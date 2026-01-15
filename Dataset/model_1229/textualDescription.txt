@@ -1,0 +1,168 @@
+The domain model 'cst' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_ModuleElement' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'name', which is of type str.
+
+'cst_Variable' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'cst_FileBlock' represents an important domain concept.
+It has one attribute: 'openMode', which is of type str.
+
+'cst_Template' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_Documentation' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_TemplateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_ForBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_TypedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_Macro' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'cst_ModelExpression' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'cst_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_Query' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'cst_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'CSTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_CSTNode' represents an important domain concept.
+It has the following attributes: 'endPosition', which is of type int; 'startPosition', which is of type int.
+
+'ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_TextExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cst_TraceBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_ProtectedAreaBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_ModuleExtendsValue' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cst_LetBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_IfBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'cst_ModuleImportsValue' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cst_TemplateOverridesValue' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cst_InitSection' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityKind' defines the following possible values: 'Public', 'Private', 'Protected'.
+The enumeration 'OpenModeKind' defines the following possible values: 'Append', 'OverWrite'.
+
+The model also captures inheritance relationships between classes.
+The class 'cst_Module' is a specialization of 'EPackage'.
+The class 'cst_Module' is a specialization of 'CSTNode'.
+The class 'cst_ModuleExtendsValue' is a specialization of 'CSTNode'.
+The class 'cst_ModuleImportsValue' is a specialization of 'CSTNode'.
+The class 'cst_TypedModel' is a specialization of 'CSTNode'.
+The class 'cst_ModuleElement' is a specialization of 'CSTNode'.
+The class 'cst_Comment' is a specialization of 'ModuleElement'.
+The class 'cst_Comment' is a specialization of 'TemplateExpression'.
+The class 'cst_Template' is a specialization of 'Block'.
+The class 'cst_Template' is a specialization of 'ModuleElement'.
+The class 'cst_TemplateOverridesValue' is a specialization of 'CSTNode'.
+The class 'cst_Variable' is a specialization of 'CSTNode'.
+The class 'cst_TemplateExpression' is a specialization of 'CSTNode'.
+The class 'cst_ModelExpression' is a specialization of 'TemplateExpression'.
+The class 'cst_TextExpression' is a specialization of 'TemplateExpression'.
+The class 'cst_Block' is a specialization of 'TemplateExpression'.
+The class 'cst_InitSection' is a specialization of 'CSTNode'.
+The class 'cst_ProtectedAreaBlock' is a specialization of 'Block'.
+The class 'cst_ForBlock' is a specialization of 'Block'.
+The class 'cst_IfBlock' is a specialization of 'Block'.
+The class 'cst_LetBlock' is a specialization of 'Block'.
+The class 'cst_FileBlock' is a specialization of 'Block'.
+The class 'cst_TraceBlock' is a specialization of 'Block'.
+The class 'cst_Macro' is a specialization of 'Block'.
+The class 'cst_Macro' is a specialization of 'ModuleElement'.
+The class 'cst_Query' is a specialization of 'ModuleElement'.
+The class 'cst_Documentation' is a specialization of 'Comment'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cst_Module' and 'cst_TypedModel'. From 'cst_Module', the role 'cst_Module' has cardinality 0..*, and from 'cst_TypedModel', the role 'cst_TypedModel' has cardinality 0..*.
+An association connects 'cst_Module' and 'cst_ModuleElement'. From 'cst_Module', the role 'cst_Module2' has cardinality 0..*, and from 'cst_ModuleElement', the role 'cst_ModuleElement' has cardinality 0..*.
+An association connects 'cst_Module' and 'cst_ModuleExtendsValue'. From 'cst_Module', the role 'cst_Module4' has cardinality 0..*, and from 'cst_ModuleExtendsValue', the role 'cst_ModuleExtendsValue' has cardinality 0..*.
+An association connects 'cst_Module' and 'cst_ModuleImportsValue'. From 'cst_Module', the role 'cst_Module6' has cardinality 0..*, and from 'cst_ModuleImportsValue', the role 'cst_ModuleImportsValue' has cardinality 0..*.
+An association connects 'cst_Module' and 'cst_Documentation'. From 'cst_Module', the role 'cst_Module8' has cardinality 0..*, and from 'cst_Documentation', the role 'cst_Documentation' has cardinality 0..*.
+An association connects 'cst_EPackage' and 'cst_TypedModel'. From 'cst_EPackage', the role 'cst_EPackage' has cardinality 0..*, and from 'cst_TypedModel', the role 'cst_TypedModel10' has cardinality 0..*.
+An association connects 'cst_TemplateOverridesValue' and 'cst_Template'. From 'cst_TemplateOverridesValue', the role 'cst_TemplateOverridesValue' has cardinality 0..*, and from 'cst_Template', the role 'cst_Template' has cardinality 0..*.
+An association connects 'cst_Variable' and 'cst_Template'. From 'cst_Variable', the role 'cst_Variable' has cardinality 0..*, and from 'cst_Template', the role 'cst_Template13' has cardinality 0..*.
+An association connects 'cst_Template' and 'cst_ModelExpression'. From 'cst_Template', the role 'cst_Template15' has cardinality 0..*, and from 'cst_ModelExpression', the role 'cst_ModelExpression' has cardinality 0..*.
+An association connects 'cst_ModelExpression' and 'cst_Template'. From 'cst_ModelExpression', the role 'cst_ModelExpression18' has cardinality 0..*, and from 'cst_Template', the role 'cst_Template17' has cardinality 0..*.
+An association connects 'cst_Variable' and 'cst_ModelExpression'. From 'cst_Variable', the role 'cst_Variable20' has cardinality 0..*, and from 'cst_ModelExpression', the role 'cst_ModelExpression21' has cardinality 0..*.
+An association connects 'cst_ModelExpression' and 'cst_ModelExpression'. From 'cst_ModelExpression', the role 'cst_ModelExpression24' has cardinality 0..*, and from 'cst_ModelExpression', the role 'cst_ModelExpression22' has cardinality 0..*.
+An association connects 'cst_ModelExpression' and 'cst_ModelExpression'. From 'cst_ModelExpression', the role 'cst_ModelExpression25' has cardinality 0..*, and from 'cst_ModelExpression', the role 'cst_ModelExpression27' has cardinality 0..*.
+An association connects 'cst_ModelExpression' and 'cst_ModelExpression'. From 'cst_ModelExpression', the role 'cst_ModelExpression28' has cardinality 0..*, and from 'cst_ModelExpression', the role 'cst_ModelExpression30' has cardinality 0..*.
+An association connects 'cst_InitSection' and 'cst_Block'. From 'cst_InitSection', the role 'cst_InitSection' has cardinality 0..*, and from 'cst_Block', the role 'cst_Block' has cardinality 0..*.
+An association connects 'cst_TemplateExpression' and 'cst_Block'. From 'cst_TemplateExpression', the role 'cst_TemplateExpression' has cardinality 0..*, and from 'cst_Block', the role 'cst_Block33' has cardinality 0..*.
+An association connects 'cst_InitSection' and 'cst_Variable'. From 'cst_InitSection', the role 'cst_InitSection35' has cardinality 0..*, and from 'cst_Variable', the role 'cst_Variable36' has cardinality 0..*.
+An association connects 'cst_ModelExpression' and 'cst_ProtectedAreaBlock'. From 'cst_ModelExpression', the role 'cst_ModelExpression38' has cardinality 0..*, and from 'cst_ProtectedAreaBlock', the role 'cst_ProtectedAreaBlock' has cardinality 0..*.
+An association connects 'cst_Variable' and 'cst_ForBlock'. From 'cst_Variable', the role 'cst_Variable40' has cardinality 0..*, and from 'cst_ForBlock', the role 'cst_ForBlock' has cardinality 0..*.
+An association connects 'cst_ForBlock' and 'cst_ModelExpression'. From 'cst_ForBlock', the role 'cst_ForBlock42' has cardinality 0..*, and from 'cst_ModelExpression', the role 'cst_ModelExpression43' has cardinality 0..*.
+An association connects 'cst_ForBlock' and 'cst_ModelExpression'. From 'cst_ForBlock', the role 'cst_ForBlock45' has cardinality 0..*, and from 'cst_ModelExpression', the role 'cst_ModelExpression46' has cardinality 0..*.
+An association connects 'cst_ForBlock' and 'cst_ModelExpression'. From 'cst_ForBlock', the role 'cst_ForBlock48' has cardinality 0..*, and from 'cst_ModelExpression', the role 'cst_ModelExpression49' has cardinality 0..*.
+An association connects 'cst_ModelExpression' and 'cst_ForBlock'. From 'cst_ModelExpression', the role 'cst_ModelExpression52' has cardinality 0..*, and from 'cst_ForBlock', the role 'cst_ForBlock51' has cardinality 0..*.
+An association connects 'cst_ModelExpression' and 'cst_ForBlock'. From 'cst_ModelExpression', the role 'cst_ModelExpression55' has cardinality 0..*, and from 'cst_ForBlock', the role 'cst_ForBlock54' has cardinality 0..*.
+An association connects 'cst_IfBlock' and 'cst_ModelExpression'. From 'cst_IfBlock', the role 'cst_IfBlock' has cardinality 0..*, and from 'cst_ModelExpression', the role 'cst_ModelExpression57' has cardinality 0..*.
+An association connects 'cst_IfBlock' and 'cst_Block'. From 'cst_IfBlock', the role 'cst_IfBlock59' has cardinality 0..*, and from 'cst_Block', the role 'cst_Block60' has cardinality 0..*.
+An association connects 'cst_IfBlock' and 'cst_IfBlock'. From 'cst_IfBlock', the role 'cst_IfBlock61' has cardinality 0..*, and from 'cst_IfBlock', the role 'cst_IfBlock63' has cardinality 0..*.
+An association connects 'cst_LetBlock' and 'cst_LetBlock'. From 'cst_LetBlock', the role 'cst_LetBlock64' has cardinality 0..*, and from 'cst_LetBlock', the role 'cst_LetBlock' has cardinality 0..*.
+An association connects 'cst_Block' and 'cst_LetBlock'. From 'cst_Block', the role 'cst_Block68' has cardinality 0..*, and from 'cst_LetBlock', the role 'cst_LetBlock67' has cardinality 0..*.
+An association connects 'cst_Variable' and 'cst_LetBlock'. From 'cst_Variable', the role 'cst_Variable71' has cardinality 0..*, and from 'cst_LetBlock', the role 'cst_LetBlock70' has cardinality 0..*.
+An association connects 'cst_FileBlock' and 'cst_ModelExpression'. From 'cst_FileBlock', the role 'cst_FileBlock' has cardinality 0..*, and from 'cst_ModelExpression', the role 'cst_ModelExpression73' has cardinality 0..*.
+An association connects 'cst_ModelExpression' and 'cst_FileBlock'. From 'cst_ModelExpression', the role 'cst_ModelExpression76' has cardinality 0..*, and from 'cst_FileBlock', the role 'cst_FileBlock75' has cardinality 0..*.
+An association connects 'cst_FileBlock' and 'cst_ModelExpression'. From 'cst_FileBlock', the role 'cst_FileBlock78' has cardinality 0..*, and from 'cst_ModelExpression', the role 'cst_ModelExpression79' has cardinality 0..*.
+An association connects 'cst_ModelExpression' and 'cst_TraceBlock'. From 'cst_ModelExpression', the role 'cst_ModelExpression81' has cardinality 0..*, and from 'cst_TraceBlock', the role 'cst_TraceBlock' has cardinality 0..*.
+An association connects 'cst_Variable' and 'cst_Macro'. From 'cst_Variable', the role 'cst_Variable83' has cardinality 0..*, and from 'cst_Macro', the role 'cst_Macro' has cardinality 0..*.
+An association connects 'cst_Query' and 'cst_Variable'. From 'cst_Query', the role 'cst_Query' has cardinality 0..*, and from 'cst_Variable', the role 'cst_Variable85' has cardinality 0..*.
+An association connects 'cst_ModelExpression' and 'cst_Query'. From 'cst_ModelExpression', the role 'cst_ModelExpression88' has cardinality 0..*, and from 'cst_Query', the role 'cst_Query87' has cardinality 0..*.

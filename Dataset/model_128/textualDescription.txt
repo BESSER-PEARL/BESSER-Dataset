@@ -1,0 +1,1354 @@
+The domain model 'sastm' describes the core structural elements and their relationships within the system.
+
+The model defines 319 main class(es).
+
+'sastm_RDBChar' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NameSpaceDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_StorageSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBString' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BitLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBVarchar' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_UnaryPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BitFieldDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NamedTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBDate' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedType' represents an important domain concept.
+It does not declare any attributes.
+
+'DerivesFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBCheckConstraint' represents an important domain concept.
+It has the following attributes: 'RDBConstraintType', which is of type str; 'RDBConstraintText', which is of type str.
+
+'sastm_RDBRaw' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_AnnotationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBRowid' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Deref' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBRefIntegrity' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BitNot' represents an important domain concept.
+It does not declare any attributes.
+
+'RDBConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBTimestamp' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_GlobalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBDatabaseDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBUniqueKey' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_EnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBClob' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_AddressOf' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_VariableCatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBConnectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBBlob' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Decrement' represents an important domain concept.
+It does not declare any attributes.
+
+'GASTMSourceObject' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Increment' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBBFile' represents an important domain concept.
+It does not declare any attributes.
+
+'SourceLocation' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_DeleteStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_PostIncrement' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBNClob' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_AccessKind' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_LabelDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_PostDecrement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_SourceFile' represents an important domain concept.
+It has one attribute: 'pathName', which is of type str.
+
+'sastm_RDBDeleteStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'GASTMSyntaxObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBCloseCursorStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Subtract' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_DeclarationOrDefinitionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBHostVariableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBSelectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Modulus' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NameSpaceType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Divide' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBInsertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_PreprocessorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_DefinitionObject' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_And' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_QualifiedIdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Exponent' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_CompilationUnit' represents an important domain concept.
+It has one attribute: 'language', which is of type str.
+
+'gastm_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Name' represents an important domain concept.
+It has one attribute: 'nameString', which is of type str.
+
+'gastm_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ProgramScope' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBModifyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_MacroCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_IncludeUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_EntryDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'NameSpaceType' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBCursorStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NotGreater' represents an important domain concept.
+It does not declare any attributes.
+
+'PreprocessorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'OtherSyntaxObject' represents an important domain concept.
+It does not declare any attributes.
+
+'AggregateType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_JumpStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FormalParameterDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BitXor' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FunctionScope' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BitRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NotLess' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_LabelType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BitAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBUpdateStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_AggregateScope' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BitOr' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_MacroDefinition' represents an important domain concept.
+It has the following attributes: 'macroName', which is of type str; 'body', which is of type str.
+
+'gastm_BlockScope' represents an important domain concept.
+It does not declare any attributes.
+
+'DefinitionObject' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'gastm_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_IdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BitLeftShift' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_TypeQualifiedIdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_MissingActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Assign' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Type' represents an important domain concept.
+It has the following attributes: 'isVolatile', which is of type bool; 'isConst', which is of type bool.
+
+'gastm_VirtualSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'MacroDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'NameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ByValueActualParameterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_VariableDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FormalParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_DeclarationOrDefinition' represents an important domain concept.
+It has the following attributes: 'linkageSpecifier', which is of type str; 'isRegister', which is of type bool.
+
+'ProgramScope' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ByReferenceActualParameterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FunctionMemberAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ActualParameterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NamedTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'RDBModifyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_External' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_SpecificTriggerDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FunctionPersistent' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_SpecificLessEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'StorageSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ConstructedType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'isMutable', which is of type bool.
+
+'gastm_SpecificGreaterEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FileLocal' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_SpecificIn' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_PerClassMember' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NoDef' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBFetchCursorStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NonVirtual' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_PrimitiveType' represents an important domain concept.
+It has one attribute: 'isSigned', which is of type bool.
+
+'sastm_RDBOpenCursorStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Virtual' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Comment' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'gastm_GASTMObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Name' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_PureVirtual' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_SpecificLike' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ShortInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_SpecificConcatString' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ExceptionType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_SpecificSelectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'RDBCursorStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FunctionMemberAttributes' represents an important domain concept.
+It has the following attributes: 'isThisConst', which is of type bool; 'isInline', which is of type bool; 'isFriend', which is of type bool.
+
+'gastm_Void' represents an important domain concept.
+It does not declare any attributes.
+
+'SourceFile' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'BlockScope' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Byte' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBTableSpaceReference' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBHostVariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_GASTMSourceObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBUserDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBSelectExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_AggregateType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBTableSpaceDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_AggregateTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'RDBTableSpaceReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_LongInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumLiteralDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBTableDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBTableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Character' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBColumnDefinition' represents an important domain concept.
+It has one attribute: 'NotNull', which is of type bool.
+
+'RDBHostVariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_OperatorAssign' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_LongDouble' represents an important domain concept.
+It does not declare any attributes.
+
+'NameSpaceDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'DataDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'AggregateScope' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_String' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBViewDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_WideCharacter' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_GASTMSyntaxObject' represents an important domain concept.
+It does not declare any attributes.
+
+'GASTMSemanticObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstructedType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Protected' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBTableAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_PointerType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_SourceLocation' represents an important domain concept.
+It has the following attributes: 'endColumn', which is of type int; 'startColumn', which is of type int; 'startLine', which is of type int; 'endLine', which is of type int.
+
+'gastm_CaseBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'DeclarationOrDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBCursorDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'IncludeUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'GASTMObject' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_RangeType' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionScope' represents an important domain concept.
+It does not declare any attributes.
+
+'FormalParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_StructureType' represents an important domain concept.
+It does not declare any attributes.
+
+'CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_UnionType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FunctionType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FormalParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'Project' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_AnnotationType' represents an important domain concept.
+It does not declare any attributes.
+
+'Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ByValueFormalParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ByReferenceFormalParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_LoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_RangeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBColumnReference' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionMemberAttributes' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Public' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_OtherSyntaxObject' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FunctionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_Private' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_FunctionCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AccessKind' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_TerminateStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBDataBaseType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_DefaultBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_GASTMSemanticObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBUserType' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBReal' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_DataDefinition' represents an important domain concept.
+It has one attribute: 'isMutable', which is of type bool.
+
+'FormalParameterDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_DoWhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ClassType' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBIndex' represents an important domain concept.
+It has the following attributes: 'NotNull', which is of type bool; 'IsUnique', which is of type bool.
+
+'sastm_RDBTableSpaceType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ForCheckBeforeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_CatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_EnumLiteralDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'AggregateTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NamedType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ForCheckAfterStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBTableType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ActualParameterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBViewType' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_AggregateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBIndexColumn' represents an important domain concept.
+It has one attribute: 'AscendingOrDescending', which is of type str.
+
+'FormalParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBCursorType' represents an important domain concept.
+It does not declare any attributes.
+
+'Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_QualifiedOverPointer' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_QualifiedOverData' represents an important domain concept.
+It does not declare any attributes.
+
+'QualifiedIdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBInt' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_ActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBLong' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_IntegerlLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBDecimal' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_NewExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_StringLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBFloat' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_TypesCatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_LabelAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_DerivesFrom' represents an important domain concept.
+It has one attribute: 'isVirtual', which is of type bool.
+
+'gastm_BooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'sastm_RDBNumber' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_CharLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_RealLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'gastm_UnnamedTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gastm_SourceFile' is a specialization of 'GASTMSourceObject'.
+The class 'gastm_SourceLocation' is a specialization of 'GASTMSourceObject'.
+The class 'gastm_Project' is a specialization of 'GASTMSemanticObject'.
+The class 'gastm_Scope' is a specialization of 'GASTMSemanticObject'.
+The class 'gastm_GASTMSyntaxObject' is a specialization of 'GASTMObject'.
+The class 'gastm_CompilationUnit' is a specialization of 'OtherSyntaxObject'.
+The class 'gastm_Name' is a specialization of 'OtherSyntaxObject'.
+The class 'gastm_DeclarationOrDefinition' is a specialization of 'DefinitionObject'.
+The class 'gastm_Definition' is a specialization of 'DeclarationOrDefinition'.
+The class 'gastm_Declaration' is a specialization of 'DeclarationOrDefinition'.
+The class 'gastm_FunctionDeclaration' is a specialization of 'Declaration'.
+The class 'gastm_VariableDeclaration' is a specialization of 'Declaration'.
+The class 'gastm_FunctionDefinition' is a specialization of 'Definition'.
+The class 'gastm_EntryDefinition' is a specialization of 'Definition'.
+The class 'gastm_DataDefinition' is a specialization of 'Definition'.
+The class 'gastm_BitFieldDefinition' is a specialization of 'DataDefinition'.
+The class 'gastm_EnumLiteralDefinition' is a specialization of 'Definition'.
+The class 'gastm_TypeDefinition' is a specialization of 'DefinitionObject'.
+The class 'gastm_NamedTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'gastm_AggregateTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'gastm_NameSpaceDefinition' is a specialization of 'DefinitionObject'.
+The class 'gastm_LabelDefinition' is a specialization of 'DefinitionObject'.
+The class 'gastm_IncludeUnit' is a specialization of 'PreprocessorElement'.
+The class 'gastm_MacroCall' is a specialization of 'PreprocessorElement'.
+The class 'gastm_MacroDefinition' is a specialization of 'PreprocessorElement'.
+The class 'gastm_Comment' is a specialization of 'PreprocessorElement'.
+The class 'gastm_Type' is a specialization of 'GASTMSyntaxObject'.
+The class 'gastm_PrimitiveType' is a specialization of 'DataType'.
+The class 'gastm_EnumType' is a specialization of 'DataType'.
+The class 'gastm_ConstructedType' is a specialization of 'DataType'.
+The class 'gastm_AggregateType' is a specialization of 'DataType'.
+The class 'gastm_ArrayType' is a specialization of 'ConstructedType'.
+The class 'gastm_Dimension' is a specialization of 'OtherSyntaxObject'.
+The class 'gastm_FunctionType' is a specialization of 'Type'.
+The class 'gastm_FormalParameterType' is a specialization of 'DataType'.
+The class 'gastm_NamedType' is a specialization of 'DataType'.
+The class 'gastm_ClassType' is a specialization of 'AggregateType'.
+The class 'gastm_DerivesFrom' is a specialization of 'OtherSyntaxObject'.
+The class 'gastm_UnnamedTypeReference' is a specialization of 'TypeReference'.
+The class 'gastm_NamedTypeReference' is a specialization of 'TypeReference'.
+The class 'gastm_DeleteStatement' is a specialization of 'Statement'.
+The class 'gastm_DeclarationOrDefinitionStatement' is a specialization of 'Statement'.
+The class 'gastm_ExpressionStatement' is a specialization of 'Statement'.
+The class 'gastm_JumpStatement' is a specialization of 'Statement'.
+The class 'gastm_BreakStatement' is a specialization of 'Statement'.
+The class 'gastm_ContinueStatement' is a specialization of 'Statement'.
+The class 'gastm_LabeledStatement' is a specialization of 'Statement'.
+The class 'gastm_BlockStatement' is a specialization of 'Statement'.
+The class 'gastm_EmptyStatement' is a specialization of 'Statement'.
+The class 'gastm_IfStatement' is a specialization of 'Statement'.
+The class 'gastm_SwitchStatement' is a specialization of 'Statement'.
+The class 'gastm_SwitchCase' is a specialization of 'OtherSyntaxObject'.
+The class 'gastm_CaseBlock' is a specialization of 'SwitchCase'.
+The class 'gastm_ReturnStatement' is a specialization of 'Statement'.
+The class 'gastm_LoopStatement' is a specialization of 'Statement'.
+The class 'gastm_ForStatement' is a specialization of 'LoopStatement'.
+The class 'gastm_TryStatement' is a specialization of 'Statement'.
+The class 'gastm_CatchBlock' is a specialization of 'OtherSyntaxObject'.
+The class 'gastm_TypesCatchBlock' is a specialization of 'CatchBlock'.
+The class 'gastm_VariableCatchBlock' is a specialization of 'CatchBlock'.
+The class 'gastm_ThrowStatement' is a specialization of 'Statement'.
+The class 'gastm_Expression' is a specialization of 'GASTMSyntaxObject'.
+The class 'gastm_NameReference' is a specialization of 'Expression'.
+The class 'gastm_ArrayAccess' is a specialization of 'Expression'.
+The class 'gastm_QualifiedIdentifierReference' is a specialization of 'NameReference'.
+The class 'gastm_TypeQualifiedIdentifierReference' is a specialization of 'NameReference'.
+The class 'gastm_Literal' is a specialization of 'Expression'.
+The class 'gastm_CastExpression' is a specialization of 'Expression'.
+The class 'gastm_UnaryExpression' is a specialization of 'Expression'.
+The class 'gastm_BinaryExpression' is a specialization of 'Expression'.
+The class 'gastm_OperatorAssign' is a specialization of 'BinaryOperator'.
+The class 'gastm_ConditionalExpression' is a specialization of 'Expression'.
+The class 'gastm_RangeExpression' is a specialization of 'Expression'.
+The class 'gastm_FunctionCallExpression' is a specialization of 'Expression'.
+The class 'gastm_ActualParameterExpression' is a specialization of 'ActualParameter'.
+The class 'gastm_NewExpression' is a specialization of 'Expression'.
+The class 'gastm_LabelAccess' is a specialization of 'Expression'.
+The class 'gastm_AnnotationExpression' is a specialization of 'Expression'.
+The class 'gastm_GlobalScope' is a specialization of 'Scope'.
+The class 'gastm_PreprocessorElement' is a specialization of 'GASTMSyntaxObject'.
+The class 'gastm_DefinitionObject' is a specialization of 'GASTMSyntaxObject'.
+The class 'gastm_ProgramScope' is a specialization of 'Scope'.
+The class 'gastm_TypeReference' is a specialization of 'Type'.
+The class 'gastm_Statement' is a specialization of 'GASTMSyntaxObject'.
+The class 'gastm_FunctionScope' is a specialization of 'Scope'.
+The class 'gastm_NameSpaceType' is a specialization of 'Type'.
+The class 'gastm_LabelType' is a specialization of 'Type'.
+The class 'gastm_AggregateScope' is a specialization of 'Scope'.
+The class 'gastm_BlockScope' is a specialization of 'Scope'.
+The class 'gastm_IdentifierReference' is a specialization of 'NameReference'.
+The class 'gastm_FormalParameterDefinition' is a specialization of 'DataDefinition'.
+The class 'gastm_VirtualSpecification' is a specialization of 'OtherSyntaxObject'.
+The class 'gastm_FormalParameterDeclaration' is a specialization of 'Declaration'.
+The class 'gastm_VariableDefinition' is a specialization of 'DataDefinition'.
+The class 'gastm_FunctionMemberAttribute' is a specialization of 'OtherSyntaxObject'.
+The class 'gastm_External' is a specialization of 'StorageSpecification'.
+The class 'gastm_FunctionPersistent' is a specialization of 'StorageSpecification'.
+The class 'gastm_FileLocal' is a specialization of 'StorageSpecification'.
+The class 'gastm_PerClassMember' is a specialization of 'StorageSpecification'.
+The class 'gastm_NoDef' is a specialization of 'StorageSpecification'.
+The class 'gastm_Virtual' is a specialization of 'VirtualSpecification'.
+The class 'gastm_PureVirtual' is a specialization of 'VirtualSpecification'.
+The class 'gastm_NonVirtual' is a specialization of 'VirtualSpecification'.
+The class 'gastm_ExceptionType' is a specialization of 'DataType'.
+The class 'gastm_Void' is a specialization of 'PrimitiveType'.
+The class 'gastm_Byte' is a specialization of 'PrimitiveType'.
+The class 'gastm_ShortInteger' is a specialization of 'PrimitiveType'.
+The class 'gastm_Integer' is a specialization of 'PrimitiveType'.
+The class 'gastm_LongInteger' is a specialization of 'PrimitiveType'.
+The class 'gastm_Float' is a specialization of 'PrimitiveType'.
+The class 'gastm_Double' is a specialization of 'PrimitiveType'.
+The class 'gastm_LongDouble' is a specialization of 'PrimitiveType'.
+The class 'gastm_Character' is a specialization of 'PrimitiveType'.
+The class 'gastm_String' is a specialization of 'PrimitiveType'.
+The class 'gastm_Boolean' is a specialization of 'PrimitiveType'.
+The class 'gastm_WideCharacter' is a specialization of 'PrimitiveType'.
+The class 'gastm_CollectionType' is a specialization of 'ConstructedType'.
+The class 'gastm_PointerType' is a specialization of 'ConstructedType'.
+The class 'gastm_ReferenceType' is a specialization of 'ConstructedType'.
+The class 'gastm_RangeType' is a specialization of 'ConstructedType'.
+The class 'gastm_StructureType' is a specialization of 'AggregateType'.
+The class 'gastm_UnionType' is a specialization of 'AggregateType'.
+The class 'gastm_AnnotationType' is a specialization of 'AggregateType'.
+The class 'gastm_ByValueFormalParameterType' is a specialization of 'FormalParameterType'.
+The class 'gastm_ByReferenceFormalParameterType' is a specialization of 'FormalParameterType'.
+The class 'gastm_Public' is a specialization of 'AccessKind'.
+The class 'gastm_Protected' is a specialization of 'AccessKind'.
+The class 'gastm_Private' is a specialization of 'AccessKind'.
+The class 'gastm_TerminateStatement' is a specialization of 'Statement'.
+The class 'gastm_DefaultBlock' is a specialization of 'SwitchCase'.
+The class 'gastm_WhileStatement' is a specialization of 'LoopStatement'.
+The class 'gastm_DoWhileStatement' is a specialization of 'LoopStatement'.
+The class 'gastm_ForCheckBeforeStatement' is a specialization of 'ForStatement'.
+The class 'gastm_ForCheckAfterStatement' is a specialization of 'ForStatement'.
+The class 'gastm_AggregateExpression' is a specialization of 'Expression'.
+The class 'gastm_QualifiedOverPointer' is a specialization of 'QualifiedIdentifierReference'.
+The class 'gastm_QualifiedOverData' is a specialization of 'QualifiedIdentifierReference'.
+The class 'gastm_IntegerlLiteral' is a specialization of 'Literal'.
+The class 'gastm_StringLiteral' is a specialization of 'Literal'.
+The class 'gastm_CharLiteral' is a specialization of 'Literal'.
+The class 'gastm_RealLiteral' is a specialization of 'Literal'.
+The class 'gastm_BooleanLiteral' is a specialization of 'Literal'.
+The class 'gastm_BitLiteral' is a specialization of 'Literal'.
+The class 'gastm_UnaryPlus' is a specialization of 'UnaryOperator'.
+The class 'gastm_Negate' is a specialization of 'UnaryOperator'.
+The class 'gastm_Not' is a specialization of 'UnaryOperator'.
+The class 'gastm_BitNot' is a specialization of 'UnaryOperator'.
+The class 'gastm_AddressOf' is a specialization of 'UnaryOperator'.
+The class 'gastm_Deref' is a specialization of 'UnaryOperator'.
+The class 'gastm_Increment' is a specialization of 'UnaryOperator'.
+The class 'gastm_Decrement' is a specialization of 'UnaryOperator'.
+The class 'gastm_PostIncrement' is a specialization of 'UnaryOperator'.
+The class 'gastm_PostDecrement' is a specialization of 'UnaryOperator'.
+The class 'gastm_Add' is a specialization of 'BinaryOperator'.
+The class 'gastm_Subtract' is a specialization of 'BinaryOperator'.
+The class 'gastm_Multiply' is a specialization of 'BinaryOperator'.
+The class 'gastm_Divide' is a specialization of 'BinaryOperator'.
+The class 'gastm_Modulus' is a specialization of 'BinaryOperator'.
+The class 'gastm_Exponent' is a specialization of 'BinaryOperator'.
+The class 'gastm_And' is a specialization of 'BinaryOperator'.
+The class 'gastm_Or' is a specialization of 'BinaryOperator'.
+The class 'gastm_Equal' is a specialization of 'BinaryOperator'.
+The class 'gastm_NotEqual' is a specialization of 'BinaryOperator'.
+The class 'gastm_Greater' is a specialization of 'BinaryOperator'.
+The class 'gastm_NotGreater' is a specialization of 'BinaryOperator'.
+The class 'gastm_Less' is a specialization of 'BinaryOperator'.
+The class 'gastm_NotLess' is a specialization of 'BinaryOperator'.
+The class 'gastm_BitAnd' is a specialization of 'BinaryOperator'.
+The class 'gastm_BitOr' is a specialization of 'BinaryOperator'.
+The class 'gastm_BitXor' is a specialization of 'BinaryOperator'.
+The class 'gastm_BitLeftShift' is a specialization of 'BinaryOperator'.
+The class 'gastm_BitRightShift' is a specialization of 'BinaryOperator'.
+The class 'gastm_Assign' is a specialization of 'BinaryOperator'.
+The class 'gastm_MissingActualParameter' is a specialization of 'ActualParameter'.
+The class 'gastm_ByValueActualParameterExpression' is a specialization of 'ActualParameterExpression'.
+The class 'gastm_ByReferenceActualParameterExpression' is a specialization of 'ActualParameterExpression'.
+The class 'gastm_SpecificTriggerDefinition' is a specialization of 'Definition'.
+The class 'gastm_SpecificLessEqual' is a specialization of 'BinaryOperator'.
+The class 'gastm_SpecificGreaterEqual' is a specialization of 'BinaryOperator'.
+The class 'gastm_SpecificIn' is a specialization of 'BinaryOperator'.
+The class 'gastm_SpecificLike' is a specialization of 'BinaryOperator'.
+The class 'gastm_SpecificConcatString' is a specialization of 'BinaryOperator'.
+The class 'gastm_SpecificSelectStatement' is a specialization of 'Statement'.
+The class 'sastm_RDBDatabaseDefinition' is a specialization of 'Definition'.
+The class 'sastm_RDBUserDefinition' is a specialization of 'Definition'.
+The class 'sastm_RDBTableSpaceDefinition' is a specialization of 'Definition'.
+The class 'sastm_RDBTableDefinition' is a specialization of 'Definition'.
+The class 'sastm_RDBColumnDefinition' is a specialization of 'Definition'.
+The class 'sastm_RDBViewDefinition' is a specialization of 'Definition'.
+The class 'sastm_RDBCursorDefinition' is a specialization of 'Definition'.
+The class 'sastm_RDBIndex' is a specialization of 'OtherSyntaxObject'.
+The class 'sastm_RDBIndexColumn' is a specialization of 'OtherSyntaxObject'.
+The class 'sastm_RDBTrigger' is a specialization of 'OtherSyntaxObject'.
+The class 'sastm_RDBConstraint' is a specialization of 'OtherSyntaxObject'.
+The class 'sastm_RDBCheckConstraint' is a specialization of 'RDBConstraint'.
+The class 'sastm_RDBRefIntegrity' is a specialization of 'RDBConstraint'.
+The class 'sastm_RDBUniqueKey' is a specialization of 'RDBConstraint'.
+The class 'sastm_RDBConnectStatement' is a specialization of 'Statement'.
+The class 'sastm_RDBSelectStatement' is a specialization of 'Statement'.
+The class 'sastm_RDBInsertStatement' is a specialization of 'Statement'.
+The class 'sastm_RDBModifyStatement' is a specialization of 'Statement'.
+The class 'sastm_RDBUpdateStatement' is a specialization of 'RDBModifyStatement'.
+The class 'sastm_RDBCursorStatement' is a specialization of 'Statement'.
+The class 'sastm_RDBOpenCursorStatement' is a specialization of 'RDBCursorStatement'.
+The class 'sastm_RDBFetchCursorStatement' is a specialization of 'RDBCursorStatement'.
+The class 'sastm_RDBSelectExpression' is a specialization of 'Expression'.
+The class 'sastm_RDBTableReference' is a specialization of 'IdentifierReference'.
+The class 'sastm_RDBTableAlias' is a specialization of 'IdentifierReference'.
+The class 'sastm_RDBColumnReference' is a specialization of 'IdentifierReference'.
+The class 'sastm_RDBDataBaseType' is a specialization of 'DataType'.
+The class 'sastm_RDBUserType' is a specialization of 'DataType'.
+The class 'sastm_RDBTableSpaceType' is a specialization of 'DataType'.
+The class 'sastm_RDBTableType' is a specialization of 'DataType'.
+The class 'sastm_RDBViewType' is a specialization of 'DataType'.
+The class 'sastm_RDBCursorType' is a specialization of 'DataType'.
+The class 'sastm_RDBInteger' is a specialization of 'DataType'.
+The class 'sastm_RDBInt' is a specialization of 'DataType'.
+The class 'sastm_RDBReal' is a specialization of 'DataType'.
+The class 'sastm_RDBFloat' is a specialization of 'DataType'.
+The class 'sastm_RDBDecimal' is a specialization of 'DataType'.
+The class 'sastm_RDBNumber' is a specialization of 'DataType'.
+The class 'sastm_RDBLong' is a specialization of 'DataType'.
+The class 'sastm_RDBChar' is a specialization of 'DataType'.
+The class 'sastm_RDBVarchar' is a specialization of 'DataType'.
+The class 'sastm_RDBString' is a specialization of 'DataType'.
+The class 'sastm_RDBRaw' is a specialization of 'DataType'.
+The class 'sastm_RDBDate' is a specialization of 'DataType'.
+The class 'sastm_RDBTimestamp' is a specialization of 'DataType'.
+The class 'sastm_RDBRowid' is a specialization of 'DataType'.
+The class 'sastm_RDBBoolean' is a specialization of 'DataType'.
+The class 'sastm_RDBBlob' is a specialization of 'DataType'.
+The class 'sastm_RDBClob' is a specialization of 'DataType'.
+The class 'sastm_RDBNClob' is a specialization of 'DataType'.
+The class 'sastm_RDBBFile' is a specialization of 'DataType'.
+The class 'sastm_RDBDeleteStatement' is a specialization of 'RDBModifyStatement'.
+The class 'sastm_RDBCloseCursorStatement' is a specialization of 'RDBCursorStatement'.
+The class 'sastm_RDBHostVariableExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gastm_SourceLocation' and 'SourceFile'. From 'gastm_SourceLocation', the role 'gastm_SourceLocation' has cardinality 0..*, and from 'SourceFile', the role 'SourceFile' has cardinality 0..*.
+An association connects 'gastm_Project' and 'CompilationUnit'. From 'gastm_Project', the role 'gastm_Project' has cardinality 0..*, and from 'CompilationUnit', the role 'CompilationUnit' has cardinality 0..*.
+An association connects 'GlobalScope' and 'gastm_Project'. From 'GlobalScope', the role 'GlobalScope' has cardinality 0..*, and from 'gastm_Project', the role 'gastm_Project3' has cardinality 0..*.
+An association connects 'DefinitionObject' and 'gastm_Scope'. From 'DefinitionObject', the role 'DefinitionObject' has cardinality 0..*, and from 'gastm_Scope', the role 'gastm_Scope' has cardinality 0..*.
+An association connects 'gastm_Scope' and 'Scope'. From 'gastm_Scope', the role 'gastm_Scope6' has cardinality 0..*, and from 'Scope', the role 'Scope' has cardinality 0..*.
+An association connects 'SourceLocation' and 'gastm_GASTMSyntaxObject'. From 'SourceLocation', the role 'SourceLocation' has cardinality 0..*, and from 'gastm_GASTMSyntaxObject', the role 'gastm_GASTMSyntaxObject' has cardinality 0..*.
+An association connects 'PreprocessorElement' and 'gastm_GASTMSyntaxObject'. From 'PreprocessorElement', the role 'PreprocessorElement' has cardinality 0..*, and from 'gastm_GASTMSyntaxObject', the role 'gastm_GASTMSyntaxObject9' has cardinality 0..*.
+An association connects 'AnnotationExpression' and 'gastm_GASTMSyntaxObject'. From 'AnnotationExpression', the role 'AnnotationExpression' has cardinality 0..*, and from 'gastm_GASTMSyntaxObject', the role 'gastm_GASTMSyntaxObject11' has cardinality 0..*.
+An association connects 'gastm_CompilationUnit' and 'DefinitionObject'. From 'gastm_CompilationUnit', the role 'gastm_CompilationUnit' has cardinality 0..*, and from 'DefinitionObject', the role 'DefinitionObject13' has cardinality 0..*.
+An association connects 'gastm_CompilationUnit' and 'ProgramScope'. From 'gastm_CompilationUnit', the role 'gastm_CompilationUnit15' has cardinality 0..*, and from 'ProgramScope', the role 'ProgramScope' has cardinality 0..*.
+An association connects 'OtherSyntaxObject' and 'gastm_DeclarationOrDefinition'. From 'OtherSyntaxObject', the role 'OtherSyntaxObject' has cardinality 0..*, and from 'gastm_DeclarationOrDefinition', the role 'gastm_DeclarationOrDefinition' has cardinality 0..*.
+An association connects 'OtherSyntaxObject' and 'gastm_DeclarationOrDefinition'. From 'OtherSyntaxObject', the role 'OtherSyntaxObject19' has cardinality 0..*, and from 'gastm_DeclarationOrDefinition', the role 'gastm_DeclarationOrDefinition18' has cardinality 0..*.
+An association connects 'gastm_Definition' and 'Name'. From 'gastm_Definition', the role 'gastm_Definition' has cardinality 0..*, and from 'Name', the role 'Name' has cardinality 0..*.
+An association connects 'gastm_Definition' and 'TypeReference'. From 'gastm_Definition', the role 'gastm_Definition22' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference' has cardinality 0..*.
+An association connects 'gastm_Declaration' and 'Definition'. From 'gastm_Declaration', the role 'gastm_Declaration' has cardinality 0..*, and from 'Definition', the role 'Definition' has cardinality 0..*.
+An association connects 'gastm_Declaration' and 'Name'. From 'gastm_Declaration', the role 'gastm_Declaration25' has cardinality 0..*, and from 'Name', the role 'Name26' has cardinality 0..*.
+An association connects 'TypeReference' and 'gastm_Declaration'. From 'TypeReference', the role 'TypeReference29' has cardinality 0..*, and from 'gastm_Declaration', the role 'gastm_Declaration28' has cardinality 0..*.
+An association connects 'FormalParameterDeclaration' and 'gastm_FunctionDeclaration'. From 'FormalParameterDeclaration', the role 'FormalParameterDeclaration' has cardinality 0..*, and from 'gastm_FunctionDeclaration', the role 'gastm_FunctionDeclaration' has cardinality 0..*.
+An association connects 'FunctionMemberAttributes' and 'gastm_FunctionDeclaration'. From 'FunctionMemberAttributes', the role 'FunctionMemberAttributes' has cardinality 0..*, and from 'gastm_FunctionDeclaration', the role 'gastm_FunctionDeclaration32' has cardinality 0..*.
+An association connects 'TypeReference' and 'gastm_FunctionDefinition'. From 'TypeReference', the role 'TypeReference34' has cardinality 0..*, and from 'gastm_FunctionDefinition', the role 'gastm_FunctionDefinition' has cardinality 0..*.
+An association connects 'FormalParameterDefinition' and 'gastm_FunctionDefinition'. From 'FormalParameterDefinition', the role 'FormalParameterDefinition' has cardinality 0..*, and from 'gastm_FunctionDefinition', the role 'gastm_FunctionDefinition36' has cardinality 0..*.
+An association connects 'Statement' and 'gastm_FunctionDefinition'. From 'Statement', the role 'Statement' has cardinality 0..*, and from 'gastm_FunctionDefinition', the role 'gastm_FunctionDefinition38' has cardinality 0..*.
+An association connects 'FunctionMemberAttributes' and 'gastm_FunctionDefinition'. From 'FunctionMemberAttributes', the role 'FunctionMemberAttributes41' has cardinality 0..*, and from 'gastm_FunctionDefinition', the role 'gastm_FunctionDefinition40' has cardinality 0..*.
+An association connects 'FunctionScope' and 'gastm_FunctionDefinition'. From 'FunctionScope', the role 'FunctionScope' has cardinality 0..*, and from 'gastm_FunctionDefinition', the role 'gastm_FunctionDefinition43' has cardinality 0..*.
+An association connects 'VirtualSpecification' and 'gastm_FunctionMemberAttributes'. From 'VirtualSpecification', the role 'VirtualSpecification' has cardinality 0..*, and from 'gastm_FunctionMemberAttributes', the role 'gastm_FunctionMemberAttributes' has cardinality 0..*.
+An association connects 'FormalParameterDefinition' and 'gastm_EntryDefinition'. From 'FormalParameterDefinition', the role 'FormalParameterDefinition46' has cardinality 0..*, and from 'gastm_EntryDefinition', the role 'gastm_EntryDefinition' has cardinality 0..*.
+An association connects 'Statement' and 'gastm_EntryDefinition'. From 'Statement', the role 'Statement49' has cardinality 0..*, and from 'gastm_EntryDefinition', the role 'gastm_EntryDefinition48' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_DataDefinition'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'gastm_DataDefinition', the role 'gastm_DataDefinition' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_BitFieldDefinition'. From 'Expression', the role 'Expression52' has cardinality 0..*, and from 'gastm_BitFieldDefinition', the role 'gastm_BitFieldDefinition' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_EnumLiteralDefinition'. From 'Expression', the role 'Expression54' has cardinality 0..*, and from 'gastm_EnumLiteralDefinition', the role 'gastm_EnumLiteralDefinition' has cardinality 0..*.
+An association connects 'gastm_TypeDefinition' and 'Name'. From 'gastm_TypeDefinition', the role 'gastm_TypeDefinition' has cardinality 0..*, and from 'Name', the role 'Name56' has cardinality 0..*.
+An association connects 'NamedType' and 'gastm_NamedTypeDefinition'. From 'NamedType', the role 'NamedType' has cardinality 0..*, and from 'gastm_NamedTypeDefinition', the role 'gastm_NamedTypeDefinition' has cardinality 0..*.
+An association connects 'gastm_AggregateTypeDefinition' and 'AggregateType'. From 'gastm_AggregateTypeDefinition', the role 'gastm_AggregateTypeDefinition' has cardinality 0..*, and from 'AggregateType', the role 'AggregateType' has cardinality 0..*.
+An association connects 'gastm_NameSpaceDefinition' and 'Name'. From 'gastm_NameSpaceDefinition', the role 'gastm_NameSpaceDefinition' has cardinality 0..*, and from 'Name', the role 'Name60' has cardinality 0..*.
+An association connects 'gastm_NameSpaceDefinition' and 'DefinitionObject'. From 'gastm_NameSpaceDefinition', the role 'gastm_NameSpaceDefinition62' has cardinality 0..*, and from 'DefinitionObject', the role 'DefinitionObject63' has cardinality 0..*.
+An association connects 'NameSpaceType' and 'gastm_NameSpaceDefinition'. From 'NameSpaceType', the role 'NameSpaceType' has cardinality 0..*, and from 'gastm_NameSpaceDefinition', the role 'gastm_NameSpaceDefinition65' has cardinality 0..*.
+An association connects 'Name' and 'gastm_LabelDefinition'. From 'Name', the role 'Name67' has cardinality 0..*, and from 'gastm_LabelDefinition', the role 'gastm_LabelDefinition' has cardinality 0..*.
+An association connects 'gastm_LabelDefinition' and 'LabelType'. From 'gastm_LabelDefinition', the role 'gastm_LabelDefinition69' has cardinality 0..*, and from 'LabelType', the role 'LabelType' has cardinality 0..*.
+An association connects 'SourceFile' and 'gastm_IncludeUnit'. From 'SourceFile', the role 'SourceFile71' has cardinality 0..*, and from 'gastm_IncludeUnit', the role 'gastm_IncludeUnit' has cardinality 0..*.
+An association connects 'MacroDefinition' and 'gastm_MacroCall'. From 'MacroDefinition', the role 'MacroDefinition' has cardinality 0..*, and from 'gastm_MacroCall', the role 'gastm_MacroCall' has cardinality 0..*.
+An association connects 'EnumLiteralDefinition' and 'gastm_EnumType'. From 'EnumLiteralDefinition', the role 'EnumLiteralDefinition' has cardinality 0..*, and from 'gastm_EnumType', the role 'gastm_EnumType' has cardinality 0..*.
+An association connects 'TypeReference' and 'gastm_ConstructedType'. From 'TypeReference', the role 'TypeReference75' has cardinality 0..*, and from 'gastm_ConstructedType', the role 'gastm_ConstructedType' has cardinality 0..*.
+An association connects 'gastm_AggregateType' and 'DefinitionObject'. From 'gastm_AggregateType', the role 'gastm_AggregateType' has cardinality 0..*, and from 'DefinitionObject', the role 'DefinitionObject77' has cardinality 0..*.
+An association connects 'AggregateScope' and 'gastm_AggregateType'. From 'AggregateScope', the role 'AggregateScope' has cardinality 0..*, and from 'gastm_AggregateType', the role 'gastm_AggregateType79' has cardinality 0..*.
+An association connects 'Dimension' and 'gastm_ArrayType'. From 'Dimension', the role 'Dimension' has cardinality 0..*, and from 'gastm_ArrayType', the role 'gastm_ArrayType' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_Dimension'. From 'Expression', the role 'Expression82' has cardinality 0..*, and from 'gastm_Dimension', the role 'gastm_Dimension' has cardinality 0..*.
+An association connects 'gastm_Dimension' and 'Expression'. From 'gastm_Dimension', the role 'gastm_Dimension84' has cardinality 0..*, and from 'Expression', the role 'Expression85' has cardinality 0..*.
+An association connects 'gastm_FunctionType' and 'TypeReference'. From 'gastm_FunctionType', the role 'gastm_FunctionType' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference87' has cardinality 0..*.
+An association connects 'gastm_FunctionType' and 'FormalParameterType'. From 'gastm_FunctionType', the role 'gastm_FunctionType89' has cardinality 0..*, and from 'FormalParameterType', the role 'FormalParameterType' has cardinality 0..*.
+An association connects 'gastm_FormalParameterType' and 'TypeReference'. From 'gastm_FormalParameterType', the role 'gastm_FormalParameterType' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference91' has cardinality 0..*.
+An association connects 'gastm_NamedType' and 'Type'. From 'gastm_NamedType', the role 'gastm_NamedType' has cardinality 0..*, and from 'Type', the role 'Type' has cardinality 0..*.
+An association connects 'DerivesFrom' and 'gastm_ClassType'. From 'DerivesFrom', the role 'DerivesFrom' has cardinality 0..*, and from 'gastm_ClassType', the role 'gastm_ClassType' has cardinality 0..*.
+An association connects 'OtherSyntaxObject' and 'gastm_DerivesFrom'. From 'OtherSyntaxObject', the role 'OtherSyntaxObject95' has cardinality 0..*, and from 'gastm_DerivesFrom', the role 'gastm_DerivesFrom' has cardinality 0..*.
+An association connects 'NamedType' and 'gastm_DerivesFrom'. From 'NamedType', the role 'NamedType98' has cardinality 0..*, and from 'gastm_DerivesFrom', the role 'gastm_DerivesFrom97' has cardinality 0..*.
+An association connects 'gastm_UnnamedTypeReference' and 'Type'. From 'gastm_UnnamedTypeReference', the role 'gastm_UnnamedTypeReference' has cardinality 0..*, and from 'Type', the role 'Type100' has cardinality 0..*.
+An association connects 'gastm_NamedTypeReference' and 'Name'. From 'gastm_NamedTypeReference', the role 'gastm_NamedTypeReference' has cardinality 0..*, and from 'Name', the role 'Name102' has cardinality 0..*.
+An association connects 'gastm_NamedTypeReference' and 'TypeDefinition'. From 'gastm_NamedTypeReference', the role 'gastm_NamedTypeReference104' has cardinality 0..*, and from 'TypeDefinition', the role 'TypeDefinition' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_DeleteStatement'. From 'Expression', the role 'Expression106' has cardinality 0..*, and from 'gastm_DeleteStatement', the role 'gastm_DeleteStatement' has cardinality 0..*.
+An association connects 'DefinitionObject' and 'gastm_DeclarationOrDefinitionStatement'. From 'DefinitionObject', the role 'DefinitionObject108' has cardinality 0..*, and from 'gastm_DeclarationOrDefinitionStatement', the role 'gastm_DeclarationOrDefinitionStatement' has cardinality 0..*.
+An association connects 'gastm_ExpressionStatement' and 'Expression'. From 'gastm_ExpressionStatement', the role 'gastm_ExpressionStatement' has cardinality 0..*, and from 'Expression', the role 'Expression110' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_JumpStatement'. From 'Expression', the role 'Expression112' has cardinality 0..*, and from 'gastm_JumpStatement', the role 'gastm_JumpStatement' has cardinality 0..*.
+An association connects 'LabelAccess' and 'gastm_BreakStatement'. From 'LabelAccess', the role 'LabelAccess' has cardinality 0..*, and from 'gastm_BreakStatement', the role 'gastm_BreakStatement' has cardinality 0..*.
+An association connects 'LabelAccess' and 'gastm_ContinueStatement'. From 'LabelAccess', the role 'LabelAccess115' has cardinality 0..*, and from 'gastm_ContinueStatement', the role 'gastm_ContinueStatement' has cardinality 0..*.
+An association connects 'gastm_LabeledStatement' and 'LabelDefinition'. From 'gastm_LabeledStatement', the role 'gastm_LabeledStatement' has cardinality 0..*, and from 'LabelDefinition', the role 'LabelDefinition' has cardinality 0..*.
+An association connects 'gastm_LabeledStatement' and 'Statement'. From 'gastm_LabeledStatement', the role 'gastm_LabeledStatement118' has cardinality 0..*, and from 'Statement', the role 'Statement119' has cardinality 0..*.
+An association connects 'gastm_BlockStatement' and 'Statement'. From 'gastm_BlockStatement', the role 'gastm_BlockStatement' has cardinality 0..*, and from 'Statement', the role 'Statement121' has cardinality 0..*.
+An association connects 'BlockScope' and 'gastm_BlockStatement'. From 'BlockScope', the role 'BlockScope' has cardinality 0..*, and from 'gastm_BlockStatement', the role 'gastm_BlockStatement123' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_IfStatement'. From 'Expression', the role 'Expression125' has cardinality 0..*, and from 'gastm_IfStatement', the role 'gastm_IfStatement' has cardinality 0..*.
+An association connects 'gastm_IfStatement' and 'Statement'. From 'gastm_IfStatement', the role 'gastm_IfStatement127' has cardinality 0..*, and from 'Statement', the role 'Statement128' has cardinality 0..*.
+An association connects 'Statement' and 'gastm_IfStatement'. From 'Statement', the role 'Statement131' has cardinality 0..*, and from 'gastm_IfStatement', the role 'gastm_IfStatement130' has cardinality 0..*.
+An association connects 'gastm_SwitchStatement' and 'Expression'. From 'gastm_SwitchStatement', the role 'gastm_SwitchStatement' has cardinality 0..*, and from 'Expression', the role 'Expression133' has cardinality 0..*.
+An association connects 'gastm_SwitchStatement' and 'SwitchCase'. From 'gastm_SwitchStatement', the role 'gastm_SwitchStatement135' has cardinality 0..*, and from 'SwitchCase', the role 'SwitchCase' has cardinality 0..*.
+An association connects 'Statement' and 'gastm_SwitchCase'. From 'Statement', the role 'Statement137' has cardinality 0..*, and from 'gastm_SwitchCase', the role 'gastm_SwitchCase' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_CaseBlock'. From 'Expression', the role 'Expression139' has cardinality 0..*, and from 'gastm_CaseBlock', the role 'gastm_CaseBlock' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_ReturnStatement'. From 'Expression', the role 'Expression141' has cardinality 0..*, and from 'gastm_ReturnStatement', the role 'gastm_ReturnStatement' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_LoopStatement'. From 'Expression', the role 'Expression143' has cardinality 0..*, and from 'gastm_LoopStatement', the role 'gastm_LoopStatement' has cardinality 0..*.
+An association connects 'Statement' and 'gastm_LoopStatement'. From 'Statement', the role 'Statement146' has cardinality 0..*, and from 'gastm_LoopStatement', the role 'gastm_LoopStatement145' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_ForStatement'. From 'Expression', the role 'Expression148' has cardinality 0..*, and from 'gastm_ForStatement', the role 'gastm_ForStatement' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_ForStatement'. From 'Expression', the role 'Expression151' has cardinality 0..*, and from 'gastm_ForStatement', the role 'gastm_ForStatement150' has cardinality 0..*.
+An association connects 'Statement' and 'gastm_TryStatement'. From 'Statement', the role 'Statement153' has cardinality 0..*, and from 'gastm_TryStatement', the role 'gastm_TryStatement' has cardinality 0..*.
+An association connects 'gastm_TryStatement' and 'CatchBlock'. From 'gastm_TryStatement', the role 'gastm_TryStatement155' has cardinality 0..*, and from 'CatchBlock', the role 'CatchBlock' has cardinality 0..*.
+An association connects 'Statement' and 'gastm_TryStatement'. From 'Statement', the role 'Statement158' has cardinality 0..*, and from 'gastm_TryStatement', the role 'gastm_TryStatement157' has cardinality 0..*.
+An association connects 'gastm_CatchBlock' and 'Statement'. From 'gastm_CatchBlock', the role 'gastm_CatchBlock' has cardinality 0..*, and from 'Statement', the role 'Statement160' has cardinality 0..*.
+An association connects 'Type' and 'gastm_TypesCatchBlock'. From 'Type', the role 'Type162' has cardinality 0..*, and from 'gastm_TypesCatchBlock', the role 'gastm_TypesCatchBlock' has cardinality 0..*.
+An association connects 'gastm_VariableCatchBlock' and 'DataDefinition'. From 'gastm_VariableCatchBlock', the role 'gastm_VariableCatchBlock' has cardinality 0..*, and from 'DataDefinition', the role 'DataDefinition' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_ThrowStatement'. From 'Expression', the role 'Expression165' has cardinality 0..*, and from 'gastm_ThrowStatement', the role 'gastm_ThrowStatement' has cardinality 0..*.
+An association connects 'gastm_Expression' and 'TypeReference'. From 'gastm_Expression', the role 'gastm_Expression' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference167' has cardinality 0..*.
+An association connects 'gastm_NameReference' and 'Name'. From 'gastm_NameReference', the role 'gastm_NameReference' has cardinality 0..*, and from 'Name', the role 'Name169' has cardinality 0..*.
+An association connects 'DefinitionObject' and 'gastm_NameReference'. From 'DefinitionObject', the role 'DefinitionObject172' has cardinality 0..*, and from 'gastm_NameReference', the role 'gastm_NameReference171' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_ArrayAccess'. From 'Expression', the role 'Expression174' has cardinality 0..*, and from 'gastm_ArrayAccess', the role 'gastm_ArrayAccess' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_ArrayAccess'. From 'Expression', the role 'Expression177' has cardinality 0..*, and from 'gastm_ArrayAccess', the role 'gastm_ArrayAccess176' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_QualifiedIdentifierReference'. From 'Expression', the role 'Expression179' has cardinality 0..*, and from 'gastm_QualifiedIdentifierReference', the role 'gastm_QualifiedIdentifierReference' has cardinality 0..*.
+An association connects 'gastm_QualifiedIdentifierReference' and 'IdentifierReference'. From 'gastm_QualifiedIdentifierReference', the role 'gastm_QualifiedIdentifierReference181' has cardinality 0..*, and from 'IdentifierReference', the role 'IdentifierReference' has cardinality 0..*.
+An association connects 'TypeReference' and 'gastm_TypeQualifiedIdentifierReference'. From 'TypeReference', the role 'TypeReference183' has cardinality 0..*, and from 'gastm_TypeQualifiedIdentifierReference', the role 'gastm_TypeQualifiedIdentifierReference' has cardinality 0..*.
+An association connects 'gastm_TypeQualifiedIdentifierReference' and 'IdentifierReference'. From 'gastm_TypeQualifiedIdentifierReference', the role 'gastm_TypeQualifiedIdentifierReference185' has cardinality 0..*, and from 'IdentifierReference', the role 'IdentifierReference186' has cardinality 0..*.
+An association connects 'TypeReference' and 'gastm_CastExpression'. From 'TypeReference', the role 'TypeReference188' has cardinality 0..*, and from 'gastm_CastExpression', the role 'gastm_CastExpression' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_CastExpression'. From 'Expression', the role 'Expression191' has cardinality 0..*, and from 'gastm_CastExpression', the role 'gastm_CastExpression190' has cardinality 0..*.
+An association connects 'gastm_UnaryExpression' and 'OtherSyntaxObject'. From 'gastm_UnaryExpression', the role 'gastm_UnaryExpression' has cardinality 0..*, and from 'OtherSyntaxObject', the role 'OtherSyntaxObject193' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_UnaryExpression'. From 'Expression', the role 'Expression196' has cardinality 0..*, and from 'gastm_UnaryExpression', the role 'gastm_UnaryExpression195' has cardinality 0..*.
+An association connects 'gastm_BinaryExpression' and 'OtherSyntaxObject'. From 'gastm_BinaryExpression', the role 'gastm_BinaryExpression' has cardinality 0..*, and from 'OtherSyntaxObject', the role 'OtherSyntaxObject198' has cardinality 0..*.
+An association connects 'gastm_BinaryExpression' and 'Expression'. From 'gastm_BinaryExpression', the role 'gastm_BinaryExpression200' has cardinality 0..*, and from 'Expression', the role 'Expression201' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_BinaryExpression'. From 'Expression', the role 'Expression204' has cardinality 0..*, and from 'gastm_BinaryExpression', the role 'gastm_BinaryExpression203' has cardinality 0..*.
+An association connects 'OtherSyntaxObject' and 'gastm_OperatorAssign'. From 'OtherSyntaxObject', the role 'OtherSyntaxObject206' has cardinality 0..*, and from 'gastm_OperatorAssign', the role 'gastm_OperatorAssign' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_ConditionalExpression'. From 'Expression', the role 'Expression208' has cardinality 0..*, and from 'gastm_ConditionalExpression', the role 'gastm_ConditionalExpression' has cardinality 0..*.
+An association connects 'gastm_ConditionalExpression' and 'Expression'. From 'gastm_ConditionalExpression', the role 'gastm_ConditionalExpression210' has cardinality 0..*, and from 'Expression', the role 'Expression211' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_ConditionalExpression'. From 'Expression', the role 'Expression214' has cardinality 0..*, and from 'gastm_ConditionalExpression', the role 'gastm_ConditionalExpression213' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_RangeExpression'. From 'Expression', the role 'Expression216' has cardinality 0..*, and from 'gastm_RangeExpression', the role 'gastm_RangeExpression' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_RangeExpression'. From 'Expression', the role 'Expression219' has cardinality 0..*, and from 'gastm_RangeExpression', the role 'gastm_RangeExpression218' has cardinality 0..*.
+An association connects 'gastm_FunctionCallExpression' and 'Expression'. From 'gastm_FunctionCallExpression', the role 'gastm_FunctionCallExpression' has cardinality 0..*, and from 'Expression', the role 'Expression221' has cardinality 0..*.
+An association connects 'ActualParameter' and 'gastm_FunctionCallExpression'. From 'ActualParameter', the role 'ActualParameter' has cardinality 0..*, and from 'gastm_FunctionCallExpression', the role 'gastm_FunctionCallExpression223' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_ActualParameterExpression'. From 'Expression', the role 'Expression225' has cardinality 0..*, and from 'gastm_ActualParameterExpression', the role 'gastm_ActualParameterExpression' has cardinality 0..*.
+An association connects 'gastm_NewExpression' and 'TypeReference'. From 'gastm_NewExpression', the role 'gastm_NewExpression' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference227' has cardinality 0..*.
+An association connects 'gastm_NewExpression' and 'OtherSyntaxObject'. From 'gastm_NewExpression', the role 'gastm_NewExpression229' has cardinality 0..*, and from 'OtherSyntaxObject', the role 'OtherSyntaxObject230' has cardinality 0..*.
+An association connects 'Name' and 'gastm_LabelAccess'. From 'Name', the role 'Name232' has cardinality 0..*, and from 'gastm_LabelAccess', the role 'gastm_LabelAccess' has cardinality 0..*.
+An association connects 'LabelDefinition' and 'gastm_LabelAccess'. From 'LabelDefinition', the role 'LabelDefinition235' has cardinality 0..*, and from 'gastm_LabelAccess', the role 'gastm_LabelAccess234' has cardinality 0..*.
+An association connects 'gastm_AnnotationExpression' and 'TypeReference'. From 'gastm_AnnotationExpression', the role 'gastm_AnnotationExpression' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference237' has cardinality 0..*.
+An association connects 'Expression' and 'gastm_AnnotationExpression'. From 'Expression', the role 'Expression240' has cardinality 0..*, and from 'gastm_AnnotationExpression', the role 'gastm_AnnotationExpression239' has cardinality 0..*.
+An association connects 'Statement' and 'gastm_SpecificTriggerDefinition'. From 'Statement', the role 'Statement242' has cardinality 0..*, and from 'gastm_SpecificTriggerDefinition', the role 'gastm_SpecificTriggerDefinition' has cardinality 0..*.
+An association connects 'sastm_RDBDatabaseDefinition' and 'RDBTableSpaceReference'. From 'sastm_RDBDatabaseDefinition', the role 'sastm_RDBDatabaseDefinition' has cardinality 0..*, and from 'RDBTableSpaceReference', the role 'RDBTableSpaceReference' has cardinality 0..*.
+An association connects 'NameSpaceDefinition' and 'sastm_RDBUserDefinition'. From 'NameSpaceDefinition', the role 'NameSpaceDefinition' has cardinality 0..*, and from 'sastm_RDBUserDefinition', the role 'sastm_RDBUserDefinition' has cardinality 0..*.
+An association connects 'NameSpaceDefinition' and 'sastm_RDBTableSpaceDefinition'. From 'NameSpaceDefinition', the role 'NameSpaceDefinition246' has cardinality 0..*, and from 'sastm_RDBTableSpaceDefinition', the role 'sastm_RDBTableSpaceDefinition' has cardinality 0..*.
+An association connects 'IncludeUnit' and 'sastm_RDBTableDefinition'. From 'IncludeUnit', the role 'IncludeUnit' has cardinality 0..*, and from 'sastm_RDBTableDefinition', the role 'sastm_RDBTableDefinition' has cardinality 0..*.
+An association connects 'Project' and 'sastm_RDBTableDefinition'. From 'Project', the role 'Project' has cardinality 0..*, and from 'sastm_RDBTableDefinition', the role 'sastm_RDBTableDefinition249' has cardinality 0..*.
+An association connects 'GASTMObject' and 'sastm_RDBTableDefinition'. From 'GASTMObject', the role 'GASTMObject' has cardinality 0..*, and from 'sastm_RDBTableDefinition', the role 'sastm_RDBTableDefinition251' has cardinality 0..*.
+An association connects 'sastm_RDBTableDefinition' and 'CompilationUnit'. From 'sastm_RDBTableDefinition', the role 'sastm_RDBTableDefinition253' has cardinality 0..*, and from 'CompilationUnit', the role 'CompilationUnit254' has cardinality 0..*.
+An association connects 'sastm_RDBTableDefinition' and 'DeclarationOrDefinition'. From 'sastm_RDBTableDefinition', the role 'sastm_RDBTableDefinition256' has cardinality 0..*, and from 'DeclarationOrDefinition', the role 'DeclarationOrDefinition' has cardinality 0..*.
+An association connects 'AggregateTypeDefinition' and 'sastm_RDBViewDefinition'. From 'AggregateTypeDefinition', the role 'AggregateTypeDefinition' has cardinality 0..*, and from 'sastm_RDBViewDefinition', the role 'sastm_RDBViewDefinition' has cardinality 0..*.
+An association connects 'sastm_RDBCursorDefinition' and 'AggregateTypeDefinition'. From 'sastm_RDBCursorDefinition', the role 'sastm_RDBCursorDefinition' has cardinality 0..*, and from 'AggregateTypeDefinition', the role 'AggregateTypeDefinition259' has cardinality 0..*.
+An association connects 'Name' and 'sastm_RDBIndex'. From 'Name', the role 'Name261' has cardinality 0..*, and from 'sastm_RDBIndex', the role 'sastm_RDBIndex' has cardinality 0..*.
+An association connects 'IncludeUnit' and 'sastm_RDBIndexColumn'. From 'IncludeUnit', the role 'IncludeUnit263' has cardinality 0..*, and from 'sastm_RDBIndexColumn', the role 'sastm_RDBIndexColumn' has cardinality 0..*.
+An association connects 'IncludeUnit' and 'sastm_RDBRefIntegrity'. From 'IncludeUnit', the role 'IncludeUnit265' has cardinality 0..*, and from 'sastm_RDBRefIntegrity', the role 'sastm_RDBRefIntegrity' has cardinality 0..*.
+An association connects 'sastm_RDBRefIntegrity' and 'IncludeUnit'. From 'sastm_RDBRefIntegrity', the role 'sastm_RDBRefIntegrity267' has cardinality 0..*, and from 'IncludeUnit', the role 'IncludeUnit268' has cardinality 0..*.
+An association connects 'IncludeUnit' and 'sastm_RDBRefIntegrity'. From 'IncludeUnit', the role 'IncludeUnit271' has cardinality 0..*, and from 'sastm_RDBRefIntegrity', the role 'sastm_RDBRefIntegrity270' has cardinality 0..*.
+An association connects 'sastm_RDBUniqueKey' and 'IncludeUnit'. From 'sastm_RDBUniqueKey', the role 'sastm_RDBUniqueKey' has cardinality 0..*, and from 'IncludeUnit', the role 'IncludeUnit273' has cardinality 0..*.
+An association connects 'sastm_RDBConnectStatement' and 'NamedTypeDefinition'. From 'sastm_RDBConnectStatement', the role 'sastm_RDBConnectStatement' has cardinality 0..*, and from 'NamedTypeDefinition', the role 'NamedTypeDefinition' has cardinality 0..*.
+An association connects 'sastm_RDBSelectStatement' and 'AggregateTypeDefinition'. From 'sastm_RDBSelectStatement', the role 'sastm_RDBSelectStatement' has cardinality 0..*, and from 'AggregateTypeDefinition', the role 'AggregateTypeDefinition276' has cardinality 0..*.
+An association connects 'NamedTypeDefinition' and 'sastm_RDBSelectStatement'. From 'NamedTypeDefinition', the role 'NamedTypeDefinition279' has cardinality 0..*, and from 'sastm_RDBSelectStatement', the role 'sastm_RDBSelectStatement278' has cardinality 0..*.
+An association connects 'NameSpaceDefinition' and 'sastm_RDBInsertStatement'. From 'NameSpaceDefinition', the role 'NameSpaceDefinition281' has cardinality 0..*, and from 'sastm_RDBInsertStatement', the role 'sastm_RDBInsertStatement' has cardinality 0..*.
+An association connects 'sastm_RDBInsertStatement' and 'IncludeUnit'. From 'sastm_RDBInsertStatement', the role 'sastm_RDBInsertStatement283' has cardinality 0..*, and from 'IncludeUnit', the role 'IncludeUnit284' has cardinality 0..*.
+An association connects 'Expression' and 'sastm_RDBInsertStatement'. From 'Expression', the role 'Expression287' has cardinality 0..*, and from 'sastm_RDBInsertStatement', the role 'sastm_RDBInsertStatement286' has cardinality 0..*.
+An association connects 'sastm_RDBModifyStatement' and 'NameSpaceDefinition'. From 'sastm_RDBModifyStatement', the role 'sastm_RDBModifyStatement' has cardinality 0..*, and from 'NameSpaceDefinition', the role 'NameSpaceDefinition289' has cardinality 0..*.
+An association connects 'sastm_RDBModifyStatement' and 'Expression'. From 'sastm_RDBModifyStatement', the role 'sastm_RDBModifyStatement291' has cardinality 0..*, and from 'Expression', the role 'Expression292' has cardinality 0..*.
+An association connects 'Expression' and 'sastm_RDBUpdateStatement'. From 'Expression', the role 'Expression294' has cardinality 0..*, and from 'sastm_RDBUpdateStatement', the role 'sastm_RDBUpdateStatement' has cardinality 0..*.
+An association connects 'Expression' and 'sastm_RDBCursorStatement'. From 'Expression', the role 'Expression296' has cardinality 0..*, and from 'sastm_RDBCursorStatement', the role 'sastm_RDBCursorStatement' has cardinality 0..*.
+An association connects 'sastm_RDBOpenCursorStatement' and 'Expression'. From 'sastm_RDBOpenCursorStatement', the role 'sastm_RDBOpenCursorStatement' has cardinality 0..*, and from 'Expression', the role 'Expression298' has cardinality 0..*.
+An association connects 'sastm_RDBFetchCursorStatement' and 'RDBHostVariableReference'. From 'sastm_RDBFetchCursorStatement', the role 'sastm_RDBFetchCursorStatement' has cardinality 0..*, and from 'RDBHostVariableReference', the role 'RDBHostVariableReference' has cardinality 0..*.
+An association connects 'Expression' and 'sastm_RDBHostVariableReference'. From 'Expression', the role 'Expression301' has cardinality 0..*, and from 'sastm_RDBHostVariableReference', the role 'sastm_RDBHostVariableReference' has cardinality 0..*.
+An association connects 'Expression' and 'sastm_RDBHostVariableReference'. From 'Expression', the role 'Expression304' has cardinality 0..*, and from 'sastm_RDBHostVariableReference', the role 'sastm_RDBHostVariableReference303' has cardinality 0..*.
+An association connects 'sastm_RDBSelectExpression' and 'NameSpaceDefinition'. From 'sastm_RDBSelectExpression', the role 'sastm_RDBSelectExpression' has cardinality 0..*, and from 'NameSpaceDefinition', the role 'NameSpaceDefinition306' has cardinality 0..*.
+An association connects 'sastm_RDBSelectExpression' and 'IncludeUnit'. From 'sastm_RDBSelectExpression', the role 'sastm_RDBSelectExpression308' has cardinality 0..*, and from 'IncludeUnit', the role 'IncludeUnit309' has cardinality 0..*.
+An association connects 'sastm_RDBSelectExpression' and 'Expression'. From 'sastm_RDBSelectExpression', the role 'sastm_RDBSelectExpression311' has cardinality 0..*, and from 'Expression', the role 'Expression312' has cardinality 0..*.
+An association connects 'LabelDefinition' and 'sastm_RDBTableReference'. From 'LabelDefinition', the role 'LabelDefinition314' has cardinality 0..*, and from 'sastm_RDBTableReference', the role 'sastm_RDBTableReference' has cardinality 0..*.
+An association connects 'sastm_RDBColumnReference' and 'Expression'. From 'sastm_RDBColumnReference', the role 'sastm_RDBColumnReference' has cardinality 0..*, and from 'Expression', the role 'Expression316' has cardinality 0..*.

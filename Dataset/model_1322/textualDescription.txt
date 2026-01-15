@@ -1,0 +1,114 @@
+The domain model 'statechart' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'statechart_State' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_StateMachineRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statechart_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statechart_CompositeState' represents an important domain concept.
+It has one attribute: 'isConcurrent', which is of type bool.
+
+'statechart_Label' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StateAction' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_Transition' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'statechart_StateVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'StateVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'NameBase' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_TransitionAction' represents an important domain concept.
+It does not declare any attributes.
+
+'IDBase' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_Guard' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'statechart_DO' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_EXIT' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_Action' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'statechart_ENTRY' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_StateAction' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'statechart_StateMachineRoot' is a specialization of 'IDBase'.
+The class 'statechart_StateMachine' is a specialization of 'IDBase'.
+The class 'statechart_State' is a specialization of 'StateVertex'.
+The class 'statechart_CompositeState' is a specialization of 'State'.
+The class 'statechart_Action' is a specialization of 'IDBase'.
+The class 'statechart_Transition' is a specialization of 'IDBase'.
+The class 'statechart_Event' is a specialization of 'IDBase'.
+The class 'statechart_Guard' is a specialization of 'IDBase'.
+The class 'statechart_TransitionAction' is a specialization of 'Action'.
+The class 'statechart_StateVertex' is a specialization of 'IDBase'.
+The class 'statechart_StateVertex' is a specialization of 'NameBase'.
+The class 'statechart_StateAction' is a specialization of 'Action'.
+The class 'statechart_DO' is a specialization of 'StateAction'.
+The class 'statechart_ENTRY' is a specialization of 'StateAction'.
+The class 'statechart_EXIT' is a specialization of 'StateAction'.
+The class 'statechart_Label' is a specialization of 'IDBase'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statechart_StateMachineRoot' and 'statechart_StateMachine'. From 'statechart_StateMachineRoot', the role 'statemachine_container' has cardinality 0..*, and from 'statechart_StateMachine', the role 'StateMachine' has cardinality 0..*.
+An association connects 'statechart_StateMachine' and 'statechart_StateMachineRoot'. From 'statechart_StateMachine', the role 'statechart_StateMachine' has cardinality 0..*, and from 'statechart_StateMachineRoot', the role 'statechart_StateMachineRoot' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_StateMachine'. From 'statechart_Transition', the role 'Transition' has cardinality 0..*, and from 'statechart_StateMachine', the role 'transSM_container' has cardinality 0..*.
+An association connects 'statechart_StateMachine' and 'statechart_State'. From 'statechart_StateMachine', the role 'state_container' has cardinality 0..*, and from 'statechart_State', the role 'State' has cardinality 0..*.
+An association connects 'statechart_StateMachineRoot' and 'statechart_StateMachine'. From 'statechart_StateMachineRoot', the role 'StateMachineRoot' has cardinality 0..*, and from 'statechart_StateMachine', the role 'subStateMachines' has cardinality 0..*.
+An association connects 'statechart_StateMachine' and 'statechart_Action'. From 'statechart_StateMachine', the role 'stateMachineCall' has cardinality 0..*, and from 'statechart_Action', the role 'Action' has cardinality 0..*.
+An association connects 'statechart_State' and 'statechart_StateMachine'. From 'statechart_State', the role 'statechart_State' has cardinality 0..*, and from 'statechart_StateMachine', the role 'statechart_StateMachine7' has cardinality 0..*.
+An association connects 'statechart_StateMachine' and 'statechart_State'. From 'statechart_StateMachine', the role 'StateMachine9' has cardinality 0..*, and from 'statechart_State', the role 'top' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_State'. From 'statechart_Transition', the role 'Transition11' has cardinality 0..*, and from 'statechart_State', the role 'transS_container' has cardinality 0..*.
+An association connects 'statechart_State' and 'statechart_Event'. From 'statechart_State', the role 'statechart_State13' has cardinality 0..*, and from 'statechart_Event', the role 'statechart_Event' has cardinality 0..*.
+An association connects 'statechart_State' and 'statechart_StateAction'. From 'statechart_State', the role 'action_container' has cardinality 0..*, and from 'statechart_StateAction', the role 'StateAction' has cardinality 0..*.
+An association connects 'statechart_StateVertex' and 'statechart_CompositeState'. From 'statechart_StateVertex', the role 'StateVertex' has cardinality 0..*, and from 'statechart_CompositeState', the role 'sv_container' has cardinality 0..*.
+An association connects 'statechart_StateMachine' and 'statechart_Action'. From 'statechart_StateMachine', the role 'StateMachine17' has cardinality 0..*, and from 'statechart_Action', the role 'calledByAction' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_StateMachine'. From 'statechart_Transition', the role 'transitions' has cardinality 0..*, and from 'statechart_StateMachine', the role 'StateMachine19' has cardinality 0..*.
+An association connects 'statechart_State' and 'statechart_Transition'. From 'statechart_State', the role 'State21' has cardinality 0..*, and from 'statechart_Transition', the role 'internalTransitions' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_Event'. From 'statechart_Transition', the role 'evt_container' has cardinality 0..*, and from 'statechart_Event', the role 'Event' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_Guard'. From 'statechart_Transition', the role 'gua_container' has cardinality 0..*, and from 'statechart_Guard', the role 'Guard' has cardinality 0..*.
+An association connects 'statechart_TransitionAction' and 'statechart_Transition'. From 'statechart_TransitionAction', the role 'TransitionAction' has cardinality 0..*, and from 'statechart_Transition', the role 'act_container' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_StateVertex'. From 'statechart_Transition', the role 'outgoing' has cardinality 0..*, and from 'statechart_StateVertex', the role 'StateVertex26' has cardinality 0..*.
+An association connects 'statechart_StateVertex' and 'statechart_Transition'. From 'statechart_StateVertex', the role 'StateVertex28' has cardinality 0..*, and from 'statechart_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_Event'. From 'statechart_Transition', the role 'Transition30' has cardinality 0..*, and from 'statechart_Event', the role 'trigger' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_Guard'. From 'statechart_Transition', the role 'Transition32' has cardinality 0..*, and from 'statechart_Guard', the role 'guard' has cardinality 0..*.
+An association connects 'statechart_TransitionAction' and 'statechart_Transition'. From 'statechart_TransitionAction', the role 'action' has cardinality 0..*, and from 'statechart_Transition', the role 'Transition34' has cardinality 0..*.
+An association connects 'statechart_StateVertex' and 'statechart_CompositeState'. From 'statechart_StateVertex', the role 'subVertexes' has cardinality 0..*, and from 'statechart_CompositeState', the role 'CompositeState' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_StateVertex'. From 'statechart_Transition', the role 'Transition37' has cardinality 0..*, and from 'statechart_StateVertex', the role 'source' has cardinality 0..*.
+An association connects 'statechart_StateVertex' and 'statechart_Transition'. From 'statechart_StateVertex', the role 'target' has cardinality 0..*, and from 'statechart_Transition', the role 'Transition39' has cardinality 0..*.
+An association connects 'statechart_Label' and 'statechart_StateVertex'. From 'statechart_Label', the role 'statechart_Label' has cardinality 0..*, and from 'statechart_StateVertex', the role 'statechart_StateVertex' has cardinality 0..*.
+An association connects 'statechart_StateAction' and 'statechart_State'. From 'statechart_StateAction', the role 'actions' has cardinality 0..*, and from 'statechart_State', the role 'State42' has cardinality 0..*.

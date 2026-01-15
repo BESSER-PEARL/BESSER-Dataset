@@ -1,0 +1,28 @@
+The domain model 'family' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'family_studyprogramme' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'family_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'family_family' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'family_person' represents an important domain concept.
+It has the following attributes: 'age', which is of type str; 'cpr', which is of type str; 'name', which is of type str.
+
+'family_university' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'family_studyprogramme' and 'family_university'. From 'family_studyprogramme', the role 'family_studyprogramme' has cardinality 0..*, and from 'family_university', the role 'family_university' has cardinality 0..*.
+An association connects 'family_person' and 'family_person'. From 'family_person', the role 'family_person' has cardinality 0..*, and from 'family_person', the role 'family_person1' has cardinality 0..*.
+An association connects 'family_person' and 'family_person'. From 'family_person', the role 'family_person3' has cardinality 0..*, and from 'family_person', the role 'family_person5' has cardinality 0..*.
+An association connects 'family_person' and 'family_person'. From 'family_person', the role 'family_person6' has cardinality 0..*, and from 'family_person', the role 'family_person8' has cardinality 0..*.
+An association connects 'family_person' and 'family_family'. From 'family_person', the role 'family_person10' has cardinality 0..*, and from 'family_family', the role 'family_family' has cardinality 0..*.
+An association connects 'family_studyprogramme' and 'family_person'. From 'family_studyprogramme', the role 'family_studyprogramme12' has cardinality 0..*, and from 'family_person', the role 'family_person13' has cardinality 0..*.
+An association connects 'family_family' and 'family_Root'. From 'family_family', the role 'family_family15' has cardinality 0..*, and from 'family_Root', the role 'family_Root' has cardinality 0..*.
+An association connects 'family_university' and 'family_Root'. From 'family_university', the role 'family_university18' has cardinality 0..*, and from 'family_Root', the role 'family_Root17' has cardinality 0..*.

@@ -1,0 +1,393 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 90 main class(es).
+
+'ACG_EmitStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_SimpleNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_SetStat' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_IntegerExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ACG_PushTStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_LetStat' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_CallStat' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_CodeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_CollectionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CompoundStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_VariableDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ACG_NewinStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_PushIStat' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_SwapStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_PopStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_DupStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_ACG' represents an important domain concept.
+It has the following attributes: 'metamodel', which is of type str; 'startsWith', which is of type str.
+
+'ACG_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_LabelStat' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ACG_ParamStat' represents an important domain concept.
+It does not declare any attributes.
+
+'EmitWithLabelRefStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_LocatedElement' represents an important domain concept.
+It has the following attributes: 'commentsAfter', which is of type str; 'location', which is of type str; 'commentsBefore', which is of type str.
+
+'ACG_OperationStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_GetAsmStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_GetStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_BooleanExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ACG_FieldStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_PushStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_VariableStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_ACGElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_OnceStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_EndIterateStat' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_FindMEStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_SelfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_PushDStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_IsAExp' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'StatementBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'EmitWithOperandStat' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_Function' represents an important domain concept.
+It has the following attributes: 'context', which is of type str; 'name', which is of type str.
+
+'ACG_AnalyzeStat' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'ACG_EmitWithLabelRefStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_Node' represents an important domain concept.
+It has the following attributes: 'element', which is of type str; 'mode', which is of type str.
+
+'ACG_EmitWithOperandStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_StoreStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_OclUndefinedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_ReportStat' represents an important domain concept.
+It has one attribute: 'severity', which is of type str.
+
+'ACG_IfStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_NavigationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACGElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_DeleteStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_IterateStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_NewStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_GotoStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_PCallStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_LastExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_ConditionalStat' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_SuperCallStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_LoadStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EmitStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_DupX1Stat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_PushFStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_PropertyCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ACG_ASMNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_Attribute' represents an important domain concept.
+It has the following attributes: 'context', which is of type str; 'name', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_StatementBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_SequenceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_ForEachStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_CompoundStat' represents an important domain concept.
+It does not declare any attributes.
+
+'ACG_StringExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Severity' defines the following possible values: 'critic', 'error', 'warning'.
+
+The model also captures inheritance relationships between classes.
+The class 'ACG_ACG' is a specialization of 'LocatedElement'.
+The class 'ACG_ACGElement' is a specialization of 'LocatedElement'.
+The class 'ACG_Function' is a specialization of 'ACGElement'.
+The class 'ACG_Attribute' is a specialization of 'ACGElement'.
+The class 'ACG_Parameter' is a specialization of 'VariableDecl'.
+The class 'ACG_Node' is a specialization of 'ACGElement'.
+The class 'ACG_Node' is a specialization of 'StatementBlock'.
+The class 'ACG_ASMNode' is a specialization of 'Node'.
+The class 'ACG_CodeNode' is a specialization of 'Node'.
+The class 'ACG_SimpleNode' is a specialization of 'Node'.
+The class 'ACG_StatementBlock' is a specialization of 'LocatedElement'.
+The class 'ACG_Statement' is a specialization of 'LocatedElement'.
+The class 'ACG_CompoundStat' is a specialization of 'Statement'.
+The class 'ACG_CompoundStat' is a specialization of 'StatementBlock'.
+The class 'ACG_ForEachStat' is a specialization of 'CompoundStat'.
+The class 'ACG_OnceStat' is a specialization of 'CompoundStat'.
+The class 'ACG_VariableStat' is a specialization of 'CompoundStat'.
+The class 'ACG_OperationStat' is a specialization of 'CompoundStat'.
+The class 'ACG_ConditionalStat' is a specialization of 'CompoundStat'.
+The class 'ACG_LetStat' is a specialization of 'CompoundStat'.
+The class 'ACG_AnalyzeStat' is a specialization of 'CompoundStat'.
+The class 'ACG_ReportStat' is a specialization of 'Statement'.
+The class 'ACG_FieldStat' is a specialization of 'Statement'.
+The class 'ACG_ParamStat' is a specialization of 'Statement'.
+The class 'ACG_EmitStat' is a specialization of 'Statement'.
+The class 'ACG_LabelStat' is a specialization of 'EmitStat'.
+The class 'ACG_NewStat' is a specialization of 'EmitStat'.
+The class 'ACG_NewinStat' is a specialization of 'EmitStat'.
+The class 'ACG_DeleteStat' is a specialization of 'EmitStat'.
+The class 'ACG_DupStat' is a specialization of 'EmitStat'.
+The class 'ACG_DupX1Stat' is a specialization of 'EmitStat'.
+The class 'ACG_PopStat' is a specialization of 'EmitStat'.
+The class 'ACG_SwapStat' is a specialization of 'EmitStat'.
+The class 'ACG_IterateStat' is a specialization of 'EmitStat'.
+The class 'ACG_EndIterateStat' is a specialization of 'EmitStat'.
+The class 'ACG_GetAsmStat' is a specialization of 'EmitStat'.
+The class 'ACG_FindMEStat' is a specialization of 'EmitStat'.
+The class 'ACG_PushTStat' is a specialization of 'EmitStat'.
+The class 'ACG_PushFStat' is a specialization of 'EmitStat'.
+The class 'ACG_EmitWithOperandStat' is a specialization of 'EmitStat'.
+The class 'ACG_PushStat' is a specialization of 'EmitWithOperandStat'.
+The class 'ACG_PushIStat' is a specialization of 'EmitWithOperandStat'.
+The class 'ACG_PushDStat' is a specialization of 'EmitWithOperandStat'.
+The class 'ACG_LoadStat' is a specialization of 'EmitWithOperandStat'.
+The class 'ACG_StoreStat' is a specialization of 'EmitWithOperandStat'.
+The class 'ACG_CallStat' is a specialization of 'EmitWithOperandStat'.
+The class 'ACG_PCallStat' is a specialization of 'EmitWithOperandStat'.
+The class 'ACG_SuperCallStat' is a specialization of 'EmitWithOperandStat'.
+The class 'ACG_GetStat' is a specialization of 'EmitWithOperandStat'.
+The class 'ACG_SetStat' is a specialization of 'EmitWithOperandStat'.
+The class 'ACG_EmitWithLabelRefStat' is a specialization of 'EmitStat'.
+The class 'ACG_IfStat' is a specialization of 'EmitWithLabelRefStat'.
+The class 'ACG_GotoStat' is a specialization of 'EmitWithLabelRefStat'.
+The class 'ACG_VariableDecl' is a specialization of 'LocatedElement'.
+The class 'ACG_Expression' is a specialization of 'LocatedElement'.
+The class 'ACG_VariableExp' is a specialization of 'Expression'.
+The class 'ACG_SelfExp' is a specialization of 'Expression'.
+The class 'ACG_LastExp' is a specialization of 'Expression'.
+The class 'ACG_IfExp' is a specialization of 'Expression'.
+The class 'ACG_IsAExp' is a specialization of 'Expression'.
+The class 'ACG_LetExp' is a specialization of 'Expression'.
+The class 'ACG_PropertyCallExp' is a specialization of 'Expression'.
+The class 'ACG_NavigationExp' is a specialization of 'PropertyCallExp'.
+The class 'ACG_IteratorExp' is a specialization of 'PropertyCallExp'.
+The class 'ACG_OperationCallExp' is a specialization of 'PropertyCallExp'.
+The class 'ACG_OperatorCallExp' is a specialization of 'OperationCallExp'.
+The class 'ACG_LiteralExp' is a specialization of 'Expression'.
+The class 'ACG_OclUndefinedExp' is a specialization of 'LiteralExp'.
+The class 'ACG_CollectionExp' is a specialization of 'LiteralExp'.
+The class 'ACG_SequenceExp' is a specialization of 'CollectionExp'.
+The class 'ACG_BooleanExp' is a specialization of 'LiteralExp'.
+The class 'ACG_IntegerExp' is a specialization of 'LiteralExp'.
+The class 'ACG_StringExp' is a specialization of 'LiteralExp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ACG_ACG' and 'ACGElement'. From 'ACG_ACG', the role '0' has cardinality 0..*, and from 'ACGElement', the role 'unnamed role' has cardinality 0..*.
+An association connects 'ACG' and 'ACG_ACGElement'. From 'ACG', the role '3' has cardinality 0..*, and from 'ACG_ACGElement', the role '02' has cardinality 0..*.
+An association connects 'Parameter' and 'ACG_Function'. From 'Parameter', the role 'Parameter' has cardinality 0..*, and from 'ACG_Function', the role 'ACG_Function' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_Function'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'ACG_Function', the role 'ACG_Function6' has cardinality 0..*.
+An association connects 'ACG_Attribute' and 'Expression'. From 'ACG_Attribute', the role 'ACG_Attribute' has cardinality 0..*, and from 'Expression', the role 'Expression8' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_Node'. From 'Expression', the role 'Expression10' has cardinality 0..*, and from 'ACG_Node', the role 'ACG_Node' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_ASMNode'. From 'Expression', the role 'Expression12' has cardinality 0..*, and from 'ACG_ASMNode', the role 'ACG_ASMNode' has cardinality 0..*.
+An association connects 'ACG_StatementBlock' and 'Statement'. From 'ACG_StatementBlock', the role 'ACG_StatementBlock' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'ACG_ForEachStat' and 'VariableDecl'. From 'ACG_ForEachStat', the role 'ACG_ForEachStat' has cardinality 0..*, and from 'VariableDecl', the role 'VariableDecl' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_ForEachStat'. From 'Expression', the role 'Expression17' has cardinality 0..*, and from 'ACG_ForEachStat', the role 'ACG_ForEachStat16' has cardinality 0..*.
+An association connects 'ACG_VariableStat' and 'Expression'. From 'ACG_VariableStat', the role 'ACG_VariableStat' has cardinality 0..*, and from 'Expression', the role 'Expression19' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_VariableStat'. From 'Expression', the role 'Expression22' has cardinality 0..*, and from 'ACG_VariableStat', the role 'ACG_VariableStat21' has cardinality 0..*.
+An association connects 'ACG_OperationStat' and 'Expression'. From 'ACG_OperationStat', the role 'ACG_OperationStat' has cardinality 0..*, and from 'Expression', the role 'Expression24' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_OperationStat'. From 'Expression', the role 'Expression27' has cardinality 0..*, and from 'ACG_OperationStat', the role 'ACG_OperationStat26' has cardinality 0..*.
+An association connects 'ACG_ConditionalStat' and 'Expression'. From 'ACG_ConditionalStat', the role 'ACG_ConditionalStat' has cardinality 0..*, and from 'Expression', the role 'Expression29' has cardinality 0..*.
+An association connects 'ACG_ConditionalStat' and 'Statement'. From 'ACG_ConditionalStat', the role 'ACG_ConditionalStat31' has cardinality 0..*, and from 'Statement', the role 'Statement32' has cardinality 0..*.
+An association connects 'VariableDecl' and 'ACG_LetStat'. From 'VariableDecl', the role 'VariableDecl34' has cardinality 0..*, and from 'ACG_LetStat', the role 'ACG_LetStat' has cardinality 0..*.
+An association connects 'ACG_LetStat' and 'Expression'. From 'ACG_LetStat', the role 'ACG_LetStat36' has cardinality 0..*, and from 'Expression', the role 'Expression37' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_AnalyzeStat'. From 'Expression', the role 'Expression39' has cardinality 0..*, and from 'ACG_AnalyzeStat', the role 'ACG_AnalyzeStat' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_ReportStat'. From 'Expression', the role 'Expression41' has cardinality 0..*, and from 'ACG_ReportStat', the role 'ACG_ReportStat' has cardinality 0..*.
+An association connects 'ACG_FieldStat' and 'Expression'. From 'ACG_FieldStat', the role 'ACG_FieldStat' has cardinality 0..*, and from 'Expression', the role 'Expression43' has cardinality 0..*.
+An association connects 'ACG_FieldStat' and 'Expression'. From 'ACG_FieldStat', the role 'ACG_FieldStat45' has cardinality 0..*, and from 'Expression', the role 'Expression46' has cardinality 0..*.
+An association connects 'ACG_ParamStat' and 'Expression'. From 'ACG_ParamStat', the role 'ACG_ParamStat' has cardinality 0..*, and from 'Expression', the role 'Expression48' has cardinality 0..*.
+An association connects 'ACG_ParamStat' and 'Expression'. From 'ACG_ParamStat', the role 'ACG_ParamStat50' has cardinality 0..*, and from 'Expression', the role 'Expression51' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_LabelStat'. From 'Expression', the role 'Expression53' has cardinality 0..*, and from 'ACG_LabelStat', the role 'ACG_LabelStat' has cardinality 0..*.
+An association connects 'ACG_EmitWithOperandStat' and 'Expression'. From 'ACG_EmitWithOperandStat', the role 'ACG_EmitWithOperandStat' has cardinality 0..*, and from 'Expression', the role 'Expression55' has cardinality 0..*.
+An association connects 'ACG_EmitWithLabelRefStat' and 'LabelStat'. From 'ACG_EmitWithLabelRefStat', the role 'ACG_EmitWithLabelRefStat' has cardinality 0..*, and from 'LabelStat', the role 'LabelStat' has cardinality 0..*.
+An association connects 'VariableDecl' and 'ACG_VariableExp'. From 'VariableDecl', the role 'VariableDecl58' has cardinality 0..*, and from 'ACG_VariableExp', the role 'ACG_VariableExp' has cardinality 0..*.
+An association connects 'ACG_IfExp' and 'Expression'. From 'ACG_IfExp', the role 'ACG_IfExp' has cardinality 0..*, and from 'Expression', the role 'Expression60' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_IfExp'. From 'Expression', the role 'Expression63' has cardinality 0..*, and from 'ACG_IfExp', the role 'ACG_IfExp62' has cardinality 0..*.
+An association connects 'ACG_IfExp' and 'Expression'. From 'ACG_IfExp', the role 'ACG_IfExp65' has cardinality 0..*, and from 'Expression', the role 'Expression66' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_IsAExp'. From 'Expression', the role 'Expression68' has cardinality 0..*, and from 'ACG_IsAExp', the role 'ACG_IsAExp' has cardinality 0..*.
+An association connects 'ACG_LetExp' and 'VariableDecl'. From 'ACG_LetExp', the role 'ACG_LetExp' has cardinality 0..*, and from 'VariableDecl', the role 'VariableDecl70' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_LetExp'. From 'Expression', the role 'Expression73' has cardinality 0..*, and from 'ACG_LetExp', the role 'ACG_LetExp72' has cardinality 0..*.
+An association connects 'ACG_LetExp' and 'Expression'. From 'ACG_LetExp', the role 'ACG_LetExp75' has cardinality 0..*, and from 'Expression', the role 'Expression76' has cardinality 0..*.
+An association connects 'ACG_PropertyCallExp' and 'Expression'. From 'ACG_PropertyCallExp', the role 'ACG_PropertyCallExp' has cardinality 0..*, and from 'Expression', the role 'Expression78' has cardinality 0..*.
+An association connects 'ACG_IteratorExp' and 'VariableDecl'. From 'ACG_IteratorExp', the role 'ACG_IteratorExp' has cardinality 0..*, and from 'VariableDecl', the role 'VariableDecl80' has cardinality 0..*.
+An association connects 'ACG_IteratorExp' and 'Expression'. From 'ACG_IteratorExp', the role 'ACG_IteratorExp82' has cardinality 0..*, and from 'Expression', the role 'Expression83' has cardinality 0..*.
+An association connects 'Expression' and 'ACG_OperationCallExp'. From 'Expression', the role 'Expression85' has cardinality 0..*, and from 'ACG_OperationCallExp', the role 'ACG_OperationCallExp' has cardinality 0..*.
+An association connects 'ACG_CollectionExp' and 'Expression'. From 'ACG_CollectionExp', the role 'ACG_CollectionExp' has cardinality 0..*, and from 'Expression', the role 'Expression87' has cardinality 0..*.

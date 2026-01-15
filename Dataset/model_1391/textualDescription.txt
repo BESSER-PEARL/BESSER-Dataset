@@ -1,0 +1,17 @@
+The domain model 'StatemachineMetamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'StatemachineMetamodel_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StatemachineMetamodel_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'StatemachineMetamodel_Statemachine' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'StatemachineMetamodel_Statemachine' and 'StatemachineMetamodel_State'. From 'StatemachineMetamodel_Statemachine', the role 'StatemachineMetamodel_Statemachine' has cardinality 0..*, and from 'StatemachineMetamodel_State', the role 'StatemachineMetamodel_State' has cardinality 0..*.
+An association connects 'StatemachineMetamodel_Transition' and 'StatemachineMetamodel_State'. From 'StatemachineMetamodel_Transition', the role 'StatemachineMetamodel_Transition' has cardinality 0..*, and from 'StatemachineMetamodel_State', the role 'StatemachineMetamodel_State2' has cardinality 0..*.
+An association connects 'StatemachineMetamodel_Transition' and 'StatemachineMetamodel_State'. From 'StatemachineMetamodel_Transition', the role 'StatemachineMetamodel_Transition5' has cardinality 0..*, and from 'StatemachineMetamodel_State', the role 'StatemachineMetamodel_State4' has cardinality 0..*.

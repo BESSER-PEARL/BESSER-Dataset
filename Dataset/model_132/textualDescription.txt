@@ -1,0 +1,82 @@
+The domain model 'JAVA' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'JAVA_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'JAVA_InterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JAVA_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'JAVA_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JAVA_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'JAVA_BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JAVA_AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JAVA_TypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JAVA_ClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'JAVA_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'JAVA_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JAVA_NamedElement' represents an important domain concept.
+It has the following attributes: 'proxy', which is of type bool; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'JAVA_ClassDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'JAVA_TypeAccess' is a specialization of 'Expression'.
+The class 'JAVA_InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'JAVA_Package' is a specialization of 'NamedElement'.
+The class 'JAVA_AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JAVA_AbstractTypeDeclaration' is a specialization of 'Type'.
+The class 'JAVA_Type' is a specialization of 'NamedElement'.
+The class 'JAVA_NamedElement' is a specialization of 'ASTNode'.
+The class 'JAVA_TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'JAVA_BodyDeclaration' is a specialization of 'NamedElement'.
+The class 'JAVA_Expression' is a specialization of 'ASTNode'.
+The class 'JAVA_FieldDeclaration' is a specialization of 'BodyDeclaration'.
+
+Relationships between classes are modeled using associations.
+An association connects 'JAVA_TypeAccess' and 'JAVA_ClassDeclaration'. From 'JAVA_TypeAccess', the role 'JAVA_TypeAccess' has cardinality 0..*, and from 'JAVA_ClassDeclaration', the role 'JAVA_ClassDeclaration' has cardinality 0..*.
+An association connects 'JAVA_FieldDeclaration' and 'JAVA_ClassDeclaration'. From 'JAVA_FieldDeclaration', the role 'JAVA_FieldDeclaration' has cardinality 0..*, and from 'JAVA_ClassDeclaration', the role 'JAVA_ClassDeclaration2' has cardinality 0..*.
+An association connects 'JAVA_TypeDeclaration' and 'JAVA_TypeAccess'. From 'JAVA_TypeDeclaration', the role 'JAVA_TypeDeclaration' has cardinality 0..*, and from 'JAVA_TypeAccess', the role 'JAVA_TypeAccess4' has cardinality 0..*.
+An association connects 'JAVA_AbstractTypeDeclaration' and 'JAVA_Package'. From 'JAVA_AbstractTypeDeclaration', the role 'JAVA_AbstractTypeDeclaration' has cardinality 0..*, and from 'JAVA_Package', the role 'JAVA_Package' has cardinality 0..*.
+An association connects 'JAVA_AbstractTypeDeclaration' and 'JAVA_TypeAccess'. From 'JAVA_AbstractTypeDeclaration', the role 'JAVA_AbstractTypeDeclaration7' has cardinality 0..*, and from 'JAVA_TypeAccess', the role 'JAVA_TypeAccess8' has cardinality 0..*.
+An association connects 'JAVA_TypeAccess' and 'JAVA_FieldDeclaration'. From 'JAVA_TypeAccess', the role 'JAVA_TypeAccess11' has cardinality 0..*, and from 'JAVA_FieldDeclaration', the role 'JAVA_FieldDeclaration10' has cardinality 0..*.

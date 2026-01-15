@@ -1,0 +1,148 @@
+The domain model 'ImperativeOCL' describes the core structural elements and their relationships within the system.
+
+The model defines 38 main class(es).
+
+'ImperativeOCL_ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ReturnExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ComputeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_AssertExp' represents an important domain concept.
+It has one attribute: 'severity', which is of type str.
+
+'ImperativeOCL_LogExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_UnlinkExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_AssignExp' represents an important domain concept.
+It has one attribute: 'isReset', which is of type str.
+
+'ImperativeOCL_ContinueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_SwitchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ForExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ListLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_BlockExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_BreakExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_RaiseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ImperativeIterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_DictionaryType' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_CatchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ListType' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_WhileExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_DictLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_VariableInitExp' represents an important domain concept.
+It has one attribute: 'withResult', which is of type str.
+
+'ImperativeOCL_UnpackExp' represents an important domain concept.
+It does not declare any attributes.
+
+'DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_TryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OrderedTupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_OrderedTupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_OrderedTupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_Typedef' represents an important domain concept.
+It does not declare any attributes.
+
+'LogExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_OrderedTupleType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SeverityKind' defines the following possible values: 'error', 'fatal', 'warning'.
+
+The model also captures inheritance relationships between classes.
+The class 'ImperativeOCL_AltExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_AssertExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_AssignExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_BlockExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_BreakExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_CatchExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ComputeExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ContinueExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ForExp' is a specialization of 'ImperativeLoopExp'.
+The class 'ImperativeOCL_ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+The class 'ImperativeOCL_InstantiationExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_RaiseExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ReturnExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_SwitchExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_TryExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_UnlinkExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_UnpackExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_VariableInitExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_WhileExp' is a specialization of 'ImperativeExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'LogExp' and 'ImperativeOCL_AssertExp'. From 'LogExp', the role 'LogExp' has cardinality 0..*, and from 'ImperativeOCL_AssertExp', the role 'ImperativeOCL_AssertExp' has cardinality 0..*.
+An association connects 'DictLiteralPart' and 'ImperativeOCL_DictLiteralExp'. From 'DictLiteralPart', the role 'DictLiteralPart' has cardinality 0..*, and from 'ImperativeOCL_DictLiteralExp', the role 'ImperativeOCL_DictLiteralExp' has cardinality 0..*.
+An association connects 'ImperativeOCL_OrderedTupleLiteralExp' and 'OrderedTupleLiteralPart'. From 'ImperativeOCL_OrderedTupleLiteralExp', the role 'ImperativeOCL_OrderedTupleLiteralExp' has cardinality 0..*, and from 'OrderedTupleLiteralPart', the role 'OrderedTupleLiteralPart' has cardinality 0..*.
+An association connects 'ImperativeOCL_SwitchExp' and 'AltExp'. From 'ImperativeOCL_SwitchExp', the role 'ImperativeOCL_SwitchExp' has cardinality 0..*, and from 'AltExp', the role 'AltExp' has cardinality 0..*.
+An association connects 'ImperativeOCL_TryExp' and 'CatchExp'. From 'ImperativeOCL_TryExp', the role 'ImperativeOCL_TryExp' has cardinality 0..*, and from 'CatchExp', the role 'CatchExp' has cardinality 0..*.

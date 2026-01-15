@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/Jamzeroth/WorkspacesMG/runtime-EclipseApplication/Customization/ORIGINAL(PLEASE DO NOT CHANGE)/StateMachine.ecore

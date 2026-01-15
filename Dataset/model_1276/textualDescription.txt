@@ -1,0 +1,389 @@
+The domain model 'essentialoclcs' describes the core structural elements and their relationships within the system.
+
+The model defines 80 main class(es).
+
+'essentialoclcs_IfExpCS' represents an important domain concept.
+It has one attribute: 'isImplicit', which is of type bool.
+
+'OperatorExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_TypeNameExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_ExpCS' represents an important domain concept.
+It has one attribute: 'hasError', which is of type bool.
+
+'essentialoclcs_LambdaLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_NullLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_TypedRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_OperationCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_NestedExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'IterationCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_UnlimitedNaturalLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_InvalidLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_AssociationClassCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_CurlyBracketedClauseCS' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'RootCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecificationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_PrimitiveLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_CollectionTypeCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextLessElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_ShadowPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_PropertyCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_StringLiteralExpCS' represents an important domain concept.
+It has one attribute: 'segments', which is of type str.
+
+'essentialoclcs_MapLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_IterationCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_SquareBracketedClauseCS' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractNameExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_PatternExpCS' represents an important domain concept.
+It has one attribute: 'patternVariableName', which is of type str.
+
+'ModelElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_OperatorExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_ShadowExpCS' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'essentialoclcs_CollectionPatternCS' represents an important domain concept.
+It has one attribute: 'restVariableName', which is of type str.
+
+'essentialoclcs_LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_ContextCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_SelfExpCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'essentialoclcs_ExpSpecificationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_InfixExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_PrefixExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_CollectionLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_TupleLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_VariableExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_TupleLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_NumberLiteralExpCS' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'essentialoclcs_TypeLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_Precedence' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ShadowExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_LetExpCS' represents an important domain concept.
+It has one attribute: 'isImplicit', which is of type bool.
+
+'essentialoclcs_LetVariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_CollectionLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_VariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_NavigatingArgCS' represents an important domain concept.
+It has the following attributes: 'role', which is of type str; 'prefix', which is of type str.
+
+'essentialoclcs_MapTypeCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'essentialoclcs_AbstractNameExpCS' represents an important domain concept.
+It has one attribute: 'isPre', which is of type bool.
+
+'essentialoclcs_NameExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'AssociationClassCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_TypeRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_RoundBracketedClauseCS' represents an important domain concept.
+It does not declare any attributes.
+
+'IterateCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_IfThenExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_IterateCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_MapLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialoclcs_BooleanLiteralExpCS' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'essentialoclcs_CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'NavigationRole' defines the following possible values: 'EXPRESSION', 'ITERATOR', 'ACCUMULATOR'.
+
+The model also captures inheritance relationships between classes.
+The class 'essentialoclcs_AbstractNameExpCS' is a specialization of 'ExpCS'.
+The class 'essentialoclcs_AssociationClassCallExpCS' is a specialization of 'CallExpCS'.
+The class 'essentialoclcs_BooleanLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialoclcs_CallExpCS' is a specialization of 'AbstractNameExpCS'.
+The class 'essentialoclcs_CollectionLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'essentialoclcs_CollectionLiteralPartCS' is a specialization of 'ModelElementCS'.
+The class 'essentialoclcs_CollectionPatternCS' is a specialization of 'TypedRefCS'.
+The class 'essentialoclcs_CollectionTypeCS' is a specialization of 'TypedRefCS'.
+The class 'essentialoclcs_CollectionTypeCS' is a specialization of 'Nameable'.
+The class 'essentialoclcs_ContextCS' is a specialization of 'NamedElementCS'.
+The class 'essentialoclcs_ContextCS' is a specialization of 'RootCS'.
+The class 'essentialoclcs_CurlyBracketedClauseCS' is a specialization of 'ContextLessElementCS'.
+The class 'essentialoclcs_ExpCS' is a specialization of 'ModelElementCS'.
+The class 'essentialoclcs_ExpSpecificationCS' is a specialization of 'SpecificationCS'.
+The class 'essentialoclcs_IfExpCS' is a specialization of 'ExpCS'.
+The class 'essentialoclcs_IfThenExpCS' is a specialization of 'ExpCS'.
+The class 'essentialoclcs_InfixExpCS' is a specialization of 'OperatorExpCS'.
+The class 'essentialoclcs_InvalidLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialoclcs_IterateCallExpCS' is a specialization of 'IterationCallExpCS'.
+The class 'essentialoclcs_IterationCallExpCS' is a specialization of 'CallExpCS'.
+The class 'essentialoclcs_LambdaLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'essentialoclcs_LetExpCS' is a specialization of 'ExpCS'.
+The class 'essentialoclcs_LetVariableCS' is a specialization of 'ExpCS'.
+The class 'essentialoclcs_LetVariableCS' is a specialization of 'VariableCS'.
+The class 'essentialoclcs_LiteralExpCS' is a specialization of 'ExpCS'.
+The class 'essentialoclcs_MapLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'essentialoclcs_MapLiteralPartCS' is a specialization of 'ModelElementCS'.
+The class 'essentialoclcs_MapTypeCS' is a specialization of 'TypedRefCS'.
+The class 'essentialoclcs_MapTypeCS' is a specialization of 'Nameable'.
+The class 'essentialoclcs_NameExpCS' is a specialization of 'AssociationClassCallExpCS'.
+The class 'essentialoclcs_NameExpCS' is a specialization of 'ShadowExpCS'.
+The class 'essentialoclcs_NameExpCS' is a specialization of 'IterateCallExpCS'.
+The class 'essentialoclcs_NameExpCS' is a specialization of 'IterationCallExpCS'.
+The class 'essentialoclcs_NameExpCS' is a specialization of 'OperationCallExpCS'.
+The class 'essentialoclcs_NameExpCS' is a specialization of 'PropertyCallExpCS'.
+The class 'essentialoclcs_NameExpCS' is a specialization of 'VariableExpCS'.
+The class 'essentialoclcs_NavigatingArgCS' is a specialization of 'ModelElementCS'.
+The class 'essentialoclcs_NestedExpCS' is a specialization of 'ExpCS'.
+The class 'essentialoclcs_NullLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialoclcs_NumberLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialoclcs_OperationCallExpCS' is a specialization of 'CallExpCS'.
+The class 'essentialoclcs_OperatorExpCS' is a specialization of 'ExpCS'.
+The class 'essentialoclcs_OperatorExpCS' is a specialization of 'NamedElementCS'.
+The class 'essentialoclcs_PatternExpCS' is a specialization of 'ExpCS'.
+The class 'essentialoclcs_PrefixExpCS' is a specialization of 'OperatorExpCS'.
+The class 'essentialoclcs_PrimitiveLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'essentialoclcs_PropertyCallExpCS' is a specialization of 'CallExpCS'.
+The class 'essentialoclcs_RoundBracketedClauseCS' is a specialization of 'ContextLessElementCS'.
+The class 'essentialoclcs_SelfExpCS' is a specialization of 'ExpCS'.
+The class 'essentialoclcs_ShadowExpCS' is a specialization of 'AbstractNameExpCS'.
+The class 'essentialoclcs_ShadowPartCS' is a specialization of 'ModelElementCS'.
+The class 'essentialoclcs_ShadowPartCS' is a specialization of 'Nameable'.
+The class 'essentialoclcs_SquareBracketedClauseCS' is a specialization of 'ContextLessElementCS'.
+The class 'essentialoclcs_StringLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialoclcs_TupleLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'essentialoclcs_TupleLiteralPartCS' is a specialization of 'VariableCS'.
+The class 'essentialoclcs_TypeLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'essentialoclcs_TypeNameExpCS' is a specialization of 'TypedRefCS'.
+The class 'essentialoclcs_UnlimitedNaturalLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialoclcs_VariableCS' is a specialization of 'NamedElementCS'.
+The class 'essentialoclcs_VariableExpCS' is a specialization of 'AbstractNameExpCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'essentialoclcs_AbstractNameExpCS' and 'essentialoclcs_CurlyBracketedClauseCS'. From 'essentialoclcs_AbstractNameExpCS', the role 'owningNameExp' has cardinality 0..*, and from 'essentialoclcs_CurlyBracketedClauseCS', the role 'CurlyBracketedClauseCS' has cardinality 0..*.
+An association connects 'essentialoclcs_PathNameCS' and 'essentialoclcs_AbstractNameExpCS'. From 'essentialoclcs_PathNameCS', the role 'essentialoclcs_PathNameCS' has cardinality 0..*, and from 'essentialoclcs_AbstractNameExpCS', the role 'essentialoclcs_AbstractNameExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_RoundBracketedClauseCS' and 'essentialoclcs_AbstractNameExpCS'. From 'essentialoclcs_RoundBracketedClauseCS', the role 'RoundBracketedClauseCS' has cardinality 0..*, and from 'essentialoclcs_AbstractNameExpCS', the role 'owningNameExp3' has cardinality 0..*.
+An association connects 'essentialoclcs_AbstractNameExpCS' and 'essentialoclcs_SquareBracketedClauseCS'. From 'essentialoclcs_AbstractNameExpCS', the role 'owningNameExp5' has cardinality 0..*, and from 'essentialoclcs_SquareBracketedClauseCS', the role 'SquareBracketedClauseCS' has cardinality 0..*.
+An association connects 'essentialoclcs_Type' and 'essentialoclcs_AbstractNameExpCS'. From 'essentialoclcs_Type', the role 'essentialoclcs_Type' has cardinality 0..*, and from 'essentialoclcs_AbstractNameExpCS', the role 'essentialoclcs_AbstractNameExpCS7' has cardinality 0..*.
+An association connects 'essentialoclcs_Type' and 'essentialoclcs_AbstractNameExpCS'. From 'essentialoclcs_Type', the role 'essentialoclcs_Type10' has cardinality 0..*, and from 'essentialoclcs_AbstractNameExpCS', the role 'essentialoclcs_AbstractNameExpCS9' has cardinality 0..*.
+An association connects 'essentialoclcs_AssociationClass' and 'essentialoclcs_AssociationClassCallExpCS'. From 'essentialoclcs_AssociationClass', the role 'essentialoclcs_AssociationClass' has cardinality 0..*, and from 'essentialoclcs_AssociationClassCallExpCS', the role 'essentialoclcs_AssociationClassCallExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_CallExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS' has cardinality 0..*, and from 'essentialoclcs_CallExpCS', the role 'essentialoclcs_CallExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_CallExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS15' has cardinality 0..*, and from 'essentialoclcs_CallExpCS', the role 'essentialoclcs_CallExpCS14' has cardinality 0..*.
+An association connects 'essentialoclcs_CollectionLiteralExpCS' and 'essentialoclcs_CollectionLiteralPartCS'. From 'essentialoclcs_CollectionLiteralExpCS', the role 'essentialoclcs_CollectionLiteralExpCS' has cardinality 0..*, and from 'essentialoclcs_CollectionLiteralPartCS', the role 'essentialoclcs_CollectionLiteralPartCS' has cardinality 0..*.
+An association connects 'essentialoclcs_CollectionTypeCS' and 'essentialoclcs_CollectionLiteralExpCS'. From 'essentialoclcs_CollectionTypeCS', the role 'essentialoclcs_CollectionTypeCS' has cardinality 0..*, and from 'essentialoclcs_CollectionLiteralExpCS', the role 'essentialoclcs_CollectionLiteralExpCS18' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_CollectionLiteralPartCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS21' has cardinality 0..*, and from 'essentialoclcs_CollectionLiteralPartCS', the role 'essentialoclcs_CollectionLiteralPartCS20' has cardinality 0..*.
+An association connects 'essentialoclcs_CollectionLiteralPartCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_CollectionLiteralPartCS', the role 'essentialoclcs_CollectionLiteralPartCS23' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS24' has cardinality 0..*.
+An association connects 'essentialoclcs_CollectionPatternCS' and 'essentialoclcs_PatternExpCS'. From 'essentialoclcs_CollectionPatternCS', the role 'essentialoclcs_CollectionPatternCS' has cardinality 0..*, and from 'essentialoclcs_PatternExpCS', the role 'essentialoclcs_PatternExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_CollectionPatternCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_CollectionPatternCS', the role 'essentialoclcs_CollectionPatternCS27' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS28' has cardinality 0..*.
+An association connects 'essentialoclcs_CollectionPatternCS' and 'essentialoclcs_CollectionTypeCS'. From 'essentialoclcs_CollectionPatternCS', the role 'essentialoclcs_CollectionPatternCS30' has cardinality 0..*, and from 'essentialoclcs_CollectionTypeCS', the role 'essentialoclcs_CollectionTypeCS31' has cardinality 0..*.
+An association connects 'essentialoclcs_TypedRefCS' and 'essentialoclcs_CollectionTypeCS'. From 'essentialoclcs_TypedRefCS', the role 'essentialoclcs_TypedRefCS' has cardinality 0..*, and from 'essentialoclcs_CollectionTypeCS', the role 'essentialoclcs_CollectionTypeCS33' has cardinality 0..*.
+An association connects 'essentialoclcs_ContextCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_ContextCS', the role 'essentialoclcs_ContextCS' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS35' has cardinality 0..*.
+An association connects 'essentialoclcs_CurlyBracketedClauseCS' and 'essentialoclcs_ShadowPartCS'. From 'essentialoclcs_CurlyBracketedClauseCS', the role 'owningCurlyBracketClause' has cardinality 0..*, and from 'essentialoclcs_ShadowPartCS', the role 'ShadowPartCS' has cardinality 0..*.
+An association connects 'essentialoclcs_CurlyBracketedClauseCS' and 'essentialoclcs_AbstractNameExpCS'. From 'essentialoclcs_CurlyBracketedClauseCS', the role 'ownedCurlyBracketedClause' has cardinality 0..*, and from 'essentialoclcs_AbstractNameExpCS', the role 'AbstractNameExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS40' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS38' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS43' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS41' has cardinality 0..*.
+An association connects 'essentialoclcs_OperatorExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_OperatorExpCS', the role 'essentialoclcs_OperatorExpCS' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS45' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS46' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS48' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS51' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS49' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_Precedence'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS53' has cardinality 0..*, and from 'essentialoclcs_Precedence', the role 'essentialoclcs_Precedence' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_ExpSpecificationCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS55' has cardinality 0..*, and from 'essentialoclcs_ExpSpecificationCS', the role 'essentialoclcs_ExpSpecificationCS' has cardinality 0..*.
+An association connects 'essentialoclcs_IfExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_IfExpCS', the role 'essentialoclcs_IfExpCS' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS57' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_IfExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS60' has cardinality 0..*, and from 'essentialoclcs_IfExpCS', the role 'essentialoclcs_IfExpCS59' has cardinality 0..*.
+An association connects 'essentialoclcs_IfThenExpCS' and 'essentialoclcs_IfExpCS'. From 'essentialoclcs_IfThenExpCS', the role 'essentialoclcs_IfThenExpCS' has cardinality 0..*, and from 'essentialoclcs_IfExpCS', the role 'essentialoclcs_IfExpCS62' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_IfExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS65' has cardinality 0..*, and from 'essentialoclcs_IfExpCS', the role 'essentialoclcs_IfExpCS64' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_IfThenExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS68' has cardinality 0..*, and from 'essentialoclcs_IfThenExpCS', the role 'essentialoclcs_IfThenExpCS67' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_IfThenExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS71' has cardinality 0..*, and from 'essentialoclcs_IfThenExpCS', the role 'essentialoclcs_IfThenExpCS70' has cardinality 0..*.
+An association connects 'essentialoclcs_InfixExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_InfixExpCS', the role 'essentialoclcs_InfixExpCS' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS73' has cardinality 0..*.
+An association connects 'essentialoclcs_InfixExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_InfixExpCS', the role 'essentialoclcs_InfixExpCS75' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS76' has cardinality 0..*.
+An association connects 'essentialoclcs_IterateCallExpCS' and 'essentialoclcs_VariableCS'. From 'essentialoclcs_IterateCallExpCS', the role 'essentialoclcs_IterateCallExpCS' has cardinality 0..*, and from 'essentialoclcs_VariableCS', the role 'essentialoclcs_VariableCS' has cardinality 0..*.
+An association connects 'essentialoclcs_VariableCS' and 'essentialoclcs_IterationCallExpCS'. From 'essentialoclcs_VariableCS', the role 'essentialoclcs_VariableCS79' has cardinality 0..*, and from 'essentialoclcs_IterationCallExpCS', the role 'essentialoclcs_IterationCallExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_Iteration' and 'essentialoclcs_IterationCallExpCS'. From 'essentialoclcs_Iteration', the role 'essentialoclcs_Iteration' has cardinality 0..*, and from 'essentialoclcs_IterationCallExpCS', the role 'essentialoclcs_IterationCallExpCS81' has cardinality 0..*.
+An association connects 'essentialoclcs_LambdaLiteralExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_LambdaLiteralExpCS', the role 'essentialoclcs_LambdaLiteralExpCS' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS83' has cardinality 0..*.
+An association connects 'essentialoclcs_LetExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_LetExpCS', the role 'essentialoclcs_LetExpCS' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS85' has cardinality 0..*.
+An association connects 'essentialoclcs_LetExpCS' and 'essentialoclcs_LetVariableCS'. From 'essentialoclcs_LetExpCS', the role 'owningLetExpression' has cardinality 0..*, and from 'essentialoclcs_LetVariableCS', the role 'LetVariableCS' has cardinality 0..*.
+An association connects 'essentialoclcs_LetVariableCS' and 'essentialoclcs_RoundBracketedClauseCS'. From 'essentialoclcs_LetVariableCS', the role 'essentialoclcs_LetVariableCS' has cardinality 0..*, and from 'essentialoclcs_RoundBracketedClauseCS', the role 'essentialoclcs_RoundBracketedClauseCS' has cardinality 0..*.
+An association connects 'essentialoclcs_LetExpCS' and 'essentialoclcs_LetVariableCS'. From 'essentialoclcs_LetExpCS', the role 'LetExpCS' has cardinality 0..*, and from 'essentialoclcs_LetVariableCS', the role 'ownedVariables' has cardinality 0..*.
+An association connects 'essentialoclcs_MapLiteralPartCS' and 'essentialoclcs_MapLiteralExpCS'. From 'essentialoclcs_MapLiteralPartCS', the role 'essentialoclcs_MapLiteralPartCS' has cardinality 0..*, and from 'essentialoclcs_MapLiteralExpCS', the role 'essentialoclcs_MapLiteralExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_MapLiteralExpCS' and 'essentialoclcs_MapTypeCS'. From 'essentialoclcs_MapLiteralExpCS', the role 'essentialoclcs_MapLiteralExpCS91' has cardinality 0..*, and from 'essentialoclcs_MapTypeCS', the role 'essentialoclcs_MapTypeCS' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_MapLiteralPartCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS94' has cardinality 0..*, and from 'essentialoclcs_MapLiteralPartCS', the role 'essentialoclcs_MapLiteralPartCS93' has cardinality 0..*.
+An association connects 'essentialoclcs_MapLiteralPartCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_MapLiteralPartCS', the role 'essentialoclcs_MapLiteralPartCS96' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS97' has cardinality 0..*.
+An association connects 'essentialoclcs_MapTypeCS' and 'essentialoclcs_TypedRefCS'. From 'essentialoclcs_MapTypeCS', the role 'essentialoclcs_MapTypeCS99' has cardinality 0..*, and from 'essentialoclcs_TypedRefCS', the role 'essentialoclcs_TypedRefCS100' has cardinality 0..*.
+An association connects 'essentialoclcs_MapTypeCS' and 'essentialoclcs_TypedRefCS'. From 'essentialoclcs_MapTypeCS', the role 'essentialoclcs_MapTypeCS102' has cardinality 0..*, and from 'essentialoclcs_TypedRefCS', the role 'essentialoclcs_TypedRefCS103' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_NavigatingArgCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS105' has cardinality 0..*, and from 'essentialoclcs_NavigatingArgCS', the role 'essentialoclcs_NavigatingArgCS' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_NavigatingArgCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS108' has cardinality 0..*, and from 'essentialoclcs_NavigatingArgCS', the role 'essentialoclcs_NavigatingArgCS107' has cardinality 0..*.
+An association connects 'essentialoclcs_NavigatingArgCS' and 'essentialoclcs_TypedRefCS'. From 'essentialoclcs_NavigatingArgCS', the role 'essentialoclcs_NavigatingArgCS110' has cardinality 0..*, and from 'essentialoclcs_TypedRefCS', the role 'essentialoclcs_TypedRefCS111' has cardinality 0..*.
+An association connects 'essentialoclcs_NavigatingArgCS' and 'essentialoclcs_RoundBracketedClauseCS'. From 'essentialoclcs_NavigatingArgCS', the role 'ownedArguments' has cardinality 0..*, and from 'essentialoclcs_RoundBracketedClauseCS', the role 'RoundBracketedClauseCS113' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_NestedExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS115' has cardinality 0..*, and from 'essentialoclcs_NestedExpCS', the role 'essentialoclcs_NestedExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_OperationCallExpCS' and 'essentialoclcs_Operation'. From 'essentialoclcs_OperationCallExpCS', the role 'essentialoclcs_OperationCallExpCS' has cardinality 0..*, and from 'essentialoclcs_Operation', the role 'essentialoclcs_Operation' has cardinality 0..*.
+An association connects 'essentialoclcs_OperatorExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_OperatorExpCS', the role 'essentialoclcs_OperatorExpCS118' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS119' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_OperatorExpCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS122' has cardinality 0..*, and from 'essentialoclcs_OperatorExpCS', the role 'essentialoclcs_OperatorExpCS121' has cardinality 0..*.
+An association connects 'essentialoclcs_TypeRefCS' and 'essentialoclcs_PatternExpCS'. From 'essentialoclcs_TypeRefCS', the role 'essentialoclcs_TypeRefCS' has cardinality 0..*, and from 'essentialoclcs_PatternExpCS', the role 'essentialoclcs_PatternExpCS124' has cardinality 0..*.
+An association connects 'essentialoclcs_Property' and 'essentialoclcs_PropertyCallExpCS'. From 'essentialoclcs_Property', the role 'essentialoclcs_Property' has cardinality 0..*, and from 'essentialoclcs_PropertyCallExpCS', the role 'essentialoclcs_PropertyCallExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_NavigatingArgCS' and 'essentialoclcs_RoundBracketedClauseCS'. From 'essentialoclcs_NavigatingArgCS', the role 'NavigatingArgCS' has cardinality 0..*, and from 'essentialoclcs_RoundBracketedClauseCS', the role 'owningRoundBracketedClause' has cardinality 0..*.
+An association connects 'essentialoclcs_AbstractNameExpCS' and 'essentialoclcs_RoundBracketedClauseCS'. From 'essentialoclcs_AbstractNameExpCS', the role 'AbstractNameExpCS128' has cardinality 0..*, and from 'essentialoclcs_RoundBracketedClauseCS', the role 'ownedRoundBracketedClause' has cardinality 0..*.
+An association connects 'essentialoclcs_ShadowPartCS' and 'essentialoclcs_ShadowExpCS'. From 'essentialoclcs_ShadowPartCS', the role 'essentialoclcs_ShadowPartCS' has cardinality 0..*, and from 'essentialoclcs_ShadowExpCS', the role 'essentialoclcs_ShadowExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_ShadowExpCS' and 'essentialoclcs_TypeNameExpCS'. From 'essentialoclcs_ShadowExpCS', the role 'essentialoclcs_ShadowExpCS131' has cardinality 0..*, and from 'essentialoclcs_TypeNameExpCS', the role 'essentialoclcs_TypeNameExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_ShadowPartCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS134' has cardinality 0..*, and from 'essentialoclcs_ShadowPartCS', the role 'essentialoclcs_ShadowPartCS133' has cardinality 0..*.
+An association connects 'essentialoclcs_ShadowPartCS' and 'essentialoclcs_CurlyBracketedClauseCS'. From 'essentialoclcs_ShadowPartCS', the role 'ownedParts' has cardinality 0..*, and from 'essentialoclcs_CurlyBracketedClauseCS', the role 'CurlyBracketedClauseCS136' has cardinality 0..*.
+An association connects 'essentialoclcs_Property' and 'essentialoclcs_ShadowPartCS'. From 'essentialoclcs_Property', the role 'essentialoclcs_Property139' has cardinality 0..*, and from 'essentialoclcs_ShadowPartCS', the role 'essentialoclcs_ShadowPartCS138' has cardinality 0..*.
+An association connects 'essentialoclcs_ExpCS' and 'essentialoclcs_SquareBracketedClauseCS'. From 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS141' has cardinality 0..*, and from 'essentialoclcs_SquareBracketedClauseCS', the role 'essentialoclcs_SquareBracketedClauseCS' has cardinality 0..*.
+An association connects 'essentialoclcs_AbstractNameExpCS' and 'essentialoclcs_SquareBracketedClauseCS'. From 'essentialoclcs_AbstractNameExpCS', the role 'AbstractNameExpCS143' has cardinality 0..*, and from 'essentialoclcs_SquareBracketedClauseCS', the role 'ownedSquareBracketedClauses' has cardinality 0..*.
+An association connects 'essentialoclcs_TupleLiteralExpCS' and 'essentialoclcs_TupleLiteralPartCS'. From 'essentialoclcs_TupleLiteralExpCS', the role 'essentialoclcs_TupleLiteralExpCS' has cardinality 0..*, and from 'essentialoclcs_TupleLiteralPartCS', the role 'essentialoclcs_TupleLiteralPartCS' has cardinality 0..*.
+An association connects 'essentialoclcs_PathNameCS' and 'essentialoclcs_TypeLiteralExpCS'. From 'essentialoclcs_PathNameCS', the role 'essentialoclcs_PathNameCS146' has cardinality 0..*, and from 'essentialoclcs_TypeLiteralExpCS', the role 'essentialoclcs_TypeLiteralExpCS' has cardinality 0..*.
+An association connects 'essentialoclcs_TypeLiteralExpCS' and 'essentialoclcs_TypedRefCS'. From 'essentialoclcs_TypeLiteralExpCS', the role 'essentialoclcs_TypeLiteralExpCS148' has cardinality 0..*, and from 'essentialoclcs_TypedRefCS', the role 'essentialoclcs_TypedRefCS149' has cardinality 0..*.
+An association connects 'essentialoclcs_TypeNameExpCS' and 'essentialoclcs_Type'. From 'essentialoclcs_TypeNameExpCS', the role 'essentialoclcs_TypeNameExpCS151' has cardinality 0..*, and from 'essentialoclcs_Type', the role 'essentialoclcs_Type152' has cardinality 0..*.
+An association connects 'essentialoclcs_TypeNameExpCS' and 'essentialoclcs_CurlyBracketedClauseCS'. From 'essentialoclcs_TypeNameExpCS', the role 'essentialoclcs_TypeNameExpCS154' has cardinality 0..*, and from 'essentialoclcs_CurlyBracketedClauseCS', the role 'essentialoclcs_CurlyBracketedClauseCS' has cardinality 0..*.
+An association connects 'essentialoclcs_TypeNameExpCS' and 'essentialoclcs_PathNameCS'. From 'essentialoclcs_TypeNameExpCS', the role 'essentialoclcs_TypeNameExpCS156' has cardinality 0..*, and from 'essentialoclcs_PathNameCS', the role 'essentialoclcs_PathNameCS157' has cardinality 0..*.
+An association connects 'essentialoclcs_TypeNameExpCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_TypeNameExpCS', the role 'essentialoclcs_TypeNameExpCS159' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS160' has cardinality 0..*.
+An association connects 'essentialoclcs_VariableCS' and 'essentialoclcs_ExpCS'. From 'essentialoclcs_VariableCS', the role 'essentialoclcs_VariableCS162' has cardinality 0..*, and from 'essentialoclcs_ExpCS', the role 'essentialoclcs_ExpCS163' has cardinality 0..*.
+An association connects 'essentialoclcs_TypedRefCS' and 'essentialoclcs_VariableCS'. From 'essentialoclcs_TypedRefCS', the role 'essentialoclcs_TypedRefCS166' has cardinality 0..*, and from 'essentialoclcs_VariableCS', the role 'essentialoclcs_VariableCS165' has cardinality 0..*.
+An association connects 'essentialoclcs_Variable' and 'essentialoclcs_VariableExpCS'. From 'essentialoclcs_Variable', the role 'essentialoclcs_Variable' has cardinality 0..*, and from 'essentialoclcs_VariableExpCS', the role 'essentialoclcs_VariableExpCS' has cardinality 0..*.

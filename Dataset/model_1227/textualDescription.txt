@@ -1,0 +1,215 @@
+The domain model 'qvtrelation' describes the core structural elements and their relationships within the system.
+
+The model defines 47 main class(es).
+
+'qvtrelation_cst_TopLevelCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_qvtrelation_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_WhenCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CSTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifiedCS' represents an important domain concept.
+It does not declare any attributes.
+
+'WhereCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_OCLExpressionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyTemplateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_WhereCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_AbstractDomainCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_ParamDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'WhenCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_TemplateVariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_qvtrelation_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifierCS' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitCS' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_UnitCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_CollectionTemplateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TransformationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_TransformationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_ModelDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ParamDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_DefaultValueCS' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractDomainCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_RelationCS' represents an important domain concept.
+It has one attribute: 'top', which is of type bool.
+
+'qvtrelation_cst_VarDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'QueryCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_KeyDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_TemplateVariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_PrimitiveTypeDomainCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_AbstractDomainCS' represents an important domain concept.
+It does not declare any attributes.
+
+'KeyDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'VarDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'DefaultValueCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_qvtrelation_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_PropertyTemplateCS' represents an important domain concept.
+It has one attribute: 'opposite', which is of type bool.
+
+'qvtrelation_cst_TemplateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_ObjectTemplateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_QueryCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelation_cst_DomainCS' represents an important domain concept.
+It has the following attributes: 'enforce', which is of type bool; 'replace', which is of type bool; 'checkonly', which is of type bool.
+
+'ModelDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLExpressionCS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'qvtrelation_cst_AbstractDomainCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_CollectionTemplateCS' is a specialization of 'TemplateCS'.
+The class 'qvtrelation_cst_DefaultValueCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_DomainCS' is a specialization of 'AbstractDomainCS'.
+The class 'qvtrelation_cst_KeyDeclCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_ModelDeclCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_ObjectTemplateCS' is a specialization of 'TemplateCS'.
+The class 'qvtrelation_cst_ParamDeclarationCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_PrimitiveTypeDomainCS' is a specialization of 'cst_TemplateVariableCS'.
+The class 'qvtrelation_cst_PrimitiveTypeDomainCS' is a specialization of 'cst_AbstractDomainCS'.
+The class 'qvtrelation_cst_PropertyTemplateCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_QueryCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_RelationCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_TemplateCS' is a specialization of 'cst_TemplateVariableCS'.
+The class 'qvtrelation_cst_TemplateCS' is a specialization of 'cst_OCLExpressionCS'.
+The class 'qvtrelation_cst_TemplateVariableCS' is a specialization of 'IdentifiedCS'.
+The class 'qvtrelation_cst_TopLevelCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_TransformationCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_UnitCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_VarDeclarationCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_WhenCS' is a specialization of 'CSTNode'.
+The class 'qvtrelation_cst_WhereCS' is a specialization of 'CSTNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'IdentifiedCS' and 'qvtrelation_cst_CollectionTemplateCS'. From 'IdentifiedCS', the role 'IdentifiedCS' has cardinality 0..*, and from 'qvtrelation_cst_CollectionTemplateCS', the role 'qvtrelation_cst_CollectionTemplateCS' has cardinality 0..*.
+An association connects 'qvtrelation_cst_CollectionTemplateCS' and 'cst_qvtrelation_EClassifier'. From 'qvtrelation_cst_CollectionTemplateCS', the role 'qvtrelation_cst_CollectionTemplateCS2' has cardinality 0..*, and from 'cst_qvtrelation_EClassifier', the role 'cst_qvtrelation_EClassifier' has cardinality 0..*.
+An association connects 'IdentifierCS' and 'qvtrelation_cst_CollectionTemplateCS'. From 'IdentifierCS', the role 'IdentifierCS' has cardinality 0..*, and from 'qvtrelation_cst_CollectionTemplateCS', the role 'qvtrelation_cst_CollectionTemplateCS4' has cardinality 0..*.
+An association connects 'qvtrelation_cst_DefaultValueCS' and 'IdentifierCS'. From 'qvtrelation_cst_DefaultValueCS', the role 'qvtrelation_cst_DefaultValueCS' has cardinality 0..*, and from 'IdentifierCS', the role 'IdentifierCS6' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtrelation_cst_DefaultValueCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS' has cardinality 0..*, and from 'qvtrelation_cst_DefaultValueCS', the role 'qvtrelation_cst_DefaultValueCS8' has cardinality 0..*.
+An association connects 'IdentifierCS' and 'qvtrelation_cst_DomainCS'. From 'IdentifierCS', the role 'IdentifierCS10' has cardinality 0..*, and from 'qvtrelation_cst_DomainCS', the role 'qvtrelation_cst_DomainCS' has cardinality 0..*.
+An association connects 'qvtrelation_cst_DomainCS' and 'TemplateCS'. From 'qvtrelation_cst_DomainCS', the role 'qvtrelation_cst_DomainCS12' has cardinality 0..*, and from 'TemplateCS', the role 'TemplateCS' has cardinality 0..*.
+An association connects 'qvtrelation_cst_DomainCS' and 'DefaultValueCS'. From 'qvtrelation_cst_DomainCS', the role 'qvtrelation_cst_DomainCS14' has cardinality 0..*, and from 'DefaultValueCS', the role 'DefaultValueCS' has cardinality 0..*.
+An association connects 'qvtrelation_cst_DomainCS' and 'OperationCallExpCS'. From 'qvtrelation_cst_DomainCS', the role 'qvtrelation_cst_DomainCS16' has cardinality 0..*, and from 'OperationCallExpCS', the role 'OperationCallExpCS' has cardinality 0..*.
+An association connects 'qvtrelation_cst_KeyDeclCS' and 'PathNameCS'. From 'qvtrelation_cst_KeyDeclCS', the role 'qvtrelation_cst_KeyDeclCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS' has cardinality 0..*.
+An association connects 'IdentifiedCS' and 'qvtrelation_cst_KeyDeclCS'. From 'IdentifiedCS', the role 'IdentifiedCS20' has cardinality 0..*, and from 'qvtrelation_cst_KeyDeclCS', the role 'qvtrelation_cst_KeyDeclCS19' has cardinality 0..*.
+An association connects 'qvtrelation_cst_ModelDeclCS' and 'IdentifierCS'. From 'qvtrelation_cst_ModelDeclCS', the role 'qvtrelation_cst_ModelDeclCS' has cardinality 0..*, and from 'IdentifierCS', the role 'IdentifierCS22' has cardinality 0..*.
+An association connects 'IdentifierCS' and 'qvtrelation_cst_ModelDeclCS'. From 'IdentifierCS', the role 'IdentifierCS25' has cardinality 0..*, and from 'qvtrelation_cst_ModelDeclCS', the role 'qvtrelation_cst_ModelDeclCS24' has cardinality 0..*.
+An association connects 'qvtrelation_cst_ObjectTemplateCS' and 'PropertyTemplateCS'. From 'qvtrelation_cst_ObjectTemplateCS', the role 'qvtrelation_cst_ObjectTemplateCS' has cardinality 0..*, and from 'PropertyTemplateCS', the role 'PropertyTemplateCS' has cardinality 0..*.
+An association connects 'cst_qvtrelation_EClass' and 'qvtrelation_cst_ObjectTemplateCS'. From 'cst_qvtrelation_EClass', the role 'cst_qvtrelation_EClass' has cardinality 0..*, and from 'qvtrelation_cst_ObjectTemplateCS', the role 'qvtrelation_cst_ObjectTemplateCS28' has cardinality 0..*.
+An association connects 'IdentifierCS' and 'qvtrelation_cst_ParamDeclarationCS'. From 'IdentifierCS', the role 'IdentifierCS30' has cardinality 0..*, and from 'qvtrelation_cst_ParamDeclarationCS', the role 'qvtrelation_cst_ParamDeclarationCS' has cardinality 0..*.
+An association connects 'TypeCS' and 'qvtrelation_cst_ParamDeclarationCS'. From 'TypeCS', the role 'TypeCS' has cardinality 0..*, and from 'qvtrelation_cst_ParamDeclarationCS', the role 'qvtrelation_cst_ParamDeclarationCS32' has cardinality 0..*.
+An association connects 'qvtrelation_cst_PropertyTemplateCS' and 'IdentifiedCS'. From 'qvtrelation_cst_PropertyTemplateCS', the role 'qvtrelation_cst_PropertyTemplateCS' has cardinality 0..*, and from 'IdentifiedCS', the role 'IdentifiedCS34' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtrelation_cst_PropertyTemplateCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS37' has cardinality 0..*, and from 'qvtrelation_cst_PropertyTemplateCS', the role 'qvtrelation_cst_PropertyTemplateCS36' has cardinality 0..*.
+An association connects 'cst_qvtrelation_EStructuralFeature' and 'qvtrelation_cst_PropertyTemplateCS'. From 'cst_qvtrelation_EStructuralFeature', the role 'cst_qvtrelation_EStructuralFeature' has cardinality 0..*, and from 'qvtrelation_cst_PropertyTemplateCS', the role 'qvtrelation_cst_PropertyTemplateCS39' has cardinality 0..*.
+An association connects 'PathNameCS' and 'qvtrelation_cst_QueryCS'. From 'PathNameCS', the role 'PathNameCS41' has cardinality 0..*, and from 'qvtrelation_cst_QueryCS', the role 'qvtrelation_cst_QueryCS' has cardinality 0..*.
+An association connects 'qvtrelation_cst_QueryCS' and 'ParamDeclarationCS'. From 'qvtrelation_cst_QueryCS', the role 'qvtrelation_cst_QueryCS43' has cardinality 0..*, and from 'ParamDeclarationCS', the role 'ParamDeclarationCS' has cardinality 0..*.
+An association connects 'qvtrelation_cst_QueryCS' and 'OCLExpressionCS'. From 'qvtrelation_cst_QueryCS', the role 'qvtrelation_cst_QueryCS45' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS46' has cardinality 0..*.
+An association connects 'TypeCS' and 'qvtrelation_cst_QueryCS'. From 'TypeCS', the role 'TypeCS49' has cardinality 0..*, and from 'qvtrelation_cst_QueryCS', the role 'qvtrelation_cst_QueryCS48' has cardinality 0..*.
+An association connects 'qvtrelation_cst_RelationCS' and 'IdentifierCS'. From 'qvtrelation_cst_RelationCS', the role 'qvtrelation_cst_RelationCS' has cardinality 0..*, and from 'IdentifierCS', the role 'IdentifierCS51' has cardinality 0..*.
+An association connects 'IdentifierCS' and 'qvtrelation_cst_RelationCS'. From 'IdentifierCS', the role 'IdentifierCS54' has cardinality 0..*, and from 'qvtrelation_cst_RelationCS', the role 'qvtrelation_cst_RelationCS53' has cardinality 0..*.
+An association connects 'VarDeclarationCS' and 'qvtrelation_cst_RelationCS'. From 'VarDeclarationCS', the role 'VarDeclarationCS' has cardinality 0..*, and from 'qvtrelation_cst_RelationCS', the role 'qvtrelation_cst_RelationCS56' has cardinality 0..*.
+An association connects 'qvtrelation_cst_RelationCS' and 'AbstractDomainCS'. From 'qvtrelation_cst_RelationCS', the role 'qvtrelation_cst_RelationCS58' has cardinality 0..*, and from 'AbstractDomainCS', the role 'AbstractDomainCS' has cardinality 0..*.
+An association connects 'qvtrelation_cst_RelationCS' and 'WhenCS'. From 'qvtrelation_cst_RelationCS', the role 'qvtrelation_cst_RelationCS60' has cardinality 0..*, and from 'WhenCS', the role 'WhenCS' has cardinality 0..*.
+An association connects 'WhereCS' and 'qvtrelation_cst_RelationCS'. From 'WhereCS', the role 'WhereCS' has cardinality 0..*, and from 'qvtrelation_cst_RelationCS', the role 'qvtrelation_cst_RelationCS62' has cardinality 0..*.
+An association connects 'qvtrelation_cst_TemplateCS' and 'OCLExpressionCS'. From 'qvtrelation_cst_TemplateCS', the role 'qvtrelation_cst_TemplateCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS64' has cardinality 0..*.
+An association connects 'qvtrelation_cst_TemplateVariableCS' and 'TypeCS'. From 'qvtrelation_cst_TemplateVariableCS', the role 'qvtrelation_cst_TemplateVariableCS' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS66' has cardinality 0..*.
+An association connects 'UnitCS' and 'qvtrelation_cst_TopLevelCS'. From 'UnitCS', the role 'UnitCS' has cardinality 0..*, and from 'qvtrelation_cst_TopLevelCS', the role 'qvtrelation_cst_TopLevelCS' has cardinality 0..*.
+An association connects 'TransformationCS' and 'qvtrelation_cst_TopLevelCS'. From 'TransformationCS', the role 'TransformationCS' has cardinality 0..*, and from 'qvtrelation_cst_TopLevelCS', the role 'qvtrelation_cst_TopLevelCS69' has cardinality 0..*.
+An association connects 'ModelDeclCS' and 'qvtrelation_cst_TransformationCS'. From 'ModelDeclCS', the role 'ModelDeclCS' has cardinality 0..*, and from 'qvtrelation_cst_TransformationCS', the role 'qvtrelation_cst_TransformationCS' has cardinality 0..*.
+An association connects 'IdentifierCS' and 'qvtrelation_cst_TransformationCS'. From 'IdentifierCS', the role 'IdentifierCS73' has cardinality 0..*, and from 'qvtrelation_cst_TransformationCS', the role 'qvtrelation_cst_TransformationCS72' has cardinality 0..*.
+An association connects 'IdentifierCS' and 'qvtrelation_cst_TransformationCS'. From 'IdentifierCS', the role 'IdentifierCS76' has cardinality 0..*, and from 'qvtrelation_cst_TransformationCS', the role 'qvtrelation_cst_TransformationCS75' has cardinality 0..*.
+An association connects 'KeyDeclCS' and 'qvtrelation_cst_TransformationCS'. From 'KeyDeclCS', the role 'KeyDeclCS' has cardinality 0..*, and from 'qvtrelation_cst_TransformationCS', the role 'qvtrelation_cst_TransformationCS78' has cardinality 0..*.
+An association connects 'QueryCS' and 'qvtrelation_cst_TransformationCS'. From 'QueryCS', the role 'QueryCS' has cardinality 0..*, and from 'qvtrelation_cst_TransformationCS', the role 'qvtrelation_cst_TransformationCS80' has cardinality 0..*.
+An association connects 'qvtrelation_cst_TransformationCS' and 'RelationCS'. From 'qvtrelation_cst_TransformationCS', the role 'qvtrelation_cst_TransformationCS82' has cardinality 0..*, and from 'RelationCS', the role 'RelationCS' has cardinality 0..*.
+An association connects 'qvtrelation_cst_UnitCS' and 'IdentifierCS'. From 'qvtrelation_cst_UnitCS', the role 'qvtrelation_cst_UnitCS' has cardinality 0..*, and from 'IdentifierCS', the role 'IdentifierCS84' has cardinality 0..*.
+An association connects 'qvtrelation_cst_VarDeclarationCS' and 'IdentifierCS'. From 'qvtrelation_cst_VarDeclarationCS', the role 'qvtrelation_cst_VarDeclarationCS' has cardinality 0..*, and from 'IdentifierCS', the role 'IdentifierCS86' has cardinality 0..*.
+An association connects 'qvtrelation_cst_VarDeclarationCS' and 'TypeCS'. From 'qvtrelation_cst_VarDeclarationCS', the role 'qvtrelation_cst_VarDeclarationCS88' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS89' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtrelation_cst_WhenCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS91' has cardinality 0..*, and from 'qvtrelation_cst_WhenCS', the role 'qvtrelation_cst_WhenCS' has cardinality 0..*.
+An association connects 'qvtrelation_cst_WhereCS' and 'OCLExpressionCS'. From 'qvtrelation_cst_WhereCS', the role 'qvtrelation_cst_WhereCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS93' has cardinality 0..*.

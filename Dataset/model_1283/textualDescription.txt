@@ -1,0 +1,531 @@
+The domain model 'morel' describes the core structural elements and their relationships within the system.
+
+The model defines 118 main class(es).
+
+'morel_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanAndExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationalExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_CollectionLiteralExp' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'morel_MultiValueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_AdditiveExp' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'morel_EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_PrimitiveVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_RealLiteralExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type float.
+
+'EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_LinkConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_ArrayLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_ValueRangeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableWithInit' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanOrExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_BooleanImpliesExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_AtomicExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_RuleGroup' represents an important domain concept.
+It has the following attributes: 'repetition', which is of type str; 'order', which is of type str; 'maxIteration', which is of type int; 'scope', which is of type str; 'scopeSize', which is of type int; 'iteration', which is of type str.
+
+'morel_PathConstraint' represents an important domain concept.
+It has the following attributes: 'maxLength', which is of type int; 'minLength', which is of type int.
+
+'morel_PrimitiveVariableWithInit' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_TransformationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_MultiplicativeExp' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'morel_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Executable' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_RuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_PredefinedBindExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'morel_AdditiveExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_VariableWithInit' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_FeaturePathExp' represents an important domain concept.
+It has one attribute: 'feature', which is of type str.
+
+'morel_ObjectVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_BooleanImpliesExp' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'morel_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_Section' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_AllDifferentConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_OrderConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_UnaryExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_UndefinedLiteralExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'morel_BooleanAndExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_SimpleLinkConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanImpliesExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'boolSymbol', which is of type bool.
+
+'morel_BindExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_CallPathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_BooleanOrExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_ReflectiveVariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_LoopPathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_ConditionExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_ImperativeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_MultiplicativeExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_AdditionalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_UnaryExp' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'CallPathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicativeExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_RelationalExp' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'morel_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_OperationPathExp' represents an important domain concept.
+It has the following attributes: 'operation', which is of type str; 'separator', which is of type str.
+
+'morel_IntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type int.
+
+'morel_RelationalExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_ImperativeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditiveExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_PrimitiveConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'AtomicExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_EEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'RuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_QueryModel' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_ObjectVariableWithInit' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'Section' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_Executable' represents an important domain concept.
+It has the following attributes: 'parameters', which is of type str; 'active', which is of type bool.
+
+'morel_EnclosureLinkConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditionalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_PredefinedVariableExp' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+'morel_TypedModel' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'morel_BooleanAndExp' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'morel_TypeLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnaryExpChild' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_BooleanOrExp' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'LoopPathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_NestedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_DeclarativeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'morel_IteratorPathExp' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BooleanOperator' defines the following possible values: 'and', 'implies', 'or', 'not'.
+The enumeration 'RepetitionType' defines the following possible values: 'first', 'allMatches', 'randomOne'.
+The enumeration 'TypedModelAction' defines the following possible values: 'readOnly', 'normal', 'createOnly', 'viewOnly', 'transient'.
+The enumeration 'UndefinedLiteral' defines the following possible values: 'INVALID', 'NULL'.
+The enumeration 'PredefinedVariable' defines the following possible values: 'id', 'this'.
+The enumeration 'UnaryOperator' defines the following possible values: 'plus', 'minus', 'not'.
+The enumeration 'AdditiveOperator' defines the following possible values: 'minus', 'plus'.
+The enumeration 'OrderType' defines the following possible values: 'sequential', 'parallel', 'default'.
+The enumeration 'ScopeType' defines the following possible values: 'dynamicRandom', 'all', 'staticRandom'.
+The enumeration 'OperationSeparator' defines the following possible values: 'arrow', 'dot'.
+The enumeration 'MultiplicativeOperator' defines the following possible values: 'multi', 'div'.
+The enumeration 'IteratorType' defines the following possible values: 'reject', 'select', 'collect', 'exists', 'closure', 'forAll'.
+The enumeration 'IterationType' defines the following possible values: 'default', 'shuffle'.
+The enumeration 'RelationalOperator' defines the following possible values: 'greaterOrEq', 'equal', 'notEqual', 'lessOrEq', 'less', 'greater'.
+The enumeration 'SectionType' defines the following possible values: 'PAC', 'LHS', 'NAC', 'RHS', 'POST', 'PRE'.
+
+The model also captures inheritance relationships between classes.
+The class 'morel_Pattern' is a specialization of 'Section'.
+The class 'morel_Clause' is a specialization of 'Section'.
+The class 'morel_Variable' is a specialization of 'NamedElement'.
+The class 'morel_ObjectVariable' is a specialization of 'Variable'.
+The class 'morel_PrimitiveVariable' is a specialization of 'Variable'.
+The class 'morel_SimpleLinkConstraint' is a specialization of 'LinkConstraint'.
+The class 'morel_EnclosureLinkConstraint' is a specialization of 'LinkConstraint'.
+The class 'morel_PathConstraint' is a specialization of 'LinkConstraint'.
+The class 'morel_QueryModel' is a specialization of 'Unit'.
+The class 'morel_TypedModel' is a specialization of 'NamedElement'.
+The class 'morel_Query' is a specialization of 'Pattern'.
+The class 'morel_Query' is a specialization of 'NamedElement'.
+The class 'morel_Query' is a specialization of 'Executable'.
+The class 'morel_AtomicExp' is a specialization of 'UnaryExpChild'.
+The class 'morel_LiteralExp' is a specialization of 'AtomicExp'.
+The class 'morel_StringLiteralExp' is a specialization of 'LiteralExp'.
+The class 'morel_IntegerLiteralExp' is a specialization of 'LiteralExp'.
+The class 'morel_RealLiteralExp' is a specialization of 'LiteralExp'.
+The class 'morel_BooleanLiteralExp' is a specialization of 'LiteralExp'.
+The class 'morel_UndefinedLiteralExp' is a specialization of 'LiteralExp'.
+The class 'morel_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'morel_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'morel_TypeLiteralExp' is a specialization of 'LiteralExp'.
+The class 'morel_VariableExp' is a specialization of 'AtomicExp'.
+The class 'morel_PredefinedVariableExp' is a specialization of 'AtomicExp'.
+The class 'morel_NestedExp' is a specialization of 'AtomicExp'.
+The class 'morel_FeaturePathExp' is a specialization of 'CallPathExp'.
+The class 'morel_OperationPathExp' is a specialization of 'CallPathExp'.
+The class 'morel_LoopPathExp' is a specialization of 'CallPathExp'.
+The class 'morel_IteratorPathExp' is a specialization of 'LoopPathExp'.
+The class 'morel_LetExp' is a specialization of 'Expression'.
+The class 'morel_LetExp' is a specialization of 'ImperativeExp'.
+The class 'morel_VariableWithInit' is a specialization of 'Variable'.
+The class 'morel_ObjectVariableWithInit' is a specialization of 'ObjectVariable'.
+The class 'morel_ObjectVariableWithInit' is a specialization of 'VariableWithInit'.
+The class 'morel_PrimitiveVariableWithInit' is a specialization of 'PrimitiveVariable'.
+The class 'morel_PrimitiveVariableWithInit' is a specialization of 'VariableWithInit'.
+The class 'morel_ConditionExp' is a specialization of 'Expression'.
+The class 'morel_BooleanImpliesExp' is a specialization of 'Expression'.
+The class 'morel_BooleanImpliesExpChild' is a specialization of 'Expression'.
+The class 'morel_BooleanOrExp' is a specialization of 'BooleanImpliesExpChild'.
+The class 'morel_BooleanOrExpChild' is a specialization of 'BooleanImpliesExpChild'.
+The class 'morel_BooleanAndExp' is a specialization of 'BooleanOrExpChild'.
+The class 'morel_BooleanAndExpChild' is a specialization of 'BooleanOrExpChild'.
+The class 'morel_RelationalExp' is a specialization of 'BooleanAndExpChild'.
+The class 'morel_RelationalExpChild' is a specialization of 'BooleanAndExpChild'.
+The class 'morel_AdditiveExp' is a specialization of 'RelationalExpChild'.
+The class 'morel_AdditiveExpChild' is a specialization of 'RelationalExpChild'.
+The class 'morel_MultiplicativeExp' is a specialization of 'AdditiveExpChild'.
+The class 'morel_MultiplicativeExpChild' is a specialization of 'AdditiveExpChild'.
+The class 'morel_UnaryExp' is a specialization of 'MultiplicativeExpChild'.
+The class 'morel_UnaryExpChild' is a specialization of 'MultiplicativeExpChild'.
+The class 'morel_CollectionType' is a specialization of 'EDataType'.
+The class 'morel_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'morel_SequenceType' is a specialization of 'CollectionType'.
+The class 'morel_SetType' is a specialization of 'CollectionType'.
+The class 'morel_BagType' is a specialization of 'CollectionType'.
+The class 'morel_ImperativeExp' is a specialization of 'Expression'.
+The class 'morel_BindExp' is a specialization of 'ImperativeExp'.
+The class 'morel_PredefinedBindExp' is a specialization of 'ImperativeExp'.
+The class 'morel_IfStatement' is a specialization of 'ImperativeStatement'.
+The class 'morel_ForStatement' is a specialization of 'ImperativeStatement'.
+The class 'morel_BlockStatement' is a specialization of 'ImperativeStatement'.
+The class 'morel_TransformationModel' is a specialization of 'Unit'.
+The class 'morel_TransformationModel' is a specialization of 'NamedElement'.
+The class 'morel_RuleElement' is a specialization of 'NamedElement'.
+The class 'morel_RuleElement' is a specialization of 'Executable'.
+The class 'morel_Rule' is a specialization of 'RuleElement'.
+The class 'morel_RuleGroup' is a specialization of 'RuleElement'.
+The class 'morel_DeclarativeStatement' is a specialization of 'Statement'.
+The class 'morel_ImperativeStatement' is a specialization of 'Statement'.
+The class 'morel_ReflectiveVariableExp' is a specialization of 'Expression'.
+The class 'morel_ArrayLiteralExp' is a specialization of 'LiteralExp'.
+The class 'morel_OrderConstraint' is a specialization of 'AdditionalConstraint'.
+The class 'morel_AllDifferentConstraint' is a specialization of 'AdditionalConstraint'.
+The class 'morel_MultiValueConstraint' is a specialization of 'PrimitiveConstraint'.
+The class 'morel_ValueRangeConstraint' is a specialization of 'PrimitiveConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'morel_Pattern' and 'morel_ObjectVariable'. From 'morel_Pattern', the role 'morel_Pattern' has cardinality 0..*, and from 'morel_ObjectVariable', the role 'morel_ObjectVariable' has cardinality 0..*.
+An association connects 'morel_LinkConstraint' and 'morel_Pattern'. From 'morel_LinkConstraint', the role 'morel_LinkConstraint' has cardinality 0..*, and from 'morel_Pattern', the role 'morel_Pattern2' has cardinality 0..*.
+An association connects 'morel_Pattern' and 'morel_Statement'. From 'morel_Pattern', the role 'morel_Pattern4' has cardinality 0..*, and from 'morel_Statement', the role 'morel_Statement' has cardinality 0..*.
+An association connects 'morel_Pattern' and 'morel_AdditionalConstraint'. From 'morel_Pattern', the role 'morel_Pattern6' has cardinality 0..*, and from 'morel_AdditionalConstraint', the role 'morel_AdditionalConstraint' has cardinality 0..*.
+An association connects 'morel_Clause' and 'morel_Statement'. From 'morel_Clause', the role 'morel_Clause' has cardinality 0..*, and from 'morel_Statement', the role 'morel_Statement8' has cardinality 0..*.
+An association connects 'morel_EClass' and 'morel_ObjectVariable'. From 'morel_EClass', the role 'morel_EClass' has cardinality 0..*, and from 'morel_ObjectVariable', the role 'morel_ObjectVariable10' has cardinality 0..*.
+An association connects 'morel_ObjectVariable' and 'morel_TypedModel'. From 'morel_ObjectVariable', the role 'morel_ObjectVariable12' has cardinality 0..*, and from 'morel_TypedModel', the role 'morel_TypedModel' has cardinality 0..*.
+An association connects 'morel_PrimitiveVariable' and 'morel_EDataType'. From 'morel_PrimitiveVariable', the role 'morel_PrimitiveVariable' has cardinality 0..*, and from 'morel_EDataType', the role 'morel_EDataType' has cardinality 0..*.
+An association connects 'morel_ObjectVariable' and 'morel_LinkConstraint'. From 'morel_ObjectVariable', the role 'morel_ObjectVariable16' has cardinality 0..*, and from 'morel_LinkConstraint', the role 'morel_LinkConstraint15' has cardinality 0..*.
+An association connects 'morel_ObjectVariable' and 'morel_LinkConstraint'. From 'morel_ObjectVariable', the role 'morel_ObjectVariable19' has cardinality 0..*, and from 'morel_LinkConstraint', the role 'morel_LinkConstraint18' has cardinality 0..*.
+An association connects 'morel_Expression' and 'morel_SimpleLinkConstraint'. From 'morel_Expression', the role 'morel_Expression' has cardinality 0..*, and from 'morel_SimpleLinkConstraint', the role 'morel_SimpleLinkConstraint' has cardinality 0..*.
+An association connects 'morel_EReference' and 'morel_SimpleLinkConstraint'. From 'morel_EReference', the role 'morel_EReference' has cardinality 0..*, and from 'morel_SimpleLinkConstraint', the role 'morel_SimpleLinkConstraint22' has cardinality 0..*.
+An association connects 'morel_EReference' and 'morel_EnclosureLinkConstraint'. From 'morel_EReference', the role 'morel_EReference24' has cardinality 0..*, and from 'morel_EnclosureLinkConstraint', the role 'morel_EnclosureLinkConstraint' has cardinality 0..*.
+An association connects 'morel_EClass' and 'morel_EnclosureLinkConstraint'. From 'morel_EClass', the role 'morel_EClass27' has cardinality 0..*, and from 'morel_EnclosureLinkConstraint', the role 'morel_EnclosureLinkConstraint26' has cardinality 0..*.
+An association connects 'morel_Variable' and 'morel_PathConstraint'. From 'morel_Variable', the role 'morel_Variable' has cardinality 0..*, and from 'morel_PathConstraint', the role 'morel_PathConstraint' has cardinality 0..*.
+An association connects 'morel_EReference' and 'morel_PathConstraint'. From 'morel_EReference', the role 'morel_EReference31' has cardinality 0..*, and from 'morel_PathConstraint', the role 'morel_PathConstraint30' has cardinality 0..*.
+An association connects 'morel_PathConstraint' and 'morel_EClass'. From 'morel_PathConstraint', the role 'morel_PathConstraint33' has cardinality 0..*, and from 'morel_EClass', the role 'morel_EClass34' has cardinality 0..*.
+An association connects 'morel_Query' and 'morel_QueryModel'. From 'morel_Query', the role 'morel_Query' has cardinality 0..*, and from 'morel_QueryModel', the role 'morel_QueryModel' has cardinality 0..*.
+An association connects 'morel_EPackage' and 'morel_TypedModel'. From 'morel_EPackage', the role 'morel_EPackage' has cardinality 0..*, and from 'morel_TypedModel', the role 'morel_TypedModel37' has cardinality 0..*.
+An association connects 'morel_Unit' and 'morel_TypedModel'. From 'morel_Unit', the role 'morel_Unit' has cardinality 0..*, and from 'morel_TypedModel', the role 'morel_TypedModel39' has cardinality 0..*.
+An association connects 'morel_EDataType' and 'morel_Unit'. From 'morel_EDataType', the role 'morel_EDataType42' has cardinality 0..*, and from 'morel_Unit', the role 'morel_Unit41' has cardinality 0..*.
+An association connects 'morel_AtomicExp' and 'morel_CallPathExp'. From 'morel_AtomicExp', the role 'morel_AtomicExp' has cardinality 0..*, and from 'morel_CallPathExp', the role 'morel_CallPathExp' has cardinality 0..*.
+An association connects 'morel_CollectionLiteralExp' and 'morel_Expression'. From 'morel_CollectionLiteralExp', the role 'morel_CollectionLiteralExp' has cardinality 0..*, and from 'morel_Expression', the role 'morel_Expression45' has cardinality 0..*.
+An association connects 'morel_EEnum' and 'morel_EnumLiteralExp'. From 'morel_EEnum', the role 'morel_EEnum' has cardinality 0..*, and from 'morel_EnumLiteralExp', the role 'morel_EnumLiteralExp' has cardinality 0..*.
+An association connects 'morel_EnumLiteralExp' and 'morel_EEnumLiteral'. From 'morel_EnumLiteralExp', the role 'morel_EnumLiteralExp48' has cardinality 0..*, and from 'morel_EEnumLiteral', the role 'morel_EEnumLiteral' has cardinality 0..*.
+An association connects 'morel_EClassifier' and 'morel_TypeLiteralExp'. From 'morel_EClassifier', the role 'morel_EClassifier' has cardinality 0..*, and from 'morel_TypeLiteralExp', the role 'morel_TypeLiteralExp' has cardinality 0..*.
+An association connects 'morel_VariableExp' and 'morel_Variable'. From 'morel_VariableExp', the role 'morel_VariableExp' has cardinality 0..*, and from 'morel_Variable', the role 'morel_Variable51' has cardinality 0..*.
+An association connects 'morel_Expression' and 'morel_NestedExp'. From 'morel_Expression', the role 'morel_Expression53' has cardinality 0..*, and from 'morel_NestedExp', the role 'morel_NestedExp' has cardinality 0..*.
+An association connects 'morel_CallPathExp' and 'morel_CallPathExp'. From 'morel_CallPathExp', the role 'morel_CallPathExp54' has cardinality 0..*, and from 'morel_CallPathExp', the role 'morel_CallPathExp56' has cardinality 0..*.
+An association connects 'morel_OperationPathExp' and 'morel_Expression'. From 'morel_OperationPathExp', the role 'morel_OperationPathExp' has cardinality 0..*, and from 'morel_Expression', the role 'morel_Expression58' has cardinality 0..*.
+An association connects 'morel_IteratorPathExp' and 'morel_Variable'. From 'morel_IteratorPathExp', the role 'morel_IteratorPathExp' has cardinality 0..*, and from 'morel_Variable', the role 'morel_Variable60' has cardinality 0..*.
+An association connects 'morel_IteratorPathExp' and 'morel_Variable'. From 'morel_IteratorPathExp', the role 'morel_IteratorPathExp62' has cardinality 0..*, and from 'morel_Variable', the role 'morel_Variable63' has cardinality 0..*.
+An association connects 'morel_Expression' and 'morel_IteratorPathExp'. From 'morel_Expression', the role 'morel_Expression66' has cardinality 0..*, and from 'morel_IteratorPathExp', the role 'morel_IteratorPathExp65' has cardinality 0..*.
+An association connects 'morel_VariableWithInit' and 'morel_LetExp'. From 'morel_VariableWithInit', the role 'morel_VariableWithInit' has cardinality 0..*, and from 'morel_LetExp', the role 'morel_LetExp' has cardinality 0..*.
+An association connects 'morel_LetExp' and 'morel_Expression'. From 'morel_LetExp', the role 'morel_LetExp69' has cardinality 0..*, and from 'morel_Expression', the role 'morel_Expression70' has cardinality 0..*.
+An association connects 'morel_Expression' and 'morel_VariableWithInit'. From 'morel_Expression', the role 'morel_Expression73' has cardinality 0..*, and from 'morel_VariableWithInit', the role 'morel_VariableWithInit72' has cardinality 0..*.
+An association connects 'morel_ConditionExp' and 'morel_BooleanImpliesExp'. From 'morel_ConditionExp', the role 'morel_ConditionExp' has cardinality 0..*, and from 'morel_BooleanImpliesExp', the role 'morel_BooleanImpliesExp' has cardinality 0..*.
+An association connects 'morel_Expression' and 'morel_ConditionExp'. From 'morel_Expression', the role 'morel_Expression77' has cardinality 0..*, and from 'morel_ConditionExp', the role 'morel_ConditionExp76' has cardinality 0..*.
+An association connects 'morel_Expression' and 'morel_ConditionExp'. From 'morel_Expression', the role 'morel_Expression80' has cardinality 0..*, and from 'morel_ConditionExp', the role 'morel_ConditionExp79' has cardinality 0..*.
+An association connects 'morel_BooleanImpliesExp' and 'morel_BooleanImpliesExpChild'. From 'morel_BooleanImpliesExp', the role 'morel_BooleanImpliesExp82' has cardinality 0..*, and from 'morel_BooleanImpliesExpChild', the role 'morel_BooleanImpliesExpChild' has cardinality 0..*.
+An association connects 'morel_BooleanImpliesExp' and 'morel_BooleanImpliesExpChild'. From 'morel_BooleanImpliesExp', the role 'morel_BooleanImpliesExp84' has cardinality 0..*, and from 'morel_BooleanImpliesExpChild', the role 'morel_BooleanImpliesExpChild85' has cardinality 0..*.
+An association connects 'morel_BooleanOrExp' and 'morel_BooleanOrExpChild'. From 'morel_BooleanOrExp', the role 'morel_BooleanOrExp' has cardinality 0..*, and from 'morel_BooleanOrExpChild', the role 'morel_BooleanOrExpChild' has cardinality 0..*.
+An association connects 'morel_BooleanAndExpChild' and 'morel_BooleanAndExp'. From 'morel_BooleanAndExpChild', the role 'morel_BooleanAndExpChild' has cardinality 0..*, and from 'morel_BooleanAndExp', the role 'morel_BooleanAndExp' has cardinality 0..*.
+An association connects 'morel_RelationalExp' and 'morel_RelationalExpChild'. From 'morel_RelationalExp', the role 'morel_RelationalExp' has cardinality 0..*, and from 'morel_RelationalExpChild', the role 'morel_RelationalExpChild' has cardinality 0..*.
+An association connects 'morel_RelationalExp' and 'morel_RelationalExpChild'. From 'morel_RelationalExp', the role 'morel_RelationalExp90' has cardinality 0..*, and from 'morel_RelationalExpChild', the role 'morel_RelationalExpChild91' has cardinality 0..*.
+An association connects 'morel_AdditiveExp' and 'morel_AdditiveExpChild'. From 'morel_AdditiveExp', the role 'morel_AdditiveExp' has cardinality 0..*, and from 'morel_AdditiveExpChild', the role 'morel_AdditiveExpChild' has cardinality 0..*.
+An association connects 'morel_MultiplicativeExpChild' and 'morel_MultiplicativeExp'. From 'morel_MultiplicativeExpChild', the role 'morel_MultiplicativeExpChild' has cardinality 0..*, and from 'morel_MultiplicativeExp', the role 'morel_MultiplicativeExp' has cardinality 0..*.
+An association connects 'morel_UnaryExp' and 'morel_UnaryExpChild'. From 'morel_UnaryExp', the role 'morel_UnaryExp' has cardinality 0..*, and from 'morel_UnaryExpChild', the role 'morel_UnaryExpChild' has cardinality 0..*.
+An association connects 'morel_CollectionType' and 'morel_EClassifier'. From 'morel_CollectionType', the role 'morel_CollectionType' has cardinality 0..*, and from 'morel_EClassifier', the role 'morel_EClassifier96' has cardinality 0..*.
+An association connects 'morel_BindExp' and 'morel_VariableExp'. From 'morel_BindExp', the role 'morel_BindExp' has cardinality 0..*, and from 'morel_VariableExp', the role 'morel_VariableExp98' has cardinality 0..*.
+An association connects 'morel_Expression' and 'morel_BindExp'. From 'morel_Expression', the role 'morel_Expression101' has cardinality 0..*, and from 'morel_BindExp', the role 'morel_BindExp100' has cardinality 0..*.
+An association connects 'morel_PredefinedVariableExp' and 'morel_PredefinedBindExp'. From 'morel_PredefinedVariableExp', the role 'morel_PredefinedVariableExp' has cardinality 0..*, and from 'morel_PredefinedBindExp', the role 'morel_PredefinedBindExp' has cardinality 0..*.
+An association connects 'morel_Expression' and 'morel_PredefinedBindExp'. From 'morel_Expression', the role 'morel_Expression105' has cardinality 0..*, and from 'morel_PredefinedBindExp', the role 'morel_PredefinedBindExp104' has cardinality 0..*.
+An association connects 'morel_BooleanImpliesExp' and 'morel_IfStatement'. From 'morel_BooleanImpliesExp', the role 'morel_BooleanImpliesExp107' has cardinality 0..*, and from 'morel_IfStatement', the role 'morel_IfStatement' has cardinality 0..*.
+An association connects 'morel_IfStatement' and 'morel_ImperativeStatement'. From 'morel_IfStatement', the role 'morel_IfStatement109' has cardinality 0..*, and from 'morel_ImperativeStatement', the role 'morel_ImperativeStatement' has cardinality 0..*.
+An association connects 'morel_ImperativeStatement' and 'morel_IfStatement'. From 'morel_ImperativeStatement', the role 'morel_ImperativeStatement112' has cardinality 0..*, and from 'morel_IfStatement', the role 'morel_IfStatement111' has cardinality 0..*.
+An association connects 'morel_VariableWithInit' and 'morel_ForStatement'. From 'morel_VariableWithInit', the role 'morel_VariableWithInit114' has cardinality 0..*, and from 'morel_ForStatement', the role 'morel_ForStatement' has cardinality 0..*.
+An association connects 'morel_BooleanImpliesExp' and 'morel_ForStatement'. From 'morel_BooleanImpliesExp', the role 'morel_BooleanImpliesExp117' has cardinality 0..*, and from 'morel_ForStatement', the role 'morel_ForStatement116' has cardinality 0..*.
+An association connects 'morel_Expression' and 'morel_ForStatement'. From 'morel_Expression', the role 'morel_Expression120' has cardinality 0..*, and from 'morel_ForStatement', the role 'morel_ForStatement119' has cardinality 0..*.
+An association connects 'morel_ImperativeStatement' and 'morel_ForStatement'. From 'morel_ImperativeStatement', the role 'morel_ImperativeStatement123' has cardinality 0..*, and from 'morel_ForStatement', the role 'morel_ForStatement122' has cardinality 0..*.
+An association connects 'morel_Statement' and 'morel_BlockStatement'. From 'morel_Statement', the role 'morel_Statement125' has cardinality 0..*, and from 'morel_BlockStatement', the role 'morel_BlockStatement' has cardinality 0..*.
+An association connects 'morel_RuleElement' and 'morel_TransformationModel'. From 'morel_RuleElement', the role 'morel_RuleElement' has cardinality 0..*, and from 'morel_TransformationModel', the role 'morel_TransformationModel' has cardinality 0..*.
+An association connects 'morel_Rule' and 'morel_Pattern'. From 'morel_Rule', the role 'morel_Rule' has cardinality 0..*, and from 'morel_Pattern', the role 'morel_Pattern128' has cardinality 0..*.
+An association connects 'morel_Rule' and 'morel_RuleGroup'. From 'morel_Rule', the role 'morel_Rule130' has cardinality 0..*, and from 'morel_RuleGroup', the role 'morel_RuleGroup' has cardinality 0..*.
+An association connects 'morel_DeclarativeStatement' and 'morel_Expression'. From 'morel_DeclarativeStatement', the role 'morel_DeclarativeStatement' has cardinality 0..*, and from 'morel_Expression', the role 'morel_Expression132' has cardinality 0..*.
+An association connects 'morel_ReflectiveVariableExp' and 'morel_Variable'. From 'morel_ReflectiveVariableExp', the role 'morel_ReflectiveVariableExp' has cardinality 0..*, and from 'morel_Variable', the role 'morel_Variable134' has cardinality 0..*.
+An association connects 'morel_ArrayLiteralExp' and 'morel_Expression'. From 'morel_ArrayLiteralExp', the role 'morel_ArrayLiteralExp' has cardinality 0..*, and from 'morel_Expression', the role 'morel_Expression136' has cardinality 0..*.
+An association connects 'morel_Executable' and 'morel_PrimitiveVariable'. From 'morel_Executable', the role 'morel_Executable' has cardinality 0..*, and from 'morel_PrimitiveVariable', the role 'morel_PrimitiveVariable138' has cardinality 0..*.
+An association connects 'morel_Variable' and 'morel_AdditionalConstraint'. From 'morel_Variable', the role 'morel_Variable141' has cardinality 0..*, and from 'morel_AdditionalConstraint', the role 'morel_AdditionalConstraint140' has cardinality 0..*.
+An association connects 'morel_ObjectVariable' and 'morel_OrderConstraint'. From 'morel_ObjectVariable', the role 'morel_ObjectVariable143' has cardinality 0..*, and from 'morel_OrderConstraint', the role 'morel_OrderConstraint' has cardinality 0..*.
+An association connects 'morel_OrderConstraint' and 'morel_EReference'. From 'morel_OrderConstraint', the role 'morel_OrderConstraint145' has cardinality 0..*, and from 'morel_EReference', the role 'morel_EReference146' has cardinality 0..*.
+An association connects 'morel_EClass' and 'morel_OrderConstraint'. From 'morel_EClass', the role 'morel_EClass149' has cardinality 0..*, and from 'morel_OrderConstraint', the role 'morel_OrderConstraint148' has cardinality 0..*.
+An association connects 'morel_PrimitiveConstraint' and 'morel_PrimitiveVariable'. From 'morel_PrimitiveConstraint', the role 'morel_PrimitiveConstraint' has cardinality 0..*, and from 'morel_PrimitiveVariable', the role 'morel_PrimitiveVariable151' has cardinality 0..*.
+An association connects 'morel_MultiValueConstraint' and 'morel_ObjectVariable'. From 'morel_MultiValueConstraint', the role 'morel_MultiValueConstraint' has cardinality 0..*, and from 'morel_ObjectVariable', the role 'morel_ObjectVariable153' has cardinality 0..*.
+An association connects 'morel_MultiValueConstraint' and 'morel_EAttribute'. From 'morel_MultiValueConstraint', the role 'morel_MultiValueConstraint155' has cardinality 0..*, and from 'morel_EAttribute', the role 'morel_EAttribute' has cardinality 0..*.
+An association connects 'morel_ValueRangeConstraint' and 'morel_Expression'. From 'morel_ValueRangeConstraint', the role 'morel_ValueRangeConstraint' has cardinality 0..*, and from 'morel_Expression', the role 'morel_Expression157' has cardinality 0..*.

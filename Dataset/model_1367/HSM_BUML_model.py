@@ -1,0 +1,122 @@
+####################
+# STRUCTURAL MODEL #
+####################
+
+from besser.BUML.metamodel.structural import (
+    Class, Property, Method, Parameter,
+    BinaryAssociation, Generalization, DomainModel,
+    Enumeration, EnumerationLiteral, Multiplicity,
+    StringType, IntegerType, FloatType, BooleanType,
+    TimeType, DateType, DateTimeType, TimeDeltaType,
+    AnyType, Constraint, AssociationClass, Metadata
+)
+
+# Classes
+HSM_StateMachine = Class(name="HSM::StateMachine")
+HSM_Transition = Class(name="HSM::Transition")
+HSM_CompositeState = Class(name="HSM::CompositeState")
+HSM_InitialState = Class(name="HSM::InitialState")
+AbstractState = Class(name="AbstractState")
+HSM_AbstractState = Class(name="HSM::AbstractState", is_abstract=True)
+HSM_RegularState = Class(name="HSM::RegularState")
+
+# HSM_StateMachine class attributes and methods
+HSM_StateMachine_name: Property = Property(name="name", type=StringType)
+HSM_StateMachine.attributes={HSM_StateMachine_name}
+
+# HSM_Transition class attributes and methods
+HSM_Transition_label: Property = Property(name="label", type=StringType)
+HSM_Transition.attributes={HSM_Transition_label}
+
+# HSM_CompositeState class attributes and methods
+
+# HSM_InitialState class attributes and methods
+
+# AbstractState class attributes and methods
+
+# HSM_AbstractState class attributes and methods
+HSM_AbstractState_name: Property = Property(name="name", type=StringType)
+HSM_AbstractState.attributes={HSM_AbstractState_name}
+
+# HSM_RegularState class attributes and methods
+
+# Relationships
+transitions0: BinaryAssociation = BinaryAssociation(
+    name="transitions0",
+    ends={
+        Property(name="Transition", type=HSM_StateMachine, multiplicity=Multiplicity(1, 1)),
+        Property(name="stateMachine", type=HSM_Transition, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+source4: BinaryAssociation = BinaryAssociation(
+    name="source4",
+    ends={
+        Property(name="HSM_AbstractState", type=HSM_Transition, multiplicity=Multiplicity(1, 1)),
+        Property(name="HSM_Transition", type=HSM_AbstractState, multiplicity=Multiplicity(1, 1))
+    }
+)
+target5: BinaryAssociation = BinaryAssociation(
+    name="target5",
+    ends={
+        Property(name="HSM_AbstractState7", type=HSM_Transition, multiplicity=Multiplicity(1, 1)),
+        Property(name="HSM_Transition6", type=HSM_AbstractState, multiplicity=Multiplicity(1, 1))
+    }
+)
+stateMachine8: BinaryAssociation = BinaryAssociation(
+    name="stateMachine8",
+    ends={
+        Property(name="StateMachine9", type=HSM_AbstractState, multiplicity=Multiplicity(1, 1)),
+        Property(name="states", type=HSM_StateMachine, multiplicity=Multiplicity(0, 1))
+    }
+)
+compositeState10: BinaryAssociation = BinaryAssociation(
+    name="compositeState10",
+    ends={
+        Property(name="CompositeState", type=HSM_AbstractState, multiplicity=Multiplicity(1, 1)),
+        Property(name="states11", type=HSM_CompositeState, multiplicity=Multiplicity(0, 1))
+    }
+)
+states1: BinaryAssociation = BinaryAssociation(
+    name="states1",
+    ends={
+        Property(name="AbstractState", type=HSM_StateMachine, multiplicity=Multiplicity(1, 1)),
+        Property(name="stateMachine2", type=HSM_AbstractState, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+stateMachine3: BinaryAssociation = BinaryAssociation(
+    name="stateMachine3",
+    ends={
+        Property(name="StateMachine", type=HSM_Transition, multiplicity=Multiplicity(1, 1)),
+        Property(name="transitions", type=HSM_StateMachine, multiplicity=Multiplicity(0, 1))
+    }
+)
+states12: BinaryAssociation = BinaryAssociation(
+    name="states12",
+    ends={
+        Property(name="AbstractState13", type=HSM_CompositeState, multiplicity=Multiplicity(1, 1)),
+        Property(name="compositeState", type=HSM_AbstractState, multiplicity=Multiplicity(0, 9999))
+    }
+)
+
+# Generalizations
+gen_HSM_InitialState_AbstractState = Generalization(general=AbstractState, specific=HSM_InitialState)
+gen_HSM_RegularState_AbstractState = Generalization(general=AbstractState, specific=HSM_RegularState)
+gen_HSM_CompositeState_AbstractState = Generalization(general=AbstractState, specific=HSM_CompositeState)
+
+# Domain Model
+domain_model = DomainModel(
+    name="HSM",
+    types={HSM_StateMachine, HSM_Transition, HSM_CompositeState, HSM_InitialState, AbstractState, HSM_AbstractState, HSM_RegularState},
+    associations={transitions0, source4, target5, stateMachine8, compositeState10, states1, stateMachine3, states12},
+    generalizations={gen_HSM_InitialState_AbstractState, gen_HSM_RegularState_AbstractState, gen_HSM_CompositeState_AbstractState},
+    metadata=None
+)
+
+
+###################### 
+ # PROJECT DEFINITION # 
+ ###################### 
+from besser.BUML.metamodel.project import Project 
+from besser.BUML.metamodel.structural.structural import Metadata
+metadata = Metadata(description="New project")
+project = Project(name="sampleModel",models=[domain_model],owner="User",metadata=metadata)

@@ -1,0 +1,177 @@
+The domain model 'essentialOCLCST' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'essentialOCLCST_VariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_DotIndexArgumentsCS' represents an important domain concept.
+It has one attribute: 'isPre', which is of type bool.
+
+'CollectionLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_TypeLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_RealLiteralExpCS' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'essentialOCLCST_TupleTypeCS' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'CallArgumentsCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpressionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_TupleLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_OclExpressionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_UnlimitedNaturalLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_CallArgumentsCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_LetExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_PrimitiveLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_CollectionLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_SimpleNameCS' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'essentialOCLCST_CollectionLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_IfExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_InvalidLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_IntegerLiteralExpCS' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'essentialOCLCST_NullLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_VariableExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_BinaryExpressionCS' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'essentialOCLCST_StringLiteralExpCS' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'essentialOCLCST_ArrowCallArgumentsCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_BooleanLiteralExpCS' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'essentialOCLCST_UnaryExpressionCS' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'essentialOCLCST_CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'essentialOCLCST_CollectionTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'essentialOCLCST_ArrowCallArgumentsCS' is a specialization of 'CallArgumentsCS'.
+The class 'essentialOCLCST_BinaryExpressionCS' is a specialization of 'OclExpressionCS'.
+The class 'essentialOCLCST_BooleanLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialOCLCST_CallExpCS' is a specialization of 'OclExpressionCS'.
+The class 'essentialOCLCST_CollectionLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'essentialOCLCST_CollectionTypeCS' is a specialization of 'TypeCS'.
+The class 'essentialOCLCST_CollectionTypeCS' is a specialization of 'CollectionLiteralExpCS'.
+The class 'essentialOCLCST_CollectionTypeCS' is a specialization of 'TypeLiteralExpCS'.
+The class 'essentialOCLCST_DotIndexArgumentsCS' is a specialization of 'CallArgumentsCS'.
+The class 'essentialOCLCST_IfExpCS' is a specialization of 'OclExpressionCS'.
+The class 'essentialOCLCST_IntegerLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialOCLCST_InvalidLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialOCLCST_LetExpCS' is a specialization of 'OclExpressionCS'.
+The class 'essentialOCLCST_LiteralExpCS' is a specialization of 'OclExpressionCS'.
+The class 'essentialOCLCST_NullLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialOCLCST_PathNameCS' is a specialization of 'TypeCS'.
+The class 'essentialOCLCST_PathNameCS' is a specialization of 'TypeLiteralExpCS'.
+The class 'essentialOCLCST_PrimitiveLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'essentialOCLCST_RealLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialOCLCST_SimpleNameCS' is a specialization of 'TypeCS'.
+The class 'essentialOCLCST_SimpleNameCS' is a specialization of 'CollectionLiteralExpCS'.
+The class 'essentialOCLCST_SimpleNameCS' is a specialization of 'TypeLiteralExpCS'.
+The class 'essentialOCLCST_SimpleNameCS' is a specialization of 'VariableExpCS'.
+The class 'essentialOCLCST_StringLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialOCLCST_TupleLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'essentialOCLCST_TupleTypeCS' is a specialization of 'TypeCS'.
+The class 'essentialOCLCST_TupleTypeCS' is a specialization of 'TypeLiteralExpCS'.
+The class 'essentialOCLCST_TypeLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'essentialOCLCST_UnaryExpressionCS' is a specialization of 'OclExpressionCS'.
+The class 'essentialOCLCST_UnlimitedNaturalLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'essentialOCLCST_VariableExpCS' is a specialization of 'OclExpressionCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'essentialOCLCST_ArrowCallArgumentsCS' and 'essentialOCLCST_VariableCS'. From 'essentialOCLCST_ArrowCallArgumentsCS', the role 'essentialOCLCST_ArrowCallArgumentsCS' has cardinality 0..*, and from 'essentialOCLCST_VariableCS', the role 'essentialOCLCST_VariableCS' has cardinality 0..*.
+An association connects 'essentialOCLCST_VariableCS' and 'essentialOCLCST_ArrowCallArgumentsCS'. From 'essentialOCLCST_VariableCS', the role 'essentialOCLCST_VariableCS3' has cardinality 0..*, and from 'essentialOCLCST_ArrowCallArgumentsCS', the role 'essentialOCLCST_ArrowCallArgumentsCS2' has cardinality 0..*.
+An association connects 'essentialOCLCST_OclExpressionCS' and 'essentialOCLCST_ArrowCallArgumentsCS'. From 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS' has cardinality 0..*, and from 'essentialOCLCST_ArrowCallArgumentsCS', the role 'essentialOCLCST_ArrowCallArgumentsCS5' has cardinality 0..*.
+An association connects 'essentialOCLCST_BinaryExpressionCS' and 'essentialOCLCST_OclExpressionCS'. From 'essentialOCLCST_BinaryExpressionCS', the role 'essentialOCLCST_BinaryExpressionCS' has cardinality 0..*, and from 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS7' has cardinality 0..*.
+An association connects 'essentialOCLCST_BinaryExpressionCS' and 'essentialOCLCST_OclExpressionCS'. From 'essentialOCLCST_BinaryExpressionCS', the role 'essentialOCLCST_BinaryExpressionCS9' has cardinality 0..*, and from 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS10' has cardinality 0..*.
+An association connects 'essentialOCLCST_CallArgumentsCS' and 'essentialOCLCST_PathNameCS'. From 'essentialOCLCST_CallArgumentsCS', the role 'essentialOCLCST_CallArgumentsCS' has cardinality 0..*, and from 'essentialOCLCST_PathNameCS', the role 'essentialOCLCST_PathNameCS' has cardinality 0..*.
+An association connects 'essentialOCLCST_OclExpressionCS' and 'essentialOCLCST_CallArgumentsCS'. From 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS14' has cardinality 0..*, and from 'essentialOCLCST_CallArgumentsCS', the role 'essentialOCLCST_CallArgumentsCS13' has cardinality 0..*.
+An association connects 'essentialOCLCST_OclExpressionCS' and 'essentialOCLCST_CallExpCS'. From 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS16' has cardinality 0..*, and from 'essentialOCLCST_CallExpCS', the role 'essentialOCLCST_CallExpCS' has cardinality 0..*.
+An association connects 'essentialOCLCST_CallArgumentsCS' and 'essentialOCLCST_CallExpCS'. From 'essentialOCLCST_CallArgumentsCS', the role 'essentialOCLCST_CallArgumentsCS19' has cardinality 0..*, and from 'essentialOCLCST_CallExpCS', the role 'essentialOCLCST_CallExpCS18' has cardinality 0..*.
+An association connects 'essentialOCLCST_CollectionLiteralPartCS' and 'essentialOCLCST_OclExpressionCS'. From 'essentialOCLCST_CollectionLiteralPartCS', the role 'essentialOCLCST_CollectionLiteralPartCS' has cardinality 0..*, and from 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS21' has cardinality 0..*.
+An association connects 'essentialOCLCST_CollectionLiteralPartCS' and 'essentialOCLCST_OclExpressionCS'. From 'essentialOCLCST_CollectionLiteralPartCS', the role 'essentialOCLCST_CollectionLiteralPartCS23' has cardinality 0..*, and from 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS24' has cardinality 0..*.
+An association connects 'essentialOCLCST_CollectionTypeCS' and 'essentialOCLCST_SimpleNameCS'. From 'essentialOCLCST_CollectionTypeCS', the role 'essentialOCLCST_CollectionTypeCS' has cardinality 0..*, and from 'essentialOCLCST_SimpleNameCS', the role 'essentialOCLCST_SimpleNameCS' has cardinality 0..*.
+An association connects 'essentialOCLCST_CollectionTypeCS' and 'essentialOCLCST_TypeCS'. From 'essentialOCLCST_CollectionTypeCS', the role 'essentialOCLCST_CollectionTypeCS27' has cardinality 0..*, and from 'essentialOCLCST_TypeCS', the role 'essentialOCLCST_TypeCS' has cardinality 0..*.
+An association connects 'essentialOCLCST_CollectionLiteralPartCS' and 'essentialOCLCST_CollectionTypeCS'. From 'essentialOCLCST_CollectionLiteralPartCS', the role 'essentialOCLCST_CollectionLiteralPartCS30' has cardinality 0..*, and from 'essentialOCLCST_CollectionTypeCS', the role 'essentialOCLCST_CollectionTypeCS29' has cardinality 0..*.
+An association connects 'essentialOCLCST_OclExpressionCS' and 'essentialOCLCST_DotIndexArgumentsCS'. From 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS32' has cardinality 0..*, and from 'essentialOCLCST_DotIndexArgumentsCS', the role 'essentialOCLCST_DotIndexArgumentsCS' has cardinality 0..*.
+An association connects 'essentialOCLCST_IfExpCS' and 'essentialOCLCST_OclExpressionCS'. From 'essentialOCLCST_IfExpCS', the role 'essentialOCLCST_IfExpCS' has cardinality 0..*, and from 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS34' has cardinality 0..*.
+An association connects 'essentialOCLCST_OclExpressionCS' and 'essentialOCLCST_IfExpCS'. From 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS37' has cardinality 0..*, and from 'essentialOCLCST_IfExpCS', the role 'essentialOCLCST_IfExpCS36' has cardinality 0..*.
+An association connects 'essentialOCLCST_IfExpCS' and 'essentialOCLCST_OclExpressionCS'. From 'essentialOCLCST_IfExpCS', the role 'essentialOCLCST_IfExpCS39' has cardinality 0..*, and from 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS40' has cardinality 0..*.
+An association connects 'essentialOCLCST_VariableCS' and 'essentialOCLCST_LetExpCS'. From 'essentialOCLCST_VariableCS', the role 'essentialOCLCST_VariableCS42' has cardinality 0..*, and from 'essentialOCLCST_LetExpCS', the role 'essentialOCLCST_LetExpCS' has cardinality 0..*.
+An association connects 'essentialOCLCST_OclExpressionCS' and 'essentialOCLCST_LetExpCS'. From 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS45' has cardinality 0..*, and from 'essentialOCLCST_LetExpCS', the role 'essentialOCLCST_LetExpCS44' has cardinality 0..*.
+An association connects 'essentialOCLCST_SimpleNameCS' and 'essentialOCLCST_PathNameCS'. From 'essentialOCLCST_SimpleNameCS', the role 'essentialOCLCST_SimpleNameCS48' has cardinality 0..*, and from 'essentialOCLCST_PathNameCS', the role 'essentialOCLCST_PathNameCS47' has cardinality 0..*.
+An association connects 'essentialOCLCST_CollectionLiteralPartCS' and 'essentialOCLCST_SimpleNameCS'. From 'essentialOCLCST_CollectionLiteralPartCS', the role 'essentialOCLCST_CollectionLiteralPartCS51' has cardinality 0..*, and from 'essentialOCLCST_SimpleNameCS', the role 'essentialOCLCST_SimpleNameCS50' has cardinality 0..*.
+An association connects 'essentialOCLCST_TupleLiteralExpCS' and 'essentialOCLCST_VariableCS'. From 'essentialOCLCST_TupleLiteralExpCS', the role 'essentialOCLCST_TupleLiteralExpCS' has cardinality 0..*, and from 'essentialOCLCST_VariableCS', the role 'essentialOCLCST_VariableCS53' has cardinality 0..*.
+An association connects 'essentialOCLCST_TupleTypeCS' and 'essentialOCLCST_VariableCS'. From 'essentialOCLCST_TupleTypeCS', the role 'essentialOCLCST_TupleTypeCS' has cardinality 0..*, and from 'essentialOCLCST_VariableCS', the role 'essentialOCLCST_VariableCS55' has cardinality 0..*.
+An association connects 'essentialOCLCST_OclExpressionCS' and 'essentialOCLCST_UnaryExpressionCS'. From 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS57' has cardinality 0..*, and from 'essentialOCLCST_UnaryExpressionCS', the role 'essentialOCLCST_UnaryExpressionCS' has cardinality 0..*.
+An association connects 'essentialOCLCST_SimpleNameCS' and 'essentialOCLCST_VariableCS'. From 'essentialOCLCST_SimpleNameCS', the role 'essentialOCLCST_SimpleNameCS60' has cardinality 0..*, and from 'essentialOCLCST_VariableCS', the role 'essentialOCLCST_VariableCS59' has cardinality 0..*.
+An association connects 'essentialOCLCST_VariableCS' and 'essentialOCLCST_TypeCS'. From 'essentialOCLCST_VariableCS', the role 'essentialOCLCST_VariableCS62' has cardinality 0..*, and from 'essentialOCLCST_TypeCS', the role 'essentialOCLCST_TypeCS63' has cardinality 0..*.
+An association connects 'essentialOCLCST_VariableCS' and 'essentialOCLCST_OclExpressionCS'. From 'essentialOCLCST_VariableCS', the role 'essentialOCLCST_VariableCS65' has cardinality 0..*, and from 'essentialOCLCST_OclExpressionCS', the role 'essentialOCLCST_OclExpressionCS66' has cardinality 0..*.

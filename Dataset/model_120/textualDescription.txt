@@ -1,0 +1,454 @@
+The domain model 'dom' describes the core structural elements and their relationships within the system.
+
+The model defines 93 main class(es).
+
+'dom_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'dom_ISelector' represents an important domain concept.
+It does not declare any attributes.
+
+'IPropertyName' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ObjectLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_IPropertySelector' represents an important domain concept.
+It does not declare any attributes.
+
+'IForInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_IForInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ExpressionSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_PropertyIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_XmlFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_GetterAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_IProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_XmlTextFragment' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'dom_SetterAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_XmlExpressionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_UnaryExpression' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'dom_IterationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_CallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Label' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'IUnqualifiedSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_IArrayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_AccessorAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_DefaultXmlNamespaceStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_AttributeIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_DescendantAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ISelector' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_XmlInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_PropertyAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_IUnqualifiedSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_CatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_FilterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_SwitchElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_WithStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Comment' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'PropertyAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'IPropertySelector' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ConstStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_CaseClause' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'XmlFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'AccessorAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_NewExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_StringLiteral' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'dom_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_BinaryExpression' represents an important domain concept.
+It has the following attributes: 'operatorPosition', which is of type int; 'operation', which is of type str.
+
+'dom_VariableStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Elision' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ArrayAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Identifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'IArrayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'IterationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ForInStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'IProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_SimplePropertyAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_WildcardIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ForEachInStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_DefaultClause' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_RegularExpressionLiteral' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'dom_QualifiedIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ArrayLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Node' represents an important domain concept.
+It has the following attributes: 'end', which is of type int; 'begin', which is of type int.
+
+'dom_FinallyClause' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_NumericLiteral' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'dom_PropertyAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_IPropertyName' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_FunctionExpression' represents an important domain concept.
+It has one attribute: 'parametersPosition', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UnaryOperator' defines the following possible values: 'bwNot', 'numNeg', 'postfixInc', 'postfixDec', 'delete', 'void', 'not', 'prefixDec', 'unaryPlus', 'typeof', 'yield', 'prefixInc'.
+The enumeration 'BinaryOperator' defines the following possible values: 'instanceof', 'same', 'mulAssign', 'geq', 'rshAssign', 'neq', 'nsame', 'div', 'logOr', 'xorAssign', 'mul', 'assign', 'comma', 'add', 'orAssign', 'bwXor', 'bwOr', 'addAssign', 'subAssign', 'rsh', 'in', 'modAssign', 'lsh', 'lshAssign', 'bwAnd', 'less', 'logAnd', 'urshAssign', 'divAssign', 'andAssign', 'eq', 'mod', 'sub', 'greater', 'leq', 'ursh'.
+
+The model also captures inheritance relationships between classes.
+The class 'dom_Comment' is a specialization of 'Node'.
+The class 'dom_Identifier' is a specialization of 'Node'.
+The class 'dom_Identifier' is a specialization of 'IPropertyName'.
+The class 'dom_Identifier' is a specialization of 'IPropertySelector'.
+The class 'dom_Identifier' is a specialization of 'IProperty'.
+The class 'dom_VariableReference' is a specialization of 'Expression'.
+The class 'dom_Label' is a specialization of 'Node'.
+The class 'dom_Expression' is a specialization of 'Node'.
+The class 'dom_Expression' is a specialization of 'IArrayElement'.
+The class 'dom_Expression' is a specialization of 'IForInitializer'.
+The class 'dom_NullLiteral' is a specialization of 'Expression'.
+The class 'dom_BooleanLiteral' is a specialization of 'Expression'.
+The class 'dom_NumericLiteral' is a specialization of 'Expression'.
+The class 'dom_NumericLiteral' is a specialization of 'IPropertyName'.
+The class 'dom_StringLiteral' is a specialization of 'Expression'.
+The class 'dom_StringLiteral' is a specialization of 'IPropertyName'.
+The class 'dom_RegularExpressionLiteral' is a specialization of 'Expression'.
+The class 'dom_ThisExpression' is a specialization of 'Expression'.
+The class 'dom_ArrayLiteral' is a specialization of 'Expression'.
+The class 'dom_IArrayElement' is a specialization of 'Node'.
+The class 'dom_Elision' is a specialization of 'IArrayElement'.
+The class 'dom_ObjectLiteral' is a specialization of 'Expression'.
+The class 'dom_PropertyAssignment' is a specialization of 'Node'.
+The class 'dom_IPropertyName' is a specialization of 'Node'.
+The class 'dom_SimplePropertyAssignment' is a specialization of 'PropertyAssignment'.
+The class 'dom_AccessorAssignment' is a specialization of 'PropertyAssignment'.
+The class 'dom_GetterAssignment' is a specialization of 'AccessorAssignment'.
+The class 'dom_SetterAssignment' is a specialization of 'AccessorAssignment'.
+The class 'dom_ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'dom_ArrayAccessExpression' is a specialization of 'Expression'.
+The class 'dom_PropertyAccessExpression' is a specialization of 'Expression'.
+The class 'dom_NewExpression' is a specialization of 'Expression'.
+The class 'dom_CallExpression' is a specialization of 'Expression'.
+The class 'dom_UnaryExpression' is a specialization of 'Expression'.
+The class 'dom_BinaryExpression' is a specialization of 'Expression'.
+The class 'dom_ConditionalExpression' is a specialization of 'Expression'.
+The class 'dom_Statement' is a specialization of 'Node'.
+The class 'dom_BlockStatement' is a specialization of 'Statement'.
+The class 'dom_VariableStatement' is a specialization of 'Statement'.
+The class 'dom_VariableStatement' is a specialization of 'IForInitializer'.
+The class 'dom_VariableDeclaration' is a specialization of 'Node'.
+The class 'dom_EmptyStatement' is a specialization of 'Statement'.
+The class 'dom_ExpressionStatement' is a specialization of 'Statement'.
+The class 'dom_IfStatement' is a specialization of 'Statement'.
+The class 'dom_IterationStatement' is a specialization of 'Statement'.
+The class 'dom_DoStatement' is a specialization of 'IterationStatement'.
+The class 'dom_WhileStatement' is a specialization of 'IterationStatement'.
+The class 'dom_ForStatement' is a specialization of 'IterationStatement'.
+The class 'dom_IForInitializer' is a specialization of 'Node'.
+The class 'dom_ForInStatement' is a specialization of 'IterationStatement'.
+The class 'dom_ContinueStatement' is a specialization of 'Statement'.
+The class 'dom_BreakStatement' is a specialization of 'Statement'.
+The class 'dom_ReturnStatement' is a specialization of 'Statement'.
+The class 'dom_WithStatement' is a specialization of 'Statement'.
+The class 'dom_SwitchStatement' is a specialization of 'Statement'.
+The class 'dom_SwitchElement' is a specialization of 'Node'.
+The class 'dom_CaseClause' is a specialization of 'SwitchElement'.
+The class 'dom_DefaultClause' is a specialization of 'SwitchElement'.
+The class 'dom_LabeledStatement' is a specialization of 'Statement'.
+The class 'dom_ThrowStatement' is a specialization of 'Statement'.
+The class 'dom_TryStatement' is a specialization of 'Statement'.
+The class 'dom_CatchClause' is a specialization of 'Node'.
+The class 'dom_FinallyClause' is a specialization of 'Node'.
+The class 'dom_FunctionExpression' is a specialization of 'Expression'.
+The class 'dom_Parameter' is a specialization of 'Node'.
+The class 'dom_Source' is a specialization of 'Node'.
+The class 'dom_ConstStatement' is a specialization of 'Statement'.
+The class 'dom_PropertyIdentifier' is a specialization of 'Expression'.
+The class 'dom_PropertyIdentifier' is a specialization of 'IProperty'.
+The class 'dom_IProperty' is a specialization of 'Node'.
+The class 'dom_XmlInitializer' is a specialization of 'Expression'.
+The class 'dom_AttributeIdentifier' is a specialization of 'PropertyIdentifier'.
+The class 'dom_ISelector' is a specialization of 'Node'.
+The class 'dom_QualifiedIdentifier' is a specialization of 'PropertyIdentifier'.
+The class 'dom_QualifiedIdentifier' is a specialization of 'ISelector'.
+The class 'dom_IUnqualifiedSelector' is a specialization of 'ISelector'.
+The class 'dom_WildcardIdentifier' is a specialization of 'PropertyIdentifier'.
+The class 'dom_WildcardIdentifier' is a specialization of 'IPropertySelector'.
+The class 'dom_IPropertySelector' is a specialization of 'IUnqualifiedSelector'.
+The class 'dom_ExpressionSelector' is a specialization of 'IUnqualifiedSelector'.
+The class 'dom_XmlFragment' is a specialization of 'Node'.
+The class 'dom_XmlTextFragment' is a specialization of 'XmlFragment'.
+The class 'dom_XmlExpressionFragment' is a specialization of 'XmlFragment'.
+The class 'dom_DescendantAccessExpression' is a specialization of 'Expression'.
+The class 'dom_FilterExpression' is a specialization of 'Expression'.
+The class 'dom_DefaultXmlNamespaceStatement' is a specialization of 'Statement'.
+The class 'dom_ForEachInStatement' is a specialization of 'IterationStatement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dom_VariableReference' and 'dom_Identifier'. From 'dom_VariableReference', the role 'dom_VariableReference' has cardinality 0..*, and from 'dom_Identifier', the role 'dom_Identifier' has cardinality 0..*.
+An association connects 'dom_IArrayElement' and 'dom_ArrayLiteral'. From 'dom_IArrayElement', the role 'dom_IArrayElement' has cardinality 0..*, and from 'dom_ArrayLiteral', the role 'dom_ArrayLiteral' has cardinality 0..*.
+An association connects 'dom_PropertyAssignment' and 'dom_ObjectLiteral'. From 'dom_PropertyAssignment', the role 'dom_PropertyAssignment' has cardinality 0..*, and from 'dom_ObjectLiteral', the role 'dom_ObjectLiteral' has cardinality 0..*.
+An association connects 'dom_IPropertyName' and 'dom_PropertyAssignment'. From 'dom_IPropertyName', the role 'dom_IPropertyName' has cardinality 0..*, and from 'dom_PropertyAssignment', the role 'dom_PropertyAssignment4' has cardinality 0..*.
+An association connects 'dom_SimplePropertyAssignment' and 'dom_Expression'. From 'dom_SimplePropertyAssignment', the role 'dom_SimplePropertyAssignment' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression' has cardinality 0..*.
+An association connects 'dom_AccessorAssignment' and 'dom_BlockStatement'. From 'dom_AccessorAssignment', the role 'dom_AccessorAssignment' has cardinality 0..*, and from 'dom_BlockStatement', the role 'dom_BlockStatement' has cardinality 0..*.
+An association connects 'dom_SetterAssignment' and 'dom_Identifier'. From 'dom_SetterAssignment', the role 'dom_SetterAssignment' has cardinality 0..*, and from 'dom_Identifier', the role 'dom_Identifier8' has cardinality 0..*.
+An association connects 'dom_ParenthesizedExpression' and 'dom_Expression'. From 'dom_ParenthesizedExpression', the role 'dom_ParenthesizedExpression' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression10' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_ArrayAccessExpression'. From 'dom_Expression', the role 'dom_Expression12' has cardinality 0..*, and from 'dom_ArrayAccessExpression', the role 'dom_ArrayAccessExpression' has cardinality 0..*.
+An association connects 'dom_ArrayAccessExpression' and 'dom_Expression'. From 'dom_ArrayAccessExpression', the role 'dom_ArrayAccessExpression14' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression15' has cardinality 0..*.
+An association connects 'dom_PropertyAccessExpression' and 'dom_Expression'. From 'dom_PropertyAccessExpression', the role 'dom_PropertyAccessExpression' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression17' has cardinality 0..*.
+An association connects 'dom_IProperty' and 'dom_PropertyAccessExpression'. From 'dom_IProperty', the role 'dom_IProperty' has cardinality 0..*, and from 'dom_PropertyAccessExpression', the role 'dom_PropertyAccessExpression19' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_NewExpression'. From 'dom_Expression', the role 'dom_Expression21' has cardinality 0..*, and from 'dom_NewExpression', the role 'dom_NewExpression' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_NewExpression'. From 'dom_Expression', the role 'dom_Expression24' has cardinality 0..*, and from 'dom_NewExpression', the role 'dom_NewExpression23' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_CallExpression'. From 'dom_Expression', the role 'dom_Expression26' has cardinality 0..*, and from 'dom_CallExpression', the role 'dom_CallExpression' has cardinality 0..*.
+An association connects 'dom_CallExpression' and 'dom_Expression'. From 'dom_CallExpression', the role 'dom_CallExpression28' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression29' has cardinality 0..*.
+An association connects 'dom_UnaryExpression' and 'dom_Expression'. From 'dom_UnaryExpression', the role 'dom_UnaryExpression' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression31' has cardinality 0..*.
+An association connects 'dom_BinaryExpression' and 'dom_Expression'. From 'dom_BinaryExpression', the role 'dom_BinaryExpression' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression33' has cardinality 0..*.
+An association connects 'dom_BinaryExpression' and 'dom_Expression'. From 'dom_BinaryExpression', the role 'dom_BinaryExpression35' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression36' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_ConditionalExpression'. From 'dom_Expression', the role 'dom_Expression38' has cardinality 0..*, and from 'dom_ConditionalExpression', the role 'dom_ConditionalExpression' has cardinality 0..*.
+An association connects 'dom_ConditionalExpression' and 'dom_Expression'. From 'dom_ConditionalExpression', the role 'dom_ConditionalExpression40' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression41' has cardinality 0..*.
+An association connects 'dom_ConditionalExpression' and 'dom_Expression'. From 'dom_ConditionalExpression', the role 'dom_ConditionalExpression43' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression44' has cardinality 0..*.
+An association connects 'dom_BlockStatement' and 'dom_Statement'. From 'dom_BlockStatement', the role 'dom_BlockStatement46' has cardinality 0..*, and from 'dom_Statement', the role 'dom_Statement' has cardinality 0..*.
+An association connects 'dom_VariableStatement' and 'dom_VariableDeclaration'. From 'dom_VariableStatement', the role 'dom_VariableStatement' has cardinality 0..*, and from 'dom_VariableDeclaration', the role 'dom_VariableDeclaration' has cardinality 0..*.
+An association connects 'dom_VariableDeclaration' and 'dom_Identifier'. From 'dom_VariableDeclaration', the role 'dom_VariableDeclaration49' has cardinality 0..*, and from 'dom_Identifier', the role 'dom_Identifier50' has cardinality 0..*.
+An association connects 'dom_VariableDeclaration' and 'dom_Expression'. From 'dom_VariableDeclaration', the role 'dom_VariableDeclaration52' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression53' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_ExpressionStatement'. From 'dom_Expression', the role 'dom_Expression55' has cardinality 0..*, and from 'dom_ExpressionStatement', the role 'dom_ExpressionStatement' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_IfStatement'. From 'dom_Expression', the role 'dom_Expression57' has cardinality 0..*, and from 'dom_IfStatement', the role 'dom_IfStatement' has cardinality 0..*.
+An association connects 'dom_Statement' and 'dom_IfStatement'. From 'dom_Statement', the role 'dom_Statement60' has cardinality 0..*, and from 'dom_IfStatement', the role 'dom_IfStatement59' has cardinality 0..*.
+An association connects 'dom_IfStatement' and 'dom_Statement'. From 'dom_IfStatement', the role 'dom_IfStatement62' has cardinality 0..*, and from 'dom_Statement', the role 'dom_Statement63' has cardinality 0..*.
+An association connects 'dom_IterationStatement' and 'dom_Statement'. From 'dom_IterationStatement', the role 'dom_IterationStatement' has cardinality 0..*, and from 'dom_Statement', the role 'dom_Statement65' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_DoStatement'. From 'dom_Expression', the role 'dom_Expression67' has cardinality 0..*, and from 'dom_DoStatement', the role 'dom_DoStatement' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_WhileStatement'. From 'dom_Expression', the role 'dom_Expression69' has cardinality 0..*, and from 'dom_WhileStatement', the role 'dom_WhileStatement' has cardinality 0..*.
+An association connects 'dom_IForInitializer' and 'dom_ForStatement'. From 'dom_IForInitializer', the role 'dom_IForInitializer' has cardinality 0..*, and from 'dom_ForStatement', the role 'dom_ForStatement' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_ForStatement'. From 'dom_Expression', the role 'dom_Expression73' has cardinality 0..*, and from 'dom_ForStatement', the role 'dom_ForStatement72' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_ForStatement'. From 'dom_Expression', the role 'dom_Expression76' has cardinality 0..*, and from 'dom_ForStatement', the role 'dom_ForStatement75' has cardinality 0..*.
+An association connects 'dom_IForInitializer' and 'dom_ForInStatement'. From 'dom_IForInitializer', the role 'dom_IForInitializer78' has cardinality 0..*, and from 'dom_ForInStatement', the role 'dom_ForInStatement' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_ForInStatement'. From 'dom_Expression', the role 'dom_Expression81' has cardinality 0..*, and from 'dom_ForInStatement', the role 'dom_ForInStatement80' has cardinality 0..*.
+An association connects 'dom_ContinueStatement' and 'dom_Label'. From 'dom_ContinueStatement', the role 'dom_ContinueStatement' has cardinality 0..*, and from 'dom_Label', the role 'dom_Label' has cardinality 0..*.
+An association connects 'dom_BreakStatement' and 'dom_Label'. From 'dom_BreakStatement', the role 'dom_BreakStatement' has cardinality 0..*, and from 'dom_Label', the role 'dom_Label84' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_ReturnStatement'. From 'dom_Expression', the role 'dom_Expression86' has cardinality 0..*, and from 'dom_ReturnStatement', the role 'dom_ReturnStatement' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_WithStatement'. From 'dom_Expression', the role 'dom_Expression88' has cardinality 0..*, and from 'dom_WithStatement', the role 'dom_WithStatement' has cardinality 0..*.
+An association connects 'dom_Statement' and 'dom_WithStatement'. From 'dom_Statement', the role 'dom_Statement91' has cardinality 0..*, and from 'dom_WithStatement', the role 'dom_WithStatement90' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_SwitchStatement'. From 'dom_Expression', the role 'dom_Expression93' has cardinality 0..*, and from 'dom_SwitchStatement', the role 'dom_SwitchStatement' has cardinality 0..*.
+An association connects 'dom_SwitchStatement' and 'dom_SwitchElement'. From 'dom_SwitchStatement', the role 'dom_SwitchStatement95' has cardinality 0..*, and from 'dom_SwitchElement', the role 'dom_SwitchElement' has cardinality 0..*.
+An association connects 'dom_SwitchElement' and 'dom_Statement'. From 'dom_SwitchElement', the role 'dom_SwitchElement97' has cardinality 0..*, and from 'dom_Statement', the role 'dom_Statement98' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_CaseClause'. From 'dom_Expression', the role 'dom_Expression100' has cardinality 0..*, and from 'dom_CaseClause', the role 'dom_CaseClause' has cardinality 0..*.
+An association connects 'dom_Label' and 'dom_LabeledStatement'. From 'dom_Label', the role 'dom_Label102' has cardinality 0..*, and from 'dom_LabeledStatement', the role 'dom_LabeledStatement' has cardinality 0..*.
+An association connects 'dom_Statement' and 'dom_LabeledStatement'. From 'dom_Statement', the role 'dom_Statement105' has cardinality 0..*, and from 'dom_LabeledStatement', the role 'dom_LabeledStatement104' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_ThrowStatement'. From 'dom_Expression', the role 'dom_Expression107' has cardinality 0..*, and from 'dom_ThrowStatement', the role 'dom_ThrowStatement' has cardinality 0..*.
+An association connects 'dom_TryStatement' and 'dom_BlockStatement'. From 'dom_TryStatement', the role 'dom_TryStatement' has cardinality 0..*, and from 'dom_BlockStatement', the role 'dom_BlockStatement109' has cardinality 0..*.
+An association connects 'dom_CatchClause' and 'dom_TryStatement'. From 'dom_CatchClause', the role 'dom_CatchClause' has cardinality 0..*, and from 'dom_TryStatement', the role 'dom_TryStatement111' has cardinality 0..*.
+An association connects 'dom_FinallyClause' and 'dom_TryStatement'. From 'dom_FinallyClause', the role 'dom_FinallyClause' has cardinality 0..*, and from 'dom_TryStatement', the role 'dom_TryStatement113' has cardinality 0..*.
+An association connects 'dom_Identifier' and 'dom_CatchClause'. From 'dom_Identifier', the role 'dom_Identifier116' has cardinality 0..*, and from 'dom_CatchClause', the role 'dom_CatchClause115' has cardinality 0..*.
+An association connects 'dom_CatchClause' and 'dom_Expression'. From 'dom_CatchClause', the role 'dom_CatchClause118' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression119' has cardinality 0..*.
+An association connects 'dom_BlockStatement' and 'dom_CatchClause'. From 'dom_BlockStatement', the role 'dom_BlockStatement122' has cardinality 0..*, and from 'dom_CatchClause', the role 'dom_CatchClause121' has cardinality 0..*.
+An association connects 'dom_BlockStatement' and 'dom_FinallyClause'. From 'dom_BlockStatement', the role 'dom_BlockStatement125' has cardinality 0..*, and from 'dom_FinallyClause', the role 'dom_FinallyClause124' has cardinality 0..*.
+An association connects 'dom_FunctionExpression' and 'dom_Comment'. From 'dom_FunctionExpression', the role 'dom_FunctionExpression' has cardinality 0..*, and from 'dom_Comment', the role 'dom_Comment' has cardinality 0..*.
+An association connects 'dom_Identifier' and 'dom_FunctionExpression'. From 'dom_Identifier', the role 'dom_Identifier129' has cardinality 0..*, and from 'dom_FunctionExpression', the role 'dom_FunctionExpression128' has cardinality 0..*.
+An association connects 'dom_Parameter' and 'dom_FunctionExpression'. From 'dom_Parameter', the role 'dom_Parameter' has cardinality 0..*, and from 'dom_FunctionExpression', the role 'dom_FunctionExpression131' has cardinality 0..*.
+An association connects 'dom_FunctionExpression' and 'dom_BlockStatement'. From 'dom_FunctionExpression', the role 'dom_FunctionExpression133' has cardinality 0..*, and from 'dom_BlockStatement', the role 'dom_BlockStatement134' has cardinality 0..*.
+An association connects 'dom_Parameter' and 'dom_Identifier'. From 'dom_Parameter', the role 'dom_Parameter136' has cardinality 0..*, and from 'dom_Identifier', the role 'dom_Identifier137' has cardinality 0..*.
+An association connects 'dom_Source' and 'dom_Statement'. From 'dom_Source', the role 'dom_Source' has cardinality 0..*, and from 'dom_Statement', the role 'dom_Statement139' has cardinality 0..*.
+An association connects 'dom_VariableDeclaration' and 'dom_ConstStatement'. From 'dom_VariableDeclaration', the role 'dom_VariableDeclaration141' has cardinality 0..*, and from 'dom_ConstStatement', the role 'dom_ConstStatement' has cardinality 0..*.
+An association connects 'dom_XmlInitializer' and 'dom_XmlFragment'. From 'dom_XmlInitializer', the role 'dom_XmlInitializer' has cardinality 0..*, and from 'dom_XmlFragment', the role 'dom_XmlFragment' has cardinality 0..*.
+An association connects 'dom_AttributeIdentifier' and 'dom_ISelector'. From 'dom_AttributeIdentifier', the role 'dom_AttributeIdentifier' has cardinality 0..*, and from 'dom_ISelector', the role 'dom_ISelector' has cardinality 0..*.
+An association connects 'dom_QualifiedIdentifier' and 'dom_IPropertySelector'. From 'dom_QualifiedIdentifier', the role 'dom_QualifiedIdentifier' has cardinality 0..*, and from 'dom_IPropertySelector', the role 'dom_IPropertySelector' has cardinality 0..*.
+An association connects 'dom_IUnqualifiedSelector' and 'dom_QualifiedIdentifier'. From 'dom_IUnqualifiedSelector', the role 'dom_IUnqualifiedSelector' has cardinality 0..*, and from 'dom_QualifiedIdentifier', the role 'dom_QualifiedIdentifier146' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_ExpressionSelector'. From 'dom_Expression', the role 'dom_Expression148' has cardinality 0..*, and from 'dom_ExpressionSelector', the role 'dom_ExpressionSelector' has cardinality 0..*.
+An association connects 'dom_XmlExpressionFragment' and 'dom_Expression'. From 'dom_XmlExpressionFragment', the role 'dom_XmlExpressionFragment' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression150' has cardinality 0..*.
+An association connects 'dom_DescendantAccessExpression' and 'dom_Expression'. From 'dom_DescendantAccessExpression', the role 'dom_DescendantAccessExpression' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression152' has cardinality 0..*.
+An association connects 'dom_DescendantAccessExpression' and 'dom_IProperty'. From 'dom_DescendantAccessExpression', the role 'dom_DescendantAccessExpression154' has cardinality 0..*, and from 'dom_IProperty', the role 'dom_IProperty155' has cardinality 0..*.
+An association connects 'dom_FilterExpression' and 'dom_Expression'. From 'dom_FilterExpression', the role 'dom_FilterExpression' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression157' has cardinality 0..*.
+An association connects 'dom_FilterExpression' and 'dom_Expression'. From 'dom_FilterExpression', the role 'dom_FilterExpression159' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression160' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_DefaultXmlNamespaceStatement'. From 'dom_Expression', the role 'dom_Expression162' has cardinality 0..*, and from 'dom_DefaultXmlNamespaceStatement', the role 'dom_DefaultXmlNamespaceStatement' has cardinality 0..*.
+An association connects 'dom_IForInitializer' and 'dom_ForEachInStatement'. From 'dom_IForInitializer', the role 'dom_IForInitializer164' has cardinality 0..*, and from 'dom_ForEachInStatement', the role 'dom_ForEachInStatement' has cardinality 0..*.
+An association connects 'dom_ForEachInStatement' and 'dom_Expression'. From 'dom_ForEachInStatement', the role 'dom_ForEachInStatement166' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression167' has cardinality 0..*.

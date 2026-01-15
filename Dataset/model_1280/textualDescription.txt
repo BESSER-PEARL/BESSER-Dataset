@@ -1,0 +1,178 @@
+The domain model 'ocl' describes the core structural elements and their relationships within the system.
+
+The model defines 54 main class(es).
+
+'ocl_uml_TypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_IntegerLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ocl_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_AssociationClassCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_UnspecifiedValueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_MessageType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_OCLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_UnlimitedNaturalLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_StringLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ocl_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_MessageExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_RealLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_ElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_StateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_TemplateParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_BooleanLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_ExpressionInOCL' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ocl_uml_ElementType' is a specialization of 'Classifier'.
+The class 'ocl_uml_ElementType' is a specialization of 'types_ElementType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uml_ocl_Operation' and 'ocl_uml_AnyType'. From 'uml_ocl_Operation', the role 'uml_ocl_Operation' has cardinality 0..*, and from 'ocl_uml_AnyType', the role 'ocl_uml_AnyType' has cardinality 0..*.
+An association connects 'uml_ocl_Operation' and 'ocl_uml_VoidType'. From 'uml_ocl_Operation', the role 'uml_ocl_Operation2' has cardinality 0..*, and from 'ocl_uml_VoidType', the role 'ocl_uml_VoidType' has cardinality 0..*.
+An association connects 'ocl_uml_InvalidType' and 'uml_ocl_Operation'. From 'ocl_uml_InvalidType', the role 'ocl_uml_InvalidType' has cardinality 0..*, and from 'uml_ocl_Operation', the role 'uml_ocl_Operation4' has cardinality 0..*.
+An association connects 'ocl_uml_TypeType' and 'uml_ocl_Operation'. From 'ocl_uml_TypeType', the role 'ocl_uml_TypeType' has cardinality 0..*, and from 'uml_ocl_Operation', the role 'uml_ocl_Operation6' has cardinality 0..*.
+An association connects 'ocl_uml_MessageType' and 'uml_ocl_Operation'. From 'ocl_uml_MessageType', the role 'ocl_uml_MessageType' has cardinality 0..*, and from 'uml_ocl_Operation', the role 'uml_ocl_Operation8' has cardinality 0..*.
+An association connects 'ocl_uml_MessageType' and 'uml_ocl_Property'. From 'ocl_uml_MessageType', the role 'ocl_uml_MessageType10' has cardinality 0..*, and from 'uml_ocl_Property', the role 'uml_ocl_Property' has cardinality 0..*.
+An association connects 'uml_ocl_Operation' and 'ocl_uml_TemplateParameterType'. From 'uml_ocl_Operation', the role 'uml_ocl_Operation12' has cardinality 0..*, and from 'ocl_uml_TemplateParameterType', the role 'ocl_uml_TemplateParameterType' has cardinality 0..*.

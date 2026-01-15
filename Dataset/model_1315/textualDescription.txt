@@ -1,0 +1,31 @@
+The domain model 'metaModelStateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'metaModelStateMachine_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelStateMachine_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelStateMachine_state' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelStateMachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelStateMachine_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'metaModelStateMachine_StateMachine' and 'metaModelStateMachine_state'. From 'metaModelStateMachine_StateMachine', the role 'metaModelStateMachine_StateMachine' has cardinality 0..*, and from 'metaModelStateMachine_state', the role 'metaModelStateMachine_state' has cardinality 0..*.
+An association connects 'metaModelStateMachine_StateMachine' and 'metaModelStateMachine_Transition'. From 'metaModelStateMachine_StateMachine', the role 'metaModelStateMachine_StateMachine2' has cardinality 0..*, and from 'metaModelStateMachine_Transition', the role 'metaModelStateMachine_Transition' has cardinality 0..*.
+An association connects 'metaModelStateMachine_StateMachine' and 'metaModelStateMachine_state'. From 'metaModelStateMachine_StateMachine', the role 'metaModelStateMachine_StateMachine5' has cardinality 0..*, and from 'metaModelStateMachine_state', the role 'metaModelStateMachine_state4' has cardinality 0..*.
+An association connects 'metaModelStateMachine_Transition' and 'metaModelStateMachine_state'. From 'metaModelStateMachine_Transition', the role 'metaModelStateMachine_Transition8' has cardinality 0..*, and from 'metaModelStateMachine_state', the role 'metaModelStateMachine_state7' has cardinality 0..*.
+An association connects 'metaModelStateMachine_Transition' and 'metaModelStateMachine_Guard'. From 'metaModelStateMachine_Transition', the role 'metaModelStateMachine_Transition10' has cardinality 0..*, and from 'metaModelStateMachine_Guard', the role 'metaModelStateMachine_Guard' has cardinality 0..*.
+An association connects 'metaModelStateMachine_state' and 'metaModelStateMachine_Transition'. From 'metaModelStateMachine_state', the role 'metaModelStateMachine_state13' has cardinality 0..*, and from 'metaModelStateMachine_Transition', the role 'metaModelStateMachine_Transition12' has cardinality 0..*.
+An association connects 'metaModelStateMachine_Transition' and 'metaModelStateMachine_state'. From 'metaModelStateMachine_Transition', the role 'metaModelStateMachine_Transition15' has cardinality 0..*, and from 'metaModelStateMachine_state', the role 'metaModelStateMachine_state16' has cardinality 0..*.
+An association connects 'metaModelStateMachine_StateMachine' and 'metaModelStateMachine_Transition'. From 'metaModelStateMachine_StateMachine', the role 'metaModelStateMachine_StateMachine19' has cardinality 0..*, and from 'metaModelStateMachine_Transition', the role 'metaModelStateMachine_Transition18' has cardinality 0..*.
+An association connects 'metaModelStateMachine_Trigger' and 'metaModelStateMachine_Transition'. From 'metaModelStateMachine_Trigger', the role 'metaModelStateMachine_Trigger' has cardinality 0..*, and from 'metaModelStateMachine_Transition', the role 'metaModelStateMachine_Transition21' has cardinality 0..*.
+An association connects 'metaModelStateMachine_Guard' and 'metaModelStateMachine_Transition'. From 'metaModelStateMachine_Guard', the role 'metaModelStateMachine_Guard24' has cardinality 0..*, and from 'metaModelStateMachine_Transition', the role 'metaModelStateMachine_Transition23' has cardinality 0..*.
+An association connects 'metaModelStateMachine_Trigger' and 'metaModelStateMachine_Transition'. From 'metaModelStateMachine_Trigger', the role 'metaModelStateMachine_Trigger26' has cardinality 0..*, and from 'metaModelStateMachine_Transition', the role 'metaModelStateMachine_Transition27' has cardinality 0..*.

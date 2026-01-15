@@ -1,0 +1,794 @@
+The domain model 'cSharp' describes the core structural elements and their relationships within the system.
+
+The model defines 155 main class(es).
+
+'cSharp_ConstructorDeclaration' represents an important domain concept.
+It has one attribute: 'constModifier', which is of type str.
+
+'cSharp_StatementExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_DestructorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_NamespaceBody' represents an important domain concept.
+It does not declare any attributes.
+
+'FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_BinaryOperatorDeclarator' represents an important domain concept.
+It has one attribute: 'overBinOperator', which is of type str.
+
+'cSharp_QualifiedIdentifierList' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Void' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_IndexerDeclaration' represents an important domain concept.
+It has one attribute: 'idModifier', which is of type str.
+
+'cSharp_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_PropertyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_UnaryExpression' represents an important domain concept.
+It has one attribute: 'expUnaryOperator', which is of type str.
+
+'cSharp_GlobalAttributeSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_FormalParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Char' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'BuiltInType' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ClassMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_AttributeName' represents an important domain concept.
+It does not declare any attributes.
+
+'OperatorDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_FinallyClause' represents an important domain concept.
+It does not declare any attributes.
+
+'RemoveAccessorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_VariableInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'DelegateDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_FixedParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegralType' represents an important domain concept.
+It does not declare any attributes.
+
+'Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_CatchClauses' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_SwitchLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_DeclarationStatment' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceAquisition' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_BuiltInClassType' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ClassDeclaration' represents an important domain concept.
+It has one attribute: 'classModifier', which is of type str.
+
+'cSharp_ClassBody' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_SelectionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Decimal' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_VariableDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_SetAccessorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_StatementExpression' represents an important domain concept.
+It has the following attributes: 'assignementOperator', which is of type str; 'incrimentDecrement', which is of type str.
+
+'cSharp_NamespaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ConstantDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Long' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_PrimaryExpression' represents an important domain concept.
+It has the following attributes: 'literal', which is of type str; 'rankSpecifier', which is of type str; 'predefinedType', which is of type str.
+
+'cSharp_InterfaceAccessors' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstructorInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_AttributeArguments' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_UsingDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_InterfaceBody' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_InterfaceMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Short' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ElsePart' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_EnumBody' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Attributes' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_MethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_LockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_NamespaceMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_GlobalAttributes' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_RemoveAccessorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_MethodHeader' represents an important domain concept.
+It has one attribute: 'modifier', which is of type str.
+
+'cSharp_OperatorDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_UShort' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_EmbeddedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ConstructorInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassBase' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_IntegralType' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ULong' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_LocalconstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_DelegateDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_StaticConstructorDeclaration' represents an important domain concept.
+It has one attribute: 'staticCosntModifier', which is of type str.
+
+'cSharp_BuiltInType' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_SByte' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_MaybeEmptyBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'GetAccessorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'MaybeEmptyBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_EventDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_IndexerDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_OperatorDeclaration' represents an important domain concept.
+It has one attribute: 'opModifier', which is of type str.
+
+'cSharp_Bool' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_AddAccessorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ClassBase' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_String' represents an important domain concept.
+It does not declare any attributes.
+
+'FormalParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_InterfaceIndexerDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_AccessorDeclarations' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_PrimaryExpression2' represents an important domain concept.
+It has one attribute: 'incrementeDecrement', which is of type str.
+
+'TypeOrVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_FixedParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_UnaryOperatorDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_JumpStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_AttributeList' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_IterationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Expression2' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_InterfaceMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_UsingStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ResourceAquisition' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Byte' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_LocalVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_AttributeSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_EventAccessorDeclarations' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_GotoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'EventDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AddAccessorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'BuiltInClassType' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ParameterArray' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_InterfaceEventDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_SpecificCatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_EnumMemberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_InterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_SwitchSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_GeneralCatchclause' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_TypeOrVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ConstructorDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'SetAccessorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_GetAccessorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_UInt' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_QualifiedIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ForeachStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ConversionOperatorDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ArgumentList' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_InterfacePropertyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_ForInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'cSharp_NonArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'cSharp_AttributeList' is a specialization of 'AttributeSection'.
+The class 'cSharp_Expression' is a specialization of 'VariableInitializer'.
+The class 'cSharp_Expression' is a specialization of 'Argument'.
+The class 'cSharp_Expression' is a specialization of 'ResourceAquisition'.
+The class 'cSharp_ArrayInitializer' is a specialization of 'VariableInitializer'.
+The class 'cSharp_Type' is a specialization of 'EventDeclaration'.
+The class 'cSharp_Type' is a specialization of 'PropertyDeclaration'.
+The class 'cSharp_Type' is a specialization of 'FieldDeclaration'.
+The class 'cSharp_Type' is a specialization of 'ConstantDeclaration'.
+The class 'cSharp_IntegralType' is a specialization of 'BuiltInType'.
+The class 'cSharp_NonArrayType' is a specialization of 'ArrayType'.
+The class 'cSharp_BuiltInClassType' is a specialization of 'BuiltInType'.
+The class 'cSharp_BuiltInClassType' is a specialization of 'ClassBase'.
+The class 'cSharp_ArgumentList' is a specialization of 'ConstructorInitializer'.
+The class 'cSharp_ConversionOperatorDeclarator' is a specialization of 'OperatorDeclarator'.
+The class 'cSharp_BinaryOperatorDeclarator' is a specialization of 'OperatorDeclarator'.
+The class 'cSharp_UnaryOperatorDeclarator' is a specialization of 'OperatorDeclarator'.
+The class 'cSharp_FixedParameters' is a specialization of 'FormalParameterList'.
+The class 'cSharp_TypeOrVoid' is a specialization of 'DelegateDeclaration'.
+The class 'cSharp_LocalVariableDeclaration' is a specialization of 'ResourceAquisition'.
+The class 'cSharp_Block' is a specialization of 'RemoveAccessorDeclaration'.
+The class 'cSharp_Block' is a specialization of 'AddAccessorDeclaration'.
+The class 'cSharp_Block' is a specialization of 'MaybeEmptyBlock'.
+The class 'cSharp_MaybeEmptyBlock' is a specialization of 'SetAccessorDeclaration'.
+The class 'cSharp_MaybeEmptyBlock' is a specialization of 'GetAccessorDeclaration'.
+The class 'cSharp_SByte' is a specialization of 'IntegralType'.
+The class 'cSharp_Byte' is a specialization of 'IntegralType'.
+The class 'cSharp_Short' is a specialization of 'IntegralType'.
+The class 'cSharp_UShort' is a specialization of 'IntegralType'.
+The class 'cSharp_Int' is a specialization of 'IntegralType'.
+The class 'cSharp_UInt' is a specialization of 'IntegralType'.
+The class 'cSharp_Long' is a specialization of 'IntegralType'.
+The class 'cSharp_ULong' is a specialization of 'IntegralType'.
+The class 'cSharp_Char' is a specialization of 'IntegralType'.
+The class 'cSharp_Bool' is a specialization of 'BuiltInType'.
+The class 'cSharp_Decimal' is a specialization of 'BuiltInType'.
+The class 'cSharp_Float' is a specialization of 'BuiltInType'.
+The class 'cSharp_Double' is a specialization of 'BuiltInType'.
+The class 'cSharp_Object' is a specialization of 'BuiltInClassType'.
+The class 'cSharp_String' is a specialization of 'BuiltInClassType'.
+The class 'cSharp_Void' is a specialization of 'TypeOrVoid'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cSharp_CompilationUnit' and 'cSharp_UsingDirective'. From 'cSharp_CompilationUnit', the role 'cSharp_CompilationUnit' has cardinality 0..*, and from 'cSharp_UsingDirective', the role 'cSharp_UsingDirective' has cardinality 0..*.
+An association connects 'cSharp_GlobalAttributes' and 'cSharp_CompilationUnit'. From 'cSharp_GlobalAttributes', the role 'cSharp_GlobalAttributes' has cardinality 0..*, and from 'cSharp_CompilationUnit', the role 'cSharp_CompilationUnit2' has cardinality 0..*.
+An association connects 'cSharp_NamespaceMemberDeclaration' and 'cSharp_CompilationUnit'. From 'cSharp_NamespaceMemberDeclaration', the role 'cSharp_NamespaceMemberDeclaration' has cardinality 0..*, and from 'cSharp_CompilationUnit', the role 'cSharp_CompilationUnit4' has cardinality 0..*.
+An association connects 'cSharp_UsingDirective' and 'cSharp_Identifier'. From 'cSharp_UsingDirective', the role 'cSharp_UsingDirective6' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier' has cardinality 0..*.
+An association connects 'cSharp_UsingDirective' and 'cSharp_QualifiedIdentifier'. From 'cSharp_UsingDirective', the role 'cSharp_UsingDirective8' has cardinality 0..*, and from 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier' has cardinality 0..*.
+An association connects 'cSharp_GlobalAttributeSection' and 'cSharp_GlobalAttributes'. From 'cSharp_GlobalAttributeSection', the role 'cSharp_GlobalAttributeSection' has cardinality 0..*, and from 'cSharp_GlobalAttributes', the role 'cSharp_GlobalAttributes10' has cardinality 0..*.
+An association connects 'cSharp_GlobalAttributeSection' and 'cSharp_AttributeList'. From 'cSharp_GlobalAttributeSection', the role 'cSharp_GlobalAttributeSection12' has cardinality 0..*, and from 'cSharp_AttributeList', the role 'cSharp_AttributeList' has cardinality 0..*.
+An association connects 'cSharp_Attributes' and 'cSharp_AttributeSection'. From 'cSharp_Attributes', the role 'cSharp_Attributes' has cardinality 0..*, and from 'cSharp_AttributeSection', the role 'cSharp_AttributeSection' has cardinality 0..*.
+An association connects 'cSharp_Attribute' and 'cSharp_AttributeList'. From 'cSharp_Attribute', the role 'cSharp_Attribute' has cardinality 0..*, and from 'cSharp_AttributeList', the role 'cSharp_AttributeList15' has cardinality 0..*.
+An association connects 'cSharp_AttributeList' and 'cSharp_Attribute'. From 'cSharp_AttributeList', the role 'cSharp_AttributeList17' has cardinality 0..*, and from 'cSharp_Attribute', the role 'cSharp_Attribute18' has cardinality 0..*.
+An association connects 'cSharp_Attribute' and 'cSharp_AttributeName'. From 'cSharp_Attribute', the role 'cSharp_Attribute20' has cardinality 0..*, and from 'cSharp_AttributeName', the role 'cSharp_AttributeName' has cardinality 0..*.
+An association connects 'cSharp_Attribute' and 'cSharp_AttributeArguments'. From 'cSharp_Attribute', the role 'cSharp_Attribute22' has cardinality 0..*, and from 'cSharp_AttributeArguments', the role 'cSharp_AttributeArguments' has cardinality 0..*.
+An association connects 'cSharp_AttributeArguments' and 'cSharp_ExpressionList'. From 'cSharp_AttributeArguments', the role 'cSharp_AttributeArguments24' has cardinality 0..*, and from 'cSharp_ExpressionList', the role 'cSharp_ExpressionList' has cardinality 0..*.
+An association connects 'cSharp_ExpressionList' and 'cSharp_Expression'. From 'cSharp_ExpressionList', the role 'cSharp_ExpressionList26' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression' has cardinality 0..*.
+An association connects 'cSharp_ExpressionList' and 'cSharp_Expression'. From 'cSharp_ExpressionList', the role 'cSharp_ExpressionList28' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression29' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_UnaryExpression'. From 'cSharp_Expression', the role 'cSharp_Expression31' has cardinality 0..*, and from 'cSharp_UnaryExpression', the role 'cSharp_UnaryExpression' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_Expression'. From 'cSharp_Expression', the role 'cSharp_Expression34' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression32' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression'. From 'cSharp_Expression2', the role 'cSharp_Expression2' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression36' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_Expression2'. From 'cSharp_Expression', the role 'cSharp_Expression39' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression238' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression242' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression240' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_Expression2'. From 'cSharp_Expression', the role 'cSharp_Expression45' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression244' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression246' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression248' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression'. From 'cSharp_Expression2', the role 'cSharp_Expression250' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression51' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression254' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression252' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression'. From 'cSharp_Expression2', the role 'cSharp_Expression256' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression57' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression258' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression260' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression'. From 'cSharp_Expression2', the role 'cSharp_Expression262' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression63' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression264' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression266' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression'. From 'cSharp_Expression2', the role 'cSharp_Expression268' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression69' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression272' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression270' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression'. From 'cSharp_Expression2', the role 'cSharp_Expression274' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression75' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression276' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression278' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression'. From 'cSharp_Expression2', the role 'cSharp_Expression280' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression81' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression282' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression284' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_BuiltInType'. From 'cSharp_Expression2', the role 'cSharp_Expression286' has cardinality 0..*, and from 'cSharp_BuiltInType', the role 'cSharp_BuiltInType' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_Expression2'. From 'cSharp_Expression', the role 'cSharp_Expression89' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression288' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression292' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression290' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_Expression2'. From 'cSharp_Expression', the role 'cSharp_Expression95' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression294' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression296' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression298' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_Expression2'. From 'cSharp_Expression', the role 'cSharp_Expression101' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression2100' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression2104' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression2102' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_Expression2'. From 'cSharp_Expression', the role 'cSharp_Expression107' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression2106' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression2110' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression2108' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression'. From 'cSharp_Expression2', the role 'cSharp_Expression2112' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression113' has cardinality 0..*.
+An association connects 'cSharp_Expression2' and 'cSharp_Expression2'. From 'cSharp_Expression2', the role 'cSharp_Expression2114' has cardinality 0..*, and from 'cSharp_Expression2', the role 'cSharp_Expression2116' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_UnaryExpression'. From 'cSharp_Type', the role 'cSharp_Type' has cardinality 0..*, and from 'cSharp_UnaryExpression', the role 'cSharp_UnaryExpression118' has cardinality 0..*.
+An association connects 'cSharp_UnaryExpression' and 'cSharp_UnaryExpression'. From 'cSharp_UnaryExpression', the role 'cSharp_UnaryExpression121' has cardinality 0..*, and from 'cSharp_UnaryExpression', the role 'cSharp_UnaryExpression119' has cardinality 0..*.
+An association connects 'cSharp_PrimaryExpression' and 'cSharp_UnaryExpression'. From 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression' has cardinality 0..*, and from 'cSharp_UnaryExpression', the role 'cSharp_UnaryExpression123' has cardinality 0..*.
+An association connects 'cSharp_PrimaryExpression' and 'cSharp_NonArrayType'. From 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression125' has cardinality 0..*, and from 'cSharp_NonArrayType', the role 'cSharp_NonArrayType' has cardinality 0..*.
+An association connects 'cSharp_PrimaryExpression' and 'cSharp_ExpressionList'. From 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression127' has cardinality 0..*, and from 'cSharp_ExpressionList', the role 'cSharp_ExpressionList128' has cardinality 0..*.
+An association connects 'cSharp_ArrayInitializer' and 'cSharp_PrimaryExpression'. From 'cSharp_ArrayInitializer', the role 'cSharp_ArrayInitializer' has cardinality 0..*, and from 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression130' has cardinality 0..*.
+An association connects 'cSharp_PrimaryExpression' and 'cSharp_ArrayType'. From 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression132' has cardinality 0..*, and from 'cSharp_ArrayType', the role 'cSharp_ArrayType' has cardinality 0..*.
+An association connects 'cSharp_ArrayInitializer' and 'cSharp_PrimaryExpression'. From 'cSharp_ArrayInitializer', the role 'cSharp_ArrayInitializer135' has cardinality 0..*, and from 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression134' has cardinality 0..*.
+An association connects 'cSharp_PrimaryExpression' and 'cSharp_Type'. From 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression137' has cardinality 0..*, and from 'cSharp_Type', the role 'cSharp_Type138' has cardinality 0..*.
+An association connects 'cSharp_ArgumentList' and 'cSharp_PrimaryExpression'. From 'cSharp_ArgumentList', the role 'cSharp_ArgumentList' has cardinality 0..*, and from 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression140' has cardinality 0..*.
+An association connects 'cSharp_PrimaryExpression' and 'cSharp_Identifier'. From 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression142' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier143' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_PrimaryExpression'. From 'cSharp_Expression', the role 'cSharp_Expression146' has cardinality 0..*, and from 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression145' has cardinality 0..*.
+An association connects 'cSharp_TypeOrVoid' and 'cSharp_PrimaryExpression'. From 'cSharp_TypeOrVoid', the role 'cSharp_TypeOrVoid' has cardinality 0..*, and from 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression148' has cardinality 0..*.
+An association connects 'cSharp_PrimaryExpression' and 'cSharp_PrimaryExpression2'. From 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression150' has cardinality 0..*, and from 'cSharp_PrimaryExpression2', the role 'cSharp_PrimaryExpression2' has cardinality 0..*.
+An association connects 'cSharp_PrimaryExpression2' and 'cSharp_Identifier'. From 'cSharp_PrimaryExpression2', the role 'cSharp_PrimaryExpression2152' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier153' has cardinality 0..*.
+An association connects 'cSharp_ArgumentList' and 'cSharp_PrimaryExpression2'. From 'cSharp_ArgumentList', the role 'cSharp_ArgumentList156' has cardinality 0..*, and from 'cSharp_PrimaryExpression2', the role 'cSharp_PrimaryExpression2155' has cardinality 0..*.
+An association connects 'cSharp_ExpressionList' and 'cSharp_PrimaryExpression2'. From 'cSharp_ExpressionList', the role 'cSharp_ExpressionList159' has cardinality 0..*, and from 'cSharp_PrimaryExpression2', the role 'cSharp_PrimaryExpression2158' has cardinality 0..*.
+An association connects 'cSharp_PrimaryExpression2' and 'cSharp_PrimaryExpression2'. From 'cSharp_PrimaryExpression2', the role 'cSharp_PrimaryExpression2162' has cardinality 0..*, and from 'cSharp_PrimaryExpression2', the role 'cSharp_PrimaryExpression2160' has cardinality 0..*.
+An association connects 'cSharp_ArrayInitializer' and 'cSharp_VariableInitializer'. From 'cSharp_ArrayInitializer', the role 'cSharp_ArrayInitializer164' has cardinality 0..*, and from 'cSharp_VariableInitializer', the role 'cSharp_VariableInitializer' has cardinality 0..*.
+An association connects 'cSharp_VariableInitializer' and 'cSharp_ArrayInitializer'. From 'cSharp_VariableInitializer', the role 'cSharp_VariableInitializer167' has cardinality 0..*, and from 'cSharp_ArrayInitializer', the role 'cSharp_ArrayInitializer166' has cardinality 0..*.
+An association connects 'cSharp_AttributeName' and 'cSharp_QualifiedIdentifier'. From 'cSharp_AttributeName', the role 'cSharp_AttributeName169' has cardinality 0..*, and from 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier170' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_NonArrayType'. From 'cSharp_Type', the role 'cSharp_Type172' has cardinality 0..*, and from 'cSharp_NonArrayType', the role 'cSharp_NonArrayType173' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_VariableDeclarator'. From 'cSharp_Type', the role 'cSharp_Type175' has cardinality 0..*, and from 'cSharp_VariableDeclarator', the role 'cSharp_VariableDeclarator' has cardinality 0..*.
+An association connects 'cSharp_VariableDeclarator' and 'cSharp_Type'. From 'cSharp_VariableDeclarator', the role 'cSharp_VariableDeclarator178' has cardinality 0..*, and from 'cSharp_Type', the role 'cSharp_Type177' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_QualifiedIdentifier'. From 'cSharp_Type', the role 'cSharp_Type180' has cardinality 0..*, and from 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier181' has cardinality 0..*.
+An association connects 'cSharp_EventAccessorDeclarations' and 'cSharp_Type'. From 'cSharp_EventAccessorDeclarations', the role 'cSharp_EventAccessorDeclarations' has cardinality 0..*, and from 'cSharp_Type', the role 'cSharp_Type183' has cardinality 0..*.
+An association connects 'cSharp_QualifiedIdentifier' and 'cSharp_Type'. From 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier186' has cardinality 0..*, and from 'cSharp_Type', the role 'cSharp_Type185' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_AccessorDeclarations'. From 'cSharp_Type', the role 'cSharp_Type188' has cardinality 0..*, and from 'cSharp_AccessorDeclarations', the role 'cSharp_AccessorDeclarations' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_VariableDeclarator'. From 'cSharp_Type', the role 'cSharp_Type190' has cardinality 0..*, and from 'cSharp_VariableDeclarator', the role 'cSharp_VariableDeclarator191' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_VariableDeclarator'. From 'cSharp_Type', the role 'cSharp_Type193' has cardinality 0..*, and from 'cSharp_VariableDeclarator', the role 'cSharp_VariableDeclarator194' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_ConstantDeclarator'. From 'cSharp_Type', the role 'cSharp_Type196' has cardinality 0..*, and from 'cSharp_ConstantDeclarator', the role 'cSharp_ConstantDeclarator' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_ConstantDeclarator'. From 'cSharp_Type', the role 'cSharp_Type198' has cardinality 0..*, and from 'cSharp_ConstantDeclarator', the role 'cSharp_ConstantDeclarator199' has cardinality 0..*.
+An association connects 'cSharp_NonArrayType' and 'cSharp_BuiltInType'. From 'cSharp_NonArrayType', the role 'cSharp_NonArrayType201' has cardinality 0..*, and from 'cSharp_BuiltInType', the role 'cSharp_BuiltInType202' has cardinality 0..*.
+An association connects 'cSharp_QualifiedIdentifier' and 'cSharp_NonArrayType'. From 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier205' has cardinality 0..*, and from 'cSharp_NonArrayType', the role 'cSharp_NonArrayType204' has cardinality 0..*.
+An association connects 'cSharp_QualifiedIdentifierList' and 'cSharp_BuiltInClassType'. From 'cSharp_QualifiedIdentifierList', the role 'cSharp_QualifiedIdentifierList' has cardinality 0..*, and from 'cSharp_BuiltInClassType', the role 'cSharp_BuiltInClassType' has cardinality 0..*.
+An association connects 'cSharp_QualifiedIdentifier' and 'cSharp_Identifier'. From 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier208' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier209' has cardinality 0..*.
+An association connects 'cSharp_QualifiedIdentifier' and 'cSharp_Identifier'. From 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier211' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier212' has cardinality 0..*.
+An association connects 'cSharp_NamespaceDeclaration' and 'cSharp_NamespaceMemberDeclaration'. From 'cSharp_NamespaceDeclaration', the role 'cSharp_NamespaceDeclaration' has cardinality 0..*, and from 'cSharp_NamespaceMemberDeclaration', the role 'cSharp_NamespaceMemberDeclaration214' has cardinality 0..*.
+An association connects 'cSharp_NamespaceMemberDeclaration' and 'cSharp_TypeDeclaration'. From 'cSharp_NamespaceMemberDeclaration', the role 'cSharp_NamespaceMemberDeclaration216' has cardinality 0..*, and from 'cSharp_TypeDeclaration', the role 'cSharp_TypeDeclaration' has cardinality 0..*.
+An association connects 'cSharp_QualifiedIdentifier' and 'cSharp_NamespaceDeclaration'. From 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier219' has cardinality 0..*, and from 'cSharp_NamespaceDeclaration', the role 'cSharp_NamespaceDeclaration218' has cardinality 0..*.
+An association connects 'cSharp_NamespaceBody' and 'cSharp_NamespaceDeclaration'. From 'cSharp_NamespaceBody', the role 'cSharp_NamespaceBody' has cardinality 0..*, and from 'cSharp_NamespaceDeclaration', the role 'cSharp_NamespaceDeclaration221' has cardinality 0..*.
+An association connects 'cSharp_NamespaceBody' and 'cSharp_UsingDirective'. From 'cSharp_NamespaceBody', the role 'cSharp_NamespaceBody223' has cardinality 0..*, and from 'cSharp_UsingDirective', the role 'cSharp_UsingDirective224' has cardinality 0..*.
+An association connects 'cSharp_NamespaceMemberDeclaration' and 'cSharp_NamespaceBody'. From 'cSharp_NamespaceMemberDeclaration', the role 'cSharp_NamespaceMemberDeclaration227' has cardinality 0..*, and from 'cSharp_NamespaceBody', the role 'cSharp_NamespaceBody226' has cardinality 0..*.
+An association connects 'cSharp_TypeDeclaration' and 'cSharp_ClassDeclaration'. From 'cSharp_TypeDeclaration', the role 'cSharp_TypeDeclaration229' has cardinality 0..*, and from 'cSharp_ClassDeclaration', the role 'cSharp_ClassDeclaration' has cardinality 0..*.
+An association connects 'cSharp_TypeDeclaration' and 'cSharp_InterfaceDeclaration'. From 'cSharp_TypeDeclaration', the role 'cSharp_TypeDeclaration231' has cardinality 0..*, and from 'cSharp_InterfaceDeclaration', the role 'cSharp_InterfaceDeclaration' has cardinality 0..*.
+An association connects 'cSharp_EnumDeclaration' and 'cSharp_TypeDeclaration'. From 'cSharp_EnumDeclaration', the role 'cSharp_EnumDeclaration' has cardinality 0..*, and from 'cSharp_TypeDeclaration', the role 'cSharp_TypeDeclaration233' has cardinality 0..*.
+An association connects 'cSharp_TypeDeclaration' and 'cSharp_DelegateDeclaration'. From 'cSharp_TypeDeclaration', the role 'cSharp_TypeDeclaration235' has cardinality 0..*, and from 'cSharp_DelegateDeclaration', the role 'cSharp_DelegateDeclaration' has cardinality 0..*.
+An association connects 'cSharp_EnumDeclaration' and 'cSharp_Identifier'. From 'cSharp_EnumDeclaration', the role 'cSharp_EnumDeclaration237' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier238' has cardinality 0..*.
+An association connects 'cSharp_EnumDeclaration' and 'cSharp_IntegralType'. From 'cSharp_EnumDeclaration', the role 'cSharp_EnumDeclaration240' has cardinality 0..*, and from 'cSharp_IntegralType', the role 'cSharp_IntegralType' has cardinality 0..*.
+An association connects 'cSharp_EnumDeclaration' and 'cSharp_EnumBody'. From 'cSharp_EnumDeclaration', the role 'cSharp_EnumDeclaration242' has cardinality 0..*, and from 'cSharp_EnumBody', the role 'cSharp_EnumBody' has cardinality 0..*.
+An association connects 'cSharp_EnumBody' and 'cSharp_EnumMemberDeclaration'. From 'cSharp_EnumBody', the role 'cSharp_EnumBody244' has cardinality 0..*, and from 'cSharp_EnumMemberDeclaration', the role 'cSharp_EnumMemberDeclaration' has cardinality 0..*.
+An association connects 'cSharp_EnumBody' and 'cSharp_EnumMemberDeclaration'. From 'cSharp_EnumBody', the role 'cSharp_EnumBody246' has cardinality 0..*, and from 'cSharp_EnumMemberDeclaration', the role 'cSharp_EnumMemberDeclaration247' has cardinality 0..*.
+An association connects 'cSharp_Attributes' and 'cSharp_EnumMemberDeclaration'. From 'cSharp_Attributes', the role 'cSharp_Attributes250' has cardinality 0..*, and from 'cSharp_EnumMemberDeclaration', the role 'cSharp_EnumMemberDeclaration249' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_EnumMemberDeclaration'. From 'cSharp_Identifier', the role 'cSharp_Identifier253' has cardinality 0..*, and from 'cSharp_EnumMemberDeclaration', the role 'cSharp_EnumMemberDeclaration252' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_EnumMemberDeclaration'. From 'cSharp_Expression', the role 'cSharp_Expression256' has cardinality 0..*, and from 'cSharp_EnumMemberDeclaration', the role 'cSharp_EnumMemberDeclaration255' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_InterfaceDeclaration'. From 'cSharp_Identifier', the role 'cSharp_Identifier259' has cardinality 0..*, and from 'cSharp_InterfaceDeclaration', the role 'cSharp_InterfaceDeclaration258' has cardinality 0..*.
+An association connects 'cSharp_InterfaceDeclaration' and 'cSharp_QualifiedIdentifierList'. From 'cSharp_InterfaceDeclaration', the role 'cSharp_InterfaceDeclaration261' has cardinality 0..*, and from 'cSharp_QualifiedIdentifierList', the role 'cSharp_QualifiedIdentifierList262' has cardinality 0..*.
+An association connects 'cSharp_InterfaceDeclaration' and 'cSharp_InterfaceBody'. From 'cSharp_InterfaceDeclaration', the role 'cSharp_InterfaceDeclaration264' has cardinality 0..*, and from 'cSharp_InterfaceBody', the role 'cSharp_InterfaceBody' has cardinality 0..*.
+An association connects 'cSharp_InterfaceBody' and 'cSharp_InterfaceMemberDeclaration'. From 'cSharp_InterfaceBody', the role 'cSharp_InterfaceBody266' has cardinality 0..*, and from 'cSharp_InterfaceMemberDeclaration', the role 'cSharp_InterfaceMemberDeclaration' has cardinality 0..*.
+An association connects 'cSharp_InterfaceMemberDeclaration' and 'cSharp_InterfaceMethodDeclaration'. From 'cSharp_InterfaceMemberDeclaration', the role 'cSharp_InterfaceMemberDeclaration268' has cardinality 0..*, and from 'cSharp_InterfaceMethodDeclaration', the role 'cSharp_InterfaceMethodDeclaration' has cardinality 0..*.
+An association connects 'cSharp_InterfaceMemberDeclaration' and 'cSharp_InterfaceEventDeclaration'. From 'cSharp_InterfaceMemberDeclaration', the role 'cSharp_InterfaceMemberDeclaration270' has cardinality 0..*, and from 'cSharp_InterfaceEventDeclaration', the role 'cSharp_InterfaceEventDeclaration' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_InterfaceMemberDeclaration'. From 'cSharp_Type', the role 'cSharp_Type273' has cardinality 0..*, and from 'cSharp_InterfaceMemberDeclaration', the role 'cSharp_InterfaceMemberDeclaration272' has cardinality 0..*.
+An association connects 'cSharp_InterfaceMemberDeclaration' and 'cSharp_InterfaceIndexerDeclaration'. From 'cSharp_InterfaceMemberDeclaration', the role 'cSharp_InterfaceMemberDeclaration275' has cardinality 0..*, and from 'cSharp_InterfaceIndexerDeclaration', the role 'cSharp_InterfaceIndexerDeclaration' has cardinality 0..*.
+An association connects 'cSharp_InterfacePropertyDeclaration' and 'cSharp_InterfaceMemberDeclaration'. From 'cSharp_InterfacePropertyDeclaration', the role 'cSharp_InterfacePropertyDeclaration' has cardinality 0..*, and from 'cSharp_InterfaceMemberDeclaration', the role 'cSharp_InterfaceMemberDeclaration277' has cardinality 0..*.
+An association connects 'cSharp_InterfaceIndexerDeclaration' and 'cSharp_FormalParameterList'. From 'cSharp_InterfaceIndexerDeclaration', the role 'cSharp_InterfaceIndexerDeclaration279' has cardinality 0..*, and from 'cSharp_FormalParameterList', the role 'cSharp_FormalParameterList' has cardinality 0..*.
+An association connects 'cSharp_InterfaceIndexerDeclaration' and 'cSharp_InterfaceAccessors'. From 'cSharp_InterfaceIndexerDeclaration', the role 'cSharp_InterfaceIndexerDeclaration281' has cardinality 0..*, and from 'cSharp_InterfaceAccessors', the role 'cSharp_InterfaceAccessors' has cardinality 0..*.
+An association connects 'cSharp_InterfaceEventDeclaration' and 'cSharp_Type'. From 'cSharp_InterfaceEventDeclaration', the role 'cSharp_InterfaceEventDeclaration283' has cardinality 0..*, and from 'cSharp_Type', the role 'cSharp_Type284' has cardinality 0..*.
+An association connects 'cSharp_InterfaceEventDeclaration' and 'cSharp_Identifier'. From 'cSharp_InterfaceEventDeclaration', the role 'cSharp_InterfaceEventDeclaration286' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier287' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_InterfacePropertyDeclaration'. From 'cSharp_Identifier', the role 'cSharp_Identifier290' has cardinality 0..*, and from 'cSharp_InterfacePropertyDeclaration', the role 'cSharp_InterfacePropertyDeclaration289' has cardinality 0..*.
+An association connects 'cSharp_InterfacePropertyDeclaration' and 'cSharp_InterfaceAccessors'. From 'cSharp_InterfacePropertyDeclaration', the role 'cSharp_InterfacePropertyDeclaration292' has cardinality 0..*, and from 'cSharp_InterfaceAccessors', the role 'cSharp_InterfaceAccessors293' has cardinality 0..*.
+An association connects 'cSharp_InterfaceAccessors' and 'cSharp_Attributes'. From 'cSharp_InterfaceAccessors', the role 'cSharp_InterfaceAccessors295' has cardinality 0..*, and from 'cSharp_Attributes', the role 'cSharp_Attributes296' has cardinality 0..*.
+An association connects 'cSharp_InterfaceAccessors' and 'cSharp_Attributes'. From 'cSharp_InterfaceAccessors', the role 'cSharp_InterfaceAccessors298' has cardinality 0..*, and from 'cSharp_Attributes', the role 'cSharp_Attributes299' has cardinality 0..*.
+An association connects 'cSharp_InterfaceAccessors' and 'cSharp_Attributes'. From 'cSharp_InterfaceAccessors', the role 'cSharp_InterfaceAccessors301' has cardinality 0..*, and from 'cSharp_Attributes', the role 'cSharp_Attributes302' has cardinality 0..*.
+An association connects 'cSharp_TypeOrVoid' and 'cSharp_InterfaceMethodDeclaration'. From 'cSharp_TypeOrVoid', the role 'cSharp_TypeOrVoid305' has cardinality 0..*, and from 'cSharp_InterfaceMethodDeclaration', the role 'cSharp_InterfaceMethodDeclaration304' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_InterfaceMethodDeclaration'. From 'cSharp_Identifier', the role 'cSharp_Identifier308' has cardinality 0..*, and from 'cSharp_InterfaceMethodDeclaration', the role 'cSharp_InterfaceMethodDeclaration307' has cardinality 0..*.
+An association connects 'cSharp_InterfaceMethodDeclaration' and 'cSharp_FormalParameterList'. From 'cSharp_InterfaceMethodDeclaration', the role 'cSharp_InterfaceMethodDeclaration310' has cardinality 0..*, and from 'cSharp_FormalParameterList', the role 'cSharp_FormalParameterList311' has cardinality 0..*.
+An association connects 'cSharp_ClassDeclaration' and 'cSharp_Identifier'. From 'cSharp_ClassDeclaration', the role 'cSharp_ClassDeclaration313' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier314' has cardinality 0..*.
+An association connects 'cSharp_ClassDeclaration' and 'cSharp_ClassBase'. From 'cSharp_ClassDeclaration', the role 'cSharp_ClassDeclaration316' has cardinality 0..*, and from 'cSharp_ClassBase', the role 'cSharp_ClassBase' has cardinality 0..*.
+An association connects 'cSharp_ClassDeclaration' and 'cSharp_ClassBody'. From 'cSharp_ClassDeclaration', the role 'cSharp_ClassDeclaration318' has cardinality 0..*, and from 'cSharp_ClassBody', the role 'cSharp_ClassBody' has cardinality 0..*.
+An association connects 'cSharp_ClassBody' and 'cSharp_Attributes'. From 'cSharp_ClassBody', the role 'cSharp_ClassBody320' has cardinality 0..*, and from 'cSharp_Attributes', the role 'cSharp_Attributes321' has cardinality 0..*.
+An association connects 'cSharp_ClassBody' and 'cSharp_ClassMemberDeclaration'. From 'cSharp_ClassBody', the role 'cSharp_ClassBody323' has cardinality 0..*, and from 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration' has cardinality 0..*.
+An association connects 'cSharp_FieldDeclaration' and 'cSharp_ClassMemberDeclaration'. From 'cSharp_FieldDeclaration', the role 'cSharp_FieldDeclaration' has cardinality 0..*, and from 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration325' has cardinality 0..*.
+An association connects 'cSharp_MethodDeclaration' and 'cSharp_ClassMemberDeclaration'. From 'cSharp_MethodDeclaration', the role 'cSharp_MethodDeclaration' has cardinality 0..*, and from 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration327' has cardinality 0..*.
+An association connects 'cSharp_ClassMemberDeclaration' and 'cSharp_ConstantDeclaration'. From 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration329' has cardinality 0..*, and from 'cSharp_ConstantDeclaration', the role 'cSharp_ConstantDeclaration' has cardinality 0..*.
+An association connects 'cSharp_PropertyDeclaration' and 'cSharp_ClassMemberDeclaration'. From 'cSharp_PropertyDeclaration', the role 'cSharp_PropertyDeclaration' has cardinality 0..*, and from 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration331' has cardinality 0..*.
+An association connects 'cSharp_EventDeclaration' and 'cSharp_ClassMemberDeclaration'. From 'cSharp_EventDeclaration', the role 'cSharp_EventDeclaration' has cardinality 0..*, and from 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration333' has cardinality 0..*.
+An association connects 'cSharp_ClassMemberDeclaration' and 'cSharp_IndexerDeclaration'. From 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration335' has cardinality 0..*, and from 'cSharp_IndexerDeclaration', the role 'cSharp_IndexerDeclaration' has cardinality 0..*.
+An association connects 'cSharp_TypeDeclaration' and 'cSharp_ClassMemberDeclaration'. From 'cSharp_TypeDeclaration', the role 'cSharp_TypeDeclaration338' has cardinality 0..*, and from 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration337' has cardinality 0..*.
+An association connects 'cSharp_ClassMemberDeclaration' and 'cSharp_OperatorDeclaration'. From 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration340' has cardinality 0..*, and from 'cSharp_OperatorDeclaration', the role 'cSharp_OperatorDeclaration' has cardinality 0..*.
+An association connects 'cSharp_ClassMemberDeclaration' and 'cSharp_ConstructorDeclaration'. From 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration342' has cardinality 0..*, and from 'cSharp_ConstructorDeclaration', the role 'cSharp_ConstructorDeclaration' has cardinality 0..*.
+An association connects 'cSharp_ClassMemberDeclaration' and 'cSharp_DestructorDeclaration'. From 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration344' has cardinality 0..*, and from 'cSharp_DestructorDeclaration', the role 'cSharp_DestructorDeclaration' has cardinality 0..*.
+An association connects 'cSharp_ClassMemberDeclaration' and 'cSharp_StaticConstructorDeclaration'. From 'cSharp_ClassMemberDeclaration', the role 'cSharp_ClassMemberDeclaration346' has cardinality 0..*, and from 'cSharp_StaticConstructorDeclaration', the role 'cSharp_StaticConstructorDeclaration' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_StaticConstructorDeclaration'. From 'cSharp_Identifier', the role 'cSharp_Identifier349' has cardinality 0..*, and from 'cSharp_StaticConstructorDeclaration', the role 'cSharp_StaticConstructorDeclaration348' has cardinality 0..*.
+An association connects 'cSharp_MaybeEmptyBlock' and 'cSharp_StaticConstructorDeclaration'. From 'cSharp_MaybeEmptyBlock', the role 'cSharp_MaybeEmptyBlock' has cardinality 0..*, and from 'cSharp_StaticConstructorDeclaration', the role 'cSharp_StaticConstructorDeclaration351' has cardinality 0..*.
+An association connects 'cSharp_DestructorDeclaration' and 'cSharp_Identifier'. From 'cSharp_DestructorDeclaration', the role 'cSharp_DestructorDeclaration353' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier354' has cardinality 0..*.
+An association connects 'cSharp_MaybeEmptyBlock' and 'cSharp_DestructorDeclaration'. From 'cSharp_MaybeEmptyBlock', the role 'cSharp_MaybeEmptyBlock357' has cardinality 0..*, and from 'cSharp_DestructorDeclaration', the role 'cSharp_DestructorDeclaration356' has cardinality 0..*.
+An association connects 'cSharp_ConstructorDeclaration' and 'cSharp_ConstructorDeclarator'. From 'cSharp_ConstructorDeclaration', the role 'cSharp_ConstructorDeclaration359' has cardinality 0..*, and from 'cSharp_ConstructorDeclarator', the role 'cSharp_ConstructorDeclarator' has cardinality 0..*.
+An association connects 'cSharp_MaybeEmptyBlock' and 'cSharp_ConstructorDeclaration'. From 'cSharp_MaybeEmptyBlock', the role 'cSharp_MaybeEmptyBlock362' has cardinality 0..*, and from 'cSharp_ConstructorDeclaration', the role 'cSharp_ConstructorDeclaration361' has cardinality 0..*.
+An association connects 'cSharp_ConstructorDeclarator' and 'cSharp_Identifier'. From 'cSharp_ConstructorDeclarator', the role 'cSharp_ConstructorDeclarator364' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier365' has cardinality 0..*.
+An association connects 'cSharp_FormalParameterList' and 'cSharp_ConstructorDeclarator'. From 'cSharp_FormalParameterList', the role 'cSharp_FormalParameterList368' has cardinality 0..*, and from 'cSharp_ConstructorDeclarator', the role 'cSharp_ConstructorDeclarator367' has cardinality 0..*.
+An association connects 'cSharp_ConstructorInitializer' and 'cSharp_ConstructorDeclarator'. From 'cSharp_ConstructorInitializer', the role 'cSharp_ConstructorInitializer' has cardinality 0..*, and from 'cSharp_ConstructorDeclarator', the role 'cSharp_ConstructorDeclarator370' has cardinality 0..*.
+An association connects 'cSharp_Argument' and 'cSharp_ArgumentList'. From 'cSharp_Argument', the role 'cSharp_Argument' has cardinality 0..*, and from 'cSharp_ArgumentList', the role 'cSharp_ArgumentList372' has cardinality 0..*.
+An association connects 'cSharp_Argument' and 'cSharp_ArgumentList'. From 'cSharp_Argument', the role 'cSharp_Argument375' has cardinality 0..*, and from 'cSharp_ArgumentList', the role 'cSharp_ArgumentList374' has cardinality 0..*.
+An association connects 'cSharp_OperatorDeclaration' and 'cSharp_OperatorDeclarator'. From 'cSharp_OperatorDeclaration', the role 'cSharp_OperatorDeclaration377' has cardinality 0..*, and from 'cSharp_OperatorDeclarator', the role 'cSharp_OperatorDeclarator' has cardinality 0..*.
+An association connects 'cSharp_OperatorDeclaration' and 'cSharp_MaybeEmptyBlock'. From 'cSharp_OperatorDeclaration', the role 'cSharp_OperatorDeclaration379' has cardinality 0..*, and from 'cSharp_MaybeEmptyBlock', the role 'cSharp_MaybeEmptyBlock380' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_OperatorDeclarator'. From 'cSharp_Type', the role 'cSharp_Type383' has cardinality 0..*, and from 'cSharp_OperatorDeclarator', the role 'cSharp_OperatorDeclarator382' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_ConversionOperatorDeclarator'. From 'cSharp_Type', the role 'cSharp_Type385' has cardinality 0..*, and from 'cSharp_ConversionOperatorDeclarator', the role 'cSharp_ConversionOperatorDeclarator' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_ConversionOperatorDeclarator'. From 'cSharp_Identifier', the role 'cSharp_Identifier388' has cardinality 0..*, and from 'cSharp_ConversionOperatorDeclarator', the role 'cSharp_ConversionOperatorDeclarator387' has cardinality 0..*.
+An association connects 'cSharp_BinaryOperatorDeclarator' and 'cSharp_Type'. From 'cSharp_BinaryOperatorDeclarator', the role 'cSharp_BinaryOperatorDeclarator' has cardinality 0..*, and from 'cSharp_Type', the role 'cSharp_Type390' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_BinaryOperatorDeclarator'. From 'cSharp_Identifier', the role 'cSharp_Identifier393' has cardinality 0..*, and from 'cSharp_BinaryOperatorDeclarator', the role 'cSharp_BinaryOperatorDeclarator392' has cardinality 0..*.
+An association connects 'cSharp_BinaryOperatorDeclarator' and 'cSharp_Type'. From 'cSharp_BinaryOperatorDeclarator', the role 'cSharp_BinaryOperatorDeclarator395' has cardinality 0..*, and from 'cSharp_Type', the role 'cSharp_Type396' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_BinaryOperatorDeclarator'. From 'cSharp_Identifier', the role 'cSharp_Identifier399' has cardinality 0..*, and from 'cSharp_BinaryOperatorDeclarator', the role 'cSharp_BinaryOperatorDeclarator398' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_UnaryOperatorDeclarator'. From 'cSharp_Type', the role 'cSharp_Type401' has cardinality 0..*, and from 'cSharp_UnaryOperatorDeclarator', the role 'cSharp_UnaryOperatorDeclarator' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_UnaryOperatorDeclarator'. From 'cSharp_Identifier', the role 'cSharp_Identifier404' has cardinality 0..*, and from 'cSharp_UnaryOperatorDeclarator', the role 'cSharp_UnaryOperatorDeclarator403' has cardinality 0..*.
+An association connects 'cSharp_IndexerDeclarator' and 'cSharp_IndexerDeclaration'. From 'cSharp_IndexerDeclarator', the role 'cSharp_IndexerDeclarator' has cardinality 0..*, and from 'cSharp_IndexerDeclaration', the role 'cSharp_IndexerDeclaration406' has cardinality 0..*.
+An association connects 'cSharp_AccessorDeclarations' and 'cSharp_IndexerDeclaration'. From 'cSharp_AccessorDeclarations', the role 'cSharp_AccessorDeclarations409' has cardinality 0..*, and from 'cSharp_IndexerDeclaration', the role 'cSharp_IndexerDeclaration408' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_IndexerDeclarator'. From 'cSharp_Type', the role 'cSharp_Type412' has cardinality 0..*, and from 'cSharp_IndexerDeclarator', the role 'cSharp_IndexerDeclarator411' has cardinality 0..*.
+An association connects 'cSharp_FormalParameterList' and 'cSharp_IndexerDeclarator'. From 'cSharp_FormalParameterList', the role 'cSharp_FormalParameterList415' has cardinality 0..*, and from 'cSharp_IndexerDeclarator', the role 'cSharp_IndexerDeclarator414' has cardinality 0..*.
+An association connects 'cSharp_QualifiedIdentifier' and 'cSharp_IndexerDeclarator'. From 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier418' has cardinality 0..*, and from 'cSharp_IndexerDeclarator', the role 'cSharp_IndexerDeclarator417' has cardinality 0..*.
+An association connects 'cSharp_EventAccessorDeclarations' and 'cSharp_Attributes'. From 'cSharp_EventAccessorDeclarations', the role 'cSharp_EventAccessorDeclarations420' has cardinality 0..*, and from 'cSharp_Attributes', the role 'cSharp_Attributes421' has cardinality 0..*.
+An association connects 'cSharp_AddAccessorDeclaration' and 'cSharp_EventAccessorDeclarations'. From 'cSharp_AddAccessorDeclaration', the role 'cSharp_AddAccessorDeclaration' has cardinality 0..*, and from 'cSharp_EventAccessorDeclarations', the role 'cSharp_EventAccessorDeclarations423' has cardinality 0..*.
+An association connects 'cSharp_Attributes' and 'cSharp_EventAccessorDeclarations'. From 'cSharp_Attributes', the role 'cSharp_Attributes426' has cardinality 0..*, and from 'cSharp_EventAccessorDeclarations', the role 'cSharp_EventAccessorDeclarations425' has cardinality 0..*.
+An association connects 'cSharp_EventAccessorDeclarations' and 'cSharp_RemoveAccessorDeclaration'. From 'cSharp_EventAccessorDeclarations', the role 'cSharp_EventAccessorDeclarations428' has cardinality 0..*, and from 'cSharp_RemoveAccessorDeclaration', the role 'cSharp_RemoveAccessorDeclaration' has cardinality 0..*.
+An association connects 'cSharp_Attributes' and 'cSharp_AccessorDeclarations'. From 'cSharp_Attributes', the role 'cSharp_Attributes431' has cardinality 0..*, and from 'cSharp_AccessorDeclarations', the role 'cSharp_AccessorDeclarations430' has cardinality 0..*.
+An association connects 'cSharp_AccessorDeclarations' and 'cSharp_GetAccessorDeclaration'. From 'cSharp_AccessorDeclarations', the role 'cSharp_AccessorDeclarations433' has cardinality 0..*, and from 'cSharp_GetAccessorDeclaration', the role 'cSharp_GetAccessorDeclaration' has cardinality 0..*.
+An association connects 'cSharp_Attributes' and 'cSharp_AccessorDeclarations'. From 'cSharp_Attributes', the role 'cSharp_Attributes436' has cardinality 0..*, and from 'cSharp_AccessorDeclarations', the role 'cSharp_AccessorDeclarations435' has cardinality 0..*.
+An association connects 'cSharp_SetAccessorDeclaration' and 'cSharp_AccessorDeclarations'. From 'cSharp_SetAccessorDeclaration', the role 'cSharp_SetAccessorDeclaration' has cardinality 0..*, and from 'cSharp_AccessorDeclarations', the role 'cSharp_AccessorDeclarations438' has cardinality 0..*.
+An association connects 'cSharp_MethodDeclaration' and 'cSharp_MethodHeader'. From 'cSharp_MethodDeclaration', the role 'cSharp_MethodDeclaration440' has cardinality 0..*, and from 'cSharp_MethodHeader', the role 'cSharp_MethodHeader' has cardinality 0..*.
+An association connects 'cSharp_MaybeEmptyBlock' and 'cSharp_MethodDeclaration'. From 'cSharp_MaybeEmptyBlock', the role 'cSharp_MaybeEmptyBlock443' has cardinality 0..*, and from 'cSharp_MethodDeclaration', the role 'cSharp_MethodDeclaration442' has cardinality 0..*.
+An association connects 'cSharp_TypeOrVoid' and 'cSharp_MethodHeader'. From 'cSharp_TypeOrVoid', the role 'cSharp_TypeOrVoid446' has cardinality 0..*, and from 'cSharp_MethodHeader', the role 'cSharp_MethodHeader445' has cardinality 0..*.
+An association connects 'cSharp_MethodHeader' and 'cSharp_QualifiedIdentifier'. From 'cSharp_MethodHeader', the role 'cSharp_MethodHeader448' has cardinality 0..*, and from 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier449' has cardinality 0..*.
+An association connects 'cSharp_FormalParameterList' and 'cSharp_MethodHeader'. From 'cSharp_FormalParameterList', the role 'cSharp_FormalParameterList452' has cardinality 0..*, and from 'cSharp_MethodHeader', the role 'cSharp_MethodHeader451' has cardinality 0..*.
+An association connects 'cSharp_FormalParameterList' and 'cSharp_ParameterArray'. From 'cSharp_FormalParameterList', the role 'cSharp_FormalParameterList454' has cardinality 0..*, and from 'cSharp_ParameterArray', the role 'cSharp_ParameterArray' has cardinality 0..*.
+An association connects 'cSharp_Attributes' and 'cSharp_ParameterArray'. From 'cSharp_Attributes', the role 'cSharp_Attributes457' has cardinality 0..*, and from 'cSharp_ParameterArray', the role 'cSharp_ParameterArray456' has cardinality 0..*.
+An association connects 'cSharp_ArrayType' and 'cSharp_ParameterArray'. From 'cSharp_ArrayType', the role 'cSharp_ArrayType460' has cardinality 0..*, and from 'cSharp_ParameterArray', the role 'cSharp_ParameterArray459' has cardinality 0..*.
+An association connects 'cSharp_ParameterArray' and 'cSharp_Identifier'. From 'cSharp_ParameterArray', the role 'cSharp_ParameterArray462' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier463' has cardinality 0..*.
+An association connects 'cSharp_FixedParameters' and 'cSharp_FixedParameter'. From 'cSharp_FixedParameters', the role 'cSharp_FixedParameters' has cardinality 0..*, and from 'cSharp_FixedParameter', the role 'cSharp_FixedParameter' has cardinality 0..*.
+An association connects 'cSharp_FixedParameter' and 'cSharp_FixedParameters'. From 'cSharp_FixedParameter', the role 'cSharp_FixedParameter467' has cardinality 0..*, and from 'cSharp_FixedParameters', the role 'cSharp_FixedParameters466' has cardinality 0..*.
+An association connects 'cSharp_Attributes' and 'cSharp_FixedParameter'. From 'cSharp_Attributes', the role 'cSharp_Attributes470' has cardinality 0..*, and from 'cSharp_FixedParameter', the role 'cSharp_FixedParameter469' has cardinality 0..*.
+An association connects 'cSharp_FixedParameter' and 'cSharp_Type'. From 'cSharp_FixedParameter', the role 'cSharp_FixedParameter472' has cardinality 0..*, and from 'cSharp_Type', the role 'cSharp_Type473' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_FixedParameter'. From 'cSharp_Identifier', the role 'cSharp_Identifier476' has cardinality 0..*, and from 'cSharp_FixedParameter', the role 'cSharp_FixedParameter475' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_TypeOrVoid'. From 'cSharp_Identifier', the role 'cSharp_Identifier479' has cardinality 0..*, and from 'cSharp_TypeOrVoid', the role 'cSharp_TypeOrVoid478' has cardinality 0..*.
+An association connects 'cSharp_FormalParameterList' and 'cSharp_TypeOrVoid'. From 'cSharp_FormalParameterList', the role 'cSharp_FormalParameterList482' has cardinality 0..*, and from 'cSharp_TypeOrVoid', the role 'cSharp_TypeOrVoid481' has cardinality 0..*.
+An association connects 'cSharp_TypeOrVoid' and 'cSharp_Type'. From 'cSharp_TypeOrVoid', the role 'cSharp_TypeOrVoid484' has cardinality 0..*, and from 'cSharp_Type', the role 'cSharp_Type485' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_VariableDeclarator'. From 'cSharp_Identifier', the role 'cSharp_Identifier488' has cardinality 0..*, and from 'cSharp_VariableDeclarator', the role 'cSharp_VariableDeclarator487' has cardinality 0..*.
+An association connects 'cSharp_VariableInitializer' and 'cSharp_VariableDeclarator'. From 'cSharp_VariableInitializer', the role 'cSharp_VariableInitializer491' has cardinality 0..*, and from 'cSharp_VariableDeclarator', the role 'cSharp_VariableDeclarator490' has cardinality 0..*.
+An association connects 'cSharp_ConstantDeclarator' and 'cSharp_Identifier'. From 'cSharp_ConstantDeclarator', the role 'cSharp_ConstantDeclarator493' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier494' has cardinality 0..*.
+An association connects 'cSharp_ConstantDeclarator' and 'cSharp_Expression'. From 'cSharp_ConstantDeclarator', the role 'cSharp_ConstantDeclarator496' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression497' has cardinality 0..*.
+An association connects 'cSharp_QualifiedIdentifierList' and 'cSharp_ClassBase'. From 'cSharp_QualifiedIdentifierList', the role 'cSharp_QualifiedIdentifierList500' has cardinality 0..*, and from 'cSharp_ClassBase', the role 'cSharp_ClassBase499' has cardinality 0..*.
+An association connects 'cSharp_QualifiedIdentifierList' and 'cSharp_QualifiedIdentifier'. From 'cSharp_QualifiedIdentifierList', the role 'cSharp_QualifiedIdentifierList502' has cardinality 0..*, and from 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier503' has cardinality 0..*.
+An association connects 'cSharp_QualifiedIdentifierList' and 'cSharp_QualifiedIdentifier'. From 'cSharp_QualifiedIdentifierList', the role 'cSharp_QualifiedIdentifierList505' has cardinality 0..*, and from 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier506' has cardinality 0..*.
+An association connects 'cSharp_LabeledStatement' and 'cSharp_Statement'. From 'cSharp_LabeledStatement', the role 'cSharp_LabeledStatement' has cardinality 0..*, and from 'cSharp_Statement', the role 'cSharp_Statement' has cardinality 0..*.
+An association connects 'cSharp_DeclarationStatment' and 'cSharp_Statement'. From 'cSharp_DeclarationStatment', the role 'cSharp_DeclarationStatment' has cardinality 0..*, and from 'cSharp_Statement', the role 'cSharp_Statement509' has cardinality 0..*.
+An association connects 'cSharp_Statement' and 'cSharp_EmbeddedStatement'. From 'cSharp_Statement', the role 'cSharp_Statement511' has cardinality 0..*, and from 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement' has cardinality 0..*.
+An association connects 'cSharp_LocalVariableDeclaration' and 'cSharp_DeclarationStatment'. From 'cSharp_LocalVariableDeclaration', the role 'cSharp_LocalVariableDeclaration' has cardinality 0..*, and from 'cSharp_DeclarationStatment', the role 'cSharp_DeclarationStatment513' has cardinality 0..*.
+An association connects 'cSharp_LocalconstantDeclaration' and 'cSharp_DeclarationStatment'. From 'cSharp_LocalconstantDeclaration', the role 'cSharp_LocalconstantDeclaration' has cardinality 0..*, and from 'cSharp_DeclarationStatment', the role 'cSharp_DeclarationStatment515' has cardinality 0..*.
+An association connects 'cSharp_LocalconstantDeclaration' and 'cSharp_Type'. From 'cSharp_LocalconstantDeclaration', the role 'cSharp_LocalconstantDeclaration517' has cardinality 0..*, and from 'cSharp_Type', the role 'cSharp_Type518' has cardinality 0..*.
+An association connects 'cSharp_LocalconstantDeclaration' and 'cSharp_ConstantDeclarator'. From 'cSharp_LocalconstantDeclaration', the role 'cSharp_LocalconstantDeclaration520' has cardinality 0..*, and from 'cSharp_ConstantDeclarator', the role 'cSharp_ConstantDeclarator521' has cardinality 0..*.
+An association connects 'cSharp_LocalconstantDeclaration' and 'cSharp_ConstantDeclarator'. From 'cSharp_LocalconstantDeclaration', the role 'cSharp_LocalconstantDeclaration523' has cardinality 0..*, and from 'cSharp_ConstantDeclarator', the role 'cSharp_ConstantDeclarator524' has cardinality 0..*.
+An association connects 'cSharp_LabeledStatement' and 'cSharp_Identifier'. From 'cSharp_LabeledStatement', the role 'cSharp_LabeledStatement526' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier527' has cardinality 0..*.
+An association connects 'cSharp_LabeledStatement' and 'cSharp_Statement'. From 'cSharp_LabeledStatement', the role 'cSharp_LabeledStatement529' has cardinality 0..*, and from 'cSharp_Statement', the role 'cSharp_Statement530' has cardinality 0..*.
+An association connects 'cSharp_EmbeddedStatement' and 'cSharp_MaybeEmptyBlock'. From 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement532' has cardinality 0..*, and from 'cSharp_MaybeEmptyBlock', the role 'cSharp_MaybeEmptyBlock533' has cardinality 0..*.
+An association connects 'cSharp_EmbeddedStatement' and 'cSharp_StatementExpression'. From 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement535' has cardinality 0..*, and from 'cSharp_StatementExpression', the role 'cSharp_StatementExpression' has cardinality 0..*.
+An association connects 'cSharp_SelectionStatement' and 'cSharp_EmbeddedStatement'. From 'cSharp_SelectionStatement', the role 'cSharp_SelectionStatement' has cardinality 0..*, and from 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement537' has cardinality 0..*.
+An association connects 'cSharp_IterationStatement' and 'cSharp_EmbeddedStatement'. From 'cSharp_IterationStatement', the role 'cSharp_IterationStatement' has cardinality 0..*, and from 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement539' has cardinality 0..*.
+An association connects 'cSharp_JumpStatement' and 'cSharp_EmbeddedStatement'. From 'cSharp_JumpStatement', the role 'cSharp_JumpStatement' has cardinality 0..*, and from 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement541' has cardinality 0..*.
+An association connects 'cSharp_TryStatement' and 'cSharp_EmbeddedStatement'. From 'cSharp_TryStatement', the role 'cSharp_TryStatement' has cardinality 0..*, and from 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement543' has cardinality 0..*.
+An association connects 'cSharp_EmbeddedStatement' and 'cSharp_Block'. From 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement545' has cardinality 0..*, and from 'cSharp_Block', the role 'cSharp_Block' has cardinality 0..*.
+An association connects 'cSharp_EmbeddedStatement' and 'cSharp_LockStatement'. From 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement547' has cardinality 0..*, and from 'cSharp_LockStatement', the role 'cSharp_LockStatement' has cardinality 0..*.
+An association connects 'cSharp_UsingStatement' and 'cSharp_EmbeddedStatement'. From 'cSharp_UsingStatement', the role 'cSharp_UsingStatement' has cardinality 0..*, and from 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement549' has cardinality 0..*.
+An association connects 'cSharp_ResourceAquisition' and 'cSharp_UsingStatement'. From 'cSharp_ResourceAquisition', the role 'cSharp_ResourceAquisition' has cardinality 0..*, and from 'cSharp_UsingStatement', the role 'cSharp_UsingStatement551' has cardinality 0..*.
+An association connects 'cSharp_UsingStatement' and 'cSharp_EmbeddedStatement'. From 'cSharp_UsingStatement', the role 'cSharp_UsingStatement553' has cardinality 0..*, and from 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement554' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_LocalVariableDeclaration'. From 'cSharp_Type', the role 'cSharp_Type557' has cardinality 0..*, and from 'cSharp_LocalVariableDeclaration', the role 'cSharp_LocalVariableDeclaration556' has cardinality 0..*.
+An association connects 'cSharp_LocalVariableDeclaration' and 'cSharp_VariableDeclarator'. From 'cSharp_LocalVariableDeclaration', the role 'cSharp_LocalVariableDeclaration559' has cardinality 0..*, and from 'cSharp_VariableDeclarator', the role 'cSharp_VariableDeclarator560' has cardinality 0..*.
+An association connects 'cSharp_LocalVariableDeclaration' and 'cSharp_VariableDeclarator'. From 'cSharp_LocalVariableDeclaration', the role 'cSharp_LocalVariableDeclaration562' has cardinality 0..*, and from 'cSharp_VariableDeclarator', the role 'cSharp_VariableDeclarator563' has cardinality 0..*.
+An association connects 'cSharp_LockStatement' and 'cSharp_Expression'. From 'cSharp_LockStatement', the role 'cSharp_LockStatement565' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression566' has cardinality 0..*.
+An association connects 'cSharp_LockStatement' and 'cSharp_EmbeddedStatement'. From 'cSharp_LockStatement', the role 'cSharp_LockStatement568' has cardinality 0..*, and from 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement569' has cardinality 0..*.
+An association connects 'cSharp_Block' and 'cSharp_TryStatement'. From 'cSharp_Block', the role 'cSharp_Block572' has cardinality 0..*, and from 'cSharp_TryStatement', the role 'cSharp_TryStatement571' has cardinality 0..*.
+An association connects 'cSharp_CatchClauses' and 'cSharp_TryStatement'. From 'cSharp_CatchClauses', the role 'cSharp_CatchClauses' has cardinality 0..*, and from 'cSharp_TryStatement', the role 'cSharp_TryStatement574' has cardinality 0..*.
+An association connects 'cSharp_FinallyClause' and 'cSharp_TryStatement'. From 'cSharp_FinallyClause', the role 'cSharp_FinallyClause' has cardinality 0..*, and from 'cSharp_TryStatement', the role 'cSharp_TryStatement576' has cardinality 0..*.
+An association connects 'cSharp_FinallyClause' and 'cSharp_TryStatement'. From 'cSharp_FinallyClause', the role 'cSharp_FinallyClause579' has cardinality 0..*, and from 'cSharp_TryStatement', the role 'cSharp_TryStatement578' has cardinality 0..*.
+An association connects 'cSharp_Block' and 'cSharp_FinallyClause'. From 'cSharp_Block', the role 'cSharp_Block582' has cardinality 0..*, and from 'cSharp_FinallyClause', the role 'cSharp_FinallyClause581' has cardinality 0..*.
+An association connects 'cSharp_CatchClauses' and 'cSharp_SpecificCatchClause'. From 'cSharp_CatchClauses', the role 'cSharp_CatchClauses584' has cardinality 0..*, and from 'cSharp_SpecificCatchClause', the role 'cSharp_SpecificCatchClause' has cardinality 0..*.
+An association connects 'cSharp_CatchClauses' and 'cSharp_GeneralCatchclause'. From 'cSharp_CatchClauses', the role 'cSharp_CatchClauses586' has cardinality 0..*, and from 'cSharp_GeneralCatchclause', the role 'cSharp_GeneralCatchclause' has cardinality 0..*.
+An association connects 'cSharp_SpecificCatchClause' and 'cSharp_CatchClauses'. From 'cSharp_SpecificCatchClause', the role 'cSharp_SpecificCatchClause589' has cardinality 0..*, and from 'cSharp_CatchClauses', the role 'cSharp_CatchClauses588' has cardinality 0..*.
+An association connects 'cSharp_GeneralCatchclause' and 'cSharp_Block'. From 'cSharp_GeneralCatchclause', the role 'cSharp_GeneralCatchclause591' has cardinality 0..*, and from 'cSharp_Block', the role 'cSharp_Block592' has cardinality 0..*.
+An association connects 'cSharp_BuiltInClassType' and 'cSharp_SpecificCatchClause'. From 'cSharp_BuiltInClassType', the role 'cSharp_BuiltInClassType595' has cardinality 0..*, and from 'cSharp_SpecificCatchClause', the role 'cSharp_SpecificCatchClause594' has cardinality 0..*.
+An association connects 'cSharp_SpecificCatchClause' and 'cSharp_QualifiedIdentifier'. From 'cSharp_SpecificCatchClause', the role 'cSharp_SpecificCatchClause597' has cardinality 0..*, and from 'cSharp_QualifiedIdentifier', the role 'cSharp_QualifiedIdentifier598' has cardinality 0..*.
+An association connects 'cSharp_Identifier' and 'cSharp_SpecificCatchClause'. From 'cSharp_Identifier', the role 'cSharp_Identifier601' has cardinality 0..*, and from 'cSharp_SpecificCatchClause', the role 'cSharp_SpecificCatchClause600' has cardinality 0..*.
+An association connects 'cSharp_Block' and 'cSharp_SpecificCatchClause'. From 'cSharp_Block', the role 'cSharp_Block604' has cardinality 0..*, and from 'cSharp_SpecificCatchClause', the role 'cSharp_SpecificCatchClause603' has cardinality 0..*.
+An association connects 'cSharp_BreakStatement' and 'cSharp_JumpStatement'. From 'cSharp_BreakStatement', the role 'cSharp_BreakStatement' has cardinality 0..*, and from 'cSharp_JumpStatement', the role 'cSharp_JumpStatement606' has cardinality 0..*.
+An association connects 'cSharp_JumpStatement' and 'cSharp_ContinueStatement'. From 'cSharp_JumpStatement', the role 'cSharp_JumpStatement608' has cardinality 0..*, and from 'cSharp_ContinueStatement', the role 'cSharp_ContinueStatement' has cardinality 0..*.
+An association connects 'cSharp_JumpStatement' and 'cSharp_GotoStatement'. From 'cSharp_JumpStatement', the role 'cSharp_JumpStatement610' has cardinality 0..*, and from 'cSharp_GotoStatement', the role 'cSharp_GotoStatement' has cardinality 0..*.
+An association connects 'cSharp_ReturnStatement' and 'cSharp_JumpStatement'. From 'cSharp_ReturnStatement', the role 'cSharp_ReturnStatement' has cardinality 0..*, and from 'cSharp_JumpStatement', the role 'cSharp_JumpStatement612' has cardinality 0..*.
+An association connects 'cSharp_ThrowStatement' and 'cSharp_JumpStatement'. From 'cSharp_ThrowStatement', the role 'cSharp_ThrowStatement' has cardinality 0..*, and from 'cSharp_JumpStatement', the role 'cSharp_JumpStatement614' has cardinality 0..*.
+An association connects 'cSharp_ThrowStatement' and 'cSharp_Expression'. From 'cSharp_ThrowStatement', the role 'cSharp_ThrowStatement616' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression617' has cardinality 0..*.
+An association connects 'cSharp_ReturnStatement' and 'cSharp_Expression'. From 'cSharp_ReturnStatement', the role 'cSharp_ReturnStatement619' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression620' has cardinality 0..*.
+An association connects 'cSharp_GotoStatement' and 'cSharp_Identifier'. From 'cSharp_GotoStatement', the role 'cSharp_GotoStatement622' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier623' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_GotoStatement'. From 'cSharp_Expression', the role 'cSharp_Expression626' has cardinality 0..*, and from 'cSharp_GotoStatement', the role 'cSharp_GotoStatement625' has cardinality 0..*.
+An association connects 'cSharp_WhileStatement' and 'cSharp_IterationStatement'. From 'cSharp_WhileStatement', the role 'cSharp_WhileStatement' has cardinality 0..*, and from 'cSharp_IterationStatement', the role 'cSharp_IterationStatement628' has cardinality 0..*.
+An association connects 'cSharp_DoStatement' and 'cSharp_IterationStatement'. From 'cSharp_DoStatement', the role 'cSharp_DoStatement' has cardinality 0..*, and from 'cSharp_IterationStatement', the role 'cSharp_IterationStatement630' has cardinality 0..*.
+An association connects 'cSharp_ForStatement' and 'cSharp_IterationStatement'. From 'cSharp_ForStatement', the role 'cSharp_ForStatement' has cardinality 0..*, and from 'cSharp_IterationStatement', the role 'cSharp_IterationStatement632' has cardinality 0..*.
+An association connects 'cSharp_ForeachStatement' and 'cSharp_IterationStatement'. From 'cSharp_ForeachStatement', the role 'cSharp_ForeachStatement' has cardinality 0..*, and from 'cSharp_IterationStatement', the role 'cSharp_IterationStatement634' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_ForeachStatement'. From 'cSharp_Type', the role 'cSharp_Type637' has cardinality 0..*, and from 'cSharp_ForeachStatement', the role 'cSharp_ForeachStatement636' has cardinality 0..*.
+An association connects 'cSharp_ForeachStatement' and 'cSharp_Identifier'. From 'cSharp_ForeachStatement', the role 'cSharp_ForeachStatement639' has cardinality 0..*, and from 'cSharp_Identifier', the role 'cSharp_Identifier640' has cardinality 0..*.
+An association connects 'cSharp_ForeachStatement' and 'cSharp_Expression'. From 'cSharp_ForeachStatement', the role 'cSharp_ForeachStatement642' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression643' has cardinality 0..*.
+An association connects 'cSharp_ForeachStatement' and 'cSharp_EmbeddedStatement'. From 'cSharp_ForeachStatement', the role 'cSharp_ForeachStatement645' has cardinality 0..*, and from 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement646' has cardinality 0..*.
+An association connects 'cSharp_ForInitializer' and 'cSharp_ForStatement'. From 'cSharp_ForInitializer', the role 'cSharp_ForInitializer' has cardinality 0..*, and from 'cSharp_ForStatement', the role 'cSharp_ForStatement648' has cardinality 0..*.
+An association connects 'cSharp_ForStatement' and 'cSharp_Expression'. From 'cSharp_ForStatement', the role 'cSharp_ForStatement650' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression651' has cardinality 0..*.
+An association connects 'cSharp_StatementExpressionList' and 'cSharp_ForStatement'. From 'cSharp_StatementExpressionList', the role 'cSharp_StatementExpressionList' has cardinality 0..*, and from 'cSharp_ForStatement', the role 'cSharp_ForStatement653' has cardinality 0..*.
+An association connects 'cSharp_EmbeddedStatement' and 'cSharp_ForStatement'. From 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement656' has cardinality 0..*, and from 'cSharp_ForStatement', the role 'cSharp_ForStatement655' has cardinality 0..*.
+An association connects 'cSharp_ForInitializer' and 'cSharp_LocalVariableDeclaration'. From 'cSharp_ForInitializer', the role 'cSharp_ForInitializer658' has cardinality 0..*, and from 'cSharp_LocalVariableDeclaration', the role 'cSharp_LocalVariableDeclaration659' has cardinality 0..*.
+An association connects 'cSharp_ForInitializer' and 'cSharp_StatementExpressionList'. From 'cSharp_ForInitializer', the role 'cSharp_ForInitializer661' has cardinality 0..*, and from 'cSharp_StatementExpressionList', the role 'cSharp_StatementExpressionList662' has cardinality 0..*.
+An association connects 'cSharp_StatementExpressionList' and 'cSharp_StatementExpression'. From 'cSharp_StatementExpressionList', the role 'cSharp_StatementExpressionList664' has cardinality 0..*, and from 'cSharp_StatementExpression', the role 'cSharp_StatementExpression665' has cardinality 0..*.
+An association connects 'cSharp_StatementExpressionList' and 'cSharp_StatementExpression'. From 'cSharp_StatementExpressionList', the role 'cSharp_StatementExpressionList667' has cardinality 0..*, and from 'cSharp_StatementExpression', the role 'cSharp_StatementExpression668' has cardinality 0..*.
+An association connects 'cSharp_Type' and 'cSharp_StatementExpression'. From 'cSharp_Type', the role 'cSharp_Type671' has cardinality 0..*, and from 'cSharp_StatementExpression', the role 'cSharp_StatementExpression670' has cardinality 0..*.
+An association connects 'cSharp_ArgumentList' and 'cSharp_StatementExpression'. From 'cSharp_ArgumentList', the role 'cSharp_ArgumentList674' has cardinality 0..*, and from 'cSharp_StatementExpression', the role 'cSharp_StatementExpression673' has cardinality 0..*.
+An association connects 'cSharp_StatementExpression' and 'cSharp_PrimaryExpression'. From 'cSharp_StatementExpression', the role 'cSharp_StatementExpression676' has cardinality 0..*, and from 'cSharp_PrimaryExpression', the role 'cSharp_PrimaryExpression677' has cardinality 0..*.
+An association connects 'cSharp_StatementExpression' and 'cSharp_UnaryExpression'. From 'cSharp_StatementExpression', the role 'cSharp_StatementExpression679' has cardinality 0..*, and from 'cSharp_UnaryExpression', the role 'cSharp_UnaryExpression680' has cardinality 0..*.
+An association connects 'cSharp_StatementExpression' and 'cSharp_Expression'. From 'cSharp_StatementExpression', the role 'cSharp_StatementExpression682' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression683' has cardinality 0..*.
+An association connects 'cSharp_DoStatement' and 'cSharp_EmbeddedStatement'. From 'cSharp_DoStatement', the role 'cSharp_DoStatement685' has cardinality 0..*, and from 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement686' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_DoStatement'. From 'cSharp_Expression', the role 'cSharp_Expression689' has cardinality 0..*, and from 'cSharp_DoStatement', the role 'cSharp_DoStatement688' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_WhileStatement'. From 'cSharp_Expression', the role 'cSharp_Expression692' has cardinality 0..*, and from 'cSharp_WhileStatement', the role 'cSharp_WhileStatement691' has cardinality 0..*.
+An association connects 'cSharp_EmbeddedStatement' and 'cSharp_WhileStatement'. From 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement695' has cardinality 0..*, and from 'cSharp_WhileStatement', the role 'cSharp_WhileStatement694' has cardinality 0..*.
+An association connects 'cSharp_IfStatement' and 'cSharp_SelectionStatement'. From 'cSharp_IfStatement', the role 'cSharp_IfStatement' has cardinality 0..*, and from 'cSharp_SelectionStatement', the role 'cSharp_SelectionStatement697' has cardinality 0..*.
+An association connects 'cSharp_SelectionStatement' and 'cSharp_SwitchStatement'. From 'cSharp_SelectionStatement', the role 'cSharp_SelectionStatement699' has cardinality 0..*, and from 'cSharp_SwitchStatement', the role 'cSharp_SwitchStatement' has cardinality 0..*.
+An association connects 'cSharp_SwitchStatement' and 'cSharp_Expression'. From 'cSharp_SwitchStatement', the role 'cSharp_SwitchStatement701' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression702' has cardinality 0..*.
+An association connects 'cSharp_SwitchStatement' and 'cSharp_SwitchSection'. From 'cSharp_SwitchStatement', the role 'cSharp_SwitchStatement704' has cardinality 0..*, and from 'cSharp_SwitchSection', the role 'cSharp_SwitchSection' has cardinality 0..*.
+An association connects 'cSharp_SwitchLabel' and 'cSharp_SwitchSection'. From 'cSharp_SwitchLabel', the role 'cSharp_SwitchLabel' has cardinality 0..*, and from 'cSharp_SwitchSection', the role 'cSharp_SwitchSection706' has cardinality 0..*.
+An association connects 'cSharp_SwitchSection' and 'cSharp_Statement'. From 'cSharp_SwitchSection', the role 'cSharp_SwitchSection708' has cardinality 0..*, and from 'cSharp_Statement', the role 'cSharp_Statement709' has cardinality 0..*.
+An association connects 'cSharp_SwitchLabel' and 'cSharp_Expression'. From 'cSharp_SwitchLabel', the role 'cSharp_SwitchLabel711' has cardinality 0..*, and from 'cSharp_Expression', the role 'cSharp_Expression712' has cardinality 0..*.
+An association connects 'cSharp_Expression' and 'cSharp_IfStatement'. From 'cSharp_Expression', the role 'cSharp_Expression715' has cardinality 0..*, and from 'cSharp_IfStatement', the role 'cSharp_IfStatement714' has cardinality 0..*.
+An association connects 'cSharp_IfStatement' and 'cSharp_EmbeddedStatement'. From 'cSharp_IfStatement', the role 'cSharp_IfStatement717' has cardinality 0..*, and from 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement718' has cardinality 0..*.
+An association connects 'cSharp_IfStatement' and 'cSharp_ElsePart'. From 'cSharp_IfStatement', the role 'cSharp_IfStatement720' has cardinality 0..*, and from 'cSharp_ElsePart', the role 'cSharp_ElsePart' has cardinality 0..*.
+An association connects 'cSharp_EmbeddedStatement' and 'cSharp_ElsePart'. From 'cSharp_EmbeddedStatement', the role 'cSharp_EmbeddedStatement723' has cardinality 0..*, and from 'cSharp_ElsePart', the role 'cSharp_ElsePart722' has cardinality 0..*.
+An association connects 'cSharp_Block' and 'cSharp_Statement'. From 'cSharp_Block', the role 'cSharp_Block725' has cardinality 0..*, and from 'cSharp_Statement', the role 'cSharp_Statement726' has cardinality 0..*.

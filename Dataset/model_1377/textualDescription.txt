@@ -1,0 +1,43 @@
+The domain model 'fsmcore' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_State' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsmcore_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_Trigger' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'fsmcore_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fsmcore_StateMachine' is a specialization of 'NamedElement'.
+The class 'fsmcore_State' is a specialization of 'NamedElement'.
+The class 'fsmcore_Transition' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsmcore_State' and 'fsmcore_StateMachine'. From 'fsmcore_State', the role 'fsmcore_State' has cardinality 0..*, and from 'fsmcore_StateMachine', the role 'fsmcore_StateMachine' has cardinality 0..*.
+An association connects 'fsmcore_StateMachine' and 'fsmcore_Transition'. From 'fsmcore_StateMachine', the role 'fsmcore_StateMachine2' has cardinality 0..*, and from 'fsmcore_Transition', the role 'fsmcore_Transition' has cardinality 0..*.
+An association connects 'fsmcore_Program' and 'fsmcore_State'. From 'fsmcore_Program', the role 'fsmcore_Program' has cardinality 0..*, and from 'fsmcore_State', the role 'fsmcore_State4' has cardinality 0..*.
+An association connects 'fsmcore_State' and 'fsmcore_Transition'. From 'fsmcore_State', the role 'target' has cardinality 0..*, and from 'fsmcore_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'fsmcore_Transition' and 'fsmcore_State'. From 'fsmcore_Transition', the role 'Transition7' has cardinality 0..*, and from 'fsmcore_State', the role 'source' has cardinality 0..*.
+An association connects 'fsmcore_Transition' and 'fsmcore_Constraint'. From 'fsmcore_Transition', the role 'fsmcore_Transition9' has cardinality 0..*, and from 'fsmcore_Constraint', the role 'fsmcore_Constraint' has cardinality 0..*.
+An association connects 'fsmcore_Trigger' and 'fsmcore_Transition'. From 'fsmcore_Trigger', the role 'fsmcore_Trigger' has cardinality 0..*, and from 'fsmcore_Transition', the role 'fsmcore_Transition11' has cardinality 0..*.
+An association connects 'fsmcore_Transition' and 'fsmcore_State'. From 'fsmcore_Transition', the role 'incoming' has cardinality 0..*, and from 'fsmcore_State', the role 'State' has cardinality 0..*.
+An association connects 'fsmcore_Transition' and 'fsmcore_State'. From 'fsmcore_Transition', the role 'outgoing' has cardinality 0..*, and from 'fsmcore_State', the role 'State14' has cardinality 0..*.

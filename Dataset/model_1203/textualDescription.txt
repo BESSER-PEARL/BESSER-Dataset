@@ -1,0 +1,436 @@
+The domain model 'ocl' describes the core structural elements and their relationships within the system.
+
+The model defines 104 main class(es).
+
+'expressions_ocl_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ocl_EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'ocl_expressions_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_Constraint' represents an important domain concept.
+It has the following attributes: 'stereotype', which is of type str; 'instanceVarName', which is of type str.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_IntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'ocl_expressions_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'types_ocl_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_ASTNode' represents an important domain concept.
+It has the following attributes: 'startPosition', which is of type int; 'endPosition', which is of type int.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_TypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'utilities_CallingASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_CollectionLiteralExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ocl_types_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_CollectionType' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ocl_EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ocl_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'utilities_PredefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_TypedASTNode' represents an important domain concept.
+It has the following attributes: 'typeStartPosition', which is of type int; 'typeEndPosition', which is of type int.
+
+'ocl_types_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_PrimitiveReal' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_PredefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ocl_EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ocl_EEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_MessageExp' represents an important domain concept.
+It does not declare any attributes.
+
+'utilities_Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_AssociationClassCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ocl_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_FeatureCallExp' represents an important domain concept.
+It has one attribute: 'markedPre', which is of type bool.
+
+'types_ocl_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_ElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_StateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_query_Query' represents an important domain concept.
+It has one attribute: 'extentMap', which is of type str.
+
+'expressions_ocl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_UnspecifiedValueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveReal' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_PrimitiveInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ocl_EParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'utilities_TypedASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ocl_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_PrimitiveBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_MessageType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_RealLiteralExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'ocl_expressions_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_PrimitiveString' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ocl_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_CallingASTNode' represents an important domain concept.
+It has the following attributes: 'propertyStartPosition', which is of type int; 'propertyEndPosition', which is of type int.
+
+'ocl_expressions_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ocl_ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_uml_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'utilities_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_OCLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_OCLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'EClass' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CollectionKind' defines the following possible values: 'set', 'sequence', 'bag', 'collection', 'orderedSet'.
+
+The model also captures inheritance relationships between classes.
+The class 'ocl_types_AnyType' is a specialization of 'EClassifier'.
+The class 'ocl_types_AnyType' is a specialization of 'utilities_PredefinedType'.
+The class 'ocl_types_BagType' is a specialization of 'CollectionType'.
+The class 'ocl_types_CollectionType' is a specialization of 'EDataType'.
+The class 'ocl_types_CollectionType' is a specialization of 'utilities_TypedASTNode'.
+The class 'ocl_types_CollectionType' is a specialization of 'utilities_PredefinedType'.
+The class 'ocl_types_ElementType' is a specialization of 'EClass'.
+The class 'ocl_types_InvalidType' is a specialization of 'EClassifier'.
+The class 'ocl_types_InvalidType' is a specialization of 'utilities_PredefinedType'.
+The class 'ocl_types_MessageType' is a specialization of 'EClass'.
+The class 'ocl_types_MessageType' is a specialization of 'utilities_PredefinedType'.
+The class 'ocl_types_OrderedSetType' is a specialization of 'CollectionType'.
+The class 'ocl_types_PrimitiveBoolean' is a specialization of 'PrimitiveType'.
+The class 'ocl_types_PrimitiveInteger' is a specialization of 'PrimitiveReal'.
+The class 'ocl_types_PrimitiveReal' is a specialization of 'PrimitiveType'.
+The class 'ocl_types_PrimitiveString' is a specialization of 'PrimitiveType'.
+The class 'ocl_types_PrimitiveType' is a specialization of 'EDataType'.
+The class 'ocl_types_PrimitiveType' is a specialization of 'utilities_PredefinedType'.
+The class 'ocl_types_SequenceType' is a specialization of 'CollectionType'.
+The class 'ocl_types_SetType' is a specialization of 'CollectionType'.
+The class 'ocl_types_TupleType' is a specialization of 'EClass'.
+The class 'ocl_types_TypeType' is a specialization of 'EClassifier'.
+The class 'ocl_types_TypeType' is a specialization of 'utilities_PredefinedType'.
+The class 'ocl_types_VoidType' is a specialization of 'EClassifier'.
+The class 'ocl_types_VoidType' is a specialization of 'utilities_PredefinedType'.
+The class 'ocl_expressions_AssociationClassCallExp' is a specialization of 'NavigationCallExp'.
+The class 'ocl_expressions_BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'ocl_expressions_CallExp' is a specialization of 'expressions_OCLExpression'.
+The class 'ocl_expressions_CallExp' is a specialization of 'utilities_CallingASTNode'.
+The class 'ocl_expressions_CollectionItem' is a specialization of 'CollectionLiteralPart'.
+The class 'ocl_expressions_CollectionLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ocl_expressions_CollectionLiteralPart' is a specialization of 'TypedElement'.
+The class 'ocl_expressions_CollectionRange' is a specialization of 'CollectionLiteralPart'.
+The class 'ocl_expressions_EnumLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ocl_expressions_FeatureCallExp' is a specialization of 'CallExp'.
+The class 'ocl_expressions_IfExp' is a specialization of 'OCLExpression'.
+The class 'ocl_expressions_IntegerLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'ocl_expressions_InvalidLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ocl_expressions_IterateExp' is a specialization of 'LoopExp'.
+The class 'ocl_expressions_IteratorExp' is a specialization of 'LoopExp'.
+The class 'ocl_expressions_LetExp' is a specialization of 'OCLExpression'.
+The class 'ocl_expressions_LiteralExp' is a specialization of 'OCLExpression'.
+The class 'ocl_expressions_LoopExp' is a specialization of 'CallExp'.
+The class 'ocl_expressions_MessageExp' is a specialization of 'expressions_OCLExpression'.
+The class 'ocl_expressions_MessageExp' is a specialization of 'utilities_CallingASTNode'.
+The class 'ocl_expressions_NavigationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'ocl_expressions_NullLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ocl_expressions_NumericLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'ocl_expressions_OCLExpression' is a specialization of 'uml_TypedElement'.
+The class 'ocl_expressions_OCLExpression' is a specialization of 'utilities_Visitable'.
+The class 'ocl_expressions_OCLExpression' is a specialization of 'utilities_ASTNode'.
+The class 'ocl_expressions_OperationCallExp' is a specialization of 'FeatureCallExp'.
+The class 'ocl_expressions_PrimitiveLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ocl_expressions_PropertyCallExp' is a specialization of 'NavigationCallExp'.
+The class 'ocl_expressions_RealLiteralExp' is a specialization of 'NumericLiteralExp'.
+The class 'ocl_expressions_StateExp' is a specialization of 'OCLExpression'.
+The class 'ocl_expressions_StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'ocl_expressions_TupleLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ocl_expressions_TupleLiteralPart' is a specialization of 'uml_TypedElement'.
+The class 'ocl_expressions_TupleLiteralPart' is a specialization of 'utilities_Visitable'.
+The class 'ocl_expressions_TupleLiteralPart' is a specialization of 'utilities_TypedASTNode'.
+The class 'ocl_expressions_TypeExp' is a specialization of 'OCLExpression'.
+The class 'ocl_expressions_UnspecifiedValueExp' is a specialization of 'expressions_OCLExpression'.
+The class 'ocl_expressions_UnspecifiedValueExp' is a specialization of 'utilities_TypedASTNode'.
+The class 'ocl_expressions_Variable' is a specialization of 'uml_TypedElement'.
+The class 'ocl_expressions_Variable' is a specialization of 'utilities_Visitable'.
+The class 'ocl_expressions_Variable' is a specialization of 'utilities_TypedASTNode'.
+The class 'ocl_expressions_VariableExp' is a specialization of 'OCLExpression'.
+The class 'ocl_uml_Constraint' is a specialization of 'ENamedElement'.
+The class 'ocl_uml_Constraint' is a specialization of 'utilities_Visitable'.
+The class 'ocl_uml_TypedElement' is a specialization of 'ENamedElement'.
+The class 'ocl_utilities_CallingASTNode' is a specialization of 'ASTNode'.
+The class 'ocl_utilities_TypedASTNode' is a specialization of 'ASTNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ocl_types_CollectionType' and 'types_ocl_EClassifier'. From 'ocl_types_CollectionType', the role 'ocl_types_CollectionType' has cardinality 0..*, and from 'types_ocl_EClassifier', the role 'types_ocl_EClassifier' has cardinality 0..*.
+An association connects 'types_ocl_EOperation' and 'ocl_types_MessageType'. From 'types_ocl_EOperation', the role 'types_ocl_EOperation' has cardinality 0..*, and from 'ocl_types_MessageType', the role 'ocl_types_MessageType' has cardinality 0..*.
+An association connects 'ocl_types_MessageType' and 'types_ocl_EClass'. From 'ocl_types_MessageType', the role 'ocl_types_MessageType3' has cardinality 0..*, and from 'types_ocl_EClass', the role 'types_ocl_EClass' has cardinality 0..*.
+An association connects 'ocl_expressions_AssociationClassCallExp' and 'expressions_ocl_EClass'. From 'ocl_expressions_AssociationClassCallExp', the role 'ocl_expressions_AssociationClassCallExp' has cardinality 0..*, and from 'expressions_ocl_EClass', the role 'expressions_ocl_EClass' has cardinality 0..*.
+An association connects 'OCLExpression' and 'ocl_expressions_CallExp'. From 'OCLExpression', the role 'OCLExpression' has cardinality 0..*, and from 'ocl_expressions_CallExp', the role 'ocl_expressions_CallExp' has cardinality 0..*.
+An association connects 'ocl_expressions_CollectionItem' and 'OCLExpression'. From 'ocl_expressions_CollectionItem', the role 'ocl_expressions_CollectionItem' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression7' has cardinality 0..*.
+An association connects 'ocl_expressions_CollectionLiteralExp' and 'CollectionLiteralPart'. From 'ocl_expressions_CollectionLiteralExp', the role 'ocl_expressions_CollectionLiteralExp' has cardinality 0..*, and from 'CollectionLiteralPart', the role 'CollectionLiteralPart' has cardinality 0..*.
+An association connects 'OCLExpression' and 'ocl_expressions_CollectionRange'. From 'OCLExpression', the role 'OCLExpression10' has cardinality 0..*, and from 'ocl_expressions_CollectionRange', the role 'ocl_expressions_CollectionRange' has cardinality 0..*.
+An association connects 'ocl_expressions_CollectionRange' and 'OCLExpression'. From 'ocl_expressions_CollectionRange', the role 'ocl_expressions_CollectionRange12' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression13' has cardinality 0..*.
+An association connects 'ocl_expressions_EnumLiteralExp' and 'expressions_ocl_EEnumLiteral'. From 'ocl_expressions_EnumLiteralExp', the role 'ocl_expressions_EnumLiteralExp' has cardinality 0..*, and from 'expressions_ocl_EEnumLiteral', the role 'expressions_ocl_EEnumLiteral' has cardinality 0..*.
+An association connects 'ocl_expressions_IfExp' and 'OCLExpression'. From 'ocl_expressions_IfExp', the role 'ocl_expressions_IfExp' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression16' has cardinality 0..*.
+An association connects 'ocl_expressions_IfExp' and 'OCLExpression'. From 'ocl_expressions_IfExp', the role 'ocl_expressions_IfExp18' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression19' has cardinality 0..*.
+An association connects 'ocl_expressions_IfExp' and 'OCLExpression'. From 'ocl_expressions_IfExp', the role 'ocl_expressions_IfExp21' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression22' has cardinality 0..*.
+An association connects 'Variable' and 'ocl_expressions_IterateExp'. From 'Variable', the role 'Variable' has cardinality 0..*, and from 'ocl_expressions_IterateExp', the role 'ocl_expressions_IterateExp' has cardinality 0..*.
+An association connects 'ocl_expressions_LetExp' and 'OCLExpression'. From 'ocl_expressions_LetExp', the role 'ocl_expressions_LetExp' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression25' has cardinality 0..*.
+An association connects 'ocl_expressions_LetExp' and 'Variable'. From 'ocl_expressions_LetExp', the role 'ocl_expressions_LetExp27' has cardinality 0..*, and from 'Variable', the role 'Variable28' has cardinality 0..*.
+An association connects 'ocl_expressions_LoopExp' and 'OCLExpression'. From 'ocl_expressions_LoopExp', the role 'ocl_expressions_LoopExp' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression30' has cardinality 0..*.
+An association connects 'ocl_expressions_LoopExp' and 'Variable'. From 'ocl_expressions_LoopExp', the role 'ocl_expressions_LoopExp32' has cardinality 0..*, and from 'Variable', the role 'Variable33' has cardinality 0..*.
+An association connects 'OCLExpression' and 'ocl_expressions_MessageExp'. From 'OCLExpression', the role 'OCLExpression35' has cardinality 0..*, and from 'ocl_expressions_MessageExp', the role 'ocl_expressions_MessageExp' has cardinality 0..*.
+An association connects 'ocl_expressions_MessageExp' and 'OCLExpression'. From 'ocl_expressions_MessageExp', the role 'ocl_expressions_MessageExp37' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression38' has cardinality 0..*.
+An association connects 'CallOperationAction' and 'ocl_expressions_MessageExp'. From 'CallOperationAction', the role 'CallOperationAction' has cardinality 0..*, and from 'ocl_expressions_MessageExp', the role 'ocl_expressions_MessageExp40' has cardinality 0..*.
+An association connects 'ocl_expressions_MessageExp' and 'SendSignalAction'. From 'ocl_expressions_MessageExp', the role 'ocl_expressions_MessageExp42' has cardinality 0..*, and from 'SendSignalAction', the role 'SendSignalAction' has cardinality 0..*.
+An association connects 'ocl_expressions_NavigationCallExp' and 'OCLExpression'. From 'ocl_expressions_NavigationCallExp', the role 'ocl_expressions_NavigationCallExp' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression44' has cardinality 0..*.
+An association connects 'ocl_expressions_NavigationCallExp' and 'expressions_ocl_EStructuralFeature'. From 'ocl_expressions_NavigationCallExp', the role 'ocl_expressions_NavigationCallExp46' has cardinality 0..*, and from 'expressions_ocl_EStructuralFeature', the role 'expressions_ocl_EStructuralFeature' has cardinality 0..*.
+An association connects 'ocl_expressions_OperationCallExp' and 'OCLExpression'. From 'ocl_expressions_OperationCallExp', the role 'ocl_expressions_OperationCallExp' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression48' has cardinality 0..*.
+An association connects 'expressions_ocl_EOperation' and 'ocl_expressions_OperationCallExp'. From 'expressions_ocl_EOperation', the role 'expressions_ocl_EOperation' has cardinality 0..*, and from 'ocl_expressions_OperationCallExp', the role 'ocl_expressions_OperationCallExp50' has cardinality 0..*.
+An association connects 'expressions_ocl_EStructuralFeature' and 'ocl_expressions_PropertyCallExp'. From 'expressions_ocl_EStructuralFeature', the role 'expressions_ocl_EStructuralFeature52' has cardinality 0..*, and from 'ocl_expressions_PropertyCallExp', the role 'ocl_expressions_PropertyCallExp' has cardinality 0..*.
+An association connects 'expressions_ocl_EObject' and 'ocl_expressions_StateExp'. From 'expressions_ocl_EObject', the role 'expressions_ocl_EObject' has cardinality 0..*, and from 'ocl_expressions_StateExp', the role 'ocl_expressions_StateExp' has cardinality 0..*.
+An association connects 'ocl_expressions_TupleLiteralExp' and 'TupleLiteralPart'. From 'ocl_expressions_TupleLiteralExp', the role 'ocl_expressions_TupleLiteralExp' has cardinality 0..*, and from 'TupleLiteralPart', the role 'TupleLiteralPart' has cardinality 0..*.
+An association connects 'OCLExpression' and 'ocl_expressions_TupleLiteralPart'. From 'OCLExpression', the role 'OCLExpression56' has cardinality 0..*, and from 'ocl_expressions_TupleLiteralPart', the role 'ocl_expressions_TupleLiteralPart' has cardinality 0..*.
+An association connects 'expressions_ocl_EStructuralFeature' and 'ocl_expressions_TupleLiteralPart'. From 'expressions_ocl_EStructuralFeature', the role 'expressions_ocl_EStructuralFeature59' has cardinality 0..*, and from 'ocl_expressions_TupleLiteralPart', the role 'ocl_expressions_TupleLiteralPart58' has cardinality 0..*.
+An association connects 'ocl_expressions_TypeExp' and 'expressions_ocl_EClassifier'. From 'ocl_expressions_TypeExp', the role 'ocl_expressions_TypeExp' has cardinality 0..*, and from 'expressions_ocl_EClassifier', the role 'expressions_ocl_EClassifier' has cardinality 0..*.
+An association connects 'ocl_expressions_Variable' and 'OCLExpression'. From 'ocl_expressions_Variable', the role 'ocl_expressions_Variable' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression62' has cardinality 0..*.
+An association connects 'ocl_expressions_Variable' and 'expressions_ocl_EParameter'. From 'ocl_expressions_Variable', the role 'ocl_expressions_Variable64' has cardinality 0..*, and from 'expressions_ocl_EParameter', the role 'expressions_ocl_EParameter' has cardinality 0..*.
+An association connects 'ocl_expressions_VariableExp' and 'Variable'. From 'ocl_expressions_VariableExp', the role 'ocl_expressions_VariableExp' has cardinality 0..*, and from 'Variable', the role 'Variable66' has cardinality 0..*.
+An association connects 'ocl_uml_CallOperationAction' and 'uml_ocl_EOperation'. From 'ocl_uml_CallOperationAction', the role 'ocl_uml_CallOperationAction' has cardinality 0..*, and from 'uml_ocl_EOperation', the role 'uml_ocl_EOperation' has cardinality 0..*.
+An association connects 'OCLExpression' and 'ocl_uml_Constraint'. From 'OCLExpression', the role 'OCLExpression69' has cardinality 0..*, and from 'ocl_uml_Constraint', the role 'ocl_uml_Constraint' has cardinality 0..*.
+An association connects 'ocl_uml_Constraint' and 'uml_ocl_ENamedElement'. From 'ocl_uml_Constraint', the role 'ocl_uml_Constraint71' has cardinality 0..*, and from 'uml_ocl_ENamedElement', the role 'uml_ocl_ENamedElement' has cardinality 0..*.
+An association connects 'uml_ocl_EClass' and 'ocl_uml_SendSignalAction'. From 'uml_ocl_EClass', the role 'uml_ocl_EClass' has cardinality 0..*, and from 'ocl_uml_SendSignalAction', the role 'ocl_uml_SendSignalAction' has cardinality 0..*.
+An association connects 'uml_ocl_EClassifier' and 'ocl_uml_TypedElement'. From 'uml_ocl_EClassifier', the role 'uml_ocl_EClassifier' has cardinality 0..*, and from 'ocl_uml_TypedElement', the role 'ocl_uml_TypedElement' has cardinality 0..*.
+An association connects 'OCLExpression' and 'ocl_query_Query'. From 'OCLExpression', the role 'OCLExpression75' has cardinality 0..*, and from 'ocl_query_Query', the role 'ocl_query_Query' has cardinality 0..*.

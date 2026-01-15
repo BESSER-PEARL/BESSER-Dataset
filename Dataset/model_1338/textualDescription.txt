@@ -1,0 +1,740 @@
+The domain model 'mutatorenvironment' describes the core structural elements and their relationships within the system.
+
+The model defines 170 main class(es).
+
+'mutatorenvironment_MaxValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_LogicExpCS' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'mutatorenvironment_miniOCL_PathElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_SpecificIntegerType' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'mutatorenvironment_AttributeCopy' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RetypeObjectMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_PathVariableCS' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'mutatorenvironment_SpecificObjectSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'Mutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RandomTypeSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_PropertyCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mutatorenvironment_miniOCL_ConstraintCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_ExistsExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_SpecificSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_NavigationPathCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_ForAllExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceSet' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RemoveRandomReferenceMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_PathCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_AttributeOperation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'mutatorenvironment_RandomDoubleNumberType' represents an important domain concept.
+It has one attribute: 'min', which is of type float.
+
+'mutatorenvironment_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RemoveSpecificReferenceMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_mutatorenvironment_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_ParameterCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mutatorenvironment_RandomNumberType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RandomSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ModifyInformationMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ReferenceInit' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ObjectAttributeType' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'mutatorenvironment_miniOCL_LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_SelectSampleMutator' represents an important domain concept.
+It has one attribute: 'clause', which is of type str.
+
+'mutatorenvironment_SelectObjectMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_AttributeScalar' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RandomStringNumberType' represents an important domain concept.
+It has the following attributes: 'allowsNull', which is of type bool; 'min', which is of type int; 'max', which is of type int.
+
+'mutatorenvironment_CreateObjectMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_Block' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'fixed', which is of type int; 'description', which is of type str; 'min', which is of type int; 'repeat', which is of type str; 'name', which is of type str.
+
+'CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_TypedSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RandomStringType' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'allowsNull', which is of type bool; 'min', which is of type int.
+
+'mutatorenvironment_miniOCL_OperationCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mutatorenvironment_Mutator' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'fixed', which is of type int; 'min', which is of type int.
+
+'mutatorenvironment_miniOCL_NavigationExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'AccVarCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_IterateExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ModifySourceReferenceMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_NavigationNameExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_CloneObjectMutator' represents an important domain concept.
+It has one attribute: 'contents', which is of type bool.
+
+'RemoveReferenceMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'OtherSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RemoveObjectMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_AttributeReverse' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_OtherSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_NavigationPathElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_SpecificClosureSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'PathCS' represents an important domain concept.
+It does not declare any attributes.
+
+'Evaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_DoubleType' represents an important domain concept.
+It does not declare any attributes.
+
+'IteratorVarCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_AttributeEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_UpperStringType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'mutatorenvironment_ReferenceAdd' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_SpecificReferenceSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_CompleteTypeSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_MinValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'ObSelectionStrategy' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RandomIntegerType' represents an important domain concept.
+It has the following attributes: 'min', which is of type int; 'allowsNull', which is of type bool; 'max', which is of type int.
+
+'mutatorenvironment_ReplaceStringType' represents an important domain concept.
+It has the following attributes: 'newstring', which is of type str; 'oldstring', which is of type str.
+
+'mutatorenvironment_AttributeSet' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_Load' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'mutatorenvironment_miniOCL_IteratorVarCS' represents an important domain concept.
+It has one attribute: 'itName', which is of type str.
+
+'mutatorenvironment_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RandomDoubleType' represents an important domain concept.
+It has the following attributes: 'allowsNull', which is of type bool; 'max', which is of type float; 'min', which is of type float.
+
+'mutatorenvironment_miniOCL_NavigationPathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'InvariantCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RandomBooleanType' represents an important domain concept.
+It has one attribute: 'allowsNull', which is of type bool.
+
+'mutatorenvironment_ObjectEmitter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NavigationPathCS' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ReferenceSwap' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_RootCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_CreateReferenceMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_SpecificStringType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'mutatorenvironment_RemoveReferenceMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_AttributeUnset' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_Program' represents an important domain concept.
+It has the following attributes: 'num', which is of type int; 'exhaustive', which is of type bool; 'output', which is of type str; 'description', which is of type str.
+
+'mutatorenvironment_NumberType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_CollectExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_BooleanLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ReferenceAtt' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_PackageCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mutatorenvironment_ModifyTargetReferenceMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RandomType' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeSet' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_IntLiteralExpCS' represents an important domain concept.
+It has one attribute: 'intSymbol', which is of type int.
+
+'mutatorenvironment_CompleteSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_Source' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'RandomNumberType' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_AttributeEvaluationType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_StringLiteralExpCS' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'mutatorenvironment_Resource' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_CatEndStringType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'mutatorenvironment_AttributeType' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'NavigationPathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_AttributeSwap' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecificSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_LoopExpCS' represents an important domain concept.
+It has one attribute: 'logicOp', which is of type str.
+
+'ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_RemoveCompleteReferenceMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_ClassCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mutatorenvironment_OtherTypeSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ListType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ReferenceRemove' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectEmitter' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_InvariantCS' represents an important domain concept.
+It does not declare any attributes.
+
+'Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ReferenceEvaluation' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'container', which is of type bool.
+
+'mutatorenvironment_LowerStringType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'mutatorenvironment_Constraint' represents an important domain concept.
+It has the following attributes: 'rules', which is of type str; 'id', which is of type str.
+
+'mutatorenvironment_RandomIntegerNumberType' represents an important domain concept.
+It has one attribute: 'min', which is of type int.
+
+'mutatorenvironment_miniOCL_NameExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_SpecificBooleanType' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'RandomSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstraintCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_BooleanExpCS' represents an important domain concept.
+It has one attribute: 'boolSymbol', which is of type bool.
+
+'mutatorenvironment_CatStartStringType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'mutatorenvironment_BinaryOperator' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'mutatorenvironment_miniOCL_NavigationPathVariableCS' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'PropertyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_Evaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ListStringType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeEvaluationType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_Definition' represents an important domain concept.
+It has one attribute: 'metamodel', which is of type str.
+
+'mutatorenvironment_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_MutatorEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_SpecificDoubleType' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'mutatorenvironment_miniOCL_PrimaryExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_RoundedBracketClauseCS' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeType' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'RoundedBracketClauseCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ReferenceSet' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'DoubleType' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_ObSelectionStrategy' represents an important domain concept.
+It has one attribute: 'resource', which is of type str.
+
+'mutatorenvironment_CompositeMutator' represents an important domain concept.
+It does not declare any attributes.
+
+'mutatorenvironment_miniOCL_AccVarCS' represents an important domain concept.
+It has one attribute: 'accVarName', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SampleClause' defines the following possible values: 'equals', 'distinct'.
+The enumeration 'Repeat' defines the following possible values: 'yes', 'no'.
+The enumeration 'Operator' defines the following possible values: 'lte', 'different', 'equals', 'in', 'gt', 'not', 'lt', 'is', 'gte'.
+The enumeration 'LogicOperator' defines the following possible values: 'or', 'and'.
+The enumeration 'ArithmeticOperator' defines the following possible values: 'subtract', 'module', 'multiply', 'divide', 'add'.
+
+The model also captures inheritance relationships between classes.
+The class 'mutatorenvironment_Library' is a specialization of 'Definition'.
+The class 'mutatorenvironment_Program' is a specialization of 'Definition'.
+The class 'mutatorenvironment_Mutator' is a specialization of 'ObjectEmitter'.
+The class 'mutatorenvironment_CompositeMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_CreateObjectMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_ObSelectionStrategy' is a specialization of 'ObjectEmitter'.
+The class 'mutatorenvironment_RandomSelection' is a specialization of 'ObSelectionStrategy'.
+The class 'mutatorenvironment_RandomTypeSelection' is a specialization of 'RandomSelection'.
+The class 'mutatorenvironment_SpecificObjectSelection' is a specialization of 'SpecificSelection'.
+The class 'mutatorenvironment_AttributeScalar' is a specialization of 'AttributeSet'.
+The class 'mutatorenvironment_AttributeType' is a specialization of 'AttributeEvaluationType'.
+The class 'mutatorenvironment_BooleanType' is a specialization of 'AttributeType'.
+The class 'mutatorenvironment_SpecificBooleanType' is a specialization of 'BooleanType'.
+The class 'mutatorenvironment_RandomBooleanType' is a specialization of 'BooleanType'.
+The class 'mutatorenvironment_StringType' is a specialization of 'AttributeType'.
+The class 'mutatorenvironment_SpecificStringType' is a specialization of 'StringType'.
+The class 'mutatorenvironment_RandomStringType' is a specialization of 'StringType'.
+The class 'mutatorenvironment_IntegerType' is a specialization of 'NumberType'.
+The class 'mutatorenvironment_SpecificIntegerType' is a specialization of 'IntegerType'.
+The class 'mutatorenvironment_RandomIntegerType' is a specialization of 'IntegerType'.
+The class 'mutatorenvironment_DoubleType' is a specialization of 'NumberType'.
+The class 'mutatorenvironment_SpecificDoubleType' is a specialization of 'DoubleType'.
+The class 'mutatorenvironment_RandomDoubleType' is a specialization of 'DoubleType'.
+The class 'mutatorenvironment_ModifySourceReferenceMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_SpecificSelection' is a specialization of 'ObSelectionStrategy'.
+The class 'mutatorenvironment_SpecificReferenceSelection' is a specialization of 'SpecificSelection'.
+The class 'mutatorenvironment_ModifyTargetReferenceMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_CreateReferenceMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_RemoveObjectMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_RemoveReferenceMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_ModifyInformationMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_UpperStringType' is a specialization of 'StringType'.
+The class 'mutatorenvironment_LowerStringType' is a specialization of 'StringType'.
+The class 'mutatorenvironment_ListStringType' is a specialization of 'AttributeType'.
+The class 'mutatorenvironment_CatStartStringType' is a specialization of 'StringType'.
+The class 'mutatorenvironment_CatEndStringType' is a specialization of 'StringType'.
+The class 'mutatorenvironment_AttributeUnset' is a specialization of 'AttributeSet'.
+The class 'mutatorenvironment_AttributeSwap' is a specialization of 'AttributeSet'.
+The class 'mutatorenvironment_ReplaceStringType' is a specialization of 'StringType'.
+The class 'mutatorenvironment_AttributeCopy' is a specialization of 'AttributeSet'.
+The class 'mutatorenvironment_RemoveRandomReferenceMutator' is a specialization of 'RemoveReferenceMutator'.
+The class 'mutatorenvironment_RemoveSpecificReferenceMutator' is a specialization of 'RemoveReferenceMutator'.
+The class 'mutatorenvironment_CompleteSelection' is a specialization of 'ObSelectionStrategy'.
+The class 'mutatorenvironment_CompleteTypeSelection' is a specialization of 'CompleteSelection'.
+The class 'mutatorenvironment_RemoveCompleteReferenceMutator' is a specialization of 'RemoveReferenceMutator'.
+The class 'mutatorenvironment_OtherSelection' is a specialization of 'ObSelectionStrategy'.
+The class 'mutatorenvironment_OtherTypeSelection' is a specialization of 'OtherSelection'.
+The class 'mutatorenvironment_SelectObjectMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_AttributeEvaluation' is a specialization of 'Evaluation'.
+The class 'mutatorenvironment_AttributeReverse' is a specialization of 'AttributeSet'.
+The class 'mutatorenvironment_ReferenceInit' is a specialization of 'ReferenceSet'.
+The class 'mutatorenvironment_ReferenceAtt' is a specialization of 'ReferenceSet'.
+The class 'mutatorenvironment_ReferenceEvaluation' is a specialization of 'Evaluation'.
+The class 'mutatorenvironment_ReferenceSwap' is a specialization of 'ReferenceSet'.
+The class 'mutatorenvironment_RandomType' is a specialization of 'AttributeType'.
+The class 'mutatorenvironment_CloneObjectMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_ListType' is a specialization of 'AttributeType'.
+The class 'mutatorenvironment_ObjectAttributeType' is a specialization of 'AttributeEvaluationType'.
+The class 'mutatorenvironment_MinValueType' is a specialization of 'NumberType'.
+The class 'mutatorenvironment_MaxValueType' is a specialization of 'NumberType'.
+The class 'mutatorenvironment_NumberType' is a specialization of 'AttributeType'.
+The class 'mutatorenvironment_AttributeOperation' is a specialization of 'AttributeSet'.
+The class 'mutatorenvironment_RandomNumberType' is a specialization of 'NumberType'.
+The class 'mutatorenvironment_RandomDoubleNumberType' is a specialization of 'RandomNumberType'.
+The class 'mutatorenvironment_RandomIntegerNumberType' is a specialization of 'RandomNumberType'.
+The class 'mutatorenvironment_SpecificClosureSelection' is a specialization of 'SpecificSelection'.
+The class 'mutatorenvironment_SelectSampleMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_ReferenceAdd' is a specialization of 'ReferenceSet'.
+The class 'mutatorenvironment_ReferenceRemove' is a specialization of 'ReferenceSet'.
+The class 'mutatorenvironment_RetypeObjectMutator' is a specialization of 'Mutator'.
+The class 'mutatorenvironment_TypedSelection' is a specialization of 'ObSelectionStrategy'.
+The class 'mutatorenvironment_RandomStringNumberType' is a specialization of 'StringType'.
+The class 'mutatorenvironment_Resource' is a specialization of 'Definition'.
+The class 'mutatorenvironment_miniOCL_LogicExpCS' is a specialization of 'ExpCS'.
+The class 'mutatorenvironment_miniOCL_CallExpCS' is a specialization of 'LogicExpCS'.
+The class 'mutatorenvironment_miniOCL_PrimaryExpCS' is a specialization of 'CallExpCS'.
+The class 'mutatorenvironment_miniOCL_NavigationExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'mutatorenvironment_miniOCL_NameExpCS' is a specialization of 'NavigationExpCS'.
+The class 'mutatorenvironment_miniOCL_LoopExpCS' is a specialization of 'NavigationExpCS'.
+The class 'mutatorenvironment_miniOCL_CollectExpCS' is a specialization of 'LoopExpCS'.
+The class 'mutatorenvironment_miniOCL_IterateExpCS' is a specialization of 'LoopExpCS'.
+The class 'mutatorenvironment_miniOCL_LiteralExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'mutatorenvironment_miniOCL_IntLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'mutatorenvironment_miniOCL_StringLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'mutatorenvironment_miniOCL_BooleanLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'mutatorenvironment_miniOCL_PathVariableCS' is a specialization of 'PathCS'.
+The class 'mutatorenvironment_miniOCL_PathElementCS' is a specialization of 'PathCS'.
+The class 'mutatorenvironment_miniOCL_BooleanExpCS' is a specialization of 'BooleanLiteralExpCS'.
+The class 'mutatorenvironment_miniOCL_ExistsExpCS' is a specialization of 'LoopExpCS'.
+The class 'mutatorenvironment_miniOCL_NavigationNameExpCS' is a specialization of 'NavigationExpCS'.
+The class 'mutatorenvironment_miniOCL_NavigationPathVariableCS' is a specialization of 'NavigationPathCS'.
+The class 'mutatorenvironment_miniOCL_NavigationPathElementCS' is a specialization of 'NavigationPathCS'.
+The class 'mutatorenvironment_miniOCL_ForAllExpCS' is a specialization of 'LoopExpCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mutatorenvironment_MutatorEnvironment' and 'mutatorenvironment_Definition'. From 'mutatorenvironment_MutatorEnvironment', the role 'mutatorenvironment_MutatorEnvironment' has cardinality 0..*, and from 'mutatorenvironment_Definition', the role 'mutatorenvironment_Definition' has cardinality 0..*.
+An association connects 'mutatorenvironment_Mutator' and 'mutatorenvironment_MutatorEnvironment'. From 'mutatorenvironment_Mutator', the role 'mutatorenvironment_Mutator' has cardinality 0..*, and from 'mutatorenvironment_MutatorEnvironment', the role 'mutatorenvironment_MutatorEnvironment2' has cardinality 0..*.
+An association connects 'mutatorenvironment_MutatorEnvironment' and 'mutatorenvironment_Load'. From 'mutatorenvironment_MutatorEnvironment', the role 'mutatorenvironment_MutatorEnvironment4' has cardinality 0..*, and from 'mutatorenvironment_Load', the role 'mutatorenvironment_Load' has cardinality 0..*.
+An association connects 'mutatorenvironment_Block' and 'mutatorenvironment_MutatorEnvironment'. From 'mutatorenvironment_Block', the role 'mutatorenvironment_Block' has cardinality 0..*, and from 'mutatorenvironment_MutatorEnvironment', the role 'mutatorenvironment_MutatorEnvironment6' has cardinality 0..*.
+An association connects 'mutatorenvironment_MutatorEnvironment' and 'mutatorenvironment_Constraint'. From 'mutatorenvironment_MutatorEnvironment', the role 'mutatorenvironment_MutatorEnvironment8' has cardinality 0..*, and from 'mutatorenvironment_Constraint', the role 'mutatorenvironment_Constraint' has cardinality 0..*.
+An association connects 'mutatorenvironment_Source' and 'mutatorenvironment_Program'. From 'mutatorenvironment_Source', the role 'mutatorenvironment_Source' has cardinality 0..*, and from 'mutatorenvironment_Program', the role 'mutatorenvironment_Program' has cardinality 0..*.
+An association connects 'mutatorenvironment_Program' and 'mutatorenvironment_Resource'. From 'mutatorenvironment_Program', the role 'mutatorenvironment_Program11' has cardinality 0..*, and from 'mutatorenvironment_Resource', the role 'mutatorenvironment_Resource' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObjectEmitter' and 'mutatorenvironment_EClass'. From 'mutatorenvironment_ObjectEmitter', the role 'mutatorenvironment_ObjectEmitter' has cardinality 0..*, and from 'mutatorenvironment_EClass', the role 'mutatorenvironment_EClass' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObjectEmitter' and 'mutatorenvironment_EClass'. From 'mutatorenvironment_ObjectEmitter', the role 'mutatorenvironment_ObjectEmitter14' has cardinality 0..*, and from 'mutatorenvironment_EClass', the role 'mutatorenvironment_EClass15' has cardinality 0..*.
+An association connects 'mutatorenvironment_CompositeMutator' and 'mutatorenvironment_Mutator'. From 'mutatorenvironment_CompositeMutator', the role 'mutatorenvironment_CompositeMutator' has cardinality 0..*, and from 'mutatorenvironment_Mutator', the role 'mutatorenvironment_Mutator17' has cardinality 0..*.
+An association connects 'mutatorenvironment_CreateObjectMutator' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_CreateObjectMutator', the role 'mutatorenvironment_CreateObjectMutator' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy' has cardinality 0..*.
+An association connects 'mutatorenvironment_AttributeSet' and 'mutatorenvironment_CreateObjectMutator'. From 'mutatorenvironment_AttributeSet', the role 'mutatorenvironment_AttributeSet' has cardinality 0..*, and from 'mutatorenvironment_CreateObjectMutator', the role 'mutatorenvironment_CreateObjectMutator20' has cardinality 0..*.
+An association connects 'mutatorenvironment_ReferenceSet' and 'mutatorenvironment_CreateObjectMutator'. From 'mutatorenvironment_ReferenceSet', the role 'mutatorenvironment_ReferenceSet' has cardinality 0..*, and from 'mutatorenvironment_CreateObjectMutator', the role 'mutatorenvironment_CreateObjectMutator22' has cardinality 0..*.
+An association connects 'mutatorenvironment_EReference' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy24' has cardinality 0..*.
+An association connects 'mutatorenvironment_Expression' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_Expression', the role 'mutatorenvironment_Expression' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy26' has cardinality 0..*.
+An association connects 'mutatorenvironment_EReference' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference29' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy28' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObSelectionStrategy' and 'mutatorenvironment_EReference'. From 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy31' has cardinality 0..*, and from 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference32' has cardinality 0..*.
+An association connects 'mutatorenvironment_SpecificObjectSelection' and 'mutatorenvironment_ObjectEmitter'. From 'mutatorenvironment_SpecificObjectSelection', the role 'mutatorenvironment_SpecificObjectSelection' has cardinality 0..*, and from 'mutatorenvironment_ObjectEmitter', the role 'mutatorenvironment_ObjectEmitter34' has cardinality 0..*.
+An association connects 'mutatorenvironment_AttributeType' and 'mutatorenvironment_AttributeScalar'. From 'mutatorenvironment_AttributeType', the role 'mutatorenvironment_AttributeType' has cardinality 0..*, and from 'mutatorenvironment_AttributeScalar', the role 'mutatorenvironment_AttributeScalar' has cardinality 0..*.
+An association connects 'mutatorenvironment_EReference' and 'mutatorenvironment_ModifySourceReferenceMutator'. From 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference37' has cardinality 0..*, and from 'mutatorenvironment_ModifySourceReferenceMutator', the role 'mutatorenvironment_ModifySourceReferenceMutator' has cardinality 0..*.
+An association connects 'mutatorenvironment_ModifySourceReferenceMutator' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_ModifySourceReferenceMutator', the role 'mutatorenvironment_ModifySourceReferenceMutator39' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy40' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObSelectionStrategy' and 'mutatorenvironment_ModifySourceReferenceMutator'. From 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy43' has cardinality 0..*, and from 'mutatorenvironment_ModifySourceReferenceMutator', the role 'mutatorenvironment_ModifySourceReferenceMutator42' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObjectEmitter' and 'mutatorenvironment_SpecificReferenceSelection'. From 'mutatorenvironment_ObjectEmitter', the role 'mutatorenvironment_ObjectEmitter45' has cardinality 0..*, and from 'mutatorenvironment_SpecificReferenceSelection', the role 'mutatorenvironment_SpecificReferenceSelection' has cardinality 0..*.
+An association connects 'mutatorenvironment_EReference' and 'mutatorenvironment_ModifyTargetReferenceMutator'. From 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference47' has cardinality 0..*, and from 'mutatorenvironment_ModifyTargetReferenceMutator', the role 'mutatorenvironment_ModifyTargetReferenceMutator' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObSelectionStrategy' and 'mutatorenvironment_ModifyTargetReferenceMutator'. From 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy50' has cardinality 0..*, and from 'mutatorenvironment_ModifyTargetReferenceMutator', the role 'mutatorenvironment_ModifyTargetReferenceMutator49' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObSelectionStrategy' and 'mutatorenvironment_ModifyTargetReferenceMutator'. From 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy53' has cardinality 0..*, and from 'mutatorenvironment_ModifyTargetReferenceMutator', the role 'mutatorenvironment_ModifyTargetReferenceMutator52' has cardinality 0..*.
+An association connects 'mutatorenvironment_CreateReferenceMutator' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_CreateReferenceMutator', the role 'mutatorenvironment_CreateReferenceMutator' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy55' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObSelectionStrategy' and 'mutatorenvironment_CreateReferenceMutator'. From 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy58' has cardinality 0..*, and from 'mutatorenvironment_CreateReferenceMutator', the role 'mutatorenvironment_CreateReferenceMutator57' has cardinality 0..*.
+An association connects 'mutatorenvironment_CreateReferenceMutator' and 'mutatorenvironment_EReference'. From 'mutatorenvironment_CreateReferenceMutator', the role 'mutatorenvironment_CreateReferenceMutator60' has cardinality 0..*, and from 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference61' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObSelectionStrategy' and 'mutatorenvironment_RemoveObjectMutator'. From 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy63' has cardinality 0..*, and from 'mutatorenvironment_RemoveObjectMutator', the role 'mutatorenvironment_RemoveObjectMutator' has cardinality 0..*.
+An association connects 'mutatorenvironment_RemoveObjectMutator' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_RemoveObjectMutator', the role 'mutatorenvironment_RemoveObjectMutator65' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy66' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObSelectionStrategy' and 'mutatorenvironment_ModifyInformationMutator'. From 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy68' has cardinality 0..*, and from 'mutatorenvironment_ModifyInformationMutator', the role 'mutatorenvironment_ModifyInformationMutator' has cardinality 0..*.
+An association connects 'mutatorenvironment_ModifyInformationMutator' and 'mutatorenvironment_AttributeSet'. From 'mutatorenvironment_ModifyInformationMutator', the role 'mutatorenvironment_ModifyInformationMutator70' has cardinality 0..*, and from 'mutatorenvironment_AttributeSet', the role 'mutatorenvironment_AttributeSet71' has cardinality 0..*.
+An association connects 'mutatorenvironment_ReferenceSet' and 'mutatorenvironment_ModifyInformationMutator'. From 'mutatorenvironment_ReferenceSet', the role 'mutatorenvironment_ReferenceSet74' has cardinality 0..*, and from 'mutatorenvironment_ModifyInformationMutator', the role 'mutatorenvironment_ModifyInformationMutator73' has cardinality 0..*.
+An association connects 'mutatorenvironment_AttributeSet' and 'mutatorenvironment_EAttribute'. From 'mutatorenvironment_AttributeSet', the role 'mutatorenvironment_AttributeSet76' has cardinality 0..*, and from 'mutatorenvironment_EAttribute', the role 'mutatorenvironment_EAttribute' has cardinality 0..*.
+An association connects 'mutatorenvironment_AttributeSwap' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_AttributeSwap', the role 'mutatorenvironment_AttributeSwap' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy78' has cardinality 0..*.
+An association connects 'mutatorenvironment_AttributeCopy' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_AttributeCopy', the role 'mutatorenvironment_AttributeCopy' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy80' has cardinality 0..*.
+An association connects 'mutatorenvironment_EReference' and 'mutatorenvironment_RemoveRandomReferenceMutator'. From 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference82' has cardinality 0..*, and from 'mutatorenvironment_RemoveRandomReferenceMutator', the role 'mutatorenvironment_RemoveRandomReferenceMutator' has cardinality 0..*.
+An association connects 'mutatorenvironment_RemoveSpecificReferenceMutator' and 'mutatorenvironment_EReference'. From 'mutatorenvironment_RemoveSpecificReferenceMutator', the role 'mutatorenvironment_RemoveSpecificReferenceMutator' has cardinality 0..*, and from 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference84' has cardinality 0..*.
+An association connects 'mutatorenvironment_RemoveSpecificReferenceMutator' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_RemoveSpecificReferenceMutator', the role 'mutatorenvironment_RemoveSpecificReferenceMutator86' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy87' has cardinality 0..*.
+An association connects 'mutatorenvironment_RemoveCompleteReferenceMutator' and 'mutatorenvironment_EReference'. From 'mutatorenvironment_RemoveCompleteReferenceMutator', the role 'mutatorenvironment_RemoveCompleteReferenceMutator' has cardinality 0..*, and from 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference89' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObSelectionStrategy' and 'mutatorenvironment_SelectObjectMutator'. From 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy91' has cardinality 0..*, and from 'mutatorenvironment_SelectObjectMutator', the role 'mutatorenvironment_SelectObjectMutator' has cardinality 0..*.
+An association connects 'mutatorenvironment_SelectObjectMutator' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_SelectObjectMutator', the role 'mutatorenvironment_SelectObjectMutator93' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy94' has cardinality 0..*.
+An association connects 'mutatorenvironment_AttributeEvaluation' and 'mutatorenvironment_EAttribute'. From 'mutatorenvironment_AttributeEvaluation', the role 'mutatorenvironment_AttributeEvaluation' has cardinality 0..*, and from 'mutatorenvironment_EAttribute', the role 'mutatorenvironment_EAttribute96' has cardinality 0..*.
+An association connects 'mutatorenvironment_AttributeEvaluationType' and 'mutatorenvironment_AttributeEvaluation'. From 'mutatorenvironment_AttributeEvaluationType', the role 'mutatorenvironment_AttributeEvaluationType' has cardinality 0..*, and from 'mutatorenvironment_AttributeEvaluation', the role 'mutatorenvironment_AttributeEvaluation98' has cardinality 0..*.
+An association connects 'mutatorenvironment_EReference' and 'mutatorenvironment_ReferenceSet'. From 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference101' has cardinality 0..*, and from 'mutatorenvironment_ReferenceSet', the role 'mutatorenvironment_ReferenceSet100' has cardinality 0..*.
+An association connects 'mutatorenvironment_ReferenceSet' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_ReferenceSet', the role 'mutatorenvironment_ReferenceSet103' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy104' has cardinality 0..*.
+An association connects 'mutatorenvironment_ReferenceAtt' and 'mutatorenvironment_EAttribute'. From 'mutatorenvironment_ReferenceAtt', the role 'mutatorenvironment_ReferenceAtt' has cardinality 0..*, and from 'mutatorenvironment_EAttribute', the role 'mutatorenvironment_EAttribute106' has cardinality 0..*.
+An association connects 'mutatorenvironment_AttributeType' and 'mutatorenvironment_ReferenceAtt'. From 'mutatorenvironment_AttributeType', the role 'mutatorenvironment_AttributeType109' has cardinality 0..*, and from 'mutatorenvironment_ReferenceAtt', the role 'mutatorenvironment_ReferenceAtt108' has cardinality 0..*.
+An association connects 'mutatorenvironment_ReferenceEvaluation' and 'mutatorenvironment_EReference'. From 'mutatorenvironment_ReferenceEvaluation', the role 'mutatorenvironment_ReferenceEvaluation' has cardinality 0..*, and from 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference111' has cardinality 0..*.
+An association connects 'mutatorenvironment_EReference' and 'mutatorenvironment_ReferenceEvaluation'. From 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference114' has cardinality 0..*, and from 'mutatorenvironment_ReferenceEvaluation', the role 'mutatorenvironment_ReferenceEvaluation113' has cardinality 0..*.
+An association connects 'mutatorenvironment_EReference' and 'mutatorenvironment_ReferenceEvaluation'. From 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference117' has cardinality 0..*, and from 'mutatorenvironment_ReferenceEvaluation', the role 'mutatorenvironment_ReferenceEvaluation116' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObSelectionStrategy' and 'mutatorenvironment_ReferenceEvaluation'. From 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy120' has cardinality 0..*, and from 'mutatorenvironment_ReferenceEvaluation', the role 'mutatorenvironment_ReferenceEvaluation119' has cardinality 0..*.
+An association connects 'mutatorenvironment_ReferenceEvaluation' and 'mutatorenvironment_EReference'. From 'mutatorenvironment_ReferenceEvaluation', the role 'mutatorenvironment_ReferenceEvaluation122' has cardinality 0..*, and from 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference123' has cardinality 0..*.
+An association connects 'mutatorenvironment_EAttribute' and 'mutatorenvironment_ReferenceEvaluation'. From 'mutatorenvironment_EAttribute', the role 'mutatorenvironment_EAttribute126' has cardinality 0..*, and from 'mutatorenvironment_ReferenceEvaluation', the role 'mutatorenvironment_ReferenceEvaluation125' has cardinality 0..*.
+An association connects 'mutatorenvironment_AttributeEvaluationType' and 'mutatorenvironment_ReferenceEvaluation'. From 'mutatorenvironment_AttributeEvaluationType', the role 'mutatorenvironment_AttributeEvaluationType129' has cardinality 0..*, and from 'mutatorenvironment_ReferenceEvaluation', the role 'mutatorenvironment_ReferenceEvaluation128' has cardinality 0..*.
+An association connects 'mutatorenvironment_Evaluation' and 'mutatorenvironment_Expression'. From 'mutatorenvironment_Evaluation', the role 'mutatorenvironment_Evaluation' has cardinality 0..*, and from 'mutatorenvironment_Expression', the role 'mutatorenvironment_Expression131' has cardinality 0..*.
+An association connects 'mutatorenvironment_BinaryOperator' and 'mutatorenvironment_Expression'. From 'mutatorenvironment_BinaryOperator', the role 'mutatorenvironment_BinaryOperator' has cardinality 0..*, and from 'mutatorenvironment_Expression', the role 'mutatorenvironment_Expression133' has cardinality 0..*.
+An association connects 'mutatorenvironment_Expression' and 'mutatorenvironment_Evaluation'. From 'mutatorenvironment_Expression', the role 'mutatorenvironment_Expression135' has cardinality 0..*, and from 'mutatorenvironment_Evaluation', the role 'mutatorenvironment_Evaluation136' has cardinality 0..*.
+An association connects 'mutatorenvironment_Block' and 'mutatorenvironment_Mutator'. From 'mutatorenvironment_Block', the role 'mutatorenvironment_Block138' has cardinality 0..*, and from 'mutatorenvironment_Mutator', the role 'mutatorenvironment_Mutator139' has cardinality 0..*.
+An association connects 'mutatorenvironment_Block' and 'mutatorenvironment_Block'. From 'mutatorenvironment_Block', the role 'mutatorenvironment_Block142' has cardinality 0..*, and from 'mutatorenvironment_Block', the role 'mutatorenvironment_Block140' has cardinality 0..*.
+An association connects 'mutatorenvironment_EClass' and 'mutatorenvironment_Constraint'. From 'mutatorenvironment_EClass', the role 'mutatorenvironment_EClass145' has cardinality 0..*, and from 'mutatorenvironment_Constraint', the role 'mutatorenvironment_Constraint144' has cardinality 0..*.
+An association connects 'mutatorenvironment_Constraint' and 'InvariantCS'. From 'mutatorenvironment_Constraint', the role 'mutatorenvironment_Constraint147' has cardinality 0..*, and from 'InvariantCS', the role 'InvariantCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObSelectionStrategy' and 'mutatorenvironment_CloneObjectMutator'. From 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy149' has cardinality 0..*, and from 'mutatorenvironment_CloneObjectMutator', the role 'mutatorenvironment_CloneObjectMutator' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObSelectionStrategy' and 'mutatorenvironment_CloneObjectMutator'. From 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy152' has cardinality 0..*, and from 'mutatorenvironment_CloneObjectMutator', the role 'mutatorenvironment_CloneObjectMutator151' has cardinality 0..*.
+An association connects 'mutatorenvironment_EReference' and 'mutatorenvironment_CloneObjectMutator'. From 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference155' has cardinality 0..*, and from 'mutatorenvironment_CloneObjectMutator', the role 'mutatorenvironment_CloneObjectMutator154' has cardinality 0..*.
+An association connects 'mutatorenvironment_AttributeSet' and 'mutatorenvironment_CloneObjectMutator'. From 'mutatorenvironment_AttributeSet', the role 'mutatorenvironment_AttributeSet158' has cardinality 0..*, and from 'mutatorenvironment_CloneObjectMutator', the role 'mutatorenvironment_CloneObjectMutator157' has cardinality 0..*.
+An association connects 'mutatorenvironment_ReferenceSet' and 'mutatorenvironment_CloneObjectMutator'. From 'mutatorenvironment_ReferenceSet', the role 'mutatorenvironment_ReferenceSet161' has cardinality 0..*, and from 'mutatorenvironment_CloneObjectMutator', the role 'mutatorenvironment_CloneObjectMutator160' has cardinality 0..*.
+An association connects 'mutatorenvironment_ListType' and 'mutatorenvironment_EObject'. From 'mutatorenvironment_ListType', the role 'mutatorenvironment_ListType' has cardinality 0..*, and from 'mutatorenvironment_EObject', the role 'mutatorenvironment_EObject' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObjectEmitter' and 'mutatorenvironment_ObjectAttributeType'. From 'mutatorenvironment_ObjectEmitter', the role 'mutatorenvironment_ObjectEmitter164' has cardinality 0..*, and from 'mutatorenvironment_ObjectAttributeType', the role 'mutatorenvironment_ObjectAttributeType' has cardinality 0..*.
+An association connects 'mutatorenvironment_EAttribute' and 'mutatorenvironment_ObjectAttributeType'. From 'mutatorenvironment_EAttribute', the role 'mutatorenvironment_EAttribute167' has cardinality 0..*, and from 'mutatorenvironment_ObjectAttributeType', the role 'mutatorenvironment_ObjectAttributeType166' has cardinality 0..*.
+An association connects 'mutatorenvironment_MinValueType' and 'mutatorenvironment_EAttribute'. From 'mutatorenvironment_MinValueType', the role 'mutatorenvironment_MinValueType' has cardinality 0..*, and from 'mutatorenvironment_EAttribute', the role 'mutatorenvironment_EAttribute169' has cardinality 0..*.
+An association connects 'mutatorenvironment_MaxValueType' and 'mutatorenvironment_EAttribute'. From 'mutatorenvironment_MaxValueType', the role 'mutatorenvironment_MaxValueType' has cardinality 0..*, and from 'mutatorenvironment_EAttribute', the role 'mutatorenvironment_EAttribute171' has cardinality 0..*.
+An association connects 'mutatorenvironment_AttributeEvaluationType' and 'mutatorenvironment_AttributeOperation'. From 'mutatorenvironment_AttributeEvaluationType', the role 'mutatorenvironment_AttributeEvaluationType173' has cardinality 0..*, and from 'mutatorenvironment_AttributeOperation', the role 'mutatorenvironment_AttributeOperation' has cardinality 0..*.
+An association connects 'mutatorenvironment_RandomNumberType' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_RandomNumberType', the role 'mutatorenvironment_RandomNumberType' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy175' has cardinality 0..*.
+An association connects 'mutatorenvironment_EAttribute' and 'mutatorenvironment_RandomNumberType'. From 'mutatorenvironment_EAttribute', the role 'mutatorenvironment_EAttribute178' has cardinality 0..*, and from 'mutatorenvironment_RandomNumberType', the role 'mutatorenvironment_RandomNumberType177' has cardinality 0..*.
+An association connects 'mutatorenvironment_ObjectEmitter' and 'mutatorenvironment_SpecificClosureSelection'. From 'mutatorenvironment_ObjectEmitter', the role 'mutatorenvironment_ObjectEmitter180' has cardinality 0..*, and from 'mutatorenvironment_SpecificClosureSelection', the role 'mutatorenvironment_SpecificClosureSelection' has cardinality 0..*.
+An association connects 'mutatorenvironment_SelectSampleMutator' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_SelectSampleMutator', the role 'mutatorenvironment_SelectSampleMutator' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy182' has cardinality 0..*.
+An association connects 'mutatorenvironment_EStructuralFeature' and 'mutatorenvironment_SelectSampleMutator'. From 'mutatorenvironment_EStructuralFeature', the role 'mutatorenvironment_EStructuralFeature' has cardinality 0..*, and from 'mutatorenvironment_SelectSampleMutator', the role 'mutatorenvironment_SelectSampleMutator184' has cardinality 0..*.
+An association connects 'mutatorenvironment_RetypeObjectMutator' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_RetypeObjectMutator', the role 'mutatorenvironment_RetypeObjectMutator' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy186' has cardinality 0..*.
+An association connects 'mutatorenvironment_RetypeObjectMutator' and 'mutatorenvironment_ObSelectionStrategy'. From 'mutatorenvironment_RetypeObjectMutator', the role 'mutatorenvironment_RetypeObjectMutator188' has cardinality 0..*, and from 'mutatorenvironment_ObSelectionStrategy', the role 'mutatorenvironment_ObSelectionStrategy189' has cardinality 0..*.
+An association connects 'mutatorenvironment_EReference' and 'mutatorenvironment_RetypeObjectMutator'. From 'mutatorenvironment_EReference', the role 'mutatorenvironment_EReference192' has cardinality 0..*, and from 'mutatorenvironment_RetypeObjectMutator', the role 'mutatorenvironment_RetypeObjectMutator191' has cardinality 0..*.
+An association connects 'mutatorenvironment_RetypeObjectMutator' and 'mutatorenvironment_AttributeSet'. From 'mutatorenvironment_RetypeObjectMutator', the role 'mutatorenvironment_RetypeObjectMutator194' has cardinality 0..*, and from 'mutatorenvironment_AttributeSet', the role 'mutatorenvironment_AttributeSet195' has cardinality 0..*.
+An association connects 'mutatorenvironment_RetypeObjectMutator' and 'mutatorenvironment_ReferenceSet'. From 'mutatorenvironment_RetypeObjectMutator', the role 'mutatorenvironment_RetypeObjectMutator197' has cardinality 0..*, and from 'mutatorenvironment_ReferenceSet', the role 'mutatorenvironment_ReferenceSet198' has cardinality 0..*.
+An association connects 'mutatorenvironment_Resource' and 'mutatorenvironment_Source'. From 'mutatorenvironment_Resource', the role 'mutatorenvironment_Resource200' has cardinality 0..*, and from 'mutatorenvironment_Source', the role 'mutatorenvironment_Source201' has cardinality 0..*.
+An association connects 'PackageCS' and 'mutatorenvironment_miniOCL_RootCS'. From 'PackageCS', the role 'PackageCS' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_RootCS', the role 'mutatorenvironment_miniOCL_RootCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_RootCS' and 'ConstraintCS'. From 'mutatorenvironment_miniOCL_RootCS', the role 'mutatorenvironment_miniOCL_RootCS204' has cardinality 0..*, and from 'ConstraintCS', the role 'ConstraintCS' has cardinality 0..*.
+An association connects 'PackageCS' and 'mutatorenvironment_miniOCL_PackageCS'. From 'PackageCS', the role 'PackageCS206' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_PackageCS', the role 'mutatorenvironment_miniOCL_PackageCS' has cardinality 0..*.
+An association connects 'ClassCS' and 'mutatorenvironment_miniOCL_PackageCS'. From 'ClassCS', the role 'ClassCS' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_PackageCS', the role 'mutatorenvironment_miniOCL_PackageCS208' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_ClassCS' and 'PathNameCS'. From 'mutatorenvironment_miniOCL_ClassCS', the role 'mutatorenvironment_miniOCL_ClassCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_ClassCS' and 'PropertyCS'. From 'mutatorenvironment_miniOCL_ClassCS', the role 'mutatorenvironment_miniOCL_ClassCS211' has cardinality 0..*, and from 'PropertyCS', the role 'PropertyCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_ClassCS' and 'OperationCS'. From 'mutatorenvironment_miniOCL_ClassCS', the role 'mutatorenvironment_miniOCL_ClassCS213' has cardinality 0..*, and from 'OperationCS', the role 'OperationCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_PropertyCS' and 'PathNameCS'. From 'mutatorenvironment_miniOCL_PropertyCS', the role 'mutatorenvironment_miniOCL_PropertyCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS215' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_OperationCS' and 'ParameterCS'. From 'mutatorenvironment_miniOCL_OperationCS', the role 'mutatorenvironment_miniOCL_OperationCS' has cardinality 0..*, and from 'ParameterCS', the role 'ParameterCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_OperationCS' and 'PathNameCS'. From 'mutatorenvironment_miniOCL_OperationCS', the role 'mutatorenvironment_miniOCL_OperationCS218' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS219' has cardinality 0..*.
+An association connects 'ExpCS' and 'mutatorenvironment_miniOCL_OperationCS'. From 'ExpCS', the role 'ExpCS' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_OperationCS', the role 'mutatorenvironment_miniOCL_OperationCS221' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_ParameterCS' and 'PathNameCS'. From 'mutatorenvironment_miniOCL_ParameterCS', the role 'mutatorenvironment_miniOCL_ParameterCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS223' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_ConstraintCS' and 'PathNameCS'. From 'mutatorenvironment_miniOCL_ConstraintCS', the role 'mutatorenvironment_miniOCL_ConstraintCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS225' has cardinality 0..*.
+An association connects 'InvariantCS' and 'mutatorenvironment_miniOCL_ConstraintCS'. From 'InvariantCS', the role 'InvariantCS228' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_ConstraintCS', the role 'mutatorenvironment_miniOCL_ConstraintCS227' has cardinality 0..*.
+An association connects 'ExpCS' and 'mutatorenvironment_miniOCL_InvariantCS'. From 'ExpCS', the role 'ExpCS230' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_InvariantCS', the role 'mutatorenvironment_miniOCL_InvariantCS' has cardinality 0..*.
+An association connects 'LogicExpCS' and 'mutatorenvironment_miniOCL_LogicExpCS'. From 'LogicExpCS', the role 'LogicExpCS' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_LogicExpCS', the role 'mutatorenvironment_miniOCL_LogicExpCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_LogicExpCS' and 'CallExpCS'. From 'mutatorenvironment_miniOCL_LogicExpCS', the role 'mutatorenvironment_miniOCL_LogicExpCS233' has cardinality 0..*, and from 'CallExpCS', the role 'CallExpCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_CallExpCS' and 'CallExpCS'. From 'mutatorenvironment_miniOCL_CallExpCS', the role 'mutatorenvironment_miniOCL_CallExpCS' has cardinality 0..*, and from 'CallExpCS', the role 'CallExpCS235' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_CallExpCS' and 'NavigationExpCS'. From 'mutatorenvironment_miniOCL_CallExpCS', the role 'mutatorenvironment_miniOCL_CallExpCS237' has cardinality 0..*, and from 'NavigationExpCS', the role 'NavigationExpCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_NameExpCS' and 'PathNameCS'. From 'mutatorenvironment_miniOCL_NameExpCS', the role 'mutatorenvironment_miniOCL_NameExpCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS239' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_NameExpCS' and 'RoundedBracketClauseCS'. From 'mutatorenvironment_miniOCL_NameExpCS', the role 'mutatorenvironment_miniOCL_NameExpCS241' has cardinality 0..*, and from 'RoundedBracketClauseCS', the role 'RoundedBracketClauseCS' has cardinality 0..*.
+An association connects 'CallExpCS' and 'mutatorenvironment_miniOCL_NameExpCS'. From 'CallExpCS', the role 'CallExpCS244' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_NameExpCS', the role 'mutatorenvironment_miniOCL_NameExpCS243' has cardinality 0..*.
+An association connects 'IteratorVarCS' and 'mutatorenvironment_miniOCL_LoopExpCS'. From 'IteratorVarCS', the role 'IteratorVarCS' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_LoopExpCS', the role 'mutatorenvironment_miniOCL_LoopExpCS' has cardinality 0..*.
+An association connects 'ExpCS' and 'mutatorenvironment_miniOCL_LoopExpCS'. From 'ExpCS', the role 'ExpCS248' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_LoopExpCS', the role 'mutatorenvironment_miniOCL_LoopExpCS247' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_IteratorVarCS' and 'PathNameCS'. From 'mutatorenvironment_miniOCL_IteratorVarCS', the role 'mutatorenvironment_miniOCL_IteratorVarCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS250' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_IterateExpCS' and 'AccVarCS'. From 'mutatorenvironment_miniOCL_IterateExpCS', the role 'mutatorenvironment_miniOCL_IterateExpCS' has cardinality 0..*, and from 'AccVarCS', the role 'AccVarCS' has cardinality 0..*.
+An association connects 'PathNameCS' and 'mutatorenvironment_miniOCL_AccVarCS'. From 'PathNameCS', the role 'PathNameCS253' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_AccVarCS', the role 'mutatorenvironment_miniOCL_AccVarCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_AccVarCS' and 'ExpCS'. From 'mutatorenvironment_miniOCL_AccVarCS', the role 'mutatorenvironment_miniOCL_AccVarCS255' has cardinality 0..*, and from 'ExpCS', the role 'ExpCS256' has cardinality 0..*.
+An association connects 'ExpCS' and 'mutatorenvironment_miniOCL_RoundedBracketClauseCS'. From 'ExpCS', the role 'ExpCS258' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_RoundedBracketClauseCS', the role 'mutatorenvironment_miniOCL_RoundedBracketClauseCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_PathNameCS' and 'PathCS'. From 'mutatorenvironment_miniOCL_PathNameCS', the role 'mutatorenvironment_miniOCL_PathNameCS' has cardinality 0..*, and from 'PathCS', the role 'PathCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_PathElementCS' and 'miniOCL_mutatorenvironment_EStructuralFeature'. From 'mutatorenvironment_miniOCL_PathElementCS', the role 'mutatorenvironment_miniOCL_PathElementCS' has cardinality 0..*, and from 'miniOCL_mutatorenvironment_EStructuralFeature', the role 'miniOCL_mutatorenvironment_EStructuralFeature' has cardinality 0..*.
+An association connects 'AccVarCS' and 'mutatorenvironment_miniOCL_ExistsExpCS'. From 'AccVarCS', the role 'AccVarCS262' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_ExistsExpCS', the role 'mutatorenvironment_miniOCL_ExistsExpCS' has cardinality 0..*.
+An association connects 'NavigationPathNameCS' and 'mutatorenvironment_miniOCL_NavigationNameExpCS'. From 'NavigationPathNameCS', the role 'NavigationPathNameCS' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_NavigationNameExpCS', the role 'mutatorenvironment_miniOCL_NavigationNameExpCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_NavigationNameExpCS' and 'RoundedBracketClauseCS'. From 'mutatorenvironment_miniOCL_NavigationNameExpCS', the role 'mutatorenvironment_miniOCL_NavigationNameExpCS265' has cardinality 0..*, and from 'RoundedBracketClauseCS', the role 'RoundedBracketClauseCS266' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_NavigationNameExpCS' and 'CallExpCS'. From 'mutatorenvironment_miniOCL_NavigationNameExpCS', the role 'mutatorenvironment_miniOCL_NavigationNameExpCS268' has cardinality 0..*, and from 'CallExpCS', the role 'CallExpCS269' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_NavigationPathNameCS' and 'NavigationPathCS'. From 'mutatorenvironment_miniOCL_NavigationPathNameCS', the role 'mutatorenvironment_miniOCL_NavigationPathNameCS' has cardinality 0..*, and from 'NavigationPathCS', the role 'NavigationPathCS' has cardinality 0..*.
+An association connects 'miniOCL_mutatorenvironment_EStructuralFeature' and 'mutatorenvironment_miniOCL_NavigationPathElementCS'. From 'miniOCL_mutatorenvironment_EStructuralFeature', the role 'miniOCL_mutatorenvironment_EStructuralFeature272' has cardinality 0..*, and from 'mutatorenvironment_miniOCL_NavigationPathElementCS', the role 'mutatorenvironment_miniOCL_NavigationPathElementCS' has cardinality 0..*.
+An association connects 'mutatorenvironment_miniOCL_ForAllExpCS' and 'AccVarCS'. From 'mutatorenvironment_miniOCL_ForAllExpCS', the role 'mutatorenvironment_miniOCL_ForAllExpCS' has cardinality 0..*, and from 'AccVarCS', the role 'AccVarCS274' has cardinality 0..*.

@@ -1,0 +1,78 @@
+The domain model 'StateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_Trigger' represents an important domain concept.
+It has one attribute: 'trigger', which is of type str.
+
+'StateMachine_Transition' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'name', which is of type str.
+
+'StateMachine_Constraint' represents an important domain concept.
+It has one attribute: 'constraint', which is of type str.
+
+'StateMachine_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_PseudoState' represents an important domain concept.
+It has the following attributes: 'returnValue', which is of type str; 'pseudoStateKind', which is of type str.
+
+'StateMachine_Vertex' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StateMachine_State' represents an important domain concept.
+It has the following attributes: 'isSimple', which is of type str; 'isSubmachineState', which is of type str; 'isComposite', which is of type str.
+
+'StateMachine_CodeBlock' represents an important domain concept.
+It has one attribute: 'desc', which is of type str.
+
+'StateMachine_Region' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TransitionKind' defines the following possible values: 'local', 'internal', 'external'.
+The enumeration 'PseudoStateKind' defines the following possible values: 'join', 'exitPoint', 'junction', 'fork', 'choice', 'entryPoint', 'terminate', 'shallowHistory', 'deepHistory', 'initial'.
+
+The model also captures inheritance relationships between classes.
+The class 'StateMachine_State' is a specialization of 'Vertex'.
+The class 'StateMachine_FinalState' is a specialization of 'State'.
+The class 'StateMachine_PseudoState' is a specialization of 'Vertex'.
+The class 'StateMachine_StateMachine' is a specialization of 'Behavior'.
+The class 'StateMachine_CodeBlock' is a specialization of 'Behavior'.
+
+Relationships between classes are modeled using associations.
+An association connects 'StateMachine_Region' and 'StateMachine_State'. From 'StateMachine_Region', the role 'StateMachine_Region' has cardinality 0..*, and from 'StateMachine_State', the role 'StateMachine_State' has cardinality 0..*.
+An association connects 'StateMachine_Behavior' and 'StateMachine_State'. From 'StateMachine_Behavior', the role 'StateMachine_Behavior' has cardinality 0..*, and from 'StateMachine_State', the role 'StateMachine_State2' has cardinality 0..*.
+An association connects 'StateMachine_State' and 'StateMachine_Trigger'. From 'StateMachine_State', the role 'StateMachine_State4' has cardinality 0..*, and from 'StateMachine_Trigger', the role 'StateMachine_Trigger' has cardinality 0..*.
+An association connects 'StateMachine_Constraint' and 'StateMachine_State'. From 'StateMachine_Constraint', the role 'StateMachine_Constraint' has cardinality 0..*, and from 'StateMachine_State', the role 'StateMachine_State6' has cardinality 0..*.
+An association connects 'StateMachine_State' and 'StateMachine_Behavior'. From 'StateMachine_State', the role 'StateMachine_State8' has cardinality 0..*, and from 'StateMachine_Behavior', the role 'StateMachine_Behavior9' has cardinality 0..*.
+An association connects 'StateMachine_Behavior' and 'StateMachine_State'. From 'StateMachine_Behavior', the role 'StateMachine_Behavior12' has cardinality 0..*, and from 'StateMachine_State', the role 'StateMachine_State11' has cardinality 0..*.
+An association connects 'StateMachine_State' and 'StateMachine_StateMachine'. From 'StateMachine_State', the role 'submachineState' has cardinality 0..*, and from 'StateMachine_StateMachine', the role 'StateMachine' has cardinality 0..*.
+An association connects 'StateMachine_State' and 'StateMachine_PseudoState'. From 'StateMachine_State', the role 'StateMachine_State15' has cardinality 0..*, and from 'StateMachine_PseudoState', the role 'StateMachine_PseudoState' has cardinality 0..*.
+An association connects 'StateMachine_PseudoState' and 'StateMachine_State'. From 'StateMachine_PseudoState', the role 'StateMachine_PseudoState18' has cardinality 0..*, and from 'StateMachine_State', the role 'StateMachine_State17' has cardinality 0..*.
+An association connects 'StateMachine_Vertex' and 'StateMachine_Transition'. From 'StateMachine_Vertex', the role 'source' has cardinality 0..*, and from 'StateMachine_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'StateMachine_Vertex' and 'StateMachine_Transition'. From 'StateMachine_Vertex', the role 'target' has cardinality 0..*, and from 'StateMachine_Transition', the role 'Transition21' has cardinality 0..*.
+An association connects 'StateMachine_Vertex' and 'StateMachine_Region'. From 'StateMachine_Vertex', the role 'StateMachine_Vertex' has cardinality 0..*, and from 'StateMachine_Region', the role 'StateMachine_Region23' has cardinality 0..*.
+An association connects 'StateMachine_Region' and 'StateMachine_Transition'. From 'StateMachine_Region', the role 'StateMachine_Region25' has cardinality 0..*, and from 'StateMachine_Transition', the role 'StateMachine_Transition' has cardinality 0..*.
+An association connects 'StateMachine_StateMachine' and 'StateMachine_Region'. From 'StateMachine_StateMachine', the role 'StateMachine_StateMachine' has cardinality 0..*, and from 'StateMachine_Region', the role 'StateMachine_Region27' has cardinality 0..*.
+An association connects 'StateMachine_State' and 'StateMachine_StateMachine'. From 'StateMachine_State', the role 'State' has cardinality 0..*, and from 'StateMachine_StateMachine', the role 'submachine' has cardinality 0..*.
+An association connects 'StateMachine_Transition' and 'StateMachine_Vertex'. From 'StateMachine_Transition', the role 'outgoing' has cardinality 0..*, and from 'StateMachine_Vertex', the role 'Vertex' has cardinality 0..*.
+An association connects 'StateMachine_Transition' and 'StateMachine_Vertex'. From 'StateMachine_Transition', the role 'incoming' has cardinality 0..*, and from 'StateMachine_Vertex', the role 'Vertex31' has cardinality 0..*.
+An association connects 'StateMachine_Behavior' and 'StateMachine_Transition'. From 'StateMachine_Behavior', the role 'StateMachine_Behavior34' has cardinality 0..*, and from 'StateMachine_Transition', the role 'StateMachine_Transition33' has cardinality 0..*.
+An association connects 'StateMachine_Trigger' and 'StateMachine_Transition'. From 'StateMachine_Trigger', the role 'StateMachine_Trigger37' has cardinality 0..*, and from 'StateMachine_Transition', the role 'StateMachine_Transition36' has cardinality 0..*.
+An association connects 'StateMachine_Constraint' and 'StateMachine_Transition'. From 'StateMachine_Constraint', the role 'StateMachine_Constraint40' has cardinality 0..*, and from 'StateMachine_Transition', the role 'StateMachine_Transition39' has cardinality 0..*.

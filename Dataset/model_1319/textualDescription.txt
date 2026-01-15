@@ -1,0 +1,19 @@
+The domain model 'FiniteStateMachines' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'FiniteStateMachines_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isEndState', which is of type bool; 'isStartState', which is of type bool.
+
+'FiniteStateMachines_FiniteStateMachine' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'FiniteStateMachines_Transition' represents an important domain concept.
+It has one attribute: 'input', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'FiniteStateMachines_State' and 'FiniteStateMachines_FiniteStateMachine'. From 'FiniteStateMachines_State', the role 'FiniteStateMachines_State' has cardinality 0..*, and from 'FiniteStateMachines_FiniteStateMachine', the role 'FiniteStateMachines_FiniteStateMachine' has cardinality 0..*.
+An association connects 'FiniteStateMachines_FiniteStateMachine' and 'FiniteStateMachines_Transition'. From 'FiniteStateMachines_FiniteStateMachine', the role 'FiniteStateMachines_FiniteStateMachine2' has cardinality 0..*, and from 'FiniteStateMachines_Transition', the role 'FiniteStateMachines_Transition' has cardinality 0..*.
+An association connects 'FiniteStateMachines_State' and 'FiniteStateMachines_Transition'. From 'FiniteStateMachines_State', the role 'startState' has cardinality 0..*, and from 'FiniteStateMachines_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'FiniteStateMachines_State' and 'FiniteStateMachines_Transition'. From 'FiniteStateMachines_State', the role 'State' has cardinality 0..*, and from 'FiniteStateMachines_Transition', the role 'transitions' has cardinality 0..*.
+An association connects 'FiniteStateMachines_State' and 'FiniteStateMachines_Transition'. From 'FiniteStateMachines_State', the role 'FiniteStateMachines_State7' has cardinality 0..*, and from 'FiniteStateMachines_Transition', the role 'FiniteStateMachines_Transition6' has cardinality 0..*.

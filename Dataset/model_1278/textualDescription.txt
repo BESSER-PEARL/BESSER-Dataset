@@ -1,0 +1,252 @@
+The domain model 'ocl' describes the core structural elements and their relationships within the system.
+
+The model defines 59 main class(es).
+
+'ocl_exp_EVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ocl_type_EPrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EFeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_ELoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EOclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_ESequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_ETypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_EBagType' represents an important domain concept.
+It does not declare any attributes.
+
+'EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_ELiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EAssociationEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'EPrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_EAnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_ETupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_dm_EAssociationEnd' represents an important domain concept.
+It has the following attributes: 'opp', which is of type str; 'name', which is of type str; 'mult', which is of type str.
+
+'EIterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_ECallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EIterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EStringLiteralExp' represents an important domain concept.
+It has one attribute: 'stringValue', which is of type str.
+
+'ocl_exp_EPrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ESignal' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_EInvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ELiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_EMessageType' represents an important domain concept.
+It has one attribute: 'referredOperation', which is of type str.
+
+'ENavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EIntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'integerValue', which is of type str.
+
+'ocl_dm_EAttribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'ELoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_ENumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EOperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EBooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'booleanValue', which is of type str.
+
+'ocl_type_EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'EVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EAssociationClassCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_EVoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_dm_EEntity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ocl_exp_EPropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EOperationCallExp' represents an important domain concept.
+It has one attribute: 'referredOperation', which is of type str.
+
+'EEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_dm_EDataModel' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EStateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EVariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ECollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'ECallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ENumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EOclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_ECollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EIteratorExp' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ocl_exp_ENavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_ESignal' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EMessageExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EFeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_EOrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_exp_EIfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_type_ESetType' represents an important domain concept.
+It does not declare any attributes.
+
+'EIfExp' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EIteratorKind' defines the following possible values: 'select', 'forAll', 'exists', 'collect'.
+The enumeration 'EMultiplicity' defines the following possible values: 'one', 'many'.
+The enumeration 'EOperator' defines the following possible values: 'less', 'IMPLIES', 'flatten', 'AND', 'isEmpty', 'greaterOrEqual', 'size', 'oclIsUndefined', 'OR', 'notEmpty', 'XOR', 'greater', 'isUnique', 'equal', 'lessOrEqual', 'allInstances', 'notEqual'.
+
+The model also captures inheritance relationships between classes.
+The class 'ocl_dm_EEntity' is a specialization of 'EClassifier'.
+The class 'ocl_exp_EVariableExp' is a specialization of 'EOclExpression'.
+The class 'ocl_exp_ETypeExp' is a specialization of 'EOclExpression'.
+The class 'ocl_exp_ELoopExp' is a specialization of 'ECallExp'.
+The class 'ocl_exp_EStateExp' is a specialization of 'EOclExpression'.
+The class 'ocl_exp_EFeatureCallExp' is a specialization of 'ECallExp'.
+The class 'ocl_exp_EAssociationClassCallExp' is a specialization of 'ENavigationCallExp'.
+The class 'ocl_exp_ENumericLiteralExp' is a specialization of 'EPrimitiveType'.
+The class 'ocl_exp_ELiteralExp' is a specialization of 'EOclExpression'.
+The class 'ocl_exp_EMessageExp' is a specialization of 'EOclExpression'.
+The class 'ocl_exp_EPropertyCallExp' is a specialization of 'ENavigationCallExp'.
+The class 'ocl_exp_EIteratorExp' is a specialization of 'ELoopExp'.
+The class 'ocl_exp_EIterateExp' is a specialization of 'ELoopExp'.
+The class 'ocl_exp_ECallExp' is a specialization of 'EOclExpression'.
+The class 'ocl_exp_EIntegerLiteralExp' is a specialization of 'ENumericLiteralExp'.
+The class 'ocl_exp_EPrimitiveType' is a specialization of 'ELiteralExp'.
+The class 'ocl_exp_ENavigationCallExp' is a specialization of 'EFeatureCallExp'.
+The class 'ocl_exp_EOperationCallExp' is a specialization of 'EFeatureCallExp'.
+The class 'ocl_exp_EStringLiteralExp' is a specialization of 'EPrimitiveType'.
+The class 'ocl_exp_EIfExp' is a specialization of 'EOclExpression'.
+The class 'ocl_exp_EBooleanLiteralExp' is a specialization of 'EPrimitiveType'.
+The class 'ocl_type_EDataType' is a specialization of 'EClassifier'.
+The class 'ocl_type_EInvalidType' is a specialization of 'EClassifier'.
+The class 'ocl_type_EVoidType' is a specialization of 'EClassifier'.
+The class 'ocl_type_EAnyType' is a specialization of 'EClassifier'.
+The class 'ocl_type_EMessageType' is a specialization of 'EClassifier'.
+The class 'ocl_type_ECollectionType' is a specialization of 'EDataType'.
+The class 'ocl_type_EPrimitiveType' is a specialization of 'EDataType'.
+The class 'ocl_type_ETupleType' is a specialization of 'EDataType'.
+The class 'ocl_type_EOrderedSetType' is a specialization of 'ECollectionType'.
+The class 'ocl_type_ESequenceType' is a specialization of 'ECollectionType'.
+The class 'ocl_type_EBagType' is a specialization of 'ECollectionType'.
+The class 'ocl_type_ESetType' is a specialization of 'ECollectionType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'EAssociationEnd' and 'ocl_dm_EEntity'. From 'EAssociationEnd', the role 'EAssociationEnd' has cardinality 0..*, and from 'ocl_dm_EEntity', the role 'ocl_dm_EEntity' has cardinality 0..*.
+An association connects 'ocl_dm_EEntity' and 'EAttribute'. From 'ocl_dm_EEntity', the role 'ocl_dm_EEntity2' has cardinality 0..*, and from 'EAttribute', the role 'EAttribute' has cardinality 0..*.
+An association connects 'ocl_dm_EAssociationEnd' and 'EEntity'. From 'ocl_dm_EAssociationEnd', the role 'ocl_dm_EAssociationEnd' has cardinality 0..*, and from 'EEntity', the role 'EEntity' has cardinality 0..*.
+An association connects 'EEntity' and 'ocl_dm_EDataModel'. From 'EEntity', the role 'EEntity5' has cardinality 0..*, and from 'ocl_dm_EDataModel', the role 'ocl_dm_EDataModel' has cardinality 0..*.
+An association connects 'EVariable' and 'ocl_exp_EVariableExp'. From 'EVariable', the role 'EVariable' has cardinality 0..*, and from 'ocl_exp_EVariableExp', the role 'ocl_exp_EVariableExp' has cardinality 0..*.
+An association connects 'EClassifier' and 'ocl_exp_ETypeExp'. From 'EClassifier', the role 'EClassifier' has cardinality 0..*, and from 'ocl_exp_ETypeExp', the role 'ocl_exp_ETypeExp' has cardinality 0..*.
+An association connects 'EOclExpression' and 'ocl_exp_ELoopExp'. From 'EOclExpression', the role 'exp' has cardinality 0..*, and from 'ocl_exp_ELoopExp', the role 'EOclExpression' has cardinality 0..*.
+An association connects 'EVariable' and 'ocl_exp_ELoopExp'. From 'EVariable', the role 'exp11' has cardinality 0..*, and from 'ocl_exp_ELoopExp', the role 'EVariable10' has cardinality 0..*.
+An association connects 'ocl_exp_EAssociationClassCallExp' and 'EAssociationEnd'. From 'ocl_exp_EAssociationClassCallExp', the role 'ocl_exp_EAssociationClassCallExp' has cardinality 0..*, and from 'EAssociationEnd', the role 'EAssociationEnd13' has cardinality 0..*.
+An association connects 'ELoopExp' and 'ocl_exp_EVariable'. From 'ELoopExp', the role 'exp15' has cardinality 0..*, and from 'ocl_exp_EVariable', the role 'ELoopExp' has cardinality 0..*.
+An association connects 'EIterateExp' and 'ocl_exp_EVariable'. From 'EIterateExp', the role 'exp17' has cardinality 0..*, and from 'ocl_exp_EVariable', the role 'EIterateExp' has cardinality 0..*.
+An association connects 'EOclExpression' and 'ocl_exp_EVariable'. From 'EOclExpression', the role 'exp20' has cardinality 0..*, and from 'ocl_exp_EVariable', the role 'EOclExpression19' has cardinality 0..*.
+An association connects 'ocl_exp_EPropertyCallExp' and 'EAttribute'. From 'ocl_exp_EPropertyCallExp', the role 'ocl_exp_EPropertyCallExp' has cardinality 0..*, and from 'EAttribute', the role 'EAttribute22' has cardinality 0..*.
+An association connects 'ELoopExp' and 'ocl_exp_EOclExpression'. From 'ELoopExp', the role 'exp25' has cardinality 0..*, and from 'ocl_exp_EOclExpression', the role 'ELoopExp24' has cardinality 0..*.
+An association connects 'ocl_exp_EOclExpression' and 'ECallExp'. From 'ocl_exp_EOclExpression', the role 'ECallExp' has cardinality 0..*, and from 'ECallExp', the role 'exp27' has cardinality 0..*.
+An association connects 'EVariable' and 'ocl_exp_EOclExpression'. From 'EVariable', the role 'exp30' has cardinality 0..*, and from 'ocl_exp_EOclExpression', the role 'EVariable29' has cardinality 0..*.
+An association connects 'ocl_exp_EOclExpression' and 'EIfExp'. From 'ocl_exp_EOclExpression', the role 'EIfExp' has cardinality 0..*, and from 'EIfExp', the role 'exp32' has cardinality 0..*.
+An association connects 'ocl_exp_EOclExpression' and 'EIfExp'. From 'ocl_exp_EOclExpression', the role 'EIfExp34' has cardinality 0..*, and from 'EIfExp', the role 'exp35' has cardinality 0..*.
+An association connects 'ocl_exp_EOclExpression' and 'EIfExp'. From 'ocl_exp_EOclExpression', the role 'EIfExp37' has cardinality 0..*, and from 'EIfExp', the role 'exp38' has cardinality 0..*.
+An association connects 'EOperationCallExp' and 'ocl_exp_EOclExpression'. From 'EOperationCallExp', the role 'exp40' has cardinality 0..*, and from 'ocl_exp_EOclExpression', the role 'EOperationCallExp' has cardinality 0..*.
+An association connects 'ENavigationCallExp' and 'ocl_exp_EOclExpression'. From 'ENavigationCallExp', the role 'exp42' has cardinality 0..*, and from 'ocl_exp_EOclExpression', the role 'ENavigationCallExp' has cardinality 0..*.
+An association connects 'EVariable' and 'ocl_exp_EIterateExp'. From 'EVariable', the role 'exp45' has cardinality 0..*, and from 'ocl_exp_EIterateExp', the role 'EVariable44' has cardinality 0..*.
+An association connects 'EOclExpression' and 'ocl_exp_ECallExp'. From 'EOclExpression', the role 'exp48' has cardinality 0..*, and from 'ocl_exp_ECallExp', the role 'EOclExpression47' has cardinality 0..*.
+An association connects 'EOclExpression' and 'ocl_exp_ENavigationCallExp'. From 'EOclExpression', the role 'exp51' has cardinality 0..*, and from 'ocl_exp_ENavigationCallExp', the role 'EOclExpression50' has cardinality 0..*.
+An association connects 'ocl_exp_EOperationCallExp' and 'EOclExpression'. From 'ocl_exp_EOperationCallExp', the role 'EOclExpression53' has cardinality 0..*, and from 'EOclExpression', the role 'exp54' has cardinality 0..*.
+An association connects 'EOclExpression' and 'ocl_exp_EIfExp'. From 'EOclExpression', the role 'exp57' has cardinality 0..*, and from 'ocl_exp_EIfExp', the role 'EOclExpression56' has cardinality 0..*.
+An association connects 'EOclExpression' and 'ocl_exp_EIfExp'. From 'EOclExpression', the role 'exp60' has cardinality 0..*, and from 'ocl_exp_EIfExp', the role 'EOclExpression59' has cardinality 0..*.
+An association connects 'ocl_exp_EIfExp' and 'EOclExpression'. From 'ocl_exp_EIfExp', the role 'EOclExpression62' has cardinality 0..*, and from 'EOclExpression', the role 'exp63' has cardinality 0..*.
+An association connects 'ESignal' and 'ocl_type_EMessageType'. From 'ESignal', the role 'ESignal' has cardinality 0..*, and from 'ocl_type_EMessageType', the role 'ocl_type_EMessageType' has cardinality 0..*.
+An association connects 'EClassifier' and 'ocl_type_ECollectionType'. From 'EClassifier', the role 'EClassifier66' has cardinality 0..*, and from 'ocl_type_ECollectionType', the role 'ocl_type_ECollectionType' has cardinality 0..*.

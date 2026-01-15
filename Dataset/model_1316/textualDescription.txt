@@ -1,0 +1,44 @@
+The domain model 'stateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'stateMachine_Condition' represents an important domain concept.
+It has the following attributes: 'op', which is of type str; 'value', which is of type int.
+
+'stateMachine_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_Events' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_States' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Variables' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'stateMachine_Variables' and 'stateMachine_StateMachine'. From 'stateMachine_Variables', the role 'stateMachine_Variables' has cardinality 0..*, and from 'stateMachine_StateMachine', the role 'stateMachine_StateMachine' has cardinality 0..*.
+An association connects 'stateMachine_Events' and 'stateMachine_StateMachine'. From 'stateMachine_Events', the role 'stateMachine_Events' has cardinality 0..*, and from 'stateMachine_StateMachine', the role 'stateMachine_StateMachine2' has cardinality 0..*.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_States'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine4' has cardinality 0..*, and from 'stateMachine_States', the role 'stateMachine_States' has cardinality 0..*.
+An association connects 'stateMachine_Variables' and 'stateMachine_Variable'. From 'stateMachine_Variables', the role 'stateMachine_Variables6' has cardinality 0..*, and from 'stateMachine_Variable', the role 'stateMachine_Variable' has cardinality 0..*.
+An association connects 'stateMachine_Events' and 'stateMachine_Event'. From 'stateMachine_Events', the role 'stateMachine_Events8' has cardinality 0..*, and from 'stateMachine_Event', the role 'stateMachine_Event' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_States'. From 'stateMachine_State', the role 'stateMachine_State' has cardinality 0..*, and from 'stateMachine_States', the role 'stateMachine_States10' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_States'. From 'stateMachine_State', the role 'stateMachine_State13' has cardinality 0..*, and from 'stateMachine_States', the role 'stateMachine_States12' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_Transition'. From 'stateMachine_State', the role 'stateMachine_State15' has cardinality 0..*, and from 'stateMachine_Transition', the role 'stateMachine_Transition' has cardinality 0..*.
+An association connects 'stateMachine_Event' and 'stateMachine_Transition'. From 'stateMachine_Event', the role 'stateMachine_Event18' has cardinality 0..*, and from 'stateMachine_Transition', the role 'stateMachine_Transition17' has cardinality 0..*.
+An association connects 'stateMachine_Transition' and 'stateMachine_Condition'. From 'stateMachine_Transition', the role 'stateMachine_Transition20' has cardinality 0..*, and from 'stateMachine_Condition', the role 'stateMachine_Condition' has cardinality 0..*.
+An association connects 'stateMachine_Transition' and 'stateMachine_State'. From 'stateMachine_Transition', the role 'stateMachine_Transition22' has cardinality 0..*, and from 'stateMachine_State', the role 'stateMachine_State23' has cardinality 0..*.
+An association connects 'stateMachine_Variable' and 'stateMachine_Condition'. From 'stateMachine_Variable', the role 'stateMachine_Variable26' has cardinality 0..*, and from 'stateMachine_Condition', the role 'stateMachine_Condition25' has cardinality 0..*.

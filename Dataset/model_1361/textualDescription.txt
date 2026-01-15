@@ -1,0 +1,53 @@
+The domain model 'statemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'statemachine_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Transition' represents an important domain concept.
+It has the following attributes: 'guardExpression', which is of type str; 'actionStatement', which is of type str; 'guardLabel', which is of type str; 'targetLabel', which is of type str; 'actionLabel', which is of type str; 'sourceLabel', which is of type str; 'label', which is of type str.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_StateMachineVariable' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'statemachine_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Action' represents an important domain concept.
+It has the following attributes: 'actionLabel', which is of type str; 'actionStatement', which is of type str.
+
+'statemachine_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_NormalState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_State' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'label', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachine_Transition' is a specialization of 'Declaration'.
+The class 'statemachine_State' is a specialization of 'Declaration'.
+The class 'statemachine_NormalState' is a specialization of 'State'.
+The class 'statemachine_InitialState' is a specialization of 'State'.
+The class 'statemachine_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_StateMachine' and 'statemachine_Declaration'. From 'statemachine_StateMachine', the role 'statemachine_StateMachine' has cardinality 0..*, and from 'statemachine_Declaration', the role 'statemachine_Declaration' has cardinality 0..*.
+An association connects 'statemachine_StateMachineVariable' and 'statemachine_StateMachine'. From 'statemachine_StateMachineVariable', the role 'statemachine_StateMachineVariable' has cardinality 0..*, and from 'statemachine_StateMachine', the role 'statemachine_StateMachine2' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_Transition'. From 'statemachine_State', the role 'statemachine_State' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_State'. From 'statemachine_Transition', the role 'statemachine_Transition5' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State6' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_State'. From 'statemachine_State', the role 'statemachine_State9' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State7' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_State'. From 'statemachine_State', the role 'statemachine_State12' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State10' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_State'. From 'statemachine_Transition', the role 'statemachine_Transition15' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State14' has cardinality 0..*.
+An association connects 'statemachine_Action' and 'statemachine_NormalState'. From 'statemachine_Action', the role 'statemachine_Action' has cardinality 0..*, and from 'statemachine_NormalState', the role 'statemachine_NormalState' has cardinality 0..*.

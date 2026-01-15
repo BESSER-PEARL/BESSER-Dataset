@@ -1,0 +1,1066 @@
+The domain model 'astm' describes the core structural elements and their relationships within the system.
+
+The model defines 243 main class(es).
+
+'astm_SpecificLike' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ShortInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BitFieldDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Comment' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'astm_IdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ExceptionType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_SpecificConcatString' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_UnaryPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DelphiUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Void' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_SpecificSelectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DelphiWithStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_NameSpaceType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ProgramScope' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DelphiFunctionCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Byte' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DeclarationOrDefinition' represents an important domain concept.
+It has the following attributes: 'isRegister', which is of type bool; 'linkageSpecifier', which is of type str.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'GASTMSourceObject' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_TypesCatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Deref' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BitNot' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_EnumLiteralDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DelphiInterfaceSection' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_LongInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'DataDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_AddressOf' represents an important domain concept.
+It does not declare any attributes.
+
+'DefinitionObject' represents an important domain concept.
+It does not declare any attributes.
+
+'AggregateType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_MacroCall' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DerivesFrom' represents an important domain concept.
+It has one attribute: 'isVirtual', which is of type bool.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Decrement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Character' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Increment' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_FunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_CatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'PreprocessorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_LongDouble' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_UnnamedTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_PostIncrement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_AnnotationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_VariableCatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_String' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_PostDecrement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BlockScope' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ClassType' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_WideCharacter' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_SourceLocation' represents an important domain concept.
+It has the following attributes: 'endColumn', which is of type int; 'startColumn', which is of type int; 'endLine', which is of type int; 'startLine', which is of type int.
+
+'astm_Subtract' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Modulus' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Protected' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Divide' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DelphiImplementationSection' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_PointerType' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_And' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_LabelType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_OperatorAssign' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_AggregateType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_MacroDefinition' represents an important domain concept.
+It has the following attributes: 'macroName', which is of type str; 'body', which is of type str.
+
+'astm_RangeType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_GlobalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Exponent' represents an important domain concept.
+It does not declare any attributes.
+
+'CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_StructureType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DeleteStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_UnionType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_StorageSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_NameSpaceDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_FunctionType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Type' represents an important domain concept.
+It has the following attributes: 'isVolatile', which is of type bool; 'isConst', which is of type bool.
+
+'astm_AnnotationType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DeclarationOrDefinitionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_SourceFile' represents an important domain concept.
+It has one attribute: 'pathName', which is of type str.
+
+'astm_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ByValueFormalParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'GASTMSemanticObject' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_NamedTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_NamedType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ByReferenceFormalParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_GASTMSyntaxObject' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_NotGreater' represents an important domain concept.
+It does not declare any attributes.
+
+'FormalParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_CompilationUnit' represents an important domain concept.
+It has one attribute: 'language', which is of type str.
+
+'astm_VirtualSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_PrimitiveType' represents an important domain concept.
+It has one attribute: 'isSigned', which is of type bool.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ConstructedType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_CaseBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Public' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_QualifiedIdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Private' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_FormalParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BitXor' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BitRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'AccessKind' represents an important domain concept.
+It does not declare any attributes.
+
+'GASTMObject' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_NameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_NotLess' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_TerminateStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BitAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_EnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_AggregateTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DefaultBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BitOr' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DataDefinition' represents an important domain concept.
+It has one attribute: 'isMutable', which is of type bool.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'isMutable', which is of type bool.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_PreprocessorElement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_GASTMSemanticObject' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DelphiBlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_FunctionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_RangeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BitLeftShift' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DoWhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_FormalParameterDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_MissingActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ForCheckBeforeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_JumpStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_GASTMObject' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Assign' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_FunctionMemberAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_FunctionScope' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_EntryDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DefinitionObject' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ForCheckAfterStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_VariableDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_FunctionCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ByValueActualParameterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_LoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_AggregateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_External' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ByReferenceActualParameterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_QualifiedOverPointer' represents an important domain concept.
+It does not declare any attributes.
+
+'ActualParameterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_FunctionMemberAttributes' represents an important domain concept.
+It has the following attributes: 'isFriend', which is of type bool; 'isInline', which is of type bool; 'isThisConst', which is of type bool.
+
+'astm_FunctionPersistent' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_QualifiedOverData' represents an important domain concept.
+It does not declare any attributes.
+
+'StorageSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_SpecificTriggerDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'QualifiedIdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'GASTMSyntaxObject' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Name' represents an important domain concept.
+It has one attribute: 'nameString', which is of type str.
+
+'astm_AggregateScope' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_FileLocal' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_SpecificLessEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_TypeQualifiedIdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstructedType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_IntegerLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'OtherSyntaxObject' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_GASTMSourceObject' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_PerClassMember' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_FormalParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_SpecificGreaterEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_StringLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_SpecificIn' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_OtherSyntaxObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_NoDef' represents an important domain concept.
+It does not declare any attributes.
+
+'NameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_LabelAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_ActualParameterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_NamedTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_NonVirtual' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BitLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_IncludeUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_NewExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Virtual' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_LabeledStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_AccessKind' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_CharLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'DeclarationOrDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_RealLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_PureVirtual' represents an important domain concept.
+It does not declare any attributes.
+
+'Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_LabelDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'astm_BooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'astm_DelphiUnit' is a specialization of 'CompilationUnit'.
+The class 'astm_DelphiInterfaceSection' is a specialization of 'CompilationUnit'.
+The class 'astm_DelphiImplementationSection' is a specialization of 'CompilationUnit'.
+The class 'astm_DelphiBlockStatement' is a specialization of 'BlockStatement'.
+The class 'astm_DelphiFunctionCallExpression' is a specialization of 'FunctionCallExpression'.
+The class 'astm_DelphiWithStatement' is a specialization of 'BlockStatement'.
+The class 'astm_GASTMObject' is a specialization of 'Visitable'.
+The class 'astm_GASTMSourceObject' is a specialization of 'Visitable'.
+The class 'astm_GASTMSemanticObject' is a specialization of 'Visitable'.
+The class 'astm_OtherSyntaxObject' is a specialization of 'GASTMSyntaxObject'.
+The class 'astm_StorageSpecification' is a specialization of 'Visitable'.
+The class 'astm_DataType' is a specialization of 'Type'.
+The class 'astm_AccessKind' is a specialization of 'Visitable'.
+The class 'astm_UnaryOperator' is a specialization of 'Operator'.
+The class 'astm_BinaryOperator' is a specialization of 'Operator'.
+The class 'astm_ActualParameter' is a specialization of 'Visitable'.
+The class 'astm_SourceFile' is a specialization of 'GASTMSourceObject'.
+The class 'astm_SourceLocation' is a specialization of 'GASTMSourceObject'.
+The class 'astm_Project' is a specialization of 'GASTMSemanticObject'.
+The class 'astm_Scope' is a specialization of 'GASTMSemanticObject'.
+The class 'astm_GASTMSyntaxObject' is a specialization of 'GASTMObject'.
+The class 'astm_CompilationUnit' is a specialization of 'OtherSyntaxObject'.
+The class 'astm_Name' is a specialization of 'OtherSyntaxObject'.
+The class 'astm_DeclarationOrDefinition' is a specialization of 'DefinitionObject'.
+The class 'astm_Definition' is a specialization of 'DeclarationOrDefinition'.
+The class 'astm_Declaration' is a specialization of 'DeclarationOrDefinition'.
+The class 'astm_FunctionDeclaration' is a specialization of 'Declaration'.
+The class 'astm_VariableDeclaration' is a specialization of 'Declaration'.
+The class 'astm_FunctionDefinition' is a specialization of 'Definition'.
+The class 'astm_FunctionMemberAttributes' is a specialization of 'Visitable'.
+The class 'astm_EntryDefinition' is a specialization of 'Definition'.
+The class 'astm_DataDefinition' is a specialization of 'Definition'.
+The class 'astm_BitFieldDefinition' is a specialization of 'DataDefinition'.
+The class 'astm_EnumLiteralDefinition' is a specialization of 'Definition'.
+The class 'astm_TypeDefinition' is a specialization of 'DefinitionObject'.
+The class 'astm_NamedTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'astm_AggregateTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'astm_NameSpaceDefinition' is a specialization of 'DefinitionObject'.
+The class 'astm_LabelDefinition' is a specialization of 'DefinitionObject'.
+The class 'astm_IncludeUnit' is a specialization of 'PreprocessorElement'.
+The class 'astm_MacroCall' is a specialization of 'PreprocessorElement'.
+The class 'astm_MacroDefinition' is a specialization of 'PreprocessorElement'.
+The class 'astm_Comment' is a specialization of 'PreprocessorElement'.
+The class 'astm_Type' is a specialization of 'GASTMSyntaxObject'.
+The class 'astm_PrimitiveType' is a specialization of 'DataType'.
+The class 'astm_EnumType' is a specialization of 'DataType'.
+The class 'astm_ConstructedType' is a specialization of 'DataType'.
+The class 'astm_AggregateType' is a specialization of 'DataType'.
+The class 'astm_ArrayType' is a specialization of 'ConstructedType'.
+The class 'astm_Dimension' is a specialization of 'OtherSyntaxObject'.
+The class 'astm_FunctionType' is a specialization of 'Type'.
+The class 'astm_FormalParameterType' is a specialization of 'DataType'.
+The class 'astm_NamedType' is a specialization of 'DataType'.
+The class 'astm_ClassType' is a specialization of 'AggregateType'.
+The class 'astm_DerivesFrom' is a specialization of 'OtherSyntaxObject'.
+The class 'astm_UnnamedTypeReference' is a specialization of 'TypeReference'.
+The class 'astm_NamedTypeReference' is a specialization of 'TypeReference'.
+The class 'astm_DeleteStatement' is a specialization of 'Statement'.
+The class 'astm_DeclarationOrDefinitionStatement' is a specialization of 'Statement'.
+The class 'astm_ExpressionStatement' is a specialization of 'Statement'.
+The class 'astm_JumpStatement' is a specialization of 'Statement'.
+The class 'astm_BreakStatement' is a specialization of 'Statement'.
+The class 'astm_ContinueStatement' is a specialization of 'Statement'.
+The class 'astm_LabeledStatement' is a specialization of 'Statement'.
+The class 'astm_BlockStatement' is a specialization of 'Statement'.
+The class 'astm_EmptyStatement' is a specialization of 'Statement'.
+The class 'astm_IfStatement' is a specialization of 'Statement'.
+The class 'astm_SwitchStatement' is a specialization of 'Statement'.
+The class 'astm_SwitchCase' is a specialization of 'OtherSyntaxObject'.
+The class 'astm_CaseBlock' is a specialization of 'SwitchCase'.
+The class 'astm_ReturnStatement' is a specialization of 'Statement'.
+The class 'astm_LoopStatement' is a specialization of 'Statement'.
+The class 'astm_ForStatement' is a specialization of 'LoopStatement'.
+The class 'astm_TryStatement' is a specialization of 'Statement'.
+The class 'astm_CatchBlock' is a specialization of 'OtherSyntaxObject'.
+The class 'astm_TypesCatchBlock' is a specialization of 'CatchBlock'.
+The class 'astm_VariableCatchBlock' is a specialization of 'CatchBlock'.
+The class 'astm_ThrowStatement' is a specialization of 'Statement'.
+The class 'astm_Expression' is a specialization of 'GASTMSyntaxObject'.
+The class 'astm_NameReference' is a specialization of 'Expression'.
+The class 'astm_ArrayAccess' is a specialization of 'Expression'.
+The class 'astm_QualifiedIdentifierReference' is a specialization of 'NameReference'.
+The class 'astm_TypeQualifiedIdentifierReference' is a specialization of 'NameReference'.
+The class 'astm_Literal' is a specialization of 'Expression'.
+The class 'astm_CastExpression' is a specialization of 'Expression'.
+The class 'astm_UnaryExpression' is a specialization of 'Expression'.
+The class 'astm_BinaryExpression' is a specialization of 'Expression'.
+The class 'astm_OperatorAssign' is a specialization of 'BinaryOperator'.
+The class 'astm_ConditionalExpression' is a specialization of 'Expression'.
+The class 'astm_RangeExpression' is a specialization of 'Expression'.
+The class 'astm_FunctionCallExpression' is a specialization of 'Expression'.
+The class 'astm_ActualParameterExpression' is a specialization of 'ActualParameter'.
+The class 'astm_NewExpression' is a specialization of 'Expression'.
+The class 'astm_LabelAccess' is a specialization of 'Expression'.
+The class 'astm_AnnotationExpression' is a specialization of 'Expression'.
+The class 'astm_GlobalScope' is a specialization of 'Scope'.
+The class 'astm_PreprocessorElement' is a specialization of 'GASTMSyntaxObject'.
+The class 'astm_DefinitionObject' is a specialization of 'GASTMSyntaxObject'.
+The class 'astm_ProgramScope' is a specialization of 'Scope'.
+The class 'astm_TypeReference' is a specialization of 'Type'.
+The class 'astm_Statement' is a specialization of 'GASTMSyntaxObject'.
+The class 'astm_FunctionScope' is a specialization of 'Scope'.
+The class 'astm_NameSpaceType' is a specialization of 'Type'.
+The class 'astm_LabelType' is a specialization of 'Type'.
+The class 'astm_AggregateScope' is a specialization of 'Scope'.
+The class 'astm_BlockScope' is a specialization of 'Scope'.
+The class 'astm_IdentifierReference' is a specialization of 'NameReference'.
+The class 'astm_FormalParameterDefinition' is a specialization of 'DataDefinition'.
+The class 'astm_VirtualSpecification' is a specialization of 'OtherSyntaxObject'.
+The class 'astm_FormalParameterDeclaration' is a specialization of 'Declaration'.
+The class 'astm_VariableDefinition' is a specialization of 'DataDefinition'.
+The class 'astm_FunctionMemberAttribute' is a specialization of 'OtherSyntaxObject'.
+The class 'astm_External' is a specialization of 'StorageSpecification'.
+The class 'astm_FunctionPersistent' is a specialization of 'StorageSpecification'.
+The class 'astm_FileLocal' is a specialization of 'StorageSpecification'.
+The class 'astm_PerClassMember' is a specialization of 'StorageSpecification'.
+The class 'astm_NoDef' is a specialization of 'StorageSpecification'.
+The class 'astm_Virtual' is a specialization of 'VirtualSpecification'.
+The class 'astm_PureVirtual' is a specialization of 'VirtualSpecification'.
+The class 'astm_NonVirtual' is a specialization of 'VirtualSpecification'.
+The class 'astm_ExceptionType' is a specialization of 'DataType'.
+The class 'astm_Void' is a specialization of 'PrimitiveType'.
+The class 'astm_Byte' is a specialization of 'PrimitiveType'.
+The class 'astm_ShortInteger' is a specialization of 'PrimitiveType'.
+The class 'astm_Integer' is a specialization of 'PrimitiveType'.
+The class 'astm_LongInteger' is a specialization of 'PrimitiveType'.
+The class 'astm_Float' is a specialization of 'PrimitiveType'.
+The class 'astm_Double' is a specialization of 'PrimitiveType'.
+The class 'astm_LongDouble' is a specialization of 'PrimitiveType'.
+The class 'astm_Character' is a specialization of 'PrimitiveType'.
+The class 'astm_String' is a specialization of 'PrimitiveType'.
+The class 'astm_Boolean' is a specialization of 'PrimitiveType'.
+The class 'astm_WideCharacter' is a specialization of 'PrimitiveType'.
+The class 'astm_CollectionType' is a specialization of 'ConstructedType'.
+The class 'astm_PointerType' is a specialization of 'ConstructedType'.
+The class 'astm_ReferenceType' is a specialization of 'ConstructedType'.
+The class 'astm_RangeType' is a specialization of 'ConstructedType'.
+The class 'astm_StructureType' is a specialization of 'AggregateType'.
+The class 'astm_UnionType' is a specialization of 'AggregateType'.
+The class 'astm_AnnotationType' is a specialization of 'AggregateType'.
+The class 'astm_ByValueFormalParameterType' is a specialization of 'FormalParameterType'.
+The class 'astm_ByReferenceFormalParameterType' is a specialization of 'FormalParameterType'.
+The class 'astm_Public' is a specialization of 'AccessKind'.
+The class 'astm_Protected' is a specialization of 'AccessKind'.
+The class 'astm_Private' is a specialization of 'AccessKind'.
+The class 'astm_TerminateStatement' is a specialization of 'Statement'.
+The class 'astm_DefaultBlock' is a specialization of 'SwitchCase'.
+The class 'astm_WhileStatement' is a specialization of 'LoopStatement'.
+The class 'astm_DoWhileStatement' is a specialization of 'LoopStatement'.
+The class 'astm_ForCheckBeforeStatement' is a specialization of 'ForStatement'.
+The class 'astm_ForCheckAfterStatement' is a specialization of 'ForStatement'.
+The class 'astm_AggregateExpression' is a specialization of 'Expression'.
+The class 'astm_QualifiedOverPointer' is a specialization of 'QualifiedIdentifierReference'.
+The class 'astm_QualifiedOverData' is a specialization of 'QualifiedIdentifierReference'.
+The class 'astm_IntegerLiteral' is a specialization of 'Literal'.
+The class 'astm_StringLiteral' is a specialization of 'Literal'.
+The class 'astm_CharLiteral' is a specialization of 'Literal'.
+The class 'astm_RealLiteral' is a specialization of 'Literal'.
+The class 'astm_BooleanLiteral' is a specialization of 'Literal'.
+The class 'astm_BitLiteral' is a specialization of 'Literal'.
+The class 'astm_UnaryPlus' is a specialization of 'UnaryOperator'.
+The class 'astm_Negate' is a specialization of 'UnaryOperator'.
+The class 'astm_Not' is a specialization of 'UnaryOperator'.
+The class 'astm_BitNot' is a specialization of 'UnaryOperator'.
+The class 'astm_AddressOf' is a specialization of 'UnaryOperator'.
+The class 'astm_Deref' is a specialization of 'UnaryOperator'.
+The class 'astm_Increment' is a specialization of 'UnaryOperator'.
+The class 'astm_Decrement' is a specialization of 'UnaryOperator'.
+The class 'astm_PostIncrement' is a specialization of 'UnaryOperator'.
+The class 'astm_PostDecrement' is a specialization of 'UnaryOperator'.
+The class 'astm_Add' is a specialization of 'BinaryOperator'.
+The class 'astm_Subtract' is a specialization of 'BinaryOperator'.
+The class 'astm_Multiply' is a specialization of 'BinaryOperator'.
+The class 'astm_Divide' is a specialization of 'BinaryOperator'.
+The class 'astm_Modulus' is a specialization of 'BinaryOperator'.
+The class 'astm_Exponent' is a specialization of 'BinaryOperator'.
+The class 'astm_And' is a specialization of 'BinaryOperator'.
+The class 'astm_Or' is a specialization of 'BinaryOperator'.
+The class 'astm_Equal' is a specialization of 'BinaryOperator'.
+The class 'astm_NotEqual' is a specialization of 'BinaryOperator'.
+The class 'astm_Greater' is a specialization of 'BinaryOperator'.
+The class 'astm_NotGreater' is a specialization of 'BinaryOperator'.
+The class 'astm_Less' is a specialization of 'BinaryOperator'.
+The class 'astm_NotLess' is a specialization of 'BinaryOperator'.
+The class 'astm_BitAnd' is a specialization of 'BinaryOperator'.
+The class 'astm_BitOr' is a specialization of 'BinaryOperator'.
+The class 'astm_BitXor' is a specialization of 'BinaryOperator'.
+The class 'astm_BitLeftShift' is a specialization of 'BinaryOperator'.
+The class 'astm_BitRightShift' is a specialization of 'BinaryOperator'.
+The class 'astm_Assign' is a specialization of 'BinaryOperator'.
+The class 'astm_MissingActualParameter' is a specialization of 'ActualParameter'.
+The class 'astm_ByValueActualParameterExpression' is a specialization of 'ActualParameterExpression'.
+The class 'astm_ByReferenceActualParameterExpression' is a specialization of 'ActualParameterExpression'.
+The class 'astm_SpecificTriggerDefinition' is a specialization of 'Definition'.
+The class 'astm_SpecificLessEqual' is a specialization of 'BinaryOperator'.
+The class 'astm_SpecificGreaterEqual' is a specialization of 'BinaryOperator'.
+The class 'astm_SpecificIn' is a specialization of 'BinaryOperator'.
+The class 'astm_SpecificLike' is a specialization of 'BinaryOperator'.
+The class 'astm_SpecificConcatString' is a specialization of 'BinaryOperator'.
+The class 'astm_SpecificSelectStatement' is a specialization of 'Statement'.
+The class 'astm_Operator' is a specialization of 'OtherSyntaxObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'astm_DelphiUnit' and 'astm_Name'. From 'astm_DelphiUnit', the role 'astm_DelphiUnit' has cardinality 0..*, and from 'astm_Name', the role 'astm_Name' has cardinality 0..*.
+An association connects 'astm_DelphiInterfaceSection' and 'astm_DelphiUnit'. From 'astm_DelphiInterfaceSection', the role 'astm_DelphiInterfaceSection' has cardinality 0..*, and from 'astm_DelphiUnit', the role 'astm_DelphiUnit2' has cardinality 0..*.
+An association connects 'astm_DelphiImplementationSection' and 'astm_DelphiUnit'. From 'astm_DelphiImplementationSection', the role 'astm_DelphiImplementationSection' has cardinality 0..*, and from 'astm_DelphiUnit', the role 'astm_DelphiUnit4' has cardinality 0..*.
+An association connects 'astm_NamedTypeReference' and 'astm_DelphiInterfaceSection'. From 'astm_NamedTypeReference', the role 'astm_NamedTypeReference' has cardinality 0..*, and from 'astm_DelphiInterfaceSection', the role 'astm_DelphiInterfaceSection6' has cardinality 0..*.
+An association connects 'astm_NamedTypeReference' and 'astm_DelphiImplementationSection'. From 'astm_NamedTypeReference', the role 'astm_NamedTypeReference9' has cardinality 0..*, and from 'astm_DelphiImplementationSection', the role 'astm_DelphiImplementationSection8' has cardinality 0..*.
+An association connects 'astm_DelphiImplementationSection' and 'astm_NamedTypeReference'. From 'astm_DelphiImplementationSection', the role 'astm_DelphiImplementationSection11' has cardinality 0..*, and from 'astm_NamedTypeReference', the role 'astm_NamedTypeReference12' has cardinality 0..*.
+An association connects 'astm_DelphiBlockStatement' and 'astm_NamedTypeReference'. From 'astm_DelphiBlockStatement', the role 'astm_DelphiBlockStatement' has cardinality 0..*, and from 'astm_NamedTypeReference', the role 'astm_NamedTypeReference14' has cardinality 0..*.
+An association connects 'astm_DefinitionObject' and 'astm_DelphiBlockStatement'. From 'astm_DefinitionObject', the role 'astm_DefinitionObject' has cardinality 0..*, and from 'astm_DelphiBlockStatement', the role 'astm_DelphiBlockStatement16' has cardinality 0..*.
+An association connects 'astm_DefinitionObject' and 'astm_DelphiFunctionCallExpression'. From 'astm_DefinitionObject', the role 'astm_DefinitionObject18' has cardinality 0..*, and from 'astm_DelphiFunctionCallExpression', the role 'astm_DelphiFunctionCallExpression' has cardinality 0..*.
+An association connects 'astm_DelphiWithStatement' and 'astm_DefinitionObject'. From 'astm_DelphiWithStatement', the role 'astm_DelphiWithStatement' has cardinality 0..*, and from 'astm_DefinitionObject', the role 'astm_DefinitionObject20' has cardinality 0..*.
+An association connects 'astm_SourceLocation' and 'astm_SourceFile'. From 'astm_SourceLocation', the role 'astm_SourceLocation' has cardinality 0..*, and from 'astm_SourceFile', the role 'astm_SourceFile' has cardinality 0..*.
+An association connects 'astm_Project' and 'astm_CompilationUnit'. From 'astm_Project', the role 'astm_Project' has cardinality 0..*, and from 'astm_CompilationUnit', the role 'astm_CompilationUnit' has cardinality 0..*.
+An association connects 'astm_Project' and 'astm_GlobalScope'. From 'astm_Project', the role 'astm_Project24' has cardinality 0..*, and from 'astm_GlobalScope', the role 'astm_GlobalScope' has cardinality 0..*.
+An association connects 'astm_DefinitionObject' and 'astm_Scope'. From 'astm_DefinitionObject', the role 'astm_DefinitionObject26' has cardinality 0..*, and from 'astm_Scope', the role 'astm_Scope' has cardinality 0..*.
+An association connects 'astm_Scope' and 'astm_Scope'. From 'astm_Scope', the role 'astm_Scope27' has cardinality 0..*, and from 'astm_Scope', the role 'astm_Scope29' has cardinality 0..*.
+An association connects 'astm_SourceLocation' and 'astm_GASTMSyntaxObject'. From 'astm_SourceLocation', the role 'astm_SourceLocation31' has cardinality 0..*, and from 'astm_GASTMSyntaxObject', the role 'astm_GASTMSyntaxObject' has cardinality 0..*.
+An association connects 'astm_GASTMSyntaxObject' and 'astm_PreprocessorElement'. From 'astm_GASTMSyntaxObject', the role 'astm_GASTMSyntaxObject33' has cardinality 0..*, and from 'astm_PreprocessorElement', the role 'astm_PreprocessorElement' has cardinality 0..*.
+An association connects 'astm_GASTMSyntaxObject' and 'astm_AnnotationExpression'. From 'astm_GASTMSyntaxObject', the role 'astm_GASTMSyntaxObject35' has cardinality 0..*, and from 'astm_AnnotationExpression', the role 'astm_AnnotationExpression' has cardinality 0..*.
+An association connects 'astm_DefinitionObject' and 'astm_CompilationUnit'. From 'astm_DefinitionObject', the role 'astm_DefinitionObject38' has cardinality 0..*, and from 'astm_CompilationUnit', the role 'astm_CompilationUnit37' has cardinality 0..*.
+An association connects 'astm_CompilationUnit' and 'astm_ProgramScope'. From 'astm_CompilationUnit', the role 'astm_CompilationUnit40' has cardinality 0..*, and from 'astm_ProgramScope', the role 'astm_ProgramScope' has cardinality 0..*.
+An association connects 'astm_DeclarationOrDefinition' and 'astm_OtherSyntaxObject'. From 'astm_DeclarationOrDefinition', the role 'astm_DeclarationOrDefinition' has cardinality 0..*, and from 'astm_OtherSyntaxObject', the role 'astm_OtherSyntaxObject' has cardinality 0..*.
+An association connects 'astm_OtherSyntaxObject' and 'astm_DeclarationOrDefinition'. From 'astm_OtherSyntaxObject', the role 'astm_OtherSyntaxObject44' has cardinality 0..*, and from 'astm_DeclarationOrDefinition', the role 'astm_DeclarationOrDefinition43' has cardinality 0..*.
+An association connects 'astm_Definition' and 'astm_Name'. From 'astm_Definition', the role 'astm_Definition' has cardinality 0..*, and from 'astm_Name', the role 'astm_Name46' has cardinality 0..*.
+An association connects 'astm_TypeReference' and 'astm_Definition'. From 'astm_TypeReference', the role 'astm_TypeReference' has cardinality 0..*, and from 'astm_Definition', the role 'astm_Definition48' has cardinality 0..*.
+An association connects 'astm_Declaration' and 'astm_Definition'. From 'astm_Declaration', the role 'astm_Declaration' has cardinality 0..*, and from 'astm_Definition', the role 'astm_Definition50' has cardinality 0..*.
+An association connects 'astm_Declaration' and 'astm_Name'. From 'astm_Declaration', the role 'astm_Declaration52' has cardinality 0..*, and from 'astm_Name', the role 'astm_Name53' has cardinality 0..*.
+An association connects 'astm_TypeReference' and 'astm_Declaration'. From 'astm_TypeReference', the role 'astm_TypeReference56' has cardinality 0..*, and from 'astm_Declaration', the role 'astm_Declaration55' has cardinality 0..*.
+An association connects 'astm_FormalParameterDeclaration' and 'astm_FunctionDeclaration'. From 'astm_FormalParameterDeclaration', the role 'astm_FormalParameterDeclaration' has cardinality 0..*, and from 'astm_FunctionDeclaration', the role 'astm_FunctionDeclaration' has cardinality 0..*.
+An association connects 'astm_FunctionDeclaration' and 'astm_FunctionMemberAttributes'. From 'astm_FunctionDeclaration', the role 'astm_FunctionDeclaration59' has cardinality 0..*, and from 'astm_FunctionMemberAttributes', the role 'astm_FunctionMemberAttributes' has cardinality 0..*.
+An association connects 'astm_TypeReference' and 'astm_FunctionDeclaration'. From 'astm_TypeReference', the role 'astm_TypeReference62' has cardinality 0..*, and from 'astm_FunctionDeclaration', the role 'astm_FunctionDeclaration61' has cardinality 0..*.
+An association connects 'astm_FunctionDefinition' and 'astm_TypeReference'. From 'astm_FunctionDefinition', the role 'astm_FunctionDefinition' has cardinality 0..*, and from 'astm_TypeReference', the role 'astm_TypeReference64' has cardinality 0..*.
+An association connects 'astm_FunctionDefinition' and 'astm_FormalParameterDefinition'. From 'astm_FunctionDefinition', the role 'astm_FunctionDefinition66' has cardinality 0..*, and from 'astm_FormalParameterDefinition', the role 'astm_FormalParameterDefinition' has cardinality 0..*.
+An association connects 'astm_Statement' and 'astm_FunctionDefinition'. From 'astm_Statement', the role 'astm_Statement' has cardinality 0..*, and from 'astm_FunctionDefinition', the role 'astm_FunctionDefinition68' has cardinality 0..*.
+An association connects 'astm_FunctionDefinition' and 'astm_FunctionMemberAttributes'. From 'astm_FunctionDefinition', the role 'astm_FunctionDefinition70' has cardinality 0..*, and from 'astm_FunctionMemberAttributes', the role 'astm_FunctionMemberAttributes71' has cardinality 0..*.
+An association connects 'astm_FunctionDefinition' and 'astm_FunctionScope'. From 'astm_FunctionDefinition', the role 'astm_FunctionDefinition73' has cardinality 0..*, and from 'astm_FunctionScope', the role 'astm_FunctionScope' has cardinality 0..*.
+An association connects 'astm_FunctionMemberAttributes' and 'astm_VirtualSpecification'. From 'astm_FunctionMemberAttributes', the role 'astm_FunctionMemberAttributes75' has cardinality 0..*, and from 'astm_VirtualSpecification', the role 'astm_VirtualSpecification' has cardinality 0..*.
+An association connects 'astm_FormalParameterDefinition' and 'astm_EntryDefinition'. From 'astm_FormalParameterDefinition', the role 'astm_FormalParameterDefinition77' has cardinality 0..*, and from 'astm_EntryDefinition', the role 'astm_EntryDefinition' has cardinality 0..*.
+An association connects 'astm_Statement' and 'astm_EntryDefinition'. From 'astm_Statement', the role 'astm_Statement80' has cardinality 0..*, and from 'astm_EntryDefinition', the role 'astm_EntryDefinition79' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_DataDefinition'. From 'astm_Expression', the role 'astm_Expression' has cardinality 0..*, and from 'astm_DataDefinition', the role 'astm_DataDefinition' has cardinality 0..*.
+An association connects 'astm_BitFieldDefinition' and 'astm_Expression'. From 'astm_BitFieldDefinition', the role 'astm_BitFieldDefinition' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression83' has cardinality 0..*.
+An association connects 'astm_EnumLiteralDefinition' and 'astm_Expression'. From 'astm_EnumLiteralDefinition', the role 'astm_EnumLiteralDefinition' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression85' has cardinality 0..*.
+An association connects 'astm_TypeDefinition' and 'astm_Name'. From 'astm_TypeDefinition', the role 'astm_TypeDefinition' has cardinality 0..*, and from 'astm_Name', the role 'astm_Name87' has cardinality 0..*.
+An association connects 'astm_NamedType' and 'astm_NamedTypeDefinition'. From 'astm_NamedType', the role 'astm_NamedType' has cardinality 0..*, and from 'astm_NamedTypeDefinition', the role 'astm_NamedTypeDefinition' has cardinality 0..*.
+An association connects 'astm_AggregateTypeDefinition' and 'astm_AggregateType'. From 'astm_AggregateTypeDefinition', the role 'astm_AggregateTypeDefinition' has cardinality 0..*, and from 'astm_AggregateType', the role 'astm_AggregateType' has cardinality 0..*.
+An association connects 'astm_Name' and 'astm_NameSpaceDefinition'. From 'astm_Name', the role 'astm_Name91' has cardinality 0..*, and from 'astm_NameSpaceDefinition', the role 'astm_NameSpaceDefinition' has cardinality 0..*.
+An association connects 'astm_NameSpaceDefinition' and 'astm_DefinitionObject'. From 'astm_NameSpaceDefinition', the role 'astm_NameSpaceDefinition93' has cardinality 0..*, and from 'astm_DefinitionObject', the role 'astm_DefinitionObject94' has cardinality 0..*.
+An association connects 'astm_NameSpaceDefinition' and 'astm_NameSpaceType'. From 'astm_NameSpaceDefinition', the role 'astm_NameSpaceDefinition96' has cardinality 0..*, and from 'astm_NameSpaceType', the role 'astm_NameSpaceType' has cardinality 0..*.
+An association connects 'astm_Name' and 'astm_LabelDefinition'. From 'astm_Name', the role 'astm_Name98' has cardinality 0..*, and from 'astm_LabelDefinition', the role 'astm_LabelDefinition' has cardinality 0..*.
+An association connects 'astm_LabelDefinition' and 'astm_LabelType'. From 'astm_LabelDefinition', the role 'astm_LabelDefinition100' has cardinality 0..*, and from 'astm_LabelType', the role 'astm_LabelType' has cardinality 0..*.
+An association connects 'astm_SourceFile' and 'astm_IncludeUnit'. From 'astm_SourceFile', the role 'astm_SourceFile102' has cardinality 0..*, and from 'astm_IncludeUnit', the role 'astm_IncludeUnit' has cardinality 0..*.
+An association connects 'astm_MacroDefinition' and 'astm_MacroCall'. From 'astm_MacroDefinition', the role 'astm_MacroDefinition' has cardinality 0..*, and from 'astm_MacroCall', the role 'astm_MacroCall' has cardinality 0..*.
+An association connects 'astm_EnumType' and 'astm_EnumLiteralDefinition'. From 'astm_EnumType', the role 'astm_EnumType' has cardinality 0..*, and from 'astm_EnumLiteralDefinition', the role 'astm_EnumLiteralDefinition105' has cardinality 0..*.
+An association connects 'astm_TypeReference' and 'astm_ConstructedType'. From 'astm_TypeReference', the role 'astm_TypeReference107' has cardinality 0..*, and from 'astm_ConstructedType', the role 'astm_ConstructedType' has cardinality 0..*.
+An association connects 'astm_DefinitionObject' and 'astm_AggregateType'. From 'astm_DefinitionObject', the role 'astm_DefinitionObject110' has cardinality 0..*, and from 'astm_AggregateType', the role 'astm_AggregateType109' has cardinality 0..*.
+An association connects 'astm_AggregateScope' and 'astm_AggregateType'. From 'astm_AggregateScope', the role 'astm_AggregateScope' has cardinality 0..*, and from 'astm_AggregateType', the role 'astm_AggregateType112' has cardinality 0..*.
+An association connects 'astm_Dimension' and 'astm_ArrayType'. From 'astm_Dimension', the role 'astm_Dimension' has cardinality 0..*, and from 'astm_ArrayType', the role 'astm_ArrayType' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_Dimension'. From 'astm_Expression', the role 'astm_Expression116' has cardinality 0..*, and from 'astm_Dimension', the role 'astm_Dimension115' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_Dimension'. From 'astm_Expression', the role 'astm_Expression119' has cardinality 0..*, and from 'astm_Dimension', the role 'astm_Dimension118' has cardinality 0..*.
+An association connects 'astm_TypeReference' and 'astm_FunctionType'. From 'astm_TypeReference', the role 'astm_TypeReference121' has cardinality 0..*, and from 'astm_FunctionType', the role 'astm_FunctionType' has cardinality 0..*.
+An association connects 'astm_FormalParameterType' and 'astm_FunctionType'. From 'astm_FormalParameterType', the role 'astm_FormalParameterType' has cardinality 0..*, and from 'astm_FunctionType', the role 'astm_FunctionType123' has cardinality 0..*.
+An association connects 'astm_FormalParameterType' and 'astm_TypeReference'. From 'astm_FormalParameterType', the role 'astm_FormalParameterType125' has cardinality 0..*, and from 'astm_TypeReference', the role 'astm_TypeReference126' has cardinality 0..*.
+An association connects 'astm_Type' and 'astm_NamedType'. From 'astm_Type', the role 'astm_Type' has cardinality 0..*, and from 'astm_NamedType', the role 'astm_NamedType128' has cardinality 0..*.
+An association connects 'astm_DerivesFrom' and 'astm_ClassType'. From 'astm_DerivesFrom', the role 'astm_DerivesFrom' has cardinality 0..*, and from 'astm_ClassType', the role 'astm_ClassType' has cardinality 0..*.
+An association connects 'astm_OtherSyntaxObject' and 'astm_DerivesFrom'. From 'astm_OtherSyntaxObject', the role 'astm_OtherSyntaxObject132' has cardinality 0..*, and from 'astm_DerivesFrom', the role 'astm_DerivesFrom131' has cardinality 0..*.
+An association connects 'astm_DerivesFrom' and 'astm_NamedType'. From 'astm_DerivesFrom', the role 'astm_DerivesFrom134' has cardinality 0..*, and from 'astm_NamedType', the role 'astm_NamedType135' has cardinality 0..*.
+An association connects 'astm_Type' and 'astm_UnnamedTypeReference'. From 'astm_Type', the role 'astm_Type137' has cardinality 0..*, and from 'astm_UnnamedTypeReference', the role 'astm_UnnamedTypeReference' has cardinality 0..*.
+An association connects 'astm_Name' and 'astm_NamedTypeReference'. From 'astm_Name', the role 'astm_Name140' has cardinality 0..*, and from 'astm_NamedTypeReference', the role 'astm_NamedTypeReference139' has cardinality 0..*.
+An association connects 'astm_TypeDefinition' and 'astm_NamedTypeReference'. From 'astm_TypeDefinition', the role 'astm_TypeDefinition143' has cardinality 0..*, and from 'astm_NamedTypeReference', the role 'astm_NamedTypeReference142' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_DeleteStatement'. From 'astm_Expression', the role 'astm_Expression145' has cardinality 0..*, and from 'astm_DeleteStatement', the role 'astm_DeleteStatement' has cardinality 0..*.
+An association connects 'astm_DeclarationOrDefinitionStatement' and 'astm_DefinitionObject'. From 'astm_DeclarationOrDefinitionStatement', the role 'astm_DeclarationOrDefinitionStatement' has cardinality 0..*, and from 'astm_DefinitionObject', the role 'astm_DefinitionObject147' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_ExpressionStatement'. From 'astm_Expression', the role 'astm_Expression149' has cardinality 0..*, and from 'astm_ExpressionStatement', the role 'astm_ExpressionStatement' has cardinality 0..*.
+An association connects 'astm_JumpStatement' and 'astm_Expression'. From 'astm_JumpStatement', the role 'astm_JumpStatement' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression151' has cardinality 0..*.
+An association connects 'astm_BreakStatement' and 'astm_LabelAccess'. From 'astm_BreakStatement', the role 'astm_BreakStatement' has cardinality 0..*, and from 'astm_LabelAccess', the role 'astm_LabelAccess' has cardinality 0..*.
+An association connects 'astm_LabelAccess' and 'astm_ContinueStatement'. From 'astm_LabelAccess', the role 'astm_LabelAccess154' has cardinality 0..*, and from 'astm_ContinueStatement', the role 'astm_ContinueStatement' has cardinality 0..*.
+An association connects 'astm_LabelDefinition' and 'astm_LabeledStatement'. From 'astm_LabelDefinition', the role 'astm_LabelDefinition156' has cardinality 0..*, and from 'astm_LabeledStatement', the role 'astm_LabeledStatement' has cardinality 0..*.
+An association connects 'astm_LabeledStatement' and 'astm_Statement'. From 'astm_LabeledStatement', the role 'astm_LabeledStatement158' has cardinality 0..*, and from 'astm_Statement', the role 'astm_Statement159' has cardinality 0..*.
+An association connects 'astm_Statement' and 'astm_BlockStatement'. From 'astm_Statement', the role 'astm_Statement161' has cardinality 0..*, and from 'astm_BlockStatement', the role 'astm_BlockStatement' has cardinality 0..*.
+An association connects 'astm_BlockStatement' and 'astm_BlockScope'. From 'astm_BlockStatement', the role 'astm_BlockStatement163' has cardinality 0..*, and from 'astm_BlockScope', the role 'astm_BlockScope' has cardinality 0..*.
+An association connects 'astm_IfStatement' and 'astm_Expression'. From 'astm_IfStatement', the role 'astm_IfStatement' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression165' has cardinality 0..*.
+An association connects 'astm_IfStatement' and 'astm_Statement'. From 'astm_IfStatement', the role 'astm_IfStatement167' has cardinality 0..*, and from 'astm_Statement', the role 'astm_Statement168' has cardinality 0..*.
+An association connects 'astm_Statement' and 'astm_IfStatement'. From 'astm_Statement', the role 'astm_Statement171' has cardinality 0..*, and from 'astm_IfStatement', the role 'astm_IfStatement170' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_SwitchStatement'. From 'astm_Expression', the role 'astm_Expression173' has cardinality 0..*, and from 'astm_SwitchStatement', the role 'astm_SwitchStatement' has cardinality 0..*.
+An association connects 'astm_SwitchStatement' and 'astm_SwitchCase'. From 'astm_SwitchStatement', the role 'astm_SwitchStatement175' has cardinality 0..*, and from 'astm_SwitchCase', the role 'astm_SwitchCase' has cardinality 0..*.
+An association connects 'astm_Statement' and 'astm_SwitchCase'. From 'astm_Statement', the role 'astm_Statement178' has cardinality 0..*, and from 'astm_SwitchCase', the role 'astm_SwitchCase177' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_CaseBlock'. From 'astm_Expression', the role 'astm_Expression180' has cardinality 0..*, and from 'astm_CaseBlock', the role 'astm_CaseBlock' has cardinality 0..*.
+An association connects 'astm_ReturnStatement' and 'astm_Expression'. From 'astm_ReturnStatement', the role 'astm_ReturnStatement' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression182' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_LoopStatement'. From 'astm_Expression', the role 'astm_Expression184' has cardinality 0..*, and from 'astm_LoopStatement', the role 'astm_LoopStatement' has cardinality 0..*.
+An association connects 'astm_Statement' and 'astm_LoopStatement'. From 'astm_Statement', the role 'astm_Statement187' has cardinality 0..*, and from 'astm_LoopStatement', the role 'astm_LoopStatement186' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_ForStatement'. From 'astm_Expression', the role 'astm_Expression189' has cardinality 0..*, and from 'astm_ForStatement', the role 'astm_ForStatement' has cardinality 0..*.
+An association connects 'astm_ForStatement' and 'astm_Expression'. From 'astm_ForStatement', the role 'astm_ForStatement191' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression192' has cardinality 0..*.
+An association connects 'astm_Statement' and 'astm_TryStatement'. From 'astm_Statement', the role 'astm_Statement194' has cardinality 0..*, and from 'astm_TryStatement', the role 'astm_TryStatement' has cardinality 0..*.
+An association connects 'astm_CatchBlock' and 'astm_TryStatement'. From 'astm_CatchBlock', the role 'astm_CatchBlock' has cardinality 0..*, and from 'astm_TryStatement', the role 'astm_TryStatement196' has cardinality 0..*.
+An association connects 'astm_TryStatement' and 'astm_Statement'. From 'astm_TryStatement', the role 'astm_TryStatement198' has cardinality 0..*, and from 'astm_Statement', the role 'astm_Statement199' has cardinality 0..*.
+An association connects 'astm_Statement' and 'astm_CatchBlock'. From 'astm_Statement', the role 'astm_Statement202' has cardinality 0..*, and from 'astm_CatchBlock', the role 'astm_CatchBlock201' has cardinality 0..*.
+An association connects 'astm_Type' and 'astm_TypesCatchBlock'. From 'astm_Type', the role 'astm_Type204' has cardinality 0..*, and from 'astm_TypesCatchBlock', the role 'astm_TypesCatchBlock' has cardinality 0..*.
+An association connects 'astm_DataDefinition' and 'astm_VariableCatchBlock'. From 'astm_DataDefinition', the role 'astm_DataDefinition206' has cardinality 0..*, and from 'astm_VariableCatchBlock', the role 'astm_VariableCatchBlock' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_ThrowStatement'. From 'astm_Expression', the role 'astm_Expression208' has cardinality 0..*, and from 'astm_ThrowStatement', the role 'astm_ThrowStatement' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_TypeReference'. From 'astm_Expression', the role 'astm_Expression210' has cardinality 0..*, and from 'astm_TypeReference', the role 'astm_TypeReference211' has cardinality 0..*.
+An association connects 'astm_Name' and 'astm_NameReference'. From 'astm_Name', the role 'astm_Name213' has cardinality 0..*, and from 'astm_NameReference', the role 'astm_NameReference' has cardinality 0..*.
+An association connects 'astm_NameReference' and 'astm_DefinitionObject'. From 'astm_NameReference', the role 'astm_NameReference215' has cardinality 0..*, and from 'astm_DefinitionObject', the role 'astm_DefinitionObject216' has cardinality 0..*.
+An association connects 'astm_ArrayAccess' and 'astm_Expression'. From 'astm_ArrayAccess', the role 'astm_ArrayAccess' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression218' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_ArrayAccess'. From 'astm_Expression', the role 'astm_Expression221' has cardinality 0..*, and from 'astm_ArrayAccess', the role 'astm_ArrayAccess220' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_QualifiedIdentifierReference'. From 'astm_Expression', the role 'astm_Expression223' has cardinality 0..*, and from 'astm_QualifiedIdentifierReference', the role 'astm_QualifiedIdentifierReference' has cardinality 0..*.
+An association connects 'astm_IdentifierReference' and 'astm_QualifiedIdentifierReference'. From 'astm_IdentifierReference', the role 'astm_IdentifierReference' has cardinality 0..*, and from 'astm_QualifiedIdentifierReference', the role 'astm_QualifiedIdentifierReference225' has cardinality 0..*.
+An association connects 'astm_TypeReference' and 'astm_TypeQualifiedIdentifierReference'. From 'astm_TypeReference', the role 'astm_TypeReference227' has cardinality 0..*, and from 'astm_TypeQualifiedIdentifierReference', the role 'astm_TypeQualifiedIdentifierReference' has cardinality 0..*.
+An association connects 'astm_IdentifierReference' and 'astm_TypeQualifiedIdentifierReference'. From 'astm_IdentifierReference', the role 'astm_IdentifierReference230' has cardinality 0..*, and from 'astm_TypeQualifiedIdentifierReference', the role 'astm_TypeQualifiedIdentifierReference229' has cardinality 0..*.
+An association connects 'astm_CastExpression' and 'astm_TypeReference'. From 'astm_CastExpression', the role 'astm_CastExpression' has cardinality 0..*, and from 'astm_TypeReference', the role 'astm_TypeReference232' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_CastExpression'. From 'astm_Expression', the role 'astm_Expression235' has cardinality 0..*, and from 'astm_CastExpression', the role 'astm_CastExpression234' has cardinality 0..*.
+An association connects 'astm_UnaryExpression' and 'astm_OtherSyntaxObject'. From 'astm_UnaryExpression', the role 'astm_UnaryExpression' has cardinality 0..*, and from 'astm_OtherSyntaxObject', the role 'astm_OtherSyntaxObject237' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_UnaryExpression'. From 'astm_Expression', the role 'astm_Expression240' has cardinality 0..*, and from 'astm_UnaryExpression', the role 'astm_UnaryExpression239' has cardinality 0..*.
+An association connects 'astm_OtherSyntaxObject' and 'astm_BinaryExpression'. From 'astm_OtherSyntaxObject', the role 'astm_OtherSyntaxObject242' has cardinality 0..*, and from 'astm_BinaryExpression', the role 'astm_BinaryExpression' has cardinality 0..*.
+An association connects 'astm_BinaryExpression' and 'astm_Expression'. From 'astm_BinaryExpression', the role 'astm_BinaryExpression244' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression245' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_BinaryExpression'. From 'astm_Expression', the role 'astm_Expression248' has cardinality 0..*, and from 'astm_BinaryExpression', the role 'astm_BinaryExpression247' has cardinality 0..*.
+An association connects 'astm_OperatorAssign' and 'astm_OtherSyntaxObject'. From 'astm_OperatorAssign', the role 'astm_OperatorAssign' has cardinality 0..*, and from 'astm_OtherSyntaxObject', the role 'astm_OtherSyntaxObject250' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_ConditionalExpression'. From 'astm_Expression', the role 'astm_Expression252' has cardinality 0..*, and from 'astm_ConditionalExpression', the role 'astm_ConditionalExpression' has cardinality 0..*.
+An association connects 'astm_ConditionalExpression' and 'astm_Expression'. From 'astm_ConditionalExpression', the role 'astm_ConditionalExpression254' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression255' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_ConditionalExpression'. From 'astm_Expression', the role 'astm_Expression258' has cardinality 0..*, and from 'astm_ConditionalExpression', the role 'astm_ConditionalExpression257' has cardinality 0..*.
+An association connects 'astm_RangeExpression' and 'astm_Expression'. From 'astm_RangeExpression', the role 'astm_RangeExpression' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression260' has cardinality 0..*.
+An association connects 'astm_Expression' and 'astm_RangeExpression'. From 'astm_Expression', the role 'astm_Expression263' has cardinality 0..*, and from 'astm_RangeExpression', the role 'astm_RangeExpression262' has cardinality 0..*.
+An association connects 'astm_FunctionCallExpression' and 'astm_Expression'. From 'astm_FunctionCallExpression', the role 'astm_FunctionCallExpression' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression265' has cardinality 0..*.
+An association connects 'astm_ActualParameter' and 'astm_FunctionCallExpression'. From 'astm_ActualParameter', the role 'astm_ActualParameter' has cardinality 0..*, and from 'astm_FunctionCallExpression', the role 'astm_FunctionCallExpression267' has cardinality 0..*.
+An association connects 'astm_ActualParameterExpression' and 'astm_Expression'. From 'astm_ActualParameterExpression', the role 'astm_ActualParameterExpression' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression269' has cardinality 0..*.
+An association connects 'astm_TypeReference' and 'astm_NewExpression'. From 'astm_TypeReference', the role 'astm_TypeReference271' has cardinality 0..*, and from 'astm_NewExpression', the role 'astm_NewExpression' has cardinality 0..*.
+An association connects 'astm_NewExpression' and 'astm_OtherSyntaxObject'. From 'astm_NewExpression', the role 'astm_NewExpression273' has cardinality 0..*, and from 'astm_OtherSyntaxObject', the role 'astm_OtherSyntaxObject274' has cardinality 0..*.
+An association connects 'astm_Name' and 'astm_LabelAccess'. From 'astm_Name', the role 'astm_Name277' has cardinality 0..*, and from 'astm_LabelAccess', the role 'astm_LabelAccess276' has cardinality 0..*.
+An association connects 'astm_LabelAccess' and 'astm_LabelDefinition'. From 'astm_LabelAccess', the role 'astm_LabelAccess279' has cardinality 0..*, and from 'astm_LabelDefinition', the role 'astm_LabelDefinition280' has cardinality 0..*.
+An association connects 'astm_TypeReference' and 'astm_AnnotationExpression'. From 'astm_TypeReference', the role 'astm_TypeReference283' has cardinality 0..*, and from 'astm_AnnotationExpression', the role 'astm_AnnotationExpression282' has cardinality 0..*.
+An association connects 'astm_AnnotationExpression' and 'astm_Expression'. From 'astm_AnnotationExpression', the role 'astm_AnnotationExpression285' has cardinality 0..*, and from 'astm_Expression', the role 'astm_Expression286' has cardinality 0..*.
+An association connects 'astm_SpecificTriggerDefinition' and 'astm_Statement'. From 'astm_SpecificTriggerDefinition', the role 'astm_SpecificTriggerDefinition' has cardinality 0..*, and from 'astm_Statement', the role 'astm_Statement288' has cardinality 0..*.

@@ -1,0 +1,1435 @@
+The domain model 'express' describes the core structural elements and their relationships within the system.
+
+The model defines 328 main class(es).
+
+'FunctionResult' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_AggregateIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainRole' represents an important domain concept.
+It does not declare any attributes.
+
+'Algorithm' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_StringIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'core_VariableType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_ActualAGGREGATEType' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'express_instances_GenericAggregate' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_Coercion' represents an important domain concept.
+It does not declare any attributes.
+
+'core_TypeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_BinaryIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'core_GeneralizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_Population' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumerationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_GenericType' represents an important domain concept.
+It has one attribute: 'isEntity', which is of type str.
+
+'express_core_LocalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_CommonElement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_BinaryOperation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'AnonymousType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_ActualARRAYType' represents an important domain concept.
+It has one attribute: 'isOptional', which is of type str.
+
+'express_core_ARRAYType' represents an important domain concept.
+It has one attribute: 'isOptional', which is of type str.
+
+'express_core_ActualType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_EntityValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_GeneralLISTType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_LengthConstraint' represents an important domain concept.
+It has the following attributes: 'isFixed', which is of type str; 'maxLength', which is of type str.
+
+'express_instances_SETValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_InverseAttribute' represents an important domain concept.
+It has one attribute: 'isUnique', which is of type str.
+
+'ActualStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_AlgorithmScope' represents an important domain concept.
+It does not declare any attributes.
+
+'BagMember' represents an important domain concept.
+It does not declare any attributes.
+
+'algorithms_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_GroupCell' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'express_instances_ConcreteValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_TypeName' represents an important domain concept.
+It does not declare any attributes.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_FunctionResult' represents an important domain concept.
+It does not declare any attributes.
+
+'GeneralizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_DefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'core_LocalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_RoleName' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_AnonymousType' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'RangeRole' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_ScopedId' represents an important domain concept.
+It has one attribute: 'localName', which is of type str.
+
+'express_expressions_AttributeRef' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'express_expressions_UnaryOperation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'core_ParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'ActualTypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'core_AttributeType' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_DomainRule' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'express_core_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_AliasStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_ConstantRef' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ScopedId' represents an important domain concept.
+It does not declare any attributes.
+
+'GenericType' represents an important domain concept.
+It does not declare any attributes.
+
+'DefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'PartialEntityValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_ActualDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'IndexOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_VariableCell' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'SchemaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'SingleEntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'AggregateValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_DomainRole' represents an important domain concept.
+It does not declare any attributes.
+
+'AGGREGATEType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_GeneralAggregationType' represents an important domain concept.
+It does not declare any attributes.
+
+'ExplicitAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_SelectType' represents an important domain concept.
+It has the following attributes: 'isExtensible', which is of type str; 'isEntity', which is of type str.
+
+'Indeterminate' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayBound' represents an important domain concept.
+It does not declare any attributes.
+
+'core_InstantiableType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_ActualLISTType' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_LocalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_RepeatCount' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_GeneralSETType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_Attribute' represents an important domain concept.
+It has the following attributes: 'position', which is of type str; 'isAbstract', which is of type str.
+
+'Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalRule' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ConcreteType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_DomainConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UniqueRule' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_GenericElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_AggregationType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_SkipStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ActualAggregationType' represents an important domain concept.
+It does not declare any attributes.
+
+'core_AlgorithmScope' represents an important domain concept.
+It does not declare any attributes.
+
+'GeneralAggregationType' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedRule' represents an important domain concept.
+It does not declare any attributes.
+
+'Population' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_SingleEntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_VARVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_GeneralizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'SupertypeRule' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_EnumItemRef' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'express_algorithms_ActualSETType' represents an important domain concept.
+It does not declare any attributes.
+
+'core_GenericType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_AggregateInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'ActualStructureConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_LogicalValue' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfacedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_GeneralARRAYType' represents an important domain concept.
+It has one attribute: 'isOptional', which is of type str.
+
+'NamedType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_VARParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'instances_AggregateValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_ActualParameter' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_AggregateValue' represents an important domain concept.
+It does not declare any attributes.
+
+'GenericAggregate' represents an important domain concept.
+It does not declare any attributes.
+
+'RealValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_QueryVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_TypeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_RealType' represents an important domain concept.
+It has one attribute: 'precision', which is of type str.
+
+'express_statements_ProcedureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_Parameter' represents an important domain concept.
+It has the following attributes: 'position', which is of type str; 'inout', which is of type str.
+
+'express_expressions_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'LengthConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_AttributeBinding' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'DomainConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_InParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_Remark' represents an important domain concept.
+It has the following attributes: 'isTail', which is of type str; 'isTagged', which is of type str; 'text', which is of type str.
+
+'express_rules_SupertypeRule' represents an important domain concept.
+It has one attribute: 'assertsAbstract', which is of type str.
+
+'express_core_RangeRole' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_QueryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'EscapeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_ParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_InvertibleAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'InvertibleAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ConcreteAggregationType' represents an important domain concept.
+It does not declare any attributes.
+
+'SingleEntityValue' represents an important domain concept.
+It does not declare any attributes.
+
+'SkipStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_VariableRef' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'express_core_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_InterfacedElement' represents an important domain concept.
+It has one attribute: 'isUSE', which is of type str.
+
+'express_algorithms_NamedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_GroupRef' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'express_instances_BooleanValue' represents an important domain concept.
+It does not declare any attributes.
+
+'EntityValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Role' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_ActualAggregationType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_UsedInRef' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_Redeclaration' represents an important domain concept.
+It has the following attributes: 'position', which is of type str; 'isMandatory', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_PartialEntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_AttributeCell' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'core_ActualType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_rules_ANDConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_Algorithm' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_RealValue' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_ActualStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'core_DomainConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'EntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_DerivedAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_Statement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'express_instances_IntegerValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_BagMember' represents an important domain concept.
+It has one attribute: 'count', which is of type str.
+
+'express_instances_EntityInstance' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'express_instances_NumberValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_ControlVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_RepeatStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_AGGREGATEType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_AggregationType' represents an important domain concept.
+It has the following attributes: 'ordering', which is of type str; 'isUnique', which is of type str.
+
+'express_instances_StringValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_MultiLeafInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_CommonElement' represents an important domain concept.
+It does not declare any attributes.
+
+'algorithms_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'PartialEntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_rules_NamedRule' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'ProcedureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_CaseAction' represents an important domain concept.
+It has one attribute: 'isDefault', which is of type str.
+
+'express_expressions_IndexOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_AliasVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'InVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'VARVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_InstantiableType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_PartialEntityValue' represents an important domain concept.
+It does not declare any attributes.
+
+'QueryVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'CaseAction' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_IndeterminateRef' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_LISTType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_TypedInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'SETValue' represents an important domain concept.
+It does not declare any attributes.
+
+'SizeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_NamedType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_SingleEntityValue' represents an important domain concept.
+It does not declare any attributes.
+
+'algorithms_GenericElement' represents an important domain concept.
+It does not declare any attributes.
+
+'InverseAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_Indeterminate' represents an important domain concept.
+It does not declare any attributes.
+
+'core_AnonymousType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_SpecializedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_BinaryValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_SimpleValue' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'express_algorithms_InVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'express_rules_Extent' represents an important domain concept.
+It does not declare any attributes.
+
+'express_rules_GlobalRule' represents an important domain concept.
+It does not declare any attributes.
+
+'Selector' represents an important domain concept.
+It does not declare any attributes.
+
+'core_SchemaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Remark' represents an important domain concept.
+It does not declare any attributes.
+
+'Redeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_ActualStructureConstraint' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'express_instances_ARRAYValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_MemberBinding' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'express_statements_ControlStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_ActualTypeConstraint' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'VARExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainRule' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_LISTValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_EnumerationType' represents an important domain concept.
+It has one attribute: 'isExtensible', which is of type str.
+
+'express_instances_ListMember' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'express_rules_ONEOFConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_Selector' represents an important domain concept.
+It does not declare any attributes.
+
+'express_rules_SubtypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'InstantiableType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_ActualGenericType' represents an important domain concept.
+It has the following attributes: 'isEntity', which is of type str; 'label', which is of type str.
+
+'express_core_SizeConstraint' represents an important domain concept.
+It has one attribute: 'bound', which is of type str.
+
+'RepeatStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MemberBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_VariableType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_UniqueRule' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'LISTValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_BAGValue' represents an important domain concept.
+It does not declare any attributes.
+
+'algorithms_VARVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'RepeatCount' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_AttributeType' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_LogicType' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicalValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_MemberCell' represents an important domain concept.
+It does not declare any attributes.
+
+'ConcreteValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_BinaryType' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'EntityInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayMember' represents an important domain concept.
+It does not declare any attributes.
+
+'instances_TypedInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_EnumerationItem' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'express_core_ArrayBound' represents an important domain concept.
+It has one attribute: 'bound', which is of type str.
+
+'express_statements_VARExpression' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'express_algorithms_ActualBAGType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'InParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_StatementBlock' represents an important domain concept.
+It has one attribute: 'delimited', which is of type str.
+
+'ListMember' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_SchemaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_ParameterRef' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'core_NamedType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_VARCell' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'SimpleValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_BAGType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_NullStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_EntityType' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'express_statements_CaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_SimpleType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ActualType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_GeneralBAGType' represents an important domain concept.
+It does not declare any attributes.
+
+'StringValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_algorithms_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'core_AGGREGATEType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_ArrayMember' represents an important domain concept.
+It has one attribute: 'index', which is of type str.
+
+'instances_ConcreteValue' represents an important domain concept.
+It does not declare any attributes.
+
+'express_rules_TOTAL_OVERConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_EscapeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'SubtypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_SELFRef' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_SETType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_expressions_PartialEntityConstructor' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ConcreteType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_ConcreteType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_Schema' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'version', which is of type str.
+
+'express_expressions_ExtentRef' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'express_instances_SingleLeafInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'algorithms_NamedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ActualDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'AlgorithmScope' represents an important domain concept.
+It does not declare any attributes.
+
+'express_instances_AttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'AliasVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_Expression' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'express_core_ConcreteAggregationType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_SpecializedType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_statements_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'express_core_ExplicitAttribute' represents an important domain concept.
+It has one attribute: 'isOptional', which is of type str.
+
+'AttributeType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'express_rules_ONEOFConstraint' is a specialization of 'SubtypeConstraint'.
+The class 'express_rules_SupertypeRule' is a specialization of 'CommonElement'.
+The class 'express_rules_Extent' is a specialization of 'SETValue'.
+The class 'express_rules_TOTAL_OVERConstraint' is a specialization of 'SubtypeConstraint'.
+The class 'express_rules_ANDConstraint' is a specialization of 'SubtypeConstraint'.
+The class 'express_rules_GlobalRule' is a specialization of 'core_SchemaElement'.
+The class 'express_rules_GlobalRule' is a specialization of 'core_AlgorithmScope'.
+The class 'express_rules_NamedRule' is a specialization of 'LocalElement'.
+The class 'express_statements_ProcedureCall' is a specialization of 'Statement'.
+The class 'express_statements_SkipStatement' is a specialization of 'ControlStatement'.
+The class 'express_statements_AliasStatement' is a specialization of 'algorithms_Statement'.
+The class 'express_statements_AliasStatement' is a specialization of 'core_LocalScope'.
+The class 'express_statements_ControlVariable' is a specialization of 'NamedVariable'.
+The class 'express_statements_AliasVariable' is a specialization of 'algorithms_NamedVariable'.
+The class 'express_statements_AliasVariable' is a specialization of 'algorithms_VARVariable'.
+The class 'express_statements_ControlStatement' is a specialization of 'Statement'.
+The class 'express_statements_VARCell' is a specialization of 'VARExpression'.
+The class 'express_statements_NullStatement' is a specialization of 'ControlStatement'.
+The class 'express_statements_AttributeCell' is a specialization of 'VARExpression'.
+The class 'express_statements_StatementBlock' is a specialization of 'Statement'.
+The class 'express_statements_MemberCell' is a specialization of 'VARExpression'.
+The class 'express_statements_RepeatStatement' is a specialization of 'algorithms_Statement'.
+The class 'express_statements_RepeatStatement' is a specialization of 'core_LocalScope'.
+The class 'express_statements_GroupCell' is a specialization of 'VARExpression'.
+The class 'express_statements_VariableCell' is a specialization of 'VARExpression'.
+The class 'express_statements_CaseStatement' is a specialization of 'Statement'.
+The class 'express_statements_IfStatement' is a specialization of 'Statement'.
+The class 'express_statements_EscapeStatement' is a specialization of 'ControlStatement'.
+The class 'express_statements_ReturnStatement' is a specialization of 'ControlStatement'.
+The class 'express_statements_Assignment' is a specialization of 'Statement'.
+The class 'express_expressions_Selector' is a specialization of 'Expression'.
+The class 'express_expressions_EnumItemRef' is a specialization of 'Primary'.
+The class 'express_expressions_Literal' is a specialization of 'Primary'.
+The class 'express_expressions_BinaryIndex' is a specialization of 'IndexOperation'.
+The class 'express_expressions_IndeterminateRef' is a specialization of 'Primary'.
+The class 'express_expressions_SELFRef' is a specialization of 'Primary'.
+The class 'express_expressions_IndexOperation' is a specialization of 'Expression'.
+The class 'express_expressions_BinaryOperation' is a specialization of 'Operation'.
+The class 'express_expressions_AggregateInitializer' is a specialization of 'Expression'.
+The class 'express_expressions_StringIndex' is a specialization of 'IndexOperation'.
+The class 'express_expressions_PartialEntityConstructor' is a specialization of 'Expression'.
+The class 'express_expressions_Coercion' is a specialization of 'Operation'.
+The class 'express_expressions_Primary' is a specialization of 'Expression'.
+The class 'express_expressions_ParameterRef' is a specialization of 'Primary'.
+The class 'express_expressions_AttributeRef' is a specialization of 'Selector'.
+The class 'express_expressions_AggregateIndex' is a specialization of 'IndexOperation'.
+The class 'express_expressions_GroupRef' is a specialization of 'Selector'.
+The class 'express_expressions_UnaryOperation' is a specialization of 'Operation'.
+The class 'express_expressions_UsedInRef' is a specialization of 'Selector'.
+The class 'express_expressions_ConstantRef' is a specialization of 'Primary'.
+The class 'express_expressions_QueryExpression' is a specialization of 'core_LocalScope'.
+The class 'express_expressions_QueryExpression' is a specialization of 'core_Expression'.
+The class 'express_expressions_QueryVariable' is a specialization of 'NamedVariable'.
+The class 'express_expressions_Operation' is a specialization of 'Expression'.
+The class 'express_expressions_FunctionCall' is a specialization of 'Expression'.
+The class 'express_expressions_ExtentRef' is a specialization of 'Primary'.
+The class 'express_expressions_VariableRef' is a specialization of 'Primary'.
+The class 'express_core_TypeElement' is a specialization of 'NamedElement'.
+The class 'express_core_AGGREGATEType' is a specialization of 'GeneralizedType'.
+The class 'express_core_GeneralBAGType' is a specialization of 'GeneralAggregationType'.
+The class 'express_core_DomainRule' is a specialization of 'core_DomainConstraint'.
+The class 'express_core_DomainRule' is a specialization of 'core_TypeElement'.
+The class 'express_core_GeneralAggregationType' is a specialization of 'core_GeneralizedType'.
+The class 'express_core_GeneralAggregationType' is a specialization of 'core_AggregationType'.
+The class 'express_core_ConcreteType' is a specialization of 'InstantiableType'.
+The class 'express_core_InverseAttribute' is a specialization of 'Attribute'.
+The class 'express_core_EnumerationType' is a specialization of 'DefinedType'.
+The class 'express_core_VariableType' is a specialization of 'core_DataType'.
+The class 'express_core_VariableType' is a specialization of 'core_AttributeType'.
+The class 'express_core_GeneralSETType' is a specialization of 'GeneralAggregationType'.
+The class 'express_core_LISTType' is a specialization of 'ConcreteAggregationType'.
+The class 'express_core_EntityType' is a specialization of 'core_NamedType'.
+The class 'express_core_EntityType' is a specialization of 'core_InstantiableType'.
+The class 'express_core_PartialEntityType' is a specialization of 'DataType'.
+The class 'express_core_Schema' is a specialization of 'Scope'.
+The class 'express_core_InvertibleAttribute' is a specialization of 'ExplicitAttribute'.
+The class 'express_core_GeneralizedType' is a specialization of 'core_ParameterType'.
+The class 'express_core_GeneralizedType' is a specialization of 'core_AttributeType'.
+The class 'express_core_NumericType' is a specialization of 'SimpleType'.
+The class 'express_core_DefinedType' is a specialization of 'core_NamedType'.
+The class 'express_core_DefinedType' is a specialization of 'core_ConcreteType'.
+The class 'express_core_UniqueRule' is a specialization of 'TypeElement'.
+The class 'express_core_DomainRole' is a specialization of 'Role'.
+The class 'express_core_InstantiableType' is a specialization of 'core_ParameterType'.
+The class 'express_core_InstantiableType' is a specialization of 'core_VariableType'.
+The class 'express_core_GeneralLISTType' is a specialization of 'GeneralAggregationType'.
+The class 'express_core_Attribute' is a specialization of 'TypeElement'.
+The class 'express_core_BAGType' is a specialization of 'ConcreteAggregationType'.
+The class 'express_core_RealType' is a specialization of 'NumericType'.
+The class 'express_core_LogicType' is a specialization of 'SimpleType'.
+The class 'express_core_GenericType' is a specialization of 'GeneralizedType'.
+The class 'express_core_StringType' is a specialization of 'SimpleType'.
+The class 'express_core_AnonymousType' is a specialization of 'core_ConcreteType'.
+The class 'express_core_AnonymousType' is a specialization of 'core_InstantiableType'.
+The class 'express_core_AlgorithmScope' is a specialization of 'LocalScope'.
+The class 'express_core_DerivedAttribute' is a specialization of 'Attribute'.
+The class 'express_core_RangeRole' is a specialization of 'Role'.
+The class 'express_core_LocalElement' is a specialization of 'NamedElement'.
+The class 'express_core_SizeConstraint' is a specialization of 'DomainConstraint'.
+The class 'express_core_SETType' is a specialization of 'ConcreteAggregationType'.
+The class 'express_core_SpecializedType' is a specialization of 'DefinedType'.
+The class 'express_core_GeneralARRAYType' is a specialization of 'GeneralAggregationType'.
+The class 'express_core_LengthConstraint' is a specialization of 'DomainConstraint'.
+The class 'express_core_LocalScope' is a specialization of 'Scope'.
+The class 'express_core_NamedType' is a specialization of 'core_InstantiableType'.
+The class 'express_core_NamedType' is a specialization of 'core_Scope'.
+The class 'express_core_NamedType' is a specialization of 'core_CommonElement'.
+The class 'express_core_NamedType' is a specialization of 'core_AttributeType'.
+The class 'express_core_BinaryType' is a specialization of 'SimpleType'.
+The class 'express_core_SelectType' is a specialization of 'DefinedType'.
+The class 'express_core_ActualType' is a specialization of 'VariableType'.
+The class 'express_core_ExplicitAttribute' is a specialization of 'Attribute'.
+The class 'express_core_SimpleType' is a specialization of 'AnonymousType'.
+The class 'express_core_CommonElement' is a specialization of 'SchemaElement'.
+The class 'express_core_SchemaElement' is a specialization of 'NamedElement'.
+The class 'express_core_ConcreteAggregationType' is a specialization of 'core_AnonymousType'.
+The class 'express_core_ConcreteAggregationType' is a specialization of 'core_AggregationType'.
+The class 'express_core_ARRAYType' is a specialization of 'ConcreteAggregationType'.
+The class 'express_algorithms_FunctionResult' is a specialization of 'Variable'.
+The class 'express_algorithms_Function' is a specialization of 'Algorithm'.
+The class 'express_algorithms_InParameter' is a specialization of 'Parameter'.
+The class 'express_algorithms_LocalVariable' is a specialization of 'Variable'.
+The class 'express_algorithms_ActualStructure' is a specialization of 'algorithms_GenericElement'.
+The class 'express_algorithms_ActualStructure' is a specialization of 'core_AGGREGATEType'.
+The class 'express_algorithms_ActualGenericType' is a specialization of 'ActualType'.
+The class 'express_algorithms_NamedVariable' is a specialization of 'LocalElement'.
+The class 'express_algorithms_InVariable' is a specialization of 'Variable'.
+The class 'express_algorithms_Procedure' is a specialization of 'Algorithm'.
+The class 'express_algorithms_ActualARRAYType' is a specialization of 'ActualAggregationType'.
+The class 'express_algorithms_ActualSETType' is a specialization of 'ActualAggregationType'.
+The class 'express_algorithms_ActualAGGREGATEType' is a specialization of 'ActualType'.
+The class 'express_algorithms_Parameter' is a specialization of 'LocalElement'.
+The class 'express_algorithms_Algorithm' is a specialization of 'core_AlgorithmScope'.
+The class 'express_algorithms_Algorithm' is a specialization of 'core_CommonElement'.
+The class 'express_algorithms_ActualAggregationType' is a specialization of 'core_ActualType'.
+The class 'express_algorithms_ActualAggregationType' is a specialization of 'core_AggregationType'.
+The class 'express_algorithms_ActualLISTType' is a specialization of 'ActualAggregationType'.
+The class 'express_algorithms_Variable' is a specialization of 'NamedVariable'.
+The class 'express_algorithms_GenericElement' is a specialization of 'LocalElement'.
+The class 'express_algorithms_VARParameter' is a specialization of 'algorithms_Parameter'.
+The class 'express_algorithms_VARParameter' is a specialization of 'algorithms_VARVariable'.
+The class 'express_algorithms_ActualDataType' is a specialization of 'core_GenericType'.
+The class 'express_algorithms_ActualDataType' is a specialization of 'algorithms_GenericElement'.
+The class 'express_algorithms_ActualBAGType' is a specialization of 'ActualAggregationType'.
+The class 'express_instances_ARRAYValue' is a specialization of 'AggregateValue'.
+The class 'express_instances_RoleName' is a specialization of 'StringValue'.
+The class 'express_instances_EntityInstance' is a specialization of 'TypedInstance'.
+The class 'express_instances_IntegerValue' is a specialization of 'RealValue'.
+The class 'express_instances_AggregateValue' is a specialization of 'ConcreteValue'.
+The class 'express_instances_Constant' is a specialization of 'CommonElement'.
+The class 'express_instances_LogicalValue' is a specialization of 'SimpleValue'.
+The class 'express_instances_TypedInstance' is a specialization of 'Instance'.
+The class 'express_instances_Indeterminate' is a specialization of 'Instance'.
+The class 'express_instances_SingleLeafInstance' is a specialization of 'EntityInstance'.
+The class 'express_instances_GenericAggregate' is a specialization of 'LISTValue'.
+The class 'express_instances_BinaryValue' is a specialization of 'SimpleValue'.
+The class 'express_instances_SpecializedValue' is a specialization of 'TypedInstance'.
+The class 'express_instances_BAGValue' is a specialization of 'AggregateValue'.
+The class 'express_instances_EnumerationItem' is a specialization of 'core_TypeElement'.
+The class 'express_instances_EnumerationItem' is a specialization of 'instances_TypedInstance'.
+The class 'express_instances_EnumerationItem' is a specialization of 'instances_ConcreteValue'.
+The class 'express_instances_EntityValue' is a specialization of 'PartialEntityValue'.
+The class 'express_instances_SETValue' is a specialization of 'AggregateValue'.
+The class 'express_instances_RealValue' is a specialization of 'NumberValue'.
+The class 'express_instances_BooleanValue' is a specialization of 'LogicalValue'.
+The class 'express_instances_LISTValue' is a specialization of 'core_Instance'.
+The class 'express_instances_LISTValue' is a specialization of 'instances_AggregateValue'.
+The class 'express_instances_StringValue' is a specialization of 'SimpleValue'.
+The class 'express_instances_TypeName' is a specialization of 'StringValue'.
+The class 'express_instances_PartialEntityValue' is a specialization of 'Instance'.
+The class 'express_instances_NumberValue' is a specialization of 'SimpleValue'.
+The class 'express_instances_MultiLeafInstance' is a specialization of 'EntityInstance'.
+The class 'express_instances_SimpleValue' is a specialization of 'ConcreteValue'.
+The class 'express_instances_ConcreteValue' is a specialization of 'Instance'.
+
+Relationships between classes are modeled using associations.
+An association connects 'EntityType' and 'express_rules_SupertypeRule'. From 'EntityType', the role 'EntityType' has cardinality 0..*, and from 'express_rules_SupertypeRule', the role 'express_rules_SupertypeRule' has cardinality 0..*.
+An association connects 'SubtypeConstraint' and 'express_rules_SupertypeRule'. From 'SubtypeConstraint', the role 'rules' has cardinality 0..*, and from 'express_rules_SupertypeRule', the role 'SubtypeConstraint' has cardinality 0..*.
+An association connects 'Extent' and 'express_rules_SubtypeConstraint'. From 'Extent', the role 'rules3' has cardinality 0..*, and from 'express_rules_SubtypeConstraint', the role 'Extent' has cardinality 0..*.
+An association connects 'Expression' and 'express_rules_SubtypeConstraint'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'express_rules_SubtypeConstraint', the role 'express_rules_SubtypeConstraint' has cardinality 0..*.
+An association connects 'express_rules_SubtypeConstraint' and 'SupertypeRule'. From 'express_rules_SubtypeConstraint', the role 'SupertypeRule' has cardinality 0..*, and from 'SupertypeRule', the role 'rules6' has cardinality 0..*.
+An association connects 'express_rules_Extent' and 'SubtypeConstraint'. From 'express_rules_Extent', the role 'SubtypeConstraint8' has cardinality 0..*, and from 'SubtypeConstraint', the role 'rules9' has cardinality 0..*.
+An association connects 'express_rules_Extent' and 'EntityInstance'. From 'express_rules_Extent', the role 'express_rules_Extent' has cardinality 0..*, and from 'EntityInstance', the role 'EntityInstance' has cardinality 0..*.
+An association connects 'Population' and 'express_rules_Extent'. From 'Population', the role 'Population' has cardinality 0..*, and from 'express_rules_Extent', the role 'express_rules_Extent12' has cardinality 0..*.
+An association connects 'express_rules_Extent' and 'GlobalRule'. From 'express_rules_Extent', the role 'GlobalRule' has cardinality 0..*, and from 'GlobalRule', the role 'rules14' has cardinality 0..*.
+An association connects 'EntityType' and 'express_rules_Extent'. From 'EntityType', the role 'core' has cardinality 0..*, and from 'express_rules_Extent', the role 'EntityType16' has cardinality 0..*.
+An association connects 'ScopedId' and 'express_rules_Extent'. From 'ScopedId', the role 'ScopedId' has cardinality 0..*, and from 'express_rules_Extent', the role 'express_rules_Extent18' has cardinality 0..*.
+An association connects 'express_rules_GlobalRule' and 'Statement'. From 'express_rules_GlobalRule', the role 'express_rules_GlobalRule' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'express_rules_GlobalRule' and 'Extent'. From 'express_rules_GlobalRule', the role 'Extent21' has cardinality 0..*, and from 'Extent', the role 'rules22' has cardinality 0..*.
+An association connects 'express_rules_GlobalRule' and 'NamedRule'. From 'express_rules_GlobalRule', the role 'express_rules_GlobalRule24' has cardinality 0..*, and from 'NamedRule', the role 'NamedRule' has cardinality 0..*.
+An association connects 'express_rules_NamedRule' and 'Expression'. From 'express_rules_NamedRule', the role 'express_rules_NamedRule' has cardinality 0..*, and from 'Expression', the role 'Expression26' has cardinality 0..*.
+An association connects 'express_statements_ProcedureCall' and 'Procedure'. From 'express_statements_ProcedureCall', the role 'express_statements_ProcedureCall' has cardinality 0..*, and from 'Procedure', the role 'Procedure' has cardinality 0..*.
+An association connects 'express_statements_ProcedureCall' and 'ActualParameter'. From 'express_statements_ProcedureCall', the role 'ActualParameter' has cardinality 0..*, and from 'ActualParameter', the role 'expressions' has cardinality 0..*.
+An association connects 'express_statements_AliasStatement' and 'VARExpression'. From 'express_statements_AliasStatement', the role 'express_statements_AliasStatement' has cardinality 0..*, and from 'VARExpression', the role 'VARExpression' has cardinality 0..*.
+An association connects 'Statement' and 'express_statements_AliasStatement'. From 'Statement', the role 'Statement32' has cardinality 0..*, and from 'express_statements_AliasStatement', the role 'express_statements_AliasStatement31' has cardinality 0..*.
+An association connects 'AliasVariable' and 'express_statements_AliasStatement'. From 'AliasVariable', the role 'AliasVariable' has cardinality 0..*, and from 'express_statements_AliasStatement', the role 'express_statements_AliasStatement34' has cardinality 0..*.
+An association connects 'express_statements_ControlVariable' and 'Expression'. From 'express_statements_ControlVariable', the role 'express_statements_ControlVariable' has cardinality 0..*, and from 'Expression', the role 'Expression36' has cardinality 0..*.
+An association connects 'express_statements_ControlVariable' and 'Expression'. From 'express_statements_ControlVariable', the role 'express_statements_ControlVariable38' has cardinality 0..*, and from 'Expression', the role 'Expression39' has cardinality 0..*.
+An association connects 'express_statements_ControlVariable' and 'Expression'. From 'express_statements_ControlVariable', the role 'express_statements_ControlVariable41' has cardinality 0..*, and from 'Expression', the role 'Expression42' has cardinality 0..*.
+An association connects 'express_statements_AliasVariable' and 'VARExpression'. From 'express_statements_AliasVariable', the role 'express_statements_AliasVariable' has cardinality 0..*, and from 'VARExpression', the role 'VARExpression44' has cardinality 0..*.
+An association connects 'VARVariable' and 'express_statements_VARCell'. From 'VARVariable', the role 'VARVariable' has cardinality 0..*, and from 'express_statements_VARCell', the role 'express_statements_VARCell' has cardinality 0..*.
+An association connects 'ExplicitAttribute' and 'express_statements_AttributeCell'. From 'ExplicitAttribute', the role 'ExplicitAttribute' has cardinality 0..*, and from 'express_statements_AttributeCell', the role 'express_statements_AttributeCell' has cardinality 0..*.
+An association connects 'VARExpression' and 'express_statements_AttributeCell'. From 'VARExpression', the role 'VARExpression49' has cardinality 0..*, and from 'express_statements_AttributeCell', the role 'express_statements_AttributeCell48' has cardinality 0..*.
+An association connects 'Statement' and 'express_statements_StatementBlock'. From 'Statement', the role 'algorithms' has cardinality 0..*, and from 'express_statements_StatementBlock', the role 'Statement51' has cardinality 0..*.
+An association connects 'express_statements_CaseAction' and 'Expression'. From 'express_statements_CaseAction', the role 'express_statements_CaseAction' has cardinality 0..*, and from 'Expression', the role 'Expression53' has cardinality 0..*.
+An association connects 'Statement' and 'express_statements_CaseAction'. From 'Statement', the role 'Statement56' has cardinality 0..*, and from 'express_statements_CaseAction', the role 'express_statements_CaseAction55' has cardinality 0..*.
+An association connects 'Expression' and 'express_statements_MemberCell'. From 'Expression', the role 'Expression58' has cardinality 0..*, and from 'express_statements_MemberCell', the role 'express_statements_MemberCell' has cardinality 0..*.
+An association connects 'express_statements_MemberCell' and 'VARExpression'. From 'express_statements_MemberCell', the role 'express_statements_MemberCell60' has cardinality 0..*, and from 'VARExpression', the role 'VARExpression61' has cardinality 0..*.
+An association connects 'Expression' and 'express_statements_RepeatStatement'. From 'Expression', the role 'Expression63' has cardinality 0..*, and from 'express_statements_RepeatStatement', the role 'express_statements_RepeatStatement' has cardinality 0..*.
+An association connects 'express_statements_RepeatStatement' and 'Statement'. From 'express_statements_RepeatStatement', the role 'Statement65' has cardinality 0..*, and from 'Statement', the role 'algorithms66' has cardinality 0..*.
+An association connects 'express_statements_RepeatStatement' and 'ControlVariable'. From 'express_statements_RepeatStatement', the role 'express_statements_RepeatStatement68' has cardinality 0..*, and from 'ControlVariable', the role 'ControlVariable' has cardinality 0..*.
+An association connects 'Expression' and 'express_statements_RepeatStatement'. From 'Expression', the role 'Expression71' has cardinality 0..*, and from 'express_statements_RepeatStatement', the role 'express_statements_RepeatStatement70' has cardinality 0..*.
+An association connects 'express_statements_GroupCell' and 'VARExpression'. From 'express_statements_GroupCell', the role 'express_statements_GroupCell' has cardinality 0..*, and from 'VARExpression', the role 'VARExpression73' has cardinality 0..*.
+An association connects 'express_statements_GroupCell' and 'SingleEntityType'. From 'express_statements_GroupCell', the role 'express_statements_GroupCell75' has cardinality 0..*, and from 'SingleEntityType', the role 'SingleEntityType' has cardinality 0..*.
+An association connects 'Variable' and 'express_statements_VariableCell'. From 'Variable', the role 'Variable' has cardinality 0..*, and from 'express_statements_VariableCell', the role 'express_statements_VariableCell' has cardinality 0..*.
+An association connects 'express_statements_CaseStatement' and 'CaseAction'. From 'express_statements_CaseStatement', the role 'express_statements_CaseStatement' has cardinality 0..*, and from 'CaseAction', the role 'CaseAction' has cardinality 0..*.
+An association connects 'Expression' and 'express_statements_CaseStatement'. From 'Expression', the role 'Expression80' has cardinality 0..*, and from 'express_statements_CaseStatement', the role 'express_statements_CaseStatement79' has cardinality 0..*.
+An association connects 'Expression' and 'express_statements_IfStatement'. From 'Expression', the role 'Expression82' has cardinality 0..*, and from 'express_statements_IfStatement', the role 'express_statements_IfStatement' has cardinality 0..*.
+An association connects 'express_statements_IfStatement' and 'Statement'. From 'express_statements_IfStatement', the role 'express_statements_IfStatement84' has cardinality 0..*, and from 'Statement', the role 'Statement85' has cardinality 0..*.
+An association connects 'express_statements_IfStatement' and 'Statement'. From 'express_statements_IfStatement', the role 'express_statements_IfStatement87' has cardinality 0..*, and from 'Statement', the role 'Statement88' has cardinality 0..*.
+An association connects 'express_statements_ReturnStatement' and 'Expression'. From 'express_statements_ReturnStatement', the role 'express_statements_ReturnStatement' has cardinality 0..*, and from 'Expression', the role 'Expression90' has cardinality 0..*.
+An association connects 'express_statements_Assignment' and 'Expression'. From 'express_statements_Assignment', the role 'express_statements_Assignment' has cardinality 0..*, and from 'Expression', the role 'Expression92' has cardinality 0..*.
+An association connects 'VARExpression' and 'express_statements_Assignment'. From 'VARExpression', the role 'VARExpression95' has cardinality 0..*, and from 'express_statements_Assignment', the role 'express_statements_Assignment94' has cardinality 0..*.
+An association connects 'Expression' and 'express_expressions_Selector'. From 'Expression', the role 'Expression97' has cardinality 0..*, and from 'express_expressions_Selector', the role 'express_expressions_Selector' has cardinality 0..*.
+An association connects 'Expression' and 'express_expressions_RepeatCount'. From 'Expression', the role 'Expression99' has cardinality 0..*, and from 'express_expressions_RepeatCount', the role 'express_expressions_RepeatCount' has cardinality 0..*.
+An association connects 'EnumerationItem' and 'express_expressions_EnumItemRef'. From 'EnumerationItem', the role 'EnumerationItem' has cardinality 0..*, and from 'express_expressions_EnumItemRef', the role 'express_expressions_EnumItemRef' has cardinality 0..*.
+An association connects 'express_expressions_Literal' and 'SimpleValue'. From 'express_expressions_Literal', the role 'express_expressions_Literal' has cardinality 0..*, and from 'SimpleValue', the role 'SimpleValue' has cardinality 0..*.
+An association connects 'express_expressions_BinaryIndex' and 'Expression'. From 'express_expressions_BinaryIndex', the role 'express_expressions_BinaryIndex' has cardinality 0..*, and from 'Expression', the role 'Expression103' has cardinality 0..*.
+An association connects 'Expression' and 'express_expressions_BinaryIndex'. From 'Expression', the role 'Expression106' has cardinality 0..*, and from 'express_expressions_BinaryIndex', the role 'express_expressions_BinaryIndex105' has cardinality 0..*.
+An association connects 'Indeterminate' and 'express_expressions_IndeterminateRef'. From 'Indeterminate', the role 'Indeterminate' has cardinality 0..*, and from 'express_expressions_IndeterminateRef', the role 'express_expressions_IndeterminateRef' has cardinality 0..*.
+An association connects 'Expression' and 'express_expressions_IndexOperation'. From 'Expression', the role 'Expression109' has cardinality 0..*, and from 'express_expressions_IndexOperation', the role 'express_expressions_IndexOperation' has cardinality 0..*.
+An association connects 'Expression' and 'express_expressions_BinaryOperation'. From 'Expression', the role 'Expression111' has cardinality 0..*, and from 'express_expressions_BinaryOperation', the role 'express_expressions_BinaryOperation' has cardinality 0..*.
+An association connects 'express_expressions_BinaryOperation' and 'Expression'. From 'express_expressions_BinaryOperation', the role 'express_expressions_BinaryOperation113' has cardinality 0..*, and from 'Expression', the role 'Expression114' has cardinality 0..*.
+An association connects 'express_expressions_AggregateInitializer' and 'GenericAggregate'. From 'express_expressions_AggregateInitializer', the role 'express_expressions_AggregateInitializer' has cardinality 0..*, and from 'GenericAggregate', the role 'GenericAggregate' has cardinality 0..*.
+An association connects 'MemberBinding' and 'express_expressions_AggregateInitializer'. From 'MemberBinding', the role 'MemberBinding' has cardinality 0..*, and from 'express_expressions_AggregateInitializer', the role 'express_expressions_AggregateInitializer117' has cardinality 0..*.
+An association connects 'express_expressions_StringIndex' and 'Expression'. From 'express_expressions_StringIndex', the role 'express_expressions_StringIndex' has cardinality 0..*, and from 'Expression', the role 'Expression119' has cardinality 0..*.
+An association connects 'Expression' and 'express_expressions_StringIndex'. From 'Expression', the role 'Expression122' has cardinality 0..*, and from 'express_expressions_StringIndex', the role 'express_expressions_StringIndex121' has cardinality 0..*.
+An association connects 'express_expressions_PartialEntityConstructor' and 'PartialEntityValue'. From 'express_expressions_PartialEntityConstructor', the role 'express_expressions_PartialEntityConstructor' has cardinality 0..*, and from 'PartialEntityValue', the role 'PartialEntityValue' has cardinality 0..*.
+An association connects 'express_expressions_PartialEntityConstructor' and 'SingleEntityType'. From 'express_expressions_PartialEntityConstructor', the role 'express_expressions_PartialEntityConstructor125' has cardinality 0..*, and from 'SingleEntityType', the role 'SingleEntityType126' has cardinality 0..*.
+An association connects 'express_expressions_PartialEntityConstructor' and 'AttributeBinding'. From 'express_expressions_PartialEntityConstructor', the role 'express_expressions_PartialEntityConstructor128' has cardinality 0..*, and from 'AttributeBinding', the role 'AttributeBinding' has cardinality 0..*.
+An association connects 'Expression' and 'express_expressions_Coercion'. From 'Expression', the role 'Expression130' has cardinality 0..*, and from 'express_expressions_Coercion', the role 'express_expressions_Coercion' has cardinality 0..*.
+An association connects 'VariableType' and 'express_expressions_Coercion'. From 'VariableType', the role 'VariableType' has cardinality 0..*, and from 'express_expressions_Coercion', the role 'express_expressions_Coercion132' has cardinality 0..*.
+An association connects 'ProcedureCall' and 'express_expressions_ActualParameter'. From 'ProcedureCall', the role 'statements' has cardinality 0..*, and from 'express_expressions_ActualParameter', the role 'ProcedureCall' has cardinality 0..*.
+An association connects 'FunctionCall' and 'express_expressions_ActualParameter'. From 'FunctionCall', the role 'expressions135' has cardinality 0..*, and from 'express_expressions_ActualParameter', the role 'FunctionCall' has cardinality 0..*.
+An association connects 'Parameter' and 'express_expressions_ActualParameter'. From 'Parameter', the role 'Parameter' has cardinality 0..*, and from 'express_expressions_ActualParameter', the role 'express_expressions_ActualParameter' has cardinality 0..*.
+An association connects 'VARExpression' and 'express_expressions_ActualParameter'. From 'VARExpression', the role 'VARExpression139' has cardinality 0..*, and from 'express_expressions_ActualParameter', the role 'express_expressions_ActualParameter138' has cardinality 0..*.
+An association connects 'Expression' and 'express_expressions_ActualParameter'. From 'Expression', the role 'Expression142' has cardinality 0..*, and from 'express_expressions_ActualParameter', the role 'express_expressions_ActualParameter141' has cardinality 0..*.
+An association connects 'Parameter' and 'express_expressions_ParameterRef'. From 'Parameter', the role 'Parameter144' has cardinality 0..*, and from 'express_expressions_ParameterRef', the role 'express_expressions_ParameterRef' has cardinality 0..*.
+An association connects 'Attribute' and 'express_expressions_AttributeRef'. From 'Attribute', the role 'Attribute' has cardinality 0..*, and from 'express_expressions_AttributeRef', the role 'express_expressions_AttributeRef' has cardinality 0..*.
+An association connects 'Expression' and 'express_expressions_AggregateIndex'. From 'Expression', the role 'Expression147' has cardinality 0..*, and from 'express_expressions_AggregateIndex', the role 'express_expressions_AggregateIndex' has cardinality 0..*.
+An association connects 'express_expressions_GroupRef' and 'SingleEntityType'. From 'express_expressions_GroupRef', the role 'express_expressions_GroupRef' has cardinality 0..*, and from 'SingleEntityType', the role 'SingleEntityType149' has cardinality 0..*.
+An association connects 'express_expressions_UnaryOperation' and 'Expression'. From 'express_expressions_UnaryOperation', the role 'express_expressions_UnaryOperation' has cardinality 0..*, and from 'Expression', the role 'Expression151' has cardinality 0..*.
+An association connects 'Attribute' and 'express_expressions_UsedInRef'. From 'Attribute', the role 'Attribute153' has cardinality 0..*, and from 'express_expressions_UsedInRef', the role 'express_expressions_UsedInRef' has cardinality 0..*.
+An association connects 'express_expressions_ConstantRef' and 'Constant'. From 'express_expressions_ConstantRef', the role 'express_expressions_ConstantRef' has cardinality 0..*, and from 'Constant', the role 'Constant' has cardinality 0..*.
+An association connects 'express_expressions_QueryExpression' and 'Expression'. From 'express_expressions_QueryExpression', the role 'express_expressions_QueryExpression' has cardinality 0..*, and from 'Expression', the role 'Expression156' has cardinality 0..*.
+An association connects 'express_expressions_QueryExpression' and 'QueryVariable'. From 'express_expressions_QueryExpression', the role 'express_expressions_QueryExpression158' has cardinality 0..*, and from 'QueryVariable', the role 'QueryVariable' has cardinality 0..*.
+An association connects 'express_expressions_QueryExpression' and 'Expression'. From 'express_expressions_QueryExpression', the role 'express_expressions_QueryExpression160' has cardinality 0..*, and from 'Expression', the role 'Expression161' has cardinality 0..*.
+An association connects 'Expression' and 'express_expressions_AttributeBinding'. From 'Expression', the role 'Expression163' has cardinality 0..*, and from 'express_expressions_AttributeBinding', the role 'express_expressions_AttributeBinding' has cardinality 0..*.
+An association connects 'express_expressions_AttributeBinding' and 'AttributeValue'. From 'express_expressions_AttributeBinding', the role 'express_expressions_AttributeBinding165' has cardinality 0..*, and from 'AttributeValue', the role 'AttributeValue' has cardinality 0..*.
+An association connects 'express_expressions_AttributeBinding' and 'ExplicitAttribute'. From 'express_expressions_AttributeBinding', the role 'express_expressions_AttributeBinding167' has cardinality 0..*, and from 'ExplicitAttribute', the role 'ExplicitAttribute168' has cardinality 0..*.
+An association connects 'ActualParameter' and 'express_expressions_FunctionCall'. From 'ActualParameter', the role 'expressions171' has cardinality 0..*, and from 'express_expressions_FunctionCall', the role 'ActualParameter170' has cardinality 0..*.
+An association connects 'express_expressions_FunctionCall' and 'Function'. From 'express_expressions_FunctionCall', the role 'express_expressions_FunctionCall' has cardinality 0..*, and from 'Function', the role 'Function' has cardinality 0..*.
+An association connects 'express_expressions_FunctionCall' and 'FunctionResult'. From 'express_expressions_FunctionCall', the role 'express_expressions_FunctionCall174' has cardinality 0..*, and from 'FunctionResult', the role 'FunctionResult' has cardinality 0..*.
+An association connects 'RepeatCount' and 'express_expressions_MemberBinding'. From 'RepeatCount', the role 'RepeatCount' has cardinality 0..*, and from 'express_expressions_MemberBinding', the role 'express_expressions_MemberBinding' has cardinality 0..*.
+An association connects 'ListMember' and 'express_expressions_MemberBinding'. From 'ListMember', the role 'ListMember' has cardinality 0..*, and from 'express_expressions_MemberBinding', the role 'express_expressions_MemberBinding177' has cardinality 0..*.
+An association connects 'express_expressions_MemberBinding' and 'Expression'. From 'express_expressions_MemberBinding', the role 'express_expressions_MemberBinding179' has cardinality 0..*, and from 'Expression', the role 'Expression180' has cardinality 0..*.
+An association connects 'express_expressions_ExtentRef' and 'NamedType'. From 'express_expressions_ExtentRef', the role 'express_expressions_ExtentRef' has cardinality 0..*, and from 'NamedType', the role 'NamedType' has cardinality 0..*.
+An association connects 'NamedVariable' and 'express_expressions_VariableRef'. From 'NamedVariable', the role 'NamedVariable' has cardinality 0..*, and from 'express_expressions_VariableRef', the role 'express_expressions_VariableRef' has cardinality 0..*.
+An association connects 'express_core_SingleEntityType' and 'ExplicitAttribute'. From 'express_core_SingleEntityType', the role 'express_core_SingleEntityType' has cardinality 0..*, and from 'ExplicitAttribute', the role 'ExplicitAttribute184' has cardinality 0..*.
+An association connects 'Attribute' and 'express_core_SingleEntityType'. From 'Attribute', the role 'core187' has cardinality 0..*, and from 'express_core_SingleEntityType', the role 'Attribute186' has cardinality 0..*.
+An association connects 'EntityType' and 'express_core_SingleEntityType'. From 'EntityType', the role 'core190' has cardinality 0..*, and from 'express_core_SingleEntityType', the role 'EntityType189' has cardinality 0..*.
+An association connects 'PartialEntityType' and 'express_core_SingleEntityType'. From 'PartialEntityType', the role 'PartialEntityType' has cardinality 0..*, and from 'express_core_SingleEntityType', the role 'express_core_SingleEntityType192' has cardinality 0..*.
+An association connects 'express_core_SingleEntityType' and 'ScopedId'. From 'express_core_SingleEntityType', the role 'express_core_SingleEntityType194' has cardinality 0..*, and from 'ScopedId', the role 'ScopedId195' has cardinality 0..*.
+An association connects 'SizeConstraint' and 'express_core_AGGREGATEType'. From 'SizeConstraint', the role 'SizeConstraint' has cardinality 0..*, and from 'express_core_AGGREGATEType', the role 'express_core_AGGREGATEType' has cardinality 0..*.
+An association connects 'ParameterType' and 'express_core_AGGREGATEType'. From 'ParameterType', the role 'ParameterType' has cardinality 0..*, and from 'express_core_AGGREGATEType', the role 'express_core_AGGREGATEType198' has cardinality 0..*.
+An association connects 'express_core_AGGREGATEType' and 'ActualStructureConstraint'. From 'express_core_AGGREGATEType', the role 'ActualStructureConstraint' has cardinality 0..*, and from 'ActualStructureConstraint', the role 'algorithms200' has cardinality 0..*.
+An association connects 'SizeConstraint' and 'express_core_AGGREGATEType'. From 'SizeConstraint', the role 'SizeConstraint203' has cardinality 0..*, and from 'express_core_AGGREGATEType', the role 'express_core_AGGREGATEType202' has cardinality 0..*.
+An association connects 'express_core_GeneralAggregationType' and 'GeneralizedType'. From 'express_core_GeneralAggregationType', the role 'express_core_GeneralAggregationType' has cardinality 0..*, and from 'GeneralizedType', the role 'GeneralizedType' has cardinality 0..*.
+An association connects 'Instance' and 'express_core_Expression'. From 'Instance', the role 'Instance' has cardinality 0..*, and from 'express_core_Expression', the role 'express_core_Expression' has cardinality 0..*.
+An association connects 'express_core_Expression' and 'Scope'. From 'express_core_Expression', the role 'express_core_Expression207' has cardinality 0..*, and from 'Scope', the role 'Scope' has cardinality 0..*.
+An association connects 'express_core_Expression' and 'DataType'. From 'express_core_Expression', the role 'express_core_Expression209' has cardinality 0..*, and from 'DataType', the role 'DataType' has cardinality 0..*.
+An association connects 'express_core_InverseAttribute' and 'DomainRole'. From 'express_core_InverseAttribute', the role 'DomainRole' has cardinality 0..*, and from 'DomainRole', the role 'core211' has cardinality 0..*.
+An association connects 'express_core_InverseAttribute' and 'InvertibleAttribute'. From 'express_core_InverseAttribute', the role 'InvertibleAttribute' has cardinality 0..*, and from 'InvertibleAttribute', the role 'core213' has cardinality 0..*.
+An association connects 'EnumerationItem' and 'express_core_EnumerationType'. From 'EnumerationItem', the role 'EnumerationItem215' has cardinality 0..*, and from 'express_core_EnumerationType', the role 'express_core_EnumerationType' has cardinality 0..*.
+An association connects 'express_core_EnumerationType' and 'EnumerationItem'. From 'express_core_EnumerationType', the role 'EnumerationItem217' has cardinality 0..*, and from 'EnumerationItem', the role 'instances' has cardinality 0..*.
+An association connects 'EnumerationType' and 'express_core_EnumerationType'. From 'EnumerationType', the role 'core219' has cardinality 0..*, and from 'express_core_EnumerationType', the role 'EnumerationType' has cardinality 0..*.
+An association connects 'express_core_EnumerationType' and 'EnumerationType'. From 'express_core_EnumerationType', the role 'EnumerationType221' has cardinality 0..*, and from 'EnumerationType', the role 'core222' has cardinality 0..*.
+An association connects 'express_core_ArrayBound' and 'Expression'. From 'express_core_ArrayBound', the role 'express_core_ArrayBound' has cardinality 0..*, and from 'Expression', the role 'Expression224' has cardinality 0..*.
+An association connects 'Expression' and 'express_core_Redeclaration'. From 'Expression', the role 'Expression226' has cardinality 0..*, and from 'express_core_Redeclaration', the role 'express_core_Redeclaration' has cardinality 0..*.
+An association connects 'AttributeType' and 'express_core_Redeclaration'. From 'AttributeType', the role 'AttributeType' has cardinality 0..*, and from 'express_core_Redeclaration', the role 'express_core_Redeclaration228' has cardinality 0..*.
+An association connects 'Redeclaration' and 'express_core_Redeclaration'. From 'Redeclaration', the role 'Redeclaration' has cardinality 0..*, and from 'express_core_Redeclaration', the role 'express_core_Redeclaration230' has cardinality 0..*.
+An association connects 'express_core_Redeclaration' and 'SizeConstraint'. From 'express_core_Redeclaration', the role 'express_core_Redeclaration232' has cardinality 0..*, and from 'SizeConstraint', the role 'SizeConstraint233' has cardinality 0..*.
+An association connects 'express_core_Redeclaration' and 'SizeConstraint'. From 'express_core_Redeclaration', the role 'express_core_Redeclaration235' has cardinality 0..*, and from 'SizeConstraint', the role 'SizeConstraint236' has cardinality 0..*.
+An association connects 'EntityType' and 'express_core_Redeclaration'. From 'EntityType', the role 'core239' has cardinality 0..*, and from 'express_core_Redeclaration', the role 'EntityType238' has cardinality 0..*.
+An association connects 'express_core_Redeclaration' and 'Attribute'. From 'express_core_Redeclaration', the role 'express_core_Redeclaration241' has cardinality 0..*, and from 'Attribute', the role 'Attribute242' has cardinality 0..*.
+An association connects 'express_core_Redeclaration' and 'Role'. From 'express_core_Redeclaration', the role 'express_core_Redeclaration244' has cardinality 0..*, and from 'Role', the role 'Role' has cardinality 0..*.
+An association connects 'ScopedId' and 'express_core_Redeclaration'. From 'ScopedId', the role 'ScopedId247' has cardinality 0..*, and from 'express_core_Redeclaration', the role 'express_core_Redeclaration246' has cardinality 0..*.
+An association connects 'express_core_EntityType' and 'Role'. From 'express_core_EntityType', the role 'Role249' has cardinality 0..*, and from 'Role', the role 'core250' has cardinality 0..*.
+An association connects 'Redeclaration' and 'express_core_EntityType'. From 'Redeclaration', the role 'core253' has cardinality 0..*, and from 'express_core_EntityType', the role 'Redeclaration252' has cardinality 0..*.
+An association connects 'express_core_EntityType' and 'Attribute'. From 'express_core_EntityType', the role 'Attribute255' has cardinality 0..*, and from 'Attribute', the role 'core256' has cardinality 0..*.
+An association connects 'RangeRole' and 'express_core_EntityType'. From 'RangeRole', the role 'core258' has cardinality 0..*, and from 'express_core_EntityType', the role 'RangeRole' has cardinality 0..*.
+An association connects 'express_core_EntityType' and 'SingleEntityType'. From 'express_core_EntityType', the role 'SingleEntityType260' has cardinality 0..*, and from 'SingleEntityType', the role 'core261' has cardinality 0..*.
+An association connects 'Extent' and 'express_core_EntityType'. From 'Extent', the role 'rules264' has cardinality 0..*, and from 'express_core_EntityType', the role 'Extent263' has cardinality 0..*.
+An association connects 'InvertibleAttribute' and 'express_core_EntityType'. From 'InvertibleAttribute', the role 'core267' has cardinality 0..*, and from 'express_core_EntityType', the role 'InvertibleAttribute266' has cardinality 0..*.
+An association connects 'DomainRole' and 'express_core_EntityType'. From 'DomainRole', the role 'core270' has cardinality 0..*, and from 'express_core_EntityType', the role 'DomainRole269' has cardinality 0..*.
+An association connects 'express_core_EntityType' and 'UniqueRule'. From 'express_core_EntityType', the role 'UniqueRule' has cardinality 0..*, and from 'UniqueRule', the role 'core272' has cardinality 0..*.
+An association connects 'InvertibleAttribute' and 'express_core_EntityType'. From 'InvertibleAttribute', the role 'core275' has cardinality 0..*, and from 'express_core_EntityType', the role 'InvertibleAttribute274' has cardinality 0..*.
+An association connects 'express_core_EntityType' and 'EntityType'. From 'express_core_EntityType', the role 'express_core_EntityType' has cardinality 0..*, and from 'EntityType', the role 'EntityType277' has cardinality 0..*.
+An association connects 'express_core_DataType' and 'Instance'. From 'express_core_DataType', the role 'Instance279' has cardinality 0..*, and from 'Instance', the role 'core280' has cardinality 0..*.
+An association connects 'SingleEntityType' and 'express_core_PartialEntityType'. From 'SingleEntityType', the role 'SingleEntityType282' has cardinality 0..*, and from 'express_core_PartialEntityType', the role 'express_core_PartialEntityType' has cardinality 0..*.
+An association connects 'Remark' and 'express_core_Schema'. From 'Remark', the role 'core284' has cardinality 0..*, and from 'express_core_Schema', the role 'Remark' has cardinality 0..*.
+An association connects 'express_core_Schema' and 'InterfacedElement'. From 'express_core_Schema', the role 'InterfacedElement' has cardinality 0..*, and from 'InterfacedElement', the role 'core286' has cardinality 0..*.
+An association connects 'SchemaElement' and 'express_core_Schema'. From 'SchemaElement', the role 'core288' has cardinality 0..*, and from 'express_core_Schema', the role 'SchemaElement' has cardinality 0..*.
+An association connects 'SchemaElement' and 'express_core_Schema'. From 'SchemaElement', the role 'core291' has cardinality 0..*, and from 'express_core_Schema', the role 'SchemaElement290' has cardinality 0..*.
+An association connects 'express_core_InvertibleAttribute' and 'InverseAttribute'. From 'express_core_InvertibleAttribute', the role 'InverseAttribute' has cardinality 0..*, and from 'InverseAttribute', the role 'core293' has cardinality 0..*.
+An association connects 'express_core_InvertibleAttribute' and 'EntityType'. From 'express_core_InvertibleAttribute', the role 'EntityType295' has cardinality 0..*, and from 'EntityType', the role 'core296' has cardinality 0..*.
+An association connects 'Relationship' and 'express_core_InvertibleAttribute'. From 'Relationship', the role 'core298' has cardinality 0..*, and from 'express_core_InvertibleAttribute', the role 'Relationship' has cardinality 0..*.
+An association connects 'express_core_InvertibleAttribute' and 'EntityType'. From 'express_core_InvertibleAttribute', the role 'EntityType300' has cardinality 0..*, and from 'EntityType', the role 'core301' has cardinality 0..*.
+An association connects 'RangeRole' and 'express_core_InvertibleAttribute'. From 'RangeRole', the role 'core304' has cardinality 0..*, and from 'express_core_InvertibleAttribute', the role 'RangeRole303' has cardinality 0..*.
+An association connects 'express_core_GeneralizedType' and 'ParameterType'. From 'express_core_GeneralizedType', the role 'ParameterType306' has cardinality 0..*, and from 'ParameterType', the role 'core307' has cardinality 0..*.
+An association connects 'express_core_InterfacedElement' and 'Schema'. From 'express_core_InterfacedElement', the role 'Schema' has cardinality 0..*, and from 'Schema', the role 'core309' has cardinality 0..*.
+An association connects 'express_core_InterfacedElement' and 'SchemaElement'. From 'express_core_InterfacedElement', the role 'SchemaElement311' has cardinality 0..*, and from 'SchemaElement', the role 'core312' has cardinality 0..*.
+An association connects 'express_core_InterfacedElement' and 'ScopedId'. From 'express_core_InterfacedElement', the role 'express_core_InterfacedElement' has cardinality 0..*, and from 'ScopedId', the role 'ScopedId314' has cardinality 0..*.
+An association connects 'express_core_UniqueRule' and 'EntityType'. From 'express_core_UniqueRule', the role 'EntityType316' has cardinality 0..*, and from 'EntityType', the role 'core317' has cardinality 0..*.
+An association connects 'express_core_UniqueRule' and 'Attribute'. From 'express_core_UniqueRule', the role 'express_core_UniqueRule' has cardinality 0..*, and from 'Attribute', the role 'Attribute319' has cardinality 0..*.
+An association connects 'express_core_DomainRole' and 'InverseAttribute'. From 'express_core_DomainRole', the role 'InverseAttribute321' has cardinality 0..*, and from 'InverseAttribute', the role 'core322' has cardinality 0..*.
+An association connects 'express_core_DomainRole' and 'EntityType'. From 'express_core_DomainRole', the role 'EntityType324' has cardinality 0..*, and from 'EntityType', the role 'core325' has cardinality 0..*.
+An association connects 'express_core_DomainRole' and 'ScopedId'. From 'express_core_DomainRole', the role 'express_core_DomainRole' has cardinality 0..*, and from 'ScopedId', the role 'ScopedId327' has cardinality 0..*.
+An association connects 'AttributeType' and 'express_core_DomainConstraint'. From 'AttributeType', the role 'core330' has cardinality 0..*, and from 'express_core_DomainConstraint', the role 'AttributeType329' has cardinality 0..*.
+An association connects 'express_core_DomainConstraint' and 'Expression'. From 'express_core_DomainConstraint', the role 'express_core_DomainConstraint' has cardinality 0..*, and from 'Expression', the role 'Expression332' has cardinality 0..*.
+An association connects 'InstantiableType' and 'express_core_InstantiableType'. From 'InstantiableType', the role 'InstantiableType' has cardinality 0..*, and from 'express_core_InstantiableType', the role 'express_core_InstantiableType' has cardinality 0..*.
+An association connects 'express_core_NamedElement' and 'Scope'. From 'express_core_NamedElement', the role 'Scope335' has cardinality 0..*, and from 'Scope', the role 'core336' has cardinality 0..*.
+An association connects 'Remark' and 'express_core_NamedElement'. From 'Remark', the role 'core339' has cardinality 0..*, and from 'express_core_NamedElement', the role 'Remark338' has cardinality 0..*.
+An association connects 'express_core_NamedElement' and 'ScopedId'. From 'express_core_NamedElement', the role 'express_core_NamedElement' has cardinality 0..*, and from 'ScopedId', the role 'ScopedId341' has cardinality 0..*.
+An association connects 'AttributeType' and 'express_core_Attribute'. From 'AttributeType', the role 'core344' has cardinality 0..*, and from 'express_core_Attribute', the role 'AttributeType343' has cardinality 0..*.
+An association connects 'SingleEntityType' and 'express_core_Attribute'. From 'SingleEntityType', the role 'core347' has cardinality 0..*, and from 'express_core_Attribute', the role 'SingleEntityType346' has cardinality 0..*.
+An association connects 'EntityType' and 'express_core_Attribute'. From 'EntityType', the role 'core350' has cardinality 0..*, and from 'express_core_Attribute', the role 'EntityType349' has cardinality 0..*.
+An association connects 'ActualTypeConstraint' and 'express_core_GenericType'. From 'ActualTypeConstraint', the role 'algorithms352' has cardinality 0..*, and from 'express_core_GenericType', the role 'ActualTypeConstraint' has cardinality 0..*.
+An association connects 'express_core_StringType' and 'LengthConstraint'. From 'express_core_StringType', the role 'express_core_StringType' has cardinality 0..*, and from 'LengthConstraint', the role 'LengthConstraint' has cardinality 0..*.
+An association connects 'express_core_AnonymousType' and 'AnonymousType'. From 'express_core_AnonymousType', the role 'express_core_AnonymousType' has cardinality 0..*, and from 'AnonymousType', the role 'AnonymousType' has cardinality 0..*.
+An association connects 'CommonElement' and 'express_core_AlgorithmScope'. From 'CommonElement', the role 'core356' has cardinality 0..*, and from 'express_core_AlgorithmScope', the role 'CommonElement' has cardinality 0..*.
+An association connects 'express_core_AlgorithmScope' and 'Variable'. From 'express_core_AlgorithmScope', the role 'express_core_AlgorithmScope' has cardinality 0..*, and from 'Variable', the role 'Variable358' has cardinality 0..*.
+An association connects 'Population' and 'express_core_Instance'. From 'Population', the role 'instances361' has cardinality 0..*, and from 'express_core_Instance', the role 'Population360' has cardinality 0..*.
+An association connects 'express_core_Instance' and 'DataType'. From 'express_core_Instance', the role 'DataType363' has cardinality 0..*, and from 'DataType', the role 'core364' has cardinality 0..*.
+An association connects 'Attribute' and 'express_core_AttributeType'. From 'Attribute', the role 'core367' has cardinality 0..*, and from 'express_core_AttributeType', the role 'Attribute366' has cardinality 0..*.
+An association connects 'DomainConstraint' and 'express_core_AttributeType'. From 'DomainConstraint', the role 'core369' has cardinality 0..*, and from 'express_core_AttributeType', the role 'DomainConstraint' has cardinality 0..*.
+An association connects 'Expression' and 'express_core_DerivedAttribute'. From 'Expression', the role 'Expression371' has cardinality 0..*, and from 'express_core_DerivedAttribute', the role 'express_core_DerivedAttribute' has cardinality 0..*.
+An association connects 'InvertibleAttribute' and 'express_core_RangeRole'. From 'InvertibleAttribute', the role 'core374' has cardinality 0..*, and from 'express_core_RangeRole', the role 'InvertibleAttribute373' has cardinality 0..*.
+An association connects 'EntityType' and 'express_core_RangeRole'. From 'EntityType', the role 'core377' has cardinality 0..*, and from 'express_core_RangeRole', the role 'EntityType376' has cardinality 0..*.
+An association connects 'ScopedId' and 'express_core_RangeRole'. From 'ScopedId', the role 'ScopedId379' has cardinality 0..*, and from 'express_core_RangeRole', the role 'express_core_RangeRole' has cardinality 0..*.
+An association connects 'Schema' and 'express_core_Remark'. From 'Schema', the role 'core382' has cardinality 0..*, and from 'express_core_Remark', the role 'Schema381' has cardinality 0..*.
+An association connects 'express_core_Remark' and 'Scope'. From 'express_core_Remark', the role 'Scope384' has cardinality 0..*, and from 'Scope', the role 'core385' has cardinality 0..*.
+An association connects 'NamedElement' and 'express_core_Remark'. From 'NamedElement', the role 'core387' has cardinality 0..*, and from 'express_core_Remark', the role 'NamedElement' has cardinality 0..*.
+An association connects 'express_core_Role' and 'Relationship'. From 'express_core_Role', the role 'Relationship389' has cardinality 0..*, and from 'Relationship', the role 'core390' has cardinality 0..*.
+An association connects 'express_core_Role' and 'EntityType'. From 'express_core_Role', the role 'EntityType392' has cardinality 0..*, and from 'EntityType', the role 'core393' has cardinality 0..*.
+An association connects 'express_core_Role' and 'SizeConstraint'. From 'express_core_Role', the role 'express_core_Role' has cardinality 0..*, and from 'SizeConstraint', the role 'SizeConstraint395' has cardinality 0..*.
+An association connects 'SizeConstraint' and 'express_core_Role'. From 'SizeConstraint', the role 'SizeConstraint398' has cardinality 0..*, and from 'express_core_Role', the role 'express_core_Role397' has cardinality 0..*.
+An association connects 'express_core_SpecializedType' and 'ConcreteType'. From 'express_core_SpecializedType', the role 'express_core_SpecializedType' has cardinality 0..*, and from 'ConcreteType', the role 'ConcreteType' has cardinality 0..*.
+An association connects 'ArrayBound' and 'express_core_GeneralARRAYType'. From 'ArrayBound', the role 'ArrayBound' has cardinality 0..*, and from 'express_core_GeneralARRAYType', the role 'express_core_GeneralARRAYType' has cardinality 0..*.
+An association connects 'ArrayBound' and 'express_core_GeneralARRAYType'. From 'ArrayBound', the role 'ArrayBound403' has cardinality 0..*, and from 'express_core_GeneralARRAYType', the role 'express_core_GeneralARRAYType402' has cardinality 0..*.
+An association connects 'DomainRole' and 'express_core_Relationship'. From 'DomainRole', the role 'DomainRole405' has cardinality 0..*, and from 'express_core_Relationship', the role 'express_core_Relationship' has cardinality 0..*.
+An association connects 'express_core_Relationship' and 'Role'. From 'express_core_Relationship', the role 'Role407' has cardinality 0..*, and from 'Role', the role 'core408' has cardinality 0..*.
+An association connects 'InvertibleAttribute' and 'express_core_Relationship'. From 'InvertibleAttribute', the role 'core411' has cardinality 0..*, and from 'express_core_Relationship', the role 'InvertibleAttribute410' has cardinality 0..*.
+An association connects 'RangeRole' and 'express_core_Relationship'. From 'RangeRole', the role 'RangeRole414' has cardinality 0..*, and from 'express_core_Relationship', the role 'express_core_Relationship413' has cardinality 0..*.
+An association connects 'express_core_LocalScope' and 'LocalElement'. From 'express_core_LocalScope', the role 'express_core_LocalScope' has cardinality 0..*, and from 'LocalElement', the role 'LocalElement' has cardinality 0..*.
+An association connects 'SelectType' and 'express_core_NamedType'. From 'SelectType', the role 'core417' has cardinality 0..*, and from 'express_core_NamedType', the role 'SelectType' has cardinality 0..*.
+An association connects 'DomainRule' and 'express_core_NamedType'. From 'DomainRule', the role 'DomainRule' has cardinality 0..*, and from 'express_core_NamedType', the role 'express_core_NamedType' has cardinality 0..*.
+An association connects 'express_core_BinaryType' and 'LengthConstraint'. From 'express_core_BinaryType', the role 'express_core_BinaryType' has cardinality 0..*, and from 'LengthConstraint', the role 'LengthConstraint420' has cardinality 0..*.
+An association connects 'express_core_ScopedId' and 'Scope'. From 'express_core_ScopedId', the role 'express_core_ScopedId' has cardinality 0..*, and from 'Scope', the role 'Scope422' has cardinality 0..*.
+An association connects 'express_core_AggregationType' and 'SizeConstraint'. From 'express_core_AggregationType', the role 'express_core_AggregationType' has cardinality 0..*, and from 'SizeConstraint', the role 'SizeConstraint424' has cardinality 0..*.
+An association connects 'express_core_AggregationType' and 'SizeConstraint'. From 'express_core_AggregationType', the role 'express_core_AggregationType426' has cardinality 0..*, and from 'SizeConstraint', the role 'SizeConstraint427' has cardinality 0..*.
+An association connects 'express_core_Scope' and 'NamedElement'. From 'express_core_Scope', the role 'NamedElement429' has cardinality 0..*, and from 'NamedElement', the role 'core430' has cardinality 0..*.
+An association connects 'Remark' and 'express_core_Scope'. From 'Remark', the role 'core433' has cardinality 0..*, and from 'express_core_Scope', the role 'Remark432' has cardinality 0..*.
+An association connects 'express_core_ParameterType' and 'GeneralizedType'. From 'express_core_ParameterType', the role 'GeneralizedType435' has cardinality 0..*, and from 'GeneralizedType', the role 'core436' has cardinality 0..*.
+An association connects 'express_core_SelectType' and 'NamedType'. From 'express_core_SelectType', the role 'NamedType438' has cardinality 0..*, and from 'NamedType', the role 'core439' has cardinality 0..*.
+An association connects 'express_core_SelectType' and 'SelectType'. From 'express_core_SelectType', the role 'SelectType441' has cardinality 0..*, and from 'SelectType', the role 'core442' has cardinality 0..*.
+An association connects 'SelectType' and 'express_core_SelectType'. From 'SelectType', the role 'core445' has cardinality 0..*, and from 'express_core_SelectType', the role 'SelectType444' has cardinality 0..*.
+An association connects 'express_core_SelectType' and 'NamedType'. From 'express_core_SelectType', the role 'express_core_SelectType' has cardinality 0..*, and from 'NamedType', the role 'NamedType447' has cardinality 0..*.
+An association connects 'Algorithm' and 'express_core_ActualType'. From 'Algorithm', the role 'Algorithm' has cardinality 0..*, and from 'express_core_ActualType', the role 'express_core_ActualType' has cardinality 0..*.
+An association connects 'express_core_CommonElement' and 'AlgorithmScope'. From 'express_core_CommonElement', the role 'AlgorithmScope' has cardinality 0..*, and from 'AlgorithmScope', the role 'core450' has cardinality 0..*.
+An association connects 'InterfacedElement' and 'express_core_SchemaElement'. From 'InterfacedElement', the role 'core453' has cardinality 0..*, and from 'express_core_SchemaElement', the role 'InterfacedElement452' has cardinality 0..*.
+An association connects 'Schema' and 'express_core_SchemaElement'. From 'Schema', the role 'core456' has cardinality 0..*, and from 'express_core_SchemaElement', the role 'Schema455' has cardinality 0..*.
+An association connects 'Schema' and 'express_core_SchemaElement'. From 'Schema', the role 'core459' has cardinality 0..*, and from 'express_core_SchemaElement', the role 'Schema458' has cardinality 0..*.
+An association connects 'InstantiableType' and 'express_core_ConcreteAggregationType'. From 'InstantiableType', the role 'InstantiableType461' has cardinality 0..*, and from 'express_core_ConcreteAggregationType', the role 'express_core_ConcreteAggregationType' has cardinality 0..*.
+An association connects 'ArrayBound' and 'express_core_ARRAYType'. From 'ArrayBound', the role 'ArrayBound463' has cardinality 0..*, and from 'express_core_ARRAYType', the role 'express_core_ARRAYType' has cardinality 0..*.
+An association connects 'express_core_ARRAYType' and 'ArrayBound'. From 'express_core_ARRAYType', the role 'express_core_ARRAYType465' has cardinality 0..*, and from 'ArrayBound', the role 'ArrayBound466' has cardinality 0..*.
+An association connects 'express_algorithms_ActualTypeConstraint' and 'GenericType'. From 'express_algorithms_ActualTypeConstraint', the role 'GenericType' has cardinality 0..*, and from 'GenericType', the role 'core468' has cardinality 0..*.
+An association connects 'express_algorithms_ActualTypeConstraint' and 'ActualDataType'. From 'express_algorithms_ActualTypeConstraint', the role 'express_algorithms_ActualTypeConstraint' has cardinality 0..*, and from 'ActualDataType', the role 'ActualDataType' has cardinality 0..*.
+An association connects 'FunctionResult' and 'express_algorithms_Function'. From 'FunctionResult', the role 'FunctionResult471' has cardinality 0..*, and from 'express_algorithms_Function', the role 'express_algorithms_Function' has cardinality 0..*.
+An association connects 'InVariable' and 'express_algorithms_InParameter'. From 'InVariable', the role 'algorithms473' has cardinality 0..*, and from 'express_algorithms_InParameter', the role 'InVariable' has cardinality 0..*.
+An association connects 'Expression' and 'express_algorithms_LocalVariable'. From 'Expression', the role 'Expression475' has cardinality 0..*, and from 'express_algorithms_LocalVariable', the role 'express_algorithms_LocalVariable' has cardinality 0..*.
+An association connects 'ActualDataType' and 'express_algorithms_ActualGenericType'. From 'ActualDataType', the role 'ActualDataType477' has cardinality 0..*, and from 'express_algorithms_ActualGenericType', the role 'express_algorithms_ActualGenericType' has cardinality 0..*.
+An association connects 'StatementBlock' and 'express_algorithms_Statement'. From 'StatementBlock', the role 'statements479' has cardinality 0..*, and from 'express_algorithms_Statement', the role 'StatementBlock' has cardinality 0..*.
+An association connects 'express_algorithms_Statement' and 'SkipStatement'. From 'express_algorithms_Statement', the role 'express_algorithms_Statement' has cardinality 0..*, and from 'SkipStatement', the role 'SkipStatement' has cardinality 0..*.
+An association connects 'EscapeStatement' and 'express_algorithms_Statement'. From 'EscapeStatement', the role 'EscapeStatement' has cardinality 0..*, and from 'express_algorithms_Statement', the role 'express_algorithms_Statement482' has cardinality 0..*.
+An association connects 'express_algorithms_Statement' and 'RepeatStatement'. From 'express_algorithms_Statement', the role 'RepeatStatement' has cardinality 0..*, and from 'RepeatStatement', the role 'statements484' has cardinality 0..*.
+An association connects 'express_algorithms_Statement' and 'Algorithm'. From 'express_algorithms_Statement', the role 'Algorithm486' has cardinality 0..*, and from 'Algorithm', the role 'algorithms487' has cardinality 0..*.
+An association connects 'VariableType' and 'express_algorithms_NamedVariable'. From 'VariableType', the role 'VariableType489' has cardinality 0..*, and from 'express_algorithms_NamedVariable', the role 'express_algorithms_NamedVariable' has cardinality 0..*.
+An association connects 'InParameter' and 'express_algorithms_InVariable'. From 'InParameter', the role 'algorithms491' has cardinality 0..*, and from 'express_algorithms_InVariable', the role 'InParameter' has cardinality 0..*.
+An association connects 'express_algorithms_ActualARRAYType' and 'ArrayBound'. From 'express_algorithms_ActualARRAYType', the role 'express_algorithms_ActualARRAYType' has cardinality 0..*, and from 'ArrayBound', the role 'ArrayBound493' has cardinality 0..*.
+An association connects 'ArrayBound' and 'express_algorithms_ActualARRAYType'. From 'ArrayBound', the role 'ArrayBound496' has cardinality 0..*, and from 'express_algorithms_ActualARRAYType', the role 'express_algorithms_ActualARRAYType495' has cardinality 0..*.
+An association connects 'SizeConstraint' and 'express_algorithms_ActualAGGREGATEType'. From 'SizeConstraint', the role 'SizeConstraint498' has cardinality 0..*, and from 'express_algorithms_ActualAGGREGATEType', the role 'express_algorithms_ActualAGGREGATEType' has cardinality 0..*.
+An association connects 'express_algorithms_ActualAGGREGATEType' and 'ActualStructure'. From 'express_algorithms_ActualAGGREGATEType', the role 'express_algorithms_ActualAGGREGATEType500' has cardinality 0..*, and from 'ActualStructure', the role 'ActualStructure' has cardinality 0..*.
+An association connects 'express_algorithms_ActualAGGREGATEType' and 'VariableType'. From 'express_algorithms_ActualAGGREGATEType', the role 'express_algorithms_ActualAGGREGATEType502' has cardinality 0..*, and from 'VariableType', the role 'VariableType503' has cardinality 0..*.
+An association connects 'express_algorithms_ActualAGGREGATEType' and 'SizeConstraint'. From 'express_algorithms_ActualAGGREGATEType', the role 'express_algorithms_ActualAGGREGATEType505' has cardinality 0..*, and from 'SizeConstraint', the role 'SizeConstraint506' has cardinality 0..*.
+An association connects 'ActualStructureConstraint' and 'express_algorithms_Parameter'. From 'ActualStructureConstraint', the role 'ActualStructureConstraint508' has cardinality 0..*, and from 'express_algorithms_Parameter', the role 'express_algorithms_Parameter' has cardinality 0..*.
+An association connects 'express_algorithms_Parameter' and 'ActualTypeConstraint'. From 'express_algorithms_Parameter', the role 'express_algorithms_Parameter510' has cardinality 0..*, and from 'ActualTypeConstraint', the role 'ActualTypeConstraint511' has cardinality 0..*.
+An association connects 'ParameterType' and 'express_algorithms_Parameter'. From 'ParameterType', the role 'ParameterType514' has cardinality 0..*, and from 'express_algorithms_Parameter', the role 'express_algorithms_Parameter513' has cardinality 0..*.
+An association connects 'AGGREGATEType' and 'express_algorithms_ActualStructureConstraint'. From 'AGGREGATEType', the role 'core516' has cardinality 0..*, and from 'express_algorithms_ActualStructureConstraint', the role 'AGGREGATEType' has cardinality 0..*.
+An association connects 'express_algorithms_ActualStructureConstraint' and 'ActualStructure'. From 'express_algorithms_ActualStructureConstraint', the role 'express_algorithms_ActualStructureConstraint' has cardinality 0..*, and from 'ActualStructure', the role 'ActualStructure518' has cardinality 0..*.
+An association connects 'Statement' and 'express_algorithms_Algorithm'. From 'Statement', the role 'algorithms521' has cardinality 0..*, and from 'express_algorithms_Algorithm', the role 'Statement520' has cardinality 0..*.
+An association connects 'Parameter' and 'express_algorithms_Algorithm'. From 'Parameter', the role 'Parameter523' has cardinality 0..*, and from 'express_algorithms_Algorithm', the role 'express_algorithms_Algorithm' has cardinality 0..*.
+An association connects 'express_algorithms_ActualAggregationType' and 'ActualType'. From 'express_algorithms_ActualAggregationType', the role 'express_algorithms_ActualAggregationType' has cardinality 0..*, and from 'ActualType', the role 'ActualType' has cardinality 0..*.
+An association connects 'express_algorithms_GenericElement' and 'Parameter'. From 'express_algorithms_GenericElement', the role 'express_algorithms_GenericElement' has cardinality 0..*, and from 'Parameter', the role 'Parameter526' has cardinality 0..*.
+An association connects 'express_algorithms_GenericElement' and 'ScopedId'. From 'express_algorithms_GenericElement', the role 'express_algorithms_GenericElement528' has cardinality 0..*, and from 'ScopedId', the role 'ScopedId529' has cardinality 0..*.
+An association connects 'express_instances_AttributeValue' and 'Instance'. From 'express_instances_AttributeValue', the role 'express_instances_AttributeValue' has cardinality 0..*, and from 'Instance', the role 'Instance531' has cardinality 0..*.
+An association connects 'ExplicitAttribute' and 'express_instances_AttributeValue'. From 'ExplicitAttribute', the role 'ExplicitAttribute534' has cardinality 0..*, and from 'express_instances_AttributeValue', the role 'express_instances_AttributeValue533' has cardinality 0..*.
+An association connects 'express_instances_ARRAYValue' and 'ArrayMember'. From 'express_instances_ARRAYValue', the role 'express_instances_ARRAYValue' has cardinality 0..*, and from 'ArrayMember', the role 'ArrayMember' has cardinality 0..*.
+An association connects 'Attribute' and 'express_instances_RoleName'. From 'Attribute', the role 'Attribute537' has cardinality 0..*, and from 'express_instances_RoleName', the role 'express_instances_RoleName' has cardinality 0..*.
+An association connects 'express_instances_RoleName' and 'ScopedId'. From 'express_instances_RoleName', the role 'express_instances_RoleName539' has cardinality 0..*, and from 'ScopedId', the role 'ScopedId540' has cardinality 0..*.
+An association connects 'express_instances_EntityInstance' and 'EntityValue'. From 'express_instances_EntityInstance', the role 'EntityValue' has cardinality 0..*, and from 'EntityValue', the role 'instances542' has cardinality 0..*.
+An association connects 'express_instances_EntityInstance' and 'EntityType'. From 'express_instances_EntityInstance', the role 'express_instances_EntityInstance' has cardinality 0..*, and from 'EntityType', the role 'EntityType544' has cardinality 0..*.
+An association connects 'Expression' and 'express_instances_Constant'. From 'Expression', the role 'Expression546' has cardinality 0..*, and from 'express_instances_Constant', the role 'express_instances_Constant' has cardinality 0..*.
+An association connects 'express_instances_Constant' and 'Instance'. From 'express_instances_Constant', the role 'express_instances_Constant548' has cardinality 0..*, and from 'Instance', the role 'Instance549' has cardinality 0..*.
+An association connects 'express_instances_Constant' and 'InstantiableType'. From 'express_instances_Constant', the role 'express_instances_Constant551' has cardinality 0..*, and from 'InstantiableType', the role 'InstantiableType552' has cardinality 0..*.
+An association connects 'SelectType' and 'express_instances_TypedInstance'. From 'SelectType', the role 'SelectType554' has cardinality 0..*, and from 'express_instances_TypedInstance', the role 'express_instances_TypedInstance' has cardinality 0..*.
+An association connects 'Instance' and 'express_instances_ListMember'. From 'Instance', the role 'Instance556' has cardinality 0..*, and from 'express_instances_ListMember', the role 'express_instances_ListMember' has cardinality 0..*.
+An association connects 'express_instances_BagMember' and 'Instance'. From 'express_instances_BagMember', the role 'express_instances_BagMember' has cardinality 0..*, and from 'Instance', the role 'Instance558' has cardinality 0..*.
+An association connects 'PartialEntityValue' and 'express_instances_SingleEntityValue'. From 'PartialEntityValue', the role 'PartialEntityValue560' has cardinality 0..*, and from 'express_instances_SingleEntityValue', the role 'express_instances_SingleEntityValue' has cardinality 0..*.
+An association connects 'express_instances_SingleEntityValue' and 'SingleEntityType'. From 'express_instances_SingleEntityValue', the role 'express_instances_SingleEntityValue562' has cardinality 0..*, and from 'SingleEntityType', the role 'SingleEntityType563' has cardinality 0..*.
+An association connects 'express_instances_SingleEntityValue' and 'AttributeValue'. From 'express_instances_SingleEntityValue', the role 'express_instances_SingleEntityValue565' has cardinality 0..*, and from 'AttributeValue', the role 'AttributeValue566' has cardinality 0..*.
+An association connects 'express_instances_SingleLeafInstance' and 'EntityType'. From 'express_instances_SingleLeafInstance', the role 'express_instances_SingleLeafInstance' has cardinality 0..*, and from 'EntityType', the role 'EntityType568' has cardinality 0..*.
+An association connects 'ConcreteValue' and 'express_instances_SpecializedValue'. From 'ConcreteValue', the role 'ConcreteValue' has cardinality 0..*, and from 'express_instances_SpecializedValue', the role 'express_instances_SpecializedValue' has cardinality 0..*.
+An association connects 'BagMember' and 'express_instances_BAGValue'. From 'BagMember', the role 'BagMember' has cardinality 0..*, and from 'express_instances_BAGValue', the role 'express_instances_BAGValue' has cardinality 0..*.
+An association connects 'express_instances_EnumerationItem' and 'EnumerationType'. From 'express_instances_EnumerationItem', the role 'EnumerationType572' has cardinality 0..*, and from 'EnumerationType', the role 'core573' has cardinality 0..*.
+An association connects 'express_instances_EntityValue' and 'EntityType'. From 'express_instances_EntityValue', the role 'express_instances_EntityValue' has cardinality 0..*, and from 'EntityType', the role 'EntityType575' has cardinality 0..*.
+An association connects 'EntityInstance' and 'express_instances_EntityValue'. From 'EntityInstance', the role 'instances578' has cardinality 0..*, and from 'express_instances_EntityValue', the role 'EntityInstance577' has cardinality 0..*.
+An association connects 'express_instances_SETValue' and 'Instance'. From 'express_instances_SETValue', the role 'express_instances_SETValue' has cardinality 0..*, and from 'Instance', the role 'Instance580' has cardinality 0..*.
+An association connects 'express_instances_ArrayMember' and 'Instance'. From 'express_instances_ArrayMember', the role 'express_instances_ArrayMember' has cardinality 0..*, and from 'Instance', the role 'Instance582' has cardinality 0..*.
+An association connects 'EntityInstance' and 'express_instances_Population'. From 'EntityInstance', the role 'EntityInstance584' has cardinality 0..*, and from 'express_instances_Population', the role 'express_instances_Population' has cardinality 0..*.
+An association connects 'Instance' and 'express_instances_Population'. From 'Instance', the role 'core587' has cardinality 0..*, and from 'express_instances_Population', the role 'Instance586' has cardinality 0..*.
+An association connects 'express_instances_Population' and 'Schema'. From 'express_instances_Population', the role 'express_instances_Population589' has cardinality 0..*, and from 'Schema', the role 'Schema590' has cardinality 0..*.
+An association connects 'express_instances_LISTValue' and 'ListMember'. From 'express_instances_LISTValue', the role 'express_instances_LISTValue' has cardinality 0..*, and from 'ListMember', the role 'ListMember592' has cardinality 0..*.
+An association connects 'NamedType' and 'express_instances_TypeName'. From 'NamedType', the role 'NamedType594' has cardinality 0..*, and from 'express_instances_TypeName', the role 'express_instances_TypeName' has cardinality 0..*.
+An association connects 'express_instances_TypeName' and 'ScopedId'. From 'express_instances_TypeName', the role 'express_instances_TypeName596' has cardinality 0..*, and from 'ScopedId', the role 'ScopedId597' has cardinality 0..*.
+An association connects 'SingleEntityValue' and 'express_instances_PartialEntityValue'. From 'SingleEntityValue', the role 'SingleEntityValue' has cardinality 0..*, and from 'express_instances_PartialEntityValue', the role 'express_instances_PartialEntityValue' has cardinality 0..*.

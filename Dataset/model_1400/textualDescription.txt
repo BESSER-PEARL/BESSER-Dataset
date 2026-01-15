@@ -1,0 +1,91 @@
+The domain model 'fsmcore' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'fsmcore_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_Trigger' represents an important domain concept.
+It has one attribute: 'expression', which is of type bool.
+
+'fsmcore_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_State' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_Pseudostate' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'fsmcore_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_VarDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmcore_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PseudostateKind' defines a single possible value: 'initial'.
+
+The model also captures inheritance relationships between classes.
+The class 'fsmcore_StateMachine' is a specialization of 'NamedElement'.
+The class 'fsmcore_Region' is a specialization of 'NamedElement'.
+The class 'fsmcore_AbstractState' is a specialization of 'NamedElement'.
+The class 'fsmcore_State' is a specialization of 'AbstractState'.
+The class 'fsmcore_Transition' is a specialization of 'NamedElement'.
+The class 'fsmcore_Conditional' is a specialization of 'Statement'.
+The class 'fsmcore_Loop' is a specialization of 'Statement'.
+The class 'fsmcore_VarDecl' is a specialization of 'Statement'.
+The class 'fsmcore_Pseudostate' is a specialization of 'AbstractState'.
+The class 'fsmcore_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsmcore_Region' and 'fsmcore_StateMachine'. From 'fsmcore_Region', the role 'fsmcore_Region' has cardinality 0..*, and from 'fsmcore_StateMachine', the role 'fsmcore_StateMachine' has cardinality 0..*.
+An association connects 'fsmcore_AbstractState' and 'fsmcore_Region'. From 'fsmcore_AbstractState', the role '2' has cardinality 0..*, and from 'fsmcore_Region', the role 'unnamed role' has cardinality 0..*.
+An association connects 'fsmcore_Transition' and 'fsmcore_Region'. From 'fsmcore_Transition', the role 'fsmcore_Transition' has cardinality 0..*, and from 'fsmcore_Region', the role 'fsmcore_Region4' has cardinality 0..*.
+An association connects 'fsmcore_Transition' and 'fsmcore_AbstractState'. From 'fsmcore_Transition', the role '7' has cardinality 0..*, and from 'fsmcore_AbstractState', the role '6' has cardinality 0..*.
+An association connects 'fsmcore_AbstractState' and 'fsmcore_Transition'. From 'fsmcore_AbstractState', the role '9' has cardinality 0..*, and from 'fsmcore_Transition', the role '10' has cardinality 0..*.
+An association connects 'fsmcore_AbstractState' and 'fsmcore_Region'. From 'fsmcore_AbstractState', the role '12' has cardinality 0..*, and from 'fsmcore_Region', the role '13' has cardinality 0..*.
+An association connects 'fsmcore_State' and 'fsmcore_Program'. From 'fsmcore_State', the role 'fsmcore_State' has cardinality 0..*, and from 'fsmcore_Program', the role 'fsmcore_Program' has cardinality 0..*.
+An association connects 'fsmcore_Program' and 'fsmcore_State'. From 'fsmcore_Program', the role 'fsmcore_Program17' has cardinality 0..*, and from 'fsmcore_State', the role 'fsmcore_State16' has cardinality 0..*.
+An association connects 'fsmcore_State' and 'fsmcore_Program'. From 'fsmcore_State', the role 'fsmcore_State19' has cardinality 0..*, and from 'fsmcore_Program', the role 'fsmcore_Program20' has cardinality 0..*.
+An association connects 'fsmcore_Trigger' and 'fsmcore_Transition'. From 'fsmcore_Trigger', the role 'fsmcore_Trigger' has cardinality 0..*, and from 'fsmcore_Transition', the role 'fsmcore_Transition22' has cardinality 0..*.
+An association connects 'fsmcore_Transition' and 'fsmcore_AbstractState'. From 'fsmcore_Transition', the role '24' has cardinality 0..*, and from 'fsmcore_AbstractState', the role '25' has cardinality 0..*.
+An association connects 'fsmcore_AbstractState' and 'fsmcore_Transition'. From 'fsmcore_AbstractState', the role '28' has cardinality 0..*, and from 'fsmcore_Transition', the role '27' has cardinality 0..*.
+An association connects 'fsmcore_Constraint' and 'fsmcore_Transition'. From 'fsmcore_Constraint', the role 'fsmcore_Constraint' has cardinality 0..*, and from 'fsmcore_Transition', the role 'fsmcore_Transition30' has cardinality 0..*.
+An association connects 'fsmcore_Program' and 'fsmcore_Statement'. From 'fsmcore_Program', the role 'fsmcore_Program32' has cardinality 0..*, and from 'fsmcore_Statement', the role 'fsmcore_Statement' has cardinality 0..*.

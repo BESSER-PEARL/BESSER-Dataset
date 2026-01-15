@@ -1,0 +1,61 @@
+The domain model 'smach' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'smach_InitActionState' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionClient' represents an important domain concept.
+It does not declare any attributes.
+
+'smach_ActionState' represents an important domain concept.
+It does not declare any attributes.
+
+'smach_FinalState' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'smach_InitStraightState' represents an important domain concept.
+It does not declare any attributes.
+
+'smach_SMACHStateMachine' represents an important domain concept.
+It has one attribute: 'SkillInterface', which is of type bool.
+
+'SMACHState' represents an important domain concept.
+It does not declare any attributes.
+
+'smach_SMACHTransition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smach_ServiceState' represents an important domain concept.
+It does not declare any attributes.
+
+'smach_SMACHState' represents an important domain concept.
+It has the following attributes: 'goal_type', which is of type str; 'goal', which is of type str; 'remap_overwrite', which is of type str.
+
+'ServiceClient' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SMACHGoalTypes' defines the following possible values: 'userdata_goal', 'static_goal'.
+The enumeration 'SMACHStateOutcomes' defines the following possible values: 'succeeded', 'preempted', 'aborted'.
+
+The model also captures inheritance relationships between classes.
+The class 'smach_SMACHStateMachine' is a specialization of 'Node'.
+The class 'smach_ActionState' is a specialization of 'ActionClient'.
+The class 'smach_ActionState' is a specialization of 'SMACHState'.
+The class 'smach_ServiceState' is a specialization of 'ServiceClient'.
+The class 'smach_ServiceState' is a specialization of 'SMACHState'.
+The class 'smach_FinalState' is a specialization of 'SMACHState'.
+The class 'smach_InitStraightState' is a specialization of 'SMACHState'.
+The class 'smach_InitActionState' is a specialization of 'SMACHState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'smach_SMACHStateMachine' and 'smach_SMACHState'. From 'smach_SMACHStateMachine', the role 'smach_SMACHStateMachine' has cardinality 0..*, and from 'smach_SMACHState', the role 'smach_SMACHState' has cardinality 0..*.
+An association connects 'smach_SMACHTransition' and 'smach_SMACHStateMachine'. From 'smach_SMACHTransition', the role 'smach_SMACHTransition' has cardinality 0..*, and from 'smach_SMACHStateMachine', the role 'smach_SMACHStateMachine2' has cardinality 0..*.
+An association connects 'smach_FinalState' and 'smach_SMACHStateMachine'. From 'smach_FinalState', the role 'smach_FinalState' has cardinality 0..*, and from 'smach_SMACHStateMachine', the role 'smach_SMACHStateMachine4' has cardinality 0..*.
+An association connects 'smach_InitActionState' and 'smach_SMACHStateMachine'. From 'smach_InitActionState', the role 'smach_InitActionState' has cardinality 0..*, and from 'smach_SMACHStateMachine', the role 'smach_SMACHStateMachine6' has cardinality 0..*.
+An association connects 'smach_SMACHState' and 'smach_SMACHTransition'. From 'smach_SMACHState', the role 'smach_SMACHState9' has cardinality 0..*, and from 'smach_SMACHTransition', the role 'smach_SMACHTransition8' has cardinality 0..*.
+An association connects 'smach_SMACHState' and 'smach_SMACHTransition'. From 'smach_SMACHState', the role 'smach_SMACHState12' has cardinality 0..*, and from 'smach_SMACHTransition', the role 'smach_SMACHTransition11' has cardinality 0..*.

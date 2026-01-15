@@ -1,0 +1,33 @@
+The domain model 'NHSM' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'NHSM_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'NHSM_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'memRequirement', which is of type int.
+
+'NHSM_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'NHSM_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'NHSM_Transition' represents an important domain concept.
+It has the following attributes: 'trigger', which is of type str; 'effect', which is of type str; 'cost', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'NHSM_InitialState' is a specialization of 'State'.
+The class 'NHSM_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'NHSM_StateMachine' and 'NHSM_State'. From 'NHSM_StateMachine', the role 'StateMachine' has cardinality 0..*, and from 'NHSM_State', the role 'ownedState' has cardinality 0..*.
+An association connects 'NHSM_State' and 'NHSM_Transition'. From 'NHSM_State', the role 'NHSM_State' has cardinality 0..*, and from 'NHSM_Transition', the role 'NHSM_Transition' has cardinality 0..*.
+An association connects 'NHSM_State' and 'NHSM_Transition'. From 'NHSM_State', the role 'NHSM_State4' has cardinality 0..*, and from 'NHSM_Transition', the role 'NHSM_Transition3' has cardinality 0..*.
+An association connects 'NHSM_StateMachine' and 'NHSM_Transition'. From 'NHSM_StateMachine', the role 'StateMachine6' has cardinality 0..*, and from 'NHSM_Transition', the role 'ownedTransition' has cardinality 0..*.
+An association connects 'NHSM_StateMachine' and 'NHSM_State'. From 'NHSM_StateMachine', the role 'owningStateMachine' has cardinality 0..*, and from 'NHSM_State', the role 'State' has cardinality 0..*.
+An association connects 'NHSM_StateMachine' and 'NHSM_Transition'. From 'NHSM_StateMachine', the role 'owningStateMachine9' has cardinality 0..*, and from 'NHSM_Transition', the role 'Transition' has cardinality 0..*.

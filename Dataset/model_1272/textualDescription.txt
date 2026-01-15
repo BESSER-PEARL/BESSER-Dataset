@@ -1,0 +1,15 @@
+The domain model 'family_ecore' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'family_ecore_Family' represents an important domain concept.
+It does not declare any attributes.
+
+'family_ecore_Person' represents an important domain concept.
+It has the following attributes: 'age', which is of type int; 'name', which is of type str; 'height', which is of type float.
+
+Relationships between classes are modeled using associations.
+An association connects 'family_ecore_Person' and 'family_ecore_Person'. From 'family_ecore_Person', the role 'family_ecore_Person' has cardinality 0..*, and from 'family_ecore_Person', the role 'family_ecore_Person0' has cardinality 0..*.
+An association connects 'family_ecore_Person' and 'family_ecore_Person'. From 'family_ecore_Person', the role 'family_ecore_Person4' has cardinality 0..*, and from 'family_ecore_Person', the role 'family_ecore_Person2' has cardinality 0..*.
+An association connects 'family_ecore_Person' and 'family_ecore_Person'. From 'family_ecore_Person', the role 'family_ecore_Person7' has cardinality 0..*, and from 'family_ecore_Person', the role 'family_ecore_Person5' has cardinality 0..*.
+An association connects 'family_ecore_Person' and 'family_ecore_Family'. From 'family_ecore_Person', the role 'family_ecore_Person9' has cardinality 0..*, and from 'family_ecore_Family', the role 'family_ecore_Family' has cardinality 0..*.

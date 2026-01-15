@@ -1,0 +1,57 @@
+The domain model 'state' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'state_State' represents an important domain concept.
+It has the following attributes: 'duration', which is of type str; 'name', which is of type str.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'state_Transition' represents an important domain concept.
+It has one attribute: 'triggerEventName', which is of type str.
+
+'state_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'state_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'state_Condition' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'state_ConditionalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'state_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'state_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'state_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'state_TimeoutTransition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'state_InitialNode' is a specialization of 'Node'.
+The class 'state_FinalNode' is a specialization of 'Node'.
+The class 'state_ConditionalNode' is a specialization of 'Node'.
+The class 'state_State' is a specialization of 'Node'.
+The class 'state_TimeoutTransition' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'state_Node' and 'state_Transition'. From 'state_Node', the role 'state_Node' has cardinality 0..*, and from 'state_Transition', the role 'state_Transition' has cardinality 0..*.
+An association connects 'state_Transition' and 'state_Node'. From 'state_Transition', the role 'state_Transition3' has cardinality 0..*, and from 'state_Node', the role 'state_Node2' has cardinality 0..*.
+An association connects 'state_Transition' and 'state_Node'. From 'state_Transition', the role 'state_Transition5' has cardinality 0..*, and from 'state_Node', the role 'state_Node6' has cardinality 0..*.
+An association connects 'state_Node' and 'state_Transition'. From 'state_Node', the role 'state_Node9' has cardinality 0..*, and from 'state_Transition', the role 'state_Transition8' has cardinality 0..*.
+An association connects 'state_Condition' and 'state_Transition'. From 'state_Condition', the role 'state_Condition' has cardinality 0..*, and from 'state_Transition', the role 'state_Transition11' has cardinality 0..*.
+An association connects 'state_ConditionalNode' and 'state_Condition'. From 'state_ConditionalNode', the role 'state_ConditionalNode' has cardinality 0..*, and from 'state_Condition', the role 'state_Condition13' has cardinality 0..*.
+An association connects 'state_Node' and 'state_StateMachine'. From 'state_Node', the role 'state_Node15' has cardinality 0..*, and from 'state_StateMachine', the role 'state_StateMachine' has cardinality 0..*.
+An association connects 'state_StateMachine' and 'state_Transition'. From 'state_StateMachine', the role 'state_StateMachine17' has cardinality 0..*, and from 'state_Transition', the role 'state_Transition18' has cardinality 0..*.
+An association connects 'state_Module' and 'state_StateMachine'. From 'state_Module', the role 'state_Module' has cardinality 0..*, and from 'state_StateMachine', the role 'state_StateMachine20' has cardinality 0..*.

@@ -1,0 +1,67 @@
+The domain model 'StateMachines' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'StateMachines_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_State' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_ConnectionPointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_Transition' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'StateMachines_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_Pseudostate' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'StateMachines_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PseudoStateKind' defines the following possible values: 'deepHistory', 'choice', 'terminate', 'entryPoint', 'exitPoint', 'junction', 'shallowHistory', 'join', 'fork', 'initial'.
+The enumeration 'TransitionKind' defines the following possible values: 'internal', 'local', 'external'.
+
+The model also captures inheritance relationships between classes.
+The class 'StateMachines_Pseudostate' is a specialization of 'Vertex'.
+The class 'StateMachines_State' is a specialization of 'Vertex'.
+The class 'StateMachines_ConnectionPointReference' is a specialization of 'Vertex'.
+The class 'StateMachines_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'StateMachines_StateMachine' and 'StateMachines_Region'. From 'StateMachines_StateMachine', the role 'StateMachines_StateMachine' has cardinality 0..*, and from 'StateMachines_Region', the role 'StateMachines_Region' has cardinality 0..*.
+An association connects 'StateMachines_Region' and 'StateMachines_Vertex'. From 'StateMachines_Region', the role 'StateMachines_Region2' has cardinality 0..*, and from 'StateMachines_Vertex', the role 'StateMachines_Vertex' has cardinality 0..*.
+An association connects 'StateMachines_Region' and 'StateMachines_Transition'. From 'StateMachines_Region', the role 'StateMachines_Region4' has cardinality 0..*, and from 'StateMachines_Transition', the role 'StateMachines_Transition' has cardinality 0..*.
+An association connects 'StateMachines_Vertex' and 'StateMachines_Transition'. From 'StateMachines_Vertex', the role 'StateMachines_Vertex6' has cardinality 0..*, and from 'StateMachines_Transition', the role 'StateMachines_Transition7' has cardinality 0..*.
+An association connects 'StateMachines_Vertex' and 'StateMachines_Transition'. From 'StateMachines_Vertex', the role 'StateMachines_Vertex9' has cardinality 0..*, and from 'StateMachines_Transition', the role 'StateMachines_Transition10' has cardinality 0..*.
+An association connects 'StateMachines_Transition' and 'StateMachines_Trigger'. From 'StateMachines_Transition', the role 'StateMachines_Transition12' has cardinality 0..*, and from 'StateMachines_Trigger', the role 'StateMachines_Trigger' has cardinality 0..*.
+An association connects 'StateMachines_Region' and 'StateMachines_State'. From 'StateMachines_Region', the role 'StateMachines_Region14' has cardinality 0..*, and from 'StateMachines_State', the role 'StateMachines_State' has cardinality 0..*.
+An association connects 'StateMachines_State' and 'StateMachines_Pseudostate'. From 'StateMachines_State', the role 'StateMachines_State16' has cardinality 0..*, and from 'StateMachines_Pseudostate', the role 'StateMachines_Pseudostate' has cardinality 0..*.
+An association connects 'StateMachines_State' and 'StateMachines_Behavior'. From 'StateMachines_State', the role 'StateMachines_State18' has cardinality 0..*, and from 'StateMachines_Behavior', the role 'StateMachines_Behavior' has cardinality 0..*.
+An association connects 'StateMachines_State' and 'StateMachines_Behavior'. From 'StateMachines_State', the role 'StateMachines_State20' has cardinality 0..*, and from 'StateMachines_Behavior', the role 'StateMachines_Behavior21' has cardinality 0..*.
+An association connects 'StateMachines_Behavior' and 'StateMachines_State'. From 'StateMachines_Behavior', the role 'StateMachines_Behavior24' has cardinality 0..*, and from 'StateMachines_State', the role 'StateMachines_State23' has cardinality 0..*.
+An association connects 'StateMachines_ConnectionPointReference' and 'StateMachines_State'. From 'StateMachines_ConnectionPointReference', the role 'StateMachines_ConnectionPointReference' has cardinality 0..*, and from 'StateMachines_State', the role 'StateMachines_State26' has cardinality 0..*.
+An association connects 'StateMachines_Trigger' and 'StateMachines_State'. From 'StateMachines_Trigger', the role 'StateMachines_Trigger29' has cardinality 0..*, and from 'StateMachines_State', the role 'StateMachines_State28' has cardinality 0..*.
+An association connects 'StateMachines_State' and 'StateMachines_StateMachine'. From 'StateMachines_State', the role 'StateMachines_State31' has cardinality 0..*, and from 'StateMachines_StateMachine', the role 'StateMachines_StateMachine32' has cardinality 0..*.
+An association connects 'StateMachines_ConnectionPointReference' and 'StateMachines_Pseudostate'. From 'StateMachines_ConnectionPointReference', the role 'StateMachines_ConnectionPointReference34' has cardinality 0..*, and from 'StateMachines_Pseudostate', the role 'StateMachines_Pseudostate35' has cardinality 0..*.
+An association connects 'StateMachines_Pseudostate' and 'StateMachines_ConnectionPointReference'. From 'StateMachines_Pseudostate', the role 'StateMachines_Pseudostate38' has cardinality 0..*, and from 'StateMachines_ConnectionPointReference', the role 'StateMachines_ConnectionPointReference37' has cardinality 0..*.

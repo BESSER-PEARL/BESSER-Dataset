@@ -1,0 +1,345 @@
+The domain model 'ocl' describes the core structural elements and their relationships within the system.
+
+The model defines 74 main class(es).
+
+'OCLMessageArgCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_CollectionLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_CallExpCS' represents an important domain concept.
+It has one attribute: 'accessor', which is of type str.
+
+'ocl_cst_IteratorExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'IsMarkedPreCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_SimpleNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CSTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLExpressionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_PrimitiveLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_SimpleNameCS' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'type', which is of type str.
+
+'ocl_cst_DefCS' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'ocl_cst_UnlimitedNaturalLiteralExpCS' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'ocl_cst_LoopExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_CollectionLiteralExpCS' represents an important domain concept.
+It has one attribute: 'collectionType', which is of type str.
+
+'ocl_cst_InitValueCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_CollectionTypeCS' represents an important domain concept.
+It has one attribute: 'collectionTypeIdentifier', which is of type str.
+
+'ocl_cst_OperationContextDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PrePostOrBodyDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'DefExpressionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_DefExpressionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_CollectionRangeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_IntegerLiteralExpCS' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'cst_LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_InvOrDefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'InitOrDerValueCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_VariableExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_OCLExpressionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_InvalidLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_PrimitiveTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_OperationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_OCLDocumentCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_ClassifierContextDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_OperationCallExpCS' represents an important domain concept.
+It has one attribute: 'isAtomic', which is of type str.
+
+'SimpleNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_IfExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_IterateExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_ContextDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_CSTNode' represents an important domain concept.
+It has the following attributes: 'endToken', which is of type str; 'endOffset', which is of type int; 'startToken', which is of type str; 'startOffset', which is of type int; 'ast', which is of type str.
+
+'ocl_cst_DerValueCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_TupleTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_PropertyContextCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_OCLMessageArgCS' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_RealLiteralExpCS' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'cst_TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'InvOrDefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_MessageExpCS' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ocl_cst_TupleLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_IsMarkedPreCS' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_PrimitiveLiteralExpCS' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'ocl_cst_BooleanLiteralExpCS' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'ocl_cst_NullLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_StringLiteralExpCS' represents an important domain concept.
+It has the following attributes: 'unescapedStringSymbol', which is of type str; 'stringSymbol', which is of type str.
+
+'ocl_cst_InitOrDerValueCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_InvCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_FeatureCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_PackageDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_cst_PrePostOrBodyDeclCS' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ocl_cst_VariableCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ocl_cst_LetExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CollectionTypeIdentifierEnum' defines the following possible values: 'OrderedSet', 'Bag', 'Set', 'Sequence', 'Collection'.
+The enumeration 'DotOrArrowEnum' defines the following possible values: 'none', 'arrow', 'dot'.
+The enumeration 'MessageExpKind' defines the following possible values: 'hasSent', 'sent'.
+The enumeration 'SimpleTypeEnum' defines the following possible values: 'OclMessage', 'UnlimitedNatural', 'OclVoid', 'identifier', 'self', 'OclAny', 'String', 'Boolean', 'Real', 'keyword', 'Integer', 'OclInvalid'.
+The enumeration 'PrePostOrBodyEnum' defines the following possible values: 'pre', 'body', 'post'.
+
+The model also captures inheritance relationships between classes.
+The class 'ocl_cst_PackageDeclarationCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_PathNameCS' is a specialization of 'TypeCS'.
+The class 'ocl_cst_TypeCS' is a specialization of 'OCLExpressionCS'.
+The class 'ocl_cst_OCLExpressionCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_SimpleNameCS' is a specialization of 'OCLExpressionCS'.
+The class 'ocl_cst_ContextDeclCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_PropertyContextCS' is a specialization of 'ContextDeclCS'.
+The class 'ocl_cst_InitOrDerValueCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_ClassifierContextDeclCS' is a specialization of 'ContextDeclCS'.
+The class 'ocl_cst_InvOrDefCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_OperationContextDeclCS' is a specialization of 'ContextDeclCS'.
+The class 'ocl_cst_OperationCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_VariableCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_PrePostOrBodyDeclCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_DerValueCS' is a specialization of 'InitOrDerValueCS'.
+The class 'ocl_cst_InitValueCS' is a specialization of 'InitOrDerValueCS'.
+The class 'ocl_cst_InvCS' is a specialization of 'InvOrDefCS'.
+The class 'ocl_cst_DefCS' is a specialization of 'InvOrDefCS'.
+The class 'ocl_cst_DefExpressionCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_VariableExpCS' is a specialization of 'OCLExpressionCS'.
+The class 'ocl_cst_IsMarkedPreCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_PrimitiveTypeCS' is a specialization of 'cst_SimpleNameCS'.
+The class 'ocl_cst_PrimitiveTypeCS' is a specialization of 'cst_TypeCS'.
+The class 'ocl_cst_TupleTypeCS' is a specialization of 'TypeCS'.
+The class 'ocl_cst_CollectionTypeCS' is a specialization of 'cst_SimpleNameCS'.
+The class 'ocl_cst_CollectionTypeCS' is a specialization of 'cst_TypeCS'.
+The class 'ocl_cst_LetExpCS' is a specialization of 'OCLExpressionCS'.
+The class 'ocl_cst_IfExpCS' is a specialization of 'OCLExpressionCS'.
+The class 'ocl_cst_MessageExpCS' is a specialization of 'OCLExpressionCS'.
+The class 'ocl_cst_OCLMessageArgCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_LiteralExpCS' is a specialization of 'OCLExpressionCS'.
+The class 'ocl_cst_CollectionLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'ocl_cst_CollectionLiteralPartCS' is a specialization of 'CSTNode'.
+The class 'ocl_cst_TupleLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'ocl_cst_PrimitiveLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'ocl_cst_IntegerLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'ocl_cst_UnlimitedNaturalLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'ocl_cst_RealLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'ocl_cst_StringLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'ocl_cst_BooleanLiteralExpCS' is a specialization of 'cst_SimpleNameCS'.
+The class 'ocl_cst_BooleanLiteralExpCS' is a specialization of 'cst_PrimitiveLiteralExpCS'.
+The class 'ocl_cst_NullLiteralExpCS' is a specialization of 'cst_SimpleNameCS'.
+The class 'ocl_cst_NullLiteralExpCS' is a specialization of 'cst_LiteralExpCS'.
+The class 'ocl_cst_InvalidLiteralExpCS' is a specialization of 'cst_SimpleNameCS'.
+The class 'ocl_cst_InvalidLiteralExpCS' is a specialization of 'cst_LiteralExpCS'.
+The class 'ocl_cst_CollectionRangeCS' is a specialization of 'CollectionLiteralPartCS'.
+The class 'ocl_cst_CallExpCS' is a specialization of 'OCLExpressionCS'.
+The class 'ocl_cst_LoopExpCS' is a specialization of 'CallExpCS'.
+The class 'ocl_cst_IteratorExpCS' is a specialization of 'LoopExpCS'.
+The class 'ocl_cst_IterateExpCS' is a specialization of 'LoopExpCS'.
+The class 'ocl_cst_FeatureCallExpCS' is a specialization of 'CallExpCS'.
+The class 'ocl_cst_OperationCallExpCS' is a specialization of 'FeatureCallExpCS'.
+The class 'ocl_cst_OCLDocumentCS' is a specialization of 'CSTNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ocl_cst_PackageDeclarationCS' and 'PathNameCS'. From 'ocl_cst_PackageDeclarationCS', the role 'ocl_cst_PackageDeclarationCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS' has cardinality 0..*.
+An association connects 'ocl_cst_PackageDeclarationCS' and 'ContextDeclCS'. From 'ocl_cst_PackageDeclarationCS', the role 'ocl_cst_PackageDeclarationCS2' has cardinality 0..*, and from 'ContextDeclCS', the role 'ContextDeclCS' has cardinality 0..*.
+An association connects 'PackageDeclarationCS' and 'ocl_cst_PackageDeclarationCS'. From 'PackageDeclarationCS', the role 'PackageDeclarationCS' has cardinality 0..*, and from 'ocl_cst_PackageDeclarationCS', the role 'ocl_cst_PackageDeclarationCS4' has cardinality 0..*.
+An association connects 'ocl_cst_PathNameCS' and 'SimpleNameCS'. From 'ocl_cst_PathNameCS', the role 'ocl_cst_PathNameCS' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS' has cardinality 0..*.
+An association connects 'PathNameCS' and 'ocl_cst_PropertyContextCS'. From 'PathNameCS', the role 'PathNameCS7' has cardinality 0..*, and from 'ocl_cst_PropertyContextCS', the role 'ocl_cst_PropertyContextCS' has cardinality 0..*.
+An association connects 'SimpleNameCS' and 'ocl_cst_PropertyContextCS'. From 'SimpleNameCS', the role 'SimpleNameCS10' has cardinality 0..*, and from 'ocl_cst_PropertyContextCS', the role 'ocl_cst_PropertyContextCS9' has cardinality 0..*.
+An association connects 'ocl_cst_PropertyContextCS' and 'TypeCS'. From 'ocl_cst_PropertyContextCS', the role 'ocl_cst_PropertyContextCS12' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS' has cardinality 0..*.
+An association connects 'InitOrDerValueCS' and 'ocl_cst_PropertyContextCS'. From 'InitOrDerValueCS', the role 'InitOrDerValueCS' has cardinality 0..*, and from 'ocl_cst_PropertyContextCS', the role 'ocl_cst_PropertyContextCS14' has cardinality 0..*.
+An association connects 'ocl_cst_InitOrDerValueCS' and 'OCLExpressionCS'. From 'ocl_cst_InitOrDerValueCS', the role 'ocl_cst_InitOrDerValueCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS' has cardinality 0..*.
+An association connects 'PathNameCS' and 'ocl_cst_ClassifierContextDeclCS'. From 'PathNameCS', the role 'PathNameCS17' has cardinality 0..*, and from 'ocl_cst_ClassifierContextDeclCS', the role 'ocl_cst_ClassifierContextDeclCS' has cardinality 0..*.
+An association connects 'InvOrDefCS' and 'ocl_cst_ClassifierContextDeclCS'. From 'InvOrDefCS', the role 'InvOrDefCS' has cardinality 0..*, and from 'ocl_cst_ClassifierContextDeclCS', the role 'ocl_cst_ClassifierContextDeclCS19' has cardinality 0..*.
+An association connects 'SimpleNameCS' and 'ocl_cst_ClassifierContextDeclCS'. From 'SimpleNameCS', the role 'SimpleNameCS22' has cardinality 0..*, and from 'ocl_cst_ClassifierContextDeclCS', the role 'ocl_cst_ClassifierContextDeclCS21' has cardinality 0..*.
+An association connects 'ocl_cst_InvOrDefCS' and 'SimpleNameCS'. From 'ocl_cst_InvOrDefCS', the role 'ocl_cst_InvOrDefCS' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS24' has cardinality 0..*.
+An association connects 'OperationCS' and 'ocl_cst_OperationContextDeclCS'. From 'OperationCS', the role 'OperationCS' has cardinality 0..*, and from 'ocl_cst_OperationContextDeclCS', the role 'ocl_cst_OperationContextDeclCS' has cardinality 0..*.
+An association connects 'PrePostOrBodyDeclCS' and 'ocl_cst_OperationContextDeclCS'. From 'PrePostOrBodyDeclCS', the role 'PrePostOrBodyDeclCS' has cardinality 0..*, and from 'ocl_cst_OperationContextDeclCS', the role 'ocl_cst_OperationContextDeclCS27' has cardinality 0..*.
+An association connects 'ocl_cst_OperationCS' and 'PathNameCS'. From 'ocl_cst_OperationCS', the role 'ocl_cst_OperationCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS29' has cardinality 0..*.
+An association connects 'SimpleNameCS' and 'ocl_cst_OperationCS'. From 'SimpleNameCS', the role 'SimpleNameCS32' has cardinality 0..*, and from 'ocl_cst_OperationCS', the role 'ocl_cst_OperationCS31' has cardinality 0..*.
+An association connects 'ocl_cst_OperationCS' and 'VariableCS'. From 'ocl_cst_OperationCS', the role 'ocl_cst_OperationCS34' has cardinality 0..*, and from 'VariableCS', the role 'VariableCS' has cardinality 0..*.
+An association connects 'TypeCS' and 'ocl_cst_OperationCS'. From 'TypeCS', the role 'TypeCS37' has cardinality 0..*, and from 'ocl_cst_OperationCS', the role 'ocl_cst_OperationCS36' has cardinality 0..*.
+An association connects 'TypeCS' and 'ocl_cst_VariableCS'. From 'TypeCS', the role 'TypeCS39' has cardinality 0..*, and from 'ocl_cst_VariableCS', the role 'ocl_cst_VariableCS' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'ocl_cst_VariableCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS42' has cardinality 0..*, and from 'ocl_cst_VariableCS', the role 'ocl_cst_VariableCS41' has cardinality 0..*.
+An association connects 'ocl_cst_PrePostOrBodyDeclCS' and 'SimpleNameCS'. From 'ocl_cst_PrePostOrBodyDeclCS', the role 'ocl_cst_PrePostOrBodyDeclCS' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS44' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'ocl_cst_PrePostOrBodyDeclCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS47' has cardinality 0..*, and from 'ocl_cst_PrePostOrBodyDeclCS', the role 'ocl_cst_PrePostOrBodyDeclCS46' has cardinality 0..*.
+An association connects 'ocl_cst_InvCS' and 'OCLExpressionCS'. From 'ocl_cst_InvCS', the role 'ocl_cst_InvCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS49' has cardinality 0..*.
+An association connects 'DefExpressionCS' and 'ocl_cst_DefCS'. From 'DefExpressionCS', the role 'DefExpressionCS' has cardinality 0..*, and from 'ocl_cst_DefCS', the role 'ocl_cst_DefCS' has cardinality 0..*.
+An association connects 'OperationCS' and 'ocl_cst_DefExpressionCS'. From 'OperationCS', the role 'OperationCS52' has cardinality 0..*, and from 'ocl_cst_DefExpressionCS', the role 'ocl_cst_DefExpressionCS' has cardinality 0..*.
+An association connects 'ocl_cst_DefExpressionCS' and 'VariableCS'. From 'ocl_cst_DefExpressionCS', the role 'ocl_cst_DefExpressionCS54' has cardinality 0..*, and from 'VariableCS', the role 'VariableCS55' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'ocl_cst_DefExpressionCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS58' has cardinality 0..*, and from 'ocl_cst_DefExpressionCS', the role 'ocl_cst_DefExpressionCS57' has cardinality 0..*.
+An association connects 'ocl_cst_VariableExpCS' and 'OCLExpressionCS'. From 'ocl_cst_VariableExpCS', the role 'ocl_cst_VariableExpCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS60' has cardinality 0..*.
+An association connects 'ocl_cst_VariableExpCS' and 'SimpleNameCS'. From 'ocl_cst_VariableExpCS', the role 'ocl_cst_VariableExpCS62' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS63' has cardinality 0..*.
+An association connects 'ocl_cst_VariableExpCS' and 'IsMarkedPreCS'. From 'ocl_cst_VariableExpCS', the role 'ocl_cst_VariableExpCS65' has cardinality 0..*, and from 'IsMarkedPreCS', the role 'IsMarkedPreCS' has cardinality 0..*.
+An association connects 'VariableCS' and 'ocl_cst_TupleTypeCS'. From 'VariableCS', the role 'VariableCS67' has cardinality 0..*, and from 'ocl_cst_TupleTypeCS', the role 'ocl_cst_TupleTypeCS' has cardinality 0..*.
+An association connects 'TypeCS' and 'ocl_cst_CollectionTypeCS'. From 'TypeCS', the role 'TypeCS69' has cardinality 0..*, and from 'ocl_cst_CollectionTypeCS', the role 'ocl_cst_CollectionTypeCS' has cardinality 0..*.
+An association connects 'ocl_cst_LetExpCS' and 'VariableCS'. From 'ocl_cst_LetExpCS', the role 'ocl_cst_LetExpCS' has cardinality 0..*, and from 'VariableCS', the role 'VariableCS71' has cardinality 0..*.
+An association connects 'ocl_cst_LetExpCS' and 'OCLExpressionCS'. From 'ocl_cst_LetExpCS', the role 'ocl_cst_LetExpCS73' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS74' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'ocl_cst_IfExpCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS76' has cardinality 0..*, and from 'ocl_cst_IfExpCS', the role 'ocl_cst_IfExpCS' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'ocl_cst_IfExpCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS79' has cardinality 0..*, and from 'ocl_cst_IfExpCS', the role 'ocl_cst_IfExpCS78' has cardinality 0..*.
+An association connects 'ocl_cst_IfExpCS' and 'OCLExpressionCS'. From 'ocl_cst_IfExpCS', the role 'ocl_cst_IfExpCS81' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS82' has cardinality 0..*.
+An association connects 'ocl_cst_MessageExpCS' and 'OCLExpressionCS'. From 'ocl_cst_MessageExpCS', the role 'ocl_cst_MessageExpCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS84' has cardinality 0..*.
+An association connects 'ocl_cst_MessageExpCS' and 'SimpleNameCS'. From 'ocl_cst_MessageExpCS', the role 'ocl_cst_MessageExpCS86' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS87' has cardinality 0..*.
+An association connects 'ocl_cst_MessageExpCS' and 'OCLMessageArgCS'. From 'ocl_cst_MessageExpCS', the role 'ocl_cst_MessageExpCS89' has cardinality 0..*, and from 'OCLMessageArgCS', the role 'OCLMessageArgCS' has cardinality 0..*.
+An association connects 'TypeCS' and 'ocl_cst_OCLMessageArgCS'. From 'TypeCS', the role 'TypeCS91' has cardinality 0..*, and from 'ocl_cst_OCLMessageArgCS', the role 'ocl_cst_OCLMessageArgCS' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'ocl_cst_OCLMessageArgCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS94' has cardinality 0..*, and from 'ocl_cst_OCLMessageArgCS', the role 'ocl_cst_OCLMessageArgCS93' has cardinality 0..*.
+An association connects 'CollectionLiteralPartCS' and 'ocl_cst_CollectionLiteralExpCS'. From 'CollectionLiteralPartCS', the role 'CollectionLiteralPartCS' has cardinality 0..*, and from 'ocl_cst_CollectionLiteralExpCS', the role 'ocl_cst_CollectionLiteralExpCS' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'ocl_cst_CollectionLiteralPartCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS97' has cardinality 0..*, and from 'ocl_cst_CollectionLiteralPartCS', the role 'ocl_cst_CollectionLiteralPartCS' has cardinality 0..*.
+An association connects 'ocl_cst_TupleLiteralExpCS' and 'VariableCS'. From 'ocl_cst_TupleLiteralExpCS', the role 'ocl_cst_TupleLiteralExpCS' has cardinality 0..*, and from 'VariableCS', the role 'VariableCS99' has cardinality 0..*.
+An association connects 'ocl_cst_CollectionRangeCS' and 'OCLExpressionCS'. From 'ocl_cst_CollectionRangeCS', the role 'ocl_cst_CollectionRangeCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS101' has cardinality 0..*.
+An association connects 'ocl_cst_CallExpCS' and 'OCLExpressionCS'. From 'ocl_cst_CallExpCS', the role 'ocl_cst_CallExpCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS103' has cardinality 0..*.
+An association connects 'ocl_cst_CallExpCS' and 'SimpleNameCS'. From 'ocl_cst_CallExpCS', the role 'ocl_cst_CallExpCS105' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS106' has cardinality 0..*.
+An association connects 'VariableCS' and 'ocl_cst_LoopExpCS'. From 'VariableCS', the role 'VariableCS108' has cardinality 0..*, and from 'ocl_cst_LoopExpCS', the role 'ocl_cst_LoopExpCS' has cardinality 0..*.
+An association connects 'VariableCS' and 'ocl_cst_LoopExpCS'. From 'VariableCS', the role 'VariableCS111' has cardinality 0..*, and from 'ocl_cst_LoopExpCS', the role 'ocl_cst_LoopExpCS110' has cardinality 0..*.
+An association connects 'ocl_cst_LoopExpCS' and 'OCLExpressionCS'. From 'ocl_cst_LoopExpCS', the role 'ocl_cst_LoopExpCS113' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS114' has cardinality 0..*.
+An association connects 'ocl_cst_FeatureCallExpCS' and 'PathNameCS'. From 'ocl_cst_FeatureCallExpCS', the role 'ocl_cst_FeatureCallExpCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS116' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'ocl_cst_FeatureCallExpCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS119' has cardinality 0..*, and from 'ocl_cst_FeatureCallExpCS', the role 'ocl_cst_FeatureCallExpCS118' has cardinality 0..*.
+An association connects 'IsMarkedPreCS' and 'ocl_cst_FeatureCallExpCS'. From 'IsMarkedPreCS', the role 'IsMarkedPreCS122' has cardinality 0..*, and from 'ocl_cst_FeatureCallExpCS', the role 'ocl_cst_FeatureCallExpCS121' has cardinality 0..*.
+An association connects 'ocl_cst_OCLDocumentCS' and 'PackageDeclarationCS'. From 'ocl_cst_OCLDocumentCS', the role 'ocl_cst_OCLDocumentCS' has cardinality 0..*, and from 'PackageDeclarationCS', the role 'PackageDeclarationCS124' has cardinality 0..*.

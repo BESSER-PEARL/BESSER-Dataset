@@ -1,0 +1,385 @@
+The domain model 'basecs' describes the core structural elements and their relationships within the system.
+
+The model defines 81 main class(es).
+
+'basecs_ConstraintCS' represents an important domain concept.
+It has one attribute: 'stereotype', which is of type str.
+
+'basecs_ModelElementCS' represents an important domain concept.
+It has the following attributes: 'csi', which is of type str; 'originalXmiId', which is of type str.
+
+'basecs_TuplePartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_TypedTypeRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_RootPackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_MultiplicityCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'VisitableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_LibraryCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_PathElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'Pivotable' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_ElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_EnumerationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_RootCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_ModelElementRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_TupleTypeCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TypedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_DocumentationCS' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'TemplateableElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_ClassifierCS' represents an important domain concept.
+It has the following attributes: 'qualifier', which is of type str; 'instanceClassName', which is of type str.
+
+'basecs_DataTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_PackageOwnerCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_TemplateParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_TemplateableElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_MultiplicityStringCS' represents an important domain concept.
+It has one attribute: 'stringBounds', which is of type str.
+
+'basecs_PathElementWithURICS' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'PivotableElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_TemplateParameterSubstitutionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_PathNameCS' represents an important domain concept.
+It has one attribute: 'scopeFilter', which is of type str.
+
+'NamespaceCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_PackageCS' represents an important domain concept.
+It has the following attributes: 'nsURI', which is of type str; 'nsPrefix', which is of type str.
+
+'Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_DetailCS' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'FeatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_LambdaTypeCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'basecs_TemplateSignatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_TypedElementCS' represents an important domain concept.
+It has the following attributes: 'optional', which is of type bool; 'qualifier', which is of type str.
+
+'basecs_ElementRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_TypeParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_SpecificationCS' represents an important domain concept.
+It has one attribute: 'exprString', which is of type str.
+
+'basecs_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_TypedRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_TemplateBindingCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_ClassCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_StructuralFeatureCS' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'basecs_NamedElementCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'basecs_WildcardTypeRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageOwnerCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_AnnotationElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'RootCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_PrimitiveTypeRefCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'basecs_ParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_AnnotationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_EnumerationLiteralCS' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'basecs_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassifierCS' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_FeatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_NamespaceCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_ImportCS' represents an important domain concept.
+It has one attribute: 'all', which is of type bool.
+
+'ModelElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_AttributeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_ReferenceCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_OperationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_MultiplicityBoundsCS' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'upperBound', which is of type str.
+
+'NamedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PathElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_VisitableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_PivotableElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'basecs_TypeRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'IteratorKind' defines the following possible values: 'Iterator', 'Parameter', 'Accumulator'.
+
+The model also captures inheritance relationships between classes.
+The class 'basecs_AnnotationCS' is a specialization of 'AnnotationElementCS'.
+The class 'basecs_AnnotationElementCS' is a specialization of 'NamedElementCS'.
+The class 'basecs_AttributeCS' is a specialization of 'StructuralFeatureCS'.
+The class 'basecs_ClassCS' is a specialization of 'ClassifierCS'.
+The class 'basecs_ClassCS' is a specialization of 'NamespaceCS'.
+The class 'basecs_ClassifierCS' is a specialization of 'NamedElementCS'.
+The class 'basecs_ClassifierCS' is a specialization of 'TypeCS'.
+The class 'basecs_ClassifierCS' is a specialization of 'TemplateableElementCS'.
+The class 'basecs_ConstraintCS' is a specialization of 'NamedElementCS'.
+The class 'basecs_DataTypeCS' is a specialization of 'ClassifierCS'.
+The class 'basecs_DataTypeCS' is a specialization of 'NamespaceCS'.
+The class 'basecs_DetailCS' is a specialization of 'NamedElementCS'.
+The class 'basecs_DocumentationCS' is a specialization of 'AnnotationElementCS'.
+The class 'basecs_ElementCS' is a specialization of 'VisitableCS'.
+The class 'basecs_ElementRefCS' is a specialization of 'PivotableElementCS'.
+The class 'basecs_EnumerationCS' is a specialization of 'ClassifierCS'.
+The class 'basecs_EnumerationCS' is a specialization of 'NamespaceCS'.
+The class 'basecs_EnumerationLiteralCS' is a specialization of 'NamedElementCS'.
+The class 'basecs_FeatureCS' is a specialization of 'TypedElementCS'.
+The class 'basecs_ImportCS' is a specialization of 'NamespaceCS'.
+The class 'basecs_LambdaTypeCS' is a specialization of 'TypedRefCS'.
+The class 'basecs_LambdaTypeCS' is a specialization of 'TemplateableElementCS'.
+The class 'basecs_LambdaTypeCS' is a specialization of 'Nameable'.
+The class 'basecs_LibraryCS' is a specialization of 'NamespaceCS'.
+The class 'basecs_ModelElementCS' is a specialization of 'PivotableElementCS'.
+The class 'basecs_ModelElementRefCS' is a specialization of 'ElementRefCS'.
+The class 'basecs_MultiplicityBoundsCS' is a specialization of 'MultiplicityCS'.
+The class 'basecs_MultiplicityCS' is a specialization of 'ElementCS'.
+The class 'basecs_MultiplicityStringCS' is a specialization of 'MultiplicityCS'.
+The class 'basecs_NamedElementCS' is a specialization of 'ModelElementCS'.
+The class 'basecs_NamedElementCS' is a specialization of 'Nameable'.
+The class 'basecs_NamespaceCS' is a specialization of 'NamedElementCS'.
+The class 'basecs_OperationCS' is a specialization of 'FeatureCS'.
+The class 'basecs_OperationCS' is a specialization of 'TemplateableElementCS'.
+The class 'basecs_PackageCS' is a specialization of 'PackageOwnerCS'.
+The class 'basecs_PackageCS' is a specialization of 'NamespaceCS'.
+The class 'basecs_PackageOwnerCS' is a specialization of 'ModelElementCS'.
+The class 'basecs_ParameterCS' is a specialization of 'TypedElementCS'.
+The class 'basecs_PathElementCS' is a specialization of 'ElementCS'.
+The class 'basecs_PathElementCS' is a specialization of 'Pivotable'.
+The class 'basecs_PathElementWithURICS' is a specialization of 'PathElementCS'.
+The class 'basecs_PathNameCS' is a specialization of 'ElementCS'.
+The class 'basecs_PathNameCS' is a specialization of 'Pivotable'.
+The class 'basecs_PivotableElementCS' is a specialization of 'ElementCS'.
+The class 'basecs_PivotableElementCS' is a specialization of 'Pivotable'.
+The class 'basecs_PrimitiveTypeRefCS' is a specialization of 'TypedRefCS'.
+The class 'basecs_PrimitiveTypeRefCS' is a specialization of 'Nameable'.
+The class 'basecs_ReferenceCS' is a specialization of 'StructuralFeatureCS'.
+The class 'basecs_RootCS' is a specialization of 'ModelElementCS'.
+The class 'basecs_RootPackageCS' is a specialization of 'PackageOwnerCS'.
+The class 'basecs_RootPackageCS' is a specialization of 'RootCS'.
+The class 'basecs_SpecificationCS' is a specialization of 'ModelElementCS'.
+The class 'basecs_StructuralFeatureCS' is a specialization of 'FeatureCS'.
+The class 'basecs_TemplateBindingCS' is a specialization of 'ElementRefCS'.
+The class 'basecs_TemplateParameterCS' is a specialization of 'NamedElementCS'.
+The class 'basecs_TemplateParameterSubstitutionCS' is a specialization of 'ModelElementCS'.
+The class 'basecs_TemplateSignatureCS' is a specialization of 'ModelElementCS'.
+The class 'basecs_TemplateableElementCS' is a specialization of 'ElementCS'.
+The class 'basecs_TuplePartCS' is a specialization of 'TypedElementCS'.
+The class 'basecs_TupleTypeCS' is a specialization of 'TypedRefCS'.
+The class 'basecs_TupleTypeCS' is a specialization of 'Nameable'.
+The class 'basecs_TypeCS' is a specialization of 'ModelElementCS'.
+The class 'basecs_TypeParameterCS' is a specialization of 'TemplateParameterCS'.
+The class 'basecs_TypeParameterCS' is a specialization of 'TypeCS'.
+The class 'basecs_TypeRefCS' is a specialization of 'ElementRefCS'.
+The class 'basecs_TypedElementCS' is a specialization of 'NamedElementCS'.
+The class 'basecs_TypedRefCS' is a specialization of 'TypeRefCS'.
+The class 'basecs_TypedTypeRefCS' is a specialization of 'TypedRefCS'.
+The class 'basecs_WildcardTypeRefCS' is a specialization of 'TypeRefCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'basecs_ModelElementCS' and 'basecs_AnnotationCS'. From 'basecs_ModelElementCS', the role 'basecs_ModelElementCS' has cardinality 0..*, and from 'basecs_AnnotationCS', the role 'basecs_AnnotationCS' has cardinality 0..*.
+An association connects 'basecs_AnnotationCS' and 'basecs_ModelElementRefCS'. From 'basecs_AnnotationCS', the role 'basecs_AnnotationCS2' has cardinality 0..*, and from 'basecs_ModelElementRefCS', the role 'basecs_ModelElementRefCS' has cardinality 0..*.
+An association connects 'basecs_AnnotationElementCS' and 'basecs_DetailCS'. From 'basecs_AnnotationElementCS', the role 'basecs_AnnotationElementCS' has cardinality 0..*, and from 'basecs_DetailCS', the role 'basecs_DetailCS' has cardinality 0..*.
+An association connects 'basecs_ClassCS' and 'basecs_TypedRefCS'. From 'basecs_ClassCS', the role 'basecs_ClassCS' has cardinality 0..*, and from 'basecs_TypedRefCS', the role 'basecs_TypedRefCS' has cardinality 0..*.
+An association connects 'basecs_OperationCS' and 'basecs_ClassCS'. From 'basecs_OperationCS', the role 'OperationCS' has cardinality 0..*, and from 'basecs_ClassCS', the role 'owningClass' has cardinality 0..*.
+An association connects 'basecs_StructuralFeatureCS' and 'basecs_ClassCS'. From 'basecs_StructuralFeatureCS', the role 'StructuralFeatureCS' has cardinality 0..*, and from 'basecs_ClassCS', the role 'owner' has cardinality 0..*.
+An association connects 'basecs_TypedRefCS' and 'basecs_ClassCS'. From 'basecs_TypedRefCS', the role 'basecs_TypedRefCS9' has cardinality 0..*, and from 'basecs_ClassCS', the role 'basecs_ClassCS8' has cardinality 0..*.
+An association connects 'basecs_PackageCS' and 'basecs_ClassifierCS'. From 'basecs_PackageCS', the role 'PackageCS' has cardinality 0..*, and from 'basecs_ClassifierCS', the role 'ownedType' has cardinality 0..*.
+An association connects 'basecs_ClassifierCS' and 'basecs_ConstraintCS'. From 'basecs_ClassifierCS', the role 'basecs_ClassifierCS' has cardinality 0..*, and from 'basecs_ConstraintCS', the role 'basecs_ConstraintCS' has cardinality 0..*.
+An association connects 'basecs_SpecificationCS' and 'basecs_ConstraintCS'. From 'basecs_SpecificationCS', the role 'basecs_SpecificationCS' has cardinality 0..*, and from 'basecs_ConstraintCS', the role 'basecs_ConstraintCS13' has cardinality 0..*.
+An association connects 'basecs_ConstraintCS' and 'basecs_SpecificationCS'. From 'basecs_ConstraintCS', the role 'basecs_ConstraintCS15' has cardinality 0..*, and from 'basecs_SpecificationCS', the role 'basecs_SpecificationCS16' has cardinality 0..*.
+An association connects 'basecs_DataTypeCS' and 'basecs_EnumerationLiteralCS'. From 'basecs_DataTypeCS', the role 'basecs_DataTypeCS' has cardinality 0..*, and from 'basecs_EnumerationLiteralCS', the role 'basecs_EnumerationLiteralCS' has cardinality 0..*.
+An association connects 'basecs_ElementCS' and 'basecs_ElementCS'. From 'basecs_ElementCS', the role 'basecs_ElementCS' has cardinality 0..*, and from 'basecs_ElementCS', the role 'basecs_ElementCS18' has cardinality 0..*.
+An association connects 'basecs_EnumerationCS' and 'basecs_EnumerationLiteralCS'. From 'basecs_EnumerationCS', the role 'basecs_EnumerationCS' has cardinality 0..*, and from 'basecs_EnumerationLiteralCS', the role 'basecs_EnumerationLiteralCS21' has cardinality 0..*.
+An association connects 'basecs_ImportCS' and 'basecs_PathNameCS'. From 'basecs_ImportCS', the role 'basecs_ImportCS' has cardinality 0..*, and from 'basecs_PathNameCS', the role 'basecs_PathNameCS' has cardinality 0..*.
+An association connects 'basecs_Namespace' and 'basecs_ImportCS'. From 'basecs_Namespace', the role 'basecs_Namespace' has cardinality 0..*, and from 'basecs_ImportCS', the role 'basecs_ImportCS24' has cardinality 0..*.
+An association connects 'basecs_LambdaTypeCS' and 'basecs_TypedRefCS'. From 'basecs_LambdaTypeCS', the role 'basecs_LambdaTypeCS' has cardinality 0..*, and from 'basecs_TypedRefCS', the role 'basecs_TypedRefCS26' has cardinality 0..*.
+An association connects 'basecs_TypedRefCS' and 'basecs_LambdaTypeCS'. From 'basecs_TypedRefCS', the role 'basecs_TypedRefCS29' has cardinality 0..*, and from 'basecs_LambdaTypeCS', the role 'basecs_LambdaTypeCS28' has cardinality 0..*.
+An association connects 'basecs_LambdaTypeCS' and 'basecs_TypedRefCS'. From 'basecs_LambdaTypeCS', the role 'basecs_LambdaTypeCS31' has cardinality 0..*, and from 'basecs_TypedRefCS', the role 'basecs_TypedRefCS32' has cardinality 0..*.
+An association connects 'basecs_LibraryCS' and 'basecs_Namespace'. From 'basecs_LibraryCS', the role 'basecs_LibraryCS' has cardinality 0..*, and from 'basecs_Namespace', the role 'basecs_Namespace34' has cardinality 0..*.
+An association connects 'basecs_AnnotationElementCS' and 'basecs_ModelElementCS'. From 'basecs_AnnotationElementCS', the role 'basecs_AnnotationElementCS37' has cardinality 0..*, and from 'basecs_ModelElementCS', the role 'basecs_ModelElementCS36' has cardinality 0..*.
+An association connects 'basecs_PathNameCS' and 'basecs_ModelElementRefCS'. From 'basecs_PathNameCS', the role 'basecs_PathNameCS40' has cardinality 0..*, and from 'basecs_ModelElementRefCS', the role 'basecs_ModelElementRefCS39' has cardinality 0..*.
+An association connects 'basecs_Element' and 'basecs_ModelElementRefCS'. From 'basecs_Element', the role 'basecs_Element' has cardinality 0..*, and from 'basecs_ModelElementRefCS', the role 'basecs_ModelElementRefCS42' has cardinality 0..*.
+An association connects 'basecs_OperationCS' and 'basecs_ClassCS'. From 'basecs_OperationCS', the role 'ownedOperation' has cardinality 0..*, and from 'basecs_ClassCS', the role 'ClassCS' has cardinality 0..*.
+An association connects 'basecs_ParameterCS' and 'basecs_OperationCS'. From 'basecs_ParameterCS', the role 'ParameterCS' has cardinality 0..*, and from 'basecs_OperationCS', the role 'owner45' has cardinality 0..*.
+An association connects 'basecs_TypedRefCS' and 'basecs_OperationCS'. From 'basecs_TypedRefCS', the role 'basecs_TypedRefCS47' has cardinality 0..*, and from 'basecs_OperationCS', the role 'basecs_OperationCS' has cardinality 0..*.
+An association connects 'basecs_OperationCS' and 'basecs_ConstraintCS'. From 'basecs_OperationCS', the role 'basecs_OperationCS49' has cardinality 0..*, and from 'basecs_ConstraintCS', the role 'basecs_ConstraintCS50' has cardinality 0..*.
+An association connects 'basecs_OperationCS' and 'basecs_ConstraintCS'. From 'basecs_OperationCS', the role 'basecs_OperationCS52' has cardinality 0..*, and from 'basecs_ConstraintCS', the role 'basecs_ConstraintCS53' has cardinality 0..*.
+An association connects 'basecs_OperationCS' and 'basecs_SpecificationCS'. From 'basecs_OperationCS', the role 'basecs_OperationCS55' has cardinality 0..*, and from 'basecs_SpecificationCS', the role 'basecs_SpecificationCS56' has cardinality 0..*.
+An association connects 'basecs_PackageCS' and 'basecs_ClassifierCS'. From 'basecs_PackageCS', the role 'owner58' has cardinality 0..*, and from 'basecs_ClassifierCS', the role 'ClassifierCS' has cardinality 0..*.
+An association connects 'basecs_PackageOwnerCS' and 'basecs_PackageCS'. From 'basecs_PackageOwnerCS', the role 'basecs_PackageOwnerCS' has cardinality 0..*, and from 'basecs_PackageCS', the role 'basecs_PackageCS' has cardinality 0..*.
+An association connects 'basecs_ParameterCS' and 'basecs_OperationCS'. From 'basecs_ParameterCS', the role 'ownedParameter' has cardinality 0..*, and from 'basecs_OperationCS', the role 'OperationCS61' has cardinality 0..*.
+An association connects 'basecs_PathNameCS' and 'basecs_PathElementCS'. From 'basecs_PathNameCS', the role 'PathNameCS' has cardinality 0..*, and from 'basecs_PathElementCS', the role 'path' has cardinality 0..*.
+An association connects 'basecs_PathElementCS' and 'basecs_Element'. From 'basecs_PathElementCS', the role 'basecs_PathElementCS' has cardinality 0..*, and from 'basecs_Element', the role 'basecs_Element64' has cardinality 0..*.
+An association connects 'basecs_EClassifier' and 'basecs_PathElementCS'. From 'basecs_EClassifier', the role 'basecs_EClassifier' has cardinality 0..*, and from 'basecs_PathElementCS', the role 'basecs_PathElementCS66' has cardinality 0..*.
+An association connects 'basecs_PathElementCS' and 'basecs_PathNameCS'. From 'basecs_PathElementCS', the role 'PathElementCS' has cardinality 0..*, and from 'basecs_PathNameCS', the role 'pathName' has cardinality 0..*.
+An association connects 'basecs_PathNameCS' and 'basecs_Element'. From 'basecs_PathNameCS', the role 'basecs_PathNameCS69' has cardinality 0..*, and from 'basecs_Element', the role 'basecs_Element70' has cardinality 0..*.
+An association connects 'basecs_ElementCS' and 'basecs_PathNameCS'. From 'basecs_ElementCS', the role 'basecs_ElementCS73' has cardinality 0..*, and from 'basecs_PathNameCS', the role 'basecs_PathNameCS72' has cardinality 0..*.
+An association connects 'basecs_Element' and 'basecs_PivotableElementCS'. From 'basecs_Element', the role 'basecs_Element75' has cardinality 0..*, and from 'basecs_PivotableElementCS', the role 'basecs_PivotableElementCS' has cardinality 0..*.
+An association connects 'basecs_ReferenceCS' and 'basecs_Property'. From 'basecs_ReferenceCS', the role 'basecs_ReferenceCS' has cardinality 0..*, and from 'basecs_Property', the role 'basecs_Property' has cardinality 0..*.
+An association connects 'basecs_Property' and 'basecs_ReferenceCS'. From 'basecs_Property', the role 'basecs_Property79' has cardinality 0..*, and from 'basecs_ReferenceCS', the role 'basecs_ReferenceCS78' has cardinality 0..*.
+An association connects 'basecs_ImportCS' and 'basecs_RootCS'. From 'basecs_ImportCS', the role 'basecs_ImportCS81' has cardinality 0..*, and from 'basecs_RootCS', the role 'basecs_RootCS' has cardinality 0..*.
+An association connects 'basecs_LibraryCS' and 'basecs_RootCS'. From 'basecs_LibraryCS', the role 'basecs_LibraryCS84' has cardinality 0..*, and from 'basecs_RootCS', the role 'basecs_RootCS83' has cardinality 0..*.
+An association connects 'basecs_ClassCS' and 'basecs_StructuralFeatureCS'. From 'basecs_ClassCS', the role 'ClassCS86' has cardinality 0..*, and from 'basecs_StructuralFeatureCS', the role 'ownedProperty' has cardinality 0..*.
+An association connects 'basecs_StructuralFeatureCS' and 'basecs_SpecificationCS'. From 'basecs_StructuralFeatureCS', the role 'basecs_StructuralFeatureCS' has cardinality 0..*, and from 'basecs_SpecificationCS', the role 'basecs_SpecificationCS88' has cardinality 0..*.
+An association connects 'basecs_TypedTypeRefCS' and 'basecs_TemplateBindingCS'. From 'basecs_TypedTypeRefCS', the role 'TypedTypeRefCS' has cardinality 0..*, and from 'basecs_TemplateBindingCS', the role 'ownedTemplateBinding' has cardinality 0..*.
+An association connects 'basecs_TemplateParameterSubstitutionCS' and 'basecs_TemplateBindingCS'. From 'basecs_TemplateParameterSubstitutionCS', the role 'TemplateParameterSubstitutionCS' has cardinality 0..*, and from 'basecs_TemplateBindingCS', the role 'owningTemplateBinding' has cardinality 0..*.
+An association connects 'basecs_TemplateParameterCS' and 'basecs_TemplateSignatureCS'. From 'basecs_TemplateParameterCS', the role 'ownedTemplateParameter' has cardinality 0..*, and from 'basecs_TemplateSignatureCS', the role 'TemplateSignatureCS' has cardinality 0..*.
+An association connects 'basecs_TemplateBindingCS' and 'basecs_TemplateParameterSubstitutionCS'. From 'basecs_TemplateBindingCS', the role 'TemplateBindingCS' has cardinality 0..*, and from 'basecs_TemplateParameterSubstitutionCS', the role 'ownedParameterSubstitution' has cardinality 0..*.
+An association connects 'basecs_TemplateParameterSubstitutionCS' and 'basecs_TypeRefCS'. From 'basecs_TemplateParameterSubstitutionCS', the role 'basecs_TemplateParameterSubstitutionCS' has cardinality 0..*, and from 'basecs_TypeRefCS', the role 'basecs_TypeRefCS' has cardinality 0..*.
+An association connects 'basecs_TemplateableElementCS' and 'basecs_TemplateSignatureCS'. From 'basecs_TemplateableElementCS', the role 'TemplateableElementCS' has cardinality 0..*, and from 'basecs_TemplateSignatureCS', the role 'ownedTemplateSignature' has cardinality 0..*.
+An association connects 'basecs_TemplateSignatureCS' and 'basecs_TemplateParameterCS'. From 'basecs_TemplateSignatureCS', the role 'owningTemplateSignature' has cardinality 0..*, and from 'basecs_TemplateParameterCS', the role 'TemplateParameterCS' has cardinality 0..*.
+An association connects 'basecs_TemplateSignatureCS' and 'basecs_TemplateableElementCS'. From 'basecs_TemplateSignatureCS', the role 'TemplateSignatureCS97' has cardinality 0..*, and from 'basecs_TemplateableElementCS', the role 'owningTemplateElement' has cardinality 0..*.
+An association connects 'basecs_TupleTypeCS' and 'basecs_TuplePartCS'. From 'basecs_TupleTypeCS', the role 'basecs_TupleTypeCS' has cardinality 0..*, and from 'basecs_TuplePartCS', the role 'basecs_TuplePartCS' has cardinality 0..*.
+An association connects 'basecs_TypeParameterCS' and 'basecs_TypedRefCS'. From 'basecs_TypeParameterCS', the role 'basecs_TypeParameterCS' has cardinality 0..*, and from 'basecs_TypedRefCS', the role 'basecs_TypedRefCS100' has cardinality 0..*.
+An association connects 'basecs_TypedRefCS' and 'basecs_TypeParameterCS'. From 'basecs_TypedRefCS', the role 'basecs_TypedRefCS103' has cardinality 0..*, and from 'basecs_TypeParameterCS', the role 'basecs_TypeParameterCS102' has cardinality 0..*.
+An association connects 'basecs_TypedElementCS' and 'basecs_TypedRefCS'. From 'basecs_TypedElementCS', the role 'basecs_TypedElementCS' has cardinality 0..*, and from 'basecs_TypedRefCS', the role 'basecs_TypedRefCS105' has cardinality 0..*.
+An association connects 'basecs_TypedRefCS' and 'basecs_MultiplicityCS'. From 'basecs_TypedRefCS', the role 'basecs_TypedRefCS107' has cardinality 0..*, and from 'basecs_MultiplicityCS', the role 'basecs_MultiplicityCS' has cardinality 0..*.
+An association connects 'basecs_PathNameCS' and 'basecs_TypedTypeRefCS'. From 'basecs_PathNameCS', the role 'basecs_PathNameCS109' has cardinality 0..*, and from 'basecs_TypedTypeRefCS', the role 'basecs_TypedTypeRefCS' has cardinality 0..*.
+An association connects 'basecs_Type' and 'basecs_TypedTypeRefCS'. From 'basecs_Type', the role 'basecs_Type' has cardinality 0..*, and from 'basecs_TypedTypeRefCS', the role 'basecs_TypedTypeRefCS111' has cardinality 0..*.
+An association connects 'basecs_TypedTypeRefCS' and 'basecs_TemplateBindingCS'. From 'basecs_TypedTypeRefCS', the role 'owningTemplateBindableElement' has cardinality 0..*, and from 'basecs_TemplateBindingCS', the role 'TemplateBindingCS113' has cardinality 0..*.
+An association connects 'basecs_WildcardTypeRefCS' and 'basecs_TypedRefCS'. From 'basecs_WildcardTypeRefCS', the role 'basecs_WildcardTypeRefCS' has cardinality 0..*, and from 'basecs_TypedRefCS', the role 'basecs_TypedRefCS115' has cardinality 0..*.
+An association connects 'basecs_TypedRefCS' and 'basecs_WildcardTypeRefCS'. From 'basecs_TypedRefCS', the role 'basecs_TypedRefCS118' has cardinality 0..*, and from 'basecs_WildcardTypeRefCS', the role 'basecs_WildcardTypeRefCS117' has cardinality 0..*.

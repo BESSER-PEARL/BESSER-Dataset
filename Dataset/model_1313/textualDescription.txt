@@ -1,0 +1,91 @@
+The domain model 'state' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'state_StateModel' represents an important domain concept.
+It does not declare any attributes.
+
+'state_Behaviour' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'state_OpaqueExpression' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'state_Event' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'state_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'state_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'state_PseudoState' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'state_Transition' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'state_State' represents an important domain concept.
+It has the following attributes: 'isComposite', which is of type bool; 'isSimple', which is of type bool.
+
+'state_NamedElement' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'state_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'state_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'state_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'state_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TransitionKind' defines the following possible values: 'internal', 'external', 'local'.
+The enumeration 'PseudoStateKind' defines the following possible values: 'choice', 'none', 'terminate', 'initial', 'shallow', 'join', 'deep', 'fork'.
+
+The model also captures inheritance relationships between classes.
+The class 'state_State' is a specialization of 'Vertex'.
+The class 'state_State' is a specialization of 'NamedElement'.
+The class 'state_Region' is a specialization of 'NamedElement'.
+The class 'state_StateMachine' is a specialization of 'NamedElement'.
+The class 'state_Vertex' is a specialization of 'NamedElement'.
+The class 'state_Transition' is a specialization of 'NamedElement'.
+The class 'state_FinalState' is a specialization of 'State'.
+The class 'state_Trigger' is a specialization of 'NamedElement'.
+The class 'state_PseudoState' is a specialization of 'Vertex'.
+
+Relationships between classes are modeled using associations.
+An association connects 'state_State' and 'state_Region'. From 'state_State', the role 'state_State' has cardinality 0..*, and from 'state_Region', the role 'state_Region' has cardinality 0..*.
+An association connects 'state_State' and 'state_Trigger'. From 'state_State', the role 'state_State2' has cardinality 0..*, and from 'state_Trigger', the role 'state_Trigger' has cardinality 0..*.
+An association connects 'state_Behaviour' and 'state_State'. From 'state_Behaviour', the role 'state_Behaviour' has cardinality 0..*, and from 'state_State', the role 'state_State4' has cardinality 0..*.
+An association connects 'state_Behaviour' and 'state_State'. From 'state_Behaviour', the role 'state_Behaviour7' has cardinality 0..*, and from 'state_State', the role 'state_State6' has cardinality 0..*.
+An association connects 'state_Behaviour' and 'state_State'. From 'state_Behaviour', the role 'state_Behaviour10' has cardinality 0..*, and from 'state_State', the role 'state_State9' has cardinality 0..*.
+An association connects 'state_State' and 'state_Region'. From 'state_State', the role 'state_State13' has cardinality 0..*, and from 'state_Region', the role 'state_Region12' has cardinality 0..*.
+An association connects 'state_Vertex' and 'state_Region'. From 'state_Vertex', the role 'state_Vertex' has cardinality 0..*, and from 'state_Region', the role 'state_Region15' has cardinality 0..*.
+An association connects 'state_StateMachine' and 'state_Region'. From 'state_StateMachine', the role 'state_StateMachine' has cardinality 0..*, and from 'state_Region', the role 'state_Region17' has cardinality 0..*.
+An association connects 'state_Transition' and 'state_Region'. From 'state_Transition', the role 'state_Transition' has cardinality 0..*, and from 'state_Region', the role 'state_Region19' has cardinality 0..*.
+An association connects 'state_Region' and 'state_StateMachine'. From 'state_Region', the role 'state_Region22' has cardinality 0..*, and from 'state_StateMachine', the role 'state_StateMachine21' has cardinality 0..*.
+An association connects 'state_Vertex' and 'state_Transition'. From 'state_Vertex', the role 'source' has cardinality 0..*, and from 'state_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'state_Transition' and 'state_Vertex'. From 'state_Transition', the role 'Transition25' has cardinality 0..*, and from 'state_Vertex', the role 'target' has cardinality 0..*.
+An association connects 'state_Vertex' and 'state_Transition'. From 'state_Vertex', the role 'Vertex' has cardinality 0..*, and from 'state_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'state_Vertex' and 'state_Transition'. From 'state_Vertex', the role 'Vertex28' has cardinality 0..*, and from 'state_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'state_Trigger' and 'state_Transition'. From 'state_Trigger', the role 'state_Trigger31' has cardinality 0..*, and from 'state_Transition', the role 'state_Transition30' has cardinality 0..*.
+An association connects 'state_Transition' and 'state_Constraint'. From 'state_Transition', the role 'state_Transition33' has cardinality 0..*, and from 'state_Constraint', the role 'state_Constraint' has cardinality 0..*.
+An association connects 'state_Behaviour' and 'state_Transition'. From 'state_Behaviour', the role 'state_Behaviour36' has cardinality 0..*, and from 'state_Transition', the role 'state_Transition35' has cardinality 0..*.
+An association connects 'state_Constraint' and 'state_OpaqueExpression'. From 'state_Constraint', the role 'state_Constraint38' has cardinality 0..*, and from 'state_OpaqueExpression', the role 'state_OpaqueExpression' has cardinality 0..*.
+An association connects 'state_Event' and 'state_Trigger'. From 'state_Event', the role 'state_Event' has cardinality 0..*, and from 'state_Trigger', the role 'state_Trigger40' has cardinality 0..*.
+An association connects 'state_NamedElement' and 'state_StateModel'. From 'state_NamedElement', the role 'state_NamedElement' has cardinality 0..*, and from 'state_StateModel', the role 'state_StateModel' has cardinality 0..*.

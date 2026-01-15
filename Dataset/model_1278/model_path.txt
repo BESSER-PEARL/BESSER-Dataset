@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/SE-at-VGU/org.vgu.se.ocl/model/ocl.ecore

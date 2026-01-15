@@ -1,0 +1,204 @@
+The domain model 'mtl' describes the core structural elements and their relationships within the system.
+
+The model defines 39 main class(es).
+
+'Documentation' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_QueryInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_InitSection' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_TemplateInvocation' represents an important domain concept.
+It has one attribute: 'super', which is of type bool.
+
+'mtl_ParameterDocumentation' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_TemplateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_TypedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_Macro' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_DocumentedElement' represents an important domain concept.
+It has one attribute: 'deprecated', which is of type bool.
+
+'mtl_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_TraceBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_IfBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'utilities_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_MacroInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_ForBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_LetBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_FileBlock' represents an important domain concept.
+It has one attribute: 'openMode', which is of type str.
+
+'mtl_CommentBody' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'endPosition', which is of type int; 'startPosition', which is of type int.
+
+'DocumentedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_ModuleElement' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_Module' represents an important domain concept.
+It has the following attributes: 'endHeaderPosition', which is of type int; 'startHeaderPosition', which is of type int.
+
+'mtl_ProtectedAreaBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_ModuleElementDocumentation' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'mtl_Template' represents an important domain concept.
+It has one attribute: 'main', which is of type bool.
+
+'mtl_ModuleDocumentation' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'author', which is of type str; 'since', which is of type str.
+
+'mtl_Documentation' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityKind' defines the following possible values: 'Public', 'Protected', 'Private'.
+The enumeration 'OpenModeKind' defines the following possible values: 'OverWrite', 'Append'.
+
+The model also captures inheritance relationships between classes.
+The class 'mtl_Module' is a specialization of 'EPackage'.
+The class 'mtl_Module' is a specialization of 'DocumentedElement'.
+The class 'mtl_ModuleElement' is a specialization of 'ENamedElement'.
+The class 'mtl_ModuleElement' is a specialization of 'utilities_ASTNode'.
+The class 'mtl_TemplateExpression' is a specialization of 'OCLExpression'.
+The class 'mtl_Block' is a specialization of 'TemplateExpression'.
+The class 'mtl_InitSection' is a specialization of 'ASTNode'.
+The class 'mtl_Template' is a specialization of 'Block'.
+The class 'mtl_Template' is a specialization of 'ModuleElement'.
+The class 'mtl_Template' is a specialization of 'DocumentedElement'.
+The class 'mtl_TemplateInvocation' is a specialization of 'TemplateExpression'.
+The class 'mtl_Query' is a specialization of 'ModuleElement'.
+The class 'mtl_Query' is a specialization of 'DocumentedElement'.
+The class 'mtl_QueryInvocation' is a specialization of 'TemplateExpression'.
+The class 'mtl_ProtectedAreaBlock' is a specialization of 'Block'.
+The class 'mtl_ForBlock' is a specialization of 'Block'.
+The class 'mtl_IfBlock' is a specialization of 'Block'.
+The class 'mtl_LetBlock' is a specialization of 'Block'.
+The class 'mtl_FileBlock' is a specialization of 'Block'.
+The class 'mtl_TraceBlock' is a specialization of 'Block'.
+The class 'mtl_Macro' is a specialization of 'Block'.
+The class 'mtl_Macro' is a specialization of 'ModuleElement'.
+The class 'mtl_Macro' is a specialization of 'DocumentedElement'.
+The class 'mtl_MacroInvocation' is a specialization of 'TemplateExpression'.
+The class 'mtl_Comment' is a specialization of 'ModuleElement'.
+The class 'mtl_Documentation' is a specialization of 'Comment'.
+The class 'mtl_ModuleDocumentation' is a specialization of 'Documentation'.
+The class 'mtl_ModuleElementDocumentation' is a specialization of 'Documentation'.
+The class 'mtl_ParameterDocumentation' is a specialization of 'Comment'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mtl_TypedModel' and 'mtl_Module'. From 'mtl_TypedModel', the role 'mtl_TypedModel' has cardinality 0..*, and from 'mtl_Module', the role 'mtl_Module' has cardinality 0..*.
+An association connects 'mtl_Module' and 'mtl_Module'. From 'mtl_Module', the role 'mtl_Module3' has cardinality 0..*, and from 'mtl_Module', the role 'mtl_Module1' has cardinality 0..*.
+An association connects 'mtl_Module' and 'mtl_Module'. From 'mtl_Module', the role 'mtl_Module6' has cardinality 0..*, and from 'mtl_Module', the role 'mtl_Module4' has cardinality 0..*.
+An association connects 'mtl_Module' and 'mtl_ModuleElement'. From 'mtl_Module', the role 'mtl_Module8' has cardinality 0..*, and from 'mtl_ModuleElement', the role 'mtl_ModuleElement' has cardinality 0..*.
+An association connects 'mtl_InitSection' and 'mtl_Block'. From 'mtl_InitSection', the role 'mtl_InitSection' has cardinality 0..*, and from 'mtl_Block', the role 'mtl_Block' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_Block'. From 'OCLExpression', the role 'OCLExpression' has cardinality 0..*, and from 'mtl_Block', the role 'mtl_Block11' has cardinality 0..*.
+An association connects 'Variable' and 'mtl_InitSection'. From 'Variable', the role 'Variable' has cardinality 0..*, and from 'mtl_InitSection', the role 'mtl_InitSection13' has cardinality 0..*.
+An association connects 'mtl_Template' and 'mtl_Template'. From 'mtl_Template', the role 'mtl_Template14' has cardinality 0..*, and from 'mtl_Template', the role 'mtl_Template' has cardinality 0..*.
+An association connects 'Variable' and 'mtl_Template'. From 'Variable', the role 'Variable18' has cardinality 0..*, and from 'mtl_Template', the role 'mtl_Template17' has cardinality 0..*.
+An association connects 'mtl_Template' and 'OCLExpression'. From 'mtl_Template', the role 'mtl_Template20' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression21' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_Template'. From 'OCLExpression', the role 'OCLExpression24' has cardinality 0..*, and from 'mtl_Template', the role 'mtl_Template23' has cardinality 0..*.
+An association connects 'mtl_Template' and 'mtl_TemplateInvocation'. From 'mtl_Template', the role 'mtl_Template26' has cardinality 0..*, and from 'mtl_TemplateInvocation', the role 'mtl_TemplateInvocation' has cardinality 0..*.
+An association connects 'mtl_TemplateInvocation' and 'OCLExpression'. From 'mtl_TemplateInvocation', the role 'mtl_TemplateInvocation28' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression29' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_TemplateInvocation'. From 'OCLExpression', the role 'OCLExpression32' has cardinality 0..*, and from 'mtl_TemplateInvocation', the role 'mtl_TemplateInvocation31' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_TemplateInvocation'. From 'OCLExpression', the role 'OCLExpression35' has cardinality 0..*, and from 'mtl_TemplateInvocation', the role 'mtl_TemplateInvocation34' has cardinality 0..*.
+An association connects 'mtl_TemplateInvocation' and 'OCLExpression'. From 'mtl_TemplateInvocation', the role 'mtl_TemplateInvocation37' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression38' has cardinality 0..*.
+An association connects 'mtl_Query' and 'Variable'. From 'mtl_Query', the role 'mtl_Query' has cardinality 0..*, and from 'Variable', the role 'Variable40' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_Query'. From 'OCLExpression', the role 'OCLExpression43' has cardinality 0..*, and from 'mtl_Query', the role 'mtl_Query42' has cardinality 0..*.
+An association connects 'mtl_Query' and 'mtl_EClassifier'. From 'mtl_Query', the role 'mtl_Query45' has cardinality 0..*, and from 'mtl_EClassifier', the role 'mtl_EClassifier' has cardinality 0..*.
+An association connects 'mtl_Query' and 'mtl_QueryInvocation'. From 'mtl_Query', the role 'mtl_Query47' has cardinality 0..*, and from 'mtl_QueryInvocation', the role 'mtl_QueryInvocation' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_QueryInvocation'. From 'OCLExpression', the role 'OCLExpression50' has cardinality 0..*, and from 'mtl_QueryInvocation', the role 'mtl_QueryInvocation49' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_ProtectedAreaBlock'. From 'OCLExpression', the role 'OCLExpression52' has cardinality 0..*, and from 'mtl_ProtectedAreaBlock', the role 'mtl_ProtectedAreaBlock' has cardinality 0..*.
+An association connects 'mtl_ForBlock' and 'Variable'. From 'mtl_ForBlock', the role 'mtl_ForBlock' has cardinality 0..*, and from 'Variable', the role 'Variable54' has cardinality 0..*.
+An association connects 'mtl_ForBlock' and 'OCLExpression'. From 'mtl_ForBlock', the role 'mtl_ForBlock56' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression57' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_ForBlock'. From 'OCLExpression', the role 'OCLExpression60' has cardinality 0..*, and from 'mtl_ForBlock', the role 'mtl_ForBlock59' has cardinality 0..*.
+An association connects 'mtl_ForBlock' and 'OCLExpression'. From 'mtl_ForBlock', the role 'mtl_ForBlock62' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression63' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_ForBlock'. From 'OCLExpression', the role 'OCLExpression66' has cardinality 0..*, and from 'mtl_ForBlock', the role 'mtl_ForBlock65' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_ForBlock'. From 'OCLExpression', the role 'OCLExpression69' has cardinality 0..*, and from 'mtl_ForBlock', the role 'mtl_ForBlock68' has cardinality 0..*.
+An association connects 'mtl_IfBlock' and 'OCLExpression'. From 'mtl_IfBlock', the role 'mtl_IfBlock' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression71' has cardinality 0..*.
+An association connects 'mtl_IfBlock' and 'mtl_Block'. From 'mtl_IfBlock', the role 'mtl_IfBlock73' has cardinality 0..*, and from 'mtl_Block', the role 'mtl_Block74' has cardinality 0..*.
+An association connects 'mtl_IfBlock' and 'mtl_IfBlock'. From 'mtl_IfBlock', the role 'mtl_IfBlock77' has cardinality 0..*, and from 'mtl_IfBlock', the role 'mtl_IfBlock75' has cardinality 0..*.
+An association connects 'mtl_LetBlock' and 'mtl_LetBlock'. From 'mtl_LetBlock', the role 'mtl_LetBlock' has cardinality 0..*, and from 'mtl_LetBlock', the role 'mtl_LetBlock78' has cardinality 0..*.
+An association connects 'mtl_Block' and 'mtl_LetBlock'. From 'mtl_Block', the role 'mtl_Block82' has cardinality 0..*, and from 'mtl_LetBlock', the role 'mtl_LetBlock81' has cardinality 0..*.
+An association connects 'mtl_LetBlock' and 'Variable'. From 'mtl_LetBlock', the role 'mtl_LetBlock84' has cardinality 0..*, and from 'Variable', the role 'Variable85' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_FileBlock'. From 'OCLExpression', the role 'OCLExpression87' has cardinality 0..*, and from 'mtl_FileBlock', the role 'mtl_FileBlock' has cardinality 0..*.
+An association connects 'mtl_FileBlock' and 'OCLExpression'. From 'mtl_FileBlock', the role 'mtl_FileBlock89' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression90' has cardinality 0..*.
+An association connects 'mtl_FileBlock' and 'OCLExpression'. From 'mtl_FileBlock', the role 'mtl_FileBlock92' has cardinality 0..*, and from 'OCLExpression', the role 'OCLExpression93' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_TraceBlock'. From 'OCLExpression', the role 'OCLExpression95' has cardinality 0..*, and from 'mtl_TraceBlock', the role 'mtl_TraceBlock' has cardinality 0..*.
+An association connects 'mtl_Macro' and 'Variable'. From 'mtl_Macro', the role 'mtl_Macro' has cardinality 0..*, and from 'Variable', the role 'Variable97' has cardinality 0..*.
+An association connects 'mtl_Macro' and 'mtl_EClassifier'. From 'mtl_Macro', the role 'mtl_Macro99' has cardinality 0..*, and from 'mtl_EClassifier', the role 'mtl_EClassifier100' has cardinality 0..*.
+An association connects 'mtl_MacroInvocation' and 'mtl_Macro'. From 'mtl_MacroInvocation', the role 'mtl_MacroInvocation' has cardinality 0..*, and from 'mtl_Macro', the role 'mtl_Macro102' has cardinality 0..*.
+An association connects 'OCLExpression' and 'mtl_MacroInvocation'. From 'OCLExpression', the role 'OCLExpression105' has cardinality 0..*, and from 'mtl_MacroInvocation', the role 'mtl_MacroInvocation104' has cardinality 0..*.
+An association connects 'mtl_EPackage' and 'mtl_TypedModel'. From 'mtl_EPackage', the role 'mtl_EPackage' has cardinality 0..*, and from 'mtl_TypedModel', the role 'mtl_TypedModel107' has cardinality 0..*.
+An association connects 'mtl_Comment' and 'mtl_CommentBody'. From 'mtl_Comment', the role 'mtl_Comment' has cardinality 0..*, and from 'mtl_CommentBody', the role 'mtl_CommentBody' has cardinality 0..*.
+An association connects 'mtl_Documentation' and 'mtl_DocumentedElement'. From 'mtl_Documentation', the role 'documentation' has cardinality 0..*, and from 'mtl_DocumentedElement', the role 'DocumentedElement' has cardinality 0..*.
+An association connects 'mtl_DocumentedElement' and 'mtl_Documentation'. From 'mtl_DocumentedElement', the role 'documentedElement' has cardinality 0..*, and from 'mtl_Documentation', the role 'Documentation' has cardinality 0..*.
+An association connects 'mtl_ModuleElementDocumentation' and 'mtl_ParameterDocumentation'. From 'mtl_ModuleElementDocumentation', the role 'mtl_ModuleElementDocumentation' has cardinality 0..*, and from 'mtl_ParameterDocumentation', the role 'mtl_ParameterDocumentation' has cardinality 0..*.

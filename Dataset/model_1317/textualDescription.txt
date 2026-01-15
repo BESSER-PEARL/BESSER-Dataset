@@ -1,0 +1,73 @@
+The domain model 'stateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'stateMachine_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_VarName' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'stateMachine_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Command' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_Type' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'stateMachine_FloatType' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Condition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_Modifier' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'stateMachine_DeclaredParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Test' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_model' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Visibility' defines the following possible values: 'Final', 'Initial'.
+
+The model also captures inheritance relationships between classes.
+The class 'stateMachine_StringType' is a specialization of 'Type'.
+The class 'stateMachine_FloatType' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_model'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine' has cardinality 0..*, and from 'stateMachine_model', the role 'stateMachine_model' has cardinality 0..*.
+An association connects 'stateMachine_Event' and 'stateMachine_StateMachine'. From 'stateMachine_Event', the role 'stateMachine_Event' has cardinality 0..*, and from 'stateMachine_StateMachine', the role 'stateMachine_StateMachine2' has cardinality 0..*.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_Command'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine4' has cardinality 0..*, and from 'stateMachine_Command', the role 'stateMachine_Command' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_StateMachine'. From 'stateMachine_State', the role 'stateMachine_State' has cardinality 0..*, and from 'stateMachine_StateMachine', the role 'stateMachine_StateMachine6' has cardinality 0..*.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_State'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine8' has cardinality 0..*, and from 'stateMachine_State', the role 'stateMachine_State9' has cardinality 0..*.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_State'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine11' has cardinality 0..*, and from 'stateMachine_State', the role 'stateMachine_State12' has cardinality 0..*.
+An association connects 'stateMachine_Type' and 'stateMachine_Event'. From 'stateMachine_Type', the role 'stateMachine_Type' has cardinality 0..*, and from 'stateMachine_Event', the role 'stateMachine_Event14' has cardinality 0..*.
+An association connects 'stateMachine_Event' and 'stateMachine_Test'. From 'stateMachine_Event', the role 'stateMachine_Event16' has cardinality 0..*, and from 'stateMachine_Test', the role 'stateMachine_Test' has cardinality 0..*.
+An association connects 'stateMachine_Type' and 'stateMachine_Test'. From 'stateMachine_Type', the role 'stateMachine_Type19' has cardinality 0..*, and from 'stateMachine_Test', the role 'stateMachine_Test18' has cardinality 0..*.
+An association connects 'stateMachine_DeclaredParameter' and 'stateMachine_Test'. From 'stateMachine_DeclaredParameter', the role 'stateMachine_DeclaredParameter' has cardinality 0..*, and from 'stateMachine_Test', the role 'stateMachine_Test21' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_Command'. From 'stateMachine_State', the role 'stateMachine_State23' has cardinality 0..*, and from 'stateMachine_Command', the role 'stateMachine_Command24' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_Transition'. From 'stateMachine_State', the role 'stateMachine_State26' has cardinality 0..*, and from 'stateMachine_Transition', the role 'stateMachine_Transition' has cardinality 0..*.
+An association connects 'stateMachine_Event' and 'stateMachine_Transition'. From 'stateMachine_Event', the role 'stateMachine_Event29' has cardinality 0..*, and from 'stateMachine_Transition', the role 'stateMachine_Transition28' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_Transition'. From 'stateMachine_State', the role 'stateMachine_State32' has cardinality 0..*, and from 'stateMachine_Transition', the role 'stateMachine_Transition31' has cardinality 0..*.
+An association connects 'stateMachine_Condition' and 'stateMachine_Transition'. From 'stateMachine_Condition', the role 'stateMachine_Condition' has cardinality 0..*, and from 'stateMachine_Transition', the role 'stateMachine_Transition34' has cardinality 0..*.
+An association connects 'stateMachine_VarName' and 'stateMachine_DeclaredParameter'. From 'stateMachine_VarName', the role 'stateMachine_VarName' has cardinality 0..*, and from 'stateMachine_DeclaredParameter', the role 'stateMachine_DeclaredParameter36' has cardinality 0..*.

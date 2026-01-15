@@ -1,0 +1,53 @@
+The domain model 'lts2' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'lts2_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'TransitionalState' represents an important domain concept.
+It does not declare any attributes.
+
+'lts2_LTSGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'lts2_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'UseCaseStep' represents an important domain concept.
+It does not declare any attributes.
+
+'lts2_State' represents an important domain concept.
+It does not declare any attributes.
+
+'lts2_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'lts2_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'lts2_TransitionalState' represents an important domain concept.
+It does not declare any attributes.
+
+'lts2_AbortState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'lts2_InitialState' is a specialization of 'TransitionalState'.
+The class 'lts2_FinalState' is a specialization of 'State'.
+The class 'lts2_TransitionalState' is a specialization of 'State'.
+The class 'lts2_AbortState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'lts2_InitialState' and 'lts2_StateMachine'. From 'lts2_InitialState', the role 'lts2_InitialState' has cardinality 0..*, and from 'lts2_StateMachine', the role 'lts2_StateMachine' has cardinality 0..*.
+An association connects 'lts2_TransitionalState' and 'lts2_StateMachine'. From 'lts2_TransitionalState', the role 'lts2_TransitionalState' has cardinality 0..*, and from 'lts2_StateMachine', the role 'lts2_StateMachine2' has cardinality 0..*.
+An association connects 'lts2_StateMachine' and 'lts2_FinalState'. From 'lts2_StateMachine', the role 'lts2_StateMachine4' has cardinality 0..*, and from 'lts2_FinalState', the role 'lts2_FinalState' has cardinality 0..*.
+An association connects 'lts2_AbortState' and 'lts2_StateMachine'. From 'lts2_AbortState', the role 'lts2_AbortState' has cardinality 0..*, and from 'lts2_StateMachine', the role 'lts2_StateMachine6' has cardinality 0..*.
+An association connects 'lts2_TransitionalState' and 'lts2_Transition'. From 'lts2_TransitionalState', the role 'sourceState' has cardinality 0..*, and from 'lts2_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'lts2_State' and 'lts2_Transition'. From 'lts2_State', the role 'lts2_State' has cardinality 0..*, and from 'lts2_Transition', the role 'lts2_Transition' has cardinality 0..*.
+An association connects 'UseCaseStep' and 'lts2_Transition'. From 'UseCaseStep', the role 'UseCaseStep' has cardinality 0..*, and from 'lts2_Transition', the role 'lts2_Transition10' has cardinality 0..*.
+An association connects 'lts2_Transition' and 'lts2_TransitionalState'. From 'lts2_Transition', the role 'transitions' has cardinality 0..*, and from 'lts2_TransitionalState', the role 'TransitionalState' has cardinality 0..*.
+An association connects 'lts2_LTSGenerator' and 'lts2_StateMachine'. From 'lts2_LTSGenerator', the role 'lts2_LTSGenerator' has cardinality 0..*, and from 'lts2_StateMachine', the role 'lts2_StateMachine13' has cardinality 0..*.

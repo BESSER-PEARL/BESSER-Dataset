@@ -1,0 +1,102 @@
+The domain model 'qvtimperativecs' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'DomainCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_QueryCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_ImperativePredicateOrAssignmentCS' represents an important domain concept.
+It has one attribute: 'isAccumulate', which is of type bool.
+
+'qvtimperativecs_ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_MappingSequenceCS' represents an important domain concept.
+It does not declare any attributes.
+
+'RootPackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_VariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_MappingCallCS' represents an important domain concept.
+It has one attribute: 'isInfinite', which is of type bool.
+
+'qvtimperativecs_MappingStatementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_TopLevelCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_MappingCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_TransformationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingStatementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_ImperativeDomainCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_MappingCallBindingCS' represents an important domain concept.
+It has one attribute: 'isPolled', which is of type bool.
+
+'ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtimperativecs_MappingLoopCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PredicateOrAssignmentCS' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMappingCS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'qvtimperativecs_ImperativeDomainCS' is a specialization of 'DomainCS'.
+The class 'qvtimperativecs_ImperativePredicateOrAssignmentCS' is a specialization of 'PredicateOrAssignmentCS'.
+The class 'qvtimperativecs_MappingCS' is a specialization of 'AbstractMappingCS'.
+The class 'qvtimperativecs_MappingCallBindingCS' is a specialization of 'ExpCS'.
+The class 'qvtimperativecs_MappingCallCS' is a specialization of 'MappingStatementCS'.
+The class 'qvtimperativecs_MappingLoopCS' is a specialization of 'MappingStatementCS'.
+The class 'qvtimperativecs_MappingSequenceCS' is a specialization of 'MappingStatementCS'.
+The class 'qvtimperativecs_MappingStatementCS' is a specialization of 'ModelElementCS'.
+The class 'qvtimperativecs_TopLevelCS' is a specialization of 'RootPackageCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'qvtimperativecs_ImperativeDomainCS' and 'qvtimperativecs_PathNameCS'. From 'qvtimperativecs_ImperativeDomainCS', the role 'qvtimperativecs_ImperativeDomainCS' has cardinality 0..*, and from 'qvtimperativecs_PathNameCS', the role 'qvtimperativecs_PathNameCS' has cardinality 0..*.
+An association connects 'qvtimperativecs_PathNameCS' and 'qvtimperativecs_ImperativeDomainCS'. From 'qvtimperativecs_PathNameCS', the role 'qvtimperativecs_PathNameCS3' has cardinality 0..*, and from 'qvtimperativecs_ImperativeDomainCS', the role 'qvtimperativecs_ImperativeDomainCS2' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingCS' and 'qvtimperativecs_MappingSequenceCS'. From 'qvtimperativecs_MappingCS', the role 'qvtimperativecs_MappingCS' has cardinality 0..*, and from 'qvtimperativecs_MappingSequenceCS', the role 'qvtimperativecs_MappingSequenceCS' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingCS' and 'qvtimperativecs_PathNameCS'. From 'qvtimperativecs_MappingCS', the role 'qvtimperativecs_MappingCS6' has cardinality 0..*, and from 'qvtimperativecs_PathNameCS', the role 'qvtimperativecs_PathNameCS7' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingCallBindingCS' and 'qvtimperativecs_ExpCS'. From 'qvtimperativecs_MappingCallBindingCS', the role 'qvtimperativecs_MappingCallBindingCS' has cardinality 0..*, and from 'qvtimperativecs_ExpCS', the role 'qvtimperativecs_ExpCS' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingCallCS' and 'qvtimperativecs_MappingCallBindingCS'. From 'qvtimperativecs_MappingCallCS', the role 'MappingCallCS' has cardinality 0..*, and from 'qvtimperativecs_MappingCallBindingCS', the role 'ownedBindings' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingCallBindingCS' and 'qvtimperativecs_Variable'. From 'qvtimperativecs_MappingCallBindingCS', the role 'qvtimperativecs_MappingCallBindingCS11' has cardinality 0..*, and from 'qvtimperativecs_Variable', the role 'qvtimperativecs_Variable' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingCallCS' and 'qvtimperativecs_MappingCallBindingCS'. From 'qvtimperativecs_MappingCallCS', the role 'owningMappingCall' has cardinality 0..*, and from 'qvtimperativecs_MappingCallBindingCS', the role 'MappingCallBindingCS' has cardinality 0..*.
+An association connects 'qvtimperativecs_PathNameCS' and 'qvtimperativecs_MappingCallCS'. From 'qvtimperativecs_PathNameCS', the role 'qvtimperativecs_PathNameCS14' has cardinality 0..*, and from 'qvtimperativecs_MappingCallCS', the role 'qvtimperativecs_MappingCallCS' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingCallCS' and 'qvtimperativecs_Mapping'. From 'qvtimperativecs_MappingCallCS', the role 'qvtimperativecs_MappingCallCS16' has cardinality 0..*, and from 'qvtimperativecs_Mapping', the role 'qvtimperativecs_Mapping' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingLoopCS' and 'qvtimperativecs_VariableCS'. From 'qvtimperativecs_MappingLoopCS', the role 'qvtimperativecs_MappingLoopCS' has cardinality 0..*, and from 'qvtimperativecs_VariableCS', the role 'qvtimperativecs_VariableCS' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingLoopCS' and 'qvtimperativecs_ExpCS'. From 'qvtimperativecs_MappingLoopCS', the role 'qvtimperativecs_MappingLoopCS19' has cardinality 0..*, and from 'qvtimperativecs_ExpCS', the role 'qvtimperativecs_ExpCS20' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingLoopCS' and 'qvtimperativecs_MappingSequenceCS'. From 'qvtimperativecs_MappingLoopCS', the role 'qvtimperativecs_MappingLoopCS22' has cardinality 0..*, and from 'qvtimperativecs_MappingSequenceCS', the role 'qvtimperativecs_MappingSequenceCS23' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingSequenceCS' and 'qvtimperativecs_MappingStatementCS'. From 'qvtimperativecs_MappingSequenceCS', the role 'qvtimperativecs_MappingSequenceCS25' has cardinality 0..*, and from 'qvtimperativecs_MappingStatementCS', the role 'qvtimperativecs_MappingStatementCS' has cardinality 0..*.
+An association connects 'qvtimperativecs_TransformationCS' and 'qvtimperativecs_TopLevelCS'. From 'qvtimperativecs_TransformationCS', the role 'qvtimperativecs_TransformationCS' has cardinality 0..*, and from 'qvtimperativecs_TopLevelCS', the role 'qvtimperativecs_TopLevelCS' has cardinality 0..*.
+An association connects 'qvtimperativecs_QueryCS' and 'qvtimperativecs_TopLevelCS'. From 'qvtimperativecs_QueryCS', the role 'qvtimperativecs_QueryCS' has cardinality 0..*, and from 'qvtimperativecs_TopLevelCS', the role 'qvtimperativecs_TopLevelCS28' has cardinality 0..*.
+An association connects 'qvtimperativecs_MappingCS' and 'qvtimperativecs_TopLevelCS'. From 'qvtimperativecs_MappingCS', the role 'qvtimperativecs_MappingCS31' has cardinality 0..*, and from 'qvtimperativecs_TopLevelCS', the role 'qvtimperativecs_TopLevelCS30' has cardinality 0..*.

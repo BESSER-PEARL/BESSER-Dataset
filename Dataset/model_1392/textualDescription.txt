@@ -1,0 +1,180 @@
+The domain model 'capellacommon' describes the core structural elements and their relationships within the system.
+
+The model defines 40 main class(es).
+
+'capellacommon_EntryPointPseudoState' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_TimeEvent' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'time', which is of type str.
+
+'capellacommon_ForkPseudoState' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_Mode' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Structure' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_StateTransition' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'triggerDescription', which is of type str.
+
+'capellacommon_JoinPseudoState' represents an important domain concept.
+It does not declare any attributes.
+
+'CapellaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_TraceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_DeepHistoryPseudoState' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_ChangeEvent' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'AbstractEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_State' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_InitialPseudoState' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'StateEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_AbstractEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_TerminatePseudoState' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_GenericTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_AbstractFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_ShallowHistoryPseudoState' represents an important domain concept.
+It does not declare any attributes.
+
+'Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_AbstractCapabilityPkg' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_FunctionalChain' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_StateEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_AbstractCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'IState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_ExitPointPseudoState' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_ChoicePseudoState' represents an important domain concept.
+It does not declare any attributes.
+
+'capellacommon_Region' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ChangeEventKind' defines a single possible value: 'WHEN'.
+The enumeration 'TransitionKind' defines the following possible values: 'local', 'external', 'internal'.
+The enumeration 'TimeEventKind' defines the following possible values: 'AFTER', 'AT'.
+
+The model also captures inheritance relationships between classes.
+The class 'capellacommon_AbstractCapabilityPkg' is a specialization of 'Structure'.
+The class 'capellacommon_GenericTrace' is a specialization of 'CapellaElement'.
+The class 'capellacommon_GenericTrace' is a specialization of 'TraceableElement'.
+The class 'capellacommon_GenericTrace' is a specialization of 'ModelElement'.
+The class 'capellacommon_StateMachine' is a specialization of 'CapellaElement'.
+The class 'capellacommon_StateMachine' is a specialization of 'AbstractBehavior'.
+The class 'capellacommon_Region' is a specialization of 'NamedElement'.
+The class 'capellacommon_State' is a specialization of 'AbstractState'.
+The class 'capellacommon_Mode' is a specialization of 'State'.
+The class 'capellacommon_FinalState' is a specialization of 'State'.
+The class 'capellacommon_AbstractState' is a specialization of 'NamedElement'.
+The class 'capellacommon_AbstractState' is a specialization of 'IState'.
+The class 'capellacommon_StateTransition' is a specialization of 'NamedElement'.
+The class 'capellacommon_StateTransition' is a specialization of 'CapellaElement'.
+The class 'capellacommon_StateTransition' is a specialization of 'ModelElement'.
+The class 'capellacommon_Pseudostate' is a specialization of 'AbstractState'.
+The class 'capellacommon_InitialPseudoState' is a specialization of 'Pseudostate'.
+The class 'capellacommon_JoinPseudoState' is a specialization of 'Pseudostate'.
+The class 'capellacommon_ForkPseudoState' is a specialization of 'Pseudostate'.
+The class 'capellacommon_ChoicePseudoState' is a specialization of 'Pseudostate'.
+The class 'capellacommon_TerminatePseudoState' is a specialization of 'Pseudostate'.
+The class 'capellacommon_ShallowHistoryPseudoState' is a specialization of 'Pseudostate'.
+The class 'capellacommon_DeepHistoryPseudoState' is a specialization of 'Pseudostate'.
+The class 'capellacommon_EntryPointPseudoState' is a specialization of 'Pseudostate'.
+The class 'capellacommon_ExitPointPseudoState' is a specialization of 'Pseudostate'.
+The class 'capellacommon_StateEvent' is a specialization of 'NamedElement'.
+The class 'capellacommon_StateEvent' is a specialization of 'AbstractEvent'.
+The class 'capellacommon_ChangeEvent' is a specialization of 'StateEvent'.
+The class 'capellacommon_TimeEvent' is a specialization of 'StateEvent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'capellacommon_GenericTrace' and 'capellacommon_TraceableElement'. From 'capellacommon_GenericTrace', the role 'capellacommon_GenericTrace' has cardinality 0..*, and from 'capellacommon_TraceableElement', the role 'capellacommon_TraceableElement' has cardinality 0..*.
+An association connects 'capellacommon_TraceableElement' and 'capellacommon_GenericTrace'. From 'capellacommon_TraceableElement', the role 'capellacommon_TraceableElement3' has cardinality 0..*, and from 'capellacommon_GenericTrace', the role 'capellacommon_GenericTrace2' has cardinality 0..*.
+An association connects 'capellacommon_StateMachine' and 'capellacommon_Region'. From 'capellacommon_StateMachine', the role 'capellacommon_StateMachine' has cardinality 0..*, and from 'capellacommon_Region', the role 'capellacommon_Region' has cardinality 0..*.
+An association connects 'capellacommon_Region' and 'capellacommon_AbstractState'. From 'capellacommon_Region', the role 'capellacommon_Region6' has cardinality 0..*, and from 'capellacommon_AbstractState', the role 'capellacommon_AbstractState' has cardinality 0..*.
+An association connects 'capellacommon_StateTransition' and 'capellacommon_Region'. From 'capellacommon_StateTransition', the role 'capellacommon_StateTransition' has cardinality 0..*, and from 'capellacommon_Region', the role 'capellacommon_Region8' has cardinality 0..*.
+An association connects 'capellacommon_Region' and 'capellacommon_AbstractState'. From 'capellacommon_Region', the role 'capellacommon_Region10' has cardinality 0..*, and from 'capellacommon_AbstractState', the role 'capellacommon_AbstractState11' has cardinality 0..*.
+An association connects 'capellacommon_State' and 'capellacommon_Region'. From 'capellacommon_State', the role 'capellacommon_State' has cardinality 0..*, and from 'capellacommon_Region', the role 'capellacommon_Region13' has cardinality 0..*.
+An association connects 'capellacommon_State' and 'capellacommon_AbstractFunction'. From 'capellacommon_State', the role 'capellacommon_State15' has cardinality 0..*, and from 'capellacommon_AbstractFunction', the role 'capellacommon_AbstractFunction' has cardinality 0..*.
+An association connects 'capellacommon_State' and 'capellacommon_FunctionalChain'. From 'capellacommon_State', the role 'capellacommon_State17' has cardinality 0..*, and from 'capellacommon_FunctionalChain', the role 'capellacommon_FunctionalChain' has cardinality 0..*.
+An association connects 'capellacommon_AbstractCapability' and 'capellacommon_State'. From 'capellacommon_AbstractCapability', the role 'capellacommon_AbstractCapability' has cardinality 0..*, and from 'capellacommon_State', the role 'capellacommon_State19' has cardinality 0..*.
+An association connects 'capellacommon_AbstractEvent' and 'capellacommon_State'. From 'capellacommon_AbstractEvent', the role 'capellacommon_AbstractEvent' has cardinality 0..*, and from 'capellacommon_State', the role 'capellacommon_State21' has cardinality 0..*.
+An association connects 'capellacommon_AbstractState' and 'capellacommon_AbstractState'. From 'capellacommon_AbstractState', the role 'capellacommon_AbstractState24' has cardinality 0..*, and from 'capellacommon_AbstractState', the role 'capellacommon_AbstractState22' has cardinality 0..*.
+An association connects 'capellacommon_Constraint' and 'capellacommon_StateTransition'. From 'capellacommon_Constraint', the role 'capellacommon_Constraint' has cardinality 0..*, and from 'capellacommon_StateTransition', the role 'capellacommon_StateTransition26' has cardinality 0..*.
+An association connects 'capellacommon_StateTransition' and 'capellacommon_AbstractState'. From 'capellacommon_StateTransition', the role 'capellacommon_StateTransition28' has cardinality 0..*, and from 'capellacommon_AbstractState', the role 'capellacommon_AbstractState29' has cardinality 0..*.
+An association connects 'capellacommon_AbstractState' and 'capellacommon_StateTransition'. From 'capellacommon_AbstractState', the role 'capellacommon_AbstractState32' has cardinality 0..*, and from 'capellacommon_StateTransition', the role 'capellacommon_StateTransition31' has cardinality 0..*.
+An association connects 'capellacommon_StateTransition' and 'capellacommon_AbstractEvent'. From 'capellacommon_StateTransition', the role 'capellacommon_StateTransition34' has cardinality 0..*, and from 'capellacommon_AbstractEvent', the role 'capellacommon_AbstractEvent35' has cardinality 0..*.
+An association connects 'capellacommon_AbstractEvent' and 'capellacommon_StateTransition'. From 'capellacommon_AbstractEvent', the role 'capellacommon_AbstractEvent38' has cardinality 0..*, and from 'capellacommon_StateTransition', the role 'capellacommon_StateTransition37' has cardinality 0..*.
+An association connects 'capellacommon_StateTransition' and 'capellacommon_StateTransition'. From 'capellacommon_StateTransition', the role 'capellacommon_StateTransition41' has cardinality 0..*, and from 'capellacommon_StateTransition', the role 'capellacommon_StateTransition39' has cardinality 0..*.
+An association connects 'capellacommon_StateEvent' and 'capellacommon_Constraint'. From 'capellacommon_StateEvent', the role 'capellacommon_StateEvent' has cardinality 0..*, and from 'capellacommon_Constraint', the role 'capellacommon_Constraint43' has cardinality 0..*.

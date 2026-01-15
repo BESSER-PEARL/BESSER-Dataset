@@ -1,0 +1,30 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'model_Transition' represents an important domain concept.
+It has the following attributes: 'trigger', which is of type str; 'name', which is of type str.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FiniteStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'model_State' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'model_State' is a specialization of 'AbstractState'.
+The class 'model_FiniteStateMachine' is a specialization of 'AbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_AbstractState' and 'model_FiniteStateMachine'. From 'model_AbstractState', the role 'unnamed role' has cardinality 0..*, and from 'model_FiniteStateMachine', the role '1' has cardinality 0..*.
+An association connects 'model_Transition' and 'model_AbstractState'. From 'model_Transition', the role '4' has cardinality 0..*, and from 'model_AbstractState', the role '3' has cardinality 0..*.
+An association connects 'model_FiniteStateMachine' and 'model_AbstractState'. From 'model_FiniteStateMachine', the role 'model_FiniteStateMachine' has cardinality 0..*, and from 'model_AbstractState', the role 'model_AbstractState' has cardinality 0..*.
+An association connects 'model_FiniteStateMachine' and 'model_AbstractState'. From 'model_FiniteStateMachine', the role '7' has cardinality 0..*, and from 'model_AbstractState', the role '8' has cardinality 0..*.
+An association connects 'model_Transition' and 'model_AbstractState'. From 'model_Transition', the role '10' has cardinality 0..*, and from 'model_AbstractState', the role '11' has cardinality 0..*.
+An association connects 'model_AbstractState' and 'model_Transition'. From 'model_AbstractState', the role 'model_AbstractState13' has cardinality 0..*, and from 'model_Transition', the role 'model_Transition' has cardinality 0..*.

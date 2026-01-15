@@ -1,0 +1,208 @@
+The domain model 'qvtrelationcs' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'qvtrelationcs_TemplateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_TemplateVariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_RelationCS' represents an important domain concept.
+It has the following attributes: 'isTop', which is of type bool; 'isDefault', which is of type bool.
+
+'qvtrelationcs_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_TransformationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_ModelDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_QueryCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_DomainPatternCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_PropertyTemplateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'RootPackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_PatternCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_VarDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_VarDeclarationIdCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_CollectionTemplateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateVariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_KeyDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_PrimitiveTypeDomainCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_DomainCS' represents an important domain concept.
+It has the following attributes: 'isEnforce', which is of type bool; 'isReplace', which is of type bool; 'implementedBy', which is of type str; 'isCheckonly', which is of type bool.
+
+'qvtrelationcs_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_AbstractDomainCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_TopLevelCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_TypedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_TypedRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_PredicateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_ParamDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_ObjectTemplateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractDomainCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_DefaultValueCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_UnitCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_ElementTemplateCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtrelationcs_ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'qvtrelationcs_AbstractDomainCS' is a specialization of 'ModelElementCS'.
+The class 'qvtrelationcs_AbstractDomainCS' is a specialization of 'Nameable'.
+The class 'qvtrelationcs_CollectionTemplateCS' is a specialization of 'TemplateCS'.
+The class 'qvtrelationcs_DefaultValueCS' is a specialization of 'ModelElementCS'.
+The class 'qvtrelationcs_DomainCS' is a specialization of 'AbstractDomainCS'.
+The class 'qvtrelationcs_DomainPatternCS' is a specialization of 'ModelElementCS'.
+The class 'qvtrelationcs_ElementTemplateCS' is a specialization of 'TemplateVariableCS'.
+The class 'qvtrelationcs_KeyDeclCS' is a specialization of 'ModelElementCS'.
+The class 'qvtrelationcs_ModelDeclCS' is a specialization of 'NamedElementCS'.
+The class 'qvtrelationcs_ObjectTemplateCS' is a specialization of 'TemplateCS'.
+The class 'qvtrelationcs_ParamDeclarationCS' is a specialization of 'TypedElementCS'.
+The class 'qvtrelationcs_PatternCS' is a specialization of 'ModelElementCS'.
+The class 'qvtrelationcs_PredicateCS' is a specialization of 'ModelElementCS'.
+The class 'qvtrelationcs_PrimitiveTypeDomainCS' is a specialization of 'TemplateVariableCS'.
+The class 'qvtrelationcs_PrimitiveTypeDomainCS' is a specialization of 'AbstractDomainCS'.
+The class 'qvtrelationcs_PropertyTemplateCS' is a specialization of 'ModelElementCS'.
+The class 'qvtrelationcs_QueryCS' is a specialization of 'TypedElementCS'.
+The class 'qvtrelationcs_RelationCS' is a specialization of 'NamedElementCS'.
+The class 'qvtrelationcs_TemplateCS' is a specialization of 'ExpCS'.
+The class 'qvtrelationcs_TemplateCS' is a specialization of 'TemplateVariableCS'.
+The class 'qvtrelationcs_TemplateVariableCS' is a specialization of 'NamedElementCS'.
+The class 'qvtrelationcs_TopLevelCS' is a specialization of 'RootPackageCS'.
+The class 'qvtrelationcs_TransformationCS' is a specialization of 'ClassCS'.
+The class 'qvtrelationcs_UnitCS' is a specialization of 'ModelElementCS'.
+The class 'qvtrelationcs_VarDeclarationCS' is a specialization of 'ModelElementCS'.
+The class 'qvtrelationcs_VarDeclarationIdCS' is a specialization of 'NamedElementCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'qvtrelationcs_CollectionTemplateCS' and 'qvtrelationcs_TemplateVariableCS'. From 'qvtrelationcs_CollectionTemplateCS', the role 'qvtrelationcs_CollectionTemplateCS' has cardinality 0..*, and from 'qvtrelationcs_TemplateVariableCS', the role 'qvtrelationcs_TemplateVariableCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_CollectionTemplateCS' and 'qvtrelationcs_ElementTemplateCS'. From 'qvtrelationcs_CollectionTemplateCS', the role 'qvtrelationcs_CollectionTemplateCS2' has cardinality 0..*, and from 'qvtrelationcs_ElementTemplateCS', the role 'qvtrelationcs_ElementTemplateCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_DefaultValueCS' and 'qvtrelationcs_ExpCS'. From 'qvtrelationcs_DefaultValueCS', the role 'qvtrelationcs_DefaultValueCS' has cardinality 0..*, and from 'qvtrelationcs_ExpCS', the role 'qvtrelationcs_ExpCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_Variable' and 'qvtrelationcs_DefaultValueCS'. From 'qvtrelationcs_Variable', the role 'qvtrelationcs_Variable' has cardinality 0..*, and from 'qvtrelationcs_DefaultValueCS', the role 'qvtrelationcs_DefaultValueCS5' has cardinality 0..*.
+An association connects 'qvtrelationcs_DomainCS' and 'qvtrelationcs_TypedModel'. From 'qvtrelationcs_DomainCS', the role 'qvtrelationcs_DomainCS' has cardinality 0..*, and from 'qvtrelationcs_TypedModel', the role 'qvtrelationcs_TypedModel' has cardinality 0..*.
+An association connects 'qvtrelationcs_DomainPatternCS' and 'qvtrelationcs_DomainCS'. From 'qvtrelationcs_DomainPatternCS', the role 'qvtrelationcs_DomainPatternCS' has cardinality 0..*, and from 'qvtrelationcs_DomainCS', the role 'qvtrelationcs_DomainCS8' has cardinality 0..*.
+An association connects 'qvtrelationcs_DefaultValueCS' and 'qvtrelationcs_DomainCS'. From 'qvtrelationcs_DefaultValueCS', the role 'qvtrelationcs_DefaultValueCS11' has cardinality 0..*, and from 'qvtrelationcs_DomainCS', the role 'qvtrelationcs_DomainCS10' has cardinality 0..*.
+An association connects 'qvtrelationcs_DomainCS' and 'qvtrelationcs_ExpCS'. From 'qvtrelationcs_DomainCS', the role 'qvtrelationcs_DomainCS13' has cardinality 0..*, and from 'qvtrelationcs_ExpCS', the role 'qvtrelationcs_ExpCS14' has cardinality 0..*.
+An association connects 'qvtrelationcs_DomainPatternCS' and 'qvtrelationcs_TemplateCS'. From 'qvtrelationcs_DomainPatternCS', the role 'qvtrelationcs_DomainPatternCS16' has cardinality 0..*, and from 'qvtrelationcs_TemplateCS', the role 'qvtrelationcs_TemplateCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_Variable' and 'qvtrelationcs_ElementTemplateCS'. From 'qvtrelationcs_Variable', the role 'qvtrelationcs_Variable19' has cardinality 0..*, and from 'qvtrelationcs_ElementTemplateCS', the role 'qvtrelationcs_ElementTemplateCS18' has cardinality 0..*.
+An association connects 'qvtrelationcs_PathNameCS' and 'qvtrelationcs_KeyDeclCS'. From 'qvtrelationcs_PathNameCS', the role 'qvtrelationcs_PathNameCS' has cardinality 0..*, and from 'qvtrelationcs_KeyDeclCS', the role 'qvtrelationcs_KeyDeclCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_KeyDeclCS' and 'qvtrelationcs_Property'. From 'qvtrelationcs_KeyDeclCS', the role 'qvtrelationcs_KeyDeclCS22' has cardinality 0..*, and from 'qvtrelationcs_Property', the role 'qvtrelationcs_Property' has cardinality 0..*.
+An association connects 'qvtrelationcs_PathNameCS' and 'qvtrelationcs_KeyDeclCS'. From 'qvtrelationcs_PathNameCS', the role 'qvtrelationcs_PathNameCS25' has cardinality 0..*, and from 'qvtrelationcs_KeyDeclCS', the role 'qvtrelationcs_KeyDeclCS24' has cardinality 0..*.
+An association connects 'qvtrelationcs_Class' and 'qvtrelationcs_KeyDeclCS'. From 'qvtrelationcs_Class', the role 'qvtrelationcs_Class' has cardinality 0..*, and from 'qvtrelationcs_KeyDeclCS', the role 'qvtrelationcs_KeyDeclCS27' has cardinality 0..*.
+An association connects 'qvtrelationcs_Namespace' and 'qvtrelationcs_ModelDeclCS'. From 'qvtrelationcs_Namespace', the role 'qvtrelationcs_Namespace' has cardinality 0..*, and from 'qvtrelationcs_ModelDeclCS', the role 'qvtrelationcs_ModelDeclCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_ObjectTemplateCS' and 'qvtrelationcs_PropertyTemplateCS'. From 'qvtrelationcs_ObjectTemplateCS', the role 'owningObjectTemplate' has cardinality 0..*, and from 'qvtrelationcs_PropertyTemplateCS', the role 'PropertyTemplateCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_PatternCS' and 'qvtrelationcs_PredicateCS'. From 'qvtrelationcs_PatternCS', the role 'qvtrelationcs_PatternCS' has cardinality 0..*, and from 'qvtrelationcs_PredicateCS', the role 'qvtrelationcs_PredicateCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_PredicateCS' and 'qvtrelationcs_ExpCS'. From 'qvtrelationcs_PredicateCS', the role 'qvtrelationcs_PredicateCS32' has cardinality 0..*, and from 'qvtrelationcs_ExpCS', the role 'qvtrelationcs_ExpCS33' has cardinality 0..*.
+An association connects 'qvtrelationcs_ObjectTemplateCS' and 'qvtrelationcs_PropertyTemplateCS'. From 'qvtrelationcs_ObjectTemplateCS', the role 'ObjectTemplateCS' has cardinality 0..*, and from 'qvtrelationcs_PropertyTemplateCS', the role 'ownedPropertyTemplates' has cardinality 0..*.
+An association connects 'qvtrelationcs_PropertyTemplateCS' and 'qvtrelationcs_Property'. From 'qvtrelationcs_PropertyTemplateCS', the role 'qvtrelationcs_PropertyTemplateCS' has cardinality 0..*, and from 'qvtrelationcs_Property', the role 'qvtrelationcs_Property36' has cardinality 0..*.
+An association connects 'qvtrelationcs_PropertyTemplateCS' and 'qvtrelationcs_PathNameCS'. From 'qvtrelationcs_PropertyTemplateCS', the role 'qvtrelationcs_PropertyTemplateCS38' has cardinality 0..*, and from 'qvtrelationcs_PathNameCS', the role 'qvtrelationcs_PathNameCS39' has cardinality 0..*.
+An association connects 'qvtrelationcs_ExpCS' and 'qvtrelationcs_PropertyTemplateCS'. From 'qvtrelationcs_ExpCS', the role 'qvtrelationcs_ExpCS42' has cardinality 0..*, and from 'qvtrelationcs_PropertyTemplateCS', the role 'qvtrelationcs_PropertyTemplateCS41' has cardinality 0..*.
+An association connects 'qvtrelationcs_QueryCS' and 'qvtrelationcs_ParamDeclarationCS'. From 'qvtrelationcs_QueryCS', the role 'qvtrelationcs_QueryCS' has cardinality 0..*, and from 'qvtrelationcs_ParamDeclarationCS', the role 'qvtrelationcs_ParamDeclarationCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_QueryCS' and 'qvtrelationcs_ExpCS'. From 'qvtrelationcs_QueryCS', the role 'qvtrelationcs_QueryCS45' has cardinality 0..*, and from 'qvtrelationcs_ExpCS', the role 'qvtrelationcs_ExpCS46' has cardinality 0..*.
+An association connects 'qvtrelationcs_RelationCS' and 'Relation'. From 'qvtrelationcs_RelationCS', the role 'qvtrelationcs_RelationCS' has cardinality 0..*, and from 'Relation', the role 'Relation' has cardinality 0..*.
+An association connects 'qvtrelationcs_VarDeclarationCS' and 'qvtrelationcs_RelationCS'. From 'qvtrelationcs_VarDeclarationCS', the role 'qvtrelationcs_VarDeclarationCS' has cardinality 0..*, and from 'qvtrelationcs_RelationCS', the role 'qvtrelationcs_RelationCS49' has cardinality 0..*.
+An association connects 'qvtrelationcs_RelationCS' and 'qvtrelationcs_AbstractDomainCS'. From 'qvtrelationcs_RelationCS', the role 'qvtrelationcs_RelationCS51' has cardinality 0..*, and from 'qvtrelationcs_AbstractDomainCS', the role 'qvtrelationcs_AbstractDomainCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_RelationCS' and 'qvtrelationcs_PatternCS'. From 'qvtrelationcs_RelationCS', the role 'qvtrelationcs_RelationCS53' has cardinality 0..*, and from 'qvtrelationcs_PatternCS', the role 'qvtrelationcs_PatternCS54' has cardinality 0..*.
+An association connects 'qvtrelationcs_RelationCS' and 'qvtrelationcs_PatternCS'. From 'qvtrelationcs_RelationCS', the role 'qvtrelationcs_RelationCS56' has cardinality 0..*, and from 'qvtrelationcs_PatternCS', the role 'qvtrelationcs_PatternCS57' has cardinality 0..*.
+An association connects 'qvtrelationcs_ExpCS' and 'qvtrelationcs_TemplateCS'. From 'qvtrelationcs_ExpCS', the role 'qvtrelationcs_ExpCS60' has cardinality 0..*, and from 'qvtrelationcs_TemplateCS', the role 'qvtrelationcs_TemplateCS59' has cardinality 0..*.
+An association connects 'qvtrelationcs_TypedRefCS' and 'qvtrelationcs_TemplateVariableCS'. From 'qvtrelationcs_TypedRefCS', the role 'qvtrelationcs_TypedRefCS' has cardinality 0..*, and from 'qvtrelationcs_TemplateVariableCS', the role 'qvtrelationcs_TemplateVariableCS62' has cardinality 0..*.
+An association connects 'qvtrelationcs_UnitCS' and 'qvtrelationcs_TopLevelCS'. From 'qvtrelationcs_UnitCS', the role 'qvtrelationcs_UnitCS' has cardinality 0..*, and from 'qvtrelationcs_TopLevelCS', the role 'qvtrelationcs_TopLevelCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_TopLevelCS' and 'qvtrelationcs_TransformationCS'. From 'qvtrelationcs_TopLevelCS', the role 'qvtrelationcs_TopLevelCS65' has cardinality 0..*, and from 'qvtrelationcs_TransformationCS', the role 'qvtrelationcs_TransformationCS' has cardinality 0..*.
+An association connects 'qvtrelationcs_ModelDeclCS' and 'qvtrelationcs_TransformationCS'. From 'qvtrelationcs_ModelDeclCS', the role 'qvtrelationcs_ModelDeclCS68' has cardinality 0..*, and from 'qvtrelationcs_TransformationCS', the role 'qvtrelationcs_TransformationCS67' has cardinality 0..*.
+An association connects 'qvtrelationcs_TransformationCS' and 'qvtrelationcs_Transformation'. From 'qvtrelationcs_TransformationCS', the role 'qvtrelationcs_TransformationCS70' has cardinality 0..*, and from 'qvtrelationcs_Transformation', the role 'qvtrelationcs_Transformation' has cardinality 0..*.
+An association connects 'qvtrelationcs_TransformationCS' and 'qvtrelationcs_KeyDeclCS'. From 'qvtrelationcs_TransformationCS', the role 'qvtrelationcs_TransformationCS72' has cardinality 0..*, and from 'qvtrelationcs_KeyDeclCS', the role 'qvtrelationcs_KeyDeclCS73' has cardinality 0..*.
+An association connects 'qvtrelationcs_TransformationCS' and 'qvtrelationcs_PathNameCS'. From 'qvtrelationcs_TransformationCS', the role 'qvtrelationcs_TransformationCS75' has cardinality 0..*, and from 'qvtrelationcs_PathNameCS', the role 'qvtrelationcs_PathNameCS76' has cardinality 0..*.
+An association connects 'qvtrelationcs_TransformationCS' and 'qvtrelationcs_QueryCS'. From 'qvtrelationcs_TransformationCS', the role 'qvtrelationcs_TransformationCS78' has cardinality 0..*, and from 'qvtrelationcs_QueryCS', the role 'qvtrelationcs_QueryCS79' has cardinality 0..*.
+An association connects 'qvtrelationcs_TransformationCS' and 'qvtrelationcs_RelationCS'. From 'qvtrelationcs_TransformationCS', the role 'qvtrelationcs_TransformationCS81' has cardinality 0..*, and from 'qvtrelationcs_RelationCS', the role 'qvtrelationcs_RelationCS82' has cardinality 0..*.
+An association connects 'qvtrelationcs_UnitCS' and 'qvtrelationcs_Element'. From 'qvtrelationcs_UnitCS', the role 'qvtrelationcs_UnitCS84' has cardinality 0..*, and from 'qvtrelationcs_Element', the role 'qvtrelationcs_Element' has cardinality 0..*.
+An association connects 'qvtrelationcs_ExpCS' and 'qvtrelationcs_VarDeclarationCS'. From 'qvtrelationcs_ExpCS', the role 'qvtrelationcs_ExpCS87' has cardinality 0..*, and from 'qvtrelationcs_VarDeclarationCS', the role 'qvtrelationcs_VarDeclarationCS86' has cardinality 0..*.
+An association connects 'qvtrelationcs_TypedRefCS' and 'qvtrelationcs_VarDeclarationCS'. From 'qvtrelationcs_TypedRefCS', the role 'qvtrelationcs_TypedRefCS90' has cardinality 0..*, and from 'qvtrelationcs_VarDeclarationCS', the role 'qvtrelationcs_VarDeclarationCS89' has cardinality 0..*.
+An association connects 'qvtrelationcs_VarDeclarationIdCS' and 'qvtrelationcs_VarDeclarationCS'. From 'qvtrelationcs_VarDeclarationIdCS', the role 'qvtrelationcs_VarDeclarationIdCS' has cardinality 0..*, and from 'qvtrelationcs_VarDeclarationCS', the role 'qvtrelationcs_VarDeclarationCS92' has cardinality 0..*.

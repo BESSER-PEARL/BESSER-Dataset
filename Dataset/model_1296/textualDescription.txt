@@ -1,0 +1,89 @@
+The domain model 'StateMachinesProv' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'StateMachinesProv_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesProv_State' represents an important domain concept.
+It has the following attributes: 'isOrthogonal', which is of type bool; 'isComposite', which is of type bool; 'isSubmachineState', which is of type bool; 'isSimple', which is of type bool.
+
+'StateMachinesProv_TimeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesProv_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesProv_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesProv_ConnectionPointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesProv_ProtocolTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesProv_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesProv_ProtocolConformance' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesProv_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesProv_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesProv_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'StateMachinesProv_Pseudostate' is a specialization of 'Vertex'.
+The class 'StateMachinesProv_ConnectionPointReference' is a specialization of 'Vertex'.
+The class 'StateMachinesProv_State' is a specialization of 'Vertex'.
+The class 'StateMachinesProv_FinalState' is a specialization of 'State'.
+The class 'StateMachinesProv_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'StateMachinesProv_ProtocolTransition' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'StateMachinesProv_StateMachine' and 'StateMachinesProv_Region'. From 'StateMachinesProv_StateMachine', the role 'StateMachinesProv_StateMachine' has cardinality 0..*, and from 'StateMachinesProv_Region', the role 'StateMachinesProv_Region' has cardinality 0..*.
+An association connects 'StateMachinesProv_StateMachine' and 'StateMachinesProv_Pseudostate'. From 'StateMachinesProv_StateMachine', the role 'StateMachinesProv_StateMachine2' has cardinality 0..*, and from 'StateMachinesProv_Pseudostate', the role 'StateMachinesProv_Pseudostate' has cardinality 0..*.
+An association connects 'StateMachinesProv_State' and 'StateMachinesProv_StateMachine'. From 'StateMachinesProv_State', the role 'StateMachinesProv_State' has cardinality 0..*, and from 'StateMachinesProv_StateMachine', the role 'StateMachinesProv_StateMachine4' has cardinality 0..*.
+An association connects 'StateMachinesProv_StateMachine' and 'StateMachinesProv_StateMachine'. From 'StateMachinesProv_StateMachine', the role 'StateMachinesProv_StateMachine7' has cardinality 0..*, and from 'StateMachinesProv_StateMachine', the role 'StateMachinesProv_StateMachine5' has cardinality 0..*.
+An association connects 'StateMachinesProv_Region' and 'StateMachinesProv_Vertex'. From 'StateMachinesProv_Region', the role 'StateMachinesProv_Region9' has cardinality 0..*, and from 'StateMachinesProv_Vertex', the role 'StateMachinesProv_Vertex' has cardinality 0..*.
+An association connects 'StateMachinesProv_Region' and 'StateMachinesProv_StateMachine'. From 'StateMachinesProv_Region', the role 'StateMachinesProv_Region11' has cardinality 0..*, and from 'StateMachinesProv_StateMachine', the role 'StateMachinesProv_StateMachine12' has cardinality 0..*.
+An association connects 'StateMachinesProv_Region' and 'StateMachinesProv_Transition'. From 'StateMachinesProv_Region', the role 'StateMachinesProv_Region14' has cardinality 0..*, and from 'StateMachinesProv_Transition', the role 'StateMachinesProv_Transition' has cardinality 0..*.
+An association connects 'StateMachinesProv_State' and 'StateMachinesProv_Region'. From 'StateMachinesProv_State', the role 'StateMachinesProv_State17' has cardinality 0..*, and from 'StateMachinesProv_Region', the role 'StateMachinesProv_Region16' has cardinality 0..*.
+An association connects 'StateMachinesProv_Region' and 'StateMachinesProv_Region'. From 'StateMachinesProv_Region', the role 'StateMachinesProv_Region18' has cardinality 0..*, and from 'StateMachinesProv_Region', the role 'StateMachinesProv_Region20' has cardinality 0..*.
+An association connects 'StateMachinesProv_Transition' and 'StateMachinesProv_Vertex'. From 'StateMachinesProv_Transition', the role 'StateMachinesProv_Transition23' has cardinality 0..*, and from 'StateMachinesProv_Vertex', the role 'StateMachinesProv_Vertex22' has cardinality 0..*.
+An association connects 'StateMachinesProv_Transition' and 'StateMachinesProv_Vertex'. From 'StateMachinesProv_Transition', the role 'StateMachinesProv_Transition26' has cardinality 0..*, and from 'StateMachinesProv_Vertex', the role 'StateMachinesProv_Vertex25' has cardinality 0..*.
+An association connects 'StateMachinesProv_Vertex' and 'StateMachinesProv_Region'. From 'StateMachinesProv_Vertex', the role 'StateMachinesProv_Vertex28' has cardinality 0..*, and from 'StateMachinesProv_Region', the role 'StateMachinesProv_Region29' has cardinality 0..*.
+An association connects 'StateMachinesProv_Transition' and 'StateMachinesProv_Vertex'. From 'StateMachinesProv_Transition', the role 'StateMachinesProv_Transition31' has cardinality 0..*, and from 'StateMachinesProv_Vertex', the role 'StateMachinesProv_Vertex32' has cardinality 0..*.
+An association connects 'StateMachinesProv_Transition' and 'StateMachinesProv_Vertex'. From 'StateMachinesProv_Transition', the role 'StateMachinesProv_Transition34' has cardinality 0..*, and from 'StateMachinesProv_Vertex', the role 'StateMachinesProv_Vertex35' has cardinality 0..*.
+An association connects 'StateMachinesProv_Transition' and 'StateMachinesProv_Region'. From 'StateMachinesProv_Transition', the role 'StateMachinesProv_Transition37' has cardinality 0..*, and from 'StateMachinesProv_Region', the role 'StateMachinesProv_Region38' has cardinality 0..*.
+An association connects 'StateMachinesProv_Transition' and 'StateMachinesProv_Transition'. From 'StateMachinesProv_Transition', the role 'StateMachinesProv_Transition39' has cardinality 0..*, and from 'StateMachinesProv_Transition', the role 'StateMachinesProv_Transition41' has cardinality 0..*.
+An association connects 'StateMachinesProv_Pseudostate' and 'StateMachinesProv_State'. From 'StateMachinesProv_Pseudostate', the role 'StateMachinesProv_Pseudostate43' has cardinality 0..*, and from 'StateMachinesProv_State', the role 'StateMachinesProv_State44' has cardinality 0..*.
+An association connects 'StateMachinesProv_ConnectionPointReference' and 'StateMachinesProv_Pseudostate'. From 'StateMachinesProv_ConnectionPointReference', the role 'StateMachinesProv_ConnectionPointReference' has cardinality 0..*, and from 'StateMachinesProv_Pseudostate', the role 'StateMachinesProv_Pseudostate46' has cardinality 0..*.
+An association connects 'StateMachinesProv_Pseudostate' and 'StateMachinesProv_ConnectionPointReference'. From 'StateMachinesProv_Pseudostate', the role 'StateMachinesProv_Pseudostate49' has cardinality 0..*, and from 'StateMachinesProv_ConnectionPointReference', the role 'StateMachinesProv_ConnectionPointReference48' has cardinality 0..*.
+An association connects 'StateMachinesProv_ConnectionPointReference' and 'StateMachinesProv_State'. From 'StateMachinesProv_ConnectionPointReference', the role 'StateMachinesProv_ConnectionPointReference51' has cardinality 0..*, and from 'StateMachinesProv_State', the role 'StateMachinesProv_State52' has cardinality 0..*.
+An association connects 'StateMachinesProv_State' and 'StateMachinesProv_ConnectionPointReference'. From 'StateMachinesProv_State', the role 'StateMachinesProv_State54' has cardinality 0..*, and from 'StateMachinesProv_ConnectionPointReference', the role 'StateMachinesProv_ConnectionPointReference55' has cardinality 0..*.
+An association connects 'StateMachinesProv_Pseudostate' and 'StateMachinesProv_State'. From 'StateMachinesProv_Pseudostate', the role 'StateMachinesProv_Pseudostate58' has cardinality 0..*, and from 'StateMachinesProv_State', the role 'StateMachinesProv_State57' has cardinality 0..*.
+An association connects 'StateMachinesProv_StateMachine' and 'StateMachinesProv_State'. From 'StateMachinesProv_StateMachine', the role 'StateMachinesProv_StateMachine61' has cardinality 0..*, and from 'StateMachinesProv_State', the role 'StateMachinesProv_State60' has cardinality 0..*.
+An association connects 'StateMachinesProv_State' and 'StateMachinesProv_Region'. From 'StateMachinesProv_State', the role 'StateMachinesProv_State63' has cardinality 0..*, and from 'StateMachinesProv_Region', the role 'StateMachinesProv_Region64' has cardinality 0..*.
+An association connects 'StateMachinesProv_State' and 'StateMachinesProv_State'. From 'StateMachinesProv_State', the role 'StateMachinesProv_State67' has cardinality 0..*, and from 'StateMachinesProv_State', the role 'StateMachinesProv_State65' has cardinality 0..*.
+An association connects 'StateMachinesProv_ProtocolConformance' and 'StateMachinesProv_ProtocolStateMachine'. From 'StateMachinesProv_ProtocolConformance', the role 'StateMachinesProv_ProtocolConformance' has cardinality 0..*, and from 'StateMachinesProv_ProtocolStateMachine', the role 'StateMachinesProv_ProtocolStateMachine' has cardinality 0..*.
+An association connects 'StateMachinesProv_ProtocolConformance' and 'StateMachinesProv_ProtocolStateMachine'. From 'StateMachinesProv_ProtocolConformance', the role 'StateMachinesProv_ProtocolConformance70' has cardinality 0..*, and from 'StateMachinesProv_ProtocolStateMachine', the role 'StateMachinesProv_ProtocolStateMachine71' has cardinality 0..*.
+An association connects 'StateMachinesProv_ProtocolStateMachine' and 'StateMachinesProv_ProtocolConformance'. From 'StateMachinesProv_ProtocolStateMachine', the role 'StateMachinesProv_ProtocolStateMachine74' has cardinality 0..*, and from 'StateMachinesProv_ProtocolConformance', the role 'StateMachinesProv_ProtocolConformance73' has cardinality 0..*.

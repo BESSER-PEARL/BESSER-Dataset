@@ -1,0 +1,188 @@
+The domain model 'ocl' describes the core structural elements and their relationships within the system.
+
+The model defines 59 main class(es).
+
+'ocl_expressions_OCLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_UnspecifiedValueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_TypedASTNode' represents an important domain concept.
+It has the following attributes: 'typeStartPosition', which is of type int; 'typeEndPosition', which is of type int.
+
+'ocl_expressions_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_RealLiteralExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'ocl_expressions_FeatureCallExp' represents an important domain concept.
+It has one attribute: 'markedPre', which is of type bool.
+
+'ocl_utilities_ASTNode' represents an important domain concept.
+It has the following attributes: 'endPosition', which is of type int; 'startPosition', which is of type int.
+
+'ocl_expressions_IntegerLiteralExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'ocl_expressions_NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_CollectionType' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ocl_expressions_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_MessageExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_CollectionLiteralExp' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'simpleRange', which is of type bool.
+
+'ocl_expressions_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_Visitor' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_UnlimitedNaturalLiteralExp' represents an important domain concept.
+It has the following attributes: 'integerSymbol', which is of type str; 'unlimited', which is of type bool.
+
+'ocl_expressions_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'ocl_types_MessageType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_TypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_StateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_PredefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_ExpressionInOCL' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_OperationCallExp' represents an important domain concept.
+It has one attribute: 'operationCode', which is of type int.
+
+'ocl_types_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_ElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_utilities_CallingASTNode' represents an important domain concept.
+It has the following attributes: 'propertyStartPosition', which is of type int; 'propertyEndPosition', which is of type int.
+
+'ocl_expressions_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_AssociationClassCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_expressions_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_types_TemplateParameterType' represents an important domain concept.
+It has one attribute: 'specification', which is of type str.
+
+'ocl_expressions_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CollectionKind' defines the following possible values: 'Sequence', 'Collection', 'Set', 'Bag', 'OrderedSet'.
+
+The model also captures inheritance relationships between classes.
+The class 'ocl_utilities_CallingASTNode' is a specialization of 'ASTNode'.
+The class 'ocl_utilities_TypedASTNode' is a specialization of 'ASTNode'.
+The class 'ocl_utilities_ExpressionInOCL' is a specialization of 'Visitable'.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jesusc/anatlyzer-models17/src/models17.tutorial.java2uml/metamodels/JAVA.ecore

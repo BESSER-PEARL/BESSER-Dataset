@@ -1,0 +1,20 @@
+The domain model 'StateMachinesModule' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'StateMachinesModule_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesModule_State' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesModule_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachinesModule_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'StateMachinesModule_StateMachine' and 'StateMachinesModule_State'. From 'StateMachinesModule_StateMachine', the role 'StateMachinesModule_StateMachine' has cardinality 0..*, and from 'StateMachinesModule_State', the role 'StateMachinesModule_State' has cardinality 0..*.
+An association connects 'StateMachinesModule_Transition' and 'StateMachinesModule_StateMachine'. From 'StateMachinesModule_Transition', the role 'StateMachinesModule_Transition' has cardinality 0..*, and from 'StateMachinesModule_StateMachine', the role 'StateMachinesModule_StateMachine2' has cardinality 0..*.
+An association connects 'StateMachinesModule_Transition' and 'StateMachinesModule_Constraint'. From 'StateMachinesModule_Transition', the role 'StateMachinesModule_Transition4' has cardinality 0..*, and from 'StateMachinesModule_Constraint', the role 'StateMachinesModule_Constraint' has cardinality 0..*.

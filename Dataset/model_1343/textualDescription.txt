@@ -1,0 +1,345 @@
+The domain model 'myAtl' describes the core structural elements and their relationships within the system.
+
+The model defines 78 main class(es).
+
+'myAtl_OutPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_TupleTypeCS' represents an important domain concept.
+It has one attribute: 'backtrack', which is of type str.
+
+'PrimaryExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_BindingStat' represents an important domain concept.
+It has one attribute: 'propertyName', which is of type str.
+
+'myAtl_Binding' represents an important domain concept.
+It has one attribute: 'propertyName', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_TupleLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_ActionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_ATLParameterCS' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'BinaryOperatorCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_PrimaryExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_PrefixExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_InfixedExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_NullLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_NavigatingArgExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_NavigatingCommaArgCS' represents an important domain concept.
+It has one attribute: 'prefix', which is of type str.
+
+'myAtl_StringExpCs' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myAtl_BinaryOperatorCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myAtl_MatchedRule' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigatingExpCS_Base' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_InfixExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_PrimitiveTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_InPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_CalledRule' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_StringLiteralExpCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myAtl_ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_ForEachOutPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_UnlimitedNaturalLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_NavigatingBarArgCS' represents an important domain concept.
+It has one attribute: 'prefix', which is of type str.
+
+'TypeLiteralCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_NavigatingExpCS_Base' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_TypeExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_NavigatingArgCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_IfExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_InPatternElement' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'myAtl_CollectionTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_IndexExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_PrefixedExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigatingExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_TypeLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_LetExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_SimpleOutPatternElement' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'InfixedExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_NestedExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_OutPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigatingArgExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_BooleanLiteralExpCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myAtl_InfixOperatorCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_RuleVariableDeclaration' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'myAtl_InvalidLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_NavigatingExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_ATLDefCS' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'myAtl_QueryRule' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_NavigationOperatorCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_NavigatingSemiArgCS' represents an important domain concept.
+It has one attribute: 'prefix', which is of type str.
+
+'myAtl_ATLType' represents an important domain concept.
+It has one attribute: 'modelName', which is of type str.
+
+'myAtl_Helper' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_UnaryOperatorCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myAtl_LetVariableCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myAtl_TypeNameExpCS' represents an important domain concept.
+It has the following attributes: 'element', which is of type str; 'namespace', which is of type str.
+
+'myAtl_TypeLiteralCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'IndexExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_tuplePartCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myAtl_NameExpCS' represents an important domain concept.
+It has the following attributes: 'element', which is of type str; 'namespace', which is of type str.
+
+'myAtl_PrimitiveLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_TupleLiteralPartCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myAtl_NumberLiteralExpCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myAtl_Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myAtl_ModuleElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PrefixedExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'myAtl_SelfExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OutPatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myAtl_MatchedRule' is a specialization of 'ModuleElement'.
+The class 'myAtl_CalledRule' is a specialization of 'ModuleElement'.
+The class 'myAtl_QueryRule' is a specialization of 'ModuleElement'.
+The class 'myAtl_Helper' is a specialization of 'ModuleElement'.
+The class 'myAtl_SimpleOutPatternElement' is a specialization of 'OutPatternElement'.
+The class 'myAtl_ForEachOutPatternElement' is a specialization of 'OutPatternElement'.
+The class 'myAtl_BindingStat' is a specialization of 'Statement'.
+The class 'myAtl_CollectionTypeCS' is a specialization of 'TypeLiteralCS'.
+The class 'myAtl_TupleTypeCS' is a specialization of 'TypeLiteralCS'.
+The class 'myAtl_PrimitiveLiteralExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'myAtl_TupleLiteralExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'myAtl_NumberLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'myAtl_StringLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'myAtl_BooleanLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'myAtl_UnlimitedNaturalLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'myAtl_InvalidLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'myAtl_NullLiteralExpCS' is a specialization of 'PrimitiveLiteralExpCS'.
+The class 'myAtl_PrimitiveTypeCS' is a specialization of 'TypeLiteralCS'.
+The class 'myAtl_TypeLiteralCS' is a specialization of 'TypeExpCS'.
+The class 'myAtl_TypeNameExpCS' is a specialization of 'TypeExpCS'.
+The class 'myAtl_IfExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'myAtl_LetExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'myAtl_NestedExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'myAtl_SelfExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'myAtl_PrimaryExpCS' is a specialization of 'PrefixedExpCS'.
+The class 'myAtl_StringExpCs' is a specialization of 'PrimaryExpCS'.
+The class 'myAtl_NameExpCS' is a specialization of 'IndexExpCS'.
+The class 'myAtl_ExpCS' is a specialization of 'NavigatingArgExpCS'.
+The class 'myAtl_InfixedExpCS' is a specialization of 'ExpCS'.
+The class 'myAtl_InfixOperatorCS' is a specialization of 'BinaryOperatorCS'.
+The class 'myAtl_NavigationOperatorCS' is a specialization of 'BinaryOperatorCS'.
+The class 'myAtl_PrefixedExpCS' is a specialization of 'InfixedExpCS'.
+The class 'myAtl_IndexExpCS' is a specialization of 'NavigatingExpCS_Base'.
+The class 'myAtl_NavigatingExpCS_Base' is a specialization of 'NavigatingExpCS'.
+The class 'myAtl_NavigatingExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'myAtl_InfixExpCS' is a specialization of 'InfixedExpCS'.
+The class 'myAtl_PrefixExpCS' is a specialization of 'PrefixedExpCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myAtl_NameExpCS' and 'myAtl_Module'. From 'myAtl_NameExpCS', the role 'myAtl_NameExpCS' has cardinality 0..*, and from 'myAtl_Module', the role 'myAtl_Module' has cardinality 0..*.
+An association connects 'myAtl_NameExpCS' and 'myAtl_Module'. From 'myAtl_NameExpCS', the role 'myAtl_NameExpCS3' has cardinality 0..*, and from 'myAtl_Module', the role 'myAtl_Module2' has cardinality 0..*.
+An association connects 'myAtl_Module' and 'myAtl_NameExpCS'. From 'myAtl_Module', the role 'myAtl_Module5' has cardinality 0..*, and from 'myAtl_NameExpCS', the role 'myAtl_NameExpCS6' has cardinality 0..*.
+An association connects 'myAtl_ModuleElement' and 'myAtl_Module'. From 'myAtl_ModuleElement', the role 'myAtl_ModuleElement' has cardinality 0..*, and from 'myAtl_Module', the role 'myAtl_Module8' has cardinality 0..*.
+An association connects 'myAtl_MatchedRule' and 'myAtl_InPattern'. From 'myAtl_MatchedRule', the role 'myAtl_MatchedRule' has cardinality 0..*, and from 'myAtl_InPattern', the role 'myAtl_InPattern' has cardinality 0..*.
+An association connects 'myAtl_MatchedRule' and 'myAtl_RuleVariableDeclaration'. From 'myAtl_MatchedRule', the role 'myAtl_MatchedRule11' has cardinality 0..*, and from 'myAtl_RuleVariableDeclaration', the role 'myAtl_RuleVariableDeclaration' has cardinality 0..*.
+An association connects 'myAtl_OutPattern' and 'myAtl_MatchedRule'. From 'myAtl_OutPattern', the role 'myAtl_OutPattern' has cardinality 0..*, and from 'myAtl_MatchedRule', the role 'myAtl_MatchedRule13' has cardinality 0..*.
+An association connects 'myAtl_ActionBlock' and 'myAtl_MatchedRule'. From 'myAtl_ActionBlock', the role 'myAtl_ActionBlock' has cardinality 0..*, and from 'myAtl_MatchedRule', the role 'myAtl_MatchedRule15' has cardinality 0..*.
+An association connects 'myAtl_CalledRule' and 'myAtl_RuleVariableDeclaration'. From 'myAtl_CalledRule', the role 'myAtl_CalledRule' has cardinality 0..*, and from 'myAtl_RuleVariableDeclaration', the role 'myAtl_RuleVariableDeclaration17' has cardinality 0..*.
+An association connects 'myAtl_OutPattern' and 'myAtl_CalledRule'. From 'myAtl_OutPattern', the role 'myAtl_OutPattern20' has cardinality 0..*, and from 'myAtl_CalledRule', the role 'myAtl_CalledRule19' has cardinality 0..*.
+An association connects 'myAtl_CalledRule' and 'myAtl_ActionBlock'. From 'myAtl_CalledRule', the role 'myAtl_CalledRule22' has cardinality 0..*, and from 'myAtl_ActionBlock', the role 'myAtl_ActionBlock23' has cardinality 0..*.
+An association connects 'myAtl_QueryRule' and 'myAtl_ATLParameterCS'. From 'myAtl_QueryRule', the role 'myAtl_QueryRule' has cardinality 0..*, and from 'myAtl_ATLParameterCS', the role 'myAtl_ATLParameterCS' has cardinality 0..*.
+An association connects 'myAtl_QueryRule' and 'myAtl_ExpCS'. From 'myAtl_QueryRule', the role 'myAtl_QueryRule26' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS' has cardinality 0..*.
+An association connects 'myAtl_Helper' and 'myAtl_ATLDefCS'. From 'myAtl_Helper', the role 'myAtl_Helper' has cardinality 0..*, and from 'myAtl_ATLDefCS', the role 'myAtl_ATLDefCS' has cardinality 0..*.
+An association connects 'myAtl_ATLParameterCS' and 'myAtl_ATLDefCS'. From 'myAtl_ATLParameterCS', the role 'myAtl_ATLParameterCS30' has cardinality 0..*, and from 'myAtl_ATLDefCS', the role 'myAtl_ATLDefCS29' has cardinality 0..*.
+An association connects 'myAtl_ATLDefCS' and 'myAtl_ATLType'. From 'myAtl_ATLDefCS', the role 'myAtl_ATLDefCS32' has cardinality 0..*, and from 'myAtl_ATLType', the role 'myAtl_ATLType' has cardinality 0..*.
+An association connects 'myAtl_ATLDefCS' and 'myAtl_ExpCS'. From 'myAtl_ATLDefCS', the role 'myAtl_ATLDefCS34' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS35' has cardinality 0..*.
+An association connects 'myAtl_ATLParameterCS' and 'myAtl_ATLType'. From 'myAtl_ATLParameterCS', the role 'myAtl_ATLParameterCS37' has cardinality 0..*, and from 'myAtl_ATLType', the role 'myAtl_ATLType38' has cardinality 0..*.
+An association connects 'myAtl_ATLType' and 'myAtl_RuleVariableDeclaration'. From 'myAtl_ATLType', the role 'myAtl_ATLType41' has cardinality 0..*, and from 'myAtl_RuleVariableDeclaration', the role 'myAtl_RuleVariableDeclaration40' has cardinality 0..*.
+An association connects 'myAtl_RuleVariableDeclaration' and 'myAtl_ExpCS'. From 'myAtl_RuleVariableDeclaration', the role 'myAtl_RuleVariableDeclaration43' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS44' has cardinality 0..*.
+An association connects 'myAtl_InPatternElement' and 'myAtl_InPattern'. From 'myAtl_InPatternElement', the role 'myAtl_InPatternElement' has cardinality 0..*, and from 'myAtl_InPattern', the role 'myAtl_InPattern46' has cardinality 0..*.
+An association connects 'myAtl_ExpCS' and 'myAtl_InPattern'. From 'myAtl_ExpCS', the role 'myAtl_ExpCS49' has cardinality 0..*, and from 'myAtl_InPattern', the role 'myAtl_InPattern48' has cardinality 0..*.
+An association connects 'myAtl_InPatternElement' and 'myAtl_ATLType'. From 'myAtl_InPatternElement', the role 'myAtl_InPatternElement51' has cardinality 0..*, and from 'myAtl_ATLType', the role 'myAtl_ATLType52' has cardinality 0..*.
+An association connects 'myAtl_OutPattern' and 'myAtl_OutPatternElement'. From 'myAtl_OutPattern', the role 'myAtl_OutPattern54' has cardinality 0..*, and from 'myAtl_OutPatternElement', the role 'myAtl_OutPatternElement' has cardinality 0..*.
+An association connects 'myAtl_ATLType' and 'myAtl_SimpleOutPatternElement'. From 'myAtl_ATLType', the role 'myAtl_ATLType56' has cardinality 0..*, and from 'myAtl_SimpleOutPatternElement', the role 'myAtl_SimpleOutPatternElement' has cardinality 0..*.
+An association connects 'myAtl_SimpleOutPatternElement' and 'myAtl_Binding'. From 'myAtl_SimpleOutPatternElement', the role 'myAtl_SimpleOutPatternElement58' has cardinality 0..*, and from 'myAtl_Binding', the role 'myAtl_Binding' has cardinality 0..*.
+An association connects 'myAtl_ForEachOutPatternElement' and 'myAtl_ExpCS'. From 'myAtl_ForEachOutPatternElement', the role 'myAtl_ForEachOutPatternElement' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS60' has cardinality 0..*.
+An association connects 'myAtl_Binding' and 'myAtl_ExpCS'. From 'myAtl_Binding', the role 'myAtl_Binding62' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS63' has cardinality 0..*.
+An association connects 'myAtl_Statement' and 'myAtl_ActionBlock'. From 'myAtl_Statement', the role 'myAtl_Statement' has cardinality 0..*, and from 'myAtl_ActionBlock', the role 'myAtl_ActionBlock65' has cardinality 0..*.
+An association connects 'myAtl_BindingStat' and 'myAtl_ExpCS'. From 'myAtl_BindingStat', the role 'myAtl_BindingStat' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS67' has cardinality 0..*.
+An association connects 'myAtl_ExpCS' and 'myAtl_BindingStat'. From 'myAtl_ExpCS', the role 'myAtl_ExpCS70' has cardinality 0..*, and from 'myAtl_BindingStat', the role 'myAtl_BindingStat69' has cardinality 0..*.
+An association connects 'myAtl_TypeExpCS' and 'myAtl_ATLType'. From 'myAtl_TypeExpCS', the role 'myAtl_TypeExpCS' has cardinality 0..*, and from 'myAtl_ATLType', the role 'myAtl_ATLType72' has cardinality 0..*.
+An association connects 'myAtl_CollectionTypeCS' and 'myAtl_TypeExpCS'. From 'myAtl_CollectionTypeCS', the role 'myAtl_CollectionTypeCS' has cardinality 0..*, and from 'myAtl_TypeExpCS', the role 'myAtl_TypeExpCS74' has cardinality 0..*.
+An association connects 'myAtl_tuplePartCS' and 'myAtl_TupleTypeCS'. From 'myAtl_tuplePartCS', the role 'myAtl_tuplePartCS' has cardinality 0..*, and from 'myAtl_TupleTypeCS', the role 'myAtl_TupleTypeCS' has cardinality 0..*.
+An association connects 'myAtl_tuplePartCS' and 'myAtl_TypeExpCS'. From 'myAtl_tuplePartCS', the role 'myAtl_tuplePartCS77' has cardinality 0..*, and from 'myAtl_TypeExpCS', the role 'myAtl_TypeExpCS78' has cardinality 0..*.
+An association connects 'myAtl_TupleLiteralPartCS' and 'myAtl_TupleLiteralExpCS'. From 'myAtl_TupleLiteralPartCS', the role 'myAtl_TupleLiteralPartCS' has cardinality 0..*, and from 'myAtl_TupleLiteralExpCS', the role 'myAtl_TupleLiteralExpCS' has cardinality 0..*.
+An association connects 'myAtl_TupleLiteralPartCS' and 'myAtl_TypeExpCS'. From 'myAtl_TupleLiteralPartCS', the role 'myAtl_TupleLiteralPartCS81' has cardinality 0..*, and from 'myAtl_TypeExpCS', the role 'myAtl_TypeExpCS82' has cardinality 0..*.
+An association connects 'myAtl_ExpCS' and 'myAtl_TupleLiteralPartCS'. From 'myAtl_ExpCS', the role 'myAtl_ExpCS85' has cardinality 0..*, and from 'myAtl_TupleLiteralPartCS', the role 'myAtl_TupleLiteralPartCS84' has cardinality 0..*.
+An association connects 'myAtl_TypeLiteralExpCS' and 'myAtl_TypeLiteralCS'. From 'myAtl_TypeLiteralExpCS', the role 'myAtl_TypeLiteralExpCS' has cardinality 0..*, and from 'myAtl_TypeLiteralCS', the role 'myAtl_TypeLiteralCS' has cardinality 0..*.
+An association connects 'myAtl_NavigatingArgCS' and 'myAtl_NavigatingArgExpCS'. From 'myAtl_NavigatingArgCS', the role 'myAtl_NavigatingArgCS' has cardinality 0..*, and from 'myAtl_NavigatingArgExpCS', the role 'myAtl_NavigatingArgExpCS' has cardinality 0..*.
+An association connects 'myAtl_NavigatingArgCS' and 'myAtl_TypeExpCS'. From 'myAtl_NavigatingArgCS', the role 'myAtl_NavigatingArgCS89' has cardinality 0..*, and from 'myAtl_TypeExpCS', the role 'myAtl_TypeExpCS90' has cardinality 0..*.
+An association connects 'myAtl_NavigatingArgCS' and 'myAtl_ExpCS'. From 'myAtl_NavigatingArgCS', the role 'myAtl_NavigatingArgCS92' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS93' has cardinality 0..*.
+An association connects 'myAtl_NavigatingBarArgCS' and 'myAtl_NavigatingArgExpCS'. From 'myAtl_NavigatingBarArgCS', the role 'myAtl_NavigatingBarArgCS' has cardinality 0..*, and from 'myAtl_NavigatingArgExpCS', the role 'myAtl_NavigatingArgExpCS95' has cardinality 0..*.
+An association connects 'myAtl_TypeExpCS' and 'myAtl_NavigatingBarArgCS'. From 'myAtl_TypeExpCS', the role 'myAtl_TypeExpCS98' has cardinality 0..*, and from 'myAtl_NavigatingBarArgCS', the role 'myAtl_NavigatingBarArgCS97' has cardinality 0..*.
+An association connects 'myAtl_NavigatingBarArgCS' and 'myAtl_ExpCS'. From 'myAtl_NavigatingBarArgCS', the role 'myAtl_NavigatingBarArgCS100' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS101' has cardinality 0..*.
+An association connects 'myAtl_NavigatingArgExpCS' and 'myAtl_NavigatingCommaArgCS'. From 'myAtl_NavigatingArgExpCS', the role 'myAtl_NavigatingArgExpCS103' has cardinality 0..*, and from 'myAtl_NavigatingCommaArgCS', the role 'myAtl_NavigatingCommaArgCS' has cardinality 0..*.
+An association connects 'myAtl_NavigatingCommaArgCS' and 'myAtl_TypeExpCS'. From 'myAtl_NavigatingCommaArgCS', the role 'myAtl_NavigatingCommaArgCS105' has cardinality 0..*, and from 'myAtl_TypeExpCS', the role 'myAtl_TypeExpCS106' has cardinality 0..*.
+An association connects 'myAtl_NavigatingCommaArgCS' and 'myAtl_ExpCS'. From 'myAtl_NavigatingCommaArgCS', the role 'myAtl_NavigatingCommaArgCS108' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS109' has cardinality 0..*.
+An association connects 'myAtl_NavigatingArgExpCS' and 'myAtl_NavigatingSemiArgCS'. From 'myAtl_NavigatingArgExpCS', the role 'myAtl_NavigatingArgExpCS111' has cardinality 0..*, and from 'myAtl_NavigatingSemiArgCS', the role 'myAtl_NavigatingSemiArgCS' has cardinality 0..*.
+An association connects 'myAtl_TypeExpCS' and 'myAtl_NavigatingSemiArgCS'. From 'myAtl_TypeExpCS', the role 'myAtl_TypeExpCS114' has cardinality 0..*, and from 'myAtl_NavigatingSemiArgCS', the role 'myAtl_NavigatingSemiArgCS113' has cardinality 0..*.
+An association connects 'myAtl_ExpCS' and 'myAtl_NavigatingSemiArgCS'. From 'myAtl_ExpCS', the role 'myAtl_ExpCS117' has cardinality 0..*, and from 'myAtl_NavigatingSemiArgCS', the role 'myAtl_NavigatingSemiArgCS116' has cardinality 0..*.
+An association connects 'myAtl_ExpCS' and 'myAtl_IfExpCS'. From 'myAtl_ExpCS', the role 'myAtl_ExpCS119' has cardinality 0..*, and from 'myAtl_IfExpCS', the role 'myAtl_IfExpCS' has cardinality 0..*.
+An association connects 'myAtl_IfExpCS' and 'myAtl_ExpCS'. From 'myAtl_IfExpCS', the role 'myAtl_IfExpCS121' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS122' has cardinality 0..*.
+An association connects 'myAtl_ExpCS' and 'myAtl_IfExpCS'. From 'myAtl_ExpCS', the role 'myAtl_ExpCS125' has cardinality 0..*, and from 'myAtl_IfExpCS', the role 'myAtl_IfExpCS124' has cardinality 0..*.
+An association connects 'myAtl_LetExpCS' and 'myAtl_LetVariableCS'. From 'myAtl_LetExpCS', the role 'myAtl_LetExpCS' has cardinality 0..*, and from 'myAtl_LetVariableCS', the role 'myAtl_LetVariableCS' has cardinality 0..*.
+An association connects 'myAtl_LetExpCS' and 'myAtl_ExpCS'. From 'myAtl_LetExpCS', the role 'myAtl_LetExpCS128' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS129' has cardinality 0..*.
+An association connects 'myAtl_TypeExpCS' and 'myAtl_LetVariableCS'. From 'myAtl_TypeExpCS', the role 'myAtl_TypeExpCS132' has cardinality 0..*, and from 'myAtl_LetVariableCS', the role 'myAtl_LetVariableCS131' has cardinality 0..*.
+An association connects 'myAtl_LetVariableCS' and 'myAtl_ExpCS'. From 'myAtl_LetVariableCS', the role 'myAtl_LetVariableCS134' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS135' has cardinality 0..*.
+An association connects 'myAtl_ExpCS' and 'myAtl_NestedExpCS'. From 'myAtl_ExpCS', the role 'myAtl_ExpCS137' has cardinality 0..*, and from 'myAtl_NestedExpCS', the role 'myAtl_NestedExpCS' has cardinality 0..*.
+An association connects 'myAtl_IndexExpCS' and 'myAtl_ExpCS'. From 'myAtl_IndexExpCS', the role 'myAtl_IndexExpCS' has cardinality 0..*, and from 'myAtl_ExpCS', the role 'myAtl_ExpCS139' has cardinality 0..*.
+An association connects 'myAtl_ExpCS' and 'myAtl_IndexExpCS'. From 'myAtl_ExpCS', the role 'myAtl_ExpCS142' has cardinality 0..*, and from 'myAtl_IndexExpCS', the role 'myAtl_IndexExpCS141' has cardinality 0..*.
+An association connects 'myAtl_NavigatingExpCS' and 'myAtl_NavigatingExpCS_Base'. From 'myAtl_NavigatingExpCS', the role 'myAtl_NavigatingExpCS' has cardinality 0..*, and from 'myAtl_NavigatingExpCS_Base', the role 'myAtl_NavigatingExpCS_Base' has cardinality 0..*.
+An association connects 'myAtl_EObject' and 'myAtl_NavigatingExpCS'. From 'myAtl_EObject', the role 'myAtl_EObject' has cardinality 0..*, and from 'myAtl_NavigatingExpCS', the role 'myAtl_NavigatingExpCS145' has cardinality 0..*.
+An association connects 'myAtl_InfixExpCS' and 'myAtl_PrefixedExpCS'. From 'myAtl_InfixExpCS', the role 'myAtl_InfixExpCS' has cardinality 0..*, and from 'myAtl_PrefixedExpCS', the role 'myAtl_PrefixedExpCS' has cardinality 0..*.
+An association connects 'myAtl_BinaryOperatorCS' and 'myAtl_InfixExpCS'. From 'myAtl_BinaryOperatorCS', the role 'myAtl_BinaryOperatorCS' has cardinality 0..*, and from 'myAtl_InfixExpCS', the role 'myAtl_InfixExpCS148' has cardinality 0..*.
+An association connects 'myAtl_PrefixExpCS' and 'myAtl_UnaryOperatorCS'. From 'myAtl_PrefixExpCS', the role 'myAtl_PrefixExpCS' has cardinality 0..*, and from 'myAtl_UnaryOperatorCS', the role 'myAtl_UnaryOperatorCS' has cardinality 0..*.
+An association connects 'myAtl_PrefixExpCS' and 'myAtl_PrimaryExpCS'. From 'myAtl_PrefixExpCS', the role 'myAtl_PrefixExpCS151' has cardinality 0..*, and from 'myAtl_PrimaryExpCS', the role 'myAtl_PrimaryExpCS' has cardinality 0..*.

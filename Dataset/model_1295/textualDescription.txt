@@ -1,0 +1,193 @@
+The domain model 'StateMachines' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'StateMachines_BehaviorStateMachines_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'ProtocolConformance' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_ProtocolStateMachines_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_ConnectionPointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'BehaviorStateMachines_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_Transition' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'StateMachines_BehaviorStateMachines_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_ProtocolStateMachines_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'BehaviorStateMachines_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_TimeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectionPointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_ProtocolStateMachines_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_ProtocolStateMachines_ProtocolTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_State' represents an important domain concept.
+It has the following attributes: 'isOrthogonal', which is of type bool; 'isComposite', which is of type bool; 'isSimple', which is of type bool; 'isSubmachineState', which is of type bool.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Region' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'BehaviorStateMachines_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_ProtocolStateMachines_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_ProtocolStateMachines_DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_ProtocolStateMachines_ProtocolConformance' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachines_BehaviorStateMachines_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TransitionKind' defines the following possible values: 'internal', 'external'.
+
+The model also captures inheritance relationships between classes.
+The class 'StateMachines_BehaviorStateMachines_StateMachine' is a specialization of 'Behavior'.
+The class 'StateMachines_BehaviorStateMachines_Region' is a specialization of 'BehaviorStateMachines_Namespace'.
+The class 'StateMachines_BehaviorStateMachines_Region' is a specialization of 'BehaviorStateMachines_RedefinableElement'.
+The class 'StateMachines_BehaviorStateMachines_Vertex' is a specialization of 'NamedElement'.
+The class 'StateMachines_BehaviorStateMachines_Transition' is a specialization of 'BehaviorStateMachines_Namespace'.
+The class 'StateMachines_BehaviorStateMachines_Transition' is a specialization of 'BehaviorStateMachines_RedefinableElement'.
+The class 'StateMachines_BehaviorStateMachines_Pseudostate' is a specialization of 'Vertex'.
+The class 'StateMachines_BehaviorStateMachines_ConnectionPointReference' is a specialization of 'Vertex'.
+The class 'StateMachines_BehaviorStateMachines_State' is a specialization of 'BehaviorStateMachines_Vertex'.
+The class 'StateMachines_BehaviorStateMachines_State' is a specialization of 'BehaviorStateMachines_RedefinableElement'.
+The class 'StateMachines_BehaviorStateMachines_State' is a specialization of 'BehaviorStateMachines_Namespace'.
+The class 'StateMachines_BehaviorStateMachines_FinalState' is a specialization of 'State'.
+The class 'StateMachines_ProtocolStateMachines_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'StateMachines_ProtocolStateMachines_ProtocolConformance' is a specialization of 'DirectedRelationship'.
+The class 'StateMachines_ProtocolStateMachines_Interface' is a specialization of 'Classifier'.
+The class 'StateMachines_ProtocolStateMachines_ProtocolTransition' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Region' and 'StateMachines_BehaviorStateMachines_StateMachine'. From 'Region', the role '1' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_StateMachine', the role 'unnamed role' has cardinality 0..*.
+An association connects 'Pseudostate' and 'StateMachines_BehaviorStateMachines_StateMachine'. From 'Pseudostate', the role 'Pseudostate' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_StateMachine', the role 'StateMachines_BehaviorStateMachines_StateMachine' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_StateMachine' and 'State'. From 'StateMachines_BehaviorStateMachines_StateMachine', the role '4' has cardinality 0..*, and from 'State', the role '5' has cardinality 0..*.
+An association connects 'StateMachine' and 'StateMachines_BehaviorStateMachines_StateMachine'. From 'StateMachine', the role 'StateMachine' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_StateMachine', the role 'StateMachines_BehaviorStateMachines_StateMachine7' has cardinality 0..*.
+An association connects 'Vertex' and 'StateMachines_BehaviorStateMachines_Region'. From 'Vertex', the role '10' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_Region', the role '9' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_Region' and 'StateMachine'. From 'StateMachines_BehaviorStateMachines_Region', the role '12' has cardinality 0..*, and from 'StateMachine', the role '13' has cardinality 0..*.
+An association connects 'Transition' and 'StateMachines_BehaviorStateMachines_Region'. From 'Transition', the role '16' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_Region', the role '15' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_Region' and 'State'. From 'StateMachines_BehaviorStateMachines_Region', the role '18' has cardinality 0..*, and from 'State', the role '19' has cardinality 0..*.
+An association connects 'Region' and 'StateMachines_BehaviorStateMachines_Region'. From 'Region', the role 'Region' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_Region', the role 'StateMachines_BehaviorStateMachines_Region' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_Vertex' and 'Transition'. From 'StateMachines_BehaviorStateMachines_Vertex', the role '22' has cardinality 0..*, and from 'Transition', the role '23' has cardinality 0..*.
+An association connects 'Transition' and 'StateMachines_BehaviorStateMachines_Vertex'. From 'Transition', the role '26' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_Vertex', the role '25' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_Vertex' and 'Region'. From 'StateMachines_BehaviorStateMachines_Vertex', the role '28' has cardinality 0..*, and from 'Region', the role '29' has cardinality 0..*.
+An association connects 'Vertex' and 'StateMachines_BehaviorStateMachines_Transition'. From 'Vertex', the role '32' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_Transition', the role '31' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_Transition' and 'Vertex'. From 'StateMachines_BehaviorStateMachines_Transition', the role '34' has cardinality 0..*, and from 'Vertex', the role '35' has cardinality 0..*.
+An association connects 'Behavior' and 'StateMachines_BehaviorStateMachines_Transition'. From 'Behavior', the role 'Behavior' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_Transition', the role 'StateMachines_BehaviorStateMachines_Transition' has cardinality 0..*.
+An association connects 'Trigger' and 'StateMachines_BehaviorStateMachines_Transition'. From 'Trigger', the role 'Trigger' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_Transition', the role 'StateMachines_BehaviorStateMachines_Transition38' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_Transition' and 'Constraint'. From 'StateMachines_BehaviorStateMachines_Transition', the role 'StateMachines_BehaviorStateMachines_Transition40' has cardinality 0..*, and from 'Constraint', the role 'Constraint' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_Transition' and 'Region'. From 'StateMachines_BehaviorStateMachines_Transition', the role '42' has cardinality 0..*, and from 'Region', the role '43' has cardinality 0..*.
+An association connects 'Transition' and 'StateMachines_BehaviorStateMachines_Transition'. From 'Transition', the role 'Transition' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_Transition', the role 'StateMachines_BehaviorStateMachines_Transition45' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_Pseudostate' and 'State'. From 'StateMachines_BehaviorStateMachines_Pseudostate', the role '47' has cardinality 0..*, and from 'State', the role '48' has cardinality 0..*.
+An association connects 'Pseudostate' and 'StateMachines_BehaviorStateMachines_ConnectionPointReference'. From 'Pseudostate', the role 'Pseudostate50' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_ConnectionPointReference', the role 'StateMachines_BehaviorStateMachines_ConnectionPointReference' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_ConnectionPointReference' and 'Pseudostate'. From 'StateMachines_BehaviorStateMachines_ConnectionPointReference', the role 'StateMachines_BehaviorStateMachines_ConnectionPointReference52' has cardinality 0..*, and from 'Pseudostate', the role 'Pseudostate53' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_ConnectionPointReference' and 'State'. From 'StateMachines_BehaviorStateMachines_ConnectionPointReference', the role '55' has cardinality 0..*, and from 'State', the role '56' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_State' and 'ConnectionPointReference'. From 'StateMachines_BehaviorStateMachines_State', the role '58' has cardinality 0..*, and from 'ConnectionPointReference', the role '59' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_State' and 'Pseudostate'. From 'StateMachines_BehaviorStateMachines_State', the role '61' has cardinality 0..*, and from 'Pseudostate', the role '62' has cardinality 0..*.
+An association connects 'StateMachine' and 'StateMachines_BehaviorStateMachines_State'. From 'StateMachine', the role '65' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_State', the role '64' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_State' and 'Region'. From 'StateMachines_BehaviorStateMachines_State', the role '67' has cardinality 0..*, and from 'Region', the role '68' has cardinality 0..*.
+An association connects 'Trigger' and 'StateMachines_BehaviorStateMachines_State'. From 'Trigger', the role 'Trigger70' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_State', the role 'StateMachines_BehaviorStateMachines_State' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_State' and 'Behavior'. From 'StateMachines_BehaviorStateMachines_State', the role 'StateMachines_BehaviorStateMachines_State72' has cardinality 0..*, and from 'Behavior', the role 'Behavior73' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_State' and 'Behavior'. From 'StateMachines_BehaviorStateMachines_State', the role 'StateMachines_BehaviorStateMachines_State75' has cardinality 0..*, and from 'Behavior', the role 'Behavior76' has cardinality 0..*.
+An association connects 'Behavior' and 'StateMachines_BehaviorStateMachines_State'. From 'Behavior', the role 'Behavior79' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_State', the role 'StateMachines_BehaviorStateMachines_State78' has cardinality 0..*.
+An association connects 'Constraint' and 'StateMachines_BehaviorStateMachines_State'. From 'Constraint', the role 'Constraint82' has cardinality 0..*, and from 'StateMachines_BehaviorStateMachines_State', the role 'StateMachines_BehaviorStateMachines_State81' has cardinality 0..*.
+An association connects 'StateMachines_BehaviorStateMachines_State' and 'State'. From 'StateMachines_BehaviorStateMachines_State', the role 'StateMachines_BehaviorStateMachines_State84' has cardinality 0..*, and from 'State', the role 'State' has cardinality 0..*.
+An association connects 'ProtocolConformance' and 'StateMachines_ProtocolStateMachines_ProtocolStateMachine'. From 'ProtocolConformance', the role '87' has cardinality 0..*, and from 'StateMachines_ProtocolStateMachines_ProtocolStateMachine', the role '86' has cardinality 0..*.
+An association connects 'StateMachines_ProtocolStateMachines_ProtocolConformance' and 'ProtocolStateMachine'. From 'StateMachines_ProtocolStateMachines_ProtocolConformance', the role '89' has cardinality 0..*, and from 'ProtocolStateMachine', the role '90' has cardinality 0..*.
+An association connects 'ProtocolStateMachine' and 'StateMachines_ProtocolStateMachines_ProtocolConformance'. From 'ProtocolStateMachine', the role 'ProtocolStateMachine' has cardinality 0..*, and from 'StateMachines_ProtocolStateMachines_ProtocolConformance', the role 'StateMachines_ProtocolStateMachines_ProtocolConformance' has cardinality 0..*.
+An association connects 'StateMachines_ProtocolStateMachines_Port' and 'ProtocolStateMachine'. From 'StateMachines_ProtocolStateMachines_Port', the role 'StateMachines_ProtocolStateMachines_Port' has cardinality 0..*, and from 'ProtocolStateMachine', the role 'ProtocolStateMachine93' has cardinality 0..*.
+An association connects 'StateMachines_ProtocolStateMachines_Interface' and 'ProtocolStateMachine'. From 'StateMachines_ProtocolStateMachines_Interface', the role 'StateMachines_ProtocolStateMachines_Interface' has cardinality 0..*, and from 'ProtocolStateMachine', the role 'ProtocolStateMachine95' has cardinality 0..*.
+An association connects 'Constraint' and 'StateMachines_ProtocolStateMachines_ProtocolTransition'. From 'Constraint', the role 'Constraint97' has cardinality 0..*, and from 'StateMachines_ProtocolStateMachines_ProtocolTransition', the role 'StateMachines_ProtocolStateMachines_ProtocolTransition' has cardinality 0..*.
+An association connects 'Constraint' and 'StateMachines_ProtocolStateMachines_ProtocolTransition'. From 'Constraint', the role 'Constraint100' has cardinality 0..*, and from 'StateMachines_ProtocolStateMachines_ProtocolTransition', the role 'StateMachines_ProtocolStateMachines_ProtocolTransition99' has cardinality 0..*.
+An association connects 'Operation' and 'StateMachines_ProtocolStateMachines_ProtocolTransition'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'StateMachines_ProtocolStateMachines_ProtocolTransition', the role 'StateMachines_ProtocolStateMachines_ProtocolTransition102' has cardinality 0..*.

@@ -1,0 +1,70 @@
+The domain model 'finitestatemachines' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'Transition2' represents an important domain concept.
+It does not declare any attributes.
+
+'finitestatemachines_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'finitestatemachines_Fork' represents an important domain concept.
+It does not declare any attributes.
+
+'finitestatemachines_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'finitestatemachines_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'finitestatemachines_Join2' represents an important domain concept.
+It does not declare any attributes.
+
+'finitestatemachines_State2' represents an important domain concept.
+It has the following attributes: 'initialTime2', which is of type int; 'finalTime', which is of type int.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'finitestatemachines_Trigger2' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'finitestatemachines_Transition2' represents an important domain concept.
+It has the following attributes: 'initialTime', which is of type int; 'finalTime2', which is of type int.
+
+'finitestatemachines_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'finitestatemachines_TimedTransition' represents an important domain concept.
+It has one attribute: 'duration', which is of type int.
+
+'State2' represents an important domain concept.
+It does not declare any attributes.
+
+'finitestatemachines_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'finitestatemachines_StateMachine' is a specialization of 'NamedElement'.
+The class 'finitestatemachines_State2' is a specialization of 'NamedElement'.
+The class 'finitestatemachines_FinalState' is a specialization of 'State2'.
+The class 'finitestatemachines_InitialState' is a specialization of 'State2'.
+The class 'finitestatemachines_Transition2' is a specialization of 'NamedElement'.
+The class 'finitestatemachines_TimedTransition' is a specialization of 'Transition2'.
+The class 'finitestatemachines_Pseudostate' is a specialization of 'State2'.
+The class 'finitestatemachines_Fork' is a specialization of 'Pseudostate'.
+The class 'finitestatemachines_Join2' is a specialization of 'Pseudostate'.
+
+Relationships between classes are modeled using associations.
+An association connects 'finitestatemachines_State2' and 'finitestatemachines_StateMachine'. From 'finitestatemachines_State2', the role '1' has cardinality 0..*, and from 'finitestatemachines_StateMachine', the role 'unnamed role' has cardinality 0..*.
+An association connects 'finitestatemachines_Transition2' and 'finitestatemachines_StateMachine'. From 'finitestatemachines_Transition2', the role '4' has cardinality 0..*, and from 'finitestatemachines_StateMachine', the role '3' has cardinality 0..*.
+An association connects 'finitestatemachines_Transition2' and 'finitestatemachines_State2'. From 'finitestatemachines_Transition2', the role '7' has cardinality 0..*, and from 'finitestatemachines_State2', the role '6' has cardinality 0..*.
+An association connects 'finitestatemachines_State2' and 'finitestatemachines_Transition2'. From 'finitestatemachines_State2', the role '9' has cardinality 0..*, and from 'finitestatemachines_Transition2', the role '10' has cardinality 0..*.
+An association connects 'finitestatemachines_StateMachine' and 'finitestatemachines_State2'. From 'finitestatemachines_StateMachine', the role '13' has cardinality 0..*, and from 'finitestatemachines_State2', the role '12' has cardinality 0..*.
+An association connects 'finitestatemachines_Transition2' and 'finitestatemachines_State2'. From 'finitestatemachines_Transition2', the role '15' has cardinality 0..*, and from 'finitestatemachines_State2', the role '16' has cardinality 0..*.
+An association connects 'finitestatemachines_Transition2' and 'finitestatemachines_State2'. From 'finitestatemachines_Transition2', the role '18' has cardinality 0..*, and from 'finitestatemachines_State2', the role '19' has cardinality 0..*.
+An association connects 'finitestatemachines_Transition2' and 'finitestatemachines_Trigger2'. From 'finitestatemachines_Transition2', the role 'finitestatemachines_Transition2' has cardinality 0..*, and from 'finitestatemachines_Trigger2', the role 'finitestatemachines_Trigger2' has cardinality 0..*.
+An association connects 'finitestatemachines_Transition2' and 'finitestatemachines_StateMachine'. From 'finitestatemachines_Transition2', the role '22' has cardinality 0..*, and from 'finitestatemachines_StateMachine', the role '23' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mondo-project/mondo-demo-wt/DSL-tao/org.mondo.wt.cstudy/patterns/StateMachine_with_OCL.ecore

@@ -1,0 +1,201 @@
+The domain model 'ocl' describes the core structural elements and their relationships within the system.
+
+The model defines 62 main class(es).
+
+'ocl_ecore_OCLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_ocl_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_ocl_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_CollectionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_ElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_ExpressionInOCL' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_UnlimitedNaturalLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_MessageType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_EnumLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_ocl_EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_IntegerLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_OppositePropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_RealLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_ocl_EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_CollectionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_TupleLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_IteratorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_BooleanLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_TypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_StringLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_MessageExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_Constraint' represents an important domain concept.
+It has one attribute: 'stereotype', which is of type str.
+
+'ocl_ecore_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_IterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_NumericLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_TemplateParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_FeatureCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_AssociationClassCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_PropertyCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_UnspecifiedValueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ocl_ecore_StateExp' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ocl_ecore_ElementType' is a specialization of 'EClass'.
+The class 'ocl_ecore_ElementType' is a specialization of 'types_ElementType'.
+The class 'ocl_ecore_Constraint' is a specialization of 'ENamedElement'.
+The class 'ocl_ecore_OppositePropertyCallExp' is a specialization of 'NavigationCallExp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ecore_ocl_EOperation' and 'ocl_ecore_CallOperationAction'. From 'ecore_ocl_EOperation', the role 'ecore_ocl_EOperation' has cardinality 0..*, and from 'ocl_ecore_CallOperationAction', the role 'ocl_ecore_CallOperationAction' has cardinality 0..*.
+An association connects 'ocl_ecore_Constraint' and 'ecore_ocl_EModelElement'. From 'ocl_ecore_Constraint', the role 'ocl_ecore_Constraint' has cardinality 0..*, and from 'ecore_ocl_EModelElement', the role 'ecore_ocl_EModelElement' has cardinality 0..*.
+An association connects 'ocl_ecore_SendSignalAction' and 'ecore_ocl_EClass'. From 'ocl_ecore_SendSignalAction', the role 'ocl_ecore_SendSignalAction' has cardinality 0..*, and from 'ecore_ocl_EClass', the role 'ecore_ocl_EClass' has cardinality 0..*.
+An association connects 'ocl_ecore_OppositePropertyCallExp' and 'ecore_ocl_EReference'. From 'ocl_ecore_OppositePropertyCallExp', the role 'ocl_ecore_OppositePropertyCallExp' has cardinality 0..*, and from 'ecore_ocl_EReference', the role 'ecore_ocl_EReference' has cardinality 0..*.

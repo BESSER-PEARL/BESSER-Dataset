@@ -1,0 +1,48 @@
+The domain model 'statemachine_mk2' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'statemachine_mk2_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statemachine_mk2_Event' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'statemachine_mk2_SimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_mk2_Composite_state' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_mk2_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statemachine_mk2_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_mk2_Final_state' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachine_mk2_Final_state' is a specialization of 'State'.
+The class 'statemachine_mk2_Composite_state' is a specialization of 'State'.
+The class 'statemachine_mk2_SimpleState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_mk2_SimpleState' and 'statemachine_mk2_StateMachine'. From 'statemachine_mk2_SimpleState', the role 'statemachine_mk2_SimpleState' has cardinality 0..*, and from 'statemachine_mk2_StateMachine', the role 'statemachine_mk2_StateMachine' has cardinality 0..*.
+An association connects 'statemachine_mk2_State' and 'statemachine_mk2_StateMachine'. From 'statemachine_mk2_State', the role 'statemachine_mk2_State' has cardinality 0..*, and from 'statemachine_mk2_StateMachine', the role 'statemachine_mk2_StateMachine2' has cardinality 0..*.
+An association connects 'statemachine_mk2_StateMachine' and 'statemachine_mk2_Transition'. From 'statemachine_mk2_StateMachine', the role 'statemachine_mk2_StateMachine4' has cardinality 0..*, and from 'statemachine_mk2_Transition', the role 'statemachine_mk2_Transition' has cardinality 0..*.
+An association connects 'statemachine_mk2_StateMachine' and 'statemachine_mk2_Event'. From 'statemachine_mk2_StateMachine', the role 'statemachine_mk2_StateMachine6' has cardinality 0..*, and from 'statemachine_mk2_Event', the role 'statemachine_mk2_Event' has cardinality 0..*.
+An association connects 'statemachine_mk2_Final_state' and 'statemachine_mk2_StateMachine'. From 'statemachine_mk2_Final_state', the role 'statemachine_mk2_Final_state' has cardinality 0..*, and from 'statemachine_mk2_StateMachine', the role 'statemachine_mk2_StateMachine8' has cardinality 0..*.
+An association connects 'statemachine_mk2_Composite_state' and 'statemachine_mk2_StateMachine'. From 'statemachine_mk2_Composite_state', the role 'statemachine_mk2_Composite_state' has cardinality 0..*, and from 'statemachine_mk2_StateMachine', the role 'statemachine_mk2_StateMachine10' has cardinality 0..*.
+An association connects 'statemachine_mk2_Transition' and 'statemachine_mk2_State'. From 'statemachine_mk2_Transition', the role 'Transition' has cardinality 0..*, and from 'statemachine_mk2_State', the role 'source' has cardinality 0..*.
+An association connects 'statemachine_mk2_State' and 'statemachine_mk2_Transition'. From 'statemachine_mk2_State', the role 'target' has cardinality 0..*, and from 'statemachine_mk2_Transition', the role 'Transition13' has cardinality 0..*.
+An association connects 'statemachine_mk2_Transition' and 'statemachine_mk2_State'. From 'statemachine_mk2_Transition', the role 'outgoing' has cardinality 0..*, and from 'statemachine_mk2_State', the role 'State' has cardinality 0..*.
+An association connects 'statemachine_mk2_State' and 'statemachine_mk2_Transition'. From 'statemachine_mk2_State', the role 'State16' has cardinality 0..*, and from 'statemachine_mk2_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'statemachine_mk2_Event' and 'statemachine_mk2_Transition'. From 'statemachine_mk2_Event', the role 'statemachine_mk2_Event19' has cardinality 0..*, and from 'statemachine_mk2_Transition', the role 'statemachine_mk2_Transition18' has cardinality 0..*.
+An association connects 'statemachine_mk2_State' and 'statemachine_mk2_Event'. From 'statemachine_mk2_State', the role 'statemachine_mk2_State22' has cardinality 0..*, and from 'statemachine_mk2_Event', the role 'statemachine_mk2_Event21' has cardinality 0..*.
+An association connects 'statemachine_mk2_Transition' and 'statemachine_mk2_Event'. From 'statemachine_mk2_Transition', the role 'statemachine_mk2_Transition25' has cardinality 0..*, and from 'statemachine_mk2_Event', the role 'statemachine_mk2_Event24' has cardinality 0..*.
+An association connects 'statemachine_mk2_State' and 'statemachine_mk2_Composite_state'. From 'statemachine_mk2_State', the role 'statemachine_mk2_State28' has cardinality 0..*, and from 'statemachine_mk2_Composite_state', the role 'statemachine_mk2_Composite_state27' has cardinality 0..*.

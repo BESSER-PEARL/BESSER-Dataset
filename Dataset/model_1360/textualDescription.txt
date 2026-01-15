@@ -1,0 +1,199 @@
+The domain model 'statemachines' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'statemachines_State' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_EventType' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_CustomSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_StringConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_BooleanAttributeValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_Pseudostate' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'statemachines_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_IntegerAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_StringAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_IntegerAttributeValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'statemachines_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_CallEventType' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_AttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_CompletionEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_BooleanAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_SignalEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statemachines_StringAttributeValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'statemachines_OperationBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_CallEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_Constraint' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'EventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_Transition' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'statemachines_IntegerConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'EventType' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_EventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_SignalEventType' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_BooleanConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TransitionKind' defines the following possible values: 'external', 'internal', 'local'.
+The enumeration 'PseudostateKind' defines the following possible values: 'join', 'initial', 'entrypoint', 'terminate', 'fork', 'exitpoint'.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachines_Signal' is a specialization of 'NamedElement'.
+The class 'statemachines_Operation' is a specialization of 'NamedElement'.
+The class 'statemachines_SignalEventType' is a specialization of 'EventType'.
+The class 'statemachines_CallEventType' is a specialization of 'EventType'.
+The class 'statemachines_Attribute' is a specialization of 'NamedElement'.
+The class 'statemachines_BooleanAttribute' is a specialization of 'Attribute'.
+The class 'statemachines_IntegerAttribute' is a specialization of 'Attribute'.
+The class 'statemachines_StringAttribute' is a specialization of 'Attribute'.
+The class 'statemachines_StateMachine' is a specialization of 'NamedElement'.
+The class 'statemachines_Region' is a specialization of 'NamedElement'.
+The class 'statemachines_Vertex' is a specialization of 'NamedElement'.
+The class 'statemachines_Pseudostate' is a specialization of 'Vertex'.
+The class 'statemachines_State' is a specialization of 'Vertex'.
+The class 'statemachines_FinalState' is a specialization of 'State'.
+The class 'statemachines_Transition' is a specialization of 'NamedElement'.
+The class 'statemachines_Trigger' is a specialization of 'NamedElement'.
+The class 'statemachines_Behavior' is a specialization of 'NamedElement'.
+The class 'statemachines_OperationBehavior' is a specialization of 'Behavior'.
+The class 'statemachines_BooleanAttributeValue' is a specialization of 'AttributeValue'.
+The class 'statemachines_IntegerAttributeValue' is a specialization of 'AttributeValue'.
+The class 'statemachines_StringAttributeValue' is a specialization of 'AttributeValue'.
+The class 'statemachines_SignalEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'statemachines_CallEventOccurrence' is a specialization of 'EventOccurrence'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachines_CustomSystem' and 'statemachines_StateMachine'. From 'statemachines_CustomSystem', the role 'statemachines_CustomSystem' has cardinality 0..*, and from 'statemachines_StateMachine', the role 'statemachines_StateMachine' has cardinality 0..*.
+An association connects 'statemachines_Signal' and 'statemachines_CustomSystem'. From 'statemachines_Signal', the role 'statemachines_Signal' has cardinality 0..*, and from 'statemachines_CustomSystem', the role 'statemachines_CustomSystem2' has cardinality 0..*.
+An association connects 'statemachines_CustomSystem' and 'statemachines_Operation'. From 'statemachines_CustomSystem', the role 'statemachines_CustomSystem4' has cardinality 0..*, and from 'statemachines_Operation', the role 'statemachines_Operation' has cardinality 0..*.
+An association connects 'statemachines_Signal' and 'statemachines_Attribute'. From 'statemachines_Signal', the role 'statemachines_Signal6' has cardinality 0..*, and from 'statemachines_Attribute', the role 'statemachines_Attribute' has cardinality 0..*.
+An association connects 'statemachines_Attribute' and 'statemachines_Operation'. From 'statemachines_Attribute', the role 'statemachines_Attribute9' has cardinality 0..*, and from 'statemachines_Operation', the role 'statemachines_Operation8' has cardinality 0..*.
+An association connects 'statemachines_Operation' and 'statemachines_Attribute'. From 'statemachines_Operation', the role 'statemachines_Operation11' has cardinality 0..*, and from 'statemachines_Attribute', the role 'statemachines_Attribute12' has cardinality 0..*.
+An association connects 'statemachines_Operation' and 'statemachines_Attribute'. From 'statemachines_Operation', the role 'statemachines_Operation14' has cardinality 0..*, and from 'statemachines_Attribute', the role 'statemachines_Attribute15' has cardinality 0..*.
+An association connects 'statemachines_SignalEventType' and 'statemachines_Signal'. From 'statemachines_SignalEventType', the role 'statemachines_SignalEventType' has cardinality 0..*, and from 'statemachines_Signal', the role 'statemachines_Signal17' has cardinality 0..*.
+An association connects 'statemachines_CallEventType' and 'statemachines_Operation'. From 'statemachines_CallEventType', the role 'statemachines_CallEventType' has cardinality 0..*, and from 'statemachines_Operation', the role 'statemachines_Operation19' has cardinality 0..*.
+An association connects 'statemachines_StateMachine' and 'statemachines_Region'. From 'statemachines_StateMachine', the role 'unnamed role' has cardinality 0..*, and from 'statemachines_Region', the role '21' has cardinality 0..*.
+An association connects 'statemachines_Vertex' and 'statemachines_Region'. From 'statemachines_Vertex', the role '24' has cardinality 0..*, and from 'statemachines_Region', the role '23' has cardinality 0..*.
+An association connects 'statemachines_Transition' and 'statemachines_Region'. From 'statemachines_Transition', the role '27' has cardinality 0..*, and from 'statemachines_Region', the role '26' has cardinality 0..*.
+An association connects 'statemachines_Region' and 'statemachines_StateMachine'. From 'statemachines_Region', the role '29' has cardinality 0..*, and from 'statemachines_StateMachine', the role '30' has cardinality 0..*.
+An association connects 'statemachines_State' and 'statemachines_Region'. From 'statemachines_State', the role '33' has cardinality 0..*, and from 'statemachines_Region', the role '32' has cardinality 0..*.
+An association connects 'statemachines_Region' and 'statemachines_Vertex'. From 'statemachines_Region', the role '36' has cardinality 0..*, and from 'statemachines_Vertex', the role '35' has cardinality 0..*.
+An association connects 'statemachines_Transition' and 'statemachines_Vertex'. From 'statemachines_Transition', the role '39' has cardinality 0..*, and from 'statemachines_Vertex', the role '38' has cardinality 0..*.
+An association connects 'statemachines_Transition' and 'statemachines_Vertex'. From 'statemachines_Transition', the role '42' has cardinality 0..*, and from 'statemachines_Vertex', the role '41' has cardinality 0..*.
+An association connects 'statemachines_State' and 'statemachines_Pseudostate'. From 'statemachines_State', the role '45' has cardinality 0..*, and from 'statemachines_Pseudostate', the role '44' has cardinality 0..*.
+An association connects 'statemachines_State' and 'statemachines_Region'. From 'statemachines_State', the role '47' has cardinality 0..*, and from 'statemachines_Region', the role '48' has cardinality 0..*.
+An association connects 'statemachines_Behavior' and 'statemachines_State'. From 'statemachines_Behavior', the role 'statemachines_Behavior' has cardinality 0..*, and from 'statemachines_State', the role 'statemachines_State' has cardinality 0..*.
+An association connects 'statemachines_State' and 'statemachines_Behavior'. From 'statemachines_State', the role 'statemachines_State51' has cardinality 0..*, and from 'statemachines_Behavior', the role 'statemachines_Behavior52' has cardinality 0..*.
+An association connects 'statemachines_Behavior' and 'statemachines_State'. From 'statemachines_Behavior', the role 'statemachines_Behavior55' has cardinality 0..*, and from 'statemachines_State', the role 'statemachines_State54' has cardinality 0..*.
+An association connects 'statemachines_State' and 'statemachines_Trigger'. From 'statemachines_State', the role 'statemachines_State57' has cardinality 0..*, and from 'statemachines_Trigger', the role 'statemachines_Trigger' has cardinality 0..*.
+An association connects 'statemachines_State' and 'statemachines_Pseudostate'. From 'statemachines_State', the role '59' has cardinality 0..*, and from 'statemachines_Pseudostate', the role '60' has cardinality 0..*.
+An association connects 'statemachines_Vertex' and 'statemachines_Transition'. From 'statemachines_Vertex', the role '63' has cardinality 0..*, and from 'statemachines_Transition', the role '62' has cardinality 0..*.
+An association connects 'statemachines_Transition' and 'statemachines_Vertex'. From 'statemachines_Transition', the role '65' has cardinality 0..*, and from 'statemachines_Vertex', the role '66' has cardinality 0..*.
+An association connects 'statemachines_Trigger' and 'statemachines_Transition'. From 'statemachines_Trigger', the role 'statemachines_Trigger68' has cardinality 0..*, and from 'statemachines_Transition', the role 'statemachines_Transition' has cardinality 0..*.
+An association connects 'statemachines_Transition' and 'statemachines_Region'. From 'statemachines_Transition', the role '70' has cardinality 0..*, and from 'statemachines_Region', the role '71' has cardinality 0..*.
+An association connects 'statemachines_Behavior' and 'statemachines_Transition'. From 'statemachines_Behavior', the role 'statemachines_Behavior74' has cardinality 0..*, and from 'statemachines_Transition', the role 'statemachines_Transition73' has cardinality 0..*.
+An association connects 'statemachines_Trigger' and 'statemachines_EventType'. From 'statemachines_Trigger', the role 'statemachines_Trigger76' has cardinality 0..*, and from 'statemachines_EventType', the role 'statemachines_EventType' has cardinality 0..*.
+An association connects 'statemachines_Behavior' and 'statemachines_SignalEventOccurrence'. From 'statemachines_Behavior', the role 'statemachines_Behavior78' has cardinality 0..*, and from 'statemachines_SignalEventOccurrence', the role 'statemachines_SignalEventOccurrence' has cardinality 0..*.
+An association connects 'statemachines_AttributeValue' and 'statemachines_OperationBehavior'. From 'statemachines_AttributeValue', the role 'statemachines_AttributeValue' has cardinality 0..*, and from 'statemachines_OperationBehavior', the role 'statemachines_OperationBehavior' has cardinality 0..*.
+An association connects 'statemachines_BooleanAttribute' and 'statemachines_BooleanAttributeValue'. From 'statemachines_BooleanAttribute', the role 'statemachines_BooleanAttribute' has cardinality 0..*, and from 'statemachines_BooleanAttributeValue', the role 'statemachines_BooleanAttributeValue' has cardinality 0..*.
+An association connects 'statemachines_IntegerAttribute' and 'statemachines_IntegerAttributeValue'. From 'statemachines_IntegerAttribute', the role 'statemachines_IntegerAttribute' has cardinality 0..*, and from 'statemachines_IntegerAttributeValue', the role 'statemachines_IntegerAttributeValue' has cardinality 0..*.
+An association connects 'statemachines_StringAttribute' and 'statemachines_StringAttributeValue'. From 'statemachines_StringAttribute', the role 'statemachines_StringAttribute' has cardinality 0..*, and from 'statemachines_StringAttributeValue', the role 'statemachines_StringAttributeValue' has cardinality 0..*.
+An association connects 'statemachines_State' and 'statemachines_CompletionEventOccurrence'. From 'statemachines_State', the role 'statemachines_State84' has cardinality 0..*, and from 'statemachines_CompletionEventOccurrence', the role 'statemachines_CompletionEventOccurrence' has cardinality 0..*.
+An association connects 'statemachines_Signal' and 'statemachines_SignalEventOccurrence'. From 'statemachines_Signal', the role 'statemachines_Signal87' has cardinality 0..*, and from 'statemachines_SignalEventOccurrence', the role 'statemachines_SignalEventOccurrence86' has cardinality 0..*.
+An association connects 'statemachines_SignalEventOccurrence' and 'statemachines_AttributeValue'. From 'statemachines_SignalEventOccurrence', the role 'statemachines_SignalEventOccurrence89' has cardinality 0..*, and from 'statemachines_AttributeValue', the role 'statemachines_AttributeValue90' has cardinality 0..*.
+An association connects 'statemachines_CallEventOccurrence' and 'statemachines_Operation'. From 'statemachines_CallEventOccurrence', the role 'statemachines_CallEventOccurrence' has cardinality 0..*, and from 'statemachines_Operation', the role 'statemachines_Operation92' has cardinality 0..*.
+An association connects 'statemachines_AttributeValue' and 'statemachines_CallEventOccurrence'. From 'statemachines_AttributeValue', the role 'statemachines_AttributeValue95' has cardinality 0..*, and from 'statemachines_CallEventOccurrence', the role 'statemachines_CallEventOccurrence94' has cardinality 0..*.
+An association connects 'statemachines_AttributeValue' and 'statemachines_CallEventOccurrence'. From 'statemachines_AttributeValue', the role 'statemachines_AttributeValue98' has cardinality 0..*, and from 'statemachines_CallEventOccurrence', the role 'statemachines_CallEventOccurrence97' has cardinality 0..*.
+An association connects 'statemachines_CallEventOccurrence' and 'statemachines_AttributeValue'. From 'statemachines_CallEventOccurrence', the role 'statemachines_CallEventOccurrence100' has cardinality 0..*, and from 'statemachines_AttributeValue', the role 'statemachines_AttributeValue101' has cardinality 0..*.

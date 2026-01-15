@@ -1,0 +1,58 @@
+The domain model 'statemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'statemachine_SetCommand' represents an important domain concept.
+It has one attribute: 'signal', which is of type str.
+
+'statemachine_ExecuteCommand' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'statemachine_State' represents an important domain concept.
+It has the following attributes: 'final', which is of type bool; 'name', which is of type str; 'id', which is of type str; 'initial', which is of type bool.
+
+'statemachine_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_VerbatimExpression' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_PrintCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_StatePropertyExpression' represents an important domain concept.
+It has one attribute: 'property', which is of type str.
+
+'statemachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Statemachine' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Command' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachine_SetCommand' is a specialization of 'Command'.
+The class 'statemachine_ExecuteCommand' is a specialization of 'Command'.
+The class 'statemachine_PrintCommand' is a specialization of 'Command'.
+The class 'statemachine_VerbatimExpression' is a specialization of 'Expression'.
+The class 'statemachine_StatePropertyExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_State' and 'statemachine_Statemachine'. From 'statemachine_State', the role 'statemachine_State' has cardinality 0..*, and from 'statemachine_Statemachine', the role 'statemachine_Statemachine' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Statemachine'. From 'statemachine_Transition', the role 'statemachine_Transition' has cardinality 0..*, and from 'statemachine_Statemachine', the role 'statemachine_Statemachine2' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_Command'. From 'statemachine_State', the role 'statemachine_State4' has cardinality 0..*, and from 'statemachine_Command', the role 'statemachine_Command' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_Transition'. From 'statemachine_State', the role 'statemachine_State7' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition6' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_Transition'. From 'statemachine_State', the role 'statemachine_State10' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition9' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Expression'. From 'statemachine_Transition', the role 'statemachine_Transition12' has cardinality 0..*, and from 'statemachine_Expression', the role 'statemachine_Expression' has cardinality 0..*.
+An association connects 'statemachine_Expression' and 'statemachine_SetCommand'. From 'statemachine_Expression', the role 'statemachine_Expression14' has cardinality 0..*, and from 'statemachine_SetCommand', the role 'statemachine_SetCommand' has cardinality 0..*.
+An association connects 'statemachine_ExecuteCommand' and 'statemachine_Expression'. From 'statemachine_ExecuteCommand', the role 'statemachine_ExecuteCommand' has cardinality 0..*, and from 'statemachine_Expression', the role 'statemachine_Expression16' has cardinality 0..*.
+An association connects 'statemachine_Expression' and 'statemachine_PrintCommand'. From 'statemachine_Expression', the role 'statemachine_Expression18' has cardinality 0..*, and from 'statemachine_PrintCommand', the role 'statemachine_PrintCommand' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_StatePropertyExpression'. From 'statemachine_State', the role 'statemachine_State20' has cardinality 0..*, and from 'statemachine_StatePropertyExpression', the role 'statemachine_StatePropertyExpression' has cardinality 0..*.

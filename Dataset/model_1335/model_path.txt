@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/adolfosbh/cs2as/uk.ac.york.cs.miniocl.xtext/model/generated/MiniOCL.ecore

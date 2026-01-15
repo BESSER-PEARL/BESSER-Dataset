@@ -1,0 +1,78 @@
+The domain model 'classescs' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'classescs_RoundedBracketClause' represents an important domain concept.
+It does not declare any attributes.
+
+'classescs_ClassCS' represents an important domain concept.
+It does not declare any attributes.
+
+'classescs_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'classescs_OperationCS' represents an important domain concept.
+It has one attribute: 'params', which is of type str.
+
+'classescs_PathElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'classescs_RootCS' represents an important domain concept.
+It does not declare any attributes.
+
+'classescs_PackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'classescs_PropertyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'classescs_NameExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'classescs_NamedElementCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classescs_ElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'classescs_ArgumentCS' represents an important domain concept.
+It does not declare any attributes.
+
+'classescs_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'classescs_NamedElementCS' is a specialization of 'ElementCS'.
+The class 'classescs_PackageCS' is a specialization of 'NamedElementCS'.
+The class 'classescs_ClassCS' is a specialization of 'NamedElementCS'.
+The class 'classescs_PathNameCS' is a specialization of 'ElementCS'.
+The class 'classescs_PathElementCS' is a specialization of 'NamedElementCS'.
+The class 'classescs_RootCS' is a specialization of 'ElementCS'.
+The class 'classescs_PropertyCS' is a specialization of 'NamedElementCS'.
+The class 'classescs_OperationCS' is a specialization of 'NamedElementCS'.
+The class 'classescs_NameExpCS' is a specialization of 'ElementCS'.
+The class 'classescs_RoundedBracketClause' is a specialization of 'ElementCS'.
+The class 'classescs_ArgumentCS' is a specialization of 'NamedElementCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'classescs_ElementCS' and 'classescs_EObject'. From 'classescs_ElementCS', the role 'classescs_ElementCS' has cardinality 0..*, and from 'classescs_EObject', the role 'classescs_EObject' has cardinality 0..*.
+An association connects 'classescs_PackageCS' and 'classescs_ClassCS'. From 'classescs_PackageCS', the role 'classescs_PackageCS' has cardinality 0..*, and from 'classescs_ClassCS', the role 'classescs_ClassCS' has cardinality 0..*.
+An association connects 'classescs_PackageCS' and 'classescs_PackageCS'. From 'classescs_PackageCS', the role 'classescs_PackageCS2' has cardinality 0..*, and from 'classescs_PackageCS', the role 'classescs_PackageCS4' has cardinality 0..*.
+An association connects 'classescs_ClassCS' and 'classescs_PathNameCS'. From 'classescs_ClassCS', the role 'classescs_ClassCS6' has cardinality 0..*, and from 'classescs_PathNameCS', the role 'classescs_PathNameCS' has cardinality 0..*.
+An association connects 'classescs_ClassCS' and 'classescs_PropertyCS'. From 'classescs_ClassCS', the role 'classescs_ClassCS8' has cardinality 0..*, and from 'classescs_PropertyCS', the role 'classescs_PropertyCS' has cardinality 0..*.
+An association connects 'classescs_OperationCS' and 'classescs_ClassCS'. From 'classescs_OperationCS', the role 'classescs_OperationCS' has cardinality 0..*, and from 'classescs_ClassCS', the role 'classescs_ClassCS10' has cardinality 0..*.
+An association connects 'classescs_PathNameCS' and 'classescs_PathElementCS'. From 'classescs_PathNameCS', the role 'classescs_PathNameCS12' has cardinality 0..*, and from 'classescs_PathElementCS', the role 'classescs_PathElementCS' has cardinality 0..*.
+An association connects 'classescs_PackageCS' and 'classescs_RootCS'. From 'classescs_PackageCS', the role 'classescs_PackageCS14' has cardinality 0..*, and from 'classescs_RootCS', the role 'classescs_RootCS' has cardinality 0..*.
+An association connects 'classescs_PathNameCS' and 'classescs_PropertyCS'. From 'classescs_PathNameCS', the role 'classescs_PathNameCS17' has cardinality 0..*, and from 'classescs_PropertyCS', the role 'classescs_PropertyCS16' has cardinality 0..*.
+An association connects 'classescs_NameExpCS' and 'classescs_OperationCS'. From 'classescs_NameExpCS', the role 'classescs_NameExpCS' has cardinality 0..*, and from 'classescs_OperationCS', the role 'classescs_OperationCS19' has cardinality 0..*.
+An association connects 'classescs_OperationCS' and 'classescs_PathNameCS'. From 'classescs_OperationCS', the role 'classescs_OperationCS21' has cardinality 0..*, and from 'classescs_PathNameCS', the role 'classescs_PathNameCS22' has cardinality 0..*.
+An association connects 'classescs_NameExpCS' and 'classescs_PathNameCS'. From 'classescs_NameExpCS', the role 'classescs_NameExpCS24' has cardinality 0..*, and from 'classescs_PathNameCS', the role 'classescs_PathNameCS25' has cardinality 0..*.
+An association connects 'classescs_NameExpCS' and 'classescs_RoundedBracketClause'. From 'classescs_NameExpCS', the role 'classescs_NameExpCS27' has cardinality 0..*, and from 'classescs_RoundedBracketClause', the role 'classescs_RoundedBracketClause' has cardinality 0..*.
+An association connects 'classescs_NameExpCS' and 'classescs_NameExpCS'. From 'classescs_NameExpCS', the role 'classescs_NameExpCS30' has cardinality 0..*, and from 'classescs_NameExpCS', the role 'classescs_NameExpCS28' has cardinality 0..*.
+An association connects 'classescs_ArgumentCS' and 'classescs_RoundedBracketClause'. From 'classescs_ArgumentCS', the role 'classescs_ArgumentCS' has cardinality 0..*, and from 'classescs_RoundedBracketClause', the role 'classescs_RoundedBracketClause32' has cardinality 0..*.

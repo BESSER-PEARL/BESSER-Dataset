@@ -1,0 +1,104 @@
+The domain model 'SimplStateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'SimplStateMachine_State' represents an important domain concept.
+It has the following attributes: 'isActive', which is of type bool; 'name', which is of type str.
+
+'SimplStateMachine_Data' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_Expression' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; '_name', which is of type str.
+
+'SimplStateMachine_Assignment' represents an important domain concept.
+It has one attribute: '_name', which is of type str.
+
+'Data' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_IntegerData' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'SimplStateMachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_ExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_BooleanData' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_IntegerVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_BooleanVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ExpressionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplStateMachine_VariableReference' represents an important domain concept.
+It has one attribute: '_name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Operator' defines the following possible values: 'and', 'div', 'gte', 'mul', 'not', 'neq', 'add', 'sub', 'or', 'lte', 'eq', 'gt', 'lt'.
+
+The model also captures inheritance relationships between classes.
+The class 'SimplStateMachine_StateMachine' is a specialization of 'CompositeState'.
+The class 'SimplStateMachine_CompositeState' is a specialization of 'State'.
+The class 'SimplStateMachine_Expression' is a specialization of 'ExpressionElement'.
+The class 'SimplStateMachine_Data' is a specialization of 'ExpressionElement'.
+The class 'SimplStateMachine_BooleanData' is a specialization of 'Data'.
+The class 'SimplStateMachine_IntegerData' is a specialization of 'Data'.
+The class 'SimplStateMachine_BooleanVariable' is a specialization of 'Variable'.
+The class 'SimplStateMachine_IntegerVariable' is a specialization of 'Variable'.
+The class 'SimplStateMachine_VariableReference' is a specialization of 'ExpressionElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimplStateMachine_Transition' and 'SimplStateMachine_StateMachine'. From 'SimplStateMachine_Transition', the role 'SimplStateMachine_Transition' has cardinality 0..*, and from 'SimplStateMachine_StateMachine', the role 'SimplStateMachine_StateMachine' has cardinality 0..*.
+An association connects 'SimplStateMachine_StateMachine' and 'SimplStateMachine_Event'. From 'SimplStateMachine_StateMachine', the role 'SimplStateMachine_StateMachine2' has cardinality 0..*, and from 'SimplStateMachine_Event', the role 'SimplStateMachine_Event' has cardinality 0..*.
+An association connects 'SimplStateMachine_Variable' and 'SimplStateMachine_StateMachine'. From 'SimplStateMachine_Variable', the role 'SimplStateMachine_Variable' has cardinality 0..*, and from 'SimplStateMachine_StateMachine', the role 'SimplStateMachine_StateMachine4' has cardinality 0..*.
+An association connects 'SimplStateMachine_State' and 'SimplStateMachine_CompositeState'. From 'SimplStateMachine_State', the role 'states' has cardinality 0..*, and from 'SimplStateMachine_CompositeState', the role 'CompositeState' has cardinality 0..*.
+An association connects 'SimplStateMachine_Operation' and 'SimplStateMachine_State'. From 'SimplStateMachine_Operation', the role 'SimplStateMachine_Operation' has cardinality 0..*, and from 'SimplStateMachine_State', the role 'SimplStateMachine_State' has cardinality 0..*.
+An association connects 'SimplStateMachine_State' and 'SimplStateMachine_CompositeState'. From 'SimplStateMachine_State', the role 'State' has cardinality 0..*, and from 'SimplStateMachine_CompositeState', the role 'container' has cardinality 0..*.
+An association connects 'SimplStateMachine_InitialState' and 'SimplStateMachine_CompositeState'. From 'SimplStateMachine_InitialState', the role 'SimplStateMachine_InitialState' has cardinality 0..*, and from 'SimplStateMachine_CompositeState', the role 'SimplStateMachine_CompositeState' has cardinality 0..*.
+An association connects 'SimplStateMachine_State' and 'SimplStateMachine_InitialState'. From 'SimplStateMachine_State', the role 'SimplStateMachine_State11' has cardinality 0..*, and from 'SimplStateMachine_InitialState', the role 'SimplStateMachine_InitialState10' has cardinality 0..*.
+An association connects 'SimplStateMachine_Transition' and 'SimplStateMachine_State'. From 'SimplStateMachine_Transition', the role 'SimplStateMachine_Transition13' has cardinality 0..*, and from 'SimplStateMachine_State', the role 'SimplStateMachine_State14' has cardinality 0..*.
+An association connects 'SimplStateMachine_State' and 'SimplStateMachine_Transition'. From 'SimplStateMachine_State', the role 'SimplStateMachine_State17' has cardinality 0..*, and from 'SimplStateMachine_Transition', the role 'SimplStateMachine_Transition16' has cardinality 0..*.
+An association connects 'SimplStateMachine_Transition' and 'SimplStateMachine_Event'. From 'SimplStateMachine_Transition', the role 'SimplStateMachine_Transition19' has cardinality 0..*, and from 'SimplStateMachine_Event', the role 'SimplStateMachine_Event20' has cardinality 0..*.
+An association connects 'SimplStateMachine_Expression' and 'SimplStateMachine_Transition'. From 'SimplStateMachine_Expression', the role 'SimplStateMachine_Expression' has cardinality 0..*, and from 'SimplStateMachine_Transition', the role 'SimplStateMachine_Transition22' has cardinality 0..*.
+An association connects 'SimplStateMachine_ExpressionElement' and 'SimplStateMachine_Expression'. From 'SimplStateMachine_ExpressionElement', the role 'SimplStateMachine_ExpressionElement' has cardinality 0..*, and from 'SimplStateMachine_Expression', the role 'SimplStateMachine_Expression24' has cardinality 0..*.
+An association connects 'SimplStateMachine_ExpressionElement' and 'SimplStateMachine_Expression'. From 'SimplStateMachine_ExpressionElement', the role 'SimplStateMachine_ExpressionElement27' has cardinality 0..*, and from 'SimplStateMachine_Expression', the role 'SimplStateMachine_Expression26' has cardinality 0..*.
+An association connects 'SimplStateMachine_Data' and 'SimplStateMachine_Variable'. From 'SimplStateMachine_Data', the role 'SimplStateMachine_Data' has cardinality 0..*, and from 'SimplStateMachine_Variable', the role 'SimplStateMachine_Variable29' has cardinality 0..*.
+An association connects 'SimplStateMachine_Assignment' and 'SimplStateMachine_Operation'. From 'SimplStateMachine_Assignment', the role 'SimplStateMachine_Assignment' has cardinality 0..*, and from 'SimplStateMachine_Operation', the role 'SimplStateMachine_Operation31' has cardinality 0..*.
+An association connects 'SimplStateMachine_Assignment' and 'SimplStateMachine_ExpressionElement'. From 'SimplStateMachine_Assignment', the role 'SimplStateMachine_Assignment33' has cardinality 0..*, and from 'SimplStateMachine_ExpressionElement', the role 'SimplStateMachine_ExpressionElement34' has cardinality 0..*.
+An association connects 'SimplStateMachine_Assignment' and 'SimplStateMachine_Variable'. From 'SimplStateMachine_Assignment', the role 'SimplStateMachine_Assignment36' has cardinality 0..*, and from 'SimplStateMachine_Variable', the role 'SimplStateMachine_Variable37' has cardinality 0..*.
+An association connects 'SimplStateMachine_Variable' and 'SimplStateMachine_VariableReference'. From 'SimplStateMachine_Variable', the role 'SimplStateMachine_Variable39' has cardinality 0..*, and from 'SimplStateMachine_VariableReference', the role 'SimplStateMachine_VariableReference' has cardinality 0..*.

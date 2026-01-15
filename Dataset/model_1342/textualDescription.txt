@@ -1,0 +1,228 @@
+The domain model 'oclinEcoreCST' describes the core structural elements and their relationships within the system.
+
+The model defines 53 main class(es).
+
+'oclinEcoreCST_DataTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EReferenceRef' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_ClassifierCS' represents an important domain concept.
+It has the following attributes: 'qualifiers', which is of type str; 'instanceClassName', which is of type str.
+
+'oclinEcoreCST_StructuralFeatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_DataTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_DetailCS' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'stringName', which is of type str; 'idName', which is of type str.
+
+'oclinEcoreCST_DataTypeOrEnumCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_DataTypeCSRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_ReferenceRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_OperationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_ClassRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassifierRef' represents an important domain concept.
+It does not declare any attributes.
+
+'DataTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EDataTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_AttributeCSRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_ClassCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_DocumentCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EnumCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_AttributeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'DataTypeOrEnumCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_AttributeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_ClassCSRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EClassRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_ImportCS' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'oclinEcoreCST_TypedElementCS' represents an important domain concept.
+It has the following attributes: 'multiplicity', which is of type str; 'qualifiers', which is of type str; 'upper', which is of type int; 'lower', which is of type int.
+
+'oclinEcoreCST_AnnotationCS' represents an important domain concept.
+It has the following attributes: 'idSource', which is of type str; 'stringSource', which is of type str.
+
+'StructuralFeatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_PackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_ConstraintCS' represents an important domain concept.
+It has one attribute: 'stereotype', which is of type str.
+
+'oclinEcoreCST_ReferenceCSRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_ClassifierRef' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_ModelElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EnumLiteralCS' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'oclinEcoreCST_ClassifierCSRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EClassifierRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_ParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassifierCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_TypeParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_ReferenceCS' represents an important domain concept.
+It has one attribute: 'containment', which is of type bool.
+
+'oclinEcoreCST_NamedElementCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ReferenceRef' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_OclExpressionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclinEcoreCST_EAttributeRef' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'oclinEcoreCST_AnnotationCS' is a specialization of 'ModelElementCS'.
+The class 'oclinEcoreCST_AttributeCS' is a specialization of 'StructuralFeatureCS'.
+The class 'oclinEcoreCST_AttributeCSRef' is a specialization of 'AttributeRef'.
+The class 'oclinEcoreCST_ClassCS' is a specialization of 'ClassifierCS'.
+The class 'oclinEcoreCST_ClassCSRef' is a specialization of 'ClassRef'.
+The class 'oclinEcoreCST_ClassRef' is a specialization of 'ClassifierRef'.
+The class 'oclinEcoreCST_ClassifierCS' is a specialization of 'NamedElementCS'.
+The class 'oclinEcoreCST_ClassifierCSRef' is a specialization of 'ClassifierRef'.
+The class 'oclinEcoreCST_ConstraintCS' is a specialization of 'NamedElementCS'.
+The class 'oclinEcoreCST_DataTypeRef' is a specialization of 'ClassifierRef'.
+The class 'oclinEcoreCST_DataTypeCS' is a specialization of 'DataTypeOrEnumCS'.
+The class 'oclinEcoreCST_DataTypeOrEnumCS' is a specialization of 'ClassifierCS'.
+The class 'oclinEcoreCST_DataTypeCSRef' is a specialization of 'DataTypeRef'.
+The class 'oclinEcoreCST_EAttributeRef' is a specialization of 'AttributeRef'.
+The class 'oclinEcoreCST_EClassRef' is a specialization of 'ClassRef'.
+The class 'oclinEcoreCST_EClassifierRef' is a specialization of 'ClassifierRef'.
+The class 'oclinEcoreCST_EDataTypeRef' is a specialization of 'DataTypeRef'.
+The class 'oclinEcoreCST_EReferenceRef' is a specialization of 'ReferenceRef'.
+The class 'oclinEcoreCST_EnumCS' is a specialization of 'DataTypeOrEnumCS'.
+The class 'oclinEcoreCST_EnumLiteralCS' is a specialization of 'NamedElementCS'.
+The class 'oclinEcoreCST_NamedElementCS' is a specialization of 'ModelElementCS'.
+The class 'oclinEcoreCST_OperationCS' is a specialization of 'TypedElementCS'.
+The class 'oclinEcoreCST_PackageCS' is a specialization of 'NamedElementCS'.
+The class 'oclinEcoreCST_ParameterCS' is a specialization of 'TypedElementCS'.
+The class 'oclinEcoreCST_ReferenceCS' is a specialization of 'StructuralFeatureCS'.
+The class 'oclinEcoreCST_ReferenceCSRef' is a specialization of 'ReferenceRef'.
+The class 'oclinEcoreCST_StructuralFeatureCS' is a specialization of 'TypedElementCS'.
+The class 'oclinEcoreCST_TypedElementCS' is a specialization of 'NamedElementCS'.
+The class 'oclinEcoreCST_TypeParameterCS' is a specialization of 'NamedElementCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'oclinEcoreCST_AnnotationCS' and 'oclinEcoreCST_DetailCS'. From 'oclinEcoreCST_AnnotationCS', the role 'oclinEcoreCST_AnnotationCS' has cardinality 0..*, and from 'oclinEcoreCST_DetailCS', the role 'oclinEcoreCST_DetailCS' has cardinality 0..*.
+An association connects 'oclinEcoreCST_AttributeCS' and 'oclinEcoreCST_AttributeCSRef'. From 'oclinEcoreCST_AttributeCS', the role 'oclinEcoreCST_AttributeCS' has cardinality 0..*, and from 'oclinEcoreCST_AttributeCSRef', the role 'oclinEcoreCST_AttributeCSRef' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ClassRef' and 'oclinEcoreCST_ClassCS'. From 'oclinEcoreCST_ClassRef', the role 'oclinEcoreCST_ClassRef' has cardinality 0..*, and from 'oclinEcoreCST_ClassCS', the role 'oclinEcoreCST_ClassCS' has cardinality 0..*.
+An association connects 'oclinEcoreCST_OperationCS' and 'oclinEcoreCST_ClassCS'. From 'oclinEcoreCST_OperationCS', the role 'oclinEcoreCST_OperationCS' has cardinality 0..*, and from 'oclinEcoreCST_ClassCS', the role 'oclinEcoreCST_ClassCS4' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ClassCS' and 'oclinEcoreCST_StructuralFeatureCS'. From 'oclinEcoreCST_ClassCS', the role 'oclinEcoreCST_ClassCS6' has cardinality 0..*, and from 'oclinEcoreCST_StructuralFeatureCS', the role 'oclinEcoreCST_StructuralFeatureCS' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ClassCS' and 'oclinEcoreCST_ClassCSRef'. From 'oclinEcoreCST_ClassCS', the role 'oclinEcoreCST_ClassCS8' has cardinality 0..*, and from 'oclinEcoreCST_ClassCSRef', the role 'oclinEcoreCST_ClassCSRef' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ConstraintCS' and 'oclinEcoreCST_ClassifierCS'. From 'oclinEcoreCST_ConstraintCS', the role 'oclinEcoreCST_ConstraintCS' has cardinality 0..*, and from 'oclinEcoreCST_ClassifierCS', the role 'oclinEcoreCST_ClassifierCS' has cardinality 0..*.
+An association connects 'oclinEcoreCST_TypeParameterCS' and 'oclinEcoreCST_ClassifierCS'. From 'oclinEcoreCST_TypeParameterCS', the role 'oclinEcoreCST_TypeParameterCS' has cardinality 0..*, and from 'oclinEcoreCST_ClassifierCS', the role 'oclinEcoreCST_ClassifierCS11' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ClassifierCSRef' and 'oclinEcoreCST_ClassifierCS'. From 'oclinEcoreCST_ClassifierCSRef', the role 'oclinEcoreCST_ClassifierCSRef' has cardinality 0..*, and from 'oclinEcoreCST_ClassifierCS', the role 'oclinEcoreCST_ClassifierCS13' has cardinality 0..*.
+An association connects 'oclinEcoreCST_OclExpressionCS' and 'oclinEcoreCST_ConstraintCS'. From 'oclinEcoreCST_OclExpressionCS', the role 'oclinEcoreCST_OclExpressionCS' has cardinality 0..*, and from 'oclinEcoreCST_ConstraintCS', the role 'oclinEcoreCST_ConstraintCS15' has cardinality 0..*.
+An association connects 'oclinEcoreCST_DataTypeCSRef' and 'oclinEcoreCST_DataTypeOrEnumCS'. From 'oclinEcoreCST_DataTypeCSRef', the role 'oclinEcoreCST_DataTypeCSRef' has cardinality 0..*, and from 'oclinEcoreCST_DataTypeOrEnumCS', the role 'oclinEcoreCST_DataTypeOrEnumCS' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ImportCS' and 'oclinEcoreCST_DocumentCS'. From 'oclinEcoreCST_ImportCS', the role 'oclinEcoreCST_ImportCS' has cardinality 0..*, and from 'oclinEcoreCST_DocumentCS', the role 'oclinEcoreCST_DocumentCS' has cardinality 0..*.
+An association connects 'oclinEcoreCST_PackageCS' and 'oclinEcoreCST_DocumentCS'. From 'oclinEcoreCST_PackageCS', the role 'oclinEcoreCST_PackageCS' has cardinality 0..*, and from 'oclinEcoreCST_DocumentCS', the role 'oclinEcoreCST_DocumentCS19' has cardinality 0..*.
+An association connects 'oclinEcoreCST_EAttribute' and 'oclinEcoreCST_EAttributeRef'. From 'oclinEcoreCST_EAttribute', the role 'oclinEcoreCST_EAttribute' has cardinality 0..*, and from 'oclinEcoreCST_EAttributeRef', the role 'oclinEcoreCST_EAttributeRef' has cardinality 0..*.
+An association connects 'oclinEcoreCST_EClassRef' and 'oclinEcoreCST_EClass'. From 'oclinEcoreCST_EClassRef', the role 'oclinEcoreCST_EClassRef' has cardinality 0..*, and from 'oclinEcoreCST_EClass', the role 'oclinEcoreCST_EClass' has cardinality 0..*.
+An association connects 'oclinEcoreCST_EClassifierRef' and 'oclinEcoreCST_EClassifier'. From 'oclinEcoreCST_EClassifierRef', the role 'oclinEcoreCST_EClassifierRef' has cardinality 0..*, and from 'oclinEcoreCST_EClassifier', the role 'oclinEcoreCST_EClassifier' has cardinality 0..*.
+An association connects 'oclinEcoreCST_EDataType' and 'oclinEcoreCST_EDataTypeRef'. From 'oclinEcoreCST_EDataType', the role 'oclinEcoreCST_EDataType' has cardinality 0..*, and from 'oclinEcoreCST_EDataTypeRef', the role 'oclinEcoreCST_EDataTypeRef' has cardinality 0..*.
+An association connects 'oclinEcoreCST_EReference' and 'oclinEcoreCST_EReferenceRef'. From 'oclinEcoreCST_EReference', the role 'oclinEcoreCST_EReference' has cardinality 0..*, and from 'oclinEcoreCST_EReferenceRef', the role 'oclinEcoreCST_EReferenceRef' has cardinality 0..*.
+An association connects 'oclinEcoreCST_EnumLiteralCS' and 'oclinEcoreCST_EnumCS'. From 'oclinEcoreCST_EnumLiteralCS', the role 'oclinEcoreCST_EnumLiteralCS' has cardinality 0..*, and from 'oclinEcoreCST_EnumCS', the role 'oclinEcoreCST_EnumCS' has cardinality 0..*.
+An association connects 'oclinEcoreCST_AnnotationCS' and 'oclinEcoreCST_ModelElementCS'. From 'oclinEcoreCST_AnnotationCS', the role 'oclinEcoreCST_AnnotationCS27' has cardinality 0..*, and from 'oclinEcoreCST_ModelElementCS', the role 'oclinEcoreCST_ModelElementCS' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ConstraintCS' and 'oclinEcoreCST_OperationCS'. From 'oclinEcoreCST_ConstraintCS', the role 'oclinEcoreCST_ConstraintCS30' has cardinality 0..*, and from 'oclinEcoreCST_OperationCS', the role 'oclinEcoreCST_OperationCS29' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ParameterCS' and 'oclinEcoreCST_OperationCS'. From 'oclinEcoreCST_ParameterCS', the role 'oclinEcoreCST_ParameterCS' has cardinality 0..*, and from 'oclinEcoreCST_OperationCS', the role 'oclinEcoreCST_OperationCS32' has cardinality 0..*.
+An association connects 'oclinEcoreCST_TypeParameterCS' and 'oclinEcoreCST_OperationCS'. From 'oclinEcoreCST_TypeParameterCS', the role 'oclinEcoreCST_TypeParameterCS35' has cardinality 0..*, and from 'oclinEcoreCST_OperationCS', the role 'oclinEcoreCST_OperationCS34' has cardinality 0..*.
+An association connects 'oclinEcoreCST_OperationCS' and 'oclinEcoreCST_ClassifierRef'. From 'oclinEcoreCST_OperationCS', the role 'oclinEcoreCST_OperationCS37' has cardinality 0..*, and from 'oclinEcoreCST_ClassifierRef', the role 'oclinEcoreCST_ClassifierRef' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ClassifierCS' and 'oclinEcoreCST_PackageCS'. From 'oclinEcoreCST_ClassifierCS', the role 'oclinEcoreCST_ClassifierCS40' has cardinality 0..*, and from 'oclinEcoreCST_PackageCS', the role 'oclinEcoreCST_PackageCS39' has cardinality 0..*.
+An association connects 'oclinEcoreCST_PackageCS' and 'oclinEcoreCST_PackageCS'. From 'oclinEcoreCST_PackageCS', the role 'oclinEcoreCST_PackageCS41' has cardinality 0..*, and from 'oclinEcoreCST_PackageCS', the role 'oclinEcoreCST_PackageCS43' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ReferenceRef' and 'oclinEcoreCST_ReferenceCS'. From 'oclinEcoreCST_ReferenceRef', the role 'oclinEcoreCST_ReferenceRef' has cardinality 0..*, and from 'oclinEcoreCST_ReferenceCS', the role 'oclinEcoreCST_ReferenceCS' has cardinality 0..*.
+An association connects 'oclinEcoreCST_AttributeRef' and 'oclinEcoreCST_ReferenceCS'. From 'oclinEcoreCST_AttributeRef', the role 'oclinEcoreCST_AttributeRef' has cardinality 0..*, and from 'oclinEcoreCST_ReferenceCS', the role 'oclinEcoreCST_ReferenceCS46' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ReferenceCSRef' and 'oclinEcoreCST_ReferenceCS'. From 'oclinEcoreCST_ReferenceCSRef', the role 'oclinEcoreCST_ReferenceCSRef' has cardinality 0..*, and from 'oclinEcoreCST_ReferenceCS', the role 'oclinEcoreCST_ReferenceCS48' has cardinality 0..*.
+An association connects 'oclinEcoreCST_StructuralFeatureCS' and 'oclinEcoreCST_ConstraintCS'. From 'oclinEcoreCST_StructuralFeatureCS', the role 'oclinEcoreCST_StructuralFeatureCS50' has cardinality 0..*, and from 'oclinEcoreCST_ConstraintCS', the role 'oclinEcoreCST_ConstraintCS51' has cardinality 0..*.
+An association connects 'oclinEcoreCST_TypedElementCS' and 'oclinEcoreCST_ClassifierRef'. From 'oclinEcoreCST_TypedElementCS', the role 'oclinEcoreCST_TypedElementCS' has cardinality 0..*, and from 'oclinEcoreCST_ClassifierRef', the role 'oclinEcoreCST_ClassifierRef53' has cardinality 0..*.
+An association connects 'oclinEcoreCST_TypeParameterCS' and 'oclinEcoreCST_ClassifierRef'. From 'oclinEcoreCST_TypeParameterCS', the role 'oclinEcoreCST_TypeParameterCS55' has cardinality 0..*, and from 'oclinEcoreCST_ClassifierRef', the role 'oclinEcoreCST_ClassifierRef56' has cardinality 0..*.
+An association connects 'oclinEcoreCST_ClassifierRef' and 'oclinEcoreCST_TypeParameterCS'. From 'oclinEcoreCST_ClassifierRef', the role 'oclinEcoreCST_ClassifierRef59' has cardinality 0..*, and from 'oclinEcoreCST_TypeParameterCS', the role 'oclinEcoreCST_TypeParameterCS58' has cardinality 0..*.

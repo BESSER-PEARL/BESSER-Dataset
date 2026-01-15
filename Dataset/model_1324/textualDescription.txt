@@ -1,0 +1,37 @@
+The domain model 'stateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'stateMachine_AbstractStateElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_StateTransition' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'stateMachine_State' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_AbstractMachineElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractStateElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMachineElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityType' defines the following possible values: 'PRIVATE', 'PUBLIC'.
+
+The model also captures inheritance relationships between classes.
+The class 'stateMachine_StateTransition' is a specialization of 'AbstractMachineElement'.
+The class 'stateMachine_AbstractStateElement' is a specialization of 'AbstractMachineElement'.
+The class 'stateMachine_State' is a specialization of 'AbstractStateElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'stateMachine_AbstractStateElement' and 'stateMachine_StateTransition'. From 'stateMachine_AbstractStateElement', the role 'stateMachine_AbstractStateElement' has cardinality 0..*, and from 'stateMachine_StateTransition', the role 'stateMachine_StateTransition' has cardinality 0..*.
+An association connects 'stateMachine_AbstractStateElement' and 'stateMachine_StateTransition'. From 'stateMachine_AbstractStateElement', the role 'stateMachine_AbstractStateElement3' has cardinality 0..*, and from 'stateMachine_StateTransition', the role 'stateMachine_StateTransition2' has cardinality 0..*.
+An association connects 'stateMachine_AbstractMachineElement' and 'stateMachine_StateMachine'. From 'stateMachine_AbstractMachineElement', the role 'stateMachine_AbstractMachineElement' has cardinality 0..*, and from 'stateMachine_StateMachine', the role 'stateMachine_StateMachine' has cardinality 0..*.

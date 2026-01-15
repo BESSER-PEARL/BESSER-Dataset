@@ -1,0 +1,13 @@
+The domain model 'hutnArticleFamilies' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'hutnArticleFamilies_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hutnArticleFamilies_Family' represents an important domain concept.
+It has the following attributes: 'migrant', which is of type bool; 'nuclear', which is of type bool; 'name', which is of type str; 'lotteryNumbers', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'hutnArticleFamilies_Person' and 'hutnArticleFamilies_Family'. From 'hutnArticleFamilies_Person', the role 'hutnArticleFamilies_Person' has cardinality 0..*, and from 'hutnArticleFamilies_Family', the role 'hutnArticleFamilies_Family' has cardinality 0..*.
+An association connects 'hutnArticleFamilies_Family' and 'hutnArticleFamilies_Family'. From 'hutnArticleFamilies_Family', the role 'hutnArticleFamilies_Family1' has cardinality 0..*, and from 'hutnArticleFamilies_Family', the role 'hutnArticleFamilies_Family3' has cardinality 0..*.

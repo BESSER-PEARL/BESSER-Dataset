@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Fhma/MT_EOL/uk.ac.york.cs.mutation.operators.generator.eol/metamodel/EOL.ecore

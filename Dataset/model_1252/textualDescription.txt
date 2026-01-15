@@ -1,0 +1,652 @@
+The domain model 'xmof' describes the core structural elements and their relationships within the system.
+
+The model defines 149 main class(es).
+
+'Communications_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_BehavioredEClass' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'ETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_BasicActions_CallAction' represents an important domain concept.
+It has one attribute: 'synchronous', which is of type bool.
+
+'WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_xmof_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_xmof_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredEClass' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Communications_SignalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtraStructuredActivities_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Communications_MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_ReadLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_DestroyLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_AddStructuralFeatureValueAction' represents an important domain concept.
+It has one attribute: 'replaceAll', which is of type bool.
+
+'xmof_Kernel_EEnumLiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_MainEClass' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_LiteralInteger' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_Activity' represents an important domain concept.
+It has one attribute: 'readOnly', which is of type bool.
+
+'xmof_IntermediateActivities_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_ExtraStructuredActivities_ExpansionRegion' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'xmof_IntermediateActions_DestroyObjectAction' represents an important domain concept.
+It has the following attributes: 'destroyLinks', which is of type bool; 'destroyOwnedObjects', which is of type bool.
+
+'xmof_ExtraStructuredActivities_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_ReadStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteStructuredActivities_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_CompleteActions_ReduceAction' represents an important domain concept.
+It has one attribute: 'ordered', which is of type bool.
+
+'xmof_IntermediateActivities_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_ClearAssociationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_BasicBehaviors_OpaqueBehavior' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'xmof_IntermediateActions_RemoveStructuralFeatureValueAction' represents an important domain concept.
+It has one attribute: 'removeDuplicates', which is of type bool.
+
+'Communications_xmof_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActions_LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'Communications_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_TestIdentityAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'Communications_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_CreateObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_LiteralString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'xmof_IntermediateActions_StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicBehaviors_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'EParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_xmof_EEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_DirectedParameter' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'xmof_BasicActions_SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_BasicBehaviors_FunctionBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_BasicBehaviors_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteStructuredActivities_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtraStructuredActivities_ExpansionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_ActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_CompleteStructuredActivities_ConditionalNode' represents an important domain concept.
+It has the following attributes: 'assured', which is of type bool; 'determinate', which is of type bool.
+
+'xmof_BasicActions_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_ReadSelfAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Communications_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_CompleteActions_StartClassifierBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_BasicActions_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteActions_xmof_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_CompleteActions_AcceptEventAction' represents an important domain concept.
+It has one attribute: 'unmarshall', which is of type bool.
+
+'EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActions_xmof_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_xmof_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_ValueSpecificationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_BasicActions_CallBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_BehavioredEOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActions_xmof_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_BehavioredEOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_DirectedParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActivities_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_LinkEndDestructionData' represents an important domain concept.
+It has one attribute: 'destroyDuplicates', which is of type bool.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_LinkEndCreationData' represents an important domain concept.
+It has one attribute: 'replaceAll', which is of type bool.
+
+'xmof_Kernel_LiteralUnlimitedNatural' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'xmof_IntermediateActivities_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_CompleteActions_ReadExtentAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_CompleteStructuredActivities_StructuredActivityNode' represents an important domain concept.
+It has one attribute: 'mustIsolate', which is of type bool.
+
+'xmof_CompleteStructuredActivities_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_CompleteStructuredActivities_LoopNode' represents an important domain concept.
+It has one attribute: 'testedFirst', which is of type bool.
+
+'xmof_CompleteActions_ReclassifyObjectAction' represents an important domain concept.
+It has one attribute: 'replaceAll', which is of type bool.
+
+'xmof_IntermediateActions_WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Communications_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredEOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_CompleteStructuredActivities_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_BasicActions_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Communications_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_ClearStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_BasicActions_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'CompleteStructuredActivities_StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_BasicActions_Action' represents an important domain concept.
+It has one attribute: 'locallyReentrant', which is of type bool.
+
+'InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_BasicActions_InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_InstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'OpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_LiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Communications_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_CompleteActions_StartObjectBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_BasicBehaviors_Behavior' represents an important domain concept.
+It has one attribute: 'reentrant', which is of type bool.
+
+'BasicActions_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActions_xmof_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_Kernel_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicBehaviors_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_IntermediateActions_WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'xmof_CompleteActions_ReadIsClassifiedObjectAction' represents an important domain concept.
+It has one attribute: 'direct', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ExpansionKind' defines the following possible values: 'parallel', 'iterative', 'stream'.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'return', 'in', 'out', 'inout'.
+The enumeration 'CallConcurrencyKind' defines a single possible value: 'sequential'.
+
+The model also captures inheritance relationships between classes.
+The class 'xmof_BasicBehaviors_OpaqueBehavior' is a specialization of 'Behavior'.
+The class 'xmof_BasicBehaviors_Behavior' is a specialization of 'BehavioredEClass'.
+The class 'xmof_BasicBehaviors_BehavioredClassifier' is a specialization of 'EClassifier'.
+The class 'xmof_BasicBehaviors_FunctionBehavior' is a specialization of 'OpaqueBehavior'.
+The class 'xmof_Communications_Trigger' is a specialization of 'ENamedElement'.
+The class 'xmof_Communications_Event' is a specialization of 'ENamedElement'.
+The class 'xmof_Communications_Signal' is a specialization of 'EClassifier'.
+The class 'xmof_Communications_SignalEvent' is a specialization of 'MessageEvent'.
+The class 'xmof_Communications_MessageEvent' is a specialization of 'Event'.
+The class 'xmof_Communications_Reception' is a specialization of 'BehavioredEOperation'.
+The class 'xmof_Kernel_BehavioredEOperation' is a specialization of 'EOperation'.
+The class 'xmof_Kernel_BehavioredEClass' is a specialization of 'EClass'.
+The class 'xmof_Kernel_BehavioredEClass' is a specialization of 'BasicBehaviors_BehavioredClassifier'.
+The class 'xmof_Kernel_MainEClass' is a specialization of 'BehavioredEClass'.
+The class 'xmof_Kernel_DirectedParameter' is a specialization of 'EParameter'.
+The class 'xmof_Kernel_EEnumLiteralSpecification' is a specialization of 'InstanceSpecification'.
+The class 'xmof_Kernel_ValueSpecification' is a specialization of 'ETypedElement'.
+The class 'xmof_Kernel_InstanceSpecification' is a specialization of 'ENamedElement'.
+The class 'xmof_Kernel_Slot' is a specialization of 'EModelElement'.
+The class 'xmof_Kernel_InstanceValue' is a specialization of 'ValueSpecification'.
+The class 'xmof_Kernel_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+The class 'xmof_Kernel_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'xmof_Kernel_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'xmof_Kernel_LiteralNull' is a specialization of 'LiteralSpecification'.
+The class 'xmof_Kernel_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'xmof_Kernel_LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+The class 'xmof_Kernel_PrimitiveType' is a specialization of 'EDataType'.
+The class 'xmof_IntermediateActivities_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'xmof_IntermediateActivities_ActivityEdge' is a specialization of 'ENamedElement'.
+The class 'xmof_IntermediateActivities_Activity' is a specialization of 'Behavior'.
+The class 'xmof_IntermediateActivities_ActivityNode' is a specialization of 'ENamedElement'.
+The class 'xmof_IntermediateActivities_ObjectNode' is a specialization of 'IntermediateActivities_ActivityNode'.
+The class 'xmof_IntermediateActivities_ObjectNode' is a specialization of 'ETypedElement'.
+The class 'xmof_IntermediateActivities_MergeNode' is a specialization of 'ControlNode'.
+The class 'xmof_IntermediateActivities_ControlNode' is a specialization of 'ActivityNode'.
+The class 'xmof_IntermediateActivities_JoinNode' is a specialization of 'ControlNode'.
+The class 'xmof_IntermediateActivities_InitialNode' is a specialization of 'ControlNode'.
+The class 'xmof_IntermediateActivities_FinalNode' is a specialization of 'ControlNode'.
+The class 'xmof_IntermediateActivities_ForkNode' is a specialization of 'ControlNode'.
+The class 'xmof_IntermediateActivities_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'xmof_IntermediateActivities_DecisionNode' is a specialization of 'ControlNode'.
+The class 'xmof_IntermediateActivities_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'xmof_IntermediateActivities_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'xmof_CompleteStructuredActivities_LoopNode' is a specialization of 'StructuredActivityNode'.
+The class 'xmof_CompleteStructuredActivities_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'xmof_CompleteStructuredActivities_Clause' is a specialization of 'EModelElement'.
+The class 'xmof_CompleteStructuredActivities_ConditionalNode' is a specialization of 'StructuredActivityNode'.
+The class 'xmof_CompleteStructuredActivities_StructuredActivityNode' is a specialization of 'Action'.
+The class 'xmof_ExtraStructuredActivities_ExpansionNode' is a specialization of 'ObjectNode'.
+The class 'xmof_ExtraStructuredActivities_ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+The class 'xmof_IntermediateActions_StructuralFeatureAction' is a specialization of 'Action'.
+The class 'xmof_IntermediateActions_TestIdentityAction' is a specialization of 'Action'.
+The class 'xmof_IntermediateActions_ValueSpecificationAction' is a specialization of 'Action'.
+The class 'xmof_IntermediateActions_WriteLinkAction' is a specialization of 'LinkAction'.
+The class 'xmof_IntermediateActions_LinkAction' is a specialization of 'Action'.
+The class 'xmof_IntermediateActions_LinkEndData' is a specialization of 'EModelElement'.
+The class 'xmof_IntermediateActions_WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'xmof_IntermediateActions_RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'xmof_IntermediateActions_ReadLinkAction' is a specialization of 'LinkAction'.
+The class 'xmof_IntermediateActions_ReadSelfAction' is a specialization of 'Action'.
+The class 'xmof_IntermediateActions_ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'xmof_IntermediateActions_LinkEndCreationData' is a specialization of 'LinkEndData'.
+The class 'xmof_IntermediateActions_LinkEndDestructionData' is a specialization of 'LinkEndData'.
+The class 'xmof_IntermediateActions_ClearAssociationAction' is a specialization of 'Action'.
+The class 'xmof_IntermediateActions_ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'xmof_IntermediateActions_CreateLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'xmof_IntermediateActions_CreateObjectAction' is a specialization of 'Action'.
+The class 'xmof_IntermediateActions_DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'xmof_IntermediateActions_DestroyObjectAction' is a specialization of 'Action'.
+The class 'xmof_IntermediateActions_AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'xmof_CompleteActions_StartClassifierBehaviorAction' is a specialization of 'Action'.
+The class 'xmof_CompleteActions_StartObjectBehaviorAction' is a specialization of 'CallAction'.
+The class 'xmof_CompleteActions_ReduceAction' is a specialization of 'Action'.
+The class 'xmof_CompleteActions_ReadExtentAction' is a specialization of 'Action'.
+The class 'xmof_CompleteActions_ReadIsClassifiedObjectAction' is a specialization of 'Action'.
+The class 'xmof_CompleteActions_ReclassifyObjectAction' is a specialization of 'Action'.
+The class 'xmof_CompleteActions_AcceptEventAction' is a specialization of 'Action'.
+The class 'xmof_BasicActions_Action' is a specialization of 'ExecutableNode'.
+The class 'xmof_BasicActions_InputPin' is a specialization of 'Pin'.
+The class 'xmof_BasicActions_Pin' is a specialization of 'IntermediateActivities_ObjectNode'.
+The class 'xmof_BasicActions_Pin' is a specialization of 'ETypedElement'.
+The class 'xmof_BasicActions_CallAction' is a specialization of 'InvocationAction'.
+The class 'xmof_BasicActions_InvocationAction' is a specialization of 'Action'.
+The class 'xmof_BasicActions_SendSignalAction' is a specialization of 'InvocationAction'.
+The class 'xmof_BasicActions_CallBehaviorAction' is a specialization of 'CallAction'.
+The class 'xmof_BasicActions_CallOperationAction' is a specialization of 'CallAction'.
+The class 'xmof_BasicActions_OutputPin' is a specialization of 'Pin'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Kernel_BehavioredEOperation' and 'xmof_BasicBehaviors_Behavior'. From 'Kernel_BehavioredEOperation', the role 'Syntax' has cardinality 0..*, and from 'xmof_BasicBehaviors_Behavior', the role 'Classes' has cardinality 0..*.
+An association connects 'Kernel_DirectedParameter' and 'xmof_BasicBehaviors_Behavior'. From 'Kernel_DirectedParameter', the role 'Kernel_DirectedParameter' has cardinality 0..*, and from 'xmof_BasicBehaviors_Behavior', the role 'xmof_BasicBehaviors_Behavior' has cardinality 0..*.
+An association connects 'BasicBehaviors_BehavioredClassifier' and 'xmof_BasicBehaviors_Behavior'. From 'BasicBehaviors_BehavioredClassifier', the role 'BasicBehaviors_BehavioredClassifier' has cardinality 0..*, and from 'xmof_BasicBehaviors_Behavior', the role 'xmof_BasicBehaviors_Behavior3' has cardinality 0..*.
+An association connects 'xmof_BasicBehaviors_BehavioredClassifier' and 'BasicBehaviors_Behavior'. From 'xmof_BasicBehaviors_BehavioredClassifier', the role 'xmof_BasicBehaviors_BehavioredClassifier' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior' has cardinality 0..*.
+An association connects 'xmof_BasicBehaviors_BehavioredClassifier' and 'BasicBehaviors_Behavior'. From 'xmof_BasicBehaviors_BehavioredClassifier', the role 'xmof_BasicBehaviors_BehavioredClassifier6' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior7' has cardinality 0..*.
+An association connects 'xmof_Communications_Trigger' and 'Communications_Event'. From 'xmof_Communications_Trigger', the role 'xmof_Communications_Trigger' has cardinality 0..*, and from 'Communications_Event', the role 'Communications_Event' has cardinality 0..*.
+An association connects 'Communications_xmof_EAttribute' and 'xmof_Communications_Signal'. From 'Communications_xmof_EAttribute', the role 'Communications_xmof_EAttribute' has cardinality 0..*, and from 'xmof_Communications_Signal', the role 'xmof_Communications_Signal' has cardinality 0..*.
+An association connects 'xmof_Communications_SignalEvent' and 'Communications_Signal'. From 'xmof_Communications_SignalEvent', the role 'xmof_Communications_SignalEvent' has cardinality 0..*, and from 'Communications_Signal', the role 'Communications_Signal' has cardinality 0..*.
+An association connects 'xmof_Communications_Reception' and 'Communications_Signal'. From 'xmof_Communications_Reception', the role 'xmof_Communications_Reception' has cardinality 0..*, and from 'Communications_Signal', the role 'Communications_Signal12' has cardinality 0..*.
+An association connects 'xmof_Kernel_BehavioredEOperation' and 'BasicBehaviors_Behavior'. From 'xmof_Kernel_BehavioredEOperation', the role 'CommonBehaviors' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'Syntax14' has cardinality 0..*.
+An association connects 'xmof_Kernel_EEnumLiteralSpecification' and 'Kernel_xmof_EEnumLiteral'. From 'xmof_Kernel_EEnumLiteralSpecification', the role 'xmof_Kernel_EEnumLiteralSpecification' has cardinality 0..*, and from 'Kernel_xmof_EEnumLiteral', the role 'Kernel_xmof_EEnumLiteral' has cardinality 0..*.
+An association connects 'xmof_Kernel_InstanceSpecification' and 'Kernel_xmof_EClassifier'. From 'xmof_Kernel_InstanceSpecification', the role 'xmof_Kernel_InstanceSpecification' has cardinality 0..*, and from 'Kernel_xmof_EClassifier', the role 'Kernel_xmof_EClassifier' has cardinality 0..*.
+An association connects 'Kernel_Slot' and 'xmof_Kernel_InstanceSpecification'. From 'Kernel_Slot', the role 'Syntax19' has cardinality 0..*, and from 'xmof_Kernel_InstanceSpecification', the role 'Classes18' has cardinality 0..*.
+An association connects 'xmof_Kernel_Slot' and 'Kernel_xmof_EStructuralFeature'. From 'xmof_Kernel_Slot', the role 'xmof_Kernel_Slot' has cardinality 0..*, and from 'Kernel_xmof_EStructuralFeature', the role 'Kernel_xmof_EStructuralFeature' has cardinality 0..*.
+An association connects 'Kernel_ValueSpecification' and 'xmof_Kernel_Slot'. From 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification' has cardinality 0..*, and from 'xmof_Kernel_Slot', the role 'xmof_Kernel_Slot22' has cardinality 0..*.
+An association connects 'xmof_Kernel_Slot' and 'Kernel_InstanceSpecification'. From 'xmof_Kernel_Slot', the role 'Classes24' has cardinality 0..*, and from 'Kernel_InstanceSpecification', the role 'Syntax25' has cardinality 0..*.
+An association connects 'Kernel_InstanceSpecification' and 'xmof_Kernel_InstanceValue'. From 'Kernel_InstanceSpecification', the role 'Kernel_InstanceSpecification' has cardinality 0..*, and from 'xmof_Kernel_InstanceValue', the role 'xmof_Kernel_InstanceValue' has cardinality 0..*.
+An association connects 'xmof_IntermediateActivities_ActivityEdge' and 'IntermediateActivities_Activity'. From 'xmof_IntermediateActivities_ActivityEdge', the role 'Activities' has cardinality 0..*, and from 'IntermediateActivities_Activity', the role 'Syntax28' has cardinality 0..*.
+An association connects 'xmof_IntermediateActivities_ActivityEdge' and 'IntermediateActivities_ActivityNode'. From 'xmof_IntermediateActivities_ActivityEdge', the role 'Activities30' has cardinality 0..*, and from 'IntermediateActivities_ActivityNode', the role 'Syntax31' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityNode' and 'xmof_IntermediateActivities_ActivityEdge'. From 'IntermediateActivities_ActivityNode', the role 'Syntax34' has cardinality 0..*, and from 'xmof_IntermediateActivities_ActivityEdge', the role 'Activities33' has cardinality 0..*.
+An association connects 'CompleteStructuredActivities_StructuredActivityNode' and 'xmof_IntermediateActivities_ActivityEdge'. From 'CompleteStructuredActivities_StructuredActivityNode', the role 'Syntax37' has cardinality 0..*, and from 'xmof_IntermediateActivities_ActivityEdge', the role 'Activities36' has cardinality 0..*.
+An association connects 'Kernel_ValueSpecification' and 'xmof_IntermediateActivities_ActivityEdge'. From 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification39' has cardinality 0..*, and from 'xmof_IntermediateActivities_ActivityEdge', the role 'xmof_IntermediateActivities_ActivityEdge' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityNode' and 'xmof_IntermediateActivities_Activity'. From 'IntermediateActivities_ActivityNode', the role 'Syntax42' has cardinality 0..*, and from 'xmof_IntermediateActivities_Activity', the role 'Activities41' has cardinality 0..*.
+An association connects 'xmof_IntermediateActivities_Activity' and 'IntermediateActivities_ActivityEdge'. From 'xmof_IntermediateActivities_Activity', the role 'Activities44' has cardinality 0..*, and from 'IntermediateActivities_ActivityEdge', the role 'Syntax45' has cardinality 0..*.
+An association connects 'CompleteStructuredActivities_StructuredActivityNode' and 'xmof_IntermediateActivities_ActivityNode'. From 'CompleteStructuredActivities_StructuredActivityNode', the role 'Syntax48' has cardinality 0..*, and from 'xmof_IntermediateActivities_ActivityNode', the role 'Activities47' has cardinality 0..*.
+An association connects 'IntermediateActivities_Activity' and 'xmof_IntermediateActivities_ActivityNode'. From 'IntermediateActivities_Activity', the role 'Syntax51' has cardinality 0..*, and from 'xmof_IntermediateActivities_ActivityNode', the role 'Activities50' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityEdge' and 'xmof_IntermediateActivities_ActivityNode'. From 'IntermediateActivities_ActivityEdge', the role 'Syntax54' has cardinality 0..*, and from 'xmof_IntermediateActivities_ActivityNode', the role 'Activities53' has cardinality 0..*.
+An association connects 'xmof_IntermediateActivities_ActivityNode' and 'IntermediateActivities_ActivityEdge'. From 'xmof_IntermediateActivities_ActivityNode', the role 'Activities56' has cardinality 0..*, and from 'IntermediateActivities_ActivityEdge', the role 'Syntax57' has cardinality 0..*.
+An association connects 'xmof_IntermediateActivities_DecisionNode' and 'BasicBehaviors_Behavior'. From 'xmof_IntermediateActivities_DecisionNode', the role 'xmof_IntermediateActivities_DecisionNode' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior59' has cardinality 0..*.
+An association connects 'IntermediateActivities_ObjectFlow' and 'xmof_IntermediateActivities_DecisionNode'. From 'IntermediateActivities_ObjectFlow', the role 'IntermediateActivities_ObjectFlow' has cardinality 0..*, and from 'xmof_IntermediateActivities_DecisionNode', the role 'xmof_IntermediateActivities_DecisionNode61' has cardinality 0..*.
+An association connects 'xmof_IntermediateActivities_ActivityParameterNode' and 'Kernel_DirectedParameter'. From 'xmof_IntermediateActivities_ActivityParameterNode', the role 'xmof_IntermediateActivities_ActivityParameterNode' has cardinality 0..*, and from 'Kernel_DirectedParameter', the role 'Kernel_DirectedParameter63' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_LoopNode' and 'BasicActions_OutputPin'. From 'xmof_CompleteStructuredActivities_LoopNode', the role 'xmof_CompleteStructuredActivities_LoopNode' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_LoopNode' and 'CompleteStructuredActivities_ExecutableNode'. From 'xmof_CompleteStructuredActivities_LoopNode', the role 'xmof_CompleteStructuredActivities_LoopNode66' has cardinality 0..*, and from 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_CompleteStructuredActivities_LoopNode'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin69' has cardinality 0..*, and from 'xmof_CompleteStructuredActivities_LoopNode', the role 'xmof_CompleteStructuredActivities_LoopNode68' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_LoopNode' and 'BasicActions_InputPin'. From 'xmof_CompleteStructuredActivities_LoopNode', the role 'xmof_CompleteStructuredActivities_LoopNode71' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin' has cardinality 0..*.
+An association connects 'CompleteStructuredActivities_ExecutableNode' and 'xmof_CompleteStructuredActivities_LoopNode'. From 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode74' has cardinality 0..*, and from 'xmof_CompleteStructuredActivities_LoopNode', the role 'xmof_CompleteStructuredActivities_LoopNode73' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_CompleteStructuredActivities_LoopNode'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin77' has cardinality 0..*, and from 'xmof_CompleteStructuredActivities_LoopNode', the role 'xmof_CompleteStructuredActivities_LoopNode76' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_CompleteStructuredActivities_LoopNode'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin80' has cardinality 0..*, and from 'xmof_CompleteStructuredActivities_LoopNode', the role 'xmof_CompleteStructuredActivities_LoopNode79' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_LoopNode' and 'CompleteStructuredActivities_ExecutableNode'. From 'xmof_CompleteStructuredActivities_LoopNode', the role 'xmof_CompleteStructuredActivities_LoopNode82' has cardinality 0..*, and from 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode83' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_Clause' and 'CompleteStructuredActivities_ExecutableNode'. From 'xmof_CompleteStructuredActivities_Clause', the role 'xmof_CompleteStructuredActivities_Clause' has cardinality 0..*, and from 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode85' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_Clause' and 'CompleteStructuredActivities_ExecutableNode'. From 'xmof_CompleteStructuredActivities_Clause', the role 'xmof_CompleteStructuredActivities_Clause87' has cardinality 0..*, and from 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode88' has cardinality 0..*.
+An association connects 'CompleteStructuredActivities_Clause' and 'xmof_CompleteStructuredActivities_Clause'. From 'CompleteStructuredActivities_Clause', the role 'Syntax91' has cardinality 0..*, and from 'xmof_CompleteStructuredActivities_Clause', the role 'Activities90' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_Clause' and 'CompleteStructuredActivities_Clause'. From 'xmof_CompleteStructuredActivities_Clause', the role 'Activities93' has cardinality 0..*, and from 'CompleteStructuredActivities_Clause', the role 'Syntax94' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_Clause' and 'BasicActions_OutputPin'. From 'xmof_CompleteStructuredActivities_Clause', the role 'xmof_CompleteStructuredActivities_Clause96' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin97' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_CompleteStructuredActivities_Clause'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin100' has cardinality 0..*, and from 'xmof_CompleteStructuredActivities_Clause', the role 'xmof_CompleteStructuredActivities_Clause99' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_ConditionalNode' and 'CompleteStructuredActivities_Clause'. From 'xmof_CompleteStructuredActivities_ConditionalNode', the role 'xmof_CompleteStructuredActivities_ConditionalNode' has cardinality 0..*, and from 'CompleteStructuredActivities_Clause', the role 'CompleteStructuredActivities_Clause' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_ConditionalNode' and 'BasicActions_OutputPin'. From 'xmof_CompleteStructuredActivities_ConditionalNode', the role 'xmof_CompleteStructuredActivities_ConditionalNode103' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin104' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_StructuredActivityNode' and 'IntermediateActivities_ActivityNode'. From 'xmof_CompleteStructuredActivities_StructuredActivityNode', the role 'Activities106' has cardinality 0..*, and from 'IntermediateActivities_ActivityNode', the role 'Syntax107' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_StructuredActivityNode' and 'IntermediateActivities_ActivityEdge'. From 'xmof_CompleteStructuredActivities_StructuredActivityNode', the role 'Activities109' has cardinality 0..*, and from 'IntermediateActivities_ActivityEdge', the role 'Syntax110' has cardinality 0..*.
+An association connects 'xmof_CompleteStructuredActivities_StructuredActivityNode' and 'BasicActions_OutputPin'. From 'xmof_CompleteStructuredActivities_StructuredActivityNode', the role 'xmof_CompleteStructuredActivities_StructuredActivityNode' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin112' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'xmof_CompleteStructuredActivities_StructuredActivityNode'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin115' has cardinality 0..*, and from 'xmof_CompleteStructuredActivities_StructuredActivityNode', the role 'xmof_CompleteStructuredActivities_StructuredActivityNode114' has cardinality 0..*.
+An association connects 'ExtraStructuredActivities_ExpansionRegion' and 'xmof_ExtraStructuredActivities_ExpansionNode'. From 'ExtraStructuredActivities_ExpansionRegion', the role 'Syntax118' has cardinality 0..*, and from 'xmof_ExtraStructuredActivities_ExpansionNode', the role 'Activities117' has cardinality 0..*.
+An association connects 'xmof_ExtraStructuredActivities_ExpansionNode' and 'ExtraStructuredActivities_ExpansionRegion'. From 'xmof_ExtraStructuredActivities_ExpansionNode', the role 'Activities120' has cardinality 0..*, and from 'ExtraStructuredActivities_ExpansionRegion', the role 'Syntax121' has cardinality 0..*.
+An association connects 'xmof_ExtraStructuredActivities_ExpansionRegion' and 'ExtraStructuredActivities_ExpansionNode'. From 'xmof_ExtraStructuredActivities_ExpansionRegion', the role 'Activities123' has cardinality 0..*, and from 'ExtraStructuredActivities_ExpansionNode', the role 'Syntax124' has cardinality 0..*.
+An association connects 'ExtraStructuredActivities_ExpansionNode' and 'xmof_ExtraStructuredActivities_ExpansionRegion'. From 'ExtraStructuredActivities_ExpansionNode', the role 'Syntax127' has cardinality 0..*, and from 'xmof_ExtraStructuredActivities_ExpansionRegion', the role 'Activities126' has cardinality 0..*.
+An association connects 'xmof_IntermediateActions_StructuralFeatureAction' and 'IntermediateActions_xmof_EStructuralFeature'. From 'xmof_IntermediateActions_StructuralFeatureAction', the role 'xmof_IntermediateActions_StructuralFeatureAction' has cardinality 0..*, and from 'IntermediateActions_xmof_EStructuralFeature', the role 'IntermediateActions_xmof_EStructuralFeature' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'xmof_IntermediateActions_StructuralFeatureAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin131' has cardinality 0..*, and from 'xmof_IntermediateActions_StructuralFeatureAction', the role 'xmof_IntermediateActions_StructuralFeatureAction130' has cardinality 0..*.
+An association connects 'xmof_IntermediateActions_TestIdentityAction' and 'BasicActions_InputPin'. From 'xmof_IntermediateActions_TestIdentityAction', the role 'xmof_IntermediateActions_TestIdentityAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin133' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_IntermediateActions_TestIdentityAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin136' has cardinality 0..*, and from 'xmof_IntermediateActions_TestIdentityAction', the role 'xmof_IntermediateActions_TestIdentityAction135' has cardinality 0..*.
+An association connects 'xmof_IntermediateActions_TestIdentityAction' and 'BasicActions_InputPin'. From 'xmof_IntermediateActions_TestIdentityAction', the role 'xmof_IntermediateActions_TestIdentityAction138' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin139' has cardinality 0..*.
+An association connects 'Kernel_ValueSpecification' and 'xmof_IntermediateActions_ValueSpecificationAction'. From 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification141' has cardinality 0..*, and from 'xmof_IntermediateActions_ValueSpecificationAction', the role 'xmof_IntermediateActions_ValueSpecificationAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_IntermediateActions_ValueSpecificationAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin144' has cardinality 0..*, and from 'xmof_IntermediateActions_ValueSpecificationAction', the role 'xmof_IntermediateActions_ValueSpecificationAction143' has cardinality 0..*.
+An association connects 'IntermediateActions_LinkEndData' and 'xmof_IntermediateActions_LinkAction'. From 'IntermediateActions_LinkEndData', the role 'IntermediateActions_LinkEndData' has cardinality 0..*, and from 'xmof_IntermediateActions_LinkAction', the role 'xmof_IntermediateActions_LinkAction' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'xmof_IntermediateActions_LinkAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin148' has cardinality 0..*, and from 'xmof_IntermediateActions_LinkAction', the role 'xmof_IntermediateActions_LinkAction147' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'xmof_IntermediateActions_LinkEndData'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin150' has cardinality 0..*, and from 'xmof_IntermediateActions_LinkEndData', the role 'xmof_IntermediateActions_LinkEndData' has cardinality 0..*.
+An association connects 'xmof_IntermediateActions_LinkEndData' and 'IntermediateActions_xmof_EReference'. From 'xmof_IntermediateActions_LinkEndData', the role 'xmof_IntermediateActions_LinkEndData152' has cardinality 0..*, and from 'IntermediateActions_xmof_EReference', the role 'IntermediateActions_xmof_EReference' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'xmof_IntermediateActions_WriteStructuralFeatureAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin154' has cardinality 0..*, and from 'xmof_IntermediateActions_WriteStructuralFeatureAction', the role 'xmof_IntermediateActions_WriteStructuralFeatureAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_IntermediateActions_WriteStructuralFeatureAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin157' has cardinality 0..*, and from 'xmof_IntermediateActions_WriteStructuralFeatureAction', the role 'xmof_IntermediateActions_WriteStructuralFeatureAction156' has cardinality 0..*.
+An association connects 'xmof_IntermediateActions_RemoveStructuralFeatureValueAction' and 'BasicActions_InputPin'. From 'xmof_IntermediateActions_RemoveStructuralFeatureValueAction', the role 'xmof_IntermediateActions_RemoveStructuralFeatureValueAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin159' has cardinality 0..*.
+An association connects 'xmof_IntermediateActions_ReadLinkAction' and 'BasicActions_OutputPin'. From 'xmof_IntermediateActions_ReadLinkAction', the role 'xmof_IntermediateActions_ReadLinkAction' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin161' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_IntermediateActions_ReadSelfAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin163' has cardinality 0..*, and from 'xmof_IntermediateActions_ReadSelfAction', the role 'xmof_IntermediateActions_ReadSelfAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_IntermediateActions_ReadStructuralFeatureAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin165' has cardinality 0..*, and from 'xmof_IntermediateActions_ReadStructuralFeatureAction', the role 'xmof_IntermediateActions_ReadStructuralFeatureAction' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'xmof_IntermediateActions_LinkEndCreationData'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin167' has cardinality 0..*, and from 'xmof_IntermediateActions_LinkEndCreationData', the role 'xmof_IntermediateActions_LinkEndCreationData' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'xmof_IntermediateActions_LinkEndDestructionData'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin169' has cardinality 0..*, and from 'xmof_IntermediateActions_LinkEndDestructionData', the role 'xmof_IntermediateActions_LinkEndDestructionData' has cardinality 0..*.
+An association connects 'IntermediateActions_xmof_EReference' and 'xmof_IntermediateActions_ClearAssociationAction'. From 'IntermediateActions_xmof_EReference', the role 'IntermediateActions_xmof_EReference171' has cardinality 0..*, and from 'xmof_IntermediateActions_ClearAssociationAction', the role 'xmof_IntermediateActions_ClearAssociationAction' has cardinality 0..*.
+An association connects 'xmof_IntermediateActions_ClearAssociationAction' and 'BasicActions_InputPin'. From 'xmof_IntermediateActions_ClearAssociationAction', the role 'xmof_IntermediateActions_ClearAssociationAction173' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin174' has cardinality 0..*.
+An association connects 'xmof_IntermediateActions_ClearStructuralFeatureAction' and 'BasicActions_OutputPin'. From 'xmof_IntermediateActions_ClearStructuralFeatureAction', the role 'xmof_IntermediateActions_ClearStructuralFeatureAction' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin176' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_IntermediateActions_CreateObjectAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin178' has cardinality 0..*, and from 'xmof_IntermediateActions_CreateObjectAction', the role 'xmof_IntermediateActions_CreateObjectAction' has cardinality 0..*.
+An association connects 'IntermediateActions_xmof_EClassifier' and 'xmof_IntermediateActions_CreateObjectAction'. From 'IntermediateActions_xmof_EClassifier', the role 'IntermediateActions_xmof_EClassifier' has cardinality 0..*, and from 'xmof_IntermediateActions_CreateObjectAction', the role 'xmof_IntermediateActions_CreateObjectAction180' has cardinality 0..*.
+An association connects 'xmof_IntermediateActions_DestroyObjectAction' and 'BasicActions_InputPin'. From 'xmof_IntermediateActions_DestroyObjectAction', the role 'xmof_IntermediateActions_DestroyObjectAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin182' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'xmof_IntermediateActions_AddStructuralFeatureValueAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin184' has cardinality 0..*, and from 'xmof_IntermediateActions_AddStructuralFeatureValueAction', the role 'xmof_IntermediateActions_AddStructuralFeatureValueAction' has cardinality 0..*.
+An association connects 'xmof_CompleteActions_StartClassifierBehaviorAction' and 'BasicActions_InputPin'. From 'xmof_CompleteActions_StartClassifierBehaviorAction', the role 'xmof_CompleteActions_StartClassifierBehaviorAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin186' has cardinality 0..*.
+An association connects 'xmof_CompleteActions_StartObjectBehaviorAction' and 'BasicActions_InputPin'. From 'xmof_CompleteActions_StartObjectBehaviorAction', the role 'xmof_CompleteActions_StartObjectBehaviorAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin188' has cardinality 0..*.
+An association connects 'BasicBehaviors_Behavior' and 'xmof_CompleteActions_ReduceAction'. From 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior190' has cardinality 0..*, and from 'xmof_CompleteActions_ReduceAction', the role 'xmof_CompleteActions_ReduceAction' has cardinality 0..*.
+An association connects 'xmof_CompleteActions_ReduceAction' and 'BasicActions_OutputPin'. From 'xmof_CompleteActions_ReduceAction', the role 'xmof_CompleteActions_ReduceAction192' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin193' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'xmof_CompleteActions_ReduceAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin196' has cardinality 0..*, and from 'xmof_CompleteActions_ReduceAction', the role 'xmof_CompleteActions_ReduceAction195' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_CompleteActions_ReadExtentAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin198' has cardinality 0..*, and from 'xmof_CompleteActions_ReadExtentAction', the role 'xmof_CompleteActions_ReadExtentAction' has cardinality 0..*.
+An association connects 'xmof_CompleteActions_ReadExtentAction' and 'CompleteActions_xmof_EClassifier'. From 'xmof_CompleteActions_ReadExtentAction', the role 'xmof_CompleteActions_ReadExtentAction200' has cardinality 0..*, and from 'CompleteActions_xmof_EClassifier', the role 'CompleteActions_xmof_EClassifier' has cardinality 0..*.
+An association connects 'CompleteActions_xmof_EClassifier' and 'xmof_CompleteActions_ReadIsClassifiedObjectAction'. From 'CompleteActions_xmof_EClassifier', the role 'CompleteActions_xmof_EClassifier202' has cardinality 0..*, and from 'xmof_CompleteActions_ReadIsClassifiedObjectAction', the role 'xmof_CompleteActions_ReadIsClassifiedObjectAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_CompleteActions_ReadIsClassifiedObjectAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin205' has cardinality 0..*, and from 'xmof_CompleteActions_ReadIsClassifiedObjectAction', the role 'xmof_CompleteActions_ReadIsClassifiedObjectAction204' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'xmof_CompleteActions_ReadIsClassifiedObjectAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin208' has cardinality 0..*, and from 'xmof_CompleteActions_ReadIsClassifiedObjectAction', the role 'xmof_CompleteActions_ReadIsClassifiedObjectAction207' has cardinality 0..*.
+An association connects 'xmof_CompleteActions_ReclassifyObjectAction' and 'CompleteActions_xmof_EClassifier'. From 'xmof_CompleteActions_ReclassifyObjectAction', the role 'xmof_CompleteActions_ReclassifyObjectAction' has cardinality 0..*, and from 'CompleteActions_xmof_EClassifier', the role 'CompleteActions_xmof_EClassifier210' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'xmof_CompleteActions_ReclassifyObjectAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin213' has cardinality 0..*, and from 'xmof_CompleteActions_ReclassifyObjectAction', the role 'xmof_CompleteActions_ReclassifyObjectAction212' has cardinality 0..*.
+An association connects 'xmof_CompleteActions_ReclassifyObjectAction' and 'CompleteActions_xmof_EClassifier'. From 'xmof_CompleteActions_ReclassifyObjectAction', the role 'xmof_CompleteActions_ReclassifyObjectAction215' has cardinality 0..*, and from 'CompleteActions_xmof_EClassifier', the role 'CompleteActions_xmof_EClassifier216' has cardinality 0..*.
+An association connects 'xmof_CompleteActions_AcceptEventAction' and 'BasicActions_OutputPin'. From 'xmof_CompleteActions_AcceptEventAction', the role 'xmof_CompleteActions_AcceptEventAction' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin218' has cardinality 0..*.
+An association connects 'Communications_Trigger' and 'xmof_CompleteActions_AcceptEventAction'. From 'Communications_Trigger', the role 'Communications_Trigger' has cardinality 0..*, and from 'xmof_CompleteActions_AcceptEventAction', the role 'xmof_CompleteActions_AcceptEventAction220' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'xmof_BasicActions_Action'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin222' has cardinality 0..*, and from 'xmof_BasicActions_Action', the role 'xmof_BasicActions_Action' has cardinality 0..*.
+An association connects 'BasicActions_xmof_EClassifier' and 'xmof_BasicActions_Action'. From 'BasicActions_xmof_EClassifier', the role 'BasicActions_xmof_EClassifier' has cardinality 0..*, and from 'xmof_BasicActions_Action', the role 'xmof_BasicActions_Action224' has cardinality 0..*.
+An association connects 'xmof_BasicActions_Action' and 'BasicActions_InputPin'. From 'xmof_BasicActions_Action', the role 'xmof_BasicActions_Action226' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin227' has cardinality 0..*.
+An association connects 'xmof_BasicActions_CallAction' and 'BasicActions_OutputPin'. From 'xmof_BasicActions_CallAction', the role 'xmof_BasicActions_CallAction' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin229' has cardinality 0..*.
+An association connects 'xmof_BasicActions_InvocationAction' and 'BasicActions_InputPin'. From 'xmof_BasicActions_InvocationAction', the role 'xmof_BasicActions_InvocationAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin231' has cardinality 0..*.
+An association connects 'xmof_BasicActions_SendSignalAction' and 'BasicActions_InputPin'. From 'xmof_BasicActions_SendSignalAction', the role 'xmof_BasicActions_SendSignalAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin233' has cardinality 0..*.
+An association connects 'Communications_Signal' and 'xmof_BasicActions_SendSignalAction'. From 'Communications_Signal', the role 'Communications_Signal236' has cardinality 0..*, and from 'xmof_BasicActions_SendSignalAction', the role 'xmof_BasicActions_SendSignalAction235' has cardinality 0..*.
+An association connects 'xmof_BasicActions_CallBehaviorAction' and 'BasicBehaviors_Behavior'. From 'xmof_BasicActions_CallBehaviorAction', the role 'xmof_BasicActions_CallBehaviorAction' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior238' has cardinality 0..*.
+An association connects 'Kernel_BehavioredEOperation' and 'xmof_BasicActions_CallOperationAction'. From 'Kernel_BehavioredEOperation', the role 'Kernel_BehavioredEOperation' has cardinality 0..*, and from 'xmof_BasicActions_CallOperationAction', the role 'xmof_BasicActions_CallOperationAction' has cardinality 0..*.
+An association connects 'xmof_BasicActions_CallOperationAction' and 'BasicActions_InputPin'. From 'xmof_BasicActions_CallOperationAction', the role 'xmof_BasicActions_CallOperationAction241' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin242' has cardinality 0..*.

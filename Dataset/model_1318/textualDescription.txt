@@ -1,0 +1,217 @@
+The domain model 'stateMachineDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'stateMachineDsl_CommandAction' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_PlusCond' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_VarType' represents an important domain concept.
+It has one attribute: 'vt', which is of type str.
+
+'stateMachineDsl_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachineDsl_ExtDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachineDsl_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_MulOrDiv' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'stateMachineDsl_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_FunctionUse' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_And' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_Parenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_VarRef' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_VarParName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachineDsl_ResetAction' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_MinusCond' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_Procedure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachineDsl_Equality' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'stateMachineDsl_ParameterFunction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachineDsl_BoolExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'stateMachineDsl_MemberState' represents an important domain concept.
+It does not declare any attributes.
+
+'ChangeAction' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_DoubleExp' represents an important domain concept.
+It has the following attributes: 'decimal', which is of type int; 'number', which is of type int; 'negative', which is of type str.
+
+'stateMachineDsl_ChangeAction' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'stateMachineDsl_IncrementAction' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_NumberExp' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'negative', which is of type str.
+
+'stateMachineDsl_ProcedureUse' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachineDsl_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_SetAction' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachineDsl_StringExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'stateMachineDsl_DecrementAction' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachineDsl_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'stateMachineDsl_CommandAction' is a specialization of 'ExtDeclaration'.
+The class 'stateMachineDsl_Function' is a specialization of 'ExtDeclaration'.
+The class 'stateMachineDsl_FunctionUse' is a specialization of 'Expression'.
+The class 'stateMachineDsl_IncrementAction' is a specialization of 'ChangeAction'.
+The class 'stateMachineDsl_DecrementAction' is a specialization of 'ChangeAction'.
+The class 'stateMachineDsl_ResetAction' is a specialization of 'ChangeAction'.
+The class 'stateMachineDsl_Or' is a specialization of 'Expression'.
+The class 'stateMachineDsl_And' is a specialization of 'Expression'.
+The class 'stateMachineDsl_Equality' is a specialization of 'Expression'.
+The class 'stateMachineDsl_Comparison' is a specialization of 'Expression'.
+The class 'stateMachineDsl_PlusCond' is a specialization of 'Expression'.
+The class 'stateMachineDsl_MinusCond' is a specialization of 'Expression'.
+The class 'stateMachineDsl_MulOrDiv' is a specialization of 'Expression'.
+The class 'stateMachineDsl_Parenthesis' is a specialization of 'Expression'.
+The class 'stateMachineDsl_NumberExp' is a specialization of 'Expression'.
+The class 'stateMachineDsl_StringExp' is a specialization of 'Expression'.
+The class 'stateMachineDsl_BoolExp' is a specialization of 'Expression'.
+The class 'stateMachineDsl_VarRef' is a specialization of 'Expression'.
+The class 'stateMachineDsl_DoubleExp' is a specialization of 'Expression'.
+The class 'stateMachineDsl_Not' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'stateMachineDsl_StateMachine' and 'stateMachineDsl_Declaration'. From 'stateMachineDsl_StateMachine', the role 'stateMachineDsl_StateMachine' has cardinality 0..*, and from 'stateMachineDsl_Declaration', the role 'stateMachineDsl_Declaration' has cardinality 0..*.
+An association connects 'stateMachineDsl_StateMachine' and 'stateMachineDsl_State'. From 'stateMachineDsl_StateMachine', the role 'stateMachineDsl_StateMachine2' has cardinality 0..*, and from 'stateMachineDsl_State', the role 'stateMachineDsl_State' has cardinality 0..*.
+An association connects 'stateMachineDsl_State' and 'stateMachineDsl_StateMachine'. From 'stateMachineDsl_State', the role 'stateMachineDsl_State5' has cardinality 0..*, and from 'stateMachineDsl_StateMachine', the role 'stateMachineDsl_StateMachine4' has cardinality 0..*.
+An association connects 'stateMachineDsl_Variable' and 'stateMachineDsl_Declaration'. From 'stateMachineDsl_Variable', the role 'stateMachineDsl_Variable' has cardinality 0..*, and from 'stateMachineDsl_Declaration', the role 'stateMachineDsl_Declaration7' has cardinality 0..*.
+An association connects 'stateMachineDsl_ExtDeclaration' and 'stateMachineDsl_Declaration'. From 'stateMachineDsl_ExtDeclaration', the role 'stateMachineDsl_ExtDeclaration' has cardinality 0..*, and from 'stateMachineDsl_Declaration', the role 'stateMachineDsl_Declaration9' has cardinality 0..*.
+An association connects 'stateMachineDsl_Declaration' and 'stateMachineDsl_Event'. From 'stateMachineDsl_Declaration', the role 'stateMachineDsl_Declaration11' has cardinality 0..*, and from 'stateMachineDsl_Event', the role 'stateMachineDsl_Event' has cardinality 0..*.
+An association connects 'stateMachineDsl_Procedure' and 'stateMachineDsl_Declaration'. From 'stateMachineDsl_Procedure', the role 'stateMachineDsl_Procedure' has cardinality 0..*, and from 'stateMachineDsl_Declaration', the role 'stateMachineDsl_Declaration13' has cardinality 0..*.
+An association connects 'stateMachineDsl_State' and 'stateMachineDsl_MemberState'. From 'stateMachineDsl_State', the role 'stateMachineDsl_State15' has cardinality 0..*, and from 'stateMachineDsl_MemberState', the role 'stateMachineDsl_MemberState' has cardinality 0..*.
+An association connects 'stateMachineDsl_MemberState' and 'stateMachineDsl_Variable'. From 'stateMachineDsl_MemberState', the role 'stateMachineDsl_MemberState17' has cardinality 0..*, and from 'stateMachineDsl_Variable', the role 'stateMachineDsl_Variable18' has cardinality 0..*.
+An association connects 'stateMachineDsl_Action' and 'stateMachineDsl_MemberState'. From 'stateMachineDsl_Action', the role 'stateMachineDsl_Action' has cardinality 0..*, and from 'stateMachineDsl_MemberState', the role 'stateMachineDsl_MemberState20' has cardinality 0..*.
+An association connects 'stateMachineDsl_MemberState' and 'stateMachineDsl_Transition'. From 'stateMachineDsl_MemberState', the role 'stateMachineDsl_MemberState22' has cardinality 0..*, and from 'stateMachineDsl_Transition', the role 'stateMachineDsl_Transition' has cardinality 0..*.
+An association connects 'stateMachineDsl_CommandAction' and 'stateMachineDsl_MemberState'. From 'stateMachineDsl_CommandAction', the role 'stateMachineDsl_CommandAction' has cardinality 0..*, and from 'stateMachineDsl_MemberState', the role 'stateMachineDsl_MemberState24' has cardinality 0..*.
+An association connects 'stateMachineDsl_State' and 'stateMachineDsl_Transition'. From 'stateMachineDsl_State', the role 'stateMachineDsl_State27' has cardinality 0..*, and from 'stateMachineDsl_Transition', the role 'stateMachineDsl_Transition26' has cardinality 0..*.
+An association connects 'stateMachineDsl_Event' and 'stateMachineDsl_Transition'. From 'stateMachineDsl_Event', the role 'stateMachineDsl_Event30' has cardinality 0..*, and from 'stateMachineDsl_Transition', the role 'stateMachineDsl_Transition29' has cardinality 0..*.
+An association connects 'stateMachineDsl_Condition' and 'stateMachineDsl_Transition'. From 'stateMachineDsl_Condition', the role 'stateMachineDsl_Condition' has cardinality 0..*, and from 'stateMachineDsl_Transition', the role 'stateMachineDsl_Transition32' has cardinality 0..*.
+An association connects 'stateMachineDsl_Transition' and 'stateMachineDsl_Action'. From 'stateMachineDsl_Transition', the role 'stateMachineDsl_Transition34' has cardinality 0..*, and from 'stateMachineDsl_Action', the role 'stateMachineDsl_Action35' has cardinality 0..*.
+An association connects 'stateMachineDsl_VarParName' and 'stateMachineDsl_Variable'. From 'stateMachineDsl_VarParName', the role 'stateMachineDsl_VarParName' has cardinality 0..*, and from 'stateMachineDsl_Variable', the role 'stateMachineDsl_Variable37' has cardinality 0..*.
+An association connects 'stateMachineDsl_VarType' and 'stateMachineDsl_Variable'. From 'stateMachineDsl_VarType', the role 'stateMachineDsl_VarType' has cardinality 0..*, and from 'stateMachineDsl_Variable', the role 'stateMachineDsl_Variable39' has cardinality 0..*.
+An association connects 'stateMachineDsl_Variable' and 'stateMachineDsl_Expression'. From 'stateMachineDsl_Variable', the role 'stateMachineDsl_Variable41' has cardinality 0..*, and from 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression' has cardinality 0..*.
+An association connects 'stateMachineDsl_ParameterFunction' and 'stateMachineDsl_ExtDeclaration'. From 'stateMachineDsl_ParameterFunction', the role 'stateMachineDsl_ParameterFunction' has cardinality 0..*, and from 'stateMachineDsl_ExtDeclaration', the role 'stateMachineDsl_ExtDeclaration43' has cardinality 0..*.
+An association connects 'stateMachineDsl_Condition' and 'stateMachineDsl_Event'. From 'stateMachineDsl_Condition', the role 'stateMachineDsl_Condition46' has cardinality 0..*, and from 'stateMachineDsl_Event', the role 'stateMachineDsl_Event45' has cardinality 0..*.
+An association connects 'stateMachineDsl_Member' and 'stateMachineDsl_Event'. From 'stateMachineDsl_Member', the role 'stateMachineDsl_Member' has cardinality 0..*, and from 'stateMachineDsl_Event', the role 'stateMachineDsl_Event48' has cardinality 0..*.
+An association connects 'stateMachineDsl_Parameter' and 'stateMachineDsl_Procedure'. From 'stateMachineDsl_Parameter', the role 'stateMachineDsl_Parameter' has cardinality 0..*, and from 'stateMachineDsl_Procedure', the role 'stateMachineDsl_Procedure50' has cardinality 0..*.
+An association connects 'stateMachineDsl_Procedure' and 'stateMachineDsl_Condition'. From 'stateMachineDsl_Procedure', the role 'stateMachineDsl_Procedure52' has cardinality 0..*, and from 'stateMachineDsl_Condition', the role 'stateMachineDsl_Condition53' has cardinality 0..*.
+An association connects 'stateMachineDsl_Procedure' and 'stateMachineDsl_Member'. From 'stateMachineDsl_Procedure', the role 'stateMachineDsl_Procedure55' has cardinality 0..*, and from 'stateMachineDsl_Member', the role 'stateMachineDsl_Member56' has cardinality 0..*.
+An association connects 'stateMachineDsl_VarType' and 'stateMachineDsl_Parameter'. From 'stateMachineDsl_VarType', the role 'stateMachineDsl_VarType59' has cardinality 0..*, and from 'stateMachineDsl_Parameter', the role 'stateMachineDsl_Parameter58' has cardinality 0..*.
+An association connects 'stateMachineDsl_VarParName' and 'stateMachineDsl_Parameter'. From 'stateMachineDsl_VarParName', the role 'stateMachineDsl_VarParName62' has cardinality 0..*, and from 'stateMachineDsl_Parameter', the role 'stateMachineDsl_Parameter61' has cardinality 0..*.
+An association connects 'stateMachineDsl_Variable' and 'stateMachineDsl_Member'. From 'stateMachineDsl_Variable', the role 'stateMachineDsl_Variable65' has cardinality 0..*, and from 'stateMachineDsl_Member', the role 'stateMachineDsl_Member64' has cardinality 0..*.
+An association connects 'stateMachineDsl_Member' and 'stateMachineDsl_Action'. From 'stateMachineDsl_Member', the role 'stateMachineDsl_Member67' has cardinality 0..*, and from 'stateMachineDsl_Action', the role 'stateMachineDsl_Action68' has cardinality 0..*.
+An association connects 'stateMachineDsl_Function' and 'stateMachineDsl_VarType'. From 'stateMachineDsl_Function', the role 'stateMachineDsl_Function' has cardinality 0..*, and from 'stateMachineDsl_VarType', the role 'stateMachineDsl_VarType70' has cardinality 0..*.
+An association connects 'stateMachineDsl_VarType' and 'stateMachineDsl_ParameterFunction'. From 'stateMachineDsl_VarType', the role 'stateMachineDsl_VarType73' has cardinality 0..*, and from 'stateMachineDsl_ParameterFunction', the role 'stateMachineDsl_ParameterFunction72' has cardinality 0..*.
+An association connects 'stateMachineDsl_EObject' and 'stateMachineDsl_Action'. From 'stateMachineDsl_EObject', the role 'stateMachineDsl_EObject' has cardinality 0..*, and from 'stateMachineDsl_Action', the role 'stateMachineDsl_Action75' has cardinality 0..*.
+An association connects 'stateMachineDsl_Condition' and 'stateMachineDsl_Action'. From 'stateMachineDsl_Condition', the role 'stateMachineDsl_Condition78' has cardinality 0..*, and from 'stateMachineDsl_Action', the role 'stateMachineDsl_Action77' has cardinality 0..*.
+An association connects 'stateMachineDsl_SetAction' and 'stateMachineDsl_VarParName'. From 'stateMachineDsl_SetAction', the role 'stateMachineDsl_SetAction' has cardinality 0..*, and from 'stateMachineDsl_VarParName', the role 'stateMachineDsl_VarParName80' has cardinality 0..*.
+An association connects 'stateMachineDsl_SetAction' and 'stateMachineDsl_Expression'. From 'stateMachineDsl_SetAction', the role 'stateMachineDsl_SetAction82' has cardinality 0..*, and from 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression83' has cardinality 0..*.
+An association connects 'stateMachineDsl_VarParName' and 'stateMachineDsl_ChangeAction'. From 'stateMachineDsl_VarParName', the role 'stateMachineDsl_VarParName85' has cardinality 0..*, and from 'stateMachineDsl_ChangeAction', the role 'stateMachineDsl_ChangeAction' has cardinality 0..*.
+An association connects 'stateMachineDsl_Function' and 'stateMachineDsl_FunctionUse'. From 'stateMachineDsl_Function', the role 'stateMachineDsl_Function87' has cardinality 0..*, and from 'stateMachineDsl_FunctionUse', the role 'stateMachineDsl_FunctionUse' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_FunctionUse'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression90' has cardinality 0..*, and from 'stateMachineDsl_FunctionUse', the role 'stateMachineDsl_FunctionUse89' has cardinality 0..*.
+An association connects 'stateMachineDsl_ProcedureUse' and 'stateMachineDsl_Procedure'. From 'stateMachineDsl_ProcedureUse', the role 'stateMachineDsl_ProcedureUse' has cardinality 0..*, and from 'stateMachineDsl_Procedure', the role 'stateMachineDsl_Procedure92' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_ProcedureUse'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression95' has cardinality 0..*, and from 'stateMachineDsl_ProcedureUse', the role 'stateMachineDsl_ProcedureUse94' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_Condition'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression98' has cardinality 0..*, and from 'stateMachineDsl_Condition', the role 'stateMachineDsl_Condition97' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_Or'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression100' has cardinality 0..*, and from 'stateMachineDsl_Or', the role 'stateMachineDsl_Or' has cardinality 0..*.
+An association connects 'stateMachineDsl_Or' and 'stateMachineDsl_Expression'. From 'stateMachineDsl_Or', the role 'stateMachineDsl_Or102' has cardinality 0..*, and from 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression103' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_And'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression105' has cardinality 0..*, and from 'stateMachineDsl_And', the role 'stateMachineDsl_And' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_And'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression108' has cardinality 0..*, and from 'stateMachineDsl_And', the role 'stateMachineDsl_And107' has cardinality 0..*.
+An association connects 'stateMachineDsl_Equality' and 'stateMachineDsl_Expression'. From 'stateMachineDsl_Equality', the role 'stateMachineDsl_Equality' has cardinality 0..*, and from 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression110' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_Equality'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression113' has cardinality 0..*, and from 'stateMachineDsl_Equality', the role 'stateMachineDsl_Equality112' has cardinality 0..*.
+An association connects 'stateMachineDsl_Comparison' and 'stateMachineDsl_Expression'. From 'stateMachineDsl_Comparison', the role 'stateMachineDsl_Comparison' has cardinality 0..*, and from 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression115' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_Comparison'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression118' has cardinality 0..*, and from 'stateMachineDsl_Comparison', the role 'stateMachineDsl_Comparison117' has cardinality 0..*.
+An association connects 'stateMachineDsl_PlusCond' and 'stateMachineDsl_Expression'. From 'stateMachineDsl_PlusCond', the role 'stateMachineDsl_PlusCond' has cardinality 0..*, and from 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression120' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_PlusCond'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression123' has cardinality 0..*, and from 'stateMachineDsl_PlusCond', the role 'stateMachineDsl_PlusCond122' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_MinusCond'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression125' has cardinality 0..*, and from 'stateMachineDsl_MinusCond', the role 'stateMachineDsl_MinusCond' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_MinusCond'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression128' has cardinality 0..*, and from 'stateMachineDsl_MinusCond', the role 'stateMachineDsl_MinusCond127' has cardinality 0..*.
+An association connects 'stateMachineDsl_MulOrDiv' and 'stateMachineDsl_Expression'. From 'stateMachineDsl_MulOrDiv', the role 'stateMachineDsl_MulOrDiv' has cardinality 0..*, and from 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression130' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_MulOrDiv'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression133' has cardinality 0..*, and from 'stateMachineDsl_MulOrDiv', the role 'stateMachineDsl_MulOrDiv132' has cardinality 0..*.
+An association connects 'stateMachineDsl_Expression' and 'stateMachineDsl_Parenthesis'. From 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression135' has cardinality 0..*, and from 'stateMachineDsl_Parenthesis', the role 'stateMachineDsl_Parenthesis' has cardinality 0..*.
+An association connects 'stateMachineDsl_VarRef' and 'stateMachineDsl_VarParName'. From 'stateMachineDsl_VarRef', the role 'stateMachineDsl_VarRef' has cardinality 0..*, and from 'stateMachineDsl_VarParName', the role 'stateMachineDsl_VarParName137' has cardinality 0..*.
+An association connects 'stateMachineDsl_Not' and 'stateMachineDsl_Expression'. From 'stateMachineDsl_Not', the role 'stateMachineDsl_Not' has cardinality 0..*, and from 'stateMachineDsl_Expression', the role 'stateMachineDsl_Expression139' has cardinality 0..*.

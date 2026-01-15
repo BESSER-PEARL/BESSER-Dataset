@@ -1,0 +1,45 @@
+The domain model 'stateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'stateMachine_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_Role' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_FieldState' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'stateMachine_StateMachine' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'package', which is of type str.
+
+'stateMachine_Trans' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_DocumentField' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_TransSet' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EFieldState' defines the following possible values: 'READONLY', 'EDITABLE', 'HIDDEN'.
+
+Relationships between classes are modeled using associations.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_Event'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine' has cardinality 0..*, and from 'stateMachine_Event', the role 'stateMachine_Event' has cardinality 0..*.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_State'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine2' has cardinality 0..*, and from 'stateMachine_State', the role 'stateMachine_State' has cardinality 0..*.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_State'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine4' has cardinality 0..*, and from 'stateMachine_State', the role 'stateMachine_State5' has cardinality 0..*.
+An association connects 'stateMachine_DocumentField' and 'stateMachine_StateMachine'. From 'stateMachine_DocumentField', the role 'stateMachine_DocumentField' has cardinality 0..*, and from 'stateMachine_StateMachine', the role 'stateMachine_StateMachine7' has cardinality 0..*.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_Role'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine9' has cardinality 0..*, and from 'stateMachine_Role', the role 'stateMachine_Role' has cardinality 0..*.
+An association connects 'stateMachine_Trans' and 'stateMachine_State'. From 'stateMachine_Trans', the role 'stateMachine_Trans' has cardinality 0..*, and from 'stateMachine_State', the role 'stateMachine_State11' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_FieldState'. From 'stateMachine_State', the role 'stateMachine_State13' has cardinality 0..*, and from 'stateMachine_FieldState', the role 'stateMachine_FieldState' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_TransSet'. From 'stateMachine_State', the role 'stateMachine_State15' has cardinality 0..*, and from 'stateMachine_TransSet', the role 'stateMachine_TransSet' has cardinality 0..*.
+An association connects 'stateMachine_Trans' and 'stateMachine_Event'. From 'stateMachine_Trans', the role 'stateMachine_Trans17' has cardinality 0..*, and from 'stateMachine_Event', the role 'stateMachine_Event18' has cardinality 0..*.
+An association connects 'stateMachine_Trans' and 'stateMachine_State'. From 'stateMachine_Trans', the role 'stateMachine_Trans20' has cardinality 0..*, and from 'stateMachine_State', the role 'stateMachine_State21' has cardinality 0..*.
+An association connects 'stateMachine_FieldState' and 'stateMachine_DocumentField'. From 'stateMachine_FieldState', the role 'stateMachine_FieldState23' has cardinality 0..*, and from 'stateMachine_DocumentField', the role 'stateMachine_DocumentField24' has cardinality 0..*.
+An association connects 'stateMachine_TransSet' and 'stateMachine_Trans'. From 'stateMachine_TransSet', the role 'stateMachine_TransSet26' has cardinality 0..*, and from 'stateMachine_Trans', the role 'stateMachine_Trans27' has cardinality 0..*.
+An association connects 'stateMachine_Role' and 'stateMachine_TransSet'. From 'stateMachine_Role', the role 'stateMachine_Role30' has cardinality 0..*, and from 'stateMachine_TransSet', the role 'stateMachine_TransSet29' has cardinality 0..*.

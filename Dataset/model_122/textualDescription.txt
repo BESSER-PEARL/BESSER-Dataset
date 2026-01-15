@@ -1,0 +1,129 @@
+The domain model 'JMM' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'JMM_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_TypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_ConstructorDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractVariablesContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_NamespaceAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_AbstractVariablesContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'JMM_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_Modifier' represents an important domain concept.
+It has one attribute: 'inheritance', which is of type str.
+
+'JMM_BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_ClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_InterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_AbstractMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_MethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_NamedElement' represents an important domain concept.
+It has the following attributes: 'proxy', which is of type bool; 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_AnnotationTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'JMM_AbstractTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'InheritanceKind' defines the following possible values: 'final', 'abstract', 'none'.
+
+The model also captures inheritance relationships between classes.
+The class 'JMM_FieldDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JMM_FieldDeclaration' is a specialization of 'AbstractVariablesContainer'.
+The class 'JMM_AnnotationTypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'JMM_MethodDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+The class 'JMM_ConstructorDeclaration' is a specialization of 'AbstractMethodDeclaration'.
+The class 'JMM_ClassDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'JMM_InterfaceDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'JMM_TypeAccess' is a specialization of 'Expression'.
+The class 'JMM_TypeAccess' is a specialization of 'NamespaceAccess'.
+The class 'JMM_Package' is a specialization of 'NamedElement'.
+The class 'JMM_AbstractTypeDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JMM_AbstractTypeDeclaration' is a specialization of 'Type'.
+The class 'JMM_BodyDeclaration' is a specialization of 'NamedElement'.
+The class 'JMM_NamedElement' is a specialization of 'ASTNode'.
+The class 'JMM_Modifier' is a specialization of 'ASTNode'.
+The class 'JMM_Type' is a specialization of 'NamedElement'.
+The class 'JMM_AbstractVariablesContainer' is a specialization of 'ASTNode'.
+The class 'JMM_AbstractMethodDeclaration' is a specialization of 'BodyDeclaration'.
+The class 'JMM_TypeDeclaration' is a specialization of 'AbstractTypeDeclaration'.
+The class 'JMM_Expression' is a specialization of 'ASTNode'.
+The class 'JMM_NamespaceAccess' is a specialization of 'ASTNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'JMM_Package' and 'JMM_Model'. From 'JMM_Package', the role 'JMM_Package' has cardinality 0..*, and from 'JMM_Model', the role 'JMM_Model' has cardinality 0..*.
+An association connects 'JMM_TypeAccess' and 'JMM_ClassDeclaration'. From 'JMM_TypeAccess', the role 'JMM_TypeAccess' has cardinality 0..*, and from 'JMM_ClassDeclaration', the role 'JMM_ClassDeclaration' has cardinality 0..*.
+An association connects 'JMM_Type' and 'JMM_TypeAccess'. From 'JMM_Type', the role 'JMM_Type' has cardinality 0..*, and from 'JMM_TypeAccess', the role 'JMM_TypeAccess3' has cardinality 0..*.
+An association connects 'JMM_Package' and 'JMM_Package'. From 'JMM_Package', the role 'JMM_Package4' has cardinality 0..*, and from 'JMM_Package', the role 'JMM_Package6' has cardinality 0..*.
+An association connects 'JMM_AbstractTypeDeclaration' and 'JMM_Package'. From 'JMM_AbstractTypeDeclaration', the role 'JMM_AbstractTypeDeclaration' has cardinality 0..*, and from 'JMM_Package', the role 'JMM_Package8' has cardinality 0..*.
+An association connects 'JMM_AbstractTypeDeclaration' and 'JMM_BodyDeclaration'. From 'JMM_AbstractTypeDeclaration', the role 'JMM_AbstractTypeDeclaration10' has cardinality 0..*, and from 'JMM_BodyDeclaration', the role 'JMM_BodyDeclaration' has cardinality 0..*.
+An association connects 'JMM_TypeAccess' and 'JMM_AbstractTypeDeclaration'. From 'JMM_TypeAccess', the role 'JMM_TypeAccess13' has cardinality 0..*, and from 'JMM_AbstractTypeDeclaration', the role 'JMM_AbstractTypeDeclaration12' has cardinality 0..*.
+An association connects 'JMM_BodyDeclaration' and 'JMM_Modifier'. From 'JMM_BodyDeclaration', the role 'JMM_BodyDeclaration15' has cardinality 0..*, and from 'JMM_Modifier', the role 'JMM_Modifier' has cardinality 0..*.

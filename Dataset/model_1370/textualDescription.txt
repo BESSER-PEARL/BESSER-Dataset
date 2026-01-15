@@ -1,0 +1,39 @@
+The domain model 'HSM' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'HSM_HSM_Transition' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'HSM_HSM_AbstractState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HSM_HSM_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'HSM_HSM_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'HSM_HSM_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HSM_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'HSM_HSM_RegularState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'HSM_HSM_InitialState' is a specialization of 'HSM_AbstractState'.
+The class 'HSM_HSM_RegularState' is a specialization of 'HSM_AbstractState'.
+The class 'HSM_HSM_CompositeState' is a specialization of 'HSM_AbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'HSM_HSM_Transition' and 'HSM_HSM_StateMachine'. From 'HSM_HSM_Transition', the role 'HSM_Transition' has cardinality 0..*, and from 'HSM_HSM_StateMachine', the role 'stateMachine' has cardinality 0..*.
+An association connects 'HSM_HSM_AbstractState' and 'HSM_HSM_StateMachine'. From 'HSM_HSM_AbstractState', the role 'HSM_AbstractState' has cardinality 0..*, and from 'HSM_HSM_StateMachine', the role 'stateMachine2' has cardinality 0..*.
+An association connects 'HSM_HSM_Transition' and 'HSM_HSM_StateMachine'. From 'HSM_HSM_Transition', the role 'transitions' has cardinality 0..*, and from 'HSM_HSM_StateMachine', the role 'HSM_StateMachine' has cardinality 0..*.
+An association connects 'HSM_HSM_Transition' and 'HSM_HSM_AbstractState'. From 'HSM_HSM_Transition', the role 'HSM_HSM_Transition' has cardinality 0..*, and from 'HSM_HSM_AbstractState', the role 'HSM_HSM_AbstractState' has cardinality 0..*.
+An association connects 'HSM_HSM_AbstractState' and 'HSM_HSM_Transition'. From 'HSM_HSM_AbstractState', the role 'HSM_HSM_AbstractState7' has cardinality 0..*, and from 'HSM_HSM_Transition', the role 'HSM_HSM_Transition6' has cardinality 0..*.
+An association connects 'HSM_HSM_StateMachine' and 'HSM_HSM_AbstractState'. From 'HSM_HSM_StateMachine', the role 'HSM_StateMachine9' has cardinality 0..*, and from 'HSM_HSM_AbstractState', the role 'states' has cardinality 0..*.
+An association connects 'HSM_HSM_CompositeState' and 'HSM_HSM_AbstractState'. From 'HSM_HSM_CompositeState', the role 'HSM_CompositeState' has cardinality 0..*, and from 'HSM_HSM_AbstractState', the role 'states11' has cardinality 0..*.
+An association connects 'HSM_HSM_AbstractState' and 'HSM_HSM_CompositeState'. From 'HSM_HSM_AbstractState', the role 'HSM_AbstractState13' has cardinality 0..*, and from 'HSM_HSM_CompositeState', the role 'compositeState' has cardinality 0..*.

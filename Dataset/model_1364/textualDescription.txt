@@ -1,0 +1,125 @@
+The domain model 'statemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'statemachine_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_PseudoState' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'statemachine_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_OpaqueBehavior' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'statemachine_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_CallEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_State' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PseudoStateKind' defines a single possible value: 'initial'.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachine_Class' is a specialization of 'BehavioredClassifier'.
+The class 'statemachine_StateMachine' is a specialization of 'Behavior'.
+The class 'statemachine_OpaqueBehavior' is a specialization of 'Behavior'.
+The class 'statemachine_Transition' is a specialization of 'NamedElement'.
+The class 'statemachine_Vertex' is a specialization of 'NamedElement'.
+The class 'statemachine_PseudoState' is a specialization of 'Vertex'.
+The class 'statemachine_State' is a specialization of 'Vertex'.
+The class 'statemachine_FinalState' is a specialization of 'State'.
+The class 'statemachine_MessageEvent' is a specialization of 'Event'.
+The class 'statemachine_CallEvent' is a specialization of 'MessageEvent'.
+The class 'statemachine_Operation' is a specialization of 'BehavioralFeature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_StateMachine' and 'statemachine_Region'. From 'statemachine_StateMachine', the role 'machine' has cardinality 0..*, and from 'statemachine_Region', the role 'Region' has cardinality 0..*.
+An association connects 'statemachine_Behavior' and 'statemachine_BehavioredClassifier'. From 'statemachine_Behavior', the role 'Behavior' has cardinality 0..*, and from 'statemachine_BehavioredClassifier', the role 'context' has cardinality 0..*.
+An association connects 'statemachine_Region' and 'statemachine_StateMachine'. From 'statemachine_Region', the role 'region' has cardinality 0..*, and from 'statemachine_StateMachine', the role 'StateMachine' has cardinality 0..*.
+An association connects 'statemachine_Region' and 'statemachine_Vertex'. From 'statemachine_Region', the role 'regionvertex' has cardinality 0..*, and from 'statemachine_Vertex', the role 'Vertex' has cardinality 0..*.
+An association connects 'statemachine_Region' and 'statemachine_Transition'. From 'statemachine_Region', the role 'transitionregion' has cardinality 0..*, and from 'statemachine_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'statemachine_Behavior' and 'statemachine_BehavioralFeature'. From 'statemachine_Behavior', the role 'behavior' has cardinality 0..*, and from 'statemachine_BehavioralFeature', the role 'BehavioralFeature' has cardinality 0..*.
+An association connects 'statemachine_BehavioredClassifier' and 'statemachine_Behavior'. From 'statemachine_BehavioredClassifier', the role 'BehavioredClassifier' has cardinality 0..*, and from 'statemachine_Behavior', the role 'ownedBehavior' has cardinality 0..*.
+An association connects 'statemachine_Behavior' and 'statemachine_Transition'. From 'statemachine_Behavior', the role 'effect' has cardinality 0..*, and from 'statemachine_Transition', the role 'Transition8' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Constraint'. From 'statemachine_Transition', the role 'constrainttransition' has cardinality 0..*, and from 'statemachine_Constraint', the role 'Constraint' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Vertex'. From 'statemachine_Transition', the role 'outgoing' has cardinality 0..*, and from 'statemachine_Vertex', the role 'Vertex11' has cardinality 0..*.
+An association connects 'statemachine_Vertex' and 'statemachine_Transition'. From 'statemachine_Vertex', the role 'Vertex13' has cardinality 0..*, and from 'statemachine_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Region'. From 'statemachine_Transition', the role 'transition' has cardinality 0..*, and from 'statemachine_Region', the role 'Region15' has cardinality 0..*.
+An association connects 'statemachine_Trigger' and 'statemachine_Transition'. From 'statemachine_Trigger', the role 'statemachine_Trigger' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Behavior'. From 'statemachine_Transition', the role 'behaviortransition' has cardinality 0..*, and from 'statemachine_Behavior', the role 'Behavior18' has cardinality 0..*.
+An association connects 'statemachine_Vertex' and 'statemachine_Transition'. From 'statemachine_Vertex', the role 'source' has cardinality 0..*, and from 'statemachine_Transition', the role 'Transition20' has cardinality 0..*.
+An association connects 'statemachine_Vertex' and 'statemachine_Transition'. From 'statemachine_Vertex', the role 'target' has cardinality 0..*, and from 'statemachine_Transition', the role 'Transition22' has cardinality 0..*.
+An association connects 'statemachine_Region' and 'statemachine_Vertex'. From 'statemachine_Region', the role 'Region24' has cardinality 0..*, and from 'statemachine_Vertex', the role 'subvertex' has cardinality 0..*.
+An association connects 'statemachine_Trigger' and 'statemachine_Event'. From 'statemachine_Trigger', the role 'Trigger' has cardinality 0..*, and from 'statemachine_Event', the role 'event' has cardinality 0..*.
+An association connects 'statemachine_Operation' and 'statemachine_CallEvent'. From 'statemachine_Operation', the role 'statemachine_Operation' has cardinality 0..*, and from 'statemachine_CallEvent', the role 'statemachine_CallEvent' has cardinality 0..*.
+An association connects 'statemachine_Behavior' and 'statemachine_BehavioralFeature'. From 'statemachine_Behavior', the role 'Behavior28' has cardinality 0..*, and from 'statemachine_BehavioralFeature', the role 'specification' has cardinality 0..*.
+An association connects 'statemachine_Trigger' and 'statemachine_Transition'. From 'statemachine_Trigger', the role 'statemachine_Trigger30' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition31' has cardinality 0..*.
+An association connects 'statemachine_Trigger' and 'statemachine_Event'. From 'statemachine_Trigger', the role 'eventtrigger' has cardinality 0..*, and from 'statemachine_Event', the role 'Event' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Constraint'. From 'statemachine_Transition', the role 'Transition34' has cardinality 0..*, and from 'statemachine_Constraint', the role 'guard' has cardinality 0..*.

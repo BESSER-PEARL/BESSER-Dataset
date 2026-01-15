@@ -1,0 +1,638 @@
+The domain model 'eol' describes the core structural elements and their relationships within the system.
+
+The model defines 144 main class(es).
+
+'FeatureCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_BooleanExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'eol_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ModelDeclarationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_LessThanOrEqualToOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_AnnotationBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_OrderedSetType' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_OperationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_EOLModule' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_BinaryOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparablePrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_EOLLibraryModule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eol_MultiplyOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ExpressionOrStatementBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'KeyValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_BagType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_XorOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_BreakAllStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'UniqueCollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_AbortStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_PrimitiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_TextPosition' represents an important domain concept.
+It has the following attributes: 'line', which is of type int; 'column', which is of type int.
+
+'eol_ArithmeticOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SwitchCaseExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_NativeType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_DeleteStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SummableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SummableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'SummablePrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_GreaterThanOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_RealExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'CollectionInitialisationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ModelType' represents an important domain concept.
+It has the following attributes: 'modelName', which is of type str; 'resolvedIMetamodel', which is of type str.
+
+'eol_ImpliesOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_LessThanOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OrderedCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_UniqueCollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_UnaryOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchCaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_StringExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'UnaryOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_EnumerationLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_NameExpression' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isType', which is of type bool; 'resolvedContent', which is of type str.
+
+'EOLLibraryModule' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_Expression' represents an important domain concept.
+It has one attribute: 'inBrackets', which is of type bool.
+
+'eol_ExecutableAnnotationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_UniqueCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_FOLMethodCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_PlusOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_NotEqualsOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ComparableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_EOLElement' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'eol_OrOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_IntegerExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'eol_SwitchCaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SummablePrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_NewExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'EOLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PseudoType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_GreaterThanOrEqualToOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_BagExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_PseudoType' represents an important domain concept.
+It does not declare any attributes.
+
+'OrderedCollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_NegativeOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_EqualsOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UniqueCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_AssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_DivideOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_CollectionInitialisationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_VariableDeclarationExpression' represents an important domain concept.
+It has one attribute: 'create', which is of type bool.
+
+'eol_ComparablePrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_AndOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_FormalParameterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_TransactionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SwitchCaseDefaultStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SelfContentType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_KeyValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_MethodCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SimpleAnnotationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparisonOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ModelDeclarationStatement' represents an important domain concept.
+It has one attribute: 'resolvedIMetamodel', which is of type str.
+
+'eol_CollectionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_OrderedSetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_MinusOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SelfType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_OrderedCollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_TextRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_NotOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_LogicalOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_PropertyCallExpression' represents an important domain concept.
+It has one attribute: 'extended', which is of type bool.
+
+'eol_SpecialAssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_AnnotationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicalOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_Import' represents an important domain concept.
+It has one attribute: 'imported', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ComparisonOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_OperatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ModelElementType' represents an important domain concept.
+It has the following attributes: 'modelElementType', which is of type str; 'resolvedIPackage', which is of type str; 'resolvedIMetamodel', which is of type str; 'elementName', which is of type str; 'modelName', which is of type str.
+
+'eol_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SequenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_FeatureCallExpression' represents an important domain concept.
+It has one attribute: 'arrow', which is of type bool.
+
+'eol_AnyType' represents an important domain concept.
+It has one attribute: 'declared', which is of type bool.
+
+'eol_OrderedCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_SetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_InvalidType' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ExpressionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_MapExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'eol_EOLLibraryModule' is a specialization of 'EOLElement'.
+The class 'eol_EOLModule' is a specialization of 'EOLLibraryModule'.
+The class 'eol_Import' is a specialization of 'EOLElement'.
+The class 'eol_Block' is a specialization of 'EOLElement'.
+The class 'eol_AnnotationBlock' is a specialization of 'Block'.
+The class 'eol_ExpressionOrStatementBlock' is a specialization of 'EOLElement'.
+The class 'eol_OperationDefinition' is a specialization of 'EOLElement'.
+The class 'eol_Expression' is a specialization of 'EOLElement'.
+The class 'eol_OperatorExpression' is a specialization of 'Expression'.
+The class 'eol_UnaryOperatorExpression' is a specialization of 'OperatorExpression'.
+The class 'eol_NotOperatorExpression' is a specialization of 'UnaryOperatorExpression'.
+The class 'eol_NegativeOperatorExpression' is a specialization of 'UnaryOperatorExpression'.
+The class 'eol_BinaryOperatorExpression' is a specialization of 'OperatorExpression'.
+The class 'eol_LogicalOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+The class 'eol_AndOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+The class 'eol_XorOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+The class 'eol_OrOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+The class 'eol_ImpliesOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+The class 'eol_ArithmeticOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+The class 'eol_DivideOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+The class 'eol_MultiplyOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+The class 'eol_MinusOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+The class 'eol_PlusOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+The class 'eol_ComparisonOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+The class 'eol_GreaterThanOrEqualToOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+The class 'eol_GreaterThanOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+The class 'eol_LessThanOrEqualToOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+The class 'eol_LessThanOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+The class 'eol_NotEqualsOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+The class 'eol_EqualsOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+The class 'eol_VariableDeclarationExpression' is a specialization of 'Expression'.
+The class 'eol_FormalParameterExpression' is a specialization of 'VariableDeclarationExpression'.
+The class 'eol_NameExpression' is a specialization of 'Expression'.
+The class 'eol_FeatureCallExpression' is a specialization of 'Expression'.
+The class 'eol_MethodCallExpression' is a specialization of 'FeatureCallExpression'.
+The class 'eol_PropertyCallExpression' is a specialization of 'FeatureCallExpression'.
+The class 'eol_FOLMethodCallExpression' is a specialization of 'FeatureCallExpression'.
+The class 'eol_KeyValueExpression' is a specialization of 'Expression'.
+The class 'eol_ModelDeclarationParameter' is a specialization of 'KeyValueExpression'.
+The class 'eol_NewExpression' is a specialization of 'Expression'.
+The class 'eol_MapExpression' is a specialization of 'Expression'.
+The class 'eol_CollectionExpression' is a specialization of 'Expression'.
+The class 'eol_PrimitiveExpression' is a specialization of 'Expression'.
+The class 'eol_ComparableExpression' is a specialization of 'PrimitiveExpression'.
+The class 'eol_SummableExpression' is a specialization of 'PrimitiveExpression'.
+The class 'eol_StringExpression' is a specialization of 'ComparableExpression'.
+The class 'eol_StringExpression' is a specialization of 'SummableExpression'.
+The class 'eol_BooleanExpression' is a specialization of 'PrimitiveExpression'.
+The class 'eol_RealExpression' is a specialization of 'ComparableExpression'.
+The class 'eol_RealExpression' is a specialization of 'SummableExpression'.
+The class 'eol_IntegerExpression' is a specialization of 'ComparableExpression'.
+The class 'eol_IntegerExpression' is a specialization of 'SummableExpression'.
+The class 'eol_BagExpression' is a specialization of 'CollectionExpression'.
+The class 'eol_SetExpression' is a specialization of 'UniqueCollection'.
+The class 'eol_OrderedSetExpression' is a specialization of 'OrderedCollection'.
+The class 'eol_OrderedSetExpression' is a specialization of 'UniqueCollection'.
+The class 'eol_SequenceExpression' is a specialization of 'OrderedCollection'.
+The class 'eol_OrderedCollection' is a specialization of 'CollectionExpression'.
+The class 'eol_UniqueCollection' is a specialization of 'CollectionExpression'.
+The class 'eol_EnumerationLiteralExpression' is a specialization of 'Expression'.
+The class 'eol_CollectionInitialisationExpression' is a specialization of 'Expression'.
+The class 'eol_ExpressionRange' is a specialization of 'CollectionInitialisationExpression'.
+The class 'eol_ExpressionList' is a specialization of 'CollectionInitialisationExpression'.
+The class 'eol_Statement' is a specialization of 'EOLElement'.
+The class 'eol_TransactionStatement' is a specialization of 'Statement'.
+The class 'eol_ExpressionStatement' is a specialization of 'Statement'.
+The class 'eol_SwitchStatement' is a specialization of 'Statement'.
+The class 'eol_SwitchCaseStatement' is a specialization of 'Statement'.
+The class 'eol_SwitchCaseDefaultStatement' is a specialization of 'SwitchCaseStatement'.
+The class 'eol_SwitchCaseExpressionStatement' is a specialization of 'SwitchCaseStatement'.
+The class 'eol_IfStatement' is a specialization of 'Statement'.
+The class 'eol_ForStatement' is a specialization of 'Statement'.
+The class 'eol_WhileStatement' is a specialization of 'Statement'.
+The class 'eol_ReturnStatement' is a specialization of 'Statement'.
+The class 'eol_ThrowStatement' is a specialization of 'Statement'.
+The class 'eol_DeleteStatement' is a specialization of 'Statement'.
+The class 'eol_AssignmentStatement' is a specialization of 'Statement'.
+The class 'eol_SpecialAssignmentStatement' is a specialization of 'AssignmentStatement'.
+The class 'eol_ContinueStatement' is a specialization of 'Statement'.
+The class 'eol_AbortStatement' is a specialization of 'Statement'.
+The class 'eol_BreakStatement' is a specialization of 'Statement'.
+The class 'eol_BreakAllStatement' is a specialization of 'Statement'.
+The class 'eol_AnnotationStatement' is a specialization of 'Statement'.
+The class 'eol_SimpleAnnotationStatement' is a specialization of 'AnnotationStatement'.
+The class 'eol_ExecutableAnnotationStatement' is a specialization of 'AnnotationStatement'.
+The class 'eol_ModelDeclarationStatement' is a specialization of 'Statement'.
+The class 'eol_Type' is a specialization of 'EOLElement'.
+The class 'eol_AnyType' is a specialization of 'Type'.
+The class 'eol_ModelType' is a specialization of 'AnyType'.
+The class 'eol_ModelElementType' is a specialization of 'AnyType'.
+The class 'eol_PseudoType' is a specialization of 'AnyType'.
+The class 'eol_SelfType' is a specialization of 'PseudoType'.
+The class 'eol_SelfContentType' is a specialization of 'PseudoType'.
+The class 'eol_MapType' is a specialization of 'AnyType'.
+The class 'eol_NativeType' is a specialization of 'AnyType'.
+The class 'eol_VoidType' is a specialization of 'AnyType'.
+The class 'eol_InvalidType' is a specialization of 'AnyType'.
+The class 'eol_CollectionType' is a specialization of 'AnyType'.
+The class 'eol_BagType' is a specialization of 'CollectionType'.
+The class 'eol_OrderedCollectionType' is a specialization of 'CollectionType'.
+The class 'eol_UniqueCollectionType' is a specialization of 'CollectionType'.
+The class 'eol_SetType' is a specialization of 'UniqueCollectionType'.
+The class 'eol_OrderedSetType' is a specialization of 'UniqueCollectionType'.
+The class 'eol_OrderedSetType' is a specialization of 'OrderedCollectionType'.
+The class 'eol_SequenceType' is a specialization of 'OrderedCollectionType'.
+The class 'eol_PrimitiveType' is a specialization of 'AnyType'.
+The class 'eol_ComparablePrimitiveType' is a specialization of 'PrimitiveType'.
+The class 'eol_SummablePrimitiveType' is a specialization of 'PrimitiveType'.
+The class 'eol_BooleanType' is a specialization of 'PrimitiveType'.
+The class 'eol_RealType' is a specialization of 'ComparablePrimitiveType'.
+The class 'eol_RealType' is a specialization of 'SummablePrimitiveType'.
+The class 'eol_IntegerType' is a specialization of 'RealType'.
+The class 'eol_StringType' is a specialization of 'ComparablePrimitiveType'.
+The class 'eol_StringType' is a specialization of 'SummablePrimitiveType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'eol_EOLElement' and 'eol_EOLElement'. From 'eol_EOLElement', the role 'eol_EOLElement0' has cardinality 0..*, and from 'eol_EOLElement', the role 'eol_EOLElement' has cardinality 0..*.
+An association connects 'eol_EOLElement' and 'eol_TextRegion'. From 'eol_EOLElement', the role 'eol_EOLElement3' has cardinality 0..*, and from 'eol_TextRegion', the role 'eol_TextRegion' has cardinality 0..*.
+An association connects 'eol_TextPosition' and 'eol_TextRegion'. From 'eol_TextPosition', the role 'eol_TextPosition' has cardinality 0..*, and from 'eol_TextRegion', the role 'eol_TextRegion5' has cardinality 0..*.
+An association connects 'eol_TextPosition' and 'eol_TextRegion'. From 'eol_TextPosition', the role 'eol_TextPosition8' has cardinality 0..*, and from 'eol_TextRegion', the role 'eol_TextRegion7' has cardinality 0..*.
+An association connects 'eol_Import' and 'eol_EOLLibraryModule'. From 'eol_Import', the role 'eol_Import' has cardinality 0..*, and from 'eol_EOLLibraryModule', the role 'eol_EOLLibraryModule' has cardinality 0..*.
+An association connects 'eol_ModelDeclarationStatement' and 'eol_EOLLibraryModule'. From 'eol_ModelDeclarationStatement', the role 'eol_ModelDeclarationStatement' has cardinality 0..*, and from 'eol_EOLLibraryModule', the role 'eol_EOLLibraryModule11' has cardinality 0..*.
+An association connects 'eol_OperationDefinition' and 'eol_EOLLibraryModule'. From 'eol_OperationDefinition', the role 'eol_OperationDefinition' has cardinality 0..*, and from 'eol_EOLLibraryModule', the role 'eol_EOLLibraryModule13' has cardinality 0..*.
+An association connects 'eol_Block' and 'eol_EOLModule'. From 'eol_Block', the role 'eol_Block' has cardinality 0..*, and from 'eol_EOLModule', the role 'eol_EOLModule' has cardinality 0..*.
+An association connects 'eol_EOLLibraryModule' and 'eol_Import'. From 'eol_EOLLibraryModule', the role 'eol_EOLLibraryModule17' has cardinality 0..*, and from 'eol_Import', the role 'eol_Import16' has cardinality 0..*.
+An association connects 'eol_Statement' and 'eol_Block'. From 'eol_Statement', the role 'eol_Statement' has cardinality 0..*, and from 'eol_Block', the role 'eol_Block19' has cardinality 0..*.
+An association connects 'eol_Block' and 'eol_ExpressionOrStatementBlock'. From 'eol_Block', the role 'eol_Block21' has cardinality 0..*, and from 'eol_ExpressionOrStatementBlock', the role 'eol_ExpressionOrStatementBlock' has cardinality 0..*.
+An association connects 'eol_ExpressionOrStatementBlock' and 'eol_Expression'. From 'eol_ExpressionOrStatementBlock', the role 'eol_ExpressionOrStatementBlock23' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression' has cardinality 0..*.
+An association connects 'eol_Expression' and 'eol_ExpressionOrStatementBlock'. From 'eol_Expression', the role 'eol_Expression26' has cardinality 0..*, and from 'eol_ExpressionOrStatementBlock', the role 'eol_ExpressionOrStatementBlock25' has cardinality 0..*.
+An association connects 'eol_Type' and 'eol_OperationDefinition'. From 'eol_Type', the role 'eol_Type' has cardinality 0..*, and from 'eol_OperationDefinition', the role 'eol_OperationDefinition28' has cardinality 0..*.
+An association connects 'eol_OperationDefinition' and 'eol_Type'. From 'eol_OperationDefinition', the role 'eol_OperationDefinition30' has cardinality 0..*, and from 'eol_Type', the role 'eol_Type31' has cardinality 0..*.
+An association connects 'eol_AnnotationBlock' and 'eol_OperationDefinition'. From 'eol_AnnotationBlock', the role 'eol_AnnotationBlock' has cardinality 0..*, and from 'eol_OperationDefinition', the role 'eol_OperationDefinition33' has cardinality 0..*.
+An association connects 'eol_Block' and 'eol_OperationDefinition'. From 'eol_Block', the role 'eol_Block36' has cardinality 0..*, and from 'eol_OperationDefinition', the role 'eol_OperationDefinition35' has cardinality 0..*.
+An association connects 'eol_NameExpression' and 'eol_OperationDefinition'. From 'eol_NameExpression', the role 'eol_NameExpression' has cardinality 0..*, and from 'eol_OperationDefinition', the role 'eol_OperationDefinition38' has cardinality 0..*.
+An association connects 'eol_FormalParameterExpression' and 'eol_OperationDefinition'. From 'eol_FormalParameterExpression', the role 'eol_FormalParameterExpression' has cardinality 0..*, and from 'eol_OperationDefinition', the role 'eol_OperationDefinition40' has cardinality 0..*.
+An association connects 'eol_VariableDeclarationExpression' and 'eol_OperationDefinition'. From 'eol_VariableDeclarationExpression', the role 'eol_VariableDeclarationExpression' has cardinality 0..*, and from 'eol_OperationDefinition', the role 'eol_OperationDefinition42' has cardinality 0..*.
+An association connects 'eol_OperationDefinition' and 'eol_VariableDeclarationExpression'. From 'eol_OperationDefinition', the role 'eol_OperationDefinition44' has cardinality 0..*, and from 'eol_VariableDeclarationExpression', the role 'eol_VariableDeclarationExpression45' has cardinality 0..*.
+An association connects 'eol_OperationDefinition' and 'eol_OperationDefinition'. From 'eol_OperationDefinition', the role 'eol_OperationDefinition46' has cardinality 0..*, and from 'eol_OperationDefinition', the role 'eol_OperationDefinition48' has cardinality 0..*.
+An association connects 'eol_Expression' and 'eol_Type'. From 'eol_Expression', the role 'eol_Expression50' has cardinality 0..*, and from 'eol_Type', the role 'eol_Type51' has cardinality 0..*.
+An association connects 'eol_UnaryOperatorExpression' and 'eol_Expression'. From 'eol_UnaryOperatorExpression', the role 'eol_UnaryOperatorExpression' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression53' has cardinality 0..*.
+An association connects 'eol_BinaryOperatorExpression' and 'eol_Expression'. From 'eol_BinaryOperatorExpression', the role 'eol_BinaryOperatorExpression' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression55' has cardinality 0..*.
+An association connects 'eol_Expression' and 'eol_BinaryOperatorExpression'. From 'eol_Expression', the role 'eol_Expression58' has cardinality 0..*, and from 'eol_BinaryOperatorExpression', the role 'eol_BinaryOperatorExpression57' has cardinality 0..*.
+An association connects 'eol_NameExpression' and 'eol_VariableDeclarationExpression'. From 'eol_NameExpression', the role 'eol_NameExpression61' has cardinality 0..*, and from 'eol_VariableDeclarationExpression', the role 'eol_VariableDeclarationExpression60' has cardinality 0..*.
+An association connects 'eol_VariableDeclarationExpression' and 'eol_NameExpression'. From 'eol_VariableDeclarationExpression', the role 'eol_VariableDeclarationExpression63' has cardinality 0..*, and from 'eol_NameExpression', the role 'eol_NameExpression64' has cardinality 0..*.
+An association connects 'eol_Expression' and 'eol_FeatureCallExpression'. From 'eol_Expression', the role 'eol_Expression66' has cardinality 0..*, and from 'eol_FeatureCallExpression', the role 'eol_FeatureCallExpression' has cardinality 0..*.
+An association connects 'eol_Expression' and 'eol_MethodCallExpression'. From 'eol_Expression', the role 'eol_Expression68' has cardinality 0..*, and from 'eol_MethodCallExpression', the role 'eol_MethodCallExpression' has cardinality 0..*.
+An association connects 'eol_MethodCallExpression' and 'eol_NameExpression'. From 'eol_MethodCallExpression', the role 'eol_MethodCallExpression70' has cardinality 0..*, and from 'eol_NameExpression', the role 'eol_NameExpression71' has cardinality 0..*.
+An association connects 'eol_MethodCallExpression' and 'eol_OperationDefinition'. From 'eol_MethodCallExpression', the role 'eol_MethodCallExpression73' has cardinality 0..*, and from 'eol_OperationDefinition', the role 'eol_OperationDefinition74' has cardinality 0..*.
+An association connects 'eol_PropertyCallExpression' and 'eol_NameExpression'. From 'eol_PropertyCallExpression', the role 'eol_PropertyCallExpression' has cardinality 0..*, and from 'eol_NameExpression', the role 'eol_NameExpression76' has cardinality 0..*.
+An association connects 'eol_FormalParameterExpression' and 'eol_FOLMethodCallExpression'. From 'eol_FormalParameterExpression', the role 'eol_FormalParameterExpression78' has cardinality 0..*, and from 'eol_FOLMethodCallExpression', the role 'eol_FOLMethodCallExpression' has cardinality 0..*.
+An association connects 'eol_Expression' and 'eol_FOLMethodCallExpression'. From 'eol_Expression', the role 'eol_Expression81' has cardinality 0..*, and from 'eol_FOLMethodCallExpression', the role 'eol_FOLMethodCallExpression80' has cardinality 0..*.
+An association connects 'eol_FOLMethodCallExpression' and 'eol_NameExpression'. From 'eol_FOLMethodCallExpression', the role 'eol_FOLMethodCallExpression83' has cardinality 0..*, and from 'eol_NameExpression', the role 'eol_NameExpression84' has cardinality 0..*.
+An association connects 'eol_OperationDefinition' and 'eol_FOLMethodCallExpression'. From 'eol_OperationDefinition', the role 'eol_OperationDefinition87' has cardinality 0..*, and from 'eol_FOLMethodCallExpression', the role 'eol_FOLMethodCallExpression86' has cardinality 0..*.
+An association connects 'eol_Expression' and 'eol_KeyValueExpression'. From 'eol_Expression', the role 'eol_Expression89' has cardinality 0..*, and from 'eol_KeyValueExpression', the role 'eol_KeyValueExpression' has cardinality 0..*.
+An association connects 'eol_Expression' and 'eol_KeyValueExpression'. From 'eol_Expression', the role 'eol_Expression92' has cardinality 0..*, and from 'eol_KeyValueExpression', the role 'eol_KeyValueExpression91' has cardinality 0..*.
+An association connects 'eol_NewExpression' and 'eol_NameExpression'. From 'eol_NewExpression', the role 'eol_NewExpression' has cardinality 0..*, and from 'eol_NameExpression', the role 'eol_NameExpression94' has cardinality 0..*.
+An association connects 'eol_NewExpression' and 'eol_Expression'. From 'eol_NewExpression', the role 'eol_NewExpression96' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression97' has cardinality 0..*.
+An association connects 'eol_KeyValueExpression' and 'eol_MapExpression'. From 'eol_KeyValueExpression', the role 'eol_KeyValueExpression99' has cardinality 0..*, and from 'eol_MapExpression', the role 'eol_MapExpression' has cardinality 0..*.
+An association connects 'eol_Expression' and 'eol_CollectionExpression'. From 'eol_Expression', the role 'eol_Expression101' has cardinality 0..*, and from 'eol_CollectionExpression', the role 'eol_CollectionExpression' has cardinality 0..*.
+An association connects 'eol_CollectionInitialisationExpression' and 'eol_CollectionExpression'. From 'eol_CollectionInitialisationExpression', the role 'eol_CollectionInitialisationExpression' has cardinality 0..*, and from 'eol_CollectionExpression', the role 'eol_CollectionExpression103' has cardinality 0..*.
+An association connects 'eol_NameExpression' and 'eol_EnumerationLiteralExpression'. From 'eol_NameExpression', the role 'eol_NameExpression105' has cardinality 0..*, and from 'eol_EnumerationLiteralExpression', the role 'eol_EnumerationLiteralExpression' has cardinality 0..*.
+An association connects 'eol_NameExpression' and 'eol_EnumerationLiteralExpression'. From 'eol_NameExpression', the role 'eol_NameExpression108' has cardinality 0..*, and from 'eol_EnumerationLiteralExpression', the role 'eol_EnumerationLiteralExpression107' has cardinality 0..*.
+An association connects 'eol_NameExpression' and 'eol_EnumerationLiteralExpression'. From 'eol_NameExpression', the role 'eol_NameExpression111' has cardinality 0..*, and from 'eol_EnumerationLiteralExpression', the role 'eol_EnumerationLiteralExpression110' has cardinality 0..*.
+An association connects 'eol_ExpressionRange' and 'eol_Expression'. From 'eol_ExpressionRange', the role 'eol_ExpressionRange' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression113' has cardinality 0..*.
+An association connects 'eol_ExpressionRange' and 'eol_Expression'. From 'eol_ExpressionRange', the role 'eol_ExpressionRange115' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression116' has cardinality 0..*.
+An association connects 'eol_ExpressionList' and 'eol_Expression'. From 'eol_ExpressionList', the role 'eol_ExpressionList' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression118' has cardinality 0..*.
+An association connects 'eol_NameExpression' and 'eol_TransactionStatement'. From 'eol_NameExpression', the role 'eol_NameExpression120' has cardinality 0..*, and from 'eol_TransactionStatement', the role 'eol_TransactionStatement' has cardinality 0..*.
+An association connects 'eol_ExpressionOrStatementBlock' and 'eol_TransactionStatement'. From 'eol_ExpressionOrStatementBlock', the role 'eol_ExpressionOrStatementBlock123' has cardinality 0..*, and from 'eol_TransactionStatement', the role 'eol_TransactionStatement122' has cardinality 0..*.
+An association connects 'eol_ExpressionStatement' and 'eol_Expression'. From 'eol_ExpressionStatement', the role 'eol_ExpressionStatement' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression125' has cardinality 0..*.
+An association connects 'eol_SwitchStatement' and 'eol_Expression'. From 'eol_SwitchStatement', the role 'eol_SwitchStatement' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression127' has cardinality 0..*.
+An association connects 'eol_SwitchCaseExpressionStatement' and 'eol_SwitchStatement'. From 'eol_SwitchCaseExpressionStatement', the role 'eol_SwitchCaseExpressionStatement' has cardinality 0..*, and from 'eol_SwitchStatement', the role 'eol_SwitchStatement129' has cardinality 0..*.
+An association connects 'eol_SwitchCaseDefaultStatement' and 'eol_SwitchStatement'. From 'eol_SwitchCaseDefaultStatement', the role 'eol_SwitchCaseDefaultStatement' has cardinality 0..*, and from 'eol_SwitchStatement', the role 'eol_SwitchStatement131' has cardinality 0..*.
+An association connects 'eol_SwitchCaseStatement' and 'eol_ExpressionOrStatementBlock'. From 'eol_SwitchCaseStatement', the role 'eol_SwitchCaseStatement' has cardinality 0..*, and from 'eol_ExpressionOrStatementBlock', the role 'eol_ExpressionOrStatementBlock133' has cardinality 0..*.
+An association connects 'eol_SwitchCaseExpressionStatement' and 'eol_Expression'. From 'eol_SwitchCaseExpressionStatement', the role 'eol_SwitchCaseExpressionStatement135' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression136' has cardinality 0..*.
+An association connects 'eol_IfStatement' and 'eol_Expression'. From 'eol_IfStatement', the role 'eol_IfStatement' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression138' has cardinality 0..*.
+An association connects 'eol_ExpressionOrStatementBlock' and 'eol_IfStatement'. From 'eol_ExpressionOrStatementBlock', the role 'eol_ExpressionOrStatementBlock141' has cardinality 0..*, and from 'eol_IfStatement', the role 'eol_IfStatement140' has cardinality 0..*.
+An association connects 'eol_IfStatement' and 'eol_ExpressionOrStatementBlock'. From 'eol_IfStatement', the role 'eol_IfStatement143' has cardinality 0..*, and from 'eol_ExpressionOrStatementBlock', the role 'eol_ExpressionOrStatementBlock144' has cardinality 0..*.
+An association connects 'eol_ExpressionOrStatementBlock' and 'eol_IfStatement'. From 'eol_ExpressionOrStatementBlock', the role 'eol_ExpressionOrStatementBlock147' has cardinality 0..*, and from 'eol_IfStatement', the role 'eol_IfStatement146' has cardinality 0..*.
+An association connects 'eol_FormalParameterExpression' and 'eol_ForStatement'. From 'eol_FormalParameterExpression', the role 'eol_FormalParameterExpression149' has cardinality 0..*, and from 'eol_ForStatement', the role 'eol_ForStatement' has cardinality 0..*.
+An association connects 'eol_ForStatement' and 'eol_Expression'. From 'eol_ForStatement', the role 'eol_ForStatement151' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression152' has cardinality 0..*.
+An association connects 'eol_ExpressionOrStatementBlock' and 'eol_ForStatement'. From 'eol_ExpressionOrStatementBlock', the role 'eol_ExpressionOrStatementBlock155' has cardinality 0..*, and from 'eol_ForStatement', the role 'eol_ForStatement154' has cardinality 0..*.
+An association connects 'eol_WhileStatement' and 'eol_Expression'. From 'eol_WhileStatement', the role 'eol_WhileStatement' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression157' has cardinality 0..*.
+An association connects 'eol_WhileStatement' and 'eol_ExpressionOrStatementBlock'. From 'eol_WhileStatement', the role 'eol_WhileStatement159' has cardinality 0..*, and from 'eol_ExpressionOrStatementBlock', the role 'eol_ExpressionOrStatementBlock160' has cardinality 0..*.
+An association connects 'eol_ReturnStatement' and 'eol_Expression'. From 'eol_ReturnStatement', the role 'eol_ReturnStatement' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression162' has cardinality 0..*.
+An association connects 'eol_ThrowStatement' and 'eol_Expression'. From 'eol_ThrowStatement', the role 'eol_ThrowStatement' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression164' has cardinality 0..*.
+An association connects 'eol_Expression' and 'eol_DeleteStatement'. From 'eol_Expression', the role 'eol_Expression166' has cardinality 0..*, and from 'eol_DeleteStatement', the role 'eol_DeleteStatement' has cardinality 0..*.
+An association connects 'eol_Expression' and 'eol_AssignmentStatement'. From 'eol_Expression', the role 'eol_Expression168' has cardinality 0..*, and from 'eol_AssignmentStatement', the role 'eol_AssignmentStatement' has cardinality 0..*.
+An association connects 'eol_AssignmentStatement' and 'eol_Expression'. From 'eol_AssignmentStatement', the role 'eol_AssignmentStatement170' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression171' has cardinality 0..*.
+An association connects 'eol_NameExpression' and 'eol_AnnotationStatement'. From 'eol_NameExpression', the role 'eol_NameExpression173' has cardinality 0..*, and from 'eol_AnnotationStatement', the role 'eol_AnnotationStatement' has cardinality 0..*.
+An association connects 'eol_SimpleAnnotationStatement' and 'eol_StringExpression'. From 'eol_SimpleAnnotationStatement', the role 'eol_SimpleAnnotationStatement' has cardinality 0..*, and from 'eol_StringExpression', the role 'eol_StringExpression' has cardinality 0..*.
+An association connects 'eol_ExecutableAnnotationStatement' and 'eol_Expression'. From 'eol_ExecutableAnnotationStatement', the role 'eol_ExecutableAnnotationStatement' has cardinality 0..*, and from 'eol_Expression', the role 'eol_Expression176' has cardinality 0..*.
+An association connects 'eol_ModelDeclarationStatement' and 'eol_VariableDeclarationExpression'. From 'eol_ModelDeclarationStatement', the role 'eol_ModelDeclarationStatement178' has cardinality 0..*, and from 'eol_VariableDeclarationExpression', the role 'eol_VariableDeclarationExpression179' has cardinality 0..*.
+An association connects 'eol_NameExpression' and 'eol_ModelDeclarationStatement'. From 'eol_NameExpression', the role 'eol_NameExpression182' has cardinality 0..*, and from 'eol_ModelDeclarationStatement', the role 'eol_ModelDeclarationStatement181' has cardinality 0..*.
+An association connects 'eol_VariableDeclarationExpression' and 'eol_ModelDeclarationStatement'. From 'eol_VariableDeclarationExpression', the role 'eol_VariableDeclarationExpression185' has cardinality 0..*, and from 'eol_ModelDeclarationStatement', the role 'eol_ModelDeclarationStatement184' has cardinality 0..*.
+An association connects 'eol_ModelDeclarationStatement' and 'eol_ModelDeclarationParameter'. From 'eol_ModelDeclarationStatement', the role 'eol_ModelDeclarationStatement187' has cardinality 0..*, and from 'eol_ModelDeclarationParameter', the role 'eol_ModelDeclarationParameter' has cardinality 0..*.
+An association connects 'eol_AnyType' and 'eol_Type'. From 'eol_AnyType', the role 'eol_AnyType' has cardinality 0..*, and from 'eol_Type', the role 'eol_Type189' has cardinality 0..*.
+An association connects 'eol_ModelElementType' and 'eol_ModelDeclarationStatement'. From 'eol_ModelElementType', the role 'eol_ModelElementType' has cardinality 0..*, and from 'eol_ModelDeclarationStatement', the role 'eol_ModelDeclarationStatement191' has cardinality 0..*.
+An association connects 'eol_MapType' and 'eol_AnyType'. From 'eol_MapType', the role 'eol_MapType' has cardinality 0..*, and from 'eol_AnyType', the role 'eol_AnyType193' has cardinality 0..*.
+An association connects 'eol_MapType' and 'eol_AnyType'. From 'eol_MapType', the role 'eol_MapType195' has cardinality 0..*, and from 'eol_AnyType', the role 'eol_AnyType196' has cardinality 0..*.
+An association connects 'eol_NativeType' and 'eol_StringExpression'. From 'eol_NativeType', the role 'eol_NativeType' has cardinality 0..*, and from 'eol_StringExpression', the role 'eol_StringExpression198' has cardinality 0..*.
+An association connects 'eol_CollectionType' and 'eol_Type'. From 'eol_CollectionType', the role 'eol_CollectionType' has cardinality 0..*, and from 'eol_Type', the role 'eol_Type200' has cardinality 0..*.

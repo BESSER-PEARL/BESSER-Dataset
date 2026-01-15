@@ -1,0 +1,37 @@
+The domain model 'SimpleHierarchicalStateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'SimpleHierarchicalStateMachine_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleHierarchicalStateMachine_Transition' represents an important domain concept.
+It has the following attributes: 'effect', which is of type str; 'trigger', which is of type str.
+
+'SimpleHierarchicalStateMachine_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleHierarchicalStateMachine_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleHierarchicalStateMachine_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SimpleHierarchicalStateMachine_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'SimpleHierarchicalStateMachine_CompositeState' is a specialization of 'State'.
+The class 'SimpleHierarchicalStateMachine_InitialState' is a specialization of 'State'.
+The class 'SimpleHierarchicalStateMachine_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimpleHierarchicalStateMachine_State' and 'SimpleHierarchicalStateMachine_CompositeState'. From 'SimpleHierarchicalStateMachine_State', the role 'SimpleHierarchicalStateMachine_State' has cardinality 0..*, and from 'SimpleHierarchicalStateMachine_CompositeState', the role 'SimpleHierarchicalStateMachine_CompositeState' has cardinality 0..*.
+An association connects 'SimpleHierarchicalStateMachine_State' and 'SimpleHierarchicalStateMachine_Transition'. From 'SimpleHierarchicalStateMachine_State', the role 'SimpleHierarchicalStateMachine_State2' has cardinality 0..*, and from 'SimpleHierarchicalStateMachine_Transition', the role 'SimpleHierarchicalStateMachine_Transition' has cardinality 0..*.
+An association connects 'SimpleHierarchicalStateMachine_Transition' and 'SimpleHierarchicalStateMachine_State'. From 'SimpleHierarchicalStateMachine_Transition', the role 'SimpleHierarchicalStateMachine_Transition4' has cardinality 0..*, and from 'SimpleHierarchicalStateMachine_State', the role 'SimpleHierarchicalStateMachine_State5' has cardinality 0..*.
+An association connects 'SimpleHierarchicalStateMachine_CompositeState' and 'SimpleHierarchicalStateMachine_State'. From 'SimpleHierarchicalStateMachine_CompositeState', the role 'SimpleHierarchicalStateMachine_CompositeState7' has cardinality 0..*, and from 'SimpleHierarchicalStateMachine_State', the role 'SimpleHierarchicalStateMachine_State8' has cardinality 0..*.
+An association connects 'SimpleHierarchicalStateMachine_State' and 'SimpleHierarchicalStateMachine_StateMachine'. From 'SimpleHierarchicalStateMachine_State', the role 'SimpleHierarchicalStateMachine_State10' has cardinality 0..*, and from 'SimpleHierarchicalStateMachine_StateMachine', the role 'SimpleHierarchicalStateMachine_StateMachine' has cardinality 0..*.
+An association connects 'SimpleHierarchicalStateMachine_Transition' and 'SimpleHierarchicalStateMachine_StateMachine'. From 'SimpleHierarchicalStateMachine_Transition', the role 'SimpleHierarchicalStateMachine_Transition13' has cardinality 0..*, and from 'SimpleHierarchicalStateMachine_StateMachine', the role 'SimpleHierarchicalStateMachine_StateMachine12' has cardinality 0..*.

@@ -1,0 +1,223 @@
+The domain model 'minioclcs' describes the core structural elements and their relationships within the system.
+
+The model defines 46 main class(es).
+
+'minioclcs_IteratorVarCS' represents an important domain concept.
+It has one attribute: 'itName', which is of type str.
+
+'minioclcs_EqualityExpCS' represents an important domain concept.
+It has one attribute: 'opName', which is of type str.
+
+'minioclcs_NavigationExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_LetVarCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'minioclcs_BooleanExpCS' represents an important domain concept.
+It has one attribute: 'boolSymbol', which is of type bool.
+
+'minioclcs_CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_BooleanLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_RoundedBracketClauseCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_ParameterCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'minioclcs_RootCS' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_LetExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_PackageCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'minioclcs_ConstraintsDefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'EqualityExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_PathElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_AccVarCS' represents an important domain concept.
+It has one attribute: 'accName', which is of type str.
+
+'minioclcs_InvariantCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_MultiplicityCS' represents an important domain concept.
+It has the following attributes: 'mandatory', which is of type int; 'opt', which is of type bool; 'upperInt', which is of type int; 'upperMult', which is of type bool; 'mult', which is of type bool; 'lowerInt', which is of type int.
+
+'minioclcs_IterateExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_NameExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_NullLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_ImportCS' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'uri', which is of type str.
+
+'minioclcs_LoopExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CSTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_CollectionLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_OperationCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'minioclcs_SelfExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_CSTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_IntLiteralExpCS' represents an important domain concept.
+It has one attribute: 'intSymbol', which is of type int.
+
+'minioclcs_ClassCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'minioclcs_PropertyCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_CollectionLiteralExpCS' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'NavigationExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_CollectExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'minioclcs_PrimaryExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CollectionKindCS' defines a single possible value: 'Collection'.
+
+The model also captures inheritance relationships between classes.
+The class 'minioclcs_RootCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_ImportCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_PackageCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_ClassCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_PropertyCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_MultiplicityCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_OperationCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_ParameterCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_ConstraintsDefCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_InvariantCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_ExpCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_EqualityExpCS' is a specialization of 'ExpCS'.
+The class 'minioclcs_CallExpCS' is a specialization of 'EqualityExpCS'.
+The class 'minioclcs_PrimaryExpCS' is a specialization of 'CallExpCS'.
+The class 'minioclcs_SelfExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'minioclcs_NavigationExpCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_LoopExpCS' is a specialization of 'NavigationExpCS'.
+The class 'minioclcs_CollectExpCS' is a specialization of 'LoopExpCS'.
+The class 'minioclcs_IteratorVarCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_IterateExpCS' is a specialization of 'LoopExpCS'.
+The class 'minioclcs_AccVarCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_NameExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'minioclcs_NameExpCS' is a specialization of 'NavigationExpCS'.
+The class 'minioclcs_RoundedBracketClauseCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_LiteralExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'minioclcs_IntLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'minioclcs_BooleanLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'minioclcs_NullLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'minioclcs_CollectionLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'minioclcs_CollectionLiteralPartCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_LetExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'minioclcs_LetVarCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_PathNameCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_PathElementCS' is a specialization of 'CSTrace'.
+The class 'minioclcs_BooleanExpCS' is a specialization of 'BooleanLiteralExpCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'minioclcs_ImportCS' and 'minioclcs_RootCS'. From 'minioclcs_ImportCS', the role 'minioclcs_ImportCS' has cardinality 0..*, and from 'minioclcs_RootCS', the role 'minioclcs_RootCS' has cardinality 0..*.
+An association connects 'minioclcs_PackageCS' and 'minioclcs_RootCS'. From 'minioclcs_PackageCS', the role 'minioclcs_PackageCS' has cardinality 0..*, and from 'minioclcs_RootCS', the role 'minioclcs_RootCS2' has cardinality 0..*.
+An association connects 'minioclcs_RootCS' and 'minioclcs_ConstraintsDefCS'. From 'minioclcs_RootCS', the role 'minioclcs_RootCS4' has cardinality 0..*, and from 'minioclcs_ConstraintsDefCS', the role 'minioclcs_ConstraintsDefCS' has cardinality 0..*.
+An association connects 'minioclcs_PackageCS' and 'minioclcs_PackageCS'. From 'minioclcs_PackageCS', the role 'minioclcs_PackageCS7' has cardinality 0..*, and from 'minioclcs_PackageCS', the role 'minioclcs_PackageCS5' has cardinality 0..*.
+An association connects 'minioclcs_PackageCS' and 'minioclcs_ClassCS'. From 'minioclcs_PackageCS', the role 'minioclcs_PackageCS9' has cardinality 0..*, and from 'minioclcs_ClassCS', the role 'minioclcs_ClassCS' has cardinality 0..*.
+An association connects 'minioclcs_PathNameCS' and 'minioclcs_ClassCS'. From 'minioclcs_PathNameCS', the role 'minioclcs_PathNameCS' has cardinality 0..*, and from 'minioclcs_ClassCS', the role 'minioclcs_ClassCS11' has cardinality 0..*.
+An association connects 'minioclcs_ClassCS' and 'minioclcs_PropertyCS'. From 'minioclcs_ClassCS', the role 'minioclcs_ClassCS13' has cardinality 0..*, and from 'minioclcs_PropertyCS', the role 'minioclcs_PropertyCS' has cardinality 0..*.
+An association connects 'minioclcs_ClassCS' and 'minioclcs_OperationCS'. From 'minioclcs_ClassCS', the role 'minioclcs_ClassCS15' has cardinality 0..*, and from 'minioclcs_OperationCS', the role 'minioclcs_OperationCS' has cardinality 0..*.
+An association connects 'minioclcs_PathNameCS' and 'minioclcs_PropertyCS'. From 'minioclcs_PathNameCS', the role 'minioclcs_PathNameCS18' has cardinality 0..*, and from 'minioclcs_PropertyCS', the role 'minioclcs_PropertyCS17' has cardinality 0..*.
+An association connects 'minioclcs_MultiplicityCS' and 'minioclcs_PropertyCS'. From 'minioclcs_MultiplicityCS', the role 'minioclcs_MultiplicityCS' has cardinality 0..*, and from 'minioclcs_PropertyCS', the role 'minioclcs_PropertyCS20' has cardinality 0..*.
+An association connects 'minioclcs_ParameterCS' and 'minioclcs_OperationCS'. From 'minioclcs_ParameterCS', the role 'minioclcs_ParameterCS' has cardinality 0..*, and from 'minioclcs_OperationCS', the role 'minioclcs_OperationCS22' has cardinality 0..*.
+An association connects 'minioclcs_OperationCS' and 'minioclcs_PathNameCS'. From 'minioclcs_OperationCS', the role 'minioclcs_OperationCS24' has cardinality 0..*, and from 'minioclcs_PathNameCS', the role 'minioclcs_PathNameCS25' has cardinality 0..*.
+An association connects 'minioclcs_OperationCS' and 'minioclcs_ExpCS'. From 'minioclcs_OperationCS', the role 'minioclcs_OperationCS27' has cardinality 0..*, and from 'minioclcs_ExpCS', the role 'minioclcs_ExpCS' has cardinality 0..*.
+An association connects 'minioclcs_ParameterCS' and 'minioclcs_PathNameCS'. From 'minioclcs_ParameterCS', the role 'minioclcs_ParameterCS29' has cardinality 0..*, and from 'minioclcs_PathNameCS', the role 'minioclcs_PathNameCS30' has cardinality 0..*.
+An association connects 'minioclcs_ConstraintsDefCS' and 'minioclcs_PathNameCS'. From 'minioclcs_ConstraintsDefCS', the role 'minioclcs_ConstraintsDefCS32' has cardinality 0..*, and from 'minioclcs_PathNameCS', the role 'minioclcs_PathNameCS33' has cardinality 0..*.
+An association connects 'minioclcs_ConstraintsDefCS' and 'minioclcs_InvariantCS'. From 'minioclcs_ConstraintsDefCS', the role 'minioclcs_ConstraintsDefCS35' has cardinality 0..*, and from 'minioclcs_InvariantCS', the role 'minioclcs_InvariantCS' has cardinality 0..*.
+An association connects 'minioclcs_InvariantCS' and 'minioclcs_ExpCS'. From 'minioclcs_InvariantCS', the role 'minioclcs_InvariantCS37' has cardinality 0..*, and from 'minioclcs_ExpCS', the role 'minioclcs_ExpCS38' has cardinality 0..*.
+An association connects 'minioclcs_EqualityExpCS' and 'minioclcs_EqualityExpCS'. From 'minioclcs_EqualityExpCS', the role 'minioclcs_EqualityExpCS39' has cardinality 0..*, and from 'minioclcs_EqualityExpCS', the role 'minioclcs_EqualityExpCS' has cardinality 0..*.
+An association connects 'minioclcs_EqualityExpCS' and 'minioclcs_CallExpCS'. From 'minioclcs_EqualityExpCS', the role 'minioclcs_EqualityExpCS42' has cardinality 0..*, and from 'minioclcs_CallExpCS', the role 'minioclcs_CallExpCS' has cardinality 0..*.
+An association connects 'minioclcs_CallExpCS' and 'minioclcs_CallExpCS'. From 'minioclcs_CallExpCS', the role 'minioclcs_CallExpCS43' has cardinality 0..*, and from 'minioclcs_CallExpCS', the role 'minioclcs_CallExpCS45' has cardinality 0..*.
+An association connects 'minioclcs_CallExpCS' and 'minioclcs_NavigationExpCS'. From 'minioclcs_CallExpCS', the role 'minioclcs_CallExpCS47' has cardinality 0..*, and from 'minioclcs_NavigationExpCS', the role 'minioclcs_NavigationExpCS' has cardinality 0..*.
+An association connects 'minioclcs_LoopExpCS' and 'minioclcs_IteratorVarCS'. From 'minioclcs_LoopExpCS', the role 'minioclcs_LoopExpCS' has cardinality 0..*, and from 'minioclcs_IteratorVarCS', the role 'minioclcs_IteratorVarCS' has cardinality 0..*.
+An association connects 'minioclcs_ExpCS' and 'minioclcs_LoopExpCS'. From 'minioclcs_ExpCS', the role 'minioclcs_ExpCS51' has cardinality 0..*, and from 'minioclcs_LoopExpCS', the role 'minioclcs_LoopExpCS50' has cardinality 0..*.
+An association connects 'minioclcs_PathNameCS' and 'minioclcs_IteratorVarCS'. From 'minioclcs_PathNameCS', the role 'minioclcs_PathNameCS54' has cardinality 0..*, and from 'minioclcs_IteratorVarCS', the role 'minioclcs_IteratorVarCS53' has cardinality 0..*.
+An association connects 'minioclcs_IterateExpCS' and 'minioclcs_AccVarCS'. From 'minioclcs_IterateExpCS', the role 'minioclcs_IterateExpCS' has cardinality 0..*, and from 'minioclcs_AccVarCS', the role 'minioclcs_AccVarCS' has cardinality 0..*.
+An association connects 'minioclcs_AccVarCS' and 'minioclcs_PathNameCS'. From 'minioclcs_AccVarCS', the role 'minioclcs_AccVarCS57' has cardinality 0..*, and from 'minioclcs_PathNameCS', the role 'minioclcs_PathNameCS58' has cardinality 0..*.
+An association connects 'minioclcs_ExpCS' and 'minioclcs_AccVarCS'. From 'minioclcs_ExpCS', the role 'minioclcs_ExpCS61' has cardinality 0..*, and from 'minioclcs_AccVarCS', the role 'minioclcs_AccVarCS60' has cardinality 0..*.
+An association connects 'minioclcs_PathNameCS' and 'minioclcs_NameExpCS'. From 'minioclcs_PathNameCS', the role 'minioclcs_PathNameCS63' has cardinality 0..*, and from 'minioclcs_NameExpCS', the role 'minioclcs_NameExpCS' has cardinality 0..*.
+An association connects 'minioclcs_NameExpCS' and 'minioclcs_RoundedBracketClauseCS'. From 'minioclcs_NameExpCS', the role 'minioclcs_NameExpCS65' has cardinality 0..*, and from 'minioclcs_RoundedBracketClauseCS', the role 'minioclcs_RoundedBracketClauseCS' has cardinality 0..*.
+An association connects 'minioclcs_ExpCS' and 'minioclcs_RoundedBracketClauseCS'. From 'minioclcs_ExpCS', the role 'minioclcs_ExpCS68' has cardinality 0..*, and from 'minioclcs_RoundedBracketClauseCS', the role 'minioclcs_RoundedBracketClauseCS67' has cardinality 0..*.
+An association connects 'minioclcs_CollectionLiteralExpCS' and 'minioclcs_CollectionLiteralPartCS'. From 'minioclcs_CollectionLiteralExpCS', the role 'minioclcs_CollectionLiteralExpCS' has cardinality 0..*, and from 'minioclcs_CollectionLiteralPartCS', the role 'minioclcs_CollectionLiteralPartCS' has cardinality 0..*.
+An association connects 'minioclcs_CollectionLiteralPartCS' and 'minioclcs_ExpCS'. From 'minioclcs_CollectionLiteralPartCS', the role 'minioclcs_CollectionLiteralPartCS71' has cardinality 0..*, and from 'minioclcs_ExpCS', the role 'minioclcs_ExpCS72' has cardinality 0..*.
+An association connects 'minioclcs_CollectionLiteralPartCS' and 'minioclcs_ExpCS'. From 'minioclcs_CollectionLiteralPartCS', the role 'minioclcs_CollectionLiteralPartCS74' has cardinality 0..*, and from 'minioclcs_ExpCS', the role 'minioclcs_ExpCS75' has cardinality 0..*.
+An association connects 'minioclcs_LetVarCS' and 'minioclcs_LetExpCS'. From 'minioclcs_LetVarCS', the role 'minioclcs_LetVarCS' has cardinality 0..*, and from 'minioclcs_LetExpCS', the role 'minioclcs_LetExpCS' has cardinality 0..*.
+An association connects 'minioclcs_LetExpCS' and 'minioclcs_ExpCS'. From 'minioclcs_LetExpCS', the role 'minioclcs_LetExpCS78' has cardinality 0..*, and from 'minioclcs_ExpCS', the role 'minioclcs_ExpCS79' has cardinality 0..*.
+An association connects 'minioclcs_LetVarCS' and 'minioclcs_PathNameCS'. From 'minioclcs_LetVarCS', the role 'minioclcs_LetVarCS81' has cardinality 0..*, and from 'minioclcs_PathNameCS', the role 'minioclcs_PathNameCS82' has cardinality 0..*.
+An association connects 'minioclcs_LetVarCS' and 'minioclcs_ExpCS'. From 'minioclcs_LetVarCS', the role 'minioclcs_LetVarCS84' has cardinality 0..*, and from 'minioclcs_ExpCS', the role 'minioclcs_ExpCS85' has cardinality 0..*.
+An association connects 'minioclcs_PathElementCS' and 'minioclcs_PathNameCS'. From 'minioclcs_PathElementCS', the role 'minioclcs_PathElementCS' has cardinality 0..*, and from 'minioclcs_PathNameCS', the role 'minioclcs_PathNameCS87' has cardinality 0..*.
+An association connects 'minioclcs_PathElementCS' and 'minioclcs_EClass'. From 'minioclcs_PathElementCS', the role 'minioclcs_PathElementCS89' has cardinality 0..*, and from 'minioclcs_EClass', the role 'minioclcs_EClass' has cardinality 0..*.
+An association connects 'minioclcs_CSTrace' and 'minioclcs_EObject'. From 'minioclcs_CSTrace', the role 'minioclcs_CSTrace' has cardinality 0..*, and from 'minioclcs_EObject', the role 'minioclcs_EObject' has cardinality 0..*.

@@ -1,0 +1,64 @@
+The domain model 'statemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'statemachine_State' represents an important domain concept.
+It has the following attributes: 'entry', which is of type str; 'exit', which is of type str; 'do', which is of type str.
+
+'statemachine_DataElement' represents an important domain concept.
+It has the following attributes: 'port', which is of type int; 'name', which is of type str; 'ioType', which is of type str.
+
+'statemachine_Node' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int.
+
+'statemachine_Region' represents an important domain concept.
+It has one attribute: 'priority', which is of type int.
+
+'statemachine_Pseudostate' represents an important domain concept.
+It has one attribute: 'pseudoType', which is of type str.
+
+'statemachine_Event' represents an important domain concept.
+It has one attribute: 'trigger', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'DataElement' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Statechart' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'UUID', which is of type str.
+
+'statemachine_Variable' represents an important domain concept.
+It has one attribute: 'dataType', which is of type str.
+
+'statemachine_Transition' represents an important domain concept.
+It has the following attributes: 'priority', which is of type int; 'id', which is of type int; 'expression', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PseudoTypes' defines the following possible values: 'join', 'initial', 'choice', 'shallowHistory', 'junction', 'terminate', 'entryPoint', 'fork', 'deepHistory', 'exitPoint'.
+The enumeration 'TriggerTypes' defines the following possible values: 'rising', 'falling', 'functionCall', 'either'.
+The enumeration 'DataTypes' defines the following possible values: 'boolean', 'double', 'int'.
+The enumeration 'IOTypes' defines the following possible values: 'local', 'input', 'output'.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachine_State' is a specialization of 'Node'.
+The class 'statemachine_Pseudostate' is a specialization of 'Node'.
+The class 'statemachine_Variable' is a specialization of 'DataElement'.
+The class 'statemachine_Event' is a specialization of 'DataElement'.
+The class 'statemachine_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_Node' and 'statemachine_Region'. From 'statemachine_Node', the role 'statemachine_Node' has cardinality 0..*, and from 'statemachine_Region', the role 'statemachine_Region' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Node'. From 'statemachine_Transition', the role 'statemachine_Transition' has cardinality 0..*, and from 'statemachine_Node', the role 'statemachine_Node2' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Node'. From 'statemachine_Transition', the role 'statemachine_Transition4' has cardinality 0..*, and from 'statemachine_Node', the role 'statemachine_Node5' has cardinality 0..*.
+An association connects 'statemachine_Region' and 'statemachine_State'. From 'statemachine_Region', the role 'statemachine_Region7' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State' has cardinality 0..*.
+An association connects 'statemachine_DataElement' and 'statemachine_Statechart'. From 'statemachine_DataElement', the role 'statemachine_DataElement' has cardinality 0..*, and from 'statemachine_Statechart', the role 'statemachine_Statechart' has cardinality 0..*.
+An association connects 'statemachine_Statechart' and 'statemachine_Region'. From 'statemachine_Statechart', the role 'statemachine_Statechart10' has cardinality 0..*, and from 'statemachine_Region', the role 'statemachine_Region11' has cardinality 0..*.
+An association connects 'statemachine_Statechart' and 'statemachine_Transition'. From 'statemachine_Statechart', the role 'statemachine_Statechart13' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition14' has cardinality 0..*.

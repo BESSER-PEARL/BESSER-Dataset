@@ -1,0 +1,92 @@
+The domain model 'statemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'statemachine_StateValue' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str.
+
+'AbstractCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_StateChange' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Statemachine' represents an important domain concept.
+It has the following attributes: 'associatedTree', which is of type str; 'associatedAttribute', which is of type str.
+
+'statemachine_AttributeCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_AbstractTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_AbstractCondition' represents an important domain concept.
+It has one attribute: 'isNotCondition', which is of type bool.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_FieldCondition' represents an important domain concept.
+It has one attribute: 'fieldName', which is of type str.
+
+'statemachine_State' represents an important domain concept.
+It has one attribute: 'stateColor', which is of type str.
+
+'statemachine_ConditionalState' represents an important domain concept.
+It has the following attributes: 'andExpression', which is of type bool; 'conditionsOrganization', which is of type str.
+
+'statemachine_ConditionalTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_StateAttribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'type', which is of type str.
+
+'statemachine_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateValueType' defines the following possible values: 'int', 'query', 'definedState', 'string', 'null', 'eventName', 'long', 'eventField', 'delete'.
+The enumeration 'StateAttributeType' defines the following possible values: 'location', 'eventField', 'constant', 'query', 'null'.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachine_Statemachine' is a specialization of 'Named'.
+The class 'statemachine_AbstractState' is a specialization of 'Named'.
+The class 'statemachine_AbstractTransition' is a specialization of 'Named'.
+The class 'statemachine_InitialState' is a specialization of 'AbstractState'.
+The class 'statemachine_FinalState' is a specialization of 'AbstractState'.
+The class 'statemachine_State' is a specialization of 'AbstractState'.
+The class 'statemachine_Transition' is a specialization of 'AbstractTransition'.
+The class 'statemachine_ConditionalTransition' is a specialization of 'AbstractTransition'.
+The class 'statemachine_ConditionalState' is a specialization of 'AbstractState'.
+The class 'statemachine_FieldCondition' is a specialization of 'AbstractCondition'.
+The class 'statemachine_AttributeCondition' is a specialization of 'AbstractCondition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_AbstractState' and 'statemachine_Statemachine'. From 'statemachine_AbstractState', the role 'statemachine_AbstractState' has cardinality 0..*, and from 'statemachine_Statemachine', the role 'statemachine_Statemachine' has cardinality 0..*.
+An association connects 'statemachine_AbstractTransition' and 'statemachine_AbstractState'. From 'statemachine_AbstractTransition', the role 'statemachine_AbstractTransition' has cardinality 0..*, and from 'statemachine_AbstractState', the role 'statemachine_AbstractState2' has cardinality 0..*.
+An association connects 'statemachine_AbstractState' and 'statemachine_AbstractTransition'. From 'statemachine_AbstractState', the role 'statemachine_AbstractState5' has cardinality 0..*, and from 'statemachine_AbstractTransition', the role 'statemachine_AbstractTransition4' has cardinality 0..*.
+An association connects 'statemachine_AbstractTransition' and 'statemachine_StateChange'. From 'statemachine_AbstractTransition', the role 'statemachine_AbstractTransition7' has cardinality 0..*, and from 'statemachine_StateChange', the role 'statemachine_StateChange' has cardinality 0..*.
+An association connects 'statemachine_StateAttribute' and 'statemachine_StateAttribute'. From 'statemachine_StateAttribute', the role 'statemachine_StateAttribute8' has cardinality 0..*, and from 'statemachine_StateAttribute', the role 'statemachine_StateAttribute' has cardinality 0..*.
+An association connects 'statemachine_AbstractCondition' and 'statemachine_ConditionalState'. From 'statemachine_AbstractCondition', the role 'statemachine_AbstractCondition' has cardinality 0..*, and from 'statemachine_ConditionalState', the role 'statemachine_ConditionalState' has cardinality 0..*.
+An association connects 'statemachine_StateAttribute' and 'statemachine_StateChange'. From 'statemachine_StateAttribute', the role 'statemachine_StateAttribute13' has cardinality 0..*, and from 'statemachine_StateChange', the role 'statemachine_StateChange12' has cardinality 0..*.
+An association connects 'statemachine_StateValue' and 'statemachine_StateChange'. From 'statemachine_StateValue', the role 'statemachine_StateValue' has cardinality 0..*, and from 'statemachine_StateChange', the role 'statemachine_StateChange15' has cardinality 0..*.
+An association connects 'statemachine_AbstractCondition' and 'statemachine_StateValue'. From 'statemachine_AbstractCondition', the role 'statemachine_AbstractCondition17' has cardinality 0..*, and from 'statemachine_StateValue', the role 'statemachine_StateValue18' has cardinality 0..*.
+An association connects 'statemachine_AttributeCondition' and 'statemachine_StateAttribute'. From 'statemachine_AttributeCondition', the role 'statemachine_AttributeCondition' has cardinality 0..*, and from 'statemachine_StateAttribute', the role 'statemachine_StateAttribute20' has cardinality 0..*.

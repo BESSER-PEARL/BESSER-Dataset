@@ -1,0 +1,86 @@
+The domain model 'columnFamilyDataModel' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'columnFamilyDataModel_SimpleType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'columnFamilyDataModel_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'columnFamilyDataModel_Collection' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Collection' represents an important domain concept.
+It does not declare any attributes.
+
+'columnFamilyDataModel_Column' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'columnFamilyDataModel_ClusteringKey' represents an important domain concept.
+It does not declare any attributes.
+
+'columnFamilyDataModel_ColumnFamilyDataModel' represents an important domain concept.
+It does not declare any attributes.
+
+'columnFamilyDataModel_ColumnFamily' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Key' represents an important domain concept.
+It does not declare any attributes.
+
+'columnFamilyDataModel_UserDefinedType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'columnFamilyDataModel_Field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'columnFamilyDataModel_List' represents an important domain concept.
+It does not declare any attributes.
+
+'columnFamilyDataModel_PartitionKey' represents an important domain concept.
+It does not declare any attributes.
+
+'columnFamilyDataModel_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'columnFamilyDataModel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'columnFamilyDataModel_Set' represents an important domain concept.
+It does not declare any attributes.
+
+'columnFamilyDataModel_Map' represents an important domain concept.
+It has one attribute: 'keyType', which is of type str.
+
+'columnFamilyDataModel_Tuple' represents an important domain concept.
+It has one attribute: 'types', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimitiveType' defines the following possible values: 'FLOAT', 'BOOLEAN', 'DATE', 'TEXT', 'ID', 'INT', 'TIMESTAMP'.
+
+The model also captures inheritance relationships between classes.
+The class 'columnFamilyDataModel_SimpleType' is a specialization of 'Type'.
+The class 'columnFamilyDataModel_Collection' is a specialization of 'Type'.
+The class 'columnFamilyDataModel_List' is a specialization of 'Collection'.
+The class 'columnFamilyDataModel_Set' is a specialization of 'Collection'.
+The class 'columnFamilyDataModel_Map' is a specialization of 'Collection'.
+The class 'columnFamilyDataModel_Tuple' is a specialization of 'Type'.
+The class 'columnFamilyDataModel_UserDefinedType' is a specialization of 'Type'.
+The class 'columnFamilyDataModel_PartitionKey' is a specialization of 'Key'.
+The class 'columnFamilyDataModel_ClusteringKey' is a specialization of 'Key'.
+
+Relationships between classes are modeled using associations.
+An association connects 'columnFamilyDataModel_Table' and 'columnFamilyDataModel_ColumnFamilyDataModel'. From 'columnFamilyDataModel_Table', the role 'columnFamilyDataModel_Table' has cardinality 0..*, and from 'columnFamilyDataModel_ColumnFamilyDataModel', the role 'columnFamilyDataModel_ColumnFamilyDataModel' has cardinality 0..*.
+An association connects 'columnFamilyDataModel_ColumnFamily' and 'columnFamilyDataModel_Table'. From 'columnFamilyDataModel_ColumnFamily', the role 'columnFamilyDataModel_ColumnFamily' has cardinality 0..*, and from 'columnFamilyDataModel_Table', the role 'columnFamilyDataModel_Table2' has cardinality 0..*.
+An association connects 'columnFamilyDataModel_Column' and 'columnFamilyDataModel_Table'. From 'columnFamilyDataModel_Column', the role 'columnFamilyDataModel_Column' has cardinality 0..*, and from 'columnFamilyDataModel_Table', the role 'columnFamilyDataModel_Table4' has cardinality 0..*.
+An association connects 'columnFamilyDataModel_PartitionKey' and 'columnFamilyDataModel_Table'. From 'columnFamilyDataModel_PartitionKey', the role 'columnFamilyDataModel_PartitionKey' has cardinality 0..*, and from 'columnFamilyDataModel_Table', the role 'columnFamilyDataModel_Table6' has cardinality 0..*.
+An association connects 'columnFamilyDataModel_ClusteringKey' and 'columnFamilyDataModel_Table'. From 'columnFamilyDataModel_ClusteringKey', the role 'columnFamilyDataModel_ClusteringKey' has cardinality 0..*, and from 'columnFamilyDataModel_Table', the role 'columnFamilyDataModel_Table8' has cardinality 0..*.
+An association connects 'columnFamilyDataModel_Type' and 'columnFamilyDataModel_Column'. From 'columnFamilyDataModel_Type', the role 'columnFamilyDataModel_Type' has cardinality 0..*, and from 'columnFamilyDataModel_Column', the role 'columnFamilyDataModel_Column10' has cardinality 0..*.
+An association connects 'columnFamilyDataModel_Column' and 'columnFamilyDataModel_ColumnFamily'. From 'columnFamilyDataModel_Column', the role 'columnFamilyDataModel_Column12' has cardinality 0..*, and from 'columnFamilyDataModel_ColumnFamily', the role 'columnFamilyDataModel_ColumnFamily13' has cardinality 0..*.
+An association connects 'columnFamilyDataModel_UserDefinedType' and 'columnFamilyDataModel_Field'. From 'columnFamilyDataModel_UserDefinedType', the role 'columnFamilyDataModel_UserDefinedType' has cardinality 0..*, and from 'columnFamilyDataModel_Field', the role 'columnFamilyDataModel_Field' has cardinality 0..*.
+An association connects 'columnFamilyDataModel_Field' and 'columnFamilyDataModel_Type'. From 'columnFamilyDataModel_Field', the role 'columnFamilyDataModel_Field16' has cardinality 0..*, and from 'columnFamilyDataModel_Type', the role 'columnFamilyDataModel_Type17' has cardinality 0..*.
+An association connects 'columnFamilyDataModel_Column' and 'columnFamilyDataModel_Key'. From 'columnFamilyDataModel_Column', the role 'columnFamilyDataModel_Column19' has cardinality 0..*, and from 'columnFamilyDataModel_Key', the role 'columnFamilyDataModel_Key' has cardinality 0..*.

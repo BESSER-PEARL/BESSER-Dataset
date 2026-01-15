@@ -1,0 +1,380 @@
+The domain model 'baseCST' describes the core structural elements and their relationships within the system.
+
+The model defines 80 main class(es).
+
+'baseCST_ConstraintCS' represents an important domain concept.
+It has one attribute: 'stereotype', which is of type str.
+
+'baseCST_MultiplicityBoundsCS' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'upperBound', which is of type str.
+
+'baseCST_TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_MultiplicityCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_ParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_WildcardTypeRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_ClassifierCS' represents an important domain concept.
+It has the following attributes: 'qualifier', which is of type str; 'instanceClassName', which is of type str.
+
+'baseCST_DocumentationCS' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'TypedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_NamespaceCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_TuplePartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_RootCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_NamedElementCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'baseCST_TypedRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_VisitableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_PathNameCS' represents an important domain concept.
+It has one attribute: 'scopeFilter', which is of type str.
+
+'baseCST_SpecificationCS' represents an important domain concept.
+It has one attribute: 'exprString', which is of type str.
+
+'baseCST_ClassCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_PathElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_ModelElementCS' represents an important domain concept.
+It has the following attributes: 'csi', which is of type str; 'originalXmiId', which is of type str.
+
+'baseCST_StructuralFeatureCS' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'TypeRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_TupleTypeCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TemplateParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_FeatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityCS' represents an important domain concept.
+It does not declare any attributes.
+
+'VisitableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'RootCS' represents an important domain concept.
+It does not declare any attributes.
+
+'Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_RootPackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_ReferenceCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_ImportCS' represents an important domain concept.
+It has one attribute: 'all', which is of type bool.
+
+'baseCST_DataTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_AttributeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassifierCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_ModelElementRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_TemplateParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_AnnotationElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'Pivotable' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_TemplateParameterSubstitutionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_ElementRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_PathElementWithURICS' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'baseCST_TypedTypeRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_AnnotationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_LibraryCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_TemplateSignatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_TypeRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_TypedElementCS' represents an important domain concept.
+It has the following attributes: 'optional', which is of type bool; 'qualifier', which is of type str.
+
+'PathElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_EnumerationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_ElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_MultiplicityStringCS' represents an important domain concept.
+It has one attribute: 'stringBounds', which is of type str.
+
+'PackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_PrimitiveTypeRefCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_OperationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_TemplateBindingCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateableElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_DetailCS' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'PivotableElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_TypeParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_TemplateableElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_PivotableElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_PackageCS' represents an important domain concept.
+It has the following attributes: 'nsURI', which is of type str; 'nsPrefix', which is of type str.
+
+'baseCST_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'baseCST_LambdaTypeCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'baseCST_EnumerationLiteralCS' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'IteratorKind' defines the following possible values: 'Accumulator', 'Iterator', 'Parameter'.
+
+The model also captures inheritance relationships between classes.
+The class 'baseCST_AnnotationCS' is a specialization of 'AnnotationElementCS'.
+The class 'baseCST_AnnotationElementCS' is a specialization of 'NamedElementCS'.
+The class 'baseCST_AttributeCS' is a specialization of 'StructuralFeatureCS'.
+The class 'baseCST_ClassCS' is a specialization of 'ClassifierCS'.
+The class 'baseCST_ClassCS' is a specialization of 'NamespaceCS'.
+The class 'baseCST_ClassifierCS' is a specialization of 'NamedElementCS'.
+The class 'baseCST_ClassifierCS' is a specialization of 'TypeCS'.
+The class 'baseCST_ClassifierCS' is a specialization of 'TemplateableElementCS'.
+The class 'baseCST_ConstraintCS' is a specialization of 'NamedElementCS'.
+The class 'baseCST_DataTypeCS' is a specialization of 'ClassifierCS'.
+The class 'baseCST_DataTypeCS' is a specialization of 'NamespaceCS'.
+The class 'baseCST_DetailCS' is a specialization of 'NamedElementCS'.
+The class 'baseCST_DocumentationCS' is a specialization of 'AnnotationElementCS'.
+The class 'baseCST_ElementCS' is a specialization of 'VisitableCS'.
+The class 'baseCST_ElementRefCS' is a specialization of 'PivotableElementCS'.
+The class 'baseCST_EnumerationCS' is a specialization of 'ClassifierCS'.
+The class 'baseCST_EnumerationCS' is a specialization of 'NamespaceCS'.
+The class 'baseCST_EnumerationLiteralCS' is a specialization of 'NamedElementCS'.
+The class 'baseCST_FeatureCS' is a specialization of 'TypedElementCS'.
+The class 'baseCST_ImportCS' is a specialization of 'NamespaceCS'.
+The class 'baseCST_LambdaTypeCS' is a specialization of 'TypedRefCS'.
+The class 'baseCST_LambdaTypeCS' is a specialization of 'TemplateableElementCS'.
+The class 'baseCST_LambdaTypeCS' is a specialization of 'Nameable'.
+The class 'baseCST_LibraryCS' is a specialization of 'NamespaceCS'.
+The class 'baseCST_ModelElementCS' is a specialization of 'PivotableElementCS'.
+The class 'baseCST_ModelElementRefCS' is a specialization of 'ElementRefCS'.
+The class 'baseCST_MultiplicityBoundsCS' is a specialization of 'MultiplicityCS'.
+The class 'baseCST_MultiplicityCS' is a specialization of 'ElementCS'.
+The class 'baseCST_MultiplicityStringCS' is a specialization of 'MultiplicityCS'.
+The class 'baseCST_NamedElementCS' is a specialization of 'ModelElementCS'.
+The class 'baseCST_NamedElementCS' is a specialization of 'Nameable'.
+The class 'baseCST_NamespaceCS' is a specialization of 'NamedElementCS'.
+The class 'baseCST_OperationCS' is a specialization of 'FeatureCS'.
+The class 'baseCST_OperationCS' is a specialization of 'TemplateableElementCS'.
+The class 'baseCST_PackageCS' is a specialization of 'NamespaceCS'.
+The class 'baseCST_ParameterCS' is a specialization of 'TypedElementCS'.
+The class 'baseCST_PathElementCS' is a specialization of 'ElementCS'.
+The class 'baseCST_PathElementCS' is a specialization of 'Pivotable'.
+The class 'baseCST_PathElementWithURICS' is a specialization of 'PathElementCS'.
+The class 'baseCST_PathNameCS' is a specialization of 'ElementCS'.
+The class 'baseCST_PathNameCS' is a specialization of 'Pivotable'.
+The class 'baseCST_PivotableElementCS' is a specialization of 'ElementCS'.
+The class 'baseCST_PivotableElementCS' is a specialization of 'Pivotable'.
+The class 'baseCST_PrimitiveTypeRefCS' is a specialization of 'TypedRefCS'.
+The class 'baseCST_PrimitiveTypeRefCS' is a specialization of 'Nameable'.
+The class 'baseCST_ReferenceCS' is a specialization of 'StructuralFeatureCS'.
+The class 'baseCST_RootCS' is a specialization of 'ModelElementCS'.
+The class 'baseCST_RootPackageCS' is a specialization of 'PackageCS'.
+The class 'baseCST_RootPackageCS' is a specialization of 'RootCS'.
+The class 'baseCST_SpecificationCS' is a specialization of 'ModelElementCS'.
+The class 'baseCST_StructuralFeatureCS' is a specialization of 'FeatureCS'.
+The class 'baseCST_TemplateBindingCS' is a specialization of 'ElementRefCS'.
+The class 'baseCST_TemplateParameterCS' is a specialization of 'NamedElementCS'.
+The class 'baseCST_TemplateParameterSubstitutionCS' is a specialization of 'ModelElementCS'.
+The class 'baseCST_TemplateSignatureCS' is a specialization of 'ModelElementCS'.
+The class 'baseCST_TemplateableElementCS' is a specialization of 'ElementCS'.
+The class 'baseCST_TuplePartCS' is a specialization of 'TypedElementCS'.
+The class 'baseCST_TupleTypeCS' is a specialization of 'TypedRefCS'.
+The class 'baseCST_TupleTypeCS' is a specialization of 'Nameable'.
+The class 'baseCST_TypeCS' is a specialization of 'ModelElementCS'.
+The class 'baseCST_TypeParameterCS' is a specialization of 'TemplateParameterCS'.
+The class 'baseCST_TypeParameterCS' is a specialization of 'TypeCS'.
+The class 'baseCST_TypeRefCS' is a specialization of 'ElementRefCS'.
+The class 'baseCST_TypedElementCS' is a specialization of 'NamedElementCS'.
+The class 'baseCST_TypedRefCS' is a specialization of 'TypeRefCS'.
+The class 'baseCST_TypedTypeRefCS' is a specialization of 'TypedRefCS'.
+The class 'baseCST_WildcardTypeRefCS' is a specialization of 'TypeRefCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'baseCST_ModelElementCS' and 'baseCST_AnnotationCS'. From 'baseCST_ModelElementCS', the role 'baseCST_ModelElementCS' has cardinality 0..*, and from 'baseCST_AnnotationCS', the role 'baseCST_AnnotationCS' has cardinality 0..*.
+An association connects 'baseCST_ModelElementRefCS' and 'baseCST_AnnotationCS'. From 'baseCST_ModelElementRefCS', the role 'baseCST_ModelElementRefCS' has cardinality 0..*, and from 'baseCST_AnnotationCS', the role 'baseCST_AnnotationCS2' has cardinality 0..*.
+An association connects 'baseCST_DetailCS' and 'baseCST_AnnotationElementCS'. From 'baseCST_DetailCS', the role 'baseCST_DetailCS' has cardinality 0..*, and from 'baseCST_AnnotationElementCS', the role 'baseCST_AnnotationElementCS' has cardinality 0..*.
+An association connects 'baseCST_TypedRefCS' and 'baseCST_ClassCS'. From 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS' has cardinality 0..*, and from 'baseCST_ClassCS', the role 'baseCST_ClassCS' has cardinality 0..*.
+An association connects 'baseCST_OperationCS' and 'baseCST_ClassCS'. From 'baseCST_OperationCS', the role 'OperationCS' has cardinality 0..*, and from 'baseCST_ClassCS', the role 'owningClass' has cardinality 0..*.
+An association connects 'baseCST_ClassCS' and 'baseCST_StructuralFeatureCS'. From 'baseCST_ClassCS', the role 'owner' has cardinality 0..*, and from 'baseCST_StructuralFeatureCS', the role 'StructuralFeatureCS' has cardinality 0..*.
+An association connects 'baseCST_TypedRefCS' and 'baseCST_ClassCS'. From 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS9' has cardinality 0..*, and from 'baseCST_ClassCS', the role 'baseCST_ClassCS8' has cardinality 0..*.
+An association connects 'baseCST_ClassifierCS' and 'baseCST_PackageCS'. From 'baseCST_ClassifierCS', the role 'ownedType' has cardinality 0..*, and from 'baseCST_PackageCS', the role 'PackageCS' has cardinality 0..*.
+An association connects 'baseCST_ConstraintCS' and 'baseCST_ClassifierCS'. From 'baseCST_ConstraintCS', the role 'baseCST_ConstraintCS' has cardinality 0..*, and from 'baseCST_ClassifierCS', the role 'baseCST_ClassifierCS' has cardinality 0..*.
+An association connects 'baseCST_ConstraintCS' and 'baseCST_SpecificationCS'. From 'baseCST_ConstraintCS', the role 'baseCST_ConstraintCS13' has cardinality 0..*, and from 'baseCST_SpecificationCS', the role 'baseCST_SpecificationCS' has cardinality 0..*.
+An association connects 'baseCST_ConstraintCS' and 'baseCST_SpecificationCS'. From 'baseCST_ConstraintCS', the role 'baseCST_ConstraintCS15' has cardinality 0..*, and from 'baseCST_SpecificationCS', the role 'baseCST_SpecificationCS16' has cardinality 0..*.
+An association connects 'baseCST_DataTypeCS' and 'baseCST_EnumerationLiteralCS'. From 'baseCST_DataTypeCS', the role 'baseCST_DataTypeCS' has cardinality 0..*, and from 'baseCST_EnumerationLiteralCS', the role 'baseCST_EnumerationLiteralCS' has cardinality 0..*.
+An association connects 'baseCST_ElementCS' and 'baseCST_ElementCS'. From 'baseCST_ElementCS', the role 'baseCST_ElementCS' has cardinality 0..*, and from 'baseCST_ElementCS', the role 'baseCST_ElementCS18' has cardinality 0..*.
+An association connects 'baseCST_EnumerationLiteralCS' and 'baseCST_EnumerationCS'. From 'baseCST_EnumerationLiteralCS', the role 'baseCST_EnumerationLiteralCS21' has cardinality 0..*, and from 'baseCST_EnumerationCS', the role 'baseCST_EnumerationCS' has cardinality 0..*.
+An association connects 'baseCST_PathNameCS' and 'baseCST_ImportCS'. From 'baseCST_PathNameCS', the role 'baseCST_PathNameCS' has cardinality 0..*, and from 'baseCST_ImportCS', the role 'baseCST_ImportCS' has cardinality 0..*.
+An association connects 'baseCST_ImportCS' and 'baseCST_Namespace'. From 'baseCST_ImportCS', the role 'baseCST_ImportCS24' has cardinality 0..*, and from 'baseCST_Namespace', the role 'baseCST_Namespace' has cardinality 0..*.
+An association connects 'baseCST_TypedRefCS' and 'baseCST_LambdaTypeCS'. From 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS26' has cardinality 0..*, and from 'baseCST_LambdaTypeCS', the role 'baseCST_LambdaTypeCS' has cardinality 0..*.
+An association connects 'baseCST_LambdaTypeCS' and 'baseCST_TypedRefCS'. From 'baseCST_LambdaTypeCS', the role 'baseCST_LambdaTypeCS28' has cardinality 0..*, and from 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS29' has cardinality 0..*.
+An association connects 'baseCST_LambdaTypeCS' and 'baseCST_TypedRefCS'. From 'baseCST_LambdaTypeCS', the role 'baseCST_LambdaTypeCS31' has cardinality 0..*, and from 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS32' has cardinality 0..*.
+An association connects 'baseCST_LibraryCS' and 'baseCST_Namespace'. From 'baseCST_LibraryCS', the role 'baseCST_LibraryCS' has cardinality 0..*, and from 'baseCST_Namespace', the role 'baseCST_Namespace34' has cardinality 0..*.
+An association connects 'baseCST_AnnotationElementCS' and 'baseCST_ModelElementCS'. From 'baseCST_AnnotationElementCS', the role 'baseCST_AnnotationElementCS37' has cardinality 0..*, and from 'baseCST_ModelElementCS', the role 'baseCST_ModelElementCS36' has cardinality 0..*.
+An association connects 'baseCST_ModelElementRefCS' and 'baseCST_PathNameCS'. From 'baseCST_ModelElementRefCS', the role 'baseCST_ModelElementRefCS39' has cardinality 0..*, and from 'baseCST_PathNameCS', the role 'baseCST_PathNameCS40' has cardinality 0..*.
+An association connects 'baseCST_Element' and 'baseCST_ModelElementRefCS'. From 'baseCST_Element', the role 'baseCST_Element' has cardinality 0..*, and from 'baseCST_ModelElementRefCS', the role 'baseCST_ModelElementRefCS42' has cardinality 0..*.
+An association connects 'baseCST_OperationCS' and 'baseCST_ClassCS'. From 'baseCST_OperationCS', the role 'ownedOperation' has cardinality 0..*, and from 'baseCST_ClassCS', the role 'ClassCS' has cardinality 0..*.
+An association connects 'baseCST_ParameterCS' and 'baseCST_OperationCS'. From 'baseCST_ParameterCS', the role 'ParameterCS' has cardinality 0..*, and from 'baseCST_OperationCS', the role 'owner45' has cardinality 0..*.
+An association connects 'baseCST_OperationCS' and 'baseCST_TypedRefCS'. From 'baseCST_OperationCS', the role 'baseCST_OperationCS' has cardinality 0..*, and from 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS47' has cardinality 0..*.
+An association connects 'baseCST_ConstraintCS' and 'baseCST_OperationCS'. From 'baseCST_ConstraintCS', the role 'baseCST_ConstraintCS50' has cardinality 0..*, and from 'baseCST_OperationCS', the role 'baseCST_OperationCS49' has cardinality 0..*.
+An association connects 'baseCST_OperationCS' and 'baseCST_ConstraintCS'. From 'baseCST_OperationCS', the role 'baseCST_OperationCS52' has cardinality 0..*, and from 'baseCST_ConstraintCS', the role 'baseCST_ConstraintCS53' has cardinality 0..*.
+An association connects 'baseCST_SpecificationCS' and 'baseCST_OperationCS'. From 'baseCST_SpecificationCS', the role 'baseCST_SpecificationCS56' has cardinality 0..*, and from 'baseCST_OperationCS', the role 'baseCST_OperationCS55' has cardinality 0..*.
+An association connects 'baseCST_PackageCS' and 'baseCST_ClassifierCS'. From 'baseCST_PackageCS', the role 'owner58' has cardinality 0..*, and from 'baseCST_ClassifierCS', the role 'ClassifierCS' has cardinality 0..*.
+An association connects 'baseCST_PackageCS' and 'baseCST_PackageCS'. From 'baseCST_PackageCS', the role 'baseCST_PackageCS59' has cardinality 0..*, and from 'baseCST_PackageCS', the role 'baseCST_PackageCS' has cardinality 0..*.
+An association connects 'baseCST_ParameterCS' and 'baseCST_OperationCS'. From 'baseCST_ParameterCS', the role 'ownedParameter' has cardinality 0..*, and from 'baseCST_OperationCS', the role 'OperationCS62' has cardinality 0..*.
+An association connects 'baseCST_PathElementCS' and 'baseCST_PathNameCS'. From 'baseCST_PathElementCS', the role 'path' has cardinality 0..*, and from 'baseCST_PathNameCS', the role 'PathNameCS' has cardinality 0..*.
+An association connects 'baseCST_PathElementCS' and 'baseCST_Element'. From 'baseCST_PathElementCS', the role 'baseCST_PathElementCS' has cardinality 0..*, and from 'baseCST_Element', the role 'baseCST_Element65' has cardinality 0..*.
+An association connects 'baseCST_EClassifier' and 'baseCST_PathElementCS'. From 'baseCST_EClassifier', the role 'baseCST_EClassifier' has cardinality 0..*, and from 'baseCST_PathElementCS', the role 'baseCST_PathElementCS67' has cardinality 0..*.
+An association connects 'baseCST_PathElementCS' and 'baseCST_PathNameCS'. From 'baseCST_PathElementCS', the role 'PathElementCS' has cardinality 0..*, and from 'baseCST_PathNameCS', the role 'pathName' has cardinality 0..*.
+An association connects 'baseCST_PathNameCS' and 'baseCST_Element'. From 'baseCST_PathNameCS', the role 'baseCST_PathNameCS70' has cardinality 0..*, and from 'baseCST_Element', the role 'baseCST_Element71' has cardinality 0..*.
+An association connects 'baseCST_PathNameCS' and 'baseCST_ElementCS'. From 'baseCST_PathNameCS', the role 'baseCST_PathNameCS73' has cardinality 0..*, and from 'baseCST_ElementCS', the role 'baseCST_ElementCS74' has cardinality 0..*.
+An association connects 'baseCST_PivotableElementCS' and 'baseCST_Element'. From 'baseCST_PivotableElementCS', the role 'baseCST_PivotableElementCS' has cardinality 0..*, and from 'baseCST_Element', the role 'baseCST_Element76' has cardinality 0..*.
+An association connects 'baseCST_ReferenceCS' and 'baseCST_Property'. From 'baseCST_ReferenceCS', the role 'baseCST_ReferenceCS' has cardinality 0..*, and from 'baseCST_Property', the role 'baseCST_Property' has cardinality 0..*.
+An association connects 'baseCST_ReferenceCS' and 'baseCST_Property'. From 'baseCST_ReferenceCS', the role 'baseCST_ReferenceCS79' has cardinality 0..*, and from 'baseCST_Property', the role 'baseCST_Property80' has cardinality 0..*.
+An association connects 'baseCST_RootCS' and 'baseCST_ImportCS'. From 'baseCST_RootCS', the role 'baseCST_RootCS' has cardinality 0..*, and from 'baseCST_ImportCS', the role 'baseCST_ImportCS82' has cardinality 0..*.
+An association connects 'baseCST_RootCS' and 'baseCST_LibraryCS'. From 'baseCST_RootCS', the role 'baseCST_RootCS84' has cardinality 0..*, and from 'baseCST_LibraryCS', the role 'baseCST_LibraryCS85' has cardinality 0..*.
+An association connects 'baseCST_StructuralFeatureCS' and 'baseCST_ClassCS'. From 'baseCST_StructuralFeatureCS', the role 'ownedProperty' has cardinality 0..*, and from 'baseCST_ClassCS', the role 'ClassCS87' has cardinality 0..*.
+An association connects 'baseCST_StructuralFeatureCS' and 'baseCST_SpecificationCS'. From 'baseCST_StructuralFeatureCS', the role 'baseCST_StructuralFeatureCS' has cardinality 0..*, and from 'baseCST_SpecificationCS', the role 'baseCST_SpecificationCS89' has cardinality 0..*.
+An association connects 'baseCST_TemplateBindingCS' and 'baseCST_TypedTypeRefCS'. From 'baseCST_TemplateBindingCS', the role 'ownedTemplateBinding' has cardinality 0..*, and from 'baseCST_TypedTypeRefCS', the role 'TypedTypeRefCS' has cardinality 0..*.
+An association connects 'baseCST_TemplateParameterSubstitutionCS' and 'baseCST_TemplateBindingCS'. From 'baseCST_TemplateParameterSubstitutionCS', the role 'TemplateParameterSubstitutionCS' has cardinality 0..*, and from 'baseCST_TemplateBindingCS', the role 'owningTemplateBinding' has cardinality 0..*.
+An association connects 'baseCST_TemplateSignatureCS' and 'baseCST_TemplateParameterCS'. From 'baseCST_TemplateSignatureCS', the role 'TemplateSignatureCS' has cardinality 0..*, and from 'baseCST_TemplateParameterCS', the role 'ownedTemplateParameter' has cardinality 0..*.
+An association connects 'baseCST_TemplateParameterSubstitutionCS' and 'baseCST_TemplateBindingCS'. From 'baseCST_TemplateParameterSubstitutionCS', the role 'ownedParameterSubstitution' has cardinality 0..*, and from 'baseCST_TemplateBindingCS', the role 'TemplateBindingCS' has cardinality 0..*.
+An association connects 'baseCST_TypeRefCS' and 'baseCST_TemplateParameterSubstitutionCS'. From 'baseCST_TypeRefCS', the role 'baseCST_TypeRefCS' has cardinality 0..*, and from 'baseCST_TemplateParameterSubstitutionCS', the role 'baseCST_TemplateParameterSubstitutionCS' has cardinality 0..*.
+An association connects 'baseCST_TemplateableElementCS' and 'baseCST_TemplateSignatureCS'. From 'baseCST_TemplateableElementCS', the role 'TemplateableElementCS' has cardinality 0..*, and from 'baseCST_TemplateSignatureCS', the role 'ownedTemplateSignature' has cardinality 0..*.
+An association connects 'baseCST_TemplateParameterCS' and 'baseCST_TemplateSignatureCS'. From 'baseCST_TemplateParameterCS', the role 'TemplateParameterCS' has cardinality 0..*, and from 'baseCST_TemplateSignatureCS', the role 'owningTemplateSignature' has cardinality 0..*.
+An association connects 'baseCST_TemplateSignatureCS' and 'baseCST_TemplateableElementCS'. From 'baseCST_TemplateSignatureCS', the role 'TemplateSignatureCS98' has cardinality 0..*, and from 'baseCST_TemplateableElementCS', the role 'owningTemplateElement' has cardinality 0..*.
+An association connects 'baseCST_TupleTypeCS' and 'baseCST_TuplePartCS'. From 'baseCST_TupleTypeCS', the role 'baseCST_TupleTypeCS' has cardinality 0..*, and from 'baseCST_TuplePartCS', the role 'baseCST_TuplePartCS' has cardinality 0..*.
+An association connects 'baseCST_TypedRefCS' and 'baseCST_TypeParameterCS'. From 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS101' has cardinality 0..*, and from 'baseCST_TypeParameterCS', the role 'baseCST_TypeParameterCS' has cardinality 0..*.
+An association connects 'baseCST_TypedRefCS' and 'baseCST_TypeParameterCS'. From 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS104' has cardinality 0..*, and from 'baseCST_TypeParameterCS', the role 'baseCST_TypeParameterCS103' has cardinality 0..*.
+An association connects 'baseCST_TypedRefCS' and 'baseCST_TypedElementCS'. From 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS106' has cardinality 0..*, and from 'baseCST_TypedElementCS', the role 'baseCST_TypedElementCS' has cardinality 0..*.
+An association connects 'baseCST_MultiplicityCS' and 'baseCST_TypedRefCS'. From 'baseCST_MultiplicityCS', the role 'baseCST_MultiplicityCS' has cardinality 0..*, and from 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS108' has cardinality 0..*.
+An association connects 'baseCST_PathNameCS' and 'baseCST_TypedTypeRefCS'. From 'baseCST_PathNameCS', the role 'baseCST_PathNameCS110' has cardinality 0..*, and from 'baseCST_TypedTypeRefCS', the role 'baseCST_TypedTypeRefCS' has cardinality 0..*.
+An association connects 'baseCST_TypedTypeRefCS' and 'baseCST_Type'. From 'baseCST_TypedTypeRefCS', the role 'baseCST_TypedTypeRefCS112' has cardinality 0..*, and from 'baseCST_Type', the role 'baseCST_Type' has cardinality 0..*.
+An association connects 'baseCST_TypedTypeRefCS' and 'baseCST_TemplateBindingCS'. From 'baseCST_TypedTypeRefCS', the role 'owningTemplateBindableElement' has cardinality 0..*, and from 'baseCST_TemplateBindingCS', the role 'TemplateBindingCS114' has cardinality 0..*.
+An association connects 'baseCST_WildcardTypeRefCS' and 'baseCST_TypedRefCS'. From 'baseCST_WildcardTypeRefCS', the role 'baseCST_WildcardTypeRefCS' has cardinality 0..*, and from 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS116' has cardinality 0..*.
+An association connects 'baseCST_WildcardTypeRefCS' and 'baseCST_TypedRefCS'. From 'baseCST_WildcardTypeRefCS', the role 'baseCST_WildcardTypeRefCS118' has cardinality 0..*, and from 'baseCST_TypedRefCS', the role 'baseCST_TypedRefCS119' has cardinality 0..*.

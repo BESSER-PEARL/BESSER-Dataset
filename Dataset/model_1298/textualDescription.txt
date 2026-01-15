@@ -1,0 +1,49 @@
+The domain model 'StateMachineDiagram_Meta' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineDiagram_Meta_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineDiagram_Meta_Application' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StateMachineDiagram_Meta_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StateMachineDiagram_Meta_Transition' represents an important domain concept.
+It has the following attributes: 'trigger', which is of type str; 'name', which is of type str.
+
+'StateMachineDiagram_Meta_ViewController' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineDiagram_Meta_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StateMachineDiagram_Meta_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineDiagram_Meta_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'StateMachineDiagram_Meta_Pseudostate' is a specialization of 'Vertex'.
+The class 'StateMachineDiagram_Meta_State' is a specialization of 'Vertex'.
+The class 'StateMachineDiagram_Meta_ViewController' is a specialization of 'State'.
+The class 'StateMachineDiagram_Meta_Event' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'StateMachineDiagram_Meta_Application' and 'StateMachineDiagram_Meta_StateMachine'. From 'StateMachineDiagram_Meta_Application', the role 'StateMachineDiagram_Meta_Application' has cardinality 0..*, and from 'StateMachineDiagram_Meta_StateMachine', the role 'StateMachineDiagram_Meta_StateMachine' has cardinality 0..*.
+An association connects 'StateMachineDiagram_Meta_StateMachine' and 'StateMachineDiagram_Meta_Vertex'. From 'StateMachineDiagram_Meta_StateMachine', the role 'StateMachineDiagram_Meta_StateMachine2' has cardinality 0..*, and from 'StateMachineDiagram_Meta_Vertex', the role 'StateMachineDiagram_Meta_Vertex' has cardinality 0..*.
+An association connects 'StateMachineDiagram_Meta_StateMachine' and 'StateMachineDiagram_Meta_Transition'. From 'StateMachineDiagram_Meta_StateMachine', the role 'StateMachineDiagram_Meta_StateMachine4' has cardinality 0..*, and from 'StateMachineDiagram_Meta_Transition', the role 'StateMachineDiagram_Meta_Transition' has cardinality 0..*.
+An association connects 'StateMachineDiagram_Meta_Transition' and 'StateMachineDiagram_Meta_Vertex'. From 'StateMachineDiagram_Meta_Transition', the role 'Transition' has cardinality 0..*, and from 'StateMachineDiagram_Meta_Vertex', the role 'source' has cardinality 0..*.
+An association connects 'StateMachineDiagram_Meta_Vertex' and 'StateMachineDiagram_Meta_Transition'. From 'StateMachineDiagram_Meta_Vertex', the role 'target' has cardinality 0..*, and from 'StateMachineDiagram_Meta_Transition', the role 'Transition7' has cardinality 0..*.
+An association connects 'StateMachineDiagram_Meta_Transition' and 'StateMachineDiagram_Meta_Vertex'. From 'StateMachineDiagram_Meta_Transition', the role 'outgoing' has cardinality 0..*, and from 'StateMachineDiagram_Meta_Vertex', the role 'Vertex' has cardinality 0..*.
+An association connects 'StateMachineDiagram_Meta_Transition' and 'StateMachineDiagram_Meta_Vertex'. From 'StateMachineDiagram_Meta_Transition', the role 'incoming' has cardinality 0..*, and from 'StateMachineDiagram_Meta_Vertex', the role 'Vertex10' has cardinality 0..*.
+An association connects 'StateMachineDiagram_Meta_StateMachine' and 'StateMachineDiagram_Meta_State'. From 'StateMachineDiagram_Meta_StateMachine', the role 'StateMachineDiagram_Meta_StateMachine12' has cardinality 0..*, and from 'StateMachineDiagram_Meta_State', the role 'StateMachineDiagram_Meta_State' has cardinality 0..*.

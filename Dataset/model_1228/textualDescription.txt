@@ -1,0 +1,170 @@
+The domain model 'qvtcore' describes the core structural elements and their relationships within the system.
+
+The model defines 39 main class(es).
+
+'ParamDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLExpressionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'EnforcementOperationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_ParamDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'RealizeableVariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_UnrealizedVariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_AreaCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_TransformationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_RealizeableVariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_GuardPatternCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_TopLevelCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_EnforcementOperationCS' represents an important domain concept.
+It has one attribute: 'deletion', which is of type bool.
+
+'TransformationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_CSTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_AssignmentCS' represents an important domain concept.
+It has one attribute: 'default', which is of type bool.
+
+'cst_IHasName' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifierCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_MappingCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_QueryCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_DomainCS' represents an important domain concept.
+It has the following attributes: 'enforce', which is of type bool; 'check', which is of type bool.
+
+'qvtcore_cst_PatternCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_DirectionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'QueryCS' represents an important domain concept.
+It does not declare any attributes.
+
+'UnrealizedVariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_RealizedVariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifiedCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtcore_cst_BottomPatternCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingCS' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PatternCS' represents an important domain concept.
+It does not declare any attributes.
+
+'RealizedVariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'AreaCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CSTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BottomPatternCS' represents an important domain concept.
+It does not declare any attributes.
+
+'GuardPatternCS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'qvtcore_cst_AreaCS' is a specialization of 'IdentifiedCS'.
+The class 'qvtcore_cst_AssignmentCS' is a specialization of 'OCLExpressionCS'.
+The class 'qvtcore_cst_BottomPatternCS' is a specialization of 'PatternCS'.
+The class 'qvtcore_cst_DirectionCS' is a specialization of 'IdentifiedCS'.
+The class 'qvtcore_cst_DomainCS' is a specialization of 'AreaCS'.
+The class 'qvtcore_cst_EnforcementOperationCS' is a specialization of 'CSTNode'.
+The class 'qvtcore_cst_GuardPatternCS' is a specialization of 'PatternCS'.
+The class 'qvtcore_cst_MappingCS' is a specialization of 'IdentifiedCS'.
+The class 'qvtcore_cst_ParamDeclarationCS' is a specialization of 'CSTNode'.
+The class 'qvtcore_cst_PatternCS' is a specialization of 'CSTNode'.
+The class 'qvtcore_cst_QueryCS' is a specialization of 'cst_CSTNode'.
+The class 'qvtcore_cst_QueryCS' is a specialization of 'cst_IHasName'.
+The class 'qvtcore_cst_RealizeableVariableCS' is a specialization of 'IdentifiedCS'.
+The class 'qvtcore_cst_RealizedVariableCS' is a specialization of 'RealizeableVariableCS'.
+The class 'qvtcore_cst_TopLevelCS' is a specialization of 'CSTNode'.
+The class 'qvtcore_cst_TransformationCS' is a specialization of 'cst_CSTNode'.
+The class 'qvtcore_cst_TransformationCS' is a specialization of 'cst_IHasName'.
+The class 'qvtcore_cst_UnrealizedVariableCS' is a specialization of 'RealizeableVariableCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'GuardPatternCS' and 'qvtcore_cst_AreaCS'. From 'GuardPatternCS', the role 'GuardPatternCS' has cardinality 0..*, and from 'qvtcore_cst_AreaCS', the role 'qvtcore_cst_AreaCS' has cardinality 0..*.
+An association connects 'qvtcore_cst_AreaCS' and 'BottomPatternCS'. From 'qvtcore_cst_AreaCS', the role 'qvtcore_cst_AreaCS2' has cardinality 0..*, and from 'BottomPatternCS', the role 'BottomPatternCS' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtcore_cst_AssignmentCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS' has cardinality 0..*, and from 'qvtcore_cst_AssignmentCS', the role 'qvtcore_cst_AssignmentCS' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtcore_cst_AssignmentCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS6' has cardinality 0..*, and from 'qvtcore_cst_AssignmentCS', the role 'qvtcore_cst_AssignmentCS5' has cardinality 0..*.
+An association connects 'EnforcementOperationCS' and 'qvtcore_cst_BottomPatternCS'. From 'EnforcementOperationCS', the role 'EnforcementOperationCS' has cardinality 0..*, and from 'qvtcore_cst_BottomPatternCS', the role 'qvtcore_cst_BottomPatternCS' has cardinality 0..*.
+An association connects 'qvtcore_cst_BottomPatternCS' and 'RealizedVariableCS'. From 'qvtcore_cst_BottomPatternCS', the role 'qvtcore_cst_BottomPatternCS9' has cardinality 0..*, and from 'RealizedVariableCS', the role 'RealizedVariableCS' has cardinality 0..*.
+An association connects 'qvtcore_cst_DirectionCS' and 'PathNameCS'. From 'qvtcore_cst_DirectionCS', the role 'qvtcore_cst_DirectionCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS' has cardinality 0..*.
+An association connects 'qvtcore_cst_DirectionCS' and 'IdentifierCS'. From 'qvtcore_cst_DirectionCS', the role 'qvtcore_cst_DirectionCS12' has cardinality 0..*, and from 'IdentifierCS', the role 'IdentifierCS' has cardinality 0..*.
+An association connects 'qvtcore_cst_EnforcementOperationCS' and 'OperationCallExpCS'. From 'qvtcore_cst_EnforcementOperationCS', the role 'qvtcore_cst_EnforcementOperationCS' has cardinality 0..*, and from 'OperationCallExpCS', the role 'OperationCallExpCS' has cardinality 0..*.
+An association connects 'MappingCS' and 'qvtcore_cst_MappingCS'. From 'MappingCS', the role 'MappingCS' has cardinality 0..*, and from 'qvtcore_cst_MappingCS', the role 'qvtcore_cst_MappingCS' has cardinality 0..*.
+An association connects 'qvtcore_cst_MappingCS' and 'DomainCS'. From 'qvtcore_cst_MappingCS', the role 'qvtcore_cst_MappingCS16' has cardinality 0..*, and from 'DomainCS', the role 'DomainCS' has cardinality 0..*.
+An association connects 'qvtcore_cst_MappingCS' and 'PathNameCS'. From 'qvtcore_cst_MappingCS', the role 'qvtcore_cst_MappingCS18' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS19' has cardinality 0..*.
+An association connects 'qvtcore_cst_MappingCS' and 'DomainCS'. From 'qvtcore_cst_MappingCS', the role 'qvtcore_cst_MappingCS21' has cardinality 0..*, and from 'DomainCS', the role 'DomainCS22' has cardinality 0..*.
+An association connects 'qvtcore_cst_MappingCS' and 'IdentifierCS'. From 'qvtcore_cst_MappingCS', the role 'qvtcore_cst_MappingCS24' has cardinality 0..*, and from 'IdentifierCS', the role 'IdentifierCS25' has cardinality 0..*.
+An association connects 'qvtcore_cst_ParamDeclarationCS' and 'IdentifierCS'. From 'qvtcore_cst_ParamDeclarationCS', the role 'qvtcore_cst_ParamDeclarationCS' has cardinality 0..*, and from 'IdentifierCS', the role 'IdentifierCS27' has cardinality 0..*.
+An association connects 'qvtcore_cst_ParamDeclarationCS' and 'TypeCS'. From 'qvtcore_cst_ParamDeclarationCS', the role 'qvtcore_cst_ParamDeclarationCS29' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtcore_cst_PatternCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS31' has cardinality 0..*, and from 'qvtcore_cst_PatternCS', the role 'qvtcore_cst_PatternCS' has cardinality 0..*.
+An association connects 'qvtcore_cst_PatternCS' and 'UnrealizedVariableCS'. From 'qvtcore_cst_PatternCS', the role 'qvtcore_cst_PatternCS33' has cardinality 0..*, and from 'UnrealizedVariableCS', the role 'UnrealizedVariableCS' has cardinality 0..*.
+An association connects 'ParamDeclarationCS' and 'qvtcore_cst_QueryCS'. From 'ParamDeclarationCS', the role 'ParamDeclarationCS' has cardinality 0..*, and from 'qvtcore_cst_QueryCS', the role 'qvtcore_cst_QueryCS' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtcore_cst_QueryCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS37' has cardinality 0..*, and from 'qvtcore_cst_QueryCS', the role 'qvtcore_cst_QueryCS36' has cardinality 0..*.
+An association connects 'PathNameCS' and 'qvtcore_cst_QueryCS'. From 'PathNameCS', the role 'PathNameCS40' has cardinality 0..*, and from 'qvtcore_cst_QueryCS', the role 'qvtcore_cst_QueryCS39' has cardinality 0..*.
+An association connects 'qvtcore_cst_QueryCS' and 'TypeCS'. From 'qvtcore_cst_QueryCS', the role 'qvtcore_cst_QueryCS42' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS43' has cardinality 0..*.
+An association connects 'TypeCS' and 'qvtcore_cst_RealizeableVariableCS'. From 'TypeCS', the role 'TypeCS45' has cardinality 0..*, and from 'qvtcore_cst_RealizeableVariableCS', the role 'qvtcore_cst_RealizeableVariableCS' has cardinality 0..*.
+An association connects 'TransformationCS' and 'qvtcore_cst_TopLevelCS'. From 'TransformationCS', the role 'TransformationCS' has cardinality 0..*, and from 'qvtcore_cst_TopLevelCS', the role 'qvtcore_cst_TopLevelCS' has cardinality 0..*.
+An association connects 'QueryCS' and 'qvtcore_cst_TopLevelCS'. From 'QueryCS', the role 'QueryCS' has cardinality 0..*, and from 'qvtcore_cst_TopLevelCS', the role 'qvtcore_cst_TopLevelCS48' has cardinality 0..*.
+An association connects 'qvtcore_cst_TopLevelCS' and 'MappingCS'. From 'qvtcore_cst_TopLevelCS', the role 'qvtcore_cst_TopLevelCS50' has cardinality 0..*, and from 'MappingCS', the role 'MappingCS51' has cardinality 0..*.
+An association connects 'DirectionCS' and 'qvtcore_cst_TransformationCS'. From 'DirectionCS', the role 'DirectionCS' has cardinality 0..*, and from 'qvtcore_cst_TransformationCS', the role 'qvtcore_cst_TransformationCS' has cardinality 0..*.
+An association connects 'qvtcore_cst_TransformationCS' and 'PathNameCS'. From 'qvtcore_cst_TransformationCS', the role 'qvtcore_cst_TransformationCS54' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS55' has cardinality 0..*.

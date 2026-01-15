@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/bluezio/ttc2020-ocl2sql/metamodels/ocl.ecore

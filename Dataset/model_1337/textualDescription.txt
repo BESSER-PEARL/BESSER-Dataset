@@ -1,0 +1,307 @@
+The domain model 'umlclassdiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 69 main class(es).
+
+'PathCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_CollectExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_LogicExpCS' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'PrimaryExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_Constraint' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_StringLiteralExpCS' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_RoundedBracketClauseCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_Relation' represents an important domain concept.
+It has the following attributes: 'ntar', which is of type str; 'derived', which is of type bool; 'nsrc', which is of type str.
+
+'umlclassdiagram_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_NavigationNameExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_ForAllExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_Aggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_NavigationPathElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_NavigationPathCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_ParameterCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umlclassdiagram_AccVarCS' represents an important domain concept.
+It has one attribute: 'accVarName', which is of type str.
+
+'umlclassdiagram_OperationCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umlclassdiagram_PropertyCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umlclassdiagram_InvariantCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_BooleanLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationPathCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_ClassDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_PrimitiveElement' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'umlclassdiagram_PathVariableCS' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'umlclassdiagram_NameExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_ExistsExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_Attribute' represents an important domain concept.
+It has one attribute: 'derived', which is of type bool.
+
+'umlclassdiagram_RootCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_NavigationPathVariableCS' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'umlclassdiagram_IterateExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_PrimaryExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_NavigationPathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umlclassdiagram_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_PathElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_IntLiteralExpCS' represents an important domain concept.
+It has one attribute: 'intSymbol', which is of type int.
+
+'umlclassdiagram_PackageCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umlclassdiagram_NavigationExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_Classifier' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'derived', which is of type bool.
+
+'umlclassdiagram_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'scope', which is of type str; 'visibility', which is of type str.
+
+'umlclassdiagram_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_ConstraintCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_BooleanExpCS' represents an important domain concept.
+It has one attribute: 'boolSymbol', which is of type bool.
+
+'umlclassdiagram_Operator' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'umlclassdiagram_ClassCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umlclassdiagram_ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_Modifier' represents an important domain concept.
+It has the following attributes: 'scope', which is of type str; 'visibility', which is of type str.
+
+'umlclassdiagram_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_LoopExpCS' represents an important domain concept.
+It has one attribute: 'logicOp', which is of type str.
+
+'umlclassdiagram_LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_PathCS' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlclassdiagram_IteratorVarCS' represents an important domain concept.
+It has one attribute: 'itName', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisbilityType' defines the following possible values: 'public', 'package', 'protected', 'private'.
+The enumeration 'ScopeType' defines the following possible values: 'classifier', 'instance'.
+The enumeration 'PrimitiveDataType' defines the following possible values: 'Integer', 'Date', 'Double', 'Boolean', 'String'.
+The enumeration 'OperatorType' defines the following possible values: 'subtract', 'or', 'equals', 'divide', 'and', 'gte', 'not', 'add', 'gt', 'lte', 'negative', 'lt', 'multiply', 'distinct', 'module'.
+
+The model also captures inheritance relationships between classes.
+The class 'umlclassdiagram_LogicExpCS' is a specialization of 'ExpCS'.
+The class 'umlclassdiagram_CallExpCS' is a specialization of 'LogicExpCS'.
+The class 'umlclassdiagram_PrimaryExpCS' is a specialization of 'CallExpCS'.
+The class 'umlclassdiagram_NavigationExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'umlclassdiagram_NameExpCS' is a specialization of 'NavigationExpCS'.
+The class 'umlclassdiagram_LoopExpCS' is a specialization of 'NavigationExpCS'.
+The class 'umlclassdiagram_CollectExpCS' is a specialization of 'LoopExpCS'.
+The class 'umlclassdiagram_IterateExpCS' is a specialization of 'LoopExpCS'.
+The class 'umlclassdiagram_LiteralExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'umlclassdiagram_IntLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'umlclassdiagram_StringLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'umlclassdiagram_BooleanLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'umlclassdiagram_PathVariableCS' is a specialization of 'PathCS'.
+The class 'umlclassdiagram_PathElementCS' is a specialization of 'PathCS'.
+The class 'umlclassdiagram_BooleanExpCS' is a specialization of 'BooleanLiteralExpCS'.
+The class 'umlclassdiagram_ExistsExpCS' is a specialization of 'LoopExpCS'.
+The class 'umlclassdiagram_NavigationNameExpCS' is a specialization of 'NavigationExpCS'.
+The class 'umlclassdiagram_NavigationPathVariableCS' is a specialization of 'NavigationPathCS'.
+The class 'umlclassdiagram_NavigationPathElementCS' is a specialization of 'NavigationPathCS'.
+The class 'umlclassdiagram_ForAllExpCS' is a specialization of 'LoopExpCS'.
+The class 'umlclassdiagram_PrimitiveElement' is a specialization of 'NamedElement'.
+The class 'umlclassdiagram_Parameter' is a specialization of 'NamedElement'.
+The class 'umlclassdiagram_Modifier' is a specialization of 'NamedElement'.
+The class 'umlclassdiagram_Classifier' is a specialization of 'Modifier'.
+The class 'umlclassdiagram_Class' is a specialization of 'Classifier'.
+The class 'umlclassdiagram_Attribute' is a specialization of 'Feature'.
+The class 'umlclassdiagram_Operation' is a specialization of 'Feature'.
+The class 'umlclassdiagram_Relation' is a specialization of 'Modifier'.
+The class 'umlclassdiagram_Dependency' is a specialization of 'Relation'.
+The class 'umlclassdiagram_Association' is a specialization of 'Relation'.
+The class 'umlclassdiagram_Aggregation' is a specialization of 'Relation'.
+The class 'umlclassdiagram_Composition' is a specialization of 'Relation'.
+The class 'umlclassdiagram_AssociationClass' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'umlclassdiagram_PackageCS' and 'umlclassdiagram_RootCS'. From 'umlclassdiagram_PackageCS', the role 'umlclassdiagram_PackageCS' has cardinality 0..*, and from 'umlclassdiagram_RootCS', the role 'umlclassdiagram_RootCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_ConstraintCS' and 'umlclassdiagram_RootCS'. From 'umlclassdiagram_ConstraintCS', the role 'umlclassdiagram_ConstraintCS' has cardinality 0..*, and from 'umlclassdiagram_RootCS', the role 'umlclassdiagram_RootCS2' has cardinality 0..*.
+An association connects 'umlclassdiagram_PackageCS' and 'umlclassdiagram_PackageCS'. From 'umlclassdiagram_PackageCS', the role 'umlclassdiagram_PackageCS3' has cardinality 0..*, and from 'umlclassdiagram_PackageCS', the role 'umlclassdiagram_PackageCS5' has cardinality 0..*.
+An association connects 'umlclassdiagram_PackageCS' and 'umlclassdiagram_ClassCS'. From 'umlclassdiagram_PackageCS', the role 'umlclassdiagram_PackageCS7' has cardinality 0..*, and from 'umlclassdiagram_ClassCS', the role 'umlclassdiagram_ClassCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_PathNameCS' and 'umlclassdiagram_ClassCS'. From 'umlclassdiagram_PathNameCS', the role 'umlclassdiagram_PathNameCS' has cardinality 0..*, and from 'umlclassdiagram_ClassCS', the role 'umlclassdiagram_ClassCS9' has cardinality 0..*.
+An association connects 'umlclassdiagram_ClassCS' and 'umlclassdiagram_PropertyCS'. From 'umlclassdiagram_ClassCS', the role 'umlclassdiagram_ClassCS11' has cardinality 0..*, and from 'umlclassdiagram_PropertyCS', the role 'umlclassdiagram_PropertyCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_OperationCS' and 'umlclassdiagram_ClassCS'. From 'umlclassdiagram_OperationCS', the role 'umlclassdiagram_OperationCS' has cardinality 0..*, and from 'umlclassdiagram_ClassCS', the role 'umlclassdiagram_ClassCS13' has cardinality 0..*.
+An association connects 'umlclassdiagram_PathNameCS' and 'umlclassdiagram_PropertyCS'. From 'umlclassdiagram_PathNameCS', the role 'umlclassdiagram_PathNameCS16' has cardinality 0..*, and from 'umlclassdiagram_PropertyCS', the role 'umlclassdiagram_PropertyCS15' has cardinality 0..*.
+An association connects 'umlclassdiagram_ParameterCS' and 'umlclassdiagram_OperationCS'. From 'umlclassdiagram_ParameterCS', the role 'umlclassdiagram_ParameterCS' has cardinality 0..*, and from 'umlclassdiagram_OperationCS', the role 'umlclassdiagram_OperationCS18' has cardinality 0..*.
+An association connects 'umlclassdiagram_OperationCS' and 'umlclassdiagram_PathNameCS'. From 'umlclassdiagram_OperationCS', the role 'umlclassdiagram_OperationCS20' has cardinality 0..*, and from 'umlclassdiagram_PathNameCS', the role 'umlclassdiagram_PathNameCS21' has cardinality 0..*.
+An association connects 'umlclassdiagram_ExpCS' and 'umlclassdiagram_OperationCS'. From 'umlclassdiagram_ExpCS', the role 'umlclassdiagram_ExpCS' has cardinality 0..*, and from 'umlclassdiagram_OperationCS', the role 'umlclassdiagram_OperationCS23' has cardinality 0..*.
+An association connects 'umlclassdiagram_PathNameCS' and 'umlclassdiagram_ParameterCS'. From 'umlclassdiagram_PathNameCS', the role 'umlclassdiagram_PathNameCS26' has cardinality 0..*, and from 'umlclassdiagram_ParameterCS', the role 'umlclassdiagram_ParameterCS25' has cardinality 0..*.
+An association connects 'umlclassdiagram_ConstraintCS' and 'umlclassdiagram_PathNameCS'. From 'umlclassdiagram_ConstraintCS', the role 'umlclassdiagram_ConstraintCS28' has cardinality 0..*, and from 'umlclassdiagram_PathNameCS', the role 'umlclassdiagram_PathNameCS29' has cardinality 0..*.
+An association connects 'umlclassdiagram_ConstraintCS' and 'umlclassdiagram_InvariantCS'. From 'umlclassdiagram_ConstraintCS', the role 'umlclassdiagram_ConstraintCS31' has cardinality 0..*, and from 'umlclassdiagram_InvariantCS', the role 'umlclassdiagram_InvariantCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_ExpCS' and 'umlclassdiagram_InvariantCS'. From 'umlclassdiagram_ExpCS', the role 'umlclassdiagram_ExpCS34' has cardinality 0..*, and from 'umlclassdiagram_InvariantCS', the role 'umlclassdiagram_InvariantCS33' has cardinality 0..*.
+An association connects 'umlclassdiagram_LogicExpCS' and 'umlclassdiagram_LogicExpCS'. From 'umlclassdiagram_LogicExpCS', the role 'umlclassdiagram_LogicExpCS35' has cardinality 0..*, and from 'umlclassdiagram_LogicExpCS', the role 'umlclassdiagram_LogicExpCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_CallExpCS' and 'umlclassdiagram_LogicExpCS'. From 'umlclassdiagram_CallExpCS', the role 'umlclassdiagram_CallExpCS' has cardinality 0..*, and from 'umlclassdiagram_LogicExpCS', the role 'umlclassdiagram_LogicExpCS38' has cardinality 0..*.
+An association connects 'umlclassdiagram_CallExpCS' and 'umlclassdiagram_CallExpCS'. From 'umlclassdiagram_CallExpCS', the role 'umlclassdiagram_CallExpCS41' has cardinality 0..*, and from 'umlclassdiagram_CallExpCS', the role 'umlclassdiagram_CallExpCS39' has cardinality 0..*.
+An association connects 'umlclassdiagram_CallExpCS' and 'umlclassdiagram_NavigationExpCS'. From 'umlclassdiagram_CallExpCS', the role 'umlclassdiagram_CallExpCS43' has cardinality 0..*, and from 'umlclassdiagram_NavigationExpCS', the role 'umlclassdiagram_NavigationExpCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_PathNameCS' and 'umlclassdiagram_NameExpCS'. From 'umlclassdiagram_PathNameCS', the role 'umlclassdiagram_PathNameCS45' has cardinality 0..*, and from 'umlclassdiagram_NameExpCS', the role 'umlclassdiagram_NameExpCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_NameExpCS' and 'umlclassdiagram_RoundedBracketClauseCS'. From 'umlclassdiagram_NameExpCS', the role 'umlclassdiagram_NameExpCS47' has cardinality 0..*, and from 'umlclassdiagram_RoundedBracketClauseCS', the role 'umlclassdiagram_RoundedBracketClauseCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_CallExpCS' and 'umlclassdiagram_NameExpCS'. From 'umlclassdiagram_CallExpCS', the role 'umlclassdiagram_CallExpCS50' has cardinality 0..*, and from 'umlclassdiagram_NameExpCS', the role 'umlclassdiagram_NameExpCS49' has cardinality 0..*.
+An association connects 'umlclassdiagram_IteratorVarCS' and 'umlclassdiagram_LoopExpCS'. From 'umlclassdiagram_IteratorVarCS', the role 'umlclassdiagram_IteratorVarCS' has cardinality 0..*, and from 'umlclassdiagram_LoopExpCS', the role 'umlclassdiagram_LoopExpCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_LoopExpCS' and 'umlclassdiagram_ExpCS'. From 'umlclassdiagram_LoopExpCS', the role 'umlclassdiagram_LoopExpCS53' has cardinality 0..*, and from 'umlclassdiagram_ExpCS', the role 'umlclassdiagram_ExpCS54' has cardinality 0..*.
+An association connects 'umlclassdiagram_PathNameCS' and 'umlclassdiagram_IteratorVarCS'. From 'umlclassdiagram_PathNameCS', the role 'umlclassdiagram_PathNameCS57' has cardinality 0..*, and from 'umlclassdiagram_IteratorVarCS', the role 'umlclassdiagram_IteratorVarCS56' has cardinality 0..*.
+An association connects 'umlclassdiagram_IterateExpCS' and 'umlclassdiagram_AccVarCS'. From 'umlclassdiagram_IterateExpCS', the role 'umlclassdiagram_IterateExpCS' has cardinality 0..*, and from 'umlclassdiagram_AccVarCS', the role 'umlclassdiagram_AccVarCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_PathNameCS' and 'umlclassdiagram_AccVarCS'. From 'umlclassdiagram_PathNameCS', the role 'umlclassdiagram_PathNameCS61' has cardinality 0..*, and from 'umlclassdiagram_AccVarCS', the role 'umlclassdiagram_AccVarCS60' has cardinality 0..*.
+An association connects 'umlclassdiagram_AccVarCS' and 'umlclassdiagram_ExpCS'. From 'umlclassdiagram_AccVarCS', the role 'umlclassdiagram_AccVarCS63' has cardinality 0..*, and from 'umlclassdiagram_ExpCS', the role 'umlclassdiagram_ExpCS64' has cardinality 0..*.
+An association connects 'umlclassdiagram_RoundedBracketClauseCS' and 'umlclassdiagram_ExpCS'. From 'umlclassdiagram_RoundedBracketClauseCS', the role 'umlclassdiagram_RoundedBracketClauseCS66' has cardinality 0..*, and from 'umlclassdiagram_ExpCS', the role 'umlclassdiagram_ExpCS67' has cardinality 0..*.
+An association connects 'umlclassdiagram_PathCS' and 'umlclassdiagram_PathNameCS'. From 'umlclassdiagram_PathCS', the role 'umlclassdiagram_PathCS' has cardinality 0..*, and from 'umlclassdiagram_PathNameCS', the role 'umlclassdiagram_PathNameCS69' has cardinality 0..*.
+An association connects 'umlclassdiagram_Feature' and 'umlclassdiagram_PathElementCS'. From 'umlclassdiagram_Feature', the role 'umlclassdiagram_Feature' has cardinality 0..*, and from 'umlclassdiagram_PathElementCS', the role 'umlclassdiagram_PathElementCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_AccVarCS' and 'umlclassdiagram_ExistsExpCS'. From 'umlclassdiagram_AccVarCS', the role 'umlclassdiagram_AccVarCS72' has cardinality 0..*, and from 'umlclassdiagram_ExistsExpCS', the role 'umlclassdiagram_ExistsExpCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_NavigationPathNameCS' and 'umlclassdiagram_NavigationNameExpCS'. From 'umlclassdiagram_NavigationPathNameCS', the role 'umlclassdiagram_NavigationPathNameCS' has cardinality 0..*, and from 'umlclassdiagram_NavigationNameExpCS', the role 'umlclassdiagram_NavigationNameExpCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_RoundedBracketClauseCS' and 'umlclassdiagram_NavigationNameExpCS'. From 'umlclassdiagram_RoundedBracketClauseCS', the role 'umlclassdiagram_RoundedBracketClauseCS76' has cardinality 0..*, and from 'umlclassdiagram_NavigationNameExpCS', the role 'umlclassdiagram_NavigationNameExpCS75' has cardinality 0..*.
+An association connects 'umlclassdiagram_CallExpCS' and 'umlclassdiagram_NavigationNameExpCS'. From 'umlclassdiagram_CallExpCS', the role 'umlclassdiagram_CallExpCS79' has cardinality 0..*, and from 'umlclassdiagram_NavigationNameExpCS', the role 'umlclassdiagram_NavigationNameExpCS78' has cardinality 0..*.
+An association connects 'umlclassdiagram_NavigationPathCS' and 'umlclassdiagram_NavigationPathNameCS'. From 'umlclassdiagram_NavigationPathCS', the role 'umlclassdiagram_NavigationPathCS' has cardinality 0..*, and from 'umlclassdiagram_NavigationPathNameCS', the role 'umlclassdiagram_NavigationPathNameCS81' has cardinality 0..*.
+An association connects 'umlclassdiagram_Feature' and 'umlclassdiagram_NavigationPathElementCS'. From 'umlclassdiagram_Feature', the role 'umlclassdiagram_Feature83' has cardinality 0..*, and from 'umlclassdiagram_NavigationPathElementCS', the role 'umlclassdiagram_NavigationPathElementCS' has cardinality 0..*.
+An association connects 'umlclassdiagram_ForAllExpCS' and 'umlclassdiagram_AccVarCS'. From 'umlclassdiagram_ForAllExpCS', the role 'umlclassdiagram_ForAllExpCS' has cardinality 0..*, and from 'umlclassdiagram_AccVarCS', the role 'umlclassdiagram_AccVarCS85' has cardinality 0..*.
+An association connects 'umlclassdiagram_Classifier' and 'umlclassdiagram_ClassDiagram'. From 'umlclassdiagram_Classifier', the role 'umlclassdiagram_Classifier' has cardinality 0..*, and from 'umlclassdiagram_ClassDiagram', the role 'umlclassdiagram_ClassDiagram' has cardinality 0..*.
+An association connects 'umlclassdiagram_ClassDiagram' and 'umlclassdiagram_Relation'. From 'umlclassdiagram_ClassDiagram', the role 'umlclassdiagram_ClassDiagram88' has cardinality 0..*, and from 'umlclassdiagram_Relation', the role 'umlclassdiagram_Relation' has cardinality 0..*.
+An association connects 'umlclassdiagram_ClassDiagram' and 'umlclassdiagram_PrimitiveElement'. From 'umlclassdiagram_ClassDiagram', the role 'umlclassdiagram_ClassDiagram90' has cardinality 0..*, and from 'umlclassdiagram_PrimitiveElement', the role 'umlclassdiagram_PrimitiveElement' has cardinality 0..*.
+An association connects 'umlclassdiagram_ClassDiagram' and 'umlclassdiagram_Constraint'. From 'umlclassdiagram_ClassDiagram', the role 'umlclassdiagram_ClassDiagram92' has cardinality 0..*, and from 'umlclassdiagram_Constraint', the role 'umlclassdiagram_Constraint' has cardinality 0..*.
+An association connects 'umlclassdiagram_NamedElement' and 'umlclassdiagram_Parameter'. From 'umlclassdiagram_NamedElement', the role 'umlclassdiagram_NamedElement' has cardinality 0..*, and from 'umlclassdiagram_Parameter', the role 'umlclassdiagram_Parameter' has cardinality 0..*.
+An association connects 'umlclassdiagram_Feature' and 'umlclassdiagram_NamedElement'. From 'umlclassdiagram_Feature', the role 'umlclassdiagram_Feature95' has cardinality 0..*, and from 'umlclassdiagram_NamedElement', the role 'umlclassdiagram_NamedElement96' has cardinality 0..*.
+An association connects 'umlclassdiagram_Feature' and 'umlclassdiagram_Classifier'. From 'umlclassdiagram_Feature', the role 'umlclassdiagram_Feature99' has cardinality 0..*, and from 'umlclassdiagram_Classifier', the role 'umlclassdiagram_Classifier98' has cardinality 0..*.
+An association connects 'umlclassdiagram_Class' and 'umlclassdiagram_Classifier'. From 'umlclassdiagram_Class', the role 'umlclassdiagram_Class' has cardinality 0..*, and from 'umlclassdiagram_Classifier', the role 'umlclassdiagram_Classifier101' has cardinality 0..*.
+An association connects 'umlclassdiagram_Classifier' and 'umlclassdiagram_Class'. From 'umlclassdiagram_Classifier', the role 'umlclassdiagram_Classifier103' has cardinality 0..*, and from 'umlclassdiagram_Class', the role 'umlclassdiagram_Class104' has cardinality 0..*.
+An association connects 'umlclassdiagram_Constraint' and 'umlclassdiagram_Class'. From 'umlclassdiagram_Constraint', the role 'umlclassdiagram_Constraint106' has cardinality 0..*, and from 'umlclassdiagram_Class', the role 'umlclassdiagram_Class107' has cardinality 0..*.
+An association connects 'umlclassdiagram_RootCS' and 'umlclassdiagram_Constraint'. From 'umlclassdiagram_RootCS', the role 'umlclassdiagram_RootCS110' has cardinality 0..*, and from 'umlclassdiagram_Constraint', the role 'umlclassdiagram_Constraint109' has cardinality 0..*.
+An association connects 'umlclassdiagram_Operation' and 'umlclassdiagram_Parameter'. From 'umlclassdiagram_Operation', the role 'umlclassdiagram_Operation' has cardinality 0..*, and from 'umlclassdiagram_Parameter', the role 'umlclassdiagram_Parameter112' has cardinality 0..*.
+An association connects 'umlclassdiagram_Operator' and 'umlclassdiagram_Operation'. From 'umlclassdiagram_Operator', the role 'umlclassdiagram_Operator' has cardinality 0..*, and from 'umlclassdiagram_Operation', the role 'umlclassdiagram_Operation114' has cardinality 0..*.
+An association connects 'umlclassdiagram_Relation' and 'umlclassdiagram_Classifier'. From 'umlclassdiagram_Relation', the role 'umlclassdiagram_Relation116' has cardinality 0..*, and from 'umlclassdiagram_Classifier', the role 'umlclassdiagram_Classifier117' has cardinality 0..*.
+An association connects 'umlclassdiagram_Relation' and 'umlclassdiagram_Classifier'. From 'umlclassdiagram_Relation', the role 'umlclassdiagram_Relation119' has cardinality 0..*, and from 'umlclassdiagram_Classifier', the role 'umlclassdiagram_Classifier120' has cardinality 0..*.
+An association connects 'umlclassdiagram_AssociationClass' and 'umlclassdiagram_Association'. From 'umlclassdiagram_AssociationClass', the role 'umlclassdiagram_AssociationClass' has cardinality 0..*, and from 'umlclassdiagram_Association', the role 'umlclassdiagram_Association' has cardinality 0..*.

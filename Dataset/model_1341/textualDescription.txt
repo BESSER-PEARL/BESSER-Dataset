@@ -1,0 +1,145 @@
+The domain model 'completeoclcs' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'completeoclcs_DefCS' represents an important domain concept.
+It has one attribute: 'isStatic', which is of type bool.
+
+'completeoclcs_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MorePivotable' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_ContextDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_DefPropertyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_OCLMessageArgCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PathNameDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_PropertyContextDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_ClassifierContextDeclCS' represents an important domain concept.
+It has one attribute: 'selfName', which is of type str.
+
+'TemplateableElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_ParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_CompleteOCLDocumentCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_PathNameDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_DefOperationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureContextDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_ExpSpecificationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_VariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_PackageDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_OperationContextDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_ConstraintCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'DefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_FeatureContextDeclCS' represents an important domain concept.
+It does not declare any attributes.
+
+'RootCS' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'completeoclcs_TypedRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'completeoclcs_ClassifierContextDeclCS' is a specialization of 'ContextDeclCS'.
+The class 'completeoclcs_ClassifierContextDeclCS' is a specialization of 'TemplateableElementCS'.
+The class 'completeoclcs_CompleteOCLDocumentCS' is a specialization of 'NamespaceCS'.
+The class 'completeoclcs_CompleteOCLDocumentCS' is a specialization of 'RootCS'.
+The class 'completeoclcs_ContextDeclCS' is a specialization of 'PathNameDeclCS'.
+The class 'completeoclcs_DefCS' is a specialization of 'TypedElementCS'.
+The class 'completeoclcs_DefOperationCS' is a specialization of 'DefCS'.
+The class 'completeoclcs_DefOperationCS' is a specialization of 'TemplateableElementCS'.
+The class 'completeoclcs_DefPropertyCS' is a specialization of 'DefCS'.
+The class 'completeoclcs_FeatureContextDeclCS' is a specialization of 'ContextDeclCS'.
+The class 'completeoclcs_OCLMessageArgCS' is a specialization of 'ExpCS'.
+The class 'completeoclcs_OperationContextDeclCS' is a specialization of 'FeatureContextDeclCS'.
+The class 'completeoclcs_OperationContextDeclCS' is a specialization of 'TemplateableElementCS'.
+The class 'completeoclcs_PackageDeclarationCS' is a specialization of 'PathNameDeclCS'.
+The class 'completeoclcs_PathNameDeclCS' is a specialization of 'ModelElementCS'.
+The class 'completeoclcs_PathNameDeclCS' is a specialization of 'MorePivotable'.
+The class 'completeoclcs_PropertyContextDeclCS' is a specialization of 'FeatureContextDeclCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'completeoclcs_DefCS' and 'completeoclcs_ClassifierContextDeclCS'. From 'completeoclcs_DefCS', the role 'DefCS' has cardinality 0..*, and from 'completeoclcs_ClassifierContextDeclCS', the role 'owningClassifierContextDecl' has cardinality 0..*.
+An association connects 'completeoclcs_ClassifierContextDeclCS' and 'completeoclcs_ConstraintCS'. From 'completeoclcs_ClassifierContextDeclCS', the role 'completeoclcs_ClassifierContextDeclCS' has cardinality 0..*, and from 'completeoclcs_ConstraintCS', the role 'completeoclcs_ConstraintCS' has cardinality 0..*.
+An association connects 'completeoclcs_ClassifierContextDeclCS' and 'completeoclcs_Class'. From 'completeoclcs_ClassifierContextDeclCS', the role 'completeoclcs_ClassifierContextDeclCS3' has cardinality 0..*, and from 'completeoclcs_Class', the role 'completeoclcs_Class' has cardinality 0..*.
+An association connects 'completeoclcs_ContextDeclCS' and 'completeoclcs_CompleteOCLDocumentCS'. From 'completeoclcs_ContextDeclCS', the role 'completeoclcs_ContextDeclCS' has cardinality 0..*, and from 'completeoclcs_CompleteOCLDocumentCS', the role 'completeoclcs_CompleteOCLDocumentCS' has cardinality 0..*.
+An association connects 'completeoclcs_PackageDeclarationCS' and 'completeoclcs_CompleteOCLDocumentCS'. From 'completeoclcs_PackageDeclarationCS', the role 'completeoclcs_PackageDeclarationCS' has cardinality 0..*, and from 'completeoclcs_CompleteOCLDocumentCS', the role 'completeoclcs_CompleteOCLDocumentCS6' has cardinality 0..*.
+An association connects 'completeoclcs_DefCS' and 'completeoclcs_ExpSpecificationCS'. From 'completeoclcs_DefCS', the role 'completeoclcs_DefCS' has cardinality 0..*, and from 'completeoclcs_ExpSpecificationCS', the role 'completeoclcs_ExpSpecificationCS' has cardinality 0..*.
+An association connects 'completeoclcs_ClassifierContextDeclCS' and 'completeoclcs_DefCS'. From 'completeoclcs_ClassifierContextDeclCS', the role 'ClassifierContextDeclCS' has cardinality 0..*, and from 'completeoclcs_DefCS', the role 'ownedDefinitions' has cardinality 0..*.
+An association connects 'completeoclcs_DefOperationCS' and 'completeoclcs_ParameterCS'. From 'completeoclcs_DefOperationCS', the role 'completeoclcs_DefOperationCS' has cardinality 0..*, and from 'completeoclcs_ParameterCS', the role 'completeoclcs_ParameterCS' has cardinality 0..*.
+An association connects 'completeoclcs_TypedRefCS' and 'completeoclcs_FeatureContextDeclCS'. From 'completeoclcs_TypedRefCS', the role 'completeoclcs_TypedRefCS' has cardinality 0..*, and from 'completeoclcs_FeatureContextDeclCS', the role 'completeoclcs_FeatureContextDeclCS' has cardinality 0..*.
+An association connects 'completeoclcs_ExpSpecificationCS' and 'completeoclcs_OperationContextDeclCS'. From 'completeoclcs_ExpSpecificationCS', the role 'completeoclcs_ExpSpecificationCS12' has cardinality 0..*, and from 'completeoclcs_OperationContextDeclCS', the role 'completeoclcs_OperationContextDeclCS' has cardinality 0..*.
+An association connects 'completeoclcs_ParameterCS' and 'completeoclcs_OperationContextDeclCS'. From 'completeoclcs_ParameterCS', the role 'completeoclcs_ParameterCS15' has cardinality 0..*, and from 'completeoclcs_OperationContextDeclCS', the role 'completeoclcs_OperationContextDeclCS14' has cardinality 0..*.
+An association connects 'completeoclcs_ConstraintCS' and 'completeoclcs_OperationContextDeclCS'. From 'completeoclcs_ConstraintCS', the role 'completeoclcs_ConstraintCS18' has cardinality 0..*, and from 'completeoclcs_OperationContextDeclCS', the role 'completeoclcs_OperationContextDeclCS17' has cardinality 0..*.
+An association connects 'completeoclcs_OperationContextDeclCS' and 'completeoclcs_ConstraintCS'. From 'completeoclcs_OperationContextDeclCS', the role 'completeoclcs_OperationContextDeclCS20' has cardinality 0..*, and from 'completeoclcs_ConstraintCS', the role 'completeoclcs_ConstraintCS21' has cardinality 0..*.
+An association connects 'completeoclcs_VariableCS' and 'completeoclcs_OperationContextDeclCS'. From 'completeoclcs_VariableCS', the role 'completeoclcs_VariableCS' has cardinality 0..*, and from 'completeoclcs_OperationContextDeclCS', the role 'completeoclcs_OperationContextDeclCS23' has cardinality 0..*.
+An association connects 'completeoclcs_Operation' and 'completeoclcs_OperationContextDeclCS'. From 'completeoclcs_Operation', the role 'completeoclcs_Operation' has cardinality 0..*, and from 'completeoclcs_OperationContextDeclCS', the role 'completeoclcs_OperationContextDeclCS25' has cardinality 0..*.
+An association connects 'completeoclcs_PackageDeclarationCS' and 'completeoclcs_ContextDeclCS'. From 'completeoclcs_PackageDeclarationCS', the role 'completeoclcs_PackageDeclarationCS27' has cardinality 0..*, and from 'completeoclcs_ContextDeclCS', the role 'completeoclcs_ContextDeclCS28' has cardinality 0..*.
+An association connects 'completeoclcs_PackageDeclarationCS' and 'completeoclcs_ConstraintCS'. From 'completeoclcs_PackageDeclarationCS', the role 'completeoclcs_PackageDeclarationCS30' has cardinality 0..*, and from 'completeoclcs_ConstraintCS', the role 'completeoclcs_ConstraintCS31' has cardinality 0..*.
+An association connects 'completeoclcs_Package' and 'completeoclcs_PackageDeclarationCS'. From 'completeoclcs_Package', the role 'completeoclcs_Package' has cardinality 0..*, and from 'completeoclcs_PackageDeclarationCS', the role 'completeoclcs_PackageDeclarationCS33' has cardinality 0..*.
+An association connects 'completeoclcs_PathNameCS' and 'completeoclcs_PathNameDeclCS'. From 'completeoclcs_PathNameCS', the role 'completeoclcs_PathNameCS' has cardinality 0..*, and from 'completeoclcs_PathNameDeclCS', the role 'completeoclcs_PathNameDeclCS' has cardinality 0..*.
+An association connects 'completeoclcs_ExpSpecificationCS' and 'completeoclcs_PropertyContextDeclCS'. From 'completeoclcs_ExpSpecificationCS', the role 'completeoclcs_ExpSpecificationCS36' has cardinality 0..*, and from 'completeoclcs_PropertyContextDeclCS', the role 'completeoclcs_PropertyContextDeclCS' has cardinality 0..*.
+An association connects 'completeoclcs_PropertyContextDeclCS' and 'completeoclcs_ConstraintCS'. From 'completeoclcs_PropertyContextDeclCS', the role 'completeoclcs_PropertyContextDeclCS38' has cardinality 0..*, and from 'completeoclcs_ConstraintCS', the role 'completeoclcs_ConstraintCS39' has cardinality 0..*.
+An association connects 'completeoclcs_PropertyContextDeclCS' and 'completeoclcs_Property'. From 'completeoclcs_PropertyContextDeclCS', the role 'completeoclcs_PropertyContextDeclCS41' has cardinality 0..*, and from 'completeoclcs_Property', the role 'completeoclcs_Property' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/antoniogarmendia/gallery-graphical-dsls-emfStencil/crala-environment/plugins/org.miso.cloud.robotic/patterns/StateMachine.ecore

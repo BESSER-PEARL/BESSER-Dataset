@@ -1,0 +1,189 @@
+The domain model 'StateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'StateMachine_RDMElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_Train' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_SignalAllowedSpeedChanged' represents an important domain concept.
+It has one attribute: 'newAllowedSpeed', which is of type str.
+
+'TriggerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_State' represents an important domain concept.
+It has the following attributes: 'isActive', which is of type bool; 'isInitial', which is of type bool.
+
+'StateMachine_TrainCurrentHeadingSpeed' represents an important domain concept.
+It has one attribute: 'currentHeadingSpeed', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_TriggerExpression' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'StateMachine_Turnout' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_TurnoutDesiredDirection' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_Transition' represents an important domain concept.
+It has the following attributes: 'isEnabled', which is of type bool; 'isFireable', which is of type bool.
+
+'StateMachine_SignalCurrentAllowedSpeed' represents an important domain concept.
+It has one attribute: 'currentAllowedSpeed', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_ChangeTrainCurrentTrackElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_NextTrackElementIs' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_TurnoutHasDesiredDirection' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_TrainCurrentlyStandsOn' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_ChangeTurnoutDirection' represents an important domain concept.
+It has one attribute: 'newTurnoutDirection', which is of type str.
+
+'ActionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'GuardExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_ChangeTrainHeadingSpeed' represents an important domain concept.
+It has one attribute: 'newHeadingSpeed', which is of type str.
+
+'StateMachine_TrainHeadingSpeedChanged' represents an important domain concept.
+It has one attribute: 'newHeadingSpeed', which is of type str.
+
+'StateMachine_GuardExpression' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'StateMachine_ChangeSignalAllowedSpeed' represents an important domain concept.
+It has one attribute: 'newAllowedSpeed', which is of type str.
+
+'StateMachine_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_TurnoutDirectionChanged' represents an important domain concept.
+It has one attribute: 'newTurnoutDirection', which is of type str.
+
+'StateMachine_TrainTrackElementChanged' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_RouteElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_TurnoutCurrentDirection' represents an important domain concept.
+It has one attribute: 'currentTurnoutDirection', which is of type str.
+
+'Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StateMachine_ActionExpression' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'StateMachine_TrackElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_StateMachineBehavioralModel' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'StateMachine_StateMachine' is a specialization of 'NamedElement'.
+The class 'StateMachine_State' is a specialization of 'NamedElement'.
+The class 'StateMachine_Transition' is a specialization of 'NamedElement'.
+The class 'StateMachine_CompositeState' is a specialization of 'State'.
+The class 'StateMachine_Trigger' is a specialization of 'NamedElement'.
+The class 'StateMachine_Guard' is a specialization of 'NamedElement'.
+The class 'StateMachine_Action' is a specialization of 'NamedElement'.
+The class 'StateMachine_ChangeTrainHeadingSpeed' is a specialization of 'ActionExpression'.
+The class 'StateMachine_ChangeSignalAllowedSpeed' is a specialization of 'ActionExpression'.
+The class 'StateMachine_ChangeTurnoutDirection' is a specialization of 'ActionExpression'.
+The class 'StateMachine_ChangeTrainCurrentTrackElement' is a specialization of 'ActionExpression'.
+The class 'StateMachine_TrainCurrentHeadingSpeed' is a specialization of 'GuardExpression'.
+The class 'StateMachine_TrainCurrentlyStandsOn' is a specialization of 'GuardExpression'.
+The class 'StateMachine_TurnoutCurrentDirection' is a specialization of 'GuardExpression'.
+The class 'StateMachine_SignalCurrentAllowedSpeed' is a specialization of 'GuardExpression'.
+The class 'StateMachine_TrainHeadingSpeedChanged' is a specialization of 'TriggerExpression'.
+The class 'StateMachine_TrainTrackElementChanged' is a specialization of 'TriggerExpression'.
+The class 'StateMachine_SignalAllowedSpeedChanged' is a specialization of 'TriggerExpression'.
+The class 'StateMachine_TurnoutDirectionChanged' is a specialization of 'TriggerExpression'.
+The class 'StateMachine_NextTrackElementIs' is a specialization of 'GuardExpression'.
+The class 'StateMachine_TurnoutHasDesiredDirection' is a specialization of 'GuardExpression'.
+The class 'StateMachine_ActionExpression' is a specialization of 'Action'.
+The class 'StateMachine_GuardExpression' is a specialization of 'Guard'.
+The class 'StateMachine_TriggerExpression' is a specialization of 'Trigger'.
+
+Relationships between classes are modeled using associations.
+An association connects 'StateMachine_StateMachineBehavioralModel' and 'StateMachine_StateMachine'. From 'StateMachine_StateMachineBehavioralModel', the role 'StateMachine_StateMachineBehavioralModel' has cardinality 0..*, and from 'StateMachine_StateMachine', the role 'StateMachine_StateMachine' has cardinality 0..*.
+An association connects 'StateMachine_State' and 'StateMachine_StateMachine'. From 'StateMachine_State', the role 'StateMachine_State' has cardinality 0..*, and from 'StateMachine_StateMachine', the role 'StateMachine_StateMachine2' has cardinality 0..*.
+An association connects 'StateMachine_Transition' and 'StateMachine_StateMachine'. From 'StateMachine_Transition', the role 'StateMachine_Transition' has cardinality 0..*, and from 'StateMachine_StateMachine', the role 'StateMachine_StateMachine4' has cardinality 0..*.
+An association connects 'StateMachine_Trigger' and 'StateMachine_StateMachine'. From 'StateMachine_Trigger', the role 'StateMachine_Trigger' has cardinality 0..*, and from 'StateMachine_StateMachine', the role 'StateMachine_StateMachine6' has cardinality 0..*.
+An association connects 'StateMachine_StateMachine' and 'StateMachine_Guard'. From 'StateMachine_StateMachine', the role 'StateMachine_StateMachine8' has cardinality 0..*, and from 'StateMachine_Guard', the role 'StateMachine_Guard' has cardinality 0..*.
+An association connects 'StateMachine_Action' and 'StateMachine_StateMachine'. From 'StateMachine_Action', the role 'StateMachine_Action' has cardinality 0..*, and from 'StateMachine_StateMachine', the role 'StateMachine_StateMachine10' has cardinality 0..*.
+An association connects 'StateMachine_State' and 'StateMachine_StateMachine'. From 'StateMachine_State', the role 'StateMachine_State13' has cardinality 0..*, and from 'StateMachine_StateMachine', the role 'StateMachine_StateMachine12' has cardinality 0..*.
+An association connects 'StateMachine_RDMElement' and 'StateMachine_StateMachine'. From 'StateMachine_RDMElement', the role 'StateMachine_RDMElement' has cardinality 0..*, and from 'StateMachine_StateMachine', the role 'StateMachine_StateMachine15' has cardinality 0..*.
+An association connects 'StateMachine_State' and 'StateMachine_Transition'. From 'StateMachine_State', the role 'sourceState' has cardinality 0..*, and from 'StateMachine_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'StateMachine_Transition' and 'StateMachine_State'. From 'StateMachine_Transition', the role 'Transition18' has cardinality 0..*, and from 'StateMachine_State', the role 'targetState' has cardinality 0..*.
+An association connects 'StateMachine_State' and 'StateMachine_Transition'. From 'StateMachine_State', the role 'State' has cardinality 0..*, and from 'StateMachine_Transition', the role 'outgoingTransitions' has cardinality 0..*.
+An association connects 'StateMachine_Transition' and 'StateMachine_State'. From 'StateMachine_Transition', the role 'incomingTransitions' has cardinality 0..*, and from 'StateMachine_State', the role 'State21' has cardinality 0..*.
+An association connects 'StateMachine_Trigger' and 'StateMachine_Transition'. From 'StateMachine_Trigger', the role 'StateMachine_Trigger24' has cardinality 0..*, and from 'StateMachine_Transition', the role 'StateMachine_Transition23' has cardinality 0..*.
+An association connects 'StateMachine_Transition' and 'StateMachine_Guard'. From 'StateMachine_Transition', the role 'StateMachine_Transition26' has cardinality 0..*, and from 'StateMachine_Guard', the role 'StateMachine_Guard27' has cardinality 0..*.
+An association connects 'StateMachine_Transition' and 'StateMachine_Action'. From 'StateMachine_Transition', the role 'StateMachine_Transition29' has cardinality 0..*, and from 'StateMachine_Action', the role 'StateMachine_Action30' has cardinality 0..*.
+An association connects 'StateMachine_CompositeState' and 'StateMachine_StateMachine'. From 'StateMachine_CompositeState', the role 'StateMachine_CompositeState' has cardinality 0..*, and from 'StateMachine_StateMachine', the role 'StateMachine_StateMachine32' has cardinality 0..*.
+An association connects 'StateMachine_ChangeTrainHeadingSpeed' and 'StateMachine_Train'. From 'StateMachine_ChangeTrainHeadingSpeed', the role 'StateMachine_ChangeTrainHeadingSpeed' has cardinality 0..*, and from 'StateMachine_Train', the role 'StateMachine_Train' has cardinality 0..*.
+An association connects 'StateMachine_ChangeSignalAllowedSpeed' and 'StateMachine_Signal'. From 'StateMachine_ChangeSignalAllowedSpeed', the role 'StateMachine_ChangeSignalAllowedSpeed' has cardinality 0..*, and from 'StateMachine_Signal', the role 'StateMachine_Signal' has cardinality 0..*.
+An association connects 'StateMachine_Turnout' and 'StateMachine_ChangeTurnoutDirection'. From 'StateMachine_Turnout', the role 'StateMachine_Turnout' has cardinality 0..*, and from 'StateMachine_ChangeTurnoutDirection', the role 'StateMachine_ChangeTurnoutDirection' has cardinality 0..*.
+An association connects 'StateMachine_ChangeTrainCurrentTrackElement' and 'StateMachine_Train'. From 'StateMachine_ChangeTrainCurrentTrackElement', the role 'StateMachine_ChangeTrainCurrentTrackElement' has cardinality 0..*, and from 'StateMachine_Train', the role 'StateMachine_Train37' has cardinality 0..*.
+An association connects 'StateMachine_TrackElement' and 'StateMachine_ChangeTrainCurrentTrackElement'. From 'StateMachine_TrackElement', the role 'StateMachine_TrackElement' has cardinality 0..*, and from 'StateMachine_ChangeTrainCurrentTrackElement', the role 'StateMachine_ChangeTrainCurrentTrackElement39' has cardinality 0..*.
+An association connects 'StateMachine_Train' and 'StateMachine_TrainCurrentHeadingSpeed'. From 'StateMachine_Train', the role 'StateMachine_Train41' has cardinality 0..*, and from 'StateMachine_TrainCurrentHeadingSpeed', the role 'StateMachine_TrainCurrentHeadingSpeed' has cardinality 0..*.
+An association connects 'StateMachine_Train' and 'StateMachine_TrainCurrentlyStandsOn'. From 'StateMachine_Train', the role 'StateMachine_Train43' has cardinality 0..*, and from 'StateMachine_TrainCurrentlyStandsOn', the role 'StateMachine_TrainCurrentlyStandsOn' has cardinality 0..*.
+An association connects 'StateMachine_TrackElement' and 'StateMachine_TrainCurrentlyStandsOn'. From 'StateMachine_TrackElement', the role 'StateMachine_TrackElement46' has cardinality 0..*, and from 'StateMachine_TrainCurrentlyStandsOn', the role 'StateMachine_TrainCurrentlyStandsOn45' has cardinality 0..*.
+An association connects 'StateMachine_TurnoutCurrentDirection' and 'StateMachine_Turnout'. From 'StateMachine_TurnoutCurrentDirection', the role 'StateMachine_TurnoutCurrentDirection' has cardinality 0..*, and from 'StateMachine_Turnout', the role 'StateMachine_Turnout48' has cardinality 0..*.
+An association connects 'StateMachine_Signal' and 'StateMachine_SignalCurrentAllowedSpeed'. From 'StateMachine_Signal', the role 'StateMachine_Signal50' has cardinality 0..*, and from 'StateMachine_SignalCurrentAllowedSpeed', the role 'StateMachine_SignalCurrentAllowedSpeed' has cardinality 0..*.
+An association connects 'StateMachine_TrainHeadingSpeedChanged' and 'StateMachine_Train'. From 'StateMachine_TrainHeadingSpeedChanged', the role 'StateMachine_TrainHeadingSpeedChanged' has cardinality 0..*, and from 'StateMachine_Train', the role 'StateMachine_Train52' has cardinality 0..*.
+An association connects 'StateMachine_TrainTrackElementChanged' and 'StateMachine_Train'. From 'StateMachine_TrainTrackElementChanged', the role 'StateMachine_TrainTrackElementChanged' has cardinality 0..*, and from 'StateMachine_Train', the role 'StateMachine_Train54' has cardinality 0..*.
+An association connects 'StateMachine_TrackElement' and 'StateMachine_TrainTrackElementChanged'. From 'StateMachine_TrackElement', the role 'StateMachine_TrackElement57' has cardinality 0..*, and from 'StateMachine_TrainTrackElementChanged', the role 'StateMachine_TrainTrackElementChanged56' has cardinality 0..*.
+An association connects 'StateMachine_SignalAllowedSpeedChanged' and 'StateMachine_Signal'. From 'StateMachine_SignalAllowedSpeedChanged', the role 'StateMachine_SignalAllowedSpeedChanged' has cardinality 0..*, and from 'StateMachine_Signal', the role 'StateMachine_Signal59' has cardinality 0..*.
+An association connects 'StateMachine_TurnoutDirectionChanged' and 'StateMachine_Turnout'. From 'StateMachine_TurnoutDirectionChanged', the role 'StateMachine_TurnoutDirectionChanged' has cardinality 0..*, and from 'StateMachine_Turnout', the role 'StateMachine_Turnout61' has cardinality 0..*.
+An association connects 'StateMachine_NextTrackElementIs' and 'StateMachine_RouteElement'. From 'StateMachine_NextTrackElementIs', the role 'StateMachine_NextTrackElementIs' has cardinality 0..*, and from 'StateMachine_RouteElement', the role 'StateMachine_RouteElement' has cardinality 0..*.
+An association connects 'StateMachine_TrackElement' and 'StateMachine_NextTrackElementIs'. From 'StateMachine_TrackElement', the role 'StateMachine_TrackElement65' has cardinality 0..*, and from 'StateMachine_NextTrackElementIs', the role 'StateMachine_NextTrackElementIs64' has cardinality 0..*.
+An association connects 'StateMachine_Turnout' and 'StateMachine_TurnoutHasDesiredDirection'. From 'StateMachine_Turnout', the role 'StateMachine_Turnout67' has cardinality 0..*, and from 'StateMachine_TurnoutHasDesiredDirection', the role 'StateMachine_TurnoutHasDesiredDirection' has cardinality 0..*.
+An association connects 'StateMachine_TurnoutDesiredDirection' and 'StateMachine_TurnoutHasDesiredDirection'. From 'StateMachine_TurnoutDesiredDirection', the role 'StateMachine_TurnoutDesiredDirection' has cardinality 0..*, and from 'StateMachine_TurnoutHasDesiredDirection', the role 'StateMachine_TurnoutHasDesiredDirection69' has cardinality 0..*.

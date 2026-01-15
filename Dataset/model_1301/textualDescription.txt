@@ -1,0 +1,41 @@
+The domain model 'stateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'stateMachine_State' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'stateMachine_IDElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'stateMachine_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'IDElement' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Event' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateKind' defines the following possible values: 'INITIAL', 'DEFAULT', 'FINAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'stateMachine_StateMachine' is a specialization of 'IDElement'.
+The class 'stateMachine_State' is a specialization of 'IDElement'.
+The class 'stateMachine_Transition' is a specialization of 'IDElement'.
+The class 'stateMachine_Event' is a specialization of 'IDElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'stateMachine_State' and 'stateMachine_StateMachine'. From 'stateMachine_State', the role 'stateMachine_State' has cardinality 0..*, and from 'stateMachine_StateMachine', the role 'stateMachine_StateMachine' has cardinality 0..*.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_Transition'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine2' has cardinality 0..*, and from 'stateMachine_Transition', the role 'stateMachine_Transition' has cardinality 0..*.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_Event'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine4' has cardinality 0..*, and from 'stateMachine_Event', the role 'stateMachine_Event' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_Transition'. From 'stateMachine_State', the role 'source' has cardinality 0..*, and from 'stateMachine_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_Transition'. From 'stateMachine_State', the role 'target' has cardinality 0..*, and from 'stateMachine_Transition', the role 'Transition7' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_Transition'. From 'stateMachine_State', the role 'State' has cardinality 0..*, and from 'stateMachine_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_Transition'. From 'stateMachine_State', the role 'State10' has cardinality 0..*, and from 'stateMachine_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'stateMachine_Event' and 'stateMachine_Transition'. From 'stateMachine_Event', the role 'stateMachine_Event13' has cardinality 0..*, and from 'stateMachine_Transition', the role 'stateMachine_Transition12' has cardinality 0..*.
+An association connects 'stateMachine_Transition' and 'stateMachine_Event'. From 'stateMachine_Transition', the role 'stateMachine_Transition15' has cardinality 0..*, and from 'stateMachine_Event', the role 'stateMachine_Event16' has cardinality 0..*.

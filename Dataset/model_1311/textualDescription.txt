@@ -1,0 +1,32 @@
+The domain model 'StateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'StateMachine_Transition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'trigger', which is of type str; 'action', which is of type str; 'id', which is of type int.
+
+'StateMachine_WashingMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_NamedState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StateMachine_UnNamedState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine_State' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'StateMachine_NamedState' is a specialization of 'State'.
+The class 'StateMachine_UnNamedState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'StateMachine_Transition' and 'StateMachine_State'. From 'StateMachine_Transition', the role 'StateMachine_Transition' has cardinality 0..*, and from 'StateMachine_State', the role 'StateMachine_State' has cardinality 0..*.
+An association connects 'StateMachine_State' and 'StateMachine_Transition'. From 'StateMachine_State', the role 'StateMachine_State3' has cardinality 0..*, and from 'StateMachine_Transition', the role 'StateMachine_Transition2' has cardinality 0..*.
+An association connects 'StateMachine_State' and 'StateMachine_Transition'. From 'StateMachine_State', the role 'StateMachine_State6' has cardinality 0..*, and from 'StateMachine_Transition', the role 'StateMachine_Transition5' has cardinality 0..*.
+An association connects 'StateMachine_WashingMachine' and 'StateMachine_State'. From 'StateMachine_WashingMachine', the role 'StateMachine_WashingMachine' has cardinality 0..*, and from 'StateMachine_State', the role 'StateMachine_State8' has cardinality 0..*.
+An association connects 'StateMachine_Transition' and 'StateMachine_WashingMachine'. From 'StateMachine_Transition', the role 'StateMachine_Transition11' has cardinality 0..*, and from 'StateMachine_WashingMachine', the role 'StateMachine_WashingMachine10' has cardinality 0..*.

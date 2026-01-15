@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/patrickneubauer/UoY-MODE-XTEXT/State Machine DSL Projects/uk.ac.york.cs.statemachines/model/statemachines.ecore

@@ -1,0 +1,42 @@
+The domain model 'StateMachineUnnamed' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'StateMachineUnnamed_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineUnnamed_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineUnnamed_StateVertex' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StateMachineUnnamed_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StateMachineUnnamed_SimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'StateVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineUnnamed_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineUnnamed_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'StateMachineUnnamed_InitialState' is a specialization of 'StateVertex'.
+The class 'StateMachineUnnamed_SimpleState' is a specialization of 'StateVertex'.
+The class 'StateMachineUnnamed_FinalState' is a specialization of 'StateVertex'.
+
+Relationships between classes are modeled using associations.
+An association connects 'StateMachineUnnamed_StateVertex' and 'StateMachineUnnamed_StateMachine'. From 'StateMachineUnnamed_StateVertex', the role 'StateMachineUnnamed_StateVertex' has cardinality 0..*, and from 'StateMachineUnnamed_StateMachine', the role 'StateMachineUnnamed_StateMachine' has cardinality 0..*.
+An association connects 'StateMachineUnnamed_StateMachine' and 'StateMachineUnnamed_Transition'. From 'StateMachineUnnamed_StateMachine', the role 'StateMachineUnnamed_StateMachine2' has cardinality 0..*, and from 'StateMachineUnnamed_Transition', the role 'StateMachineUnnamed_Transition' has cardinality 0..*.
+An association connects 'StateMachineUnnamed_StateVertex' and 'StateMachineUnnamed_Transition'. From 'StateMachineUnnamed_StateVertex', the role 'source' has cardinality 0..*, and from 'StateMachineUnnamed_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'StateMachineUnnamed_StateVertex' and 'StateMachineUnnamed_Transition'. From 'StateMachineUnnamed_StateVertex', the role 'target' has cardinality 0..*, and from 'StateMachineUnnamed_Transition', the role 'Transition5' has cardinality 0..*.
+An association connects 'StateMachineUnnamed_StateVertex' and 'StateMachineUnnamed_StateVertex'. From 'StateMachineUnnamed_StateVertex', the role 'StateMachineUnnamed_StateVertex6' has cardinality 0..*, and from 'StateMachineUnnamed_StateVertex', the role 'StateMachineUnnamed_StateVertex8' has cardinality 0..*.
+An association connects 'StateMachineUnnamed_StateVertex' and 'StateMachineUnnamed_Transition'. From 'StateMachineUnnamed_StateVertex', the role 'StateVertex' has cardinality 0..*, and from 'StateMachineUnnamed_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'StateMachineUnnamed_StateVertex' and 'StateMachineUnnamed_Transition'. From 'StateMachineUnnamed_StateVertex', the role 'StateVertex11' has cardinality 0..*, and from 'StateMachineUnnamed_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'StateMachineUnnamed_Transition' and 'StateMachineUnnamed_Event'. From 'StateMachineUnnamed_Transition', the role 'StateMachineUnnamed_Transition13' has cardinality 0..*, and from 'StateMachineUnnamed_Event', the role 'StateMachineUnnamed_Event' has cardinality 0..*.

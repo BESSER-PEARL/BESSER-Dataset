@@ -1,0 +1,67 @@
+The domain model 'statemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'statemachine_Transition' represents an important domain concept.
+It has one attribute: 'guard', which is of type str.
+
+'StateMachineDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'ObeoDSMObject' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_State' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'Behaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_StateMachineDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statemachine_Region' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachine_NamedElement' is a specialization of 'ObeoDSMObject'.
+The class 'statemachine_StateMachine' is a specialization of 'StateMachineDescription'.
+The class 'statemachine_StateMachine' is a specialization of 'Behaviour'.
+The class 'statemachine_State' is a specialization of 'AbstractState'.
+The class 'statemachine_State' is a specialization of 'NamedElement'.
+The class 'statemachine_StateMachineDescription' is a specialization of 'NamedElement'.
+The class 'statemachine_Region' is a specialization of 'StateMachineDescription'.
+The class 'statemachine_AbstractState' is a specialization of 'ObeoDSMObject'.
+The class 'statemachine_Transition' is a specialization of 'ObeoDSMObject'.
+The class 'statemachine_InitialState' is a specialization of 'AbstractState'.
+The class 'statemachine_FinalState' is a specialization of 'AbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_Region' and 'statemachine_StateMachine'. From 'statemachine_Region', the role 'statemachine_Region' has cardinality 0..*, and from 'statemachine_StateMachine', the role 'statemachine_StateMachine' has cardinality 0..*.
+An association connects 'statemachine_AbstractState' and 'statemachine_StateMachineDescription'. From 'statemachine_AbstractState', the role 'statemachine_AbstractState' has cardinality 0..*, and from 'statemachine_StateMachineDescription', the role 'statemachine_StateMachineDescription' has cardinality 0..*.
+An association connects 'statemachine_StateMachineDescription' and 'statemachine_Transition'. From 'statemachine_StateMachineDescription', the role 'statemachine_StateMachineDescription3' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_AbstractState'. From 'statemachine_Transition', the role 'Transition' has cardinality 0..*, and from 'statemachine_AbstractState', the role 'to' has cardinality 0..*.
+An association connects 'statemachine_AbstractState' and 'statemachine_Transition'. From 'statemachine_AbstractState', the role 'from' has cardinality 0..*, and from 'statemachine_Transition', the role 'Transition6' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_AbstractState'. From 'statemachine_Transition', the role 'outcomingTransitions' has cardinality 0..*, and from 'statemachine_AbstractState', the role 'AbstractState' has cardinality 0..*.
+An association connects 'statemachine_AbstractState' and 'statemachine_Transition'. From 'statemachine_AbstractState', the role 'AbstractState9' has cardinality 0..*, and from 'statemachine_Transition', the role 'incomingTransitions' has cardinality 0..*.

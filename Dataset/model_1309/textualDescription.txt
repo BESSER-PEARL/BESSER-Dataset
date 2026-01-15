@@ -1,0 +1,160 @@
+The domain model 'stateMachine' describes the core structural elements and their relationships within the system.
+
+The model defines 38 main class(es).
+
+'stateMachine_Managed' represents an important domain concept.
+It has the following attributes: 'code', which is of type int; 'success', which is of type bool.
+
+'stateMachine_Bye' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_CollectTimeout' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Recorderd' represents an important domain concept.
+It has one attribute: 'recordId', which is of type str.
+
+'stateMachine_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Played' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Cancel' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Otherwise' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_State' represents an important domain concept.
+It has one attribute: 'nombre', which is of type str.
+
+'Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Timer' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'IVREvent' represents an important domain concept.
+It does not declare any attributes.
+
+'IvrAction' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Terminate' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_IVREvent' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Play' represents an important domain concept.
+It has the following attributes: 'mediaURI', which is of type str; 'baseURL', which is of type str.
+
+'stateMachine_Collected' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Properties' represents an important domain concept.
+It has the following attributes: 'scscfProtocol', which is of type str; 'applicationAddress', which is of type str; 'mediaHost', which is of type str; 'setupConference', which is of type bool; 'mediaToAddr', which is of type str; 'applicationServerHost', which is of type str; 'recordPath', which is of type str; 'applicationServerPort', which is of type int; 'applicationServerProtocol', which is of type str; 'scscfHost', which is of type str; 'mediaPort', which is of type int; 'scscfUser', which is of type str; 'mediaProtocol', which is of type str; 'mediaFromAddr', which is of type str; 'mediaURI', which is of type str; 'scscfPort', which is of type int.
+
+'stateMachine_Call' represents an important domain concept.
+It has the following attributes: 'from', which is of type str; 'to', which is of type str.
+
+'stateMachine_Terminated' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_NoneEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Key' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'stateMachine_IvrAction' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_SMS' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'from', which is of type str; 'to', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_SendSms' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_SMSReceived' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_StateMachine' represents an important domain concept.
+It has one attribute: 'nombre', which is of type str.
+
+'stateMachine_PickUp' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_Init' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_SetTimer' represents an important domain concept.
+It has one attribute: 'millis', which is of type float.
+
+'stateMachine_Action' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'stateMachine_InitialState' is a specialization of 'State'.
+The class 'stateMachine_FinalState' is a specialization of 'State'.
+The class 'stateMachine_CompositeState' is a specialization of 'State'.
+The class 'stateMachine_IvrAction' is a specialization of 'Action'.
+The class 'stateMachine_Play' is a specialization of 'IvrAction'.
+The class 'stateMachine_Terminate' is a specialization of 'IvrAction'.
+The class 'stateMachine_SendSms' is a specialization of 'Action'.
+The class 'stateMachine_SetTimer' is a specialization of 'Action'.
+The class 'stateMachine_IVREvent' is a specialization of 'Transition'.
+The class 'stateMachine_Bye' is a specialization of 'IVREvent'.
+The class 'stateMachine_Call' is a specialization of 'IVREvent'.
+The class 'stateMachine_PickUp' is a specialization of 'IVREvent'.
+The class 'stateMachine_Played' is a specialization of 'IVREvent'.
+The class 'stateMachine_Recorderd' is a specialization of 'IVREvent'.
+The class 'stateMachine_Terminated' is a specialization of 'IVREvent'.
+The class 'stateMachine_Init' is a specialization of 'IVREvent'.
+The class 'stateMachine_Cancel' is a specialization of 'IVREvent'.
+The class 'stateMachine_CollectTimeout' is a specialization of 'IVREvent'.
+The class 'stateMachine_Managed' is a specialization of 'IVREvent'.
+The class 'stateMachine_NoneEvent' is a specialization of 'Transition'.
+The class 'stateMachine_SMSReceived' is a specialization of 'Transition'.
+The class 'stateMachine_Timer' is a specialization of 'Transition'.
+The class 'stateMachine_Collected' is a specialization of 'IVREvent'.
+The class 'stateMachine_Key' is a specialization of 'Branch'.
+The class 'stateMachine_Otherwise' is a specialization of 'Branch'.
+
+Relationships between classes are modeled using associations.
+An association connects 'stateMachine_State' and 'stateMachine_StateMachine'. From 'stateMachine_State', the role 'stateMachine_State' has cardinality 0..*, and from 'stateMachine_StateMachine', the role 'stateMachine_StateMachine' has cardinality 0..*.
+An association connects 'stateMachine_StateMachine' and 'stateMachine_Properties'. From 'stateMachine_StateMachine', the role 'stateMachine_StateMachine2' has cardinality 0..*, and from 'stateMachine_Properties', the role 'stateMachine_Properties' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_Transition'. From 'stateMachine_State', the role 'src' has cardinality 0..*, and from 'stateMachine_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_State'. From 'stateMachine_State', the role 'parent' has cardinality 0..*, and from 'stateMachine_State', the role 'State' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_State'. From 'stateMachine_State', the role 'State8' has cardinality 0..*, and from 'stateMachine_State', the role 'children' has cardinality 0..*.
+An association connects 'stateMachine_CompositeState' and 'stateMachine_StateMachine'. From 'stateMachine_CompositeState', the role 'stateMachine_CompositeState' has cardinality 0..*, and from 'stateMachine_StateMachine', the role 'stateMachine_StateMachine10' has cardinality 0..*.
+An association connects 'stateMachine_SendSms' and 'stateMachine_SMS'. From 'stateMachine_SendSms', the role 'stateMachine_SendSms' has cardinality 0..*, and from 'stateMachine_SMS', the role 'stateMachine_SMS' has cardinality 0..*.
+An association connects 'stateMachine_Transition' and 'stateMachine_Action'. From 'stateMachine_Transition', the role 'stateMachine_Transition' has cardinality 0..*, and from 'stateMachine_Action', the role 'stateMachine_Action' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_Transition'. From 'stateMachine_State', the role 'State14' has cardinality 0..*, and from 'stateMachine_Transition', the role 'outs' has cardinality 0..*.
+An association connects 'stateMachine_Transition' and 'stateMachine_State'. From 'stateMachine_Transition', the role 'stateMachine_Transition16' has cardinality 0..*, and from 'stateMachine_State', the role 'stateMachine_State17' has cardinality 0..*.
+An association connects 'stateMachine_SMS' and 'stateMachine_SMSReceived'. From 'stateMachine_SMS', the role 'stateMachine_SMS19' has cardinality 0..*, and from 'stateMachine_SMSReceived', the role 'stateMachine_SMSReceived' has cardinality 0..*.
+An association connects 'stateMachine_Branch' and 'stateMachine_Collected'. From 'stateMachine_Branch', the role 'stateMachine_Branch' has cardinality 0..*, and from 'stateMachine_Collected', the role 'stateMachine_Collected' has cardinality 0..*.
+An association connects 'stateMachine_State' and 'stateMachine_Branch'. From 'stateMachine_State', the role 'stateMachine_State23' has cardinality 0..*, and from 'stateMachine_Branch', the role 'stateMachine_Branch22' has cardinality 0..*.
+An association connects 'stateMachine_Branch' and 'stateMachine_Action'. From 'stateMachine_Branch', the role 'stateMachine_Branch25' has cardinality 0..*, and from 'stateMachine_Action', the role 'stateMachine_Action26' has cardinality 0..*.

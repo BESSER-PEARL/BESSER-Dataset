@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jalmenUAL/ATL-TESTING/ATL-machine-BaseX/EXAMPLES/StateMachineCaseStudy/metamodels/SimpleHierarchicalStateMachine.ecore

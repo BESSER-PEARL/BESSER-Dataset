@@ -1,0 +1,21 @@
+The domain model 'statemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'statemachine_Set' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_State' represents an important domain concept.
+It has the following attributes: 'terminal', which is of type bool; 'initial', which is of type bool.
+
+'statemachine_Transition' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'statemachine_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_State' and 'statemachine_StateMachine'. From 'statemachine_State', the role 'statemachine_State' has cardinality 0..*, and from 'statemachine_StateMachine', the role 'statemachine_StateMachine' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_StateMachine'. From 'statemachine_Transition', the role 'statemachine_Transition' has cardinality 0..*, and from 'statemachine_StateMachine', the role 'statemachine_StateMachine2' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_State'. From 'statemachine_Transition', the role 'statemachine_Transition4' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State5' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_Transition'. From 'statemachine_State', the role 'statemachine_State8' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition7' has cardinality 0..*.

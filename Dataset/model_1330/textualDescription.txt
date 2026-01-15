@@ -1,0 +1,36 @@
+The domain model 'states' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'states_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'states_ActionExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'states_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'states_State' represents an important domain concept.
+It does not declare any attributes.
+
+'states_StateSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'states_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'states_Event' represents an important domain concept.
+It has one attribute: 'qualifiedName', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'states_State' and 'states_StateSystem'. From 'states_State', the role 'states_State' has cardinality 0..*, and from 'states_StateSystem', the role 'states_StateSystem' has cardinality 0..*.
+An association connects 'states_Transition' and 'states_StateSystem'. From 'states_Transition', the role 'states_Transition' has cardinality 0..*, and from 'states_StateSystem', the role 'states_StateSystem2' has cardinality 0..*.
+An association connects 'states_Trace' and 'states_StateSystem'. From 'states_Trace', the role 'states_Trace' has cardinality 0..*, and from 'states_StateSystem', the role 'states_StateSystem4' has cardinality 0..*.
+An association connects 'states_State' and 'states_Transition'. From 'states_State', the role 'source' has cardinality 0..*, and from 'states_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'states_Transition' and 'states_State'. From 'states_Transition', the role 'Transition7' has cardinality 0..*, and from 'states_State', the role 'target' has cardinality 0..*.
+An association connects 'states_State' and 'states_EObject'. From 'states_State', the role 'states_State9' has cardinality 0..*, and from 'states_EObject', the role 'states_EObject' has cardinality 0..*.
+An association connects 'states_State' and 'states_Transition'. From 'states_State', the role 'State' has cardinality 0..*, and from 'states_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'states_State' and 'states_Transition'. From 'states_State', the role 'State12' has cardinality 0..*, and from 'states_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'states_Transition' and 'states_Event'. From 'states_Transition', the role 'states_Transition14' has cardinality 0..*, and from 'states_Event', the role 'states_Event' has cardinality 0..*.
+An association connects 'states_Event' and 'states_ActionExecution'. From 'states_Event', the role 'states_Event16' has cardinality 0..*, and from 'states_ActionExecution', the role 'states_ActionExecution' has cardinality 0..*.

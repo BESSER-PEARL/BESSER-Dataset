@@ -1,0 +1,121 @@
+The domain model 'miniOCL' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'miniOCL_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_PackageCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'miniOCL_OperationCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_NameExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_ClassCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'miniOCL_IntLiteralExpCS' represents an important domain concept.
+It has one attribute: 'intSymbol', which is of type int.
+
+'miniOCL_RoundedBracketClauseCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_ParameterCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'miniOCL_StringLiteralExpCS' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'miniOCL_RootCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_InvariantCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_PathElementCS' represents an important domain concept.
+It has one attribute: 'pathName', which is of type str.
+
+'miniOCL_ConstraintCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_LogicExpCS' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_PrimaryExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_PropertyCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'LogicExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_BooleanLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_BooleanExpCS' represents an important domain concept.
+It has one attribute: 'boolSymbol', which is of type bool.
+
+'BooleanLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'miniOCL_ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'miniOCL_LogicExpCS' is a specialization of 'ExpCS'.
+The class 'miniOCL_CallExpCS' is a specialization of 'LogicExpCS'.
+The class 'miniOCL_PrimaryExpCS' is a specialization of 'CallExpCS'.
+The class 'miniOCL_NameExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'miniOCL_LiteralExpCS' is a specialization of 'PrimaryExpCS'.
+The class 'miniOCL_IntLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'miniOCL_StringLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'miniOCL_BooleanLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'miniOCL_BooleanExpCS' is a specialization of 'BooleanLiteralExpCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'miniOCL_PackageCS' and 'miniOCL_RootCS'. From 'miniOCL_PackageCS', the role 'miniOCL_PackageCS' has cardinality 0..*, and from 'miniOCL_RootCS', the role 'miniOCL_RootCS' has cardinality 0..*.
+An association connects 'miniOCL_ConstraintCS' and 'miniOCL_RootCS'. From 'miniOCL_ConstraintCS', the role 'miniOCL_ConstraintCS' has cardinality 0..*, and from 'miniOCL_RootCS', the role 'miniOCL_RootCS2' has cardinality 0..*.
+An association connects 'miniOCL_PackageCS' and 'miniOCL_PackageCS'. From 'miniOCL_PackageCS', the role 'miniOCL_PackageCS5' has cardinality 0..*, and from 'miniOCL_PackageCS', the role 'miniOCL_PackageCS3' has cardinality 0..*.
+An association connects 'miniOCL_ClassCS' and 'miniOCL_PackageCS'. From 'miniOCL_ClassCS', the role 'miniOCL_ClassCS' has cardinality 0..*, and from 'miniOCL_PackageCS', the role 'miniOCL_PackageCS7' has cardinality 0..*.
+An association connects 'miniOCL_PathNameCS' and 'miniOCL_ClassCS'. From 'miniOCL_PathNameCS', the role 'miniOCL_PathNameCS' has cardinality 0..*, and from 'miniOCL_ClassCS', the role 'miniOCL_ClassCS9' has cardinality 0..*.
+An association connects 'miniOCL_ClassCS' and 'miniOCL_PropertyCS'. From 'miniOCL_ClassCS', the role 'miniOCL_ClassCS11' has cardinality 0..*, and from 'miniOCL_PropertyCS', the role 'miniOCL_PropertyCS' has cardinality 0..*.
+An association connects 'miniOCL_OperationCS' and 'miniOCL_ClassCS'. From 'miniOCL_OperationCS', the role 'miniOCL_OperationCS' has cardinality 0..*, and from 'miniOCL_ClassCS', the role 'miniOCL_ClassCS13' has cardinality 0..*.
+An association connects 'miniOCL_PropertyCS' and 'miniOCL_PathNameCS'. From 'miniOCL_PropertyCS', the role 'miniOCL_PropertyCS15' has cardinality 0..*, and from 'miniOCL_PathNameCS', the role 'miniOCL_PathNameCS16' has cardinality 0..*.
+An association connects 'miniOCL_ParameterCS' and 'miniOCL_OperationCS'. From 'miniOCL_ParameterCS', the role 'miniOCL_ParameterCS' has cardinality 0..*, and from 'miniOCL_OperationCS', the role 'miniOCL_OperationCS18' has cardinality 0..*.
+An association connects 'miniOCL_OperationCS' and 'miniOCL_PathNameCS'. From 'miniOCL_OperationCS', the role 'miniOCL_OperationCS20' has cardinality 0..*, and from 'miniOCL_PathNameCS', the role 'miniOCL_PathNameCS21' has cardinality 0..*.
+An association connects 'miniOCL_ExpCS' and 'miniOCL_OperationCS'. From 'miniOCL_ExpCS', the role 'miniOCL_ExpCS' has cardinality 0..*, and from 'miniOCL_OperationCS', the role 'miniOCL_OperationCS23' has cardinality 0..*.
+An association connects 'miniOCL_PathNameCS' and 'miniOCL_ParameterCS'. From 'miniOCL_PathNameCS', the role 'miniOCL_PathNameCS26' has cardinality 0..*, and from 'miniOCL_ParameterCS', the role 'miniOCL_ParameterCS25' has cardinality 0..*.
+An association connects 'miniOCL_PathNameCS' and 'miniOCL_ConstraintCS'. From 'miniOCL_PathNameCS', the role 'miniOCL_PathNameCS29' has cardinality 0..*, and from 'miniOCL_ConstraintCS', the role 'miniOCL_ConstraintCS28' has cardinality 0..*.
+An association connects 'miniOCL_ConstraintCS' and 'miniOCL_InvariantCS'. From 'miniOCL_ConstraintCS', the role 'miniOCL_ConstraintCS31' has cardinality 0..*, and from 'miniOCL_InvariantCS', the role 'miniOCL_InvariantCS' has cardinality 0..*.
+An association connects 'miniOCL_InvariantCS' and 'miniOCL_ExpCS'. From 'miniOCL_InvariantCS', the role 'miniOCL_InvariantCS33' has cardinality 0..*, and from 'miniOCL_ExpCS', the role 'miniOCL_ExpCS34' has cardinality 0..*.
+An association connects 'miniOCL_LogicExpCS' and 'miniOCL_LogicExpCS'. From 'miniOCL_LogicExpCS', the role 'miniOCL_LogicExpCS35' has cardinality 0..*, and from 'miniOCL_LogicExpCS', the role 'miniOCL_LogicExpCS' has cardinality 0..*.
+An association connects 'miniOCL_CallExpCS' and 'miniOCL_LogicExpCS'. From 'miniOCL_CallExpCS', the role 'miniOCL_CallExpCS' has cardinality 0..*, and from 'miniOCL_LogicExpCS', the role 'miniOCL_LogicExpCS38' has cardinality 0..*.
+An association connects 'miniOCL_CallExpCS' and 'miniOCL_CallExpCS'. From 'miniOCL_CallExpCS', the role 'miniOCL_CallExpCS39' has cardinality 0..*, and from 'miniOCL_CallExpCS', the role 'miniOCL_CallExpCS41' has cardinality 0..*.
+An association connects 'miniOCL_CallExpCS' and 'miniOCL_NameExpCS'. From 'miniOCL_CallExpCS', the role 'miniOCL_CallExpCS43' has cardinality 0..*, and from 'miniOCL_NameExpCS', the role 'miniOCL_NameExpCS' has cardinality 0..*.
+An association connects 'miniOCL_NameExpCS' and 'miniOCL_PathNameCS'. From 'miniOCL_NameExpCS', the role 'miniOCL_NameExpCS45' has cardinality 0..*, and from 'miniOCL_PathNameCS', the role 'miniOCL_PathNameCS46' has cardinality 0..*.
+An association connects 'miniOCL_NameExpCS' and 'miniOCL_RoundedBracketClauseCS'. From 'miniOCL_NameExpCS', the role 'miniOCL_NameExpCS48' has cardinality 0..*, and from 'miniOCL_RoundedBracketClauseCS', the role 'miniOCL_RoundedBracketClauseCS' has cardinality 0..*.
+An association connects 'miniOCL_CallExpCS' and 'miniOCL_NameExpCS'. From 'miniOCL_CallExpCS', the role 'miniOCL_CallExpCS51' has cardinality 0..*, and from 'miniOCL_NameExpCS', the role 'miniOCL_NameExpCS50' has cardinality 0..*.
+An association connects 'miniOCL_RoundedBracketClauseCS' and 'miniOCL_ExpCS'. From 'miniOCL_RoundedBracketClauseCS', the role 'miniOCL_RoundedBracketClauseCS53' has cardinality 0..*, and from 'miniOCL_ExpCS', the role 'miniOCL_ExpCS54' has cardinality 0..*.
+An association connects 'miniOCL_PathNameCS' and 'miniOCL_PathElementCS'. From 'miniOCL_PathNameCS', the role 'miniOCL_PathNameCS56' has cardinality 0..*, and from 'miniOCL_PathElementCS', the role 'miniOCL_PathElementCS' has cardinality 0..*.

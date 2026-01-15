@@ -1,0 +1,118 @@
+The domain model 'statemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'statemachine_GStopState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_GStatemachine' represents an important domain concept.
+It has one attribute: 'package', which is of type str.
+
+'statemachine_GCompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'GState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_ConstantValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'statemachine_LongValue' represents an important domain concept.
+It does not declare any attributes.
+
+'GAbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Call' represents an important domain concept.
+It has one attribute: 'actionId', which is of type str.
+
+'statemachine_GetParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_GStartState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_NumberValue' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_GAbstractAction' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'statemachine_CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_GAbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_BooleanValue' represents an important domain concept.
+It does not declare any attributes.
+
+'GCompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_StringValue' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Transition' represents an important domain concept.
+It has one attribute: 'preserveTimers', which is of type bool.
+
+'statemachine_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstantValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberValue' represents an important domain concept.
+It does not declare any attributes.
+
+'GAbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_GState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Named' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ActionKind' defines the following possible values: 'EXIT', 'ENTRY'.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachine_GState' is a specialization of 'Named'.
+The class 'statemachine_GState' is a specialization of 'GAbstractState'.
+The class 'statemachine_Transition' is a specialization of 'Named'.
+The class 'statemachine_GCompositeState' is a specialization of 'GState'.
+The class 'statemachine_GStartState' is a specialization of 'GAbstractState'.
+The class 'statemachine_GStopState' is a specialization of 'GAbstractState'.
+The class 'statemachine_GStatemachine' is a specialization of 'GCompositeState'.
+The class 'statemachine_CallAction' is a specialization of 'GAbstractAction'.
+The class 'statemachine_Parameter' is a specialization of 'Named'.
+The class 'statemachine_GetParameter' is a specialization of 'Value'.
+The class 'statemachine_Call' is a specialization of 'Value'.
+The class 'statemachine_ConstantValue' is a specialization of 'Value'.
+The class 'statemachine_StringValue' is a specialization of 'ConstantValue'.
+The class 'statemachine_NumberValue' is a specialization of 'ConstantValue'.
+The class 'statemachine_BooleanValue' is a specialization of 'ConstantValue'.
+The class 'statemachine_LongValue' is a specialization of 'NumberValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_GAbstractAction' and 'statemachine_GAbstractState'. From 'statemachine_GAbstractAction', the role 'statemachine_GAbstractAction' has cardinality 0..*, and from 'statemachine_GAbstractState', the role 'statemachine_GAbstractState' has cardinality 0..*.
+An association connects 'statemachine_GAbstractState' and 'statemachine_Transition'. From 'statemachine_GAbstractState', the role 'statemachine_GAbstractState2' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition' has cardinality 0..*.
+An association connects 'statemachine_GAbstractState' and 'statemachine_Transition'. From 'statemachine_GAbstractState', the role 'statemachine_GAbstractState5' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition4' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Value'. From 'statemachine_Transition', the role 'statemachine_Transition7' has cardinality 0..*, and from 'statemachine_Value', the role 'statemachine_Value' has cardinality 0..*.
+An association connects 'statemachine_Value' and 'statemachine_Transition'. From 'statemachine_Value', the role 'statemachine_Value10' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition9' has cardinality 0..*.
+An association connects 'statemachine_Value' and 'statemachine_Transition'. From 'statemachine_Value', the role 'statemachine_Value13' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition12' has cardinality 0..*.
+An association connects 'statemachine_GCompositeState' and 'statemachine_GAbstractState'. From 'statemachine_GCompositeState', the role 'statemachine_GCompositeState' has cardinality 0..*, and from 'statemachine_GAbstractState', the role 'statemachine_GAbstractState15' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_GCompositeState'. From 'statemachine_Transition', the role 'statemachine_Transition18' has cardinality 0..*, and from 'statemachine_GCompositeState', the role 'statemachine_GCompositeState17' has cardinality 0..*.
+An association connects 'statemachine_GStatemachine' and 'statemachine_Parameter'. From 'statemachine_GStatemachine', the role 'statemachine_GStatemachine' has cardinality 0..*, and from 'statemachine_Parameter', the role 'statemachine_Parameter' has cardinality 0..*.
+An association connects 'statemachine_Call' and 'statemachine_CallAction'. From 'statemachine_Call', the role 'statemachine_Call' has cardinality 0..*, and from 'statemachine_CallAction', the role 'statemachine_CallAction' has cardinality 0..*.
+An association connects 'statemachine_Parameter' and 'statemachine_GetParameter'. From 'statemachine_Parameter', the role 'statemachine_Parameter22' has cardinality 0..*, and from 'statemachine_GetParameter', the role 'statemachine_GetParameter' has cardinality 0..*.

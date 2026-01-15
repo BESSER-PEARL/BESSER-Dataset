@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lollix91/ATLCsForge/myAtlProject/org.xtext.example.myatl.parent/org.xtext.example.myatl/model/generated/MyAtl.ecore

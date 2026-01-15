@@ -1,0 +1,579 @@
+The domain model 'qvtoperational' describes the core structural elements and their relationships within the system.
+
+The model defines 124 main class(es).
+
+'qvtoperational_cst_MappingDeclarationCS' represents an important domain concept.
+It has the following attributes: 'isQuery', which is of type bool; 'qualifiers', which is of type str.
+
+'qvtoperational_cst_ConstructorCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_SwitchAltExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_MappingInitCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ImperativeLoopExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_UnitCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_WhileExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleUsageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_DirectionKindCS' represents an important domain concept.
+It has one attribute: 'directionKind', which is of type str.
+
+'OperationCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_MappingRuleCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TransformationRefineCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ResolveInExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchAltExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ConfigPropertyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_VariableInitializationCS' represents an important domain concept.
+It has one attribute: 'withResult', which is of type bool.
+
+'qvtoperational_cst_RenameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ForExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ResolveExpCS' represents an important domain concept.
+It has the following attributes: 'isInverse', which is of type bool; 'isDeferred', which is of type bool; 'one', which is of type bool.
+
+'qvtoperational_cst_ContextualPropertyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ListTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_CompleteSignatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ClassifierPropertyCS' represents an important domain concept.
+It has one attribute: 'isOrdered', which is of type bool.
+
+'qvtoperational_cst_ElementWithBody' represents an important domain concept.
+It has the following attributes: 'bodyStartLocation', which is of type int; 'bodyEndLocation', which is of type int.
+
+'MappingMethodCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_BreakExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ResolveOpArgsExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_InstantiationExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ModuleRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingModuleCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_AssertExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ModelTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ResolveExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_MultiplicityDefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ScopedNameCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SimpleSignatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalPropertyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_MappingModuleCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_MappingSectionsCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_DictionaryTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OppositePropertyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectionKindCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ImportCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_BlockExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_PackageRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_TransformationRefineCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ModuleKindCS' represents an important domain concept.
+It has one attribute: 'moduleKind', which is of type str.
+
+'ModuleKindCS' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TagCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ModulePropertyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_MappingSectionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_CSTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ExpressionStatementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ListLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassifierPropertyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'StringLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingEndCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'RenameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ContinueExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_DictLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ParameterDeclarationCS' represents an important domain concept.
+It has one attribute: 'directionKind', which is of type str.
+
+'cst_StatementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_TypeSpecCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_StatementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CSTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeSpecCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingInitCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ImperativeIterateExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingBodyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ImportCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ComputeExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_OppositePropertyCS' represents an important domain concept.
+It has one attribute: 'isNavigable', which is of type bool.
+
+'qvtoperational_cst_MappingEndCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_DictLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingRuleCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_LocalPropertyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingSectionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassifierDefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_LogExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingDeclarationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_MappingBodyCS' represents an important domain concept.
+It has one attribute: 'hasPopulationKeyword', which is of type bool.
+
+'qvtoperational_cst_ModulePropertyCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TransformationHeaderCS' represents an important domain concept.
+It does not declare any attributes.
+
+'DictLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ObjectExpCS' represents an important domain concept.
+It has one attribute: 'isImplicit', which is of type bool.
+
+'qvtoperational_cst_TransformationHeaderCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ClassifierDefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_AssignStatementCS' represents an important domain concept.
+It has one attribute: 'incremental', which is of type bool.
+
+'cst_LoopExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_MappingCallExpCS' represents an important domain concept.
+It has one attribute: 'strict', which is of type bool.
+
+'qvtoperational_cst_ReturnExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_SimpleSignatureCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_LibraryCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ScopedNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_ElementWithBody' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ImperativeOperationCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingExtensionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_InstantiationExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLExpressionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_TagCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_LibraryImportCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeLoopExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_MappingExtensionCS' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'qvtoperational_cst_MappingMethodCS' represents an important domain concept.
+It has one attribute: 'blackBox', which is of type bool.
+
+'MultiplicityDefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_ModuleUsageCS' represents an important domain concept.
+It has one attribute: 'importKind', which is of type str.
+
+'LogExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOperationCallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_SwitchExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_cst_MappingQueryCS' represents an important domain concept.
+It has one attribute: 'isSimpleDefinition', which is of type bool.
+
+'MappingSectionsCS' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'QualifierKindCS' defines the following possible values: 'blackbox', 'abstract', 'static'.
+The enumeration 'MappingExtensionKindCS' defines the following possible values: 'merges', 'disjuncts', 'inherits'.
+The enumeration 'DirectionKindEnum' defines the following possible values: 'out', 'inout', 'in', 'DEFAULT'.
+The enumeration 'ImportKindEnum' defines the following possible values: 'access', 'extension'.
+The enumeration 'ModuleKindEnum' defines the following possible values: 'transformation', 'library'.
+
+The model also captures inheritance relationships between classes.
+The class 'qvtoperational_cst_MappingModuleCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_LibraryCS' is a specialization of 'MappingModuleCS'.
+The class 'qvtoperational_cst_ImportCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_LibraryImportCS' is a specialization of 'ImportCS'.
+The class 'qvtoperational_cst_RenameCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_ModulePropertyCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_ConfigPropertyCS' is a specialization of 'ModulePropertyCS'.
+The class 'qvtoperational_cst_LocalPropertyCS' is a specialization of 'ModulePropertyCS'.
+The class 'qvtoperational_cst_ContextualPropertyCS' is a specialization of 'ModulePropertyCS'.
+The class 'qvtoperational_cst_ClassifierDefCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_ClassifierPropertyCS' is a specialization of 'LocalPropertyCS'.
+The class 'qvtoperational_cst_OppositePropertyCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_MultiplicityDefCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_MappingDeclarationCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_ParameterDeclarationCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_SimpleSignatureCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_CompleteSignatureCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_MappingMethodCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_MappingRuleCS' is a specialization of 'MappingMethodCS'.
+The class 'qvtoperational_cst_MappingQueryCS' is a specialization of 'MappingMethodCS'.
+The class 'qvtoperational_cst_ConstructorCS' is a specialization of 'MappingMethodCS'.
+The class 'qvtoperational_cst_MappingSectionCS' is a specialization of 'cst_CSTNode'.
+The class 'qvtoperational_cst_MappingSectionCS' is a specialization of 'cst_ElementWithBody'.
+The class 'qvtoperational_cst_MappingInitCS' is a specialization of 'MappingSectionCS'.
+The class 'qvtoperational_cst_MappingEndCS' is a specialization of 'MappingSectionCS'.
+The class 'qvtoperational_cst_MappingSectionsCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_StatementCS' is a specialization of 'OCLExpressionCS'.
+The class 'qvtoperational_cst_BlockExpCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_ComputeExpCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_WhileExpCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_ImperativeLoopExpCS' is a specialization of 'cst_LoopExpCS'.
+The class 'qvtoperational_cst_ImperativeLoopExpCS' is a specialization of 'cst_StatementCS'.
+The class 'qvtoperational_cst_ForExpCS' is a specialization of 'ImperativeLoopExpCS'.
+The class 'qvtoperational_cst_ImperativeIterateExpCS' is a specialization of 'ImperativeLoopExpCS'.
+The class 'qvtoperational_cst_SwitchExpCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_SwitchAltExpCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_VariableInitializationCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_AssignStatementCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_BreakExpCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_ContinueExpCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_ExpressionStatementCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_MappingBodyCS' is a specialization of 'MappingSectionCS'.
+The class 'qvtoperational_cst_ObjectExpCS' is a specialization of 'cst_InstantiationExpCS'.
+The class 'qvtoperational_cst_ObjectExpCS' is a specialization of 'cst_ElementWithBody'.
+The class 'qvtoperational_cst_MappingCallExpCS' is a specialization of 'ImperativeOperationCallExpCS'.
+The class 'qvtoperational_cst_ImperativeOperationCallExpCS' is a specialization of 'OperationCallExpCS'.
+The class 'qvtoperational_cst_DirectionKindCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_ResolveExpCS' is a specialization of 'CallExpCS'.
+The class 'qvtoperational_cst_ResolveInExpCS' is a specialization of 'ResolveExpCS'.
+The class 'qvtoperational_cst_ModelTypeCS' is a specialization of 'cst_CSTNode'.
+The class 'qvtoperational_cst_ModelTypeCS' is a specialization of 'cst_ElementWithBody'.
+The class 'qvtoperational_cst_PackageRefCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_TransformationHeaderCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_ModuleKindCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_ModuleRefCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_ModuleUsageCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_TransformationRefineCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_TypeSpecCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_LogExpCS' is a specialization of 'OperationCallExpCS'.
+The class 'qvtoperational_cst_AssertExpCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_ReturnExpCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_MappingExtensionCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_InstantiationExpCS' is a specialization of 'StatementCS'.
+The class 'qvtoperational_cst_ListTypeCS' is a specialization of 'TypeCS'.
+The class 'qvtoperational_cst_ListLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'qvtoperational_cst_DictionaryTypeCS' is a specialization of 'TypeCS'.
+The class 'qvtoperational_cst_DictLiteralExpCS' is a specialization of 'LiteralExpCS'.
+The class 'qvtoperational_cst_DictLiteralPartCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_TagCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_UnitCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_ResolveOpArgsExpCS' is a specialization of 'CSTNode'.
+The class 'qvtoperational_cst_ScopedNameCS' is a specialization of 'CSTNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'TransformationHeaderCS' and 'qvtoperational_cst_MappingModuleCS'. From 'TransformationHeaderCS', the role 'TransformationHeaderCS' has cardinality 0..*, and from 'qvtoperational_cst_MappingModuleCS', the role 'qvtoperational_cst_MappingModuleCS' has cardinality 0..*.
+An association connects 'ImportCS' and 'qvtoperational_cst_MappingModuleCS'. From 'ImportCS', the role 'ImportCS' has cardinality 0..*, and from 'qvtoperational_cst_MappingModuleCS', the role 'qvtoperational_cst_MappingModuleCS2' has cardinality 0..*.
+An association connects 'ModelTypeCS' and 'qvtoperational_cst_MappingModuleCS'. From 'ModelTypeCS', the role 'ModelTypeCS' has cardinality 0..*, and from 'qvtoperational_cst_MappingModuleCS', the role 'qvtoperational_cst_MappingModuleCS4' has cardinality 0..*.
+An association connects 'RenameCS' and 'qvtoperational_cst_MappingModuleCS'. From 'RenameCS', the role 'RenameCS' has cardinality 0..*, and from 'qvtoperational_cst_MappingModuleCS', the role 'qvtoperational_cst_MappingModuleCS6' has cardinality 0..*.
+An association connects 'ModulePropertyCS' and 'qvtoperational_cst_MappingModuleCS'. From 'ModulePropertyCS', the role 'ModulePropertyCS' has cardinality 0..*, and from 'qvtoperational_cst_MappingModuleCS', the role 'qvtoperational_cst_MappingModuleCS8' has cardinality 0..*.
+An association connects 'qvtoperational_cst_MappingModuleCS' and 'MappingMethodCS'. From 'qvtoperational_cst_MappingModuleCS', the role 'qvtoperational_cst_MappingModuleCS10' has cardinality 0..*, and from 'MappingMethodCS', the role 'MappingMethodCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_MappingModuleCS' and 'ClassifierDefCS'. From 'qvtoperational_cst_MappingModuleCS', the role 'qvtoperational_cst_MappingModuleCS12' has cardinality 0..*, and from 'ClassifierDefCS', the role 'ClassifierDefCS' has cardinality 0..*.
+An association connects 'TagCS' and 'qvtoperational_cst_MappingModuleCS'. From 'TagCS', the role 'TagCS' has cardinality 0..*, and from 'qvtoperational_cst_MappingModuleCS', the role 'qvtoperational_cst_MappingModuleCS14' has cardinality 0..*.
+An association connects 'PathNameCS' and 'qvtoperational_cst_ImportCS'. From 'PathNameCS', the role 'PathNameCS' has cardinality 0..*, and from 'qvtoperational_cst_ImportCS', the role 'qvtoperational_cst_ImportCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_RenameCS' and 'TypeCS'. From 'qvtoperational_cst_RenameCS', the role 'qvtoperational_cst_RenameCS' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS' has cardinality 0..*.
+An association connects 'SimpleNameCS' and 'qvtoperational_cst_RenameCS'. From 'SimpleNameCS', the role 'SimpleNameCS' has cardinality 0..*, and from 'qvtoperational_cst_RenameCS', the role 'qvtoperational_cst_RenameCS18' has cardinality 0..*.
+An association connects 'StringLiteralExpCS' and 'qvtoperational_cst_RenameCS'. From 'StringLiteralExpCS', the role 'StringLiteralExpCS' has cardinality 0..*, and from 'qvtoperational_cst_RenameCS', the role 'qvtoperational_cst_RenameCS20' has cardinality 0..*.
+An association connects 'SimpleNameCS' and 'qvtoperational_cst_ModulePropertyCS'. From 'SimpleNameCS', the role 'SimpleNameCS22' has cardinality 0..*, and from 'qvtoperational_cst_ModulePropertyCS', the role 'qvtoperational_cst_ModulePropertyCS' has cardinality 0..*.
+An association connects 'TypeCS' and 'qvtoperational_cst_ConfigPropertyCS'. From 'TypeCS', the role 'TypeCS24' has cardinality 0..*, and from 'qvtoperational_cst_ConfigPropertyCS', the role 'qvtoperational_cst_ConfigPropertyCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_LocalPropertyCS' and 'TypeCS'. From 'qvtoperational_cst_LocalPropertyCS', the role 'qvtoperational_cst_LocalPropertyCS' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS26' has cardinality 0..*.
+An association connects 'qvtoperational_cst_LocalPropertyCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_LocalPropertyCS', the role 'qvtoperational_cst_LocalPropertyCS28' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ContextualPropertyCS' and 'ScopedNameCS'. From 'qvtoperational_cst_ContextualPropertyCS', the role 'qvtoperational_cst_ContextualPropertyCS' has cardinality 0..*, and from 'ScopedNameCS', the role 'ScopedNameCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ContextualPropertyCS' and 'TypeCS'. From 'qvtoperational_cst_ContextualPropertyCS', the role 'qvtoperational_cst_ContextualPropertyCS31' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS32' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ContextualPropertyCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_ContextualPropertyCS', the role 'qvtoperational_cst_ContextualPropertyCS34' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS35' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ClassifierDefCS' and 'SimpleNameCS'. From 'qvtoperational_cst_ClassifierDefCS', the role 'qvtoperational_cst_ClassifierDefCS' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS37' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ClassifierDefCS' and 'TypeCS'. From 'qvtoperational_cst_ClassifierDefCS', the role 'qvtoperational_cst_ClassifierDefCS39' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS40' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ClassifierDefCS' and 'ClassifierPropertyCS'. From 'qvtoperational_cst_ClassifierDefCS', the role 'qvtoperational_cst_ClassifierDefCS42' has cardinality 0..*, and from 'ClassifierPropertyCS', the role 'ClassifierPropertyCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ClassifierDefCS' and 'TagCS'. From 'qvtoperational_cst_ClassifierDefCS', the role 'qvtoperational_cst_ClassifierDefCS44' has cardinality 0..*, and from 'TagCS', the role 'TagCS45' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ClassifierPropertyCS' and 'SimpleNameCS'. From 'qvtoperational_cst_ClassifierPropertyCS', the role 'qvtoperational_cst_ClassifierPropertyCS' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS47' has cardinality 0..*.
+An association connects 'SimpleNameCS' and 'qvtoperational_cst_ClassifierPropertyCS'. From 'SimpleNameCS', the role 'SimpleNameCS50' has cardinality 0..*, and from 'qvtoperational_cst_ClassifierPropertyCS', the role 'qvtoperational_cst_ClassifierPropertyCS49' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ClassifierPropertyCS' and 'MultiplicityDefCS'. From 'qvtoperational_cst_ClassifierPropertyCS', the role 'qvtoperational_cst_ClassifierPropertyCS52' has cardinality 0..*, and from 'MultiplicityDefCS', the role 'MultiplicityDefCS' has cardinality 0..*.
+An association connects 'OppositePropertyCS' and 'qvtoperational_cst_ClassifierPropertyCS'. From 'OppositePropertyCS', the role 'OppositePropertyCS' has cardinality 0..*, and from 'qvtoperational_cst_ClassifierPropertyCS', the role 'qvtoperational_cst_ClassifierPropertyCS54' has cardinality 0..*.
+An association connects 'qvtoperational_cst_OppositePropertyCS' and 'SimpleNameCS'. From 'qvtoperational_cst_OppositePropertyCS', the role 'qvtoperational_cst_OppositePropertyCS' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS56' has cardinality 0..*.
+An association connects 'qvtoperational_cst_OppositePropertyCS' and 'MultiplicityDefCS'. From 'qvtoperational_cst_OppositePropertyCS', the role 'qvtoperational_cst_OppositePropertyCS58' has cardinality 0..*, and from 'MultiplicityDefCS', the role 'MultiplicityDefCS59' has cardinality 0..*.
+An association connects 'qvtoperational_cst_MultiplicityDefCS' and 'PrimitiveLiteralExpCS'. From 'qvtoperational_cst_MultiplicityDefCS', the role 'qvtoperational_cst_MultiplicityDefCS' has cardinality 0..*, and from 'PrimitiveLiteralExpCS', the role 'PrimitiveLiteralExpCS' has cardinality 0..*.
+An association connects 'PrimitiveLiteralExpCS' and 'qvtoperational_cst_MultiplicityDefCS'. From 'PrimitiveLiteralExpCS', the role 'PrimitiveLiteralExpCS63' has cardinality 0..*, and from 'qvtoperational_cst_MultiplicityDefCS', the role 'qvtoperational_cst_MultiplicityDefCS62' has cardinality 0..*.
+An association connects 'qvtoperational_cst_MappingDeclarationCS' and 'SimpleNameCS'. From 'qvtoperational_cst_MappingDeclarationCS', the role 'qvtoperational_cst_MappingDeclarationCS' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS65' has cardinality 0..*.
+An association connects 'qvtoperational_cst_MappingDeclarationCS' and 'TypeCS'. From 'qvtoperational_cst_MappingDeclarationCS', the role 'qvtoperational_cst_MappingDeclarationCS67' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS68' has cardinality 0..*.
+An association connects 'qvtoperational_cst_MappingDeclarationCS' and 'ParameterDeclarationCS'. From 'qvtoperational_cst_MappingDeclarationCS', the role 'qvtoperational_cst_MappingDeclarationCS70' has cardinality 0..*, and from 'ParameterDeclarationCS', the role 'ParameterDeclarationCS' has cardinality 0..*.
+An association connects 'ParameterDeclarationCS' and 'qvtoperational_cst_MappingDeclarationCS'. From 'ParameterDeclarationCS', the role 'ParameterDeclarationCS73' has cardinality 0..*, and from 'qvtoperational_cst_MappingDeclarationCS', the role 'qvtoperational_cst_MappingDeclarationCS72' has cardinality 0..*.
+An association connects 'qvtoperational_cst_MappingDeclarationCS' and 'DirectionKindCS'. From 'qvtoperational_cst_MappingDeclarationCS', the role 'qvtoperational_cst_MappingDeclarationCS75' has cardinality 0..*, and from 'DirectionKindCS', the role 'DirectionKindCS' has cardinality 0..*.
+An association connects 'MappingExtensionCS' and 'qvtoperational_cst_MappingDeclarationCS'. From 'MappingExtensionCS', the role 'MappingExtensionCS' has cardinality 0..*, and from 'qvtoperational_cst_MappingDeclarationCS', the role 'qvtoperational_cst_MappingDeclarationCS77' has cardinality 0..*.
+An association connects 'SimpleNameCS' and 'qvtoperational_cst_ParameterDeclarationCS'. From 'SimpleNameCS', the role 'SimpleNameCS79' has cardinality 0..*, and from 'qvtoperational_cst_ParameterDeclarationCS', the role 'qvtoperational_cst_ParameterDeclarationCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ParameterDeclarationCS' and 'TypeSpecCS'. From 'qvtoperational_cst_ParameterDeclarationCS', the role 'qvtoperational_cst_ParameterDeclarationCS81' has cardinality 0..*, and from 'TypeSpecCS', the role 'TypeSpecCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_SimpleSignatureCS' and 'ParameterDeclarationCS'. From 'qvtoperational_cst_SimpleSignatureCS', the role 'qvtoperational_cst_SimpleSignatureCS' has cardinality 0..*, and from 'ParameterDeclarationCS', the role 'ParameterDeclarationCS83' has cardinality 0..*.
+An association connects 'qvtoperational_cst_CompleteSignatureCS' and 'SimpleSignatureCS'. From 'qvtoperational_cst_CompleteSignatureCS', the role 'qvtoperational_cst_CompleteSignatureCS' has cardinality 0..*, and from 'SimpleSignatureCS', the role 'SimpleSignatureCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_CompleteSignatureCS' and 'ParameterDeclarationCS'. From 'qvtoperational_cst_CompleteSignatureCS', the role 'qvtoperational_cst_CompleteSignatureCS86' has cardinality 0..*, and from 'ParameterDeclarationCS', the role 'ParameterDeclarationCS87' has cardinality 0..*.
+An association connects 'qvtoperational_cst_MappingMethodCS' and 'MappingDeclarationCS'. From 'qvtoperational_cst_MappingMethodCS', the role 'qvtoperational_cst_MappingMethodCS' has cardinality 0..*, and from 'MappingDeclarationCS', the role 'MappingDeclarationCS' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtoperational_cst_MappingRuleCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS90' has cardinality 0..*, and from 'qvtoperational_cst_MappingRuleCS', the role 'qvtoperational_cst_MappingRuleCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_MappingRuleCS' and 'MappingSectionsCS'. From 'qvtoperational_cst_MappingRuleCS', the role 'qvtoperational_cst_MappingRuleCS92' has cardinality 0..*, and from 'MappingSectionsCS', the role 'MappingSectionsCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_MappingQueryCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_MappingQueryCS', the role 'qvtoperational_cst_MappingQueryCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS94' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtoperational_cst_ConstructorCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS96' has cardinality 0..*, and from 'qvtoperational_cst_ConstructorCS', the role 'qvtoperational_cst_ConstructorCS' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtoperational_cst_MappingSectionCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS98' has cardinality 0..*, and from 'qvtoperational_cst_MappingSectionCS', the role 'qvtoperational_cst_MappingSectionCS' has cardinality 0..*.
+An association connects 'MappingRuleCS' and 'qvtoperational_cst_MappingSectionCS'. From 'MappingRuleCS', the role 'MappingRuleCS' has cardinality 0..*, and from 'qvtoperational_cst_MappingSectionCS', the role 'qvtoperational_cst_MappingSectionCS100' has cardinality 0..*.
+An association connects 'MappingInitCS' and 'qvtoperational_cst_MappingSectionsCS'. From 'MappingInitCS', the role 'MappingInitCS' has cardinality 0..*, and from 'qvtoperational_cst_MappingSectionsCS', the role 'qvtoperational_cst_MappingSectionsCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_MappingSectionsCS' and 'MappingBodyCS'. From 'qvtoperational_cst_MappingSectionsCS', the role 'qvtoperational_cst_MappingSectionsCS103' has cardinality 0..*, and from 'MappingBodyCS', the role 'MappingBodyCS' has cardinality 0..*.
+An association connects 'MappingEndCS' and 'qvtoperational_cst_MappingSectionsCS'. From 'MappingEndCS', the role 'MappingEndCS' has cardinality 0..*, and from 'qvtoperational_cst_MappingSectionsCS', the role 'qvtoperational_cst_MappingSectionsCS105' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtoperational_cst_BlockExpCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS107' has cardinality 0..*, and from 'qvtoperational_cst_BlockExpCS', the role 'qvtoperational_cst_BlockExpCS' has cardinality 0..*.
+An association connects 'VariableCS' and 'qvtoperational_cst_ComputeExpCS'. From 'VariableCS', the role 'VariableCS' has cardinality 0..*, and from 'qvtoperational_cst_ComputeExpCS', the role 'qvtoperational_cst_ComputeExpCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ComputeExpCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_ComputeExpCS', the role 'qvtoperational_cst_ComputeExpCS110' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS111' has cardinality 0..*.
+An association connects 'qvtoperational_cst_WhileExpCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_WhileExpCS', the role 'qvtoperational_cst_WhileExpCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS113' has cardinality 0..*.
+An association connects 'qvtoperational_cst_WhileExpCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_WhileExpCS', the role 'qvtoperational_cst_WhileExpCS115' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS116' has cardinality 0..*.
+An association connects 'qvtoperational_cst_WhileExpCS' and 'VariableCS'. From 'qvtoperational_cst_WhileExpCS', the role 'qvtoperational_cst_WhileExpCS118' has cardinality 0..*, and from 'VariableCS', the role 'VariableCS119' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ImperativeLoopExpCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_ImperativeLoopExpCS', the role 'qvtoperational_cst_ImperativeLoopExpCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS121' has cardinality 0..*.
+An association connects 'VariableCS' and 'qvtoperational_cst_ImperativeIterateExpCS'. From 'VariableCS', the role 'VariableCS123' has cardinality 0..*, and from 'qvtoperational_cst_ImperativeIterateExpCS', the role 'qvtoperational_cst_ImperativeIterateExpCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_SwitchExpCS' and 'SwitchAltExpCS'. From 'qvtoperational_cst_SwitchExpCS', the role 'qvtoperational_cst_SwitchExpCS' has cardinality 0..*, and from 'SwitchAltExpCS', the role 'SwitchAltExpCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_SwitchExpCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_SwitchExpCS', the role 'qvtoperational_cst_SwitchExpCS126' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS127' has cardinality 0..*.
+An association connects 'qvtoperational_cst_SwitchAltExpCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_SwitchAltExpCS', the role 'qvtoperational_cst_SwitchAltExpCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS129' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtoperational_cst_SwitchAltExpCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS132' has cardinality 0..*, and from 'qvtoperational_cst_SwitchAltExpCS', the role 'qvtoperational_cst_SwitchAltExpCS131' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtoperational_cst_VariableInitializationCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS134' has cardinality 0..*, and from 'qvtoperational_cst_VariableInitializationCS', the role 'qvtoperational_cst_VariableInitializationCS' has cardinality 0..*.
+An association connects 'SimpleNameCS' and 'qvtoperational_cst_VariableInitializationCS'. From 'SimpleNameCS', the role 'SimpleNameCS137' has cardinality 0..*, and from 'qvtoperational_cst_VariableInitializationCS', the role 'qvtoperational_cst_VariableInitializationCS136' has cardinality 0..*.
+An association connects 'qvtoperational_cst_VariableInitializationCS' and 'TypeCS'. From 'qvtoperational_cst_VariableInitializationCS', the role 'qvtoperational_cst_VariableInitializationCS139' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS140' has cardinality 0..*.
+An association connects 'qvtoperational_cst_AssignStatementCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_AssignStatementCS', the role 'qvtoperational_cst_AssignStatementCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS142' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtoperational_cst_AssignStatementCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS145' has cardinality 0..*, and from 'qvtoperational_cst_AssignStatementCS', the role 'qvtoperational_cst_AssignStatementCS144' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtoperational_cst_ExpressionStatementCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS147' has cardinality 0..*, and from 'qvtoperational_cst_ExpressionStatementCS', the role 'qvtoperational_cst_ExpressionStatementCS' has cardinality 0..*.
+An association connects 'SimpleNameCS' and 'qvtoperational_cst_ObjectExpCS'. From 'SimpleNameCS', the role 'SimpleNameCS149' has cardinality 0..*, and from 'qvtoperational_cst_ObjectExpCS', the role 'qvtoperational_cst_ObjectExpCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ObjectExpCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_ObjectExpCS', the role 'qvtoperational_cst_ObjectExpCS151' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS152' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ImperativeOperationCallExpCS' and 'SimpleNameCS'. From 'qvtoperational_cst_ImperativeOperationCallExpCS', the role 'qvtoperational_cst_ImperativeOperationCallExpCS' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS154' has cardinality 0..*.
+An association connects 'VariableCS' and 'qvtoperational_cst_ResolveExpCS'. From 'VariableCS', the role 'VariableCS156' has cardinality 0..*, and from 'qvtoperational_cst_ResolveExpCS', the role 'qvtoperational_cst_ResolveExpCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ResolveExpCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_ResolveExpCS', the role 'qvtoperational_cst_ResolveExpCS158' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS159' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ResolveInExpCS' and 'TypeCS'. From 'qvtoperational_cst_ResolveInExpCS', the role 'qvtoperational_cst_ResolveInExpCS' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS161' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ResolveInExpCS' and 'SimpleNameCS'. From 'qvtoperational_cst_ResolveInExpCS', the role 'qvtoperational_cst_ResolveInExpCS163' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS164' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ModelTypeCS' and 'SimpleNameCS'. From 'qvtoperational_cst_ModelTypeCS', the role 'qvtoperational_cst_ModelTypeCS' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS166' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ModelTypeCS' and 'StringLiteralExpCS'. From 'qvtoperational_cst_ModelTypeCS', the role 'qvtoperational_cst_ModelTypeCS168' has cardinality 0..*, and from 'StringLiteralExpCS', the role 'StringLiteralExpCS169' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ModelTypeCS' and 'PackageRefCS'. From 'qvtoperational_cst_ModelTypeCS', the role 'qvtoperational_cst_ModelTypeCS171' has cardinality 0..*, and from 'PackageRefCS', the role 'PackageRefCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ModelTypeCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_ModelTypeCS', the role 'qvtoperational_cst_ModelTypeCS173' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS174' has cardinality 0..*.
+An association connects 'PathNameCS' and 'qvtoperational_cst_PackageRefCS'. From 'PathNameCS', the role 'PathNameCS176' has cardinality 0..*, and from 'qvtoperational_cst_PackageRefCS', the role 'qvtoperational_cst_PackageRefCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_PackageRefCS' and 'StringLiteralExpCS'. From 'qvtoperational_cst_PackageRefCS', the role 'qvtoperational_cst_PackageRefCS178' has cardinality 0..*, and from 'StringLiteralExpCS', the role 'StringLiteralExpCS179' has cardinality 0..*.
+An association connects 'qvtoperational_cst_TransformationHeaderCS' and 'StringLiteralExpCS'. From 'qvtoperational_cst_TransformationHeaderCS', the role 'qvtoperational_cst_TransformationHeaderCS' has cardinality 0..*, and from 'StringLiteralExpCS', the role 'StringLiteralExpCS181' has cardinality 0..*.
+An association connects 'PathNameCS' and 'qvtoperational_cst_TransformationHeaderCS'. From 'PathNameCS', the role 'PathNameCS184' has cardinality 0..*, and from 'qvtoperational_cst_TransformationHeaderCS', the role 'qvtoperational_cst_TransformationHeaderCS183' has cardinality 0..*.
+An association connects 'qvtoperational_cst_TransformationHeaderCS' and 'ParameterDeclarationCS'. From 'qvtoperational_cst_TransformationHeaderCS', the role 'qvtoperational_cst_TransformationHeaderCS186' has cardinality 0..*, and from 'ParameterDeclarationCS', the role 'ParameterDeclarationCS187' has cardinality 0..*.
+An association connects 'ModuleUsageCS' and 'qvtoperational_cst_TransformationHeaderCS'. From 'ModuleUsageCS', the role 'ModuleUsageCS' has cardinality 0..*, and from 'qvtoperational_cst_TransformationHeaderCS', the role 'qvtoperational_cst_TransformationHeaderCS189' has cardinality 0..*.
+An association connects 'qvtoperational_cst_TransformationHeaderCS' and 'TransformationRefineCS'. From 'qvtoperational_cst_TransformationHeaderCS', the role 'qvtoperational_cst_TransformationHeaderCS191' has cardinality 0..*, and from 'TransformationRefineCS', the role 'TransformationRefineCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ModuleRefCS' and 'PathNameCS'. From 'qvtoperational_cst_ModuleRefCS', the role 'qvtoperational_cst_ModuleRefCS' has cardinality 0..*, and from 'PathNameCS', the role 'PathNameCS193' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ModuleRefCS' and 'ParameterDeclarationCS'. From 'qvtoperational_cst_ModuleRefCS', the role 'qvtoperational_cst_ModuleRefCS195' has cardinality 0..*, and from 'ParameterDeclarationCS', the role 'ParameterDeclarationCS196' has cardinality 0..*.
+An association connects 'ModuleKindCS' and 'qvtoperational_cst_ModuleUsageCS'. From 'ModuleKindCS', the role 'ModuleKindCS' has cardinality 0..*, and from 'qvtoperational_cst_ModuleUsageCS', the role 'qvtoperational_cst_ModuleUsageCS' has cardinality 0..*.
+An association connects 'ModuleRefCS' and 'qvtoperational_cst_ModuleUsageCS'. From 'ModuleRefCS', the role 'ModuleRefCS' has cardinality 0..*, and from 'qvtoperational_cst_ModuleUsageCS', the role 'qvtoperational_cst_ModuleUsageCS199' has cardinality 0..*.
+An association connects 'qvtoperational_cst_TransformationRefineCS' and 'ModuleRefCS'. From 'qvtoperational_cst_TransformationRefineCS', the role 'qvtoperational_cst_TransformationRefineCS' has cardinality 0..*, and from 'ModuleRefCS', the role 'ModuleRefCS201' has cardinality 0..*.
+An association connects 'qvtoperational_cst_TransformationRefineCS' and 'SimpleNameCS'. From 'qvtoperational_cst_TransformationRefineCS', the role 'qvtoperational_cst_TransformationRefineCS203' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS204' has cardinality 0..*.
+An association connects 'qvtoperational_cst_TypeSpecCS' and 'TypeCS'. From 'qvtoperational_cst_TypeSpecCS', the role 'qvtoperational_cst_TypeSpecCS' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS206' has cardinality 0..*.
+An association connects 'qvtoperational_cst_TypeSpecCS' and 'SimpleNameCS'. From 'qvtoperational_cst_TypeSpecCS', the role 'qvtoperational_cst_TypeSpecCS208' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS209' has cardinality 0..*.
+An association connects 'qvtoperational_cst_LogExpCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_LogExpCS', the role 'qvtoperational_cst_LogExpCS' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS211' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtoperational_cst_AssertExpCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS213' has cardinality 0..*, and from 'qvtoperational_cst_AssertExpCS', the role 'qvtoperational_cst_AssertExpCS' has cardinality 0..*.
+An association connects 'LogExpCS' and 'qvtoperational_cst_AssertExpCS'. From 'LogExpCS', the role 'LogExpCS' has cardinality 0..*, and from 'qvtoperational_cst_AssertExpCS', the role 'qvtoperational_cst_AssertExpCS215' has cardinality 0..*.
+An association connects 'qvtoperational_cst_AssertExpCS' and 'SimpleNameCS'. From 'qvtoperational_cst_AssertExpCS', the role 'qvtoperational_cst_AssertExpCS217' has cardinality 0..*, and from 'SimpleNameCS', the role 'SimpleNameCS218' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtoperational_cst_ReturnExpCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS220' has cardinality 0..*, and from 'qvtoperational_cst_ReturnExpCS', the role 'qvtoperational_cst_ReturnExpCS' has cardinality 0..*.
+An association connects 'ScopedNameCS' and 'qvtoperational_cst_MappingExtensionCS'. From 'ScopedNameCS', the role 'ScopedNameCS222' has cardinality 0..*, and from 'qvtoperational_cst_MappingExtensionCS', the role 'qvtoperational_cst_MappingExtensionCS' has cardinality 0..*.
+An association connects 'TypeSpecCS' and 'qvtoperational_cst_InstantiationExpCS'. From 'TypeSpecCS', the role 'TypeSpecCS224' has cardinality 0..*, and from 'qvtoperational_cst_InstantiationExpCS', the role 'qvtoperational_cst_InstantiationExpCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_InstantiationExpCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_InstantiationExpCS', the role 'qvtoperational_cst_InstantiationExpCS226' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS227' has cardinality 0..*.
+An association connects 'TypeCS' and 'qvtoperational_cst_ListTypeCS'. From 'TypeCS', the role 'TypeCS229' has cardinality 0..*, and from 'qvtoperational_cst_ListTypeCS', the role 'qvtoperational_cst_ListTypeCS' has cardinality 0..*.
+An association connects 'CollectionLiteralPartCS' and 'qvtoperational_cst_ListLiteralExpCS'. From 'CollectionLiteralPartCS', the role 'CollectionLiteralPartCS' has cardinality 0..*, and from 'qvtoperational_cst_ListLiteralExpCS', the role 'qvtoperational_cst_ListLiteralExpCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_DictionaryTypeCS' and 'TypeCS'. From 'qvtoperational_cst_DictionaryTypeCS', the role 'qvtoperational_cst_DictionaryTypeCS' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS232' has cardinality 0..*.
+An association connects 'TypeCS' and 'qvtoperational_cst_DictionaryTypeCS'. From 'TypeCS', the role 'TypeCS235' has cardinality 0..*, and from 'qvtoperational_cst_DictionaryTypeCS', the role 'qvtoperational_cst_DictionaryTypeCS234' has cardinality 0..*.
+An association connects 'qvtoperational_cst_DictLiteralExpCS' and 'DictLiteralPartCS'. From 'qvtoperational_cst_DictLiteralExpCS', the role 'qvtoperational_cst_DictLiteralExpCS' has cardinality 0..*, and from 'DictLiteralPartCS', the role 'DictLiteralPartCS' has cardinality 0..*.
+An association connects 'LiteralExpCS' and 'qvtoperational_cst_DictLiteralPartCS'. From 'LiteralExpCS', the role 'LiteralExpCS' has cardinality 0..*, and from 'qvtoperational_cst_DictLiteralPartCS', the role 'qvtoperational_cst_DictLiteralPartCS' has cardinality 0..*.
+An association connects 'qvtoperational_cst_DictLiteralPartCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_DictLiteralPartCS', the role 'qvtoperational_cst_DictLiteralPartCS239' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS240' has cardinality 0..*.
+An association connects 'StringLiteralExpCS' and 'qvtoperational_cst_TagCS'. From 'StringLiteralExpCS', the role 'StringLiteralExpCS242' has cardinality 0..*, and from 'qvtoperational_cst_TagCS', the role 'qvtoperational_cst_TagCS' has cardinality 0..*.
+An association connects 'ScopedNameCS' and 'qvtoperational_cst_TagCS'. From 'ScopedNameCS', the role 'ScopedNameCS245' has cardinality 0..*, and from 'qvtoperational_cst_TagCS', the role 'qvtoperational_cst_TagCS244' has cardinality 0..*.
+An association connects 'OCLExpressionCS' and 'qvtoperational_cst_TagCS'. From 'OCLExpressionCS', the role 'OCLExpressionCS248' has cardinality 0..*, and from 'qvtoperational_cst_TagCS', the role 'qvtoperational_cst_TagCS247' has cardinality 0..*.
+An association connects 'CSTNode' and 'qvtoperational_cst_UnitCS'. From 'CSTNode', the role 'CSTNode' has cardinality 0..*, and from 'qvtoperational_cst_UnitCS', the role 'qvtoperational_cst_UnitCS' has cardinality 0..*.
+An association connects 'MappingModuleCS' and 'qvtoperational_cst_UnitCS'. From 'MappingModuleCS', the role 'MappingModuleCS' has cardinality 0..*, and from 'qvtoperational_cst_UnitCS', the role 'qvtoperational_cst_UnitCS251' has cardinality 0..*.
+An association connects 'qvtoperational_cst_UnitCS' and 'ModelTypeCS'. From 'qvtoperational_cst_UnitCS', the role 'qvtoperational_cst_UnitCS253' has cardinality 0..*, and from 'ModelTypeCS', the role 'ModelTypeCS254' has cardinality 0..*.
+An association connects 'qvtoperational_cst_UnitCS' and 'ImportCS'. From 'qvtoperational_cst_UnitCS', the role 'qvtoperational_cst_UnitCS256' has cardinality 0..*, and from 'ImportCS', the role 'ImportCS257' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ResolveOpArgsExpCS' and 'VariableCS'. From 'qvtoperational_cst_ResolveOpArgsExpCS', the role 'qvtoperational_cst_ResolveOpArgsExpCS' has cardinality 0..*, and from 'VariableCS', the role 'VariableCS259' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ResolveOpArgsExpCS' and 'OCLExpressionCS'. From 'qvtoperational_cst_ResolveOpArgsExpCS', the role 'qvtoperational_cst_ResolveOpArgsExpCS261' has cardinality 0..*, and from 'OCLExpressionCS', the role 'OCLExpressionCS262' has cardinality 0..*.
+An association connects 'qvtoperational_cst_ScopedNameCS' and 'TypeCS'. From 'qvtoperational_cst_ScopedNameCS', the role 'qvtoperational_cst_ScopedNameCS' has cardinality 0..*, and from 'TypeCS', the role 'TypeCS264' has cardinality 0..*.

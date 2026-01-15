@@ -1,0 +1,65 @@
+The domain model 'ex' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'OutputState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'ex_stateMachine_TerminalState' represents an important domain concept.
+It does not declare any attributes.
+
+'ex_stateMachine_InputState' represents an important domain concept.
+It does not declare any attributes.
+
+'InputState' represents an important domain concept.
+It does not declare any attributes.
+
+'ex_stateMachine_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stateMachine_OutputState' represents an important domain concept.
+It does not declare any attributes.
+
+'ex_stateMachine_StandardState' represents an important domain concept.
+It does not declare any attributes.
+
+'stateMachine_InputState' represents an important domain concept.
+It does not declare any attributes.
+
+'ex_stateMachine_OutputState' represents an important domain concept.
+It does not declare any attributes.
+
+'InitState' represents an important domain concept.
+It does not declare any attributes.
+
+'ex_stateMachine_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'ex_stateMachine_InitState' represents an important domain concept.
+It does not declare any attributes.
+
+'ex_stateMachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ex_stateMachine_InputState' is a specialization of 'State'.
+The class 'ex_stateMachine_OutputState' is a specialization of 'State'.
+The class 'ex_stateMachine_InitState' is a specialization of 'OutputState'.
+The class 'ex_stateMachine_StandardState' is a specialization of 'stateMachine_InputState'.
+The class 'ex_stateMachine_StandardState' is a specialization of 'stateMachine_OutputState'.
+The class 'ex_stateMachine_TerminalState' is a specialization of 'InputState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ex_stateMachine_StateMachine' and 'InitState'. From 'ex_stateMachine_StateMachine', the role 'ex_stateMachine_StateMachine' has cardinality 0..*, and from 'InitState', the role 'InitState' has cardinality 0..*.
+An association connects 'ex_stateMachine_StateMachine' and 'State'. From 'ex_stateMachine_StateMachine', the role 'ex_stateMachine_StateMachine2' has cardinality 0..*, and from 'State', the role 'State' has cardinality 0..*.
+An association connects 'ex_stateMachine_StateMachine' and 'Transition'. From 'ex_stateMachine_StateMachine', the role 'ex_stateMachine_StateMachine4' has cardinality 0..*, and from 'Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'ex_stateMachine_Transition' and 'OutputState'. From 'ex_stateMachine_Transition', the role 'ex_stateMachine_Transition' has cardinality 0..*, and from 'OutputState', the role 'OutputState' has cardinality 0..*.
+An association connects 'InputState' and 'ex_stateMachine_Transition'. From 'InputState', the role 'InputState' has cardinality 0..*, and from 'ex_stateMachine_Transition', the role 'ex_stateMachine_Transition7' has cardinality 0..*.
+An association connects 'Transition' and 'ex_stateMachine_InputState'. From 'Transition', the role 'Transition9' has cardinality 0..*, and from 'ex_stateMachine_InputState', the role 'ex_stateMachine_InputState' has cardinality 0..*.
+An association connects 'Transition' and 'ex_stateMachine_OutputState'. From 'Transition', the role 'Transition11' has cardinality 0..*, and from 'ex_stateMachine_OutputState', the role 'ex_stateMachine_OutputState' has cardinality 0..*.

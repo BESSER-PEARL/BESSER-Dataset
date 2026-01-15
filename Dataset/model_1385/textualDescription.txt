@@ -1,0 +1,32 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'test_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'test_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'test_State' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'test_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Kind' defines the following possible values: 'NotNice', 'Nice'.
+
+The model also captures inheritance relationships between classes.
+The class 'test_StateMachine' is a specialization of 'NamedElement'.
+The class 'test_Transition' is a specialization of 'NamedElement'.
+The class 'test_State' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_StateMachine' and 'test_Transition'. From 'test_StateMachine', the role 'test_StateMachine' has cardinality 0..*, and from 'test_Transition', the role 'test_Transition' has cardinality 0..*.
+An association connects 'test_State' and 'test_StateMachine'. From 'test_State', the role 'test_State' has cardinality 0..*, and from 'test_StateMachine', the role 'test_StateMachine2' has cardinality 0..*.
+An association connects 'test_State' and 'test_Transition'. From 'test_State', the role 'test_State5' has cardinality 0..*, and from 'test_Transition', the role 'test_Transition4' has cardinality 0..*.
+An association connects 'test_State' and 'test_Transition'. From 'test_State', the role 'test_State8' has cardinality 0..*, and from 'test_Transition', the role 'test_Transition7' has cardinality 0..*.

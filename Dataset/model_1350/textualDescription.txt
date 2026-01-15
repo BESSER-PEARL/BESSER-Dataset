@@ -1,0 +1,49 @@
+The domain model 'statemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_FiringElement' represents an important domain concept.
+It has the following attributes: 'trigger', which is of type str; 'action', which is of type str.
+
+'statemachine_State' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'FiringElement' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_AbstractState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statemachine_StateAction' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachine_State' is a specialization of 'AbstractState'.
+The class 'statemachine_InitialState' is a specialization of 'AbstractState'.
+The class 'statemachine_FinalState' is a specialization of 'AbstractState'.
+The class 'statemachine_Transition' is a specialization of 'FiringElement'.
+The class 'statemachine_StateAction' is a specialization of 'FiringElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_AbstractState' and 'statemachine_StateMachine'. From 'statemachine_AbstractState', the role 'statemachine_AbstractState' has cardinality 0..*, and from 'statemachine_StateMachine', the role 'statemachine_StateMachine' has cardinality 0..*.
+An association connects 'statemachine_StateMachine' and 'statemachine_Transition'. From 'statemachine_StateMachine', the role 'statemachine_StateMachine2' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition' has cardinality 0..*.
+An association connects 'statemachine_AbstractState' and 'statemachine_Transition'. From 'statemachine_AbstractState', the role 'source' has cardinality 0..*, and from 'statemachine_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_AbstractState'. From 'statemachine_Transition', the role 'Transition5' has cardinality 0..*, and from 'statemachine_AbstractState', the role 'target' has cardinality 0..*.
+An association connects 'statemachine_StateAction' and 'statemachine_State'. From 'statemachine_StateAction', the role 'statemachine_StateAction' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State' has cardinality 0..*.
+An association connects 'statemachine_AbstractState' and 'statemachine_Transition'. From 'statemachine_AbstractState', the role 'AbstractState' has cardinality 0..*, and from 'statemachine_Transition', the role 'transitionsAsSource' has cardinality 0..*.
+An association connects 'statemachine_AbstractState' and 'statemachine_Transition'. From 'statemachine_AbstractState', the role 'AbstractState9' has cardinality 0..*, and from 'statemachine_Transition', the role 'transitionsAsTarget' has cardinality 0..*.

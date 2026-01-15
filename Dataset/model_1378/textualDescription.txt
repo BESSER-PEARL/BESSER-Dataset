@@ -1,0 +1,36 @@
+The domain model 'tsm' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'tsm_State' represents an important domain concept.
+It does not declare any attributes.
+
+'tsm_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'tsm_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tsm_TimeEvent' represents an important domain concept.
+It has one attribute: 'time', which is of type int.
+
+'tsm_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'tsm_StateMachine' is a specialization of 'NamedElement'.
+The class 'tsm_State' is a specialization of 'NamedElement'.
+The class 'tsm_Transition' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tsm_State' and 'tsm_StateMachine'. From 'tsm_State', the role 'tsm_State' has cardinality 0..*, and from 'tsm_StateMachine', the role 'tsm_StateMachine' has cardinality 0..*.
+An association connects 'tsm_Transition' and 'tsm_StateMachine'. From 'tsm_Transition', the role 'tsm_Transition' has cardinality 0..*, and from 'tsm_StateMachine', the role 'tsm_StateMachine2' has cardinality 0..*.
+An association connects 'tsm_State' and 'tsm_StateMachine'. From 'tsm_State', the role 'tsm_State5' has cardinality 0..*, and from 'tsm_StateMachine', the role 'tsm_StateMachine4' has cardinality 0..*.
+An association connects 'tsm_Transition' and 'tsm_State'. From 'tsm_Transition', the role 'Transition' has cardinality 0..*, and from 'tsm_State', the role 'target' has cardinality 0..*.
+An association connects 'tsm_State' and 'tsm_Transition'. From 'tsm_State', the role 'source' has cardinality 0..*, and from 'tsm_Transition', the role 'Transition8' has cardinality 0..*.
+An association connects 'tsm_TimeEvent' and 'tsm_Transition'. From 'tsm_TimeEvent', the role 'tsm_TimeEvent' has cardinality 0..*, and from 'tsm_Transition', the role 'tsm_Transition10' has cardinality 0..*.
+An association connects 'tsm_Transition' and 'tsm_State'. From 'tsm_Transition', the role 'incoming' has cardinality 0..*, and from 'tsm_State', the role 'State' has cardinality 0..*.
+An association connects 'tsm_Transition' and 'tsm_State'. From 'tsm_Transition', the role 'outgoing' has cardinality 0..*, and from 'tsm_State', the role 'State13' has cardinality 0..*.

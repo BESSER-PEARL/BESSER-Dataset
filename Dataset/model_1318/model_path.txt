@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/pedercinirita/StateMachineEasyDSL/org.xtext.statemachine.dsl/model/generated/StateMachineDsl.ecore

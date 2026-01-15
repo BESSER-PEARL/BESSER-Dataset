@@ -1,0 +1,59 @@
+The domain model 'source' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'source_Y1' represents an important domain concept.
+It does not declare any attributes.
+
+'source_Z' represents an important domain concept.
+It does not declare any attributes.
+
+'source_Y2' represents an important domain concept.
+It does not declare any attributes.
+
+'SElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Y' represents an important domain concept.
+It does not declare any attributes.
+
+'source_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'source_X' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isA1', which is of type bool; 'isA2', which is of type bool.
+
+'source_Y' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'source_PathNameCS' represents an important domain concept.
+It does not declare any attributes.
+
+'source_SElement' represents an important domain concept.
+It does not declare any attributes.
+
+'source_PathElementCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'source_SRoot' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'source_X' is a specialization of 'SElement'.
+The class 'source_Y' is a specialization of 'SElement'.
+The class 'source_Y1' is a specialization of 'Y'.
+The class 'source_Y2' is a specialization of 'Y'.
+The class 'source_Z' is a specialization of 'SElement'.
+The class 'source_SRoot' is a specialization of 'SElement'.
+The class 'source_PathNameCS' is a specialization of 'SElement'.
+The class 'source_PathElementCS' is a specialization of 'SElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'source_X' and 'source_Y'. From 'source_X', the role 'toX' has cardinality 0..*, and from 'source_Y', the role 'Y' has cardinality 0..*.
+An association connects 'source_Z' and 'source_Y'. From 'source_Z', the role 'Z' has cardinality 0..*, and from 'source_Y', the role 'toY' has cardinality 0..*.
+An association connects 'source_X' and 'source_Y'. From 'source_X', the role 'X' has cardinality 0..*, and from 'source_Y', the role 'ownsY' has cardinality 0..*.
+An association connects 'source_Y' and 'source_Z'. From 'source_Y', the role 'Y4' has cardinality 0..*, and from 'source_Z', the role 'ownsZ' has cardinality 0..*.
+An association connects 'source_PathNameCS' and 'source_Z'. From 'source_PathNameCS', the role 'source_PathNameCS' has cardinality 0..*, and from 'source_Z', the role 'source_Z' has cardinality 0..*.
+An association connects 'source_X' and 'source_SRoot'. From 'source_X', the role 'source_X' has cardinality 0..*, and from 'source_SRoot', the role 'source_SRoot' has cardinality 0..*.
+An association connects 'source_EObject' and 'source_SElement'. From 'source_EObject', the role 'source_EObject' has cardinality 0..*, and from 'source_SElement', the role 'source_SElement' has cardinality 0..*.
+An association connects 'source_PathElementCS' and 'source_PathNameCS'. From 'source_PathElementCS', the role 'source_PathElementCS' has cardinality 0..*, and from 'source_PathNameCS', the role 'source_PathNameCS9' has cardinality 0..*.

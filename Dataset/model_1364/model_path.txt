@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/KourdacheHoussam/ModelTransformationTP4/ModelTransformationTP4/model/StateMachine.ecore

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jdelara/DSL-tao/src/org.mondo.dsl/patterns/StateMachine.ecore

@@ -1,0 +1,1623 @@
+The domain model 'simTL4J' describes the core structural elements and their relationships within the system.
+
+The model defines 389 main class(es).
+
+'simTL4J_literals_DecimalFloatLiteral' represents an important domain concept.
+It has one attribute: 'decimalValue', which is of type float.
+
+'simTL4J_expressions_AssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OrdinaryParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'arrays_ArrayTypeable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_IntegerLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'arrays_ArrayInitializationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentOr' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_DoWhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicativeExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_Char' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_annotations_AnnotationInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_generics_SuperTypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_StatementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_AdditiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentUnsignedRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_ShiftExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_LongLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'Instantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_EqualityExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_DefaultSwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_AdditiveOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'classifiers_ConcreteClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_Long' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_GreaterThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Native' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_Short' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'modifiers_AnnotableAndModifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_Void' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_LessThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_classifiers_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_variables_AdditionalLocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_classifiers_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_RelationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_generics_TypeArgumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'simTL4J_statements_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_Subtraction' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Transient' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_ForLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_variables_LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_generics_QualifiedTypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_UnaryModificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceOfExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayTypeable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_members_ExceptionThrower' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_Jump' represents an important domain concept.
+It does not declare any attributes.
+
+'ForLoopInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'imports_ImportingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_Self' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_AssignmentExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_members_MemberContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_ForEachLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'variables_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_OctalLongLiteral' represents an important domain concept.
+It has one attribute: 'octalValue', which is of type str.
+
+'TAbstractMethodStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_members_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_PlusPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_LocalVariableStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'members_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TIf' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_Remainder' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_ForLoopInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_instantiations_Initializable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_Complement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_HexFloatLiteral' represents an important domain concept.
+It has one attribute: 'hexValue', which is of type float.
+
+'simTL4J_imports_StaticImport' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Static' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_MinusMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditionalLocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_containers_EmptyModel' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_classifiers_ConcreteClassifier' represents an important domain concept.
+It has one attribute: 'fullName', which is of type str.
+
+'simTL4J_literals_DecimalIntegerLiteral' represents an important domain concept.
+It has one attribute: 'decimalValue', which is of type str.
+
+'JumpLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_OctalIntegerLiteral' represents an important domain concept.
+It has one attribute: 'octalValue', which is of type str.
+
+'instantiations_Instantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_LeftShift' represents an important domain concept.
+It does not declare any attributes.
+
+'Commentable' represents an important domain concept.
+It does not declare any attributes.
+
+'classifiers_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_CharacterLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'simTL4J_containers_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_RightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Volatile' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_generics_ExtendsTypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'annotations_Annotable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_UnsignedRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_Template' represents an important domain concept.
+It does not declare any attributes.
+
+'CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'TForVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_generics_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_JumpLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TFor' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_commons_NamespaceAwareElement' represents an important domain concept.
+It has one attribute: 'namespaces', which is of type str.
+
+'simTL4J_parameters_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TForVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'containers_JavaRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_AnnotableAndModifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_ConditionalAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_parameters_VariableLengthParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TemplateHeader' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_commons_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simTL4J_literals_This' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_parameters_Parametrizable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_arrays_ArrayDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_references_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_classifiers_Implementor' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_ExclusiveOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_members_ClassMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_InclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_parameters_OrdinaryParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_instantiations_Instantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TModelImport' represents an important domain concept.
+It has the following attributes: 'uri', which is of type str; 'name', which is of type str.
+
+'classifiers_Implementor' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_NormalSwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Abstract' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_annotations_SingleAnnotationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_members_AdditionalField' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_classifiers_AnonymousClass' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_MultiplicativeOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Static' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TMethodCall' represents an important domain concept.
+It has the following attributes: 'params', which is of type str; 'methodName', which is of type str.
+
+'simTL4J_expressions_EqualityExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_generics_TypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'ShiftOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_members_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_references_MethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_imports_PackageImport' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentMultiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'annotations_AnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Modifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_NestedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_references_Argumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateHeader' represents an important domain concept.
+It does not declare any attributes.
+
+'generics_TypeArgumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Import' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'EqualityOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'StaticImport' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_references_ReferenceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_Throw' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditiveOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'FloatLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'ArraySelector' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_containers_JavaRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'parameters_Parametrizable' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Public' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_FloatLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_Super' represents an important domain concept.
+It does not declare any attributes.
+
+'TModelImport' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TAbstractMethodStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Private' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_Switch' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_commons_Commentable' represents an important domain concept.
+It has one attribute: 'comments', which is of type str.
+
+'simTL4J_simTL_TFor_MemberContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_SynchronizedBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_InstanceOfExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_arrays_ArraySelector' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_references_ElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_AndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'Method' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_references_IdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_members_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'modifiers_AnnotationInstanceOrModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentLeftShift' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TPlaceholder' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_InclusiveOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_instantiations_ExplicitConstructorCall' represents an important domain concept.
+It does not declare any attributes.
+
+'Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TIf_MemberContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'members_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL_TFor' represents an important domain concept.
+It does not declare any attributes.
+
+'references_ElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TFor_StatementListContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Strictfp' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_ConditionalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'generics_TypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditiveExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'ShiftExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryModificationExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_TryBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_references_ReflectiveClassReference' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_UnaryExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'DoubleLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_references_PrimitiveTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TPlaceholder_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_annotations_AnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentModulo' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_classifiers_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_PrefixUnaryModificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_instantiations_NewConstructorCall' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL_TIf' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TIf_StatementListContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_annotations_AnnotationParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_HexLongLiteral' represents an important domain concept.
+It has one attribute: 'hexValue', which is of type str.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_annotations_AnnotationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_arrays_ArrayInstantiationByValues' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_ConditionalAndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'Self' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_references_StringReference' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'TPlaceholder' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_UnaryModificationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayInitializationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_InstanceOfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_references_SelfReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TUnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TMethodStatementImpl' represents an important domain concept.
+It has one attribute: 'caller', which is of type str.
+
+'simTL4J_literals_DecimalLongLiteral' represents an important domain concept.
+It has one attribute: 'decimalValue', which is of type str.
+
+'simTL4J_variables_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicativeOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_AdditiveExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_StatementListContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'instantiations_Initializable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_StatementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL_TPlaceholder' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_generics_TypeParametrizable' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Synchronized' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_imports_ImportingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_simTL_TUnaryOperatorNOT' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_DecimalDoubleLiteral' represents an important domain concept.
+It has one attribute: 'decimalValue', which is of type float.
+
+'simTL4J_modifiers_AnnotationInstanceOrModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'AnonymousClass' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_StatementListContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_ConditionalOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TUnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_NamespaceClassifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_imports_Import' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_RelationExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentExclusiveOr' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_ExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'members_ExceptionThrower' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_ConditionalOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceClassifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationAttributeSetting' represents an important domain concept.
+It does not declare any attributes.
+
+'InclusiveOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_EqualityOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_HexDoubleLiteral' represents an important domain concept.
+It has one attribute: 'hexValue', which is of type float.
+
+'simTL4J_statements_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_arrays_ArrayInitializationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_arrays_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceAwareElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TMethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_imports_StaticClassifierImport' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_members_InterfaceMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_annotations_Annotable' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_MultiplicativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_HexIntegerLiteral' represents an important domain concept.
+It has one attribute: 'hexValue', which is of type str.
+
+'simTL4J_statements_ForLoopInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'ExclusiveOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_members_EmptyMember' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_ShiftOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'EqualityExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_imports_StaticMemberImport' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_arrays_ArrayInstantiationBySize' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalAndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_ExclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_generics_CallTypeArgumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'generics_TypeParametrizable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_ShiftExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'references_Argumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_UnaryModificationExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_ClassifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_literals_DoubleLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_Assert' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_classifiers_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_arrays_ArrayTypeable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_SuffixUnaryModificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_modifiers_Protected' represents an important domain concept.
+It does not declare any attributes.
+
+'references_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementListContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_UnaryModificationExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'LongLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AdditiveOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_classifiers_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'generics_CallTypeArgumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_Break' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationInstanceOrModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_imports_ClassifierImport' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_containers_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryModificationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_members_EnumConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_RelationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'types_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_Byte' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_generics_UnknownTypeArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_annotations_AnnotationAttributeSetting' represents an important domain concept.
+It does not declare any attributes.
+
+'ConcreteClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_members_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditionalField' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryModificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_operators_AssignmentDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'Jump' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_CatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_NamespaceAwareElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_statements_Continue' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'references_ReferenceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_expressions_MultiplicativeExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'types_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_annotations_AnnotationAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'simTL4J_types_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'members_MemberContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'modifiers_Modifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'AndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simTL4J_annotations_Annotable' is a specialization of 'Commentable'.
+The class 'simTL4J_annotations_AnnotationInstance' is a specialization of 'references_Reference'.
+The class 'simTL4J_annotations_AnnotationInstance' is a specialization of 'modifiers_AnnotationInstanceOrModifier'.
+The class 'simTL4J_annotations_AnnotationInstance' is a specialization of 'commons_NamespaceAwareElement'.
+The class 'simTL4J_annotations_AnnotationParameter' is a specialization of 'Commentable'.
+The class 'simTL4J_annotations_SingleAnnotationParameter' is a specialization of 'AnnotationParameter'.
+The class 'simTL4J_annotations_AnnotationParameterList' is a specialization of 'AnnotationParameter'.
+The class 'simTL4J_annotations_AnnotationAttributeSetting' is a specialization of 'Commentable'.
+The class 'simTL4J_annotations_AnnotationValue' is a specialization of 'Commentable'.
+The class 'simTL4J_annotations_AnnotationAttribute' is a specialization of 'InterfaceMethod'.
+The class 'simTL4J_arrays_ArrayTypeable' is a specialization of 'Commentable'.
+The class 'simTL4J_arrays_ArrayDimension' is a specialization of 'Commentable'.
+The class 'simTL4J_arrays_ArrayInitializer' is a specialization of 'arrays_ArrayInitializationValue'.
+The class 'simTL4J_arrays_ArrayInitializer' is a specialization of 'annotations_AnnotationValue'.
+The class 'simTL4J_arrays_ArrayInitializationValue' is a specialization of 'Commentable'.
+The class 'simTL4J_arrays_ArrayInstantiationBySize' is a specialization of 'expressions_Expression'.
+The class 'simTL4J_arrays_ArrayInstantiationBySize' is a specialization of 'types_TypedElement'.
+The class 'simTL4J_arrays_ArrayInstantiationBySize' is a specialization of 'arrays_ArrayTypeable'.
+The class 'simTL4J_arrays_ArrayInstantiationBySize' is a specialization of 'references_Reference'.
+The class 'simTL4J_arrays_ArrayInstantiationByValues' is a specialization of 'expressions_Expression'.
+The class 'simTL4J_arrays_ArrayInstantiationByValues' is a specialization of 'types_TypedElement'.
+The class 'simTL4J_arrays_ArrayInstantiationByValues' is a specialization of 'arrays_ArrayTypeable'.
+The class 'simTL4J_arrays_ArrayInstantiationByValues' is a specialization of 'references_Reference'.
+The class 'simTL4J_arrays_ArraySelector' is a specialization of 'Commentable'.
+The class 'simTL4J_classifiers_Classifier' is a specialization of 'types_Type'.
+The class 'simTL4J_classifiers_Classifier' is a specialization of 'references_ReferenceableElement'.
+The class 'simTL4J_classifiers_ConcreteClassifier' is a specialization of 'classifiers_Classifier'.
+The class 'simTL4J_classifiers_ConcreteClassifier' is a specialization of 'generics_TypeParametrizable'.
+The class 'simTL4J_classifiers_ConcreteClassifier' is a specialization of 'members_MemberContainer'.
+The class 'simTL4J_classifiers_ConcreteClassifier' is a specialization of 'members_Member'.
+The class 'simTL4J_classifiers_ConcreteClassifier' is a specialization of 'statements_Statement'.
+The class 'simTL4J_classifiers_ConcreteClassifier' is a specialization of 'modifiers_AnnotableAndModifiable'.
+The class 'simTL4J_classifiers_Implementor' is a specialization of 'Commentable'.
+The class 'simTL4J_classifiers_Class' is a specialization of 'classifiers_ConcreteClassifier'.
+The class 'simTL4J_classifiers_Class' is a specialization of 'classifiers_Implementor'.
+The class 'simTL4J_classifiers_Interface' is a specialization of 'ConcreteClassifier'.
+The class 'simTL4J_classifiers_Enumeration' is a specialization of 'classifiers_ConcreteClassifier'.
+The class 'simTL4J_classifiers_Enumeration' is a specialization of 'classifiers_Implementor'.
+The class 'simTL4J_classifiers_Annotation' is a specialization of 'ConcreteClassifier'.
+The class 'simTL4J_classifiers_AnonymousClass' is a specialization of 'types_Type'.
+The class 'simTL4J_classifiers_AnonymousClass' is a specialization of 'members_MemberContainer'.
+The class 'simTL4J_commons_NamedElement' is a specialization of 'Commentable'.
+The class 'simTL4J_commons_NamespaceAwareElement' is a specialization of 'Commentable'.
+The class 'simTL4J_containers_JavaRoot' is a specialization of 'commons_NamedElement'.
+The class 'simTL4J_containers_JavaRoot' is a specialization of 'commons_NamespaceAwareElement'.
+The class 'simTL4J_containers_JavaRoot' is a specialization of 'imports_ImportingElement'.
+The class 'simTL4J_containers_CompilationUnit' is a specialization of 'JavaRoot'.
+The class 'simTL4J_containers_Package' is a specialization of 'containers_JavaRoot'.
+The class 'simTL4J_containers_Package' is a specialization of 'annotations_Annotable'.
+The class 'simTL4J_containers_Package' is a specialization of 'references_ReferenceableElement'.
+The class 'simTL4J_containers_EmptyModel' is a specialization of 'JavaRoot'.
+The class 'simTL4J_expressions_ExpressionList' is a specialization of 'ForLoopInitializer'.
+The class 'simTL4J_expressions_Expression' is a specialization of 'arrays_ArrayInitializationValue'.
+The class 'simTL4J_expressions_Expression' is a specialization of 'annotations_AnnotationValue'.
+The class 'simTL4J_expressions_AssignmentExpression' is a specialization of 'Expression'.
+The class 'simTL4J_expressions_AssignmentExpressionChild' is a specialization of 'Expression'.
+The class 'simTL4J_expressions_ConditionalExpression' is a specialization of 'AssignmentExpressionChild'.
+The class 'simTL4J_expressions_ConditionalExpressionChild' is a specialization of 'AssignmentExpressionChild'.
+The class 'simTL4J_expressions_ConditionalOrExpression' is a specialization of 'ConditionalExpressionChild'.
+The class 'simTL4J_expressions_ConditionalOrExpressionChild' is a specialization of 'ConditionalExpressionChild'.
+The class 'simTL4J_expressions_ConditionalAndExpression' is a specialization of 'ConditionalOrExpressionChild'.
+The class 'simTL4J_expressions_ConditionalAndExpressionChild' is a specialization of 'ConditionalOrExpressionChild'.
+The class 'simTL4J_expressions_InclusiveOrExpression' is a specialization of 'ConditionalAndExpressionChild'.
+The class 'simTL4J_expressions_InclusiveOrExpressionChild' is a specialization of 'ConditionalAndExpressionChild'.
+The class 'simTL4J_expressions_ExclusiveOrExpression' is a specialization of 'InclusiveOrExpressionChild'.
+The class 'simTL4J_expressions_ExclusiveOrExpressionChild' is a specialization of 'InclusiveOrExpressionChild'.
+The class 'simTL4J_expressions_AndExpression' is a specialization of 'ExclusiveOrExpressionChild'.
+The class 'simTL4J_expressions_AndExpressionChild' is a specialization of 'ExclusiveOrExpressionChild'.
+The class 'simTL4J_expressions_EqualityExpression' is a specialization of 'AndExpressionChild'.
+The class 'simTL4J_expressions_EqualityExpressionChild' is a specialization of 'AndExpressionChild'.
+The class 'simTL4J_expressions_InstanceOfExpression' is a specialization of 'arrays_ArrayTypeable'.
+The class 'simTL4J_expressions_InstanceOfExpression' is a specialization of 'types_TypedElement'.
+The class 'simTL4J_expressions_InstanceOfExpression' is a specialization of 'expressions_EqualityExpressionChild'.
+The class 'simTL4J_expressions_InstanceOfExpressionChild' is a specialization of 'EqualityExpressionChild'.
+The class 'simTL4J_expressions_RelationExpression' is a specialization of 'InstanceOfExpressionChild'.
+The class 'simTL4J_expressions_RelationExpressionChild' is a specialization of 'InstanceOfExpressionChild'.
+The class 'simTL4J_expressions_ShiftExpression' is a specialization of 'RelationExpressionChild'.
+The class 'simTL4J_expressions_ShiftExpressionChild' is a specialization of 'RelationExpressionChild'.
+The class 'simTL4J_expressions_AdditiveExpression' is a specialization of 'ShiftExpressionChild'.
+The class 'simTL4J_expressions_AdditiveExpressionChild' is a specialization of 'ShiftExpressionChild'.
+The class 'simTL4J_expressions_MultiplicativeExpression' is a specialization of 'AdditiveExpressionChild'.
+The class 'simTL4J_expressions_MultiplicativeExpressionChild' is a specialization of 'AdditiveExpressionChild'.
+The class 'simTL4J_expressions_UnaryExpression' is a specialization of 'MultiplicativeExpressionChild'.
+The class 'simTL4J_expressions_UnaryExpressionChild' is a specialization of 'MultiplicativeExpressionChild'.
+The class 'simTL4J_expressions_UnaryModificationExpression' is a specialization of 'UnaryExpressionChild'.
+The class 'simTL4J_expressions_PrefixUnaryModificationExpression' is a specialization of 'UnaryModificationExpression'.
+The class 'simTL4J_expressions_SuffixUnaryModificationExpression' is a specialization of 'UnaryModificationExpression'.
+The class 'simTL4J_expressions_UnaryModificationExpressionChild' is a specialization of 'UnaryExpressionChild'.
+The class 'simTL4J_expressions_CastExpression' is a specialization of 'types_TypedElement'.
+The class 'simTL4J_expressions_CastExpression' is a specialization of 'arrays_ArrayTypeable'.
+The class 'simTL4J_expressions_CastExpression' is a specialization of 'expressions_UnaryModificationExpressionChild'.
+The class 'simTL4J_expressions_PrimaryExpression' is a specialization of 'UnaryModificationExpressionChild'.
+The class 'simTL4J_expressions_NestedExpression' is a specialization of 'Reference'.
+The class 'simTL4J_generics_TypeArgument' is a specialization of 'ArrayTypeable'.
+The class 'simTL4J_generics_TypeArgumentable' is a specialization of 'Commentable'.
+The class 'simTL4J_generics_CallTypeArgumentable' is a specialization of 'Commentable'.
+The class 'simTL4J_generics_TypeParametrizable' is a specialization of 'Commentable'.
+The class 'simTL4J_generics_ExtendsTypeArgument' is a specialization of 'TypeArgument'.
+The class 'simTL4J_generics_QualifiedTypeArgument' is a specialization of 'generics_TypeArgument'.
+The class 'simTL4J_generics_QualifiedTypeArgument' is a specialization of 'types_TypedElement'.
+The class 'simTL4J_generics_SuperTypeArgument' is a specialization of 'TypeArgument'.
+The class 'simTL4J_generics_TypeParameter' is a specialization of 'Classifier'.
+The class 'simTL4J_generics_UnknownTypeArgument' is a specialization of 'TypeArgument'.
+The class 'simTL4J_imports_Import' is a specialization of 'NamespaceAwareElement'.
+The class 'simTL4J_imports_ImportingElement' is a specialization of 'Commentable'.
+The class 'simTL4J_imports_StaticImport' is a specialization of 'Import'.
+The class 'simTL4J_imports_ClassifierImport' is a specialization of 'Import'.
+The class 'simTL4J_imports_PackageImport' is a specialization of 'Import'.
+The class 'simTL4J_imports_StaticClassifierImport' is a specialization of 'StaticImport'.
+The class 'simTL4J_imports_StaticMemberImport' is a specialization of 'StaticImport'.
+The class 'simTL4J_instantiations_Initializable' is a specialization of 'Commentable'.
+The class 'simTL4J_instantiations_Instantiation' is a specialization of 'types_TypedElement'.
+The class 'simTL4J_instantiations_Instantiation' is a specialization of 'references_Reference'.
+The class 'simTL4J_instantiations_Instantiation' is a specialization of 'references_Argumentable'.
+The class 'simTL4J_instantiations_Instantiation' is a specialization of 'generics_TypeArgumentable'.
+The class 'simTL4J_instantiations_NewConstructorCall' is a specialization of 'instantiations_Instantiation'.
+The class 'simTL4J_instantiations_NewConstructorCall' is a specialization of 'generics_CallTypeArgumentable'.
+The class 'simTL4J_instantiations_ExplicitConstructorCall' is a specialization of 'Instantiation'.
+The class 'simTL4J_literals_Literal' is a specialization of 'PrimaryExpression'.
+The class 'simTL4J_literals_Self' is a specialization of 'Commentable'.
+The class 'simTL4J_literals_BooleanLiteral' is a specialization of 'Literal'.
+The class 'simTL4J_literals_CharacterLiteral' is a specialization of 'Literal'.
+The class 'simTL4J_literals_FloatLiteral' is a specialization of 'Literal'.
+The class 'simTL4J_literals_DecimalFloatLiteral' is a specialization of 'FloatLiteral'.
+The class 'simTL4J_literals_HexFloatLiteral' is a specialization of 'FloatLiteral'.
+The class 'simTL4J_literals_DoubleLiteral' is a specialization of 'Literal'.
+The class 'simTL4J_literals_DecimalDoubleLiteral' is a specialization of 'DoubleLiteral'.
+The class 'simTL4J_literals_HexDoubleLiteral' is a specialization of 'DoubleLiteral'.
+The class 'simTL4J_literals_IntegerLiteral' is a specialization of 'Literal'.
+The class 'simTL4J_literals_DecimalIntegerLiteral' is a specialization of 'IntegerLiteral'.
+The class 'simTL4J_literals_HexIntegerLiteral' is a specialization of 'IntegerLiteral'.
+The class 'simTL4J_literals_OctalIntegerLiteral' is a specialization of 'IntegerLiteral'.
+The class 'simTL4J_literals_LongLiteral' is a specialization of 'Literal'.
+The class 'simTL4J_literals_DecimalLongLiteral' is a specialization of 'LongLiteral'.
+The class 'simTL4J_literals_HexLongLiteral' is a specialization of 'LongLiteral'.
+The class 'simTL4J_literals_OctalLongLiteral' is a specialization of 'LongLiteral'.
+The class 'simTL4J_literals_NullLiteral' is a specialization of 'Literal'.
+The class 'simTL4J_literals_Super' is a specialization of 'Self'.
+The class 'simTL4J_literals_This' is a specialization of 'Self'.
+The class 'simTL4J_members_ExceptionThrower' is a specialization of 'Commentable'.
+The class 'simTL4J_members_Member' is a specialization of 'NamedElement'.
+The class 'simTL4J_members_MemberContainer' is a specialization of 'Commentable'.
+The class 'simTL4J_members_AdditionalField' is a specialization of 'references_ReferenceableElement'.
+The class 'simTL4J_members_AdditionalField' is a specialization of 'arrays_ArrayTypeable'.
+The class 'simTL4J_members_AdditionalField' is a specialization of 'instantiations_Initializable'.
+The class 'simTL4J_members_Constructor' is a specialization of 'members_Member'.
+The class 'simTL4J_members_Constructor' is a specialization of 'statements_StatementListContainer'.
+The class 'simTL4J_members_Constructor' is a specialization of 'parameters_Parametrizable'.
+The class 'simTL4J_members_Constructor' is a specialization of 'generics_TypeParametrizable'.
+The class 'simTL4J_members_Constructor' is a specialization of 'members_ExceptionThrower'.
+The class 'simTL4J_members_Constructor' is a specialization of 'modifiers_AnnotableAndModifiable'.
+The class 'simTL4J_members_EmptyMember' is a specialization of 'Member'.
+The class 'simTL4J_members_Field' is a specialization of 'members_Member'.
+The class 'simTL4J_members_Field' is a specialization of 'instantiations_Initializable'.
+The class 'simTL4J_members_Field' is a specialization of 'variables_Variable'.
+The class 'simTL4J_members_Field' is a specialization of 'references_ReferenceableElement'.
+The class 'simTL4J_members_Field' is a specialization of 'modifiers_AnnotableAndModifiable'.
+The class 'simTL4J_members_Method' is a specialization of 'members_Member'.
+The class 'simTL4J_members_Method' is a specialization of 'types_TypedElement'.
+The class 'simTL4J_members_Method' is a specialization of 'arrays_ArrayTypeable'.
+The class 'simTL4J_members_Method' is a specialization of 'generics_TypeParametrizable'.
+The class 'simTL4J_members_Method' is a specialization of 'parameters_Parametrizable'.
+The class 'simTL4J_members_Method' is a specialization of 'references_ReferenceableElement'.
+The class 'simTL4J_members_Method' is a specialization of 'members_ExceptionThrower'.
+The class 'simTL4J_members_Method' is a specialization of 'modifiers_AnnotableAndModifiable'.
+The class 'simTL4J_members_InterfaceMethod' is a specialization of 'Method'.
+The class 'simTL4J_members_ClassMethod' is a specialization of 'members_Method'.
+The class 'simTL4J_members_ClassMethod' is a specialization of 'statements_StatementListContainer'.
+The class 'simTL4J_members_EnumConstant' is a specialization of 'references_ReferenceableElement'.
+The class 'simTL4J_members_EnumConstant' is a specialization of 'references_Argumentable'.
+The class 'simTL4J_members_EnumConstant' is a specialization of 'annotations_Annotable'.
+The class 'simTL4J_modifiers_Modifier' is a specialization of 'AnnotationInstanceOrModifier'.
+The class 'simTL4J_modifiers_AnnotationInstanceOrModifier' is a specialization of 'Commentable'.
+The class 'simTL4J_modifiers_AnnotableAndModifiable' is a specialization of 'Commentable'.
+The class 'simTL4J_modifiers_Modifiable' is a specialization of 'Commentable'.
+The class 'simTL4J_modifiers_Abstract' is a specialization of 'Modifier'.
+The class 'simTL4J_modifiers_Final' is a specialization of 'Modifier'.
+The class 'simTL4J_modifiers_Native' is a specialization of 'Modifier'.
+The class 'simTL4J_modifiers_Protected' is a specialization of 'Modifier'.
+The class 'simTL4J_modifiers_Public' is a specialization of 'Modifier'.
+The class 'simTL4J_modifiers_Private' is a specialization of 'Modifier'.
+The class 'simTL4J_modifiers_Static' is a specialization of 'Modifier'.
+The class 'simTL4J_modifiers_Strictfp' is a specialization of 'Modifier'.
+The class 'simTL4J_modifiers_Synchronized' is a specialization of 'Modifier'.
+The class 'simTL4J_modifiers_Transient' is a specialization of 'Modifier'.
+The class 'simTL4J_modifiers_Volatile' is a specialization of 'Modifier'.
+The class 'simTL4J_operators_Operator' is a specialization of 'Commentable'.
+The class 'simTL4J_operators_AdditiveOperator' is a specialization of 'Operator'.
+The class 'simTL4J_operators_AssignmentOperator' is a specialization of 'Operator'.
+The class 'simTL4J_operators_EqualityOperator' is a specialization of 'Operator'.
+The class 'simTL4J_operators_MultiplicativeOperator' is a specialization of 'Operator'.
+The class 'simTL4J_operators_RelationOperator' is a specialization of 'Operator'.
+The class 'simTL4J_operators_ShiftOperator' is a specialization of 'Operator'.
+The class 'simTL4J_operators_UnaryOperator' is a specialization of 'Operator'.
+The class 'simTL4J_operators_UnaryModificationOperator' is a specialization of 'Operator'.
+The class 'simTL4J_operators_Assignment' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_AssignmentAnd' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_AssignmentDivision' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_AssignmentExclusiveOr' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_AssignmentMinus' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_AssignmentModulo' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_AssignmentMultiplication' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_AssignmentLeftShift' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_AssignmentOr' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_AssignmentPlus' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_AssignmentRightShift' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_AssignmentUnsignedRightShift' is a specialization of 'AssignmentOperator'.
+The class 'simTL4J_operators_Equal' is a specialization of 'EqualityOperator'.
+The class 'simTL4J_operators_NotEqual' is a specialization of 'EqualityOperator'.
+The class 'simTL4J_operators_GreaterThan' is a specialization of 'RelationOperator'.
+The class 'simTL4J_operators_GreaterThanOrEqual' is a specialization of 'RelationOperator'.
+The class 'simTL4J_operators_LessThan' is a specialization of 'RelationOperator'.
+The class 'simTL4J_operators_LessThanOrEqual' is a specialization of 'RelationOperator'.
+The class 'simTL4J_operators_Addition' is a specialization of 'operators_AdditiveOperator'.
+The class 'simTL4J_operators_Addition' is a specialization of 'operators_UnaryOperator'.
+The class 'simTL4J_operators_Subtraction' is a specialization of 'operators_AdditiveOperator'.
+The class 'simTL4J_operators_Subtraction' is a specialization of 'operators_UnaryOperator'.
+The class 'simTL4J_operators_Division' is a specialization of 'MultiplicativeOperator'.
+The class 'simTL4J_operators_Multiplication' is a specialization of 'MultiplicativeOperator'.
+The class 'simTL4J_operators_Remainder' is a specialization of 'MultiplicativeOperator'.
+The class 'simTL4J_operators_Complement' is a specialization of 'UnaryOperator'.
+The class 'simTL4J_operators_MinusMinus' is a specialization of 'UnaryModificationOperator'.
+The class 'simTL4J_operators_Negate' is a specialization of 'UnaryOperator'.
+The class 'simTL4J_operators_PlusPlus' is a specialization of 'UnaryModificationOperator'.
+The class 'simTL4J_operators_LeftShift' is a specialization of 'ShiftOperator'.
+The class 'simTL4J_operators_RightShift' is a specialization of 'ShiftOperator'.
+The class 'simTL4J_operators_UnsignedRightShift' is a specialization of 'ShiftOperator'.
+The class 'simTL4J_parameters_Parameter' is a specialization of 'variables_Variable'.
+The class 'simTL4J_parameters_Parameter' is a specialization of 'modifiers_AnnotableAndModifiable'.
+The class 'simTL4J_parameters_Parametrizable' is a specialization of 'Commentable'.
+The class 'simTL4J_parameters_OrdinaryParameter' is a specialization of 'Parameter'.
+The class 'simTL4J_parameters_VariableLengthParameter' is a specialization of 'Parameter'.
+The class 'simTL4J_references_Reference' is a specialization of 'expressions_PrimaryExpression'.
+The class 'simTL4J_references_Reference' is a specialization of 'generics_TypeArgumentable'.
+The class 'simTL4J_references_Argumentable' is a specialization of 'Commentable'.
+The class 'simTL4J_references_ReferenceableElement' is a specialization of 'NamedElement'.
+The class 'simTL4J_references_ElementReference' is a specialization of 'Reference'.
+The class 'simTL4J_references_IdentifierReference' is a specialization of 'ElementReference'.
+The class 'simTL4J_references_MethodCall' is a specialization of 'references_ElementReference'.
+The class 'simTL4J_references_MethodCall' is a specialization of 'references_Argumentable'.
+The class 'simTL4J_references_MethodCall' is a specialization of 'generics_CallTypeArgumentable'.
+The class 'simTL4J_references_ReflectiveClassReference' is a specialization of 'Reference'.
+The class 'simTL4J_references_PrimitiveTypeReference' is a specialization of 'Reference'.
+The class 'simTL4J_references_StringReference' is a specialization of 'Reference'.
+The class 'simTL4J_references_SelfReference' is a specialization of 'Reference'.
+The class 'simTL4J_statements_StatementContainer' is a specialization of 'Commentable'.
+The class 'simTL4J_statements_StatementListContainer' is a specialization of 'Commentable'.
+The class 'simTL4J_statements_Conditional' is a specialization of 'Commentable'.
+The class 'simTL4J_statements_ForLoopInitializer' is a specialization of 'Commentable'.
+The class 'simTL4J_statements_Statement' is a specialization of 'Commentable'.
+The class 'simTL4J_statements_SwitchCase' is a specialization of 'StatementListContainer'.
+The class 'simTL4J_statements_Assert' is a specialization of 'statements_Statement'.
+The class 'simTL4J_statements_Assert' is a specialization of 'statements_Conditional'.
+The class 'simTL4J_statements_Break' is a specialization of 'Jump'.
+The class 'simTL4J_statements_Block' is a specialization of 'members_Member'.
+The class 'simTL4J_statements_Block' is a specialization of 'statements_Statement'.
+The class 'simTL4J_statements_Block' is a specialization of 'statements_StatementListContainer'.
+The class 'simTL4J_statements_Block' is a specialization of 'modifiers_Modifiable'.
+The class 'simTL4J_statements_CatchBlock' is a specialization of 'StatementListContainer'.
+The class 'simTL4J_statements_Condition' is a specialization of 'statements_Statement'.
+The class 'simTL4J_statements_Condition' is a specialization of 'statements_StatementContainer'.
+The class 'simTL4J_statements_Condition' is a specialization of 'statements_Conditional'.
+The class 'simTL4J_statements_Continue' is a specialization of 'Jump'.
+The class 'simTL4J_statements_DefaultSwitchCase' is a specialization of 'SwitchCase'.
+The class 'simTL4J_statements_DoWhileLoop' is a specialization of 'WhileLoop'.
+The class 'simTL4J_statements_EmptyStatement' is a specialization of 'Statement'.
+The class 'simTL4J_statements_ExpressionStatement' is a specialization of 'Statement'.
+The class 'simTL4J_statements_ForLoop' is a specialization of 'statements_Statement'.
+The class 'simTL4J_statements_ForLoop' is a specialization of 'statements_StatementContainer'.
+The class 'simTL4J_statements_ForLoop' is a specialization of 'statements_Conditional'.
+The class 'simTL4J_statements_ForEachLoop' is a specialization of 'statements_Statement'.
+The class 'simTL4J_statements_ForEachLoop' is a specialization of 'statements_StatementContainer'.
+The class 'simTL4J_statements_Jump' is a specialization of 'Statement'.
+The class 'simTL4J_statements_JumpLabel' is a specialization of 'statements_Statement'.
+The class 'simTL4J_statements_JumpLabel' is a specialization of 'statements_StatementContainer'.
+The class 'simTL4J_statements_JumpLabel' is a specialization of 'commons_NamedElement'.
+The class 'simTL4J_statements_LocalVariableStatement' is a specialization of 'Statement'.
+The class 'simTL4J_statements_NormalSwitchCase' is a specialization of 'statements_SwitchCase'.
+The class 'simTL4J_statements_NormalSwitchCase' is a specialization of 'statements_Conditional'.
+The class 'simTL4J_statements_Return' is a specialization of 'Statement'.
+The class 'simTL4J_statements_Switch' is a specialization of 'Statement'.
+The class 'simTL4J_statements_SynchronizedBlock' is a specialization of 'statements_Statement'.
+The class 'simTL4J_statements_SynchronizedBlock' is a specialization of 'statements_StatementListContainer'.
+The class 'simTL4J_statements_Throw' is a specialization of 'Statement'.
+The class 'simTL4J_statements_TryBlock' is a specialization of 'statements_Statement'.
+The class 'simTL4J_statements_TryBlock' is a specialization of 'statements_StatementListContainer'.
+The class 'simTL4J_statements_WhileLoop' is a specialization of 'statements_Statement'.
+The class 'simTL4J_statements_WhileLoop' is a specialization of 'statements_StatementContainer'.
+The class 'simTL4J_types_Type' is a specialization of 'Commentable'.
+The class 'simTL4J_types_TypedElement' is a specialization of 'Commentable'.
+The class 'simTL4J_types_TypeReference' is a specialization of 'Commentable'.
+The class 'simTL4J_types_ClassifierReference' is a specialization of 'types_TypeReference'.
+The class 'simTL4J_types_ClassifierReference' is a specialization of 'generics_TypeArgumentable'.
+The class 'simTL4J_types_NamespaceClassifierReference' is a specialization of 'types_TypeReference'.
+The class 'simTL4J_types_NamespaceClassifierReference' is a specialization of 'commons_NamespaceAwareElement'.
+The class 'simTL4J_types_PrimitiveType' is a specialization of 'types_Type'.
+The class 'simTL4J_types_PrimitiveType' is a specialization of 'types_TypeReference'.
+The class 'simTL4J_types_Boolean' is a specialization of 'PrimitiveType'.
+The class 'simTL4J_types_Byte' is a specialization of 'PrimitiveType'.
+The class 'simTL4J_types_Char' is a specialization of 'PrimitiveType'.
+The class 'simTL4J_types_Double' is a specialization of 'PrimitiveType'.
+The class 'simTL4J_types_Float' is a specialization of 'PrimitiveType'.
+The class 'simTL4J_types_Int' is a specialization of 'PrimitiveType'.
+The class 'simTL4J_types_Long' is a specialization of 'PrimitiveType'.
+The class 'simTL4J_types_Short' is a specialization of 'PrimitiveType'.
+The class 'simTL4J_types_Void' is a specialization of 'PrimitiveType'.
+The class 'simTL4J_variables_Variable' is a specialization of 'commons_NamedElement'.
+The class 'simTL4J_variables_Variable' is a specialization of 'types_TypedElement'.
+The class 'simTL4J_variables_Variable' is a specialization of 'arrays_ArrayTypeable'.
+The class 'simTL4J_variables_Variable' is a specialization of 'references_ReferenceableElement'.
+The class 'simTL4J_variables_Variable' is a specialization of 'generics_TypeArgumentable'.
+The class 'simTL4J_variables_LocalVariable' is a specialization of 'variables_Variable'.
+The class 'simTL4J_variables_LocalVariable' is a specialization of 'instantiations_Initializable'.
+The class 'simTL4J_variables_LocalVariable' is a specialization of 'statements_ForLoopInitializer'.
+The class 'simTL4J_variables_LocalVariable' is a specialization of 'modifiers_AnnotableAndModifiable'.
+The class 'simTL4J_variables_AdditionalLocalVariable' is a specialization of 'references_ReferenceableElement'.
+The class 'simTL4J_variables_AdditionalLocalVariable' is a specialization of 'arrays_ArrayTypeable'.
+The class 'simTL4J_variables_AdditionalLocalVariable' is a specialization of 'instantiations_Initializable'.
+The class 'simTL4J_simTL_TFor_MemberContainer' is a specialization of 'simTL_TFor'.
+The class 'simTL4J_simTL_TFor_MemberContainer' is a specialization of 'members_MemberContainer'.
+The class 'simTL4J_simTL_TFor_MemberContainer' is a specialization of 'members_Member'.
+The class 'simTL4J_simTL_TFor_StatementListContainer' is a specialization of 'simTL_TFor'.
+The class 'simTL4J_simTL_TFor_StatementListContainer' is a specialization of 'statements_StatementListContainer'.
+The class 'simTL4J_simTL_TFor_StatementListContainer' is a specialization of 'statements_Statement'.
+The class 'simTL4J_simTL_TIf_MemberContainer' is a specialization of 'simTL_TIf'.
+The class 'simTL4J_simTL_TIf_MemberContainer' is a specialization of 'members_MemberContainer'.
+The class 'simTL4J_simTL_TIf_MemberContainer' is a specialization of 'members_Member'.
+The class 'simTL4J_simTL_TIf_StatementListContainer' is a specialization of 'simTL_TIf'.
+The class 'simTL4J_simTL_TIf_StatementListContainer' is a specialization of 'statements_StatementListContainer'.
+The class 'simTL4J_simTL_TIf_StatementListContainer' is a specialization of 'statements_Statement'.
+The class 'simTL4J_simTL_TPlaceholder_PrimaryExpression' is a specialization of 'simTL_TPlaceholder'.
+The class 'simTL4J_simTL_TPlaceholder_PrimaryExpression' is a specialization of 'expressions_PrimaryExpression'.
+The class 'simTL4J_simTL_TUnaryOperator' is a specialization of 'TAbstractMethodStatement'.
+The class 'simTL4J_simTL_TUnaryOperatorNOT' is a specialization of 'TUnaryOperator'.
+The class 'simTL4J_simTL_TMethodStatementImpl' is a specialization of 'TAbstractMethodStatement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simTL4J_annotations_Annotable' and 'AnnotationInstance'. From 'simTL4J_annotations_Annotable', the role 'simTL4J_annotations_Annotable' has cardinality 0..*, and from 'AnnotationInstance', the role 'AnnotationInstance' has cardinality 0..*.
+An association connects 'simTL4J_annotations_AnnotationInstance' and 'Classifier'. From 'simTL4J_annotations_AnnotationInstance', the role 'simTL4J_annotations_AnnotationInstance' has cardinality 0..*, and from 'Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'simTL4J_annotations_AnnotationInstance' and 'AnnotationParameter'. From 'simTL4J_annotations_AnnotationInstance', the role 'simTL4J_annotations_AnnotationInstance3' has cardinality 0..*, and from 'AnnotationParameter', the role 'AnnotationParameter' has cardinality 0..*.
+An association connects 'simTL4J_annotations_SingleAnnotationParameter' and 'AnnotationValue'. From 'simTL4J_annotations_SingleAnnotationParameter', the role 'simTL4J_annotations_SingleAnnotationParameter' has cardinality 0..*, and from 'AnnotationValue', the role 'AnnotationValue' has cardinality 0..*.
+An association connects 'simTL4J_annotations_AnnotationParameterList' and 'AnnotationAttributeSetting'. From 'simTL4J_annotations_AnnotationParameterList', the role 'simTL4J_annotations_AnnotationParameterList' has cardinality 0..*, and from 'AnnotationAttributeSetting', the role 'AnnotationAttributeSetting' has cardinality 0..*.
+An association connects 'InterfaceMethod' and 'simTL4J_annotations_AnnotationAttributeSetting'. From 'InterfaceMethod', the role 'InterfaceMethod' has cardinality 0..*, and from 'simTL4J_annotations_AnnotationAttributeSetting', the role 'simTL4J_annotations_AnnotationAttributeSetting' has cardinality 0..*.
+An association connects 'AnnotationValue' and 'simTL4J_annotations_AnnotationAttributeSetting'. From 'AnnotationValue', the role 'AnnotationValue9' has cardinality 0..*, and from 'simTL4J_annotations_AnnotationAttributeSetting', the role 'simTL4J_annotations_AnnotationAttributeSetting8' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_annotations_AnnotationAttribute'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'simTL4J_annotations_AnnotationAttribute', the role 'simTL4J_annotations_AnnotationAttribute' has cardinality 0..*.
+An association connects 'ArrayDimension' and 'simTL4J_arrays_ArrayTypeable'. From 'ArrayDimension', the role 'ArrayDimension' has cardinality 0..*, and from 'simTL4J_arrays_ArrayTypeable', the role 'simTL4J_arrays_ArrayTypeable' has cardinality 0..*.
+An association connects 'ArrayDimension' and 'simTL4J_arrays_ArrayTypeable'. From 'ArrayDimension', the role 'ArrayDimension14' has cardinality 0..*, and from 'simTL4J_arrays_ArrayTypeable', the role 'simTL4J_arrays_ArrayTypeable13' has cardinality 0..*.
+An association connects 'ArrayInitializationValue' and 'simTL4J_arrays_ArrayInitializer'. From 'ArrayInitializationValue', the role 'ArrayInitializationValue' has cardinality 0..*, and from 'simTL4J_arrays_ArrayInitializer', the role 'simTL4J_arrays_ArrayInitializer' has cardinality 0..*.
+An association connects 'simTL4J_arrays_ArrayInstantiationBySize' and 'Expression'. From 'simTL4J_arrays_ArrayInstantiationBySize', the role 'simTL4J_arrays_ArrayInstantiationBySize' has cardinality 0..*, and from 'Expression', the role 'Expression17' has cardinality 0..*.
+An association connects 'simTL4J_arrays_ArrayInstantiationByValues' and 'ArrayInitializer'. From 'simTL4J_arrays_ArrayInstantiationByValues', the role 'simTL4J_arrays_ArrayInstantiationByValues' has cardinality 0..*, and from 'ArrayInitializer', the role 'ArrayInitializer' has cardinality 0..*.
+An association connects 'simTL4J_arrays_ArraySelector' and 'Expression'. From 'simTL4J_arrays_ArraySelector', the role 'simTL4J_arrays_ArraySelector' has cardinality 0..*, and from 'Expression', the role 'Expression20' has cardinality 0..*.
+An association connects 'simTL4J_classifiers_Implementor' and 'TypeReference'. From 'simTL4J_classifiers_Implementor', the role 'simTL4J_classifiers_Implementor' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference' has cardinality 0..*.
+An association connects 'TypeReference' and 'simTL4J_classifiers_Class'. From 'TypeReference', the role 'TypeReference23' has cardinality 0..*, and from 'simTL4J_classifiers_Class', the role 'simTL4J_classifiers_Class' has cardinality 0..*.
+An association connects 'TypeReference' and 'simTL4J_classifiers_Class'. From 'TypeReference', the role 'TypeReference26' has cardinality 0..*, and from 'simTL4J_classifiers_Class', the role 'simTL4J_classifiers_Class25' has cardinality 0..*.
+An association connects 'simTL4J_classifiers_Interface' and 'TypeReference'. From 'simTL4J_classifiers_Interface', the role 'simTL4J_classifiers_Interface' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference28' has cardinality 0..*.
+An association connects 'simTL4J_classifiers_Interface' and 'TypeReference'. From 'simTL4J_classifiers_Interface', the role 'simTL4J_classifiers_Interface30' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference31' has cardinality 0..*.
+An association connects 'EnumConstant' and 'simTL4J_classifiers_Enumeration'. From 'EnumConstant', the role 'EnumConstant' has cardinality 0..*, and from 'simTL4J_classifiers_Enumeration', the role 'simTL4J_classifiers_Enumeration' has cardinality 0..*.
+An association connects 'simTL4J_commons_NamedElement' and 'TPlaceholder'. From 'simTL4J_commons_NamedElement', the role 'simTL4J_commons_NamedElement' has cardinality 0..*, and from 'TPlaceholder', the role 'TPlaceholder' has cardinality 0..*.
+An association connects 'simTL4J_containers_CompilationUnit' and 'ConcreteClassifier'. From 'simTL4J_containers_CompilationUnit', the role 'simTL4J_containers_CompilationUnit' has cardinality 0..*, and from 'ConcreteClassifier', the role 'ConcreteClassifier' has cardinality 0..*.
+An association connects 'CompilationUnit' and 'simTL4J_containers_Package'. From 'CompilationUnit', the role 'CompilationUnit' has cardinality 0..*, and from 'simTL4J_containers_Package', the role 'simTL4J_containers_Package' has cardinality 0..*.
+An association connects 'Package' and 'simTL4J_containers_Package'. From 'Package', the role 'Package' has cardinality 0..*, and from 'simTL4J_containers_Package', the role 'simTL4J_containers_Package37' has cardinality 0..*.
+An association connects 'simTL4J_expressions_ExpressionList' and 'Expression'. From 'simTL4J_expressions_ExpressionList', the role 'simTL4J_expressions_ExpressionList' has cardinality 0..*, and from 'Expression', the role 'Expression39' has cardinality 0..*.
+An association connects 'AssignmentExpressionChild' and 'simTL4J_expressions_AssignmentExpression'. From 'AssignmentExpressionChild', the role 'AssignmentExpressionChild' has cardinality 0..*, and from 'simTL4J_expressions_AssignmentExpression', the role 'simTL4J_expressions_AssignmentExpression' has cardinality 0..*.
+An association connects 'AssignmentOperator' and 'simTL4J_expressions_AssignmentExpression'. From 'AssignmentOperator', the role 'AssignmentOperator' has cardinality 0..*, and from 'simTL4J_expressions_AssignmentExpression', the role 'simTL4J_expressions_AssignmentExpression42' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_expressions_AssignmentExpression'. From 'Expression', the role 'Expression45' has cardinality 0..*, and from 'simTL4J_expressions_AssignmentExpression', the role 'simTL4J_expressions_AssignmentExpression44' has cardinality 0..*.
+An association connects 'ConditionalExpressionChild' and 'simTL4J_expressions_ConditionalExpression'. From 'ConditionalExpressionChild', the role 'ConditionalExpressionChild' has cardinality 0..*, and from 'simTL4J_expressions_ConditionalExpression', the role 'simTL4J_expressions_ConditionalExpression' has cardinality 0..*.
+An association connects 'simTL4J_expressions_ConditionalExpression' and 'Expression'. From 'simTL4J_expressions_ConditionalExpression', the role 'simTL4J_expressions_ConditionalExpression48' has cardinality 0..*, and from 'Expression', the role 'Expression49' has cardinality 0..*.
+An association connects 'simTL4J_expressions_ConditionalExpression' and 'AssignmentExpressionChild'. From 'simTL4J_expressions_ConditionalExpression', the role 'simTL4J_expressions_ConditionalExpression51' has cardinality 0..*, and from 'AssignmentExpressionChild', the role 'AssignmentExpressionChild52' has cardinality 0..*.
+An association connects 'simTL4J_expressions_ConditionalOrExpression' and 'ConditionalOrExpressionChild'. From 'simTL4J_expressions_ConditionalOrExpression', the role 'simTL4J_expressions_ConditionalOrExpression' has cardinality 0..*, and from 'ConditionalOrExpressionChild', the role 'ConditionalOrExpressionChild' has cardinality 0..*.
+An association connects 'simTL4J_expressions_ConditionalAndExpression' and 'ConditionalAndExpressionChild'. From 'simTL4J_expressions_ConditionalAndExpression', the role 'simTL4J_expressions_ConditionalAndExpression' has cardinality 0..*, and from 'ConditionalAndExpressionChild', the role 'ConditionalAndExpressionChild' has cardinality 0..*.
+An association connects 'simTL4J_expressions_InclusiveOrExpression' and 'InclusiveOrExpressionChild'. From 'simTL4J_expressions_InclusiveOrExpression', the role 'simTL4J_expressions_InclusiveOrExpression' has cardinality 0..*, and from 'InclusiveOrExpressionChild', the role 'InclusiveOrExpressionChild' has cardinality 0..*.
+An association connects 'simTL4J_expressions_ExclusiveOrExpression' and 'ExclusiveOrExpressionChild'. From 'simTL4J_expressions_ExclusiveOrExpression', the role 'simTL4J_expressions_ExclusiveOrExpression' has cardinality 0..*, and from 'ExclusiveOrExpressionChild', the role 'ExclusiveOrExpressionChild' has cardinality 0..*.
+An association connects 'simTL4J_expressions_AndExpression' and 'AndExpressionChild'. From 'simTL4J_expressions_AndExpression', the role 'simTL4J_expressions_AndExpression' has cardinality 0..*, and from 'AndExpressionChild', the role 'AndExpressionChild' has cardinality 0..*.
+An association connects 'simTL4J_expressions_EqualityExpression' and 'EqualityOperator'. From 'simTL4J_expressions_EqualityExpression', the role 'simTL4J_expressions_EqualityExpression' has cardinality 0..*, and from 'EqualityOperator', the role 'EqualityOperator' has cardinality 0..*.
+An association connects 'EqualityExpressionChild' and 'simTL4J_expressions_EqualityExpression'. From 'EqualityExpressionChild', the role 'EqualityExpressionChild' has cardinality 0..*, and from 'simTL4J_expressions_EqualityExpression', the role 'simTL4J_expressions_EqualityExpression60' has cardinality 0..*.
+An association connects 'InstanceOfExpressionChild' and 'simTL4J_expressions_InstanceOfExpression'. From 'InstanceOfExpressionChild', the role 'InstanceOfExpressionChild' has cardinality 0..*, and from 'simTL4J_expressions_InstanceOfExpression', the role 'simTL4J_expressions_InstanceOfExpression' has cardinality 0..*.
+An association connects 'simTL4J_expressions_RelationExpression' and 'RelationExpressionChild'. From 'simTL4J_expressions_RelationExpression', the role 'simTL4J_expressions_RelationExpression' has cardinality 0..*, and from 'RelationExpressionChild', the role 'RelationExpressionChild' has cardinality 0..*.
+An association connects 'RelationOperator' and 'simTL4J_expressions_RelationExpression'. From 'RelationOperator', the role 'RelationOperator' has cardinality 0..*, and from 'simTL4J_expressions_RelationExpression', the role 'simTL4J_expressions_RelationExpression64' has cardinality 0..*.
+An association connects 'ShiftExpressionChild' and 'simTL4J_expressions_ShiftExpression'. From 'ShiftExpressionChild', the role 'ShiftExpressionChild' has cardinality 0..*, and from 'simTL4J_expressions_ShiftExpression', the role 'simTL4J_expressions_ShiftExpression' has cardinality 0..*.
+An association connects 'ShiftOperator' and 'simTL4J_expressions_ShiftExpression'. From 'ShiftOperator', the role 'ShiftOperator' has cardinality 0..*, and from 'simTL4J_expressions_ShiftExpression', the role 'simTL4J_expressions_ShiftExpression67' has cardinality 0..*.
+An association connects 'simTL4J_expressions_AdditiveExpression' and 'AdditiveExpressionChild'. From 'simTL4J_expressions_AdditiveExpression', the role 'simTL4J_expressions_AdditiveExpression' has cardinality 0..*, and from 'AdditiveExpressionChild', the role 'AdditiveExpressionChild' has cardinality 0..*.
+An association connects 'simTL4J_expressions_AdditiveExpression' and 'AdditiveOperator'. From 'simTL4J_expressions_AdditiveExpression', the role 'simTL4J_expressions_AdditiveExpression70' has cardinality 0..*, and from 'AdditiveOperator', the role 'AdditiveOperator' has cardinality 0..*.
+An association connects 'MultiplicativeExpressionChild' and 'simTL4J_expressions_MultiplicativeExpression'. From 'MultiplicativeExpressionChild', the role 'MultiplicativeExpressionChild' has cardinality 0..*, and from 'simTL4J_expressions_MultiplicativeExpression', the role 'simTL4J_expressions_MultiplicativeExpression' has cardinality 0..*.
+An association connects 'MultiplicativeOperator' and 'simTL4J_expressions_MultiplicativeExpression'. From 'MultiplicativeOperator', the role 'MultiplicativeOperator' has cardinality 0..*, and from 'simTL4J_expressions_MultiplicativeExpression', the role 'simTL4J_expressions_MultiplicativeExpression73' has cardinality 0..*.
+An association connects 'simTL4J_expressions_UnaryExpression' and 'UnaryOperator'. From 'simTL4J_expressions_UnaryExpression', the role 'simTL4J_expressions_UnaryExpression' has cardinality 0..*, and from 'UnaryOperator', the role 'UnaryOperator' has cardinality 0..*.
+An association connects 'UnaryExpressionChild' and 'simTL4J_expressions_UnaryExpression'. From 'UnaryExpressionChild', the role 'UnaryExpressionChild' has cardinality 0..*, and from 'simTL4J_expressions_UnaryExpression', the role 'simTL4J_expressions_UnaryExpression76' has cardinality 0..*.
+An association connects 'UnaryModificationExpressionChild' and 'simTL4J_expressions_UnaryModificationExpression'. From 'UnaryModificationExpressionChild', the role 'UnaryModificationExpressionChild' has cardinality 0..*, and from 'simTL4J_expressions_UnaryModificationExpression', the role 'simTL4J_expressions_UnaryModificationExpression' has cardinality 0..*.
+An association connects 'simTL4J_expressions_UnaryModificationExpression' and 'UnaryModificationOperator'. From 'simTL4J_expressions_UnaryModificationExpression', the role 'simTL4J_expressions_UnaryModificationExpression79' has cardinality 0..*, and from 'UnaryModificationOperator', the role 'UnaryModificationOperator' has cardinality 0..*.
+An association connects 'simTL4J_expressions_CastExpression' and 'MultiplicativeExpressionChild'. From 'simTL4J_expressions_CastExpression', the role 'simTL4J_expressions_CastExpression' has cardinality 0..*, and from 'MultiplicativeExpressionChild', the role 'MultiplicativeExpressionChild81' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_expressions_NestedExpression'. From 'Expression', the role 'Expression83' has cardinality 0..*, and from 'simTL4J_expressions_NestedExpression', the role 'simTL4J_expressions_NestedExpression' has cardinality 0..*.
+An association connects 'simTL4J_generics_TypeArgumentable' and 'TypeArgument'. From 'simTL4J_generics_TypeArgumentable', the role 'simTL4J_generics_TypeArgumentable' has cardinality 0..*, and from 'TypeArgument', the role 'TypeArgument' has cardinality 0..*.
+An association connects 'simTL4J_generics_CallTypeArgumentable' and 'TypeArgument'. From 'simTL4J_generics_CallTypeArgumentable', the role 'simTL4J_generics_CallTypeArgumentable' has cardinality 0..*, and from 'TypeArgument', the role 'TypeArgument86' has cardinality 0..*.
+An association connects 'TypeParameter' and 'simTL4J_generics_TypeParametrizable'. From 'TypeParameter', the role 'TypeParameter' has cardinality 0..*, and from 'simTL4J_generics_TypeParametrizable', the role 'simTL4J_generics_TypeParametrizable' has cardinality 0..*.
+An association connects 'TypeReference' and 'simTL4J_generics_ExtendsTypeArgument'. From 'TypeReference', the role 'TypeReference89' has cardinality 0..*, and from 'simTL4J_generics_ExtendsTypeArgument', the role 'simTL4J_generics_ExtendsTypeArgument' has cardinality 0..*.
+An association connects 'TypeReference' and 'simTL4J_generics_SuperTypeArgument'. From 'TypeReference', the role 'TypeReference91' has cardinality 0..*, and from 'simTL4J_generics_SuperTypeArgument', the role 'simTL4J_generics_SuperTypeArgument' has cardinality 0..*.
+An association connects 'TypeReference' and 'simTL4J_generics_TypeParameter'. From 'TypeReference', the role 'TypeReference93' has cardinality 0..*, and from 'simTL4J_generics_TypeParameter', the role 'simTL4J_generics_TypeParameter' has cardinality 0..*.
+An association connects 'Import' and 'simTL4J_imports_ImportingElement'. From 'Import', the role 'Import' has cardinality 0..*, and from 'simTL4J_imports_ImportingElement', the role 'simTL4J_imports_ImportingElement' has cardinality 0..*.
+An association connects 'simTL4J_imports_StaticImport' and 'Static'. From 'simTL4J_imports_StaticImport', the role 'simTL4J_imports_StaticImport' has cardinality 0..*, and from 'Static', the role 'Static' has cardinality 0..*.
+An association connects 'simTL4J_imports_ClassifierImport' and 'ConcreteClassifier'. From 'simTL4J_imports_ClassifierImport', the role 'simTL4J_imports_ClassifierImport' has cardinality 0..*, and from 'ConcreteClassifier', the role 'ConcreteClassifier97' has cardinality 0..*.
+An association connects 'ReferenceableElement' and 'simTL4J_imports_StaticMemberImport'. From 'ReferenceableElement', the role 'ReferenceableElement' has cardinality 0..*, and from 'simTL4J_imports_StaticMemberImport', the role 'simTL4J_imports_StaticMemberImport' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_instantiations_Initializable'. From 'Expression', the role 'Expression100' has cardinality 0..*, and from 'simTL4J_instantiations_Initializable', the role 'simTL4J_instantiations_Initializable' has cardinality 0..*.
+An association connects 'AnonymousClass' and 'simTL4J_instantiations_NewConstructorCall'. From 'AnonymousClass', the role 'AnonymousClass' has cardinality 0..*, and from 'simTL4J_instantiations_NewConstructorCall', the role 'simTL4J_instantiations_NewConstructorCall' has cardinality 0..*.
+An association connects 'Self' and 'simTL4J_instantiations_ExplicitConstructorCall'. From 'Self', the role 'Self' has cardinality 0..*, and from 'simTL4J_instantiations_ExplicitConstructorCall', the role 'simTL4J_instantiations_ExplicitConstructorCall' has cardinality 0..*.
+An association connects 'NamespaceClassifierReference' and 'simTL4J_members_ExceptionThrower'. From 'NamespaceClassifierReference', the role 'NamespaceClassifierReference' has cardinality 0..*, and from 'simTL4J_members_ExceptionThrower', the role 'simTL4J_members_ExceptionThrower' has cardinality 0..*.
+An association connects 'simTL4J_members_MemberContainer' and 'Member'. From 'simTL4J_members_MemberContainer', the role 'simTL4J_members_MemberContainer' has cardinality 0..*, and from 'Member', the role 'Member' has cardinality 0..*.
+An association connects 'Member' and 'simTL4J_members_MemberContainer'. From 'Member', the role 'Member107' has cardinality 0..*, and from 'simTL4J_members_MemberContainer', the role 'simTL4J_members_MemberContainer106' has cardinality 0..*.
+An association connects 'AdditionalField' and 'simTL4J_members_Field'. From 'AdditionalField', the role 'AdditionalField' has cardinality 0..*, and from 'simTL4J_members_Field', the role 'simTL4J_members_Field' has cardinality 0..*.
+An association connects 'AnonymousClass' and 'simTL4J_members_EnumConstant'. From 'AnonymousClass', the role 'AnonymousClass110' has cardinality 0..*, and from 'simTL4J_members_EnumConstant', the role 'simTL4J_members_EnumConstant' has cardinality 0..*.
+An association connects 'simTL4J_modifiers_AnnotableAndModifiable' and 'AnnotationInstanceOrModifier'. From 'simTL4J_modifiers_AnnotableAndModifiable', the role 'simTL4J_modifiers_AnnotableAndModifiable' has cardinality 0..*, and from 'AnnotationInstanceOrModifier', the role 'AnnotationInstanceOrModifier' has cardinality 0..*.
+An association connects 'simTL4J_modifiers_Modifiable' and 'Modifier'. From 'simTL4J_modifiers_Modifiable', the role 'simTL4J_modifiers_Modifiable' has cardinality 0..*, and from 'Modifier', the role 'Modifier' has cardinality 0..*.
+An association connects 'simTL4J_parameters_Parametrizable' and 'Parameter'. From 'simTL4J_parameters_Parametrizable', the role 'simTL4J_parameters_Parametrizable' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'Reference' and 'simTL4J_references_Reference'. From 'Reference', the role 'Reference' has cardinality 0..*, and from 'simTL4J_references_Reference', the role 'simTL4J_references_Reference' has cardinality 0..*.
+An association connects 'simTL4J_references_Reference' and 'ArraySelector'. From 'simTL4J_references_Reference', the role 'simTL4J_references_Reference116' has cardinality 0..*, and from 'ArraySelector', the role 'ArraySelector' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_references_Argumentable'. From 'Expression', the role 'Expression118' has cardinality 0..*, and from 'simTL4J_references_Argumentable', the role 'simTL4J_references_Argumentable' has cardinality 0..*.
+An association connects 'ReferenceableElement' and 'simTL4J_references_ElementReference'. From 'ReferenceableElement', the role 'ReferenceableElement120' has cardinality 0..*, and from 'simTL4J_references_ElementReference', the role 'simTL4J_references_ElementReference' has cardinality 0..*.
+An association connects 'simTL4J_references_PrimitiveTypeReference' and 'PrimitiveType'. From 'simTL4J_references_PrimitiveTypeReference', the role 'simTL4J_references_PrimitiveTypeReference' has cardinality 0..*, and from 'PrimitiveType', the role 'PrimitiveType' has cardinality 0..*.
+An association connects 'simTL4J_references_SelfReference' and 'Self'. From 'simTL4J_references_SelfReference', the role 'simTL4J_references_SelfReference' has cardinality 0..*, and from 'Self', the role 'Self123' has cardinality 0..*.
+An association connects 'Statement' and 'simTL4J_statements_StatementContainer'. From 'Statement', the role 'Statement' has cardinality 0..*, and from 'simTL4J_statements_StatementContainer', the role 'simTL4J_statements_StatementContainer' has cardinality 0..*.
+An association connects 'simTL4J_statements_StatementListContainer' and 'Statement'. From 'simTL4J_statements_StatementListContainer', the role 'simTL4J_statements_StatementListContainer' has cardinality 0..*, and from 'Statement', the role 'Statement126' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_statements_Conditional'. From 'Expression', the role 'Expression128' has cardinality 0..*, and from 'simTL4J_statements_Conditional', the role 'simTL4J_statements_Conditional' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_statements_Assert'. From 'Expression', the role 'Expression130' has cardinality 0..*, and from 'simTL4J_statements_Assert', the role 'simTL4J_statements_Assert' has cardinality 0..*.
+An association connects 'OrdinaryParameter' and 'simTL4J_statements_CatchBlock'. From 'OrdinaryParameter', the role 'OrdinaryParameter' has cardinality 0..*, and from 'simTL4J_statements_CatchBlock', the role 'simTL4J_statements_CatchBlock' has cardinality 0..*.
+An association connects 'simTL4J_statements_Condition' and 'Statement'. From 'simTL4J_statements_Condition', the role 'simTL4J_statements_Condition' has cardinality 0..*, and from 'Statement', the role 'Statement133' has cardinality 0..*.
+An association connects 'simTL4J_statements_ExpressionStatement' and 'Expression'. From 'simTL4J_statements_ExpressionStatement', the role 'simTL4J_statements_ExpressionStatement' has cardinality 0..*, and from 'Expression', the role 'Expression135' has cardinality 0..*.
+An association connects 'ForLoopInitializer' and 'simTL4J_statements_ForLoop'. From 'ForLoopInitializer', the role 'ForLoopInitializer' has cardinality 0..*, and from 'simTL4J_statements_ForLoop', the role 'simTL4J_statements_ForLoop' has cardinality 0..*.
+An association connects 'simTL4J_statements_ForLoop' and 'Expression'. From 'simTL4J_statements_ForLoop', the role 'simTL4J_statements_ForLoop138' has cardinality 0..*, and from 'Expression', the role 'Expression139' has cardinality 0..*.
+An association connects 'OrdinaryParameter' and 'simTL4J_statements_ForEachLoop'. From 'OrdinaryParameter', the role 'OrdinaryParameter141' has cardinality 0..*, and from 'simTL4J_statements_ForEachLoop', the role 'simTL4J_statements_ForEachLoop' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_statements_ForEachLoop'. From 'Expression', the role 'Expression144' has cardinality 0..*, and from 'simTL4J_statements_ForEachLoop', the role 'simTL4J_statements_ForEachLoop143' has cardinality 0..*.
+An association connects 'JumpLabel' and 'simTL4J_statements_Jump'. From 'JumpLabel', the role 'JumpLabel' has cardinality 0..*, and from 'simTL4J_statements_Jump', the role 'simTL4J_statements_Jump' has cardinality 0..*.
+An association connects 'simTL4J_statements_LocalVariableStatement' and 'LocalVariable'. From 'simTL4J_statements_LocalVariableStatement', the role 'simTL4J_statements_LocalVariableStatement' has cardinality 0..*, and from 'LocalVariable', the role 'LocalVariable' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_statements_Return'. From 'Expression', the role 'Expression148' has cardinality 0..*, and from 'simTL4J_statements_Return', the role 'simTL4J_statements_Return' has cardinality 0..*.
+An association connects 'simTL4J_statements_Switch' and 'SwitchCase'. From 'simTL4J_statements_Switch', the role 'simTL4J_statements_Switch' has cardinality 0..*, and from 'SwitchCase', the role 'SwitchCase' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_statements_Switch'. From 'Expression', the role 'Expression152' has cardinality 0..*, and from 'simTL4J_statements_Switch', the role 'simTL4J_statements_Switch151' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_statements_SynchronizedBlock'. From 'Expression', the role 'Expression154' has cardinality 0..*, and from 'simTL4J_statements_SynchronizedBlock', the role 'simTL4J_statements_SynchronizedBlock' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_statements_Throw'. From 'Expression', the role 'Expression156' has cardinality 0..*, and from 'simTL4J_statements_Throw', the role 'simTL4J_statements_Throw' has cardinality 0..*.
+An association connects 'CatchBlock' and 'simTL4J_statements_TryBlock'. From 'CatchBlock', the role 'CatchBlock' has cardinality 0..*, and from 'simTL4J_statements_TryBlock', the role 'simTL4J_statements_TryBlock' has cardinality 0..*.
+An association connects 'Block' and 'simTL4J_statements_TryBlock'. From 'Block', the role 'Block' has cardinality 0..*, and from 'simTL4J_statements_TryBlock', the role 'simTL4J_statements_TryBlock159' has cardinality 0..*.
+An association connects 'Expression' and 'simTL4J_statements_WhileLoop'. From 'Expression', the role 'Expression161' has cardinality 0..*, and from 'simTL4J_statements_WhileLoop', the role 'simTL4J_statements_WhileLoop' has cardinality 0..*.
+An association connects 'simTL4J_types_TypedElement' and 'TypeReference'. From 'simTL4J_types_TypedElement', the role 'simTL4J_types_TypedElement' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference163' has cardinality 0..*.
+An association connects 'Classifier' and 'simTL4J_types_ClassifierReference'. From 'Classifier', the role 'Classifier165' has cardinality 0..*, and from 'simTL4J_types_ClassifierReference', the role 'simTL4J_types_ClassifierReference' has cardinality 0..*.
+An association connects 'ClassifierReference' and 'simTL4J_types_NamespaceClassifierReference'. From 'ClassifierReference', the role 'ClassifierReference' has cardinality 0..*, and from 'simTL4J_types_NamespaceClassifierReference', the role 'simTL4J_types_NamespaceClassifierReference' has cardinality 0..*.
+An association connects 'simTL4J_variables_LocalVariable' and 'AdditionalLocalVariable'. From 'simTL4J_variables_LocalVariable', the role 'simTL4J_variables_LocalVariable' has cardinality 0..*, and from 'AdditionalLocalVariable', the role 'AdditionalLocalVariable' has cardinality 0..*.
+An association connects 'TAbstractMethodStatement' and 'simTL4J_simTL_TIf'. From 'TAbstractMethodStatement', the role 'TAbstractMethodStatement' has cardinality 0..*, and from 'simTL4J_simTL_TIf', the role 'simTL4J_simTL_TIf' has cardinality 0..*.
+An association connects 'TForVariable' and 'simTL4J_simTL_TFor'. From 'TForVariable', the role 'TForVariable' has cardinality 0..*, and from 'simTL4J_simTL_TFor', the role 'simTL4J_simTL_TFor' has cardinality 0..*.
+An association connects 'simTL4J_simTL_TForVariable' and 'TAbstractMethodStatement'. From 'simTL4J_simTL_TForVariable', the role 'simTL4J_simTL_TForVariable' has cardinality 0..*, and from 'TAbstractMethodStatement', the role 'TAbstractMethodStatement171' has cardinality 0..*.
+An association connects 'simTL4J_simTL_Template' and 'TemplateHeader'. From 'simTL4J_simTL_Template', the role 'simTL4J_simTL_Template' has cardinality 0..*, and from 'TemplateHeader', the role 'TemplateHeader' has cardinality 0..*.
+An association connects 'JavaRoot' and 'simTL4J_simTL_Template'. From 'JavaRoot', the role 'JavaRoot' has cardinality 0..*, and from 'simTL4J_simTL_Template', the role 'simTL4J_simTL_Template174' has cardinality 0..*.
+An association connects 'simTL4J_simTL_TemplateHeader' and 'TModelImport'. From 'simTL4J_simTL_TemplateHeader', the role 'simTL4J_simTL_TemplateHeader' has cardinality 0..*, and from 'TModelImport', the role 'TModelImport' has cardinality 0..*.
+An association connects 'simTL4J_simTL_TPlaceholder' and 'TAbstractMethodStatement'. From 'simTL4J_simTL_TPlaceholder', the role 'simTL4J_simTL_TPlaceholder' has cardinality 0..*, and from 'TAbstractMethodStatement', the role 'TAbstractMethodStatement177' has cardinality 0..*.
+An association connects 'simTL4J_simTL_TUnaryOperator' and 'TAbstractMethodStatement'. From 'simTL4J_simTL_TUnaryOperator', the role 'simTL4J_simTL_TUnaryOperator' has cardinality 0..*, and from 'TAbstractMethodStatement', the role 'TAbstractMethodStatement179' has cardinality 0..*.
+An association connects 'simTL4J_simTL_TMethodStatementImpl' and 'TMethodCall'. From 'simTL4J_simTL_TMethodStatementImpl', the role 'simTL4J_simTL_TMethodStatementImpl' has cardinality 0..*, and from 'TMethodCall', the role 'TMethodCall' has cardinality 0..*.

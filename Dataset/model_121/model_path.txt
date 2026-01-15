@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Elderjr/Coding-Conventions-Specification-Language/ccsl-workspace/org.ccsl.metamodel/model/ccsl.ecore

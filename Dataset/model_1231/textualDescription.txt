@@ -1,0 +1,38 @@
+The domain model 'qvt' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'qvt_cst_IdentifiedCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_CSTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'qvt_cst_IdentifierCS' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'qvt_cst_ErrorNode' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'IdentifierCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_IHasName' represents an important domain concept.
+It does not declare any attributes.
+
+'qvt_cst_IHasName' represents an important domain concept.
+It does not declare any attributes.
+
+'cst_qvt_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'qvt_cst_IdentifiedCS' is a specialization of 'cst_CSTNode'.
+The class 'qvt_cst_IdentifiedCS' is a specialization of 'cst_IHasName'.
+The class 'qvt_cst_IdentifierCS' is a specialization of 'cst_CSTNode'.
+The class 'qvt_cst_IdentifierCS' is a specialization of 'cst_IHasName'.
+
+Relationships between classes are modeled using associations.
+An association connects 'qvt_cst_IdentifiedCS' and 'IdentifierCS'. From 'qvt_cst_IdentifiedCS', the role 'qvt_cst_IdentifiedCS' has cardinality 0..*, and from 'IdentifierCS', the role 'IdentifierCS' has cardinality 0..*.
+An association connects 'cst_qvt_EObject' and 'qvt_cst_IdentifiedCS'. From 'cst_qvt_EObject', the role 'cst_qvt_EObject' has cardinality 0..*, and from 'qvt_cst_IdentifiedCS', the role 'qvt_cst_IdentifiedCS2' has cardinality 0..*.
+An association connects 'qvt_cst_IdentifierCS' and 'cst_qvt_EObject'. From 'qvt_cst_IdentifierCS', the role 'qvt_cst_IdentifierCS' has cardinality 0..*, and from 'cst_qvt_EObject', the role 'cst_qvt_EObject4' has cardinality 0..*.

@@ -1,0 +1,211 @@
+The domain model 'ImperativeOCL' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_AssignExp' represents an important domain concept.
+It has one attribute: 'isReset', which is of type str.
+
+'ImperativeOCL_ContinueExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ComputeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_BlockExp' represents an important domain concept.
+It does not declare any attributes.
+
+'DictLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ReturnExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ListLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LogExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_SwitchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_RaiseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_AltExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_UnlinkExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_DictionaryType' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_VariableInitExp' represents an important domain concept.
+It has one attribute: 'withResult', which is of type str.
+
+'ImperativeOCL_BreakExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ImperativeIterateExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ListType' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_DictLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_AssertExp' represents an important domain concept.
+It has one attribute: 'severity', which is of type str.
+
+'ImperativeOCL_Typedef' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_ForExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeLoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_WhileExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_CatchExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_TryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_DictLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOCL_LogExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SeverityKind' defines the following possible values: 'warning', 'fatal', 'error'.
+
+The model also captures inheritance relationships between classes.
+The class 'ImperativeOCL_AltExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_AssertExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_AssignExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_BlockExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_BreakExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_CatchExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ComputeExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ContinueExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_DictLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ImperativeOCL_DictLiteralPart' is a specialization of 'Element'.
+The class 'ImperativeOCL_DictionaryType' is a specialization of 'CollectionType'.
+The class 'ImperativeOCL_ForExp' is a specialization of 'ImperativeLoopExp'.
+The class 'ImperativeOCL_ImperativeExpression' is a specialization of 'OclExpression'.
+The class 'ImperativeOCL_ImperativeIterateExp' is a specialization of 'ImperativeLoopExp'.
+The class 'ImperativeOCL_ImperativeLoopExp' is a specialization of 'LoopExp'.
+The class 'ImperativeOCL_ImperativeLoopExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_InstantiationExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ListLiteralExp' is a specialization of 'LiteralExp'.
+The class 'ImperativeOCL_ListType' is a specialization of 'CollectionType'.
+The class 'ImperativeOCL_LogExp' is a specialization of 'OperationCallExp'.
+The class 'ImperativeOCL_LogExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_RaiseExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_ReturnExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_SwitchExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_TryExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_Typedef' is a specialization of 'Class'.
+The class 'ImperativeOCL_UnlinkExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_VariableInitExp' is a specialization of 'ImperativeExpression'.
+The class 'ImperativeOCL_WhileExp' is a specialization of 'ImperativeExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'OclExpression' and 'ImperativeOCL_AltExp'. From 'OclExpression', the role 'OclExpression' has cardinality 0..*, and from 'ImperativeOCL_AltExp', the role 'ImperativeOCL_AltExp' has cardinality 0..*.
+An association connects 'ImperativeOCL_AltExp' and 'OclExpression'. From 'ImperativeOCL_AltExp', the role 'ImperativeOCL_AltExp2' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression3' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_AssertExp'. From 'OclExpression', the role 'OclExpression5' has cardinality 0..*, and from 'ImperativeOCL_AssertExp', the role 'ImperativeOCL_AssertExp' has cardinality 0..*.
+An association connects 'ImperativeOCL_AssertExp' and 'LogExp'. From 'ImperativeOCL_AssertExp', the role 'ImperativeOCL_AssertExp7' has cardinality 0..*, and from 'LogExp', the role 'LogExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_AssignExp'. From 'OclExpression', the role 'OclExpression9' has cardinality 0..*, and from 'ImperativeOCL_AssignExp', the role 'ImperativeOCL_AssignExp' has cardinality 0..*.
+An association connects 'ImperativeOCL_AssignExp' and 'OclExpression'. From 'ImperativeOCL_AssignExp', the role 'ImperativeOCL_AssignExp11' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression12' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_AssignExp'. From 'OclExpression', the role 'OclExpression15' has cardinality 0..*, and from 'ImperativeOCL_AssignExp', the role 'ImperativeOCL_AssignExp14' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_BlockExp'. From 'OclExpression', the role 'OclExpression17' has cardinality 0..*, and from 'ImperativeOCL_BlockExp', the role 'ImperativeOCL_BlockExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_CatchExp'. From 'OclExpression', the role 'OclExpression19' has cardinality 0..*, and from 'ImperativeOCL_CatchExp', the role 'ImperativeOCL_CatchExp' has cardinality 0..*.
+An association connects 'Type' and 'ImperativeOCL_CatchExp'. From 'Type', the role 'Type' has cardinality 0..*, and from 'ImperativeOCL_CatchExp', the role 'ImperativeOCL_CatchExp21' has cardinality 0..*.
+An association connects 'Variable' and 'ImperativeOCL_CatchExp'. From 'Variable', the role 'Variable' has cardinality 0..*, and from 'ImperativeOCL_CatchExp', the role 'ImperativeOCL_CatchExp23' has cardinality 0..*.
+An association connects 'ImperativeOCL_ComputeExp' and 'OclExpression'. From 'ImperativeOCL_ComputeExp', the role 'ImperativeOCL_ComputeExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression25' has cardinality 0..*.
+An association connects 'Variable' and 'ImperativeOCL_ComputeExp'. From 'Variable', the role 'Variable28' has cardinality 0..*, and from 'ImperativeOCL_ComputeExp', the role 'ImperativeOCL_ComputeExp27' has cardinality 0..*.
+An association connects 'DictLiteralPart' and 'ImperativeOCL_DictLiteralExp'. From 'DictLiteralPart', the role 'DictLiteralPart' has cardinality 0..*, and from 'ImperativeOCL_DictLiteralExp', the role 'partOwner' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_DictLiteralPart'. From 'OclExpression', the role 'OclExpression31' has cardinality 0..*, and from 'ImperativeOCL_DictLiteralPart', the role 'ImperativeOCL_DictLiteralPart' has cardinality 0..*.
+An association connects 'ImperativeOCL_DictLiteralPart' and 'OclExpression'. From 'ImperativeOCL_DictLiteralPart', the role 'ImperativeOCL_DictLiteralPart33' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression34' has cardinality 0..*.
+An association connects 'DictLiteralExp' and 'ImperativeOCL_DictLiteralPart'. From 'DictLiteralExp', the role 'DictLiteralExp' has cardinality 0..*, and from 'ImperativeOCL_DictLiteralPart', the role 'ImperativeOCL_DictLiteralPart36' has cardinality 0..*.
+An association connects 'Type' and 'ImperativeOCL_DictionaryType'. From 'Type', the role 'Type38' has cardinality 0..*, and from 'ImperativeOCL_DictionaryType', the role 'ImperativeOCL_DictionaryType' has cardinality 0..*.
+An association connects 'ImperativeOCL_ImperativeIterateExp' and 'Variable'. From 'ImperativeOCL_ImperativeIterateExp', the role 'ImperativeOCL_ImperativeIterateExp' has cardinality 0..*, and from 'Variable', the role 'Variable40' has cardinality 0..*.
+An association connects 'ImperativeOCL_ImperativeLoopExp' and 'OclExpression'. From 'ImperativeOCL_ImperativeLoopExp', the role 'ImperativeOCL_ImperativeLoopExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression42' has cardinality 0..*.
+An association connects 'ImperativeOCL_InstantiationExp' and 'OclExpression'. From 'ImperativeOCL_InstantiationExp', the role 'ImperativeOCL_InstantiationExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression44' has cardinality 0..*.
+An association connects 'ImperativeOCL_InstantiationExp' and 'Variable'. From 'ImperativeOCL_InstantiationExp', the role 'ImperativeOCL_InstantiationExp46' has cardinality 0..*, and from 'Variable', the role 'Variable47' has cardinality 0..*.
+An association connects 'Class' and 'ImperativeOCL_InstantiationExp'. From 'Class', the role 'Class' has cardinality 0..*, and from 'ImperativeOCL_InstantiationExp', the role 'ImperativeOCL_InstantiationExp49' has cardinality 0..*.
+An association connects 'Operation' and 'ImperativeOCL_InstantiationExp'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'ImperativeOCL_InstantiationExp', the role 'ImperativeOCL_InstantiationExp51' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_ListLiteralExp'. From 'OclExpression', the role 'OclExpression53' has cardinality 0..*, and from 'ImperativeOCL_ListLiteralExp', the role 'ImperativeOCL_ListLiteralExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_LogExp'. From 'OclExpression', the role 'OclExpression55' has cardinality 0..*, and from 'ImperativeOCL_LogExp', the role 'ImperativeOCL_LogExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_RaiseExp'. From 'OclExpression', the role 'OclExpression57' has cardinality 0..*, and from 'ImperativeOCL_RaiseExp', the role 'ImperativeOCL_RaiseExp' has cardinality 0..*.
+An association connects 'ImperativeOCL_RaiseExp' and 'Type'. From 'ImperativeOCL_RaiseExp', the role 'ImperativeOCL_RaiseExp59' has cardinality 0..*, and from 'Type', the role 'Type60' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_ReturnExp'. From 'OclExpression', the role 'OclExpression62' has cardinality 0..*, and from 'ImperativeOCL_ReturnExp', the role 'ImperativeOCL_ReturnExp' has cardinality 0..*.
+An association connects 'ImperativeOCL_SwitchExp' and 'AltExp'. From 'ImperativeOCL_SwitchExp', the role 'ImperativeOCL_SwitchExp' has cardinality 0..*, and from 'AltExp', the role 'AltExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_SwitchExp'. From 'OclExpression', the role 'OclExpression66' has cardinality 0..*, and from 'ImperativeOCL_SwitchExp', the role 'ImperativeOCL_SwitchExp65' has cardinality 0..*.
+An association connects 'ImperativeOCL_TryExp' and 'CatchExp'. From 'ImperativeOCL_TryExp', the role 'ImperativeOCL_TryExp' has cardinality 0..*, and from 'CatchExp', the role 'CatchExp' has cardinality 0..*.
+An association connects 'ImperativeOCL_TryExp' and 'OclExpression'. From 'ImperativeOCL_TryExp', the role 'ImperativeOCL_TryExp69' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression70' has cardinality 0..*.
+An association connects 'Type' and 'ImperativeOCL_Typedef'. From 'Type', the role 'Type72' has cardinality 0..*, and from 'ImperativeOCL_Typedef', the role 'ImperativeOCL_Typedef' has cardinality 0..*.
+An association connects 'ImperativeOCL_Typedef' and 'OclExpression'. From 'ImperativeOCL_Typedef', the role 'ImperativeOCL_Typedef74' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression75' has cardinality 0..*.
+An association connects 'ImperativeOCL_UnlinkExp' and 'OclExpression'. From 'ImperativeOCL_UnlinkExp', the role 'ImperativeOCL_UnlinkExp' has cardinality 0..*, and from 'OclExpression', the role 'OclExpression77' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_UnlinkExp'. From 'OclExpression', the role 'OclExpression80' has cardinality 0..*, and from 'ImperativeOCL_UnlinkExp', the role 'ImperativeOCL_UnlinkExp79' has cardinality 0..*.
+An association connects 'Variable' and 'ImperativeOCL_VariableInitExp'. From 'Variable', the role 'Variable82' has cardinality 0..*, and from 'ImperativeOCL_VariableInitExp', the role 'ImperativeOCL_VariableInitExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_WhileExp'. From 'OclExpression', the role 'OclExpression84' has cardinality 0..*, and from 'ImperativeOCL_WhileExp', the role 'ImperativeOCL_WhileExp' has cardinality 0..*.
+An association connects 'OclExpression' and 'ImperativeOCL_WhileExp'. From 'OclExpression', the role 'OclExpression87' has cardinality 0..*, and from 'ImperativeOCL_WhileExp', the role 'ImperativeOCL_WhileExp86' has cardinality 0..*.

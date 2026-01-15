@@ -1,0 +1,258 @@
+The domain model 'qvtoperational' describes the core structural elements and their relationships within the system.
+
+The model defines 58 main class(es).
+
+'qvtoperational_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'ResolveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_DummyRelationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'DummyRelationDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'InstantiationExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Dummy2' represents an important domain concept.
+It does not declare any attributes.
+
+'DummyRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_TemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_OperationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelType' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_MappingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ImperativeCallExp' represents an important domain concept.
+It has one attribute: 'isVirtual', which is of type str.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ContextualProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_OCLExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_OperationalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_MappingParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_MappingBody' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_VarParameter' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'qvtoperational_ResolveInExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Module' represents an important domain concept.
+It has one attribute: 'isBlackbox', which is of type str.
+
+'OperationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_DummyRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstructorBody' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Tag' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'qvtoperational_EntryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ImperativeOperation' represents an important domain concept.
+It has one attribute: 'isBlackbox', which is of type str.
+
+'CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ModuleImport' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'qvtoperational_ConstructorBody' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleImport' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_DummyRelationDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_Helper' represents an important domain concept.
+It has one attribute: 'isQuery', which is of type str.
+
+'VarParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_MappingCallExp' represents an important domain concept.
+It has one attribute: 'isStrict', which is of type str.
+
+'EntryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'qvtoperational_ResolveExp' represents an important domain concept.
+It has the following attributes: 'isDeferred', which is of type str; 'isInverse', which is of type str; 'one', which is of type str.
+
+'qvtoperational_ModelType' represents an important domain concept.
+It has one attribute: 'conformanceKind', which is of type str.
+
+'qvtoperational_ObjectExp' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DirectionKind' defines the following possible values: 'inout', 'out', 'in'.
+The enumeration 'ImportKind' defines the following possible values: 'extension', 'access'.
+
+The model also captures inheritance relationships between classes.
+The class 'qvtoperational_Constructor' is a specialization of 'ImperativeOperation'.
+The class 'qvtoperational_ConstructorBody' is a specialization of 'OperationBody'.
+The class 'qvtoperational_ContextualProperty' is a specialization of 'Property'.
+The class 'qvtoperational_DummyRelation' is a specialization of 'Element'.
+The class 'qvtoperational_DummyRelationDomain' is a specialization of 'Element'.
+The class 'qvtoperational_DummyRelationalTransformation' is a specialization of 'Element'.
+The class 'qvtoperational_EntryOperation' is a specialization of 'ImperativeOperation'.
+The class 'qvtoperational_Helper' is a specialization of 'ImperativeOperation'.
+The class 'qvtoperational_ImperativeCallExp' is a specialization of 'OperationCallExp'.
+The class 'qvtoperational_ImperativeCallExp' is a specialization of 'ImperativeExpression'.
+The class 'qvtoperational_ImperativeOperation' is a specialization of 'Operation'.
+The class 'qvtoperational_Library' is a specialization of 'Module'.
+The class 'qvtoperational_MappingBody' is a specialization of 'OperationBody'.
+The class 'qvtoperational_MappingCallExp' is a specialization of 'ImperativeCallExp'.
+The class 'qvtoperational_MappingOperation' is a specialization of 'ImperativeOperation'.
+The class 'qvtoperational_MappingParameter' is a specialization of 'VarParameter'.
+The class 'qvtoperational_ModelParameter' is a specialization of 'VarParameter'.
+The class 'qvtoperational_ModelType' is a specialization of 'Class'.
+The class 'qvtoperational_Module' is a specialization of 'Class'.
+The class 'qvtoperational_ModuleImport' is a specialization of 'Element'.
+The class 'qvtoperational_ObjectExp' is a specialization of 'InstantiationExp'.
+The class 'qvtoperational_OperationBody' is a specialization of 'Element'.
+The class 'qvtoperational_OperationalTransformation' is a specialization of 'Module'.
+The class 'qvtoperational_ResolveExp' is a specialization of 'CallExp'.
+The class 'qvtoperational_ResolveExp' is a specialization of 'ImperativeExpression'.
+The class 'qvtoperational_ResolveInExp' is a specialization of 'ResolveExp'.
+The class 'qvtoperational_VarParameter' is a specialization of 'Variable'.
+The class 'qvtoperational_VarParameter' is a specialization of 'Parameter'.
+The class 'qvtoperational_Tag' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'qvtoperational_ContextualProperty' and 'qvtoperational_Class'. From 'qvtoperational_ContextualProperty', the role 'qvtoperational_ContextualProperty' has cardinality 0..*, and from 'qvtoperational_Class', the role 'qvtoperational_Class' has cardinality 0..*.
+An association connects 'qvtoperational_OCLExpression' and 'qvtoperational_ContextualProperty'. From 'qvtoperational_OCLExpression', the role 'qvtoperational_OCLExpression' has cardinality 0..*, and from 'qvtoperational_ContextualProperty', the role 'qvtoperational_ContextualProperty2' has cardinality 0..*.
+An association connects 'qvtoperational_Property' and 'qvtoperational_ContextualProperty'. From 'qvtoperational_Property', the role 'qvtoperational_Property' has cardinality 0..*, and from 'qvtoperational_ContextualProperty', the role 'qvtoperational_ContextualProperty4' has cardinality 0..*.
+An association connects 'OperationBody' and 'qvtoperational_ImperativeOperation'. From 'OperationBody', the role 'OperationBody' has cardinality 0..*, and from 'qvtoperational_ImperativeOperation', the role 'qvtoperational_ImperativeOperation' has cardinality 0..*.
+An association connects 'VarParameter' and 'qvtoperational_ImperativeOperation'. From 'VarParameter', the role 'VarParameter' has cardinality 0..*, and from 'qvtoperational_ImperativeOperation', the role 'qvtoperational_ImperativeOperation7' has cardinality 0..*.
+An association connects 'qvtoperational_ImperativeOperation' and 'ImperativeOperation'. From 'qvtoperational_ImperativeOperation', the role 'qvtoperational_ImperativeOperation9' has cardinality 0..*, and from 'ImperativeOperation', the role 'ImperativeOperation' has cardinality 0..*.
+An association connects 'VarParameter' and 'qvtoperational_ImperativeOperation'. From 'VarParameter', the role 'VarParameter12' has cardinality 0..*, and from 'qvtoperational_ImperativeOperation', the role 'qvtoperational_ImperativeOperation11' has cardinality 0..*.
+An association connects 'qvtoperational_OCLExpression' and 'qvtoperational_MappingBody'. From 'qvtoperational_OCLExpression', the role 'qvtoperational_OCLExpression14' has cardinality 0..*, and from 'qvtoperational_MappingBody', the role 'qvtoperational_MappingBody' has cardinality 0..*.
+An association connects 'qvtoperational_MappingBody' and 'qvtoperational_OCLExpression'. From 'qvtoperational_MappingBody', the role 'qvtoperational_MappingBody16' has cardinality 0..*, and from 'qvtoperational_OCLExpression', the role 'qvtoperational_OCLExpression17' has cardinality 0..*.
+An association connects 'MappingOperation' and 'qvtoperational_MappingOperation'. From 'MappingOperation', the role 'MappingOperation' has cardinality 0..*, and from 'qvtoperational_MappingOperation', the role 'qvtoperational_MappingOperation' has cardinality 0..*.
+An association connects 'qvtoperational_MappingOperation' and 'MappingOperation'. From 'qvtoperational_MappingOperation', the role 'qvtoperational_MappingOperation20' has cardinality 0..*, and from 'MappingOperation', the role 'MappingOperation21' has cardinality 0..*.
+An association connects 'qvtoperational_MappingOperation' and 'MappingOperation'. From 'qvtoperational_MappingOperation', the role 'qvtoperational_MappingOperation23' has cardinality 0..*, and from 'MappingOperation', the role 'MappingOperation24' has cardinality 0..*.
+An association connects 'DummyRelation' and 'qvtoperational_MappingOperation'. From 'DummyRelation', the role 'DummyRelation' has cardinality 0..*, and from 'qvtoperational_MappingOperation', the role 'qvtoperational_MappingOperation26' has cardinality 0..*.
+An association connects 'qvtoperational_OCLExpression' and 'qvtoperational_MappingOperation'. From 'qvtoperational_OCLExpression', the role 'qvtoperational_OCLExpression29' has cardinality 0..*, and from 'qvtoperational_MappingOperation', the role 'qvtoperational_MappingOperation28' has cardinality 0..*.
+An association connects 'qvtoperational_OCLExpression' and 'qvtoperational_MappingOperation'. From 'qvtoperational_OCLExpression', the role 'qvtoperational_OCLExpression32' has cardinality 0..*, and from 'qvtoperational_MappingOperation', the role 'qvtoperational_MappingOperation31' has cardinality 0..*.
+An association connects 'qvtoperational_MappingParameter' and 'ModelParameter'. From 'qvtoperational_MappingParameter', the role 'qvtoperational_MappingParameter' has cardinality 0..*, and from 'ModelParameter', the role 'ModelParameter' has cardinality 0..*.
+An association connects 'qvtoperational_MappingParameter' and 'DummyRelationDomain'. From 'qvtoperational_MappingParameter', the role 'qvtoperational_MappingParameter35' has cardinality 0..*, and from 'DummyRelationDomain', the role 'DummyRelationDomain' has cardinality 0..*.
+An association connects 'qvtoperational_OCLExpression' and 'qvtoperational_ModelType'. From 'qvtoperational_OCLExpression', the role 'qvtoperational_OCLExpression37' has cardinality 0..*, and from 'qvtoperational_ModelType', the role 'qvtoperational_ModelType' has cardinality 0..*.
+An association connects 'qvtoperational_ModelType' and 'qvtoperational_Package'. From 'qvtoperational_ModelType', the role 'qvtoperational_ModelType39' has cardinality 0..*, and from 'qvtoperational_Package', the role 'qvtoperational_Package' has cardinality 0..*.
+An association connects 'qvtoperational_Property' and 'qvtoperational_Module'. From 'qvtoperational_Property', the role 'qvtoperational_Property41' has cardinality 0..*, and from 'qvtoperational_Module', the role 'qvtoperational_Module' has cardinality 0..*.
+An association connects 'qvtoperational_Module' and 'EntryOperation'. From 'qvtoperational_Module', the role 'qvtoperational_Module43' has cardinality 0..*, and from 'EntryOperation', the role 'EntryOperation' has cardinality 0..*.
+An association connects 'qvtoperational_Module' and 'ModuleImport'. From 'qvtoperational_Module', the role 'qvtoperational_Module45' has cardinality 0..*, and from 'ModuleImport', the role 'ModuleImport' has cardinality 0..*.
+An association connects 'qvtoperational_TemplateableElement' and 'qvtoperational_Module'. From 'qvtoperational_TemplateableElement', the role 'qvtoperational_TemplateableElement' has cardinality 0..*, and from 'qvtoperational_Module', the role 'qvtoperational_Module47' has cardinality 0..*.
+An association connects 'qvtoperational_Module' and 'qvtoperational_Variable'. From 'qvtoperational_Module', the role 'qvtoperational_Module49' has cardinality 0..*, and from 'qvtoperational_Variable', the role 'qvtoperational_Variable' has cardinality 0..*.
+An association connects 'ModelType' and 'qvtoperational_Module'. From 'ModelType', the role 'ModelType' has cardinality 0..*, and from 'qvtoperational_Module', the role 'qvtoperational_Module51' has cardinality 0..*.
+An association connects 'qvtoperational_ModuleImport' and 'ModelType'. From 'qvtoperational_ModuleImport', the role 'qvtoperational_ModuleImport' has cardinality 0..*, and from 'ModelType', the role 'ModelType53' has cardinality 0..*.
+An association connects 'qvtoperational_ModuleImport' and 'Module'. From 'qvtoperational_ModuleImport', the role 'qvtoperational_ModuleImport55' has cardinality 0..*, and from 'Module', the role 'Module' has cardinality 0..*.
+An association connects 'Module' and 'qvtoperational_ModuleImport'. From 'Module', the role 'Module58' has cardinality 0..*, and from 'qvtoperational_ModuleImport', the role 'qvtoperational_ModuleImport57' has cardinality 0..*.
+An association connects 'ConstructorBody' and 'qvtoperational_ObjectExp'. From 'ConstructorBody', the role 'ConstructorBody' has cardinality 0..*, and from 'qvtoperational_ObjectExp', the role 'qvtoperational_ObjectExp' has cardinality 0..*.
+An association connects 'qvtoperational_ObjectExp' and 'qvtoperational_Variable'. From 'qvtoperational_ObjectExp', the role 'qvtoperational_ObjectExp61' has cardinality 0..*, and from 'qvtoperational_Variable', the role 'qvtoperational_Variable62' has cardinality 0..*.
+An association connects 'qvtoperational_OCLExpression' and 'qvtoperational_OperationBody'. From 'qvtoperational_OCLExpression', the role 'qvtoperational_OCLExpression64' has cardinality 0..*, and from 'qvtoperational_OperationBody', the role 'qvtoperational_OperationBody' has cardinality 0..*.
+An association connects 'ImperativeOperation' and 'qvtoperational_OperationBody'. From 'ImperativeOperation', the role 'ImperativeOperation67' has cardinality 0..*, and from 'qvtoperational_OperationBody', the role 'qvtoperational_OperationBody66' has cardinality 0..*.
+An association connects 'qvtoperational_Variable' and 'qvtoperational_OperationBody'. From 'qvtoperational_Variable', the role 'qvtoperational_Variable70' has cardinality 0..*, and from 'qvtoperational_OperationBody', the role 'qvtoperational_OperationBody69' has cardinality 0..*.
+An association connects 'qvtoperational_Class' and 'qvtoperational_OperationalTransformation'. From 'qvtoperational_Class', the role 'qvtoperational_Class72' has cardinality 0..*, and from 'qvtoperational_OperationalTransformation', the role 'qvtoperational_OperationalTransformation' has cardinality 0..*.
+An association connects 'qvtoperational_Property' and 'qvtoperational_OperationalTransformation'. From 'qvtoperational_Property', the role 'qvtoperational_Property75' has cardinality 0..*, and from 'qvtoperational_OperationalTransformation', the role 'qvtoperational_OperationalTransformation74' has cardinality 0..*.
+An association connects 'qvtoperational_OperationalTransformation' and 'ModelParameter'. From 'qvtoperational_OperationalTransformation', the role 'qvtoperational_OperationalTransformation77' has cardinality 0..*, and from 'ModelParameter', the role 'ModelParameter78' has cardinality 0..*.
+An association connects 'Dummy2' and 'qvtoperational_OperationalTransformation'. From 'Dummy2', the role 'Dummy2' has cardinality 0..*, and from 'qvtoperational_OperationalTransformation', the role 'qvtoperational_OperationalTransformation80' has cardinality 0..*.
+An association connects 'DummyRelation' and 'qvtoperational_OperationalTransformation'. From 'DummyRelation', the role 'DummyRelation83' has cardinality 0..*, and from 'qvtoperational_OperationalTransformation', the role 'qvtoperational_OperationalTransformation82' has cardinality 0..*.
+An association connects 'qvtoperational_OCLExpression' and 'qvtoperational_ResolveExp'. From 'qvtoperational_OCLExpression', the role 'qvtoperational_OCLExpression85' has cardinality 0..*, and from 'qvtoperational_ResolveExp', the role 'qvtoperational_ResolveExp' has cardinality 0..*.
+An association connects 'qvtoperational_Variable' and 'qvtoperational_ResolveExp'. From 'qvtoperational_Variable', the role 'qvtoperational_Variable88' has cardinality 0..*, and from 'qvtoperational_ResolveExp', the role 'qvtoperational_ResolveExp87' has cardinality 0..*.
+An association connects 'MappingOperation' and 'qvtoperational_ResolveInExp'. From 'MappingOperation', the role 'MappingOperation90' has cardinality 0..*, and from 'qvtoperational_ResolveInExp', the role 'qvtoperational_ResolveInExp' has cardinality 0..*.
+An association connects 'qvtoperational_VarParameter' and 'ImperativeOperation'. From 'qvtoperational_VarParameter', the role 'qvtoperational_VarParameter' has cardinality 0..*, and from 'ImperativeOperation', the role 'ImperativeOperation92' has cardinality 0..*.
+An association connects 'qvtoperational_VarParameter' and 'ImperativeOperation'. From 'qvtoperational_VarParameter', the role 'qvtoperational_VarParameter94' has cardinality 0..*, and from 'ImperativeOperation', the role 'ImperativeOperation95' has cardinality 0..*.
+An association connects 'qvtoperational_Tag' and 'qvtoperational_Element'. From 'qvtoperational_Tag', the role 'qvtoperational_Tag' has cardinality 0..*, and from 'qvtoperational_Element', the role 'qvtoperational_Element' has cardinality 0..*.

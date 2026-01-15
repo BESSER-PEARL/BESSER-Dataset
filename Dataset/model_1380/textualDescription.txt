@@ -1,0 +1,33 @@
+The domain model 'statemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'statemachine_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_State' represents an important domain concept.
+It has one attribute: 'time', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Initial' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachine_Initial' is a specialization of 'State'.
+The class 'statemachine_Final' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_FSM' and 'statemachine_State'. From 'statemachine_FSM', the role 'statemachine_FSM' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State' has cardinality 0..*.
+An association connects 'statemachine_FSM' and 'statemachine_Transition'. From 'statemachine_FSM', the role 'statemachine_FSM2' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_FSM'. From 'statemachine_State', the role 'statemachine_State5' has cardinality 0..*, and from 'statemachine_FSM', the role 'statemachine_FSM4' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_State'. From 'statemachine_State', the role 'statemachine_State8' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State6' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_State'. From 'statemachine_Transition', the role 'statemachine_Transition10' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State11' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_State'. From 'statemachine_Transition', the role 'statemachine_Transition13' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State14' has cardinality 0..*.

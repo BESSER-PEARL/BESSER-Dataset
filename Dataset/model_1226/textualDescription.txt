@@ -1,0 +1,192 @@
+The domain model 'imperativeoclcs' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'imperativeoclcs_StatementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_SwitchAltCS' represents an important domain concept.
+It has one attribute: 'keyword', which is of type str.
+
+'imperativeoclcs_DictLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_PrimitiveLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_ComputeExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_DoExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_VariableCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_TypedRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_ForExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_InstantiationExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedRefCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_AssertExpCS' represents an important domain concept.
+It has one attribute: 'severity', which is of type str.
+
+'imperativeoclcs_QuitExpCS' represents an important domain concept.
+It has one attribute: 'keyword', which is of type str.
+
+'StatementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_ReturnExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_BlockExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_VariableInitializationCS' represents an important domain concept.
+It has the following attributes: 'withResult', which is of type bool; 'simpleNameCS', which is of type str.
+
+'imperativeoclcs_CollectionLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'CallExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_TypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_SwitchExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_ExpressionStatementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_LogExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_ExceptCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionBlockCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_RaiseExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_DictLiteralPartCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_DictTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_ImperativeIterateExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_ListTypeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_ImperativeLoopExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_WhileExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_ListLiteralExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_AssignStatementCS' represents an important domain concept.
+It has one attribute: 'incremental', which is of type bool.
+
+'ImperativeLoopExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_TryExpCS' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'imperativeoclcs_ExpressionBlockCS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'imperativeoclcs_AssertExpCS' is a specialization of 'StatementCS'.
+The class 'imperativeoclcs_AssignStatementCS' is a specialization of 'StatementCS'.
+The class 'imperativeoclcs_BlockExpCS' is a specialization of 'StatementCS'.
+The class 'imperativeoclcs_DictLiteralExpCS' is a specialization of 'ExpCS'.
+The class 'imperativeoclcs_DictLiteralPartCS' is a specialization of 'ElementCS'.
+The class 'imperativeoclcs_DictTypeCS' is a specialization of 'TypedRefCS'.
+The class 'imperativeoclcs_ComputeExpCS' is a specialization of 'ExpressionBlockCS'.
+The class 'imperativeoclcs_ImperativeIterateExpCS' is a specialization of 'ImperativeLoopExpCS'.
+The class 'imperativeoclcs_ImperativeLoopExpCS' is a specialization of 'CallExpCS'.
+The class 'imperativeoclcs_ImperativeLoopExpCS' is a specialization of 'StatementCS'.
+The class 'imperativeoclcs_InstantiationExpCS' is a specialization of 'StatementCS'.
+The class 'imperativeoclcs_DoExpCS' is a specialization of 'ExpressionBlockCS'.
+The class 'imperativeoclcs_ExceptCS' is a specialization of 'ElementCS'.
+The class 'imperativeoclcs_ExpressionBlockCS' is a specialization of 'ExpCS'.
+The class 'imperativeoclcs_ExpressionStatementCS' is a specialization of 'StatementCS'.
+The class 'imperativeoclcs_ForExpCS' is a specialization of 'ImperativeLoopExpCS'.
+The class 'imperativeoclcs_ListTypeCS' is a specialization of 'TypedRefCS'.
+The class 'imperativeoclcs_ListLiteralExpCS' is a specialization of 'ExpCS'.
+The class 'imperativeoclcs_LogExpCS' is a specialization of 'CallExpCS'.
+The class 'imperativeoclcs_QuitExpCS' is a specialization of 'StatementCS'.
+The class 'imperativeoclcs_RaiseExpCS' is a specialization of 'StatementCS'.
+The class 'imperativeoclcs_ReturnExpCS' is a specialization of 'ExpCS'.
+The class 'imperativeoclcs_StatementCS' is a specialization of 'ExpCS'.
+The class 'imperativeoclcs_SwitchAltCS' is a specialization of 'StatementCS'.
+The class 'imperativeoclcs_SwitchExpCS' is a specialization of 'StatementCS'.
+The class 'imperativeoclcs_TryExpCS' is a specialization of 'ExpressionBlockCS'.
+The class 'imperativeoclcs_VariableInitializationCS' is a specialization of 'StatementCS'.
+The class 'imperativeoclcs_WhileExpCS' is a specialization of 'ExpressionBlockCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'imperativeoclcs_AssertExpCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_AssertExpCS', the role 'imperativeoclcs_AssertExpCS' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_LogExpCS' and 'imperativeoclcs_AssertExpCS'. From 'imperativeoclcs_LogExpCS', the role 'imperativeoclcs_LogExpCS' has cardinality 0..*, and from 'imperativeoclcs_AssertExpCS', the role 'imperativeoclcs_AssertExpCS2' has cardinality 0..*.
+An association connects 'imperativeoclcs_ExpCS' and 'imperativeoclcs_AssignStatementCS'. From 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS4' has cardinality 0..*, and from 'imperativeoclcs_AssignStatementCS', the role 'imperativeoclcs_AssignStatementCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_AssignStatementCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_AssignStatementCS', the role 'imperativeoclcs_AssignStatementCS6' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS7' has cardinality 0..*.
+An association connects 'imperativeoclcs_BlockExpCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_BlockExpCS', the role 'imperativeoclcs_BlockExpCS' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS9' has cardinality 0..*.
+An association connects 'imperativeoclcs_DictLiteralExpCS' and 'imperativeoclcs_DictLiteralPartCS'. From 'imperativeoclcs_DictLiteralExpCS', the role 'imperativeoclcs_DictLiteralExpCS' has cardinality 0..*, and from 'imperativeoclcs_DictLiteralPartCS', the role 'imperativeoclcs_DictLiteralPartCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_DictLiteralPartCS' and 'imperativeoclcs_PrimitiveLiteralExpCS'. From 'imperativeoclcs_DictLiteralPartCS', the role 'imperativeoclcs_DictLiteralPartCS12' has cardinality 0..*, and from 'imperativeoclcs_PrimitiveLiteralExpCS', the role 'imperativeoclcs_PrimitiveLiteralExpCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_ExpCS' and 'imperativeoclcs_DictLiteralPartCS'. From 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS15' has cardinality 0..*, and from 'imperativeoclcs_DictLiteralPartCS', the role 'imperativeoclcs_DictLiteralPartCS14' has cardinality 0..*.
+An association connects 'imperativeoclcs_TypedRefCS' and 'imperativeoclcs_DictTypeCS'. From 'imperativeoclcs_TypedRefCS', the role 'imperativeoclcs_TypedRefCS' has cardinality 0..*, and from 'imperativeoclcs_DictTypeCS', the role 'imperativeoclcs_DictTypeCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_DictTypeCS' and 'imperativeoclcs_TypedRefCS'. From 'imperativeoclcs_DictTypeCS', the role 'imperativeoclcs_DictTypeCS18' has cardinality 0..*, and from 'imperativeoclcs_TypedRefCS', the role 'imperativeoclcs_TypedRefCS19' has cardinality 0..*.
+An association connects 'imperativeoclcs_ComputeExpCS' and 'imperativeoclcs_VariableCS'. From 'imperativeoclcs_ComputeExpCS', the role 'imperativeoclcs_ComputeExpCS' has cardinality 0..*, and from 'imperativeoclcs_VariableCS', the role 'imperativeoclcs_VariableCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_VariableCS' and 'imperativeoclcs_ImperativeIterateExpCS'. From 'imperativeoclcs_VariableCS', the role 'imperativeoclcs_VariableCS22' has cardinality 0..*, and from 'imperativeoclcs_ImperativeIterateExpCS', the role 'imperativeoclcs_ImperativeIterateExpCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_ExpCS' and 'imperativeoclcs_ImperativeLoopExpCS'. From 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS24' has cardinality 0..*, and from 'imperativeoclcs_ImperativeLoopExpCS', the role 'imperativeoclcs_ImperativeLoopExpCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_InstantiationExpCS' and 'imperativeoclcs_TypeCS'. From 'imperativeoclcs_InstantiationExpCS', the role 'imperativeoclcs_InstantiationExpCS' has cardinality 0..*, and from 'imperativeoclcs_TypeCS', the role 'imperativeoclcs_TypeCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_ExpCS' and 'imperativeoclcs_InstantiationExpCS'. From 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS28' has cardinality 0..*, and from 'imperativeoclcs_InstantiationExpCS', the role 'imperativeoclcs_InstantiationExpCS27' has cardinality 0..*.
+An association connects 'imperativeoclcs_DoExpCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_DoExpCS', the role 'imperativeoclcs_DoExpCS' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS30' has cardinality 0..*.
+An association connects 'imperativeoclcs_Type' and 'imperativeoclcs_ExceptCS'. From 'imperativeoclcs_Type', the role 'imperativeoclcs_Type' has cardinality 0..*, and from 'imperativeoclcs_ExceptCS', the role 'imperativeoclcs_ExceptCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_ExpCS' and 'imperativeoclcs_ExceptCS'. From 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS34' has cardinality 0..*, and from 'imperativeoclcs_ExceptCS', the role 'imperativeoclcs_ExceptCS33' has cardinality 0..*.
+An association connects 'imperativeoclcs_ExpressionBlockCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_ExpressionBlockCS', the role 'imperativeoclcs_ExpressionBlockCS' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS36' has cardinality 0..*.
+An association connects 'imperativeoclcs_ExpressionStatementCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_ExpressionStatementCS', the role 'imperativeoclcs_ExpressionStatementCS' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS38' has cardinality 0..*.
+An association connects 'imperativeoclcs_TypedRefCS' and 'imperativeoclcs_ListTypeCS'. From 'imperativeoclcs_TypedRefCS', the role 'imperativeoclcs_TypedRefCS40' has cardinality 0..*, and from 'imperativeoclcs_ListTypeCS', the role 'imperativeoclcs_ListTypeCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_ListLiteralExpCS' and 'imperativeoclcs_CollectionLiteralPartCS'. From 'imperativeoclcs_ListLiteralExpCS', the role 'imperativeoclcs_ListLiteralExpCS' has cardinality 0..*, and from 'imperativeoclcs_CollectionLiteralPartCS', the role 'imperativeoclcs_CollectionLiteralPartCS' has cardinality 0..*.
+An association connects 'imperativeoclcs_ExpCS' and 'imperativeoclcs_LogExpCS'. From 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS44' has cardinality 0..*, and from 'imperativeoclcs_LogExpCS', the role 'imperativeoclcs_LogExpCS43' has cardinality 0..*.
+An association connects 'imperativeoclcs_QuitExpCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_QuitExpCS', the role 'imperativeoclcs_QuitExpCS' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS46' has cardinality 0..*.
+An association connects 'imperativeoclcs_ReturnExpCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_ReturnExpCS', the role 'imperativeoclcs_ReturnExpCS' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS48' has cardinality 0..*.
+An association connects 'imperativeoclcs_SwitchAltCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_SwitchAltCS', the role 'imperativeoclcs_SwitchAltCS' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS50' has cardinality 0..*.
+An association connects 'imperativeoclcs_ExpCS' and 'imperativeoclcs_SwitchAltCS'. From 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS53' has cardinality 0..*, and from 'imperativeoclcs_SwitchAltCS', the role 'imperativeoclcs_SwitchAltCS52' has cardinality 0..*.
+An association connects 'imperativeoclcs_SwitchExpCS' and 'imperativeoclcs_SwitchAltCS'. From 'imperativeoclcs_SwitchExpCS', the role 'imperativeoclcs_SwitchExpCS' has cardinality 0..*, and from 'imperativeoclcs_SwitchAltCS', the role 'imperativeoclcs_SwitchAltCS55' has cardinality 0..*.
+An association connects 'imperativeoclcs_SwitchExpCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_SwitchExpCS', the role 'imperativeoclcs_SwitchExpCS57' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS58' has cardinality 0..*.
+An association connects 'imperativeoclcs_TryExpCS' and 'imperativeoclcs_ExceptCS'. From 'imperativeoclcs_TryExpCS', the role 'imperativeoclcs_TryExpCS' has cardinality 0..*, and from 'imperativeoclcs_ExceptCS', the role 'imperativeoclcs_ExceptCS60' has cardinality 0..*.
+An association connects 'imperativeoclcs_VariableInitializationCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_VariableInitializationCS', the role 'imperativeoclcs_VariableInitializationCS' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS62' has cardinality 0..*.
+An association connects 'imperativeoclcs_TypeCS' and 'imperativeoclcs_VariableInitializationCS'. From 'imperativeoclcs_TypeCS', the role 'imperativeoclcs_TypeCS65' has cardinality 0..*, and from 'imperativeoclcs_VariableInitializationCS', the role 'imperativeoclcs_VariableInitializationCS64' has cardinality 0..*.
+An association connects 'imperativeoclcs_WhileExpCS' and 'imperativeoclcs_ExpCS'. From 'imperativeoclcs_WhileExpCS', the role 'imperativeoclcs_WhileExpCS' has cardinality 0..*, and from 'imperativeoclcs_ExpCS', the role 'imperativeoclcs_ExpCS67' has cardinality 0..*.
+An association connects 'imperativeoclcs_WhileExpCS' and 'imperativeoclcs_VariableCS'. From 'imperativeoclcs_WhileExpCS', the role 'imperativeoclcs_WhileExpCS69' has cardinality 0..*, and from 'imperativeoclcs_VariableCS', the role 'imperativeoclcs_VariableCS70' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/antoniogarmendia/gallery-graphical-dsls-emfStencil/caex-environment/plugins/caex.caex30/model/patterns/StateMachineHyperedges.ecore
