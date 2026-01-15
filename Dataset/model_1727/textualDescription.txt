@@ -1,0 +1,101 @@
+The domain model 'extlibraryprofile' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'extlibraryprofile_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'extlibraryprofile_BookOnTape' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibraryprofile_CirculatingItem' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibraryprofile_Book' represents an important domain concept.
+It has the following attributes: 'category', which is of type str; 'pages', which is of type str.
+
+'extlibraryprofile_Borrower' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibraryprofile_Lendable' represents an important domain concept.
+It has one attribute: 'copies', which is of type str.
+
+'CirculatingItem' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibraryprofile_Person' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'lastName', which is of type str.
+
+'AudioVisualItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Lendable' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibraryprofile_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'extlibraryprofile_Periodical' represents an important domain concept.
+It has one attribute: 'issuesPerYear', which is of type str.
+
+'extlibraryprofile_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibraryprofile_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibraryprofile_Item' represents an important domain concept.
+It has the following attributes: 'publicationDate', which is of type str; 'title', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibraryprofile_AudioVisualItem' represents an important domain concept.
+It has the following attributes: 'minutesLength', which is of type str; 'damaged', which is of type str.
+
+'extlibraryprofile_Borrows' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'Addressable' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibraryprofile_VideoCassete' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibraryprofile_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibraryprofile_Addressable' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'extlibraryprofile_Employee' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'ScienceFiction', 'Mystery', 'Biography'.
+
+The model also captures inheritance relationships between classes.
+The class 'extlibraryprofile_Book' is a specialization of 'CirculatingItem'.
+The class 'extlibraryprofile_CirculatingItem' is a specialization of 'Item'.
+The class 'extlibraryprofile_CirculatingItem' is a specialization of 'Lendable'.
+The class 'extlibraryprofile_Library' is a specialization of 'Addressable'.
+The class 'extlibraryprofile_Writer' is a specialization of 'Person'.
+The class 'extlibraryprofile_Person' is a specialization of 'Addressable'.
+The class 'extlibraryprofile_VideoCassete' is a specialization of 'AudioVisualItem'.
+The class 'extlibraryprofile_AudioVisualItem' is a specialization of 'CirculatingItem'.
+The class 'extlibraryprofile_BookOnTape' is a specialization of 'AudioVisualItem'.
+The class 'extlibraryprofile_Periodical' is a specialization of 'Item'.
+The class 'extlibraryprofile_Borrower' is a specialization of 'Person'.
+The class 'extlibraryprofile_Employee' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'extlibraryprofile_Item' and 'extlibraryprofile_Class'. From 'extlibraryprofile_Item', the role 'extlibraryprofile_Item' has cardinality 0..*, and from 'extlibraryprofile_Class', the role 'extlibraryprofile_Class' has cardinality 0..*.
+An association connects 'extlibraryprofile_Package' and 'extlibraryprofile_Library'. From 'extlibraryprofile_Package', the role 'extlibraryprofile_Package' has cardinality 0..*, and from 'extlibraryprofile_Library', the role 'extlibraryprofile_Library' has cardinality 0..*.
+An association connects 'extlibraryprofile_Writer' and 'extlibraryprofile_BookOnTape'. From 'extlibraryprofile_Writer', the role 'extlibraryprofile_Writer' has cardinality 0..*, and from 'extlibraryprofile_BookOnTape', the role 'extlibraryprofile_BookOnTape' has cardinality 0..*.
+An association connects 'extlibraryprofile_Person' and 'extlibraryprofile_VideoCassete'. From 'extlibraryprofile_Person', the role 'extlibraryprofile_Person' has cardinality 0..*, and from 'extlibraryprofile_VideoCassete', the role 'extlibraryprofile_VideoCassete' has cardinality 0..*.
+An association connects 'extlibraryprofile_Person' and 'extlibraryprofile_BookOnTape'. From 'extlibraryprofile_Person', the role 'extlibraryprofile_Person5' has cardinality 0..*, and from 'extlibraryprofile_BookOnTape', the role 'extlibraryprofile_BookOnTape6' has cardinality 0..*.
+An association connects 'extlibraryprofile_Class' and 'extlibraryprofile_Person'. From 'extlibraryprofile_Class', the role 'extlibraryprofile_Class9' has cardinality 0..*, and from 'extlibraryprofile_Person', the role 'extlibraryprofile_Person8' has cardinality 0..*.
+An association connects 'extlibraryprofile_Borrows' and 'extlibraryprofile_Dependency'. From 'extlibraryprofile_Borrows', the role 'extlibraryprofile_Borrows' has cardinality 0..*, and from 'extlibraryprofile_Dependency', the role 'extlibraryprofile_Dependency' has cardinality 0..*.

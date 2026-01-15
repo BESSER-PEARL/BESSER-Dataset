@@ -1,0 +1,1150 @@
+from datetime import datetime, date, time
+from abc import ABC, abstractmethod
+
+from enum import Enum
+
+############################################
+# Definition of Enumerations
+############################################
+
+class MPrimitiveTypes(Enum):
+    boolean = "boolean"
+    byte = "byte"
+    short = "short"
+    int = "int"
+    long = "long"
+    float = "float"
+    double = "double"
+    char = "char"
+class MVisibility(Enum):
+    DEFAULT = "DEFAULT"
+    PRIVATE = "PRIVATE"
+    PROTECTED = "PROTECTED"
+    PUBLIC = "PUBLIC"
+
+
+############################################
+# Definition of Classes
+############################################
+
+class AbstractCExpression:
+
+    pass
+class jsm_CUnparsedExpression(AbstractCExpression):
+
+    def __init__(self, code: str):
+        self.code = code
+        
+    @property
+    def code(self) -> str:
+        return self.__code
+
+    @code.setter
+    def code(self, code: str):
+        self.__code = code
+
+class jsm_CConditionalExpression(AbstractCExpression):
+
+    pass
+class AbstractCStatement:
+
+    pass
+class jsm_CUnparsedStatement(AbstractCStatement):
+
+    def __init__(self, code: str):
+        self.code = code
+        
+    @property
+    def code(self) -> str:
+        return self.__code
+
+    @code.setter
+    def code(self, code: str):
+        self.__code = code
+
+class jsm_CExpressionStatement(AbstractCStatement):
+
+    pass
+class jsm_CIfStatement(AbstractCStatement):
+
+    pass
+class jsm_CBlockStatement(AbstractCStatement):
+
+    pass
+class AbstractMMethodLike:
+
+    pass
+class AbstractMMethodImplementation:
+
+    pass
+class jsm_MMethodImplementationParameter:
+
+    def __init__(self, final: bool, name: str, MMethodImplementationParameter: "jsm_AbstractMMethodImplementation" = None, parameters62: "jsm_AbstractMMethodImplementation" = None):
+        self.final = final
+        self.name = name
+        self.MMethodImplementationParameter = MMethodImplementationParameter
+        self.parameters62 = parameters62
+        
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @name.setter
+    def name(self, name: str):
+        self.__name = name
+
+    @property
+    def final(self) -> bool:
+        return self.__final
+
+    @final.setter
+    def final(self, final: bool):
+        self.__final = final
+
+    @property
+    def MMethodImplementationParameter(self):
+        return self.__MMethodImplementationParameter
+
+    @MMethodImplementationParameter.setter
+    def MMethodImplementationParameter(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MMethodImplementationParameter__MMethodImplementationParameter", None)
+        self.__MMethodImplementationParameter = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "methodImplementation"):
+                opp_val = getattr(old_value, "methodImplementation", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "methodImplementation"):
+                opp_val = getattr(value, "methodImplementation", None)
+                if opp_val is None:
+                    setattr(value, "methodImplementation", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def parameters62(self):
+        return self.__parameters62
+
+    @parameters62.setter
+    def parameters62(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MMethodImplementationParameter__parameters62", None)
+        self.__parameters62 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "AbstractMMethodImplementation63"):
+                opp_val = getattr(old_value, "AbstractMMethodImplementation63", None)
+                if opp_val == self:
+                    setattr(old_value, "AbstractMMethodImplementation63", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "AbstractMMethodImplementation63"):
+                opp_val = getattr(value, "AbstractMMethodImplementation63", None)
+                setattr(value, "AbstractMMethodImplementation63", self)
+
+class AbstractMImplementableMethodDeclaration:
+
+    pass
+class jsm_MDeclaredMethodImplementation(AbstractMMethodImplementation):
+
+    pass
+class jsm_MDirectMethodImplementation(AbstractMMethodImplementation):
+
+    pass
+class AbstractMMethodDeclaration:
+
+    pass
+class jsm_AbstractMImplementableMethodDeclaration(AbstractMMethodDeclaration):
+
+    pass
+class jsm_MImplicitMethodDeclaration(AbstractMMethodDeclaration):
+
+    pass
+class jsm_AbstractCExpression(ABC):
+
+    pass
+class AbstractMTypeWithNameDeclaration:
+
+    pass
+class jsm_CDeclarationStatement(AbstractCStatement, AbstractMTypeWithNameDeclaration):
+
+    def __init__(self, final: bool, jsm_CDeclarationStatement: "jsm_AbstractCExpression" = None):
+        self.final = final
+        self.jsm_CDeclarationStatement = jsm_CDeclarationStatement
+        
+    @property
+    def final(self) -> bool:
+        return self.__final
+
+    @final.setter
+    def final(self, final: bool):
+        self.__final = final
+
+    @property
+    def jsm_CDeclarationStatement(self):
+        return self.__jsm_CDeclarationStatement
+
+    @jsm_CDeclarationStatement.setter
+    def jsm_CDeclarationStatement(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_CDeclarationStatement__jsm_CDeclarationStatement", None)
+        self.__jsm_CDeclarationStatement = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "jsm_AbstractCExpression73"):
+                opp_val = getattr(old_value, "jsm_AbstractCExpression73", None)
+                if opp_val == self:
+                    setattr(old_value, "jsm_AbstractCExpression73", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "jsm_AbstractCExpression73"):
+                opp_val = getattr(value, "jsm_AbstractCExpression73", None)
+                setattr(value, "jsm_AbstractCExpression73", self)
+
+class jsm_MConstructorParameter(AbstractMTypeWithNameDeclaration):
+
+    def __init__(self, final: bool, MConstructorParameter: "jsm_MConstructor" = None, parameters68: "jsm_MConstructor" = None):
+        self.final = final
+        self.MConstructorParameter = MConstructorParameter
+        self.parameters68 = parameters68
+        
+    @property
+    def final(self) -> bool:
+        return self.__final
+
+    @final.setter
+    def final(self, final: bool):
+        self.__final = final
+
+    @property
+    def MConstructorParameter(self):
+        return self.__MConstructorParameter
+
+    @MConstructorParameter.setter
+    def MConstructorParameter(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MConstructorParameter__MConstructorParameter", None)
+        self.__MConstructorParameter = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "constructor"):
+                opp_val = getattr(old_value, "constructor", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "constructor"):
+                opp_val = getattr(value, "constructor", None)
+                if opp_val is None:
+                    setattr(value, "constructor", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def parameters68(self):
+        return self.__parameters68
+
+    @parameters68.setter
+    def parameters68(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MConstructorParameter__parameters68", None)
+        self.__parameters68 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "MConstructor69"):
+                opp_val = getattr(old_value, "MConstructor69", None)
+                if opp_val == self:
+                    setattr(old_value, "MConstructor69", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "MConstructor69"):
+                opp_val = getattr(value, "MConstructor69", None)
+                setattr(value, "MConstructor69", self)
+
+class jsm_AbstractMFieldDeclaration(AbstractMTypeWithNameDeclaration):
+
+    pass
+class jsm_MMethodDeclarationParameter(AbstractMTypeWithNameDeclaration):
+
+    pass
+class jsm_AbstractMMethodDeclaration(AbstractMTypeWithNameDeclaration):
+
+    pass
+class AbstractMClassFieldDeclaration:
+
+    pass
+class AbstractMFieldDeclaration:
+
+    pass
+class jsm_AbstractMClassFieldDeclaration(AbstractMFieldDeclaration):
+
+    def __init__(self, visibility: str, final: bool):
+        self.visibility = visibility
+        self.final = final
+        
+    @property
+    def final(self) -> bool:
+        return self.__final
+
+    @final.setter
+    def final(self, final: bool):
+        self.__final = final
+
+    @property
+    def visibility(self) -> str:
+        return self.__visibility
+
+    @visibility.setter
+    def visibility(self, visibility: str):
+        self.__visibility = visibility
+
+class jsm_MNativeMethodDeclaration(AbstractMMethodDeclaration):
+
+    pass
+class jsm_MInterfaceMethodDeclaration(AbstractMImplementableMethodDeclaration):
+
+    pass
+class jsm_MConstantInterfaceFieldDeclaration(AbstractMFieldDeclaration):
+
+    pass
+class AbstractMInterface:
+
+    pass
+class AbstractMExternalType:
+
+    pass
+class jsm_MExternalInterface(AbstractMInterface, AbstractMExternalType):
+
+    pass
+class jsm_MAbstractClassMethodDeclaration(AbstractMImplementableMethodDeclaration):
+
+    def __init__(self, visibility: str, MAbstractClassMethodDeclaration: "jsm_MAbstractDeclaredClass" = None, abstractMethods: "jsm_MAbstractDeclaredClass" = None):
+        self.visibility = visibility
+        self.MAbstractClassMethodDeclaration = MAbstractClassMethodDeclaration
+        self.abstractMethods = abstractMethods
+        
+    @property
+    def visibility(self) -> str:
+        return self.__visibility
+
+    @visibility.setter
+    def visibility(self, visibility: str):
+        self.__visibility = visibility
+
+    @property
+    def MAbstractClassMethodDeclaration(self):
+        return self.__MAbstractClassMethodDeclaration
+
+    @MAbstractClassMethodDeclaration.setter
+    def MAbstractClassMethodDeclaration(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MAbstractClassMethodDeclaration__MAbstractClassMethodDeclaration", None)
+        self.__MAbstractClassMethodDeclaration = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "owner33"):
+                opp_val = getattr(old_value, "owner33", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "owner33"):
+                opp_val = getattr(value, "owner33", None)
+                if opp_val is None:
+                    setattr(value, "owner33", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def abstractMethods(self):
+        return self.__abstractMethods
+
+    @abstractMethods.setter
+    def abstractMethods(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MAbstractClassMethodDeclaration__abstractMethods", None)
+        self.__abstractMethods = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "MAbstractDeclaredClass"):
+                opp_val = getattr(old_value, "MAbstractDeclaredClass", None)
+                if opp_val == self:
+                    setattr(old_value, "MAbstractDeclaredClass", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "MAbstractDeclaredClass"):
+                opp_val = getattr(value, "MAbstractDeclaredClass", None)
+                setattr(value, "MAbstractDeclaredClass", self)
+
+class MDeclaredClass:
+
+    pass
+class jsm_MAbstractDeclaredClass(MDeclaredClass):
+
+    pass
+class jsm_AbstractMMethodImplementation(AbstractMMethodLike):
+
+    pass
+class jsm_MConstructor(AbstractMMethodLike):
+
+    pass
+class jsm_MInstanceClassFieldDeclaration(AbstractMClassFieldDeclaration):
+
+    def __init__(self, transient: bool, MInstanceClassFieldDeclaration: "jsm_MDeclaredClass" = None, instanceFields: "jsm_MDeclaredClass" = None):
+        self.transient = transient
+        self.MInstanceClassFieldDeclaration = MInstanceClassFieldDeclaration
+        self.instanceFields = instanceFields
+        
+    @property
+    def transient(self) -> bool:
+        return self.__transient
+
+    @transient.setter
+    def transient(self, transient: bool):
+        self.__transient = transient
+
+    @property
+    def MInstanceClassFieldDeclaration(self):
+        return self.__MInstanceClassFieldDeclaration
+
+    @MInstanceClassFieldDeclaration.setter
+    def MInstanceClassFieldDeclaration(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MInstanceClassFieldDeclaration__MInstanceClassFieldDeclaration", None)
+        self.__MInstanceClassFieldDeclaration = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "owner25"):
+                opp_val = getattr(old_value, "owner25", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "owner25"):
+                opp_val = getattr(value, "owner25", None)
+                if opp_val is None:
+                    setattr(value, "owner25", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def instanceFields(self):
+        return self.__instanceFields
+
+    @instanceFields.setter
+    def instanceFields(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MInstanceClassFieldDeclaration__instanceFields", None)
+        self.__instanceFields = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "MDeclaredClass43"):
+                opp_val = getattr(old_value, "MDeclaredClass43", None)
+                if opp_val == self:
+                    setattr(old_value, "MDeclaredClass43", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "MDeclaredClass43"):
+                opp_val = getattr(value, "MDeclaredClass43", None)
+                setattr(value, "MDeclaredClass43", self)
+
+class jsm_MStaticClassFieldDeclaration(AbstractMClassFieldDeclaration):
+
+    pass
+class AbstractMDeclaredType:
+
+    pass
+class jsm_MDeclaredInterface(AbstractMInterface, AbstractMDeclaredType):
+
+    pass
+class AbstractMClass:
+
+    pass
+class jsm_MExternalClass(AbstractMClass, AbstractMExternalType):
+
+    pass
+class jsm_MDeclaredClass(AbstractMClass, AbstractMDeclaredType):
+
+    pass
+class AbstractMType:
+
+    pass
+class jsm_AbstractMInterface(AbstractMType):
+
+    pass
+class jsm_AbstractMClass(AbstractMType):
+
+    pass
+class jsm_AbstractMTypeWithNameDeclaration(ABC):
+
+    def __init__(self, name: str, jsm_AbstractMTypeWithNameDeclaration: "jsm_AbstractMTypeReference" = None):
+        self.name = name
+        self.jsm_AbstractMTypeWithNameDeclaration = jsm_AbstractMTypeWithNameDeclaration
+        
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @name.setter
+    def name(self, name: str):
+        self.__name = name
+
+    @property
+    def jsm_AbstractMTypeWithNameDeclaration(self):
+        return self.__jsm_AbstractMTypeWithNameDeclaration
+
+    @jsm_AbstractMTypeWithNameDeclaration.setter
+    def jsm_AbstractMTypeWithNameDeclaration(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMTypeWithNameDeclaration__jsm_AbstractMTypeWithNameDeclaration", None)
+        self.__jsm_AbstractMTypeWithNameDeclaration = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "jsm_AbstractMTypeReference"):
+                opp_val = getattr(old_value, "jsm_AbstractMTypeReference", None)
+                if opp_val == self:
+                    setattr(old_value, "jsm_AbstractMTypeReference", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "jsm_AbstractMTypeReference"):
+                opp_val = getattr(value, "jsm_AbstractMTypeReference", None)
+                setattr(value, "jsm_AbstractMTypeReference", self)
+
+class jsm_AbstractCStatement(ABC):
+
+    pass
+class AbstractModifiers:
+
+    pass
+class jsm_AbstractMMethodLike(AbstractModifiers):
+
+    pass
+class jsm_AbstractModifiers(ABC):
+
+    def __init__(self, visibility: str, final: bool, synchronized: bool):
+        self.visibility = visibility
+        self.final = final
+        self.synchronized = synchronized
+        
+    @property
+    def final(self) -> bool:
+        return self.__final
+
+    @final.setter
+    def final(self, final: bool):
+        self.__final = final
+
+    @property
+    def visibility(self) -> str:
+        return self.__visibility
+
+    @visibility.setter
+    def visibility(self, visibility: str):
+        self.__visibility = visibility
+
+    @property
+    def synchronized(self) -> bool:
+        return self.__synchronized
+
+    @synchronized.setter
+    def synchronized(self, synchronized: bool):
+        self.__synchronized = synchronized
+
+class AbstractMTypeReference:
+
+    pass
+class jsm_MPrimitiveTypeReference(AbstractMTypeReference):
+
+    def __init__(self, type: str):
+        self.type = type
+        
+    @property
+    def type(self) -> str:
+        return self.__type
+
+    @type.setter
+    def type(self, type: str):
+        self.__type = type
+
+class jsm_MExternalTypeReference(AbstractMTypeReference):
+
+    pass
+class jsm_MDeclaredTypeReference(AbstractMTypeReference):
+
+    pass
+class jsm_AbstractMTypeReference(ABC):
+
+    def __init__(self, array: bool, jsm_AbstractMTypeReference: "jsm_AbstractMTypeWithNameDeclaration" = None):
+        self.array = array
+        self.jsm_AbstractMTypeReference = jsm_AbstractMTypeReference
+        
+    @property
+    def array(self) -> bool:
+        return self.__array
+
+    @array.setter
+    def array(self, array: bool):
+        self.__array = array
+
+    @property
+    def jsm_AbstractMTypeReference(self):
+        return self.__jsm_AbstractMTypeReference
+
+    @jsm_AbstractMTypeReference.setter
+    def jsm_AbstractMTypeReference(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMTypeReference__jsm_AbstractMTypeReference", None)
+        self.__jsm_AbstractMTypeReference = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "jsm_AbstractMTypeWithNameDeclaration"):
+                opp_val = getattr(old_value, "jsm_AbstractMTypeWithNameDeclaration", None)
+                if opp_val == self:
+                    setattr(old_value, "jsm_AbstractMTypeWithNameDeclaration", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "jsm_AbstractMTypeWithNameDeclaration"):
+                opp_val = getattr(value, "jsm_AbstractMTypeWithNameDeclaration", None)
+                setattr(value, "jsm_AbstractMTypeWithNameDeclaration", self)
+
+class jsm_AbstractMType(ABC):
+
+    pass
+class AbstractMTypeContainer:
+
+    pass
+class jsm_AbstractMResource(ABC):
+
+    def __init__(self, name: str, derived: bool, AbstractMResource: "jsm_MPackage" = None, resources: "jsm_MPackage" = None, AbstractMResource8: "jsm_AbstractMResource" = None, superOf: set["jsm_AbstractMResource"] = None, AbstractMResource11: "jsm_AbstractMResource" = None, derivedFrom: set["jsm_AbstractMResource"] = None):
+        self.name = name
+        self.derived = derived
+        self.AbstractMResource = AbstractMResource
+        self.resources = resources
+        self.AbstractMResource8 = AbstractMResource8
+        self.superOf = superOf if superOf is not None else set()
+        self.AbstractMResource11 = AbstractMResource11
+        self.derivedFrom = derivedFrom if derivedFrom is not None else set()
+        
+    @property
+    def derived(self) -> bool:
+        return self.__derived
+
+    @derived.setter
+    def derived(self, derived: bool):
+        self.__derived = derived
+
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @name.setter
+    def name(self, name: str):
+        self.__name = name
+
+    @property
+    def AbstractMResource11(self):
+        return self.__AbstractMResource11
+
+    @AbstractMResource11.setter
+    def AbstractMResource11(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMResource__AbstractMResource11", None)
+        self.__AbstractMResource11 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "derivedFrom"):
+                opp_val = getattr(old_value, "derivedFrom", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "derivedFrom"):
+                opp_val = getattr(value, "derivedFrom", None)
+                if opp_val is None:
+                    setattr(value, "derivedFrom", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def AbstractMResource(self):
+        return self.__AbstractMResource
+
+    @AbstractMResource.setter
+    def AbstractMResource(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMResource__AbstractMResource", None)
+        self.__AbstractMResource = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "package"):
+                opp_val = getattr(old_value, "package", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "package"):
+                opp_val = getattr(value, "package", None)
+                if opp_val is None:
+                    setattr(value, "package", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def resources(self):
+        return self.__resources
+
+    @resources.setter
+    def resources(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMResource__resources", None)
+        self.__resources = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "MPackage5"):
+                opp_val = getattr(old_value, "MPackage5", None)
+                if opp_val == self:
+                    setattr(old_value, "MPackage5", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "MPackage5"):
+                opp_val = getattr(value, "MPackage5", None)
+                setattr(value, "MPackage5", self)
+
+    @property
+    def derivedFrom(self):
+        return self.__derivedFrom
+
+    @derivedFrom.setter
+    def derivedFrom(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMResource__derivedFrom", None)
+        self.__derivedFrom = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "AbstractMResource11"):
+                    opp_val = getattr(item, "AbstractMResource11", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "AbstractMResource11", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "AbstractMResource11"):
+                    opp_val = getattr(item, "AbstractMResource11", None)
+                    
+                    setattr(item, "AbstractMResource11", self)
+                    
+
+    @property
+    def AbstractMResource8(self):
+        return self.__AbstractMResource8
+
+    @AbstractMResource8.setter
+    def AbstractMResource8(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMResource__AbstractMResource8", None)
+        self.__AbstractMResource8 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "superOf"):
+                opp_val = getattr(old_value, "superOf", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "superOf"):
+                opp_val = getattr(value, "superOf", None)
+                if opp_val is None:
+                    setattr(value, "superOf", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def superOf(self):
+        return self.__superOf
+
+    @superOf.setter
+    def superOf(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMResource__superOf", None)
+        self.__superOf = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "AbstractMResource8"):
+                    opp_val = getattr(item, "AbstractMResource8", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "AbstractMResource8", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "AbstractMResource8"):
+                    opp_val = getattr(item, "AbstractMResource8", None)
+                    
+                    setattr(item, "AbstractMResource8", self)
+                    
+
+class jsm_AbstractMDeclaredType(AbstractMTypeContainer):
+
+    def __init__(self, name: str, types: "jsm_AbstractMTypeContainer" = None, AbstractMDeclaredType: "jsm_AbstractMTypeContainer" = None, jsm_AbstractMDeclaredType: "jsm_MDeclaredTypeReference" = None):
+        self.name = name
+        self.types = types
+        self.AbstractMDeclaredType = AbstractMDeclaredType
+        self.jsm_AbstractMDeclaredType = jsm_AbstractMDeclaredType
+        
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @name.setter
+    def name(self, name: str):
+        self.__name = name
+
+    @property
+    def AbstractMDeclaredType(self):
+        return self.__AbstractMDeclaredType
+
+    @AbstractMDeclaredType.setter
+    def AbstractMDeclaredType(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMDeclaredType__AbstractMDeclaredType", None)
+        self.__AbstractMDeclaredType = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "typeContainer"):
+                opp_val = getattr(old_value, "typeContainer", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "typeContainer"):
+                opp_val = getattr(value, "typeContainer", None)
+                if opp_val is None:
+                    setattr(value, "typeContainer", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def types(self):
+        return self.__types
+
+    @types.setter
+    def types(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMDeclaredType__types", None)
+        self.__types = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "AbstractMTypeContainer"):
+                opp_val = getattr(old_value, "AbstractMTypeContainer", None)
+                if opp_val == self:
+                    setattr(old_value, "AbstractMTypeContainer", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "AbstractMTypeContainer"):
+                opp_val = getattr(value, "AbstractMTypeContainer", None)
+                setattr(value, "AbstractMTypeContainer", self)
+
+    @property
+    def jsm_AbstractMDeclaredType(self):
+        return self.__jsm_AbstractMDeclaredType
+
+    @jsm_AbstractMDeclaredType.setter
+    def jsm_AbstractMDeclaredType(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMDeclaredType__jsm_AbstractMDeclaredType", None)
+        self.__jsm_AbstractMDeclaredType = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "jsm_MDeclaredTypeReference"):
+                opp_val = getattr(old_value, "jsm_MDeclaredTypeReference", None)
+                if opp_val == self:
+                    setattr(old_value, "jsm_MDeclaredTypeReference", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "jsm_MDeclaredTypeReference"):
+                opp_val = getattr(value, "jsm_MDeclaredTypeReference", None)
+                setattr(value, "jsm_MDeclaredTypeReference", self)
+
+class jsm_AbstractMTypeContainer(ABC):
+
+    pass
+class AbstractMResource:
+
+    pass
+class jsm_MCompilationUnit(AbstractMTypeContainer, AbstractMResource):
+
+    pass
+class jsm_MResource(AbstractMResource):
+
+    def __init__(self, content: str):
+        self.content = content
+        
+    @property
+    def content(self) -> str:
+        return self.__content
+
+    @content.setter
+    def content(self, content: str):
+        self.__content = content
+
+class jsm_AbstractMExternalType(ABC):
+
+    def __init__(self, fullQualifiedName: str, AbstractMExternalType: "jsm_MRoot" = None, externalTypes: "jsm_MRoot" = None, jsm_AbstractMExternalType: "jsm_MExternalTypeReference" = None):
+        self.fullQualifiedName = fullQualifiedName
+        self.AbstractMExternalType = AbstractMExternalType
+        self.externalTypes = externalTypes
+        self.jsm_AbstractMExternalType = jsm_AbstractMExternalType
+        
+    @property
+    def fullQualifiedName(self) -> str:
+        return self.__fullQualifiedName
+
+    @fullQualifiedName.setter
+    def fullQualifiedName(self, fullQualifiedName: str):
+        self.__fullQualifiedName = fullQualifiedName
+
+    @property
+    def jsm_AbstractMExternalType(self):
+        return self.__jsm_AbstractMExternalType
+
+    @jsm_AbstractMExternalType.setter
+    def jsm_AbstractMExternalType(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMExternalType__jsm_AbstractMExternalType", None)
+        self.__jsm_AbstractMExternalType = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "jsm_MExternalTypeReference"):
+                opp_val = getattr(old_value, "jsm_MExternalTypeReference", None)
+                if opp_val == self:
+                    setattr(old_value, "jsm_MExternalTypeReference", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "jsm_MExternalTypeReference"):
+                opp_val = getattr(value, "jsm_MExternalTypeReference", None)
+                setattr(value, "jsm_MExternalTypeReference", self)
+
+    @property
+    def externalTypes(self):
+        return self.__externalTypes
+
+    @externalTypes.setter
+    def externalTypes(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMExternalType__externalTypes", None)
+        self.__externalTypes = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "MRoot"):
+                opp_val = getattr(old_value, "MRoot", None)
+                if opp_val == self:
+                    setattr(old_value, "MRoot", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "MRoot"):
+                opp_val = getattr(value, "MRoot", None)
+                setattr(value, "MRoot", self)
+
+    @property
+    def AbstractMExternalType(self):
+        return self.__AbstractMExternalType
+
+    @AbstractMExternalType.setter
+    def AbstractMExternalType(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_AbstractMExternalType__AbstractMExternalType", None)
+        self.__AbstractMExternalType = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "root"):
+                opp_val = getattr(old_value, "root", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "root"):
+                opp_val = getattr(value, "root", None)
+                if opp_val is None:
+                    setattr(value, "root", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+class AbstractMPackageContainer:
+
+    pass
+class jsm_MRoot(AbstractMPackageContainer):
+
+    pass
+class jsm_MPackage(AbstractMPackageContainer):
+
+    def __init__(self, name: str, MPackage: "jsm_AbstractMPackageContainer" = None, packages: "jsm_AbstractMPackageContainer" = None, package: set["jsm_AbstractMResource"] = None, MPackage5: "jsm_AbstractMResource" = None):
+        self.name = name
+        self.MPackage = MPackage
+        self.packages = packages
+        self.package = package if package is not None else set()
+        self.MPackage5 = MPackage5
+        
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @name.setter
+    def name(self, name: str):
+        self.__name = name
+
+    @property
+    def MPackage(self):
+        return self.__MPackage
+
+    @MPackage.setter
+    def MPackage(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MPackage__MPackage", None)
+        self.__MPackage = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "packageContainer"):
+                opp_val = getattr(old_value, "packageContainer", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "packageContainer"):
+                opp_val = getattr(value, "packageContainer", None)
+                if opp_val is None:
+                    setattr(value, "packageContainer", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def MPackage5(self):
+        return self.__MPackage5
+
+    @MPackage5.setter
+    def MPackage5(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MPackage__MPackage5", None)
+        self.__MPackage5 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "resources"):
+                opp_val = getattr(old_value, "resources", None)
+                if opp_val == self:
+                    setattr(old_value, "resources", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "resources"):
+                opp_val = getattr(value, "resources", None)
+                setattr(value, "resources", self)
+
+    @property
+    def packages(self):
+        return self.__packages
+
+    @packages.setter
+    def packages(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MPackage__packages", None)
+        self.__packages = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "AbstractMPackageContainer"):
+                opp_val = getattr(old_value, "AbstractMPackageContainer", None)
+                if opp_val == self:
+                    setattr(old_value, "AbstractMPackageContainer", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "AbstractMPackageContainer"):
+                opp_val = getattr(value, "AbstractMPackageContainer", None)
+                setattr(value, "AbstractMPackageContainer", self)
+
+    @property
+    def package(self):
+        return self.__package
+
+    @package.setter
+    def package(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_jsm_MPackage__package", None)
+        self.__package = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "AbstractMResource"):
+                    opp_val = getattr(item, "AbstractMResource", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "AbstractMResource", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "AbstractMResource"):
+                    opp_val = getattr(item, "AbstractMResource", None)
+                    
+                    setattr(item, "AbstractMResource", self)
+                    
+
+class jsm_AbstractMPackageContainer(ABC):
+
+    pass

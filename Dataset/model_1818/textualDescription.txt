@@ -1,0 +1,180 @@
+The domain model 'doc' describes the core structural elements and their relationships within the system.
+
+The model defines 46 main class(es).
+
+'doc_fragment_Copyright' represents an important domain concept.
+It has one attribute: 'year', which is of type int.
+
+'doc_map_MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_map_Map' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_map_Import' represents an important domain concept.
+It does not declare any attributes.
+
+'BookContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'map_MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_map_File' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'Section' represents an important domain concept.
+It does not declare any attributes.
+
+'Author' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_map_ExcludePatternRule' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_map_PatternRule' represents an important domain concept.
+It has one attribute: 'pattern', which is of type str.
+
+'Content' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_map_ExtensionMappingEntry' represents an important domain concept.
+It has one attribute: 'extension', which is of type str.
+
+'ExtensionMappingEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_builder_PropertyEntry' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'Import' represents an important domain concept.
+It does not declare any attributes.
+
+'fragment_Content' represents an important domain concept.
+It does not declare any attributes.
+
+'PatternRule' represents an important domain concept.
+It does not declare any attributes.
+
+'builder_PropertyEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'NameRule' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_book_BookContainer' represents an important domain concept.
+It has one attribute: 'numberingStyle', which is of type str.
+
+'MapContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_map_IncludePatternRule' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_map_MapSection' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'title', which is of type str.
+
+'doc_map_Feature' represents an important domain concept.
+It has the following attributes: 'createSection', which is of type bool; 'featureId', which is of type str.
+
+'doc_fragment_Author' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str; 'ref', which is of type str.
+
+'BookSection' represents an important domain concept.
+It does not declare any attributes.
+
+'map_MapContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_fragment_Section' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'doc_fragment_PlainTextContent' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'doc_fragment_Content' represents an important domain concept.
+It does not declare any attributes.
+
+'Map' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_book_Book' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'copyrightMarker', which is of type str; 'title', which is of type str; 'copyrightText', which is of type str.
+
+'Copyright' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_map_NameRule' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_map_ResourceFactory' represents an important domain concept.
+It has one attribute: 'className', which is of type str.
+
+'doc_fragment_Container' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'MapElement' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_map_MapContainer' represents an important domain concept.
+It has one attribute: 'numberingStyle', which is of type str.
+
+'doc_fragment_Fragment' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_book_BookSection' represents an important domain concept.
+It has the following attributes: 'number', which is of type int; 'title', which is of type str; 'id', which is of type str; 'fullNumber', which is of type str.
+
+'doc_map_ContentGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_builder_BookBuilder' represents an important domain concept.
+It has the following attributes: 'copyrightMarker', which is of type str; 'license', which is of type str; 'title', which is of type str; 'version', which is of type str.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'doc_Test' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceFactory' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RuleResult' defines the following possible values: 'ACCEPT', 'REJECT'.
+The enumeration 'NumberingStyle' defines the following possible values: 'LATIN', 'ARABIC', 'ROMAN'.
+
+The model also captures inheritance relationships between classes.
+The class 'doc_map_Map' is a specialization of 'MapContainer'.
+The class 'doc_map_Import' is a specialization of 'MapElement'.
+The class 'doc_map_File' is a specialization of 'Import'.
+The class 'doc_map_MapSection' is a specialization of 'map_MapContainer'.
+The class 'doc_map_MapSection' is a specialization of 'map_MapElement'.
+The class 'doc_map_Feature' is a specialization of 'Import'.
+The class 'doc_map_PatternRule' is a specialization of 'NameRule'.
+The class 'doc_map_IncludePatternRule' is a specialization of 'PatternRule'.
+The class 'doc_map_ExcludePatternRule' is a specialization of 'PatternRule'.
+The class 'doc_map_ContentGenerator' is a specialization of 'map_MapElement'.
+The class 'doc_map_ContentGenerator' is a specialization of 'fragment_Content'.
+The class 'doc_fragment_Fragment' is a specialization of 'Container'.
+The class 'doc_fragment_Section' is a specialization of 'Container'.
+The class 'doc_fragment_PlainTextContent' is a specialization of 'Content'.
+The class 'doc_book_Book' is a specialization of 'BookContainer'.
+The class 'doc_book_BookSection' is a specialization of 'BookContainer'.
+The class 'doc_builder_BookBuilder' is a specialization of 'Map'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ExtensionMappingEntry' and 'doc_map_Map'. From 'ExtensionMappingEntry', the role 'ExtensionMappingEntry' has cardinality 0..*, and from 'doc_map_Map', the role 'doc_map_Map' has cardinality 0..*.
+An association connects 'doc_map_Feature' and 'NameRule'. From 'doc_map_Feature', the role 'doc_map_Feature' has cardinality 0..*, and from 'NameRule', the role 'NameRule' has cardinality 0..*.
+An association connects 'ResourceFactory' and 'doc_map_ExtensionMappingEntry'. From 'ResourceFactory', the role 'ResourceFactory' has cardinality 0..*, and from 'doc_map_ExtensionMappingEntry', the role 'doc_map_ExtensionMappingEntry' has cardinality 0..*.
+An association connects 'doc_map_MapContainer' and 'MapElement'. From 'doc_map_MapContainer', the role 'doc_map_MapContainer' has cardinality 0..*, and from 'MapElement', the role 'MapElement' has cardinality 0..*.
+An association connects 'doc_fragment_Container' and 'Content'. From 'doc_fragment_Container', the role 'doc_fragment_Container' has cardinality 0..*, and from 'Content', the role 'Content' has cardinality 0..*.
+An association connects 'Section' and 'doc_fragment_Container'. From 'Section', the role 'Section' has cardinality 0..*, and from 'doc_fragment_Container', the role 'doc_fragment_Container6' has cardinality 0..*.
+An association connects 'Author' and 'doc_fragment_Copyright'. From 'Author', the role 'Author' has cardinality 0..*, and from 'doc_fragment_Copyright', the role 'doc_fragment_Copyright' has cardinality 0..*.
+An association connects 'doc_book_Book' and 'Author'. From 'doc_book_Book', the role 'doc_book_Book' has cardinality 0..*, and from 'Author', the role 'Author9' has cardinality 0..*.
+An association connects 'Copyright' and 'doc_book_Book'. From 'Copyright', the role 'Copyright' has cardinality 0..*, and from 'doc_book_Book', the role 'doc_book_Book11' has cardinality 0..*.
+An association connects 'Content' and 'doc_book_BookContainer'. From 'Content', the role 'Content13' has cardinality 0..*, and from 'doc_book_BookContainer', the role 'doc_book_BookContainer' has cardinality 0..*.
+An association connects 'BookSection' and 'doc_book_BookContainer'. From 'BookSection', the role 'BookSection' has cardinality 0..*, and from 'doc_book_BookContainer', the role 'doc_book_BookContainer15' has cardinality 0..*.
+An association connects 'doc_builder_BookBuilder' and 'Author'. From 'doc_builder_BookBuilder', the role 'doc_builder_BookBuilder' has cardinality 0..*, and from 'Author', the role 'Author17' has cardinality 0..*.
+An association connects 'doc_builder_BookBuilder' and 'Copyright'. From 'doc_builder_BookBuilder', the role 'doc_builder_BookBuilder19' has cardinality 0..*, and from 'Copyright', the role 'Copyright20' has cardinality 0..*.
+An association connects 'builder_PropertyEntry' and 'doc_builder_BookBuilder'. From 'builder_PropertyEntry', the role 'builder_PropertyEntry' has cardinality 0..*, and from 'doc_builder_BookBuilder', the role 'doc_builder_BookBuilder22' has cardinality 0..*.

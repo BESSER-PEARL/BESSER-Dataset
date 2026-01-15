@@ -1,0 +1,105 @@
+The domain model 'Behaviour' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'Behaviour_Description' represents an important domain concept.
+It does not declare any attributes.
+
+'Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Place' represents an important domain concept.
+It does not declare any attributes.
+
+'Behaviour_PreTransitionConnection' represents an important domain concept.
+It has one attribute: 'requiredTokenAmount', which is of type int.
+
+'Behaviour_PostTransitionConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'Behaviour_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Behaviour_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'Behaviour_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'Behaviour_StartPlace' represents an important domain concept.
+It has one attribute: 'spawnPolicy', which is of type str.
+
+'Behaviour_WaitingLine' represents an important domain concept.
+It has one attribute: 'schedulingPolicy', which is of type str.
+
+'Behaviour_TransitionFunction' represents an important domain concept.
+It has one attribute: 'transitionFunction', which is of type str.
+
+'Behaviour_Server' represents an important domain concept.
+It has one attribute: 'capacity', which is of type int.
+
+'Behaviour_ConditionalTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Behaviour_StochasticTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Behaviour_DefaultPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'Behaviour_QueuePlace' represents an important domain concept.
+It does not declare any attributes.
+
+'Behaviour_Colour' represents an important domain concept.
+It has one attribute: 'attribute', which is of type str.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Behaviour_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Behaviour_Place' is a specialization of 'Identifier'.
+The class 'Behaviour_Transition' is a specialization of 'Identifier'.
+The class 'Behaviour_Connection' is a specialization of 'Identifier'.
+The class 'Behaviour_PostTransitionConnection' is a specialization of 'Connection'.
+The class 'Behaviour_PreTransitionConnection' is a specialization of 'Connection'.
+The class 'Behaviour_DefaultPlace' is a specialization of 'Place'.
+The class 'Behaviour_QueuePlace' is a specialization of 'Place'.
+The class 'Behaviour_StartPlace' is a specialization of 'Place'.
+The class 'Behaviour_ConditionalTransition' is a specialization of 'Transition'.
+The class 'Behaviour_StochasticTransition' is a specialization of 'Transition'.
+The class 'Behaviour_Server' is a specialization of 'Place'.
+The class 'Behaviour_WaitingLine' is a specialization of 'Place'.
+The class 'Behaviour_Token' is a specialization of 'Identifier'.
+The class 'Behaviour_Description' is a specialization of 'Identifier'.
+The class 'Behaviour_Colour' is a specialization of 'Identifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Behaviour_Place' and 'Behaviour_Token'. From 'Behaviour_Place', the role 'Behaviour_Place' has cardinality 0..*, and from 'Behaviour_Token', the role 'Behaviour_Token' has cardinality 0..*.
+An association connects 'Behaviour_PostTransitionConnection' and 'Behaviour_Transition'. From 'Behaviour_PostTransitionConnection', the role 'Behaviour_PostTransitionConnection' has cardinality 0..*, and from 'Behaviour_Transition', the role 'Behaviour_Transition' has cardinality 0..*.
+An association connects 'Behaviour_PreTransitionConnection' and 'Behaviour_Transition'. From 'Behaviour_PreTransitionConnection', the role 'Behaviour_PreTransitionConnection' has cardinality 0..*, and from 'Behaviour_Transition', the role 'Behaviour_Transition3' has cardinality 0..*.
+An association connects 'Behaviour_Connection' and 'Behaviour_Place'. From 'Behaviour_Connection', the role 'Behaviour_Connection' has cardinality 0..*, and from 'Behaviour_Place', the role 'Behaviour_Place5' has cardinality 0..*.
+An association connects 'Behaviour_Transition' and 'Behaviour_Connection'. From 'Behaviour_Transition', the role 'Behaviour_Transition8' has cardinality 0..*, and from 'Behaviour_Connection', the role 'Behaviour_Connection7' has cardinality 0..*.
+An association connects 'Behaviour_PreTransitionConnection' and 'Behaviour_DefaultPlace'. From 'Behaviour_PreTransitionConnection', the role 'Behaviour_PreTransitionConnection10' has cardinality 0..*, and from 'Behaviour_DefaultPlace', the role 'Behaviour_DefaultPlace' has cardinality 0..*.
+An association connects 'Behaviour_DefaultPlace' and 'Behaviour_PostTransitionConnection'. From 'Behaviour_DefaultPlace', the role 'Behaviour_DefaultPlace12' has cardinality 0..*, and from 'Behaviour_PostTransitionConnection', the role 'Behaviour_PostTransitionConnection13' has cardinality 0..*.
+An association connects 'Behaviour_Server' and 'Behaviour_QueuePlace'. From 'Behaviour_Server', the role 'Behaviour_Server' has cardinality 0..*, and from 'Behaviour_QueuePlace', the role 'Behaviour_QueuePlace' has cardinality 0..*.
+An association connects 'Behaviour_WaitingLine' and 'Behaviour_QueuePlace'. From 'Behaviour_WaitingLine', the role 'Behaviour_WaitingLine' has cardinality 0..*, and from 'Behaviour_QueuePlace', the role 'Behaviour_QueuePlace16' has cardinality 0..*.
+An association connects 'Behaviour_PreTransitionConnection' and 'Behaviour_StartPlace'. From 'Behaviour_PreTransitionConnection', the role 'Behaviour_PreTransitionConnection18' has cardinality 0..*, and from 'Behaviour_StartPlace', the role 'Behaviour_StartPlace' has cardinality 0..*.
+An association connects 'Behaviour_TransitionFunction' and 'Behaviour_ConditionalTransition'. From 'Behaviour_TransitionFunction', the role 'Behaviour_TransitionFunction' has cardinality 0..*, and from 'Behaviour_ConditionalTransition', the role 'Behaviour_ConditionalTransition' has cardinality 0..*.
+An association connects 'Behaviour_TransitionFunction' and 'Behaviour_StochasticTransition'. From 'Behaviour_TransitionFunction', the role 'Behaviour_TransitionFunction21' has cardinality 0..*, and from 'Behaviour_StochasticTransition', the role 'Behaviour_StochasticTransition' has cardinality 0..*.
+An association connects 'Behaviour_WaitingLine' and 'Behaviour_Server'. From 'Behaviour_WaitingLine', the role 'WaitingLine' has cardinality 0..*, and from 'Behaviour_Server', the role 'server' has cardinality 0..*.
+An association connects 'Behaviour_Server' and 'Behaviour_PreTransitionConnection'. From 'Behaviour_Server', the role 'Behaviour_Server24' has cardinality 0..*, and from 'Behaviour_PreTransitionConnection', the role 'Behaviour_PreTransitionConnection25' has cardinality 0..*.
+An association connects 'Behaviour_WaitingLine' and 'Behaviour_Server'. From 'Behaviour_WaitingLine', the role 'waitingLine' has cardinality 0..*, and from 'Behaviour_Server', the role 'Server' has cardinality 0..*.
+An association connects 'Behaviour_WaitingLine' and 'Behaviour_PostTransitionConnection'. From 'Behaviour_WaitingLine', the role 'Behaviour_WaitingLine28' has cardinality 0..*, and from 'Behaviour_PostTransitionConnection', the role 'Behaviour_PostTransitionConnection29' has cardinality 0..*.
+An association connects 'Behaviour_Token' and 'Behaviour_Colour'. From 'Behaviour_Token', the role 'Behaviour_Token31' has cardinality 0..*, and from 'Behaviour_Colour', the role 'Behaviour_Colour' has cardinality 0..*.
+An association connects 'Behaviour_Connection' and 'Behaviour_Description'. From 'Behaviour_Connection', the role 'Behaviour_Connection33' has cardinality 0..*, and from 'Behaviour_Description', the role 'Behaviour_Description' has cardinality 0..*.
+An association connects 'Behaviour_Description' and 'Behaviour_Place'. From 'Behaviour_Description', the role 'Behaviour_Description35' has cardinality 0..*, and from 'Behaviour_Place', the role 'Behaviour_Place36' has cardinality 0..*.
+An association connects 'Behaviour_Description' and 'Behaviour_Transition'. From 'Behaviour_Description', the role 'Behaviour_Description38' has cardinality 0..*, and from 'Behaviour_Transition', the role 'Behaviour_Transition39' has cardinality 0..*.
+An association connects 'Behaviour_Description' and 'Behaviour_Token'. From 'Behaviour_Description', the role 'Behaviour_Description41' has cardinality 0..*, and from 'Behaviour_Token', the role 'Behaviour_Token42' has cardinality 0..*.
+An association connects 'Behaviour_TransitionFunction' and 'Behaviour_PostTransitionConnection'. From 'Behaviour_TransitionFunction', the role 'Behaviour_TransitionFunction44' has cardinality 0..*, and from 'Behaviour_PostTransitionConnection', the role 'Behaviour_PostTransitionConnection45' has cardinality 0..*.
+An association connects 'Behaviour_TransitionFunction' and 'Behaviour_Token'. From 'Behaviour_TransitionFunction', the role 'Behaviour_TransitionFunction47' has cardinality 0..*, and from 'Behaviour_Token', the role 'Behaviour_Token48' has cardinality 0..*.

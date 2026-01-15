@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Elderjr/Coding-Conventions-Specification-Language/ccslSpecificationExecutor-workspace/org.eclipse.emf.ecore/model/Ecore.ecore

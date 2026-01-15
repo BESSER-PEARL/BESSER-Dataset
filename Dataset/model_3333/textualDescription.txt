@@ -1,0 +1,76 @@
+The domain model 'javaMetaModel' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'javaMetaModel_JAttribute' represents an important domain concept.
+It has one attribute: 'primitiveType', which is of type str.
+
+'javaMetaModel_JMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'JField' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMetaModel_JElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'javaMetaModel_JField' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMetaModel_JClass' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type bool; 'isFinal', which is of type bool.
+
+'JFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMetaModel_JParameter' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'JElement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMetaModel_JPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'JParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'javaMetaModel_JReferenceTypePar' represents an important domain concept.
+It has one attribute: 'refType', which is of type str.
+
+'javaMetaModel_JReference' represents an important domain concept.
+It has one attribute: 'refType', which is of type str.
+
+'javaMetaModel_JPrimitiveTypePar' represents an important domain concept.
+It has one attribute: 'primitiveType', which is of type str.
+
+'javaMetaModel_JFeature' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'isStatic', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Vis' defines the following possible values: 'public', 'protected', 'private'.
+The enumeration 'PrimitiveType' defines the following possible values: 'JFloat', 'JByte', 'JShort', 'JChar', 'JInt', 'JBoolean', 'JLong', 'JDouble'.
+The enumeration 'Direction' defines the following possible values: 'input', 'return'.
+The enumeration 'ReferenceType' defines the following possible values: 'JInterfaceType', 'JClassType', 'JArrayType'.
+
+The model also captures inheritance relationships between classes.
+The class 'javaMetaModel_JMethod' is a specialization of 'JFeature'.
+The class 'javaMetaModel_JClass' is a specialization of 'JElement'.
+The class 'javaMetaModel_JPackage' is a specialization of 'JElement'.
+The class 'javaMetaModel_JField' is a specialization of 'JFeature'.
+The class 'javaMetaModel_JAttribute' is a specialization of 'JField'.
+The class 'javaMetaModel_JReference' is a specialization of 'JField'.
+The class 'javaMetaModel_JParameter' is a specialization of 'JElement'.
+The class 'javaMetaModel_JPrimitiveTypePar' is a specialization of 'JParameter'.
+The class 'javaMetaModel_JReferenceTypePar' is a specialization of 'JParameter'.
+The class 'javaMetaModel_JFeature' is a specialization of 'JElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'javaMetaModel_JParameter' and 'javaMetaModel_JMethod'. From 'javaMetaModel_JParameter', the role 'JParameter' has cardinality 0..*, and from 'javaMetaModel_JMethod', the role 'owner' has cardinality 0..*.
+An association connects 'javaMetaModel_JFeature' and 'javaMetaModel_JClass'. From 'javaMetaModel_JFeature', the role 'JFeature' has cardinality 0..*, and from 'javaMetaModel_JClass', the role 'owner2' has cardinality 0..*.
+An association connects 'javaMetaModel_JClass' and 'javaMetaModel_JPackage'. From 'javaMetaModel_JClass', the role 'jclass' has cardinality 0..*, and from 'javaMetaModel_JPackage', the role 'JPackage' has cardinality 0..*.
+An association connects 'javaMetaModel_JClass' and 'javaMetaModel_JClass'. From 'javaMetaModel_JClass', the role 'JClass' has cardinality 0..*, and from 'javaMetaModel_JClass', the role 'jsuperClass' has cardinality 0..*.
+An association connects 'javaMetaModel_JClass' and 'javaMetaModel_JClass'. From 'javaMetaModel_JClass', the role 'jsubClass' has cardinality 0..*, and from 'javaMetaModel_JClass', the role 'JClass8' has cardinality 0..*.
+An association connects 'javaMetaModel_JClass' and 'javaMetaModel_JPackage'. From 'javaMetaModel_JClass', the role 'JClass11' has cardinality 0..*, and from 'javaMetaModel_JPackage', the role 'owner10' has cardinality 0..*.
+An association connects 'javaMetaModel_JParameter' and 'javaMetaModel_JMethod'. From 'javaMetaModel_JParameter', the role 'jparameter' has cardinality 0..*, and from 'javaMetaModel_JMethod', the role 'JMethod' has cardinality 0..*.
+An association connects 'javaMetaModel_JFeature' and 'javaMetaModel_JClass'. From 'javaMetaModel_JFeature', the role 'jfeature' has cardinality 0..*, and from 'javaMetaModel_JClass', the role 'JClass14' has cardinality 0..*.

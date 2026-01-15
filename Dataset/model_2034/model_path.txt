@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ponta027/xtext_practice/statemachine/com.ponta027.xtext.statemachine.dsl/model/generated/Dsl.ecore

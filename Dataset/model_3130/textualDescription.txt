@@ -1,0 +1,40 @@
+The domain model 'class' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'class_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElt' represents an important domain concept.
+It does not declare any attributes.
+
+'class_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'class_NamedElt' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'class_Attribute' represents an important domain concept.
+It has one attribute: 'multiValued', which is of type bool.
+
+'class_ClassModel' represents an important domain concept.
+It does not declare any attributes.
+
+'class_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'class_Classifier' is a specialization of 'NamedElt'.
+The class 'class_DataType' is a specialization of 'Classifier'.
+The class 'class_Class' is a specialization of 'Classifier'.
+The class 'class_Attribute' is a specialization of 'NamedElt'.
+
+Relationships between classes are modeled using associations.
+An association connects 'class_Class' and 'class_Class'. From 'class_Class', the role 'class_Class0' has cardinality 0..*, and from 'class_Class', the role 'class_Class' has cardinality 0..*.
+An association connects 'class_Class' and 'class_Attribute'. From 'class_Class', the role 'owner' has cardinality 0..*, and from 'class_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'class_Attribute' and 'class_Class'. From 'class_Attribute', the role 'attr' has cardinality 0..*, and from 'class_Class', the role 'Class' has cardinality 0..*.
+An association connects 'class_Attribute' and 'class_Classifier'. From 'class_Attribute', the role 'class_Attribute' has cardinality 0..*, and from 'class_Classifier', the role 'class_Classifier' has cardinality 0..*.
+An association connects 'class_ClassModel' and 'class_NamedElt'. From 'class_ClassModel', the role 'class_ClassModel' has cardinality 0..*, and from 'class_NamedElt', the role 'class_NamedElt' has cardinality 0..*.

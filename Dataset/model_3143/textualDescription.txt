@@ -1,0 +1,84 @@
+The domain model 'USE' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'USE_Enumeration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'USE_OCLExpression' represents an important domain concept.
+It has one attribute: 'expr', which is of type str.
+
+'USE_SimpleType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'USE_Role' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type int; 'name', which is of type str; 'ordered', which is of type bool; 'lowerBound', which is of type int.
+
+'USE_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'USE_ReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'USE_CollectionType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'USE_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'USE_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'USE_Literal' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'USE_Association' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'kind', which is of type str.
+
+'USE_EnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'USE_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'USE_Class' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'name', which is of type str.
+
+'USE_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AssocKind' defines the following possible values: 'Association', 'Composition', 'Aggregation'.
+The enumeration 'SimpleTypes' defines the following possible values: 'String', 'Integer', 'Real', 'Boolean'.
+The enumeration 'CollectionTypes' defines the following possible values: 'Set', 'Bag', 'Sequence'.
+
+The model also captures inheritance relationships between classes.
+The class 'USE_EnumerationType' is a specialization of 'Type'.
+The class 'USE_CollectionType' is a specialization of 'Type'.
+The class 'USE_SimpleType' is a specialization of 'Type'.
+The class 'USE_ReferenceType' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'USE_Class' and 'USE_Class'. From 'USE_Class', the role 'USE_Class0' has cardinality 0..*, and from 'USE_Class', the role 'USE_Class' has cardinality 0..*.
+An association connects 'USE_Class' and 'USE_Attribute'. From 'USE_Class', the role 'USE_Class3' has cardinality 0..*, and from 'USE_Attribute', the role 'USE_Attribute' has cardinality 0..*.
+An association connects 'USE_Operation' and 'USE_Class'. From 'USE_Operation', the role 'USE_Operation' has cardinality 0..*, and from 'USE_Class', the role 'USE_Class5' has cardinality 0..*.
+An association connects 'USE_OCLExpression' and 'USE_Class'. From 'USE_OCLExpression', the role 'USE_OCLExpression' has cardinality 0..*, and from 'USE_Class', the role 'USE_Class7' has cardinality 0..*.
+An association connects 'USE_Model' and 'USE_Class'. From 'USE_Model', the role 'USE_Model' has cardinality 0..*, and from 'USE_Class', the role 'USE_Class9' has cardinality 0..*.
+An association connects 'USE_Enumeration' and 'USE_Model'. From 'USE_Enumeration', the role 'USE_Enumeration' has cardinality 0..*, and from 'USE_Model', the role 'USE_Model11' has cardinality 0..*.
+An association connects 'USE_Model' and 'USE_Association'. From 'USE_Model', the role 'USE_Model13' has cardinality 0..*, and from 'USE_Association', the role 'USE_Association' has cardinality 0..*.
+An association connects 'USE_Type' and 'USE_Attribute'. From 'USE_Type', the role 'USE_Type' has cardinality 0..*, and from 'USE_Attribute', the role 'USE_Attribute15' has cardinality 0..*.
+An association connects 'USE_Parameter' and 'USE_Operation'. From 'USE_Parameter', the role 'USE_Parameter' has cardinality 0..*, and from 'USE_Operation', the role 'USE_Operation17' has cardinality 0..*.
+An association connects 'USE_Operation' and 'USE_OCLExpression'. From 'USE_Operation', the role 'USE_Operation19' has cardinality 0..*, and from 'USE_OCLExpression', the role 'USE_OCLExpression20' has cardinality 0..*.
+An association connects 'USE_Type' and 'USE_Operation'. From 'USE_Type', the role 'USE_Type23' has cardinality 0..*, and from 'USE_Operation', the role 'USE_Operation22' has cardinality 0..*.
+An association connects 'USE_Operation' and 'USE_OCLExpression'. From 'USE_Operation', the role 'USE_Operation25' has cardinality 0..*, and from 'USE_OCLExpression', the role 'USE_OCLExpression26' has cardinality 0..*.
+An association connects 'USE_OCLExpression' and 'USE_Operation'. From 'USE_OCLExpression', the role 'USE_OCLExpression29' has cardinality 0..*, and from 'USE_Operation', the role 'USE_Operation28' has cardinality 0..*.
+An association connects 'USE_Parameter' and 'USE_Type'. From 'USE_Parameter', the role 'USE_Parameter31' has cardinality 0..*, and from 'USE_Type', the role 'USE_Type32' has cardinality 0..*.
+An association connects 'USE_Enumeration' and 'USE_EnumerationType'. From 'USE_Enumeration', the role 'USE_Enumeration34' has cardinality 0..*, and from 'USE_EnumerationType', the role 'USE_EnumerationType' has cardinality 0..*.
+An association connects 'USE_CollectionType' and 'USE_Type'. From 'USE_CollectionType', the role 'USE_CollectionType' has cardinality 0..*, and from 'USE_Type', the role 'USE_Type36' has cardinality 0..*.
+An association connects 'USE_Class' and 'USE_ReferenceType'. From 'USE_Class', the role 'USE_Class38' has cardinality 0..*, and from 'USE_ReferenceType', the role 'USE_ReferenceType' has cardinality 0..*.
+An association connects 'USE_Literal' and 'USE_Enumeration'. From 'USE_Literal', the role 'USE_Literal' has cardinality 0..*, and from 'USE_Enumeration', the role 'USE_Enumeration40' has cardinality 0..*.
+An association connects 'USE_Role' and 'USE_Association'. From 'USE_Role', the role 'USE_Role' has cardinality 0..*, and from 'USE_Association', the role 'USE_Association42' has cardinality 0..*.
+An association connects 'USE_Class' and 'USE_Role'. From 'USE_Class', the role 'USE_Class45' has cardinality 0..*, and from 'USE_Role', the role 'USE_Role44' has cardinality 0..*.

@@ -1,0 +1,88 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_SchedulingEvent' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'trace_ObjectValueChangeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Event' represents an important domain concept.
+It has one attribute: 'timestamp', which is of type str.
+
+'trace_ResourceEvent' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'trace_DurationValueChangeEvent' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'trace_Properties' represents an important domain concept.
+It has the following attributes: 'remainingTime', which is of type str; 'executionTime', which is of type str; 'index', which is of type str; 'responseTime', which is of type str; 'range', which is of type str; 'absoluteDeadline', which is of type str; 'blockingTime', which is of type str.
+
+'trace_ValueChangeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Slice' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'name', which is of type str; 'kindLabel', which is of type str.
+
+'trace_NumberValueChangeEvent' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'trace_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Trace' represents an important domain concept.
+It has the following attributes: 'hostId', which is of type str; 'range', which is of type str; 'precision', which is of type str.
+
+'ValueChangeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_DataSizeValueChangeEvent' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'trace_MessageEvent' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MessageEventKind' defines the following possible values: 'TRANSMITTED', 'ERROR', 'RECEIVED', 'INSTANTIATED'.
+The enumeration 'SliceKind' defines the following possible values: 'FUNCTION_INSTANCE', 'TASK', 'FRAME', 'LINK', 'STATE', 'PACKET', 'OS', 'RESOURCE', 'TEMPORAL_CHAIN', 'JOB', 'AUTOMATON', 'OTHER', 'FUNCTION'.
+The enumeration 'SchedulingEventKind' defines the following possible values: 'BLOCKED', 'SUSPENDED', 'TERMINATED', 'ACTIVATED', 'RUNNING', 'DEADLINE'.
+The enumeration 'ResourceEventKind' defines the following possible values: 'ACQUIRED', 'RELEASED', 'REQUESTED'.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_Trace' is a specialization of 'EModelElement'.
+The class 'trace_Event' is a specialization of 'EModelElement'.
+The class 'trace_ResourceEvent' is a specialization of 'Event'.
+The class 'trace_SchedulingEvent' is a specialization of 'Event'.
+The class 'trace_MessageEvent' is a specialization of 'Event'.
+The class 'trace_Slice' is a specialization of 'EModelElement'.
+The class 'trace_Properties' is a specialization of 'EModelElement'.
+The class 'trace_ValueChangeEvent' is a specialization of 'Event'.
+The class 'trace_ObjectValueChangeEvent' is a specialization of 'ValueChangeEvent'.
+The class 'trace_DurationValueChangeEvent' is a specialization of 'ValueChangeEvent'.
+The class 'trace_DataSizeValueChangeEvent' is a specialization of 'ValueChangeEvent'.
+The class 'trace_NumberValueChangeEvent' is a specialization of 'ValueChangeEvent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_Trace' and 'trace_Event'. From 'trace_Trace', the role 'trace' has cardinality 0..*, and from 'trace_Event', the role 'Event' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_Slice'. From 'trace_Trace', the role 'trace_Trace' has cardinality 0..*, and from 'trace_Slice', the role 'trace_Slice' has cardinality 0..*.
+An association connects 'trace_Event' and 'trace_Trace'. From 'trace_Event', the role 'events' has cardinality 0..*, and from 'trace_Trace', the role 'Trace' has cardinality 0..*.
+An association connects 'trace_Slice' and 'trace_Event'. From 'trace_Slice', the role 'trace_Slice4' has cardinality 0..*, and from 'trace_Event', the role 'trace_Event' has cardinality 0..*.
+An association connects 'trace_Slice' and 'trace_Event'. From 'trace_Slice', the role 'trace_Slice6' has cardinality 0..*, and from 'trace_Event', the role 'trace_Event7' has cardinality 0..*.
+An association connects 'trace_Slice' and 'trace_Slice'. From 'trace_Slice', the role 'parent' has cardinality 0..*, and from 'trace_Slice', the role 'Slice' has cardinality 0..*.
+An association connects 'trace_Slice' and 'trace_Slice'. From 'trace_Slice', the role 'Slice12' has cardinality 0..*, and from 'trace_Slice', the role 'ownedSubSlices' has cardinality 0..*.
+An association connects 'trace_Slice' and 'trace_Properties'. From 'trace_Slice', the role 'trace_Slice14' has cardinality 0..*, and from 'trace_Properties', the role 'trace_Properties' has cardinality 0..*.
+An association connects 'trace_Slice' and 'trace_Slice'. From 'trace_Slice', the role 'trace_Slice15' has cardinality 0..*, and from 'trace_Slice', the role 'trace_Slice17' has cardinality 0..*.
+An association connects 'trace_EStructuralFeature' and 'trace_ValueChangeEvent'. From 'trace_EStructuralFeature', the role 'trace_EStructuralFeature' has cardinality 0..*, and from 'trace_ValueChangeEvent', the role 'trace_ValueChangeEvent' has cardinality 0..*.
+An association connects 'trace_EObject' and 'trace_ValueChangeEvent'. From 'trace_EObject', the role 'trace_EObject' has cardinality 0..*, and from 'trace_ValueChangeEvent', the role 'trace_ValueChangeEvent20' has cardinality 0..*.
+An association connects 'trace_ObjectValueChangeEvent' and 'trace_EObject'. From 'trace_ObjectValueChangeEvent', the role 'trace_ObjectValueChangeEvent' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject22' has cardinality 0..*.

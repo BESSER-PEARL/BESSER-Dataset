@@ -1,0 +1,12 @@
+The domain model 'resourceunload' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'resourceunload_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'resourceunload_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'resourceunload_Library' and 'resourceunload_Book'. From 'resourceunload_Library', the role 'resourceunload_Library' has cardinality 0..*, and from 'resourceunload_Book', the role 'resourceunload_Book' has cardinality 0..*.

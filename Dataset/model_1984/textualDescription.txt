@@ -1,0 +1,19 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_TraceLink' represents an important domain concept.
+It has the following attributes: 'similarity', which is of type int; 'rationale', which is of type str; 'requiredSimilarity', which is of type int; 'name', which is of type str; 'sourceValue', which is of type str; 'similarityMethod', which is of type int; 'targetValue', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_Trace' and 'trace_TraceLink'. From 'trace_Trace', the role 'trace_Trace' has cardinality 0..*, and from 'trace_TraceLink', the role 'trace_TraceLink' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_EObject'. From 'trace_Trace', the role 'trace_Trace2' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_EObject'. From 'trace_Trace', the role 'trace_Trace4' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject5' has cardinality 0..*.
+An association connects 'trace_TraceLink' and 'trace_EObject'. From 'trace_TraceLink', the role 'trace_TraceLink7' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject8' has cardinality 0..*.
+An association connects 'trace_EObject' and 'trace_TraceLink'. From 'trace_EObject', the role 'trace_EObject11' has cardinality 0..*, and from 'trace_TraceLink', the role 'trace_TraceLink10' has cardinality 0..*.

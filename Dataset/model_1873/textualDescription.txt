@@ -1,0 +1,69 @@
+The domain model 'basic' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'TypeItem' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_Event' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'basic_Parameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'type', which is of type str.
+
+'basic_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_Alias' represents an important domain concept.
+It has the following attributes: 'rawName', which is of type str; 'name', which is of type str.
+
+'basic_Widget' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_ExecutionEnvironment' represents an important domain concept.
+It has the following attributes: 'builtin', which is of type bool; 'corePath', which is of type str; 'coreType', which is of type str; 'facet', which is of type str; 'versions', which is of type str; 'libraries', which is of type str; 'name', which is of type str.
+
+'basic_ExtJSProject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'basic_Plugin' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_File' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'basic_TypeItem' represents an important domain concept.
+It has the following attributes: 'sourceStart', which is of type int; 'typeName', which is of type str; 'sourceEnd', which is of type int.
+
+'basic_CoreVersionDefault' represents an important domain concept.
+It has the following attributes: 'coreLib', which is of type str; 'version', which is of type str; 'facet', which is of type str.
+
+'basic_Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'Alias' represents an important domain concept.
+It does not declare any attributes.
+
+'basic_LibrarySource' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'path', which is of type str; 'exclusions', which is of type str; 'inclusions', which is of type str.
+
+'basic_Library' represents an important domain concept.
+It has the following attributes: 'builtin', which is of type bool; 'senchaTouchVersions', which is of type str; 'name', which is of type str; 'versions', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LibrarySourceType' defines the following possible values: 'JavascriptFile', 'ZipFile', 'Folder'.
+
+The model also captures inheritance relationships between classes.
+The class 'basic_Alias' is a specialization of 'TypeItem'.
+The class 'basic_Widget' is a specialization of 'Alias'.
+The class 'basic_Plugin' is a specialization of 'Alias'.
+The class 'basic_Layout' is a specialization of 'Alias'.
+The class 'basic_Feature' is a specialization of 'Alias'.
+The class 'basic_Event' is a specialization of 'TypeItem'.
+
+Relationships between classes are modeled using associations.
+An association connects 'basic_File' and 'basic_ExtJSProject'. From 'basic_File', the role 'basic_File' has cardinality 0..*, and from 'basic_ExtJSProject', the role 'basic_ExtJSProject' has cardinality 0..*.
+An association connects 'basic_File' and 'basic_Alias'. From 'basic_File', the role 'basic_File2' has cardinality 0..*, and from 'basic_Alias', the role 'basic_Alias' has cardinality 0..*.
+An association connects 'basic_Event' and 'basic_Parameter'. From 'basic_Event', the role 'basic_Event' has cardinality 0..*, and from 'basic_Parameter', the role 'basic_Parameter' has cardinality 0..*.
+An association connects 'basic_LibrarySource' and 'basic_Library'. From 'basic_LibrarySource', the role 'basic_LibrarySource' has cardinality 0..*, and from 'basic_Library', the role 'basic_Library' has cardinality 0..*.
+An association connects 'basic_LibrarySource' and 'basic_File'. From 'basic_LibrarySource', the role 'basic_LibrarySource6' has cardinality 0..*, and from 'basic_File', the role 'basic_File7' has cardinality 0..*.

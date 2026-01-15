@@ -1,0 +1,25 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'trace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_OutputFile' represents an important domain concept.
+It has the following attributes: 'outlet', which is of type str; 'fileName', which is of type str.
+
+'trace_InputElement' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_OutputFile' and 'trace_Trace'. From 'trace_OutputFile', the role 'trace_OutputFile' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace' has cardinality 0..*.
+An association connects 'trace_OutputFile' and 'trace_InputElement'. From 'trace_OutputFile', the role 'trace_OutputFile2' has cardinality 0..*, and from 'trace_InputElement', the role 'trace_InputElement' has cardinality 0..*.
+An association connects 'trace_OutputFile' and 'trace_EObject'. From 'trace_OutputFile', the role 'trace_OutputFile4' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject' has cardinality 0..*.
+An association connects 'trace_EObject' and 'trace_InputElement'. From 'trace_EObject', the role 'trace_EObject7' has cardinality 0..*, and from 'trace_InputElement', the role 'trace_InputElement6' has cardinality 0..*.
+An association connects 'trace_InputElement' and 'trace_EStructuralFeature'. From 'trace_InputElement', the role 'trace_InputElement9' has cardinality 0..*, and from 'trace_EStructuralFeature', the role 'trace_EStructuralFeature' has cardinality 0..*.

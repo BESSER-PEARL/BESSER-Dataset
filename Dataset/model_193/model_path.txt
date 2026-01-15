@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/unicase-ls1/unicase/other/diagrammodelmigration/org.unicase.model/model/gmf/templates/Ecore.ecore

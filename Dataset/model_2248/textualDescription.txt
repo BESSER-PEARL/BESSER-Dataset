@@ -1,0 +1,24 @@
+The domain model 'tdt4250' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'tdt4250_Student' represents an important domain concept.
+It has the following attributes: 'current_semester', which is of type int; 'studentID', which is of type int.
+
+'tdt4250_Course' represents an important domain concept.
+It has the following attributes: 'level', which is of type str; 'study_points', which is of type float; 'name', which is of type str; 'code', which is of type str.
+
+'tdt4250_StudyProgram' represents an important domain concept.
+It has the following attributes: 'number_of_semesters', which is of type int; 'name', which is of type str.
+
+'tdt4250_Specialisation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'tdt4250_StudyProgram' and 'tdt4250_Student'. From 'tdt4250_StudyProgram', the role 'tdt4250_StudyProgram' has cardinality 0..*, and from 'tdt4250_Student', the role 'tdt4250_Student' has cardinality 0..*.
+An association connects 'tdt4250_Specialisation' and 'tdt4250_StudyProgram'. From 'tdt4250_Specialisation', the role 'tdt4250_Specialisation' has cardinality 0..*, and from 'tdt4250_StudyProgram', the role 'tdt4250_StudyProgram2' has cardinality 0..*.
+An association connects 'tdt4250_Course' and 'tdt4250_StudyProgram'. From 'tdt4250_Course', the role 'tdt4250_Course' has cardinality 0..*, and from 'tdt4250_StudyProgram', the role 'tdt4250_StudyProgram4' has cardinality 0..*.
+An association connects 'tdt4250_Student' and 'tdt4250_Course'. From 'tdt4250_Student', the role 'tdt4250_Student6' has cardinality 0..*, and from 'tdt4250_Course', the role 'tdt4250_Course7' has cardinality 0..*.
+An association connects 'tdt4250_Specialisation' and 'tdt4250_Student'. From 'tdt4250_Specialisation', the role 'tdt4250_Specialisation9' has cardinality 0..*, and from 'tdt4250_Student', the role 'tdt4250_Student10' has cardinality 0..*.
+An association connects 'tdt4250_Specialisation' and 'tdt4250_Course'. From 'tdt4250_Specialisation', the role 'tdt4250_Specialisation12' has cardinality 0..*, and from 'tdt4250_Course', the role 'tdt4250_Course13' has cardinality 0..*.
+An association connects 'tdt4250_Specialisation' and 'tdt4250_Course'. From 'tdt4250_Specialisation', the role 'tdt4250_Specialisation15' has cardinality 0..*, and from 'tdt4250_Course', the role 'tdt4250_Course16' has cardinality 0..*.

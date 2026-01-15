@@ -1,0 +1,100 @@
+The domain model 'MediaLibrary' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'MediaLibrary_MusicTrack' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'MediaLibrary_DurationArtifact' represents an important domain concept.
+It has one attribute: 'duration', which is of type int.
+
+'MediaLibrary_AudioBook' represents an important domain concept.
+It has one attribute: 'currentPosition', which is of type int.
+
+'MediaLibrary_Store' represents an important domain concept.
+It has the following attributes: 'url', which is of type str; 'name', which is of type str.
+
+'MediaLibrary_Computer' represents an important domain concept.
+It does not declare any attributes.
+
+'MediaLibrary_Artifact' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'author', which is of type str.
+
+'MediaLibrary_Device' represents an important domain concept.
+It has the following attributes: 'MACAddress', which is of type str; 'resolutionWidth', which is of type int; 'resolutionHeight', which is of type int.
+
+'MediaLibrary_Smartphone' represents an important domain concept.
+It does not declare any attributes.
+
+'MediaLibrary_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MediaLibrary_ExternalSource' represents an important domain concept.
+It has one attribute: 'sourceType', which is of type str.
+
+'MediaLibrary_Ebook' represents an important domain concept.
+It has one attribute: 'pages', which is of type int.
+
+'MediaLibrary_Video' represents an important domain concept.
+It has one attribute: 'fps', which is of type str.
+
+'MediaSource' represents an important domain concept.
+It does not declare any attributes.
+
+'MediaLibrary_Image' represents an important domain concept.
+It has one attribute: 'dateTaken', which is of type str.
+
+'MediaLibrary_EReader' represents an important domain concept.
+It has the following attributes: 'videoEnabled', which is of type str; 'audioEnabled', which is of type str.
+
+'Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'MediaLibrary_MediaCollection' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MediaLibrary_Tablet' represents an important domain concept.
+It does not declare any attributes.
+
+'MediaLibrary_MediaSource' represents an important domain concept.
+It does not declare any attributes.
+
+'DurationArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'MediaLibrary_Ecosystem' represents an important domain concept.
+It does not declare any attributes.
+
+'Device' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SourceType' defines the following possible values: 'OTHER', 'CASSETTE', 'CD', 'HDD'.
+
+The model also captures inheritance relationships between classes.
+The class 'MediaLibrary_Tablet' is a specialization of 'Device'.
+The class 'MediaLibrary_Computer' is a specialization of 'Device'.
+The class 'MediaLibrary_Smartphone' is a specialization of 'Device'.
+The class 'MediaLibrary_EReader' is a specialization of 'Device'.
+The class 'MediaLibrary_DurationArtifact' is a specialization of 'Artifact'.
+The class 'MediaLibrary_AudioBook' is a specialization of 'DurationArtifact'.
+The class 'MediaLibrary_MusicTrack' is a specialization of 'DurationArtifact'.
+The class 'MediaLibrary_Video' is a specialization of 'DurationArtifact'.
+The class 'MediaLibrary_Ebook' is a specialization of 'Artifact'.
+The class 'MediaLibrary_Image' is a specialization of 'Artifact'.
+The class 'MediaLibrary_ExternalSource' is a specialization of 'MediaSource'.
+The class 'MediaLibrary_Store' is a specialization of 'MediaSource'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MediaLibrary_Ecosystem' and 'MediaLibrary_Library'. From 'MediaLibrary_Ecosystem', the role 'MediaLibrary_Ecosystem' has cardinality 0..*, and from 'MediaLibrary_Library', the role 'MediaLibrary_Library' has cardinality 0..*.
+An association connects 'MediaLibrary_Device' and 'MediaLibrary_Ecosystem'. From 'MediaLibrary_Device', the role 'MediaLibrary_Device' has cardinality 0..*, and from 'MediaLibrary_Ecosystem', the role 'MediaLibrary_Ecosystem2' has cardinality 0..*.
+An association connects 'MediaLibrary_MediaSource' and 'MediaLibrary_Ecosystem'. From 'MediaLibrary_MediaSource', the role 'MediaLibrary_MediaSource' has cardinality 0..*, and from 'MediaLibrary_Ecosystem', the role 'MediaLibrary_Ecosystem4' has cardinality 0..*.
+An association connects 'MediaLibrary_Artifact' and 'MediaLibrary_Ecosystem'. From 'MediaLibrary_Artifact', the role 'MediaLibrary_Artifact' has cardinality 0..*, and from 'MediaLibrary_Ecosystem', the role 'MediaLibrary_Ecosystem6' has cardinality 0..*.
+An association connects 'MediaLibrary_MediaCollection' and 'MediaLibrary_Library'. From 'MediaLibrary_MediaCollection', the role 'MediaLibrary_MediaCollection' has cardinality 0..*, and from 'MediaLibrary_Library', the role 'MediaLibrary_Library8' has cardinality 0..*.
+An association connects 'MediaLibrary_Artifact' and 'MediaLibrary_MediaCollection'. From 'MediaLibrary_Artifact', the role 'MediaLibrary_Artifact11' has cardinality 0..*, and from 'MediaLibrary_MediaCollection', the role 'MediaLibrary_MediaCollection10' has cardinality 0..*.
+An association connects 'MediaLibrary_Device' and 'MediaLibrary_MediaCollection'. From 'MediaLibrary_Device', the role 'Device' has cardinality 0..*, and from 'MediaLibrary_MediaCollection', the role 'hostOf' has cardinality 0..*.
+An association connects 'MediaLibrary_MediaCollection' and 'MediaLibrary_Device'. From 'MediaLibrary_MediaCollection', the role 'collections' has cardinality 0..*, and from 'MediaLibrary_Device', the role 'Device14' has cardinality 0..*.
+An association connects 'MediaLibrary_Device' and 'MediaLibrary_MediaCollection'. From 'MediaLibrary_Device', the role 'host' has cardinality 0..*, and from 'MediaLibrary_MediaCollection', the role 'MediaCollection' has cardinality 0..*.
+An association connects 'MediaLibrary_Device' and 'MediaLibrary_MediaCollection'. From 'MediaLibrary_Device', the role 'syncedDevices' has cardinality 0..*, and from 'MediaLibrary_MediaCollection', the role 'MediaCollection17' has cardinality 0..*.
+An association connects 'MediaLibrary_Artifact' and 'MediaLibrary_MediaSource'. From 'MediaLibrary_Artifact', the role 'contents' has cardinality 0..*, and from 'MediaLibrary_MediaSource', the role 'MediaSource' has cardinality 0..*.
+An association connects 'MediaLibrary_Artifact' and 'MediaLibrary_MediaSource'. From 'MediaLibrary_Artifact', the role 'Artifact' has cardinality 0..*, and from 'MediaLibrary_MediaSource', the role 'origin' has cardinality 0..*.

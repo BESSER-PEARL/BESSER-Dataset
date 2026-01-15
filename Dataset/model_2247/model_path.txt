@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/SimenSverdrup/TDT4250_1/com.eclipse.tdt4250.assignment1/model/tdt4250.ecore

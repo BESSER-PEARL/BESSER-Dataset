@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/udaykabe/gra2mol/Grammar2Model.examples.Java2JavaModel/files/metamodels/javaSimplified.ecore

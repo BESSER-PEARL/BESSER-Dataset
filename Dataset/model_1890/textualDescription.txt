@@ -1,0 +1,70 @@
+The domain model 'sgen' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'sgen_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_GeneratorModel' represents an important domain concept.
+It has one attribute: 'generatorId', which is of type str.
+
+'sgen_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_GeneratorEntry' represents an important domain concept.
+It has one attribute: 'contentType', which is of type str.
+
+'sgen_FeatureParameter' represents an important domain concept.
+It has the following attributes: 'optional', which is of type bool; 'parameterType', which is of type str.
+
+'sgen_FeatureTypeLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DeprecatableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_FeatureType' represents an important domain concept.
+It has one attribute: 'optional', which is of type bool.
+
+'sgen_GeneratorConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_FeatureConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_DeprecatableElement' represents an important domain concept.
+It has the following attributes: 'deprecated', which is of type bool; 'comment', which is of type str.
+
+'sgen_FeatureParameterValue' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParameterTypes' defines the following possible values: 'STRING', 'FLOAT', 'BOOLEAN', 'INTEGER'.
+
+The model also captures inheritance relationships between classes.
+The class 'sgen_FeatureType' is a specialization of 'NamedElement'.
+The class 'sgen_FeatureType' is a specialization of 'DeprecatableElement'.
+The class 'sgen_FeatureParameter' is a specialization of 'NamedElement'.
+The class 'sgen_FeatureParameter' is a specialization of 'DeprecatableElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sgen_GeneratorEntry' and 'sgen_GeneratorModel'. From 'sgen_GeneratorEntry', the role 'sgen_GeneratorEntry' has cardinality 0..*, and from 'sgen_GeneratorModel', the role 'sgen_GeneratorModel' has cardinality 0..*.
+An association connects 'sgen_GeneratorModel' and 'sgen_Property'. From 'sgen_GeneratorModel', the role 'sgen_GeneratorModel2' has cardinality 0..*, and from 'sgen_Property', the role 'sgen_Property' has cardinality 0..*.
+An association connects 'sgen_GeneratorConfiguration' and 'sgen_FeatureConfiguration'. From 'sgen_GeneratorConfiguration', the role 'sgen_GeneratorConfiguration' has cardinality 0..*, and from 'sgen_FeatureConfiguration', the role 'sgen_FeatureConfiguration' has cardinality 0..*.
+An association connects 'sgen_FeatureType' and 'sgen_FeatureParameter'. From 'sgen_FeatureType', the role 'featureType' has cardinality 0..*, and from 'sgen_FeatureParameter', the role 'FeatureParameter' has cardinality 0..*.
+An association connects 'sgen_FeatureTypeLibrary' and 'sgen_FeatureType'. From 'sgen_FeatureTypeLibrary', the role 'sgen_FeatureTypeLibrary' has cardinality 0..*, and from 'sgen_FeatureType', the role 'sgen_FeatureType' has cardinality 0..*.
+An association connects 'sgen_FeatureParameter' and 'sgen_FeatureType'. From 'sgen_FeatureParameter', the role 'parameters' has cardinality 0..*, and from 'sgen_FeatureType', the role 'FeatureType' has cardinality 0..*.
+An association connects 'sgen_FeatureType' and 'sgen_FeatureConfiguration'. From 'sgen_FeatureType', the role 'sgen_FeatureType9' has cardinality 0..*, and from 'sgen_FeatureConfiguration', the role 'sgen_FeatureConfiguration8' has cardinality 0..*.
+An association connects 'sgen_FeatureConfiguration' and 'sgen_FeatureParameterValue'. From 'sgen_FeatureConfiguration', the role 'featureConfiguration' has cardinality 0..*, and from 'sgen_FeatureParameterValue', the role 'FeatureParameterValue' has cardinality 0..*.
+An association connects 'sgen_EObject' and 'sgen_GeneratorEntry'. From 'sgen_EObject', the role 'sgen_EObject' has cardinality 0..*, and from 'sgen_GeneratorEntry', the role 'sgen_GeneratorEntry12' has cardinality 0..*.
+An association connects 'sgen_GeneratorEntry' and 'sgen_FeatureConfiguration'. From 'sgen_GeneratorEntry', the role 'sgen_GeneratorEntry14' has cardinality 0..*, and from 'sgen_FeatureConfiguration', the role 'sgen_FeatureConfiguration15' has cardinality 0..*.
+An association connects 'sgen_FeatureParameter' and 'sgen_FeatureParameterValue'. From 'sgen_FeatureParameter', the role 'sgen_FeatureParameter' has cardinality 0..*, and from 'sgen_FeatureParameterValue', the role 'sgen_FeatureParameterValue' has cardinality 0..*.
+An association connects 'sgen_FeatureParameterValue' and 'sgen_FeatureConfiguration'. From 'sgen_FeatureParameterValue', the role 'parameterValues' has cardinality 0..*, and from 'sgen_FeatureConfiguration', the role 'FeatureConfiguration' has cardinality 0..*.
+An association connects 'sgen_Expression' and 'sgen_FeatureParameterValue'. From 'sgen_Expression', the role 'sgen_Expression' has cardinality 0..*, and from 'sgen_FeatureParameterValue', the role 'sgen_FeatureParameterValue19' has cardinality 0..*.
+An association connects 'sgen_FeatureType' and 'sgen_FeatureTypeLibrary'. From 'sgen_FeatureType', the role 'sgen_FeatureType22' has cardinality 0..*, and from 'sgen_FeatureTypeLibrary', the role 'sgen_FeatureTypeLibrary21' has cardinality 0..*.

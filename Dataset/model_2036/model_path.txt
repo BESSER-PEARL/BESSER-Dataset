@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/sbrocard/statemachine-generator/net.sb.statemachine.dsl/src-gen/net/sb/statemachine/dsl/Stm.ecore

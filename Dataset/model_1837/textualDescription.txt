@@ -1,0 +1,617 @@
+The domain model 'mMDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 131 main class(es).
+
+'mMDSL_Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_EmbedPlatformType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_DirCreate' represents an important domain concept.
+It has one attribute: 'dirname', which is of type str.
+
+'mMDSL_InsertContextItem' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'context', which is of type str.
+
+'mMDSL_VerticalLineTo' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_SymbolStyle' represents an important domain concept.
+It has the following attributes: 'fontsize', which is of type str; 'strokewidth', which is of type str; 'name', which is of type str.
+
+'mMDSL_EqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_DirSetWorking' represents an important domain concept.
+It has one attribute: 'dirname', which is of type str.
+
+'mMDSL_ItemOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_Line' represents an important domain concept.
+It has the following attributes: 'x2', which is of type str; 'y1', which is of type str; 'x1', which is of type str; 'y2', which is of type str.
+
+'mMDSL_PathParametersQ' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'y', which is of type str; 'x1', which is of type str; 'y1', which is of type str.
+
+'mMDSL_PathParametersMLT' represents an important domain concept.
+It has the following attributes: 'y', which is of type str; 'x', which is of type str.
+
+'mMDSL_ForLoop' represents an important domain concept.
+It has the following attributes: 'stop', which is of type int; 'interval', which is of type int; 'start', which is of type int.
+
+'mMDSL_RelationInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_IncludeLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_Expression' represents an important domain concept.
+It has the following attributes: 'false', which is of type str; 'valueString', which is of type str; 'true', which is of type str; 'valueRealNumber', which is of type str.
+
+'mMDSL_ModelType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_OperatorCompare' represents an important domain concept.
+It has the following attributes: 'lesser', which is of type str; 'lesserequal', which is of type str; 'greaterequal', which is of type str; 'greater', which is of type str.
+
+'mMDSL_DirGetWorking' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_PathParametersA' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'largearcflag', which is of type str; 'y', which is of type str; 'xaxisrot', which is of type str; 'sweepflag', which is of type str; 'rx', which is of type str; 'ry', which is of type str.
+
+'mMDSL_SymbolClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_SymbolRelation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_RemoveMenuItem' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_RelationInstanceSet' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_PathParametersHV' represents an important domain concept.
+It has one attribute: 'x', which is of type str.
+
+'mMDSL_Points' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'y', which is of type str.
+
+'mMDSL_FileOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_OperatorMultiply' represents an important domain concept.
+It has the following attributes: 'modulo', which is of type str; 'divide', which is of type str; 'multiply', which is of type str.
+
+'mMDSL_LineTo' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_ModelCreate' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_ModelIsLoaded' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_HorizontalLineTo' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_MenuItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_EllipticalArc' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_Path' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_Algorithm' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_InfoBox' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'text', which is of type str.
+
+'mMDSL_Text' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'y', which is of type str; 'x', which is of type str; 'fontsize', which is of type str.
+
+'mMDSL_FileWrite' represents an important domain concept.
+It has the following attributes: 'filename', which is of type str; 'append', which is of type str; 'text', which is of type str.
+
+'mMDSL_QuadraticBezierCurve' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_EditBox' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'okbuttontext', which is of type str; 'text', which is of type str.
+
+'mMDSL_ErrorBox' represents an important domain concept.
+It has the following attributes: 'buttontype', which is of type str; 'text', which is of type str; 'title', which is of type str.
+
+'mMDSL_FileDelete' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'mMDSL_InsertMenuItem' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'menu', which is of type str.
+
+'mMDSL_OperatorAnd' represents an important domain concept.
+It has one attribute: 'and', which is of type str.
+
+'mMDSL_AttributeGet' represents an important domain concept.
+It has one attribute: 'attrgetparams', which is of type str.
+
+'mMDSL_ClassInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_EmbedCodeType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_ClassInstanceCreate' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_RefName' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_RelationInstanceGetAll' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_CurveTo' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_ModelDiscard' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_FileRead' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'mMDSL_ModelDelete' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_ClassInstanceSet' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_OperatorAdd' represents an important domain concept.
+It has the following attributes: 'subtract', which is of type str; 'add', which is of type str.
+
+'mMDSL_DirList' represents an important domain concept.
+It has one attribute: 'dirname', which is of type str.
+
+'mMDSL_Relation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_RemoveContextItem' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_SimpleUI' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_AttributeOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_ViewBox' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'text', which is of type str.
+
+'mMDSL_Rectangle' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'height', which is of type str; 'y', which is of type str; 'x', which is of type str.
+
+'mMDSL_SmoothCurveTo' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_MoveTo' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_AdditionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'access', which is of type str.
+
+'mMDSL_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_ClassAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_Reference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_MultiplicationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_FileCopy' represents an important domain concept.
+It has the following attributes: 'src', which is of type str; 'dest', which is of type str.
+
+'mMDSL_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_StrokeColor' represents an important domain concept.
+It has the following attributes: 'hexcolor', which is of type str; 'color', which is of type str.
+
+'mMDSL_Ellipse' represents an important domain concept.
+It has the following attributes: 'rx', which is of type str; 'ry', which is of type str; 'cx', which is of type str; 'cy', which is of type str.
+
+'mMDSL_Metamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_OperatorOr' represents an important domain concept.
+It has one attribute: 'or', which is of type str.
+
+'mMDSL_Class' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_RelationInstanceCreate' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_AlgorithmOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_BreakContinue' represents an important domain concept.
+It has the following attributes: 'continue', which is of type str; 'break', which is of type str.
+
+'mMDSL_MethodName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_DirDelete' represents an important domain concept.
+It has one attribute: 'dirname', which is of type str.
+
+'mMDSL_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_SVGCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_SmoothQuadraticBezierCurveTo' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_Mode' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_PathParametersS' represents an important domain concept.
+It has the following attributes: 'x2', which is of type str; 'y2', which is of type str; 'x', which is of type str; 'y', which is of type str.
+
+'mMDSL_WarningBox' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'title', which is of type str; 'buttontype', which is of type str.
+
+'mMDSL_RelationInstanceGet' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_CompareExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_InsertEmbedCode' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_RelationInstanceDelete' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_IncludeLibraryType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mMDSL_ClassInstanceGetAll' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_ModelLoad' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_Enumeration' represents an important domain concept.
+It has the following attributes: 'enumvalues', which is of type str; 'name', which is of type str.
+
+'mMDSL_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_EmbedCode' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'embeddedcode', which is of type str.
+
+'mMDSL_Circle' represents an important domain concept.
+It has the following attributes: 'cy', which is of type str; 'r', which is of type str; 'cx', which is of type str.
+
+'mMDSL_DirOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_FillColor' represents an important domain concept.
+It has the following attributes: 'hexcolor', which is of type str; 'color', which is of type str.
+
+'mMDSL_FontFamily' represents an important domain concept.
+It has the following attributes: 'fontstr', which is of type str; 'font', which is of type str.
+
+'mMDSL_Type' represents an important domain concept.
+It has one attribute: 'simpletype', which is of type str.
+
+'mMDSL_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_ModelSave' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_PathParametersC' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'y', which is of type str; 'y2', which is of type str; 'x1', which is of type str; 'x2', which is of type str; 'y1', which is of type str.
+
+'mMDSL_OperatorMultyAssign' represents an important domain concept.
+It has the following attributes: 'multiassign', which is of type str; 'subassign', which is of type str; 'divassign', which is of type str; 'addassign', which is of type str.
+
+'mMDSL_ModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_EnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_InstanceOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_ClassInstanceGet' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_PathData' represents an important domain concept.
+It has one attribute: 'closepath', which is of type str.
+
+'mMDSL_LoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_OperatorUnary' represents an important domain concept.
+It has one attribute: 'not', which is of type str.
+
+'mMDSL_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_ContextItem' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_OperatorEqual' represents an important domain concept.
+It has the following attributes: 'notequal', which is of type str; 'equal', which is of type str.
+
+'mMDSL_VarStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_SelectionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_FileCreate' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'mMDSL_AttributeSet' represents an important domain concept.
+It has the following attributes: 'attrsetparams', which is of type str; 'valueString', which is of type str; 'valueRealNumber', which is of type str.
+
+'mMDSL_ClassInstanceDelete' represents an important domain concept.
+It does not declare any attributes.
+
+'mMDSL_OperatorAssign' represents an important domain concept.
+It has one attribute: 'assign', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ButtonType' defines the following possible values: 'defok', 'ok', 'okcancel', 'defno', 'defcancel', 'defyes', 'defretry', 'yesnocancel', 'yesno', 'retrycancel'.
+The enumeration 'Color' defines the following possible values: 'peru', 'oldlace', 'plum', 'beige', 'aqua', 'darkgreen', 'midnightblue', 'green', 'ghostwhite', 'violet', 'darkviolet', 'peachpuff', 'olive', 'mediumturquoise', 'goldenrod', 'blue', 'palevioletred', 'antiquewhite', 'saddlebrown', 'lightslategray', 'gainsboro', 'darkturquoise', 'slategray', 'fuchsia', 'lightpink', 'mintcream', 'crimson', 'dodgerblue', 'darkblue', 'lightgray', 'firebrick', 'darkgoldenrod', 'tomato', 'gold', 'palegreen', 'orange', 'darkolivegreen', 'seashell', 'palegoldenrod', 'navy', 'chartreuse', 'lavenderblush', 'orchid', 'lavender', 'darkorange', 'darkslateblue', 'cornsilk', 'mediumaquamarine', 'papayawhip', 'lightsteelblue', 'lightskyblue', 'blanchedalmond', 'floralwhite', 'darkseagreen', 'lightsalmon', 'honeydew', 'snow', 'mediumorchid', 'moccasin', 'forestgreen', 'salmon', 'whitesmoke', 'red', 'blueviolet', 'chocolate', 'slateblue', 'darkgray', 'aquamarine', 'yellow', 'springgreen', 'lightyellow', 'orangered', 'greenyellow', 'lightgoldenrodyellow', 'powderblue', 'lemonchiffon', 'royalblue', 'steelblue', 'khaki', 'skyblue', 'darkslategray', 'burlywood', 'cornflowerblue', 'silver', 'hotpink', 'darkmagenta', 'mediumblue', 'navajowhite', 'coral', 'limegreen', 'sandybrown', 'olivedrab', 'mediumspringgreen', 'sienna', 'lawngreen', 'cadetblue', 'darkcyan', 'darkkhaki', 'purple', 'white', 'darkorchid', 'lightmagenta', 'indigo', 'dimgray', 'mediumseagreen', 'rosybrown', 'mediumpurple', 'deeppink', 'mediumvioletred', 'yellowgreen', 'indianred', 'aliceblue', 'paleturquoise', 'mistyrose', 'lightseagreen', 'linen', 'tan', 'magenta', 'lightcoral', 'deepskyblue', 'cyan', 'teal', 'brown', 'mediumslateblue', 'azure', 'ivory', 'seagreen', 'pink', 'black', 'thistle', 'gray', 'lightblue', 'bisque', 'maroon', 'wheat', 'lightgreen', 'turquoise', 'darkred', 'darksalmon', 'lime', 'lightcyan'.
+The enumeration 'EventName' defines the following possible values: 'aftereditattributevalue', 'setattributevalue', 'aftercreatemodelingnode', 'deletemodel', 'aftercreatemodelingconnector', 'beforedeleteinstance', 'beforecreatemodel', 'toolinitialized', 'savemodel', 'beforediscardmodel', 'deleteinstance', 'beforedeletemodel', 'createrelationinstance', 'discardmodel', 'discardinstance', 'beforesavemodel', 'beforecreaterelationinstance', 'deleterelationinstance', 'openmodel', 'createinstance', 'createmodel', 'renameinstance'.
+The enumeration 'Font' defines the following possible values: 'symbol', 'verdana', 'windings', 'palatinolinotype', 'timesnewroman', 'webdings', 'mssansserif', 'comicsansms', 'couriernew', 'lucidaconsole', 'lucidasansunicode', 'msserif', 'arial', 'arialblack', 'tahoma', 'impact', 'georgia', 'trebuchetms'.
+The enumeration 'AttrGetParams' defines the following possible values: 'value', 'type', 'name'.
+The enumeration 'SimpleType' defines the following possible values: 'Int', 'Double', 'String'.
+The enumeration 'AccessType' defines the following possible values: 'read', 'write', 'internal'.
+The enumeration 'AttrSetParams' defines a single possible value: 'value'.
+
+The model also captures inheritance relationships between classes.
+The class 'mMDSL_OrExpression' is a specialization of 'Expression'.
+The class 'mMDSL_AndExpression' is a specialization of 'Expression'.
+The class 'mMDSL_EqualExpression' is a specialization of 'Expression'.
+The class 'mMDSL_CompareExpression' is a specialization of 'Expression'.
+The class 'mMDSL_AdditionExpression' is a specialization of 'Expression'.
+The class 'mMDSL_MultiplicationExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mMDSL_Root' and 'mMDSL_MethodName'. From 'mMDSL_Root', the role 'mMDSL_Root' has cardinality 0..*, and from 'mMDSL_MethodName', the role 'mMDSL_MethodName' has cardinality 0..*.
+An association connects 'mMDSL_IncludeLibraryType' and 'mMDSL_Root'. From 'mMDSL_IncludeLibraryType', the role 'mMDSL_IncludeLibraryType' has cardinality 0..*, and from 'mMDSL_Root', the role 'mMDSL_Root2' has cardinality 0..*.
+An association connects 'mMDSL_Root' and 'mMDSL_EmbedPlatformType'. From 'mMDSL_Root', the role 'mMDSL_Root4' has cardinality 0..*, and from 'mMDSL_EmbedPlatformType', the role 'mMDSL_EmbedPlatformType' has cardinality 0..*.
+An association connects 'mMDSL_Root' and 'mMDSL_EmbedCodeType'. From 'mMDSL_Root', the role 'mMDSL_Root6' has cardinality 0..*, and from 'mMDSL_EmbedCodeType', the role 'mMDSL_EmbedCodeType' has cardinality 0..*.
+An association connects 'mMDSL_Root' and 'mMDSL_IncludeLibrary'. From 'mMDSL_Root', the role 'mMDSL_Root8' has cardinality 0..*, and from 'mMDSL_IncludeLibrary', the role 'mMDSL_IncludeLibrary' has cardinality 0..*.
+An association connects 'mMDSL_Root' and 'mMDSL_EmbedCode'. From 'mMDSL_Root', the role 'mMDSL_Root10' has cardinality 0..*, and from 'mMDSL_EmbedCode', the role 'mMDSL_EmbedCode' has cardinality 0..*.
+An association connects 'mMDSL_Method' and 'mMDSL_Root'. From 'mMDSL_Method', the role 'mMDSL_Method' has cardinality 0..*, and from 'mMDSL_Root', the role 'mMDSL_Root12' has cardinality 0..*.
+An association connects 'mMDSL_IncludeLibrary' and 'mMDSL_IncludeLibraryType'. From 'mMDSL_IncludeLibrary', the role 'mMDSL_IncludeLibrary14' has cardinality 0..*, and from 'mMDSL_IncludeLibraryType', the role 'mMDSL_IncludeLibraryType15' has cardinality 0..*.
+An association connects 'mMDSL_EmbedCode' and 'mMDSL_EmbedPlatformType'. From 'mMDSL_EmbedCode', the role 'mMDSL_EmbedCode17' has cardinality 0..*, and from 'mMDSL_EmbedPlatformType', the role 'mMDSL_EmbedPlatformType18' has cardinality 0..*.
+An association connects 'mMDSL_EmbedCodeType' and 'mMDSL_EmbedCode'. From 'mMDSL_EmbedCodeType', the role 'mMDSL_EmbedCodeType21' has cardinality 0..*, and from 'mMDSL_EmbedCode', the role 'mMDSL_EmbedCode20' has cardinality 0..*.
+An association connects 'mMDSL_EmbedCode' and 'mMDSL_InsertEmbedCode'. From 'mMDSL_EmbedCode', the role 'mMDSL_EmbedCode23' has cardinality 0..*, and from 'mMDSL_InsertEmbedCode', the role 'mMDSL_InsertEmbedCode' has cardinality 0..*.
+An association connects 'mMDSL_Enumeration' and 'mMDSL_Method'. From 'mMDSL_Enumeration', the role 'mMDSL_Enumeration' has cardinality 0..*, and from 'mMDSL_Method', the role 'mMDSL_Method25' has cardinality 0..*.
+An association connects 'mMDSL_SymbolStyle' and 'mMDSL_Method'. From 'mMDSL_SymbolStyle', the role 'mMDSL_SymbolStyle' has cardinality 0..*, and from 'mMDSL_Method', the role 'mMDSL_Method27' has cardinality 0..*.
+An association connects 'mMDSL_Method' and 'mMDSL_SymbolClass'. From 'mMDSL_Method', the role 'mMDSL_Method29' has cardinality 0..*, and from 'mMDSL_SymbolClass', the role 'mMDSL_SymbolClass' has cardinality 0..*.
+An association connects 'mMDSL_SymbolRelation' and 'mMDSL_Method'. From 'mMDSL_SymbolRelation', the role 'mMDSL_SymbolRelation' has cardinality 0..*, and from 'mMDSL_Method', the role 'mMDSL_Method31' has cardinality 0..*.
+An association connects 'mMDSL_Method' and 'mMDSL_Metamodel'. From 'mMDSL_Method', the role 'mMDSL_Method33' has cardinality 0..*, and from 'mMDSL_Metamodel', the role 'mMDSL_Metamodel' has cardinality 0..*.
+An association connects 'mMDSL_Algorithm' and 'mMDSL_Method'. From 'mMDSL_Algorithm', the role 'mMDSL_Algorithm' has cardinality 0..*, and from 'mMDSL_Method', the role 'mMDSL_Method35' has cardinality 0..*.
+An association connects 'mMDSL_Method' and 'mMDSL_Event'. From 'mMDSL_Method', the role 'mMDSL_Method37' has cardinality 0..*, and from 'mMDSL_Event', the role 'mMDSL_Event' has cardinality 0..*.
+An association connects 'mMDSL_Class' and 'mMDSL_Metamodel'. From 'mMDSL_Class', the role 'mMDSL_Class' has cardinality 0..*, and from 'mMDSL_Metamodel', the role 'mMDSL_Metamodel39' has cardinality 0..*.
+An association connects 'mMDSL_Metamodel' and 'mMDSL_Relation'. From 'mMDSL_Metamodel', the role 'mMDSL_Metamodel41' has cardinality 0..*, and from 'mMDSL_Relation', the role 'mMDSL_Relation' has cardinality 0..*.
+An association connects 'mMDSL_Attribute' and 'mMDSL_Metamodel'. From 'mMDSL_Attribute', the role 'mMDSL_Attribute' has cardinality 0..*, and from 'mMDSL_Metamodel', the role 'mMDSL_Metamodel43' has cardinality 0..*.
+An association connects 'mMDSL_Metamodel' and 'mMDSL_ModelType'. From 'mMDSL_Metamodel', the role 'mMDSL_Metamodel45' has cardinality 0..*, and from 'mMDSL_ModelType', the role 'mMDSL_ModelType' has cardinality 0..*.
+An association connects 'mMDSL_Class' and 'mMDSL_Class'. From 'mMDSL_Class', the role 'mMDSL_Class46' has cardinality 0..*, and from 'mMDSL_Class', the role 'mMDSL_Class48' has cardinality 0..*.
+An association connects 'mMDSL_SymbolClass' and 'mMDSL_Class'. From 'mMDSL_SymbolClass', the role 'mMDSL_SymbolClass51' has cardinality 0..*, and from 'mMDSL_Class', the role 'mMDSL_Class50' has cardinality 0..*.
+An association connects 'mMDSL_ClassAttribute' and 'mMDSL_Class'. From 'mMDSL_ClassAttribute', the role 'mMDSL_ClassAttribute' has cardinality 0..*, and from 'mMDSL_Class', the role 'mMDSL_Class53' has cardinality 0..*.
+An association connects 'mMDSL_Class' and 'mMDSL_Attribute'. From 'mMDSL_Class', the role 'mMDSL_Class55' has cardinality 0..*, and from 'mMDSL_Attribute', the role 'mMDSL_Attribute56' has cardinality 0..*.
+An association connects 'mMDSL_InsertEmbedCode' and 'mMDSL_Class'. From 'mMDSL_InsertEmbedCode', the role 'mMDSL_InsertEmbedCode59' has cardinality 0..*, and from 'mMDSL_Class', the role 'mMDSL_Class58' has cardinality 0..*.
+An association connects 'mMDSL_Class' and 'mMDSL_Reference'. From 'mMDSL_Class', the role 'mMDSL_Class61' has cardinality 0..*, and from 'mMDSL_Reference', the role 'mMDSL_Reference' has cardinality 0..*.
+An association connects 'mMDSL_Relation' and 'mMDSL_Relation'. From 'mMDSL_Relation', the role 'mMDSL_Relation62' has cardinality 0..*, and from 'mMDSL_Relation', the role 'mMDSL_Relation64' has cardinality 0..*.
+An association connects 'mMDSL_SymbolRelation' and 'mMDSL_Relation'. From 'mMDSL_SymbolRelation', the role 'mMDSL_SymbolRelation67' has cardinality 0..*, and from 'mMDSL_Relation', the role 'mMDSL_Relation66' has cardinality 0..*.
+An association connects 'mMDSL_Relation' and 'mMDSL_Class'. From 'mMDSL_Relation', the role 'mMDSL_Relation69' has cardinality 0..*, and from 'mMDSL_Class', the role 'mMDSL_Class70' has cardinality 0..*.
+An association connects 'mMDSL_Relation' and 'mMDSL_Class'. From 'mMDSL_Relation', the role 'mMDSL_Relation72' has cardinality 0..*, and from 'mMDSL_Class', the role 'mMDSL_Class73' has cardinality 0..*.
+An association connects 'mMDSL_Attribute' and 'mMDSL_Relation'. From 'mMDSL_Attribute', the role 'mMDSL_Attribute76' has cardinality 0..*, and from 'mMDSL_Relation', the role 'mMDSL_Relation75' has cardinality 0..*.
+An association connects 'mMDSL_Relation' and 'mMDSL_InsertEmbedCode'. From 'mMDSL_Relation', the role 'mMDSL_Relation78' has cardinality 0..*, and from 'mMDSL_InsertEmbedCode', the role 'mMDSL_InsertEmbedCode79' has cardinality 0..*.
+An association connects 'mMDSL_Type' and 'mMDSL_Attribute'. From 'mMDSL_Type', the role 'mMDSL_Type' has cardinality 0..*, and from 'mMDSL_Attribute', the role 'mMDSL_Attribute81' has cardinality 0..*.
+An association connects 'mMDSL_ClassAttribute' and 'mMDSL_Type'. From 'mMDSL_ClassAttribute', the role 'mMDSL_ClassAttribute83' has cardinality 0..*, and from 'mMDSL_Type', the role 'mMDSL_Type84' has cardinality 0..*.
+An association connects 'mMDSL_Reference' and 'mMDSL_RefName'. From 'mMDSL_Reference', the role 'mMDSL_Reference86' has cardinality 0..*, and from 'mMDSL_RefName', the role 'mMDSL_RefName' has cardinality 0..*.
+An association connects 'mMDSL_RefName' and 'mMDSL_ModelType'. From 'mMDSL_RefName', the role 'mMDSL_RefName88' has cardinality 0..*, and from 'mMDSL_ModelType', the role 'mMDSL_ModelType89' has cardinality 0..*.
+An association connects 'mMDSL_Class' and 'mMDSL_RefName'. From 'mMDSL_Class', the role 'mMDSL_Class92' has cardinality 0..*, and from 'mMDSL_RefName', the role 'mMDSL_RefName91' has cardinality 0..*.
+An association connects 'mMDSL_EnumType' and 'mMDSL_Type'. From 'mMDSL_EnumType', the role 'mMDSL_EnumType' has cardinality 0..*, and from 'mMDSL_Type', the role 'mMDSL_Type94' has cardinality 0..*.
+An association connects 'mMDSL_Enumeration' and 'mMDSL_EnumType'. From 'mMDSL_Enumeration', the role 'mMDSL_Enumeration97' has cardinality 0..*, and from 'mMDSL_EnumType', the role 'mMDSL_EnumType96' has cardinality 0..*.
+An association connects 'mMDSL_ModelType' and 'mMDSL_Class'. From 'mMDSL_ModelType', the role 'mMDSL_ModelType99' has cardinality 0..*, and from 'mMDSL_Class', the role 'mMDSL_Class100' has cardinality 0..*.
+An association connects 'mMDSL_ModelType' and 'mMDSL_Relation'. From 'mMDSL_ModelType', the role 'mMDSL_ModelType102' has cardinality 0..*, and from 'mMDSL_Relation', the role 'mMDSL_Relation103' has cardinality 0..*.
+An association connects 'mMDSL_Mode' and 'mMDSL_ModelType'. From 'mMDSL_Mode', the role 'mMDSL_Mode' has cardinality 0..*, and from 'mMDSL_ModelType', the role 'mMDSL_ModelType105' has cardinality 0..*.
+An association connects 'mMDSL_Class' and 'mMDSL_Mode'. From 'mMDSL_Class', the role 'mMDSL_Class108' has cardinality 0..*, and from 'mMDSL_Mode', the role 'mMDSL_Mode107' has cardinality 0..*.
+An association connects 'mMDSL_Mode' and 'mMDSL_Relation'. From 'mMDSL_Mode', the role 'mMDSL_Mode110' has cardinality 0..*, and from 'mMDSL_Relation', the role 'mMDSL_Relation111' has cardinality 0..*.
+An association connects 'mMDSL_SymbolClass' and 'mMDSL_SymbolStyle'. From 'mMDSL_SymbolClass', the role 'mMDSL_SymbolClass113' has cardinality 0..*, and from 'mMDSL_SymbolStyle', the role 'mMDSL_SymbolStyle114' has cardinality 0..*.
+An association connects 'mMDSL_SymbolClass' and 'mMDSL_SVGCommand'. From 'mMDSL_SymbolClass', the role 'mMDSL_SymbolClass116' has cardinality 0..*, and from 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand' has cardinality 0..*.
+An association connects 'mMDSL_SymbolRelation' and 'mMDSL_SymbolStyle'. From 'mMDSL_SymbolRelation', the role 'mMDSL_SymbolRelation118' has cardinality 0..*, and from 'mMDSL_SymbolStyle', the role 'mMDSL_SymbolStyle119' has cardinality 0..*.
+An association connects 'mMDSL_SVGCommand' and 'mMDSL_SymbolRelation'. From 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand122' has cardinality 0..*, and from 'mMDSL_SymbolRelation', the role 'mMDSL_SymbolRelation121' has cardinality 0..*.
+An association connects 'mMDSL_SVGCommand' and 'mMDSL_SymbolRelation'. From 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand125' has cardinality 0..*, and from 'mMDSL_SymbolRelation', the role 'mMDSL_SymbolRelation124' has cardinality 0..*.
+An association connects 'mMDSL_SymbolRelation' and 'mMDSL_SVGCommand'. From 'mMDSL_SymbolRelation', the role 'mMDSL_SymbolRelation127' has cardinality 0..*, and from 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand128' has cardinality 0..*.
+An association connects 'mMDSL_SVGCommand' and 'mMDSL_InsertEmbedCode'. From 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand130' has cardinality 0..*, and from 'mMDSL_InsertEmbedCode', the role 'mMDSL_InsertEmbedCode131' has cardinality 0..*.
+An association connects 'mMDSL_Rectangle' and 'mMDSL_SVGCommand'. From 'mMDSL_Rectangle', the role 'mMDSL_Rectangle' has cardinality 0..*, and from 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand133' has cardinality 0..*.
+An association connects 'mMDSL_SVGCommand' and 'mMDSL_Circle'. From 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand135' has cardinality 0..*, and from 'mMDSL_Circle', the role 'mMDSL_Circle' has cardinality 0..*.
+An association connects 'mMDSL_Ellipse' and 'mMDSL_SVGCommand'. From 'mMDSL_Ellipse', the role 'mMDSL_Ellipse' has cardinality 0..*, and from 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand137' has cardinality 0..*.
+An association connects 'mMDSL_Line' and 'mMDSL_SVGCommand'. From 'mMDSL_Line', the role 'mMDSL_Line' has cardinality 0..*, and from 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand139' has cardinality 0..*.
+An association connects 'mMDSL_Polyline' and 'mMDSL_SVGCommand'. From 'mMDSL_Polyline', the role 'mMDSL_Polyline' has cardinality 0..*, and from 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand141' has cardinality 0..*.
+An association connects 'mMDSL_Polygon' and 'mMDSL_SVGCommand'. From 'mMDSL_Polygon', the role 'mMDSL_Polygon' has cardinality 0..*, and from 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand143' has cardinality 0..*.
+An association connects 'mMDSL_Path' and 'mMDSL_SVGCommand'. From 'mMDSL_Path', the role 'mMDSL_Path' has cardinality 0..*, and from 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand145' has cardinality 0..*.
+An association connects 'mMDSL_Text' and 'mMDSL_SVGCommand'. From 'mMDSL_Text', the role 'mMDSL_Text' has cardinality 0..*, and from 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand147' has cardinality 0..*.
+An association connects 'mMDSL_SVGCommand' and 'mMDSL_SymbolStyle'. From 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand149' has cardinality 0..*, and from 'mMDSL_SymbolStyle', the role 'mMDSL_SymbolStyle150' has cardinality 0..*.
+An association connects 'mMDSL_SymbolStyle' and 'mMDSL_SVGCommand'. From 'mMDSL_SymbolStyle', the role 'mMDSL_SymbolStyle153' has cardinality 0..*, and from 'mMDSL_SVGCommand', the role 'mMDSL_SVGCommand152' has cardinality 0..*.
+An association connects 'mMDSL_Points' and 'mMDSL_Polyline'. From 'mMDSL_Points', the role 'mMDSL_Points' has cardinality 0..*, and from 'mMDSL_Polyline', the role 'mMDSL_Polyline155' has cardinality 0..*.
+An association connects 'mMDSL_Points' and 'mMDSL_Polygon'. From 'mMDSL_Points', the role 'mMDSL_Points158' has cardinality 0..*, and from 'mMDSL_Polygon', the role 'mMDSL_Polygon157' has cardinality 0..*.
+An association connects 'mMDSL_Path' and 'mMDSL_PathData'. From 'mMDSL_Path', the role 'mMDSL_Path160' has cardinality 0..*, and from 'mMDSL_PathData', the role 'mMDSL_PathData' has cardinality 0..*.
+An association connects 'mMDSL_FontFamily' and 'mMDSL_Text'. From 'mMDSL_FontFamily', the role 'mMDSL_FontFamily' has cardinality 0..*, and from 'mMDSL_Text', the role 'mMDSL_Text162' has cardinality 0..*.
+An association connects 'mMDSL_Text' and 'mMDSL_FillColor'. From 'mMDSL_Text', the role 'mMDSL_Text164' has cardinality 0..*, and from 'mMDSL_FillColor', the role 'mMDSL_FillColor' has cardinality 0..*.
+An association connects 'mMDSL_PathData' and 'mMDSL_MoveTo'. From 'mMDSL_PathData', the role 'mMDSL_PathData166' has cardinality 0..*, and from 'mMDSL_MoveTo', the role 'mMDSL_MoveTo' has cardinality 0..*.
+An association connects 'mMDSL_LineTo' and 'mMDSL_PathData'. From 'mMDSL_LineTo', the role 'mMDSL_LineTo' has cardinality 0..*, and from 'mMDSL_PathData', the role 'mMDSL_PathData168' has cardinality 0..*.
+An association connects 'mMDSL_PathData' and 'mMDSL_HorizontalLineTo'. From 'mMDSL_PathData', the role 'mMDSL_PathData170' has cardinality 0..*, and from 'mMDSL_HorizontalLineTo', the role 'mMDSL_HorizontalLineTo' has cardinality 0..*.
+An association connects 'mMDSL_VerticalLineTo' and 'mMDSL_PathData'. From 'mMDSL_VerticalLineTo', the role 'mMDSL_VerticalLineTo' has cardinality 0..*, and from 'mMDSL_PathData', the role 'mMDSL_PathData172' has cardinality 0..*.
+An association connects 'mMDSL_CurveTo' and 'mMDSL_PathData'. From 'mMDSL_CurveTo', the role 'mMDSL_CurveTo' has cardinality 0..*, and from 'mMDSL_PathData', the role 'mMDSL_PathData174' has cardinality 0..*.
+An association connects 'mMDSL_SmoothCurveTo' and 'mMDSL_PathData'. From 'mMDSL_SmoothCurveTo', the role 'mMDSL_SmoothCurveTo' has cardinality 0..*, and from 'mMDSL_PathData', the role 'mMDSL_PathData176' has cardinality 0..*.
+An association connects 'mMDSL_PathData' and 'mMDSL_QuadraticBezierCurve'. From 'mMDSL_PathData', the role 'mMDSL_PathData178' has cardinality 0..*, and from 'mMDSL_QuadraticBezierCurve', the role 'mMDSL_QuadraticBezierCurve' has cardinality 0..*.
+An association connects 'mMDSL_PathData' and 'mMDSL_SmoothQuadraticBezierCurveTo'. From 'mMDSL_PathData', the role 'mMDSL_PathData180' has cardinality 0..*, and from 'mMDSL_SmoothQuadraticBezierCurveTo', the role 'mMDSL_SmoothQuadraticBezierCurveTo' has cardinality 0..*.
+An association connects 'mMDSL_PathData' and 'mMDSL_EllipticalArc'. From 'mMDSL_PathData', the role 'mMDSL_PathData182' has cardinality 0..*, and from 'mMDSL_EllipticalArc', the role 'mMDSL_EllipticalArc' has cardinality 0..*.
+An association connects 'mMDSL_PathParametersMLT' and 'mMDSL_MoveTo'. From 'mMDSL_PathParametersMLT', the role 'mMDSL_PathParametersMLT' has cardinality 0..*, and from 'mMDSL_MoveTo', the role 'mMDSL_MoveTo184' has cardinality 0..*.
+An association connects 'mMDSL_LineTo' and 'mMDSL_PathParametersMLT'. From 'mMDSL_LineTo', the role 'mMDSL_LineTo186' has cardinality 0..*, and from 'mMDSL_PathParametersMLT', the role 'mMDSL_PathParametersMLT187' has cardinality 0..*.
+An association connects 'mMDSL_HorizontalLineTo' and 'mMDSL_PathParametersHV'. From 'mMDSL_HorizontalLineTo', the role 'mMDSL_HorizontalLineTo189' has cardinality 0..*, and from 'mMDSL_PathParametersHV', the role 'mMDSL_PathParametersHV' has cardinality 0..*.
+An association connects 'mMDSL_PathParametersHV' and 'mMDSL_VerticalLineTo'. From 'mMDSL_PathParametersHV', the role 'mMDSL_PathParametersHV192' has cardinality 0..*, and from 'mMDSL_VerticalLineTo', the role 'mMDSL_VerticalLineTo191' has cardinality 0..*.
+An association connects 'mMDSL_PathParametersC' and 'mMDSL_CurveTo'. From 'mMDSL_PathParametersC', the role 'mMDSL_PathParametersC' has cardinality 0..*, and from 'mMDSL_CurveTo', the role 'mMDSL_CurveTo194' has cardinality 0..*.
+An association connects 'mMDSL_PathParametersS' and 'mMDSL_SmoothCurveTo'. From 'mMDSL_PathParametersS', the role 'mMDSL_PathParametersS' has cardinality 0..*, and from 'mMDSL_SmoothCurveTo', the role 'mMDSL_SmoothCurveTo196' has cardinality 0..*.
+An association connects 'mMDSL_PathParametersQ' and 'mMDSL_QuadraticBezierCurve'. From 'mMDSL_PathParametersQ', the role 'mMDSL_PathParametersQ' has cardinality 0..*, and from 'mMDSL_QuadraticBezierCurve', the role 'mMDSL_QuadraticBezierCurve198' has cardinality 0..*.
+An association connects 'mMDSL_PathParametersMLT' and 'mMDSL_SmoothQuadraticBezierCurveTo'. From 'mMDSL_PathParametersMLT', the role 'mMDSL_PathParametersMLT201' has cardinality 0..*, and from 'mMDSL_SmoothQuadraticBezierCurveTo', the role 'mMDSL_SmoothQuadraticBezierCurveTo200' has cardinality 0..*.
+An association connects 'mMDSL_PathParametersA' and 'mMDSL_EllipticalArc'. From 'mMDSL_PathParametersA', the role 'mMDSL_PathParametersA' has cardinality 0..*, and from 'mMDSL_EllipticalArc', the role 'mMDSL_EllipticalArc203' has cardinality 0..*.
+An association connects 'mMDSL_SymbolStyle' and 'mMDSL_FillColor'. From 'mMDSL_SymbolStyle', the role 'mMDSL_SymbolStyle205' has cardinality 0..*, and from 'mMDSL_FillColor', the role 'mMDSL_FillColor206' has cardinality 0..*.
+An association connects 'mMDSL_StrokeColor' and 'mMDSL_SymbolStyle'. From 'mMDSL_StrokeColor', the role 'mMDSL_StrokeColor' has cardinality 0..*, and from 'mMDSL_SymbolStyle', the role 'mMDSL_SymbolStyle208' has cardinality 0..*.
+An association connects 'mMDSL_SymbolStyle' and 'mMDSL_FontFamily'. From 'mMDSL_SymbolStyle', the role 'mMDSL_SymbolStyle210' has cardinality 0..*, and from 'mMDSL_FontFamily', the role 'mMDSL_FontFamily211' has cardinality 0..*.
+An association connects 'mMDSL_InsertEmbedCode' and 'mMDSL_SymbolStyle'. From 'mMDSL_InsertEmbedCode', the role 'mMDSL_InsertEmbedCode214' has cardinality 0..*, and from 'mMDSL_SymbolStyle', the role 'mMDSL_SymbolStyle213' has cardinality 0..*.
+An association connects 'mMDSL_Statement' and 'mMDSL_Algorithm'. From 'mMDSL_Statement', the role 'mMDSL_Statement' has cardinality 0..*, and from 'mMDSL_Algorithm', the role 'mMDSL_Algorithm216' has cardinality 0..*.
+An association connects 'mMDSL_Statement' and 'mMDSL_SelectionStatement'. From 'mMDSL_Statement', the role 'mMDSL_Statement218' has cardinality 0..*, and from 'mMDSL_SelectionStatement', the role 'mMDSL_SelectionStatement' has cardinality 0..*.
+An association connects 'mMDSL_Statement' and 'mMDSL_LoopStatement'. From 'mMDSL_Statement', the role 'mMDSL_Statement220' has cardinality 0..*, and from 'mMDSL_LoopStatement', the role 'mMDSL_LoopStatement' has cardinality 0..*.
+An association connects 'mMDSL_Statement' and 'mMDSL_Variable'. From 'mMDSL_Statement', the role 'mMDSL_Statement222' has cardinality 0..*, and from 'mMDSL_Variable', the role 'mMDSL_Variable' has cardinality 0..*.
+An association connects 'mMDSL_Statement' and 'mMDSL_AlgorithmOperation'. From 'mMDSL_Statement', the role 'mMDSL_Statement224' has cardinality 0..*, and from 'mMDSL_AlgorithmOperation', the role 'mMDSL_AlgorithmOperation' has cardinality 0..*.
+An association connects 'mMDSL_Statement' and 'mMDSL_InsertEmbedCode'. From 'mMDSL_Statement', the role 'mMDSL_Statement226' has cardinality 0..*, and from 'mMDSL_InsertEmbedCode', the role 'mMDSL_InsertEmbedCode227' has cardinality 0..*.
+An association connects 'mMDSL_SelectionStatement' and 'mMDSL_Expr'. From 'mMDSL_SelectionStatement', the role 'mMDSL_SelectionStatement229' has cardinality 0..*, and from 'mMDSL_Expr', the role 'mMDSL_Expr' has cardinality 0..*.
+An association connects 'mMDSL_SelectionStatement' and 'mMDSL_Statement'. From 'mMDSL_SelectionStatement', the role 'mMDSL_SelectionStatement231' has cardinality 0..*, and from 'mMDSL_Statement', the role 'mMDSL_Statement232' has cardinality 0..*.
+An association connects 'mMDSL_Expr' and 'mMDSL_SelectionStatement'. From 'mMDSL_Expr', the role 'mMDSL_Expr235' has cardinality 0..*, and from 'mMDSL_SelectionStatement', the role 'mMDSL_SelectionStatement234' has cardinality 0..*.
+An association connects 'mMDSL_Statement' and 'mMDSL_SelectionStatement'. From 'mMDSL_Statement', the role 'mMDSL_Statement238' has cardinality 0..*, and from 'mMDSL_SelectionStatement', the role 'mMDSL_SelectionStatement237' has cardinality 0..*.
+An association connects 'mMDSL_Statement' and 'mMDSL_SelectionStatement'. From 'mMDSL_Statement', the role 'mMDSL_Statement241' has cardinality 0..*, and from 'mMDSL_SelectionStatement', the role 'mMDSL_SelectionStatement240' has cardinality 0..*.
+An association connects 'mMDSL_LoopStatement' and 'mMDSL_WhileLoop'. From 'mMDSL_LoopStatement', the role 'mMDSL_LoopStatement243' has cardinality 0..*, and from 'mMDSL_WhileLoop', the role 'mMDSL_WhileLoop' has cardinality 0..*.
+An association connects 'mMDSL_LoopStatement' and 'mMDSL_ForLoop'. From 'mMDSL_LoopStatement', the role 'mMDSL_LoopStatement245' has cardinality 0..*, and from 'mMDSL_ForLoop', the role 'mMDSL_ForLoop' has cardinality 0..*.
+An association connects 'mMDSL_WhileLoop' and 'mMDSL_Expr'. From 'mMDSL_WhileLoop', the role 'mMDSL_WhileLoop247' has cardinality 0..*, and from 'mMDSL_Expr', the role 'mMDSL_Expr248' has cardinality 0..*.
+An association connects 'mMDSL_Statement' and 'mMDSL_WhileLoop'. From 'mMDSL_Statement', the role 'mMDSL_Statement251' has cardinality 0..*, and from 'mMDSL_WhileLoop', the role 'mMDSL_WhileLoop250' has cardinality 0..*.
+An association connects 'mMDSL_WhileLoop' and 'mMDSL_BreakContinue'. From 'mMDSL_WhileLoop', the role 'mMDSL_WhileLoop253' has cardinality 0..*, and from 'mMDSL_BreakContinue', the role 'mMDSL_BreakContinue' has cardinality 0..*.
+An association connects 'mMDSL_ForLoop' and 'mMDSL_Statement'. From 'mMDSL_ForLoop', the role 'mMDSL_ForLoop255' has cardinality 0..*, and from 'mMDSL_Statement', the role 'mMDSL_Statement256' has cardinality 0..*.
+An association connects 'mMDSL_ForLoop' and 'mMDSL_BreakContinue'. From 'mMDSL_ForLoop', the role 'mMDSL_ForLoop258' has cardinality 0..*, and from 'mMDSL_BreakContinue', the role 'mMDSL_BreakContinue259' has cardinality 0..*.
+An association connects 'mMDSL_Variable' and 'mMDSL_OperatorAssign'. From 'mMDSL_Variable', the role 'mMDSL_Variable261' has cardinality 0..*, and from 'mMDSL_OperatorAssign', the role 'mMDSL_OperatorAssign' has cardinality 0..*.
+An association connects 'mMDSL_Variable' and 'mMDSL_VarStatement'. From 'mMDSL_Variable', the role 'mMDSL_Variable263' has cardinality 0..*, and from 'mMDSL_VarStatement', the role 'mMDSL_VarStatement' has cardinality 0..*.
+An association connects 'mMDSL_Variable' and 'mMDSL_Variable'. From 'mMDSL_Variable', the role 'mMDSL_Variable266' has cardinality 0..*, and from 'mMDSL_Variable', the role 'mMDSL_Variable264' has cardinality 0..*.
+An association connects 'mMDSL_VarStatement' and 'mMDSL_Expr'. From 'mMDSL_VarStatement', the role 'mMDSL_VarStatement268' has cardinality 0..*, and from 'mMDSL_Expr', the role 'mMDSL_Expr269' has cardinality 0..*.
+An association connects 'mMDSL_VarStatement' and 'mMDSL_AlgorithmOperation'. From 'mMDSL_VarStatement', the role 'mMDSL_VarStatement271' has cardinality 0..*, and from 'mMDSL_AlgorithmOperation', the role 'mMDSL_AlgorithmOperation272' has cardinality 0..*.
+An association connects 'mMDSL_Class' and 'mMDSL_VarStatement'. From 'mMDSL_Class', the role 'mMDSL_Class275' has cardinality 0..*, and from 'mMDSL_VarStatement', the role 'mMDSL_VarStatement274' has cardinality 0..*.
+An association connects 'mMDSL_Attribute' and 'mMDSL_VarStatement'. From 'mMDSL_Attribute', the role 'mMDSL_Attribute278' has cardinality 0..*, and from 'mMDSL_VarStatement', the role 'mMDSL_VarStatement277' has cardinality 0..*.
+An association connects 'mMDSL_VarStatement' and 'mMDSL_Reference'. From 'mMDSL_VarStatement', the role 'mMDSL_VarStatement280' has cardinality 0..*, and from 'mMDSL_Reference', the role 'mMDSL_Reference281' has cardinality 0..*.
+An association connects 'mMDSL_VarStatement' and 'mMDSL_SymbolClass'. From 'mMDSL_VarStatement', the role 'mMDSL_VarStatement283' has cardinality 0..*, and from 'mMDSL_SymbolClass', the role 'mMDSL_SymbolClass284' has cardinality 0..*.
+An association connects 'mMDSL_VarStatement' and 'mMDSL_SymbolRelation'. From 'mMDSL_VarStatement', the role 'mMDSL_VarStatement286' has cardinality 0..*, and from 'mMDSL_SymbolRelation', the role 'mMDSL_SymbolRelation287' has cardinality 0..*.
+An association connects 'mMDSL_SymbolStyle' and 'mMDSL_VarStatement'. From 'mMDSL_SymbolStyle', the role 'mMDSL_SymbolStyle290' has cardinality 0..*, and from 'mMDSL_VarStatement', the role 'mMDSL_VarStatement289' has cardinality 0..*.
+An association connects 'mMDSL_EmbedCode' and 'mMDSL_VarStatement'. From 'mMDSL_EmbedCode', the role 'mMDSL_EmbedCode293' has cardinality 0..*, and from 'mMDSL_VarStatement', the role 'mMDSL_VarStatement292' has cardinality 0..*.
+An association connects 'mMDSL_VarStatement' and 'mMDSL_ModelType'. From 'mMDSL_VarStatement', the role 'mMDSL_VarStatement295' has cardinality 0..*, and from 'mMDSL_ModelType', the role 'mMDSL_ModelType296' has cardinality 0..*.
+An association connects 'mMDSL_OperatorAssign' and 'mMDSL_OperatorMultyAssign'. From 'mMDSL_OperatorAssign', the role 'mMDSL_OperatorAssign298' has cardinality 0..*, and from 'mMDSL_OperatorMultyAssign', the role 'mMDSL_OperatorMultyAssign' has cardinality 0..*.
+An association connects 'mMDSL_Expression' and 'mMDSL_Expr'. From 'mMDSL_Expression', the role 'mMDSL_Expression' has cardinality 0..*, and from 'mMDSL_Expr', the role 'mMDSL_Expr300' has cardinality 0..*.
+An association connects 'mMDSL_EObject' and 'mMDSL_Expression'. From 'mMDSL_EObject', the role 'mMDSL_EObject' has cardinality 0..*, and from 'mMDSL_Expression', the role 'mMDSL_Expression302' has cardinality 0..*.
+An association connects 'mMDSL_Expression' and 'mMDSL_Expression'. From 'mMDSL_Expression', the role 'mMDSL_Expression303' has cardinality 0..*, and from 'mMDSL_Expression', the role 'mMDSL_Expression305' has cardinality 0..*.
+An association connects 'mMDSL_Expression' and 'mMDSL_Expression'. From 'mMDSL_Expression', the role 'mMDSL_Expression308' has cardinality 0..*, and from 'mMDSL_Expression', the role 'mMDSL_Expression306' has cardinality 0..*.
+An association connects 'mMDSL_Expression' and 'mMDSL_Expression'. From 'mMDSL_Expression', the role 'mMDSL_Expression309' has cardinality 0..*, and from 'mMDSL_Expression', the role 'mMDSL_Expression311' has cardinality 0..*.
+An association connects 'mMDSL_Expression' and 'mMDSL_Variable'. From 'mMDSL_Expression', the role 'mMDSL_Expression313' has cardinality 0..*, and from 'mMDSL_Variable', the role 'mMDSL_Variable314' has cardinality 0..*.
+An association connects 'mMDSL_Expression' and 'mMDSL_Expression'. From 'mMDSL_Expression', the role 'mMDSL_Expression317' has cardinality 0..*, and from 'mMDSL_Expression', the role 'mMDSL_Expression315' has cardinality 0..*.
+An association connects 'mMDSL_Expression' and 'mMDSL_Expression'. From 'mMDSL_Expression', the role 'mMDSL_Expression318' has cardinality 0..*, and from 'mMDSL_Expression', the role 'mMDSL_Expression320' has cardinality 0..*.
+An association connects 'mMDSL_FileOperation' and 'mMDSL_AlgorithmOperation'. From 'mMDSL_FileOperation', the role 'mMDSL_FileOperation' has cardinality 0..*, and from 'mMDSL_AlgorithmOperation', the role 'mMDSL_AlgorithmOperation322' has cardinality 0..*.
+An association connects 'mMDSL_DirOperation' and 'mMDSL_AlgorithmOperation'. From 'mMDSL_DirOperation', the role 'mMDSL_DirOperation' has cardinality 0..*, and from 'mMDSL_AlgorithmOperation', the role 'mMDSL_AlgorithmOperation324' has cardinality 0..*.
+An association connects 'mMDSL_AlgorithmOperation' and 'mMDSL_SimpleUI'. From 'mMDSL_AlgorithmOperation', the role 'mMDSL_AlgorithmOperation326' has cardinality 0..*, and from 'mMDSL_SimpleUI', the role 'mMDSL_SimpleUI' has cardinality 0..*.
+An association connects 'mMDSL_AlgorithmOperation' and 'mMDSL_ModelOperation'. From 'mMDSL_AlgorithmOperation', the role 'mMDSL_AlgorithmOperation328' has cardinality 0..*, and from 'mMDSL_ModelOperation', the role 'mMDSL_ModelOperation' has cardinality 0..*.
+An association connects 'mMDSL_AlgorithmOperation' and 'mMDSL_InstanceOperation'. From 'mMDSL_AlgorithmOperation', the role 'mMDSL_AlgorithmOperation330' has cardinality 0..*, and from 'mMDSL_InstanceOperation', the role 'mMDSL_InstanceOperation' has cardinality 0..*.
+An association connects 'mMDSL_AlgorithmOperation' and 'mMDSL_AttributeOperation'. From 'mMDSL_AlgorithmOperation', the role 'mMDSL_AlgorithmOperation332' has cardinality 0..*, and from 'mMDSL_AttributeOperation', the role 'mMDSL_AttributeOperation' has cardinality 0..*.
+An association connects 'mMDSL_FileCopy' and 'mMDSL_FileOperation'. From 'mMDSL_FileCopy', the role 'mMDSL_FileCopy' has cardinality 0..*, and from 'mMDSL_FileOperation', the role 'mMDSL_FileOperation334' has cardinality 0..*.
+An association connects 'mMDSL_FileOperation' and 'mMDSL_FileDelete'. From 'mMDSL_FileOperation', the role 'mMDSL_FileOperation336' has cardinality 0..*, and from 'mMDSL_FileDelete', the role 'mMDSL_FileDelete' has cardinality 0..*.
+An association connects 'mMDSL_FileCreate' and 'mMDSL_FileOperation'. From 'mMDSL_FileCreate', the role 'mMDSL_FileCreate' has cardinality 0..*, and from 'mMDSL_FileOperation', the role 'mMDSL_FileOperation338' has cardinality 0..*.
+An association connects 'mMDSL_FileRead' and 'mMDSL_FileOperation'. From 'mMDSL_FileRead', the role 'mMDSL_FileRead' has cardinality 0..*, and from 'mMDSL_FileOperation', the role 'mMDSL_FileOperation340' has cardinality 0..*.
+An association connects 'mMDSL_FileWrite' and 'mMDSL_FileOperation'. From 'mMDSL_FileWrite', the role 'mMDSL_FileWrite' has cardinality 0..*, and from 'mMDSL_FileOperation', the role 'mMDSL_FileOperation342' has cardinality 0..*.
+An association connects 'mMDSL_DirSetWorking' and 'mMDSL_DirOperation'. From 'mMDSL_DirSetWorking', the role 'mMDSL_DirSetWorking' has cardinality 0..*, and from 'mMDSL_DirOperation', the role 'mMDSL_DirOperation344' has cardinality 0..*.
+An association connects 'mMDSL_DirOperation' and 'mMDSL_DirGetWorking'. From 'mMDSL_DirOperation', the role 'mMDSL_DirOperation346' has cardinality 0..*, and from 'mMDSL_DirGetWorking', the role 'mMDSL_DirGetWorking' has cardinality 0..*.
+An association connects 'mMDSL_DirOperation' and 'mMDSL_DirCreate'. From 'mMDSL_DirOperation', the role 'mMDSL_DirOperation348' has cardinality 0..*, and from 'mMDSL_DirCreate', the role 'mMDSL_DirCreate' has cardinality 0..*.
+An association connects 'mMDSL_DirDelete' and 'mMDSL_DirOperation'. From 'mMDSL_DirDelete', the role 'mMDSL_DirDelete' has cardinality 0..*, and from 'mMDSL_DirOperation', the role 'mMDSL_DirOperation350' has cardinality 0..*.
+An association connects 'mMDSL_DirOperation' and 'mMDSL_DirList'. From 'mMDSL_DirOperation', the role 'mMDSL_DirOperation352' has cardinality 0..*, and from 'mMDSL_DirList', the role 'mMDSL_DirList' has cardinality 0..*.
+An association connects 'mMDSL_EditBox' and 'mMDSL_SimpleUI'. From 'mMDSL_EditBox', the role 'mMDSL_EditBox' has cardinality 0..*, and from 'mMDSL_SimpleUI', the role 'mMDSL_SimpleUI354' has cardinality 0..*.
+An association connects 'mMDSL_InfoBox' and 'mMDSL_SimpleUI'. From 'mMDSL_InfoBox', the role 'mMDSL_InfoBox' has cardinality 0..*, and from 'mMDSL_SimpleUI', the role 'mMDSL_SimpleUI356' has cardinality 0..*.
+An association connects 'mMDSL_SimpleUI' and 'mMDSL_ErrorBox'. From 'mMDSL_SimpleUI', the role 'mMDSL_SimpleUI358' has cardinality 0..*, and from 'mMDSL_ErrorBox', the role 'mMDSL_ErrorBox' has cardinality 0..*.
+An association connects 'mMDSL_WarningBox' and 'mMDSL_SimpleUI'. From 'mMDSL_WarningBox', the role 'mMDSL_WarningBox' has cardinality 0..*, and from 'mMDSL_SimpleUI', the role 'mMDSL_SimpleUI360' has cardinality 0..*.
+An association connects 'mMDSL_SimpleUI' and 'mMDSL_ViewBox'. From 'mMDSL_SimpleUI', the role 'mMDSL_SimpleUI362' has cardinality 0..*, and from 'mMDSL_ViewBox', the role 'mMDSL_ViewBox' has cardinality 0..*.
+An association connects 'mMDSL_SimpleUI' and 'mMDSL_ItemOperation'. From 'mMDSL_SimpleUI', the role 'mMDSL_SimpleUI364' has cardinality 0..*, and from 'mMDSL_ItemOperation', the role 'mMDSL_ItemOperation' has cardinality 0..*.
+An association connects 'mMDSL_ItemOperation' and 'mMDSL_MenuItem'. From 'mMDSL_ItemOperation', the role 'mMDSL_ItemOperation366' has cardinality 0..*, and from 'mMDSL_MenuItem', the role 'mMDSL_MenuItem' has cardinality 0..*.
+An association connects 'mMDSL_ItemOperation' and 'mMDSL_ContextItem'. From 'mMDSL_ItemOperation', the role 'mMDSL_ItemOperation368' has cardinality 0..*, and from 'mMDSL_ContextItem', the role 'mMDSL_ContextItem' has cardinality 0..*.
+An association connects 'mMDSL_MenuItem' and 'mMDSL_InsertMenuItem'. From 'mMDSL_MenuItem', the role 'mMDSL_MenuItem370' has cardinality 0..*, and from 'mMDSL_InsertMenuItem', the role 'mMDSL_InsertMenuItem' has cardinality 0..*.
+An association connects 'mMDSL_RemoveMenuItem' and 'mMDSL_MenuItem'. From 'mMDSL_RemoveMenuItem', the role 'mMDSL_RemoveMenuItem' has cardinality 0..*, and from 'mMDSL_MenuItem', the role 'mMDSL_MenuItem372' has cardinality 0..*.
+An association connects 'mMDSL_RemoveMenuItem' and 'mMDSL_InsertMenuItem'. From 'mMDSL_RemoveMenuItem', the role 'mMDSL_RemoveMenuItem374' has cardinality 0..*, and from 'mMDSL_InsertMenuItem', the role 'mMDSL_InsertMenuItem375' has cardinality 0..*.
+An association connects 'mMDSL_InsertContextItem' and 'mMDSL_ContextItem'. From 'mMDSL_InsertContextItem', the role 'mMDSL_InsertContextItem' has cardinality 0..*, and from 'mMDSL_ContextItem', the role 'mMDSL_ContextItem377' has cardinality 0..*.
+An association connects 'mMDSL_RemoveContextItem' and 'mMDSL_ContextItem'. From 'mMDSL_RemoveContextItem', the role 'mMDSL_RemoveContextItem' has cardinality 0..*, and from 'mMDSL_ContextItem', the role 'mMDSL_ContextItem379' has cardinality 0..*.
+An association connects 'mMDSL_RemoveContextItem' and 'mMDSL_InsertContextItem'. From 'mMDSL_RemoveContextItem', the role 'mMDSL_RemoveContextItem381' has cardinality 0..*, and from 'mMDSL_InsertContextItem', the role 'mMDSL_InsertContextItem382' has cardinality 0..*.
+An association connects 'mMDSL_ModelCreate' and 'mMDSL_ModelOperation'. From 'mMDSL_ModelCreate', the role 'mMDSL_ModelCreate' has cardinality 0..*, and from 'mMDSL_ModelOperation', the role 'mMDSL_ModelOperation384' has cardinality 0..*.
+An association connects 'mMDSL_ModelDelete' and 'mMDSL_ModelOperation'. From 'mMDSL_ModelDelete', the role 'mMDSL_ModelDelete' has cardinality 0..*, and from 'mMDSL_ModelOperation', the role 'mMDSL_ModelOperation386' has cardinality 0..*.
+An association connects 'mMDSL_ModelOperation' and 'mMDSL_ModelDiscard'. From 'mMDSL_ModelOperation', the role 'mMDSL_ModelOperation388' has cardinality 0..*, and from 'mMDSL_ModelDiscard', the role 'mMDSL_ModelDiscard' has cardinality 0..*.
+An association connects 'mMDSL_ModelSave' and 'mMDSL_ModelOperation'. From 'mMDSL_ModelSave', the role 'mMDSL_ModelSave' has cardinality 0..*, and from 'mMDSL_ModelOperation', the role 'mMDSL_ModelOperation390' has cardinality 0..*.
+An association connects 'mMDSL_ModelLoad' and 'mMDSL_ModelOperation'. From 'mMDSL_ModelLoad', the role 'mMDSL_ModelLoad' has cardinality 0..*, and from 'mMDSL_ModelOperation', the role 'mMDSL_ModelOperation392' has cardinality 0..*.
+An association connects 'mMDSL_ModelIsLoaded' and 'mMDSL_ModelOperation'. From 'mMDSL_ModelIsLoaded', the role 'mMDSL_ModelIsLoaded' has cardinality 0..*, and from 'mMDSL_ModelOperation', the role 'mMDSL_ModelOperation394' has cardinality 0..*.
+An association connects 'mMDSL_ModelCreate' and 'mMDSL_ModelType'. From 'mMDSL_ModelCreate', the role 'mMDSL_ModelCreate396' has cardinality 0..*, and from 'mMDSL_ModelType', the role 'mMDSL_ModelType397' has cardinality 0..*.
+An association connects 'mMDSL_ModelDelete' and 'mMDSL_ModelCreate'. From 'mMDSL_ModelDelete', the role 'mMDSL_ModelDelete399' has cardinality 0..*, and from 'mMDSL_ModelCreate', the role 'mMDSL_ModelCreate400' has cardinality 0..*.
+An association connects 'mMDSL_ModelCreate' and 'mMDSL_ModelDiscard'. From 'mMDSL_ModelCreate', the role 'mMDSL_ModelCreate403' has cardinality 0..*, and from 'mMDSL_ModelDiscard', the role 'mMDSL_ModelDiscard402' has cardinality 0..*.
+An association connects 'mMDSL_ModelSave' and 'mMDSL_ModelCreate'. From 'mMDSL_ModelSave', the role 'mMDSL_ModelSave405' has cardinality 0..*, and from 'mMDSL_ModelCreate', the role 'mMDSL_ModelCreate406' has cardinality 0..*.
+An association connects 'mMDSL_ModelLoad' and 'mMDSL_ModelCreate'. From 'mMDSL_ModelLoad', the role 'mMDSL_ModelLoad408' has cardinality 0..*, and from 'mMDSL_ModelCreate', the role 'mMDSL_ModelCreate409' has cardinality 0..*.
+An association connects 'mMDSL_ModelCreate' and 'mMDSL_ModelIsLoaded'. From 'mMDSL_ModelCreate', the role 'mMDSL_ModelCreate412' has cardinality 0..*, and from 'mMDSL_ModelIsLoaded', the role 'mMDSL_ModelIsLoaded411' has cardinality 0..*.
+An association connects 'mMDSL_ClassInstance' and 'mMDSL_InstanceOperation'. From 'mMDSL_ClassInstance', the role 'mMDSL_ClassInstance' has cardinality 0..*, and from 'mMDSL_InstanceOperation', the role 'mMDSL_InstanceOperation414' has cardinality 0..*.
+An association connects 'mMDSL_InstanceOperation' and 'mMDSL_RelationInstance'. From 'mMDSL_InstanceOperation', the role 'mMDSL_InstanceOperation416' has cardinality 0..*, and from 'mMDSL_RelationInstance', the role 'mMDSL_RelationInstance' has cardinality 0..*.
+An association connects 'mMDSL_ClassInstanceCreate' and 'mMDSL_ClassInstance'. From 'mMDSL_ClassInstanceCreate', the role 'mMDSL_ClassInstanceCreate' has cardinality 0..*, and from 'mMDSL_ClassInstance', the role 'mMDSL_ClassInstance418' has cardinality 0..*.
+An association connects 'mMDSL_ClassInstanceDelete' and 'mMDSL_ClassInstance'. From 'mMDSL_ClassInstanceDelete', the role 'mMDSL_ClassInstanceDelete' has cardinality 0..*, and from 'mMDSL_ClassInstance', the role 'mMDSL_ClassInstance420' has cardinality 0..*.
+An association connects 'mMDSL_ClassInstanceGet' and 'mMDSL_ClassInstance'. From 'mMDSL_ClassInstanceGet', the role 'mMDSL_ClassInstanceGet' has cardinality 0..*, and from 'mMDSL_ClassInstance', the role 'mMDSL_ClassInstance422' has cardinality 0..*.
+An association connects 'mMDSL_ClassInstanceSet' and 'mMDSL_ClassInstance'. From 'mMDSL_ClassInstanceSet', the role 'mMDSL_ClassInstanceSet' has cardinality 0..*, and from 'mMDSL_ClassInstance', the role 'mMDSL_ClassInstance424' has cardinality 0..*.
+An association connects 'mMDSL_ClassInstanceGetAll' and 'mMDSL_ClassInstance'. From 'mMDSL_ClassInstanceGetAll', the role 'mMDSL_ClassInstanceGetAll' has cardinality 0..*, and from 'mMDSL_ClassInstance', the role 'mMDSL_ClassInstance426' has cardinality 0..*.
+An association connects 'mMDSL_Class' and 'mMDSL_ClassInstanceCreate'. From 'mMDSL_Class', the role 'mMDSL_Class429' has cardinality 0..*, and from 'mMDSL_ClassInstanceCreate', the role 'mMDSL_ClassInstanceCreate428' has cardinality 0..*.
+An association connects 'mMDSL_ClassInstanceDelete' and 'mMDSL_ClassInstanceCreate'. From 'mMDSL_ClassInstanceDelete', the role 'mMDSL_ClassInstanceDelete431' has cardinality 0..*, and from 'mMDSL_ClassInstanceCreate', the role 'mMDSL_ClassInstanceCreate432' has cardinality 0..*.
+An association connects 'mMDSL_ClassInstanceGet' and 'mMDSL_ClassInstanceCreate'. From 'mMDSL_ClassInstanceGet', the role 'mMDSL_ClassInstanceGet434' has cardinality 0..*, and from 'mMDSL_ClassInstanceCreate', the role 'mMDSL_ClassInstanceCreate435' has cardinality 0..*.
+An association connects 'mMDSL_Class' and 'mMDSL_ClassInstanceGetAll'. From 'mMDSL_Class', the role 'mMDSL_Class438' has cardinality 0..*, and from 'mMDSL_ClassInstanceGetAll', the role 'mMDSL_ClassInstanceGetAll437' has cardinality 0..*.
+An association connects 'mMDSL_ClassInstanceSet' and 'mMDSL_ClassInstanceCreate'. From 'mMDSL_ClassInstanceSet', the role 'mMDSL_ClassInstanceSet440' has cardinality 0..*, and from 'mMDSL_ClassInstanceCreate', the role 'mMDSL_ClassInstanceCreate441' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstanceCreate' and 'mMDSL_RelationInstance'. From 'mMDSL_RelationInstanceCreate', the role 'mMDSL_RelationInstanceCreate' has cardinality 0..*, and from 'mMDSL_RelationInstance', the role 'mMDSL_RelationInstance443' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstance' and 'mMDSL_RelationInstanceDelete'. From 'mMDSL_RelationInstance', the role 'mMDSL_RelationInstance445' has cardinality 0..*, and from 'mMDSL_RelationInstanceDelete', the role 'mMDSL_RelationInstanceDelete' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstance' and 'mMDSL_RelationInstanceGet'. From 'mMDSL_RelationInstance', the role 'mMDSL_RelationInstance447' has cardinality 0..*, and from 'mMDSL_RelationInstanceGet', the role 'mMDSL_RelationInstanceGet' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstanceSet' and 'mMDSL_RelationInstance'. From 'mMDSL_RelationInstanceSet', the role 'mMDSL_RelationInstanceSet' has cardinality 0..*, and from 'mMDSL_RelationInstance', the role 'mMDSL_RelationInstance449' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstance' and 'mMDSL_RelationInstanceGetAll'. From 'mMDSL_RelationInstance', the role 'mMDSL_RelationInstance451' has cardinality 0..*, and from 'mMDSL_RelationInstanceGetAll', the role 'mMDSL_RelationInstanceGetAll' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstanceCreate' and 'mMDSL_Relation'. From 'mMDSL_RelationInstanceCreate', the role 'mMDSL_RelationInstanceCreate453' has cardinality 0..*, and from 'mMDSL_Relation', the role 'mMDSL_Relation454' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstanceCreate' and 'mMDSL_ClassInstanceCreate'. From 'mMDSL_RelationInstanceCreate', the role 'mMDSL_RelationInstanceCreate456' has cardinality 0..*, and from 'mMDSL_ClassInstanceCreate', the role 'mMDSL_ClassInstanceCreate457' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstanceCreate' and 'mMDSL_ClassInstanceCreate'. From 'mMDSL_RelationInstanceCreate', the role 'mMDSL_RelationInstanceCreate459' has cardinality 0..*, and from 'mMDSL_ClassInstanceCreate', the role 'mMDSL_ClassInstanceCreate460' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstanceDelete' and 'mMDSL_RelationInstanceCreate'. From 'mMDSL_RelationInstanceDelete', the role 'mMDSL_RelationInstanceDelete462' has cardinality 0..*, and from 'mMDSL_RelationInstanceCreate', the role 'mMDSL_RelationInstanceCreate463' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstanceCreate' and 'mMDSL_RelationInstanceGet'. From 'mMDSL_RelationInstanceCreate', the role 'mMDSL_RelationInstanceCreate466' has cardinality 0..*, and from 'mMDSL_RelationInstanceGet', the role 'mMDSL_RelationInstanceGet465' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstanceGetAll' and 'mMDSL_Relation'. From 'mMDSL_RelationInstanceGetAll', the role 'mMDSL_RelationInstanceGetAll468' has cardinality 0..*, and from 'mMDSL_Relation', the role 'mMDSL_Relation469' has cardinality 0..*.
+An association connects 'mMDSL_RelationInstanceCreate' and 'mMDSL_RelationInstanceSet'. From 'mMDSL_RelationInstanceCreate', the role 'mMDSL_RelationInstanceCreate472' has cardinality 0..*, and from 'mMDSL_RelationInstanceSet', the role 'mMDSL_RelationInstanceSet471' has cardinality 0..*.
+An association connects 'mMDSL_Attribute' and 'mMDSL_AttributeOperation'. From 'mMDSL_Attribute', the role 'mMDSL_Attribute475' has cardinality 0..*, and from 'mMDSL_AttributeOperation', the role 'mMDSL_AttributeOperation474' has cardinality 0..*.
+An association connects 'mMDSL_AttributeGet' and 'mMDSL_AttributeOperation'. From 'mMDSL_AttributeGet', the role 'mMDSL_AttributeGet' has cardinality 0..*, and from 'mMDSL_AttributeOperation', the role 'mMDSL_AttributeOperation477' has cardinality 0..*.
+An association connects 'mMDSL_AttributeOperation' and 'mMDSL_AttributeSet'. From 'mMDSL_AttributeOperation', the role 'mMDSL_AttributeOperation479' has cardinality 0..*, and from 'mMDSL_AttributeSet', the role 'mMDSL_AttributeSet' has cardinality 0..*.
+An association connects 'mMDSL_AttributeSet' and 'mMDSL_Variable'. From 'mMDSL_AttributeSet', the role 'mMDSL_AttributeSet481' has cardinality 0..*, and from 'mMDSL_Variable', the role 'mMDSL_Variable482' has cardinality 0..*.
+An association connects 'mMDSL_Event' and 'mMDSL_Algorithm'. From 'mMDSL_Event', the role 'mMDSL_Event484' has cardinality 0..*, and from 'mMDSL_Algorithm', the role 'mMDSL_Algorithm485' has cardinality 0..*.

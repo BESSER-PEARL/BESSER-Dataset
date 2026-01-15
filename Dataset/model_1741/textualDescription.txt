@@ -1,0 +1,67 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'model_PersonBNode' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_PrimaryObject' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'featureMapAttributeCollection', which is of type str; 'featureMapReferenceCollection', which is of type str; 'featureMapAttributeType1', which is of type str; 'unsettableAttributeWithDefault', which is of type str; 'unsettableAttribute', which is of type str; 'featureMapAttributeType2', which is of type str; 'id', which is of type int.
+
+'model_BNode' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'model_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_TargetObject' represents an important domain concept.
+It has the following attributes: 'arrayAttribute', which is of type str; 'singleAttribute', which is of type str; 'id', which is of type int.
+
+'model_Movie' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'title', which is of type str.
+
+'model_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BookBNode' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'model_MappedLibrary' represents an important domain concept.
+It has one attribute: 'books', which is of type str.
+
+'model_ETypes' represents an important domain concept.
+It has the following attributes: 'eByteArray', which is of type str; 'eBoolean', which is of type bool; 'eChar', which is of type str; 'eBigInteger', which is of type str; 'eFloat', which is of type float; 'eInt', which is of type int; 'uris', which is of type str; 'eLong', which is of type str; 'eDouble', which is of type float; 'eString', which is of type str; 'eShort', which is of type str; 'eBigDecimal', which is of type str; 'eByte', which is of type str; 'eDate', which is of type date.
+
+'model_Location' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'address', which is of type str.
+
+'model_Book' represents an important domain concept.
+It has the following attributes: 'tags', which is of type str; 'data', which is of type str; 'title', which is of type str.
+
+'model_Actor' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Book' and 'model_Person'. From 'model_Book', the role 'Book' has cardinality 0..*, and from 'model_Person', the role 'authors' has cardinality 0..*.
+An association connects 'model_Person' and 'model_Book'. From 'model_Person', the role 'Person' has cardinality 0..*, and from 'model_Book', the role 'books' has cardinality 0..*.
+An association connects 'model_BookBNode' and 'model_PersonBNode'. From 'model_BookBNode', the role 'model_BookBNode' has cardinality 0..*, and from 'model_PersonBNode', the role 'model_PersonBNode' has cardinality 0..*.
+An association connects 'model_PersonBNode' and 'model_BookBNode'. From 'model_PersonBNode', the role 'model_PersonBNode5' has cardinality 0..*, and from 'model_BookBNode', the role 'model_BookBNode4' has cardinality 0..*.
+An association connects 'model_BNode' and 'model_BNode'. From 'model_BNode', the role 'model_BNode6' has cardinality 0..*, and from 'model_BNode', the role 'model_BNode' has cardinality 0..*.
+An association connects 'model_Library' and 'model_Book'. From 'model_Library', the role 'model_Library' has cardinality 0..*, and from 'model_Book', the role 'model_Book' has cardinality 0..*.
+An association connects 'model_Library' and 'model_Location'. From 'model_Library', the role 'model_Library10' has cardinality 0..*, and from 'model_Location', the role 'model_Location' has cardinality 0..*.
+An association connects 'model_Book' and 'model_Library'. From 'model_Book', the role 'model_Book13' has cardinality 0..*, and from 'model_Library', the role 'model_Library12' has cardinality 0..*.
+An association connects 'model_Book' and 'model_Location'. From 'model_Book', the role 'model_Book16' has cardinality 0..*, and from 'model_Location', the role 'model_Location15' has cardinality 0..*.
+An association connects 'model_MappedLibrary' and 'model_Location'. From 'model_MappedLibrary', the role 'model_MappedLibrary' has cardinality 0..*, and from 'model_Location', the role 'model_Location18' has cardinality 0..*.
+An association connects 'model_MappedLibrary' and 'model_Book'. From 'model_MappedLibrary', the role 'model_MappedLibrary20' has cardinality 0..*, and from 'model_Book', the role 'model_Book21' has cardinality 0..*.
+An association connects 'model_Book' and 'model_MappedLibrary'. From 'model_Book', the role 'model_Book24' has cardinality 0..*, and from 'model_MappedLibrary', the role 'model_MappedLibrary23' has cardinality 0..*.
+An association connects 'model_TargetObject' and 'model_PrimaryObject'. From 'model_TargetObject', the role 'model_TargetObject' has cardinality 0..*, and from 'model_PrimaryObject', the role 'model_PrimaryObject' has cardinality 0..*.
+An association connects 'model_PrimaryObject' and 'model_TargetObject'. From 'model_PrimaryObject', the role 'model_PrimaryObject27' has cardinality 0..*, and from 'model_TargetObject', the role 'model_TargetObject28' has cardinality 0..*.
+An association connects 'model_TargetObject' and 'model_PrimaryObject'. From 'model_TargetObject', the role 'model_TargetObject31' has cardinality 0..*, and from 'model_PrimaryObject', the role 'model_PrimaryObject30' has cardinality 0..*.
+An association connects 'model_PrimaryObject' and 'model_TargetObject'. From 'model_PrimaryObject', the role 'model_PrimaryObject33' has cardinality 0..*, and from 'model_TargetObject', the role 'model_TargetObject34' has cardinality 0..*.
+An association connects 'model_PrimaryObject' and 'model_TargetObject'. From 'model_PrimaryObject', the role 'model_PrimaryObject36' has cardinality 0..*, and from 'model_TargetObject', the role 'model_TargetObject37' has cardinality 0..*.
+An association connects 'model_PrimaryObject' and 'model_TargetObject'. From 'model_PrimaryObject', the role 'model_PrimaryObject39' has cardinality 0..*, and from 'model_TargetObject', the role 'model_TargetObject40' has cardinality 0..*.
+An association connects 'model_TargetObject' and 'model_PrimaryObject'. From 'model_TargetObject', the role 'model_TargetObject43' has cardinality 0..*, and from 'model_PrimaryObject', the role 'model_PrimaryObject42' has cardinality 0..*.
+An association connects 'model_PrimaryObject' and 'model_TargetObject'. From 'model_PrimaryObject', the role 'model_PrimaryObject45' has cardinality 0..*, and from 'model_TargetObject', the role 'model_TargetObject46' has cardinality 0..*.
+An association connects 'model_PrimaryObject' and 'model_TargetObject'. From 'model_PrimaryObject', the role 'model_PrimaryObject48' has cardinality 0..*, and from 'model_TargetObject', the role 'model_TargetObject49' has cardinality 0..*.
+An association connects 'model_Movie' and 'model_Actor'. From 'model_Movie', the role 'actorOf' has cardinality 0..*, and from 'model_Actor', the role 'Actor' has cardinality 0..*.
+An association connects 'model_Actor' and 'model_Movie'. From 'model_Actor', the role 'actors' has cardinality 0..*, and from 'model_Movie', the role 'Movie' has cardinality 0..*.

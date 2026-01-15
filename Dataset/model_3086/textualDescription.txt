@@ -1,0 +1,1974 @@
+The domain model 'MARTE' describes the core structural elements and their relationships within the system.
+
+The model defines 432 main class(es).
+
+'Variables_ExpressionContext' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwDevice_HwI_O' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaLatencyObs' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_CoreElements_ModeTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_SchedulableResource' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Variables_ExpressionContext' represents an important domain concept.
+It does not declare any attributes.
+
+'HwMemory' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_Interaction_MARTE_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HwComputing_HwProcessor' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_MARTE_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'GaCommStep' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_CommunicationEndPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'HwProtocol_MARTE_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_StorageResource' represents an important domain concept.
+It does not declare any attributes.
+
+'DataTypes_MARTE_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HLAM_RtService' represents an important domain concept.
+It has the following attributes: 'concPolicy', which is of type str; 'isAtomic', which is of type str; 'synchKind', which is of type str; 'exeKind', which is of type str.
+
+'CoreElements_MARTE_State' represents an important domain concept.
+It does not declare any attributes.
+
+'HwIO_HwLine' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwProtocol_HwProtocol' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaRequestedService' represents an important domain concept.
+It does not declare any attributes.
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'NfpConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_Concurrency_MARTE_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'CoreElements_MARTE_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'HwIO_HwPin' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaExecHost' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'HLAM_MARTE_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'SwConcurrentResource' represents an important domain concept.
+It does not declare any attributes.
+
+'HLAM_MARTE_Message' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwStorageManager_HwStorageManager' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Time_TimedProcessing' represents an important domain concept.
+It does not declare any attributes.
+
+'HwDevice_HwPeripheral' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_Brokering_DeviceBroker' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaStep' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwPackage_HwWire' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Time_TimedValueSpecification' represents an important domain concept.
+It has one attribute: 'interpretation', which is of type str.
+
+'MARTE_HwCommunication_HwBridge' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaWorkloadBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_ResourceCore_MARTE_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HwMemory_HwRAM' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwComputing_PLD_Organization' represents an important domain concept.
+It has one attribute: 'class', which is of type str.
+
+'GQAM_MARTE_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_GaWorkloadBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaWorkloadGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'CoreElements_MARTE_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_ComputingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'HwComputing_PLD_Organization' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GCM_FlowPort' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'isConjugated', which is of type str; 'isAtomic', which is of type str.
+
+'MARTE_GCM_DataEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwCommunication_HwPort' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_GaExecHost' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Interaction_SwInteractionResource' represents an important domain concept.
+It has the following attributes: 'isIntraMemoryPartitionInteraction', which is of type bool; 'waitingQueueCapacity', which is of type str; 'waitingQueuePolicy', which is of type str.
+
+'GRM_TimingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'SwSynchronizationResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_RSM_InterRepetition' represents an important domain concept.
+It has one attribute: 'isModulo', which is of type str.
+
+'GRM_MARTE_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'GaCommHost' represents an important domain concept.
+It does not declare any attributes.
+
+'HwI_O' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_NaturalInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Time_TimedObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Brokering_MemoryBroker' represents an important domain concept.
+It has one attribute: 'accessPolicy', which is of type str.
+
+'TimedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Interaction_SwSynchronizationResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwComputing_HwBranchPredictor' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HLAM_RtSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Natural' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwTiming_HwTimingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'HwCommunication_HwMedia' represents an important domain concept.
+It does not declare any attributes.
+
+'HwDeviceFunction_HwDeviceFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Brokering_DeviceBroker' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isBuffered', which is of type str; 'accessPolicy', which is of type str.
+
+'MARTE_HLAM_RtFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'HwCommunication_HwPort' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwMemory_HwCache' represents an important domain concept.
+It has the following attributes: 'writePolicy', which is of type str; 'type', which is of type str; 'repl_Policy', which is of type str.
+
+'NFP_DateTime' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwCommunication_HwEndPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SAM_SaEndtoEndFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_TimedProcessing' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SAM_SaSchedObs' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_GrService' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_GaEventTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_CoreElements_Configuration' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwMemory_HwDrive' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Time_ClockConstraint' represents an important domain concept.
+It has the following attributes: 'isCoincidenceBased', which is of type str; 'isPrecedenceBased', which is of type bool; 'isChronometricBased', which is of type str.
+
+'MARTE_HwPower_HwCoolingSupply' represents an important domain concept.
+It does not declare any attributes.
+
+'SchedulableResource' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'GaAnalysisContext' represents an important domain concept.
+It does not declare any attributes.
+
+'HwGeneral_MARTE_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SAM_SaCommHost' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_ResourceCore_SwAccessService' represents an important domain concept.
+It has one attribute: 'isModifier', which is of type str.
+
+'CoreElements_Configuration' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SAM_SaExecHost' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwDevice_HwPeripheral' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_GaTimedObs' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_PAM_PaResPassStep' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HwComputing_HwBranchPredictor' represents an important domain concept.
+It does not declare any attributes.
+
+'SchedParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwPeripheral_RegisterAction' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_SynchronizationResource' represents an important domain concept.
+It does not declare any attributes.
+
+'Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'Alloc_MARTE_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Interaction_SharedDataComResource' represents an important domain concept.
+It does not declare any attributes.
+
+'NFPs_MARTE_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_MARTE_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_DataTypes_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Energy' represents an important domain concept.
+It does not declare any attributes.
+
+'HwStorageManager_HwMMU' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HLAM_PpUnit' represents an important domain concept.
+It has one attribute: 'concPolicy', which is of type str.
+
+'HwComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'GCM_MARTE_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SAM_SaCommStep' represents an important domain concept.
+It does not declare any attributes.
+
+'HwStorageManager_HwStorageManager' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_NFPs_Nfp' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HLAM_RtAction' represents an important domain concept.
+It has the following attributes: 'synchKind', which is of type str; 'isAtomic', which is of type str.
+
+'MARTE_RSM_Tiler' represents an important domain concept.
+It does not declare any attributes.
+
+'DataTypes_MARTE_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'TimedObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_RSM_Shaped' represents an important domain concept.
+It does not declare any attributes.
+
+'RSM_MARTE_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'HwDiagram_MARTE_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'HwMemory_Timing' represents an important domain concept.
+It does not declare any attributes.
+
+'GCM_MARTE_InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SAM_SaStep' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'HLAM_MARTE_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'TimingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'HwMemory_HwCache' represents an important domain concept.
+It does not declare any attributes.
+
+'ShapeSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GCM_ClientServerPort' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'specificationKind', which is of type str; 'isConjugated', which is of type str.
+
+'MARTE_GCM_GCMInvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'RSM_MARTE_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UtilityType' represents an important domain concept.
+It does not declare any attributes.
+
+'HwCommunication_HwCommunicationResource' represents an important domain concept.
+It does not declare any attributes.
+
+'CoreElements_MARTE_StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_NFPs_Dimension' represents an important domain concept.
+It has the following attributes: 'baseExponent', which is of type int; 'symbol', which is of type str.
+
+'HLAM_MARTE_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_Concurrency_MARTE_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Concurrency_MemoryPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MutualExclusionResource' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Area' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_Lifeline' represents an important domain concept.
+It does not declare any attributes.
+
+'MutualExclusionResource' represents an important domain concept.
+It does not declare any attributes.
+
+'Alloc_MARTE_ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_DataTypes_IntervalType' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrivalPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_ResourceCore_MARTE_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwComputing_HwISA' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'GQAM_GaWorkloadEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_Concurrency_SwConcurrentResource' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_Scheduler' represents an important domain concept.
+It does not declare any attributes.
+
+'Variables_MARTE_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwPower_HwPowerSupply' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_DeviceResource' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Power' represents an important domain concept.
+It does not declare any attributes.
+
+'Alloc_MARTE_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'HwTimingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_ExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GCM_FlowProperty' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'MARTE_GCM_ClientServerSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_SynchronizationResource' represents an important domain concept.
+It does not declare any attributes.
+
+'Realnterval' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwMemory_Timing' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_ResourceCore_MARTE_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_TimedInstantObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'HwTiming_HwClock' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwIO_HwPin' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwCommunication_HwArbiter' represents an important domain concept.
+It does not declare any attributes.
+
+'GCM_MARTE_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_DataTxRate' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_DataTypes_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwStorageManager_HwDMA' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_Brokering_MARTE_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_PAM_PaRequestedStep' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_Brokering_MARTE_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'GCM_MARTE_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_PAM_PaStep' represents an important domain concept.
+It has one attribute: 'extOpDemand', which is of type str.
+
+'HwPackage_HwWire' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwDiagram_HwHRMDiagram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'GQAM_MARTE_TimeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_SecondaryScheduler' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Percentage' represents an important domain concept.
+It does not declare any attributes.
+
+'HwCommunication_HwConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_DataTypes_BoundedSubtype' represents an important domain concept.
+It has the following attributes: 'isMinOpen', which is of type bool; 'minValue', which is of type str; 'isMaxOpen', which is of type bool; 'maxValue', which is of type str.
+
+'HwMemory_CacheStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_GaScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Price' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwIO_HwLine' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaCommStep' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_CollaborationUse' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Time_ClockType' represents an important domain concept.
+It has the following attributes: 'isLogical', which is of type str; 'nature', which is of type str.
+
+'MARTE_HwPeripheral_ReadRegisterAction' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_Interaction_SwSynchronizationResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaRelStep' represents an important domain concept.
+It does not declare any attributes.
+
+'Scheduler' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Time_TimedDurationObservation' represents an important domain concept.
+It has one attribute: 'obsKind', which is of type str.
+
+'TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'TilerSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_SchedulableResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_NFPs_Unit' represents an important domain concept.
+It has the following attributes: 'convFactor', which is of type str; 'offsetFactor', which is of type str.
+
+'GQAM_GaRequestedService' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_TimingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'HwCommunication_HwArbiter' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaCommHost' represents an important domain concept.
+It does not declare any attributes.
+
+'HwPeripheral_MARTE_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_Clock' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_PAM_PaLogicalResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwDiagram_SRMDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Time_TimedConstraint' represents an important domain concept.
+It has one attribute: 'interpretation', which is of type str.
+
+'Time_MARTE_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwTiming_HwClock' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_GaStep' represents an important domain concept.
+It does not declare any attributes.
+
+'HwComputing_HwComputingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaCommChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Real' represents an important domain concept.
+It does not declare any attributes.
+
+'HwResource' represents an important domain concept.
+It does not declare any attributes.
+
+'Alloc_MARTE_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_ConcurrencyResource' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_MARTE_TimeObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'SwCommunicationResource' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_DurationObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'HwCommunication_HwEndPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'NFPs_MARTE_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_CommunicationMedia' represents an important domain concept.
+It does not declare any attributes.
+
+'HwMemory_HwMemory' represents an important domain concept.
+It does not declare any attributes.
+
+'SAM_SaSharedResource' represents an important domain concept.
+It does not declare any attributes.
+
+'HwLayout_HwComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'InterruptResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_PAM_PaRunTInstance' represents an important domain concept.
+It has one attribute: 'unbddPool', which is of type str.
+
+'MARTE_NFPs_NfpType' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_GaCommStep' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_ProcessingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwStorageManager_HwMMU' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwPeripheral_PeripheralActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'Alloc_Allocated' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwCommunication_HwMedia' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwDevice_HwSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerVector' represents an important domain concept.
+It does not declare any attributes.
+
+'HwComputing_HwISA' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Concurrency_Alarm' represents an important domain concept.
+It has one attribute: 'isWatchdog', which is of type str.
+
+'MARTE_HwLayout_HwComponent' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'GCM_MARTE_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'RegisterAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'NFPs_NfpConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaWorkloadEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'PAM_PaStep' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_MutualExclusionResource' represents an important domain concept.
+It has the following attributes: 'otherProtectProtocol', which is of type str; 'protectKind', which is of type str.
+
+'HwComputingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'GCM_MARTE_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'SAM_MARTE_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaAcqStep' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwGeneral_HwResourceService' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwTiming_HwTimer' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Alloc_AllocateActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Concurrency_SwConcurrentResource' represents an important domain concept.
+It has one attribute: 'activationCapacity', which is of type str.
+
+'MARTE_DataTypes_ChoiceType' represents an important domain concept.
+It does not declare any attributes.
+
+'HwPeripheral_PeripheralActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'NFPs_MARTE_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_NFPs_NfpConstraint' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'MARTE_SW_Concurrency_SwTimerResource' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwComputing_HwComputingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwMemory_MemoryOrganization' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GCM_DataPool' represents an important domain concept.
+It has one attribute: 'ordering', which is of type str.
+
+'HwStorageManager' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwMemory_HwROM' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'MARTE_Time_TimedEvent' represents an important domain concept.
+It has one attribute: 'repetition', which is of type str.
+
+'HwMedia' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Time_TimedInstantObservation' represents an important domain concept.
+It has one attribute: 'obsKind', which is of type str.
+
+'MARTE_HwComputing_HwASIC' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_DeviceResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Alloc_Assign' represents an important domain concept.
+It does not declare any attributes.
+
+'GrService' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwMemory_HwMemory' represents an important domain concept.
+It does not declare any attributes.
+
+'HwPeripheral_MARTE_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_FrequencyInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaAnalysisContext' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Variables_Var' represents an important domain concept.
+It has one attribute: 'dir', which is of type str.
+
+'TimerResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_TimerResource' represents an important domain concept.
+It has one attribute: 'isPeriodic', which is of type str.
+
+'NFP_String' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'HwPeripheral_MARTE_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Alloc_MARTE_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Interaction_SwCommunicationResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwDiagram_HwCircuitDiagram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MARTE_Time_Clock' represents an important domain concept.
+It has one attribute: 'standard', which is of type str.
+
+'MARTE_GRM_ProcessingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Concurrency_EntryPoint' represents an important domain concept.
+It has one attribute: 'isReentrant', which is of type str.
+
+'MARTE_GCM_ClientServerFeature' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'MARTE_Time_TimedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_ResourceUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_Message' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerMatrix' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwPeripheral_OperationImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'HLAM_MARTE_InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'HwGeneral_MARTE_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwPackage_HwPackage' represents an important domain concept.
+It has the following attributes: 'pinNum', which is of type int; 'name', which is of type str; 'packageType', which is of type str.
+
+'SW_Concurrency_MARTE_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkTopology' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HLAM_RtUnit' represents an important domain concept.
+It has the following attributes: 'queueSchedPolicy', which is of type str; 'isDynamic', which is of type str; 'srPoolPolicy', which is of type str; 'srPoolSize', which is of type str; 'isMain', which is of type str; 'queueSize', which is of type str.
+
+'MARTE_Alloc_Allocate' represents an important domain concept.
+It has the following attributes: 'nature', which is of type str; 'kind', which is of type str.
+
+'MARTE_HwDevice_HWActuator' represents an important domain concept.
+It does not declare any attributes.
+
+'HwPackage_HwPackagePin' represents an important domain concept.
+It does not declare any attributes.
+
+'GaStep' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_Release' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_GaWorkloadGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_PAM_PaCommStep' represents an important domain concept.
+It does not declare any attributes.
+
+'Alloc_MARTE_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'HwPeripheral_RegisterAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_TimeObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_Scheduler' represents an important domain concept.
+It has the following attributes: 'schedPolicy', which is of type str; 'otherSchedPolicy', which is of type str; 'isPreemptible', which is of type str.
+
+'MARTE_HwLayout_Env_Condition' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'status', which is of type str.
+
+'MARTE_SW_Interaction_SwMutualExclusionResource' represents an important domain concept.
+It has the following attributes: 'mechanism', which is of type str; 'concurrentAccessProtocol', which is of type str.
+
+'GaScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Alloc_Allocated' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwMemory_CacheStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'SwResource' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Length' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_ResourceCore_SwResource' represents an important domain concept.
+It does not declare any attributes.
+
+'SAM_MARTE_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_RSM_LinkTopology' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwDevice_HwDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_CommunicationEndPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_Acquire' represents an important domain concept.
+It has one attribute: 'isBlocking', which is of type str.
+
+'HwEndPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwDatasheet_HwDatasheet' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'revision', which is of type str.
+
+'MARTE_GCM_GCMTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'Variables_MARTE_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'CoreElements_MARTE_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'HLAM_MARTE_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_Concurrency_MARTE_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'HwCommunicationResource' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_StorageResource' represents an important domain concept.
+It does not declare any attributes.
+
+'GaExecHost' represents an important domain concept.
+It does not declare any attributes.
+
+'HLAM_MARTE_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'GCM_MARTE_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SAM_SaSharedResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwDiagram_HwBlockDiagram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MARTE_SW_Interaction_NotificationResource' represents an important domain concept.
+It has the following attributes: 'occurence', which is of type str; 'mechanism', which is of type str.
+
+'SW_Concurrency_MARTE_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwComputing_HwPLD' represents an important domain concept.
+It has one attribute: 'technology', which is of type str.
+
+'MARTE_HwPackage_HwPackagePin' represents an important domain concept.
+It has the following attributes: 'pinNo', which is of type str; 'altNames', which is of type str.
+
+'SW_Interaction_SwInteractionResource' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwDeviceFunction_HwDeviceFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaTimedObs' represents an important domain concept.
+It has one attribute: 'laxity', which is of type str.
+
+'Allocate' represents an important domain concept.
+It does not declare any attributes.
+
+'HwGeneral_HwResource' represents an important domain concept.
+It does not declare any attributes.
+
+'HwLayout_Env_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_ComputingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'HLAM_RtSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_ClockType' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Concurrency_InterruptResource' represents an important domain concept.
+It has the following attributes: 'isMaskable', which is of type str; 'kind', which is of type str.
+
+'MARTE_CoreElements_ModeBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwGeneral_HwResource' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'GCM_MARTE_AnyReceiveEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'HwPackage_HwPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'HwMemory_MemoryOrganization' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwDevice_HWSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Concurrency_SwSchedulableResource' represents an important domain concept.
+It has the following attributes: 'isStaticSchedulingFeature', which is of type str; 'isPreemptable', which is of type str.
+
+'MARTE_GQAM_GaResourcesPlatform' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwMemory_HwRAM' represents an important domain concept.
+It has the following attributes: 'writePolicy', which is of type str; 'repl_Policy', which is of type str.
+
+'HwPeripheral_OperationImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_RSM_DefaultLink' represents an important domain concept.
+It does not declare any attributes.
+
+'NFPs_Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'GCM_MARTE_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'CoreElements_Mode' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_ResourceUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_Brokering_MARTE_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HwDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_CommunicationMedia' represents an important domain concept.
+It has one attribute: 'transmMode', which is of type str.
+
+'MARTE_HwCommunication_HwCommunicationResource' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_DataSize' represents an important domain concept.
+It does not declare any attributes.
+
+'NFPs_MARTE_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'GRM_MARTE_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'HLAM_MARTE_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwCommunication_HwBus' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_ClockResource' represents an important domain concept.
+It does not declare any attributes.
+
+'HLAM_MARTE_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SAM_SaAnalysisContext' represents an important domain concept.
+It has one attribute: 'optCriterion', which is of type str.
+
+'MARTE_RSM_Distribute' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Frequency' represents an important domain concept.
+It does not declare any attributes.
+
+'HwGeneral_HwResourceService' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Time_TimedDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_GaResourcesPlatform' represents an important domain concept.
+It does not declare any attributes.
+
+'GCM_MARTE_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'NFP_Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_SecondaryScheduler' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwRegister_HwRegister' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'NFP_Duration' represents an important domain concept.
+It does not declare any attributes.
+
+'GQAM_MARTE_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'RSM_MARTE_ConnectorEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'HwProtocol_HwProtocol' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GRM_Resource' represents an important domain concept.
+It has one attribute: 'isProtected', which is of type str.
+
+'SW_Interaction_MARTE_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'PAM_MARTE_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwComputing_HwMCU' represents an important domain concept.
+It does not declare any attributes.
+
+'NFPs_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwPeripheral_WriteRegisterAction' represents an important domain concept.
+It does not declare any attributes.
+
+'SW_Brokering_MARTE_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwComputing_HwProcessor' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GQAM_GaEventTrace' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'format', which is of type str; 'content', which is of type str.
+
+'MARTE_CoreElements_Mode' represents an important domain concept.
+It does not declare any attributes.
+
+'Time_MARTE_TimeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'GCM_ClientServerSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_SW_Interaction_MessageComResource' represents an important domain concept.
+It has the following attributes: 'messageQueuePolicy', which is of type str; 'isFixedMessageSize', which is of type str; 'mechanism', which is of type str.
+
+'Time_TimedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_GCM_FlowSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_RSM_Reshape' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_Alloc_NfpRefine' represents an important domain concept.
+It does not declare any attributes.
+
+'GaTimedObs' represents an important domain concept.
+It does not declare any attributes.
+
+'MARTE_HwCommunication_HwConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'HwRegister_HwRegister' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'WritePolicy' defines the following possible values: 'undef', 'writeThrough', 'other', 'writeBack'.
+The enumeration 'OptimallityCriterionKind' defines the following possible values: 'minimizeMissedDeadlines', 'other', 'undef', 'minimizedMeanTardiness', 'meetHardDeadlines'.
+The enumeration 'PLD_Technology' defines the following possible values: 'SRAM', 'undef', 'antifuse', 'flash', 'other'.
+The enumeration 'ExecutionKind' defines the following possible values: 'deferred', 'localImmediate', 'remoteImmediate'.
+The enumeration 'AllocationNature' defines the following possible values: 'timeScheduling', 'spatialDistribution'.
+The enumeration 'VariableDirectionKind' defines the following possible values: 'inout', 'out', 'in'.
+The enumeration 'QueuePolicyKind' defines the following possible values: 'LIFO', 'Priority', 'FIFO', 'Undef', 'Other'.
+The enumeration 'AllocationKind' is defined but does not specify any literals.
+The enumeration 'AssignmentNature' is defined but does not specify any literals.
+The enumeration 'AllocationEndKind' is defined but does not specify any literals.
+The enumeration 'ConditionType' defines the following possible values: 'humidity', 'vibration', 'altitude', 'undef', 'shock', 'other', 'temperature'.
+The enumeration 'Repl_Policy' defines the following possible values: 'random', 'undef', 'LRU', 'FIFO', 'NFU', 'other'.
+The enumeration 'ClientServerKind' defines the following possible values: 'proreq', 'provided', 'required'.
+The enumeration 'ConcurrentAccessProtocolKind' defines the following possible values: 'PCP', 'NoPreemption', 'Other', 'PIP', 'Undef'.
+The enumeration 'DataPoolOrderingKind' defines the following possible values: 'LIFO', 'UserDefined', 'FIFO'.
+The enumeration 'NotificationResourceKind' defines the following possible values: 'Undef', 'Event', 'Barrier', 'Other'.
+The enumeration 'AccessPolicyKind' defines the following possible values: 'Read', 'Other', 'ReadWrite', 'Write', 'Undef'.
+The enumeration 'SynchronizationKind' defines the following possible values: 'delayedSynchronous', 'synchronous', 'rendezVous', 'asynchronous', 'other'.
+The enumeration 'PortSpecificationKind' defines the following possible values: 'atomic', 'interfaceBased', 'featureBased'.
+The enumeration 'MutualExclusionResourceKind' defines the following possible values: 'Mutex', 'Other', 'CountSemaphore', 'Undef', 'BooleanSemaphore'.
+The enumeration 'ComponentKind' defines the following possible values: 'unit', 'undef', 'other', 'chip', 'card', 'channel', 'port'.
+The enumeration 'ROM_Type' defines the following possible values: 'EEPROM', 'OTP_EPROM', 'other', 'Flash', 'maskedROM', 'EPROM', 'undef'.
+The enumeration 'PoolMgtPolicyKind' defines the following possible values: 'timedWait', 'infiniteWait', 'dynamic', 'exception', 'other'.
+The enumeration 'ISA_Type' defines the following possible values: 'CISC', 'SIMD', 'undef', 'VLIW', 'other', 'RISC'.
+The enumeration 'CacheType' defines the following possible values: 'unified', 'undef', 'instruction', 'other', 'data'.
+The enumeration 'ComponentState' defines the following possible values: 'operating', 'undef', 'other', 'storage'.
+The enumeration 'FlowDirectionKind' defines the following possible values: 'out', 'inout', 'in'.
+The enumeration 'PLD_Class' defines the following possible values: 'seaOfGates', 'other', 'undef', 'symetricalArray', 'hierarchicalPLD', 'rowBased'.
+The enumeration 'MessageResourceKind' defines the following possible values: 'Undef', 'Other', 'Pipe', 'Blackboard', 'MessageQueue'.
+The enumeration 'ConstraintKind' defines the following possible values: 'required', 'contract', 'offered'.
+The enumeration 'ConcurrencyKind' defines the following possible values: 'writer', 'reader', 'parallel'.
+The enumeration 'InterruptKind' defines the following possible values: 'ProcessorDetectedException', 'Undef', 'Other', 'ProgrammedException', 'HardwareInterruption'.
+The enumeration 'AssignmentKind' defines the following possible values: 'hybrid', 'behavioral', 'structural'.
+The enumeration 'NotificationKind' defines the following possible values: 'Memoryless', 'Undef', 'Bounded', 'Memorized', 'Other'.
+The enumeration 'LaxityKind' defines the following possible values: 'soft', 'hard', 'other'.
+The enumeration 'CallConcurrencyKind' defines the following possible values: 'concurrent', 'guarded', 'sequential'.
+
+The model also captures inheritance relationships between classes.
+The class 'MARTE_NFPs_NfpType' is a specialization of 'TupleType'.
+The class 'MARTE_Time_TimedValueSpecification' is a specialization of 'TimedElement'.
+The class 'MARTE_Time_TimedConstraint' is a specialization of 'NFPs_NfpConstraint'.
+The class 'MARTE_Time_TimedConstraint' is a specialization of 'Time_TimedElement'.
+The class 'MARTE_Time_ClockConstraint' is a specialization of 'NFPs_NfpConstraint'.
+The class 'MARTE_Time_ClockConstraint' is a specialization of 'Time_TimedElement'.
+The class 'MARTE_Time_TimedObservation' is a specialization of 'TimedElement'.
+The class 'MARTE_Time_TimedInstantObservation' is a specialization of 'TimedObservation'.
+The class 'MARTE_Time_TimedDurationObservation' is a specialization of 'TimedObservation'.
+The class 'MARTE_Time_TimedEvent' is a specialization of 'TimedElement'.
+The class 'MARTE_Time_TimedProcessing' is a specialization of 'TimedElement'.
+The class 'MARTE_GRM_StorageResource' is a specialization of 'Resource'.
+The class 'MARTE_GRM_CommunicationEndPoint' is a specialization of 'Resource'.
+The class 'MARTE_GRM_SynchronizationResource' is a specialization of 'Resource'.
+The class 'MARTE_GRM_ConcurrencyResource' is a specialization of 'Resource'.
+The class 'MARTE_GRM_Scheduler' is a specialization of 'Resource'.
+The class 'MARTE_GRM_ProcessingResource' is a specialization of 'Resource'.
+The class 'MARTE_GRM_ComputingResource' is a specialization of 'ProcessingResource'.
+The class 'MARTE_GRM_MutualExclusionResource' is a specialization of 'Resource'.
+The class 'MARTE_GRM_SchedulableResource' is a specialization of 'Resource'.
+The class 'MARTE_GRM_SecondaryScheduler' is a specialization of 'Scheduler'.
+The class 'MARTE_GRM_CommunicationMedia' is a specialization of 'ProcessingResource'.
+The class 'MARTE_GRM_DeviceResource' is a specialization of 'ProcessingResource'.
+The class 'MARTE_GRM_TimingResource' is a specialization of 'Resource'.
+The class 'MARTE_GRM_ClockResource' is a specialization of 'TimingResource'.
+The class 'MARTE_GRM_TimerResource' is a specialization of 'TimingResource'.
+The class 'MARTE_GRM_Release' is a specialization of 'GrService'.
+The class 'MARTE_GRM_Acquire' is a specialization of 'GrService'.
+The class 'MARTE_RSM_DefaultLink' is a specialization of 'LinkTopology'.
+The class 'MARTE_RSM_InterRepetition' is a specialization of 'LinkTopology'.
+The class 'MARTE_RSM_Distribute' is a specialization of 'Allocate'.
+The class 'MARTE_RSM_Reshape' is a specialization of 'LinkTopology'.
+The class 'MARTE_RSM_Tiler' is a specialization of 'LinkTopology'.
+The class 'MARTE_HwComputing_HwProcessor' is a specialization of 'HwComputingResource'.
+The class 'MARTE_HwComputing_HwComputingResource' is a specialization of 'HwGeneral_HwResource'.
+The class 'MARTE_HwComputing_HwComputingResource' is a specialization of 'GRM_ComputingResource'.
+The class 'MARTE_HwComputing_HwISA' is a specialization of 'HwResource'.
+The class 'MARTE_HwComputing_HwBranchPredictor' is a specialization of 'HwResource'.
+The class 'MARTE_HwComputing_HwASIC' is a specialization of 'HwComputingResource'.
+The class 'MARTE_HwComputing_HwPLD' is a specialization of 'HwComputingResource'.
+The class 'MARTE_HwComputing_HwMCU' is a specialization of 'HwComputingResource'.
+The class 'MARTE_HwCommunication_HwCommunicationResource' is a specialization of 'HwResource'.
+The class 'MARTE_HwCommunication_HwArbiter' is a specialization of 'HwCommunicationResource'.
+The class 'MARTE_HwCommunication_HwMedia' is a specialization of 'GRM_CommunicationMedia'.
+The class 'MARTE_HwCommunication_HwMedia' is a specialization of 'HwCommunication_HwCommunicationResource'.
+The class 'MARTE_HwCommunication_HwBus' is a specialization of 'HwMedia'.
+The class 'MARTE_HwCommunication_HwBridge' is a specialization of 'HwMedia'.
+The class 'MARTE_HwCommunication_HwEndPoint' is a specialization of 'HwCommunication_HwCommunicationResource'.
+The class 'MARTE_HwCommunication_HwEndPoint' is a specialization of 'GRM_CommunicationEndPoint'.
+The class 'MARTE_HwCommunication_HwPort' is a specialization of 'HwEndPoint'.
+The class 'MARTE_HwCommunication_HwConnection' is a specialization of 'HwMedia'.
+The class 'MARTE_HwStorageManager_HwStorageManager' is a specialization of 'HwGeneral_HwResource'.
+The class 'MARTE_HwStorageManager_HwStorageManager' is a specialization of 'GRM_StorageResource'.
+The class 'MARTE_HwStorageManager_HwDMA' is a specialization of 'HwStorageManager_HwStorageManager'.
+The class 'MARTE_HwStorageManager_HwDMA' is a specialization of 'HwCommunication_HwArbiter'.
+The class 'MARTE_HwStorageManager_HwMMU' is a specialization of 'HwStorageManager'.
+The class 'MARTE_HwMemory_HwMemory' is a specialization of 'HwGeneral_HwResource'.
+The class 'MARTE_HwMemory_HwMemory' is a specialization of 'GRM_StorageResource'.
+The class 'MARTE_HwMemory_HwRAM' is a specialization of 'HwMemory'.
+The class 'MARTE_HwMemory_HwROM' is a specialization of 'HwMemory'.
+The class 'MARTE_HwMemory_HwDrive' is a specialization of 'HwMemory'.
+The class 'MARTE_HwMemory_HwCache' is a specialization of 'HwMemory'.
+The class 'MARTE_HwTiming_HwTimingResource' is a specialization of 'HwGeneral_HwResource'.
+The class 'MARTE_HwTiming_HwTimingResource' is a specialization of 'GRM_TimingResource'.
+The class 'MARTE_HwTiming_HwClock' is a specialization of 'HwTimingResource'.
+The class 'MARTE_HwTiming_HwTimer' is a specialization of 'HwTimingResource'.
+The class 'MARTE_HwDevice_HwDevice' is a specialization of 'HwGeneral_HwResource'.
+The class 'MARTE_HwDevice_HwDevice' is a specialization of 'GRM_DeviceResource'.
+The class 'MARTE_HwDevice_HwI_O' is a specialization of 'HwDevice'.
+The class 'MARTE_HwDevice_HwSupport' is a specialization of 'HwDevice'.
+The class 'MARTE_HwDevice_HWActuator' is a specialization of 'HwI_O'.
+The class 'MARTE_HwDevice_HWSensor' is a specialization of 'HwI_O'.
+The class 'MARTE_HwDevice_HwPeripheral' is a specialization of 'HwDevice'.
+The class 'MARTE_HwGeneral_HwResourceService' is a specialization of 'GrService'.
+The class 'MARTE_HwGeneral_HwResource' is a specialization of 'Resource'.
+The class 'MARTE_HwLayout_HwComponent' is a specialization of 'HwResource'.
+The class 'MARTE_HwPower_HwPowerSupply' is a specialization of 'HwComponent'.
+The class 'MARTE_HwPower_HwCoolingSupply' is a specialization of 'HwComponent'.
+The class 'MARTE_HwPeripheral_OperationImpl' is a specialization of 'Operation'.
+The class 'MARTE_HwPeripheral_RegisterAction' is a specialization of 'Action'.
+The class 'MARTE_HwPeripheral_WriteRegisterAction' is a specialization of 'RegisterAction'.
+The class 'MARTE_HwPeripheral_ReadRegisterAction' is a specialization of 'RegisterAction'.
+The class 'MARTE_HwPeripheral_PeripheralActivity' is a specialization of 'Activity'.
+The class 'MARTE_HwDeviceFunction_HwDeviceFunction' is a specialization of 'Operation'.
+The class 'MARTE_HwIO_HwPin' is a specialization of 'HwEndPoint'.
+The class 'MARTE_HwIO_HwLine' is a specialization of 'HwMedia'.
+The class 'MARTE_HwRegister_HwRegister' is a specialization of 'HwMemory'.
+The class 'MARTE_HwPackage_HwPackagePin' is a specialization of 'HwEndPoint'.
+The class 'MARTE_HwPackage_HwWire' is a specialization of 'HwMedia'.
+The class 'MARTE_SW_ResourceCore_SwResource' is a specialization of 'Resource'.
+The class 'MARTE_SW_ResourceCore_SwAccessService' is a specialization of 'GrService'.
+The class 'MARTE_SW_Concurrency_EntryPoint' is a specialization of 'Allocate'.
+The class 'MARTE_SW_Concurrency_SwConcurrentResource' is a specialization of 'SwResource'.
+The class 'MARTE_SW_Concurrency_InterruptResource' is a specialization of 'SwConcurrentResource'.
+The class 'MARTE_SW_Concurrency_SwSchedulableResource' is a specialization of 'SW_Concurrency_SwConcurrentResource'.
+The class 'MARTE_SW_Concurrency_SwSchedulableResource' is a specialization of 'GRM_SchedulableResource'.
+The class 'MARTE_SW_Concurrency_SwTimerResource' is a specialization of 'TimerResource'.
+The class 'MARTE_SW_Concurrency_MemoryPartition' is a specialization of 'SwResource'.
+The class 'MARTE_SW_Concurrency_Alarm' is a specialization of 'InterruptResource'.
+The class 'MARTE_SW_Brokering_DeviceBroker' is a specialization of 'SwResource'.
+The class 'MARTE_SW_Brokering_MemoryBroker' is a specialization of 'SwResource'.
+The class 'MARTE_SW_Interaction_SwInteractionResource' is a specialization of 'SwResource'.
+The class 'MARTE_SW_Interaction_SwCommunicationResource' is a specialization of 'SW_Interaction_SwInteractionResource'.
+The class 'MARTE_SW_Interaction_SwCommunicationResource' is a specialization of 'GRM_CommunicationMedia'.
+The class 'MARTE_SW_Interaction_SwSynchronizationResource' is a specialization of 'SW_Interaction_SwInteractionResource'.
+The class 'MARTE_SW_Interaction_SwSynchronizationResource' is a specialization of 'GRM_SynchronizationResource'.
+The class 'MARTE_SW_Interaction_SharedDataComResource' is a specialization of 'SwCommunicationResource'.
+The class 'MARTE_SW_Interaction_MessageComResource' is a specialization of 'SwCommunicationResource'.
+The class 'MARTE_SW_Interaction_NotificationResource' is a specialization of 'SwSynchronizationResource'.
+The class 'MARTE_SW_Interaction_SwMutualExclusionResource' is a specialization of 'SW_Interaction_SwSynchronizationResource'.
+The class 'MARTE_SW_Interaction_SwMutualExclusionResource' is a specialization of 'GRM_MutualExclusionResource'.
+The class 'MARTE_GQAM_GaScenario' is a specialization of 'GRM_ResourceUsage'.
+The class 'MARTE_GQAM_GaScenario' is a specialization of 'Time_TimedProcessing'.
+The class 'MARTE_GQAM_GaStep' is a specialization of 'GaScenario'.
+The class 'MARTE_GQAM_GaExecHost' is a specialization of 'GRM_Scheduler'.
+The class 'MARTE_GQAM_GaExecHost' is a specialization of 'GRM_ComputingResource'.
+The class 'MARTE_GQAM_GaRequestedService' is a specialization of 'GaStep'.
+The class 'MARTE_GQAM_GaTimedObs' is a specialization of 'NfpConstraint'.
+The class 'MARTE_GQAM_GaCommStep' is a specialization of 'GaStep'.
+The class 'MARTE_GQAM_GaAcqStep' is a specialization of 'GaStep'.
+The class 'MARTE_GQAM_GaRelStep' is a specialization of 'GaStep'.
+The class 'MARTE_GQAM_GaLatencyObs' is a specialization of 'GaTimedObs'.
+The class 'MARTE_GQAM_GaCommHost' is a specialization of 'GRM_CommunicationMedia'.
+The class 'MARTE_GQAM_GaCommHost' is a specialization of 'GRM_Scheduler'.
+The class 'MARTE_GQAM_GaCommChannel' is a specialization of 'SchedulableResource'.
+The class 'MARTE_GQAM_GaAnalysisContext' is a specialization of 'CoreElements_Configuration'.
+The class 'MARTE_GQAM_GaAnalysisContext' is a specialization of 'Variables_ExpressionContext'.
+The class 'MARTE_SAM_SaAnalysisContext' is a specialization of 'GaAnalysisContext'.
+The class 'MARTE_SAM_SaCommStep' is a specialization of 'GaCommStep'.
+The class 'MARTE_SAM_SaStep' is a specialization of 'GaStep'.
+The class 'MARTE_SAM_SaSharedResource' is a specialization of 'MutualExclusionResource'.
+The class 'MARTE_SAM_SaSchedObs' is a specialization of 'GaTimedObs'.
+The class 'MARTE_SAM_SaCommHost' is a specialization of 'GaCommHost'.
+The class 'MARTE_SAM_SaExecHost' is a specialization of 'GaExecHost'.
+The class 'MARTE_PAM_PaStep' is a specialization of 'GaStep'.
+The class 'MARTE_PAM_PaRequestedStep' is a specialization of 'PAM_PaStep'.
+The class 'MARTE_PAM_PaRequestedStep' is a specialization of 'GQAM_GaRequestedService'.
+The class 'MARTE_PAM_PaCommStep' is a specialization of 'PAM_PaStep'.
+The class 'MARTE_PAM_PaCommStep' is a specialization of 'GQAM_GaCommStep'.
+The class 'MARTE_PAM_PaResPassStep' is a specialization of 'GaStep'.
+The class 'MARTE_PAM_PaLogicalResource' is a specialization of 'Resource'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MARTE_NFPs_Nfp' and 'NFPs_MARTE_Property'. From 'MARTE_NFPs_Nfp', the role 'MARTE_NFPs_Nfp' has cardinality 0..*, and from 'NFPs_MARTE_Property', the role 'NFPs_MARTE_Property' has cardinality 0..*.
+An association connects 'NFPs_Unit' and 'MARTE_NFPs_Unit'. From 'NFPs_Unit', the role 'NFPs_Unit' has cardinality 0..*, and from 'MARTE_NFPs_Unit', the role 'MARTE_NFPs_Unit' has cardinality 0..*.
+An association connects 'NFPs_MARTE_EnumerationLiteral' and 'MARTE_NFPs_Unit'. From 'NFPs_MARTE_EnumerationLiteral', the role 'NFPs_MARTE_EnumerationLiteral' has cardinality 0..*, and from 'MARTE_NFPs_Unit', the role 'MARTE_NFPs_Unit3' has cardinality 0..*.
+An association connects 'NFPs_MARTE_Constraint' and 'MARTE_NFPs_NfpConstraint'. From 'NFPs_MARTE_Constraint', the role 'NFPs_MARTE_Constraint' has cardinality 0..*, and from 'MARTE_NFPs_NfpConstraint', the role 'MARTE_NFPs_NfpConstraint' has cardinality 0..*.
+An association connects 'CoreElements_Mode' and 'MARTE_NFPs_NfpConstraint'. From 'CoreElements_Mode', the role 'CoreElements_Mode' has cardinality 0..*, and from 'MARTE_NFPs_NfpConstraint', the role 'MARTE_NFPs_NfpConstraint6' has cardinality 0..*.
+An association connects 'NFPs_MARTE_Property' and 'MARTE_NFPs_NfpType'. From 'NFPs_MARTE_Property', the role 'NFPs_MARTE_Property8' has cardinality 0..*, and from 'MARTE_NFPs_NfpType', the role 'MARTE_NFPs_NfpType' has cardinality 0..*.
+An association connects 'NFPs_MARTE_Property' and 'MARTE_NFPs_NfpType'. From 'NFPs_MARTE_Property', the role 'NFPs_MARTE_Property11' has cardinality 0..*, and from 'MARTE_NFPs_NfpType', the role 'MARTE_NFPs_NfpType10' has cardinality 0..*.
+An association connects 'NFPs_MARTE_Property' and 'MARTE_NFPs_NfpType'. From 'NFPs_MARTE_Property', the role 'NFPs_MARTE_Property14' has cardinality 0..*, and from 'MARTE_NFPs_NfpType', the role 'MARTE_NFPs_NfpType13' has cardinality 0..*.
+An association connects 'NFPs_Dimension' and 'MARTE_NFPs_Dimension'. From 'NFPs_Dimension', the role 'NFPs_Dimension' has cardinality 0..*, and from 'MARTE_NFPs_Dimension', the role 'MARTE_NFPs_Dimension' has cardinality 0..*.
+An association connects 'MARTE_NFPs_Dimension' and 'NFPs_MARTE_Enumeration'. From 'MARTE_NFPs_Dimension', the role 'MARTE_NFPs_Dimension17' has cardinality 0..*, and from 'NFPs_MARTE_Enumeration', the role 'NFPs_MARTE_Enumeration' has cardinality 0..*.
+An association connects 'MARTE_CoreElements_ModeTransition' and 'CoreElements_MARTE_Transition'. From 'MARTE_CoreElements_ModeTransition', the role 'MARTE_CoreElements_ModeTransition' has cardinality 0..*, and from 'CoreElements_MARTE_Transition', the role 'CoreElements_MARTE_Transition' has cardinality 0..*.
+An association connects 'MARTE_CoreElements_ModeBehavior' and 'CoreElements_MARTE_StateMachine'. From 'MARTE_CoreElements_ModeBehavior', the role 'MARTE_CoreElements_ModeBehavior' has cardinality 0..*, and from 'CoreElements_MARTE_StateMachine', the role 'CoreElements_MARTE_StateMachine' has cardinality 0..*.
+An association connects 'MARTE_CoreElements_Configuration' and 'CoreElements_MARTE_StructuredClassifier'. From 'MARTE_CoreElements_Configuration', the role 'MARTE_CoreElements_Configuration' has cardinality 0..*, and from 'CoreElements_MARTE_StructuredClassifier', the role 'CoreElements_MARTE_StructuredClassifier' has cardinality 0..*.
+An association connects 'MARTE_CoreElements_Configuration' and 'CoreElements_MARTE_Package'. From 'MARTE_CoreElements_Configuration', the role 'MARTE_CoreElements_Configuration22' has cardinality 0..*, and from 'CoreElements_MARTE_Package', the role 'CoreElements_MARTE_Package' has cardinality 0..*.
+An association connects 'MARTE_CoreElements_Configuration' and 'CoreElements_Mode'. From 'MARTE_CoreElements_Configuration', the role 'MARTE_CoreElements_Configuration24' has cardinality 0..*, and from 'CoreElements_Mode', the role 'CoreElements_Mode25' has cardinality 0..*.
+An association connects 'CoreElements_MARTE_State' and 'MARTE_CoreElements_Mode'. From 'CoreElements_MARTE_State', the role 'CoreElements_MARTE_State' has cardinality 0..*, and from 'MARTE_CoreElements_Mode', the role 'MARTE_CoreElements_Mode' has cardinality 0..*.
+An association connects 'Alloc_MARTE_NamedElement' and 'MARTE_Alloc_Allocated'. From 'Alloc_MARTE_NamedElement', the role 'Alloc_MARTE_NamedElement' has cardinality 0..*, and from 'MARTE_Alloc_Allocated', the role 'MARTE_Alloc_Allocated' has cardinality 0..*.
+An association connects 'MARTE_Alloc_Allocated' and 'Alloc_Allocated'. From 'MARTE_Alloc_Allocated', the role 'MARTE_Alloc_Allocated29' has cardinality 0..*, and from 'Alloc_Allocated', the role 'Alloc_Allocated' has cardinality 0..*.
+An association connects 'MARTE_Alloc_Allocated' and 'Alloc_Allocated'. From 'MARTE_Alloc_Allocated', the role 'MARTE_Alloc_Allocated31' has cardinality 0..*, and from 'Alloc_Allocated', the role 'Alloc_Allocated32' has cardinality 0..*.
+An association connects 'Alloc_MARTE_ActivityPartition' and 'MARTE_Alloc_AllocateActivityGroup'. From 'Alloc_MARTE_ActivityPartition', the role 'Alloc_MARTE_ActivityPartition' has cardinality 0..*, and from 'MARTE_Alloc_AllocateActivityGroup', the role 'MARTE_Alloc_AllocateActivityGroup' has cardinality 0..*.
+An association connects 'Alloc_MARTE_Dependency' and 'MARTE_Alloc_NfpRefine'. From 'Alloc_MARTE_Dependency', the role 'Alloc_MARTE_Dependency' has cardinality 0..*, and from 'MARTE_Alloc_NfpRefine', the role 'MARTE_Alloc_NfpRefine' has cardinality 0..*.
+An association connects 'NFPs_NfpConstraint' and 'MARTE_Alloc_NfpRefine'. From 'NFPs_NfpConstraint', the role 'NFPs_NfpConstraint' has cardinality 0..*, and from 'MARTE_Alloc_NfpRefine', the role 'MARTE_Alloc_NfpRefine36' has cardinality 0..*.
+An association connects 'MARTE_Alloc_Assign' and 'NFPs_NfpConstraint'. From 'MARTE_Alloc_Assign', the role 'MARTE_Alloc_Assign' has cardinality 0..*, and from 'NFPs_NfpConstraint', the role 'NFPs_NfpConstraint38' has cardinality 0..*.
+An association connects 'Alloc_MARTE_Element' and 'MARTE_Alloc_Assign'. From 'Alloc_MARTE_Element', the role 'Alloc_MARTE_Element' has cardinality 0..*, and from 'MARTE_Alloc_Assign', the role 'MARTE_Alloc_Assign40' has cardinality 0..*.
+An association connects 'Alloc_MARTE_Element' and 'MARTE_Alloc_Assign'. From 'Alloc_MARTE_Element', the role 'Alloc_MARTE_Element43' has cardinality 0..*, and from 'MARTE_Alloc_Assign', the role 'MARTE_Alloc_Assign42' has cardinality 0..*.
+An association connects 'MARTE_Alloc_Assign' and 'Alloc_MARTE_Comment'. From 'MARTE_Alloc_Assign', the role 'MARTE_Alloc_Assign45' has cardinality 0..*, and from 'Alloc_MARTE_Comment', the role 'Alloc_MARTE_Comment' has cardinality 0..*.
+An association connects 'Alloc_MARTE_Abstraction' and 'MARTE_Alloc_Allocate'. From 'Alloc_MARTE_Abstraction', the role 'Alloc_MARTE_Abstraction' has cardinality 0..*, and from 'MARTE_Alloc_Allocate', the role 'MARTE_Alloc_Allocate' has cardinality 0..*.
+An association connects 'NFPs_NfpConstraint' and 'MARTE_Alloc_Allocate'. From 'NFPs_NfpConstraint', the role 'NFPs_NfpConstraint49' has cardinality 0..*, and from 'MARTE_Alloc_Allocate', the role 'MARTE_Alloc_Allocate48' has cardinality 0..*.
+An association connects 'Time_MARTE_Namespace' and 'MARTE_Time_TimedDomain'. From 'Time_MARTE_Namespace', the role 'Time_MARTE_Namespace' has cardinality 0..*, and from 'MARTE_Time_TimedDomain', the role 'MARTE_Time_TimedDomain' has cardinality 0..*.
+An association connects 'MARTE_Time_Clock' and 'Time_MARTE_InstanceSpecification'. From 'MARTE_Time_Clock', the role 'MARTE_Time_Clock' has cardinality 0..*, and from 'Time_MARTE_InstanceSpecification', the role 'Time_MARTE_InstanceSpecification' has cardinality 0..*.
+An association connects 'MARTE_Time_Clock' and 'Time_ClockType'. From 'MARTE_Time_Clock', the role 'MARTE_Time_Clock53' has cardinality 0..*, and from 'Time_ClockType', the role 'Time_ClockType' has cardinality 0..*.
+An association connects 'NFPs_Unit' and 'MARTE_Time_Clock'. From 'NFPs_Unit', the role 'NFPs_Unit56' has cardinality 0..*, and from 'MARTE_Time_Clock', the role 'MARTE_Time_Clock55' has cardinality 0..*.
+An association connects 'MARTE_Time_Clock' and 'Time_MARTE_Property'. From 'MARTE_Time_Clock', the role 'MARTE_Time_Clock58' has cardinality 0..*, and from 'Time_MARTE_Property', the role 'Time_MARTE_Property' has cardinality 0..*.
+An association connects 'Time_MARTE_Enumeration' and 'MARTE_Time_ClockType'. From 'Time_MARTE_Enumeration', the role 'Time_MARTE_Enumeration' has cardinality 0..*, and from 'MARTE_Time_ClockType', the role 'MARTE_Time_ClockType' has cardinality 0..*.
+An association connects 'Time_MARTE_Property' and 'MARTE_Time_ClockType'. From 'Time_MARTE_Property', the role 'Time_MARTE_Property62' has cardinality 0..*, and from 'MARTE_Time_ClockType', the role 'MARTE_Time_ClockType61' has cardinality 0..*.
+An association connects 'MARTE_Time_ClockType' and 'Time_MARTE_Property'. From 'MARTE_Time_ClockType', the role 'MARTE_Time_ClockType64' has cardinality 0..*, and from 'Time_MARTE_Property', the role 'Time_MARTE_Property65' has cardinality 0..*.
+An association connects 'MARTE_Time_ClockType' and 'Time_MARTE_Property'. From 'MARTE_Time_ClockType', the role 'MARTE_Time_ClockType67' has cardinality 0..*, and from 'Time_MARTE_Property', the role 'Time_MARTE_Property68' has cardinality 0..*.
+An association connects 'Time_MARTE_Operation' and 'MARTE_Time_ClockType'. From 'Time_MARTE_Operation', the role 'Time_MARTE_Operation' has cardinality 0..*, and from 'MARTE_Time_ClockType', the role 'MARTE_Time_ClockType70' has cardinality 0..*.
+An association connects 'Time_MARTE_Operation' and 'MARTE_Time_ClockType'. From 'Time_MARTE_Operation', the role 'Time_MARTE_Operation73' has cardinality 0..*, and from 'MARTE_Time_ClockType', the role 'MARTE_Time_ClockType72' has cardinality 0..*.
+An association connects 'Time_MARTE_Operation' and 'MARTE_Time_ClockType'. From 'Time_MARTE_Operation', the role 'Time_MARTE_Operation76' has cardinality 0..*, and from 'MARTE_Time_ClockType', the role 'MARTE_Time_ClockType75' has cardinality 0..*.
+An association connects 'Time_MARTE_Class' and 'MARTE_Time_ClockType'. From 'Time_MARTE_Class', the role 'Time_MARTE_Class' has cardinality 0..*, and from 'MARTE_Time_ClockType', the role 'MARTE_Time_ClockType78' has cardinality 0..*.
+An association connects 'MARTE_Time_TimedElement' and 'Time_Clock'. From 'MARTE_Time_TimedElement', the role 'MARTE_Time_TimedElement' has cardinality 0..*, and from 'Time_Clock', the role 'Time_Clock' has cardinality 0..*.
+An association connects 'Time_MARTE_ValueSpecification' and 'MARTE_Time_TimedValueSpecification'. From 'Time_MARTE_ValueSpecification', the role 'Time_MARTE_ValueSpecification' has cardinality 0..*, and from 'MARTE_Time_TimedValueSpecification', the role 'MARTE_Time_TimedValueSpecification' has cardinality 0..*.
+An association connects 'Time_MARTE_TimeObservation' and 'MARTE_Time_TimedInstantObservation'. From 'Time_MARTE_TimeObservation', the role 'Time_MARTE_TimeObservation' has cardinality 0..*, and from 'MARTE_Time_TimedInstantObservation', the role 'MARTE_Time_TimedInstantObservation' has cardinality 0..*.
+An association connects 'Time_MARTE_DurationObservation' and 'MARTE_Time_TimedDurationObservation'. From 'Time_MARTE_DurationObservation', the role 'Time_MARTE_DurationObservation' has cardinality 0..*, and from 'MARTE_Time_TimedDurationObservation', the role 'MARTE_Time_TimedDurationObservation' has cardinality 0..*.
+An association connects 'MARTE_Time_TimedEvent' and 'Time_MARTE_TimeEvent'. From 'MARTE_Time_TimedEvent', the role 'MARTE_Time_TimedEvent' has cardinality 0..*, and from 'Time_MARTE_TimeEvent', the role 'Time_MARTE_TimeEvent' has cardinality 0..*.
+An association connects 'MARTE_Time_TimedEvent' and 'Time_MARTE_ValueSpecification'. From 'MARTE_Time_TimedEvent', the role 'MARTE_Time_TimedEvent85' has cardinality 0..*, and from 'Time_MARTE_ValueSpecification', the role 'Time_MARTE_ValueSpecification86' has cardinality 0..*.
+An association connects 'Time_MARTE_Action' and 'MARTE_Time_TimedProcessing'. From 'Time_MARTE_Action', the role 'Time_MARTE_Action' has cardinality 0..*, and from 'MARTE_Time_TimedProcessing', the role 'MARTE_Time_TimedProcessing' has cardinality 0..*.
+An association connects 'MARTE_Time_TimedProcessing' and 'Time_MARTE_Behavior'. From 'MARTE_Time_TimedProcessing', the role 'MARTE_Time_TimedProcessing89' has cardinality 0..*, and from 'Time_MARTE_Behavior', the role 'Time_MARTE_Behavior' has cardinality 0..*.
+An association connects 'MARTE_Time_TimedProcessing' and 'Time_MARTE_Message'. From 'MARTE_Time_TimedProcessing', the role 'MARTE_Time_TimedProcessing91' has cardinality 0..*, and from 'Time_MARTE_Message', the role 'Time_MARTE_Message' has cardinality 0..*.
+An association connects 'MARTE_Time_TimedProcessing' and 'Time_MARTE_ValueSpecification'. From 'MARTE_Time_TimedProcessing', the role 'MARTE_Time_TimedProcessing93' has cardinality 0..*, and from 'Time_MARTE_ValueSpecification', the role 'Time_MARTE_ValueSpecification94' has cardinality 0..*.
+An association connects 'MARTE_Time_TimedProcessing' and 'Time_MARTE_Event'. From 'MARTE_Time_TimedProcessing', the role 'MARTE_Time_TimedProcessing96' has cardinality 0..*, and from 'Time_MARTE_Event', the role 'Time_MARTE_Event' has cardinality 0..*.
+An association connects 'MARTE_Time_TimedProcessing' and 'Time_MARTE_Event'. From 'MARTE_Time_TimedProcessing', the role 'MARTE_Time_TimedProcessing98' has cardinality 0..*, and from 'Time_MARTE_Event', the role 'Time_MARTE_Event99' has cardinality 0..*.
+An association connects 'NFP_Integer' and 'MARTE_GRM_Resource'. From 'NFP_Integer', the role 'NFP_Integer' has cardinality 0..*, and from 'MARTE_GRM_Resource', the role 'MARTE_GRM_Resource' has cardinality 0..*.
+An association connects 'GRM_MARTE_Property' and 'MARTE_GRM_Resource'. From 'GRM_MARTE_Property', the role 'GRM_MARTE_Property' has cardinality 0..*, and from 'MARTE_GRM_Resource', the role 'MARTE_GRM_Resource102' has cardinality 0..*.
+An association connects 'GRM_MARTE_InstanceSpecification' and 'MARTE_GRM_Resource'. From 'GRM_MARTE_InstanceSpecification', the role 'GRM_MARTE_InstanceSpecification' has cardinality 0..*, and from 'MARTE_GRM_Resource', the role 'MARTE_GRM_Resource104' has cardinality 0..*.
+An association connects 'MARTE_GRM_Resource' and 'GRM_MARTE_Classifier'. From 'MARTE_GRM_Resource', the role 'MARTE_GRM_Resource106' has cardinality 0..*, and from 'GRM_MARTE_Classifier', the role 'GRM_MARTE_Classifier' has cardinality 0..*.
+An association connects 'GRM_MARTE_Lifeline' and 'MARTE_GRM_Resource'. From 'GRM_MARTE_Lifeline', the role 'GRM_MARTE_Lifeline' has cardinality 0..*, and from 'MARTE_GRM_Resource', the role 'MARTE_GRM_Resource108' has cardinality 0..*.
+An association connects 'GRM_MARTE_ConnectableElement' and 'MARTE_GRM_Resource'. From 'GRM_MARTE_ConnectableElement', the role 'GRM_MARTE_ConnectableElement' has cardinality 0..*, and from 'MARTE_GRM_Resource', the role 'MARTE_GRM_Resource110' has cardinality 0..*.
+An association connects 'MARTE_GRM_StorageResource' and 'NFP_Integer'. From 'MARTE_GRM_StorageResource', the role 'MARTE_GRM_StorageResource' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer112' has cardinality 0..*.
+An association connects 'MARTE_GRM_CommunicationEndPoint' and 'NFP_Integer'. From 'MARTE_GRM_CommunicationEndPoint', the role 'MARTE_GRM_CommunicationEndPoint' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer114' has cardinality 0..*.
+An association connects 'GRM_MARTE_OpaqueExpression' and 'MARTE_GRM_Scheduler'. From 'GRM_MARTE_OpaqueExpression', the role 'GRM_MARTE_OpaqueExpression' has cardinality 0..*, and from 'MARTE_GRM_Scheduler', the role 'MARTE_GRM_Scheduler' has cardinality 0..*.
+An association connects 'MARTE_GRM_Scheduler' and 'GRM_ProcessingResource'. From 'MARTE_GRM_Scheduler', the role 'MARTE_GRM_Scheduler117' has cardinality 0..*, and from 'GRM_ProcessingResource', the role 'GRM_ProcessingResource' has cardinality 0..*.
+An association connects 'GRM_ComputingResource' and 'MARTE_GRM_Scheduler'. From 'GRM_ComputingResource', the role 'GRM_ComputingResource' has cardinality 0..*, and from 'MARTE_GRM_Scheduler', the role 'MARTE_GRM_Scheduler119' has cardinality 0..*.
+An association connects 'MARTE_GRM_Scheduler' and 'GRM_MutualExclusionResource'. From 'MARTE_GRM_Scheduler', the role 'GRM' has cardinality 0..*, and from 'GRM_MutualExclusionResource', the role 'MARTE_Foundations' has cardinality 0..*.
+An association connects 'MARTE_GRM_Scheduler' and 'GRM_SchedulableResource'. From 'MARTE_GRM_Scheduler', the role 'GRM122' has cardinality 0..*, and from 'GRM_SchedulableResource', the role 'MARTE_Foundations123' has cardinality 0..*.
+An association connects 'NFP_Real' and 'MARTE_GRM_ProcessingResource'. From 'NFP_Real', the role 'NFP_Real' has cardinality 0..*, and from 'MARTE_GRM_ProcessingResource', the role 'MARTE_GRM_ProcessingResource' has cardinality 0..*.
+An association connects 'MARTE_GRM_ProcessingResource' and 'GRM_Scheduler'. From 'MARTE_GRM_ProcessingResource', the role 'MARTE_GRM_ProcessingResource126' has cardinality 0..*, and from 'GRM_Scheduler', the role 'GRM_Scheduler' has cardinality 0..*.
+An association connects 'NFP_Integer' and 'MARTE_GRM_MutualExclusionResource'. From 'NFP_Integer', the role 'NFP_Integer128' has cardinality 0..*, and from 'MARTE_GRM_MutualExclusionResource', the role 'MARTE_GRM_MutualExclusionResource' has cardinality 0..*.
+An association connects 'MARTE_GRM_MutualExclusionResource' and 'GRM_Scheduler'. From 'MARTE_GRM_MutualExclusionResource', the role 'GRM130' has cardinality 0..*, and from 'GRM_Scheduler', the role 'MARTE_Foundations131' has cardinality 0..*.
+An association connects 'MARTE_GRM_SchedulableResource' and 'SchedParameters'. From 'MARTE_GRM_SchedulableResource', the role 'MARTE_GRM_SchedulableResource' has cardinality 0..*, and from 'SchedParameters', the role 'SchedParameters' has cardinality 0..*.
+An association connects 'GRM_SecondaryScheduler' and 'MARTE_GRM_SchedulableResource'. From 'GRM_SecondaryScheduler', the role 'MARTE_Foundations135' has cardinality 0..*, and from 'MARTE_GRM_SchedulableResource', the role 'GRM134' has cardinality 0..*.
+An association connects 'MARTE_GRM_SchedulableResource' and 'GRM_Scheduler'. From 'MARTE_GRM_SchedulableResource', the role 'GRM137' has cardinality 0..*, and from 'GRM_Scheduler', the role 'MARTE_Foundations138' has cardinality 0..*.
+An association connects 'MARTE_GRM_SecondaryScheduler' and 'GRM_SchedulableResource'. From 'MARTE_GRM_SecondaryScheduler', the role 'GRM140' has cardinality 0..*, and from 'GRM_SchedulableResource', the role 'MARTE_Foundations141' has cardinality 0..*.
+An association connects 'MARTE_GRM_CommunicationMedia' and 'NFP_Integer'. From 'MARTE_GRM_CommunicationMedia', the role 'MARTE_GRM_CommunicationMedia' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer143' has cardinality 0..*.
+An association connects 'MARTE_GRM_CommunicationMedia' and 'GRM_MARTE_Connector'. From 'MARTE_GRM_CommunicationMedia', the role 'MARTE_GRM_CommunicationMedia145' has cardinality 0..*, and from 'GRM_MARTE_Connector', the role 'GRM_MARTE_Connector' has cardinality 0..*.
+An association connects 'MARTE_GRM_CommunicationMedia' and 'NFP_Duration'. From 'MARTE_GRM_CommunicationMedia', the role 'MARTE_GRM_CommunicationMedia147' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration' has cardinality 0..*.
+An association connects 'MARTE_GRM_CommunicationMedia' and 'NFP_Duration'. From 'MARTE_GRM_CommunicationMedia', the role 'MARTE_GRM_CommunicationMedia149' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration150' has cardinality 0..*.
+An association connects 'MARTE_GRM_CommunicationMedia' and 'NFP_DataTxRate'. From 'MARTE_GRM_CommunicationMedia', the role 'MARTE_GRM_CommunicationMedia152' has cardinality 0..*, and from 'NFP_DataTxRate', the role 'NFP_DataTxRate' has cardinality 0..*.
+An association connects 'MARTE_GRM_TimerResource' and 'NFP_Duration'. From 'MARTE_GRM_TimerResource', the role 'MARTE_GRM_TimerResource' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration154' has cardinality 0..*.
+An association connects 'MARTE_GRM_GrService' and 'GRM_Resource'. From 'MARTE_GRM_GrService', the role 'MARTE_GRM_GrService' has cardinality 0..*, and from 'GRM_Resource', the role 'GRM_Resource' has cardinality 0..*.
+An association connects 'GRM_MARTE_ExecutionSpecification' and 'MARTE_GRM_GrService'. From 'GRM_MARTE_ExecutionSpecification', the role 'GRM_MARTE_ExecutionSpecification' has cardinality 0..*, and from 'MARTE_GRM_GrService', the role 'MARTE_GRM_GrService157' has cardinality 0..*.
+An association connects 'MARTE_GRM_GrService' and 'GRM_MARTE_BehavioralFeature'. From 'MARTE_GRM_GrService', the role 'MARTE_GRM_GrService159' has cardinality 0..*, and from 'GRM_MARTE_BehavioralFeature', the role 'GRM_MARTE_BehavioralFeature' has cardinality 0..*.
+An association connects 'GRM_MARTE_Behavior' and 'MARTE_GRM_GrService'. From 'GRM_MARTE_Behavior', the role 'GRM_MARTE_Behavior' has cardinality 0..*, and from 'MARTE_GRM_GrService', the role 'MARTE_GRM_GrService161' has cardinality 0..*.
+An association connects 'MARTE_GRM_GrService' and 'GRM_MARTE_Collaboration'. From 'MARTE_GRM_GrService', the role 'MARTE_GRM_GrService163' has cardinality 0..*, and from 'GRM_MARTE_Collaboration', the role 'GRM_MARTE_Collaboration' has cardinality 0..*.
+An association connects 'MARTE_GRM_GrService' and 'GRM_MARTE_CollaborationUse'. From 'MARTE_GRM_GrService', the role 'MARTE_GRM_GrService165' has cardinality 0..*, and from 'GRM_MARTE_CollaborationUse', the role 'GRM_MARTE_CollaborationUse' has cardinality 0..*.
+An association connects 'MARTE_GRM_ResourceUsage' and 'NFP_Duration'. From 'MARTE_GRM_ResourceUsage', the role 'MARTE_GRM_ResourceUsage' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration167' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_GRM_ResourceUsage'. From 'NFP_DataSize', the role 'NFP_DataSize' has cardinality 0..*, and from 'MARTE_GRM_ResourceUsage', the role 'MARTE_GRM_ResourceUsage169' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_GRM_ResourceUsage'. From 'NFP_DataSize', the role 'NFP_DataSize172' has cardinality 0..*, and from 'MARTE_GRM_ResourceUsage', the role 'MARTE_GRM_ResourceUsage171' has cardinality 0..*.
+An association connects 'NFP_Power' and 'MARTE_GRM_ResourceUsage'. From 'NFP_Power', the role 'NFP_Power' has cardinality 0..*, and from 'MARTE_GRM_ResourceUsage', the role 'MARTE_GRM_ResourceUsage174' has cardinality 0..*.
+An association connects 'MARTE_GRM_ResourceUsage' and 'NFP_Energy'. From 'MARTE_GRM_ResourceUsage', the role 'MARTE_GRM_ResourceUsage176' has cardinality 0..*, and from 'NFP_Energy', the role 'NFP_Energy' has cardinality 0..*.
+An association connects 'MARTE_GRM_ResourceUsage' and 'GRM_MARTE_NamedElement'. From 'MARTE_GRM_ResourceUsage', the role 'MARTE_GRM_ResourceUsage178' has cardinality 0..*, and from 'GRM_MARTE_NamedElement', the role 'GRM_MARTE_NamedElement' has cardinality 0..*.
+An association connects 'GRM_ResourceUsage' and 'MARTE_GRM_ResourceUsage'. From 'GRM_ResourceUsage', the role 'GRM_ResourceUsage' has cardinality 0..*, and from 'MARTE_GRM_ResourceUsage', the role 'MARTE_GRM_ResourceUsage180' has cardinality 0..*.
+An association connects 'MARTE_GRM_ResourceUsage' and 'GRM_Resource'. From 'MARTE_GRM_ResourceUsage', the role 'MARTE_GRM_ResourceUsage182' has cardinality 0..*, and from 'GRM_Resource', the role 'GRM_Resource183' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_GRM_ResourceUsage'. From 'NFP_DataSize', the role 'NFP_DataSize186' has cardinality 0..*, and from 'MARTE_GRM_ResourceUsage', the role 'MARTE_GRM_ResourceUsage185' has cardinality 0..*.
+An association connects 'RSM_MARTE_Connector' and 'MARTE_RSM_LinkTopology'. From 'RSM_MARTE_Connector', the role 'RSM_MARTE_Connector' has cardinality 0..*, and from 'MARTE_RSM_LinkTopology', the role 'MARTE_RSM_LinkTopology' has cardinality 0..*.
+An association connects 'MARTE_RSM_InterRepetition' and 'IntegerVector'. From 'MARTE_RSM_InterRepetition', the role 'MARTE_RSM_InterRepetition' has cardinality 0..*, and from 'IntegerVector', the role 'IntegerVector' has cardinality 0..*.
+An association connects 'ShapeSpecification' and 'MARTE_RSM_Distribute'. From 'ShapeSpecification', the role 'ShapeSpecification' has cardinality 0..*, and from 'MARTE_RSM_Distribute', the role 'MARTE_RSM_Distribute' has cardinality 0..*.
+An association connects 'MARTE_RSM_Distribute' and 'ShapeSpecification'. From 'MARTE_RSM_Distribute', the role 'MARTE_RSM_Distribute191' has cardinality 0..*, and from 'ShapeSpecification', the role 'ShapeSpecification192' has cardinality 0..*.
+An association connects 'MARTE_RSM_Distribute' and 'TilerSpecification'. From 'MARTE_RSM_Distribute', the role 'MARTE_RSM_Distribute194' has cardinality 0..*, and from 'TilerSpecification', the role 'TilerSpecification' has cardinality 0..*.
+An association connects 'TilerSpecification' and 'MARTE_RSM_Distribute'. From 'TilerSpecification', the role 'TilerSpecification197' has cardinality 0..*, and from 'MARTE_RSM_Distribute', the role 'MARTE_RSM_Distribute196' has cardinality 0..*.
+An association connects 'ShapeSpecification' and 'MARTE_RSM_Reshape'. From 'ShapeSpecification', the role 'ShapeSpecification199' has cardinality 0..*, and from 'MARTE_RSM_Reshape', the role 'MARTE_RSM_Reshape' has cardinality 0..*.
+An association connects 'ShapeSpecification' and 'MARTE_RSM_Reshape'. From 'ShapeSpecification', the role 'ShapeSpecification202' has cardinality 0..*, and from 'MARTE_RSM_Reshape', the role 'MARTE_RSM_Reshape201' has cardinality 0..*.
+An association connects 'IntegerVector' and 'MARTE_RSM_Tiler'. From 'IntegerVector', the role 'IntegerVector204' has cardinality 0..*, and from 'MARTE_RSM_Tiler', the role 'MARTE_RSM_Tiler' has cardinality 0..*.
+An association connects 'IntegerMatrix' and 'MARTE_RSM_Tiler'. From 'IntegerMatrix', the role 'IntegerMatrix' has cardinality 0..*, and from 'MARTE_RSM_Tiler', the role 'MARTE_RSM_Tiler206' has cardinality 0..*.
+An association connects 'MARTE_RSM_Tiler' and 'IntegerMatrix'. From 'MARTE_RSM_Tiler', the role 'MARTE_RSM_Tiler208' has cardinality 0..*, and from 'IntegerMatrix', the role 'IntegerMatrix209' has cardinality 0..*.
+An association connects 'MARTE_RSM_Tiler' and 'TilerSpecification'. From 'MARTE_RSM_Tiler', the role 'MARTE_RSM_Tiler211' has cardinality 0..*, and from 'TilerSpecification', the role 'TilerSpecification212' has cardinality 0..*.
+An association connects 'RSM_MARTE_ConnectorEnd' and 'MARTE_RSM_Tiler'. From 'RSM_MARTE_ConnectorEnd', the role 'RSM_MARTE_ConnectorEnd' has cardinality 0..*, and from 'MARTE_RSM_Tiler', the role 'MARTE_RSM_Tiler214' has cardinality 0..*.
+An association connects 'ShapeSpecification' and 'MARTE_RSM_Shaped'. From 'ShapeSpecification', the role 'ShapeSpecification216' has cardinality 0..*, and from 'MARTE_RSM_Shaped', the role 'MARTE_RSM_Shaped' has cardinality 0..*.
+An association connects 'RSM_MARTE_MultiplicityElement' and 'MARTE_RSM_Shaped'. From 'RSM_MARTE_MultiplicityElement', the role 'RSM_MARTE_MultiplicityElement' has cardinality 0..*, and from 'MARTE_RSM_Shaped', the role 'MARTE_RSM_Shaped218' has cardinality 0..*.
+An association connects 'Variables_MARTE_Property' and 'MARTE_Variables_Var'. From 'Variables_MARTE_Property', the role 'Variables_MARTE_Property' has cardinality 0..*, and from 'MARTE_Variables_Var', the role 'MARTE_Variables_Var' has cardinality 0..*.
+An association connects 'MARTE_Variables_ExpressionContext' and 'Variables_MARTE_NamedElement'. From 'MARTE_Variables_ExpressionContext', the role 'MARTE_Variables_ExpressionContext' has cardinality 0..*, and from 'Variables_MARTE_NamedElement', the role 'Variables_MARTE_NamedElement' has cardinality 0..*.
+An association connects 'MARTE_DataTypes_BoundedSubtype' and 'DataTypes_MARTE_Property'. From 'MARTE_DataTypes_BoundedSubtype', the role 'MARTE_DataTypes_BoundedSubtype' has cardinality 0..*, and from 'DataTypes_MARTE_Property', the role 'DataTypes_MARTE_Property' has cardinality 0..*.
+An association connects 'DataTypes_MARTE_DataType' and 'MARTE_DataTypes_BoundedSubtype'. From 'DataTypes_MARTE_DataType', the role 'DataTypes_MARTE_DataType' has cardinality 0..*, and from 'MARTE_DataTypes_BoundedSubtype', the role 'MARTE_DataTypes_BoundedSubtype223' has cardinality 0..*.
+An association connects 'DataTypes_MARTE_Property' and 'MARTE_DataTypes_IntervalType'. From 'DataTypes_MARTE_Property', the role 'DataTypes_MARTE_Property225' has cardinality 0..*, and from 'MARTE_DataTypes_IntervalType', the role 'MARTE_DataTypes_IntervalType' has cardinality 0..*.
+An association connects 'DataTypes_MARTE_DataType' and 'MARTE_DataTypes_IntervalType'. From 'DataTypes_MARTE_DataType', the role 'DataTypes_MARTE_DataType228' has cardinality 0..*, and from 'MARTE_DataTypes_IntervalType', the role 'MARTE_DataTypes_IntervalType227' has cardinality 0..*.
+An association connects 'DataTypes_MARTE_Property' and 'MARTE_DataTypes_CollectionType'. From 'DataTypes_MARTE_Property', the role 'DataTypes_MARTE_Property230' has cardinality 0..*, and from 'MARTE_DataTypes_CollectionType', the role 'MARTE_DataTypes_CollectionType' has cardinality 0..*.
+An association connects 'DataTypes_MARTE_DataType' and 'MARTE_DataTypes_CollectionType'. From 'DataTypes_MARTE_DataType', the role 'DataTypes_MARTE_DataType233' has cardinality 0..*, and from 'MARTE_DataTypes_CollectionType', the role 'MARTE_DataTypes_CollectionType232' has cardinality 0..*.
+An association connects 'MARTE_DataTypes_ChoiceType' and 'DataTypes_MARTE_Property'. From 'MARTE_DataTypes_ChoiceType', the role 'MARTE_DataTypes_ChoiceType' has cardinality 0..*, and from 'DataTypes_MARTE_Property', the role 'DataTypes_MARTE_Property235' has cardinality 0..*.
+An association connects 'MARTE_DataTypes_ChoiceType' and 'DataTypes_MARTE_Property'. From 'MARTE_DataTypes_ChoiceType', the role 'MARTE_DataTypes_ChoiceType237' has cardinality 0..*, and from 'DataTypes_MARTE_Property', the role 'DataTypes_MARTE_Property238' has cardinality 0..*.
+An association connects 'MARTE_DataTypes_ChoiceType' and 'DataTypes_MARTE_DataType'. From 'MARTE_DataTypes_ChoiceType', the role 'MARTE_DataTypes_ChoiceType240' has cardinality 0..*, and from 'DataTypes_MARTE_DataType', the role 'DataTypes_MARTE_DataType241' has cardinality 0..*.
+An association connects 'MARTE_DataTypes_TupleType' and 'DataTypes_MARTE_Property'. From 'MARTE_DataTypes_TupleType', the role 'MARTE_DataTypes_TupleType' has cardinality 0..*, and from 'DataTypes_MARTE_Property', the role 'DataTypes_MARTE_Property243' has cardinality 0..*.
+An association connects 'DataTypes_MARTE_DataType' and 'MARTE_DataTypes_TupleType'. From 'DataTypes_MARTE_DataType', the role 'DataTypes_MARTE_DataType246' has cardinality 0..*, and from 'MARTE_DataTypes_TupleType', the role 'MARTE_DataTypes_TupleType245' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtUnit' and 'NFP_Duration'. From 'MARTE_HLAM_RtUnit', the role 'MARTE_HLAM_RtUnit' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration248' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtUnit' and 'HLAM_MARTE_Behavior'. From 'MARTE_HLAM_RtUnit', the role 'MARTE_HLAM_RtUnit250' has cardinality 0..*, and from 'HLAM_MARTE_Behavior', the role 'HLAM_MARTE_Behavior' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtUnit' and 'HLAM_MARTE_Operation'. From 'MARTE_HLAM_RtUnit', the role 'MARTE_HLAM_RtUnit252' has cardinality 0..*, and from 'HLAM_MARTE_Operation', the role 'HLAM_MARTE_Operation' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_HLAM_RtUnit'. From 'NFP_DataSize', the role 'NFP_DataSize255' has cardinality 0..*, and from 'MARTE_HLAM_RtUnit', the role 'MARTE_HLAM_RtUnit254' has cardinality 0..*.
+An association connects 'HLAM_MARTE_BehavioredClassifier' and 'MARTE_HLAM_RtUnit'. From 'HLAM_MARTE_BehavioredClassifier', the role 'HLAM_MARTE_BehavioredClassifier' has cardinality 0..*, and from 'MARTE_HLAM_RtUnit', the role 'MARTE_HLAM_RtUnit257' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_HLAM_RtUnit'. From 'NFP_DataSize', the role 'NFP_DataSize260' has cardinality 0..*, and from 'MARTE_HLAM_RtUnit', the role 'MARTE_HLAM_RtUnit259' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_HLAM_PpUnit'. From 'NFP_DataSize', the role 'NFP_DataSize262' has cardinality 0..*, and from 'MARTE_HLAM_PpUnit', the role 'MARTE_HLAM_PpUnit' has cardinality 0..*.
+An association connects 'HLAM_MARTE_BehavioredClassifier' and 'MARTE_HLAM_PpUnit'. From 'HLAM_MARTE_BehavioredClassifier', the role 'HLAM_MARTE_BehavioredClassifier265' has cardinality 0..*, and from 'MARTE_HLAM_PpUnit', the role 'MARTE_HLAM_PpUnit264' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtFeature' and 'HLAM_MARTE_BehavioralFeature'. From 'MARTE_HLAM_RtFeature', the role 'MARTE_HLAM_RtFeature' has cardinality 0..*, and from 'HLAM_MARTE_BehavioralFeature', the role 'HLAM_MARTE_BehavioralFeature' has cardinality 0..*.
+An association connects 'HLAM_MARTE_Message' and 'MARTE_HLAM_RtFeature'. From 'HLAM_MARTE_Message', the role 'HLAM_MARTE_Message' has cardinality 0..*, and from 'MARTE_HLAM_RtFeature', the role 'MARTE_HLAM_RtFeature268' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtFeature' and 'HLAM_MARTE_Signal'. From 'MARTE_HLAM_RtFeature', the role 'MARTE_HLAM_RtFeature270' has cardinality 0..*, and from 'HLAM_MARTE_Signal', the role 'HLAM_MARTE_Signal' has cardinality 0..*.
+An association connects 'HLAM_MARTE_Port' and 'MARTE_HLAM_RtFeature'. From 'HLAM_MARTE_Port', the role 'HLAM_MARTE_Port' has cardinality 0..*, and from 'MARTE_HLAM_RtFeature', the role 'MARTE_HLAM_RtFeature272' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtFeature' and 'HLAM_MARTE_InvocationAction'. From 'MARTE_HLAM_RtFeature', the role 'MARTE_HLAM_RtFeature274' has cardinality 0..*, and from 'HLAM_MARTE_InvocationAction', the role 'HLAM_MARTE_InvocationAction' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtFeature' and 'HLAM_RtSpecification'. From 'MARTE_HLAM_RtFeature', the role 'MARTE_HLAM_RtFeature276' has cardinality 0..*, and from 'HLAM_RtSpecification', the role 'HLAM_RtSpecification' has cardinality 0..*.
+An association connects 'UtilityType' and 'MARTE_HLAM_RtSpecification'. From 'UtilityType', the role 'UtilityType' has cardinality 0..*, and from 'MARTE_HLAM_RtSpecification', the role 'MARTE_HLAM_RtSpecification' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtSpecification' and 'ArrivalPattern'. From 'MARTE_HLAM_RtSpecification', the role 'MARTE_HLAM_RtSpecification279' has cardinality 0..*, and from 'ArrivalPattern', the role 'ArrivalPattern' has cardinality 0..*.
+An association connects 'Time_TimedInstantObservation' and 'MARTE_HLAM_RtSpecification'. From 'Time_TimedInstantObservation', the role 'Time_TimedInstantObservation' has cardinality 0..*, and from 'MARTE_HLAM_RtSpecification', the role 'MARTE_HLAM_RtSpecification281' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_HLAM_RtSpecification'. From 'NFP_Duration', the role 'NFP_Duration284' has cardinality 0..*, and from 'MARTE_HLAM_RtSpecification', the role 'MARTE_HLAM_RtSpecification283' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtSpecification' and 'NFP_DateTime'. From 'MARTE_HLAM_RtSpecification', the role 'MARTE_HLAM_RtSpecification286' has cardinality 0..*, and from 'NFP_DateTime', the role 'NFP_DateTime' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtSpecification' and 'NFP_Duration'. From 'MARTE_HLAM_RtSpecification', the role 'MARTE_HLAM_RtSpecification288' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration289' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtSpecification' and 'NFP_Duration'. From 'MARTE_HLAM_RtSpecification', the role 'MARTE_HLAM_RtSpecification291' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration292' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtSpecification' and 'NFP_Percentage'. From 'MARTE_HLAM_RtSpecification', the role 'MARTE_HLAM_RtSpecification294' has cardinality 0..*, and from 'NFP_Percentage', the role 'NFP_Percentage' has cardinality 0..*.
+An association connects 'NFP_Integer' and 'MARTE_HLAM_RtSpecification'. From 'NFP_Integer', the role 'NFP_Integer297' has cardinality 0..*, and from 'MARTE_HLAM_RtSpecification', the role 'MARTE_HLAM_RtSpecification296' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtSpecification' and 'HLAM_MARTE_Comment'. From 'MARTE_HLAM_RtSpecification', the role 'MARTE_HLAM_RtSpecification299' has cardinality 0..*, and from 'HLAM_MARTE_Comment', the role 'HLAM_MARTE_Comment' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_HLAM_RtAction'. From 'NFP_DataSize', the role 'NFP_DataSize301' has cardinality 0..*, and from 'MARTE_HLAM_RtAction', the role 'MARTE_HLAM_RtAction' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtAction' and 'HLAM_MARTE_BehavioralFeature'. From 'MARTE_HLAM_RtAction', the role 'MARTE_HLAM_RtAction303' has cardinality 0..*, and from 'HLAM_MARTE_BehavioralFeature', the role 'HLAM_MARTE_BehavioralFeature304' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtAction' and 'HLAM_MARTE_InvocationAction'. From 'MARTE_HLAM_RtAction', the role 'MARTE_HLAM_RtAction306' has cardinality 0..*, and from 'HLAM_MARTE_InvocationAction', the role 'HLAM_MARTE_InvocationAction307' has cardinality 0..*.
+An association connects 'MARTE_HLAM_RtService' and 'HLAM_MARTE_BehavioralFeature'. From 'MARTE_HLAM_RtService', the role 'MARTE_HLAM_RtService' has cardinality 0..*, and from 'HLAM_MARTE_BehavioralFeature', the role 'HLAM_MARTE_BehavioralFeature309' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_PLD_Organization' and 'NFP_Integer'. From 'MARTE_HwComputing_PLD_Organization', the role 'MARTE_HwComputing_PLD_Organization' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer311' has cardinality 0..*.
+An association connects 'NFP_Natural' and 'MARTE_HwComputing_PLD_Organization'. From 'NFP_Natural', the role 'NFP_Natural' has cardinality 0..*, and from 'MARTE_HwComputing_PLD_Organization', the role 'MARTE_HwComputing_PLD_Organization313' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwProcessor' and 'NFP_DataSize'. From 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor' has cardinality 0..*, and from 'NFP_DataSize', the role 'NFP_DataSize315' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwProcessor' and 'NFP_Natural'. From 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor317' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural318' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwProcessor' and 'NFP_Real'. From 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor320' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real321' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwProcessor' and 'NFP_Natural'. From 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor323' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural324' has cardinality 0..*.
+An association connects 'NFP_Natural' and 'MARTE_HwComputing_HwProcessor'. From 'NFP_Natural', the role 'NFP_Natural327' has cardinality 0..*, and from 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor326' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwProcessor' and 'NFP_Natural'. From 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor329' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural330' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwProcessor' and 'NFP_Natural'. From 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor332' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural333' has cardinality 0..*.
+An association connects 'NFP_Natural' and 'MARTE_HwComputing_HwProcessor'. From 'NFP_Natural', the role 'NFP_Natural336' has cardinality 0..*, and from 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor335' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwProcessor' and 'HwComputing_HwISA'. From 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor338' has cardinality 0..*, and from 'HwComputing_HwISA', the role 'HwComputing_HwISA' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwProcessor' and 'HwComputing_HwBranchPredictor'. From 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor340' has cardinality 0..*, and from 'HwComputing_HwBranchPredictor', the role 'HwComputing_HwBranchPredictor' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwProcessor' and 'HwMemory_HwCache'. From 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor342' has cardinality 0..*, and from 'HwMemory_HwCache', the role 'HwMemory_HwCache' has cardinality 0..*.
+An association connects 'HwStorageManager_HwMMU' and 'MARTE_HwComputing_HwProcessor'. From 'HwStorageManager_HwMMU', the role 'HwStorageManager_HwMMU' has cardinality 0..*, and from 'MARTE_HwComputing_HwProcessor', the role 'MARTE_HwComputing_HwProcessor344' has cardinality 0..*.
+An association connects 'NFP_FrequencyInterval' and 'MARTE_HwComputing_HwComputingResource'. From 'NFP_FrequencyInterval', the role 'NFP_FrequencyInterval' has cardinality 0..*, and from 'MARTE_HwComputing_HwComputingResource', the role 'MARTE_HwComputing_HwComputingResource' has cardinality 0..*.
+An association connects 'NFP_String' and 'MARTE_HwComputing_HwISA'. From 'NFP_String', the role 'NFP_String' has cardinality 0..*, and from 'MARTE_HwComputing_HwISA', the role 'MARTE_HwComputing_HwISA' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwISA' and 'NFP_DataSize'. From 'MARTE_HwComputing_HwISA', the role 'MARTE_HwComputing_HwISA348' has cardinality 0..*, and from 'NFP_DataSize', the role 'NFP_DataSize349' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwPLD' and 'HwComputing_PLD_Organization'. From 'MARTE_HwComputing_HwPLD', the role 'MARTE_HwComputing_HwPLD' has cardinality 0..*, and from 'HwComputing_PLD_Organization', the role 'HwComputing_PLD_Organization' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwPLD' and 'NFP_Natural'. From 'MARTE_HwComputing_HwPLD', the role 'MARTE_HwComputing_HwPLD352' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural353' has cardinality 0..*.
+An association connects 'NFP_Natural' and 'MARTE_HwComputing_HwPLD'. From 'NFP_Natural', the role 'NFP_Natural356' has cardinality 0..*, and from 'MARTE_HwComputing_HwPLD', the role 'MARTE_HwComputing_HwPLD355' has cardinality 0..*.
+An association connects 'NFP_Natural' and 'MARTE_HwComputing_HwPLD'. From 'NFP_Natural', the role 'NFP_Natural359' has cardinality 0..*, and from 'MARTE_HwComputing_HwPLD', the role 'MARTE_HwComputing_HwPLD358' has cardinality 0..*.
+An association connects 'HwMemory_HwRAM' and 'MARTE_HwComputing_HwPLD'. From 'HwMemory_HwRAM', the role 'HwMemory_HwRAM' has cardinality 0..*, and from 'MARTE_HwComputing_HwPLD', the role 'MARTE_HwComputing_HwPLD361' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwPLD' and 'HwComputing_HwComputingResource'. From 'MARTE_HwComputing_HwPLD', the role 'MARTE_HwComputing_HwPLD363' has cardinality 0..*, and from 'HwComputing_HwComputingResource', the role 'HwComputing_HwComputingResource' has cardinality 0..*.
+An association connects 'HwComputing_HwProcessor' and 'MARTE_HwComputing_HwMCU'. From 'HwComputing_HwProcessor', the role 'HwComputing_HwProcessor' has cardinality 0..*, and from 'MARTE_HwComputing_HwMCU', the role 'MARTE_HwComputing_HwMCU' has cardinality 0..*.
+An association connects 'HwDevice_HwPeripheral' and 'MARTE_HwComputing_HwMCU'. From 'HwDevice_HwPeripheral', the role 'HwDevice_HwPeripheral' has cardinality 0..*, and from 'MARTE_HwComputing_HwMCU', the role 'MARTE_HwComputing_HwMCU366' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwMCU' and 'HwRegister_HwRegister'. From 'MARTE_HwComputing_HwMCU', the role 'MARTE_HwComputing_HwMCU368' has cardinality 0..*, and from 'HwRegister_HwRegister', the role 'HwRegister_HwRegister' has cardinality 0..*.
+An association connects 'HwPackage_HwPackage' and 'MARTE_HwComputing_HwMCU'. From 'HwPackage_HwPackage', the role 'HwPackage_HwPackage' has cardinality 0..*, and from 'MARTE_HwComputing_HwMCU', the role 'MARTE_HwComputing_HwMCU370' has cardinality 0..*.
+An association connects 'HwIO_HwPin' and 'MARTE_HwComputing_HwMCU'. From 'HwIO_HwPin', the role 'HwIO_HwPin' has cardinality 0..*, and from 'MARTE_HwComputing_HwMCU', the role 'MARTE_HwComputing_HwMCU372' has cardinality 0..*.
+An association connects 'MARTE_HwComputing_HwMCU' and 'HwCommunication_HwPort'. From 'MARTE_HwComputing_HwMCU', the role 'MARTE_HwComputing_HwMCU374' has cardinality 0..*, and from 'HwCommunication_HwPort', the role 'HwCommunication_HwPort' has cardinality 0..*.
+An association connects 'MARTE_HwCommunication_HwArbiter' and 'HwCommunication_HwMedia'. From 'MARTE_HwCommunication_HwArbiter', the role 'HRM' has cardinality 0..*, and from 'HwCommunication_HwMedia', the role 'MARTE_DesignModel' has cardinality 0..*.
+An association connects 'NFP_DataTxRate' and 'MARTE_HwCommunication_HwMedia'. From 'NFP_DataTxRate', the role 'NFP_DataTxRate377' has cardinality 0..*, and from 'MARTE_HwCommunication_HwMedia', the role 'MARTE_HwCommunication_HwMedia' has cardinality 0..*.
+An association connects 'HwCommunication_HwArbiter' and 'MARTE_HwCommunication_HwMedia'. From 'HwCommunication_HwArbiter', the role 'MARTE_DesignModel380' has cardinality 0..*, and from 'MARTE_HwCommunication_HwMedia', the role 'HRM379' has cardinality 0..*.
+An association connects 'MARTE_HwCommunication_HwBus' and 'NFP_DataSize'. From 'MARTE_HwCommunication_HwBus', the role 'MARTE_HwCommunication_HwBus' has cardinality 0..*, and from 'NFP_DataSize', the role 'NFP_DataSize382' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_HwCommunication_HwBus'. From 'NFP_DataSize', the role 'NFP_DataSize385' has cardinality 0..*, and from 'MARTE_HwCommunication_HwBus', the role 'MARTE_HwCommunication_HwBus384' has cardinality 0..*.
+An association connects 'MARTE_HwCommunication_HwBus' and 'NFP_Boolean'. From 'MARTE_HwCommunication_HwBus', the role 'MARTE_HwCommunication_HwBus387' has cardinality 0..*, and from 'NFP_Boolean', the role 'NFP_Boolean' has cardinality 0..*.
+An association connects 'NFP_Boolean' and 'MARTE_HwCommunication_HwBus'. From 'NFP_Boolean', the role 'NFP_Boolean390' has cardinality 0..*, and from 'MARTE_HwCommunication_HwBus', the role 'MARTE_HwCommunication_HwBus389' has cardinality 0..*.
+An association connects 'MARTE_HwCommunication_HwBridge' and 'HwCommunication_HwMedia'. From 'MARTE_HwCommunication_HwBridge', the role 'MARTE_HwCommunication_HwBridge' has cardinality 0..*, and from 'HwCommunication_HwMedia', the role 'HwCommunication_HwMedia' has cardinality 0..*.
+An association connects 'HwCommunication_HwMedia' and 'MARTE_HwCommunication_HwEndPoint'. From 'HwCommunication_HwMedia', the role 'HwCommunication_HwMedia393' has cardinality 0..*, and from 'MARTE_HwCommunication_HwEndPoint', the role 'MARTE_HwCommunication_HwEndPoint' has cardinality 0..*.
+An association connects 'HwIO_HwPin' and 'MARTE_HwCommunication_HwPort'. From 'HwIO_HwPin', the role 'HwIO_HwPin395' has cardinality 0..*, and from 'MARTE_HwCommunication_HwPort', the role 'MARTE_HwCommunication_HwPort' has cardinality 0..*.
+An association connects 'HwProtocol_HwProtocol' and 'MARTE_HwCommunication_HwConnection'. From 'HwProtocol_HwProtocol', the role 'HwProtocol_HwProtocol' has cardinality 0..*, and from 'MARTE_HwCommunication_HwConnection', the role 'MARTE_HwCommunication_HwConnection' has cardinality 0..*.
+An association connects 'HwMemory_HwMemory' and 'MARTE_HwStorageManager_HwStorageManager'. From 'HwMemory_HwMemory', the role 'HwMemory_HwMemory' has cardinality 0..*, and from 'MARTE_HwStorageManager_HwStorageManager', the role 'MARTE_HwStorageManager_HwStorageManager' has cardinality 0..*.
+An association connects 'NFP_Natural' and 'MARTE_HwStorageManager_HwDMA'. From 'NFP_Natural', the role 'NFP_Natural399' has cardinality 0..*, and from 'MARTE_HwStorageManager_HwDMA', the role 'MARTE_HwStorageManager_HwDMA' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_HwStorageManager_HwDMA'. From 'NFP_DataSize', the role 'NFP_DataSize402' has cardinality 0..*, and from 'MARTE_HwStorageManager_HwDMA', the role 'MARTE_HwStorageManager_HwDMA401' has cardinality 0..*.
+An association connects 'MARTE_HwStorageManager_HwDMA' and 'HwComputing_HwProcessor'. From 'MARTE_HwStorageManager_HwDMA', the role 'MARTE_HwStorageManager_HwDMA404' has cardinality 0..*, and from 'HwComputing_HwProcessor', the role 'HwComputing_HwProcessor405' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_HwStorageManager_HwMMU'. From 'NFP_DataSize', the role 'NFP_DataSize407' has cardinality 0..*, and from 'MARTE_HwStorageManager_HwMMU', the role 'MARTE_HwStorageManager_HwMMU' has cardinality 0..*.
+An association connects 'MARTE_HwStorageManager_HwMMU' and 'NFP_DataSize'. From 'MARTE_HwStorageManager_HwMMU', the role 'MARTE_HwStorageManager_HwMMU409' has cardinality 0..*, and from 'NFP_DataSize', the role 'NFP_DataSize410' has cardinality 0..*.
+An association connects 'MARTE_HwStorageManager_HwMMU' and 'NFP_Boolean'. From 'MARTE_HwStorageManager_HwMMU', the role 'MARTE_HwStorageManager_HwMMU412' has cardinality 0..*, and from 'NFP_Boolean', the role 'NFP_Boolean413' has cardinality 0..*.
+An association connects 'MARTE_HwStorageManager_HwMMU' and 'NFP_Natural'. From 'MARTE_HwStorageManager_HwMMU', the role 'MARTE_HwStorageManager_HwMMU415' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural416' has cardinality 0..*.
+An association connects 'MARTE_HwStorageManager_HwMMU' and 'HwMemory_HwCache'. From 'MARTE_HwStorageManager_HwMMU', the role 'MARTE_HwStorageManager_HwMMU418' has cardinality 0..*, and from 'HwMemory_HwCache', the role 'HwMemory_HwCache419' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_HwMemory' and 'NFP_DataSize'. From 'MARTE_HwMemory_HwMemory', the role 'MARTE_HwMemory_HwMemory' has cardinality 0..*, and from 'NFP_DataSize', the role 'NFP_DataSize421' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_HwMemory' and 'NFP_DataSize'. From 'MARTE_HwMemory_HwMemory', the role 'MARTE_HwMemory_HwMemory423' has cardinality 0..*, and from 'NFP_DataSize', the role 'NFP_DataSize424' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_HwMemory' and 'HwMemory_Timing'. From 'MARTE_HwMemory_HwMemory', the role 'MARTE_HwMemory_HwMemory426' has cardinality 0..*, and from 'HwMemory_Timing', the role 'HwMemory_Timing' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_HwMemory' and 'NFP_DataTxRate'. From 'MARTE_HwMemory_HwMemory', the role 'MARTE_HwMemory_HwMemory428' has cardinality 0..*, and from 'NFP_DataTxRate', the role 'NFP_DataTxRate429' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_Timing' and 'NFP_String'. From 'MARTE_HwMemory_Timing', the role 'MARTE_HwMemory_Timing' has cardinality 0..*, and from 'NFP_String', the role 'NFP_String431' has cardinality 0..*.
+An association connects 'NFP_String' and 'MARTE_HwMemory_Timing'. From 'NFP_String', the role 'NFP_String434' has cardinality 0..*, and from 'MARTE_HwMemory_Timing', the role 'MARTE_HwMemory_Timing433' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_Timing' and 'NFP_Duration'. From 'MARTE_HwMemory_Timing', the role 'MARTE_HwMemory_Timing436' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration437' has cardinality 0..*.
+An association connects 'NFP_Natural' and 'MARTE_HwMemory_CacheStructure'. From 'NFP_Natural', the role 'NFP_Natural439' has cardinality 0..*, and from 'MARTE_HwMemory_CacheStructure', the role 'MARTE_HwMemory_CacheStructure' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_HwMemory_CacheStructure'. From 'NFP_DataSize', the role 'NFP_DataSize442' has cardinality 0..*, and from 'MARTE_HwMemory_CacheStructure', the role 'MARTE_HwMemory_CacheStructure441' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_CacheStructure' and 'NFP_Natural'. From 'MARTE_HwMemory_CacheStructure', the role 'MARTE_HwMemory_CacheStructure444' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural445' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_MemoryOrganization' and 'NFP_Natural'. From 'MARTE_HwMemory_MemoryOrganization', the role 'MARTE_HwMemory_MemoryOrganization' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural447' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_MemoryOrganization' and 'NFP_Natural'. From 'MARTE_HwMemory_MemoryOrganization', the role 'MARTE_HwMemory_MemoryOrganization449' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural450' has cardinality 0..*.
+An association connects 'NFP_Natural' and 'MARTE_HwMemory_MemoryOrganization'. From 'NFP_Natural', the role 'NFP_Natural453' has cardinality 0..*, and from 'MARTE_HwMemory_MemoryOrganization', the role 'MARTE_HwMemory_MemoryOrganization452' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_MemoryOrganization' and 'NFP_DataSize'. From 'MARTE_HwMemory_MemoryOrganization', the role 'MARTE_HwMemory_MemoryOrganization455' has cardinality 0..*, and from 'NFP_DataSize', the role 'NFP_DataSize456' has cardinality 0..*.
+An association connects 'HwMemory_MemoryOrganization' and 'MARTE_HwMemory_HwRAM'. From 'HwMemory_MemoryOrganization', the role 'HwMemory_MemoryOrganization' has cardinality 0..*, and from 'MARTE_HwMemory_HwRAM', the role 'MARTE_HwMemory_HwRAM' has cardinality 0..*.
+An association connects 'NFP_Boolean' and 'MARTE_HwMemory_HwRAM'. From 'NFP_Boolean', the role 'NFP_Boolean460' has cardinality 0..*, and from 'MARTE_HwMemory_HwRAM', the role 'MARTE_HwMemory_HwRAM459' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_HwRAM' and 'NFP_Boolean'. From 'MARTE_HwMemory_HwRAM', the role 'MARTE_HwMemory_HwRAM462' has cardinality 0..*, and from 'NFP_Boolean', the role 'NFP_Boolean463' has cardinality 0..*.
+An association connects 'NFP_Boolean' and 'MARTE_HwMemory_HwRAM'. From 'NFP_Boolean', the role 'NFP_Boolean466' has cardinality 0..*, and from 'MARTE_HwMemory_HwRAM', the role 'MARTE_HwMemory_HwRAM465' has cardinality 0..*.
+An association connects 'HwMemory_MemoryOrganization' and 'MARTE_HwMemory_HwROM'. From 'HwMemory_MemoryOrganization', the role 'HwMemory_MemoryOrganization468' has cardinality 0..*, and from 'MARTE_HwMemory_HwROM', the role 'MARTE_HwMemory_HwROM' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_HwDrive' and 'NFP_DataSize'. From 'MARTE_HwMemory_HwDrive', the role 'MARTE_HwMemory_HwDrive' has cardinality 0..*, and from 'NFP_DataSize', the role 'NFP_DataSize470' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_HwDrive' and 'HwMemory_HwRAM'. From 'MARTE_HwMemory_HwDrive', the role 'MARTE_HwMemory_HwDrive472' has cardinality 0..*, and from 'HwMemory_HwRAM', the role 'HwMemory_HwRAM473' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_HwCache' and 'NFP_Natural'. From 'MARTE_HwMemory_HwCache', the role 'MARTE_HwMemory_HwCache' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural475' has cardinality 0..*.
+An association connects 'MARTE_HwMemory_HwCache' and 'HwMemory_CacheStructure'. From 'MARTE_HwMemory_HwCache', the role 'MARTE_HwMemory_HwCache477' has cardinality 0..*, and from 'HwMemory_CacheStructure', the role 'HwMemory_CacheStructure' has cardinality 0..*.
+An association connects 'MARTE_HwTiming_HwTimer' and 'NFP_Natural'. From 'MARTE_HwTiming_HwTimer', the role 'MARTE_HwTiming_HwTimer' has cardinality 0..*, and from 'NFP_Natural', the role 'NFP_Natural479' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_HwTiming_HwTimer'. From 'NFP_DataSize', the role 'NFP_DataSize482' has cardinality 0..*, and from 'MARTE_HwTiming_HwTimer', the role 'MARTE_HwTiming_HwTimer481' has cardinality 0..*.
+An association connects 'HwTiming_HwClock' and 'MARTE_HwTiming_HwTimer'. From 'HwTiming_HwClock', the role 'HwTiming_HwClock' has cardinality 0..*, and from 'MARTE_HwTiming_HwTimer', the role 'MARTE_HwTiming_HwTimer484' has cardinality 0..*.
+An association connects 'MARTE_HwDevice_HwDevice' and 'HwDeviceFunction_HwDeviceFunction'. From 'MARTE_HwDevice_HwDevice', the role 'MARTE_HwDevice_HwDevice' has cardinality 0..*, and from 'HwDeviceFunction_HwDeviceFunction', the role 'HwDeviceFunction_HwDeviceFunction' has cardinality 0..*.
+An association connects 'MARTE_HwDevice_HwDevice' and 'HwProtocol_HwProtocol'. From 'MARTE_HwDevice_HwDevice', the role 'MARTE_HwDevice_HwDevice487' has cardinality 0..*, and from 'HwProtocol_HwProtocol', the role 'HwProtocol_HwProtocol488' has cardinality 0..*.
+An association connects 'HwPackage_HwPackage' and 'MARTE_HwDevice_HwDevice'. From 'HwPackage_HwPackage', the role 'HwPackage_HwPackage491' has cardinality 0..*, and from 'MARTE_HwDevice_HwDevice', the role 'MARTE_HwDevice_HwDevice490' has cardinality 0..*.
+An association connects 'HwIO_HwPin' and 'MARTE_HwDevice_HwDevice'. From 'HwIO_HwPin', the role 'HwIO_HwPin494' has cardinality 0..*, and from 'MARTE_HwDevice_HwDevice', the role 'MARTE_HwDevice_HwDevice493' has cardinality 0..*.
+An association connects 'MARTE_HwDevice_HwDevice' and 'HwRegister_HwRegister'. From 'MARTE_HwDevice_HwDevice', the role 'MARTE_HwDevice_HwDevice496' has cardinality 0..*, and from 'HwRegister_HwRegister', the role 'HwRegister_HwRegister497' has cardinality 0..*.
+An association connects 'HwCommunication_HwPort' and 'MARTE_HwDevice_HwDevice'. From 'HwCommunication_HwPort', the role 'HwCommunication_HwPort500' has cardinality 0..*, and from 'MARTE_HwDevice_HwDevice', the role 'MARTE_HwDevice_HwDevice499' has cardinality 0..*.
+An association connects 'HwProtocol_HwProtocol' and 'MARTE_HwDevice_HwPeripheral'. From 'HwProtocol_HwProtocol', the role 'HwProtocol_HwProtocol502' has cardinality 0..*, and from 'MARTE_HwDevice_HwPeripheral', the role 'MARTE_HwDevice_HwPeripheral' has cardinality 0..*.
+An association connects 'MARTE_HwDevice_HwPeripheral' and 'HwPeripheral_OperationImpl'. From 'MARTE_HwDevice_HwPeripheral', the role 'MARTE_HwDevice_HwPeripheral504' has cardinality 0..*, and from 'HwPeripheral_OperationImpl', the role 'HwPeripheral_OperationImpl' has cardinality 0..*.
+An association connects 'MARTE_HwDevice_HwPeripheral' and 'HwRegister_HwRegister'. From 'MARTE_HwDevice_HwPeripheral', the role 'MARTE_HwDevice_HwPeripheral506' has cardinality 0..*, and from 'HwRegister_HwRegister', the role 'HwRegister_HwRegister507' has cardinality 0..*.
+An association connects 'MARTE_HwDevice_HwPeripheral' and 'HwCommunication_HwPort'. From 'MARTE_HwDevice_HwPeripheral', the role 'MARTE_HwDevice_HwPeripheral509' has cardinality 0..*, and from 'HwCommunication_HwPort', the role 'HwCommunication_HwPort510' has cardinality 0..*.
+An association connects 'HwPeripheral_PeripheralActivity' and 'MARTE_HwDevice_HwPeripheral'. From 'HwPeripheral_PeripheralActivity', the role 'HwPeripheral_PeripheralActivity' has cardinality 0..*, and from 'MARTE_HwDevice_HwPeripheral', the role 'MARTE_HwDevice_HwPeripheral512' has cardinality 0..*.
+An association connects 'NFP_Power' and 'MARTE_HwGeneral_HwResourceService'. From 'NFP_Power', the role 'NFP_Power514' has cardinality 0..*, and from 'MARTE_HwGeneral_HwResourceService', the role 'MARTE_HwGeneral_HwResourceService' has cardinality 0..*.
+An association connects 'MARTE_HwGeneral_HwResourceService' and 'NFP_Power'. From 'MARTE_HwGeneral_HwResourceService', the role 'MARTE_HwGeneral_HwResourceService516' has cardinality 0..*, and from 'NFP_Power', the role 'NFP_Power517' has cardinality 0..*.
+An association connects 'NFP_String' and 'MARTE_HwGeneral_HwResource'. From 'NFP_String', the role 'NFP_String519' has cardinality 0..*, and from 'MARTE_HwGeneral_HwResource', the role 'MARTE_HwGeneral_HwResource' has cardinality 0..*.
+An association connects 'HwGeneral_HwResourceService' and 'MARTE_HwGeneral_HwResource'. From 'HwGeneral_HwResourceService', the role 'HwGeneral_HwResourceService' has cardinality 0..*, and from 'MARTE_HwGeneral_HwResource', the role 'MARTE_HwGeneral_HwResource521' has cardinality 0..*.
+An association connects 'MARTE_HwGeneral_HwResource' and 'HwGeneral_HwResourceService'. From 'MARTE_HwGeneral_HwResource', the role 'MARTE_HwGeneral_HwResource523' has cardinality 0..*, and from 'HwGeneral_HwResourceService', the role 'HwGeneral_HwResourceService524' has cardinality 0..*.
+An association connects 'MARTE_HwGeneral_HwResource' and 'HwGeneral_HwResource'. From 'MARTE_HwGeneral_HwResource', the role 'MARTE_HwGeneral_HwResource526' has cardinality 0..*, and from 'HwGeneral_HwResource', the role 'HwGeneral_HwResource' has cardinality 0..*.
+An association connects 'HwCommunication_HwEndPoint' and 'MARTE_HwGeneral_HwResource'. From 'HwCommunication_HwEndPoint', the role 'HwCommunication_HwEndPoint' has cardinality 0..*, and from 'MARTE_HwGeneral_HwResource', the role 'MARTE_HwGeneral_HwResource528' has cardinality 0..*.
+An association connects 'MARTE_HwGeneral_HwResource' and 'NFP_Frequency'. From 'MARTE_HwGeneral_HwResource', the role 'MARTE_HwGeneral_HwResource530' has cardinality 0..*, and from 'NFP_Frequency', the role 'NFP_Frequency' has cardinality 0..*.
+An association connects 'MARTE_HwGeneral_HwResource' and 'HwGeneral_MARTE_Operation'. From 'MARTE_HwGeneral_HwResource', the role 'MARTE_HwGeneral_HwResource532' has cardinality 0..*, and from 'HwGeneral_MARTE_Operation', the role 'HwGeneral_MARTE_Operation' has cardinality 0..*.
+An association connects 'HwGeneral_MARTE_Activity' and 'MARTE_HwGeneral_HwResource'. From 'HwGeneral_MARTE_Activity', the role 'HwGeneral_MARTE_Activity' has cardinality 0..*, and from 'MARTE_HwGeneral_HwResource', the role 'MARTE_HwGeneral_HwResource534' has cardinality 0..*.
+An association connects 'NFP_Length' and 'MARTE_HwLayout_HwComponent'. From 'NFP_Length', the role 'NFP_Length' has cardinality 0..*, and from 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent' has cardinality 0..*.
+An association connects 'NFP_Area' and 'MARTE_HwLayout_HwComponent'. From 'NFP_Area', the role 'NFP_Area' has cardinality 0..*, and from 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent537' has cardinality 0..*.
+An association connects 'NFP_NaturalInterval' and 'MARTE_HwLayout_HwComponent'. From 'NFP_NaturalInterval', the role 'NFP_NaturalInterval' has cardinality 0..*, and from 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent539' has cardinality 0..*.
+An association connects 'NFP_Natural' and 'MARTE_HwLayout_HwComponent'. From 'NFP_Natural', the role 'NFP_Natural542' has cardinality 0..*, and from 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent541' has cardinality 0..*.
+An association connects 'NFP_Natural' and 'MARTE_HwLayout_HwComponent'. From 'NFP_Natural', the role 'NFP_Natural545' has cardinality 0..*, and from 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent544' has cardinality 0..*.
+An association connects 'NFP_Real' and 'MARTE_HwLayout_HwComponent'. From 'NFP_Real', the role 'NFP_Real548' has cardinality 0..*, and from 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent547' has cardinality 0..*.
+An association connects 'NFP_Price' and 'MARTE_HwLayout_HwComponent'. From 'NFP_Price', the role 'NFP_Price' has cardinality 0..*, and from 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent550' has cardinality 0..*.
+An association connects 'MARTE_HwLayout_HwComponent' and 'HwLayout_Env_Condition'. From 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent552' has cardinality 0..*, and from 'HwLayout_Env_Condition', the role 'HwLayout_Env_Condition' has cardinality 0..*.
+An association connects 'HwGeneral_HwResourceService' and 'MARTE_HwLayout_HwComponent'. From 'HwGeneral_HwResourceService', the role 'HwGeneral_HwResourceService555' has cardinality 0..*, and from 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent554' has cardinality 0..*.
+An association connects 'NFP_Power' and 'MARTE_HwLayout_HwComponent'. From 'NFP_Power', the role 'NFP_Power558' has cardinality 0..*, and from 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent557' has cardinality 0..*.
+An association connects 'MARTE_HwLayout_HwComponent' and 'NFP_Power'. From 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent560' has cardinality 0..*, and from 'NFP_Power', the role 'NFP_Power561' has cardinality 0..*.
+An association connects 'HwLayout_HwComponent' and 'MARTE_HwLayout_HwComponent'. From 'HwLayout_HwComponent', the role 'HwLayout_HwComponent' has cardinality 0..*, and from 'MARTE_HwLayout_HwComponent', the role 'MARTE_HwLayout_HwComponent563' has cardinality 0..*.
+An association connects 'MARTE_HwLayout_Env_Condition' and 'NFP_String'. From 'MARTE_HwLayout_Env_Condition', the role 'MARTE_HwLayout_Env_Condition' has cardinality 0..*, and from 'NFP_String', the role 'NFP_String565' has cardinality 0..*.
+An association connects 'Realnterval' and 'MARTE_HwLayout_Env_Condition'. From 'Realnterval', the role 'Realnterval' has cardinality 0..*, and from 'MARTE_HwLayout_Env_Condition', the role 'MARTE_HwLayout_Env_Condition567' has cardinality 0..*.
+An association connects 'MARTE_HwPower_HwPowerSupply' and 'NFP_Power'. From 'MARTE_HwPower_HwPowerSupply', the role 'MARTE_HwPower_HwPowerSupply' has cardinality 0..*, and from 'NFP_Power', the role 'NFP_Power569' has cardinality 0..*.
+An association connects 'NFP_Energy' and 'MARTE_HwPower_HwPowerSupply'. From 'NFP_Energy', the role 'NFP_Energy572' has cardinality 0..*, and from 'MARTE_HwPower_HwPowerSupply', the role 'MARTE_HwPower_HwPowerSupply571' has cardinality 0..*.
+An association connects 'NFP_Power' and 'MARTE_HwPower_HwCoolingSupply'. From 'NFP_Power', the role 'NFP_Power574' has cardinality 0..*, and from 'MARTE_HwPower_HwCoolingSupply', the role 'MARTE_HwPower_HwCoolingSupply' has cardinality 0..*.
+An association connects 'MARTE_HwPeripheral_OperationImpl' and 'HwPeripheral_MARTE_Operation'. From 'MARTE_HwPeripheral_OperationImpl', the role 'MARTE_HwPeripheral_OperationImpl' has cardinality 0..*, and from 'HwPeripheral_MARTE_Operation', the role 'HwPeripheral_MARTE_Operation' has cardinality 0..*.
+An association connects 'MARTE_HwPeripheral_RegisterAction' and 'HwRegister_HwRegister'. From 'MARTE_HwPeripheral_RegisterAction', the role 'MARTE_HwPeripheral_RegisterAction' has cardinality 0..*, and from 'HwRegister_HwRegister', the role 'HwRegister_HwRegister577' has cardinality 0..*.
+An association connects 'MARTE_HwPeripheral_WriteRegisterAction' and 'HwPeripheral_MARTE_InputPin'. From 'MARTE_HwPeripheral_WriteRegisterAction', the role 'MARTE_HwPeripheral_WriteRegisterAction' has cardinality 0..*, and from 'HwPeripheral_MARTE_InputPin', the role 'HwPeripheral_MARTE_InputPin' has cardinality 0..*.
+An association connects 'MARTE_HwPeripheral_ReadRegisterAction' and 'HwPeripheral_MARTE_OutputPin'. From 'MARTE_HwPeripheral_ReadRegisterAction', the role 'MARTE_HwPeripheral_ReadRegisterAction' has cardinality 0..*, and from 'HwPeripheral_MARTE_OutputPin', the role 'HwPeripheral_MARTE_OutputPin' has cardinality 0..*.
+An association connects 'MARTE_HwPeripheral_PeripheralActivity' and 'HwPeripheral_RegisterAction'. From 'MARTE_HwPeripheral_PeripheralActivity', the role 'MARTE_HwPeripheral_PeripheralActivity' has cardinality 0..*, and from 'HwPeripheral_RegisterAction', the role 'HwPeripheral_RegisterAction' has cardinality 0..*.
+An association connects 'HwPackage_HwPackagePin' and 'MARTE_HwIO_HwPin'. From 'HwPackage_HwPackagePin', the role 'MARTE_DesignModel583' has cardinality 0..*, and from 'MARTE_HwIO_HwPin', the role 'HRM582' has cardinality 0..*.
+An association connects 'MARTE_HwIO_HwPin' and 'HwIO_HwLine'. From 'MARTE_HwIO_HwPin', the role 'MARTE_HwIO_HwPin' has cardinality 0..*, and from 'HwIO_HwLine', the role 'HwIO_HwLine' has cardinality 0..*.
+An association connects 'HwGeneral_HwResource' and 'MARTE_HwDatasheet_HwDatasheet'. From 'HwGeneral_HwResource', the role 'HwGeneral_HwResource586' has cardinality 0..*, and from 'MARTE_HwDatasheet_HwDatasheet', the role 'MARTE_HwDatasheet_HwDatasheet' has cardinality 0..*.
+An association connects 'HwProtocol_HwProtocol' and 'MARTE_HwDatasheet_HwDatasheet'. From 'HwProtocol_HwProtocol', the role 'HwProtocol_HwProtocol589' has cardinality 0..*, and from 'MARTE_HwDatasheet_HwDatasheet', the role 'MARTE_HwDatasheet_HwDatasheet588' has cardinality 0..*.
+An association connects 'MARTE_HwPackage_HwPackage' and 'HwPackage_HwPackagePin'. From 'MARTE_HwPackage_HwPackage', the role 'MARTE_HwPackage_HwPackage' has cardinality 0..*, and from 'HwPackage_HwPackagePin', the role 'HwPackage_HwPackagePin' has cardinality 0..*.
+An association connects 'HwIO_HwPin' and 'MARTE_HwPackage_HwPackagePin'. From 'HwIO_HwPin', the role 'MARTE_DesignModel593' has cardinality 0..*, and from 'MARTE_HwPackage_HwPackagePin', the role 'HRM592' has cardinality 0..*.
+An association connects 'MARTE_HwPackage_HwPackagePin' and 'HwPackage_HwWire'. From 'MARTE_HwPackage_HwPackagePin', the role 'MARTE_HwPackage_HwPackagePin' has cardinality 0..*, and from 'HwPackage_HwWire', the role 'HwPackage_HwWire' has cardinality 0..*.
+An association connects 'HwProtocol_MARTE_Operation' and 'MARTE_HwProtocol_HwProtocol'. From 'HwProtocol_MARTE_Operation', the role 'HwProtocol_MARTE_Operation' has cardinality 0..*, and from 'MARTE_HwProtocol_HwProtocol', the role 'MARTE_HwProtocol_HwProtocol' has cardinality 0..*.
+An association connects 'MARTE_HwDiagram_HwBlockDiagram' and 'HwProtocol_HwProtocol'. From 'MARTE_HwDiagram_HwBlockDiagram', the role 'MARTE_HwDiagram_HwBlockDiagram' has cardinality 0..*, and from 'HwProtocol_HwProtocol', the role 'HwProtocol_HwProtocol597' has cardinality 0..*.
+An association connects 'MARTE_HwDiagram_HwBlockDiagram' and 'HwCommunication_HwConnection'. From 'MARTE_HwDiagram_HwBlockDiagram', the role 'MARTE_HwDiagram_HwBlockDiagram599' has cardinality 0..*, and from 'HwCommunication_HwConnection', the role 'HwCommunication_HwConnection' has cardinality 0..*.
+An association connects 'HwGeneral_HwResource' and 'MARTE_HwDiagram_HwBlockDiagram'. From 'HwGeneral_HwResource', the role 'HwGeneral_HwResource602' has cardinality 0..*, and from 'MARTE_HwDiagram_HwBlockDiagram', the role 'MARTE_HwDiagram_HwBlockDiagram601' has cardinality 0..*.
+An association connects 'MARTE_HwDiagram_HwCircuitDiagram' and 'HwPackage_HwPackage'. From 'MARTE_HwDiagram_HwCircuitDiagram', the role 'MARTE_HwDiagram_HwCircuitDiagram' has cardinality 0..*, and from 'HwPackage_HwPackage', the role 'HwPackage_HwPackage604' has cardinality 0..*.
+An association connects 'MARTE_HwDiagram_HwCircuitDiagram' and 'HwPackage_HwWire'. From 'MARTE_HwDiagram_HwCircuitDiagram', the role 'MARTE_HwDiagram_HwCircuitDiagram606' has cardinality 0..*, and from 'HwPackage_HwWire', the role 'HwPackage_HwWire607' has cardinality 0..*.
+An association connects 'HwGeneral_HwResource' and 'MARTE_HwDiagram_HwHRMDiagram'. From 'HwGeneral_HwResource', the role 'HwGeneral_HwResource609' has cardinality 0..*, and from 'MARTE_HwDiagram_HwHRMDiagram', the role 'MARTE_HwDiagram_HwHRMDiagram' has cardinality 0..*.
+An association connects 'HwCommunication_HwMedia' and 'MARTE_HwDiagram_HwHRMDiagram'. From 'HwCommunication_HwMedia', the role 'HwCommunication_HwMedia612' has cardinality 0..*, and from 'MARTE_HwDiagram_HwHRMDiagram', the role 'MARTE_HwDiagram_HwHRMDiagram611' has cardinality 0..*.
+An association connects 'HwProtocol_HwProtocol' and 'MARTE_HwDiagram_HwHRMDiagram'. From 'HwProtocol_HwProtocol', the role 'HwProtocol_HwProtocol615' has cardinality 0..*, and from 'MARTE_HwDiagram_HwHRMDiagram', the role 'MARTE_HwDiagram_HwHRMDiagram614' has cardinality 0..*.
+An association connects 'MARTE_HwDiagram_HwHRMDiagram' and 'HwDiagram_MARTE_DataType'. From 'MARTE_HwDiagram_HwHRMDiagram', the role 'MARTE_HwDiagram_HwHRMDiagram617' has cardinality 0..*, and from 'HwDiagram_MARTE_DataType', the role 'HwDiagram_MARTE_DataType' has cardinality 0..*.
+An association connects 'MARTE_HwDiagram_SRMDiagram' and 'SW_Brokering_DeviceBroker'. From 'MARTE_HwDiagram_SRMDiagram', the role 'MARTE_HwDiagram_SRMDiagram' has cardinality 0..*, and from 'SW_Brokering_DeviceBroker', the role 'SW_Brokering_DeviceBroker' has cardinality 0..*.
+An association connects 'HwGeneral_HwResource' and 'MARTE_HwDiagram_SRMDiagram'. From 'HwGeneral_HwResource', the role 'HwGeneral_HwResource621' has cardinality 0..*, and from 'MARTE_HwDiagram_SRMDiagram', the role 'MARTE_HwDiagram_SRMDiagram620' has cardinality 0..*.
+An association connects 'SW_ResourceCore_MARTE_TypedElement' and 'MARTE_SW_ResourceCore_SwResource'. From 'SW_ResourceCore_MARTE_TypedElement', the role 'SW_ResourceCore_MARTE_TypedElement' has cardinality 0..*, and from 'MARTE_SW_ResourceCore_SwResource', the role 'MARTE_SW_ResourceCore_SwResource' has cardinality 0..*.
+An association connects 'SW_ResourceCore_MARTE_TypedElement' and 'MARTE_SW_ResourceCore_SwResource'. From 'SW_ResourceCore_MARTE_TypedElement', the role 'SW_ResourceCore_MARTE_TypedElement625' has cardinality 0..*, and from 'MARTE_SW_ResourceCore_SwResource', the role 'MARTE_SW_ResourceCore_SwResource624' has cardinality 0..*.
+An association connects 'MARTE_SW_ResourceCore_SwResource' and 'SW_ResourceCore_MARTE_TypedElement'. From 'MARTE_SW_ResourceCore_SwResource', the role 'MARTE_SW_ResourceCore_SwResource627' has cardinality 0..*, and from 'SW_ResourceCore_MARTE_TypedElement', the role 'SW_ResourceCore_MARTE_TypedElement628' has cardinality 0..*.
+An association connects 'MARTE_SW_ResourceCore_SwResource' and 'SW_ResourceCore_MARTE_BehavioralFeature'. From 'MARTE_SW_ResourceCore_SwResource', the role 'MARTE_SW_ResourceCore_SwResource630' has cardinality 0..*, and from 'SW_ResourceCore_MARTE_BehavioralFeature', the role 'SW_ResourceCore_MARTE_BehavioralFeature' has cardinality 0..*.
+An association connects 'SW_ResourceCore_MARTE_BehavioralFeature' and 'MARTE_SW_ResourceCore_SwResource'. From 'SW_ResourceCore_MARTE_BehavioralFeature', the role 'SW_ResourceCore_MARTE_BehavioralFeature633' has cardinality 0..*, and from 'MARTE_SW_ResourceCore_SwResource', the role 'MARTE_SW_ResourceCore_SwResource632' has cardinality 0..*.
+An association connects 'MARTE_SW_ResourceCore_SwResource' and 'SW_ResourceCore_MARTE_BehavioralFeature'. From 'MARTE_SW_ResourceCore_SwResource', the role 'MARTE_SW_ResourceCore_SwResource635' has cardinality 0..*, and from 'SW_ResourceCore_MARTE_BehavioralFeature', the role 'SW_ResourceCore_MARTE_BehavioralFeature636' has cardinality 0..*.
+An association connects 'SW_ResourceCore_MARTE_Property' and 'MARTE_SW_ResourceCore_SwAccessService'. From 'SW_ResourceCore_MARTE_Property', the role 'SW_ResourceCore_MARTE_Property' has cardinality 0..*, and from 'MARTE_SW_ResourceCore_SwAccessService', the role 'MARTE_SW_ResourceCore_SwAccessService' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_BehavioralFeature' and 'MARTE_SW_Concurrency_EntryPoint'. From 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature' has cardinality 0..*, and from 'MARTE_SW_Concurrency_EntryPoint', the role 'MARTE_SW_Concurrency_EntryPoint' has cardinality 0..*.
+An association connects 'ArrivalPattern' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'ArrivalPattern', the role 'ArrivalPattern640' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_SwConcurrentResource' and 'SW_Concurrency_MARTE_Element'. From 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource642' has cardinality 0..*, and from 'SW_Concurrency_MARTE_Element', the role 'SW_Concurrency_MARTE_Element' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_TypedElement' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource644' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_SwConcurrentResource' and 'SW_Concurrency_MARTE_TypedElement'. From 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource646' has cardinality 0..*, and from 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement647' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_TypedElement' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement650' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource649' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_TypedElement' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement653' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource652' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_SwConcurrentResource' and 'SW_Concurrency_MARTE_BehavioralFeature'. From 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource655' has cardinality 0..*, and from 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature656' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_BehavioralFeature' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature659' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource658' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_BehavioralFeature' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature662' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource661' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_BehavioralFeature' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature665' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource664' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_BehavioralFeature' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature668' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource667' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_SwConcurrentResource' and 'SW_Concurrency_MARTE_BehavioralFeature'. From 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource670' has cardinality 0..*, and from 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature671' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_TypedElement' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement674' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource673' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_SwConcurrentResource' and 'SW_Concurrency_MARTE_TypedElement'. From 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource676' has cardinality 0..*, and from 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement677' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_TypedElement' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement680' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource679' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_TypedElement' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement683' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource682' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_TypedElement' and 'MARTE_SW_Concurrency_SwConcurrentResource'. From 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement686' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwConcurrentResource', the role 'MARTE_SW_Concurrency_SwConcurrentResource685' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_InterruptResource' and 'SW_Concurrency_MARTE_TypedElement'. From 'MARTE_SW_Concurrency_InterruptResource', the role 'MARTE_SW_Concurrency_InterruptResource' has cardinality 0..*, and from 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement688' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_InterruptResource' and 'SW_Concurrency_MARTE_TypedElement'. From 'MARTE_SW_Concurrency_InterruptResource', the role 'MARTE_SW_Concurrency_InterruptResource690' has cardinality 0..*, and from 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement691' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_BehavioralFeature' and 'MARTE_SW_Concurrency_InterruptResource'. From 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature694' has cardinality 0..*, and from 'MARTE_SW_Concurrency_InterruptResource', the role 'MARTE_SW_Concurrency_InterruptResource693' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_BehavioralFeature' and 'MARTE_SW_Concurrency_InterruptResource'. From 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature697' has cardinality 0..*, and from 'MARTE_SW_Concurrency_InterruptResource', the role 'MARTE_SW_Concurrency_InterruptResource696' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_NamedElement' and 'MARTE_SW_Concurrency_SwSchedulableResource'. From 'SW_Concurrency_MARTE_NamedElement', the role 'SW_Concurrency_MARTE_NamedElement' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwSchedulableResource', the role 'MARTE_SW_Concurrency_SwSchedulableResource' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_SwSchedulableResource' and 'SW_Concurrency_MARTE_TypedElement'. From 'MARTE_SW_Concurrency_SwSchedulableResource', the role 'MARTE_SW_Concurrency_SwSchedulableResource700' has cardinality 0..*, and from 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement701' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_SwSchedulableResource' and 'SW_Concurrency_MARTE_TypedElement'. From 'MARTE_SW_Concurrency_SwSchedulableResource', the role 'MARTE_SW_Concurrency_SwSchedulableResource703' has cardinality 0..*, and from 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement704' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_TypedElement' and 'MARTE_SW_Concurrency_SwSchedulableResource'. From 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement707' has cardinality 0..*, and from 'MARTE_SW_Concurrency_SwSchedulableResource', the role 'MARTE_SW_Concurrency_SwSchedulableResource706' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_SwSchedulableResource' and 'SW_Concurrency_MARTE_BehavioralFeature'. From 'MARTE_SW_Concurrency_SwSchedulableResource', the role 'MARTE_SW_Concurrency_SwSchedulableResource709' has cardinality 0..*, and from 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature710' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_SwSchedulableResource' and 'SW_Concurrency_MARTE_BehavioralFeature'. From 'MARTE_SW_Concurrency_SwSchedulableResource', the role 'MARTE_SW_Concurrency_SwSchedulableResource712' has cardinality 0..*, and from 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature713' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_SwSchedulableResource' and 'SW_Concurrency_MARTE_BehavioralFeature'. From 'MARTE_SW_Concurrency_SwSchedulableResource', the role 'MARTE_SW_Concurrency_SwSchedulableResource715' has cardinality 0..*, and from 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature716' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_SwTimerResource' and 'SW_Concurrency_MARTE_TypedElement'. From 'MARTE_SW_Concurrency_SwTimerResource', the role 'MARTE_SW_Concurrency_SwTimerResource' has cardinality 0..*, and from 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement718' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_MemoryPartition' and 'SW_Concurrency_MARTE_TypedElement'. From 'MARTE_SW_Concurrency_MemoryPartition', the role 'MARTE_SW_Concurrency_MemoryPartition' has cardinality 0..*, and from 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement720' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_MemoryPartition' and 'SW_Concurrency_MARTE_TypedElement'. From 'MARTE_SW_Concurrency_MemoryPartition', the role 'MARTE_SW_Concurrency_MemoryPartition722' has cardinality 0..*, and from 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement723' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_BehavioralFeature' and 'MARTE_SW_Concurrency_MemoryPartition'. From 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature726' has cardinality 0..*, and from 'MARTE_SW_Concurrency_MemoryPartition', the role 'MARTE_SW_Concurrency_MemoryPartition725' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_MemoryPartition' and 'SW_Concurrency_MARTE_BehavioralFeature'. From 'MARTE_SW_Concurrency_MemoryPartition', the role 'MARTE_SW_Concurrency_MemoryPartition728' has cardinality 0..*, and from 'SW_Concurrency_MARTE_BehavioralFeature', the role 'SW_Concurrency_MARTE_BehavioralFeature729' has cardinality 0..*.
+An association connects 'MARTE_SW_Concurrency_MemoryPartition' and 'SW_Concurrency_MARTE_Namespace'. From 'MARTE_SW_Concurrency_MemoryPartition', the role 'MARTE_SW_Concurrency_MemoryPartition731' has cardinality 0..*, and from 'SW_Concurrency_MARTE_Namespace', the role 'SW_Concurrency_MARTE_Namespace' has cardinality 0..*.
+An association connects 'SW_Concurrency_MARTE_TypedElement' and 'MARTE_SW_Concurrency_Alarm'. From 'SW_Concurrency_MARTE_TypedElement', the role 'SW_Concurrency_MARTE_TypedElement733' has cardinality 0..*, and from 'MARTE_SW_Concurrency_Alarm', the role 'MARTE_SW_Concurrency_Alarm' has cardinality 0..*.
+An association connects 'MARTE_SW_Brokering_DeviceBroker' and 'SW_Brokering_MARTE_TypedElement'. From 'MARTE_SW_Brokering_DeviceBroker', the role 'MARTE_SW_Brokering_DeviceBroker' has cardinality 0..*, and from 'SW_Brokering_MARTE_TypedElement', the role 'SW_Brokering_MARTE_TypedElement' has cardinality 0..*.
+An association connects 'MARTE_SW_Brokering_DeviceBroker' and 'SW_Brokering_MARTE_BehavioralFeature'. From 'MARTE_SW_Brokering_DeviceBroker', the role 'MARTE_SW_Brokering_DeviceBroker736' has cardinality 0..*, and from 'SW_Brokering_MARTE_BehavioralFeature', the role 'SW_Brokering_MARTE_BehavioralFeature' has cardinality 0..*.
+An association connects 'MARTE_SW_Brokering_DeviceBroker' and 'SW_Brokering_MARTE_BehavioralFeature'. From 'MARTE_SW_Brokering_DeviceBroker', the role 'MARTE_SW_Brokering_DeviceBroker738' has cardinality 0..*, and from 'SW_Brokering_MARTE_BehavioralFeature', the role 'SW_Brokering_MARTE_BehavioralFeature739' has cardinality 0..*.
+An association connects 'SW_Brokering_MARTE_BehavioralFeature' and 'MARTE_SW_Brokering_DeviceBroker'. From 'SW_Brokering_MARTE_BehavioralFeature', the role 'SW_Brokering_MARTE_BehavioralFeature742' has cardinality 0..*, and from 'MARTE_SW_Brokering_DeviceBroker', the role 'MARTE_SW_Brokering_DeviceBroker741' has cardinality 0..*.
+An association connects 'MARTE_SW_Brokering_DeviceBroker' and 'SW_Brokering_MARTE_BehavioralFeature'. From 'MARTE_SW_Brokering_DeviceBroker', the role 'MARTE_SW_Brokering_DeviceBroker744' has cardinality 0..*, and from 'SW_Brokering_MARTE_BehavioralFeature', the role 'SW_Brokering_MARTE_BehavioralFeature745' has cardinality 0..*.
+An association connects 'MARTE_SW_Brokering_DeviceBroker' and 'SW_Brokering_MARTE_BehavioralFeature'. From 'MARTE_SW_Brokering_DeviceBroker', the role 'MARTE_SW_Brokering_DeviceBroker747' has cardinality 0..*, and from 'SW_Brokering_MARTE_BehavioralFeature', the role 'SW_Brokering_MARTE_BehavioralFeature748' has cardinality 0..*.
+An association connects 'MARTE_SW_Brokering_DeviceBroker' and 'SW_Brokering_MARTE_Operation'. From 'MARTE_SW_Brokering_DeviceBroker', the role 'MARTE_SW_Brokering_DeviceBroker750' has cardinality 0..*, and from 'SW_Brokering_MARTE_Operation', the role 'SW_Brokering_MARTE_Operation' has cardinality 0..*.
+An association connects 'SW_Brokering_MARTE_Activity' and 'MARTE_SW_Brokering_DeviceBroker'. From 'SW_Brokering_MARTE_Activity', the role 'SW_Brokering_MARTE_Activity' has cardinality 0..*, and from 'MARTE_SW_Brokering_DeviceBroker', the role 'MARTE_SW_Brokering_DeviceBroker752' has cardinality 0..*.
+An association connects 'SW_Brokering_MARTE_TypedElement' and 'MARTE_SW_Brokering_MemoryBroker'. From 'SW_Brokering_MARTE_TypedElement', the role 'SW_Brokering_MARTE_TypedElement754' has cardinality 0..*, and from 'MARTE_SW_Brokering_MemoryBroker', the role 'MARTE_SW_Brokering_MemoryBroker' has cardinality 0..*.
+An association connects 'SW_Brokering_MARTE_TypedElement' and 'MARTE_SW_Brokering_MemoryBroker'. From 'SW_Brokering_MARTE_TypedElement', the role 'SW_Brokering_MARTE_TypedElement757' has cardinality 0..*, and from 'MARTE_SW_Brokering_MemoryBroker', the role 'MARTE_SW_Brokering_MemoryBroker756' has cardinality 0..*.
+An association connects 'MARTE_SW_Brokering_MemoryBroker' and 'SW_Brokering_MARTE_TypedElement'. From 'MARTE_SW_Brokering_MemoryBroker', the role 'MARTE_SW_Brokering_MemoryBroker759' has cardinality 0..*, and from 'SW_Brokering_MARTE_TypedElement', the role 'SW_Brokering_MARTE_TypedElement760' has cardinality 0..*.
+An association connects 'MARTE_SW_Brokering_MemoryBroker' and 'SW_Brokering_MARTE_BehavioralFeature'. From 'MARTE_SW_Brokering_MemoryBroker', the role 'MARTE_SW_Brokering_MemoryBroker762' has cardinality 0..*, and from 'SW_Brokering_MARTE_BehavioralFeature', the role 'SW_Brokering_MARTE_BehavioralFeature763' has cardinality 0..*.
+An association connects 'SW_Brokering_MARTE_BehavioralFeature' and 'MARTE_SW_Brokering_MemoryBroker'. From 'SW_Brokering_MARTE_BehavioralFeature', the role 'SW_Brokering_MARTE_BehavioralFeature766' has cardinality 0..*, and from 'MARTE_SW_Brokering_MemoryBroker', the role 'MARTE_SW_Brokering_MemoryBroker765' has cardinality 0..*.
+An association connects 'MARTE_SW_Brokering_MemoryBroker' and 'SW_Brokering_MARTE_BehavioralFeature'. From 'MARTE_SW_Brokering_MemoryBroker', the role 'MARTE_SW_Brokering_MemoryBroker768' has cardinality 0..*, and from 'SW_Brokering_MARTE_BehavioralFeature', the role 'SW_Brokering_MARTE_BehavioralFeature769' has cardinality 0..*.
+An association connects 'MARTE_SW_Brokering_MemoryBroker' and 'SW_Brokering_MARTE_BehavioralFeature'. From 'MARTE_SW_Brokering_MemoryBroker', the role 'MARTE_SW_Brokering_MemoryBroker771' has cardinality 0..*, and from 'SW_Brokering_MARTE_BehavioralFeature', the role 'SW_Brokering_MARTE_BehavioralFeature772' has cardinality 0..*.
+An association connects 'SW_Interaction_MARTE_TypedElement' and 'MARTE_SW_Interaction_SwInteractionResource'. From 'SW_Interaction_MARTE_TypedElement', the role 'SW_Interaction_MARTE_TypedElement' has cardinality 0..*, and from 'MARTE_SW_Interaction_SwInteractionResource', the role 'MARTE_SW_Interaction_SwInteractionResource' has cardinality 0..*.
+An association connects 'MARTE_SW_Interaction_SharedDataComResource' and 'SW_Interaction_MARTE_BehavioralFeature'. From 'MARTE_SW_Interaction_SharedDataComResource', the role 'MARTE_SW_Interaction_SharedDataComResource' has cardinality 0..*, and from 'SW_Interaction_MARTE_BehavioralFeature', the role 'SW_Interaction_MARTE_BehavioralFeature' has cardinality 0..*.
+An association connects 'MARTE_SW_Interaction_SharedDataComResource' and 'SW_Interaction_MARTE_BehavioralFeature'. From 'MARTE_SW_Interaction_SharedDataComResource', the role 'MARTE_SW_Interaction_SharedDataComResource776' has cardinality 0..*, and from 'SW_Interaction_MARTE_BehavioralFeature', the role 'SW_Interaction_MARTE_BehavioralFeature777' has cardinality 0..*.
+An association connects 'MARTE_SW_Interaction_MessageComResource' and 'SW_Interaction_MARTE_TypedElement'. From 'MARTE_SW_Interaction_MessageComResource', the role 'MARTE_SW_Interaction_MessageComResource' has cardinality 0..*, and from 'SW_Interaction_MARTE_TypedElement', the role 'SW_Interaction_MARTE_TypedElement779' has cardinality 0..*.
+An association connects 'SW_Interaction_MARTE_TypedElement' and 'MARTE_SW_Interaction_MessageComResource'. From 'SW_Interaction_MARTE_TypedElement', the role 'SW_Interaction_MARTE_TypedElement782' has cardinality 0..*, and from 'MARTE_SW_Interaction_MessageComResource', the role 'MARTE_SW_Interaction_MessageComResource781' has cardinality 0..*.
+An association connects 'MARTE_SW_Interaction_MessageComResource' and 'SW_Interaction_MARTE_BehavioralFeature'. From 'MARTE_SW_Interaction_MessageComResource', the role 'MARTE_SW_Interaction_MessageComResource784' has cardinality 0..*, and from 'SW_Interaction_MARTE_BehavioralFeature', the role 'SW_Interaction_MARTE_BehavioralFeature785' has cardinality 0..*.
+An association connects 'MARTE_SW_Interaction_MessageComResource' and 'SW_Interaction_MARTE_BehavioralFeature'. From 'MARTE_SW_Interaction_MessageComResource', the role 'MARTE_SW_Interaction_MessageComResource787' has cardinality 0..*, and from 'SW_Interaction_MARTE_BehavioralFeature', the role 'SW_Interaction_MARTE_BehavioralFeature788' has cardinality 0..*.
+An association connects 'MARTE_SW_Interaction_NotificationResource' and 'SW_Interaction_MARTE_TypedElement'. From 'MARTE_SW_Interaction_NotificationResource', the role 'MARTE_SW_Interaction_NotificationResource' has cardinality 0..*, and from 'SW_Interaction_MARTE_TypedElement', the role 'SW_Interaction_MARTE_TypedElement790' has cardinality 0..*.
+An association connects 'SW_Interaction_MARTE_TypedElement' and 'MARTE_SW_Interaction_NotificationResource'. From 'SW_Interaction_MARTE_TypedElement', the role 'SW_Interaction_MARTE_TypedElement793' has cardinality 0..*, and from 'MARTE_SW_Interaction_NotificationResource', the role 'MARTE_SW_Interaction_NotificationResource792' has cardinality 0..*.
+An association connects 'MARTE_SW_Interaction_NotificationResource' and 'SW_Interaction_MARTE_BehavioralFeature'. From 'MARTE_SW_Interaction_NotificationResource', the role 'MARTE_SW_Interaction_NotificationResource795' has cardinality 0..*, and from 'SW_Interaction_MARTE_BehavioralFeature', the role 'SW_Interaction_MARTE_BehavioralFeature796' has cardinality 0..*.
+An association connects 'MARTE_SW_Interaction_NotificationResource' and 'SW_Interaction_MARTE_BehavioralFeature'. From 'MARTE_SW_Interaction_NotificationResource', the role 'MARTE_SW_Interaction_NotificationResource798' has cardinality 0..*, and from 'SW_Interaction_MARTE_BehavioralFeature', the role 'SW_Interaction_MARTE_BehavioralFeature799' has cardinality 0..*.
+An association connects 'SW_Interaction_MARTE_BehavioralFeature' and 'MARTE_SW_Interaction_NotificationResource'. From 'SW_Interaction_MARTE_BehavioralFeature', the role 'SW_Interaction_MARTE_BehavioralFeature802' has cardinality 0..*, and from 'MARTE_SW_Interaction_NotificationResource', the role 'MARTE_SW_Interaction_NotificationResource801' has cardinality 0..*.
+An association connects 'SW_Interaction_MARTE_BehavioralFeature' and 'MARTE_SW_Interaction_NotificationResource'. From 'SW_Interaction_MARTE_BehavioralFeature', the role 'SW_Interaction_MARTE_BehavioralFeature805' has cardinality 0..*, and from 'MARTE_SW_Interaction_NotificationResource', the role 'MARTE_SW_Interaction_NotificationResource804' has cardinality 0..*.
+An association connects 'SW_Interaction_MARTE_TypedElement' and 'MARTE_SW_Interaction_SwMutualExclusionResource'. From 'SW_Interaction_MARTE_TypedElement', the role 'SW_Interaction_MARTE_TypedElement807' has cardinality 0..*, and from 'MARTE_SW_Interaction_SwMutualExclusionResource', the role 'MARTE_SW_Interaction_SwMutualExclusionResource' has cardinality 0..*.
+An association connects 'SW_Interaction_MARTE_BehavioralFeature' and 'MARTE_SW_Interaction_SwMutualExclusionResource'. From 'SW_Interaction_MARTE_BehavioralFeature', the role 'SW_Interaction_MARTE_BehavioralFeature810' has cardinality 0..*, and from 'MARTE_SW_Interaction_SwMutualExclusionResource', the role 'MARTE_SW_Interaction_SwMutualExclusionResource809' has cardinality 0..*.
+An association connects 'SW_Interaction_MARTE_BehavioralFeature' and 'MARTE_SW_Interaction_SwMutualExclusionResource'. From 'SW_Interaction_MARTE_BehavioralFeature', the role 'SW_Interaction_MARTE_BehavioralFeature813' has cardinality 0..*, and from 'MARTE_SW_Interaction_SwMutualExclusionResource', the role 'MARTE_SW_Interaction_SwMutualExclusionResource812' has cardinality 0..*.
+An association connects 'MARTE_GCM_FlowProperty' and 'GCM_MARTE_Property'. From 'MARTE_GCM_FlowProperty', the role 'MARTE_GCM_FlowProperty' has cardinality 0..*, and from 'GCM_MARTE_Property', the role 'GCM_MARTE_Property' has cardinality 0..*.
+An association connects 'GCM_MARTE_Port' and 'MARTE_GCM_FlowPort'. From 'GCM_MARTE_Port', the role 'GCM_MARTE_Port' has cardinality 0..*, and from 'MARTE_GCM_FlowPort', the role 'MARTE_GCM_FlowPort' has cardinality 0..*.
+An association connects 'MARTE_GCM_ClientServerPort' and 'GCM_MARTE_Port'. From 'MARTE_GCM_ClientServerPort', the role 'MARTE_GCM_ClientServerPort' has cardinality 0..*, and from 'GCM_MARTE_Port', the role 'GCM_MARTE_Port817' has cardinality 0..*.
+An association connects 'MARTE_GCM_ClientServerPort' and 'GCM_MARTE_Interface'. From 'MARTE_GCM_ClientServerPort', the role 'MARTE_GCM_ClientServerPort819' has cardinality 0..*, and from 'GCM_MARTE_Interface', the role 'GCM_MARTE_Interface' has cardinality 0..*.
+An association connects 'MARTE_GCM_ClientServerPort' and 'GCM_MARTE_Interface'. From 'MARTE_GCM_ClientServerPort', the role 'MARTE_GCM_ClientServerPort821' has cardinality 0..*, and from 'GCM_MARTE_Interface', the role 'GCM_MARTE_Interface822' has cardinality 0..*.
+An association connects 'GCM_ClientServerSpecification' and 'MARTE_GCM_ClientServerPort'. From 'GCM_ClientServerSpecification', the role 'GCM_ClientServerSpecification' has cardinality 0..*, and from 'MARTE_GCM_ClientServerPort', the role 'MARTE_GCM_ClientServerPort824' has cardinality 0..*.
+An association connects 'GCM_MARTE_Interface' and 'MARTE_GCM_ClientServerSpecification'. From 'GCM_MARTE_Interface', the role 'GCM_MARTE_Interface826' has cardinality 0..*, and from 'MARTE_GCM_ClientServerSpecification', the role 'MARTE_GCM_ClientServerSpecification' has cardinality 0..*.
+An association connects 'GCM_MARTE_Interface' and 'MARTE_GCM_FlowSpecification'. From 'GCM_MARTE_Interface', the role 'GCM_MARTE_Interface828' has cardinality 0..*, and from 'MARTE_GCM_FlowSpecification', the role 'MARTE_GCM_FlowSpecification' has cardinality 0..*.
+An association connects 'GCM_MARTE_BehavioralFeature' and 'MARTE_GCM_ClientServerFeature'. From 'GCM_MARTE_BehavioralFeature', the role 'GCM_MARTE_BehavioralFeature' has cardinality 0..*, and from 'MARTE_GCM_ClientServerFeature', the role 'MARTE_GCM_ClientServerFeature' has cardinality 0..*.
+An association connects 'GCM_MARTE_Trigger' and 'MARTE_GCM_GCMTrigger'. From 'GCM_MARTE_Trigger', the role 'GCM_MARTE_Trigger' has cardinality 0..*, and from 'MARTE_GCM_GCMTrigger', the role 'MARTE_GCM_GCMTrigger' has cardinality 0..*.
+An association connects 'MARTE_GCM_GCMTrigger' and 'GCM_MARTE_Feature'. From 'MARTE_GCM_GCMTrigger', the role 'MARTE_GCM_GCMTrigger832' has cardinality 0..*, and from 'GCM_MARTE_Feature', the role 'GCM_MARTE_Feature' has cardinality 0..*.
+An association connects 'MARTE_GCM_GCMInvocationAction' and 'GCM_MARTE_InvocationAction'. From 'MARTE_GCM_GCMInvocationAction', the role 'MARTE_GCM_GCMInvocationAction' has cardinality 0..*, and from 'GCM_MARTE_InvocationAction', the role 'GCM_MARTE_InvocationAction' has cardinality 0..*.
+An association connects 'MARTE_GCM_GCMInvocationAction' and 'GCM_MARTE_Feature'. From 'MARTE_GCM_GCMInvocationAction', the role 'MARTE_GCM_GCMInvocationAction835' has cardinality 0..*, and from 'GCM_MARTE_Feature', the role 'GCM_MARTE_Feature836' has cardinality 0..*.
+An association connects 'GCM_MARTE_AnyReceiveEvent' and 'MARTE_GCM_DataEvent'. From 'GCM_MARTE_AnyReceiveEvent', the role 'GCM_MARTE_AnyReceiveEvent' has cardinality 0..*, and from 'MARTE_GCM_DataEvent', the role 'MARTE_GCM_DataEvent' has cardinality 0..*.
+An association connects 'MARTE_GCM_DataEvent' and 'GCM_MARTE_Classifier'. From 'MARTE_GCM_DataEvent', the role 'MARTE_GCM_DataEvent839' has cardinality 0..*, and from 'GCM_MARTE_Classifier', the role 'GCM_MARTE_Classifier' has cardinality 0..*.
+An association connects 'GCM_MARTE_Property' and 'MARTE_GCM_DataPool'. From 'GCM_MARTE_Property', the role 'GCM_MARTE_Property841' has cardinality 0..*, and from 'MARTE_GCM_DataPool', the role 'MARTE_GCM_DataPool' has cardinality 0..*.
+An association connects 'GCM_MARTE_Behavior' and 'MARTE_GCM_DataPool'. From 'GCM_MARTE_Behavior', the role 'GCM_MARTE_Behavior' has cardinality 0..*, and from 'MARTE_GCM_DataPool', the role 'MARTE_GCM_DataPool843' has cardinality 0..*.
+An association connects 'MARTE_GCM_DataPool' and 'GCM_MARTE_Behavior'. From 'MARTE_GCM_DataPool', the role 'MARTE_GCM_DataPool845' has cardinality 0..*, and from 'GCM_MARTE_Behavior', the role 'GCM_MARTE_Behavior846' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaWorkloadGenerator' and 'NFP_Integer'. From 'MARTE_GQAM_GaWorkloadGenerator', the role 'MARTE_GQAM_GaWorkloadGenerator' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer848' has cardinality 0..*.
+An association connects 'GQAM_MARTE_Behavior' and 'MARTE_GQAM_GaWorkloadGenerator'. From 'GQAM_MARTE_Behavior', the role 'GQAM_MARTE_Behavior' has cardinality 0..*, and from 'MARTE_GQAM_GaWorkloadGenerator', the role 'MARTE_GQAM_GaWorkloadGenerator850' has cardinality 0..*.
+An association connects 'GQAM_MARTE_NamedElement' and 'MARTE_GQAM_GaEventTrace'. From 'GQAM_MARTE_NamedElement', the role 'GQAM_MARTE_NamedElement' has cardinality 0..*, and from 'MARTE_GQAM_GaEventTrace', the role 'MARTE_GQAM_GaEventTrace' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaWorkloadEvent' and 'ArrivalPattern'. From 'MARTE_GQAM_GaWorkloadEvent', the role 'MARTE_GQAM_GaWorkloadEvent' has cardinality 0..*, and from 'ArrivalPattern', the role 'ArrivalPattern853' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaWorkloadEvent' and 'GQAM_GaWorkloadGenerator'. From 'MARTE_GQAM_GaWorkloadEvent', the role 'MARTE_GQAM_GaWorkloadEvent855' has cardinality 0..*, and from 'GQAM_GaWorkloadGenerator', the role 'GQAM_GaWorkloadGenerator' has cardinality 0..*.
+An association connects 'GQAM_GaEventTrace' and 'MARTE_GQAM_GaWorkloadEvent'. From 'GQAM_GaEventTrace', the role 'GQAM_GaEventTrace' has cardinality 0..*, and from 'MARTE_GQAM_GaWorkloadEvent', the role 'MARTE_GQAM_GaWorkloadEvent857' has cardinality 0..*.
+An association connects 'GQAM_GaScenario' and 'MARTE_GQAM_GaWorkloadEvent'. From 'GQAM_GaScenario', the role 'GQAM_GaScenario' has cardinality 0..*, and from 'MARTE_GQAM_GaWorkloadEvent', the role 'MARTE_GQAM_GaWorkloadEvent859' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaWorkloadEvent' and 'GQAM_MARTE_TimeEvent'. From 'MARTE_GQAM_GaWorkloadEvent', the role 'MARTE_GQAM_GaWorkloadEvent861' has cardinality 0..*, and from 'GQAM_MARTE_TimeEvent', the role 'GQAM_MARTE_TimeEvent' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaWorkloadEvent' and 'GQAM_MARTE_NamedElement'. From 'MARTE_GQAM_GaWorkloadEvent', the role 'MARTE_GQAM_GaWorkloadEvent863' has cardinality 0..*, and from 'GQAM_MARTE_NamedElement', the role 'GQAM_MARTE_NamedElement864' has cardinality 0..*.
+An association connects 'GQAM_GaWorkloadEvent' and 'MARTE_GQAM_GaScenario'. From 'GQAM_GaWorkloadEvent', the role 'GQAM_GaWorkloadEvent' has cardinality 0..*, and from 'MARTE_GQAM_GaScenario', the role 'MARTE_GQAM_GaScenario' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_GQAM_GaScenario'. From 'NFP_Duration', the role 'NFP_Duration868' has cardinality 0..*, and from 'MARTE_GQAM_GaScenario', the role 'MARTE_GQAM_GaScenario867' has cardinality 0..*.
+An association connects 'NFP_Real' and 'MARTE_GQAM_GaScenario'. From 'NFP_Real', the role 'NFP_Real871' has cardinality 0..*, and from 'MARTE_GQAM_GaScenario', the role 'MARTE_GQAM_GaScenario870' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaScenario' and 'NFP_Duration'. From 'MARTE_GQAM_GaScenario', the role 'MARTE_GQAM_GaScenario873' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration874' has cardinality 0..*.
+An association connects 'NFP_Frequency' and 'MARTE_GQAM_GaScenario'. From 'NFP_Frequency', the role 'NFP_Frequency877' has cardinality 0..*, and from 'MARTE_GQAM_GaScenario', the role 'MARTE_GQAM_GaScenario876' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_GQAM_GaScenario'. From 'NFP_Duration', the role 'NFP_Duration880' has cardinality 0..*, and from 'MARTE_GQAM_GaScenario', the role 'MARTE_GQAM_GaScenario879' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaScenario' and 'NFP_Real'. From 'MARTE_GQAM_GaScenario', the role 'MARTE_GQAM_GaScenario882' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real883' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaScenario' and 'NFP_Real'. From 'MARTE_GQAM_GaScenario', the role 'MARTE_GQAM_GaScenario885' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real886' has cardinality 0..*.
+An association connects 'GQAM_GaStep' and 'MARTE_GQAM_GaScenario'. From 'GQAM_GaStep', the role 'GQAM_GaStep' has cardinality 0..*, and from 'MARTE_GQAM_GaScenario', the role 'MARTE_GQAM_GaScenario888' has cardinality 0..*.
+An association connects 'GQAM_GaTimedObs' and 'MARTE_GQAM_GaScenario'. From 'GQAM_GaTimedObs', the role 'GQAM_GaTimedObs' has cardinality 0..*, and from 'MARTE_GQAM_GaScenario', the role 'MARTE_GQAM_GaScenario890' has cardinality 0..*.
+An association connects 'NFP_Boolean' and 'MARTE_GQAM_GaStep'. From 'NFP_Boolean', the role 'NFP_Boolean892' has cardinality 0..*, and from 'MARTE_GQAM_GaStep', the role 'MARTE_GQAM_GaStep' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaStep' and 'NFP_Duration'. From 'MARTE_GQAM_GaStep', the role 'MARTE_GQAM_GaStep894' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration895' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaStep' and 'NFP_Real'. From 'MARTE_GQAM_GaStep', the role 'MARTE_GQAM_GaStep897' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real898' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaStep' and 'NFP_Real'. From 'MARTE_GQAM_GaStep', the role 'MARTE_GQAM_GaStep900' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real901' has cardinality 0..*.
+An association connects 'NFP_Integer' and 'MARTE_GQAM_GaStep'. From 'NFP_Integer', the role 'NFP_Integer904' has cardinality 0..*, and from 'MARTE_GQAM_GaStep', the role 'MARTE_GQAM_GaStep903' has cardinality 0..*.
+An association connects 'GRM_SchedulableResource' and 'MARTE_GQAM_GaStep'. From 'GRM_SchedulableResource', the role 'GRM_SchedulableResource' has cardinality 0..*, and from 'MARTE_GQAM_GaStep', the role 'MARTE_GQAM_GaStep906' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaStep' and 'GQAM_GaExecHost'. From 'MARTE_GQAM_GaStep', the role 'MARTE_GQAM_GaStep908' has cardinality 0..*, and from 'GQAM_GaExecHost', the role 'GQAM_GaExecHost' has cardinality 0..*.
+An association connects 'GQAM_GaRequestedService' and 'MARTE_GQAM_GaStep'. From 'GQAM_GaRequestedService', the role 'GQAM_GaRequestedService' has cardinality 0..*, and from 'MARTE_GQAM_GaStep', the role 'MARTE_GQAM_GaStep910' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaStep' and 'NFP_Real'. From 'MARTE_GQAM_GaStep', the role 'MARTE_GQAM_GaStep912' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real913' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaStep' and 'GQAM_GaScenario'. From 'MARTE_GQAM_GaStep', the role 'MARTE_GQAM_GaStep915' has cardinality 0..*, and from 'GQAM_GaScenario', the role 'GQAM_GaScenario916' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_GQAM_GaStep'. From 'NFP_Duration', the role 'NFP_Duration919' has cardinality 0..*, and from 'MARTE_GQAM_GaStep', the role 'MARTE_GQAM_GaStep918' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaExecHost' and 'NFP_Duration'. From 'MARTE_GQAM_GaExecHost', the role 'MARTE_GQAM_GaExecHost' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration921' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaExecHost' and 'NFP_Duration'. From 'MARTE_GQAM_GaExecHost', the role 'MARTE_GQAM_GaExecHost923' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration924' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaExecHost' and 'NFP_Duration'. From 'MARTE_GQAM_GaExecHost', the role 'MARTE_GQAM_GaExecHost926' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration927' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_GQAM_GaExecHost'. From 'NFP_Duration', the role 'NFP_Duration930' has cardinality 0..*, and from 'MARTE_GQAM_GaExecHost', the role 'MARTE_GQAM_GaExecHost929' has cardinality 0..*.
+An association connects 'IntegerInterval' and 'MARTE_GQAM_GaExecHost'. From 'IntegerInterval', the role 'IntegerInterval' has cardinality 0..*, and from 'MARTE_GQAM_GaExecHost', the role 'MARTE_GQAM_GaExecHost932' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_GQAM_GaExecHost'. From 'NFP_DataSize', the role 'NFP_DataSize935' has cardinality 0..*, and from 'MARTE_GQAM_GaExecHost', the role 'MARTE_GQAM_GaExecHost934' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaExecHost' and 'NFP_Real'. From 'MARTE_GQAM_GaExecHost', the role 'MARTE_GQAM_GaExecHost937' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real938' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaExecHost' and 'NFP_Frequency'. From 'MARTE_GQAM_GaExecHost', the role 'MARTE_GQAM_GaExecHost940' has cardinality 0..*, and from 'NFP_Frequency', the role 'NFP_Frequency941' has cardinality 0..*.
+An association connects 'GQAM_MARTE_Operation' and 'MARTE_GQAM_GaRequestedService'. From 'GQAM_MARTE_Operation', the role 'GQAM_MARTE_Operation' has cardinality 0..*, and from 'MARTE_GQAM_GaRequestedService', the role 'MARTE_GQAM_GaRequestedService' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaTimedObs' and 'GQAM_MARTE_TimeObservation'. From 'MARTE_GQAM_GaTimedObs', the role 'MARTE_GQAM_GaTimedObs' has cardinality 0..*, and from 'GQAM_MARTE_TimeObservation', the role 'GQAM_MARTE_TimeObservation' has cardinality 0..*.
+An association connects 'GQAM_MARTE_TimeObservation' and 'MARTE_GQAM_GaTimedObs'. From 'GQAM_MARTE_TimeObservation', the role 'GQAM_MARTE_TimeObservation946' has cardinality 0..*, and from 'MARTE_GQAM_GaTimedObs', the role 'MARTE_GQAM_GaTimedObs945' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaAcqStep' and 'GRM_Resource'. From 'MARTE_GQAM_GaAcqStep', the role 'MARTE_GQAM_GaAcqStep' has cardinality 0..*, and from 'GRM_Resource', the role 'GRM_Resource948' has cardinality 0..*.
+An association connects 'NFP_Integer' and 'MARTE_GQAM_GaAcqStep'. From 'NFP_Integer', the role 'NFP_Integer951' has cardinality 0..*, and from 'MARTE_GQAM_GaAcqStep', the role 'MARTE_GQAM_GaAcqStep950' has cardinality 0..*.
+An association connects 'GRM_Resource' and 'MARTE_GQAM_GaRelStep'. From 'GRM_Resource', the role 'GRM_Resource953' has cardinality 0..*, and from 'MARTE_GQAM_GaRelStep', the role 'MARTE_GQAM_GaRelStep' has cardinality 0..*.
+An association connects 'NFP_Integer' and 'MARTE_GQAM_GaRelStep'. From 'NFP_Integer', the role 'NFP_Integer956' has cardinality 0..*, and from 'MARTE_GQAM_GaRelStep', the role 'MARTE_GQAM_GaRelStep955' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_GQAM_GaLatencyObs'. From 'NFP_Duration', the role 'NFP_Duration958' has cardinality 0..*, and from 'MARTE_GQAM_GaLatencyObs', the role 'MARTE_GQAM_GaLatencyObs' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaLatencyObs' and 'NFP_Real'. From 'MARTE_GQAM_GaLatencyObs', the role 'MARTE_GQAM_GaLatencyObs960' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real961' has cardinality 0..*.
+An association connects 'UtilityType' and 'MARTE_GQAM_GaLatencyObs'. From 'UtilityType', the role 'UtilityType964' has cardinality 0..*, and from 'MARTE_GQAM_GaLatencyObs', the role 'MARTE_GQAM_GaLatencyObs963' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaLatencyObs' and 'NFP_Duration'. From 'MARTE_GQAM_GaLatencyObs', the role 'MARTE_GQAM_GaLatencyObs966' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration967' has cardinality 0..*.
+An association connects 'NFP_Frequency' and 'MARTE_GQAM_GaCommHost'. From 'NFP_Frequency', the role 'NFP_Frequency969' has cardinality 0..*, and from 'MARTE_GQAM_GaCommHost', the role 'MARTE_GQAM_GaCommHost' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaCommHost' and 'NFP_Real'. From 'MARTE_GQAM_GaCommHost', the role 'MARTE_GQAM_GaCommHost971' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real972' has cardinality 0..*.
+An association connects 'NFP_DataSize' and 'MARTE_GQAM_GaCommChannel'. From 'NFP_DataSize', the role 'NFP_DataSize974' has cardinality 0..*, and from 'MARTE_GQAM_GaCommChannel', the role 'MARTE_GQAM_GaCommChannel' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaCommChannel' and 'NFP_Real'. From 'MARTE_GQAM_GaCommChannel', the role 'MARTE_GQAM_GaCommChannel976' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real977' has cardinality 0..*.
+An association connects 'GQAM_GaScenario' and 'MARTE_GQAM_GaWorkloadBehavior'. From 'GQAM_GaScenario', the role 'GQAM_GaScenario979' has cardinality 0..*, and from 'MARTE_GQAM_GaWorkloadBehavior', the role 'MARTE_GQAM_GaWorkloadBehavior' has cardinality 0..*.
+An association connects 'GQAM_GaWorkloadEvent' and 'MARTE_GQAM_GaWorkloadBehavior'. From 'GQAM_GaWorkloadEvent', the role 'GQAM_GaWorkloadEvent982' has cardinality 0..*, and from 'MARTE_GQAM_GaWorkloadBehavior', the role 'MARTE_GQAM_GaWorkloadBehavior981' has cardinality 0..*.
+An association connects 'GQAM_MARTE_NamedElement' and 'MARTE_GQAM_GaWorkloadBehavior'. From 'GQAM_MARTE_NamedElement', the role 'GQAM_MARTE_NamedElement985' has cardinality 0..*, and from 'MARTE_GQAM_GaWorkloadBehavior', the role 'MARTE_GQAM_GaWorkloadBehavior984' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaAnalysisContext' and 'NFP_String'. From 'MARTE_GQAM_GaAnalysisContext', the role 'MARTE_GQAM_GaAnalysisContext' has cardinality 0..*, and from 'NFP_String', the role 'NFP_String987' has cardinality 0..*.
+An association connects 'MARTE_GQAM_GaAnalysisContext' and 'GQAM_GaWorkloadBehavior'. From 'MARTE_GQAM_GaAnalysisContext', the role 'MARTE_GQAM_GaAnalysisContext989' has cardinality 0..*, and from 'GQAM_GaWorkloadBehavior', the role 'GQAM_GaWorkloadBehavior' has cardinality 0..*.
+An association connects 'GQAM_GaResourcesPlatform' and 'MARTE_GQAM_GaAnalysisContext'. From 'GQAM_GaResourcesPlatform', the role 'GQAM_GaResourcesPlatform' has cardinality 0..*, and from 'MARTE_GQAM_GaAnalysisContext', the role 'MARTE_GQAM_GaAnalysisContext991' has cardinality 0..*.
+An association connects 'GRM_Resource' and 'MARTE_GQAM_GaResourcesPlatform'. From 'GRM_Resource', the role 'GRM_Resource993' has cardinality 0..*, and from 'MARTE_GQAM_GaResourcesPlatform', the role 'MARTE_GQAM_GaResourcesPlatform' has cardinality 0..*.
+An association connects 'GQAM_MARTE_Classifier' and 'MARTE_GQAM_GaResourcesPlatform'. From 'GQAM_MARTE_Classifier', the role 'GQAM_MARTE_Classifier' has cardinality 0..*, and from 'MARTE_GQAM_GaResourcesPlatform', the role 'MARTE_GQAM_GaResourcesPlatform995' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaAnalysisContext' and 'NFP_Boolean'. From 'MARTE_SAM_SaAnalysisContext', the role 'MARTE_SAM_SaAnalysisContext' has cardinality 0..*, and from 'NFP_Boolean', the role 'NFP_Boolean997' has cardinality 0..*.
+An association connects 'NFP_Boolean' and 'MARTE_SAM_SaEndtoEndFlow'. From 'NFP_Boolean', the role 'NFP_Boolean999' has cardinality 0..*, and from 'MARTE_SAM_SaEndtoEndFlow', the role 'MARTE_SAM_SaEndtoEndFlow' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaEndtoEndFlow' and 'NFP_Real'. From 'MARTE_SAM_SaEndtoEndFlow', the role 'MARTE_SAM_SaEndtoEndFlow1001' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real1002' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_SAM_SaEndtoEndFlow'. From 'NFP_Duration', the role 'NFP_Duration1005' has cardinality 0..*, and from 'MARTE_SAM_SaEndtoEndFlow', the role 'MARTE_SAM_SaEndtoEndFlow1004' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_SAM_SaEndtoEndFlow'. From 'NFP_Duration', the role 'NFP_Duration1008' has cardinality 0..*, and from 'MARTE_SAM_SaEndtoEndFlow', the role 'MARTE_SAM_SaEndtoEndFlow1007' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaEndtoEndFlow' and 'GQAM_GaTimedObs'. From 'MARTE_SAM_SaEndtoEndFlow', the role 'MARTE_SAM_SaEndtoEndFlow1010' has cardinality 0..*, and from 'GQAM_GaTimedObs', the role 'GQAM_GaTimedObs1011' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaEndtoEndFlow' and 'SAM_MARTE_NamedElement'. From 'MARTE_SAM_SaEndtoEndFlow', the role 'MARTE_SAM_SaEndtoEndFlow1013' has cardinality 0..*, and from 'SAM_MARTE_NamedElement', the role 'SAM_MARTE_NamedElement' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_SAM_SaCommStep'. From 'NFP_Duration', the role 'NFP_Duration1015' has cardinality 0..*, and from 'MARTE_SAM_SaCommStep', the role 'MARTE_SAM_SaCommStep' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_SAM_SaCommStep'. From 'NFP_Duration', the role 'NFP_Duration1018' has cardinality 0..*, and from 'MARTE_SAM_SaCommStep', the role 'MARTE_SAM_SaCommStep1017' has cardinality 0..*.
+An association connects 'NFP_Real' and 'MARTE_SAM_SaCommStep'. From 'NFP_Real', the role 'NFP_Real1021' has cardinality 0..*, and from 'MARTE_SAM_SaCommStep', the role 'MARTE_SAM_SaCommStep1020' has cardinality 0..*.
+An association connects 'SAM_MARTE_BehavioralFeature' and 'MARTE_SAM_SaCommStep'. From 'SAM_MARTE_BehavioralFeature', the role 'SAM_MARTE_BehavioralFeature' has cardinality 0..*, and from 'MARTE_SAM_SaCommStep', the role 'MARTE_SAM_SaCommStep1023' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaStep' and 'SAM_MARTE_BehavioralFeature'. From 'MARTE_SAM_SaStep', the role 'MARTE_SAM_SaStep' has cardinality 0..*, and from 'SAM_MARTE_BehavioralFeature', the role 'SAM_MARTE_BehavioralFeature1025' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_SAM_SaStep'. From 'NFP_Duration', the role 'NFP_Duration1028' has cardinality 0..*, and from 'MARTE_SAM_SaStep', the role 'MARTE_SAM_SaStep1027' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaStep' and 'NFP_Duration'. From 'MARTE_SAM_SaStep', the role 'MARTE_SAM_SaStep1030' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration1031' has cardinality 0..*.
+An association connects 'NFP_Real' and 'MARTE_SAM_SaStep'. From 'NFP_Real', the role 'NFP_Real1034' has cardinality 0..*, and from 'MARTE_SAM_SaStep', the role 'MARTE_SAM_SaStep1033' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaStep' and 'NFP_Duration'. From 'MARTE_SAM_SaStep', the role 'MARTE_SAM_SaStep1036' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration1037' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_SAM_SaStep'. From 'NFP_Duration', the role 'NFP_Duration1040' has cardinality 0..*, and from 'MARTE_SAM_SaStep', the role 'MARTE_SAM_SaStep1039' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaStep' and 'NFP_Duration'. From 'MARTE_SAM_SaStep', the role 'MARTE_SAM_SaStep1042' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration1043' has cardinality 0..*.
+An association connects 'SAM_SaSharedResource' and 'MARTE_SAM_SaStep'. From 'SAM_SaSharedResource', the role 'SAM_SaSharedResource' has cardinality 0..*, and from 'MARTE_SAM_SaStep', the role 'MARTE_SAM_SaStep1045' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaStep' and 'NFP_Duration'. From 'MARTE_SAM_SaStep', the role 'MARTE_SAM_SaStep1047' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration1048' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaStep' and 'NFP_Integer'. From 'MARTE_SAM_SaStep', the role 'MARTE_SAM_SaStep1050' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer1051' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaSharedResource' and 'NFP_Integer'. From 'MARTE_SAM_SaSharedResource', the role 'MARTE_SAM_SaSharedResource' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer1053' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaSharedResource' and 'NFP_Boolean'. From 'MARTE_SAM_SaSharedResource', the role 'MARTE_SAM_SaSharedResource1055' has cardinality 0..*, and from 'NFP_Boolean', the role 'NFP_Boolean1056' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaSharedResource' and 'NFP_Boolean'. From 'MARTE_SAM_SaSharedResource', the role 'MARTE_SAM_SaSharedResource1058' has cardinality 0..*, and from 'NFP_Boolean', the role 'NFP_Boolean1059' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_SAM_SaSharedResource'. From 'NFP_Duration', the role 'NFP_Duration1062' has cardinality 0..*, and from 'MARTE_SAM_SaSharedResource', the role 'MARTE_SAM_SaSharedResource1061' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaSharedResource' and 'NFP_Duration'. From 'MARTE_SAM_SaSharedResource', the role 'MARTE_SAM_SaSharedResource1064' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration1065' has cardinality 0..*.
+An association connects 'NFP_Integer' and 'MARTE_SAM_SaSchedObs'. From 'NFP_Integer', the role 'NFP_Integer1067' has cardinality 0..*, and from 'MARTE_SAM_SaSchedObs', the role 'MARTE_SAM_SaSchedObs' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaSchedObs' and 'NFP_Duration'. From 'MARTE_SAM_SaSchedObs', the role 'MARTE_SAM_SaSchedObs1069' has cardinality 0..*, and from 'NFP_Duration', the role 'NFP_Duration1070' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaSchedObs' and 'NFP_Integer'. From 'MARTE_SAM_SaSchedObs', the role 'MARTE_SAM_SaSchedObs1072' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer1073' has cardinality 0..*.
+An association connects 'NFP_Boolean' and 'MARTE_SAM_SaCommHost'. From 'NFP_Boolean', the role 'NFP_Boolean1075' has cardinality 0..*, and from 'MARTE_SAM_SaCommHost', the role 'MARTE_SAM_SaCommHost' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaCommHost' and 'NFP_Real'. From 'MARTE_SAM_SaCommHost', the role 'MARTE_SAM_SaCommHost1077' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real1078' has cardinality 0..*.
+An association connects 'NFP_Boolean' and 'MARTE_SAM_SaExecHost'. From 'NFP_Boolean', the role 'NFP_Boolean1080' has cardinality 0..*, and from 'MARTE_SAM_SaExecHost', the role 'MARTE_SAM_SaExecHost' has cardinality 0..*.
+An association connects 'NFP_Real' and 'MARTE_SAM_SaExecHost'. From 'NFP_Real', the role 'NFP_Real1083' has cardinality 0..*, and from 'MARTE_SAM_SaExecHost', the role 'MARTE_SAM_SaExecHost1082' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaExecHost' and 'NFP_Real'. From 'MARTE_SAM_SaExecHost', the role 'MARTE_SAM_SaExecHost1085' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real1086' has cardinality 0..*.
+An association connects 'NFP_Duration' and 'MARTE_SAM_SaExecHost'. From 'NFP_Duration', the role 'NFP_Duration1089' has cardinality 0..*, and from 'MARTE_SAM_SaExecHost', the role 'MARTE_SAM_SaExecHost1088' has cardinality 0..*.
+An association connects 'MARTE_SAM_SaExecHost' and 'IntegerInterval'. From 'MARTE_SAM_SaExecHost', the role 'MARTE_SAM_SaExecHost1091' has cardinality 0..*, and from 'IntegerInterval', the role 'IntegerInterval1092' has cardinality 0..*.
+An association connects 'MARTE_PAM_PaStep' and 'NFP_Boolean'. From 'MARTE_PAM_PaStep', the role 'MARTE_PAM_PaStep' has cardinality 0..*, and from 'NFP_Boolean', the role 'NFP_Boolean1094' has cardinality 0..*.
+An association connects 'NFP_Real' and 'MARTE_PAM_PaStep'. From 'NFP_Real', the role 'NFP_Real1097' has cardinality 0..*, and from 'MARTE_PAM_PaStep', the role 'MARTE_PAM_PaStep1096' has cardinality 0..*.
+An association connects 'GQAM_GaScenario' and 'MARTE_PAM_PaStep'. From 'GQAM_GaScenario', the role 'GQAM_GaScenario1100' has cardinality 0..*, and from 'MARTE_PAM_PaStep', the role 'MARTE_PAM_PaStep1099' has cardinality 0..*.
+An association connects 'NFP_Real' and 'MARTE_PAM_PaStep'. From 'NFP_Real', the role 'NFP_Real1103' has cardinality 0..*, and from 'MARTE_PAM_PaStep', the role 'MARTE_PAM_PaStep1102' has cardinality 0..*.
+An association connects 'GRM_Resource' and 'MARTE_PAM_PaResPassStep'. From 'GRM_Resource', the role 'GRM_Resource1105' has cardinality 0..*, and from 'MARTE_PAM_PaResPassStep', the role 'MARTE_PAM_PaResPassStep' has cardinality 0..*.
+An association connects 'NFP_Integer' and 'MARTE_PAM_PaResPassStep'. From 'NFP_Integer', the role 'NFP_Integer1108' has cardinality 0..*, and from 'MARTE_PAM_PaResPassStep', the role 'MARTE_PAM_PaResPassStep1107' has cardinality 0..*.
+An association connects 'NFP_Real' and 'MARTE_PAM_PaLogicalResource'. From 'NFP_Real', the role 'NFP_Real1110' has cardinality 0..*, and from 'MARTE_PAM_PaLogicalResource', the role 'MARTE_PAM_PaLogicalResource' has cardinality 0..*.
+An association connects 'MARTE_PAM_PaLogicalResource' and 'NFP_Frequency'. From 'MARTE_PAM_PaLogicalResource', the role 'MARTE_PAM_PaLogicalResource1112' has cardinality 0..*, and from 'NFP_Frequency', the role 'NFP_Frequency1113' has cardinality 0..*.
+An association connects 'MARTE_PAM_PaLogicalResource' and 'NFP_Integer'. From 'MARTE_PAM_PaLogicalResource', the role 'MARTE_PAM_PaLogicalResource1115' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer1116' has cardinality 0..*.
+An association connects 'MARTE_PAM_PaRunTInstance' and 'NFP_Integer'. From 'MARTE_PAM_PaRunTInstance', the role 'MARTE_PAM_PaRunTInstance' has cardinality 0..*, and from 'NFP_Integer', the role 'NFP_Integer1118' has cardinality 0..*.
+An association connects 'GRM_SchedulableResource' and 'MARTE_PAM_PaRunTInstance'. From 'GRM_SchedulableResource', the role 'GRM_SchedulableResource1121' has cardinality 0..*, and from 'MARTE_PAM_PaRunTInstance', the role 'MARTE_PAM_PaRunTInstance1120' has cardinality 0..*.
+An association connects 'GQAM_GaExecHost' and 'MARTE_PAM_PaRunTInstance'. From 'GQAM_GaExecHost', the role 'GQAM_GaExecHost1124' has cardinality 0..*, and from 'MARTE_PAM_PaRunTInstance', the role 'MARTE_PAM_PaRunTInstance1123' has cardinality 0..*.
+An association connects 'MARTE_PAM_PaRunTInstance' and 'NFP_Real'. From 'MARTE_PAM_PaRunTInstance', the role 'MARTE_PAM_PaRunTInstance1126' has cardinality 0..*, and from 'NFP_Real', the role 'NFP_Real1127' has cardinality 0..*.
+An association connects 'NFP_Frequency' and 'MARTE_PAM_PaRunTInstance'. From 'NFP_Frequency', the role 'NFP_Frequency1130' has cardinality 0..*, and from 'MARTE_PAM_PaRunTInstance', the role 'MARTE_PAM_PaRunTInstance1129' has cardinality 0..*.
+An association connects 'MARTE_PAM_PaRunTInstance' and 'PAM_MARTE_NamedElement'. From 'MARTE_PAM_PaRunTInstance', the role 'MARTE_PAM_PaRunTInstance1132' has cardinality 0..*, and from 'PAM_MARTE_NamedElement', the role 'PAM_MARTE_NamedElement' has cardinality 0..*.

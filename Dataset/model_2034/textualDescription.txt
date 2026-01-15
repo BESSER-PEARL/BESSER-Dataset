@@ -1,0 +1,30 @@
+The domain model 'dsl' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'dsl_Event' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str.
+
+'dsl_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Command' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str.
+
+'dsl_Statemachine' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'dsl_Statemachine' and 'dsl_Event'. From 'dsl_Statemachine', the role 'dsl_Statemachine' has cardinality 0..*, and from 'dsl_Event', the role 'dsl_Event' has cardinality 0..*.
+An association connects 'dsl_Statemachine' and 'dsl_Event'. From 'dsl_Statemachine', the role 'dsl_Statemachine2' has cardinality 0..*, and from 'dsl_Event', the role 'dsl_Event3' has cardinality 0..*.
+An association connects 'dsl_Statemachine' and 'dsl_State'. From 'dsl_Statemachine', the role 'dsl_Statemachine5' has cardinality 0..*, and from 'dsl_State', the role 'dsl_State' has cardinality 0..*.
+An association connects 'dsl_Command' and 'dsl_Statemachine'. From 'dsl_Command', the role 'dsl_Command' has cardinality 0..*, and from 'dsl_Statemachine', the role 'dsl_Statemachine7' has cardinality 0..*.
+An association connects 'dsl_Statemachine' and 'dsl_State'. From 'dsl_Statemachine', the role 'dsl_Statemachine9' has cardinality 0..*, and from 'dsl_State', the role 'dsl_State10' has cardinality 0..*.
+An association connects 'dsl_State' and 'dsl_Command'. From 'dsl_State', the role 'dsl_State12' has cardinality 0..*, and from 'dsl_Command', the role 'dsl_Command13' has cardinality 0..*.
+An association connects 'dsl_Transition' and 'dsl_State'. From 'dsl_Transition', the role 'dsl_Transition' has cardinality 0..*, and from 'dsl_State', the role 'dsl_State15' has cardinality 0..*.
+An association connects 'dsl_State' and 'dsl_State'. From 'dsl_State', the role 'dsl_State18' has cardinality 0..*, and from 'dsl_State', the role 'dsl_State16' has cardinality 0..*.
+An association connects 'dsl_Event' and 'dsl_Transition'. From 'dsl_Event', the role 'dsl_Event21' has cardinality 0..*, and from 'dsl_Transition', the role 'dsl_Transition20' has cardinality 0..*.
+An association connects 'dsl_State' and 'dsl_Transition'. From 'dsl_State', the role 'dsl_State24' has cardinality 0..*, and from 'dsl_Transition', the role 'dsl_Transition23' has cardinality 0..*.

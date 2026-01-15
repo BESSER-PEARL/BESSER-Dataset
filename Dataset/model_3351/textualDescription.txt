@@ -1,0 +1,143 @@
+The domain model 'java' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'java_InterfaceImplementation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_AnnotationInstance' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_GETExpression' represents an important domain concept.
+It has the following attributes: 'rightSide', which is of type str; 'leftSide', which is of type str.
+
+'java_Method' represents an important domain concept.
+It has the following attributes: 'isDefault', which is of type bool; 'isFinal', which is of type bool; 'isAbstract', which is of type bool; 'name', which is of type str; 'concurrency', which is of type str; 'isStatic', which is of type bool.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Contained' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Annotable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Contained' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'java_Generalization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_Import' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_AnnotationInstanceParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_GenericBinding' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Statement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_System' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_Argument' represents an important domain concept.
+It has the following attributes: 'order', which is of type int; 'name', which is of type str.
+
+'java_Field' represents an important domain concept.
+It has the following attributes: 'default', which is of type str; 'isStatic', which is of type bool; 'name', which is of type str; 'isFinal', which is of type bool.
+
+'java_Classifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'Annotable' represents an important domain concept.
+It does not declare any attributes.
+
+'java_AssertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Class' represents an important domain concept.
+It has the following attributes: 'isFinal', which is of type bool; 'isAbstract', which is of type bool; 'isStatic', which is of type bool.
+
+'java_AnnotationInstanceValue' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str; 'id', which is of type int.
+
+'java_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'java_Package' is a specialization of 'Container'.
+The class 'java_Class' is a specialization of 'Classifier'.
+The class 'java_Classifier' is a specialization of 'Contained'.
+The class 'java_Classifier' is a specialization of 'Container'.
+The class 'java_Classifier' is a specialization of 'Annotable'.
+The class 'java_Field' is a specialization of 'Contained'.
+The class 'java_Field' is a specialization of 'Annotable'.
+The class 'java_Method' is a specialization of 'Contained'.
+The class 'java_Method' is a specialization of 'Annotable'.
+The class 'java_AssertStatement' is a specialization of 'Statement'.
+The class 'java_Interface' is a specialization of 'Classifier'.
+The class 'java_Interface' is a specialization of 'Contained'.
+The class 'java_Interface' is a specialization of 'Container'.
+The class 'java_Annotation' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'java_Package' and 'java_System'. From 'java_Package', the role 'Package' has cardinality 0..*, and from 'java_System', the role 'system' has cardinality 0..*.
+An association connects 'java_System' and 'java_Package'. From 'java_System', the role 'System' has cardinality 0..*, and from 'java_Package', the role 'packages' has cardinality 0..*.
+An association connects 'java_Class' and 'java_Class'. From 'java_Class', the role 'Class' has cardinality 0..*, and from 'java_Class', the role 'extendingClasses' has cardinality 0..*.
+An association connects 'java_Class' and 'java_Class'. From 'java_Class', the role 'extendedClass' has cardinality 0..*, and from 'java_Class', the role 'Class6' has cardinality 0..*.
+An association connects 'java_InterfaceImplementation' and 'java_Interface'. From 'java_InterfaceImplementation', the role 'java_InterfaceImplementation' has cardinality 0..*, and from 'java_Interface', the role 'java_Interface' has cardinality 0..*.
+An association connects 'java_Classifier' and 'java_InterfaceImplementation'. From 'java_Classifier', the role 'Classifier' has cardinality 0..*, and from 'java_InterfaceImplementation', the role 'interfaceImplementations' has cardinality 0..*.
+An association connects 'java_Generalization' and 'java_Classifier'. From 'java_Generalization', the role 'java_Generalization' has cardinality 0..*, and from 'java_Classifier', the role 'java_Classifier' has cardinality 0..*.
+An association connects 'java_Classifier' and 'java_Generalization'. From 'java_Classifier', the role 'Classifier11' has cardinality 0..*, and from 'java_Generalization', the role 'generalization' has cardinality 0..*.
+An association connects 'java_GenericBinding' and 'java_Classifier'. From 'java_GenericBinding', the role 'GenericBinding' has cardinality 0..*, and from 'java_Classifier', the role 'usingClassifier' has cardinality 0..*.
+An association connects 'java_Classifier' and 'java_Field'. From 'java_Classifier', the role 'containingClassifier' has cardinality 0..*, and from 'java_Field', the role 'Field' has cardinality 0..*.
+An association connects 'java_Classifier' and 'java_Method'. From 'java_Classifier', the role 'containingClassifier15' has cardinality 0..*, and from 'java_Method', the role 'Method' has cardinality 0..*.
+An association connects 'java_Classifier' and 'java_InterfaceImplementation'. From 'java_Classifier', the role 'implementer' has cardinality 0..*, and from 'java_InterfaceImplementation', the role 'InterfaceImplementation' has cardinality 0..*.
+An association connects 'java_Classifier' and 'java_Generalization'. From 'java_Classifier', the role 'generalizator' has cardinality 0..*, and from 'java_Generalization', the role 'Generalization' has cardinality 0..*.
+An association connects 'java_Import' and 'java_Classifier'. From 'java_Import', the role 'Import' has cardinality 0..*, and from 'java_Classifier', the role 'importing' has cardinality 0..*.
+An association connects 'java_Field' and 'java_Classifier'. From 'java_Field', the role 'java_Field' has cardinality 0..*, and from 'java_Classifier', the role 'java_Classifier20' has cardinality 0..*.
+An association connects 'java_Field' and 'java_Classifier'. From 'java_Field', the role 'fields' has cardinality 0..*, and from 'java_Classifier', the role 'Classifier22' has cardinality 0..*.
+An association connects 'java_Import' and 'java_Classifier'. From 'java_Import', the role 'java_Import' has cardinality 0..*, and from 'java_Classifier', the role 'java_Classifier24' has cardinality 0..*.
+An association connects 'java_Import' and 'java_Classifier'. From 'java_Import', the role 'imports' has cardinality 0..*, and from 'java_Classifier', the role 'Classifier26' has cardinality 0..*.
+An association connects 'java_Contained' and 'java_Container'. From 'java_Contained', the role 'containedElements' has cardinality 0..*, and from 'java_Container', the role 'Container' has cardinality 0..*.
+An association connects 'java_Class' and 'java_Contained'. From 'java_Class', the role 'java_Class' has cardinality 0..*, and from 'java_Contained', the role 'java_Contained' has cardinality 0..*.
+An association connects 'java_Method' and 'java_Classifier'. From 'java_Method', the role 'java_Method' has cardinality 0..*, and from 'java_Classifier', the role 'java_Classifier30' has cardinality 0..*.
+An association connects 'java_Argument' and 'java_Method'. From 'java_Argument', the role 'Argument' has cardinality 0..*, and from 'java_Method', the role 'usingMethod' has cardinality 0..*.
+An association connects 'java_Classifier' and 'java_Method'. From 'java_Classifier', the role 'Classifier33' has cardinality 0..*, and from 'java_Method', the role 'methods' has cardinality 0..*.
+An association connects 'java_Method' and 'java_Classifier'. From 'java_Method', the role 'java_Method35' has cardinality 0..*, and from 'java_Classifier', the role 'java_Classifier36' has cardinality 0..*.
+An association connects 'java_Method' and 'java_Statement'. From 'java_Method', the role 'method' has cardinality 0..*, and from 'java_Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_Method'. From 'java_Statement', the role 'body' has cardinality 0..*, and from 'java_Method', the role 'Method39' has cardinality 0..*.
+An association connects 'java_AssertStatement' and 'java_GETExpression'. From 'java_AssertStatement', the role 'containerStatement' has cardinality 0..*, and from 'java_GETExpression', the role 'GETExpression' has cardinality 0..*.
+An association connects 'java_GETExpression' and 'java_AssertStatement'. From 'java_GETExpression', the role 'assertion' has cardinality 0..*, and from 'java_AssertStatement', the role 'AssertStatement' has cardinality 0..*.
+An association connects 'java_Argument' and 'java_Classifier'. From 'java_Argument', the role 'java_Argument' has cardinality 0..*, and from 'java_Classifier', the role 'java_Classifier43' has cardinality 0..*.
+An association connects 'java_Method' and 'java_Argument'. From 'java_Method', the role 'Method45' has cardinality 0..*, and from 'java_Argument', the role 'arguments' has cardinality 0..*.
+An association connects 'java_Contained' and 'java_Container'. From 'java_Contained', the role 'Contained' has cardinality 0..*, and from 'java_Container', the role 'container' has cardinality 0..*.
+An association connects 'java_Classifier' and 'java_GenericBinding'. From 'java_Classifier', the role 'java_Classifier48' has cardinality 0..*, and from 'java_GenericBinding', the role 'java_GenericBinding' has cardinality 0..*.
+An association connects 'java_Classifier' and 'java_GenericBinding'. From 'java_Classifier', the role 'java_Classifier51' has cardinality 0..*, and from 'java_GenericBinding', the role 'java_GenericBinding50' has cardinality 0..*.
+An association connects 'java_Classifier' and 'java_GenericBinding'. From 'java_Classifier', the role 'Classifier53' has cardinality 0..*, and from 'java_GenericBinding', the role 'genericBindings' has cardinality 0..*.
+An association connects 'java_Annotable' and 'java_AnnotationInstance'. From 'java_Annotable', the role 'annotable' has cardinality 0..*, and from 'java_AnnotationInstance', the role 'AnnotationInstance' has cardinality 0..*.
+An association connects 'java_Annotation' and 'java_AnnotationInstance'. From 'java_Annotation', the role 'java_Annotation' has cardinality 0..*, and from 'java_AnnotationInstance', the role 'java_AnnotationInstance' has cardinality 0..*.
+An association connects 'java_AnnotationInstanceParameter' and 'java_AnnotationInstance'. From 'java_AnnotationInstanceParameter', the role 'AnnotationInstanceParameter' has cardinality 0..*, and from 'java_AnnotationInstance', the role 'instance' has cardinality 0..*.
+An association connects 'java_Annotable' and 'java_AnnotationInstance'. From 'java_Annotable', the role 'Annotable' has cardinality 0..*, and from 'java_AnnotationInstance', the role 'annotationInstances' has cardinality 0..*.
+An association connects 'java_AnnotationInstanceValue' and 'java_AnnotationInstanceParameter'. From 'java_AnnotationInstanceValue', the role 'AnnotationInstanceValue' has cardinality 0..*, and from 'java_AnnotationInstanceParameter', the role 'parameter' has cardinality 0..*.
+An association connects 'java_AnnotationInstance' and 'java_AnnotationInstanceParameter'. From 'java_AnnotationInstance', the role 'AnnotationInstance60' has cardinality 0..*, and from 'java_AnnotationInstanceParameter', the role 'parameters' has cardinality 0..*.
+An association connects 'java_AnnotationInstanceValue' and 'java_AnnotationInstanceParameter'. From 'java_AnnotationInstanceValue', the role 'values' has cardinality 0..*, and from 'java_AnnotationInstanceParameter', the role 'AnnotationInstanceParameter62' has cardinality 0..*.

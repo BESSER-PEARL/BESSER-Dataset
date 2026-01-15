@@ -1,0 +1,505 @@
+The domain model 'sqliteModel' describes the core structural elements and their relationships within the system.
+
+The model defines 107 main class(es).
+
+'sqliteModel_DatabaseBlock' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sqliteModel_MigrationBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'SingleSource' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_NullCheckExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ExprAdd' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'ContentUriSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_WhereExpressions' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_DeleteStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ExprEqual' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sqliteModel_StringLiteral' represents an important domain concept.
+It has one attribute: 'literal', which is of type str.
+
+'sqliteModel_Case' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_FunctionArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_SingleSource' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectSource' represents an important domain concept.
+It does not declare any attributes.
+
+'ColumnSource' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_SelectCore' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sqliteModel_InitBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'TableDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_SingleSourceTable' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_SelectStatementExpression' represents an important domain concept.
+It has the following attributes: 'not', which is of type bool; 'exists', which is of type bool.
+
+'DMLStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_CreateTriggerStatement' represents an important domain concept.
+It has the following attributes: 'forEachRow', which is of type str; 'eventType', which is of type str; 'updateColumnNames', which is of type str; 'temporary', which is of type bool; 'name', which is of type str; 'when', which is of type str.
+
+'sqliteModel_ContentUri' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'sqliteModel_ExprBit' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sqliteModel_ExprRelate' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sqliteModel_CastExpression' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'sqliteModel_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_PrimaryConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ExprConcat' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sqliteModel_SelectCoreExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_UpdateColumnExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_NumericLiteral' represents an important domain concept.
+It has one attribute: 'number', which is of type str.
+
+'sqliteModel_SelectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_DefaultValue' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_CreateTableStatement' represents an important domain concept.
+It has one attribute: 'temporary', which is of type bool.
+
+'sqliteModel_GroupByExpressions' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ResultColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ColumnDef' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'sqliteModel_ActionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_JoinSource' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ContentUriSegment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sqliteModel_IsNull' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_NullLiteral' represents an important domain concept.
+It has one attribute: 'literal', which is of type str.
+
+'sqliteModel_JoinStatement' represents an important domain concept.
+It has the following attributes: 'cross', which is of type bool; 'outer', which is of type bool; 'natural', which is of type bool; 'left', which is of type bool; 'inner', which is of type bool.
+
+'sqliteModel_NotNullConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ExprMult' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sqliteModel_CreateViewStatement' represents an important domain concept.
+It has one attribute: 'temporary', which is of type bool.
+
+'sqliteModel_CheckTableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ConflictClause' represents an important domain concept.
+It has one attribute: 'resolution', which is of type str.
+
+'sqliteModel_ColumnSourceRef' represents an important domain concept.
+It has one attribute: 'all', which is of type bool.
+
+'DefaultValue' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_CheckConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ExpressionDefaultValue' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_TableDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sqliteModel_DropTableStatement' represents an important domain concept.
+It has one attribute: 'ifExists', which is of type bool.
+
+'sqliteModel_CurrentTimeLiteral' represents an important domain concept.
+It has one attribute: 'literal', which is of type str.
+
+'ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_SingleSourceSelectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_NewColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_CurrentDateLiteral' represents an important domain concept.
+It has one attribute: 'literal', which is of type str.
+
+'sqliteModel_OldColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_DropIndexStatement' represents an important domain concept.
+It has one attribute: 'ifExists', which is of type bool.
+
+'sqliteModel_AlterTableAddColumnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_Model' represents an important domain concept.
+It has one attribute: 'packageName', which is of type str.
+
+'sqliteModel_LiteralValue' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_IndexedColumn' represents an important domain concept.
+It has the following attributes: 'collationName', which is of type str; 'asc', which is of type bool; 'desc', which is of type bool.
+
+'sqliteModel_DropViewStatement' represents an important domain concept.
+It has one attribute: 'ifExists', which is of type bool.
+
+'sqliteModel_ContentUriParamSegment' represents an important domain concept.
+It has the following attributes: 'num', which is of type bool; 'text', which is of type bool.
+
+'sqliteModel_ExprOr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sqliteModel_AlterTableRenameStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DDLStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_DefaultConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ConfigurationStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sqliteModel_ConfigBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ExprAnd' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'SelectCoreExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_DropTriggerStatement' represents an important domain concept.
+It has one attribute: 'ifExists', which is of type bool.
+
+'sqliteModel_FunctionArg' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'sqliteModel_UpdateStatement' represents an important domain concept.
+It has one attribute: 'conflictResolution', which is of type str.
+
+'sqliteModel_OrderingTermList' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_NestedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_SelectExpression' represents an important domain concept.
+It has the following attributes: 'all', which is of type bool; 'distinct', which is of type bool; 'allColumns', which is of type bool.
+
+'sqliteModel_OrderingTerm' represents an important domain concept.
+It has the following attributes: 'desc', which is of type bool; 'asc', which is of type bool.
+
+'sqliteModel_HavingExpressions' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_DMLStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_PrimaryKeyColumnConstraint' represents an important domain concept.
+It has the following attributes: 'asc', which is of type bool; 'autoincrement', which is of type bool; 'desc', which is of type bool.
+
+'sqliteModel_Function' represents an important domain concept.
+It has one attribute: 'all', which is of type bool.
+
+'sqliteModel_DDLStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_ColumnSource' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_TableConstraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sqliteModel_InsertStatement' represents an important domain concept.
+It has one attribute: 'conflictResolution', which is of type str.
+
+'sqliteModel_UniqueTableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_CaseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_SingleSourceJoin' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_CreateIndexStatement' represents an important domain concept.
+It has the following attributes: 'unique', which is of type bool; 'name', which is of type str.
+
+'sqliteModel_LiteralDefaultValue' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_SelectSource' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sqliteModel_ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ConfigurationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralValue' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_CurrentTimeStampLiteral' represents an important domain concept.
+It has one attribute: 'literal', which is of type str.
+
+'sqliteModel_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_NotNull' represents an important domain concept.
+It does not declare any attributes.
+
+'sqliteModel_SelectList' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CompoundOperator' defines the following possible values: 'union', 'except', 'intersect', 'unionall'.
+The enumeration 'SqliteDataType' defines the following possible values: 'blob', 'integer', 'numeric', 'none', 'real', 'text'.
+The enumeration 'ColumnType' defines the following possible values: 'integer', 'boolean', 'text', 'blob', 'real'.
+The enumeration 'ConflictResolution' defines the following possible values: 'replace', 'abort', 'fail', 'rollback', 'ignore'.
+
+The model also captures inheritance relationships between classes.
+The class 'sqliteModel_SelectStatement' is a specialization of 'DMLStatement'.
+The class 'sqliteModel_SelectSource' is a specialization of 'SingleSource'.
+The class 'sqliteModel_SingleSourceJoin' is a specialization of 'SingleSource'.
+The class 'sqliteModel_TableDefinition' is a specialization of 'DDLStatement'.
+The class 'sqliteModel_CreateTriggerStatement' is a specialization of 'DDLStatement'.
+The class 'sqliteModel_AlterTableAddColumnStatement' is a specialization of 'DDLStatement'.
+The class 'sqliteModel_DropTableStatement' is a specialization of 'DDLStatement'.
+The class 'sqliteModel_DropTriggerStatement' is a specialization of 'DDLStatement'.
+The class 'sqliteModel_DropViewStatement' is a specialization of 'DDLStatement'.
+The class 'sqliteModel_CreateIndexStatement' is a specialization of 'DDLStatement'.
+The class 'sqliteModel_DropIndexStatement' is a specialization of 'DDLStatement'.
+The class 'sqliteModel_UniqueTableConstraint' is a specialization of 'TableConstraint'.
+The class 'sqliteModel_PrimaryConstraint' is a specialization of 'TableConstraint'.
+The class 'sqliteModel_CheckTableConstraint' is a specialization of 'TableConstraint'.
+The class 'sqliteModel_DeleteStatement' is a specialization of 'DMLStatement'.
+The class 'sqliteModel_InsertStatement' is a specialization of 'DMLStatement'.
+The class 'sqliteModel_UpdateStatement' is a specialization of 'DMLStatement'.
+The class 'sqliteModel_ActionStatement' is a specialization of 'ConfigurationStatement'.
+The class 'sqliteModel_Function' is a specialization of 'ConfigurationStatement'.
+The class 'sqliteModel_Function' is a specialization of 'Expression'.
+The class 'sqliteModel_ContentUriParamSegment' is a specialization of 'ContentUriSegment'.
+The class 'sqliteModel_ExprConcat' is a specialization of 'Expression'.
+The class 'sqliteModel_ExprMult' is a specialization of 'Expression'.
+The class 'sqliteModel_ExprAdd' is a specialization of 'Expression'.
+The class 'sqliteModel_ExprBit' is a specialization of 'Expression'.
+The class 'sqliteModel_ExprRelate' is a specialization of 'Expression'.
+The class 'sqliteModel_ExprEqual' is a specialization of 'Expression'.
+The class 'sqliteModel_ExprAnd' is a specialization of 'Expression'.
+The class 'sqliteModel_ExprOr' is a specialization of 'Expression'.
+The class 'sqliteModel_NullCheckExpression' is a specialization of 'Expression'.
+The class 'sqliteModel_IsNull' is a specialization of 'Expression'.
+The class 'sqliteModel_NotNull' is a specialization of 'Expression'.
+The class 'sqliteModel_NewColumn' is a specialization of 'Expression'.
+The class 'sqliteModel_OldColumn' is a specialization of 'Expression'.
+The class 'sqliteModel_ColumnSourceRef' is a specialization of 'Expression'.
+The class 'sqliteModel_Literal' is a specialization of 'Expression'.
+The class 'sqliteModel_NestedExpression' is a specialization of 'Expression'.
+The class 'sqliteModel_SelectStatementExpression' is a specialization of 'Expression'.
+The class 'sqliteModel_CaseExpression' is a specialization of 'Expression'.
+The class 'sqliteModel_CastExpression' is a specialization of 'Expression'.
+The class 'sqliteModel_FunctionArgument' is a specialization of 'Expression'.
+The class 'sqliteModel_SelectCore' is a specialization of 'SelectCoreExpression'.
+The class 'sqliteModel_SelectExpression' is a specialization of 'SelectCoreExpression'.
+The class 'sqliteModel_SingleSourceTable' is a specialization of 'SelectSource'.
+The class 'sqliteModel_SingleSourceSelectStatement' is a specialization of 'SelectSource'.
+The class 'sqliteModel_ResultColumn' is a specialization of 'ColumnSource'.
+The class 'sqliteModel_NumericLiteral' is a specialization of 'LiteralValue'.
+The class 'sqliteModel_StringLiteral' is a specialization of 'LiteralValue'.
+The class 'sqliteModel_NullLiteral' is a specialization of 'LiteralValue'.
+The class 'sqliteModel_CurrentTimeLiteral' is a specialization of 'LiteralValue'.
+The class 'sqliteModel_CurrentDateLiteral' is a specialization of 'LiteralValue'.
+The class 'sqliteModel_CurrentTimeStampLiteral' is a specialization of 'LiteralValue'.
+The class 'sqliteModel_CreateTableStatement' is a specialization of 'TableDefinition'.
+The class 'sqliteModel_CreateViewStatement' is a specialization of 'TableDefinition'.
+The class 'sqliteModel_AlterTableRenameStatement' is a specialization of 'TableDefinition'.
+The class 'sqliteModel_ColumnDef' is a specialization of 'ColumnSource'.
+The class 'sqliteModel_PrimaryKeyColumnConstraint' is a specialization of 'ColumnConstraint'.
+The class 'sqliteModel_NotNullConstraint' is a specialization of 'ColumnConstraint'.
+The class 'sqliteModel_UniqueConstraint' is a specialization of 'ColumnConstraint'.
+The class 'sqliteModel_DefaultConstraint' is a specialization of 'ColumnConstraint'.
+The class 'sqliteModel_CheckConstraint' is a specialization of 'ColumnConstraint'.
+The class 'sqliteModel_LiteralDefaultValue' is a specialization of 'DefaultValue'.
+The class 'sqliteModel_ExpressionDefaultValue' is a specialization of 'DefaultValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sqliteModel_Model' and 'sqliteModel_DatabaseBlock'. From 'sqliteModel_Model', the role 'sqliteModel_Model' has cardinality 0..*, and from 'sqliteModel_DatabaseBlock', the role 'sqliteModel_DatabaseBlock' has cardinality 0..*.
+An association connects 'sqliteModel_DatabaseBlock' and 'sqliteModel_ConfigBlock'. From 'sqliteModel_DatabaseBlock', the role 'sqliteModel_DatabaseBlock2' has cardinality 0..*, and from 'sqliteModel_ConfigBlock', the role 'sqliteModel_ConfigBlock' has cardinality 0..*.
+An association connects 'sqliteModel_DatabaseBlock' and 'sqliteModel_InitBlock'. From 'sqliteModel_DatabaseBlock', the role 'sqliteModel_DatabaseBlock4' has cardinality 0..*, and from 'sqliteModel_InitBlock', the role 'sqliteModel_InitBlock' has cardinality 0..*.
+An association connects 'sqliteModel_DatabaseBlock' and 'sqliteModel_MigrationBlock'. From 'sqliteModel_DatabaseBlock', the role 'sqliteModel_DatabaseBlock6' has cardinality 0..*, and from 'sqliteModel_MigrationBlock', the role 'sqliteModel_MigrationBlock' has cardinality 0..*.
+An association connects 'sqliteModel_ConfigBlock' and 'sqliteModel_ConfigurationStatement'. From 'sqliteModel_ConfigBlock', the role 'sqliteModel_ConfigBlock8' has cardinality 0..*, and from 'sqliteModel_ConfigurationStatement', the role 'sqliteModel_ConfigurationStatement' has cardinality 0..*.
+An association connects 'sqliteModel_InitBlock' and 'sqliteModel_DDLStatement'. From 'sqliteModel_InitBlock', the role 'sqliteModel_InitBlock10' has cardinality 0..*, and from 'sqliteModel_DDLStatement', the role 'sqliteModel_DDLStatement' has cardinality 0..*.
+An association connects 'sqliteModel_ContentUri' and 'sqliteModel_ContentUriSegment'. From 'sqliteModel_ContentUri', the role 'sqliteModel_ContentUri' has cardinality 0..*, and from 'sqliteModel_ContentUriSegment', the role 'sqliteModel_ContentUriSegment' has cardinality 0..*.
+An association connects 'sqliteModel_DDLStatement' and 'sqliteModel_MigrationBlock'. From 'sqliteModel_DDLStatement', the role 'sqliteModel_DDLStatement14' has cardinality 0..*, and from 'sqliteModel_MigrationBlock', the role 'sqliteModel_MigrationBlock13' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_Case'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression' has cardinality 0..*, and from 'sqliteModel_Case', the role 'sqliteModel_Case' has cardinality 0..*.
+An association connects 'sqliteModel_Case' and 'sqliteModel_Expression'. From 'sqliteModel_Case', the role 'sqliteModel_Case17' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression18' has cardinality 0..*.
+An association connects 'sqliteModel_SelectStatement' and 'sqliteModel_SelectCoreExpression'. From 'sqliteModel_SelectStatement', the role 'sqliteModel_SelectStatement' has cardinality 0..*, and from 'sqliteModel_SelectCoreExpression', the role 'sqliteModel_SelectCoreExpression' has cardinality 0..*.
+An association connects 'sqliteModel_OrderingTermList' and 'sqliteModel_SelectStatement'. From 'sqliteModel_OrderingTermList', the role 'sqliteModel_OrderingTermList' has cardinality 0..*, and from 'sqliteModel_SelectStatement', the role 'sqliteModel_SelectStatement21' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_SelectStatement'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression24' has cardinality 0..*, and from 'sqliteModel_SelectStatement', the role 'sqliteModel_SelectStatement23' has cardinality 0..*.
+An association connects 'sqliteModel_SelectStatement' and 'sqliteModel_Expression'. From 'sqliteModel_SelectStatement', the role 'sqliteModel_SelectStatement26' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression27' has cardinality 0..*.
+An association connects 'sqliteModel_OrderingTermList' and 'sqliteModel_OrderingTerm'. From 'sqliteModel_OrderingTermList', the role 'sqliteModel_OrderingTermList29' has cardinality 0..*, and from 'sqliteModel_OrderingTerm', the role 'sqliteModel_OrderingTerm' has cardinality 0..*.
+An association connects 'sqliteModel_ColumnSource' and 'sqliteModel_SelectList'. From 'sqliteModel_ColumnSource', the role 'sqliteModel_ColumnSource' has cardinality 0..*, and from 'sqliteModel_SelectList', the role 'sqliteModel_SelectList' has cardinality 0..*.
+An association connects 'sqliteModel_WhereExpressions' and 'sqliteModel_Expression'. From 'sqliteModel_WhereExpressions', the role 'sqliteModel_WhereExpressions' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression32' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_GroupByExpressions'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression34' has cardinality 0..*, and from 'sqliteModel_GroupByExpressions', the role 'sqliteModel_GroupByExpressions' has cardinality 0..*.
+An association connects 'sqliteModel_HavingExpressions' and 'sqliteModel_Expression'. From 'sqliteModel_HavingExpressions', the role 'sqliteModel_HavingExpressions' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression36' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_OrderingTerm'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression39' has cardinality 0..*, and from 'sqliteModel_OrderingTerm', the role 'sqliteModel_OrderingTerm38' has cardinality 0..*.
+An association connects 'sqliteModel_JoinSource' and 'sqliteModel_SingleSource'. From 'sqliteModel_JoinSource', the role 'sqliteModel_JoinSource' has cardinality 0..*, and from 'sqliteModel_SingleSource', the role 'sqliteModel_SingleSource' has cardinality 0..*.
+An association connects 'sqliteModel_JoinSource' and 'sqliteModel_JoinStatement'. From 'sqliteModel_JoinSource', the role 'sqliteModel_JoinSource42' has cardinality 0..*, and from 'sqliteModel_JoinStatement', the role 'sqliteModel_JoinStatement' has cardinality 0..*.
+An association connects 'sqliteModel_SingleSourceJoin' and 'sqliteModel_JoinSource'. From 'sqliteModel_SingleSourceJoin', the role 'sqliteModel_SingleSourceJoin' has cardinality 0..*, and from 'sqliteModel_JoinSource', the role 'sqliteModel_JoinSource44' has cardinality 0..*.
+An association connects 'sqliteModel_SingleSource' and 'sqliteModel_JoinStatement'. From 'sqliteModel_SingleSource', the role 'sqliteModel_SingleSource47' has cardinality 0..*, and from 'sqliteModel_JoinStatement', the role 'sqliteModel_JoinStatement46' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_JoinStatement'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression50' has cardinality 0..*, and from 'sqliteModel_JoinStatement', the role 'sqliteModel_JoinStatement49' has cardinality 0..*.
+An association connects 'sqliteModel_TableDefinition' and 'sqliteModel_CreateTriggerStatement'. From 'sqliteModel_TableDefinition', the role 'sqliteModel_TableDefinition' has cardinality 0..*, and from 'sqliteModel_CreateTriggerStatement', the role 'sqliteModel_CreateTriggerStatement' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_CreateTriggerStatement'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression54' has cardinality 0..*, and from 'sqliteModel_CreateTriggerStatement', the role 'sqliteModel_CreateTriggerStatement53' has cardinality 0..*.
+An association connects 'sqliteModel_CreateTriggerStatement' and 'sqliteModel_DMLStatement'. From 'sqliteModel_CreateTriggerStatement', the role 'sqliteModel_CreateTriggerStatement56' has cardinality 0..*, and from 'sqliteModel_DMLStatement', the role 'sqliteModel_DMLStatement' has cardinality 0..*.
+An association connects 'sqliteModel_AlterTableAddColumnStatement' and 'sqliteModel_TableDefinition'. From 'sqliteModel_AlterTableAddColumnStatement', the role 'sqliteModel_AlterTableAddColumnStatement' has cardinality 0..*, and from 'sqliteModel_TableDefinition', the role 'sqliteModel_TableDefinition58' has cardinality 0..*.
+An association connects 'sqliteModel_AlterTableAddColumnStatement' and 'sqliteModel_ColumnSource'. From 'sqliteModel_AlterTableAddColumnStatement', the role 'sqliteModel_AlterTableAddColumnStatement60' has cardinality 0..*, and from 'sqliteModel_ColumnSource', the role 'sqliteModel_ColumnSource61' has cardinality 0..*.
+An association connects 'sqliteModel_TableDefinition' and 'sqliteModel_DropTableStatement'. From 'sqliteModel_TableDefinition', the role 'sqliteModel_TableDefinition63' has cardinality 0..*, and from 'sqliteModel_DropTableStatement', the role 'sqliteModel_DropTableStatement' has cardinality 0..*.
+An association connects 'sqliteModel_DropTriggerStatement' and 'sqliteModel_CreateTriggerStatement'. From 'sqliteModel_DropTriggerStatement', the role 'sqliteModel_DropTriggerStatement' has cardinality 0..*, and from 'sqliteModel_CreateTriggerStatement', the role 'sqliteModel_CreateTriggerStatement65' has cardinality 0..*.
+An association connects 'sqliteModel_DropViewStatement' and 'sqliteModel_CreateViewStatement'. From 'sqliteModel_DropViewStatement', the role 'sqliteModel_DropViewStatement' has cardinality 0..*, and from 'sqliteModel_CreateViewStatement', the role 'sqliteModel_CreateViewStatement' has cardinality 0..*.
+An association connects 'sqliteModel_CreateIndexStatement' and 'sqliteModel_TableDefinition'. From 'sqliteModel_CreateIndexStatement', the role 'sqliteModel_CreateIndexStatement' has cardinality 0..*, and from 'sqliteModel_TableDefinition', the role 'sqliteModel_TableDefinition68' has cardinality 0..*.
+An association connects 'sqliteModel_CreateIndexStatement' and 'sqliteModel_IndexedColumn'. From 'sqliteModel_CreateIndexStatement', the role 'sqliteModel_CreateIndexStatement70' has cardinality 0..*, and from 'sqliteModel_IndexedColumn', the role 'sqliteModel_IndexedColumn' has cardinality 0..*.
+An association connects 'sqliteModel_CreateIndexStatement' and 'sqliteModel_DropIndexStatement'. From 'sqliteModel_CreateIndexStatement', the role 'sqliteModel_CreateIndexStatement72' has cardinality 0..*, and from 'sqliteModel_DropIndexStatement', the role 'sqliteModel_DropIndexStatement' has cardinality 0..*.
+An association connects 'sqliteModel_UniqueTableConstraint' and 'sqliteModel_IndexedColumn'. From 'sqliteModel_UniqueTableConstraint', the role 'sqliteModel_UniqueTableConstraint' has cardinality 0..*, and from 'sqliteModel_IndexedColumn', the role 'sqliteModel_IndexedColumn74' has cardinality 0..*.
+An association connects 'sqliteModel_UniqueTableConstraint' and 'sqliteModel_ConflictClause'. From 'sqliteModel_UniqueTableConstraint', the role 'sqliteModel_UniqueTableConstraint76' has cardinality 0..*, and from 'sqliteModel_ConflictClause', the role 'sqliteModel_ConflictClause' has cardinality 0..*.
+An association connects 'sqliteModel_PrimaryConstraint' and 'sqliteModel_IndexedColumn'. From 'sqliteModel_PrimaryConstraint', the role 'sqliteModel_PrimaryConstraint' has cardinality 0..*, and from 'sqliteModel_IndexedColumn', the role 'sqliteModel_IndexedColumn78' has cardinality 0..*.
+An association connects 'sqliteModel_PrimaryConstraint' and 'sqliteModel_ConflictClause'. From 'sqliteModel_PrimaryConstraint', the role 'sqliteModel_PrimaryConstraint80' has cardinality 0..*, and from 'sqliteModel_ConflictClause', the role 'sqliteModel_ConflictClause81' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_CheckTableConstraint'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression83' has cardinality 0..*, and from 'sqliteModel_CheckTableConstraint', the role 'sqliteModel_CheckTableConstraint' has cardinality 0..*.
+An association connects 'sqliteModel_ColumnDef' and 'sqliteModel_IndexedColumn'. From 'sqliteModel_ColumnDef', the role 'sqliteModel_ColumnDef' has cardinality 0..*, and from 'sqliteModel_IndexedColumn', the role 'sqliteModel_IndexedColumn85' has cardinality 0..*.
+An association connects 'sqliteModel_DeleteStatement' and 'sqliteModel_TableDefinition'. From 'sqliteModel_DeleteStatement', the role 'sqliteModel_DeleteStatement' has cardinality 0..*, and from 'sqliteModel_TableDefinition', the role 'sqliteModel_TableDefinition87' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_DeleteStatement'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression90' has cardinality 0..*, and from 'sqliteModel_DeleteStatement', the role 'sqliteModel_DeleteStatement89' has cardinality 0..*.
+An association connects 'sqliteModel_TableDefinition' and 'sqliteModel_InsertStatement'. From 'sqliteModel_TableDefinition', the role 'sqliteModel_TableDefinition92' has cardinality 0..*, and from 'sqliteModel_InsertStatement', the role 'sqliteModel_InsertStatement' has cardinality 0..*.
+An association connects 'sqliteModel_InsertStatement' and 'sqliteModel_ColumnDef'. From 'sqliteModel_InsertStatement', the role 'sqliteModel_InsertStatement94' has cardinality 0..*, and from 'sqliteModel_ColumnDef', the role 'sqliteModel_ColumnDef95' has cardinality 0..*.
+An association connects 'sqliteModel_InsertStatement' and 'sqliteModel_Expression'. From 'sqliteModel_InsertStatement', the role 'sqliteModel_InsertStatement97' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression98' has cardinality 0..*.
+An association connects 'sqliteModel_InsertStatement' and 'sqliteModel_SelectStatement'. From 'sqliteModel_InsertStatement', the role 'sqliteModel_InsertStatement100' has cardinality 0..*, and from 'sqliteModel_SelectStatement', the role 'sqliteModel_SelectStatement101' has cardinality 0..*.
+An association connects 'sqliteModel_UpdateStatement' and 'sqliteModel_TableDefinition'. From 'sqliteModel_UpdateStatement', the role 'sqliteModel_UpdateStatement' has cardinality 0..*, and from 'sqliteModel_TableDefinition', the role 'sqliteModel_TableDefinition103' has cardinality 0..*.
+An association connects 'sqliteModel_UpdateStatement' and 'sqliteModel_UpdateColumnExpression'. From 'sqliteModel_UpdateStatement', the role 'sqliteModel_UpdateStatement105' has cardinality 0..*, and from 'sqliteModel_UpdateColumnExpression', the role 'sqliteModel_UpdateColumnExpression' has cardinality 0..*.
+An association connects 'sqliteModel_UpdateStatement' and 'sqliteModel_Expression'. From 'sqliteModel_UpdateStatement', the role 'sqliteModel_UpdateStatement107' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression108' has cardinality 0..*.
+An association connects 'sqliteModel_UpdateColumnExpression' and 'sqliteModel_ColumnDef'. From 'sqliteModel_UpdateColumnExpression', the role 'sqliteModel_UpdateColumnExpression110' has cardinality 0..*, and from 'sqliteModel_ColumnDef', the role 'sqliteModel_ColumnDef111' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_UpdateColumnExpression'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression114' has cardinality 0..*, and from 'sqliteModel_UpdateColumnExpression', the role 'sqliteModel_UpdateColumnExpression113' has cardinality 0..*.
+An association connects 'sqliteModel_ContentUri' and 'sqliteModel_ActionStatement'. From 'sqliteModel_ContentUri', the role 'sqliteModel_ContentUri116' has cardinality 0..*, and from 'sqliteModel_ActionStatement', the role 'sqliteModel_ActionStatement' has cardinality 0..*.
+An association connects 'sqliteModel_FunctionArg' and 'sqliteModel_Function'. From 'sqliteModel_FunctionArg', the role 'sqliteModel_FunctionArg' has cardinality 0..*, and from 'sqliteModel_Function', the role 'sqliteModel_Function' has cardinality 0..*.
+An association connects 'sqliteModel_DMLStatement' and 'sqliteModel_Function'. From 'sqliteModel_DMLStatement', the role 'sqliteModel_DMLStatement120' has cardinality 0..*, and from 'sqliteModel_Function', the role 'sqliteModel_Function119' has cardinality 0..*.
+An association connects 'sqliteModel_Function' and 'sqliteModel_Expression'. From 'sqliteModel_Function', the role 'sqliteModel_Function122' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression123' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_ExprConcat'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression125' has cardinality 0..*, and from 'sqliteModel_ExprConcat', the role 'sqliteModel_ExprConcat' has cardinality 0..*.
+An association connects 'sqliteModel_ExprConcat' and 'sqliteModel_Expression'. From 'sqliteModel_ExprConcat', the role 'sqliteModel_ExprConcat127' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression128' has cardinality 0..*.
+An association connects 'sqliteModel_ExprMult' and 'sqliteModel_Expression'. From 'sqliteModel_ExprMult', the role 'sqliteModel_ExprMult' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression130' has cardinality 0..*.
+An association connects 'sqliteModel_ExprMult' and 'sqliteModel_Expression'. From 'sqliteModel_ExprMult', the role 'sqliteModel_ExprMult132' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression133' has cardinality 0..*.
+An association connects 'sqliteModel_ExprAdd' and 'sqliteModel_Expression'. From 'sqliteModel_ExprAdd', the role 'sqliteModel_ExprAdd' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression135' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_ExprAdd'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression138' has cardinality 0..*, and from 'sqliteModel_ExprAdd', the role 'sqliteModel_ExprAdd137' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_ExprBit'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression140' has cardinality 0..*, and from 'sqliteModel_ExprBit', the role 'sqliteModel_ExprBit' has cardinality 0..*.
+An association connects 'sqliteModel_ExprBit' and 'sqliteModel_Expression'. From 'sqliteModel_ExprBit', the role 'sqliteModel_ExprBit142' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression143' has cardinality 0..*.
+An association connects 'sqliteModel_ExprRelate' and 'sqliteModel_Expression'. From 'sqliteModel_ExprRelate', the role 'sqliteModel_ExprRelate' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression145' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_ExprRelate'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression148' has cardinality 0..*, and from 'sqliteModel_ExprRelate', the role 'sqliteModel_ExprRelate147' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_ExprEqual'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression150' has cardinality 0..*, and from 'sqliteModel_ExprEqual', the role 'sqliteModel_ExprEqual' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_ExprEqual'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression153' has cardinality 0..*, and from 'sqliteModel_ExprEqual', the role 'sqliteModel_ExprEqual152' has cardinality 0..*.
+An association connects 'sqliteModel_ExprAnd' and 'sqliteModel_Expression'. From 'sqliteModel_ExprAnd', the role 'sqliteModel_ExprAnd' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression155' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_ExprAnd'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression158' has cardinality 0..*, and from 'sqliteModel_ExprAnd', the role 'sqliteModel_ExprAnd157' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_ExprOr'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression160' has cardinality 0..*, and from 'sqliteModel_ExprOr', the role 'sqliteModel_ExprOr' has cardinality 0..*.
+An association connects 'sqliteModel_ExprOr' and 'sqliteModel_Expression'. From 'sqliteModel_ExprOr', the role 'sqliteModel_ExprOr162' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression163' has cardinality 0..*.
+An association connects 'sqliteModel_NullCheckExpression' and 'sqliteModel_Expression'. From 'sqliteModel_NullCheckExpression', the role 'sqliteModel_NullCheckExpression' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression165' has cardinality 0..*.
+An association connects 'sqliteModel_NullCheckExpression' and 'sqliteModel_Expression'. From 'sqliteModel_NullCheckExpression', the role 'sqliteModel_NullCheckExpression167' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression168' has cardinality 0..*.
+An association connects 'sqliteModel_ColumnSource' and 'sqliteModel_NewColumn'. From 'sqliteModel_ColumnSource', the role 'sqliteModel_ColumnSource170' has cardinality 0..*, and from 'sqliteModel_NewColumn', the role 'sqliteModel_NewColumn' has cardinality 0..*.
+An association connects 'sqliteModel_ColumnSource' and 'sqliteModel_OldColumn'. From 'sqliteModel_ColumnSource', the role 'sqliteModel_ColumnSource172' has cardinality 0..*, and from 'sqliteModel_OldColumn', the role 'sqliteModel_OldColumn' has cardinality 0..*.
+An association connects 'sqliteModel_SelectSource' and 'sqliteModel_ColumnSourceRef'. From 'sqliteModel_SelectSource', the role 'sqliteModel_SelectSource' has cardinality 0..*, and from 'sqliteModel_ColumnSourceRef', the role 'sqliteModel_ColumnSourceRef' has cardinality 0..*.
+An association connects 'sqliteModel_ColumnSource' and 'sqliteModel_ColumnSourceRef'. From 'sqliteModel_ColumnSource', the role 'sqliteModel_ColumnSource176' has cardinality 0..*, and from 'sqliteModel_ColumnSourceRef', the role 'sqliteModel_ColumnSourceRef175' has cardinality 0..*.
+An association connects 'sqliteModel_LiteralValue' and 'sqliteModel_Literal'. From 'sqliteModel_LiteralValue', the role 'sqliteModel_LiteralValue' has cardinality 0..*, and from 'sqliteModel_Literal', the role 'sqliteModel_Literal' has cardinality 0..*.
+An association connects 'sqliteModel_NestedExpression' and 'sqliteModel_Expression'. From 'sqliteModel_NestedExpression', the role 'sqliteModel_NestedExpression' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression179' has cardinality 0..*.
+An association connects 'sqliteModel_SelectStatementExpression' and 'sqliteModel_SelectStatement'. From 'sqliteModel_SelectStatementExpression', the role 'sqliteModel_SelectStatementExpression' has cardinality 0..*, and from 'sqliteModel_SelectStatement', the role 'sqliteModel_SelectStatement181' has cardinality 0..*.
+An association connects 'sqliteModel_CaseExpression' and 'sqliteModel_Expression'. From 'sqliteModel_CaseExpression', the role 'sqliteModel_CaseExpression' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression183' has cardinality 0..*.
+An association connects 'sqliteModel_CaseExpression' and 'sqliteModel_Case'. From 'sqliteModel_CaseExpression', the role 'sqliteModel_CaseExpression185' has cardinality 0..*, and from 'sqliteModel_Case', the role 'sqliteModel_Case186' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_CaseExpression'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression189' has cardinality 0..*, and from 'sqliteModel_CaseExpression', the role 'sqliteModel_CaseExpression188' has cardinality 0..*.
+An association connects 'sqliteModel_CastExpression' and 'sqliteModel_Expression'. From 'sqliteModel_CastExpression', the role 'sqliteModel_CastExpression' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression191' has cardinality 0..*.
+An association connects 'sqliteModel_FunctionArg' and 'sqliteModel_FunctionArgument'. From 'sqliteModel_FunctionArg', the role 'sqliteModel_FunctionArg193' has cardinality 0..*, and from 'sqliteModel_FunctionArgument', the role 'sqliteModel_FunctionArgument' has cardinality 0..*.
+An association connects 'sqliteModel_SelectCore' and 'sqliteModel_SelectCoreExpression'. From 'sqliteModel_SelectCore', the role 'sqliteModel_SelectCore' has cardinality 0..*, and from 'sqliteModel_SelectCoreExpression', the role 'sqliteModel_SelectCoreExpression195' has cardinality 0..*.
+An association connects 'sqliteModel_SelectCore' and 'sqliteModel_SelectCoreExpression'. From 'sqliteModel_SelectCore', the role 'sqliteModel_SelectCore197' has cardinality 0..*, and from 'sqliteModel_SelectCoreExpression', the role 'sqliteModel_SelectCoreExpression198' has cardinality 0..*.
+An association connects 'sqliteModel_SelectExpression' and 'sqliteModel_SelectList'. From 'sqliteModel_SelectExpression', the role 'sqliteModel_SelectExpression' has cardinality 0..*, and from 'sqliteModel_SelectList', the role 'sqliteModel_SelectList200' has cardinality 0..*.
+An association connects 'sqliteModel_JoinSource' and 'sqliteModel_SelectExpression'. From 'sqliteModel_JoinSource', the role 'sqliteModel_JoinSource203' has cardinality 0..*, and from 'sqliteModel_SelectExpression', the role 'sqliteModel_SelectExpression202' has cardinality 0..*.
+An association connects 'sqliteModel_WhereExpressions' and 'sqliteModel_SelectExpression'. From 'sqliteModel_WhereExpressions', the role 'sqliteModel_WhereExpressions206' has cardinality 0..*, and from 'sqliteModel_SelectExpression', the role 'sqliteModel_SelectExpression205' has cardinality 0..*.
+An association connects 'sqliteModel_GroupByExpressions' and 'sqliteModel_SelectExpression'. From 'sqliteModel_GroupByExpressions', the role 'sqliteModel_GroupByExpressions209' has cardinality 0..*, and from 'sqliteModel_SelectExpression', the role 'sqliteModel_SelectExpression208' has cardinality 0..*.
+An association connects 'sqliteModel_SelectExpression' and 'sqliteModel_HavingExpressions'. From 'sqliteModel_SelectExpression', the role 'sqliteModel_SelectExpression211' has cardinality 0..*, and from 'sqliteModel_HavingExpressions', the role 'sqliteModel_HavingExpressions212' has cardinality 0..*.
+An association connects 'sqliteModel_SingleSourceTable' and 'sqliteModel_TableDefinition'. From 'sqliteModel_SingleSourceTable', the role 'sqliteModel_SingleSourceTable' has cardinality 0..*, and from 'sqliteModel_TableDefinition', the role 'sqliteModel_TableDefinition214' has cardinality 0..*.
+An association connects 'sqliteModel_SingleSourceSelectStatement' and 'sqliteModel_SelectStatement'. From 'sqliteModel_SingleSourceSelectStatement', the role 'sqliteModel_SingleSourceSelectStatement' has cardinality 0..*, and from 'sqliteModel_SelectStatement', the role 'sqliteModel_SelectStatement216' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_ResultColumn'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression218' has cardinality 0..*, and from 'sqliteModel_ResultColumn', the role 'sqliteModel_ResultColumn' has cardinality 0..*.
+An association connects 'sqliteModel_ColumnSource' and 'sqliteModel_CreateTableStatement'. From 'sqliteModel_ColumnSource', the role 'sqliteModel_ColumnSource220' has cardinality 0..*, and from 'sqliteModel_CreateTableStatement', the role 'sqliteModel_CreateTableStatement' has cardinality 0..*.
+An association connects 'sqliteModel_TableConstraint' and 'sqliteModel_CreateTableStatement'. From 'sqliteModel_TableConstraint', the role 'sqliteModel_TableConstraint' has cardinality 0..*, and from 'sqliteModel_CreateTableStatement', the role 'sqliteModel_CreateTableStatement222' has cardinality 0..*.
+An association connects 'sqliteModel_CreateViewStatement' and 'sqliteModel_SelectStatement'. From 'sqliteModel_CreateViewStatement', the role 'sqliteModel_CreateViewStatement224' has cardinality 0..*, and from 'sqliteModel_SelectStatement', the role 'sqliteModel_SelectStatement225' has cardinality 0..*.
+An association connects 'sqliteModel_AlterTableRenameStatement' and 'sqliteModel_TableDefinition'. From 'sqliteModel_AlterTableRenameStatement', the role 'sqliteModel_AlterTableRenameStatement' has cardinality 0..*, and from 'sqliteModel_TableDefinition', the role 'sqliteModel_TableDefinition227' has cardinality 0..*.
+An association connects 'sqliteModel_ColumnDef' and 'sqliteModel_ColumnConstraint'. From 'sqliteModel_ColumnDef', the role 'sqliteModel_ColumnDef229' has cardinality 0..*, and from 'sqliteModel_ColumnConstraint', the role 'sqliteModel_ColumnConstraint' has cardinality 0..*.
+An association connects 'sqliteModel_NotNullConstraint' and 'sqliteModel_ConflictClause'. From 'sqliteModel_NotNullConstraint', the role 'sqliteModel_NotNullConstraint' has cardinality 0..*, and from 'sqliteModel_ConflictClause', the role 'sqliteModel_ConflictClause231' has cardinality 0..*.
+An association connects 'sqliteModel_ConflictClause' and 'sqliteModel_UniqueConstraint'. From 'sqliteModel_ConflictClause', the role 'sqliteModel_ConflictClause233' has cardinality 0..*, and from 'sqliteModel_UniqueConstraint', the role 'sqliteModel_UniqueConstraint' has cardinality 0..*.
+An association connects 'sqliteModel_DefaultValue' and 'sqliteModel_DefaultConstraint'. From 'sqliteModel_DefaultValue', the role 'sqliteModel_DefaultValue' has cardinality 0..*, and from 'sqliteModel_DefaultConstraint', the role 'sqliteModel_DefaultConstraint' has cardinality 0..*.
+An association connects 'sqliteModel_Expression' and 'sqliteModel_CheckConstraint'. From 'sqliteModel_Expression', the role 'sqliteModel_Expression236' has cardinality 0..*, and from 'sqliteModel_CheckConstraint', the role 'sqliteModel_CheckConstraint' has cardinality 0..*.
+An association connects 'sqliteModel_LiteralDefaultValue' and 'sqliteModel_LiteralValue'. From 'sqliteModel_LiteralDefaultValue', the role 'sqliteModel_LiteralDefaultValue' has cardinality 0..*, and from 'sqliteModel_LiteralValue', the role 'sqliteModel_LiteralValue238' has cardinality 0..*.
+An association connects 'sqliteModel_ExpressionDefaultValue' and 'sqliteModel_Expression'. From 'sqliteModel_ExpressionDefaultValue', the role 'sqliteModel_ExpressionDefaultValue' has cardinality 0..*, and from 'sqliteModel_Expression', the role 'sqliteModel_Expression240' has cardinality 0..*.

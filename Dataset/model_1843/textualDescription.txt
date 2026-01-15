@@ -1,0 +1,513 @@
+The domain model 'rapidml' describes the core structural elements and their relationships within the system.
+
+The model defines 109 main class(es).
+
+'RESTElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_ObjectRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'URISegment' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_CollectionReferenceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_Structure' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_ZenModel' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'namespace', which is of type str.
+
+'rapidml_SecurityScope' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rapidml_URI' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_Extension' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'rapidml_URISegmentWithParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_HasStringValue' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_InlineExample' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'rapidml_HasSecurityValue' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_CollectionResource' represents an important domain concept.
+It has one attribute: 'resourceRealizationKind', which is of type str.
+
+'rapidml_ResourceAPI' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'baseURI', which is of type str; 'version', which is of type str.
+
+'rapidml_PathSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_RealizationModelLocation' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'rapidml_WithDataExamples' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_RealizationContainer' represents an important domain concept.
+It has the following attributes: 'withDefaultRealization', which is of type bool; 'realizationName', which is of type str; 'effectiveRealization', which is of type str.
+
+'rapidml_Documentable' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_ImportDeclaration' represents an important domain concept.
+It has the following attributes: 'importURI', which is of type str; 'importedNamespace', which is of type str; 'alias', which is of type str.
+
+'rapidml_Method' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'httpMethod', which is of type str.
+
+'rapidml_MediaTypesLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'DataExample' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_ExternalExample' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'rapidml_URISegment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rapidml_UserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rapidml_DataModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_InlineDataExample' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_SecuritySchemeLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rapidml_LengthConstraint' represents an important domain concept.
+It has the following attributes: 'maxLength', which is of type int; 'length', which is of type int; 'minLength', which is of type int.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_ServiceDataResource' represents an important domain concept.
+It has one attribute: 'default', which is of type bool.
+
+'HasStringValue' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_SecurityScheme' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'flow', which is of type str.
+
+'WithDataExamples' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_PrimitiveTypesLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rapidml_ReferenceRealization' represents an important domain concept.
+It has the following attributes: 'realizationType', which is of type str; 'multiValued', which is of type bool.
+
+'Inheritable' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_MediaType' represents an important domain concept.
+It has the following attributes: 'specURL', which is of type str; 'name', which is of type str.
+
+'rapidml_URIParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_LinkRelationsLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rapidml_Inheritable' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_DataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rapidml_ValueRangeConstraint' represents an important domain concept.
+It has the following attributes: 'maxValueExclusive', which is of type bool; 'minValueExclusive', which is of type bool; 'minValue', which is of type str; 'maxValue', which is of type str.
+
+'rapidml_ReferenceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_SourceReference' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_WithExamples' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'URIParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_NamedLinkDescriptor' represents an important domain concept.
+It has the following attributes: 'default', which is of type bool; 'name', which is of type str.
+
+'WithExamples' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_Example' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_PrimitiveTypeSourceReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Extensible' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_TypedResponse' represents an important domain concept.
+It has one attribute: 'statusCode', which is of type int.
+
+'rapidml_MatrixParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Example' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_SecuritySchemeParameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'ReferenceTreatment' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'SourceReference' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_Parameter' represents an important domain concept.
+It has the following attributes: 'required', which is of type bool; 'default', which is of type str; 'name', which is of type str; 'fixed', which is of type str.
+
+'rapidml_DataExample' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_TypedMessage' represents an important domain concept.
+It has one attribute: 'useParentTypeReference', which is of type bool.
+
+'rapidml_PropertyReference' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_ReferenceEmbed' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceDataResource' represents an important domain concept.
+It does not declare any attributes.
+
+'RealizationContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_EnumConstant' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'integerValue', which is of type int; 'literalValue', which is of type str.
+
+'SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'HasTitle' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_Extensible' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_RegExConstraint' represents an important domain concept.
+It has one attribute: 'pattern', which is of type str.
+
+'rapidml_RESTElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_ReferenceProperty' represents an important domain concept.
+It has the following attributes: 'container', which is of type bool; 'containment', which is of type bool.
+
+'rapidml_ObjectResource' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentable' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_SingleValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'HasSecurityValue' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_MessageParameter' represents an important domain concept.
+It has one attribute: 'httpLocation', which is of type str.
+
+'rapidml_PropertyRealization' represents an important domain concept.
+It has one attribute: 'cardinality', which is of type str.
+
+'rapidml_ReferenceTreatment' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_Feature' represents an important domain concept.
+It has the following attributes: 'readOnly', which is of type bool; 'restriction', which is of type bool; 'key', which is of type bool; 'name', which is of type str.
+
+'rapidml_AuthenticationMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_CollectionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_HasTitle' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'rapidml_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_PrimitiveProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_ResourceDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rapidml_ReferenceLink' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'collectionRealizationLevel', which is of type str.
+
+'rapidml_ConstrainableType' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_Documentation' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ConstrainableType' represents an important domain concept.
+It does not declare any attributes.
+
+'SingleValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_Element' represents an important domain concept.
+It has one attribute: 'cardinality', which is of type str.
+
+'rapidml_TypedRequest' represents an important domain concept.
+It does not declare any attributes.
+
+'rapidml_LinkRelation' represents an important domain concept.
+It has the following attributes: 'specURL', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'HTTPMethods' defines the following possible values: 'HEAD', 'TRACE', 'OPTIONS', 'CONNECT', 'POST', 'PATCH', 'GET', 'PUT', 'DELETE'.
+The enumeration 'HttpMessageParameterLocation' defines the following possible values: 'QUERY', 'NONE', 'HEADER'.
+The enumeration 'CollectionRealizationLevelEnum' defines the following possible values: 'ITEM_LEVEL', 'COLLECTION_LEVEL'.
+The enumeration 'AuthenticationTypes' defines the following possible values: 'OAUTH2', 'BASIC', 'CUSTOM'.
+The enumeration 'ReferenceRealizationEnum' defines the following possible values: 'EMBED', 'LINK'.
+The enumeration 'CollectionRealizationEnum' defines the following possible values: 'REFERENCE_LINK_LIST', 'EMBEDDED_OBJECT_LIST'.
+The enumeration 'AuthenticationFlows' defines the following possible values: 'IMPLICIT', 'PASSWORD', 'ACCESS_CODE', 'APPLICATION'.
+
+The model also captures inheritance relationships between classes.
+The class 'rapidml_ResourceDefinition' is a specialization of 'RESTElement'.
+The class 'rapidml_ResourceDefinition' is a specialization of 'WithExamples'.
+The class 'rapidml_ResourceDefinition' is a specialization of 'HasSecurityValue'.
+The class 'rapidml_TypedMessage' is a specialization of 'RealizationContainer'.
+The class 'rapidml_TypedMessage' is a specialization of 'RESTElement'.
+The class 'rapidml_TypedMessage' is a specialization of 'WithExamples'.
+The class 'rapidml_Method' is a specialization of 'RESTElement'.
+The class 'rapidml_Method' is a specialization of 'HasSecurityValue'.
+The class 'rapidml_Method' is a specialization of 'Extensible'.
+The class 'rapidml_Parameter' is a specialization of 'RESTElement'.
+The class 'rapidml_Parameter' is a specialization of 'Extensible'.
+The class 'rapidml_RESTElement' is a specialization of 'Documentable'.
+The class 'rapidml_RESTElement' is a specialization of 'Extensible'.
+The class 'rapidml_MediaType' is a specialization of 'RESTElement'.
+The class 'rapidml_TypedRequest' is a specialization of 'TypedMessage'.
+The class 'rapidml_TypedResponse' is a specialization of 'TypedMessage'.
+The class 'rapidml_URIParameter' is a specialization of 'Parameter'.
+The class 'rapidml_MatrixParameter' is a specialization of 'URIParameter'.
+The class 'rapidml_TemplateParameter' is a specialization of 'URIParameter'.
+The class 'rapidml_CollectionResource' is a specialization of 'ServiceDataResource'.
+The class 'rapidml_ObjectResource' is a specialization of 'ServiceDataResource'.
+The class 'rapidml_CollectionParameter' is a specialization of 'Parameter'.
+The class 'rapidml_PropertyReference' is a specialization of 'SourceReference'.
+The class 'rapidml_MessageParameter' is a specialization of 'Parameter'.
+The class 'rapidml_ZenModel' is a specialization of 'Documentable'.
+The class 'rapidml_ZenModel' is a specialization of 'Extensible'.
+The class 'rapidml_ZenModel' is a specialization of 'HasTitle'.
+The class 'rapidml_ResourceAPI' is a specialization of 'RESTElement'.
+The class 'rapidml_ResourceAPI' is a specialization of 'HasSecurityValue'.
+The class 'rapidml_ResourceAPI' is a specialization of 'HasTitle'.
+The class 'rapidml_ServiceDataResource' is a specialization of 'RealizationContainer'.
+The class 'rapidml_ServiceDataResource' is a specialization of 'ResourceDefinition'.
+The class 'rapidml_ReferenceTreatment' is a specialization of 'Extensible'.
+The class 'rapidml_ReferenceRealization' is a specialization of 'RealizationContainer'.
+The class 'rapidml_ReferenceLink' is a specialization of 'ReferenceTreatment'.
+The class 'rapidml_ReferenceEmbed' is a specialization of 'ReferenceTreatment'.
+The class 'rapidml_NamedLinkDescriptor' is a specialization of 'ObjectRealization'.
+The class 'rapidml_PrimitiveTypeSourceReference' is a specialization of 'SourceReference'.
+The class 'rapidml_URI' is a specialization of 'HasStringValue'.
+The class 'rapidml_URISegment' is a specialization of 'HasStringValue'.
+The class 'rapidml_URISegmentWithParameter' is a specialization of 'URISegment'.
+The class 'rapidml_PropertyRealization' is a specialization of 'ConstrainableType'.
+The class 'rapidml_LinkRelation' is a specialization of 'Documentable'.
+The class 'rapidml_InlineExample' is a specialization of 'Example'.
+The class 'rapidml_ExternalExample' is a specialization of 'Example'.
+The class 'rapidml_ObjectRealization' is a specialization of 'Extensible'.
+The class 'rapidml_CollectionReferenceElement' is a specialization of 'ReferenceElement'.
+The class 'rapidml_SecurityScheme' is a specialization of 'Documentable'.
+The class 'rapidml_SecurityScheme' is a specialization of 'RESTElement'.
+The class 'rapidml_SecurityScope' is a specialization of 'Documentable'.
+The class 'rapidml_SecuritySchemeParameter' is a specialization of 'Documentable'.
+The class 'rapidml_SecuritySchemeLibrary' is a specialization of 'Documentable'.
+The class 'rapidml_RealizationContainer' is a specialization of 'Extensible'.
+The class 'rapidml_Operation' is a specialization of 'Documentable'.
+The class 'rapidml_Feature' is a specialization of 'Documentable'.
+The class 'rapidml_Feature' is a specialization of 'Element'.
+The class 'rapidml_Feature' is a specialization of 'Extensible'.
+The class 'rapidml_ReferenceProperty' is a specialization of 'Feature'.
+The class 'rapidml_ReferenceProperty' is a specialization of 'ReferenceElement'.
+The class 'rapidml_PrimitiveProperty' is a specialization of 'Feature'.
+The class 'rapidml_PrimitiveProperty' is a specialization of 'HasStringValue'.
+The class 'rapidml_PrimitiveProperty' is a specialization of 'ConstrainableType'.
+The class 'rapidml_Structure' is a specialization of 'DataType'.
+The class 'rapidml_Structure' is a specialization of 'WithDataExamples'.
+The class 'rapidml_Structure' is a specialization of 'Inheritable'.
+The class 'rapidml_DataModel' is a specialization of 'Documentable'.
+The class 'rapidml_DataModel' is a specialization of 'HasTitle'.
+The class 'rapidml_InlineDataExample' is a specialization of 'DataExample'.
+The class 'rapidml_Constraint' is a specialization of 'Extensible'.
+The class 'rapidml_Enumeration' is a specialization of 'SingleValueType'.
+The class 'rapidml_SimpleType' is a specialization of 'SingleValueType'.
+The class 'rapidml_EnumConstant' is a specialization of 'Documentable'.
+The class 'rapidml_UserDefinedType' is a specialization of 'SimpleType'.
+The class 'rapidml_UserDefinedType' is a specialization of 'ConstrainableType'.
+The class 'rapidml_PrimitiveType' is a specialization of 'SimpleType'.
+The class 'rapidml_DataType' is a specialization of 'Documentable'.
+The class 'rapidml_DataType' is a specialization of 'Extensible'.
+The class 'rapidml_SingleValueType' is a specialization of 'DataType'.
+The class 'rapidml_ReferenceElement' is a specialization of 'Element'.
+The class 'rapidml_LengthConstraint' is a specialization of 'Constraint'.
+The class 'rapidml_RegExConstraint' is a specialization of 'Constraint'.
+The class 'rapidml_ValueRangeConstraint' is a specialization of 'Constraint'.
+The class 'rapidml_ConstrainableType' is a specialization of 'Extensible'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rapidml_Method' and 'rapidml_ResourceDefinition'. From 'rapidml_Method', the role 'Method' has cardinality 0..*, and from 'rapidml_ResourceDefinition', the role 'containingResourceDefinition' has cardinality 0..*.
+An association connects 'rapidml_MediaType' and 'rapidml_ResourceDefinition'. From 'rapidml_MediaType', the role 'rapidml_MediaType' has cardinality 0..*, and from 'rapidml_ResourceDefinition', the role 'rapidml_ResourceDefinition' has cardinality 0..*.
+An association connects 'rapidml_ResourceDefinition' and 'rapidml_MediaType'. From 'rapidml_ResourceDefinition', the role 'rapidml_ResourceDefinition3' has cardinality 0..*, and from 'rapidml_MediaType', the role 'rapidml_MediaType4' has cardinality 0..*.
+An association connects 'rapidml_ResourceDefinition' and 'rapidml_URI'. From 'rapidml_ResourceDefinition', the role 'rapidml_ResourceDefinition6' has cardinality 0..*, and from 'rapidml_URI', the role 'rapidml_URI' has cardinality 0..*.
+An association connects 'rapidml_MessageParameter' and 'rapidml_TypedMessage'. From 'rapidml_MessageParameter', the role 'MessageParameter' has cardinality 0..*, and from 'rapidml_TypedMessage', the role 'containingMessage' has cardinality 0..*.
+An association connects 'rapidml_ResourceDefinition' and 'rapidml_TypedMessage'. From 'rapidml_ResourceDefinition', the role 'rapidml_ResourceDefinition9' has cardinality 0..*, and from 'rapidml_TypedMessage', the role 'rapidml_TypedMessage' has cardinality 0..*.
+An association connects 'rapidml_MediaType' and 'rapidml_TypedMessage'. From 'rapidml_MediaType', the role 'rapidml_MediaType12' has cardinality 0..*, and from 'rapidml_TypedMessage', the role 'rapidml_TypedMessage11' has cardinality 0..*.
+An association connects 'rapidml_TypedRequest' and 'rapidml_Method'. From 'rapidml_TypedRequest', the role 'TypedRequest' has cardinality 0..*, and from 'rapidml_Method', the role 'containingMethod' has cardinality 0..*.
+An association connects 'rapidml_TypedResponse' and 'rapidml_Method'. From 'rapidml_TypedResponse', the role 'TypedResponse' has cardinality 0..*, and from 'rapidml_Method', the role 'containingMethod15' has cardinality 0..*.
+An association connects 'rapidml_ResourceDefinition' and 'rapidml_Method'. From 'rapidml_ResourceDefinition', the role 'ResourceDefinition' has cardinality 0..*, and from 'rapidml_Method', the role 'methods' has cardinality 0..*.
+An association connects 'rapidml_SourceReference' and 'rapidml_Parameter'. From 'rapidml_SourceReference', the role 'SourceReference' has cardinality 0..*, and from 'rapidml_Parameter', the role 'containingParameter' has cardinality 0..*.
+An association connects 'rapidml_Documentation' and 'rapidml_Documentable'. From 'rapidml_Documentation', the role 'rapidml_Documentation' has cardinality 0..*, and from 'rapidml_Documentable', the role 'rapidml_Documentable' has cardinality 0..*.
+An association connects 'rapidml_MediaType' and 'rapidml_MediaType'. From 'rapidml_MediaType', the role 'rapidml_MediaType21' has cardinality 0..*, and from 'rapidml_MediaType', the role 'rapidml_MediaType19' has cardinality 0..*.
+An association connects 'rapidml_Method' and 'rapidml_TypedRequest'. From 'rapidml_Method', the role 'Method23' has cardinality 0..*, and from 'rapidml_TypedRequest', the role 'request' has cardinality 0..*.
+An association connects 'rapidml_Method' and 'rapidml_TypedResponse'. From 'rapidml_Method', the role 'Method25' has cardinality 0..*, and from 'rapidml_TypedResponse', the role 'responses' has cardinality 0..*.
+An association connects 'rapidml_URIParameter' and 'rapidml_URISegmentWithParameter'. From 'rapidml_URIParameter', the role 'rapidml_URIParameter' has cardinality 0..*, and from 'rapidml_URISegmentWithParameter', the role 'rapidml_URISegmentWithParameter' has cardinality 0..*.
+An association connects 'rapidml_URIParameter' and 'rapidml_URI'. From 'rapidml_URIParameter', the role 'uriParameters' has cardinality 0..*, and from 'rapidml_URI', the role 'URI' has cardinality 0..*.
+An association connects 'rapidml_CollectionParameter' and 'rapidml_CollectionResource'. From 'rapidml_CollectionParameter', the role 'CollectionParameter' has cardinality 0..*, and from 'rapidml_CollectionResource', the role 'containingResourceDefinition29' has cardinality 0..*.
+An association connects 'rapidml_CollectionReferenceElement' and 'rapidml_CollectionResource'. From 'rapidml_CollectionReferenceElement', the role 'rapidml_CollectionReferenceElement' has cardinality 0..*, and from 'rapidml_CollectionResource', the role 'rapidml_CollectionResource' has cardinality 0..*.
+An association connects 'rapidml_CollectionResource' and 'rapidml_CollectionParameter'. From 'rapidml_CollectionResource', the role 'CollectionResource' has cardinality 0..*, and from 'rapidml_CollectionParameter', the role 'collectionParameters' has cardinality 0..*.
+An association connects 'rapidml_PrimitiveProperty' and 'rapidml_PropertyReference'. From 'rapidml_PrimitiveProperty', the role 'rapidml_PrimitiveProperty' has cardinality 0..*, and from 'rapidml_PropertyReference', the role 'rapidml_PropertyReference' has cardinality 0..*.
+An association connects 'rapidml_SourceReference' and 'rapidml_Parameter'. From 'rapidml_SourceReference', the role 'sourceReference' has cardinality 0..*, and from 'rapidml_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'rapidml_MessageParameter' and 'rapidml_TypedMessage'. From 'rapidml_MessageParameter', the role 'parameters' has cardinality 0..*, and from 'rapidml_TypedMessage', the role 'TypedMessage' has cardinality 0..*.
+An association connects 'rapidml_ResourceAPI' and 'rapidml_ZenModel'. From 'rapidml_ResourceAPI', the role 'rapidml_ResourceAPI' has cardinality 0..*, and from 'rapidml_ZenModel', the role 'rapidml_ZenModel' has cardinality 0..*.
+An association connects 'rapidml_DataModel' and 'rapidml_ZenModel'. From 'rapidml_DataModel', the role 'rapidml_DataModel' has cardinality 0..*, and from 'rapidml_ZenModel', the role 'rapidml_ZenModel37' has cardinality 0..*.
+An association connects 'rapidml_MediaTypesLibrary' and 'rapidml_ZenModel'. From 'rapidml_MediaTypesLibrary', the role 'rapidml_MediaTypesLibrary' has cardinality 0..*, and from 'rapidml_ZenModel', the role 'rapidml_ZenModel39' has cardinality 0..*.
+An association connects 'rapidml_LinkRelationsLibrary' and 'rapidml_ZenModel'. From 'rapidml_LinkRelationsLibrary', the role 'rapidml_LinkRelationsLibrary' has cardinality 0..*, and from 'rapidml_ZenModel', the role 'rapidml_ZenModel41' has cardinality 0..*.
+An association connects 'rapidml_ZenModel' and 'rapidml_PrimitiveTypesLibrary'. From 'rapidml_ZenModel', the role 'rapidml_ZenModel43' has cardinality 0..*, and from 'rapidml_PrimitiveTypesLibrary', the role 'rapidml_PrimitiveTypesLibrary' has cardinality 0..*.
+An association connects 'rapidml_ImportDeclaration' and 'rapidml_ZenModel'. From 'rapidml_ImportDeclaration', the role 'rapidml_ImportDeclaration' has cardinality 0..*, and from 'rapidml_ZenModel', the role 'rapidml_ZenModel45' has cardinality 0..*.
+An association connects 'rapidml_SecuritySchemeLibrary' and 'rapidml_ZenModel'. From 'rapidml_SecuritySchemeLibrary', the role 'rapidml_SecuritySchemeLibrary' has cardinality 0..*, and from 'rapidml_ZenModel', the role 'rapidml_ZenModel47' has cardinality 0..*.
+An association connects 'rapidml_ResourceAPI' and 'rapidml_ResourceDefinition'. From 'rapidml_ResourceAPI', the role 'rapidml_ResourceAPI49' has cardinality 0..*, and from 'rapidml_ResourceDefinition', the role 'rapidml_ResourceDefinition50' has cardinality 0..*.
+An association connects 'rapidml_ResourceAPI' and 'rapidml_DataModel'. From 'rapidml_ResourceAPI', the role 'rapidml_ResourceAPI52' has cardinality 0..*, and from 'rapidml_DataModel', the role 'rapidml_DataModel53' has cardinality 0..*.
+An association connects 'rapidml_ResourceAPI' and 'rapidml_MediaType'. From 'rapidml_ResourceAPI', the role 'rapidml_ResourceAPI55' has cardinality 0..*, and from 'rapidml_MediaType', the role 'rapidml_MediaType56' has cardinality 0..*.
+An association connects 'rapidml_ResourceAPI' and 'rapidml_MediaType'. From 'rapidml_ResourceAPI', the role 'rapidml_ResourceAPI58' has cardinality 0..*, and from 'rapidml_MediaType', the role 'rapidml_MediaType59' has cardinality 0..*.
+An association connects 'rapidml_ResourceAPI' and 'rapidml_LinkRelation'. From 'rapidml_ResourceAPI', the role 'rapidml_ResourceAPI61' has cardinality 0..*, and from 'rapidml_LinkRelation', the role 'rapidml_LinkRelation' has cardinality 0..*.
+An association connects 'rapidml_ReferenceRealization' and 'rapidml_ResourceAPI'. From 'rapidml_ReferenceRealization', the role 'rapidml_ReferenceRealization' has cardinality 0..*, and from 'rapidml_ResourceAPI', the role 'rapidml_ResourceAPI63' has cardinality 0..*.
+An association connects 'rapidml_RealizationModelLocation' and 'rapidml_ResourceAPI'. From 'rapidml_RealizationModelLocation', the role 'rapidml_RealizationModelLocation' has cardinality 0..*, and from 'rapidml_ResourceAPI', the role 'rapidml_ResourceAPI65' has cardinality 0..*.
+An association connects 'rapidml_NamedLinkDescriptor' and 'rapidml_ServiceDataResource'. From 'rapidml_NamedLinkDescriptor', the role 'rapidml_NamedLinkDescriptor' has cardinality 0..*, and from 'rapidml_ServiceDataResource', the role 'rapidml_ServiceDataResource' has cardinality 0..*.
+An association connects 'rapidml_ReferenceTreatment' and 'rapidml_ReferenceElement'. From 'rapidml_ReferenceTreatment', the role 'rapidml_ReferenceTreatment' has cardinality 0..*, and from 'rapidml_ReferenceElement', the role 'rapidml_ReferenceElement' has cardinality 0..*.
+An association connects 'rapidml_ReferenceTreatment' and 'rapidml_ReferenceRealization'. From 'rapidml_ReferenceTreatment', the role 'rapidml_ReferenceTreatment69' has cardinality 0..*, and from 'rapidml_ReferenceRealization', the role 'rapidml_ReferenceRealization70' has cardinality 0..*.
+An association connects 'rapidml_ReferenceRealization' and 'rapidml_ReferenceTreatment'. From 'rapidml_ReferenceRealization', the role 'rapidml_ReferenceRealization73' has cardinality 0..*, and from 'rapidml_ReferenceTreatment', the role 'rapidml_ReferenceTreatment72' has cardinality 0..*.
+An association connects 'rapidml_ReferenceRealization' and 'rapidml_ResourceDefinition'. From 'rapidml_ReferenceRealization', the role 'rapidml_ReferenceRealization75' has cardinality 0..*, and from 'rapidml_ResourceDefinition', the role 'rapidml_ResourceDefinition76' has cardinality 0..*.
+An association connects 'rapidml_LinkRelation' and 'rapidml_ReferenceLink'. From 'rapidml_LinkRelation', the role 'rapidml_LinkRelation78' has cardinality 0..*, and from 'rapidml_ReferenceLink', the role 'rapidml_ReferenceLink' has cardinality 0..*.
+An association connects 'rapidml_ReferenceElement' and 'rapidml_PathSegment'. From 'rapidml_ReferenceElement', the role 'rapidml_ReferenceElement80' has cardinality 0..*, and from 'rapidml_PathSegment', the role 'rapidml_PathSegment' has cardinality 0..*.
+An association connects 'rapidml_PrimitiveType' and 'rapidml_PrimitiveTypeSourceReference'. From 'rapidml_PrimitiveType', the role 'rapidml_PrimitiveType' has cardinality 0..*, and from 'rapidml_PrimitiveTypeSourceReference', the role 'rapidml_PrimitiveTypeSourceReference' has cardinality 0..*.
+An association connects 'rapidml_URI' and 'rapidml_URISegment'. From 'rapidml_URI', the role 'rapidml_URI83' has cardinality 0..*, and from 'rapidml_URISegment', the role 'rapidml_URISegment' has cardinality 0..*.
+An association connects 'rapidml_URIParameter' and 'rapidml_URI'. From 'rapidml_URIParameter', the role 'URIParameter' has cardinality 0..*, and from 'rapidml_URI', the role 'containingURI' has cardinality 0..*.
+An association connects 'rapidml_Feature' and 'rapidml_PropertyRealization'. From 'rapidml_Feature', the role 'rapidml_Feature' has cardinality 0..*, and from 'rapidml_PropertyRealization', the role 'rapidml_PropertyRealization' has cardinality 0..*.
+An association connects 'rapidml_WithExamples' and 'rapidml_Example'. From 'rapidml_WithExamples', the role 'rapidml_WithExamples' has cardinality 0..*, and from 'rapidml_Example', the role 'rapidml_Example' has cardinality 0..*.
+An association connects 'rapidml_ImportDeclaration' and 'rapidml_ZenModel'. From 'rapidml_ImportDeclaration', the role 'rapidml_ImportDeclaration88' has cardinality 0..*, and from 'rapidml_ZenModel', the role 'rapidml_ZenModel89' has cardinality 0..*.
+An association connects 'rapidml_ObjectRealization' and 'rapidml_PropertyRealization'. From 'rapidml_ObjectRealization', the role 'rapidml_ObjectRealization' has cardinality 0..*, and from 'rapidml_PropertyRealization', the role 'rapidml_PropertyRealization91' has cardinality 0..*.
+An association connects 'rapidml_PropertyRealization' and 'rapidml_ObjectRealization'. From 'rapidml_PropertyRealization', the role 'rapidml_PropertyRealization94' has cardinality 0..*, and from 'rapidml_ObjectRealization', the role 'rapidml_ObjectRealization93' has cardinality 0..*.
+An association connects 'rapidml_Feature' and 'rapidml_ObjectRealization'. From 'rapidml_Feature', the role 'rapidml_Feature97' has cardinality 0..*, and from 'rapidml_ObjectRealization', the role 'rapidml_ObjectRealization96' has cardinality 0..*.
+An association connects 'rapidml_RealizationContainer' and 'rapidml_ObjectRealization'. From 'rapidml_RealizationContainer', the role 'RealizationContainer' has cardinality 0..*, and from 'rapidml_ObjectRealization', the role 'inlineObjectRealization' has cardinality 0..*.
+An association connects 'rapidml_AuthenticationMethod' and 'rapidml_HasSecurityValue'. From 'rapidml_AuthenticationMethod', the role 'rapidml_AuthenticationMethod' has cardinality 0..*, and from 'rapidml_HasSecurityValue', the role 'rapidml_HasSecurityValue' has cardinality 0..*.
+An association connects 'rapidml_SecurityScope' and 'rapidml_SecurityScheme'. From 'rapidml_SecurityScope', the role 'rapidml_SecurityScope' has cardinality 0..*, and from 'rapidml_SecurityScheme', the role 'rapidml_SecurityScheme' has cardinality 0..*.
+An association connects 'rapidml_SecuritySchemeParameter' and 'rapidml_SecurityScheme'. From 'rapidml_SecuritySchemeParameter', the role 'rapidml_SecuritySchemeParameter' has cardinality 0..*, and from 'rapidml_SecurityScheme', the role 'rapidml_SecurityScheme102' has cardinality 0..*.
+An association connects 'rapidml_SecurityScheme' and 'rapidml_MessageParameter'. From 'rapidml_SecurityScheme', the role 'rapidml_SecurityScheme104' has cardinality 0..*, and from 'rapidml_MessageParameter', the role 'rapidml_MessageParameter' has cardinality 0..*.
+An association connects 'rapidml_TypedResponse' and 'rapidml_SecurityScheme'. From 'rapidml_TypedResponse', the role 'rapidml_TypedResponse' has cardinality 0..*, and from 'rapidml_SecurityScheme', the role 'rapidml_SecurityScheme106' has cardinality 0..*.
+An association connects 'rapidml_SecurityScheme' and 'rapidml_AuthenticationMethod'. From 'rapidml_SecurityScheme', the role 'rapidml_SecurityScheme109' has cardinality 0..*, and from 'rapidml_AuthenticationMethod', the role 'rapidml_AuthenticationMethod108' has cardinality 0..*.
+An association connects 'rapidml_AuthenticationMethod' and 'rapidml_SecurityScope'. From 'rapidml_AuthenticationMethod', the role 'rapidml_AuthenticationMethod111' has cardinality 0..*, and from 'rapidml_SecurityScope', the role 'rapidml_SecurityScope112' has cardinality 0..*.
+An association connects 'rapidml_SecuritySchemeLibrary' and 'rapidml_SecurityScheme'. From 'rapidml_SecuritySchemeLibrary', the role 'rapidml_SecuritySchemeLibrary114' has cardinality 0..*, and from 'rapidml_SecurityScheme', the role 'rapidml_SecurityScheme115' has cardinality 0..*.
+An association connects 'rapidml_RealizationContainer' and 'rapidml_ObjectRealization'. From 'rapidml_RealizationContainer', the role 'realizationContainer' has cardinality 0..*, and from 'rapidml_ObjectRealization', the role 'ObjectRealization' has cardinality 0..*.
+An association connects 'rapidml_RealizationContainer' and 'rapidml_ObjectRealization'. From 'rapidml_RealizationContainer', the role 'rapidml_RealizationContainer' has cardinality 0..*, and from 'rapidml_ObjectRealization', the role 'rapidml_ObjectRealization118' has cardinality 0..*.
+An association connects 'rapidml_RealizationContainer' and 'rapidml_ReferenceTreatment'. From 'rapidml_RealizationContainer', the role 'rapidml_RealizationContainer120' has cardinality 0..*, and from 'rapidml_ReferenceTreatment', the role 'rapidml_ReferenceTreatment121' has cardinality 0..*.
+An association connects 'rapidml_RealizationContainer' and 'rapidml_Structure'. From 'rapidml_RealizationContainer', the role 'rapidml_RealizationContainer123' has cardinality 0..*, and from 'rapidml_Structure', the role 'rapidml_Structure' has cardinality 0..*.
+An association connects 'rapidml_Extension' and 'rapidml_Extensible'. From 'rapidml_Extension', the role 'rapidml_Extension' has cardinality 0..*, and from 'rapidml_Extensible', the role 'rapidml_Extensible' has cardinality 0..*.
+An association connects 'rapidml_MediaTypesLibrary' and 'rapidml_MediaType'. From 'rapidml_MediaTypesLibrary', the role 'rapidml_MediaTypesLibrary126' has cardinality 0..*, and from 'rapidml_MediaType', the role 'rapidml_MediaType127' has cardinality 0..*.
+An association connects 'rapidml_LinkRelation' and 'rapidml_LinkRelationsLibrary'. From 'rapidml_LinkRelation', the role 'rapidml_LinkRelation130' has cardinality 0..*, and from 'rapidml_LinkRelationsLibrary', the role 'rapidml_LinkRelationsLibrary129' has cardinality 0..*.
+An association connects 'rapidml_PrimitiveTypesLibrary' and 'rapidml_PrimitiveType'. From 'rapidml_PrimitiveTypesLibrary', the role 'rapidml_PrimitiveTypesLibrary132' has cardinality 0..*, and from 'rapidml_PrimitiveType', the role 'rapidml_PrimitiveType133' has cardinality 0..*.
+An association connects 'rapidml_Structure' and 'rapidml_Feature'. From 'rapidml_Structure', the role 'Structure' has cardinality 0..*, and from 'rapidml_Feature', the role 'ownedFeatures' has cardinality 0..*.
+An association connects 'rapidml_ReferenceProperty' and 'rapidml_Structure'. From 'rapidml_ReferenceProperty', the role 'rapidml_ReferenceProperty' has cardinality 0..*, and from 'rapidml_Structure', the role 'rapidml_Structure136' has cardinality 0..*.
+An association connects 'rapidml_ReferenceProperty' and 'rapidml_ReferenceProperty'. From 'rapidml_ReferenceProperty', the role 'rapidml_ReferenceProperty137' has cardinality 0..*, and from 'rapidml_ReferenceProperty', the role 'rapidml_ReferenceProperty139' has cardinality 0..*.
+An association connects 'rapidml_SingleValueType' and 'rapidml_PrimitiveProperty'. From 'rapidml_SingleValueType', the role 'rapidml_SingleValueType' has cardinality 0..*, and from 'rapidml_PrimitiveProperty', the role 'rapidml_PrimitiveProperty141' has cardinality 0..*.
+An association connects 'rapidml_Structure' and 'rapidml_Feature'. From 'rapidml_Structure', the role 'containingDataType' has cardinality 0..*, and from 'rapidml_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'rapidml_Structure' and 'rapidml_Structure'. From 'rapidml_Structure', the role 'rapidml_Structure143' has cardinality 0..*, and from 'rapidml_Structure', the role 'rapidml_Structure145' has cardinality 0..*.
+An association connects 'rapidml_Operation' and 'rapidml_Structure'. From 'rapidml_Operation', the role 'rapidml_Operation' has cardinality 0..*, and from 'rapidml_Structure', the role 'rapidml_Structure147' has cardinality 0..*.
+An association connects 'rapidml_Inheritable' and 'rapidml_Structure'. From 'rapidml_Inheritable', the role 'rapidml_Inheritable' has cardinality 0..*, and from 'rapidml_Structure', the role 'rapidml_Structure149' has cardinality 0..*.
+An association connects 'rapidml_Inheritable' and 'rapidml_Structure'. From 'rapidml_Inheritable', the role 'rapidml_Inheritable152' has cardinality 0..*, and from 'rapidml_Structure', the role 'rapidml_Structure151' has cardinality 0..*.
+An association connects 'rapidml_DataType' and 'rapidml_DataModel'. From 'rapidml_DataType', the role 'rapidml_DataType' has cardinality 0..*, and from 'rapidml_DataModel', the role 'rapidml_DataModel154' has cardinality 0..*.
+An association connects 'rapidml_DataExample' and 'rapidml_WithDataExamples'. From 'rapidml_DataExample', the role 'rapidml_DataExample' has cardinality 0..*, and from 'rapidml_WithDataExamples', the role 'rapidml_WithDataExamples' has cardinality 0..*.
+An association connects 'rapidml_EnumConstant' and 'rapidml_Enumeration'. From 'rapidml_EnumConstant', the role 'EnumConstant' has cardinality 0..*, and from 'rapidml_Enumeration', the role 'enumeration' has cardinality 0..*.
+An association connects 'rapidml_Enumeration' and 'rapidml_PrimitiveType'. From 'rapidml_Enumeration', the role 'rapidml_Enumeration' has cardinality 0..*, and from 'rapidml_PrimitiveType', the role 'rapidml_PrimitiveType158' has cardinality 0..*.
+An association connects 'rapidml_Enumeration' and 'rapidml_EnumConstant'. From 'rapidml_Enumeration', the role 'Enumeration' has cardinality 0..*, and from 'rapidml_EnumConstant', the role 'enumConstants' has cardinality 0..*.
+An association connects 'rapidml_UserDefinedType' and 'rapidml_SimpleType'. From 'rapidml_UserDefinedType', the role 'rapidml_UserDefinedType' has cardinality 0..*, and from 'rapidml_SimpleType', the role 'rapidml_SimpleType' has cardinality 0..*.
+An association connects 'rapidml_ReferenceElement' and 'rapidml_Structure'. From 'rapidml_ReferenceElement', the role 'rapidml_ReferenceElement162' has cardinality 0..*, and from 'rapidml_Structure', the role 'rapidml_Structure163' has cardinality 0..*.
+An association connects 'rapidml_ConstrainableType' and 'rapidml_Constraint'. From 'rapidml_ConstrainableType', the role 'rapidml_ConstrainableType' has cardinality 0..*, and from 'rapidml_Constraint', the role 'rapidml_Constraint' has cardinality 0..*.

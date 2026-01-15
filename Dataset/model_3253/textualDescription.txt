@@ -1,0 +1,285 @@
+The domain model 'cmof' describes the core structural elements and their relationships within the system.
+
+The model defines 53 main class(es).
+
+'cmof_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Package' represents an important domain concept.
+It has one attribute: 'uRI', which is of type str.
+
+'cmof_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_OpaqueExpression' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'cmof_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'upper', which is of type int; 'isUnique', which is of type bool; 'isOrdered', which is of type bool; 'lower', which is of type int.
+
+'cmof_Parameter' represents an important domain concept.
+It has the following attributes: 'default', which is of type str; 'direction', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Operation' represents an important domain concept.
+It has one attribute: 'isQuery', which is of type bool.
+
+'cmof_ElementImport' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'alias', which is of type str.
+
+'cmof_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'cmof_PackageImport' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Property' represents an important domain concept.
+It has the following attributes: 'isID', which is of type bool; 'isDerivedUnion', which is of type bool; 'isReadOnly', which is of type bool; 'isComposite', which is of type bool; 'default', which is of type str; 'isDerived', which is of type bool.
+
+'cmof_Association' represents an important domain concept.
+It has one attribute: 'isDerived', which is of type bool.
+
+'cmof_PackageMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Exception' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'cmof_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'visibility', which is of type str.
+
+'DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Tag' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'cmof_Argument' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'cmof_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Factory' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'cmof_Link' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityKind' defines the following possible values: 'protected', 'public', 'private', 'package'.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'out', 'in', 'inout', 'return'.
+
+The model also captures inheritance relationships between classes.
+The class 'cmof_Classifier' is a specialization of 'Namespace'.
+The class 'cmof_Classifier' is a specialization of 'Type'.
+The class 'cmof_Namespace' is a specialization of 'NamedElement'.
+The class 'cmof_NamedElement' is a specialization of 'Element'.
+The class 'cmof_Comment' is a specialization of 'Element'.
+The class 'cmof_Class' is a specialization of 'Classifier'.
+The class 'cmof_Property' is a specialization of 'StructuralFeature'.
+The class 'cmof_Property' is a specialization of 'MultiplicityElement'.
+The class 'cmof_StructuralFeature' is a specialization of 'Feature'.
+The class 'cmof_StructuralFeature' is a specialization of 'MultiplicityElement'.
+The class 'cmof_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'cmof_Feature' is a specialization of 'RedefinableElement'.
+The class 'cmof_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'cmof_TypedElement' is a specialization of 'NamedElement'.
+The class 'cmof_Type' is a specialization of 'PackageableElement'.
+The class 'cmof_PackageableElement' is a specialization of 'NamedElement'.
+The class 'cmof_Package' is a specialization of 'Namespace'.
+The class 'cmof_Package' is a specialization of 'PackageableElement'.
+The class 'cmof_PackageMerge' is a specialization of 'DirectedRelationship'.
+The class 'cmof_DirectedRelationship' is a specialization of 'Relationship'.
+The class 'cmof_Relationship' is a specialization of 'Element'.
+The class 'cmof_MultiplicityElement' is a specialization of 'Element'.
+The class 'cmof_Association' is a specialization of 'Classifier'.
+The class 'cmof_Association' is a specialization of 'Relationship'.
+The class 'cmof_DataType' is a specialization of 'Classifier'.
+The class 'cmof_Operation' is a specialization of 'BehavioralFeature'.
+The class 'cmof_Operation' is a specialization of 'MultiplicityElement'.
+The class 'cmof_Operation' is a specialization of 'TypedElement'.
+The class 'cmof_BehavioralFeature' is a specialization of 'Namespace'.
+The class 'cmof_BehavioralFeature' is a specialization of 'Feature'.
+The class 'cmof_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'cmof_Parameter' is a specialization of 'TypedElement'.
+The class 'cmof_Constraint' is a specialization of 'PackageableElement'.
+The class 'cmof_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'cmof_ValueSpecification' is a specialization of 'PackageableElement'.
+The class 'cmof_ElementImport' is a specialization of 'DirectedRelationship'.
+The class 'cmof_PackageImport' is a specialization of 'DirectedRelationship'.
+The class 'cmof_OpaqueExpression' is a specialization of 'ValueSpecification'.
+The class 'cmof_Expression' is a specialization of 'ValueSpecification'.
+The class 'cmof_Enumeration' is a specialization of 'DataType'.
+The class 'cmof_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'cmof_PrimitiveType' is a specialization of 'DataType'.
+The class 'cmof_Factory' is a specialization of 'Element'.
+The class 'cmof_Tag' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cmof_Feature' and 'cmof_Classifier'. From 'cmof_Feature', the role 'Feature' has cardinality 0..*, and from 'cmof_Classifier', the role 'featuringClassifier' has cardinality 0..*.
+An association connects 'cmof_Classifier' and 'cmof_Property'. From 'cmof_Classifier', the role 'cmof_Classifier' has cardinality 0..*, and from 'cmof_Property', the role 'cmof_Property' has cardinality 0..*.
+An association connects 'cmof_Classifier' and 'cmof_Classifier'. From 'cmof_Classifier', the role 'cmof_Classifier4' has cardinality 0..*, and from 'cmof_Classifier', the role 'cmof_Classifier2' has cardinality 0..*.
+An association connects 'cmof_NamedElement' and 'cmof_Classifier'. From 'cmof_NamedElement', the role 'cmof_NamedElement' has cardinality 0..*, and from 'cmof_Classifier', the role 'cmof_Classifier6' has cardinality 0..*.
+An association connects 'cmof_Constraint' and 'cmof_Namespace'. From 'cmof_Constraint', the role 'Constraint' has cardinality 0..*, and from 'cmof_Namespace', the role 'namespace' has cardinality 0..*.
+An association connects 'cmof_PackageableElement' and 'cmof_Namespace'. From 'cmof_PackageableElement', the role 'cmof_PackageableElement' has cardinality 0..*, and from 'cmof_Namespace', the role 'cmof_Namespace' has cardinality 0..*.
+An association connects 'cmof_Namespace' and 'cmof_ElementImport'. From 'cmof_Namespace', the role 'importingNamespace' has cardinality 0..*, and from 'cmof_ElementImport', the role 'ElementImport' has cardinality 0..*.
+An association connects 'cmof_PackageImport' and 'cmof_Namespace'. From 'cmof_PackageImport', the role 'PackageImport' has cardinality 0..*, and from 'cmof_Namespace', the role 'importingNamespace11' has cardinality 0..*.
+An association connects 'cmof_Namespace' and 'cmof_NamedElement'. From 'cmof_Namespace', the role 'cmof_Namespace13' has cardinality 0..*, and from 'cmof_NamedElement', the role 'cmof_NamedElement14' has cardinality 0..*.
+An association connects 'cmof_Element' and 'cmof_Element'. From 'cmof_Element', the role 'owner' has cardinality 0..*, and from 'cmof_Element', the role 'Element' has cardinality 0..*.
+An association connects 'cmof_Element' and 'cmof_Element'. From 'cmof_Element', the role 'Element19' has cardinality 0..*, and from 'cmof_Element', the role 'ownedElement' has cardinality 0..*.
+An association connects 'cmof_Comment' and 'cmof_Element'. From 'cmof_Comment', the role 'cmof_Comment' has cardinality 0..*, and from 'cmof_Element', the role 'cmof_Element' has cardinality 0..*.
+An association connects 'cmof_Comment' and 'cmof_Element'. From 'cmof_Comment', the role 'cmof_Comment22' has cardinality 0..*, and from 'cmof_Element', the role 'cmof_Element23' has cardinality 0..*.
+An association connects 'cmof_Property' and 'cmof_Class'. From 'cmof_Property', the role 'Property' has cardinality 0..*, and from 'cmof_Class', the role 'class' has cardinality 0..*.
+An association connects 'cmof_Class' and 'cmof_Operation'. From 'cmof_Class', the role 'class26' has cardinality 0..*, and from 'cmof_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'cmof_Class' and 'cmof_Class'. From 'cmof_Class', the role 'cmof_Class27' has cardinality 0..*, and from 'cmof_Class', the role 'cmof_Class' has cardinality 0..*.
+An association connects 'cmof_Association' and 'cmof_Property'. From 'cmof_Association', the role 'Association' has cardinality 0..*, and from 'cmof_Property', the role 'ownedEnd' has cardinality 0..*.
+An association connects 'cmof_Property' and 'cmof_Association'. From 'cmof_Property', the role 'memberEnd' has cardinality 0..*, and from 'cmof_Association', the role 'Association31' has cardinality 0..*.
+An association connects 'cmof_Property' and 'cmof_Property'. From 'cmof_Property', the role 'cmof_Property32' has cardinality 0..*, and from 'cmof_Property', the role 'cmof_Property34' has cardinality 0..*.
+An association connects 'cmof_Property' and 'cmof_Property'. From 'cmof_Property', the role 'cmof_Property37' has cardinality 0..*, and from 'cmof_Property', the role 'cmof_Property35' has cardinality 0..*.
+An association connects 'cmof_DataType' and 'cmof_Property'. From 'cmof_DataType', the role 'DataType' has cardinality 0..*, and from 'cmof_Property', the role 'ownedAttribute' has cardinality 0..*.
+An association connects 'cmof_Property' and 'cmof_Property'. From 'cmof_Property', the role 'cmof_Property41' has cardinality 0..*, and from 'cmof_Property', the role 'cmof_Property39' has cardinality 0..*.
+An association connects 'cmof_Class' and 'cmof_Property'. From 'cmof_Class', the role 'Class' has cardinality 0..*, and from 'cmof_Property', the role 'ownedAttribute43' has cardinality 0..*.
+An association connects 'cmof_Classifier' and 'cmof_Feature'. From 'cmof_Classifier', the role 'Classifier' has cardinality 0..*, and from 'cmof_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'cmof_Classifier' and 'cmof_RedefinableElement'. From 'cmof_Classifier', the role 'cmof_Classifier46' has cardinality 0..*, and from 'cmof_RedefinableElement', the role 'cmof_RedefinableElement' has cardinality 0..*.
+An association connects 'cmof_RedefinableElement' and 'cmof_RedefinableElement'. From 'cmof_RedefinableElement', the role 'cmof_RedefinableElement47' has cardinality 0..*, and from 'cmof_RedefinableElement', the role 'cmof_RedefinableElement49' has cardinality 0..*.
+An association connects 'cmof_Type' and 'cmof_TypedElement'. From 'cmof_Type', the role 'cmof_Type' has cardinality 0..*, and from 'cmof_TypedElement', the role 'cmof_TypedElement' has cardinality 0..*.
+An association connects 'cmof_Type' and 'cmof_Package'. From 'cmof_Type', the role 'ownedType' has cardinality 0..*, and from 'cmof_Package', the role 'Package' has cardinality 0..*.
+An association connects 'cmof_Package' and 'cmof_PackageableElement'. From 'cmof_Package', the role 'cmof_Package' has cardinality 0..*, and from 'cmof_PackageableElement', the role 'cmof_PackageableElement53' has cardinality 0..*.
+An association connects 'cmof_PackageMerge' and 'cmof_Package'. From 'cmof_PackageMerge', the role 'PackageMerge' has cardinality 0..*, and from 'cmof_Package', the role 'receivingPackage' has cardinality 0..*.
+An association connects 'cmof_Package' and 'cmof_Package'. From 'cmof_Package', the role 'Package57' has cardinality 0..*, and from 'cmof_Package', the role 'nestingPackage' has cardinality 0..*.
+An association connects 'cmof_Package' and 'cmof_Package'. From 'cmof_Package', the role 'Package60' has cardinality 0..*, and from 'cmof_Package', the role 'nestedPackage' has cardinality 0..*.
+An association connects 'cmof_Package' and 'cmof_Type'. From 'cmof_Package', the role 'package' has cardinality 0..*, and from 'cmof_Type', the role 'Type' has cardinality 0..*.
+An association connects 'cmof_PackageMerge' and 'cmof_Package'. From 'cmof_PackageMerge', the role 'cmof_PackageMerge' has cardinality 0..*, and from 'cmof_Package', the role 'cmof_Package63' has cardinality 0..*.
+An association connects 'cmof_Package' and 'cmof_PackageMerge'. From 'cmof_Package', the role 'Package65' has cardinality 0..*, and from 'cmof_PackageMerge', the role 'packageMerge' has cardinality 0..*.
+An association connects 'cmof_Element' and 'cmof_DirectedRelationship'. From 'cmof_Element', the role 'cmof_Element67' has cardinality 0..*, and from 'cmof_DirectedRelationship', the role 'cmof_DirectedRelationship' has cardinality 0..*.
+An association connects 'cmof_DirectedRelationship' and 'cmof_Element'. From 'cmof_DirectedRelationship', the role 'cmof_DirectedRelationship69' has cardinality 0..*, and from 'cmof_Element', the role 'cmof_Element70' has cardinality 0..*.
+An association connects 'cmof_Relationship' and 'cmof_Element'. From 'cmof_Relationship', the role 'cmof_Relationship' has cardinality 0..*, and from 'cmof_Element', the role 'cmof_Element72' has cardinality 0..*.
+An association connects 'cmof_Type' and 'cmof_Association'. From 'cmof_Type', the role 'cmof_Type74' has cardinality 0..*, and from 'cmof_Association', the role 'cmof_Association' has cardinality 0..*.
+An association connects 'cmof_Property' and 'cmof_Association'. From 'cmof_Property', the role 'Property76' has cardinality 0..*, and from 'cmof_Association', the role 'association' has cardinality 0..*.
+An association connects 'cmof_Property' and 'cmof_Association'. From 'cmof_Property', the role 'cmof_Property79' has cardinality 0..*, and from 'cmof_Association', the role 'cmof_Association78' has cardinality 0..*.
+An association connects 'cmof_Association' and 'cmof_Property'. From 'cmof_Association', the role 'owningAssociation' has cardinality 0..*, and from 'cmof_Property', the role 'Property81' has cardinality 0..*.
+An association connects 'cmof_Operation' and 'cmof_DataType'. From 'cmof_Operation', the role 'Operation83' has cardinality 0..*, and from 'cmof_DataType', the role 'datatype' has cardinality 0..*.
+An association connects 'cmof_Property' and 'cmof_DataType'. From 'cmof_Property', the role 'Property86' has cardinality 0..*, and from 'cmof_DataType', the role 'datatype85' has cardinality 0..*.
+An association connects 'cmof_Operation' and 'cmof_Operation'. From 'cmof_Operation', the role 'cmof_Operation' has cardinality 0..*, and from 'cmof_Operation', the role 'cmof_Operation87' has cardinality 0..*.
+An association connects 'cmof_Operation' and 'cmof_Constraint'. From 'cmof_Operation', the role 'cmof_Operation90' has cardinality 0..*, and from 'cmof_Constraint', the role 'cmof_Constraint' has cardinality 0..*.
+An association connects 'cmof_Operation' and 'cmof_Constraint'. From 'cmof_Operation', the role 'cmof_Operation92' has cardinality 0..*, and from 'cmof_Constraint', the role 'cmof_Constraint93' has cardinality 0..*.
+An association connects 'cmof_Operation' and 'cmof_Constraint'. From 'cmof_Operation', the role 'cmof_Operation95' has cardinality 0..*, and from 'cmof_Constraint', the role 'cmof_Constraint96' has cardinality 0..*.
+An association connects 'cmof_Class' and 'cmof_Operation'. From 'cmof_Class', the role 'Class98' has cardinality 0..*, and from 'cmof_Operation', the role 'ownedOperation' has cardinality 0..*.
+An association connects 'cmof_Operation' and 'cmof_DataType'. From 'cmof_Operation', the role 'ownedOperation100' has cardinality 0..*, and from 'cmof_DataType', the role 'DataType101' has cardinality 0..*.
+An association connects 'cmof_BehavioralFeature' and 'cmof_Parameter'. From 'cmof_BehavioralFeature', the role 'cmof_BehavioralFeature' has cardinality 0..*, and from 'cmof_Parameter', the role 'cmof_Parameter' has cardinality 0..*.
+An association connects 'cmof_Type' and 'cmof_BehavioralFeature'. From 'cmof_Type', the role 'cmof_Type105' has cardinality 0..*, and from 'cmof_BehavioralFeature', the role 'cmof_BehavioralFeature104' has cardinality 0..*.
+An association connects 'cmof_Parameter' and 'cmof_Operation'. From 'cmof_Parameter', the role 'cmof_Parameter107' has cardinality 0..*, and from 'cmof_Operation', the role 'cmof_Operation108' has cardinality 0..*.
+An association connects 'cmof_Namespace' and 'cmof_Constraint'. From 'cmof_Namespace', the role 'cmof_Namespace111' has cardinality 0..*, and from 'cmof_Constraint', the role 'cmof_Constraint110' has cardinality 0..*.
+An association connects 'cmof_Element' and 'cmof_Constraint'. From 'cmof_Element', the role 'cmof_Element114' has cardinality 0..*, and from 'cmof_Constraint', the role 'cmof_Constraint113' has cardinality 0..*.
+An association connects 'cmof_Constraint' and 'cmof_ValueSpecification'. From 'cmof_Constraint', the role 'cmof_Constraint116' has cardinality 0..*, and from 'cmof_ValueSpecification', the role 'cmof_ValueSpecification' has cardinality 0..*.
+An association connects 'cmof_Constraint' and 'cmof_Namespace'. From 'cmof_Constraint', the role 'ownedRule' has cardinality 0..*, and from 'cmof_Namespace', the role 'Namespace' has cardinality 0..*.
+An association connects 'cmof_PackageableElement' and 'cmof_ElementImport'. From 'cmof_PackageableElement', the role 'cmof_PackageableElement119' has cardinality 0..*, and from 'cmof_ElementImport', the role 'cmof_ElementImport' has cardinality 0..*.
+An association connects 'cmof_Namespace' and 'cmof_ElementImport'. From 'cmof_Namespace', the role 'Namespace121' has cardinality 0..*, and from 'cmof_ElementImport', the role 'elementImport' has cardinality 0..*.
+An association connects 'cmof_Package' and 'cmof_PackageImport'. From 'cmof_Package', the role 'cmof_Package123' has cardinality 0..*, and from 'cmof_PackageImport', the role 'cmof_PackageImport' has cardinality 0..*.
+An association connects 'cmof_PackageImport' and 'cmof_Namespace'. From 'cmof_PackageImport', the role 'packageImport' has cardinality 0..*, and from 'cmof_Namespace', the role 'Namespace125' has cardinality 0..*.
+An association connects 'cmof_Expression' and 'cmof_ValueSpecification'. From 'cmof_Expression', the role 'cmof_Expression' has cardinality 0..*, and from 'cmof_ValueSpecification', the role 'cmof_ValueSpecification127' has cardinality 0..*.
+An association connects 'cmof_Enumeration' and 'cmof_EnumerationLiteral'. From 'cmof_Enumeration', the role 'enumeration' has cardinality 0..*, and from 'cmof_EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*.
+An association connects 'cmof_Enumeration' and 'cmof_EnumerationLiteral'. From 'cmof_Enumeration', the role 'Enumeration' has cardinality 0..*, and from 'cmof_EnumerationLiteral', the role 'ownedLiteral' has cardinality 0..*.
+An association connects 'cmof_Exception' and 'cmof_Element'. From 'cmof_Exception', the role 'cmof_Exception' has cardinality 0..*, and from 'cmof_Element', the role 'cmof_Element131' has cardinality 0..*.
+An association connects 'cmof_Exception' and 'cmof_Element'. From 'cmof_Exception', the role 'cmof_Exception133' has cardinality 0..*, and from 'cmof_Element', the role 'cmof_Element134' has cardinality 0..*.
+An association connects 'cmof_Factory' and 'cmof_Package'. From 'cmof_Factory', the role 'cmof_Factory' has cardinality 0..*, and from 'cmof_Package', the role 'cmof_Package136' has cardinality 0..*.
+An association connects 'cmof_Link' and 'cmof_Element'. From 'cmof_Link', the role 'cmof_Link' has cardinality 0..*, and from 'cmof_Element', the role 'cmof_Element138' has cardinality 0..*.
+An association connects 'cmof_Element' and 'cmof_Link'. From 'cmof_Element', the role 'cmof_Element141' has cardinality 0..*, and from 'cmof_Link', the role 'cmof_Link140' has cardinality 0..*.
+An association connects 'cmof_Association' and 'cmof_Link'. From 'cmof_Association', the role 'cmof_Association144' has cardinality 0..*, and from 'cmof_Link', the role 'cmof_Link143' has cardinality 0..*.
+An association connects 'cmof_Element' and 'cmof_Tag'. From 'cmof_Element', the role 'cmof_Element146' has cardinality 0..*, and from 'cmof_Tag', the role 'cmof_Tag' has cardinality 0..*.

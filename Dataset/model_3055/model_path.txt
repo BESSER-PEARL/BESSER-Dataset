@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/RoiSoleil/gmftools/xtext-gmf-example/org.xtext.cg2009.exercise1.solution/src-gen/org/xtext/cg2009/Entities.ecore

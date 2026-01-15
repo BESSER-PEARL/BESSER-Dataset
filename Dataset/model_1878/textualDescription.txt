@@ -1,0 +1,96 @@
+The domain model 'statesml' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'statesml_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statesml_DataTypeLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statesml_SelectionDivergence' represents an important domain concept.
+It does not declare any attributes.
+
+'statesml_DataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statesml_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statesml_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'statesml_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statesml_ChangeEvent' represents an important domain concept.
+It has one attribute: 'isFulfilled', which is of type bool.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'statesml_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statesml_StatesML' represents an important domain concept.
+It does not declare any attributes.
+
+'statesml_SystemUnits' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statesml_State' represents an important domain concept.
+It has the following attributes: 'isTerminal', which is of type bool; 'isInitial', which is of type bool.
+
+'statesml_Edge' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'statesml_SystemUnitLibrariy' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statesml_SelectionConvergence' represents an important domain concept.
+It does not declare any attributes.
+
+'statesml_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'statesml_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'statesml_State' is a specialization of 'Node'.
+The class 'statesml_Transition' is a specialization of 'Node'.
+The class 'statesml_SelectionDivergence' is a specialization of 'Node'.
+The class 'statesml_SelectionConvergence' is a specialization of 'Node'.
+The class 'statesml_ChangeEvent' is a specialization of 'Event'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statesml_Function' and 'statesml_SystemUnits'. From 'statesml_Function', the role 'statesml_Function' has cardinality 0..*, and from 'statesml_SystemUnits', the role 'statesml_SystemUnits' has cardinality 0..*.
+An association connects 'statesml_SystemUnits' and 'statesml_Attribute'. From 'statesml_SystemUnits', the role 'statesml_SystemUnits2' has cardinality 0..*, and from 'statesml_Attribute', the role 'statesml_Attribute' has cardinality 0..*.
+An association connects 'statesml_Function' and 'statesml_Parameter'. From 'statesml_Function', the role 'statesml_Function4' has cardinality 0..*, and from 'statesml_Parameter', the role 'statesml_Parameter' has cardinality 0..*.
+An association connects 'statesml_Function' and 'statesml_Parameter'. From 'statesml_Function', the role 'statesml_Function6' has cardinality 0..*, and from 'statesml_Parameter', the role 'statesml_Parameter7' has cardinality 0..*.
+An association connects 'statesml_DataType' and 'statesml_Attribute'. From 'statesml_DataType', the role 'statesml_DataType' has cardinality 0..*, and from 'statesml_Attribute', the role 'statesml_Attribute9' has cardinality 0..*.
+An association connects 'statesml_Parameter' and 'statesml_DataType'. From 'statesml_Parameter', the role 'statesml_Parameter11' has cardinality 0..*, and from 'statesml_DataType', the role 'statesml_DataType12' has cardinality 0..*.
+An association connects 'statesml_Function' and 'statesml_DataType'. From 'statesml_Function', the role 'statesml_Function15' has cardinality 0..*, and from 'statesml_DataType', the role 'statesml_DataType14' has cardinality 0..*.
+An association connects 'statesml_SystemUnits' and 'statesml_SystemUnitLibrariy'. From 'statesml_SystemUnits', the role 'statesml_SystemUnits17' has cardinality 0..*, and from 'statesml_SystemUnitLibrariy', the role 'statesml_SystemUnitLibrariy' has cardinality 0..*.
+An association connects 'statesml_DataTypeLibrary' and 'statesml_DataType'. From 'statesml_DataTypeLibrary', the role 'statesml_DataTypeLibrary' has cardinality 0..*, and from 'statesml_DataType', the role 'statesml_DataType19' has cardinality 0..*.
+An association connects 'statesml_State' and 'statesml_Transition'. From 'statesml_State', the role 'state' has cardinality 0..*, and from 'statesml_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'statesml_SelectionDivergence' and 'statesml_State'. From 'statesml_SelectionDivergence', the role 'statesml_SelectionDivergence' has cardinality 0..*, and from 'statesml_State', the role 'statesml_State' has cardinality 0..*.
+An association connects 'statesml_Transition' and 'statesml_ChangeEvent'. From 'statesml_Transition', the role 'statesml_Transition' has cardinality 0..*, and from 'statesml_ChangeEvent', the role 'statesml_ChangeEvent' has cardinality 0..*.
+An association connects 'statesml_State' and 'statesml_Transition'. From 'statesml_State', the role 'State' has cardinality 0..*, and from 'statesml_Transition', the role 'transition' has cardinality 0..*.
+An association connects 'statesml_SelectionConvergence' and 'statesml_Transition'. From 'statesml_SelectionConvergence', the role 'statesml_SelectionConvergence' has cardinality 0..*, and from 'statesml_Transition', the role 'statesml_Transition25' has cardinality 0..*.
+An association connects 'statesml_Transition' and 'statesml_SelectionDivergence'. From 'statesml_Transition', the role 'statesml_Transition28' has cardinality 0..*, and from 'statesml_SelectionDivergence', the role 'statesml_SelectionDivergence27' has cardinality 0..*.
+An association connects 'statesml_SelectionConvergence' and 'statesml_State'. From 'statesml_SelectionConvergence', the role 'statesml_SelectionConvergence30' has cardinality 0..*, and from 'statesml_State', the role 'statesml_State31' has cardinality 0..*.
+An association connects 'statesml_StatesML' and 'statesml_Event'. From 'statesml_StatesML', the role 'statesml_StatesML' has cardinality 0..*, and from 'statesml_Event', the role 'statesml_Event' has cardinality 0..*.
+An association connects 'statesml_StatesML' and 'statesml_SystemUnits'. From 'statesml_StatesML', the role 'statesml_StatesML34' has cardinality 0..*, and from 'statesml_SystemUnits', the role 'statesml_SystemUnits35' has cardinality 0..*.
+An association connects 'statesml_DataTypeLibrary' and 'statesml_StatesML'. From 'statesml_DataTypeLibrary', the role 'statesml_DataTypeLibrary38' has cardinality 0..*, and from 'statesml_StatesML', the role 'statesml_StatesML37' has cardinality 0..*.
+An association connects 'statesml_StatesML' and 'statesml_SystemUnitLibrariy'. From 'statesml_StatesML', the role 'statesml_StatesML40' has cardinality 0..*, and from 'statesml_SystemUnitLibrariy', the role 'statesml_SystemUnitLibrariy41' has cardinality 0..*.
+An association connects 'statesml_StatesML' and 'statesml_Node'. From 'statesml_StatesML', the role 'statesml_StatesML43' has cardinality 0..*, and from 'statesml_Node', the role 'statesml_Node' has cardinality 0..*.
+An association connects 'statesml_Edge' and 'statesml_StatesML'. From 'statesml_Edge', the role 'statesml_Edge' has cardinality 0..*, and from 'statesml_StatesML', the role 'statesml_StatesML45' has cardinality 0..*.
+An association connects 'statesml_StatesML' and 'statesml_Attribute'. From 'statesml_StatesML', the role 'statesml_StatesML47' has cardinality 0..*, and from 'statesml_Attribute', the role 'statesml_Attribute48' has cardinality 0..*.
+An association connects 'statesml_Edge' and 'statesml_Node'. From 'statesml_Edge', the role 'edge' has cardinality 0..*, and from 'statesml_Node', the role 'Node' has cardinality 0..*.
+An association connects 'statesml_Edge' and 'statesml_Node'. From 'statesml_Edge', the role 'Edge' has cardinality 0..*, and from 'statesml_Node', the role 'node' has cardinality 0..*.
+An association connects 'statesml_Node' and 'statesml_Function'. From 'statesml_Node', the role 'statesml_Node52' has cardinality 0..*, and from 'statesml_Function', the role 'statesml_Function53' has cardinality 0..*.
+An association connects 'statesml_Trigger' and 'statesml_ChangeEvent'. From 'statesml_Trigger', the role 'statesml_Trigger' has cardinality 0..*, and from 'statesml_ChangeEvent', the role 'statesml_ChangeEvent55' has cardinality 0..*.

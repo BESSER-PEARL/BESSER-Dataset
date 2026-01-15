@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rsanjai/sr-o2core/org.osate.aadl2/src/org/osate/aadl2/impl/aadl2.ecore

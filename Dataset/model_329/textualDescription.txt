@@ -1,0 +1,29 @@
+The domain model 'bz242995' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'bz242995_OneTimeWonder' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'id', which is of type str.
+
+'bz242995_Author' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'id', which is of type str.
+
+'bz242995_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bz242995_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bz242995_Book' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'pages', which is of type int; 'category', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'Mystery', 'ScienceFiction', 'Biography'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bz242995_Book' and 'bz242995_Writer'. From 'bz242995_Book', the role 'books' has cardinality 0..*, and from 'bz242995_Writer', the role 'Writer' has cardinality 0..*.
+An association connects 'bz242995_Library' and 'bz242995_Writer'. From 'bz242995_Library', the role 'bz242995_Library' has cardinality 0..*, and from 'bz242995_Writer', the role 'bz242995_Writer' has cardinality 0..*.
+An association connects 'bz242995_Book' and 'bz242995_Library'. From 'bz242995_Book', the role 'bz242995_Book' has cardinality 0..*, and from 'bz242995_Library', the role 'bz242995_Library3' has cardinality 0..*.
+An association connects 'bz242995_Book' and 'bz242995_Writer'. From 'bz242995_Book', the role 'Book' has cardinality 0..*, and from 'bz242995_Writer', the role 'author' has cardinality 0..*.
+An association connects 'bz242995_OneTimeWonder' and 'bz242995_Author'. From 'bz242995_OneTimeWonder', the role 'theBook' has cardinality 0..*, and from 'bz242995_Author', the role 'Author' has cardinality 0..*.
+An association connects 'bz242995_OneTimeWonder' and 'bz242995_Author'. From 'bz242995_OneTimeWonder', the role 'OneTimeWonder' has cardinality 0..*, and from 'bz242995_Author', the role 'theAuthor' has cardinality 0..*.

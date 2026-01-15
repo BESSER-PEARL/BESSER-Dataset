@@ -1,0 +1,13 @@
+The domain model 'book' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'book_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'book_Chapter' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'author', which is of type str; 'nbPages', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'book_Book' and 'book_Chapter'. From 'book_Book', the role 'book' has cardinality 0..*, and from 'book_Chapter', the role 'Chapter' has cardinality 0..*.
+An association connects 'book_Book' and 'book_Chapter'. From 'book_Book', the role 'Book' has cardinality 0..*, and from 'book_Chapter', the role 'chapters' has cardinality 0..*.

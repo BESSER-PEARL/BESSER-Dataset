@@ -1,0 +1,21 @@
+The domain model 'hierarchy' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'hierarchy_HierLibrary' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'hierarchy_NonFiction' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'hierarchy_Fiction' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'hierarchy_Book' represents an important domain concept.
+It has the following attributes: 'genre', which is of type str; 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'hierarchy_Fiction' and 'hierarchy_HierLibrary'. From 'hierarchy_Fiction', the role 'hierarchy_Fiction' has cardinality 0..*, and from 'hierarchy_HierLibrary', the role 'hierarchy_HierLibrary' has cardinality 0..*.
+An association connects 'hierarchy_HierLibrary' and 'hierarchy_NonFiction'. From 'hierarchy_HierLibrary', the role 'hierarchy_HierLibrary2' has cardinality 0..*, and from 'hierarchy_NonFiction', the role 'hierarchy_NonFiction' has cardinality 0..*.
+An association connects 'hierarchy_Fiction' and 'hierarchy_Book'. From 'hierarchy_Fiction', the role 'hierarchy_Fiction4' has cardinality 0..*, and from 'hierarchy_Book', the role 'hierarchy_Book' has cardinality 0..*.
+An association connects 'hierarchy_NonFiction' and 'hierarchy_Book'. From 'hierarchy_NonFiction', the role 'hierarchy_NonFiction6' has cardinality 0..*, and from 'hierarchy_Book', the role 'hierarchy_Book7' has cardinality 0..*.

@@ -1,0 +1,90 @@
+The domain model 'rdbms' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'rdbms_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_schema' represents an important domain concept.
+It has the following attributes: 'oID', which is of type str; 'kind', which is of type str; 'name', which is of type str.
+
+'rdbms_key2' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_foreignKey' represents an important domain concept.
+It has the following attributes: 'owner', which is of type str; 'kind', which is of type str; 'name', which is of type str; 'refersTo', which is of type str; 'oID', which is of type str.
+
+'rdbms_oID' represents an important domain concept.
+It has one attribute: 'oID', which is of type str.
+
+'rdbms_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'rdbms_RDBMS' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_hasForeignKeys' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'rdbms_columns' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'rdbms_key' represents an important domain concept.
+It has the following attributes: 'oID', which is of type str; 'name', which is of type str; 'kind', which is of type str.
+
+'rdbms_referencedColumns' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'rdbms_schemas' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'rdbms_tables' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'rdbms_table' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'oID', which is of type str; 'name', which is of type str.
+
+'rdbms_referencedKeys' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'rdbms_foreignKeys' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'rdbms_column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'kind', which is of type str; 'oID', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'rdbms_column' and 'rdbms_referencedKeys'. From 'rdbms_column', the role 'rdbms_column' has cardinality 0..*, and from 'rdbms_referencedKeys', the role 'rdbms_referencedKeys' has cardinality 0..*.
+An association connects 'rdbms_column' and 'rdbms_hasForeignKeys'. From 'rdbms_column', the role 'rdbms_column2' has cardinality 0..*, and from 'rdbms_hasForeignKeys', the role 'rdbms_hasForeignKeys' has cardinality 0..*.
+An association connects 'rdbms_columns' and 'rdbms_column'. From 'rdbms_columns', the role 'rdbms_columns' has cardinality 0..*, and from 'rdbms_column', the role 'rdbms_column4' has cardinality 0..*.
+An association connects 'rdbms_EStringToStringMapEntry' and 'rdbms_DocumentRoot'. From 'rdbms_EStringToStringMapEntry', the role 'rdbms_EStringToStringMapEntry' has cardinality 0..*, and from 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot' has cardinality 0..*.
+An association connects 'rdbms_DocumentRoot' and 'rdbms_EStringToStringMapEntry'. From 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot7' has cardinality 0..*, and from 'rdbms_EStringToStringMapEntry', the role 'rdbms_EStringToStringMapEntry8' has cardinality 0..*.
+An association connects 'rdbms_column' and 'rdbms_DocumentRoot'. From 'rdbms_column', the role 'rdbms_column11' has cardinality 0..*, and from 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot10' has cardinality 0..*.
+An association connects 'rdbms_DocumentRoot' and 'rdbms_columns'. From 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot13' has cardinality 0..*, and from 'rdbms_columns', the role 'rdbms_columns14' has cardinality 0..*.
+An association connects 'rdbms_foreignKey' and 'rdbms_DocumentRoot'. From 'rdbms_foreignKey', the role 'rdbms_foreignKey' has cardinality 0..*, and from 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot16' has cardinality 0..*.
+An association connects 'rdbms_foreignKeys' and 'rdbms_DocumentRoot'. From 'rdbms_foreignKeys', the role 'rdbms_foreignKeys' has cardinality 0..*, and from 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot18' has cardinality 0..*.
+An association connects 'rdbms_hasForeignKeys' and 'rdbms_DocumentRoot'. From 'rdbms_hasForeignKeys', the role 'rdbms_hasForeignKeys21' has cardinality 0..*, and from 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot20' has cardinality 0..*.
+An association connects 'rdbms_DocumentRoot' and 'rdbms_key'. From 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot23' has cardinality 0..*, and from 'rdbms_key', the role 'rdbms_key' has cardinality 0..*.
+An association connects 'rdbms_DocumentRoot' and 'rdbms_key2'. From 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot25' has cardinality 0..*, and from 'rdbms_key2', the role 'rdbms_key2' has cardinality 0..*.
+An association connects 'rdbms_oID' and 'rdbms_DocumentRoot'. From 'rdbms_oID', the role 'rdbms_oID' has cardinality 0..*, and from 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot27' has cardinality 0..*.
+An association connects 'rdbms_RDBMS' and 'rdbms_DocumentRoot'. From 'rdbms_RDBMS', the role 'rdbms_RDBMS' has cardinality 0..*, and from 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot29' has cardinality 0..*.
+An association connects 'rdbms_referencedColumns' and 'rdbms_DocumentRoot'. From 'rdbms_referencedColumns', the role 'rdbms_referencedColumns' has cardinality 0..*, and from 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot31' has cardinality 0..*.
+An association connects 'rdbms_referencedKeys' and 'rdbms_DocumentRoot'. From 'rdbms_referencedKeys', the role 'rdbms_referencedKeys34' has cardinality 0..*, and from 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot33' has cardinality 0..*.
+An association connects 'rdbms_DocumentRoot' and 'rdbms_schema'. From 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot36' has cardinality 0..*, and from 'rdbms_schema', the role 'rdbms_schema' has cardinality 0..*.
+An association connects 'rdbms_DocumentRoot' and 'rdbms_schemas'. From 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot38' has cardinality 0..*, and from 'rdbms_schemas', the role 'rdbms_schemas' has cardinality 0..*.
+An association connects 'rdbms_DocumentRoot' and 'rdbms_table'. From 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot40' has cardinality 0..*, and from 'rdbms_table', the role 'rdbms_table' has cardinality 0..*.
+An association connects 'rdbms_DocumentRoot' and 'rdbms_tables'. From 'rdbms_DocumentRoot', the role 'rdbms_DocumentRoot42' has cardinality 0..*, and from 'rdbms_tables', the role 'rdbms_tables' has cardinality 0..*.
+An association connects 'rdbms_foreignKey' and 'rdbms_referencedColumns'. From 'rdbms_foreignKey', the role 'rdbms_foreignKey44' has cardinality 0..*, and from 'rdbms_referencedColumns', the role 'rdbms_referencedColumns45' has cardinality 0..*.
+An association connects 'rdbms_foreignKeys' and 'rdbms_foreignKey'. From 'rdbms_foreignKeys', the role 'rdbms_foreignKeys47' has cardinality 0..*, and from 'rdbms_foreignKey', the role 'rdbms_foreignKey48' has cardinality 0..*.
+An association connects 'rdbms_hasForeignKeys' and 'rdbms_oID'. From 'rdbms_hasForeignKeys', the role 'rdbms_hasForeignKeys50' has cardinality 0..*, and from 'rdbms_oID', the role 'rdbms_oID51' has cardinality 0..*.
+An association connects 'rdbms_key' and 'rdbms_referencedColumns'. From 'rdbms_key', the role 'rdbms_key53' has cardinality 0..*, and from 'rdbms_referencedColumns', the role 'rdbms_referencedColumns54' has cardinality 0..*.
+An association connects 'rdbms_key' and 'rdbms_key2'. From 'rdbms_key', the role 'rdbms_key57' has cardinality 0..*, and from 'rdbms_key2', the role 'rdbms_key256' has cardinality 0..*.
+An association connects 'rdbms_RDBMS' and 'rdbms_schemas'. From 'rdbms_RDBMS', the role 'rdbms_RDBMS59' has cardinality 0..*, and from 'rdbms_schemas', the role 'rdbms_schemas60' has cardinality 0..*.
+An association connects 'rdbms_referencedColumns' and 'rdbms_oID'. From 'rdbms_referencedColumns', the role 'rdbms_referencedColumns62' has cardinality 0..*, and from 'rdbms_oID', the role 'rdbms_oID63' has cardinality 0..*.
+An association connects 'rdbms_referencedKeys' and 'rdbms_oID'. From 'rdbms_referencedKeys', the role 'rdbms_referencedKeys65' has cardinality 0..*, and from 'rdbms_oID', the role 'rdbms_oID66' has cardinality 0..*.
+An association connects 'rdbms_tables' and 'rdbms_schema'. From 'rdbms_tables', the role 'rdbms_tables69' has cardinality 0..*, and from 'rdbms_schema', the role 'rdbms_schema68' has cardinality 0..*.
+An association connects 'rdbms_foreignKeys' and 'rdbms_schema'. From 'rdbms_foreignKeys', the role 'rdbms_foreignKeys72' has cardinality 0..*, and from 'rdbms_schema', the role 'rdbms_schema71' has cardinality 0..*.
+An association connects 'rdbms_schema' and 'rdbms_schemas'. From 'rdbms_schema', the role 'rdbms_schema75' has cardinality 0..*, and from 'rdbms_schemas', the role 'rdbms_schemas74' has cardinality 0..*.
+An association connects 'rdbms_table' and 'rdbms_columns'. From 'rdbms_table', the role 'rdbms_table77' has cardinality 0..*, and from 'rdbms_columns', the role 'rdbms_columns78' has cardinality 0..*.
+An association connects 'rdbms_table' and 'rdbms_key2'. From 'rdbms_table', the role 'rdbms_table80' has cardinality 0..*, and from 'rdbms_key2', the role 'rdbms_key281' has cardinality 0..*.
+An association connects 'rdbms_table' and 'rdbms_tables'. From 'rdbms_table', the role 'rdbms_table84' has cardinality 0..*, and from 'rdbms_tables', the role 'rdbms_tables83' has cardinality 0..*.

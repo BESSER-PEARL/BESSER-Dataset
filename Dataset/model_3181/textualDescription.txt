@@ -1,0 +1,132 @@
+The domain model 'testintentionsAssistance' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'testintentionsAssistance_Boolean' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'testintentionsAssistance_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'testintentionsAssistance_MulOrDiv' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'testintentionsAssistance_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'testintentionsAssistance_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'testintentionsAssistance_OutVariable' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'testintentionsAssistance_And' represents an important domain concept.
+It does not declare any attributes.
+
+'testintentionsAssistance_Double' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'testintentionsAssistance_DomainDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'testintentionsAssistance_INT' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'testintentionsAssistance_Data' represents an important domain concept.
+It does not declare any attributes.
+
+'testintentionsAssistance_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'testintentionsAssistance_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'testintentionsAssistance_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'testintentionsAssistance_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'testintentionsAssistance_Equality' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'testintentionsAssistance_STRING' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'testintentionsAssistance_Variable' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'testintentionsAssistance_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'testintentionsAssistance_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'testintentionsAssistance_TestIntention' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'testintentionsAssistance_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'testintentionsAssistance_Function' represents an important domain concept.
+It has one attribute: 'methode', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'testintentionsAssistance_Inst' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'STRING', 'INT', 'Boolean', 'Double'.
+
+The model also captures inheritance relationships between classes.
+The class 'testintentionsAssistance_DomainDeclaration' is a specialization of 'AbstractElement'.
+The class 'testintentionsAssistance_Import' is a specialization of 'AbstractElement'.
+The class 'testintentionsAssistance_Function' is a specialization of 'AbstractElement'.
+The class 'testintentionsAssistance_Data' is a specialization of 'AbstractElement'.
+The class 'testintentionsAssistance_TestIntention' is a specialization of 'AbstractElement'.
+The class 'testintentionsAssistance_Or' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_And' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_Equality' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_Comparison' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_Plus' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_Minus' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_MulOrDiv' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_Not' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_INT' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_STRING' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_Boolean' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_Double' is a specialization of 'Expression'.
+The class 'testintentionsAssistance_VariableRef' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testintentionsAssistance_DomainDeclaration' and 'testintentionsAssistance_Model'. From 'testintentionsAssistance_DomainDeclaration', the role 'testintentionsAssistance_DomainDeclaration' has cardinality 0..*, and from 'testintentionsAssistance_Model', the role 'testintentionsAssistance_Model' has cardinality 0..*.
+An association connects 'testintentionsAssistance_AbstractElement' and 'testintentionsAssistance_DomainDeclaration'. From 'testintentionsAssistance_AbstractElement', the role 'testintentionsAssistance_AbstractElement' has cardinality 0..*, and from 'testintentionsAssistance_DomainDeclaration', the role 'testintentionsAssistance_DomainDeclaration2' has cardinality 0..*.
+An association connects 'testintentionsAssistance_OutVariable' and 'testintentionsAssistance_Function'. From 'testintentionsAssistance_OutVariable', the role 'testintentionsAssistance_OutVariable' has cardinality 0..*, and from 'testintentionsAssistance_Function', the role 'testintentionsAssistance_Function' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Variable' and 'testintentionsAssistance_Function'. From 'testintentionsAssistance_Variable', the role 'testintentionsAssistance_Variable' has cardinality 0..*, and from 'testintentionsAssistance_Function', the role 'testintentionsAssistance_Function5' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Function' and 'testintentionsAssistance_Variable'. From 'testintentionsAssistance_Function', the role 'testintentionsAssistance_Function7' has cardinality 0..*, and from 'testintentionsAssistance_Variable', the role 'testintentionsAssistance_Variable8' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Data' and 'testintentionsAssistance_Inst'. From 'testintentionsAssistance_Data', the role 'testintentionsAssistance_Data' has cardinality 0..*, and from 'testintentionsAssistance_Inst', the role 'testintentionsAssistance_Inst' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Variable' and 'testintentionsAssistance_Inst'. From 'testintentionsAssistance_Variable', the role 'testintentionsAssistance_Variable12' has cardinality 0..*, and from 'testintentionsAssistance_Inst', the role 'testintentionsAssistance_Inst11' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Expression' and 'testintentionsAssistance_Inst'. From 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression' has cardinality 0..*, and from 'testintentionsAssistance_Inst', the role 'testintentionsAssistance_Inst14' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Expression' and 'testintentionsAssistance_TestIntention'. From 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression16' has cardinality 0..*, and from 'testintentionsAssistance_TestIntention', the role 'testintentionsAssistance_TestIntention' has cardinality 0..*.
+An association connects 'testintentionsAssistance_OutVariable' and 'testintentionsAssistance_TestIntention'. From 'testintentionsAssistance_OutVariable', the role 'testintentionsAssistance_OutVariable19' has cardinality 0..*, and from 'testintentionsAssistance_TestIntention', the role 'testintentionsAssistance_TestIntention18' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Or' and 'testintentionsAssistance_Expression'. From 'testintentionsAssistance_Or', the role 'testintentionsAssistance_Or' has cardinality 0..*, and from 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression21' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Or' and 'testintentionsAssistance_Expression'. From 'testintentionsAssistance_Or', the role 'testintentionsAssistance_Or23' has cardinality 0..*, and from 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression24' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Expression' and 'testintentionsAssistance_And'. From 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression26' has cardinality 0..*, and from 'testintentionsAssistance_And', the role 'testintentionsAssistance_And' has cardinality 0..*.
+An association connects 'testintentionsAssistance_And' and 'testintentionsAssistance_Expression'. From 'testintentionsAssistance_And', the role 'testintentionsAssistance_And28' has cardinality 0..*, and from 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression29' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Equality' and 'testintentionsAssistance_Expression'. From 'testintentionsAssistance_Equality', the role 'testintentionsAssistance_Equality' has cardinality 0..*, and from 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression31' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Equality' and 'testintentionsAssistance_Expression'. From 'testintentionsAssistance_Equality', the role 'testintentionsAssistance_Equality33' has cardinality 0..*, and from 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression34' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Expression' and 'testintentionsAssistance_Comparison'. From 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression36' has cardinality 0..*, and from 'testintentionsAssistance_Comparison', the role 'testintentionsAssistance_Comparison' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Expression' and 'testintentionsAssistance_Comparison'. From 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression39' has cardinality 0..*, and from 'testintentionsAssistance_Comparison', the role 'testintentionsAssistance_Comparison38' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Plus' and 'testintentionsAssistance_Expression'. From 'testintentionsAssistance_Plus', the role 'testintentionsAssistance_Plus' has cardinality 0..*, and from 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression41' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Plus' and 'testintentionsAssistance_Expression'. From 'testintentionsAssistance_Plus', the role 'testintentionsAssistance_Plus43' has cardinality 0..*, and from 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression44' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Minus' and 'testintentionsAssistance_Expression'. From 'testintentionsAssistance_Minus', the role 'testintentionsAssistance_Minus' has cardinality 0..*, and from 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression46' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Expression' and 'testintentionsAssistance_Minus'. From 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression49' has cardinality 0..*, and from 'testintentionsAssistance_Minus', the role 'testintentionsAssistance_Minus48' has cardinality 0..*.
+An association connects 'testintentionsAssistance_MulOrDiv' and 'testintentionsAssistance_Expression'. From 'testintentionsAssistance_MulOrDiv', the role 'testintentionsAssistance_MulOrDiv' has cardinality 0..*, and from 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression51' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Expression' and 'testintentionsAssistance_MulOrDiv'. From 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression54' has cardinality 0..*, and from 'testintentionsAssistance_MulOrDiv', the role 'testintentionsAssistance_MulOrDiv53' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Not' and 'testintentionsAssistance_Expression'. From 'testintentionsAssistance_Not', the role 'testintentionsAssistance_Not' has cardinality 0..*, and from 'testintentionsAssistance_Expression', the role 'testintentionsAssistance_Expression56' has cardinality 0..*.
+An association connects 'testintentionsAssistance_Variable' and 'testintentionsAssistance_VariableRef'. From 'testintentionsAssistance_Variable', the role 'testintentionsAssistance_Variable58' has cardinality 0..*, and from 'testintentionsAssistance_VariableRef', the role 'testintentionsAssistance_VariableRef' has cardinality 0..*.

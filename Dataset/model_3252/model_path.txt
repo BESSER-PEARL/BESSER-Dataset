@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/estepper/org.eclipse.uml2/plugins/org.eclipse.uml2.uml/model/CMOF20.ecore

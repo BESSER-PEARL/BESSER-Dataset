@@ -1,0 +1,73 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'trace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EMappingContext' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_ETuplePartValue' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'trace_ObjectToTraceRecordMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'trace_VarParameterValue' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'kind', which is of type str; 'name', which is of type str.
+
+'trace_MappingOperationToTraceRecordMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EMappingOperation' represents an important domain concept.
+It has the following attributes: 'package', which is of type str; 'module', which is of type str; 'name', which is of type str.
+
+'trace_EMappingResults' represents an important domain concept.
+It does not declare any attributes.
+
+'EValue' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EValue' represents an important domain concept.
+It has the following attributes: 'oclObject', which is of type str; 'primitiveValue', which is of type str; 'collectionType', which is of type str.
+
+'trace_TraceRecord' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EMappingParameters' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EDirectionKind' defines the following possible values: 'INOUT', 'IN', 'OUT'.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_ETuplePartValue' is a specialization of 'EValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_TraceRecord' and 'trace_Trace'. From 'trace_TraceRecord', the role 'trace_TraceRecord' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_MappingOperationToTraceRecordMapEntry'. From 'trace_Trace', the role 'trace_Trace2' has cardinality 0..*, and from 'trace_MappingOperationToTraceRecordMapEntry', the role 'trace_MappingOperationToTraceRecordMapEntry' has cardinality 0..*.
+An association connects 'trace_ObjectToTraceRecordMapEntry' and 'trace_Trace'. From 'trace_ObjectToTraceRecordMapEntry', the role 'trace_ObjectToTraceRecordMapEntry' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace4' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_ObjectToTraceRecordMapEntry'. From 'trace_Trace', the role 'trace_Trace6' has cardinality 0..*, and from 'trace_ObjectToTraceRecordMapEntry', the role 'trace_ObjectToTraceRecordMapEntry7' has cardinality 0..*.
+An association connects 'trace_EMappingOperation' and 'trace_TraceRecord'. From 'trace_EMappingOperation', the role 'trace_EMappingOperation' has cardinality 0..*, and from 'trace_TraceRecord', the role 'trace_TraceRecord9' has cardinality 0..*.
+An association connects 'trace_EMappingContext' and 'trace_TraceRecord'. From 'trace_EMappingContext', the role 'trace_EMappingContext' has cardinality 0..*, and from 'trace_TraceRecord', the role 'trace_TraceRecord11' has cardinality 0..*.
+An association connects 'trace_EMappingParameters' and 'trace_TraceRecord'. From 'trace_EMappingParameters', the role 'trace_EMappingParameters' has cardinality 0..*, and from 'trace_TraceRecord', the role 'trace_TraceRecord13' has cardinality 0..*.
+An association connects 'trace_TraceRecord' and 'trace_EMappingResults'. From 'trace_TraceRecord', the role 'trace_TraceRecord15' has cardinality 0..*, and from 'trace_EMappingResults', the role 'trace_EMappingResults' has cardinality 0..*.
+An association connects 'trace_EValue' and 'trace_VarParameterValue'. From 'trace_EValue', the role 'trace_EValue' has cardinality 0..*, and from 'trace_VarParameterValue', the role 'trace_VarParameterValue' has cardinality 0..*.
+An association connects 'trace_MappingOperationToTraceRecordMapEntry' and 'trace_TraceRecord'. From 'trace_MappingOperationToTraceRecordMapEntry', the role 'trace_MappingOperationToTraceRecordMapEntry18' has cardinality 0..*, and from 'trace_TraceRecord', the role 'trace_TraceRecord19' has cardinality 0..*.
+An association connects 'MappingOperation' and 'trace_MappingOperationToTraceRecordMapEntry'. From 'MappingOperation', the role 'MappingOperation' has cardinality 0..*, and from 'trace_MappingOperationToTraceRecordMapEntry', the role 'trace_MappingOperationToTraceRecordMapEntry21' has cardinality 0..*.
+An association connects 'MappingOperation' and 'trace_EMappingOperation'. From 'MappingOperation', the role 'MappingOperation24' has cardinality 0..*, and from 'trace_EMappingOperation', the role 'trace_EMappingOperation23' has cardinality 0..*.
+An association connects 'trace_EValue' and 'trace_EObject'. From 'trace_EValue', the role 'trace_EValue26' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject' has cardinality 0..*.
+An association connects 'trace_EObject' and 'trace_EValue'. From 'trace_EObject', the role 'trace_EObject29' has cardinality 0..*, and from 'trace_EValue', the role 'trace_EValue28' has cardinality 0..*.
+An association connects 'trace_EValue' and 'trace_EValue'. From 'trace_EValue', the role 'trace_EValue32' has cardinality 0..*, and from 'trace_EValue', the role 'trace_EValue30' has cardinality 0..*.
+An association connects 'trace_ETuplePartValue' and 'trace_EValue'. From 'trace_ETuplePartValue', the role 'trace_ETuplePartValue' has cardinality 0..*, and from 'trace_EValue', the role 'trace_EValue34' has cardinality 0..*.
+An association connects 'trace_EMappingContext' and 'trace_VarParameterValue'. From 'trace_EMappingContext', the role 'trace_EMappingContext36' has cardinality 0..*, and from 'trace_VarParameterValue', the role 'trace_VarParameterValue37' has cardinality 0..*.
+An association connects 'trace_VarParameterValue' and 'trace_EMappingParameters'. From 'trace_VarParameterValue', the role 'trace_VarParameterValue40' has cardinality 0..*, and from 'trace_EMappingParameters', the role 'trace_EMappingParameters39' has cardinality 0..*.
+An association connects 'trace_EMappingResults' and 'trace_VarParameterValue'. From 'trace_EMappingResults', the role 'trace_EMappingResults42' has cardinality 0..*, and from 'trace_VarParameterValue', the role 'trace_VarParameterValue43' has cardinality 0..*.
+An association connects 'trace_ObjectToTraceRecordMapEntry' and 'trace_TraceRecord'. From 'trace_ObjectToTraceRecordMapEntry', the role 'trace_ObjectToTraceRecordMapEntry45' has cardinality 0..*, and from 'trace_TraceRecord', the role 'trace_TraceRecord46' has cardinality 0..*.

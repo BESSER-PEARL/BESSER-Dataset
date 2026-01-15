@@ -1,0 +1,19 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'trace_Exception' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Log' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'timestamp', which is of type date; 'level', which is of type str; 'message', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LogLevel' defines the following possible values: 'FINE', 'SEVERE', 'FINER', 'CONFIG', 'FINEST', 'INFO', 'WARNING'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_Log' and 'trace_Trace'. From 'trace_Log', the role 'trace_Log' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace' has cardinality 0..*.
+An association connects 'trace_Exception' and 'trace_Log'. From 'trace_Exception', the role 'trace_Exception' has cardinality 0..*, and from 'trace_Log', the role 'trace_Log2' has cardinality 0..*.

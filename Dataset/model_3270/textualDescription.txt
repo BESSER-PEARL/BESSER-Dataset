@@ -1,0 +1,37 @@
+The domain model 'smDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'smDsl_EventHandlingDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'smDsl_EventsSection' represents an important domain concept.
+It does not declare any attributes.
+
+'smDsl_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smDsl_CommandsSection' represents an important domain concept.
+It does not declare any attributes.
+
+'smDsl_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smDsl_State' represents an important domain concept.
+It has the following attributes: 'initial', which is of type bool; 'name', which is of type str.
+
+'smDsl_Command' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'smDsl_EventsSection' and 'smDsl_Model'. From 'smDsl_EventsSection', the role 'smDsl_EventsSection' has cardinality 0..*, and from 'smDsl_Model', the role 'smDsl_Model' has cardinality 0..*.
+An association connects 'smDsl_CommandsSection' and 'smDsl_Model'. From 'smDsl_CommandsSection', the role 'smDsl_CommandsSection' has cardinality 0..*, and from 'smDsl_Model', the role 'smDsl_Model2' has cardinality 0..*.
+An association connects 'smDsl_State' and 'smDsl_Model'. From 'smDsl_State', the role 'smDsl_State' has cardinality 0..*, and from 'smDsl_Model', the role 'smDsl_Model4' has cardinality 0..*.
+An association connects 'smDsl_Event' and 'smDsl_EventsSection'. From 'smDsl_Event', the role 'smDsl_Event' has cardinality 0..*, and from 'smDsl_EventsSection', the role 'smDsl_EventsSection6' has cardinality 0..*.
+An association connects 'smDsl_CommandsSection' and 'smDsl_Command'. From 'smDsl_CommandsSection', the role 'smDsl_CommandsSection8' has cardinality 0..*, and from 'smDsl_Command', the role 'smDsl_Command' has cardinality 0..*.
+An association connects 'smDsl_Command' and 'smDsl_State'. From 'smDsl_Command', the role 'smDsl_Command11' has cardinality 0..*, and from 'smDsl_State', the role 'smDsl_State10' has cardinality 0..*.
+An association connects 'smDsl_EventHandlingDescription' and 'smDsl_State'. From 'smDsl_EventHandlingDescription', the role 'smDsl_EventHandlingDescription' has cardinality 0..*, and from 'smDsl_State', the role 'smDsl_State13' has cardinality 0..*.
+An association connects 'smDsl_Command' and 'smDsl_State'. From 'smDsl_Command', the role 'smDsl_Command16' has cardinality 0..*, and from 'smDsl_State', the role 'smDsl_State15' has cardinality 0..*.
+An association connects 'smDsl_EventHandlingDescription' and 'smDsl_Event'. From 'smDsl_EventHandlingDescription', the role 'smDsl_EventHandlingDescription18' has cardinality 0..*, and from 'smDsl_Event', the role 'smDsl_Event19' has cardinality 0..*.
+An association connects 'smDsl_Command' and 'smDsl_EventHandlingDescription'. From 'smDsl_Command', the role 'smDsl_Command22' has cardinality 0..*, and from 'smDsl_EventHandlingDescription', the role 'smDsl_EventHandlingDescription21' has cardinality 0..*.
+An association connects 'smDsl_State' and 'smDsl_EventHandlingDescription'. From 'smDsl_State', the role 'smDsl_State25' has cardinality 0..*, and from 'smDsl_EventHandlingDescription', the role 'smDsl_EventHandlingDescription24' has cardinality 0..*.

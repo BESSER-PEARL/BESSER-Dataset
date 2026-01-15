@@ -1,0 +1,28 @@
+The domain model 'TypeGraphTrace' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'TypeGraphTrace_MethodSignatureTrace' represents an important domain concept.
+It has one attribute: 'signatureString', which is of type str.
+
+'TypeGraphTrace_TClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeGraphTrace_ClassListTrace' represents an important domain concept.
+It has one attribute: 'concatSignature', which is of type str.
+
+'TypeGraphTrace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeGraphTrace_TMethodSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeGraphTrace_TypeGraph' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'TypeGraphTrace_Trace' and 'TypeGraphTrace_TypeGraph'. From 'TypeGraphTrace_Trace', the role 'TypeGraphTrace_Trace' has cardinality 0..*, and from 'TypeGraphTrace_TypeGraph', the role 'TypeGraphTrace_TypeGraph' has cardinality 0..*.
+An association connects 'TypeGraphTrace_Trace' and 'TypeGraphTrace_MethodSignatureTrace'. From 'TypeGraphTrace_Trace', the role 'TypeGraphTrace_Trace2' has cardinality 0..*, and from 'TypeGraphTrace_MethodSignatureTrace', the role 'TypeGraphTrace_MethodSignatureTrace' has cardinality 0..*.
+An association connects 'TypeGraphTrace_ClassListTrace' and 'TypeGraphTrace_Trace'. From 'TypeGraphTrace_ClassListTrace', the role 'TypeGraphTrace_ClassListTrace' has cardinality 0..*, and from 'TypeGraphTrace_Trace', the role 'TypeGraphTrace_Trace4' has cardinality 0..*.
+An association connects 'TypeGraphTrace_TMethodSignature' and 'TypeGraphTrace_MethodSignatureTrace'. From 'TypeGraphTrace_TMethodSignature', the role 'TypeGraphTrace_TMethodSignature' has cardinality 0..*, and from 'TypeGraphTrace_MethodSignatureTrace', the role 'TypeGraphTrace_MethodSignatureTrace6' has cardinality 0..*.
+An association connects 'TypeGraphTrace_TClass' and 'TypeGraphTrace_ClassListTrace'. From 'TypeGraphTrace_TClass', the role 'TypeGraphTrace_TClass' has cardinality 0..*, and from 'TypeGraphTrace_ClassListTrace', the role 'TypeGraphTrace_ClassListTrace8' has cardinality 0..*.

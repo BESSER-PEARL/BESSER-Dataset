@@ -1,0 +1,555 @@
+The domain model 'OPLmetamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 125 main class(es).
+
+'OPLmetamodel_SearchProcedure' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_FloatExpression' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'OPLmetamodel_SetType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OPLmetamodel_FloatType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_PiecewiseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_DataDeclaration' represents an important domain concept.
+It has the following attributes: 'isDecisionExpr', which is of type bool; 'isDecisionVar', which is of type bool.
+
+'OPLmetamodel_AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_FunctionCall' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'OPLmetamodel_Objective' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'isLinearRelaxation', which is of type bool.
+
+'OPLmetamodel_UnaryExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_RecordField' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OPLmetamodel_Initialization' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_PathDereference' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Reference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_PrimitiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Setting' represents an important domain concept.
+It does not declare any attributes.
+
+'RangeType' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_IfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ReflectiveFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Error' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_StringExpression' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_BuiltInFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'PiecewiseLinearFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ResourceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_RelationalInit' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ParameterDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_RelationalOperator' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'DataInitMethods' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Interval' represents an important domain concept.
+It has one attribute: 'isOptional', which is of type bool.
+
+'OPLmetamodel_ActivityDeclaration' represents an important domain concept.
+It has the following attributes: 'latestEndTime', which is of type str; 'earliestStartTime', which is of type str.
+
+'OPLmetamodel_StepFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_BlockExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ScriptStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_EnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ScriptStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_VariableBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_BooleanExpression' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'OPLmetamodel_FunctionRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FloatType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_RangeType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractBinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_BindingRef' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_AbstractBinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ArrayDereference' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ForAllConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_PositiveFloatType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_BinaryOperator' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'OPLmetamodel_AllExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_FormalParameter' represents an important domain concept.
+It has one attribute: 'isOrdered', which is of type bool.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ScheduleInitialization' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_AggregateExp' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'OPLmetamodel_QueryUser' represents an important domain concept.
+It has one attribute: 'ask', which is of type str.
+
+'OPLmetamodel_DeferredInit' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Constraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OPLmetamodel_ArraySlotConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_PositiveIntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Number' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ReadFile' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'OPLmetamodel_Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_SetValue' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_PathExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_RangeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_FloatRangeType' represents an important domain concept.
+It does not declare any attributes.
+
+'DefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ParameterRef' represents an important domain concept.
+It does not declare any attributes.
+
+'PathExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_EnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Declaration' represents an important domain concept.
+It has one attribute: 'order', which is of type int.
+
+'OPLmetamodel_Writeln' represents an important domain concept.
+It has the following attributes: 'arg', which is of type str; 'string', which is of type str.
+
+'OPLmetamodel_NumericExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_StateFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_ArrayValue' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_IntegerRangeType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Comprehension' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_IndexValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Assertion' represents an important domain concept.
+It does not declare any attributes.
+
+'BuiltInFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_In' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_PiecewiseLinearFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_RelationalExpression' represents an important domain concept.
+It has one attribute: 'redefinedOp', which is of type str.
+
+'OPLmetamodel_TupleBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_DisplayInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Model' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'isConstraintProblem', which is of type bool.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_IfConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_DataObject' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'OPLmetamodel_CollectionExpression' represents an important domain concept.
+It has one attribute: 'isUnique', which is of type bool.
+
+'OPLmetamodel_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_Record' represents an important domain concept.
+It has the following attributes: 'isTuple', which is of type bool; 'name', which is of type str.
+
+'OPLmetamodel_CumulativeFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_DataRef' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_DataInitMethods' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_IntegerExpression' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'OPLmetamodel_Script' represents an important domain concept.
+It has one attribute: 'isMain', which is of type bool.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_DefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_RecordValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Initialization' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'OPLmetamodel_BooleanBlock' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BinaryOp' defines the following possible values: 'mod', 'subtract', 'add', 'percent', 'multiply', 'symdiff', 'divide', 'power', 'union', 'diff', 'inter'.
+The enumeration 'RelationalOp' defines the following possible values: 'equalTo', 'notEqualTo', 'greaterThan', 'lessThan', 'greaterThanOrEqualTo', 'lessThanOrEqualTo'.
+The enumeration 'MembershipOp' defines the following possible values: 'in', 'conjunction', 'or', 'not_in', 'and'.
+The enumeration 'Quantifier' defines a single possible value: 'forAll'.
+The enumeration 'UnaryOp' defines the following possible values: 'negate', 'unaryMinus'.
+The enumeration 'SetOp' defines the following possible values: 'inter', 'union', 'diff', 'symdiff'.
+The enumeration 'AggOp' defines the following possible values: 'min', 'max', 'sum', 'and', 'union', 'prod', 'inter', 'or'.
+The enumeration 'LogicalOp' defines the following possible values: 'conjunction', 'disjunction', 'or', 'negation', 'and'.
+The enumeration 'OptimizationMode' defines the following possible values: 'solve', 'maximize', 'minimize'.
+
+The model also captures inheritance relationships between classes.
+The class 'OPLmetamodel_ActivityDeclaration' is a specialization of 'Declaration'.
+The class 'OPLmetamodel_AggregateExp' is a specialization of 'Expression'.
+The class 'OPLmetamodel_ArrayDereference' is a specialization of 'PathExpression'.
+The class 'OPLmetamodel_ArraySlotConstraint' is a specialization of 'Expression'.
+The class 'OPLmetamodel_ArrayType' is a specialization of 'DefinedType'.
+The class 'OPLmetamodel_ArrayValue' is a specialization of 'Expression'.
+The class 'OPLmetamodel_Assertion' is a specialization of 'Declaration'.
+The class 'OPLmetamodel_BinaryExpression' is a specialization of 'Expression'.
+The class 'OPLmetamodel_BinaryOperator' is a specialization of 'AbstractBinaryOperator'.
+The class 'OPLmetamodel_BindingRef' is a specialization of 'Reference'.
+The class 'OPLmetamodel_BlockExpression' is a specialization of 'Expression'.
+The class 'OPLmetamodel_BooleanExpression' is a specialization of 'PrimitiveExpression'.
+The class 'OPLmetamodel_BooleanType' is a specialization of 'PrimitiveType'.
+The class 'OPLmetamodel_BuiltInFunction' is a specialization of 'Function'.
+The class 'OPLmetamodel_CollectionExpression' is a specialization of 'Expression'.
+The class 'OPLmetamodel_Constraint' is a specialization of 'Declaration'.
+The class 'OPLmetamodel_Comprehension' is a specialization of 'CollectionExpression'.
+The class 'OPLmetamodel_CumulativeFunction' is a specialization of 'Function'.
+The class 'OPLmetamodel_DataDeclaration' is a specialization of 'Declaration'.
+The class 'OPLmetamodel_DataObject' is a specialization of 'Initialization'.
+The class 'OPLmetamodel_DataRef' is a specialization of 'Reference'.
+The class 'OPLmetamodel_DefinedType' is a specialization of 'AbstractType'.
+The class 'OPLmetamodel_DefinedType' is a specialization of 'Declaration'.
+The class 'OPLmetamodel_EnumerationType' is a specialization of 'SetType'.
+The class 'OPLmetamodel_EnumLiteral' is a specialization of 'PrimitiveType'.
+The class 'OPLmetamodel_EnumLiteral' is a specialization of 'PrimitiveExpression'.
+The class 'OPLmetamodel_FloatRangeType' is a specialization of 'FloatType'.
+The class 'OPLmetamodel_FloatRangeType' is a specialization of 'RangeType'.
+The class 'OPLmetamodel_FloatType' is a specialization of 'NumericType'.
+The class 'OPLmetamodel_Extension' is a specialization of 'CollectionExpression'.
+The class 'OPLmetamodel_FloatExpression' is a specialization of 'NumericExpression'.
+The class 'OPLmetamodel_ForAllConstraint' is a specialization of 'Constraint'.
+The class 'OPLmetamodel_Function' is a specialization of 'Declaration'.
+The class 'OPLmetamodel_FunctionCall' is a specialization of 'PathExpression'.
+The class 'OPLmetamodel_IfConstraint' is a specialization of 'Constraint'.
+The class 'OPLmetamodel_IfExpression' is a specialization of 'Expression'.
+The class 'OPLmetamodel_IntegerType' is a specialization of 'NumericType'.
+The class 'OPLmetamodel_IntegerExpression' is a specialization of 'NumericExpression'.
+The class 'OPLmetamodel_IntegerRangeType' is a specialization of 'IntegerType'.
+The class 'OPLmetamodel_IntegerRangeType' is a specialization of 'RangeType'.
+The class 'OPLmetamodel_IndexValuePair' is a specialization of 'Expression'.
+The class 'OPLmetamodel_NumericExpression' is a specialization of 'PrimitiveExpression'.
+The class 'OPLmetamodel_NumericType' is a specialization of 'PrimitiveType'.
+The class 'OPLmetamodel_Objective' is a specialization of 'Declaration'.
+The class 'OPLmetamodel_ParameterRef' is a specialization of 'Reference'.
+The class 'OPLmetamodel_PathDereference' is a specialization of 'PathExpression'.
+The class 'OPLmetamodel_PathExpression' is a specialization of 'Expression'.
+The class 'OPLmetamodel_PiecewiseLinearFunction' is a specialization of 'Function'.
+The class 'OPLmetamodel_PositiveFloatType' is a specialization of 'FloatType'.
+The class 'OPLmetamodel_PrimitiveExpression' is a specialization of 'Expression'.
+The class 'OPLmetamodel_PrimitiveType' is a specialization of 'AbstractType'.
+The class 'OPLmetamodel_PositiveIntegerType' is a specialization of 'IntegerType'.
+The class 'OPLmetamodel_QueryUser' is a specialization of 'DataInitMethods'.
+The class 'OPLmetamodel_RangeExpression' is a specialization of 'NumericExpression'.
+The class 'OPLmetamodel_RangeType' is a specialization of 'SetType'.
+The class 'OPLmetamodel_ReadFile' is a specialization of 'DataInitMethods'.
+The class 'OPLmetamodel_Record' is a specialization of 'ParameterDomain'.
+The class 'OPLmetamodel_Record' is a specialization of 'DefinedType'.
+The class 'OPLmetamodel_RecordValue' is a specialization of 'Expression'.
+The class 'OPLmetamodel_Reference' is a specialization of 'Expression'.
+The class 'OPLmetamodel_ReflectiveFunction' is a specialization of 'BuiltInFunction'.
+The class 'OPLmetamodel_RelationalExpression' is a specialization of 'BinaryExpression'.
+The class 'OPLmetamodel_RelationalExpression' is a specialization of 'BooleanExpression'.
+The class 'OPLmetamodel_RelationalInit' is a specialization of 'Initialization'.
+The class 'OPLmetamodel_RelationalOperator' is a specialization of 'AbstractBinaryOperator'.
+The class 'OPLmetamodel_ResourceDeclaration' is a specialization of 'Declaration'.
+The class 'OPLmetamodel_ScheduleInitialization' is a specialization of 'Declaration'.
+The class 'OPLmetamodel_Script' is a specialization of 'Declaration'.
+The class 'OPLmetamodel_Setting' is a specialization of 'Declaration'.
+The class 'OPLmetamodel_SetType' is a specialization of 'DefinedType'.
+The class 'OPLmetamodel_SetType' is a specialization of 'ParameterDomain'.
+The class 'OPLmetamodel_SetValue' is a specialization of 'Expression'.
+The class 'OPLmetamodel_StateFunction' is a specialization of 'Function'.
+The class 'OPLmetamodel_StepFunction' is a specialization of 'PiecewiseLinearFunction'.
+The class 'OPLmetamodel_StringExpression' is a specialization of 'PrimitiveExpression'.
+The class 'OPLmetamodel_StringType' is a specialization of 'PrimitiveType'.
+The class 'OPLmetamodel_UnaryExpression' is a specialization of 'Expression'.
+The class 'OPLmetamodel_Writeln' is a specialization of 'ScriptStatement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'OPLmetamodel_ActivityDeclaration' and 'OPLmetamodel_Number'. From 'OPLmetamodel_ActivityDeclaration', the role 'OPLmetamodel_ActivityDeclaration' has cardinality 0..*, and from 'OPLmetamodel_Number', the role 'OPLmetamodel_Number' has cardinality 0..*.
+An association connects 'OPLmetamodel_AggregateExp' and 'OPLmetamodel_FormalParameter'. From 'OPLmetamodel_AggregateExp', the role 'OPLmetamodel_AggregateExp' has cardinality 0..*, and from 'OPLmetamodel_FormalParameter', the role 'OPLmetamodel_FormalParameter' has cardinality 0..*.
+An association connects 'OPLmetamodel_AggregateExp' and 'OPLmetamodel_Expression'. From 'OPLmetamodel_AggregateExp', the role 'OPLmetamodel_AggregateExp3' has cardinality 0..*, and from 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression' has cardinality 0..*.
+An association connects 'OPLmetamodel_AllExpression' and 'OPLmetamodel_FormalParameter'. From 'OPLmetamodel_AllExpression', the role 'OPLmetamodel_AllExpression' has cardinality 0..*, and from 'OPLmetamodel_FormalParameter', the role 'OPLmetamodel_FormalParameter5' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_AllExpression'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression8' has cardinality 0..*, and from 'OPLmetamodel_AllExpression', the role 'OPLmetamodel_AllExpression7' has cardinality 0..*.
+An association connects 'OPLmetamodel_ArrayDereference' and 'OPLmetamodel_PathExpression'. From 'OPLmetamodel_ArrayDereference', the role 'OPLmetamodel_ArrayDereference' has cardinality 0..*, and from 'OPLmetamodel_PathExpression', the role 'OPLmetamodel_PathExpression' has cardinality 0..*.
+An association connects 'OPLmetamodel_ArrayDereference' and 'OPLmetamodel_Expression'. From 'OPLmetamodel_ArrayDereference', the role 'OPLmetamodel_ArrayDereference11' has cardinality 0..*, and from 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression12' has cardinality 0..*.
+An association connects 'OPLmetamodel_ArraySlotConstraint' and 'OPLmetamodel_ArrayDereference'. From 'OPLmetamodel_ArraySlotConstraint', the role 'OPLmetamodel_ArraySlotConstraint' has cardinality 0..*, and from 'OPLmetamodel_ArrayDereference', the role 'OPLmetamodel_ArrayDereference14' has cardinality 0..*.
+An association connects 'OPLmetamodel_ArrayType' and 'OPLmetamodel_AbstractType'. From 'OPLmetamodel_ArrayType', the role 'OPLmetamodel_ArrayType' has cardinality 0..*, and from 'OPLmetamodel_AbstractType', the role 'OPLmetamodel_AbstractType' has cardinality 0..*.
+An association connects 'OPLmetamodel_ArrayType' and 'OPLmetamodel_DataRef'. From 'OPLmetamodel_ArrayType', the role 'OPLmetamodel_ArrayType17' has cardinality 0..*, and from 'OPLmetamodel_DataRef', the role 'OPLmetamodel_DataRef' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_ArrayValue'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression19' has cardinality 0..*, and from 'OPLmetamodel_ArrayValue', the role 'OPLmetamodel_ArrayValue' has cardinality 0..*.
+An association connects 'OPLmetamodel_Assertion' and 'OPLmetamodel_Constraint'. From 'OPLmetamodel_Assertion', the role 'OPLmetamodel_Assertion' has cardinality 0..*, and from 'OPLmetamodel_Constraint', the role 'OPLmetamodel_Constraint' has cardinality 0..*.
+An association connects 'OPLmetamodel_BinaryExpression' and 'OPLmetamodel_Expression'. From 'OPLmetamodel_BinaryExpression', the role 'OPLmetamodel_BinaryExpression' has cardinality 0..*, and from 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression22' has cardinality 0..*.
+An association connects 'OPLmetamodel_BinaryExpression' and 'OPLmetamodel_Expression'. From 'OPLmetamodel_BinaryExpression', the role 'OPLmetamodel_BinaryExpression24' has cardinality 0..*, and from 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression25' has cardinality 0..*.
+An association connects 'OPLmetamodel_BinaryExpression' and 'OPLmetamodel_AbstractBinaryOperator'. From 'OPLmetamodel_BinaryExpression', the role 'OPLmetamodel_BinaryExpression27' has cardinality 0..*, and from 'OPLmetamodel_AbstractBinaryOperator', the role 'OPLmetamodel_AbstractBinaryOperator' has cardinality 0..*.
+An association connects 'OPLmetamodel_BlockExpression' and 'OPLmetamodel_BooleanBlock'. From 'OPLmetamodel_BlockExpression', the role 'OPLmetamodel_BlockExpression' has cardinality 0..*, and from 'OPLmetamodel_BooleanBlock', the role 'OPLmetamodel_BooleanBlock' has cardinality 0..*.
+An association connects 'OPLmetamodel_Constraint' and 'OPLmetamodel_Expression'. From 'OPLmetamodel_Constraint', the role 'OPLmetamodel_Constraint30' has cardinality 0..*, and from 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression31' has cardinality 0..*.
+An association connects 'OPLmetamodel_DataDeclaration' and 'OPLmetamodel_DataRef'. From 'OPLmetamodel_DataDeclaration', the role 'OPLmetamodel_DataDeclaration' has cardinality 0..*, and from 'OPLmetamodel_DataRef', the role 'OPLmetamodel_DataRef33' has cardinality 0..*.
+An association connects 'OPLmetamodel_DataDeclaration' and 'OPLmetamodel_AbstractType'. From 'OPLmetamodel_DataDeclaration', the role 'OPLmetamodel_DataDeclaration35' has cardinality 0..*, and from 'OPLmetamodel_AbstractType', the role 'OPLmetamodel_AbstractType36' has cardinality 0..*.
+An association connects 'OPLmetamodel_DataDeclaration' and 'OPLmetamodel_Initialization'. From 'OPLmetamodel_DataDeclaration', the role 'OPLmetamodel_DataDeclaration38' has cardinality 0..*, and from 'OPLmetamodel_Initialization', the role 'OPLmetamodel_Initialization' has cardinality 0..*.
+An association connects 'OPLmetamodel_DataDeclaration' and 'OPLmetamodel_Expression'. From 'OPLmetamodel_DataDeclaration', the role 'OPLmetamodel_DataDeclaration40' has cardinality 0..*, and from 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression41' has cardinality 0..*.
+An association connects 'OPLmetamodel_DisplayInstruction' and 'OPLmetamodel_Expression'. From 'OPLmetamodel_DisplayInstruction', the role 'OPLmetamodel_DisplayInstruction' has cardinality 0..*, and from 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression43' has cardinality 0..*.
+An association connects 'OPLmetamodel_ParameterDeclaration' and 'OPLmetamodel_DisplayInstruction'. From 'OPLmetamodel_ParameterDeclaration', the role 'OPLmetamodel_ParameterDeclaration' has cardinality 0..*, and from 'OPLmetamodel_DisplayInstruction', the role 'OPLmetamodel_DisplayInstruction45' has cardinality 0..*.
+An association connects 'OPLmetamodel_EnumLiteral' and 'OPLmetamodel_EnumerationType'. From 'OPLmetamodel_EnumLiteral', the role 'OPLmetamodel_EnumLiteral' has cardinality 0..*, and from 'OPLmetamodel_EnumerationType', the role 'OPLmetamodel_EnumerationType' has cardinality 0..*.
+An association connects 'OPLmetamodel_FormalParameter' and 'OPLmetamodel_ParameterDomain'. From 'OPLmetamodel_FormalParameter', the role 'OPLmetamodel_FormalParameter48' has cardinality 0..*, and from 'OPLmetamodel_ParameterDomain', the role 'OPLmetamodel_ParameterDomain' has cardinality 0..*.
+An association connects 'OPLmetamodel_FormalParameter' and 'OPLmetamodel_BindingRef'. From 'OPLmetamodel_FormalParameter', the role 'OPLmetamodel_FormalParameter50' has cardinality 0..*, and from 'OPLmetamodel_BindingRef', the role 'OPLmetamodel_BindingRef' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_FormalParameter'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression53' has cardinality 0..*, and from 'OPLmetamodel_FormalParameter', the role 'OPLmetamodel_FormalParameter52' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_Extension'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression55' has cardinality 0..*, and from 'OPLmetamodel_Extension', the role 'OPLmetamodel_Extension' has cardinality 0..*.
+An association connects 'OPLmetamodel_FormalParameter' and 'OPLmetamodel_ForAllConstraint'. From 'OPLmetamodel_FormalParameter', the role 'OPLmetamodel_FormalParameter57' has cardinality 0..*, and from 'OPLmetamodel_ForAllConstraint', the role 'OPLmetamodel_ForAllConstraint' has cardinality 0..*.
+An association connects 'OPLmetamodel_ForAllConstraint' and 'OPLmetamodel_Constraint'. From 'OPLmetamodel_ForAllConstraint', the role 'OPLmetamodel_ForAllConstraint59' has cardinality 0..*, and from 'OPLmetamodel_Constraint', the role 'OPLmetamodel_Constraint60' has cardinality 0..*.
+An association connects 'OPLmetamodel_Function' and 'OPLmetamodel_FunctionRef'. From 'OPLmetamodel_Function', the role 'OPLmetamodel_Function' has cardinality 0..*, and from 'OPLmetamodel_FunctionRef', the role 'OPLmetamodel_FunctionRef' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_Function'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression64' has cardinality 0..*, and from 'OPLmetamodel_Function', the role 'OPLmetamodel_Function63' has cardinality 0..*.
+An association connects 'OPLmetamodel_Reference' and 'OPLmetamodel_Function'. From 'OPLmetamodel_Reference', the role 'OPLmetamodel_Reference' has cardinality 0..*, and from 'OPLmetamodel_Function', the role 'OPLmetamodel_Function66' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_FunctionCall'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression68' has cardinality 0..*, and from 'OPLmetamodel_FunctionCall', the role 'OPLmetamodel_FunctionCall' has cardinality 0..*.
+An association connects 'OPLmetamodel_BooleanExpression' and 'OPLmetamodel_IfConstraint'. From 'OPLmetamodel_BooleanExpression', the role 'OPLmetamodel_BooleanExpression' has cardinality 0..*, and from 'OPLmetamodel_IfConstraint', the role 'OPLmetamodel_IfConstraint' has cardinality 0..*.
+An association connects 'OPLmetamodel_IfConstraint' and 'OPLmetamodel_Constraint'. From 'OPLmetamodel_IfConstraint', the role 'OPLmetamodel_IfConstraint71' has cardinality 0..*, and from 'OPLmetamodel_Constraint', the role 'OPLmetamodel_Constraint72' has cardinality 0..*.
+An association connects 'OPLmetamodel_Constraint' and 'OPLmetamodel_IfConstraint'. From 'OPLmetamodel_Constraint', the role 'OPLmetamodel_Constraint75' has cardinality 0..*, and from 'OPLmetamodel_IfConstraint', the role 'OPLmetamodel_IfConstraint74' has cardinality 0..*.
+An association connects 'OPLmetamodel_BooleanExpression' and 'OPLmetamodel_IfExpression'. From 'OPLmetamodel_BooleanExpression', the role 'OPLmetamodel_BooleanExpression77' has cardinality 0..*, and from 'OPLmetamodel_IfExpression', the role 'OPLmetamodel_IfExpression' has cardinality 0..*.
+An association connects 'OPLmetamodel_IfExpression' and 'OPLmetamodel_Expression'. From 'OPLmetamodel_IfExpression', the role 'OPLmetamodel_IfExpression79' has cardinality 0..*, and from 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression80' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_IfExpression'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression83' has cardinality 0..*, and from 'OPLmetamodel_IfExpression', the role 'OPLmetamodel_IfExpression82' has cardinality 0..*.
+An association connects 'OPLmetamodel_Interval' and 'OPLmetamodel_RangeType'. From 'OPLmetamodel_Interval', the role 'OPLmetamodel_Interval' has cardinality 0..*, and from 'OPLmetamodel_RangeType', the role 'OPLmetamodel_RangeType' has cardinality 0..*.
+An association connects 'OPLmetamodel_Interval' and 'OPLmetamodel_NumericType'. From 'OPLmetamodel_Interval', the role 'OPLmetamodel_Interval86' has cardinality 0..*, and from 'OPLmetamodel_NumericType', the role 'OPLmetamodel_NumericType' has cardinality 0..*.
+An association connects 'OPLmetamodel_StepFunction' and 'OPLmetamodel_Interval'. From 'OPLmetamodel_StepFunction', the role 'OPLmetamodel_StepFunction' has cardinality 0..*, and from 'OPLmetamodel_Interval', the role 'OPLmetamodel_Interval88' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_IndexValuePair'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression90' has cardinality 0..*, and from 'OPLmetamodel_IndexValuePair', the role 'OPLmetamodel_IndexValuePair' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_IndexValuePair'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression93' has cardinality 0..*, and from 'OPLmetamodel_IndexValuePair', the role 'OPLmetamodel_IndexValuePair92' has cardinality 0..*.
+An association connects 'OPLmetamodel_DefinedType' and 'OPLmetamodel_Model'. From 'OPLmetamodel_DefinedType', the role 'OPLmetamodel_DefinedType' has cardinality 0..*, and from 'OPLmetamodel_Model', the role 'OPLmetamodel_Model' has cardinality 0..*.
+An association connects 'OPLmetamodel_Model' and 'OPLmetamodel_DataDeclaration'. From 'OPLmetamodel_Model', the role 'OPLmetamodel_Model96' has cardinality 0..*, and from 'OPLmetamodel_DataDeclaration', the role 'OPLmetamodel_DataDeclaration97' has cardinality 0..*.
+An association connects 'OPLmetamodel_Constraint' and 'OPLmetamodel_Model'. From 'OPLmetamodel_Constraint', the role 'OPLmetamodel_Constraint100' has cardinality 0..*, and from 'OPLmetamodel_Model', the role 'OPLmetamodel_Model99' has cardinality 0..*.
+An association connects 'OPLmetamodel_Objective' and 'OPLmetamodel_Model'. From 'OPLmetamodel_Objective', the role 'OPLmetamodel_Objective' has cardinality 0..*, and from 'OPLmetamodel_Model', the role 'OPLmetamodel_Model102' has cardinality 0..*.
+An association connects 'OPLmetamodel_Model' and 'OPLmetamodel_Function'. From 'OPLmetamodel_Model', the role 'OPLmetamodel_Model104' has cardinality 0..*, and from 'OPLmetamodel_Function', the role 'OPLmetamodel_Function105' has cardinality 0..*.
+An association connects 'OPLmetamodel_ActivityDeclaration' and 'OPLmetamodel_Model'. From 'OPLmetamodel_ActivityDeclaration', the role 'OPLmetamodel_ActivityDeclaration108' has cardinality 0..*, and from 'OPLmetamodel_Model', the role 'OPLmetamodel_Model107' has cardinality 0..*.
+An association connects 'OPLmetamodel_ResourceDeclaration' and 'OPLmetamodel_Model'. From 'OPLmetamodel_ResourceDeclaration', the role 'OPLmetamodel_ResourceDeclaration' has cardinality 0..*, and from 'OPLmetamodel_Model', the role 'OPLmetamodel_Model110' has cardinality 0..*.
+An association connects 'OPLmetamodel_Constraint' and 'OPLmetamodel_Model'. From 'OPLmetamodel_Constraint', the role 'OPLmetamodel_Constraint113' has cardinality 0..*, and from 'OPLmetamodel_Model', the role 'OPLmetamodel_Model112' has cardinality 0..*.
+An association connects 'OPLmetamodel_ScheduleInitialization' and 'OPLmetamodel_Model'. From 'OPLmetamodel_ScheduleInitialization', the role 'OPLmetamodel_ScheduleInitialization' has cardinality 0..*, and from 'OPLmetamodel_Model', the role 'OPLmetamodel_Model115' has cardinality 0..*.
+An association connects 'OPLmetamodel_Model' and 'OPLmetamodel_Script'. From 'OPLmetamodel_Model', the role 'OPLmetamodel_Model117' has cardinality 0..*, and from 'OPLmetamodel_Script', the role 'OPLmetamodel_Script' has cardinality 0..*.
+An association connects 'OPLmetamodel_Model' and 'OPLmetamodel_Setting'. From 'OPLmetamodel_Model', the role 'OPLmetamodel_Model119' has cardinality 0..*, and from 'OPLmetamodel_Setting', the role 'OPLmetamodel_Setting' has cardinality 0..*.
+An association connects 'OPLmetamodel_Declaration' and 'OPLmetamodel_Model'. From 'OPLmetamodel_Declaration', the role 'OPLmetamodel_Declaration' has cardinality 0..*, and from 'OPLmetamodel_Model', the role 'OPLmetamodel_Model121' has cardinality 0..*.
+An association connects 'OPLmetamodel_Model' and 'OPLmetamodel_SearchProcedure'. From 'OPLmetamodel_Model', the role 'OPLmetamodel_Model123' has cardinality 0..*, and from 'OPLmetamodel_SearchProcedure', the role 'OPLmetamodel_SearchProcedure' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_Objective'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression126' has cardinality 0..*, and from 'OPLmetamodel_Objective', the role 'OPLmetamodel_Objective125' has cardinality 0..*.
+An association connects 'OPLmetamodel_PathDereference' and 'OPLmetamodel_Reference'. From 'OPLmetamodel_PathDereference', the role 'OPLmetamodel_PathDereference' has cardinality 0..*, and from 'OPLmetamodel_Reference', the role 'OPLmetamodel_Reference128' has cardinality 0..*.
+An association connects 'OPLmetamodel_PathExpression' and 'OPLmetamodel_PathDereference'. From 'OPLmetamodel_PathExpression', the role 'OPLmetamodel_PathExpression131' has cardinality 0..*, and from 'OPLmetamodel_PathDereference', the role 'OPLmetamodel_PathDereference130' has cardinality 0..*.
+An association connects 'OPLmetamodel_RangeExpression' and 'OPLmetamodel_NumericExpression'. From 'OPLmetamodel_RangeExpression', the role 'OPLmetamodel_RangeExpression' has cardinality 0..*, and from 'OPLmetamodel_NumericExpression', the role 'OPLmetamodel_NumericExpression' has cardinality 0..*.
+An association connects 'OPLmetamodel_RangeExpression' and 'OPLmetamodel_NumericExpression'. From 'OPLmetamodel_RangeExpression', the role 'OPLmetamodel_RangeExpression134' has cardinality 0..*, and from 'OPLmetamodel_NumericExpression', the role 'OPLmetamodel_NumericExpression135' has cardinality 0..*.
+An association connects 'OPLmetamodel_RangeExpression' and 'OPLmetamodel_NumericType'. From 'OPLmetamodel_RangeExpression', the role 'OPLmetamodel_RangeExpression137' has cardinality 0..*, and from 'OPLmetamodel_NumericType', the role 'OPLmetamodel_NumericType138' has cardinality 0..*.
+An association connects 'OPLmetamodel_RangeType' and 'OPLmetamodel_NumericType'. From 'OPLmetamodel_RangeType', the role 'OPLmetamodel_RangeType140' has cardinality 0..*, and from 'OPLmetamodel_NumericType', the role 'OPLmetamodel_NumericType141' has cardinality 0..*.
+An association connects 'OPLmetamodel_NumericType' and 'OPLmetamodel_RangeType'. From 'OPLmetamodel_NumericType', the role 'OPLmetamodel_NumericType144' has cardinality 0..*, and from 'OPLmetamodel_RangeType', the role 'OPLmetamodel_RangeType143' has cardinality 0..*.
+An association connects 'OPLmetamodel_RecordField' and 'OPLmetamodel_Record'. From 'OPLmetamodel_RecordField', the role 'OPLmetamodel_RecordField' has cardinality 0..*, and from 'OPLmetamodel_Record', the role 'OPLmetamodel_Record' has cardinality 0..*.
+An association connects 'OPLmetamodel_RecordField' and 'OPLmetamodel_AbstractType'. From 'OPLmetamodel_RecordField', the role 'OPLmetamodel_RecordField147' has cardinality 0..*, and from 'OPLmetamodel_AbstractType', the role 'OPLmetamodel_AbstractType148' has cardinality 0..*.
+An association connects 'OPLmetamodel_RecordValue' and 'OPLmetamodel_IndexValuePair'. From 'OPLmetamodel_RecordValue', the role 'OPLmetamodel_RecordValue' has cardinality 0..*, and from 'OPLmetamodel_IndexValuePair', the role 'OPLmetamodel_IndexValuePair150' has cardinality 0..*.
+An association connects 'OPLmetamodel_RelationalInit' and 'OPLmetamodel_BindingRef'. From 'OPLmetamodel_RelationalInit', the role 'OPLmetamodel_RelationalInit' has cardinality 0..*, and from 'OPLmetamodel_BindingRef', the role 'OPLmetamodel_BindingRef152' has cardinality 0..*.
+An association connects 'OPLmetamodel_VariableBinding' and 'OPLmetamodel_RelationalInit'. From 'OPLmetamodel_VariableBinding', the role 'OPLmetamodel_VariableBinding' has cardinality 0..*, and from 'OPLmetamodel_RelationalInit', the role 'OPLmetamodel_RelationalInit154' has cardinality 0..*.
+An association connects 'OPLmetamodel_RelationalInit' and 'OPLmetamodel_RelationalExpression'. From 'OPLmetamodel_RelationalInit', the role 'OPLmetamodel_RelationalInit156' has cardinality 0..*, and from 'OPLmetamodel_RelationalExpression', the role 'OPLmetamodel_RelationalExpression' has cardinality 0..*.
+An association connects 'OPLmetamodel_Script' and 'OPLmetamodel_Reference'. From 'OPLmetamodel_Script', the role 'OPLmetamodel_Script158' has cardinality 0..*, and from 'OPLmetamodel_Reference', the role 'OPLmetamodel_Reference159' has cardinality 0..*.
+An association connects 'OPLmetamodel_ScriptStatement' and 'OPLmetamodel_Script'. From 'OPLmetamodel_ScriptStatement', the role 'OPLmetamodel_ScriptStatement' has cardinality 0..*, and from 'OPLmetamodel_Script', the role 'OPLmetamodel_Script161' has cardinality 0..*.
+An association connects 'OPLmetamodel_Sequence' and 'OPLmetamodel_Interval'. From 'OPLmetamodel_Sequence', the role 'OPLmetamodel_Sequence' has cardinality 0..*, and from 'OPLmetamodel_Interval', the role 'OPLmetamodel_Interval163' has cardinality 0..*.
+An association connects 'OPLmetamodel_Sequence' and 'OPLmetamodel_DefinedType'. From 'OPLmetamodel_Sequence', the role 'OPLmetamodel_Sequence165' has cardinality 0..*, and from 'OPLmetamodel_DefinedType', the role 'OPLmetamodel_DefinedType166' has cardinality 0..*.
+An association connects 'OPLmetamodel_AbstractType' and 'OPLmetamodel_SetType'. From 'OPLmetamodel_AbstractType', the role 'OPLmetamodel_AbstractType168' has cardinality 0..*, and from 'OPLmetamodel_SetType', the role 'OPLmetamodel_SetType' has cardinality 0..*.
+An association connects 'OPLmetamodel_SetType' and 'OPLmetamodel_Entity'. From 'OPLmetamodel_SetType', the role 'OPLmetamodel_SetType170' has cardinality 0..*, and from 'OPLmetamodel_Entity', the role 'OPLmetamodel_Entity' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_SetValue'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression172' has cardinality 0..*, and from 'OPLmetamodel_SetValue', the role 'OPLmetamodel_SetValue' has cardinality 0..*.
+An association connects 'OPLmetamodel_SetType' and 'OPLmetamodel_StateFunction'. From 'OPLmetamodel_SetType', the role 'OPLmetamodel_SetType174' has cardinality 0..*, and from 'OPLmetamodel_StateFunction', the role 'OPLmetamodel_StateFunction' has cardinality 0..*.
+An association connects 'OPLmetamodel_BindingRef' and 'OPLmetamodel_TupleBinding'. From 'OPLmetamodel_BindingRef', the role 'OPLmetamodel_BindingRef176' has cardinality 0..*, and from 'OPLmetamodel_TupleBinding', the role 'OPLmetamodel_TupleBinding' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_UnaryExpression'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression178' has cardinality 0..*, and from 'OPLmetamodel_UnaryExpression', the role 'OPLmetamodel_UnaryExpression' has cardinality 0..*.
+An association connects 'OPLmetamodel_BindingRef' and 'OPLmetamodel_VariableBinding'. From 'OPLmetamodel_BindingRef', the role 'OPLmetamodel_BindingRef181' has cardinality 0..*, and from 'OPLmetamodel_VariableBinding', the role 'OPLmetamodel_VariableBinding180' has cardinality 0..*.
+An association connects 'OPLmetamodel_Expression' and 'OPLmetamodel_VariableBinding'. From 'OPLmetamodel_Expression', the role 'OPLmetamodel_Expression184' has cardinality 0..*, and from 'OPLmetamodel_VariableBinding', the role 'OPLmetamodel_VariableBinding183' has cardinality 0..*.

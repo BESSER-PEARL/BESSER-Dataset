@@ -1,0 +1,45 @@
+The domain model 'petriNetz' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'petriNetz_Place' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'petriNetz_Petrinet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petriNetz_TPArc' represents an important domain concept.
+It does not declare any attributes.
+
+'petriNetz_PTArc' represents an important domain concept.
+It does not declare any attributes.
+
+'petriNetz_Arc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'petriNetz_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petriNetz_Token' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'petriNetz_PTArc' is a specialization of 'Arc'.
+The class 'petriNetz_TPArc' is a specialization of 'Arc'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petriNetz_Petrinet' and 'petriNetz_Place'. From 'petriNetz_Petrinet', the role 'petriNetz_Petrinet' has cardinality 0..*, and from 'petriNetz_Place', the role 'petriNetz_Place' has cardinality 0..*.
+An association connects 'petriNetz_Transition' and 'petriNetz_Petrinet'. From 'petriNetz_Transition', the role 'petriNetz_Transition' has cardinality 0..*, and from 'petriNetz_Petrinet', the role 'petriNetz_Petrinet2' has cardinality 0..*.
+An association connects 'petriNetz_Arc' and 'petriNetz_Petrinet'. From 'petriNetz_Arc', the role 'petriNetz_Arc' has cardinality 0..*, and from 'petriNetz_Petrinet', the role 'petriNetz_Petrinet4' has cardinality 0..*.
+An association connects 'petriNetz_Token' and 'petriNetz_Place'. From 'petriNetz_Token', the role 'petriNetz_Token' has cardinality 0..*, and from 'petriNetz_Place', the role 'petriNetz_Place6' has cardinality 0..*.
+An association connects 'petriNetz_PTArc' and 'petriNetz_Place'. From 'petriNetz_PTArc', the role 'petriNetz_PTArc' has cardinality 0..*, and from 'petriNetz_Place', the role 'petriNetz_Place8' has cardinality 0..*.
+An association connects 'petriNetz_TPArc' and 'petriNetz_Place'. From 'petriNetz_TPArc', the role 'petriNetz_TPArc' has cardinality 0..*, and from 'petriNetz_Place', the role 'petriNetz_Place10' has cardinality 0..*.
+An association connects 'petriNetz_PTArc' and 'petriNetz_Transition'. From 'petriNetz_PTArc', the role 'petriNetz_PTArc13' has cardinality 0..*, and from 'petriNetz_Transition', the role 'petriNetz_Transition12' has cardinality 0..*.
+An association connects 'petriNetz_Transition' and 'petriNetz_TPArc'. From 'petriNetz_Transition', the role 'petriNetz_Transition15' has cardinality 0..*, and from 'petriNetz_TPArc', the role 'petriNetz_TPArc16' has cardinality 0..*.
+An association connects 'petriNetz_PTArc' and 'petriNetz_Place'. From 'petriNetz_PTArc', the role 'petriNetz_PTArc18' has cardinality 0..*, and from 'petriNetz_Place', the role 'petriNetz_Place19' has cardinality 0..*.
+An association connects 'petriNetz_Transition' and 'petriNetz_PTArc'. From 'petriNetz_Transition', the role 'petriNetz_Transition22' has cardinality 0..*, and from 'petriNetz_PTArc', the role 'petriNetz_PTArc21' has cardinality 0..*.
+An association connects 'petriNetz_TPArc' and 'petriNetz_Place'. From 'petriNetz_TPArc', the role 'petriNetz_TPArc24' has cardinality 0..*, and from 'petriNetz_Place', the role 'petriNetz_Place25' has cardinality 0..*.
+An association connects 'petriNetz_Transition' and 'petriNetz_TPArc'. From 'petriNetz_Transition', the role 'petriNetz_Transition28' has cardinality 0..*, and from 'petriNetz_TPArc', the role 'petriNetz_TPArc27' has cardinality 0..*.

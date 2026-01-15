@@ -1,0 +1,40 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'TraceItem' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_M2CTraceItem' represents an important domain concept.
+It has the following attributes: 'token', which is of type str; 'targetFile', which is of type str.
+
+'trace_TraceItem' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'trace_TraceBySource' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_TraceList' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_M2MTraceItem' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_M2MTraceItem' is a specialization of 'TraceItem'.
+The class 'trace_M2CTraceItem' is a specialization of 'TraceItem'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_Trace' and 'trace_TraceList'. From 'trace_Trace', the role 'trace_Trace' has cardinality 0..*, and from 'trace_TraceList', the role 'trace_TraceList' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_TraceBySource'. From 'trace_Trace', the role 'trace_Trace2' has cardinality 0..*, and from 'trace_TraceBySource', the role 'trace_TraceBySource' has cardinality 0..*.
+An association connects 'trace_TraceList' and 'trace_TraceItem'. From 'trace_TraceList', the role 'trace_TraceList4' has cardinality 0..*, and from 'trace_TraceItem', the role 'trace_TraceItem' has cardinality 0..*.
+An association connects 'trace_TraceItem' and 'trace_EObject'. From 'trace_TraceItem', the role 'trace_TraceItem6' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject' has cardinality 0..*.
+An association connects 'trace_EObject' and 'trace_TraceBySource'. From 'trace_EObject', the role 'trace_EObject9' has cardinality 0..*, and from 'trace_TraceBySource', the role 'trace_TraceBySource8' has cardinality 0..*.
+An association connects 'trace_TraceItem' and 'trace_TraceBySource'. From 'trace_TraceItem', the role 'trace_TraceItem12' has cardinality 0..*, and from 'trace_TraceBySource', the role 'trace_TraceBySource11' has cardinality 0..*.
+An association connects 'trace_EObject' and 'trace_M2MTraceItem'. From 'trace_EObject', the role 'trace_EObject14' has cardinality 0..*, and from 'trace_M2MTraceItem', the role 'trace_M2MTraceItem' has cardinality 0..*.

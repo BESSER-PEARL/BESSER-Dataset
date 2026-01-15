@@ -1,0 +1,40 @@
+The domain model 'rdbmsMM' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'rdbmsMM_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rdbmsMM_Column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'rdbmsMM_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rdbmsMM_ForeignKey' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rdbmsMM_Key' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rdbmsMM_dummy' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'rdbmsMM_Schema' and 'rdbmsMM_Table'. From 'rdbmsMM_Schema', the role 'schema' has cardinality 0..*, and from 'rdbmsMM_Table', the role 'Table' has cardinality 0..*.
+An association connects 'rdbmsMM_Schema' and 'rdbmsMM_ForeignKey'. From 'rdbmsMM_Schema', the role 'schema2' has cardinality 0..*, and from 'rdbmsMM_ForeignKey', the role 'ForeignKey' has cardinality 0..*.
+An association connects 'rdbmsMM_Table' and 'rdbmsMM_Schema'. From 'rdbmsMM_Table', the role 'table' has cardinality 0..*, and from 'rdbmsMM_Schema', the role 'Schema' has cardinality 0..*.
+An association connects 'rdbmsMM_Table' and 'rdbmsMM_Column'. From 'rdbmsMM_Table', the role 'owner' has cardinality 0..*, and from 'rdbmsMM_Column', the role 'Column' has cardinality 0..*.
+An association connects 'rdbmsMM_Key' and 'rdbmsMM_Table'. From 'rdbmsMM_Key', the role 'Key' has cardinality 0..*, and from 'rdbmsMM_Table', the role 'owner6' has cardinality 0..*.
+An association connects 'rdbmsMM_ForeignKey' and 'rdbmsMM_Table'. From 'rdbmsMM_ForeignKey', the role 'ForeignKey9' has cardinality 0..*, and from 'rdbmsMM_Table', the role 'owner8' has cardinality 0..*.
+An association connects 'rdbmsMM_Table' and 'rdbmsMM_Column'. From 'rdbmsMM_Table', the role 'Table11' has cardinality 0..*, and from 'rdbmsMM_Column', the role 'column' has cardinality 0..*.
+An association connects 'rdbmsMM_Key' and 'rdbmsMM_Column'. From 'rdbmsMM_Key', the role 'Key14' has cardinality 0..*, and from 'rdbmsMM_Column', the role 'column13' has cardinality 0..*.
+An association connects 'rdbmsMM_Column' and 'rdbmsMM_ForeignKey'. From 'rdbmsMM_Column', the role 'column16' has cardinality 0..*, and from 'rdbmsMM_ForeignKey', the role 'ForeignKey17' has cardinality 0..*.
+An association connects 'rdbmsMM_Table' and 'rdbmsMM_Key'. From 'rdbmsMM_Table', the role 'Table19' has cardinality 0..*, and from 'rdbmsMM_Key', the role 'hasKey' has cardinality 0..*.
+An association connects 'rdbmsMM_Column' and 'rdbmsMM_Key'. From 'rdbmsMM_Column', the role 'Column22' has cardinality 0..*, and from 'rdbmsMM_Key', the role 'hasKey21' has cardinality 0..*.
+An association connects 'rdbmsMM_ForeignKey' and 'rdbmsMM_Key'. From 'rdbmsMM_ForeignKey', the role 'ForeignKey24' has cardinality 0..*, and from 'rdbmsMM_Key', the role 'refersTo' has cardinality 0..*.
+An association connects 'rdbmsMM_ForeignKey' and 'rdbmsMM_Schema'. From 'rdbmsMM_ForeignKey', the role 'foreignKey' has cardinality 0..*, and from 'rdbmsMM_Schema', the role 'Schema26' has cardinality 0..*.
+An association connects 'rdbmsMM_ForeignKey' and 'rdbmsMM_Key'. From 'rdbmsMM_ForeignKey', the role 'referredBy' has cardinality 0..*, and from 'rdbmsMM_Key', the role 'Key28' has cardinality 0..*.
+An association connects 'rdbmsMM_Table' and 'rdbmsMM_ForeignKey'. From 'rdbmsMM_Table', the role 'Table30' has cardinality 0..*, and from 'rdbmsMM_ForeignKey', the role 'hasForeignKey' has cardinality 0..*.
+An association connects 'rdbmsMM_ForeignKey' and 'rdbmsMM_Column'. From 'rdbmsMM_ForeignKey', the role 'hasForeignKey32' has cardinality 0..*, and from 'rdbmsMM_Column', the role 'Column33' has cardinality 0..*.
+An association connects 'rdbmsMM_dummy' and 'rdbmsMM_Schema'. From 'rdbmsMM_dummy', the role 'rdbmsMM_dummy' has cardinality 0..*, and from 'rdbmsMM_Schema', the role 'rdbmsMM_Schema' has cardinality 0..*.

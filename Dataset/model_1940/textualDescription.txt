@@ -1,0 +1,42 @@
+The domain model 'addressbook' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'addressbook_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'addressbook_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'addressbook_AddressBook' represents an important domain concept.
+It does not declare any attributes.
+
+'addressbook_Contact' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'firstName', which is of type str; 'lastName', which is of type str.
+
+'addressbook_Organization' represents an important domain concept.
+It has one attribute: 'homepage', which is of type str.
+
+'Entry' represents an important domain concept.
+It does not declare any attributes.
+
+'addressbook_Entry' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'addressbook_AddressBook' is a specialization of 'NamedElement'.
+The class 'addressbook_Category' is a specialization of 'NamedElement'.
+The class 'addressbook_Contact' is a specialization of 'Entry'.
+The class 'addressbook_Organization' is a specialization of 'Entry'.
+The class 'addressbook_Organization' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'addressbook_AddressBook' and 'addressbook_Category'. From 'addressbook_AddressBook', the role 'addressBook' has cardinality 0..*, and from 'addressbook_Category', the role 'Category' has cardinality 0..*.
+An association connects 'addressbook_Category' and 'addressbook_AddressBook'. From 'addressbook_Category', the role 'categories' has cardinality 0..*, and from 'addressbook_AddressBook', the role 'AddressBook' has cardinality 0..*.
+An association connects 'addressbook_Entry' and 'addressbook_Category'. From 'addressbook_Entry', the role 'Entry' has cardinality 0..*, and from 'addressbook_Category', the role 'category' has cardinality 0..*.
+An association connects 'addressbook_Category' and 'addressbook_Entry'. From 'addressbook_Category', the role 'Category4' has cardinality 0..*, and from 'addressbook_Entry', the role 'entries' has cardinality 0..*.
+An association connects 'addressbook_Organization' and 'addressbook_Contact'. From 'addressbook_Organization', the role 'Organization' has cardinality 0..*, and from 'addressbook_Contact', the role 'employees' has cardinality 0..*.
+An association connects 'addressbook_Contact' and 'addressbook_Organization'. From 'addressbook_Contact', the role 'Contact' has cardinality 0..*, and from 'addressbook_Organization', the role 'employers' has cardinality 0..*.

@@ -1,0 +1,44 @@
+The domain model 'studies' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'studies_StudyYear' represents an important domain concept.
+It has one attribute: 'programName', which is of type str.
+
+'studies_StudyCourse' represents an important domain concept.
+It has one attribute: 'mandatory', which is of type bool.
+
+'studies_Course' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str; 'studyPoints', which is of type float.
+
+'studies_StudyInstance' represents an important domain concept.
+It has one attribute: 'year', which is of type int.
+
+'studies_University' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'studies_Study' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'name', which is of type str.
+
+'studies_Semester' represents an important domain concept.
+It has one attribute: 'studyYearSemester', which is of type str.
+
+'studies_CourseInstance' represents an important domain concept.
+It has the following attributes: 'instanceName', which is of type str; 'year', which is of type int; 'semester', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SemesterCode' defines the following possible values: 'Spring', 'Autumn'.
+
+Relationships between classes are modeled using associations.
+An association connects 'studies_Course' and 'studies_University'. From 'studies_Course', the role 'studies_Course' has cardinality 0..*, and from 'studies_University', the role 'studies_University' has cardinality 0..*.
+An association connects 'studies_University' and 'studies_Study'. From 'studies_University', the role 'studies_University2' has cardinality 0..*, and from 'studies_Study', the role 'studies_Study' has cardinality 0..*.
+An association connects 'studies_CourseInstance' and 'studies_Course'. From 'studies_CourseInstance', the role 'CourseInstance' has cardinality 0..*, and from 'studies_Course', the role 'course' has cardinality 0..*.
+An association connects 'studies_Course' and 'studies_CourseInstance'. From 'studies_Course', the role 'Course' has cardinality 0..*, and from 'studies_CourseInstance', the role 'courseInstances' has cardinality 0..*.
+An association connects 'studies_Study' and 'studies_StudyInstance'. From 'studies_Study', the role 'study' has cardinality 0..*, and from 'studies_StudyInstance', the role 'StudyInstance' has cardinality 0..*.
+An association connects 'studies_StudyInstance' and 'studies_Study'. From 'studies_StudyInstance', the role 'studyInstances' has cardinality 0..*, and from 'studies_Study', the role 'Study' has cardinality 0..*.
+An association connects 'studies_StudyYear' and 'studies_StudyInstance'. From 'studies_StudyYear', the role 'studies_StudyYear' has cardinality 0..*, and from 'studies_StudyInstance', the role 'studies_StudyInstance' has cardinality 0..*.
+An association connects 'studies_StudyYear' and 'studies_StudyYear'. From 'studies_StudyYear', the role 'studies_StudyYear8' has cardinality 0..*, and from 'studies_StudyYear', the role 'studies_StudyYear10' has cardinality 0..*.
+An association connects 'studies_Semester' and 'studies_StudyYear'. From 'studies_Semester', the role 'studies_Semester' has cardinality 0..*, and from 'studies_StudyYear', the role 'studies_StudyYear12' has cardinality 0..*.
+An association connects 'studies_StudyYear' and 'studies_Semester'. From 'studies_StudyYear', the role 'studies_StudyYear14' has cardinality 0..*, and from 'studies_Semester', the role 'studies_Semester15' has cardinality 0..*.
+An association connects 'studies_StudyCourse' and 'studies_CourseInstance'. From 'studies_StudyCourse', the role 'studies_StudyCourse' has cardinality 0..*, and from 'studies_CourseInstance', the role 'studies_CourseInstance' has cardinality 0..*.
+An association connects 'studies_Semester' and 'studies_CourseInstance'. From 'studies_Semester', the role 'studies_Semester18' has cardinality 0..*, and from 'studies_CourseInstance', the role 'studies_CourseInstance19' has cardinality 0..*.

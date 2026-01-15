@@ -1,0 +1,462 @@
+The domain model 'sADL' describes the core structural elements and their relationships within the system.
+
+The model defines 93 main class(es).
+
+'sADL_SadlIsSymmetrical' represents an important domain concept.
+It does not declare any attributes.
+
+'SadlExplicitValue' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_Sublist' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlAnnotation' represents an important domain concept.
+It has the following attributes: 'contents', which is of type str; 'type', which is of type str.
+
+'sADL_SadlExplicitValue' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlValueList' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlSameAs' represents an important domain concept.
+It has one attribute: 'complement', which is of type bool.
+
+'sADL_AskExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionScope' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlPropertyRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sADL_SadlInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_BinaryOperation' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sADL_SadlModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlClassOrPropertyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlDataTypeFacet' represents an important domain concept.
+It has the following attributes: 'len', which is of type str; 'max', which is of type str; 'minInclusive', which is of type bool; 'min', which is of type str; 'minlen', which is of type str; 'maxlen', which is of type str; 'maxInclusive', which is of type bool; 'regex', which is of type str; 'values', which is of type str.
+
+'sADL_RuleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'SadlModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SadlPropertyRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlMustBeOneOf' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlParameterDeclaration' represents an important domain concept.
+It has the following attributes: 'ellipsis', which is of type str; 'unknown', which is of type str.
+
+'sADL_SadlTypeAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlAllValuesCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlPropertyInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlExplicitValueLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlNecessaryAndSufficient' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlDefaultValue' represents an important domain concept.
+It has one attribute: 'level', which is of type int.
+
+'sADL_Name' represents an important domain concept.
+It has one attribute: 'function', which is of type bool.
+
+'sADL_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sADL_SadlHasValueCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlBooleanLiteral' represents an important domain concept.
+It has one attribute: 'truethy', which is of type bool.
+
+'sADL_SadlIsInverseOf' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlModel' represents an important domain concept.
+It has the following attributes: 'baseUri', which is of type str; 'version', which is of type str; 'alias', which is of type str.
+
+'sADL_Declaration' represents an important domain concept.
+It has the following attributes: 'maxlen', which is of type str; 'len', which is of type str; 'article', which is of type str; 'ordinal', which is of type str.
+
+'AbstractSadlEquation' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_PrintStatement' represents an important domain concept.
+It has the following attributes: 'model', which is of type str; 'displayString', which is of type str.
+
+'sADL_SadlIsFunctional' represents an important domain concept.
+It has one attribute: 'inverse', which is of type bool.
+
+'SadlExplicitValueLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlPrimitiveDataType' represents an important domain concept.
+It has the following attributes: 'list', which is of type bool; 'primitiveType', which is of type str.
+
+'sADL_SadlProperty' represents an important domain concept.
+It has one attribute: 'primaryDeclaration', which is of type bool.
+
+'sADL_ValueTable' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_ExternalEquationStatement' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'uri', which is of type str.
+
+'sADL_StartWriteStatement' represents an important domain concept.
+It has the following attributes: 'write', which is of type str; 'dataOnly', which is of type str.
+
+'sADL_SadlStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_PropOfSubject' represents an important domain concept.
+It has one attribute: 'of', which is of type str.
+
+'sADL_SadlCardinalityCondition' represents an important domain concept.
+It has the following attributes: 'cardinality', which is of type str; 'operator', which is of type str.
+
+'sADL_SadlNestedInstance' represents an important domain concept.
+It has one attribute: 'article', which is of type str.
+
+'sADL_SadlConstantLiteral' represents an important domain concept.
+It has one attribute: 'term', which is of type str.
+
+'sADL_SadlIsTransitive' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlIsAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_ConstructExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_EquationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'SadlCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_ValueRow' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlCanOnlyBeOneOf' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlResource' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_QueryStatement' represents an important domain concept.
+It has one attribute: 'start', which is of type str.
+
+'sADL_UnitExpression' represents an important domain concept.
+It has one attribute: 'unit', which is of type str.
+
+'sADL_Constant' represents an important domain concept.
+It has one attribute: 'constant', which is of type str.
+
+'SadlInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_OrderElement' represents an important domain concept.
+It has one attribute: 'desc', which is of type bool.
+
+'sADL_SadlNumberLiteral' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'literalNumber', which is of type str.
+
+'sADL_SadlImport' represents an important domain concept.
+It has one attribute: 'alias', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlIntersectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_AbstractSadlEquation' represents an important domain concept.
+It has one attribute: 'unknown', which is of type str.
+
+'sADL_SadlUnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'sADL_ReadStatement' represents an important domain concept.
+It has the following attributes: 'templateFilename', which is of type str; 'filename', which is of type str.
+
+'sADL_ExplainStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlPropertyCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlStringLiteral' represents an important domain concept.
+It has one attribute: 'literalString', which is of type str.
+
+'sADL_ExpressionScope' represents an important domain concept.
+It does not declare any attributes.
+
+'SadlStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SelectExpression' represents an important domain concept.
+It has the following attributes: 'distinct', which is of type bool; 'orderby', which is of type str.
+
+'sADL_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sADL_NamedStructureAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlDifferentFrom' represents an important domain concept.
+It has one attribute: 'complement', which is of type bool.
+
+'sADL_TestStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'SadlTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_EndWriteStatement' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'sADL_SubjHasProp' represents an important domain concept.
+It has one attribute: 'comma', which is of type bool.
+
+'sADL_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_ExpressionStatement' represents an important domain concept.
+It has one attribute: 'evaluatesTo', which is of type str.
+
+'sADL_UnaryExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'SadlResource' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlRangeRestriction' represents an important domain concept.
+It has the following attributes: 'singleValued', which is of type bool; 'typeonly', which is of type str.
+
+'sADL_ElementInList' represents an important domain concept.
+It has the following attributes: 'after', which is of type bool; 'before', which is of type bool.
+
+'sADL_SadlDisjointClasses' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlUnionType' represents an important domain concept.
+It does not declare any attributes.
+
+'sADL_SadlSimpleTypeReference' represents an important domain concept.
+It has one attribute: 'list', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SadlDataType' defines the following possible values: 'double', 'gYearMonth', 'base64Binary', 'gDay', 'integer', 'duration', 'gMonth', 'anyURI', 'positiveInteger', 'hexBinary', 'time', 'anySimpleType', 'string', 'long', 'dateTime', 'unsignedByte', 'boolean', 'gMonthDay', 'int', 'byte', 'gYear', 'date', 'decimal', 'nonNegativeInteger', 'float', 'negativeInteger', 'nonPositiveInteger', 'unsignedInt'.
+
+The model also captures inheritance relationships between classes.
+The class 'sADL_EquationStatement' is a specialization of 'SadlModelElement'.
+The class 'sADL_EquationStatement' is a specialization of 'AbstractSadlEquation'.
+The class 'sADL_ExternalEquationStatement' is a specialization of 'SadlModelElement'.
+The class 'sADL_ExternalEquationStatement' is a specialization of 'AbstractSadlEquation'.
+The class 'sADL_SadlStatement' is a specialization of 'SadlModelElement'.
+The class 'sADL_SadlPropertyCondition' is a specialization of 'SadlTypeReference'.
+The class 'sADL_SadlInstance' is a specialization of 'SadlStatement'.
+The class 'sADL_SadlResource' is a specialization of 'SadlStatement'.
+The class 'sADL_SadlResource' is a specialization of 'SadlExplicitValueLiteral'.
+The class 'sADL_SadlResource' is a specialization of 'Expression'.
+The class 'sADL_SadlTypeReference' is a specialization of 'SadlStatement'.
+The class 'sADL_SadlProperty' is a specialization of 'SadlStatement'.
+The class 'sADL_SadlCondition' is a specialization of 'SadlPropertyRestriction'.
+The class 'sADL_SadlAllValuesCondition' is a specialization of 'SadlCondition'.
+The class 'sADL_SadlHasValueCondition' is a specialization of 'SadlCondition'.
+The class 'sADL_SadlCardinalityCondition' is a specialization of 'SadlCondition'.
+The class 'sADL_SadlExplicitValueLiteral' is a specialization of 'SadlExplicitValue'.
+The class 'sADL_SadlValueList' is a specialization of 'SadlExplicitValueLiteral'.
+The class 'sADL_ExpressionScope' is a specialization of 'SadlModelElement'.
+The class 'sADL_PrintStatement' is a specialization of 'SadlModelElement'.
+The class 'sADL_ExplainStatement' is a specialization of 'SadlModelElement'.
+The class 'sADL_StartWriteStatement' is a specialization of 'SadlModelElement'.
+The class 'sADL_EndWriteStatement' is a specialization of 'SadlModelElement'.
+The class 'sADL_ReadStatement' is a specialization of 'SadlModelElement'.
+The class 'sADL_ValueTable' is a specialization of 'Expression'.
+The class 'sADL_SadlClassOrPropertyDeclaration' is a specialization of 'SadlStatement'.
+The class 'sADL_SadlSameAs' is a specialization of 'SadlStatement'.
+The class 'sADL_SadlDifferentFrom' is a specialization of 'SadlStatement'.
+The class 'sADL_SadlDisjointClasses' is a specialization of 'SadlStatement'.
+The class 'sADL_SadlNecessaryAndSufficient' is a specialization of 'SadlStatement'.
+The class 'sADL_SadlNestedInstance' is a specialization of 'SadlInstance'.
+The class 'sADL_SadlUnionType' is a specialization of 'SadlTypeReference'.
+The class 'sADL_SadlIntersectionType' is a specialization of 'SadlTypeReference'.
+The class 'sADL_SadlSimpleTypeReference' is a specialization of 'SadlTypeReference'.
+The class 'sADL_SadlPrimitiveDataType' is a specialization of 'SadlTypeReference'.
+The class 'sADL_SadlTypeAssociation' is a specialization of 'SadlPropertyRestriction'.
+The class 'sADL_SadlRangeRestriction' is a specialization of 'SadlPropertyRestriction'.
+The class 'sADL_SadlIsInverseOf' is a specialization of 'SadlPropertyRestriction'.
+The class 'sADL_SadlIsTransitive' is a specialization of 'SadlPropertyRestriction'.
+The class 'sADL_SadlIsSymmetrical' is a specialization of 'SadlPropertyRestriction'.
+The class 'sADL_SadlIsAnnotation' is a specialization of 'SadlPropertyRestriction'.
+The class 'sADL_SadlDefaultValue' is a specialization of 'SadlPropertyRestriction'.
+The class 'sADL_SadlIsFunctional' is a specialization of 'SadlPropertyRestriction'.
+The class 'sADL_SadlMustBeOneOf' is a specialization of 'SadlPropertyRestriction'.
+The class 'sADL_SadlCanOnlyBeOneOf' is a specialization of 'SadlPropertyRestriction'.
+The class 'sADL_SadlUnaryExpression' is a specialization of 'SadlExplicitValue'.
+The class 'sADL_SadlNumberLiteral' is a specialization of 'SadlExplicitValueLiteral'.
+The class 'sADL_SadlStringLiteral' is a specialization of 'SadlExplicitValueLiteral'.
+The class 'sADL_SadlBooleanLiteral' is a specialization of 'SadlExplicitValueLiteral'.
+The class 'sADL_SadlConstantLiteral' is a specialization of 'SadlExplicitValueLiteral'.
+The class 'sADL_ExpressionStatement' is a specialization of 'ExpressionScope'.
+The class 'sADL_RuleStatement' is a specialization of 'ExpressionScope'.
+The class 'sADL_QueryStatement' is a specialization of 'ExpressionScope'.
+The class 'sADL_ConstructExpression' is a specialization of 'Expression'.
+The class 'sADL_AskExpression' is a specialization of 'Expression'.
+The class 'sADL_TestStatement' is a specialization of 'ExpressionScope'.
+The class 'sADL_SelectExpression' is a specialization of 'Expression'.
+The class 'sADL_Sublist' is a specialization of 'Expression'.
+The class 'sADL_BinaryOperation' is a specialization of 'Expression'.
+The class 'sADL_PropOfSubject' is a specialization of 'Expression'.
+The class 'sADL_SubjHasProp' is a specialization of 'Expression'.
+The class 'sADL_ElementInList' is a specialization of 'Expression'.
+The class 'sADL_UnitExpression' is a specialization of 'Expression'.
+The class 'sADL_UnaryExpression' is a specialization of 'Expression'.
+The class 'sADL_Declaration' is a specialization of 'Expression'.
+The class 'sADL_StringLiteral' is a specialization of 'Expression'.
+The class 'sADL_NumberLiteral' is a specialization of 'Expression'.
+The class 'sADL_BooleanLiteral' is a specialization of 'Expression'.
+The class 'sADL_Constant' is a specialization of 'Expression'.
+The class 'sADL_Name' is a specialization of 'SadlResource'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sADL_SadlAnnotation' and 'sADL_SadlModel'. From 'sADL_SadlAnnotation', the role 'sADL_SadlAnnotation' has cardinality 0..*, and from 'sADL_SadlModel', the role 'sADL_SadlModel' has cardinality 0..*.
+An association connects 'sADL_SadlImport' and 'sADL_SadlModel'. From 'sADL_SadlImport', the role 'sADL_SadlImport' has cardinality 0..*, and from 'sADL_SadlModel', the role 'sADL_SadlModel2' has cardinality 0..*.
+An association connects 'sADL_SadlModelElement' and 'sADL_SadlModel'. From 'sADL_SadlModelElement', the role 'sADL_SadlModelElement' has cardinality 0..*, and from 'sADL_SadlModel', the role 'sADL_SadlModel4' has cardinality 0..*.
+An association connects 'sADL_SadlImport' and 'sADL_SadlModel'. From 'sADL_SadlImport', the role 'sADL_SadlImport6' has cardinality 0..*, and from 'sADL_SadlModel', the role 'sADL_SadlModel7' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_EquationStatement'. From 'sADL_Expression', the role 'sADL_Expression' has cardinality 0..*, and from 'sADL_EquationStatement', the role 'sADL_EquationStatement' has cardinality 0..*.
+An association connects 'sADL_AbstractSadlEquation' and 'sADL_SadlResource'. From 'sADL_AbstractSadlEquation', the role 'sADL_AbstractSadlEquation' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource' has cardinality 0..*.
+An association connects 'sADL_SadlParameterDeclaration' and 'sADL_AbstractSadlEquation'. From 'sADL_SadlParameterDeclaration', the role 'sADL_SadlParameterDeclaration' has cardinality 0..*, and from 'sADL_AbstractSadlEquation', the role 'sADL_AbstractSadlEquation11' has cardinality 0..*.
+An association connects 'sADL_AbstractSadlEquation' and 'sADL_SadlTypeReference'. From 'sADL_AbstractSadlEquation', the role 'sADL_AbstractSadlEquation13' has cardinality 0..*, and from 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference' has cardinality 0..*.
+An association connects 'sADL_SadlTypeReference' and 'sADL_SadlParameterDeclaration'. From 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference16' has cardinality 0..*, and from 'sADL_SadlParameterDeclaration', the role 'sADL_SadlParameterDeclaration15' has cardinality 0..*.
+An association connects 'sADL_SadlParameterDeclaration' and 'sADL_SadlResource'. From 'sADL_SadlParameterDeclaration', the role 'sADL_SadlParameterDeclaration18' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource19' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_SadlPropertyCondition'. From 'sADL_SadlResource', the role 'sADL_SadlResource21' has cardinality 0..*, and from 'sADL_SadlPropertyCondition', the role 'sADL_SadlPropertyCondition' has cardinality 0..*.
+An association connects 'sADL_SadlPropertyCondition' and 'sADL_SadlCondition'. From 'sADL_SadlPropertyCondition', the role 'sADL_SadlPropertyCondition23' has cardinality 0..*, and from 'sADL_SadlCondition', the role 'sADL_SadlCondition' has cardinality 0..*.
+An association connects 'sADL_SadlPropertyInitializer' and 'sADL_SadlResource'. From 'sADL_SadlPropertyInitializer', the role 'sADL_SadlPropertyInitializer' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource25' has cardinality 0..*.
+An association connects 'sADL_SadlPropertyInitializer' and 'sADL_EObject'. From 'sADL_SadlPropertyInitializer', the role 'sADL_SadlPropertyInitializer27' has cardinality 0..*, and from 'sADL_EObject', the role 'sADL_EObject' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_SadlPropertyInitializer'. From 'sADL_SadlResource', the role 'sADL_SadlResource30' has cardinality 0..*, and from 'sADL_SadlPropertyInitializer', the role 'sADL_SadlPropertyInitializer29' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_SadlInstance'. From 'sADL_SadlResource', the role 'sADL_SadlResource32' has cardinality 0..*, and from 'sADL_SadlInstance', the role 'sADL_SadlInstance' has cardinality 0..*.
+An association connects 'sADL_SadlInstance' and 'sADL_SadlTypeReference'. From 'sADL_SadlInstance', the role 'sADL_SadlInstance34' has cardinality 0..*, and from 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference35' has cardinality 0..*.
+An association connects 'sADL_SadlInstance' and 'sADL_SadlValueList'. From 'sADL_SadlInstance', the role 'sADL_SadlInstance37' has cardinality 0..*, and from 'sADL_SadlValueList', the role 'sADL_SadlValueList' has cardinality 0..*.
+An association connects 'sADL_SadlPropertyInitializer' and 'sADL_SadlInstance'. From 'sADL_SadlPropertyInitializer', the role 'sADL_SadlPropertyInitializer40' has cardinality 0..*, and from 'sADL_SadlInstance', the role 'sADL_SadlInstance39' has cardinality 0..*.
+An association connects 'sADL_SadlInstance' and 'sADL_SadlResource'. From 'sADL_SadlInstance', the role 'sADL_SadlInstance42' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource43' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_SadlResource'. From 'sADL_SadlResource', the role 'sADL_SadlResource44' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource46' has cardinality 0..*.
+An association connects 'sADL_SadlAnnotation' and 'sADL_SadlResource'. From 'sADL_SadlAnnotation', the role 'sADL_SadlAnnotation49' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource48' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_SadlProperty'. From 'sADL_SadlResource', the role 'sADL_SadlResource51' has cardinality 0..*, and from 'sADL_SadlProperty', the role 'sADL_SadlProperty' has cardinality 0..*.
+An association connects 'sADL_SadlPropertyRestriction' and 'sADL_SadlProperty'. From 'sADL_SadlPropertyRestriction', the role 'sADL_SadlPropertyRestriction' has cardinality 0..*, and from 'sADL_SadlProperty', the role 'sADL_SadlProperty53' has cardinality 0..*.
+An association connects 'sADL_SadlTypeReference' and 'sADL_SadlProperty'. From 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference56' has cardinality 0..*, and from 'sADL_SadlProperty', the role 'sADL_SadlProperty55' has cardinality 0..*.
+An association connects 'sADL_SadlProperty' and 'sADL_SadlTypeReference'. From 'sADL_SadlProperty', the role 'sADL_SadlProperty58' has cardinality 0..*, and from 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference59' has cardinality 0..*.
+An association connects 'sADL_SadlProperty' and 'sADL_SadlResource'. From 'sADL_SadlProperty', the role 'sADL_SadlProperty61' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource62' has cardinality 0..*.
+An association connects 'sADL_SadlProperty' and 'sADL_SadlResource'. From 'sADL_SadlProperty', the role 'sADL_SadlProperty64' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource65' has cardinality 0..*.
+An association connects 'sADL_SadlAllValuesCondition' and 'sADL_SadlTypeReference'. From 'sADL_SadlAllValuesCondition', the role 'sADL_SadlAllValuesCondition' has cardinality 0..*, and from 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference67' has cardinality 0..*.
+An association connects 'sADL_SadlDataTypeFacet' and 'sADL_SadlAllValuesCondition'. From 'sADL_SadlDataTypeFacet', the role 'sADL_SadlDataTypeFacet' has cardinality 0..*, and from 'sADL_SadlAllValuesCondition', the role 'sADL_SadlAllValuesCondition69' has cardinality 0..*.
+An association connects 'sADL_SadlHasValueCondition' and 'sADL_EObject'. From 'sADL_SadlHasValueCondition', the role 'sADL_SadlHasValueCondition' has cardinality 0..*, and from 'sADL_EObject', the role 'sADL_EObject71' has cardinality 0..*.
+An association connects 'sADL_SadlCardinalityCondition' and 'sADL_SadlTypeReference'. From 'sADL_SadlCardinalityCondition', the role 'sADL_SadlCardinalityCondition' has cardinality 0..*, and from 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference73' has cardinality 0..*.
+An association connects 'sADL_SadlCardinalityCondition' and 'sADL_SadlDataTypeFacet'. From 'sADL_SadlCardinalityCondition', the role 'sADL_SadlCardinalityCondition75' has cardinality 0..*, and from 'sADL_SadlDataTypeFacet', the role 'sADL_SadlDataTypeFacet76' has cardinality 0..*.
+An association connects 'sADL_SadlValueList' and 'sADL_SadlExplicitValue'. From 'sADL_SadlValueList', the role 'sADL_SadlValueList78' has cardinality 0..*, and from 'sADL_SadlExplicitValue', the role 'sADL_SadlExplicitValue' has cardinality 0..*.
+An association connects 'sADL_NamedStructureAnnotation' and 'sADL_SadlResource'. From 'sADL_NamedStructureAnnotation', the role 'sADL_NamedStructureAnnotation' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource80' has cardinality 0..*.
+An association connects 'sADL_SadlExplicitValue' and 'sADL_NamedStructureAnnotation'. From 'sADL_SadlExplicitValue', the role 'sADL_SadlExplicitValue83' has cardinality 0..*, and from 'sADL_NamedStructureAnnotation', the role 'sADL_NamedStructureAnnotation82' has cardinality 0..*.
+An association connects 'sADL_ExplainStatement' and 'sADL_Expression'. From 'sADL_ExplainStatement', the role 'sADL_ExplainStatement' has cardinality 0..*, and from 'sADL_Expression', the role 'sADL_Expression85' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_ExplainStatement'. From 'sADL_SadlResource', the role 'sADL_SadlResource88' has cardinality 0..*, and from 'sADL_ExplainStatement', the role 'sADL_ExplainStatement87' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_OrderElement'. From 'sADL_SadlResource', the role 'sADL_SadlResource90' has cardinality 0..*, and from 'sADL_OrderElement', the role 'sADL_OrderElement' has cardinality 0..*.
+An association connects 'sADL_ValueTable' and 'sADL_ValueTable'. From 'sADL_ValueTable', the role 'sADL_ValueTable91' has cardinality 0..*, and from 'sADL_ValueTable', the role 'sADL_ValueTable' has cardinality 0..*.
+An association connects 'sADL_ValueRow' and 'sADL_ValueTable'. From 'sADL_ValueRow', the role 'sADL_ValueRow' has cardinality 0..*, and from 'sADL_ValueTable', the role 'sADL_ValueTable94' has cardinality 0..*.
+An association connects 'sADL_ValueRow' and 'sADL_ValueTable'. From 'sADL_ValueRow', the role 'sADL_ValueRow97' has cardinality 0..*, and from 'sADL_ValueTable', the role 'sADL_ValueTable96' has cardinality 0..*.
+An association connects 'sADL_ValueRow' and 'sADL_Expression'. From 'sADL_ValueRow', the role 'sADL_ValueRow99' has cardinality 0..*, and from 'sADL_Expression', the role 'sADL_Expression100' has cardinality 0..*.
+An association connects 'sADL_SadlClassOrPropertyDeclaration' and 'sADL_SadlResource'. From 'sADL_SadlClassOrPropertyDeclaration', the role 'sADL_SadlClassOrPropertyDeclaration' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource102' has cardinality 0..*.
+An association connects 'sADL_SadlClassOrPropertyDeclaration' and 'sADL_SadlTypeReference'. From 'sADL_SadlClassOrPropertyDeclaration', the role 'sADL_SadlClassOrPropertyDeclaration104' has cardinality 0..*, and from 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference105' has cardinality 0..*.
+An association connects 'sADL_SadlClassOrPropertyDeclaration' and 'sADL_SadlDataTypeFacet'. From 'sADL_SadlClassOrPropertyDeclaration', the role 'sADL_SadlClassOrPropertyDeclaration107' has cardinality 0..*, and from 'sADL_SadlDataTypeFacet', the role 'sADL_SadlDataTypeFacet108' has cardinality 0..*.
+An association connects 'sADL_SadlClassOrPropertyDeclaration' and 'sADL_SadlProperty'. From 'sADL_SadlClassOrPropertyDeclaration', the role 'sADL_SadlClassOrPropertyDeclaration110' has cardinality 0..*, and from 'sADL_SadlProperty', the role 'sADL_SadlProperty111' has cardinality 0..*.
+An association connects 'sADL_SadlPropertyRestriction' and 'sADL_SadlClassOrPropertyDeclaration'. From 'sADL_SadlPropertyRestriction', the role 'sADL_SadlPropertyRestriction114' has cardinality 0..*, and from 'sADL_SadlClassOrPropertyDeclaration', the role 'sADL_SadlClassOrPropertyDeclaration113' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_SadlSameAs'. From 'sADL_SadlResource', the role 'sADL_SadlResource116' has cardinality 0..*, and from 'sADL_SadlSameAs', the role 'sADL_SadlSameAs' has cardinality 0..*.
+An association connects 'sADL_SadlTypeReference' and 'sADL_SadlSameAs'. From 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference119' has cardinality 0..*, and from 'sADL_SadlSameAs', the role 'sADL_SadlSameAs118' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_SadlDifferentFrom'. From 'sADL_SadlResource', the role 'sADL_SadlResource121' has cardinality 0..*, and from 'sADL_SadlDifferentFrom', the role 'sADL_SadlDifferentFrom' has cardinality 0..*.
+An association connects 'sADL_SadlTypeReference' and 'sADL_SadlDifferentFrom'. From 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference124' has cardinality 0..*, and from 'sADL_SadlDifferentFrom', the role 'sADL_SadlDifferentFrom123' has cardinality 0..*.
+An association connects 'sADL_SadlClassOrPropertyDeclaration' and 'sADL_SadlDifferentFrom'. From 'sADL_SadlClassOrPropertyDeclaration', the role 'sADL_SadlClassOrPropertyDeclaration127' has cardinality 0..*, and from 'sADL_SadlDifferentFrom', the role 'sADL_SadlDifferentFrom126' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_SadlDisjointClasses'. From 'sADL_SadlResource', the role 'sADL_SadlResource129' has cardinality 0..*, and from 'sADL_SadlDisjointClasses', the role 'sADL_SadlDisjointClasses' has cardinality 0..*.
+An association connects 'sADL_SadlClassOrPropertyDeclaration' and 'sADL_SadlDisjointClasses'. From 'sADL_SadlClassOrPropertyDeclaration', the role 'sADL_SadlClassOrPropertyDeclaration132' has cardinality 0..*, and from 'sADL_SadlDisjointClasses', the role 'sADL_SadlDisjointClasses131' has cardinality 0..*.
+An association connects 'sADL_SadlTypeReference' and 'sADL_SadlNecessaryAndSufficient'. From 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference134' has cardinality 0..*, and from 'sADL_SadlNecessaryAndSufficient', the role 'sADL_SadlNecessaryAndSufficient' has cardinality 0..*.
+An association connects 'sADL_SadlNecessaryAndSufficient' and 'sADL_SadlResource'. From 'sADL_SadlNecessaryAndSufficient', the role 'sADL_SadlNecessaryAndSufficient136' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource137' has cardinality 0..*.
+An association connects 'sADL_SadlPropertyCondition' and 'sADL_SadlNecessaryAndSufficient'. From 'sADL_SadlPropertyCondition', the role 'sADL_SadlPropertyCondition140' has cardinality 0..*, and from 'sADL_SadlNecessaryAndSufficient', the role 'sADL_SadlNecessaryAndSufficient139' has cardinality 0..*.
+An association connects 'sADL_SadlTypeReference' and 'sADL_SadlUnionType'. From 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference142' has cardinality 0..*, and from 'sADL_SadlUnionType', the role 'sADL_SadlUnionType' has cardinality 0..*.
+An association connects 'sADL_SadlTypeReference' and 'sADL_SadlUnionType'. From 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference145' has cardinality 0..*, and from 'sADL_SadlUnionType', the role 'sADL_SadlUnionType144' has cardinality 0..*.
+An association connects 'sADL_SadlIntersectionType' and 'sADL_SadlTypeReference'. From 'sADL_SadlIntersectionType', the role 'sADL_SadlIntersectionType' has cardinality 0..*, and from 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference147' has cardinality 0..*.
+An association connects 'sADL_SadlTypeReference' and 'sADL_SadlIntersectionType'. From 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference150' has cardinality 0..*, and from 'sADL_SadlIntersectionType', the role 'sADL_SadlIntersectionType149' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_SadlSimpleTypeReference'. From 'sADL_SadlResource', the role 'sADL_SadlResource152' has cardinality 0..*, and from 'sADL_SadlSimpleTypeReference', the role 'sADL_SadlSimpleTypeReference' has cardinality 0..*.
+An association connects 'sADL_SadlTypeAssociation' and 'sADL_SadlTypeReference'. From 'sADL_SadlTypeAssociation', the role 'sADL_SadlTypeAssociation' has cardinality 0..*, and from 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference154' has cardinality 0..*.
+An association connects 'sADL_SadlTypeReference' and 'sADL_SadlRangeRestriction'. From 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference156' has cardinality 0..*, and from 'sADL_SadlRangeRestriction', the role 'sADL_SadlRangeRestriction' has cardinality 0..*.
+An association connects 'sADL_SadlDataTypeFacet' and 'sADL_SadlRangeRestriction'. From 'sADL_SadlDataTypeFacet', the role 'sADL_SadlDataTypeFacet159' has cardinality 0..*, and from 'sADL_SadlRangeRestriction', the role 'sADL_SadlRangeRestriction158' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_SadlIsInverseOf'. From 'sADL_SadlResource', the role 'sADL_SadlResource161' has cardinality 0..*, and from 'sADL_SadlIsInverseOf', the role 'sADL_SadlIsInverseOf' has cardinality 0..*.
+An association connects 'sADL_SadlDefaultValue' and 'sADL_SadlExplicitValue'. From 'sADL_SadlDefaultValue', the role 'sADL_SadlDefaultValue' has cardinality 0..*, and from 'sADL_SadlExplicitValue', the role 'sADL_SadlExplicitValue163' has cardinality 0..*.
+An association connects 'sADL_SadlMustBeOneOf' and 'sADL_SadlExplicitValue'. From 'sADL_SadlMustBeOneOf', the role 'sADL_SadlMustBeOneOf' has cardinality 0..*, and from 'sADL_SadlExplicitValue', the role 'sADL_SadlExplicitValue165' has cardinality 0..*.
+An association connects 'sADL_SadlExplicitValue' and 'sADL_SadlCanOnlyBeOneOf'. From 'sADL_SadlExplicitValue', the role 'sADL_SadlExplicitValue167' has cardinality 0..*, and from 'sADL_SadlCanOnlyBeOneOf', the role 'sADL_SadlCanOnlyBeOneOf' has cardinality 0..*.
+An association connects 'sADL_SadlExplicitValueLiteral' and 'sADL_SadlUnaryExpression'. From 'sADL_SadlExplicitValueLiteral', the role 'sADL_SadlExplicitValueLiteral' has cardinality 0..*, and from 'sADL_SadlUnaryExpression', the role 'sADL_SadlUnaryExpression' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_ExpressionStatement'. From 'sADL_Expression', the role 'sADL_Expression170' has cardinality 0..*, and from 'sADL_ExpressionStatement', the role 'sADL_ExpressionStatement' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_RuleStatement'. From 'sADL_SadlResource', the role 'sADL_SadlResource172' has cardinality 0..*, and from 'sADL_RuleStatement', the role 'sADL_RuleStatement' has cardinality 0..*.
+An association connects 'sADL_RuleStatement' and 'sADL_NamedStructureAnnotation'. From 'sADL_RuleStatement', the role 'sADL_RuleStatement174' has cardinality 0..*, and from 'sADL_NamedStructureAnnotation', the role 'sADL_NamedStructureAnnotation175' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_RuleStatement'. From 'sADL_Expression', the role 'sADL_Expression178' has cardinality 0..*, and from 'sADL_RuleStatement', the role 'sADL_RuleStatement177' has cardinality 0..*.
+An association connects 'sADL_RuleStatement' and 'sADL_Expression'. From 'sADL_RuleStatement', the role 'sADL_RuleStatement180' has cardinality 0..*, and from 'sADL_Expression', the role 'sADL_Expression181' has cardinality 0..*.
+An association connects 'sADL_QueryStatement' and 'sADL_SadlResource'. From 'sADL_QueryStatement', the role 'sADL_QueryStatement' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource183' has cardinality 0..*.
+An association connects 'sADL_QueryStatement' and 'sADL_NamedStructureAnnotation'. From 'sADL_QueryStatement', the role 'sADL_QueryStatement185' has cardinality 0..*, and from 'sADL_NamedStructureAnnotation', the role 'sADL_NamedStructureAnnotation186' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_QueryStatement'. From 'sADL_Expression', the role 'sADL_Expression189' has cardinality 0..*, and from 'sADL_QueryStatement', the role 'sADL_QueryStatement188' has cardinality 0..*.
+An association connects 'sADL_ConstructExpression' and 'sADL_SadlResource'. From 'sADL_ConstructExpression', the role 'sADL_ConstructExpression' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource191' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_ConstructExpression'. From 'sADL_SadlResource', the role 'sADL_SadlResource194' has cardinality 0..*, and from 'sADL_ConstructExpression', the role 'sADL_ConstructExpression193' has cardinality 0..*.
+An association connects 'sADL_ConstructExpression' and 'sADL_SadlResource'. From 'sADL_ConstructExpression', the role 'sADL_ConstructExpression196' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource197' has cardinality 0..*.
+An association connects 'sADL_ConstructExpression' and 'sADL_Expression'. From 'sADL_ConstructExpression', the role 'sADL_ConstructExpression199' has cardinality 0..*, and from 'sADL_Expression', the role 'sADL_Expression200' has cardinality 0..*.
+An association connects 'sADL_AskExpression' and 'sADL_Expression'. From 'sADL_AskExpression', the role 'sADL_AskExpression' has cardinality 0..*, and from 'sADL_Expression', the role 'sADL_Expression202' has cardinality 0..*.
+An association connects 'sADL_TestStatement' and 'sADL_Expression'. From 'sADL_TestStatement', the role 'sADL_TestStatement' has cardinality 0..*, and from 'sADL_Expression', the role 'sADL_Expression204' has cardinality 0..*.
+An association connects 'sADL_SadlResource' and 'sADL_SelectExpression'. From 'sADL_SadlResource', the role 'sADL_SadlResource206' has cardinality 0..*, and from 'sADL_SelectExpression', the role 'sADL_SelectExpression' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_SelectExpression'. From 'sADL_Expression', the role 'sADL_Expression209' has cardinality 0..*, and from 'sADL_SelectExpression', the role 'sADL_SelectExpression208' has cardinality 0..*.
+An association connects 'sADL_SelectExpression' and 'sADL_OrderElement'. From 'sADL_SelectExpression', the role 'sADL_SelectExpression211' has cardinality 0..*, and from 'sADL_OrderElement', the role 'sADL_OrderElement212' has cardinality 0..*.
+An association connects 'sADL_Sublist' and 'sADL_Expression'. From 'sADL_Sublist', the role 'sADL_Sublist' has cardinality 0..*, and from 'sADL_Expression', the role 'sADL_Expression214' has cardinality 0..*.
+An association connects 'sADL_Sublist' and 'sADL_Expression'. From 'sADL_Sublist', the role 'sADL_Sublist216' has cardinality 0..*, and from 'sADL_Expression', the role 'sADL_Expression217' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_BinaryOperation'. From 'sADL_Expression', the role 'sADL_Expression219' has cardinality 0..*, and from 'sADL_BinaryOperation', the role 'sADL_BinaryOperation' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_BinaryOperation'. From 'sADL_Expression', the role 'sADL_Expression222' has cardinality 0..*, and from 'sADL_BinaryOperation', the role 'sADL_BinaryOperation221' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_PropOfSubject'. From 'sADL_Expression', the role 'sADL_Expression224' has cardinality 0..*, and from 'sADL_PropOfSubject', the role 'sADL_PropOfSubject' has cardinality 0..*.
+An association connects 'sADL_PropOfSubject' and 'sADL_Expression'. From 'sADL_PropOfSubject', the role 'sADL_PropOfSubject226' has cardinality 0..*, and from 'sADL_Expression', the role 'sADL_Expression227' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_SubjHasProp'. From 'sADL_Expression', the role 'sADL_Expression229' has cardinality 0..*, and from 'sADL_SubjHasProp', the role 'sADL_SubjHasProp' has cardinality 0..*.
+An association connects 'sADL_SubjHasProp' and 'sADL_SadlResource'. From 'sADL_SubjHasProp', the role 'sADL_SubjHasProp231' has cardinality 0..*, and from 'sADL_SadlResource', the role 'sADL_SadlResource232' has cardinality 0..*.
+An association connects 'sADL_SubjHasProp' and 'sADL_Expression'. From 'sADL_SubjHasProp', the role 'sADL_SubjHasProp234' has cardinality 0..*, and from 'sADL_Expression', the role 'sADL_Expression235' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_ElementInList'. From 'sADL_Expression', the role 'sADL_Expression237' has cardinality 0..*, and from 'sADL_ElementInList', the role 'sADL_ElementInList' has cardinality 0..*.
+An association connects 'sADL_UnitExpression' and 'sADL_Expression'. From 'sADL_UnitExpression', the role 'sADL_UnitExpression' has cardinality 0..*, and from 'sADL_Expression', the role 'sADL_Expression239' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_UnaryExpression'. From 'sADL_Expression', the role 'sADL_Expression241' has cardinality 0..*, and from 'sADL_UnaryExpression', the role 'sADL_UnaryExpression' has cardinality 0..*.
+An association connects 'sADL_Declaration' and 'sADL_SadlTypeReference'. From 'sADL_Declaration', the role 'sADL_Declaration' has cardinality 0..*, and from 'sADL_SadlTypeReference', the role 'sADL_SadlTypeReference243' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_Declaration'. From 'sADL_Expression', the role 'sADL_Expression246' has cardinality 0..*, and from 'sADL_Declaration', the role 'sADL_Declaration245' has cardinality 0..*.
+An association connects 'sADL_Expression' and 'sADL_Name'. From 'sADL_Expression', the role 'sADL_Expression248' has cardinality 0..*, and from 'sADL_Name', the role 'sADL_Name' has cardinality 0..*.

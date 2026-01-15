@@ -1,0 +1,380 @@
+The domain model 'co2' describes the core structural elements and their relationships within the system.
+
+The model defines 81 main class(es).
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_IntPlaceholder' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_PackageDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'single', which is of type bool.
+
+'co2_ReceiveGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_ExtSum' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_BooleanNegation' represents an important domain concept.
+It does not declare any attributes.
+
+'Placeholder' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_HonestyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_IntActionType' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_IntAction' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_ArithmeticSigned' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_StringActionType' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_ParallelProcesses' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Case' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_MultiOrDiv' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'co2_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'co2_StringPlaceholder' represents an important domain concept.
+It does not declare any attributes.
+
+'Prefix' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'co2_Send' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_EmptyContract' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'co2_IntSum' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'co2_ExtAction' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'co2_UnitActionType' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_ContractsAndProcessesDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_IntType' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_ContractReference' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Equals' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'co2_Prefix' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Tell' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_TellAndWait' represents an important domain concept.
+It has one attribute: 'timeout', which is of type bool.
+
+'co2_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Retract' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Session' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_SwitchCase' represents an important domain concept.
+It has one attribute: 'default', which is of type bool.
+
+'co2_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Tau' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_TellAndReturn' represents an important domain concept.
+It does not declare any attributes.
+
+'Contract' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_ProcessCall' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_CO2System' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_EmptyProcess' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'co2_Ask' represents an important domain concept.
+It has one attribute: 'formula', which is of type str.
+
+'co2_BoolPlaceholder' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionType' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_SessionType' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_DoOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_DoInput' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_DelimitedProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_ProcessDefinition' represents an important domain concept.
+It has the following attributes: 'withoutRestrictions', which is of type bool; 'name', which is of type str.
+
+'co2_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'co2_Sum' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Contract' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Process' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Placeholder' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_SendGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_Receive' represents an important domain concept.
+It has one attribute: 'timeout', which is of type bool.
+
+'co2_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_RetractedProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'SendGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_IfThenElse' represents an important domain concept.
+It does not declare any attributes.
+
+'ReceiveGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_ContractDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'co2_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'co2_Type' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'co2_TimeoutProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'co2_ActionType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'co2_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'co2_ParallelProcesses' is a specialization of 'Process'.
+The class 'co2_EmptyProcess' is a specialization of 'Process'.
+The class 'co2_Sum' is a specialization of 'Process'.
+The class 'co2_IfThenElse' is a specialization of 'Process'.
+The class 'co2_ProcessCall' is a specialization of 'Process'.
+The class 'co2_Tell' is a specialization of 'Prefix'.
+The class 'co2_Retract' is a specialization of 'Prefix'.
+The class 'co2_DoOutput' is a specialization of 'Prefix'.
+The class 'co2_DoInput' is a specialization of 'Prefix'.
+The class 'co2_Ask' is a specialization of 'Prefix'.
+The class 'co2_Tau' is a specialization of 'Prefix'.
+The class 'co2_TellAndReturn' is a specialization of 'Process'.
+The class 'co2_TellAndWait' is a specialization of 'Process'.
+The class 'co2_SendGroup' is a specialization of 'Process'.
+The class 'co2_Send' is a specialization of 'SendGroup'.
+The class 'co2_ReceiveGroup' is a specialization of 'Process'.
+The class 'co2_Receive' is a specialization of 'ReceiveGroup'.
+The class 'co2_SwitchCase' is a specialization of 'Process'.
+The class 'co2_NumberLiteral' is a specialization of 'Expression'.
+The class 'co2_StringLiteral' is a specialization of 'Expression'.
+The class 'co2_BooleanLiteral' is a specialization of 'Expression'.
+The class 'co2_Placeholder' is a specialization of 'Expression'.
+The class 'co2_Variable' is a specialization of 'VariableDeclaration'.
+The class 'co2_Session' is a specialization of 'VariableDeclaration'.
+The class 'co2_EmptyContract' is a specialization of 'Contract'.
+The class 'co2_IntSum' is a specialization of 'Contract'.
+The class 'co2_ExtSum' is a specialization of 'Contract'.
+The class 'co2_IntAction' is a specialization of 'Action'.
+The class 'co2_ExtAction' is a specialization of 'Action'.
+The class 'co2_RetractedProcess' is a specialization of 'Process'.
+The class 'co2_OrExpression' is a specialization of 'Expression'.
+The class 'co2_AndExpression' is a specialization of 'Expression'.
+The class 'co2_Comparison' is a specialization of 'Expression'.
+The class 'co2_Equals' is a specialization of 'Expression'.
+The class 'co2_Plus' is a specialization of 'Expression'.
+The class 'co2_Minus' is a specialization of 'Expression'.
+The class 'co2_MultiOrDiv' is a specialization of 'Expression'.
+The class 'co2_BooleanNegation' is a specialization of 'Expression'.
+The class 'co2_ArithmeticSigned' is a specialization of 'Expression'.
+The class 'co2_VariableReference' is a specialization of 'Expression'.
+The class 'co2_IntPlaceholder' is a specialization of 'Placeholder'.
+The class 'co2_BoolPlaceholder' is a specialization of 'Placeholder'.
+The class 'co2_StringPlaceholder' is a specialization of 'Placeholder'.
+The class 'co2_IntType' is a specialization of 'Type'.
+The class 'co2_StringType' is a specialization of 'Type'.
+The class 'co2_BooleanType' is a specialization of 'Type'.
+The class 'co2_SessionType' is a specialization of 'Type'.
+The class 'co2_ContractReference' is a specialization of 'Contract'.
+The class 'co2_UnitActionType' is a specialization of 'ActionType'.
+The class 'co2_IntActionType' is a specialization of 'ActionType'.
+The class 'co2_StringActionType' is a specialization of 'ActionType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'co2_CO2System' and 'co2_PackageDeclaration'. From 'co2_CO2System', the role 'co2_CO2System' has cardinality 0..*, and from 'co2_PackageDeclaration', the role 'co2_PackageDeclaration' has cardinality 0..*.
+An association connects 'co2_HonestyDeclaration' and 'co2_CO2System'. From 'co2_HonestyDeclaration', the role 'co2_HonestyDeclaration' has cardinality 0..*, and from 'co2_CO2System', the role 'co2_CO2System2' has cardinality 0..*.
+An association connects 'co2_CO2System' and 'co2_ContractsAndProcessesDeclaration'. From 'co2_CO2System', the role 'co2_CO2System4' has cardinality 0..*, and from 'co2_ContractsAndProcessesDeclaration', the role 'co2_ContractsAndProcessesDeclaration' has cardinality 0..*.
+An association connects 'co2_ProcessDefinition' and 'co2_HonestyDeclaration'. From 'co2_ProcessDefinition', the role 'co2_ProcessDefinition' has cardinality 0..*, and from 'co2_HonestyDeclaration', the role 'co2_HonestyDeclaration6' has cardinality 0..*.
+An association connects 'co2_ContractsAndProcessesDeclaration' and 'co2_ContractDefinition'. From 'co2_ContractsAndProcessesDeclaration', the role 'co2_ContractsAndProcessesDeclaration8' has cardinality 0..*, and from 'co2_ContractDefinition', the role 'co2_ContractDefinition' has cardinality 0..*.
+An association connects 'co2_ProcessDefinition' and 'co2_ContractsAndProcessesDeclaration'. From 'co2_ProcessDefinition', the role 'co2_ProcessDefinition11' has cardinality 0..*, and from 'co2_ContractsAndProcessesDeclaration', the role 'co2_ContractsAndProcessesDeclaration10' has cardinality 0..*.
+An association connects 'co2_Variable' and 'co2_ProcessDefinition'. From 'co2_Variable', the role 'co2_Variable' has cardinality 0..*, and from 'co2_ProcessDefinition', the role 'co2_ProcessDefinition13' has cardinality 0..*.
+An association connects 'co2_ProcessDefinition' and 'co2_ParallelProcesses'. From 'co2_ProcessDefinition', the role 'co2_ProcessDefinition15' has cardinality 0..*, and from 'co2_ParallelProcesses', the role 'co2_ParallelProcesses' has cardinality 0..*.
+An association connects 'co2_ParallelProcesses' and 'co2_DelimitedProcess'. From 'co2_ParallelProcesses', the role 'co2_ParallelProcesses17' has cardinality 0..*, and from 'co2_DelimitedProcess', the role 'co2_DelimitedProcess' has cardinality 0..*.
+An association connects 'co2_Variable' and 'co2_DelimitedProcess'. From 'co2_Variable', the role 'co2_Variable20' has cardinality 0..*, and from 'co2_DelimitedProcess', the role 'co2_DelimitedProcess19' has cardinality 0..*.
+An association connects 'co2_Process' and 'co2_DelimitedProcess'. From 'co2_Process', the role 'co2_Process' has cardinality 0..*, and from 'co2_DelimitedProcess', the role 'co2_DelimitedProcess22' has cardinality 0..*.
+An association connects 'co2_Prefix' and 'co2_Sum'. From 'co2_Prefix', the role 'co2_Prefix' has cardinality 0..*, and from 'co2_Sum', the role 'co2_Sum' has cardinality 0..*.
+An association connects 'co2_Expression' and 'co2_IfThenElse'. From 'co2_Expression', the role 'co2_Expression' has cardinality 0..*, and from 'co2_IfThenElse', the role 'co2_IfThenElse' has cardinality 0..*.
+An association connects 'co2_Process' and 'co2_IfThenElse'. From 'co2_Process', the role 'co2_Process27' has cardinality 0..*, and from 'co2_IfThenElse', the role 'co2_IfThenElse26' has cardinality 0..*.
+An association connects 'co2_Process' and 'co2_IfThenElse'. From 'co2_Process', the role 'co2_Process30' has cardinality 0..*, and from 'co2_IfThenElse', the role 'co2_IfThenElse29' has cardinality 0..*.
+An association connects 'co2_ProcessDefinition' and 'co2_ProcessCall'. From 'co2_ProcessDefinition', the role 'co2_ProcessDefinition32' has cardinality 0..*, and from 'co2_ProcessCall', the role 'co2_ProcessCall' has cardinality 0..*.
+An association connects 'co2_Expression' and 'co2_ProcessCall'. From 'co2_Expression', the role 'co2_Expression35' has cardinality 0..*, and from 'co2_ProcessCall', the role 'co2_ProcessCall34' has cardinality 0..*.
+An association connects 'co2_Process' and 'co2_Prefix'. From 'co2_Process', the role 'co2_Process38' has cardinality 0..*, and from 'co2_Prefix', the role 'co2_Prefix37' has cardinality 0..*.
+An association connects 'co2_VariableDeclaration' and 'co2_Tell'. From 'co2_VariableDeclaration', the role 'co2_VariableDeclaration' has cardinality 0..*, and from 'co2_Tell', the role 'co2_Tell' has cardinality 0..*.
+An association connects 'co2_Tell' and 'co2_Contract'. From 'co2_Tell', the role 'co2_Tell41' has cardinality 0..*, and from 'co2_Contract', the role 'co2_Contract' has cardinality 0..*.
+An association connects 'co2_ContractDefinition' and 'co2_Tell'. From 'co2_ContractDefinition', the role 'co2_ContractDefinition44' has cardinality 0..*, and from 'co2_Tell', the role 'co2_Tell43' has cardinality 0..*.
+An association connects 'co2_Retract' and 'co2_VariableDeclaration'. From 'co2_Retract', the role 'co2_Retract' has cardinality 0..*, and from 'co2_VariableDeclaration', the role 'co2_VariableDeclaration46' has cardinality 0..*.
+An association connects 'co2_DoOutput' and 'co2_VariableDeclaration'. From 'co2_DoOutput', the role 'co2_DoOutput' has cardinality 0..*, and from 'co2_VariableDeclaration', the role 'co2_VariableDeclaration48' has cardinality 0..*.
+An association connects 'co2_IntAction' and 'co2_DoOutput'. From 'co2_IntAction', the role 'co2_IntAction' has cardinality 0..*, and from 'co2_DoOutput', the role 'co2_DoOutput50' has cardinality 0..*.
+An association connects 'co2_DoOutput' and 'co2_Expression'. From 'co2_DoOutput', the role 'co2_DoOutput52' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression53' has cardinality 0..*.
+An association connects 'co2_DoInput' and 'co2_VariableDeclaration'. From 'co2_DoInput', the role 'co2_DoInput' has cardinality 0..*, and from 'co2_VariableDeclaration', the role 'co2_VariableDeclaration55' has cardinality 0..*.
+An association connects 'co2_ExtAction' and 'co2_DoInput'. From 'co2_ExtAction', the role 'co2_ExtAction' has cardinality 0..*, and from 'co2_DoInput', the role 'co2_DoInput57' has cardinality 0..*.
+An association connects 'co2_Variable' and 'co2_DoInput'. From 'co2_Variable', the role 'co2_Variable60' has cardinality 0..*, and from 'co2_DoInput', the role 'co2_DoInput59' has cardinality 0..*.
+An association connects 'co2_VariableDeclaration' and 'co2_Ask'. From 'co2_VariableDeclaration', the role 'co2_VariableDeclaration62' has cardinality 0..*, and from 'co2_Ask', the role 'co2_Ask' has cardinality 0..*.
+An association connects 'co2_Session' and 'co2_TellAndReturn'. From 'co2_Session', the role 'co2_Session' has cardinality 0..*, and from 'co2_TellAndReturn', the role 'co2_TellAndReturn' has cardinality 0..*.
+An association connects 'co2_TellAndReturn' and 'co2_Process'. From 'co2_TellAndReturn', the role 'co2_TellAndReturn65' has cardinality 0..*, and from 'co2_Process', the role 'co2_Process66' has cardinality 0..*.
+An association connects 'co2_Session' and 'co2_TellAndWait'. From 'co2_Session', the role 'co2_Session68' has cardinality 0..*, and from 'co2_TellAndWait', the role 'co2_TellAndWait' has cardinality 0..*.
+An association connects 'co2_Process' and 'co2_TellAndWait'. From 'co2_Process', the role 'co2_Process71' has cardinality 0..*, and from 'co2_TellAndWait', the role 'co2_TellAndWait70' has cardinality 0..*.
+An association connects 'co2_TellAndWait' and 'co2_TimeoutProcess'. From 'co2_TellAndWait', the role 'co2_TellAndWait73' has cardinality 0..*, and from 'co2_TimeoutProcess', the role 'co2_TimeoutProcess' has cardinality 0..*.
+An association connects 'co2_TimeoutProcess' and 'co2_Expression'. From 'co2_TimeoutProcess', the role 'co2_TimeoutProcess75' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression76' has cardinality 0..*.
+An association connects 'co2_Process' and 'co2_TimeoutProcess'. From 'co2_Process', the role 'co2_Process79' has cardinality 0..*, and from 'co2_TimeoutProcess', the role 'co2_TimeoutProcess78' has cardinality 0..*.
+An association connects 'co2_Process' and 'co2_Send'. From 'co2_Process', the role 'co2_Process81' has cardinality 0..*, and from 'co2_Send', the role 'co2_Send' has cardinality 0..*.
+An association connects 'co2_IntAction' and 'co2_Send'. From 'co2_IntAction', the role 'co2_IntAction84' has cardinality 0..*, and from 'co2_Send', the role 'co2_Send83' has cardinality 0..*.
+An association connects 'co2_Send' and 'co2_Expression'. From 'co2_Send', the role 'co2_Send86' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression87' has cardinality 0..*.
+An association connects 'co2_Send' and 'co2_VariableDeclaration'. From 'co2_Send', the role 'co2_Send89' has cardinality 0..*, and from 'co2_VariableDeclaration', the role 'co2_VariableDeclaration90' has cardinality 0..*.
+An association connects 'co2_Receive' and 'co2_Input'. From 'co2_Receive', the role 'co2_Receive' has cardinality 0..*, and from 'co2_Input', the role 'co2_Input' has cardinality 0..*.
+An association connects 'co2_TimeoutProcess' and 'co2_Receive'. From 'co2_TimeoutProcess', the role 'co2_TimeoutProcess94' has cardinality 0..*, and from 'co2_Receive', the role 'co2_Receive93' has cardinality 0..*.
+An association connects 'co2_Input' and 'co2_Process'. From 'co2_Input', the role 'co2_Input96' has cardinality 0..*, and from 'co2_Process', the role 'co2_Process97' has cardinality 0..*.
+An association connects 'co2_Input' and 'co2_ExtAction'. From 'co2_Input', the role 'co2_Input99' has cardinality 0..*, and from 'co2_ExtAction', the role 'co2_ExtAction100' has cardinality 0..*.
+An association connects 'co2_Variable' and 'co2_Input'. From 'co2_Variable', the role 'co2_Variable103' has cardinality 0..*, and from 'co2_Input', the role 'co2_Input102' has cardinality 0..*.
+An association connects 'co2_Input' and 'co2_VariableDeclaration'. From 'co2_Input', the role 'co2_Input105' has cardinality 0..*, and from 'co2_VariableDeclaration', the role 'co2_VariableDeclaration106' has cardinality 0..*.
+An association connects 'co2_SwitchCase' and 'co2_Expression'. From 'co2_SwitchCase', the role 'co2_SwitchCase' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression108' has cardinality 0..*.
+An association connects 'co2_SwitchCase' and 'co2_Case'. From 'co2_SwitchCase', the role 'co2_SwitchCase110' has cardinality 0..*, and from 'co2_Case', the role 'co2_Case' has cardinality 0..*.
+An association connects 'co2_Process' and 'co2_SwitchCase'. From 'co2_Process', the role 'co2_Process113' has cardinality 0..*, and from 'co2_SwitchCase', the role 'co2_SwitchCase112' has cardinality 0..*.
+An association connects 'co2_Expression' and 'co2_Case'. From 'co2_Expression', the role 'co2_Expression116' has cardinality 0..*, and from 'co2_Case', the role 'co2_Case115' has cardinality 0..*.
+An association connects 'co2_Process' and 'co2_Case'. From 'co2_Process', the role 'co2_Process119' has cardinality 0..*, and from 'co2_Case', the role 'co2_Case118' has cardinality 0..*.
+An association connects 'co2_Type' and 'co2_Placeholder'. From 'co2_Type', the role 'co2_Type' has cardinality 0..*, and from 'co2_Placeholder', the role 'co2_Placeholder' has cardinality 0..*.
+An association connects 'co2_Variable' and 'co2_Type'. From 'co2_Variable', the role 'co2_Variable122' has cardinality 0..*, and from 'co2_Type', the role 'co2_Type123' has cardinality 0..*.
+An association connects 'co2_Contract' and 'co2_Session'. From 'co2_Contract', the role 'co2_Contract126' has cardinality 0..*, and from 'co2_Session', the role 'co2_Session125' has cardinality 0..*.
+An association connects 'co2_Session' and 'co2_ContractDefinition'. From 'co2_Session', the role 'co2_Session128' has cardinality 0..*, and from 'co2_ContractDefinition', the role 'co2_ContractDefinition129' has cardinality 0..*.
+An association connects 'co2_Contract' and 'co2_ContractDefinition'. From 'co2_Contract', the role 'co2_Contract132' has cardinality 0..*, and from 'co2_ContractDefinition', the role 'co2_ContractDefinition131' has cardinality 0..*.
+An association connects 'co2_IntSum' and 'co2_IntAction'. From 'co2_IntSum', the role 'co2_IntSum' has cardinality 0..*, and from 'co2_IntAction', the role 'co2_IntAction134' has cardinality 0..*.
+An association connects 'co2_ExtAction' and 'co2_ExtSum'. From 'co2_ExtAction', the role 'co2_ExtAction136' has cardinality 0..*, and from 'co2_ExtSum', the role 'co2_ExtSum' has cardinality 0..*.
+An association connects 'co2_ActionType' and 'co2_Action'. From 'co2_ActionType', the role 'co2_ActionType' has cardinality 0..*, and from 'co2_Action', the role 'co2_Action' has cardinality 0..*.
+An association connects 'co2_Action' and 'co2_Contract'. From 'co2_Action', the role 'co2_Action139' has cardinality 0..*, and from 'co2_Contract', the role 'co2_Contract140' has cardinality 0..*.
+An association connects 'co2_Process' and 'co2_RetractedProcess'. From 'co2_Process', the role 'co2_Process142' has cardinality 0..*, and from 'co2_RetractedProcess', the role 'co2_RetractedProcess' has cardinality 0..*.
+An association connects 'co2_OrExpression' and 'co2_Expression'. From 'co2_OrExpression', the role 'co2_OrExpression' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression144' has cardinality 0..*.
+An association connects 'co2_OrExpression' and 'co2_Expression'. From 'co2_OrExpression', the role 'co2_OrExpression146' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression147' has cardinality 0..*.
+An association connects 'co2_Expression' and 'co2_AndExpression'. From 'co2_Expression', the role 'co2_Expression149' has cardinality 0..*, and from 'co2_AndExpression', the role 'co2_AndExpression' has cardinality 0..*.
+An association connects 'co2_Expression' and 'co2_AndExpression'. From 'co2_Expression', the role 'co2_Expression152' has cardinality 0..*, and from 'co2_AndExpression', the role 'co2_AndExpression151' has cardinality 0..*.
+An association connects 'co2_Expression' and 'co2_Comparison'. From 'co2_Expression', the role 'co2_Expression154' has cardinality 0..*, and from 'co2_Comparison', the role 'co2_Comparison' has cardinality 0..*.
+An association connects 'co2_Comparison' and 'co2_Expression'. From 'co2_Comparison', the role 'co2_Comparison156' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression157' has cardinality 0..*.
+An association connects 'co2_Expression' and 'co2_Equals'. From 'co2_Expression', the role 'co2_Expression159' has cardinality 0..*, and from 'co2_Equals', the role 'co2_Equals' has cardinality 0..*.
+An association connects 'co2_Expression' and 'co2_Equals'. From 'co2_Expression', the role 'co2_Expression162' has cardinality 0..*, and from 'co2_Equals', the role 'co2_Equals161' has cardinality 0..*.
+An association connects 'co2_Plus' and 'co2_Expression'. From 'co2_Plus', the role 'co2_Plus' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression164' has cardinality 0..*.
+An association connects 'co2_Plus' and 'co2_Expression'. From 'co2_Plus', the role 'co2_Plus166' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression167' has cardinality 0..*.
+An association connects 'co2_Expression' and 'co2_Minus'. From 'co2_Expression', the role 'co2_Expression169' has cardinality 0..*, and from 'co2_Minus', the role 'co2_Minus' has cardinality 0..*.
+An association connects 'co2_Minus' and 'co2_Expression'. From 'co2_Minus', the role 'co2_Minus171' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression172' has cardinality 0..*.
+An association connects 'co2_Expression' and 'co2_MultiOrDiv'. From 'co2_Expression', the role 'co2_Expression174' has cardinality 0..*, and from 'co2_MultiOrDiv', the role 'co2_MultiOrDiv' has cardinality 0..*.
+An association connects 'co2_MultiOrDiv' and 'co2_Expression'. From 'co2_MultiOrDiv', the role 'co2_MultiOrDiv176' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression177' has cardinality 0..*.
+An association connects 'co2_Expression' and 'co2_BooleanNegation'. From 'co2_Expression', the role 'co2_Expression179' has cardinality 0..*, and from 'co2_BooleanNegation', the role 'co2_BooleanNegation' has cardinality 0..*.
+An association connects 'co2_ArithmeticSigned' and 'co2_Expression'. From 'co2_ArithmeticSigned', the role 'co2_ArithmeticSigned' has cardinality 0..*, and from 'co2_Expression', the role 'co2_Expression181' has cardinality 0..*.
+An association connects 'co2_VariableDeclaration' and 'co2_VariableReference'. From 'co2_VariableDeclaration', the role 'co2_VariableDeclaration183' has cardinality 0..*, and from 'co2_VariableReference', the role 'co2_VariableReference' has cardinality 0..*.
+An association connects 'co2_ContractDefinition' and 'co2_ContractReference'. From 'co2_ContractDefinition', the role 'co2_ContractDefinition185' has cardinality 0..*, and from 'co2_ContractReference', the role 'co2_ContractReference' has cardinality 0..*.

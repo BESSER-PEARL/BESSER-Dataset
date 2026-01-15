@@ -1,0 +1,186 @@
+The domain model 'graphbt' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'graphbt_Formula' represents an important domain concept.
+It has one attribute: 'formulaName', which is of type str.
+
+'GUI' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_Component' represents an important domain concept.
+It has the following attributes: 'componentRef', which is of type str; 'componentDesc', which is of type str; 'enumerated', which is of type bool; 'componentName', which is of type str; 'id', which is of type int.
+
+'graphbt_State' represents an important domain concept.
+It has the following attributes: 'desc', which is of type str; 'name', which is of type str; 'ref', which is of type str.
+
+'graphbt_InputType' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_Layout' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'z', which is of type int; 'y', which is of type int; 'cRef', which is of type str; 'width', which is of type int; 'x', which is of type int.
+
+'graphbt_OperatorClass' represents an important domain concept.
+It has one attribute: 'operatorLiteral', which is of type str.
+
+'graphbt_SpecialEdge' represents an important domain concept.
+It has the following attributes: 'destination', which is of type int; 'type', which is of type str.
+
+'graphbt_GUI' represents an important domain concept.
+It has the following attributes: 'codeImplementation', which is of type str; 'identifier', which is of type str.
+
+'graphbt_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_Edge' represents an important domain concept.
+It has the following attributes: 'branch', which is of type str; 'composition', which is of type str.
+
+'graphbt_TraceabilityStatusClass' represents an important domain concept.
+It has one attribute: 'traceabilityStatusLiteral', which is of type str.
+
+'graphbt_Author' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'contact', which is of type str; 'role', which is of type str.
+
+'graphbt_AlternativeClass' represents an important domain concept.
+It has one attribute: 'alternativeAttribute', which is of type str.
+
+'graphbt_Behavior' represents an important domain concept.
+It has the following attributes: 'behaviorDesc', which is of type str; 'behaviorRef', which is of type str; 'behaviorType', which is of type str; 'behaviorName', which is of type str; 'technicalDetail', which is of type str.
+
+'graphbt_EmptyNode' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'graphbt_Libraries' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_Requirement' represents an important domain concept.
+It has the following attributes: 'Requirement', which is of type str; 'Description', which is of type str; 'Key', which is of type str; 'Id', which is of type str.
+
+'graphbt_RequirementList' represents an important domain concept.
+It has one attribute: 'projectId', which is of type str.
+
+'graphbt_BehaviorTree' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'graphbt_Information' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'graphbt_CTEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_InputGUI' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_GUIImplementable' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_Parameter' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'graphbt_OutputType' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_AuthorList' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_LayoutList' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_Library' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'text', which is of type str; 'desc', which is of type str; 'name', which is of type str; 'id', which is of type str.
+
+'graphbt_MethodDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'graphbt_MapInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'value', which is of type str.
+
+'graphbt_BEModel' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'name', which is of type str; 'subtitle', which is of type str.
+
+'graphbt_FormulaList' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_StandardNode' represents an important domain concept.
+It has the following attributes: 'componentRef', which is of type str; 'operator', which is of type str; 'label', which is of type str; 'leaf', which is of type bool; 'behaviorRef', which is of type str; 'traceabilityStatus', which is of type str; 'traceabilityLink', which is of type str.
+
+'graphbt_ComponentList' represents an important domain concept.
+It does not declare any attributes.
+
+'GUIImplementable' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_Button' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'graphbt_OutputGUI' represents an important domain concept.
+It does not declare any attributes.
+
+'Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'graphbt_Node' represents an important domain concept.
+It has the following attributes: 'index', which is of type int; 'id', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BehaviorType' defines the following possible values: 'Guard', 'Selection', 'ExternalOutput', 'InternalInput', 'StateRealization', 'InternalOutput', 'ExternalInput'.
+The enumeration 'Composition' defines the following possible values: 'Atomic', 'Sequential'.
+The enumeration 'SpecialEdgeEnum' defines the following possible values: 'Reference', 'BranchKill', 'Reversion', 'Synchronize'.
+The enumeration 'Operator' defines the following possible values: 'Synchronize', 'BranchKill', 'Conjunction', 'Reference', 'Disjunction', 'NoOperator', 'Reversion', 'ExclusiveOR'.
+The enumeration 'TraceabilityStatus' defines the following possible values: 'Deleted', 'Updated', 'Missing', 'Implied', 'DesignRefinement', 'Original'.
+The enumeration 'Branch' defines the following possible values: 'Alternative', 'Parallel'.
+The enumeration 'EventType' defines the following possible values: 'ExternalInput', 'InternalOutput', 'ExternalOutput', 'InternalInput'.
+
+The model also captures inheritance relationships between classes.
+The class 'graphbt_EmptyNode' is a specialization of 'Node'.
+The class 'graphbt_StandardNode' is a specialization of 'Node'.
+The class 'graphbt_InputType' is a specialization of 'GUIImplementable'.
+The class 'graphbt_OutputType' is a specialization of 'GUIImplementable'.
+The class 'graphbt_InputGUI' is a specialization of 'GUI'.
+The class 'graphbt_OutputGUI' is a specialization of 'GUI'.
+The class 'graphbt_Button' is a specialization of 'Layout'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graphbt_BEModel' and 'graphbt_BehaviorTree'. From 'graphbt_BEModel', the role 'graphbt_BEModel' has cardinality 0..*, and from 'graphbt_BehaviorTree', the role 'graphbt_BehaviorTree' has cardinality 0..*.
+An association connects 'graphbt_BEModel' and 'graphbt_ComponentList'. From 'graphbt_BEModel', the role 'graphbt_BEModel2' has cardinality 0..*, and from 'graphbt_ComponentList', the role 'graphbt_ComponentList' has cardinality 0..*.
+An association connects 'graphbt_BEModel' and 'graphbt_RequirementList'. From 'graphbt_BEModel', the role 'graphbt_BEModel4' has cardinality 0..*, and from 'graphbt_RequirementList', the role 'graphbt_RequirementList' has cardinality 0..*.
+An association connects 'graphbt_BEModel' and 'graphbt_FormulaList'. From 'graphbt_BEModel', the role 'graphbt_BEModel6' has cardinality 0..*, and from 'graphbt_FormulaList', the role 'graphbt_FormulaList' has cardinality 0..*.
+An association connects 'graphbt_Libraries' and 'graphbt_BEModel'. From 'graphbt_Libraries', the role 'graphbt_Libraries' has cardinality 0..*, and from 'graphbt_BEModel', the role 'graphbt_BEModel8' has cardinality 0..*.
+An association connects 'graphbt_BEModel' and 'graphbt_StandardNode'. From 'graphbt_BEModel', the role 'graphbt_BEModel10' has cardinality 0..*, and from 'graphbt_StandardNode', the role 'graphbt_StandardNode' has cardinality 0..*.
+An association connects 'graphbt_StandardNode' and 'graphbt_BEModel'. From 'graphbt_StandardNode', the role 'graphbt_StandardNode13' has cardinality 0..*, and from 'graphbt_BEModel', the role 'graphbt_BEModel12' has cardinality 0..*.
+An association connects 'graphbt_BEModel' and 'graphbt_LayoutList'. From 'graphbt_BEModel', the role 'graphbt_BEModel15' has cardinality 0..*, and from 'graphbt_LayoutList', the role 'graphbt_LayoutList' has cardinality 0..*.
+An association connects 'graphbt_BEModel' and 'graphbt_AuthorList'. From 'graphbt_BEModel', the role 'graphbt_BEModel17' has cardinality 0..*, and from 'graphbt_AuthorList', the role 'graphbt_AuthorList' has cardinality 0..*.
+An association connects 'graphbt_BehaviorTree' and 'graphbt_Node'. From 'graphbt_BehaviorTree', the role 'graphbt_BehaviorTree19' has cardinality 0..*, and from 'graphbt_Node', the role 'graphbt_Node' has cardinality 0..*.
+An association connects 'graphbt_Edge' and 'graphbt_Node'. From 'graphbt_Edge', the role 'graphbt_Edge' has cardinality 0..*, and from 'graphbt_Node', the role 'graphbt_Node21' has cardinality 0..*.
+An association connects 'graphbt_SpecialEdge' and 'graphbt_Node'. From 'graphbt_SpecialEdge', the role 'graphbt_SpecialEdge' has cardinality 0..*, and from 'graphbt_Node', the role 'graphbt_Node23' has cardinality 0..*.
+An association connects 'graphbt_Edge' and 'graphbt_Link'. From 'graphbt_Edge', the role 'graphbt_Edge25' has cardinality 0..*, and from 'graphbt_Link', the role 'graphbt_Link' has cardinality 0..*.
+An association connects 'graphbt_Edge' and 'graphbt_Node'. From 'graphbt_Edge', the role 'graphbt_Edge27' has cardinality 0..*, and from 'graphbt_Node', the role 'graphbt_Node28' has cardinality 0..*.
+An association connects 'graphbt_StandardNode' and 'graphbt_StandardNode'. From 'graphbt_StandardNode', the role 'graphbt_StandardNode29' has cardinality 0..*, and from 'graphbt_StandardNode', the role 'graphbt_StandardNode31' has cardinality 0..*.
+An association connects 'graphbt_Component' and 'graphbt_Attribute'. From 'graphbt_Component', the role 'graphbt_Component' has cardinality 0..*, and from 'graphbt_Attribute', the role 'graphbt_Attribute' has cardinality 0..*.
+An association connects 'graphbt_Component' and 'graphbt_State'. From 'graphbt_Component', the role 'graphbt_Component34' has cardinality 0..*, and from 'graphbt_State', the role 'graphbt_State' has cardinality 0..*.
+An association connects 'graphbt_State' and 'graphbt_Component'. From 'graphbt_State', the role 'graphbt_State37' has cardinality 0..*, and from 'graphbt_Component', the role 'graphbt_Component36' has cardinality 0..*.
+An association connects 'graphbt_Component' and 'graphbt_Component'. From 'graphbt_Component', the role 'graphbt_Component40' has cardinality 0..*, and from 'graphbt_Component', the role 'graphbt_Component38' has cardinality 0..*.
+An association connects 'graphbt_Behavior' and 'graphbt_Component'. From 'graphbt_Behavior', the role 'graphbt_Behavior' has cardinality 0..*, and from 'graphbt_Component', the role 'graphbt_Component42' has cardinality 0..*.
+An association connects 'graphbt_Library' and 'graphbt_Component'. From 'graphbt_Library', the role 'graphbt_Library' has cardinality 0..*, and from 'graphbt_Component', the role 'graphbt_Component44' has cardinality 0..*.
+An association connects 'graphbt_State' and 'graphbt_MapInformation'. From 'graphbt_State', the role 'graphbt_State46' has cardinality 0..*, and from 'graphbt_MapInformation', the role 'graphbt_MapInformation' has cardinality 0..*.
+An association connects 'graphbt_MethodDeclaration' and 'graphbt_Library'. From 'graphbt_MethodDeclaration', the role 'graphbt_MethodDeclaration' has cardinality 0..*, and from 'graphbt_Library', the role 'graphbt_Library48' has cardinality 0..*.
+An association connects 'graphbt_Library' and 'graphbt_State'. From 'graphbt_Library', the role 'graphbt_Library50' has cardinality 0..*, and from 'graphbt_State', the role 'graphbt_State51' has cardinality 0..*.
+An association connects 'graphbt_Behavior' and 'graphbt_Library'. From 'graphbt_Behavior', the role 'graphbt_Behavior54' has cardinality 0..*, and from 'graphbt_Library', the role 'graphbt_Library53' has cardinality 0..*.
+An association connects 'graphbt_Library' and 'graphbt_Attribute'. From 'graphbt_Library', the role 'graphbt_Library56' has cardinality 0..*, and from 'graphbt_Attribute', the role 'graphbt_Attribute57' has cardinality 0..*.
+An association connects 'graphbt_Requirement' and 'graphbt_StandardNode'. From 'graphbt_Requirement', the role 'graphbt_Requirement' has cardinality 0..*, and from 'graphbt_StandardNode', the role 'graphbt_StandardNode59' has cardinality 0..*.
+An association connects 'graphbt_Component' and 'graphbt_ComponentList'. From 'graphbt_Component', the role 'graphbt_Component62' has cardinality 0..*, and from 'graphbt_ComponentList', the role 'graphbt_ComponentList61' has cardinality 0..*.
+An association connects 'graphbt_Requirement' and 'graphbt_RequirementList'. From 'graphbt_Requirement', the role 'graphbt_Requirement65' has cardinality 0..*, and from 'graphbt_RequirementList', the role 'graphbt_RequirementList64' has cardinality 0..*.
+An association connects 'graphbt_Formula' and 'graphbt_FormulaList'. From 'graphbt_Formula', the role 'graphbt_Formula' has cardinality 0..*, and from 'graphbt_FormulaList', the role 'graphbt_FormulaList67' has cardinality 0..*.
+An association connects 'graphbt_Link' and 'graphbt_Node'. From 'graphbt_Link', the role 'graphbt_Link69' has cardinality 0..*, and from 'graphbt_Node', the role 'graphbt_Node70' has cardinality 0..*.
+An association connects 'graphbt_Link' and 'graphbt_Node'. From 'graphbt_Link', the role 'graphbt_Link72' has cardinality 0..*, and from 'graphbt_Node', the role 'graphbt_Node73' has cardinality 0..*.
+An association connects 'graphbt_MapInformation' and 'graphbt_Information'. From 'graphbt_MapInformation', the role 'graphbt_MapInformation75' has cardinality 0..*, and from 'graphbt_Information', the role 'graphbt_Information' has cardinality 0..*.
+An association connects 'graphbt_Library' and 'graphbt_Libraries'. From 'graphbt_Library', the role 'graphbt_Library78' has cardinality 0..*, and from 'graphbt_Libraries', the role 'graphbt_Libraries77' has cardinality 0..*.
+An association connects 'graphbt_Parameter' and 'graphbt_MethodDeclaration'. From 'graphbt_Parameter', the role 'graphbt_Parameter' has cardinality 0..*, and from 'graphbt_MethodDeclaration', the role 'graphbt_MethodDeclaration80' has cardinality 0..*.
+An association connects 'graphbt_LayoutList' and 'graphbt_Layout'. From 'graphbt_LayoutList', the role 'graphbt_LayoutList82' has cardinality 0..*, and from 'graphbt_Layout', the role 'graphbt_Layout' has cardinality 0..*.
+An association connects 'graphbt_Author' and 'graphbt_AuthorList'. From 'graphbt_Author', the role 'graphbt_Author' has cardinality 0..*, and from 'graphbt_AuthorList', the role 'graphbt_AuthorList84' has cardinality 0..*.

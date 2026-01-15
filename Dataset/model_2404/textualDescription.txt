@@ -1,0 +1,35 @@
+The domain model 'sqlCrudGenerator' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'sqlCrudGenerator_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sqlCrudGenerator_DataType' represents an important domain concept.
+It has the following attributes: 'precision', which is of type int; 'dataType', which is of type str.
+
+'sqlCrudGenerator_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'sqlCrudGenerator_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sqlCrudGenerator_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'sqlCrudGenerator_Column' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ENUM_DATA_TYPE' defines the following possible values: 'ARRAY_M', 'INTEGER_M', 'VARCHAR', 'VARCHAR_M', 'TIME_M', 'ARRAY', 'BINARY', 'MULTISET_M', 'BIGINT_M', 'INT', 'MULTISET', 'DECIMAL', 'REAL_M', 'VARYING_M', 'BOOLEAN_M', 'DATE', 'TIMESTAMP', 'BOOLEAN', 'NUMERIC', 'DATE_M', 'INTEGER', 'SMALLINT', 'XML', 'XML_M', 'CHARACTER_M', 'DECIMAL_M', 'VARYING', 'TIMESTAMP_M', 'INT_M', 'BINARY_M', 'INTERVAL_M', 'FLOAT_M', 'SMALLINT_M', 'NUMERIC_M', 'FLOAT', 'INTERVAL', 'BIGINT', 'VARBINARY_M', 'REAL', 'TIME', 'VARBINARY', 'CHARACTER'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sqlCrudGenerator_Schema' and 'sqlCrudGenerator_Table'. From 'sqlCrudGenerator_Schema', the role 'sqlCrudGenerator_Schema' has cardinality 0..*, and from 'sqlCrudGenerator_Table', the role 'sqlCrudGenerator_Table' has cardinality 0..*.
+An association connects 'sqlCrudGenerator_Column' and 'sqlCrudGenerator_Table'. From 'sqlCrudGenerator_Column', the role 'sqlCrudGenerator_Column' has cardinality 0..*, and from 'sqlCrudGenerator_Table', the role 'sqlCrudGenerator_Table2' has cardinality 0..*.
+An association connects 'sqlCrudGenerator_PrimaryKey' and 'sqlCrudGenerator_Table'. From 'sqlCrudGenerator_PrimaryKey', the role 'sqlCrudGenerator_PrimaryKey' has cardinality 0..*, and from 'sqlCrudGenerator_Table', the role 'sqlCrudGenerator_Table4' has cardinality 0..*.
+An association connects 'sqlCrudGenerator_ForeignKey' and 'sqlCrudGenerator_Table'. From 'sqlCrudGenerator_ForeignKey', the role 'sqlCrudGenerator_ForeignKey' has cardinality 0..*, and from 'sqlCrudGenerator_Table', the role 'sqlCrudGenerator_Table6' has cardinality 0..*.
+An association connects 'sqlCrudGenerator_DataType' and 'sqlCrudGenerator_Column'. From 'sqlCrudGenerator_DataType', the role 'sqlCrudGenerator_DataType' has cardinality 0..*, and from 'sqlCrudGenerator_Column', the role 'sqlCrudGenerator_Column8' has cardinality 0..*.
+An association connects 'sqlCrudGenerator_PrimaryKey' and 'sqlCrudGenerator_Column'. From 'sqlCrudGenerator_PrimaryKey', the role 'sqlCrudGenerator_PrimaryKey10' has cardinality 0..*, and from 'sqlCrudGenerator_Column', the role 'sqlCrudGenerator_Column11' has cardinality 0..*.
+An association connects 'sqlCrudGenerator_ForeignKey' and 'sqlCrudGenerator_Column'. From 'sqlCrudGenerator_ForeignKey', the role 'sqlCrudGenerator_ForeignKey13' has cardinality 0..*, and from 'sqlCrudGenerator_Column', the role 'sqlCrudGenerator_Column14' has cardinality 0..*.
+An association connects 'sqlCrudGenerator_Table' and 'sqlCrudGenerator_ForeignKey'. From 'sqlCrudGenerator_Table', the role 'sqlCrudGenerator_Table17' has cardinality 0..*, and from 'sqlCrudGenerator_ForeignKey', the role 'sqlCrudGenerator_ForeignKey16' has cardinality 0..*.
+An association connects 'sqlCrudGenerator_ForeignKey' and 'sqlCrudGenerator_Column'. From 'sqlCrudGenerator_ForeignKey', the role 'sqlCrudGenerator_ForeignKey19' has cardinality 0..*, and from 'sqlCrudGenerator_Column', the role 'sqlCrudGenerator_Column20' has cardinality 0..*.

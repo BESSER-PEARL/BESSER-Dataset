@@ -1,0 +1,25 @@
+The domain model 'prosjekt' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'prosjekt_Institute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'shortName', which is of type str.
+
+'prosjekt_Semester' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'prosjekt_Course' represents an important domain concept.
+It has the following attributes: 'studyPoints', which is of type float; 'avgGrade', which is of type int; 'code', which is of type str; 'name', which is of type str.
+
+'prosjekt_CourseCoordinator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'prosjekt_Institute' and 'prosjekt_Course'. From 'prosjekt_Institute', the role 'institute' has cardinality 0..*, and from 'prosjekt_Course', the role 'Course' has cardinality 0..*.
+An association connects 'prosjekt_Institute' and 'prosjekt_CourseCoordinator'. From 'prosjekt_Institute', the role 'institute2' has cardinality 0..*, and from 'prosjekt_CourseCoordinator', the role 'CourseCoordinator' has cardinality 0..*.
+An association connects 'prosjekt_Institute' and 'prosjekt_Course'. From 'prosjekt_Institute', the role 'Institute' has cardinality 0..*, and from 'prosjekt_Course', the role 'course' has cardinality 0..*.
+An association connects 'prosjekt_Semester' and 'prosjekt_Course'. From 'prosjekt_Semester', the role 'Semester' has cardinality 0..*, and from 'prosjekt_Course', the role 'course5' has cardinality 0..*.
+An association connects 'prosjekt_CourseCoordinator' and 'prosjekt_Course'. From 'prosjekt_CourseCoordinator', the role 'CourseCoordinator8' has cardinality 0..*, and from 'prosjekt_Course', the role 'course7' has cardinality 0..*.
+An association connects 'prosjekt_Semester' and 'prosjekt_Course'. From 'prosjekt_Semester', the role 'semester' has cardinality 0..*, and from 'prosjekt_Course', the role 'Course10' has cardinality 0..*.
+An association connects 'prosjekt_Course' and 'prosjekt_CourseCoordinator'. From 'prosjekt_Course', the role 'Course12' has cardinality 0..*, and from 'prosjekt_CourseCoordinator', the role 'courseCoordinator' has cardinality 0..*.
+An association connects 'prosjekt_Institute' and 'prosjekt_CourseCoordinator'. From 'prosjekt_Institute', the role 'Institute15' has cardinality 0..*, and from 'prosjekt_CourseCoordinator', the role 'courseCoordinator14' has cardinality 0..*.

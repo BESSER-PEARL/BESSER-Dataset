@@ -1,0 +1,99 @@
+The domain model 'database' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'RefFKey' represents an important domain concept.
+It does not declare any attributes.
+
+'database_Database' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'database_RefDatabase' represents an important domain concept.
+It does not declare any attributes.
+
+'database_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'database_Procedure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RefProcedure' represents an important domain concept.
+It does not declare any attributes.
+
+'database_PKey' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'database_RefFKey' represents an important domain concept.
+It does not declare any attributes.
+
+'database_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'database_Column' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RefType' represents an important domain concept.
+It does not declare any attributes.
+
+'database_FKey' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RefPKey' represents an important domain concept.
+It does not declare any attributes.
+
+'database_RefParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'database_RefPKey' represents an important domain concept.
+It does not declare any attributes.
+
+'database_RefColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'database_RefTable' represents an important domain concept.
+It does not declare any attributes.
+
+'database_RefType' represents an important domain concept.
+It does not declare any attributes.
+
+'RefColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'RefTable' represents an important domain concept.
+It does not declare any attributes.
+
+'database_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RefParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'database_RefProcedure' represents an important domain concept.
+It does not declare any attributes.
+
+'RefDatabase' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'database_Table' is a specialization of 'RefTable'.
+The class 'database_FKey' is a specialization of 'RefFKey'.
+The class 'database_Column' is a specialization of 'RefColumn'.
+The class 'database_Database' is a specialization of 'RefDatabase'.
+The class 'database_Procedure' is a specialization of 'RefProcedure'.
+The class 'database_Parameter' is a specialization of 'RefParameter'.
+The class 'database_Type' is a specialization of 'RefType'.
+The class 'database_PKey' is a specialization of 'RefPKey'.
+
+Relationships between classes are modeled using associations.
+An association connects 'database_RefColumn' and 'database_Table'. From 'database_RefColumn', the role 'database_RefColumn' has cardinality 0..*, and from 'database_Table', the role 'database_Table' has cardinality 0..*.
+An association connects 'database_RefPKey' and 'database_Table'. From 'database_RefPKey', the role 'database_RefPKey' has cardinality 0..*, and from 'database_Table', the role 'database_Table2' has cardinality 0..*.
+An association connects 'database_Table' and 'database_RefFKey'. From 'database_Table', the role 'database_Table4' has cardinality 0..*, and from 'database_RefFKey', the role 'database_RefFKey' has cardinality 0..*.
+An association connects 'database_FKey' and 'database_Column'. From 'database_FKey', the role 'database_FKey' has cardinality 0..*, and from 'database_Column', the role 'database_Column' has cardinality 0..*.
+An association connects 'database_RefTable' and 'database_FKey'. From 'database_RefTable', the role 'database_RefTable' has cardinality 0..*, and from 'database_FKey', the role 'database_FKey7' has cardinality 0..*.
+An association connects 'database_RefType' and 'database_Column'. From 'database_RefType', the role 'database_RefType' has cardinality 0..*, and from 'database_Column', the role 'database_Column9' has cardinality 0..*.
+An association connects 'database_RefTable' and 'database_Database'. From 'database_RefTable', the role 'database_RefTable11' has cardinality 0..*, and from 'database_Database', the role 'database_Database' has cardinality 0..*.
+An association connects 'database_RefProcedure' and 'database_Database'. From 'database_RefProcedure', the role 'database_RefProcedure' has cardinality 0..*, and from 'database_Database', the role 'database_Database13' has cardinality 0..*.
+An association connects 'database_RefParameter' and 'database_Procedure'. From 'database_RefParameter', the role 'database_RefParameter' has cardinality 0..*, and from 'database_Procedure', the role 'database_Procedure' has cardinality 0..*.
+An association connects 'database_RefType' and 'database_Procedure'. From 'database_RefType', the role 'database_RefType17' has cardinality 0..*, and from 'database_Procedure', the role 'database_Procedure16' has cardinality 0..*.
+An association connects 'database_Parameter' and 'database_RefType'. From 'database_Parameter', the role 'database_Parameter' has cardinality 0..*, and from 'database_RefType', the role 'database_RefType19' has cardinality 0..*.
+An association connects 'database_Column' and 'database_PKey'. From 'database_Column', the role 'database_Column21' has cardinality 0..*, and from 'database_PKey', the role 'database_PKey' has cardinality 0..*.

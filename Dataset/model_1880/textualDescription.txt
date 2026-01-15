@@ -1,0 +1,76 @@
+The domain model 'shop' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'shop_AccountBook' represents an important domain concept.
+It has one attribute: 'cashFlow', which is of type float.
+
+'shop_ChequePayment' represents an important domain concept.
+It has the following attributes: 'depositDate', which is of type date; 'deposited', which is of type bool.
+
+'shop_BankOperation' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'shop_Valuable' represents an important domain concept.
+It has the following attributes: 'date', which is of type date; 'value', which is of type float.
+
+'shop_Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'shop_CashPayment' represents an important domain concept.
+It does not declare any attributes.
+
+'Valuable' represents an important domain concept.
+It does not declare any attributes.
+
+'shop_ElectronicPayment' represents an important domain concept.
+It does not declare any attributes.
+
+'shop_Customer' represents an important domain concept.
+It does not declare any attributes.
+
+'Payment' represents an important domain concept.
+It does not declare any attributes.
+
+'shop_Shop' represents an important domain concept.
+It does not declare any attributes.
+
+'shop_Sale' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'shop_Person' represents an important domain concept.
+It has the following attributes: 'emails', which is of type str; 'birthDate', which is of type date; 'firstName', which is of type str; 'address', which is of type str; 'lastName', which is of type str; 'phoneNumbers', which is of type str.
+
+'shop_Payment' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PaymentType' defines the following possible values: 'ELECTRONIC', 'CASH', 'CHEQUE'.
+
+The model also captures inheritance relationships between classes.
+The class 'shop_Customer' is a specialization of 'Person'.
+The class 'shop_Sale' is a specialization of 'Valuable'.
+The class 'shop_Employee' is a specialization of 'Person'.
+The class 'shop_Payment' is a specialization of 'Valuable'.
+The class 'shop_ChequePayment' is a specialization of 'Payment'.
+The class 'shop_CashPayment' is a specialization of 'Payment'.
+The class 'shop_ElectronicPayment' is a specialization of 'Payment'.
+The class 'shop_BankOperation' is a specialization of 'Valuable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'shop_Shop' and 'shop_Customer'. From 'shop_Shop', the role 'shop_Shop' has cardinality 0..*, and from 'shop_Customer', the role 'shop_Customer' has cardinality 0..*.
+An association connects 'shop_Shop' and 'shop_Sale'. From 'shop_Shop', the role 'shop_Shop2' has cardinality 0..*, and from 'shop_Sale', the role 'shop_Sale' has cardinality 0..*.
+An association connects 'shop_Shop' and 'shop_Employee'. From 'shop_Shop', the role 'shop_Shop4' has cardinality 0..*, and from 'shop_Employee', the role 'shop_Employee' has cardinality 0..*.
+An association connects 'shop_AccountBook' and 'shop_Shop'. From 'shop_AccountBook', the role 'AccountBook' has cardinality 0..*, and from 'shop_Shop', the role 'shop' has cardinality 0..*.
+An association connects 'shop_Sale' and 'shop_Customer'. From 'shop_Sale', the role 'Sale' has cardinality 0..*, and from 'shop_Customer', the role 'customer' has cardinality 0..*.
+An association connects 'shop_Customer' and 'shop_Sale'. From 'shop_Customer', the role 'Customer' has cardinality 0..*, and from 'shop_Sale', the role 'sales' has cardinality 0..*.
+An association connects 'shop_Employee' and 'shop_Sale'. From 'shop_Employee', the role 'Employee' has cardinality 0..*, and from 'shop_Sale', the role 'sales9' has cardinality 0..*.
+An association connects 'shop_Sale' and 'shop_Payment'. From 'shop_Sale', the role 'sale' has cardinality 0..*, and from 'shop_Payment', the role 'Payment' has cardinality 0..*.
+An association connects 'shop_Employee' and 'shop_Sale'. From 'shop_Employee', the role 'employees' has cardinality 0..*, and from 'shop_Sale', the role 'Sale12' has cardinality 0..*.
+An association connects 'shop_Payment' and 'shop_Sale'. From 'shop_Payment', the role 'payments' has cardinality 0..*, and from 'shop_Sale', the role 'Sale14' has cardinality 0..*.
+An association connects 'shop_BankOperation' and 'shop_AccountBook'. From 'shop_BankOperation', the role 'shop_BankOperation' has cardinality 0..*, and from 'shop_AccountBook', the role 'shop_AccountBook' has cardinality 0..*.
+An association connects 'shop_Shop' and 'shop_AccountBook'. From 'shop_Shop', the role 'Shop' has cardinality 0..*, and from 'shop_AccountBook', the role 'accountBook' has cardinality 0..*.
+An association connects 'shop_Payment' and 'shop_AccountBook'. From 'shop_Payment', the role 'shop_Payment' has cardinality 0..*, and from 'shop_AccountBook', the role 'shop_AccountBook18' has cardinality 0..*.

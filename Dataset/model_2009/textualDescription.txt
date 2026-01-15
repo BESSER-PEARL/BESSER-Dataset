@@ -1,0 +1,47 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'trace_ModelElement' represents an important domain concept.
+It has one attribute: 'element_id', which is of type str.
+
+'trace_Property' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'trace_TraceElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'trace_ModuleElement' represents an important domain concept.
+It has one attribute: 'module_id', which is of type str.
+
+'TraceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_ExecutionContext' represents an important domain concept.
+It has the following attributes: 'scriptId', which is of type str; 'modelsIds', which is of type str.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_ExecutionContext' is a specialization of 'TraceElement'.
+The class 'trace_ModuleElement' is a specialization of 'TraceElement'.
+The class 'trace_Trace' is a specialization of 'TraceElement'.
+The class 'trace_ModelElement' is a specialization of 'TraceElement'.
+The class 'trace_Property' is a specialization of 'TraceElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_ModuleElement' and 'trace_ExecutionContext'. From 'trace_ModuleElement', the role 'ModuleElement' has cardinality 0..*, and from 'trace_ExecutionContext', the role 'executionContexts' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_ExecutionContext'. From 'trace_Trace', the role 'Trace' has cardinality 0..*, and from 'trace_ExecutionContext', the role 'executionContext' has cardinality 0..*.
+An association connects 'trace_ModelElement' and 'trace_ExecutionContext'. From 'trace_ModelElement', the role 'ModelElement' has cardinality 0..*, and from 'trace_ExecutionContext', the role 'executionContext3' has cardinality 0..*.
+An association connects 'trace_ExecutionContext' and 'trace_ModuleElement'. From 'trace_ExecutionContext', the role 'ExecutionContext' has cardinality 0..*, and from 'trace_ModuleElement', the role 'for' has cardinality 0..*.
+An association connects 'trace_ModuleElement' and 'trace_Trace'. From 'trace_ModuleElement', the role 'traces' has cardinality 0..*, and from 'trace_Trace', the role 'Trace6' has cardinality 0..*.
+An association connects 'trace_ExecutionContext' and 'trace_Trace'. From 'trace_ExecutionContext', the role 'ExecutionContext8' has cardinality 0..*, and from 'trace_Trace', the role 'contains' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_ModuleElement'. From 'trace_Trace', the role 'traces10' has cardinality 0..*, and from 'trace_ModuleElement', the role 'ModuleElement11' has cardinality 0..*.
+An association connects 'trace_ModelElement' and 'trace_Trace'. From 'trace_ModelElement', the role 'ModelElement14' has cardinality 0..*, and from 'trace_Trace', the role 'traces13' has cardinality 0..*.
+An association connects 'trace_Property' and 'trace_Trace'. From 'trace_Property', the role 'Property' has cardinality 0..*, and from 'trace_Trace', the role 'traces16' has cardinality 0..*.
+An association connects 'trace_ModelElement' and 'trace_ExecutionContext'. From 'trace_ModelElement', the role 'involves' has cardinality 0..*, and from 'trace_ExecutionContext', the role 'ExecutionContext18' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_ModelElement'. From 'trace_Trace', the role 'Trace20' has cardinality 0..*, and from 'trace_ModelElement', the role 'reaches' has cardinality 0..*.
+An association connects 'trace_Property' and 'trace_ModelElement'. From 'trace_Property', the role 'Property22' has cardinality 0..*, and from 'trace_ModelElement', the role 'modelElement' has cardinality 0..*.
+An association connects 'trace_Property' and 'trace_ModelElement'. From 'trace_Property', the role 'owns' has cardinality 0..*, and from 'trace_ModelElement', the role 'ModelElement24' has cardinality 0..*.
+An association connects 'trace_Property' and 'trace_Trace'. From 'trace_Property', the role 'accesses' has cardinality 0..*, and from 'trace_Trace', the role 'Trace26' has cardinality 0..*.

@@ -1,0 +1,28 @@
+The domain model 'traces' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'traces_Model' represents an important domain concept.
+It has one attribute: 'uriModel', which is of type str.
+
+'traces_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'traces_TraceElement' represents an important domain concept.
+It has the following attributes: 'typeName', which is of type str; 'traceType', which is of type str; 'value', which is of type str.
+
+'traces_TraceRecord' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'traces_Trace' represents an important domain concept.
+It has the following attributes: 'timestamp', which is of type str; 'ruleName', which is of type str; 'ruleInfo', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParameterType' defines the following possible values: 'source', 'target', 'used'.
+
+Relationships between classes are modeled using associations.
+An association connects 'traces_Trace' and 'traces_TraceRecord'. From 'traces_Trace', the role 'traces_Trace' has cardinality 0..*, and from 'traces_TraceRecord', the role 'traces_TraceRecord' has cardinality 0..*.
+An association connects 'traces_Model' and 'traces_TraceRecord'. From 'traces_Model', the role 'traces_Model' has cardinality 0..*, and from 'traces_TraceRecord', the role 'traces_TraceRecord2' has cardinality 0..*.
+An association connects 'traces_TraceElement' and 'traces_Trace'. From 'traces_TraceElement', the role 'traces_TraceElement' has cardinality 0..*, and from 'traces_Trace', the role 'traces_Trace4' has cardinality 0..*.
+An association connects 'traces_TraceElement' and 'traces_EObject'. From 'traces_TraceElement', the role 'traces_TraceElement6' has cardinality 0..*, and from 'traces_EObject', the role 'traces_EObject' has cardinality 0..*.
+An association connects 'traces_EObject' and 'traces_Model'. From 'traces_EObject', the role 'traces_EObject9' has cardinality 0..*, and from 'traces_Model', the role 'traces_Model8' has cardinality 0..*.

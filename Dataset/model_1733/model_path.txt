@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/nberrehouma/org.eclipse.emf.teneo/tests/org.eclipse.emf.teneo.hibernate.test/src/org/eclipse/emf/teneo/samples/emf/hibernate/transientotm/model/transientotm.ecore

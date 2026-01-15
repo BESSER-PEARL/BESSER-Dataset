@@ -1,0 +1,42 @@
+The domain model 'Class' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'NamedElt' represents an important domain concept.
+It does not declare any attributes.
+
+'Class_NamedElt' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Class_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Class_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'Class_Attribute' represents an important domain concept.
+It has one attribute: 'multiValued', which is of type bool.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Class_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Class_Classifier' is a specialization of 'NamedElt'.
+The class 'Class_DataType' is a specialization of 'Classifier'.
+The class 'Class_Class' is a specialization of 'Classifier'.
+The class 'Class_Attribute' is a specialization of 'NamedElt'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Class' and 'Class_Class'. From 'Class', the role 'Class' has cardinality 0..*, and from 'Class_Class', the role 'Class_Class' has cardinality 0..*.
+An association connects 'Class_Class' and 'Attribute'. From 'Class_Class', the role '1' has cardinality 0..*, and from 'Attribute', the role '#' has cardinality 0..*.
+An association connects 'Classifier' and 'Class_Attribute'. From 'Classifier', the role 'Classifier' has cardinality 0..*, and from 'Class_Attribute', the role 'Class_Attribute' has cardinality 0..*.
+An association connects 'Class_Attribute' and 'Class'. From 'Class_Attribute', the role '14' has cardinality 0..*, and from 'Class', the role '#5' has cardinality 0..*.

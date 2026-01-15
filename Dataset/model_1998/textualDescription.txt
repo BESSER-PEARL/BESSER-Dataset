@@ -1,0 +1,63 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'trace_SourceElementList' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_TargetElement' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_TraceProperty' represents an important domain concept.
+It has the following attributes: 'resolved', which is of type bool; 'propertyName', which is of type str.
+
+'trace_SourceElement' represents an important domain concept.
+It has one attribute: 'mapsToSelf', which is of type bool.
+
+'trace_TraceLinkSet' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_TraceLink' represents an important domain concept.
+It has one attribute: 'overridden', which is of type bool.
+
+'trace_TracedRule' represents an important domain concept.
+It has one attribute: 'rule', which is of type str.
+
+'trace_TraceElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'runtimeObject', which is of type str.
+
+'TraceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_SourceElement' is a specialization of 'TraceElement'.
+The class 'trace_TargetElement' is a specialization of 'TraceElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_TraceLinkSet' and 'trace_TracedRule'. From 'trace_TraceLinkSet', the role 'linkSet' has cardinality 0..*, and from 'trace_TracedRule', the role 'TracedRule' has cardinality 0..*.
+An association connects 'trace_SourceElement' and 'trace_TraceLinkSet'. From 'trace_SourceElement', the role 'SourceElement' has cardinality 0..*, and from 'trace_TraceLinkSet', the role 'defaultFor' has cardinality 0..*.
+An association connects 'trace_TraceLinkSet' and 'trace_SourceElementList'. From 'trace_TraceLinkSet', the role 'defaultFor3' has cardinality 0..*, and from 'trace_SourceElementList', the role 'SourceElementList' has cardinality 0..*.
+An association connects 'trace_TracedRule' and 'trace_TraceLink'. From 'trace_TracedRule', the role 'rule' has cardinality 0..*, and from 'trace_TraceLink', the role 'TraceLink' has cardinality 0..*.
+An association connects 'trace_TraceLinkSet' and 'trace_TracedRule'. From 'trace_TraceLinkSet', the role 'TraceLinkSet' has cardinality 0..*, and from 'trace_TracedRule', the role 'rules' has cardinality 0..*.
+An association connects 'trace_SourceElement' and 'trace_TracedRule'. From 'trace_SourceElement', the role 'SourceElement7' has cardinality 0..*, and from 'trace_TracedRule', the role 'uniqueFor' has cardinality 0..*.
+An association connects 'trace_TracedRule' and 'trace_SourceElementList'. From 'trace_TracedRule', the role 'uniqueFor9' has cardinality 0..*, and from 'trace_SourceElementList', the role 'SourceElementList10' has cardinality 0..*.
+An association connects 'trace_SourceElement' and 'trace_TraceLink'. From 'trace_SourceElement', the role 'SourceElement12' has cardinality 0..*, and from 'trace_TraceLink', the role 'sourceOf' has cardinality 0..*.
+An association connects 'trace_TargetElement' and 'trace_TraceLink'. From 'trace_TargetElement', the role 'TargetElement' has cardinality 0..*, and from 'trace_TraceLink', the role 'targetOf' has cardinality 0..*.
+An association connects 'trace_TraceLink' and 'trace_TracedRule'. From 'trace_TraceLink', the role 'links' has cardinality 0..*, and from 'trace_TracedRule', the role 'TracedRule15' has cardinality 0..*.
+An association connects 'trace_TraceProperty' and 'trace_TraceLink'. From 'trace_TraceProperty', the role 'TraceProperty' has cardinality 0..*, and from 'trace_TraceLink', the role 'appliedAt' has cardinality 0..*.
+An association connects 'trace_TraceElement' and 'trace_EObject'. From 'trace_TraceElement', the role 'trace_TraceElement' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject' has cardinality 0..*.
+An association connects 'trace_TraceLink' and 'trace_SourceElement'. From 'trace_TraceLink', the role 'TraceLink19' has cardinality 0..*, and from 'trace_SourceElement', the role 'sourceElements' has cardinality 0..*.
+An association connects 'trace_TargetElement' and 'trace_SourceElement'. From 'trace_TargetElement', the role 'TargetElement21' has cardinality 0..*, and from 'trace_SourceElement', the role 'mapsTo' has cardinality 0..*.
+An association connects 'trace_SourceElement' and 'trace_TraceLinkSet'. From 'trace_SourceElement', the role 'defaultSourceElements' has cardinality 0..*, and from 'trace_TraceLinkSet', the role 'TraceLinkSet23' has cardinality 0..*.
+An association connects 'trace_TracedRule' and 'trace_SourceElement'. From 'trace_TracedRule', the role 'TracedRule25' has cardinality 0..*, and from 'trace_SourceElement', the role 'uniqueSourceElements' has cardinality 0..*.
+An association connects 'trace_TargetElement' and 'trace_TraceLink'. From 'trace_TargetElement', the role 'targetElements' has cardinality 0..*, and from 'trace_TraceLink', the role 'TraceLink27' has cardinality 0..*.
+An association connects 'trace_TargetElement' and 'trace_SourceElement'. From 'trace_TargetElement', the role 'mapsTo29' has cardinality 0..*, and from 'trace_SourceElement', the role 'SourceElement30' has cardinality 0..*.
+An association connects 'trace_SourceElementList' and 'trace_SourceElement'. From 'trace_SourceElementList', the role 'trace_SourceElementList' has cardinality 0..*, and from 'trace_SourceElement', the role 'trace_SourceElement' has cardinality 0..*.
+An association connects 'trace_SourceElementList' and 'trace_TraceLinkSet'. From 'trace_SourceElementList', the role 'defaultSourceElementLists' has cardinality 0..*, and from 'trace_TraceLinkSet', the role 'TraceLinkSet33' has cardinality 0..*.
+An association connects 'trace_TracedRule' and 'trace_SourceElementList'. From 'trace_TracedRule', the role 'TracedRule35' has cardinality 0..*, and from 'trace_SourceElementList', the role 'uniqueSourceElementLists' has cardinality 0..*.
+An association connects 'trace_TraceProperty' and 'trace_TargetElement'. From 'trace_TraceProperty', the role 'trace_TraceProperty' has cardinality 0..*, and from 'trace_TargetElement', the role 'trace_TargetElement' has cardinality 0..*.
+An association connects 'trace_TraceProperty' and 'trace_EObject'. From 'trace_TraceProperty', the role 'trace_TraceProperty38' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject39' has cardinality 0..*.
+An association connects 'trace_TraceLink' and 'trace_TraceProperty'. From 'trace_TraceLink', the role 'TraceLink41' has cardinality 0..*, and from 'trace_TraceProperty', the role 'properties' has cardinality 0..*.

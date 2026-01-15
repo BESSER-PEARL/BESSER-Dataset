@@ -1,0 +1,98 @@
+The domain model 'Classes' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'Classes_StaffMember' represents an important domain concept.
+It has the following attributes: 'username', which is of type str; 'isLoggedIn', which is of type bool; 'password', which is of type str; 'admin', which is of type str.
+
+'Classes_Bill' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_IFinance' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Room' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'roomNumber', which is of type str.
+
+'Classes_IHotelManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_IBookingManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_IPerson' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'email', which is of type str; 'lastName', which is of type str; 'address', which is of type str; 'phoneNumber', which is of type str.
+
+'Classes_IBookingManagementImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Booking' represents an important domain concept.
+It has the following attributes: 'checkOut', which is of type date; 'bookingID', which is of type str; 'numberOfGuests', which is of type str; 'checkIn', which is of type date.
+
+'Classes_AdministratorProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Customer' represents an important domain concept.
+It does not declare any attributes.
+
+'IBookingManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'IFinance' represents an important domain concept.
+It does not declare any attributes.
+
+'IHotelManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_RoomType' represents an important domain concept.
+It has the following attributes: 'roomTypeName', which is of type str; 'price', which is of type str; 'description', which is of type str; 'numberOfGuests', which is of type str; 'features', which is of type str.
+
+'Classes_Charge' represents an important domain concept.
+It has the following attributes: 'amount', which is of type int; 'date', which is of type date; 'chargeType', which is of type str.
+
+'Classes_CustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_IHotelManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_IFinanceImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'IPerson' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RoomStatus' defines the following possible values: 'Available', 'Occupied', 'Maintenance', 'Cleaning'.
+The enumeration 'ChargeType' defines the following possible values: 'LateCheckOutFee', 'CancellationFee', 'FamilySuite', 'Breakfast', 'SingleRoom', 'DoubleRoom'.
+The enumeration 'RoomTypeName' defines the following possible values: 'SingleRoom', 'FamilySuite', 'DoubleRoom'.
+
+The model also captures inheritance relationships between classes.
+The class 'Classes_Customer' is a specialization of 'IPerson'.
+The class 'Classes_IBookingManagementImpl' is a specialization of 'IBookingManagement'.
+The class 'Classes_IHotelManagerImpl' is a specialization of 'IHotelManager'.
+The class 'Classes_StaffMember' is a specialization of 'IPerson'.
+The class 'Classes_IFinanceImpl' is a specialization of 'IFinance'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Classes_Room' and 'Classes_RoomType'. From 'Classes_Room', the role 'room' has cardinality 0..*, and from 'Classes_RoomType', the role 'RoomType' has cardinality 0..*.
+An association connects 'Classes_Booking' and 'Classes_Room'. From 'Classes_Booking', the role 'Booking' has cardinality 0..*, and from 'Classes_Room', the role 'rooms' has cardinality 0..*.
+An association connects 'Classes_IBookingManagementImpl' and 'Classes_Room'. From 'Classes_IBookingManagementImpl', the role 'IBookingManagementImpl' has cardinality 0..*, and from 'Classes_Room', the role 'room3' has cardinality 0..*.
+An association connects 'Classes_Room' and 'Classes_RoomType'. From 'Classes_Room', the role 'Room' has cardinality 0..*, and from 'Classes_RoomType', the role 'roomType' has cardinality 0..*.
+An association connects 'Classes_Customer' and 'Classes_Booking'. From 'Classes_Customer', the role 'Customer' has cardinality 0..*, and from 'Classes_Booking', the role 'booking' has cardinality 0..*.
+An association connects 'Classes_Booking' and 'Classes_IBookingManagementImpl'. From 'Classes_Booking', the role 'confirmedBookings' has cardinality 0..*, and from 'Classes_IBookingManagementImpl', the role 'IBookingManagementImpl7' has cardinality 0..*.
+An association connects 'Classes_Booking' and 'Classes_Bill'. From 'Classes_Booking', the role 'Classes_Booking' has cardinality 0..*, and from 'Classes_Bill', the role 'Classes_Bill' has cardinality 0..*.
+An association connects 'Classes_Booking' and 'Classes_Room'. From 'Classes_Booking', the role 'bookings' has cardinality 0..*, and from 'Classes_Room', the role 'Room10' has cardinality 0..*.
+An association connects 'Classes_Customer' and 'Classes_Booking'. From 'Classes_Customer', the role 'customer' has cardinality 0..*, and from 'Classes_Booking', the role 'Booking12' has cardinality 0..*.
+An association connects 'Classes_Customer' and 'Classes_IBookingManagementImpl'. From 'Classes_Customer', the role 'Classes_Customer' has cardinality 0..*, and from 'Classes_IBookingManagementImpl', the role 'Classes_IBookingManagementImpl' has cardinality 0..*.
+An association connects 'Classes_Room' and 'Classes_IBookingManagementImpl'. From 'Classes_Room', the role 'Room15' has cardinality 0..*, and from 'Classes_IBookingManagementImpl', the role 'iBookingManagementImpl' has cardinality 0..*.
+An association connects 'Classes_Booking' and 'Classes_IBookingManagementImpl'. From 'Classes_Booking', the role 'Classes_Booking18' has cardinality 0..*, and from 'Classes_IBookingManagementImpl', the role 'Classes_IBookingManagementImpl17' has cardinality 0..*.
+An association connects 'Classes_IHotelManagerImpl' and 'Classes_IBookingManagementImpl'. From 'Classes_IHotelManagerImpl', the role 'IHotelManagerImpl' has cardinality 0..*, and from 'Classes_IBookingManagementImpl', the role 'iBookingManagementImpl20' has cardinality 0..*.
+An association connects 'Classes_Booking' and 'Classes_IBookingManagementImpl'. From 'Classes_Booking', the role 'Classes_Booking23' has cardinality 0..*, and from 'Classes_IBookingManagementImpl', the role 'Classes_IBookingManagementImpl22' has cardinality 0..*.
+An association connects 'Classes_IFinanceImpl' and 'Classes_IBookingManagementImpl'. From 'Classes_IFinanceImpl', the role 'IFinanceImpl' has cardinality 0..*, and from 'Classes_IBookingManagementImpl', the role 'iBookingManagementImpl25' has cardinality 0..*.
+An association connects 'Classes_Booking' and 'Classes_IBookingManagementImpl'. From 'Classes_Booking', the role 'Booking28' has cardinality 0..*, and from 'Classes_IBookingManagementImpl', the role 'iBookingManagementImpl27' has cardinality 0..*.
+An association connects 'Classes_IHotelManagerImpl' and 'Classes_StaffMember'. From 'Classes_IHotelManagerImpl', the role 'Classes_IHotelManagerImpl' has cardinality 0..*, and from 'Classes_StaffMember', the role 'Classes_StaffMember' has cardinality 0..*.
+An association connects 'Classes_IBookingManagementImpl' and 'Classes_IHotelManagerImpl'. From 'Classes_IBookingManagementImpl', the role 'IBookingManagementImpl31' has cardinality 0..*, and from 'Classes_IHotelManagerImpl', the role 'iHotelManagerImpl' has cardinality 0..*.
+An association connects 'Classes_IFinanceImpl' and 'Classes_CustomerProvides'. From 'Classes_IFinanceImpl', the role 'Classes_IFinanceImpl' has cardinality 0..*, and from 'Classes_CustomerProvides', the role 'Classes_CustomerProvides' has cardinality 0..*.
+An association connects 'Classes_IBookingManagementImpl' and 'Classes_IFinanceImpl'. From 'Classes_IBookingManagementImpl', the role 'IBookingManagementImpl34' has cardinality 0..*, and from 'Classes_IFinanceImpl', the role 'iFinanceImpl' has cardinality 0..*.
+An association connects 'Classes_Bill' and 'Classes_Charge'. From 'Classes_Bill', the role 'Classes_Bill36' has cardinality 0..*, and from 'Classes_Charge', the role 'Classes_Charge' has cardinality 0..*.

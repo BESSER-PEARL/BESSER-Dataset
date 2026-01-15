@@ -1,0 +1,48 @@
+The domain model 'sm' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'sm_sm_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'sm_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'sm_sm_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'sm_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sm_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sm_sm_State' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sm_sm_StateMachine' is a specialization of 'StateMachine'.
+The class 'sm_sm_State' is a specialization of 'State'.
+The class 'sm_sm_Transition' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sm_Event' and 'sm_sm_Transition'. From 'sm_Event', the role 'sm_Event' has cardinality 0..*, and from 'sm_sm_Transition', the role 'sm_sm_Transition' has cardinality 0..*.
+An association connects 'sm_State' and 'sm_StateMachine'. From 'sm_State', the role 'sm_State' has cardinality 0..*, and from 'sm_StateMachine', the role 'sm_StateMachine' has cardinality 0..*.
+An association connects 'sm_StateMachine' and 'sm_State'. From 'sm_StateMachine', the role 'sm_StateMachine3' has cardinality 0..*, and from 'sm_State', the role 'sm_State4' has cardinality 0..*.
+An association connects 'sm_StateMachine' and 'sm_State'. From 'sm_StateMachine', the role 'sm_StateMachine6' has cardinality 0..*, and from 'sm_State', the role 'sm_State7' has cardinality 0..*.
+An association connects 'sm_StateMachine' and 'sm_Transition'. From 'sm_StateMachine', the role 'sm_StateMachine9' has cardinality 0..*, and from 'sm_Transition', the role 'sm_Transition' has cardinality 0..*.
+An association connects 'sm_StateMachine' and 'sm_State'. From 'sm_StateMachine', the role 'sm_StateMachine12' has cardinality 0..*, and from 'sm_State', the role 'sm_State11' has cardinality 0..*.
+An association connects 'sm_State' and 'sm_Transition'. From 'sm_State', the role 'sm_State15' has cardinality 0..*, and from 'sm_Transition', the role 'sm_Transition14' has cardinality 0..*.
+An association connects 'sm_Transition' and 'sm_State'. From 'sm_Transition', the role 'sm_Transition17' has cardinality 0..*, and from 'sm_State', the role 'sm_State18' has cardinality 0..*.

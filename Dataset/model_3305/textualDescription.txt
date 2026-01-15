@@ -1,0 +1,20 @@
+The domain model 'generatedplugin' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'generatedplugin_DublinCore' represents an important domain concept.
+It has the following attributes: 'date', which is of type str; 'created', which is of type str; 'license', which is of type str; 'coverage', which is of type str; 'contributor', which is of type str; 'language', which is of type str; 'categoryId', which is of type str; 'source', which is of type str; 'spatial', which is of type str; 'rights', which is of type str; 'publisher', which is of type str; 'relation', which is of type str; 'requires', which is of type str; 'format', which is of type str; 'description', which is of type str; 'valid', which is of type str; 'title', which is of type str; 'identifier', which is of type str; 'creator', which is of type str; 'bibliographicCitation', which is of type str; 'subject', which is of type str; 'type', which is of type str.
+
+'generatedplugin_Plugin' represents an important domain concept.
+It does not declare any attributes.
+
+'generatedplugin_Extension' represents an important domain concept.
+It has one attribute: 'point', which is of type str.
+
+'generatedplugin_StemCategory' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str; 'parentId', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'generatedplugin_Extension' and 'generatedplugin_StemCategory'. From 'generatedplugin_Extension', the role 'generatedplugin_Extension' has cardinality 0..*, and from 'generatedplugin_StemCategory', the role 'generatedplugin_StemCategory' has cardinality 0..*.
+An association connects 'generatedplugin_Extension' and 'generatedplugin_DublinCore'. From 'generatedplugin_Extension', the role 'generatedplugin_Extension2' has cardinality 0..*, and from 'generatedplugin_DublinCore', the role 'generatedplugin_DublinCore' has cardinality 0..*.
+An association connects 'generatedplugin_Plugin' and 'generatedplugin_Extension'. From 'generatedplugin_Plugin', the role 'generatedplugin_Plugin' has cardinality 0..*, and from 'generatedplugin_Extension', the role 'generatedplugin_Extension4' has cardinality 0..*.

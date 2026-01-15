@@ -1,0 +1,18 @@
+The domain model 'db2EntityDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'db2EntityDsl_EntityColumnMapper' represents an important domain concept.
+It does not declare any attributes.
+
+'db2EntityDsl_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractColumnMapper' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'db2EntityDsl_EntityColumnMapper' is a specialization of 'AbstractColumnMapper'.
+
+Relationships between classes are modeled using associations.
+An association connects 'db2EntityDsl_EntityColumnMapper' and 'db2EntityDsl_Attribute'. From 'db2EntityDsl_EntityColumnMapper', the role 'db2EntityDsl_EntityColumnMapper' has cardinality 0..*, and from 'db2EntityDsl_Attribute', the role 'db2EntityDsl_Attribute' has cardinality 0..*.

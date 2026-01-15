@@ -1,0 +1,30 @@
+The domain model 'school' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'school_Pupil' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'inclass', which is of type str.
+
+'school_Grade' represents an important domain concept.
+It has the following attributes: 'grade', which is of type str; 'year', which is of type str.
+
+'school_Grade2' represents an important domain concept.
+It does not declare any attributes.
+
+'school_Course' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Grade' represents an important domain concept.
+It does not declare any attributes.
+
+'school_School' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'school_Grade2' is a specialization of 'Grade'.
+
+Relationships between classes are modeled using associations.
+An association connects 'school_Pupil' and 'school_School'. From 'school_Pupil', the role 'school_Pupil' has cardinality 0..*, and from 'school_School', the role 'school_School' has cardinality 0..*.
+An association connects 'school_School' and 'school_Course'. From 'school_School', the role 'school_School2' has cardinality 0..*, and from 'school_Course', the role 'school_Course' has cardinality 0..*.
+An association connects 'school_Pupil' and 'school_Grade'. From 'school_Pupil', the role 'school_Pupil4' has cardinality 0..*, and from 'school_Grade', the role 'school_Grade' has cardinality 0..*.
+An association connects 'school_Grade' and 'school_Course'. From 'school_Grade', the role 'school_Grade6' has cardinality 0..*, and from 'school_Course', the role 'school_Course7' has cardinality 0..*.

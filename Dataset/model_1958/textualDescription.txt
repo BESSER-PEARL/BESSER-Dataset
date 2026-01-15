@@ -1,0 +1,445 @@
+The domain model 'shadowrun' describes the core structural elements and their relationships within the system.
+
+The model defines 105 main class(es).
+
+'shadowrun_Fertigkeit' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_PersonaKoerper' represents an important domain concept.
+It has one attribute: 'gesamtZustand', which is of type int.
+
+'Essenz' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_BodyIndex' represents an important domain concept.
+It has one attribute: 'bodyIndex', which is of type int.
+
+'AbstaktPersona' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_AbstractMagier' represents an important domain concept.
+It has the following attributes: 'Astralpool', which is of type int; 'MagiePool', which is of type int; 'InitationsGrad', which is of type int.
+
+'shadowrun_koerpermods' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMagier' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_AbstractMagischePaersona' represents an important domain concept.
+It has one attribute: 'magieBase', which is of type int.
+
+'shadowrun_PersonaZauber' represents an important domain concept.
+It has one attribute: 'stufe', which is of type int.
+
+'shadowrun_MagischeMods' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Persona' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Shamane' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Schadenswiederstand' represents an important domain concept.
+It has the following attributes: 'ruestungsSchutzBalistisch', which is of type int; 'ruestungsSchutzStoss', which is of type int.
+
+'koerpermods' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstrakteRuestung' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Zauber' represents an important domain concept.
+It has the following attributes: 'art', which is of type str; 'Schaden', which is of type str; 'Enzug', which is of type str; 'reichweite', which is of type str; 'Mindestwurf', which is of type str; 'Dauer', which is of type str.
+
+'shadowrun_GeldWert' represents an important domain concept.
+It has the following attributes: 'wert', which is of type str; 'verfuegbarkeit', which is of type str; 'strassenIndex', which is of type float.
+
+'shadowrun_AbstraktFertigkeit' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Sichtverhaeltnisse' represents an important domain concept.
+It has the following attributes: 'Ultrasound', which is of type str; 'Restlichtverstaerkung', which is of type str; 'Infrarot', which is of type str.
+
+'shadowrun_AbstraktNahkampfwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'Legalitaet' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_SourceBook' represents an important domain concept.
+It has the following attributes: 'endShrTime', which is of type str; 'startShrTime', which is of type str.
+
+'shadowrun_BioWare' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstaktWaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'Beschreibbar' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Reichweite' represents an important domain concept.
+It has the following attributes: 'reichweiteKurz1', which is of type int; 'reichweiteExtrem1', which is of type int; 'reichweiteWeit', which is of type int; 'reichweiteMittel1', which is of type int; 'reichweiteMittel', which is of type int; 'reichweiteExtrem', which is of type int; 'reichweiteWeit1', which is of type int; 'reichweiteKurz', which is of type int.
+
+'AbstraktKleidung' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Kleidung' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_KiAdept' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_ShrList' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Legalitaet' represents an important domain concept.
+It has one attribute: 'legalitaet', which is of type str.
+
+'shadowrun_KiKraft' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_ModifikatorList' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'shadowrun_Quelle' represents an important domain concept.
+It has one attribute: 'page', which is of type str.
+
+'shadowrun_AbstrakteRuestung' represents an important domain concept.
+It has the following attributes: 'ruestungsSchutzBalistisch', which is of type int; 'ruestungsSchutzStoss', which is of type int.
+
+'shadowrun_Essenz' represents an important domain concept.
+It has one attribute: 'Essenz', which is of type int.
+
+'shadowrun_Granate' represents an important domain concept.
+It has the following attributes: 'daempfung', which is of type str; 'type', which is of type str.
+
+'shadowrun_AbstaktGegenstand' represents an important domain concept.
+It has the following attributes: 'tragbar', which is of type str; 'gewicht', which is of type float; 'raumKapazitaet', which is of type int; 'inBenutzung', which is of type bool; 'verbraucht', which is of type bool.
+
+'shadowrun_AbstaktWaffe' represents an important domain concept.
+It has one attribute: 'schadenscode', which is of type str.
+
+'shadowrun_Spezialisierung' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_RaumKoordinate' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_BaseMagischePersona' represents an important domain concept.
+It has one attribute: 'magie', which is of type int.
+
+'shadowrun_Feuerwaffe' represents an important domain concept.
+It has the following attributes: 'modie', which is of type str; 'munitionstyp', which is of type str; 'kapazitaet', which is of type int.
+
+'shadowrun_KoerperlicheAtribute' represents an important domain concept.
+It has the following attributes: 'Konsitution', which is of type int; 'Schnelligkeit', which is of type int; 'Staerke', which is of type int.
+
+'shadowrun_Ruestung' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_BerechneteAttribute' represents an important domain concept.
+It has the following attributes: 'Reaktion', which is of type int; 'ReaktionW', which is of type int; 'Kampfpool', which is of type int.
+
+'shadowrun_WarenListe' represents an important domain concept.
+It has the following attributes: 'strassenWert', which is of type str; 'listenWert', which is of type str.
+
+'shadowrun_AbstaktFernKampfwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'FK' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_MunitionsBehealter' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_PersonaFertigkeit' represents an important domain concept.
+It has one attribute: 'stufe', which is of type int.
+
+'shadowrun_Konzentration' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Modifizierbar' represents an important domain concept.
+It does not declare any attributes.
+
+'NahkampfReichweite' represents an important domain concept.
+It does not declare any attributes.
+
+'KoerperlicheAtribute' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_AbstrakRaumKoerper' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_GeistigeAttribute' represents an important domain concept.
+It has the following attributes: 'Charisma', which is of type int; 'Inteligenz', which is of type int; 'Willenskraft', which is of type int.
+
+'AbstraktFertigkeit' represents an important domain concept.
+It does not declare any attributes.
+
+'GeldWert' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstraktModifikatoren' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_AbstraktModifikatoren' represents an important domain concept.
+It does not declare any attributes.
+
+'Schadenswiederstand' represents an important domain concept.
+It does not declare any attributes.
+
+'GeistigeAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Bemerkbar' represents an important domain concept.
+It has one attribute: 'tarnstufe', which is of type int.
+
+'AbstraktNahkampfwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_FertigkeitsGruppe' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_FernkampfwaffenModifikatoren' represents an important domain concept.
+It has the following attributes: 'lasterPointer', which is of type bool; 'Vergroesserung', which is of type int; 'Schalldaempfer', which is of type bool; 'Smartgun', which is of type str; 'Rueckstoss', which is of type int.
+
+'shadowrun_AttributModifikatorWert' represents an important domain concept.
+It has one attribute: 'wert', which is of type int.
+
+'shadowrun_Behaelter' represents an important domain concept.
+It has one attribute: 'kapazitaet', which is of type int.
+
+'Bemerkbar' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Placement' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Script' represents an important domain concept.
+It does not declare any attributes.
+
+'Gegenstand' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Wurfwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_BasicList' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstaktFernKampfwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'Quelle' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_GengenstandListe' represents an important domain concept.
+It does not declare any attributes.
+
+'MagiePersona' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_FK' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_AbstraktKleidung' represents an important domain concept.
+It has one attribute: 'koeperTeil', which is of type str.
+
+'shadowrun_PersonaGruppe' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMagischePaersona' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Munition' represents an important domain concept.
+It has the following attributes: 'niveau', which is of type int; 'schadensTyp', which is of type str; 'power', which is of type int.
+
+'AbstaktGegenstand' represents an important domain concept.
+It does not declare any attributes.
+
+'BerechneteAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Totem' represents an important domain concept.
+It does not declare any attributes.
+
+'Modifizierbar' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Beschreibbar' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'beschreibung', which is of type str; 'image', which is of type str.
+
+'shadowrun_Reichweiten' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Projektilwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_GegenstandStufen' represents an important domain concept.
+It has the following attributes: 'Protection', which is of type int; 'Elektronik', which is of type int; 'AntiProtection', which is of type int; 'Tracing', which is of type int; 'AntiTracing', which is of type int; 'Computer', which is of type int.
+
+'shadowrun_MagiePersona' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Nahkampfwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Cyberware' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_AbstaktPersona' represents an important domain concept.
+It has the following attributes: 'KonsitutionBase', which is of type int; 'WillenskraftBase', which is of type int; 'EssenzBase', which is of type int; 'StaerkeBase', which is of type int; 'CharismaBase', which is of type int; 'ReaktionBase', which is of type int; 'KampfpoolBase', which is of type int; 'eigenGewicht', which is of type int; 'modsetter', which is of type str; 'SchnelligkeitBase', which is of type int; 'InteligenzBase', which is of type int; 'ReaktionWBase', which is of type int.
+
+'BaseMagischePersona' represents an important domain concept.
+It does not declare any attributes.
+
+'MagischeMods' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_NahkampfReichweite' represents an important domain concept.
+It has one attribute: 'reichweite', which is of type int.
+
+'shadowrun_Gegenstand' represents an important domain concept.
+It does not declare any attributes.
+
+'shadowrun_Spezies' represents an important domain concept.
+It has the following attributes: 'KonsitutionMax', which is of type int; 'WillenskraftMax', which is of type int; 'InteligenzMax', which is of type int; 'SchnelligkeitMax', which is of type int; 'CharismaMax', which is of type int; 'StaerkeMax', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ZauberReichweite' defines the following possible values: 'Blickfeld', 'Beruehrung', 'Begrenzt', 'Selbst'.
+The enumeration 'FeuerModus' defines the following possible values: 'EM', 'SM', 'AM', 'HM'.
+The enumeration 'MagazinTyp' defines the following possible values: 'Streifen', 'Trommel', 'Clip', 'Gurt'.
+The enumeration 'SmartgunType' defines the following possible values: 'SmatgunII', 'SmartBrille', 'SmartGun'.
+The enumeration 'Tragbar' defines the following possible values: 'zweihaendig', 'einhaendig'.
+The enumeration 'ZauberArt' defines the following possible values: 'Physisch', 'Mana'.
+The enumeration 'ModifikatorType' defines the following possible values: 'Bio', 'Natural', 'Cyber'.
+The enumeration 'Koerperteil' defines the following possible values: 'Rumpf', 'Kopf', 'Beine', 'Arme'.
+The enumeration 'SchadensTyp' defines the following possible values: 'koerperlich', 'speziell', 'geistig'.
+The enumeration 'ZauberDauer' defines the following possible values: 'Sofort', 'Aufrechterhalten', 'Permanent'.
+
+The model also captures inheritance relationships between classes.
+The class 'shadowrun_AbstaktFernKampfwaffe' is a specialization of 'AbstaktWaffe'.
+The class 'shadowrun_AbstaktGegenstand' is a specialization of 'FK'.
+The class 'shadowrun_AbstaktGegenstand' is a specialization of 'GeldWert'.
+The class 'shadowrun_AbstaktGegenstand' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_AbstaktGegenstand' is a specialization of 'Legalitaet'.
+The class 'shadowrun_AbstaktGegenstand' is a specialization of 'Bemerkbar'.
+The class 'shadowrun_AbstaktGegenstand' is a specialization of 'Quelle'.
+The class 'shadowrun_AbstaktGegenstand' is a specialization of 'Modifizierbar'.
+The class 'shadowrun_AbstaktPersona' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_AbstaktPersona' is a specialization of 'Essenz'.
+The class 'shadowrun_AbstaktPersona' is a specialization of 'BodyIndex'.
+The class 'shadowrun_AbstaktPersona' is a specialization of 'KoerperlicheAtribute'.
+The class 'shadowrun_AbstaktPersona' is a specialization of 'BerechneteAttribute'.
+The class 'shadowrun_AbstaktPersona' is a specialization of 'GeistigeAttribute'.
+The class 'shadowrun_AbstaktWaffe' is a specialization of 'AbstaktGegenstand'.
+The class 'shadowrun_AbstrakteRuestung' is a specialization of 'AbstraktKleidung'.
+The class 'shadowrun_AbstraktKleidung' is a specialization of 'AbstaktGegenstand'.
+The class 'shadowrun_AbstraktModifikatoren' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_AbstraktModifikatoren' is a specialization of 'Modifizierbar'.
+The class 'shadowrun_AbstraktModifikatoren' is a specialization of 'Quelle'.
+The class 'shadowrun_AbstraktNahkampfwaffe' is a specialization of 'AbstaktWaffe'.
+The class 'shadowrun_AbstraktNahkampfwaffe' is a specialization of 'NahkampfReichweite'.
+The class 'shadowrun_Behaelter' is a specialization of 'Gegenstand'.
+The class 'shadowrun_Feuerwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+The class 'shadowrun_Gegenstand' is a specialization of 'AbstaktGegenstand'.
+The class 'shadowrun_Kleidung' is a specialization of 'AbstraktKleidung'.
+The class 'shadowrun_MunitionsBehealter' is a specialization of 'Gegenstand'.
+The class 'shadowrun_Persona' is a specialization of 'AbstaktPersona'.
+The class 'shadowrun_PersonaGruppe' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_Placement' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_Projektilwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+The class 'shadowrun_Ruestung' is a specialization of 'AbstrakteRuestung'.
+The class 'shadowrun_Script' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_Wurfwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+The class 'shadowrun_Cyberware' is a specialization of 'GeldWert'.
+The class 'shadowrun_Cyberware' is a specialization of 'koerpermods'.
+The class 'shadowrun_KiKraft' is a specialization of 'MagischeMods'.
+The class 'shadowrun_AbstraktFertigkeit' is a specialization of 'FK'.
+The class 'shadowrun_AbstraktFertigkeit' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_Fertigkeit' is a specialization of 'AbstraktFertigkeit'.
+The class 'shadowrun_Konzentration' is a specialization of 'AbstraktFertigkeit'.
+The class 'shadowrun_Spezialisierung' is a specialization of 'AbstraktFertigkeit'.
+The class 'shadowrun_BioWare' is a specialization of 'GeldWert'.
+The class 'shadowrun_BioWare' is a specialization of 'koerpermods'.
+The class 'shadowrun_koerpermods' is a specialization of 'AbstraktModifikatoren'.
+The class 'shadowrun_MagischeMods' is a specialization of 'AbstraktModifikatoren'.
+The class 'shadowrun_AbstractMagischePaersona' is a specialization of 'AbstaktPersona'.
+The class 'shadowrun_AbstractMagischePaersona' is a specialization of 'BaseMagischePersona'.
+The class 'shadowrun_KiAdept' is a specialization of 'AbstractMagischePaersona'.
+The class 'shadowrun_Reichweite' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_AbstractMagier' is a specialization of 'BaseMagischePersona'.
+The class 'shadowrun_MagiePersona' is a specialization of 'AbstractMagischePaersona'.
+The class 'shadowrun_MagiePersona' is a specialization of 'AbstractMagier'.
+The class 'shadowrun_Zauber' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_FertigkeitsGruppe' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_FertigkeitsGruppe' is a specialization of 'FK'.
+The class 'shadowrun_Nahkampfwaffe' is a specialization of 'AbstraktNahkampfwaffe'.
+The class 'shadowrun_ShrList' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_KoerperlicheAtribute' is a specialization of 'Schadenswiederstand'.
+The class 'shadowrun_Spezies' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_Spezies' is a specialization of 'Modifizierbar'.
+The class 'shadowrun_SourceBook' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_Shamane' is a specialization of 'MagiePersona'.
+The class 'shadowrun_Totem' is a specialization of 'Beschreibbar'.
+The class 'shadowrun_Granate' is a specialization of 'AbstaktWaffe'.
+The class 'shadowrun_Munition' is a specialization of 'AbstaktGegenstand'.
+
+Relationships between classes are modeled using associations.
+An association connects 'shadowrun_Reichweite' and 'shadowrun_AbstaktFernKampfwaffe'. From 'shadowrun_Reichweite', the role 'shadowrun_Reichweite' has cardinality 0..*, and from 'shadowrun_AbstaktFernKampfwaffe', the role 'shadowrun_AbstaktFernKampfwaffe' has cardinality 0..*.
+An association connects 'shadowrun_PersonaFertigkeit' and 'shadowrun_AbstaktPersona'. From 'shadowrun_PersonaFertigkeit', the role 'shadowrun_PersonaFertigkeit' has cardinality 0..*, and from 'shadowrun_AbstaktPersona', the role 'shadowrun_AbstaktPersona' has cardinality 0..*.
+An association connects 'shadowrun_Cyberware' and 'shadowrun_AbstaktPersona'. From 'shadowrun_Cyberware', the role 'Cyberware' has cardinality 0..*, and from 'shadowrun_AbstaktPersona', the role 'persona' has cardinality 0..*.
+An association connects 'shadowrun_BioWare' and 'shadowrun_AbstaktPersona'. From 'shadowrun_BioWare', the role 'BioWare' has cardinality 0..*, and from 'shadowrun_AbstaktPersona', the role 'persona4' has cardinality 0..*.
+An association connects 'shadowrun_AbstaktPersona' and 'shadowrun_AbstaktGegenstand'. From 'shadowrun_AbstaktPersona', the role 'shadowrun_AbstaktPersona6' has cardinality 0..*, and from 'shadowrun_AbstaktGegenstand', the role 'shadowrun_AbstaktGegenstand' has cardinality 0..*.
+An association connects 'shadowrun_AbstaktPersona' and 'shadowrun_AbstaktGegenstand'. From 'shadowrun_AbstaktPersona', the role 'shadowrun_AbstaktPersona8' has cardinality 0..*, and from 'shadowrun_AbstaktGegenstand', the role 'shadowrun_AbstaktGegenstand9' has cardinality 0..*.
+An association connects 'shadowrun_AbstaktGegenstand' and 'shadowrun_AbstaktPersona'. From 'shadowrun_AbstaktGegenstand', the role 'shadowrun_AbstaktGegenstand12' has cardinality 0..*, and from 'shadowrun_AbstaktPersona', the role 'shadowrun_AbstaktPersona11' has cardinality 0..*.
+An association connects 'shadowrun_AbstraktKleidung' and 'shadowrun_AbstaktPersona'. From 'shadowrun_AbstraktKleidung', the role 'shadowrun_AbstraktKleidung' has cardinality 0..*, and from 'shadowrun_AbstaktPersona', the role 'shadowrun_AbstaktPersona14' has cardinality 0..*.
+An association connects 'shadowrun_AbstaktPersona' and 'shadowrun_AbstaktGegenstand'. From 'shadowrun_AbstaktPersona', the role 'shadowrun_AbstaktPersona16' has cardinality 0..*, and from 'shadowrun_AbstaktGegenstand', the role 'shadowrun_AbstaktGegenstand17' has cardinality 0..*.
+An association connects 'shadowrun_Spezies' and 'shadowrun_AbstaktPersona'. From 'shadowrun_Spezies', the role 'shadowrun_Spezies' has cardinality 0..*, and from 'shadowrun_AbstaktPersona', the role 'shadowrun_AbstaktPersona19' has cardinality 0..*.
+An association connects 'shadowrun_AbstaktWaffe' and 'shadowrun_Fertigkeit'. From 'shadowrun_AbstaktWaffe', the role 'shadowrun_AbstaktWaffe' has cardinality 0..*, and from 'shadowrun_Fertigkeit', the role 'shadowrun_Fertigkeit' has cardinality 0..*.
+An association connects 'shadowrun_AbstaktWaffe' and 'shadowrun_Konzentration'. From 'shadowrun_AbstaktWaffe', the role 'shadowrun_AbstaktWaffe22' has cardinality 0..*, and from 'shadowrun_Konzentration', the role 'shadowrun_Konzentration' has cardinality 0..*.
+An association connects 'shadowrun_Spezialisierung' and 'shadowrun_AbstaktWaffe'. From 'shadowrun_Spezialisierung', the role 'shadowrun_Spezialisierung' has cardinality 0..*, and from 'shadowrun_AbstaktWaffe', the role 'shadowrun_AbstaktWaffe24' has cardinality 0..*.
+An association connects 'shadowrun_AbstrakRaumKoerper' and 'shadowrun_RaumKoordinate'. From 'shadowrun_AbstrakRaumKoerper', the role 'shadowrun_AbstrakRaumKoerper' has cardinality 0..*, and from 'shadowrun_RaumKoordinate', the role 'shadowrun_RaumKoordinate' has cardinality 0..*.
+An association connects 'shadowrun_Behaelter' and 'shadowrun_AbstaktGegenstand'. From 'shadowrun_Behaelter', the role 'shadowrun_Behaelter' has cardinality 0..*, and from 'shadowrun_AbstaktGegenstand', the role 'shadowrun_AbstaktGegenstand27' has cardinality 0..*.
+An association connects 'shadowrun_Feuerwaffe' and 'shadowrun_MunitionsBehealter'. From 'shadowrun_Feuerwaffe', the role 'shadowrun_Feuerwaffe' has cardinality 0..*, and from 'shadowrun_MunitionsBehealter', the role 'shadowrun_MunitionsBehealter' has cardinality 0..*.
+An association connects 'shadowrun_PersonaGruppe' and 'shadowrun_AbstaktPersona'. From 'shadowrun_PersonaGruppe', the role 'shadowrun_PersonaGruppe' has cardinality 0..*, and from 'shadowrun_AbstaktPersona', the role 'shadowrun_AbstaktPersona30' has cardinality 0..*.
+An association connects 'shadowrun_PersonaGruppe' and 'shadowrun_Placement'. From 'shadowrun_PersonaGruppe', the role 'shadowrun_PersonaGruppe32' has cardinality 0..*, and from 'shadowrun_Placement', the role 'shadowrun_Placement' has cardinality 0..*.
+An association connects 'shadowrun_Placement' and 'shadowrun_Script'. From 'shadowrun_Placement', the role 'shadowrun_Placement34' has cardinality 0..*, and from 'shadowrun_Script', the role 'shadowrun_Script' has cardinality 0..*.
+An association connects 'shadowrun_PersonaGruppe' and 'shadowrun_Script'. From 'shadowrun_PersonaGruppe', the role 'shadowrun_PersonaGruppe37' has cardinality 0..*, and from 'shadowrun_Script', the role 'shadowrun_Script36' has cardinality 0..*.
+An association connects 'shadowrun_AbstaktPersona' and 'shadowrun_Cyberware'. From 'shadowrun_AbstaktPersona', the role 'AbstaktPersona' has cardinality 0..*, and from 'shadowrun_Cyberware', the role 'cyberware' has cardinality 0..*.
+An association connects 'shadowrun_BasicList' and 'shadowrun_FK'. From 'shadowrun_BasicList', the role 'shadowrun_BasicList' has cardinality 0..*, and from 'shadowrun_FK', the role 'shadowrun_FK' has cardinality 0..*.
+An association connects 'shadowrun_EAttribute' and 'shadowrun_AttributModifikatorWert'. From 'shadowrun_EAttribute', the role 'shadowrun_EAttribute' has cardinality 0..*, and from 'shadowrun_AttributModifikatorWert', the role 'shadowrun_AttributModifikatorWert' has cardinality 0..*.
+An association connects 'shadowrun_Modifizierbar' and 'shadowrun_AttributModifikatorWert'. From 'shadowrun_Modifizierbar', the role 'Modifizierbar' has cardinality 0..*, and from 'shadowrun_AttributModifikatorWert', the role 'mods' has cardinality 0..*.
+An association connects 'shadowrun_KiKraft' and 'shadowrun_KiAdept'. From 'shadowrun_KiKraft', the role 'kikraft' has cardinality 0..*, and from 'shadowrun_KiAdept', the role 'KiAdept' has cardinality 0..*.
+An association connects 'shadowrun_Fertigkeit' and 'shadowrun_Konzentration'. From 'shadowrun_Fertigkeit', the role 'fertigkeit' has cardinality 0..*, and from 'shadowrun_Konzentration', the role 'Konzentration' has cardinality 0..*.
+An association connects 'shadowrun_Fertigkeit' and 'shadowrun_FertigkeitsGruppe'. From 'shadowrun_Fertigkeit', the role 'fertigkeiten' has cardinality 0..*, and from 'shadowrun_FertigkeitsGruppe', the role 'FertigkeitsGruppe' has cardinality 0..*.
+An association connects 'shadowrun_Konzentration' and 'shadowrun_Spezialisierung'. From 'shadowrun_Konzentration', the role 'konzentration' has cardinality 0..*, and from 'shadowrun_Spezialisierung', the role 'Spezialisierung' has cardinality 0..*.
+An association connects 'shadowrun_Fertigkeit' and 'shadowrun_Konzentration'. From 'shadowrun_Fertigkeit', the role 'Fertigkeit' has cardinality 0..*, and from 'shadowrun_Konzentration', the role 'konzentrationen' has cardinality 0..*.
+An association connects 'shadowrun_Konzentration' and 'shadowrun_Spezialisierung'. From 'shadowrun_Konzentration', the role 'Konzentration48' has cardinality 0..*, and from 'shadowrun_Spezialisierung', the role 'spezialisierungen' has cardinality 0..*.
+An association connects 'shadowrun_AbstraktFertigkeit' and 'shadowrun_PersonaFertigkeit'. From 'shadowrun_AbstraktFertigkeit', the role 'shadowrun_AbstraktFertigkeit' has cardinality 0..*, and from 'shadowrun_PersonaFertigkeit', the role 'shadowrun_PersonaFertigkeit50' has cardinality 0..*.
+An association connects 'shadowrun_AbstaktPersona' and 'shadowrun_BioWare'. From 'shadowrun_AbstaktPersona', the role 'AbstaktPersona52' has cardinality 0..*, and from 'shadowrun_BioWare', the role 'bioware' has cardinality 0..*.
+An association connects 'shadowrun_AbstraktModifikatoren' and 'shadowrun_ModifikatorList'. From 'shadowrun_AbstraktModifikatoren', the role 'shadowrun_AbstraktModifikatoren' has cardinality 0..*, and from 'shadowrun_ModifikatorList', the role 'shadowrun_ModifikatorList' has cardinality 0..*.
+An association connects 'shadowrun_KiAdept' and 'shadowrun_KiKraft'. From 'shadowrun_KiAdept', the role 'persona55' has cardinality 0..*, and from 'shadowrun_KiKraft', the role 'KiKraft' has cardinality 0..*.
+An association connects 'shadowrun_GengenstandListe' and 'shadowrun_AbstaktGegenstand'. From 'shadowrun_GengenstandListe', the role 'shadowrun_GengenstandListe' has cardinality 0..*, and from 'shadowrun_AbstaktGegenstand', the role 'shadowrun_AbstaktGegenstand57' has cardinality 0..*.
+An association connects 'shadowrun_Reichweite' and 'shadowrun_Reichweiten'. From 'shadowrun_Reichweite', the role 'shadowrun_Reichweite59' has cardinality 0..*, and from 'shadowrun_Reichweiten', the role 'shadowrun_Reichweiten' has cardinality 0..*.
+An association connects 'shadowrun_MagiePersona' and 'shadowrun_PersonaZauber'. From 'shadowrun_MagiePersona', the role 'shadowrun_MagiePersona' has cardinality 0..*, and from 'shadowrun_PersonaZauber', the role 'shadowrun_PersonaZauber' has cardinality 0..*.
+An association connects 'shadowrun_Zauber' and 'shadowrun_PersonaZauber'. From 'shadowrun_Zauber', the role 'shadowrun_Zauber' has cardinality 0..*, and from 'shadowrun_PersonaZauber', the role 'shadowrun_PersonaZauber62' has cardinality 0..*.
+An association connects 'shadowrun_Fertigkeit' and 'shadowrun_FertigkeitsGruppe'. From 'shadowrun_Fertigkeit', the role 'Fertigkeit64' has cardinality 0..*, and from 'shadowrun_FertigkeitsGruppe', the role 'gruppe' has cardinality 0..*.
+An association connects 'shadowrun_EObject' and 'shadowrun_ShrList'. From 'shadowrun_EObject', the role 'shadowrun_EObject' has cardinality 0..*, and from 'shadowrun_ShrList', the role 'shadowrun_ShrList' has cardinality 0..*.
+An association connects 'shadowrun_AbstaktGegenstand' and 'shadowrun_WarenListe'. From 'shadowrun_AbstaktGegenstand', the role 'shadowrun_AbstaktGegenstand67' has cardinality 0..*, and from 'shadowrun_WarenListe', the role 'shadowrun_WarenListe' has cardinality 0..*.
+An association connects 'shadowrun_SourceBook' and 'shadowrun_Quelle'. From 'shadowrun_SourceBook', the role 'shadowrun_SourceBook' has cardinality 0..*, and from 'shadowrun_Quelle', the role 'shadowrun_Quelle' has cardinality 0..*.
+An association connects 'shadowrun_AttributModifikatorWert' and 'shadowrun_Modifizierbar'. From 'shadowrun_AttributModifikatorWert', the role 'AttributModifikatorWert' has cardinality 0..*, and from 'shadowrun_Modifizierbar', the role 'modifiziertes' has cardinality 0..*.
+An association connects 'shadowrun_Shamane' and 'shadowrun_Totem'. From 'shadowrun_Shamane', the role 'shadowrun_Shamane' has cardinality 0..*, and from 'shadowrun_Totem', the role 'shadowrun_Totem' has cardinality 0..*.
+An association connects 'shadowrun_Munition' and 'shadowrun_Reichweite'. From 'shadowrun_Munition', the role 'shadowrun_Munition' has cardinality 0..*, and from 'shadowrun_Reichweite', the role 'shadowrun_Reichweite72' has cardinality 0..*.

@@ -1,0 +1,386 @@
+The domain model 'UnifiedMetamodel_' describes the core structural elements and their relationships within the system.
+
+The model defines 89 main class(es).
+
+'UnifiedMetamodel__Create' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleFront' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__JavaScript' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__EInterface' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__Containers' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__RelationDom' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Directory' represents an important domain concept.
+It has the following attributes: 'isRoot', which is of type bool; 'purpose', which is of type str; 'name', which is of type str.
+
+'UnifiedMetamodel__JEE_Project' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__ReactApp' represents an important domain concept.
+It does not declare any attributes.
+
+'Transaction' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__JavaApp' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__ActionDispatcher' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__MethodBack' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__sale' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__UIFront' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__TechnologyMetamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__AbstractMethod' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__Back' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__ModuleFront' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__Submodule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__Reducer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__AbstractClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__ServicesFront' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Layer' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__exchange' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__War' represents an important domain concept.
+It does not declare any attributes.
+
+'LayerSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__MD' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__ArquitectureMetamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__RelationArch' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__NativeClass' represents an important domain concept.
+It has one attribute: 'primitiveRef', which is of type str.
+
+'ComponentFront' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Reducers' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Read' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Facade' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Annotation' represents an important domain concept.
+It has one attribute: 'properties', which is of type str.
+
+'UnifiedMetamodel__Dto' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Epackage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__Operations' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__UI' represents an important domain concept.
+It does not declare any attributes.
+
+'EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__DomainMetamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Library' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isNative', which is of type bool.
+
+'UnifiedMetamodel__Layer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__Descriptor' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'path', which is of type str.
+
+'UnifiedMetamodel__Front' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Util' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__EClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__SpecialEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Ejb' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__RestEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Operations' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Visualizer' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationDom' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__File' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'UnifiedMetamodel__JSON' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Design' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__ActionCreator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__Functionality' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__Pojo' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__State' represents an important domain concept.
+It does not declare any attributes.
+
+'UIFront' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Transaction' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__APICall' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Container' represents an important domain concept.
+It does not declare any attributes.
+
+'File' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Subproject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__GenericClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__GeneralEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Property' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'UnifiedMetamodel__Metamodel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__CSS' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Router' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__RouterComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__ComponentFront' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__Redux' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__LayerSegment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnifiedMetamodel__Actions' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__JS' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Store' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Services' represents an important domain concept.
+It does not declare any attributes.
+
+'UnifiedMetamodel__Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'UnifiedMetamodel__Ejb' is a specialization of 'Layer'.
+The class 'UnifiedMetamodel__Dto' is a specialization of 'LayerSegment'.
+The class 'UnifiedMetamodel__Store' is a specialization of 'LayerSegment'.
+The class 'UnifiedMetamodel__UI' is a specialization of 'LayerSegment'.
+The class 'UnifiedMetamodel__RestEntity' is a specialization of 'LayerSegment'.
+The class 'UnifiedMetamodel__Facade' is a specialization of 'LayerSegment'.
+The class 'UnifiedMetamodel__War' is a specialization of 'Layer'.
+The class 'UnifiedMetamodel__Containers' is a specialization of 'LayerSegment'.
+The class 'UnifiedMetamodel__Pojo' is a specialization of 'LayerSegment'.
+The class 'UnifiedMetamodel__Services' is a specialization of 'LayerSegment'.
+The class 'UnifiedMetamodel__Read' is a specialization of 'Operations'.
+The class 'UnifiedMetamodel__Create' is a specialization of 'Operations'.
+The class 'UnifiedMetamodel__sale' is a specialization of 'Transaction'.
+The class 'UnifiedMetamodel__exchange' is a specialization of 'Transaction'.
+The class 'UnifiedMetamodel__Composition' is a specialization of 'RelationDom'.
+The class 'UnifiedMetamodel__SpecialEntity' is a specialization of 'Entity'.
+The class 'UnifiedMetamodel__GeneralEntity' is a specialization of 'Entity'.
+The class 'UnifiedMetamodel__Router' is a specialization of 'ModuleFront'.
+The class 'UnifiedMetamodel__JSON' is a specialization of 'File'.
+The class 'UnifiedMetamodel__MD' is a specialization of 'File'.
+The class 'UnifiedMetamodel__CSS' is a specialization of 'File'.
+The class 'UnifiedMetamodel__APICall' is a specialization of 'ModuleFront'.
+The class 'UnifiedMetamodel__UIFront' is a specialization of 'ComponentFront'.
+The class 'UnifiedMetamodel__Visualizer' is a specialization of 'UIFront'.
+The class 'UnifiedMetamodel__Design' is a specialization of 'ModuleFront'.
+The class 'UnifiedMetamodel__RouterComponent' is a specialization of 'UIFront'.
+The class 'UnifiedMetamodel__Container' is a specialization of 'ComponentFront'.
+The class 'UnifiedMetamodel__JS' is a specialization of 'File'.
+The class 'UnifiedMetamodel__Redux' is a specialization of 'ModuleFront'.
+The class 'UnifiedMetamodel__NativeClass' is a specialization of 'EClass'.
+The class 'UnifiedMetamodel__GenericClass' is a specialization of 'EClass'.
+The class 'UnifiedMetamodel__AbstractClass' is a specialization of 'EClass'.
+The class 'UnifiedMetamodel__Annotation' is a specialization of 'EClass'.
+The class 'UnifiedMetamodel__JavaScript' is a specialization of 'Layer'.
+The class 'UnifiedMetamodel__Util' is a specialization of 'LayerSegment'.
+The class 'UnifiedMetamodel__Reducers' is a specialization of 'LayerSegment'.
+The class 'UnifiedMetamodel__Actions' is a specialization of 'LayerSegment'.
+The class 'UnifiedMetamodel__Back' is a specialization of 'Component'.
+The class 'UnifiedMetamodel__Front' is a specialization of 'Component'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UnifiedMetamodel__LayerSegment' and 'UnifiedMetamodel__LayerSegment'. From 'UnifiedMetamodel__LayerSegment', the role 'UnifiedMetamodel__LayerSegment' has cardinality 0..*, and from 'UnifiedMetamodel__LayerSegment', the role 'UnifiedMetamodel__LayerSegment0' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__LayerSegment' and 'UnifiedMetamodel__LayerSegment'. From 'UnifiedMetamodel__LayerSegment', the role 'UnifiedMetamodel__LayerSegment4' has cardinality 0..*, and from 'UnifiedMetamodel__LayerSegment', the role 'UnifiedMetamodel__LayerSegment2' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Layer' and 'UnifiedMetamodel__LayerSegment'. From 'UnifiedMetamodel__Layer', the role 'UnifiedMetamodel__Layer' has cardinality 0..*, and from 'UnifiedMetamodel__LayerSegment', the role 'UnifiedMetamodel__LayerSegment6' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Component' and 'UnifiedMetamodel__Layer'. From 'UnifiedMetamodel__Component', the role 'UnifiedMetamodel__Component' has cardinality 0..*, and from 'UnifiedMetamodel__Layer', the role 'UnifiedMetamodel__Layer8' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__RelationArch' and 'UnifiedMetamodel__Component'. From 'UnifiedMetamodel__RelationArch', the role 'UnifiedMetamodel__RelationArch' has cardinality 0..*, and from 'UnifiedMetamodel__Component', the role 'UnifiedMetamodel__Component10' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Layer' and 'UnifiedMetamodel__RelationArch'. From 'UnifiedMetamodel__Layer', the role 'UnifiedMetamodel__Layer13' has cardinality 0..*, and from 'UnifiedMetamodel__RelationArch', the role 'UnifiedMetamodel__RelationArch12' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Layer' and 'UnifiedMetamodel__RelationArch'. From 'UnifiedMetamodel__Layer', the role 'UnifiedMetamodel__Layer16' has cardinality 0..*, and from 'UnifiedMetamodel__RelationArch', the role 'UnifiedMetamodel__RelationArch15' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Component' and 'UnifiedMetamodel__ArquitectureMetamodel'. From 'UnifiedMetamodel__Component', the role 'UnifiedMetamodel__Component18' has cardinality 0..*, and from 'UnifiedMetamodel__ArquitectureMetamodel', the role 'UnifiedMetamodel__ArquitectureMetamodel' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__ArquitectureMetamodel' and 'UnifiedMetamodel__Metamodel'. From 'UnifiedMetamodel__ArquitectureMetamodel', the role 'UnifiedMetamodel__ArquitectureMetamodel20' has cardinality 0..*, and from 'UnifiedMetamodel__Metamodel', the role 'UnifiedMetamodel__Metamodel' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Metamodel' and 'UnifiedMetamodel__DomainMetamodel'. From 'UnifiedMetamodel__Metamodel', the role 'UnifiedMetamodel__Metamodel22' has cardinality 0..*, and from 'UnifiedMetamodel__DomainMetamodel', the role 'UnifiedMetamodel__DomainMetamodel' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__TechnologyMetamodel' and 'UnifiedMetamodel__Metamodel'. From 'UnifiedMetamodel__TechnologyMetamodel', the role 'UnifiedMetamodel__TechnologyMetamodel' has cardinality 0..*, and from 'UnifiedMetamodel__Metamodel', the role 'UnifiedMetamodel__Metamodel24' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Operations' and 'UnifiedMetamodel__Entity'. From 'UnifiedMetamodel__Operations', the role 'UnifiedMetamodel__Operations' has cardinality 0..*, and from 'UnifiedMetamodel__Entity', the role 'UnifiedMetamodel__Entity' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Submodule' and 'UnifiedMetamodel__Module'. From 'UnifiedMetamodel__Submodule', the role 'UnifiedMetamodel__Submodule' has cardinality 0..*, and from 'UnifiedMetamodel__Module', the role 'UnifiedMetamodel__Module' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__SpecialEntity' and 'UnifiedMetamodel__Transaction'. From 'UnifiedMetamodel__SpecialEntity', the role 'UnifiedMetamodel__SpecialEntity' has cardinality 0..*, and from 'UnifiedMetamodel__Transaction', the role 'UnifiedMetamodel__Transaction' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Entity' and 'UnifiedMetamodel__Property'. From 'UnifiedMetamodel__Entity', the role 'UnifiedMetamodel__Entity29' has cardinality 0..*, and from 'UnifiedMetamodel__Property', the role 'UnifiedMetamodel__Property' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__RelationDom' and 'UnifiedMetamodel__Entity'. From 'UnifiedMetamodel__RelationDom', the role 'UnifiedMetamodel__RelationDom' has cardinality 0..*, and from 'UnifiedMetamodel__Entity', the role 'UnifiedMetamodel__Entity31' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Entity' and 'UnifiedMetamodel__RelationDom'. From 'UnifiedMetamodel__Entity', the role 'UnifiedMetamodel__Entity34' has cardinality 0..*, and from 'UnifiedMetamodel__RelationDom', the role 'UnifiedMetamodel__RelationDom33' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__GeneralEntity' and 'UnifiedMetamodel__Transaction'. From 'UnifiedMetamodel__GeneralEntity', the role 'UnifiedMetamodel__GeneralEntity' has cardinality 0..*, and from 'UnifiedMetamodel__Transaction', the role 'UnifiedMetamodel__Transaction36' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Submodule' and 'UnifiedMetamodel__Operations'. From 'UnifiedMetamodel__Submodule', the role 'UnifiedMetamodel__Submodule38' has cardinality 0..*, and from 'UnifiedMetamodel__Operations', the role 'UnifiedMetamodel__Operations39' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Submodule' and 'UnifiedMetamodel__Entity'. From 'UnifiedMetamodel__Submodule', the role 'UnifiedMetamodel__Submodule41' has cardinality 0..*, and from 'UnifiedMetamodel__Entity', the role 'UnifiedMetamodel__Entity42' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Module' and 'UnifiedMetamodel__DomainMetamodel'. From 'UnifiedMetamodel__Module', the role 'UnifiedMetamodel__Module45' has cardinality 0..*, and from 'UnifiedMetamodel__DomainMetamodel', the role 'UnifiedMetamodel__DomainMetamodel44' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__DomainMetamodel' and 'UnifiedMetamodel__RelationDom'. From 'UnifiedMetamodel__DomainMetamodel', the role 'UnifiedMetamodel__DomainMetamodel47' has cardinality 0..*, and from 'UnifiedMetamodel__RelationDom', the role 'UnifiedMetamodel__RelationDom48' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__ActionDispatcher' and 'UnifiedMetamodel__ActionCreator'. From 'UnifiedMetamodel__ActionDispatcher', the role 'UnifiedMetamodel__ActionDispatcher' has cardinality 0..*, and from 'UnifiedMetamodel__ActionCreator', the role 'UnifiedMetamodel__ActionCreator' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Directory' and 'UnifiedMetamodel__Directory'. From 'UnifiedMetamodel__Directory', the role 'UnifiedMetamodel__Directory50' has cardinality 0..*, and from 'UnifiedMetamodel__Directory', the role 'UnifiedMetamodel__Directory' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__File' and 'UnifiedMetamodel__Directory'. From 'UnifiedMetamodel__File', the role 'UnifiedMetamodel__File' has cardinality 0..*, and from 'UnifiedMetamodel__Directory', the role 'UnifiedMetamodel__Directory53' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__State' and 'UnifiedMetamodel__Action'. From 'UnifiedMetamodel__State', the role 'UnifiedMetamodel__State' has cardinality 0..*, and from 'UnifiedMetamodel__Action', the role 'UnifiedMetamodel__Action' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__State' and 'UnifiedMetamodel__Reducer'. From 'UnifiedMetamodel__State', the role 'UnifiedMetamodel__State56' has cardinality 0..*, and from 'UnifiedMetamodel__Reducer', the role 'UnifiedMetamodel__Reducer' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__State' and 'UnifiedMetamodel__ModuleFront'. From 'UnifiedMetamodel__State', the role 'UnifiedMetamodel__State58' has cardinality 0..*, and from 'UnifiedMetamodel__ModuleFront', the role 'UnifiedMetamodel__ModuleFront' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__RouterComponent' and 'UnifiedMetamodel__UIFront'. From 'UnifiedMetamodel__RouterComponent', the role 'UnifiedMetamodel__RouterComponent' has cardinality 0..*, and from 'UnifiedMetamodel__UIFront', the role 'UnifiedMetamodel__UIFront' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__ActionDispatcher' and 'UnifiedMetamodel__Container'. From 'UnifiedMetamodel__ActionDispatcher', the role 'UnifiedMetamodel__ActionDispatcher61' has cardinality 0..*, and from 'UnifiedMetamodel__Container', the role 'UnifiedMetamodel__Container' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Container' and 'UnifiedMetamodel__Reducer'. From 'UnifiedMetamodel__Container', the role 'UnifiedMetamodel__Container63' has cardinality 0..*, and from 'UnifiedMetamodel__Reducer', the role 'UnifiedMetamodel__Reducer64' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__ModuleFront' and 'UnifiedMetamodel__ServicesFront'. From 'UnifiedMetamodel__ModuleFront', the role 'UnifiedMetamodel__ModuleFront66' has cardinality 0..*, and from 'UnifiedMetamodel__ServicesFront', the role 'UnifiedMetamodel__ServicesFront' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Directory' and 'UnifiedMetamodel__ServicesFront'. From 'UnifiedMetamodel__Directory', the role 'UnifiedMetamodel__Directory69' has cardinality 0..*, and from 'UnifiedMetamodel__ServicesFront', the role 'UnifiedMetamodel__ServicesFront68' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Functionality' and 'UnifiedMetamodel__ComponentFront'. From 'UnifiedMetamodel__Functionality', the role 'UnifiedMetamodel__Functionality' has cardinality 0..*, and from 'UnifiedMetamodel__ComponentFront', the role 'UnifiedMetamodel__ComponentFront' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__State' and 'UnifiedMetamodel__Functionality'. From 'UnifiedMetamodel__State', the role 'UnifiedMetamodel__State73' has cardinality 0..*, and from 'UnifiedMetamodel__Functionality', the role 'UnifiedMetamodel__Functionality72' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Functionality' and 'UnifiedMetamodel__ServicesFront'. From 'UnifiedMetamodel__Functionality', the role 'UnifiedMetamodel__Functionality75' has cardinality 0..*, and from 'UnifiedMetamodel__ServicesFront', the role 'UnifiedMetamodel__ServicesFront76' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Directory' and 'UnifiedMetamodel__Functionality'. From 'UnifiedMetamodel__Directory', the role 'UnifiedMetamodel__Directory79' has cardinality 0..*, and from 'UnifiedMetamodel__Functionality', the role 'UnifiedMetamodel__Functionality78' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Action' and 'UnifiedMetamodel__ActionDispatcher'. From 'UnifiedMetamodel__Action', the role 'UnifiedMetamodel__Action81' has cardinality 0..*, and from 'UnifiedMetamodel__ActionDispatcher', the role 'UnifiedMetamodel__ActionDispatcher82' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Action' and 'UnifiedMetamodel__ActionCreator'. From 'UnifiedMetamodel__Action', the role 'UnifiedMetamodel__Action84' has cardinality 0..*, and from 'UnifiedMetamodel__ActionCreator', the role 'UnifiedMetamodel__ActionCreator85' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Directory' and 'UnifiedMetamodel__Action'. From 'UnifiedMetamodel__Directory', the role 'UnifiedMetamodel__Directory88' has cardinality 0..*, and from 'UnifiedMetamodel__Action', the role 'UnifiedMetamodel__Action87' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Functionality' and 'UnifiedMetamodel__ReactApp'. From 'UnifiedMetamodel__Functionality', the role 'UnifiedMetamodel__Functionality90' has cardinality 0..*, and from 'UnifiedMetamodel__ReactApp', the role 'UnifiedMetamodel__ReactApp' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__ModuleFront' and 'UnifiedMetamodel__ReactApp'. From 'UnifiedMetamodel__ModuleFront', the role 'UnifiedMetamodel__ModuleFront93' has cardinality 0..*, and from 'UnifiedMetamodel__ReactApp', the role 'UnifiedMetamodel__ReactApp92' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Directory' and 'UnifiedMetamodel__ReactApp'. From 'UnifiedMetamodel__Directory', the role 'UnifiedMetamodel__Directory96' has cardinality 0..*, and from 'UnifiedMetamodel__ReactApp', the role 'UnifiedMetamodel__ReactApp95' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__ComponentFront' and 'UnifiedMetamodel__ModuleFront'. From 'UnifiedMetamodel__ComponentFront', the role 'UnifiedMetamodel__ComponentFront98' has cardinality 0..*, and from 'UnifiedMetamodel__ModuleFront', the role 'UnifiedMetamodel__ModuleFront99' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Directory' and 'UnifiedMetamodel__ComponentFront'. From 'UnifiedMetamodel__Directory', the role 'UnifiedMetamodel__Directory102' has cardinality 0..*, and from 'UnifiedMetamodel__ComponentFront', the role 'UnifiedMetamodel__ComponentFront101' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Reducer' and 'UnifiedMetamodel__ActionCreator'. From 'UnifiedMetamodel__Reducer', the role 'UnifiedMetamodel__Reducer104' has cardinality 0..*, and from 'UnifiedMetamodel__ActionCreator', the role 'UnifiedMetamodel__ActionCreator105' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Reducer' and 'UnifiedMetamodel__Directory'. From 'UnifiedMetamodel__Reducer', the role 'UnifiedMetamodel__Reducer107' has cardinality 0..*, and from 'UnifiedMetamodel__Directory', the role 'UnifiedMetamodel__Directory108' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__ModuleFront' and 'UnifiedMetamodel__Directory'. From 'UnifiedMetamodel__ModuleFront', the role 'UnifiedMetamodel__ModuleFront110' has cardinality 0..*, and from 'UnifiedMetamodel__Directory', the role 'UnifiedMetamodel__Directory111' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__JavaApp' and 'UnifiedMetamodel__TechnologyMetamodel'. From 'UnifiedMetamodel__JavaApp', the role 'UnifiedMetamodel__JavaApp' has cardinality 0..*, and from 'UnifiedMetamodel__TechnologyMetamodel', the role 'UnifiedMetamodel__TechnologyMetamodel113' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__TechnologyMetamodel' and 'UnifiedMetamodel__ReactApp'. From 'UnifiedMetamodel__TechnologyMetamodel', the role 'UnifiedMetamodel__TechnologyMetamodel115' has cardinality 0..*, and from 'UnifiedMetamodel__ReactApp', the role 'UnifiedMetamodel__ReactApp116' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__JEE_Project' and 'UnifiedMetamodel__JavaApp'. From 'UnifiedMetamodel__JEE_Project', the role 'UnifiedMetamodel__JEE_Project' has cardinality 0..*, and from 'UnifiedMetamodel__JavaApp', the role 'UnifiedMetamodel__JavaApp118' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Subproject' and 'UnifiedMetamodel__JEE_Project'. From 'UnifiedMetamodel__Subproject', the role 'UnifiedMetamodel__Subproject' has cardinality 0..*, and from 'UnifiedMetamodel__JEE_Project', the role 'UnifiedMetamodel__JEE_Project120' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__AbstractMethod' and 'UnifiedMetamodel__EInterface'. From 'UnifiedMetamodel__AbstractMethod', the role 'UnifiedMetamodel__AbstractMethod' has cardinality 0..*, and from 'UnifiedMetamodel__EInterface', the role 'UnifiedMetamodel__EInterface' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Library' and 'UnifiedMetamodel__NativeClass'. From 'UnifiedMetamodel__Library', the role 'UnifiedMetamodel__Library' has cardinality 0..*, and from 'UnifiedMetamodel__NativeClass', the role 'UnifiedMetamodel__NativeClass' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Library' and 'UnifiedMetamodel__Annotation'. From 'UnifiedMetamodel__Library', the role 'UnifiedMetamodel__Library124' has cardinality 0..*, and from 'UnifiedMetamodel__Annotation', the role 'UnifiedMetamodel__Annotation' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Attribute' and 'UnifiedMetamodel__Annotation'. From 'UnifiedMetamodel__Attribute', the role 'UnifiedMetamodel__Attribute' has cardinality 0..*, and from 'UnifiedMetamodel__Annotation', the role 'UnifiedMetamodel__Annotation126' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__EClass' and 'UnifiedMetamodel__Attribute'. From 'UnifiedMetamodel__EClass', the role 'UnifiedMetamodel__EClass' has cardinality 0..*, and from 'UnifiedMetamodel__Attribute', the role 'UnifiedMetamodel__Attribute128' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__EInterface' and 'UnifiedMetamodel__GenericClass'. From 'UnifiedMetamodel__EInterface', the role 'UnifiedMetamodel__EInterface130' has cardinality 0..*, and from 'UnifiedMetamodel__GenericClass', the role 'UnifiedMetamodel__GenericClass' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__AbstractClass' and 'UnifiedMetamodel__GenericClass'. From 'UnifiedMetamodel__AbstractClass', the role 'UnifiedMetamodel__AbstractClass' has cardinality 0..*, and from 'UnifiedMetamodel__GenericClass', the role 'UnifiedMetamodel__GenericClass132' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__MethodBack' and 'UnifiedMetamodel__Annotation'. From 'UnifiedMetamodel__MethodBack', the role 'UnifiedMetamodel__MethodBack' has cardinality 0..*, and from 'UnifiedMetamodel__Annotation', the role 'UnifiedMetamodel__Annotation134' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__MethodBack' and 'UnifiedMetamodel__EClass'. From 'UnifiedMetamodel__MethodBack', the role 'UnifiedMetamodel__MethodBack136' has cardinality 0..*, and from 'UnifiedMetamodel__EClass', the role 'UnifiedMetamodel__EClass137' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__MethodBack' and 'UnifiedMetamodel__EClass'. From 'UnifiedMetamodel__MethodBack', the role 'UnifiedMetamodel__MethodBack139' has cardinality 0..*, and from 'UnifiedMetamodel__EClass', the role 'UnifiedMetamodel__EClass140' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__AbstractClass' and 'UnifiedMetamodel__AbstractMethod'. From 'UnifiedMetamodel__AbstractClass', the role 'UnifiedMetamodel__AbstractClass142' has cardinality 0..*, and from 'UnifiedMetamodel__AbstractMethod', the role 'UnifiedMetamodel__AbstractMethod143' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Epackage' and 'UnifiedMetamodel__EClass'. From 'UnifiedMetamodel__Epackage', the role 'UnifiedMetamodel__Epackage' has cardinality 0..*, and from 'UnifiedMetamodel__EClass', the role 'UnifiedMetamodel__EClass145' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__EClass' and 'UnifiedMetamodel__Attribute'. From 'UnifiedMetamodel__EClass', the role 'UnifiedMetamodel__EClass147' has cardinality 0..*, and from 'UnifiedMetamodel__Attribute', the role 'UnifiedMetamodel__Attribute148' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__EClass' and 'UnifiedMetamodel__MethodBack'. From 'UnifiedMetamodel__EClass', the role 'UnifiedMetamodel__EClass150' has cardinality 0..*, and from 'UnifiedMetamodel__MethodBack', the role 'UnifiedMetamodel__MethodBack151' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Annotation' and 'UnifiedMetamodel__EClass'. From 'UnifiedMetamodel__Annotation', the role 'UnifiedMetamodel__Annotation154' has cardinality 0..*, and from 'UnifiedMetamodel__EClass', the role 'UnifiedMetamodel__EClass153' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Descriptor' and 'UnifiedMetamodel__Annotation'. From 'UnifiedMetamodel__Descriptor', the role 'UnifiedMetamodel__Descriptor' has cardinality 0..*, and from 'UnifiedMetamodel__Annotation', the role 'UnifiedMetamodel__Annotation156' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Subproject' and 'UnifiedMetamodel__Descriptor'. From 'UnifiedMetamodel__Subproject', the role 'UnifiedMetamodel__Subproject158' has cardinality 0..*, and from 'UnifiedMetamodel__Descriptor', the role 'UnifiedMetamodel__Descriptor159' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Subproject' and 'UnifiedMetamodel__Epackage'. From 'UnifiedMetamodel__Subproject', the role 'UnifiedMetamodel__Subproject161' has cardinality 0..*, and from 'UnifiedMetamodel__Epackage', the role 'UnifiedMetamodel__Epackage162' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__Subproject' and 'UnifiedMetamodel__Library'. From 'UnifiedMetamodel__Subproject', the role 'UnifiedMetamodel__Subproject164' has cardinality 0..*, and from 'UnifiedMetamodel__Library', the role 'UnifiedMetamodel__Library165' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__EClass' and 'UnifiedMetamodel__AbstractMethod'. From 'UnifiedMetamodel__EClass', the role 'UnifiedMetamodel__EClass168' has cardinality 0..*, and from 'UnifiedMetamodel__AbstractMethod', the role 'UnifiedMetamodel__AbstractMethod167' has cardinality 0..*.
+An association connects 'UnifiedMetamodel__AbstractMethod' and 'UnifiedMetamodel__EClass'. From 'UnifiedMetamodel__AbstractMethod', the role 'UnifiedMetamodel__AbstractMethod170' has cardinality 0..*, and from 'UnifiedMetamodel__EClass', the role 'UnifiedMetamodel__EClass171' has cardinality 0..*.

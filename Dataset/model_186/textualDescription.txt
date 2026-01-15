@@ -1,0 +1,44 @@
+The domain model 'lit_petriNets_2' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'lit_petriNets_2_TPArc' represents an important domain concept.
+It does not declare any attributes.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'lit_petriNets_2_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'lit_petriNets_2_PTArc' represents an important domain concept.
+It does not declare any attributes.
+
+'lit_petriNets_2_Net' represents an important domain concept.
+It does not declare any attributes.
+
+'lit_petriNets_2_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lit_petriNets_2_Place' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'lit_petriNets_2_PTArc' is a specialization of 'Arc'.
+The class 'lit_petriNets_2_TPArc' is a specialization of 'Arc'.
+
+Relationships between classes are modeled using associations.
+An association connects 'lit_petriNets_2_Place' and 'lit_petriNets_2_Net'. From 'lit_petriNets_2_Place', the role 'Place' has cardinality 0..*, and from 'lit_petriNets_2_Net', the role 'net' has cardinality 0..*.
+An association connects 'lit_petriNets_2_Transition' and 'lit_petriNets_2_Net'. From 'lit_petriNets_2_Transition', the role 'Transition' has cardinality 0..*, and from 'lit_petriNets_2_Net', the role 'net2' has cardinality 0..*.
+An association connects 'lit_petriNets_2_Net' and 'lit_petriNets_2_Arc'. From 'lit_petriNets_2_Net', the role 'net4' has cardinality 0..*, and from 'lit_petriNets_2_Arc', the role 'Arc' has cardinality 0..*.
+An association connects 'lit_petriNets_2_Net' and 'lit_petriNets_2_Place'. From 'lit_petriNets_2_Net', the role 'Net' has cardinality 0..*, and from 'lit_petriNets_2_Place', the role 'places' has cardinality 0..*.
+An association connects 'lit_petriNets_2_TPArc' and 'lit_petriNets_2_Place'. From 'lit_petriNets_2_TPArc', the role 'TPArc' has cardinality 0..*, and from 'lit_petriNets_2_Place', the role 'dst' has cardinality 0..*.
+An association connects 'lit_petriNets_2_PTArc' and 'lit_petriNets_2_Place'. From 'lit_petriNets_2_PTArc', the role 'PTArc' has cardinality 0..*, and from 'lit_petriNets_2_Place', the role 'src' has cardinality 0..*.
+An association connects 'lit_petriNets_2_Net' and 'lit_petriNets_2_Transition'. From 'lit_petriNets_2_Net', the role 'Net9' has cardinality 0..*, and from 'lit_petriNets_2_Transition', the role 'transitions' has cardinality 0..*.
+An association connects 'lit_petriNets_2_PTArc' and 'lit_petriNets_2_Transition'. From 'lit_petriNets_2_PTArc', the role 'PTArc12' has cardinality 0..*, and from 'lit_petriNets_2_Transition', the role 'dst11' has cardinality 0..*.
+An association connects 'lit_petriNets_2_TPArc' and 'lit_petriNets_2_Transition'. From 'lit_petriNets_2_TPArc', the role 'TPArc15' has cardinality 0..*, and from 'lit_petriNets_2_Transition', the role 'src14' has cardinality 0..*.
+An association connects 'lit_petriNets_2_Arc' and 'lit_petriNets_2_Net'. From 'lit_petriNets_2_Arc', the role 'arcs' has cardinality 0..*, and from 'lit_petriNets_2_Net', the role 'Net17' has cardinality 0..*.
+An association connects 'lit_petriNets_2_PTArc' and 'lit_petriNets_2_Place'. From 'lit_petriNets_2_PTArc', the role 'out' has cardinality 0..*, and from 'lit_petriNets_2_Place', the role 'Place19' has cardinality 0..*.
+An association connects 'lit_petriNets_2_PTArc' and 'lit_petriNets_2_Transition'. From 'lit_petriNets_2_PTArc', the role 'in' has cardinality 0..*, and from 'lit_petriNets_2_Transition', the role 'Transition21' has cardinality 0..*.
+An association connects 'lit_petriNets_2_TPArc' and 'lit_petriNets_2_Transition'. From 'lit_petriNets_2_TPArc', the role 'out23' has cardinality 0..*, and from 'lit_petriNets_2_Transition', the role 'Transition24' has cardinality 0..*.
+An association connects 'lit_petriNets_2_TPArc' and 'lit_petriNets_2_Place'. From 'lit_petriNets_2_TPArc', the role 'in26' has cardinality 0..*, and from 'lit_petriNets_2_Place', the role 'Place27' has cardinality 0..*.

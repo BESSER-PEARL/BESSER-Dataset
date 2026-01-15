@@ -1,0 +1,134 @@
+The domain model 'remes' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'remes_ExitPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'Referable' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_ConditionalConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_EntryPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_SubMode' represents an important domain concept.
+It has the following attributes: 'invariant', which is of type str; 'isUrgent', which is of type bool.
+
+'remes_InitPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_CompositeMode' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicalRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_Point' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_Resource' represents an important domain concept.
+It has the following attributes: 'expression', which is of type str; 'type', which is of type str.
+
+'remes_RemesDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_Constant' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str; 'global', which is of type bool.
+
+'ExitPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_Mode' represents an important domain concept.
+It does not declare any attributes.
+
+'Mode' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlPath' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_Variable' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'global', which is of type bool; 'writable', which is of type bool; 'vectorSize', which is of type int; 'readable', which is of type bool; 'type', which is of type str.
+
+'remes_CompositeExitPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_ControlPath' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Point' represents an important domain concept.
+It does not declare any attributes.
+
+'EntryPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_Edge' represents an important domain concept.
+It has the following attributes: 'actionGuard', which is of type str; 'actionBody', which is of type str.
+
+'remes_Referable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'remes_CompositeEntryPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_WritePoint' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ResourceTypes' defines the following possible values: 'cpu', 'memory', 'power', 'bandwidth', 'port'.
+The enumeration 'PrimitiveTypes' defines the following possible values: 'clock', 'boolean', 'float', 'string', 'integer', 'natural'.
+
+The model also captures inheritance relationships between classes.
+The class 'remes_Mode' is a specialization of 'ControlPath'.
+The class 'remes_CompositeMode' is a specialization of 'Mode'.
+The class 'remes_SubMode' is a specialization of 'Mode'.
+The class 'remes_ConditionalConnector' is a specialization of 'ControlPath'.
+The class 'remes_InitPoint' is a specialization of 'ExitPoint'.
+The class 'remes_EntryPoint' is a specialization of 'Point'.
+The class 'remes_ExitPoint' is a specialization of 'Point'.
+The class 'remes_CompositeEntryPoint' is a specialization of 'ExitPoint'.
+The class 'remes_CompositeExitPoint' is a specialization of 'EntryPoint'.
+The class 'remes_Variable' is a specialization of 'Referable'.
+The class 'remes_Resource' is a specialization of 'Referable'.
+The class 'remes_Constant' is a specialization of 'Referable'.
+The class 'remes_WritePoint' is a specialization of 'EntryPoint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'remes_RemesDiagram' and 'remes_Mode'. From 'remes_RemesDiagram', the role 'remes_RemesDiagram' has cardinality 0..*, and from 'remes_Mode', the role 'remes_Mode' has cardinality 0..*.
+An association connects 'remes_ControlPath' and 'remes_EntryPoint'. From 'remes_ControlPath', the role 'container' has cardinality 0..*, and from 'remes_EntryPoint', the role 'EntryPoint' has cardinality 0..*.
+An association connects 'remes_ControlPath' and 'remes_ExitPoint'. From 'remes_ControlPath', the role 'container3' has cardinality 0..*, and from 'remes_ExitPoint', the role 'ExitPoint' has cardinality 0..*.
+An association connects 'remes_Variable' and 'remes_Mode'. From 'remes_Variable', the role 'Variable' has cardinality 0..*, and from 'remes_Mode', the role 'scope' has cardinality 0..*.
+An association connects 'remes_Mode' and 'remes_Resource'. From 'remes_Mode', the role 'scope6' has cardinality 0..*, and from 'remes_Resource', the role 'Resource' has cardinality 0..*.
+An association connects 'remes_Mode' and 'remes_Constant'. From 'remes_Mode', the role 'scope8' has cardinality 0..*, and from 'remes_Constant', the role 'Constant' has cardinality 0..*.
+An association connects 'remes_SubMode' and 'remes_CompositeMode'. From 'remes_SubMode', the role 'SubMode' has cardinality 0..*, and from 'remes_CompositeMode', the role 'parent' has cardinality 0..*.
+An association connects 'remes_ConditionalConnector' and 'remes_CompositeMode'. From 'remes_ConditionalConnector', the role 'ConditionalConnector' has cardinality 0..*, and from 'remes_CompositeMode', the role 'parent11' has cardinality 0..*.
+An association connects 'remes_InitPoint' and 'remes_CompositeMode'. From 'remes_InitPoint', the role 'remes_InitPoint' has cardinality 0..*, and from 'remes_CompositeMode', the role 'remes_CompositeMode' has cardinality 0..*.
+An association connects 'remes_CompositeMode' and 'remes_CompositeEntryPoint'. From 'remes_CompositeMode', the role 'composite' has cardinality 0..*, and from 'remes_CompositeEntryPoint', the role 'CompositeEntryPoint' has cardinality 0..*.
+An association connects 'remes_CompositeMode' and 'remes_CompositeExitPoint'. From 'remes_CompositeMode', the role 'composite15' has cardinality 0..*, and from 'remes_CompositeExitPoint', the role 'CompositeExitPoint' has cardinality 0..*.
+An association connects 'remes_CompositeMode' and 'remes_WritePoint'. From 'remes_CompositeMode', the role 'remes_CompositeMode17' has cardinality 0..*, and from 'remes_WritePoint', the role 'remes_WritePoint' has cardinality 0..*.
+An association connects 'remes_CompositeMode' and 'remes_SubMode'. From 'remes_CompositeMode', the role 'CompositeMode' has cardinality 0..*, and from 'remes_SubMode', the role 'subModes' has cardinality 0..*.
+An association connects 'remes_SubMode' and 'LogicalRoot'. From 'remes_SubMode', the role 'remes_SubMode' has cardinality 0..*, and from 'LogicalRoot', the role 'LogicalRoot' has cardinality 0..*.
+An association connects 'remes_CompositeMode' and 'remes_ConditionalConnector'. From 'remes_CompositeMode', the role 'CompositeMode21' has cardinality 0..*, and from 'remes_ConditionalConnector', the role 'conditionalConnectors' has cardinality 0..*.
+An association connects 'remes_Edge' and 'remes_EntryPoint'. From 'remes_Edge', the role 'Edge' has cardinality 0..*, and from 'remes_EntryPoint', the role 'connectTo' has cardinality 0..*.
+An association connects 'remes_ControlPath' and 'remes_EntryPoint'. From 'remes_ControlPath', the role 'ControlPath' has cardinality 0..*, and from 'remes_EntryPoint', the role 'entryPoint' has cardinality 0..*.
+An association connects 'remes_Edge' and 'remes_ExitPoint'. From 'remes_Edge', the role 'Edge25' has cardinality 0..*, and from 'remes_ExitPoint', the role 'connectFrom' has cardinality 0..*.
+An association connects 'remes_ControlPath' and 'remes_ExitPoint'. From 'remes_ControlPath', the role 'ControlPath27' has cardinality 0..*, and from 'remes_ExitPoint', the role 'exitPoint' has cardinality 0..*.
+An association connects 'remes_CompositeEntryPoint' and 'remes_CompositeMode'. From 'remes_CompositeEntryPoint', the role 'compositeEntryPoint' has cardinality 0..*, and from 'remes_CompositeMode', the role 'CompositeMode29' has cardinality 0..*.
+An association connects 'remes_CompositeMode' and 'remes_CompositeExitPoint'. From 'remes_CompositeMode', the role 'CompositeMode31' has cardinality 0..*, and from 'remes_CompositeExitPoint', the role 'compositeExitPoint' has cardinality 0..*.
+An association connects 'LogicalRoot' and 'remes_Edge'. From 'LogicalRoot', the role 'LogicalRoot33' has cardinality 0..*, and from 'remes_Edge', the role 'remes_Edge' has cardinality 0..*.
+An association connects 'remes_Edge' and 'remes_ExitPoint'. From 'remes_Edge', the role 'exitEdges' has cardinality 0..*, and from 'remes_ExitPoint', the role 'ExitPoint35' has cardinality 0..*.
+An association connects 'remes_EntryPoint' and 'remes_Edge'. From 'remes_EntryPoint', the role 'EntryPoint37' has cardinality 0..*, and from 'remes_Edge', the role 'entryEdges' has cardinality 0..*.
+An association connects 'ActionRoot' and 'remes_Edge'. From 'ActionRoot', the role 'ActionRoot' has cardinality 0..*, and from 'remes_Edge', the role 'remes_Edge39' has cardinality 0..*.
+An association connects 'remes_Variable' and 'remes_Mode'. From 'remes_Variable', the role 'variables' has cardinality 0..*, and from 'remes_Mode', the role 'Mode' has cardinality 0..*.
+An association connects 'remes_Resource' and 'remes_Mode'. From 'remes_Resource', the role 'resources' has cardinality 0..*, and from 'remes_Mode', the role 'Mode42' has cardinality 0..*.
+An association connects 'remes_Resource' and 'ResourceRoot'. From 'remes_Resource', the role 'remes_Resource' has cardinality 0..*, and from 'ResourceRoot', the role 'ResourceRoot' has cardinality 0..*.
+An association connects 'remes_Constant' and 'remes_Mode'. From 'remes_Constant', the role 'constants' has cardinality 0..*, and from 'remes_Mode', the role 'Mode45' has cardinality 0..*.

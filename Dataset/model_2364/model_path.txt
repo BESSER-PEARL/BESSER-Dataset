@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Teiid-Designer/teiid-designer/tests/org.teiid.designer.core.test/testdata/relational.ecore

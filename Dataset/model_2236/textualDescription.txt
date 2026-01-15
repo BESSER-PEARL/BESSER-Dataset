@@ -1,0 +1,34 @@
+The domain model 'prosjekt' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'prosjekt_Department' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'shortName', which is of type str.
+
+'prosjekt_Course' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str; 'studyPoints', which is of type float.
+
+'prosjekt_Semester' represents an important domain concept.
+It has the following attributes: 'averageGrade', which is of type float; 'amountE', which is of type int; 'amountF', which is of type int; 'amountB', which is of type int; 'amountA', which is of type int; 'amountD', which is of type int; 'name', which is of type str; 'amountC', which is of type int.
+
+'prosjekt_University' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'shortName', which is of type str.
+
+'prosjekt_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'prosjekt_CourseCoordinator' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'prosjekt_Department' and 'prosjekt_University'. From 'prosjekt_Department', the role 'Department' has cardinality 0..*, and from 'prosjekt_University', the role 'university' has cardinality 0..*.
+An association connects 'prosjekt_Department' and 'prosjekt_University'. From 'prosjekt_Department', the role 'departments' has cardinality 0..*, and from 'prosjekt_University', the role 'University' has cardinality 0..*.
+An association connects 'prosjekt_Course' and 'prosjekt_Department'. From 'prosjekt_Course', the role 'Course' has cardinality 0..*, and from 'prosjekt_Department', the role 'department' has cardinality 0..*.
+An association connects 'prosjekt_Person' and 'prosjekt_Department'. From 'prosjekt_Person', the role 'Person' has cardinality 0..*, and from 'prosjekt_Department', the role 'worksForDepartment' has cardinality 0..*.
+An association connects 'prosjekt_Department' and 'prosjekt_Course'. From 'prosjekt_Department', the role 'Department5' has cardinality 0..*, and from 'prosjekt_Course', the role 'course' has cardinality 0..*.
+An association connects 'prosjekt_Course' and 'prosjekt_Semester'. From 'prosjekt_Course', the role 'course7' has cardinality 0..*, and from 'prosjekt_Semester', the role 'Semester' has cardinality 0..*.
+An association connects 'prosjekt_Course' and 'prosjekt_Semester'. From 'prosjekt_Course', the role 'Course9' has cardinality 0..*, and from 'prosjekt_Semester', the role 'semester' has cardinality 0..*.
+An association connects 'prosjekt_Person' and 'prosjekt_Department'. From 'prosjekt_Person', the role 'staff' has cardinality 0..*, and from 'prosjekt_Department', the role 'Department11' has cardinality 0..*.
+An association connects 'prosjekt_CourseCoordinator' and 'prosjekt_Person'. From 'prosjekt_CourseCoordinator', the role 'CourseCoordinator' has cardinality 0..*, and from 'prosjekt_Person', the role 'person' has cardinality 0..*.
+An association connects 'prosjekt_CourseCoordinator' and 'prosjekt_Course'. From 'prosjekt_CourseCoordinator', the role 'prosjekt_CourseCoordinator' has cardinality 0..*, and from 'prosjekt_Course', the role 'prosjekt_Course' has cardinality 0..*.
+An association connects 'prosjekt_CourseCoordinator' and 'prosjekt_Person'. From 'prosjekt_CourseCoordinator', the role 'roles' has cardinality 0..*, and from 'prosjekt_Person', the role 'Person15' has cardinality 0..*.

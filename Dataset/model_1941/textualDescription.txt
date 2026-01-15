@@ -1,0 +1,139 @@
+The domain model 'docbook' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'docbook_Author' represents an important domain concept.
+It has the following attributes: 'honorific', which is of type str; 'authorblug', which is of type str; 'firstname', which is of type str; 'surname', which is of type str.
+
+'docbook_XMLElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'XMLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_TitledElement' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_ImageObject' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Ulink' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_SimpleText' represents an important domain concept.
+It has one attribute: 'data', which is of type str.
+
+'docbook_SectionMixedContent' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_ImageData' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'depth', which is of type str; 'fileref', which is of type str.
+
+'docbook_Book' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'ParaMixedContent' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Warning' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_MediaObject' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Title' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Bookinfo' represents an important domain concept.
+It has the following attributes: 'pubdate', which is of type str; 'date', which is of type str.
+
+'docbook_ParaMixedContent' represents an important domain concept.
+It does not declare any attributes.
+
+'TitledElement' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Tip' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Emphasis' represents an important domain concept.
+It does not declare any attributes.
+
+'Para' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Chapter' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Section' represents an important domain concept.
+It does not declare any attributes.
+
+'SectionMixedContent' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Para' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_Subtitle' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_ProgramListing' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'docbook_Book' is a specialization of 'XMLElement'.
+The class 'docbook_Bookinfo' is a specialization of 'XMLElement'.
+The class 'docbook_Chapter' is a specialization of 'TitledElement'.
+The class 'docbook_Chapter' is a specialization of 'XMLElement'.
+The class 'docbook_Para' is a specialization of 'SectionMixedContent'.
+The class 'docbook_Section' is a specialization of 'SectionMixedContent'.
+The class 'docbook_Section' is a specialization of 'TitledElement'.
+The class 'docbook_Section' is a specialization of 'XMLElement'.
+The class 'docbook_ParaMixedContent' is a specialization of 'SectionMixedContent'.
+The class 'docbook_ProgramListing' is a specialization of 'Para'.
+The class 'docbook_SimpleText' is a specialization of 'ParaMixedContent'.
+The class 'docbook_Figure' is a specialization of 'TitledElement'.
+The class 'docbook_Figure' is a specialization of 'ParaMixedContent'.
+The class 'docbook_Emphasis' is a specialization of 'ParaMixedContent'.
+The class 'docbook_Tip' is a specialization of 'Para'.
+The class 'docbook_Warning' is a specialization of 'Para'.
+The class 'docbook_Link' is a specialization of 'ParaMixedContent'.
+The class 'docbook_Ulink' is a specialization of 'ParaMixedContent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'docbook_Bookinfo' and 'docbook_Book'. From 'docbook_Bookinfo', the role 'Bookinfo' has cardinality 0..*, and from 'docbook_Book', the role 'book' has cardinality 0..*.
+An association connects 'docbook_Book' and 'docbook_Chapter'. From 'docbook_Book', the role 'book2' has cardinality 0..*, and from 'docbook_Chapter', the role 'Chapter' has cardinality 0..*.
+An association connects 'docbook_Bookinfo' and 'docbook_Book'. From 'docbook_Bookinfo', the role 'bookinfo' has cardinality 0..*, and from 'docbook_Book', the role 'Book' has cardinality 0..*.
+An association connects 'docbook_Bookinfo' and 'docbook_Subtitle'. From 'docbook_Bookinfo', the role 'bookinfo5' has cardinality 0..*, and from 'docbook_Subtitle', the role 'Subtitle' has cardinality 0..*.
+An association connects 'docbook_Author' and 'docbook_Bookinfo'. From 'docbook_Author', the role 'Author' has cardinality 0..*, and from 'docbook_Bookinfo', the role 'bookinfo7' has cardinality 0..*.
+An association connects 'docbook_Bookinfo' and 'docbook_Author'. From 'docbook_Bookinfo', the role 'Bookinfo9' has cardinality 0..*, and from 'docbook_Author', the role 'author' has cardinality 0..*.
+An association connects 'docbook_Subtitle' and 'docbook_Bookinfo'. From 'docbook_Subtitle', the role 'subtitle' has cardinality 0..*, and from 'docbook_Bookinfo', the role 'Bookinfo11' has cardinality 0..*.
+An association connects 'docbook_Chapter' and 'docbook_Book'. From 'docbook_Chapter', the role 'chapter' has cardinality 0..*, and from 'docbook_Book', the role 'Book13' has cardinality 0..*.
+An association connects 'docbook_SectionMixedContent' and 'docbook_Chapter'. From 'docbook_SectionMixedContent', the role 'SectionMixedContent' has cardinality 0..*, and from 'docbook_Chapter', the role 'chapter15' has cardinality 0..*.
+An association connects 'docbook_TitledElement' and 'docbook_Title'. From 'docbook_TitledElement', the role 'TitledElement' has cardinality 0..*, and from 'docbook_Title', the role 'title' has cardinality 0..*.
+An association connects 'docbook_ParaMixedContent' and 'docbook_Title'. From 'docbook_ParaMixedContent', the role 'ParaMixedContent' has cardinality 0..*, and from 'docbook_Title', the role 'titleElement' has cardinality 0..*.
+An association connects 'docbook_ParaMixedContent' and 'docbook_Para'. From 'docbook_ParaMixedContent', the role 'ParaMixedContent19' has cardinality 0..*, and from 'docbook_Para', the role 'para' has cardinality 0..*.
+An association connects 'docbook_Section' and 'docbook_SectionMixedContent'. From 'docbook_Section', the role 'section' has cardinality 0..*, and from 'docbook_SectionMixedContent', the role 'SectionMixedContent21' has cardinality 0..*.
+An association connects 'docbook_SectionMixedContent' and 'docbook_Chapter'. From 'docbook_SectionMixedContent', the role 'mixedContent' has cardinality 0..*, and from 'docbook_Chapter', the role 'Chapter23' has cardinality 0..*.
+An association connects 'docbook_SectionMixedContent' and 'docbook_Section'. From 'docbook_SectionMixedContent', the role 'content' has cardinality 0..*, and from 'docbook_Section', the role 'Section' has cardinality 0..*.
+An association connects 'docbook_TitledElement' and 'docbook_Title'. From 'docbook_TitledElement', the role 'titledElement' has cardinality 0..*, and from 'docbook_Title', the role 'Title' has cardinality 0..*.
+An association connects 'docbook_Para' and 'docbook_ParaMixedContent'. From 'docbook_Para', the role 'Para' has cardinality 0..*, and from 'docbook_ParaMixedContent', the role 'content27' has cardinality 0..*.
+An association connects 'docbook_ParaMixedContent' and 'docbook_Title'. From 'docbook_ParaMixedContent', the role 'content29' has cardinality 0..*, and from 'docbook_Title', the role 'Title30' has cardinality 0..*.
+An association connects 'docbook_ParaMixedContent' and 'docbook_Emphasis'. From 'docbook_ParaMixedContent', the role 'content32' has cardinality 0..*, and from 'docbook_Emphasis', the role 'Emphasis' has cardinality 0..*.
+An association connects 'docbook_Ulink' and 'docbook_ParaMixedContent'. From 'docbook_Ulink', the role 'Ulink' has cardinality 0..*, and from 'docbook_ParaMixedContent', the role 'content34' has cardinality 0..*.
+An association connects 'docbook_Link' and 'docbook_ParaMixedContent'. From 'docbook_Link', the role 'Link' has cardinality 0..*, and from 'docbook_ParaMixedContent', the role 'content36' has cardinality 0..*.
+An association connects 'docbook_Figure' and 'docbook_MediaObject'. From 'docbook_Figure', the role 'figure' has cardinality 0..*, and from 'docbook_MediaObject', the role 'MediaObject' has cardinality 0..*.
+An association connects 'docbook_Emphasis' and 'docbook_ParaMixedContent'. From 'docbook_Emphasis', the role 'emphasis' has cardinality 0..*, and from 'docbook_ParaMixedContent', the role 'ParaMixedContent39' has cardinality 0..*.
+An association connects 'docbook_Link' and 'docbook_ParaMixedContent'. From 'docbook_Link', the role 'link' has cardinality 0..*, and from 'docbook_ParaMixedContent', the role 'ParaMixedContent41' has cardinality 0..*.
+An association connects 'docbook_Ulink' and 'docbook_ParaMixedContent'. From 'docbook_Ulink', the role 'ulink' has cardinality 0..*, and from 'docbook_ParaMixedContent', the role 'ParaMixedContent43' has cardinality 0..*.
+An association connects 'docbook_MediaObject' and 'docbook_Figure'. From 'docbook_MediaObject', the role 'content45' has cardinality 0..*, and from 'docbook_Figure', the role 'Figure' has cardinality 0..*.
+An association connects 'docbook_MediaObject' and 'docbook_ImageObject'. From 'docbook_MediaObject', the role 'mediaObject' has cardinality 0..*, and from 'docbook_ImageObject', the role 'ImageObject' has cardinality 0..*.
+An association connects 'docbook_MediaObject' and 'docbook_ImageObject'. From 'docbook_MediaObject', the role 'MediaObject49' has cardinality 0..*, and from 'docbook_ImageObject', the role 'content48' has cardinality 0..*.
+An association connects 'docbook_ImageData' and 'docbook_ImageObject'. From 'docbook_ImageData', the role 'ImageData' has cardinality 0..*, and from 'docbook_ImageObject', the role 'imageObject' has cardinality 0..*.
+An association connects 'docbook_ImageData' and 'docbook_ImageObject'. From 'docbook_ImageData', the role 'content52' has cardinality 0..*, and from 'docbook_ImageObject', the role 'ImageObject53' has cardinality 0..*.

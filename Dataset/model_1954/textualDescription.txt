@@ -1,0 +1,1009 @@
+The domain model 'shr5' describes the core structural elements and their relationships within the system.
+
+The model defines 220 main class(es).
+
+'shr5_SoftwareAgent' represents an important domain concept.
+It has one attribute: 'rating', which is of type int.
+
+'shr5_Magazin' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_AbstraktPersona' represents an important domain concept.
+It has the following attributes: 'geschicklichkeitBasis', which is of type int; 'intuitionBasis', which is of type int; 'reaktionBasis', which is of type int; 'konstitutionBasis', which is of type int; 'willenskraftBasis', which is of type int; 'modManager', which is of type str; 'charismaBasis', which is of type int; 'staerkeBasis', which is of type int; 'logikBasis', which is of type int.
+
+'StufenPersona' represents an important domain concept.
+It does not declare any attributes.
+
+'AstraleProjektion' represents an important domain concept.
+It does not declare any attributes.
+
+'Spezialisierung' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_CyberwareEnhancement' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'capacityUse', which is of type int.
+
+'shr5_Vertrag' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_KleindungsModifikator' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'rating', which is of type int; 'capacity', which is of type int.
+
+'shr5_FahrzeugZustand' represents an important domain concept.
+It has one attribute: 'zustandMax', which is of type int.
+
+'shr5_Beschreibbar' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'beschreibung', which is of type str; 'image', which is of type str.
+
+'shr5_Nahkampfwaffe' represents an important domain concept.
+It has one attribute: 'reichweite', which is of type int.
+
+'shr5_RiggerProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_IntervallVertrag' represents an important domain concept.
+It has the following attributes: 'faelligkeitsIntervall', which is of type int; 'unit', which is of type str; 'begin', which is of type str.
+
+'Wissensfertigkeit' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_MagischeTradition' represents an important domain concept.
+It has one attribute: 'enzug', which is of type str.
+
+'Modifizierbar' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Lifestyle' represents an important domain concept.
+It has one attribute: 'owned', which is of type bool.
+
+'shr5_Spezialisierung' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_ProbenModifikatoren' represents an important domain concept.
+It has the following attributes: 'schadenswiederstand', which is of type int; 'heilung', which is of type int.
+
+'shr5_MagieFokus' represents an important domain concept.
+It has one attribute: 'bindungsFaktor', which is of type int.
+
+'Substance' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_AutoSoft' represents an important domain concept.
+It has one attribute: 'rating', which is of type int.
+
+'shr5_AbstractMatrixDevice' represents an important domain concept.
+It has one attribute: 'deviceRating', which is of type int.
+
+'Software' represents an important domain concept.
+It does not declare any attributes.
+
+'ActiveMatixDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_MagischeStufe' represents an important domain concept.
+It has one attribute: 'stufe', which is of type int.
+
+'shr5_Wissensfertigkeit' represents an important domain concept.
+It does not declare any attributes.
+
+'Nahkampfwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstraktModifikatoren' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_RiggerCommandConsole' represents an important domain concept.
+It has the following attributes: 'zugriff', which is of type int; 'datenverarbeitungBasis', which is of type int; 'rauschunterdrueckung', which is of type int; 'zugriffBasis', which is of type int; 'firewallBasis', which is of type int.
+
+'shr5_DefaultWifi' represents an important domain concept.
+It does not declare any attributes.
+
+'MagischePersona' represents an important domain concept.
+It does not declare any attributes.
+
+'PersonaZustand' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_KoerperlicheAttribute' represents an important domain concept.
+It has the following attributes: 'geschicklichkeit', which is of type int; 'reaktion', which is of type int; 'staerke', which is of type int; 'konstitution', which is of type int.
+
+'shr5_Zauberer' represents an important domain concept.
+It has one attribute: 'enzug', which is of type int.
+
+'shr5_Technomancer' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Panzerung' represents an important domain concept.
+It has one attribute: 'panzer', which is of type int.
+
+'shr5_Wurfwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Projektilwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_GegenstandStufen' represents an important domain concept.
+It has the following attributes: 'antiTracing', which is of type int; 'tracing', which is of type int; 'elektronik', which is of type int; 'protection', which is of type int; 'antiProtection', which is of type int; 'computer', which is of type int.
+
+'shr5_Schutzgeist' represents an important domain concept.
+It has the following attributes: 'vorteile', which is of type str; 'nachteile', which is of type str.
+
+'PassagierFahrzeug' represents an important domain concept.
+It does not declare any attributes.
+
+'MatrixAttributes' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Cyberdeck' represents an important domain concept.
+It has the following attributes: 'attribute1', which is of type int; 'modManager', which is of type str; 'programSlots', which is of type int; 'attribute2', which is of type int; 'attribute4', which is of type int; 'attribute3', which is of type int.
+
+'shr5_Tutorsoft' represents an important domain concept.
+It has one attribute: 'rating', which is of type int.
+
+'AbstraktFokus' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Echo' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_AbstaktWaffe' represents an important domain concept.
+It has the following attributes: 'schadenscode', which is of type str; 'durchschlagsKraft', which is of type int; 'schadesTyp', which is of type str; 'praezision', which is of type int.
+
+'shr5_MagischePersona' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_MatrixAttributes' represents an important domain concept.
+It has the following attributes: 'firewall', which is of type int; 'currentModus', which is of type str; 'geraetestufe', which is of type int; 'datenverarbeitung', which is of type int.
+
+'shr5_SubstanceContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_ResonanzPersona' represents an important domain concept.
+It has the following attributes: 'resonanzBasis', which is of type int; 'resonanz', which is of type int.
+
+'shr5_MartialartTechnique' represents an important domain concept.
+It does not declare any attributes.
+
+'FahrzeugModifikation' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Software' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_AspektMagier' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Sin' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_FahrzeugErweiterung' represents an important domain concept.
+It does not declare any attributes.
+
+'Spezies' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Fokus' represents an important domain concept.
+It has one attribute: 'bindungskosten', which is of type int.
+
+'AbstaktFernKampfwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Fahrzeug' represents an important domain concept.
+It has the following attributes: 'sensor', which is of type int; 'fahrzeugTyp', which is of type str; 'geschwindigkeit', which is of type int; 'handling', which is of type int; 'panzer', which is of type int; 'weaponMounts', which is of type int; 'pilot', which is of type int; 'rumpf', which is of type int; 'beschleunigung', which is of type int.
+
+'shr5_Identifiable' represents an important domain concept.
+It has one attribute: 'parentId', which is of type str.
+
+'Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_PersonaZauber' represents an important domain concept.
+It has one attribute: 'stufe', which is of type int.
+
+'Fahrzeug' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_WaffenFokus' represents an important domain concept.
+It does not declare any attributes.
+
+'KoerperlicheAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'MatrixProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'FahrzeugZustand' represents an important domain concept.
+It does not declare any attributes.
+
+'Wurfwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Anwendbar' represents an important domain concept.
+It does not declare any attributes.
+
+'GeistigeAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_PercentLifestyleOption' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_MartialartStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_ChrakterLimits' represents an important domain concept.
+It has the following attributes: 'geistig', which is of type int; 'koerperlich', which is of type int; 'sozial', which is of type int.
+
+'Fertigkeit' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Fertigkeit' represents an important domain concept.
+It has the following attributes: 'kategorie', which is of type str; 'ausweichen', which is of type bool.
+
+'shr5_PersonalAreaNetwork' represents an important domain concept.
+It has one attribute: 'slaveMax', which is of type int.
+
+'Beschreibbar' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Localization' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'page', which is of type int; 'local', which is of type str.
+
+'shr5_MudanPersona' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Drug' represents an important domain concept.
+It has the following attributes: 'duration', which is of type str; 'addictionType', which is of type str.
+
+'RiggerProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Sprite' represents an important domain concept.
+It has the following attributes: 'firewallMod', which is of type int; 'datenverarbeitungMod', which is of type int; 'initativeMod', which is of type int; 'schleicherMod', which is of type int; 'angriffMod', which is of type int; 'stufe', which is of type int.
+
+'shr5_SourceBook' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'startShrTime', which is of type str; 'endShrTime', which is of type str.
+
+'shr5_Modifizierbar' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMatrixDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'MagischeStufe' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Toxin' represents an important domain concept.
+It has the following attributes: 'effect', which is of type str; 'power', which is of type int; 'penetration', which is of type int.
+
+'Munition' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Granate' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Quelle' represents an important domain concept.
+It has one attribute: 'page', which is of type str.
+
+'shr5_MatrixDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_PersonaKomplexForm' represents an important domain concept.
+It has one attribute: 'stufe', which is of type int.
+
+'shr5_GebundenerGeist' represents an important domain concept.
+It has one attribute: 'dienste', which is of type int.
+
+'Quelle' represents an important domain concept.
+It does not declare any attributes.
+
+'Menge' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Magier' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Kleidung' represents an important domain concept.
+It has one attribute: 'ruestung', which is of type int.
+
+'shr5_Reichweite' represents an important domain concept.
+It has the following attributes: 'extrem', which is of type int; 'weit', which is of type int; 'kurz', which is of type int; 'mittel', which is of type int; 'min', which is of type int.
+
+'shr5_SkillSoft' represents an important domain concept.
+It has one attribute: 'rating', which is of type int.
+
+'shr5_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Fakeable' represents an important domain concept.
+It has the following attributes: 'gefaelscht', which is of type bool; 'stufe', which is of type int.
+
+'shr5_ShoppingTransaction' represents an important domain concept.
+It has the following attributes: 'caculatedCosts', which is of type str; 'fee', which is of type float.
+
+'LifestyleOption' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_AbstraktGegenstand' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Sichtverhaeltnisse' represents an important domain concept.
+It has the following attributes: 'infrarot', which is of type str; 'ultrasound', which is of type str; 'restlichtverstaerkung', which is of type str.
+
+'ResonanzPersona' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_CritterKraft' represents an important domain concept.
+It has the following attributes: 'handlung', which is of type str; 'reichweite', which is of type str; 'art', which is of type str; 'dauer', which is of type str.
+
+'shr5_SpezielleAttribute' represents an important domain concept.
+It has the following attributes: 'edgeBasis', which is of type int; 'initative', which is of type int; 'initativWuerfel', which is of type int; 'ausweichen', which is of type int; 'essenz', which is of type int; 'edge', which is of type int.
+
+'Anwendbar' represents an important domain concept.
+It does not declare any attributes.
+
+'ChrakterLimits' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_AstraleProjektion' represents an important domain concept.
+It has the following attributes: 'astraleInitative', which is of type int; 'astraleStaerke', which is of type int; 'astralePanzerung', which is of type int; 'astraleKonstitution', which is of type int; 'astraleInitativWuerfel', which is of type int; 'astraleReaktion', which is of type int; 'astraleGeschicklichkeit', which is of type int; 'astralesLimit', which is of type int.
+
+'GeldWert' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_PersonaMartialartStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_FahrzeugModifikation' represents an important domain concept.
+It has one attribute: 'capacityUsed', which is of type int.
+
+'shr5_Credstick' represents an important domain concept.
+It has the following attributes: 'currentValue', which is of type str; 'maxValue', which is of type int.
+
+'shr5_TransferAmount' represents an important domain concept.
+It has one attribute: 'amountToTransfer', which is of type str.
+
+'shr5_AbtraktGranate' represents an important domain concept.
+It has one attribute: 'blast', which is of type str.
+
+'shr5_Datasoft' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_WeaponMount' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_BasicProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Modifyable' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Critter' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_PersonaFertigkeitsGruppe' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_PersonaMartialartTechnique' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_MagischeMods' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_PersonaFertigkeit' represents an important domain concept.
+It does not declare any attributes.
+
+'MatixConditionMonitor' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_CredstickTransaction' represents an important domain concept.
+It has the following attributes: 'date', which is of type str; 'description', which is of type str; 'amount', which is of type str.
+
+'shr5_QiFokus' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Koerpermods' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_PassagierFahrzeug' represents an important domain concept.
+It has one attribute: 'sitze', which is of type int.
+
+'shr5_LifestyleOption' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_AbstaktFernKampfwaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_KiKraft' represents an important domain concept.
+It has one attribute: 'kraftpunkte', which is of type int.
+
+'shr5_ActiveMatixDevice' represents an important domain concept.
+It has the following attributes: 'schleicher', which is of type int; 'angriff', which is of type int.
+
+'shr5_Commlink' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_CommonProgram' represents an important domain concept.
+It has one attribute: 'programType', which is of type str.
+
+'shr5_BerechneteAttribute' represents an important domain concept.
+It has the following attributes: 'menschenkenntnis', which is of type int; 'errinerungsvermoegen', which is of type int; 'selbstbeherrschung', which is of type int.
+
+'shr5_FernkampfwaffenModifikatoren' represents an important domain concept.
+It has the following attributes: 'schalldaempfer', which is of type bool; 'rueckstoss', which is of type int; 'smartgun', which is of type str; 'sichtverbesserung', which is of type int; 'vergroesserung', which is of type int; 'lasterPointer', which is of type bool.
+
+'shr5_Drohne' represents an important domain concept.
+It has one attribute: 'programSlotCount', which is of type int.
+
+'shr5_ConsumerSoft' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'shr5_Feuerwaffe' represents an important domain concept.
+It has the following attributes: 'kapazitaet', which is of type int; 'rueckstoss', which is of type int; 'munitionstyp', which is of type str; 'modie', which is of type str; 'erweiterung', which is of type str.
+
+'BasicProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_AttributModifikatorWert' represents an important domain concept.
+It has one attribute: 'wert', which is of type int.
+
+'Steigerbar' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_FokusBinding' represents an important domain concept.
+It has one attribute: 'active', which is of type bool.
+
+'shr5_MatrixProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'CyberwareEnhancement' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_FertigkeitsGruppe' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_SensorArray' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_GeistigeAttribute' represents an important domain concept.
+It has the following attributes: 'willenskraft', which is of type int; 'logik', which is of type int; 'charisma', which is of type int; 'intuition', which is of type int.
+
+'shr5_Geist' represents an important domain concept.
+It has the following attributes: 'intuitionBasis', which is of type int; 'willenskraftBasis', which is of type int; 'logikBasis', which is of type int; 'reaktionBasis', which is of type int; 'staerkeBasis', which is of type int; 'charismaBasis', which is of type int; 'konstitutionBasis', which is of type int; 'geschicklichkeitBasis', which is of type int.
+
+'shr5_MatixConditionMonitor' represents an important domain concept.
+It has one attribute: 'matrixZustandMax', which is of type int.
+
+'Fokus' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Spezies' represents an important domain concept.
+It has the following attributes: 'staerkeMin', which is of type int; 'logikMax', which is of type int; 'intuitionMin', which is of type int; 'resonanzMin', which is of type int; 'rennen', which is of type int; 'sprinten', which is of type int; 'willenskraftMin', which is of type int; 'resonanzMax', which is of type int; 'edgeMax', which is of type int; 'reaktionMin', which is of type int; 'intuitionMax', which is of type int; 'charismaMin', which is of type int; 'laufen', which is of type int; 'geschicklichkeitMin', which is of type int; 'staerkeMax', which is of type int; 'essenzMax', which is of type int; 'willenskraftMax', which is of type int; 'essenzMin', which is of type int; 'geschicklichkeitMax', which is of type int; 'charismaMax', which is of type int; 'edgeMin', which is of type int; 'konstitutionMax', which is of type int; 'konstitutionMin', which is of type int; 'magieMax', which is of type int; 'reaktionMax', which is of type int; 'logikMin', which is of type int; 'magieMin', which is of type int.
+
+'AbstraktPersona' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_ModifikatorAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_KomplexeForm' represents an important domain concept.
+It has the following attributes: 'dauer', which is of type str; 'schwund', which is of type str; 'ziel', which is of type str.
+
+'shr5_GeldWert' represents an important domain concept.
+It has the following attributes: 'wert', which is of type str; 'verfuegbarkeit', which is of type str; 'wertValue', which is of type str.
+
+'BaseMagischePersona' represents an important domain concept.
+It does not declare any attributes.
+
+'Modifyable' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_PersonaEigenschaft' represents an important domain concept.
+It has one attribute: 'karmaKosten', which is of type int.
+
+'shr5_Gegenstand' represents an important domain concept.
+It has the following attributes: 'kategorie', which is of type str; 'stufe', which is of type int.
+
+'ModifikatorAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Bodenfahrzeug' represents an important domain concept.
+It has the following attributes: 'geschwindigkeitGelaende', which is of type int; 'handlingGelaende', which is of type int.
+
+'shr5_CyberImplantWeapon' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertrag' represents an important domain concept.
+It does not declare any attributes.
+
+'SpezielleAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_AbstraktFokus' represents an important domain concept.
+It does not declare any attributes.
+
+'IntervallVertrag' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_SensorFunction' represents an important domain concept.
+It has one attribute: 'maxRange', which is of type int.
+
+'shr5_Menge' represents an important domain concept.
+It has the following attributes: 'proAnzahl', which is of type int; 'anzahl', which is of type int.
+
+'AbtraktGranate' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Cyberware' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'cyberwareCapacity', which is of type int.
+
+'Zauberer' represents an important domain concept.
+It does not declare any attributes.
+
+'Koerpermods' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_PersonaZustand' represents an important domain concept.
+It has the following attributes: 'zustandGrenze', which is of type int; 'zustandKoerperlichMax', which is of type int; 'zustandGeistigMax', which is of type int.
+
+'shr5_Substance' represents an important domain concept.
+It has the following attributes: 'vector', which is of type str; 'speed', which is of type str.
+
+'shr5_MiniGrenate' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_AbstraktModifikatoren' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_MetaMagie' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Host' represents an important domain concept.
+It has the following attributes: 'hostRating', which is of type int; 'baseFirewall', which is of type int; 'baseAngriff', which is of type int; 'baseDatenverarbeitung', which is of type int; 'baseSchleicher', which is of type int.
+
+'KoerperPersona' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_CyberwareModifikatioren' represents an important domain concept.
+It has the following attributes: 'riggerInterface', which is of type bool; 'simRig', which is of type int; 'directNeuralInterface', which is of type bool; 'controlRig', which is of type int; 'universalDataConnector', which is of type bool.
+
+'shr5_ShrList' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Munition' represents an important domain concept.
+It has the following attributes: 'damageMod', which is of type int; 'damageType', which is of type str; 'armorMod', which is of type int.
+
+'shr5_Capacity' represents an important domain concept.
+It has the following attributes: 'capacityRemains', which is of type int; 'capacity', which is of type int.
+
+'shr5_SourceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Sprachfertigkeit' represents an important domain concept.
+It does not declare any attributes.
+
+'Capacity' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Zauber' represents an important domain concept.
+It has the following attributes: 'kategorie', which is of type str; 'entzug', which is of type str; 'merkmale', which is of type str; 'dauer', which is of type str; 'art', which is of type str; 'reichweite', which is of type str; 'schaden', which is of type str.
+
+'shr5_KiAdept' represents an important domain concept.
+It does not declare any attributes.
+
+'CredstickTransaction' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_BioWare' represents an important domain concept.
+It does not declare any attributes.
+
+'MatrixDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'KiAdept' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstaktWaffe' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_MysticAdept' represents an important domain concept.
+It does not declare any attributes.
+
+'Erlernbar' represents an important domain concept.
+It does not declare any attributes.
+
+'BerechneteAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Sensor' represents an important domain concept.
+It has the following attributes: 'rating', which is of type int; 'capacityValue', which is of type int.
+
+'Panzerung' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Steigerbar' represents an important domain concept.
+It has one attribute: 'stufe', which is of type int.
+
+'Fakeable' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstraktGegenstand' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Initation' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_Erlernbar' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_BaseMagischePersona' represents an important domain concept.
+It has the following attributes: 'magieBasis', which is of type int; 'magie', which is of type int.
+
+'shr5_StufenPersona' represents an important domain concept.
+It has one attribute: 'stufe', which is of type int.
+
+'shr5_Lizenz' represents an important domain concept.
+It has one attribute: 'lizenGegenstand', which is of type str.
+
+'shr5_KoerperPersona' represents an important domain concept.
+It has the following attributes: 'zustandKoerperlich', which is of type int; 'zustandGeistig', which is of type int.
+
+'MagischeMods' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5_FernkampfwaffeModifikator' represents an important domain concept.
+It has one attribute: 'ep', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AddictionType' defines the following possible values: 'both', 'psychological', 'physiological'.
+The enumeration 'InterfaceModus' defines the following possible values: 'hotSim', 'coldSim', 'augmentedReality'.
+The enumeration 'CritterHandlung' defines the following possible values: 'auto', 'komplex'.
+The enumeration 'ProgramType' defines the following possible values: 'defaultSoft', 'dataSoft', 'shopSoft'.
+The enumeration 'CritterDauer' defines the following possible values: 'immer', 'aufrechterhalten', 'permanent', 'sofort', 'speziell'.
+The enumeration 'FeuwerwaffenErweiterung' defines the following possible values: 'Unten', 'Oben', 'Lauf'.
+The enumeration 'FeuerModus' defines the following possible values: 'AM', 'SM', 'HM', 'EM'.
+The enumeration 'MagazinTyp' defines the following possible values: 'Clip', 'Gurt', 'Streifen', 'Trommel'.
+The enumeration 'SmartgunType' defines the following possible values: 'SmartBrille', 'SmartGun', 'SmatgunII'.
+The enumeration 'SubstanceEffect' defines the following possible values: 'nausea', 'paralysis', 'disorientation', 'stunDamage'.
+The enumeration 'SchadensTyp' defines the following possible values: 'speziell', 'koerperlich', 'geistig'.
+The enumeration 'ZauberReichweite' defines the following possible values: 'Selbst', 'Blickfeld', 'Begrenzt', 'Beruehrung'.
+The enumeration 'ZauberArt' defines the following possible values: 'Physisch', 'Mana'.
+The enumeration 'SubstanceVector' defines the following possible values: 'inhalation', 'ingestion', 'contact', 'injection'.
+The enumeration 'armorModificationType' defines the following possible values: 'FireResistance', 'ChemicalProtection', 'ShockFrills', 'Insulation', 'Nonconductivity', 'ThermalDamping', 'ChemicalSeal'.
+The enumeration 'CyberwareType' defines the following possible values: 'headware', 'bodyware', 'earware', 'cyberlimb', 'eyeware'.
+The enumeration 'ZauberDauer' defines the following possible values: 'Sofort', 'Permanent', 'Aufrechterhalten'.
+The enumeration 'TimeUnits' defines the following possible values: 'month', 'day', 'min', 'sec', 'hour', 'year', 'week'.
+The enumeration 'MatrixProgramType' defines the following possible values: 'defaultProgram', 'hackingProgram'.
+The enumeration 'ModifikatorType' defines the following possible values: 'Cyber', 'Bio', 'Natural'.
+The enumeration 'CritterReichweite' defines the following possible values: 'speziell', 'beruehrung', 'selbst', 'blickfeld'.
+The enumeration 'ResonanzZiel' defines the following possible values: 'sprite', 'geraet', 'persona', 'datei', 'selbst'.
+The enumeration 'Enzug' defines the following possible values: 'wil_cha', 'wil_log', 'wil_int'.
+
+The model also captures inheritance relationships between classes.
+The class 'shr5_Quelle' is a specialization of 'Identifiable'.
+The class 'shr5_SourceBook' is a specialization of 'Beschreibbar'.
+The class 'shr5_SourceBook' is a specialization of 'Identifiable'.
+The class 'shr5_AbstraktPersona' is a specialization of 'Beschreibbar'.
+The class 'shr5_AbstraktPersona' is a specialization of 'KoerperlicheAttribute'.
+The class 'shr5_AbstraktPersona' is a specialization of 'SpezielleAttribute'.
+The class 'shr5_AbstraktPersona' is a specialization of 'GeistigeAttribute'.
+The class 'shr5_AbstraktPersona' is a specialization of 'ChrakterLimits'.
+The class 'shr5_Gegenstand' is a specialization of 'AbstraktGegenstand'.
+The class 'shr5_Reichweite' is a specialization of 'Beschreibbar'.
+The class 'shr5_Reichweite' is a specialization of 'Identifiable'.
+The class 'shr5_KoerperlicheAttribute' is a specialization of 'ModifikatorAttribute'.
+The class 'shr5_SpezielleAttribute' is a specialization of 'ModifikatorAttribute'.
+The class 'shr5_AbstraktGegenstand' is a specialization of 'Quelle'.
+The class 'shr5_AbstraktGegenstand' is a specialization of 'GeldWert'.
+The class 'shr5_AbstraktGegenstand' is a specialization of 'Beschreibbar'.
+The class 'shr5_AbstraktGegenstand' is a specialization of 'Modifizierbar'.
+The class 'shr5_AbstraktGegenstand' is a specialization of 'Anwendbar'.
+The class 'shr5_AbstaktFernKampfwaffe' is a specialization of 'AbstaktWaffe'.
+The class 'shr5_AbstaktWaffe' is a specialization of 'AbstraktGegenstand'.
+The class 'shr5_Nahkampfwaffe' is a specialization of 'AbstaktWaffe'.
+The class 'shr5_Feuerwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+The class 'shr5_Wurfwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+The class 'shr5_Wurfwaffe' is a specialization of 'Menge'.
+The class 'shr5_ShrList' is a specialization of 'Beschreibbar'.
+The class 'shr5_ShrList' is a specialization of 'Identifiable'.
+The class 'shr5_Projektilwaffe' is a specialization of 'AbstaktFernKampfwaffe'.
+The class 'shr5_FertigkeitsGruppe' is a specialization of 'Beschreibbar'.
+The class 'shr5_FertigkeitsGruppe' is a specialization of 'Quelle'.
+The class 'shr5_FertigkeitsGruppe' is a specialization of 'Modifyable'.
+The class 'shr5_Fertigkeit' is a specialization of 'Beschreibbar'.
+The class 'shr5_Fertigkeit' is a specialization of 'Quelle'.
+The class 'shr5_Fertigkeit' is a specialization of 'Modifyable'.
+The class 'shr5_PersonaFertigkeit' is a specialization of 'Steigerbar'.
+The class 'shr5_PersonaFertigkeitsGruppe' is a specialization of 'Steigerbar'.
+The class 'shr5_Cyberware' is a specialization of 'Koerpermods'.
+The class 'shr5_Cyberware' is a specialization of 'GeldWert'.
+The class 'shr5_Cyberware' is a specialization of 'Capacity'.
+The class 'shr5_BioWare' is a specialization of 'Koerpermods'.
+The class 'shr5_BioWare' is a specialization of 'GeldWert'.
+The class 'shr5_Koerpermods' is a specialization of 'AbstraktModifikatoren'.
+The class 'shr5_AbstraktModifikatoren' is a specialization of 'Beschreibbar'.
+The class 'shr5_AbstraktModifikatoren' is a specialization of 'Modifizierbar'.
+The class 'shr5_AbstraktModifikatoren' is a specialization of 'Quelle'.
+The class 'shr5_GeistigeAttribute' is a specialization of 'ModifikatorAttribute'.
+The class 'shr5_MudanPersona' is a specialization of 'KoerperPersona'.
+The class 'shr5_KoerperPersona' is a specialization of 'AbstraktPersona'.
+The class 'shr5_KoerperPersona' is a specialization of 'Panzerung'.
+The class 'shr5_KoerperPersona' is a specialization of 'PersonaZustand'.
+The class 'shr5_KoerperPersona' is a specialization of 'BerechneteAttribute'.
+The class 'shr5_MagischeMods' is a specialization of 'AbstraktModifikatoren'.
+The class 'shr5_KiKraft' is a specialization of 'MagischeMods'.
+The class 'shr5_KiKraft' is a specialization of 'Erlernbar'.
+The class 'shr5_MagischePersona' is a specialization of 'KoerperPersona'.
+The class 'shr5_MagischePersona' is a specialization of 'BaseMagischePersona'.
+The class 'shr5_FernkampfwaffenModifikatoren' is a specialization of 'ModifikatorAttribute'.
+The class 'shr5_Sichtverhaeltnisse' is a specialization of 'ModifikatorAttribute'.
+The class 'shr5_Spezies' is a specialization of 'Beschreibbar'.
+The class 'shr5_Spezies' is a specialization of 'Modifizierbar'.
+The class 'shr5_Spezies' is a specialization of 'Quelle'.
+The class 'shr5_GegenstandStufen' is a specialization of 'ModifikatorAttribute'.
+The class 'shr5_KiAdept' is a specialization of 'MagischePersona'.
+The class 'shr5_Kleidung' is a specialization of 'AbstraktGegenstand'.
+The class 'shr5_Kleidung' is a specialization of 'Capacity'.
+The class 'shr5_FernkampfwaffeModifikator' is a specialization of 'AbstraktModifikatoren'.
+The class 'shr5_FernkampfwaffeModifikator' is a specialization of 'GeldWert'.
+The class 'shr5_PersonaEigenschaft' is a specialization of 'AbstraktModifikatoren'.
+The class 'shr5_PersonaEigenschaft' is a specialization of 'Erlernbar'.
+The class 'shr5_ProbenModifikatoren' is a specialization of 'ModifikatorAttribute'.
+The class 'shr5_Magier' is a specialization of 'MagischePersona'.
+The class 'shr5_Magier' is a specialization of 'Zauberer'.
+The class 'shr5_Magier' is a specialization of 'AstraleProjektion'.
+The class 'shr5_MysticAdept' is a specialization of 'KiAdept'.
+The class 'shr5_MysticAdept' is a specialization of 'Zauberer'.
+The class 'shr5_PersonaZauber' is a specialization of 'Erlernbar'.
+The class 'shr5_Zauber' is a specialization of 'Beschreibbar'.
+The class 'shr5_Zauber' is a specialization of 'Quelle'.
+The class 'shr5_AspektMagier' is a specialization of 'MagischePersona'.
+The class 'shr5_AspektMagier' is a specialization of 'Zauberer'.
+The class 'shr5_Schutzgeist' is a specialization of 'MagischeMods'.
+The class 'shr5_Initation' is a specialization of 'Steigerbar'.
+The class 'shr5_MetaMagie' is a specialization of 'Beschreibbar'.
+The class 'shr5_MetaMagie' is a specialization of 'Quelle'.
+The class 'shr5_CritterKraft' is a specialization of 'MagischeMods'.
+The class 'shr5_Fahrzeug' is a specialization of 'Beschreibbar'.
+The class 'shr5_Fahrzeug' is a specialization of 'Quelle'.
+The class 'shr5_Fahrzeug' is a specialization of 'GeldWert'.
+The class 'shr5_Fahrzeug' is a specialization of 'Anwendbar'.
+The class 'shr5_Fahrzeug' is a specialization of 'Modifizierbar'.
+The class 'shr5_Fahrzeug' is a specialization of 'FahrzeugZustand'.
+The class 'shr5_Fahrzeug' is a specialization of 'Capacity'.
+The class 'shr5_Bodenfahrzeug' is a specialization of 'PassagierFahrzeug'.
+The class 'shr5_PassagierFahrzeug' is a specialization of 'Fahrzeug'.
+The class 'shr5_Drohne' is a specialization of 'Fahrzeug'.
+The class 'shr5_Drohne' is a specialization of 'MatrixAttributes'.
+The class 'shr5_FahrzeugModifikation' is a specialization of 'Beschreibbar'.
+The class 'shr5_FahrzeugModifikation' is a specialization of 'Quelle'.
+The class 'shr5_FahrzeugModifikation' is a specialization of 'GeldWert'.
+The class 'shr5_Technomancer' is a specialization of 'KoerperPersona'.
+The class 'shr5_Technomancer' is a specialization of 'ResonanzPersona'.
+The class 'shr5_ResonanzPersona' is a specialization of 'ActiveMatixDevice'.
+The class 'shr5_KomplexeForm' is a specialization of 'Quelle'.
+The class 'shr5_KomplexeForm' is a specialization of 'Beschreibbar'.
+The class 'shr5_PersonaKomplexForm' is a specialization of 'Erlernbar'.
+The class 'shr5_Sprite' is a specialization of 'ResonanzPersona'.
+The class 'shr5_Sprite' is a specialization of 'Beschreibbar'.
+The class 'shr5_Sprite' is a specialization of 'Quelle'.
+The class 'shr5_Echo' is a specialization of 'AbstraktModifikatoren'.
+The class 'shr5_Vertrag' is a specialization of 'Beschreibbar'.
+The class 'shr5_Vertrag' is a specialization of 'Quelle'.
+The class 'shr5_Vertrag' is a specialization of 'GeldWert'.
+The class 'shr5_Lifestyle' is a specialization of 'IntervallVertrag'.
+The class 'shr5_Wissensfertigkeit' is a specialization of 'Fertigkeit'.
+The class 'shr5_Sprachfertigkeit' is a specialization of 'Wissensfertigkeit'.
+The class 'shr5_Critter' is a specialization of 'Spezies'.
+The class 'shr5_IntervallVertrag' is a specialization of 'Vertrag'.
+The class 'shr5_Sin' is a specialization of 'Fakeable'.
+The class 'shr5_Lizenz' is a specialization of 'Fakeable'.
+The class 'shr5_Fakeable' is a specialization of 'Vertrag'.
+The class 'shr5_Steigerbar' is a specialization of 'Erlernbar'.
+The class 'shr5_Credstick' is a specialization of 'AbstraktGegenstand'.
+The class 'shr5_Munition' is a specialization of 'AbstraktGegenstand'.
+The class 'shr5_Munition' is a specialization of 'Menge'.
+The class 'shr5_StufenPersona' is a specialization of 'Quelle'.
+The class 'shr5_StufenPersona' is a specialization of 'SpezielleAttribute'.
+The class 'shr5_StufenPersona' is a specialization of 'GeistigeAttribute'.
+The class 'shr5_StufenPersona' is a specialization of 'KoerperlicheAttribute'.
+The class 'shr5_StufenPersona' is a specialization of 'Beschreibbar'.
+The class 'shr5_StufenPersona' is a specialization of 'ChrakterLimits'.
+The class 'shr5_StufenPersona' is a specialization of 'Panzerung'.
+The class 'shr5_Geist' is a specialization of 'StufenPersona'.
+The class 'shr5_Geist' is a specialization of 'AstraleProjektion'.
+The class 'shr5_Spezialisierung' is a specialization of 'Beschreibbar'.
+The class 'shr5_Spezialisierung' is a specialization of 'Quelle'.
+The class 'shr5_Spezialisierung' is a specialization of 'Erlernbar'.
+The class 'shr5_Spezialisierung' is a specialization of 'Modifyable'.
+The class 'shr5_MatrixAttributes' is a specialization of 'MatixConditionMonitor'.
+The class 'shr5_ActiveMatixDevice' is a specialization of 'MatrixAttributes'.
+The class 'shr5_Commlink' is a specialization of 'AbstractMatrixDevice'.
+The class 'shr5_Cyberdeck' is a specialization of 'AbstractMatrixDevice'.
+The class 'shr5_Cyberdeck' is a specialization of 'MatrixDevice'.
+The class 'shr5_Cyberdeck' is a specialization of 'ActiveMatixDevice'.
+The class 'shr5_Cyberdeck' is a specialization of 'Capacity'.
+The class 'shr5_SoftwareAgent' is a specialization of 'MatrixProgram'.
+The class 'shr5_Host' is a specialization of 'Beschreibbar'.
+The class 'shr5_Host' is a specialization of 'MatrixDevice'.
+The class 'shr5_Host' is a specialization of 'ActiveMatixDevice'.
+The class 'shr5_CyberwareModifikatioren' is a specialization of 'ModifikatorAttribute'.
+The class 'shr5_RiggerCommandConsole' is a specialization of 'AbstractMatrixDevice'.
+The class 'shr5_AutoSoft' is a specialization of 'RiggerProgram'.
+The class 'shr5_Software' is a specialization of 'GeldWert'.
+The class 'shr5_Software' is a specialization of 'Beschreibbar'.
+The class 'shr5_Software' is a specialization of 'Quelle'.
+The class 'shr5_MatrixProgram' is a specialization of 'Software'.
+The class 'shr5_MatrixProgram' is a specialization of 'Modifizierbar'.
+The class 'shr5_Tutorsoft' is a specialization of 'BasicProgram'.
+The class 'shr5_SkillSoft' is a specialization of 'Software'.
+The class 'shr5_BasicProgram' is a specialization of 'Software'.
+The class 'shr5_Datasoft' is a specialization of 'BasicProgram'.
+The class 'shr5_AbstractMatrixDevice' is a specialization of 'AbstraktGegenstand'.
+The class 'shr5_AbstractMatrixDevice' is a specialization of 'MatrixDevice'.
+The class 'shr5_ConsumerSoft' is a specialization of 'BasicProgram'.
+The class 'shr5_RiggerProgram' is a specialization of 'Software'.
+The class 'shr5_MatrixDevice' is a specialization of 'MatrixAttributes'.
+The class 'shr5_CommonProgram' is a specialization of 'MatrixProgram'.
+The class 'shr5_CommonProgram' is a specialization of 'RiggerProgram'.
+The class 'shr5_WeaponMount' is a specialization of 'FahrzeugModifikation'.
+The class 'shr5_LifestyleOption' is a specialization of 'Beschreibbar'.
+The class 'shr5_LifestyleOption' is a specialization of 'Quelle'.
+The class 'shr5_LifestyleOption' is a specialization of 'GeldWert'.
+The class 'shr5_PercentLifestyleOption' is a specialization of 'LifestyleOption'.
+The class 'shr5_Fokus' is a specialization of 'MagischeStufe'.
+The class 'shr5_Fokus' is a specialization of 'Erlernbar'.
+The class 'shr5_AbstraktFokus' is a specialization of 'Fokus'.
+The class 'shr5_AbstraktFokus' is a specialization of 'AbstraktGegenstand'.
+The class 'shr5_QiFokus' is a specialization of 'AbstraktFokus'.
+The class 'shr5_WaffenFokus' is a specialization of 'Nahkampfwaffe'.
+The class 'shr5_WaffenFokus' is a specialization of 'Fokus'.
+The class 'shr5_MagieFokus' is a specialization of 'AbstraktFokus'.
+The class 'shr5_Substance' is a specialization of 'Beschreibbar'.
+The class 'shr5_Substance' is a specialization of 'Quelle'.
+The class 'shr5_Substance' is a specialization of 'GeldWert'.
+The class 'shr5_Substance' is a specialization of 'Menge'.
+The class 'shr5_Toxin' is a specialization of 'Substance'.
+The class 'shr5_Drug' is a specialization of 'Substance'.
+The class 'shr5_Drug' is a specialization of 'Modifizierbar'.
+The class 'shr5_Magazin' is a specialization of 'AbstraktGegenstand'.
+The class 'shr5_Magazin' is a specialization of 'Capacity'.
+The class 'shr5_DefaultWifi' is a specialization of 'AbstractMatrixDevice'.
+The class 'shr5_SubstanceContainer' is a specialization of 'AbstraktGegenstand'.
+The class 'shr5_CyberwareEnhancement' is a specialization of 'GeldWert'.
+The class 'shr5_CyberwareEnhancement' is a specialization of 'AbstraktModifikatoren'.
+The class 'shr5_CyberImplantWeapon' is a specialization of 'CyberwareEnhancement'.
+The class 'shr5_MagischeTradition' is a specialization of 'Beschreibbar'.
+The class 'shr5_MagischeTradition' is a specialization of 'Quelle'.
+The class 'shr5_ShoppingTransaction' is a specialization of 'CredstickTransaction'.
+The class 'shr5_TransferAmount' is a specialization of 'CredstickTransaction'.
+The class 'shr5_KleindungsModifikator' is a specialization of 'Beschreibbar'.
+The class 'shr5_KleindungsModifikator' is a specialization of 'Quelle'.
+The class 'shr5_KleindungsModifikator' is a specialization of 'GeldWert'.
+The class 'shr5_Sensor' is a specialization of 'Capacity'.
+The class 'shr5_Sensor' is a specialization of 'Beschreibbar'.
+The class 'shr5_Sensor' is a specialization of 'Quelle'.
+The class 'shr5_Sensor' is a specialization of 'GeldWert'.
+The class 'shr5_SensorArray' is a specialization of 'Sensor'.
+The class 'shr5_SensorFunction' is a specialization of 'Beschreibbar'.
+The class 'shr5_SensorFunction' is a specialization of 'Quelle'.
+The class 'shr5_MartialartStyle' is a specialization of 'Beschreibbar'.
+The class 'shr5_MartialartStyle' is a specialization of 'Quelle'.
+The class 'shr5_MartialartTechnique' is a specialization of 'Beschreibbar'.
+The class 'shr5_MartialartTechnique' is a specialization of 'Quelle'.
+The class 'shr5_PersonaMartialartStyle' is a specialization of 'Spezialisierung'.
+The class 'shr5_PersonaMartialartTechnique' is a specialization of 'Erlernbar'.
+The class 'shr5_FahrzeugErweiterung' is a specialization of 'FahrzeugModifikation'.
+The class 'shr5_MiniGrenate' is a specialization of 'Munition'.
+The class 'shr5_MiniGrenate' is a specialization of 'AbtraktGranate'.
+The class 'shr5_Granate' is a specialization of 'Wurfwaffe'.
+The class 'shr5_Granate' is a specialization of 'AbtraktGranate'.
+The class 'shr5_SourceLink' is a specialization of 'Beschreibbar'.
+The class 'shr5_SourceLink' is a specialization of 'Quelle'.
+
+Relationships between classes are modeled using associations.
+An association connects 'shr5_Quelle' and 'shr5_SourceBook'. From 'shr5_Quelle', the role 'shr5_Quelle' has cardinality 0..*, and from 'shr5_SourceBook', the role 'shr5_SourceBook' has cardinality 0..*.
+An association connects 'shr5_AbstraktPersona' and 'shr5_PersonaFertigkeit'. From 'shr5_AbstraktPersona', the role 'shr5_AbstraktPersona' has cardinality 0..*, and from 'shr5_PersonaFertigkeit', the role 'shr5_PersonaFertigkeit' has cardinality 0..*.
+An association connects 'shr5_AbstraktPersona' and 'shr5_PersonaFertigkeitsGruppe'. From 'shr5_AbstraktPersona', the role 'shr5_AbstraktPersona3' has cardinality 0..*, and from 'shr5_PersonaFertigkeitsGruppe', the role 'shr5_PersonaFertigkeitsGruppe' has cardinality 0..*.
+An association connects 'shr5_Spezies' and 'shr5_AbstraktPersona'. From 'shr5_Spezies', the role 'shr5_Spezies' has cardinality 0..*, and from 'shr5_AbstraktPersona', the role 'shr5_AbstraktPersona5' has cardinality 0..*.
+An association connects 'shr5_PersonaMartialartStyle' and 'shr5_AbstraktPersona'. From 'shr5_PersonaMartialartStyle', the role 'shr5_PersonaMartialartStyle' has cardinality 0..*, and from 'shr5_AbstraktPersona', the role 'shr5_AbstraktPersona7' has cardinality 0..*.
+An association connects 'shr5_EAttribute' and 'shr5_AttributModifikatorWert'. From 'shr5_EAttribute', the role 'shr5_EAttribute' has cardinality 0..*, and from 'shr5_AttributModifikatorWert', the role 'shr5_AttributModifikatorWert' has cardinality 0..*.
+An association connects 'shr5_Modifizierbar' and 'shr5_AttributModifikatorWert'. From 'shr5_Modifizierbar', the role 'Modifizierbar' has cardinality 0..*, and from 'shr5_AttributModifikatorWert', the role 'mods' has cardinality 0..*.
+An association connects 'shr5_AttributModifikatorWert' and 'shr5_Modifyable'. From 'shr5_AttributModifikatorWert', the role 'shr5_AttributModifikatorWert11' has cardinality 0..*, and from 'shr5_Modifyable', the role 'shr5_Modifyable' has cardinality 0..*.
+An association connects 'shr5_AttributModifikatorWert' and 'shr5_Modifizierbar'. From 'shr5_AttributModifikatorWert', the role 'AttributModifikatorWert' has cardinality 0..*, and from 'shr5_Modifizierbar', the role 'modifiziertes' has cardinality 0..*.
+An association connects 'shr5_MatrixDevice' and 'shr5_AbstraktGegenstand'. From 'shr5_MatrixDevice', the role 'shr5_MatrixDevice' has cardinality 0..*, and from 'shr5_AbstraktGegenstand', the role 'shr5_AbstraktGegenstand' has cardinality 0..*.
+An association connects 'shr5_Reichweite' and 'shr5_AbstaktFernKampfwaffe'. From 'shr5_Reichweite', the role 'shr5_Reichweite' has cardinality 0..*, and from 'shr5_AbstaktFernKampfwaffe', the role 'shr5_AbstaktFernKampfwaffe' has cardinality 0..*.
+An association connects 'shr5_Feuerwaffe' and 'shr5_FernkampfwaffeModifikator'. From 'shr5_Feuerwaffe', the role 'shr5_Feuerwaffe' has cardinality 0..*, and from 'shr5_FernkampfwaffeModifikator', the role 'shr5_FernkampfwaffeModifikator' has cardinality 0..*.
+An association connects 'shr5_Feuerwaffe' and 'shr5_Magazin'. From 'shr5_Feuerwaffe', the role 'shr5_Feuerwaffe17' has cardinality 0..*, and from 'shr5_Magazin', the role 'shr5_Magazin' has cardinality 0..*.
+An association connects 'shr5_ShrList' and 'shr5_EObject'. From 'shr5_ShrList', the role 'shr5_ShrList' has cardinality 0..*, and from 'shr5_EObject', the role 'shr5_EObject' has cardinality 0..*.
+An association connects 'shr5_Fertigkeit' and 'shr5_FertigkeitsGruppe'. From 'shr5_Fertigkeit', the role 'shr5_Fertigkeit' has cardinality 0..*, and from 'shr5_FertigkeitsGruppe', the role 'shr5_FertigkeitsGruppe' has cardinality 0..*.
+An association connects 'shr5_EAttribute' and 'shr5_Fertigkeit'. From 'shr5_EAttribute', the role 'shr5_EAttribute22' has cardinality 0..*, and from 'shr5_Fertigkeit', the role 'shr5_Fertigkeit21' has cardinality 0..*.
+An association connects 'shr5_Fertigkeit' and 'shr5_Spezialisierung'. From 'shr5_Fertigkeit', the role 'fertigkeit' has cardinality 0..*, and from 'shr5_Spezialisierung', the role 'Spezialisierung' has cardinality 0..*.
+An association connects 'shr5_PersonaFertigkeit' and 'shr5_Fertigkeit'. From 'shr5_PersonaFertigkeit', the role 'shr5_PersonaFertigkeit25' has cardinality 0..*, and from 'shr5_Fertigkeit', the role 'shr5_Fertigkeit26' has cardinality 0..*.
+An association connects 'shr5_PersonaFertigkeit' and 'shr5_Spezialisierung'. From 'shr5_PersonaFertigkeit', the role 'shr5_PersonaFertigkeit28' has cardinality 0..*, and from 'shr5_Spezialisierung', the role 'shr5_Spezialisierung' has cardinality 0..*.
+An association connects 'shr5_FertigkeitsGruppe' and 'shr5_PersonaFertigkeitsGruppe'. From 'shr5_FertigkeitsGruppe', the role 'shr5_FertigkeitsGruppe31' has cardinality 0..*, and from 'shr5_PersonaFertigkeitsGruppe', the role 'shr5_PersonaFertigkeitsGruppe30' has cardinality 0..*.
+An association connects 'shr5_Cyberware' and 'shr5_AbstraktPersona'. From 'shr5_Cyberware', the role 'shr5_Cyberware' has cardinality 0..*, and from 'shr5_AbstraktPersona', the role 'shr5_AbstraktPersona33' has cardinality 0..*.
+An association connects 'shr5_CyberwareEnhancement' and 'shr5_Cyberware'. From 'shr5_CyberwareEnhancement', the role 'shr5_CyberwareEnhancement' has cardinality 0..*, and from 'shr5_Cyberware', the role 'shr5_Cyberware35' has cardinality 0..*.
+An association connects 'shr5_DefaultWifi' and 'shr5_Cyberware'. From 'shr5_DefaultWifi', the role 'shr5_DefaultWifi' has cardinality 0..*, and from 'shr5_Cyberware', the role 'shr5_Cyberware37' has cardinality 0..*.
+An association connects 'shr5_AbstraktPersona' and 'shr5_BioWare'. From 'shr5_AbstraktPersona', the role 'shr5_AbstraktPersona39' has cardinality 0..*, and from 'shr5_BioWare', the role 'shr5_BioWare' has cardinality 0..*.
+An association connects 'shr5_KoerperPersona' and 'shr5_Koerpermods'. From 'shr5_KoerperPersona', the role 'shr5_KoerperPersona' has cardinality 0..*, and from 'shr5_Koerpermods', the role 'shr5_Koerpermods' has cardinality 0..*.
+An association connects 'shr5_PersonaEigenschaft' and 'shr5_KoerperPersona'. From 'shr5_PersonaEigenschaft', the role 'shr5_PersonaEigenschaft' has cardinality 0..*, and from 'shr5_KoerperPersona', the role 'shr5_KoerperPersona42' has cardinality 0..*.
+An association connects 'shr5_MagischePersona' and 'shr5_Schutzgeist'. From 'shr5_MagischePersona', the role 'shr5_MagischePersona' has cardinality 0..*, and from 'shr5_Schutzgeist', the role 'shr5_Schutzgeist' has cardinality 0..*.
+An association connects 'shr5_Initation' and 'shr5_BaseMagischePersona'. From 'shr5_Initation', the role 'shr5_Initation' has cardinality 0..*, and from 'shr5_BaseMagischePersona', the role 'shr5_BaseMagischePersona' has cardinality 0..*.
+An association connects 'shr5_BaseMagischePersona' and 'shr5_FokusBinding'. From 'shr5_BaseMagischePersona', the role 'shr5_BaseMagischePersona46' has cardinality 0..*, and from 'shr5_FokusBinding', the role 'shr5_FokusBinding' has cardinality 0..*.
+An association connects 'shr5_Spezies' and 'shr5_Nahkampfwaffe'. From 'shr5_Spezies', the role 'shr5_Spezies48' has cardinality 0..*, and from 'shr5_Nahkampfwaffe', the role 'shr5_Nahkampfwaffe' has cardinality 0..*.
+An association connects 'shr5_KiAdept' and 'shr5_KiKraft'. From 'shr5_KiAdept', the role 'shr5_KiAdept' has cardinality 0..*, and from 'shr5_KiKraft', the role 'shr5_KiKraft' has cardinality 0..*.
+An association connects 'shr5_KleindungsModifikator' and 'shr5_Kleidung'. From 'shr5_KleindungsModifikator', the role 'shr5_KleindungsModifikator' has cardinality 0..*, and from 'shr5_Kleidung', the role 'shr5_Kleidung' has cardinality 0..*.
+An association connects 'shr5_Fertigkeit' and 'shr5_Anwendbar'. From 'shr5_Fertigkeit', the role 'shr5_Fertigkeit52' has cardinality 0..*, and from 'shr5_Anwendbar', the role 'shr5_Anwendbar' has cardinality 0..*.
+An association connects 'shr5_Spezialisierung' and 'shr5_Anwendbar'. From 'shr5_Spezialisierung', the role 'shr5_Spezialisierung55' has cardinality 0..*, and from 'shr5_Anwendbar', the role 'shr5_Anwendbar54' has cardinality 0..*.
+An association connects 'shr5_PersonaZauber' and 'shr5_Zauberer'. From 'shr5_PersonaZauber', the role 'shr5_PersonaZauber' has cardinality 0..*, and from 'shr5_Zauberer', the role 'shr5_Zauberer' has cardinality 0..*.
+An association connects 'shr5_Zauberer' and 'shr5_GebundenerGeist'. From 'shr5_Zauberer', the role 'shr5_Zauberer58' has cardinality 0..*, and from 'shr5_GebundenerGeist', the role 'shr5_GebundenerGeist' has cardinality 0..*.
+An association connects 'shr5_GebundenerGeist' and 'shr5_Zauberer'. From 'shr5_GebundenerGeist', the role 'shr5_GebundenerGeist61' has cardinality 0..*, and from 'shr5_Zauberer', the role 'shr5_Zauberer60' has cardinality 0..*.
+An association connects 'shr5_MagischeTradition' and 'shr5_Zauberer'. From 'shr5_MagischeTradition', the role 'shr5_MagischeTradition' has cardinality 0..*, and from 'shr5_Zauberer', the role 'shr5_Zauberer63' has cardinality 0..*.
+An association connects 'shr5_PersonaZauber' and 'shr5_Zauber'. From 'shr5_PersonaZauber', the role 'shr5_PersonaZauber65' has cardinality 0..*, and from 'shr5_Zauber', the role 'shr5_Zauber' has cardinality 0..*.
+An association connects 'shr5_AspektMagier' and 'shr5_FertigkeitsGruppe'. From 'shr5_AspektMagier', the role 'shr5_AspektMagier' has cardinality 0..*, and from 'shr5_FertigkeitsGruppe', the role 'shr5_FertigkeitsGruppe67' has cardinality 0..*.
+An association connects 'shr5_Initation' and 'shr5_MetaMagie'. From 'shr5_Initation', the role 'shr5_Initation69' has cardinality 0..*, and from 'shr5_MetaMagie', the role 'shr5_MetaMagie' has cardinality 0..*.
+An association connects 'shr5_FahrzeugModifikation' and 'shr5_Fahrzeug'. From 'shr5_FahrzeugModifikation', the role 'shr5_FahrzeugModifikation' has cardinality 0..*, and from 'shr5_Fahrzeug', the role 'shr5_Fahrzeug' has cardinality 0..*.
+An association connects 'shr5_SensorArray' and 'shr5_Fahrzeug'. From 'shr5_SensorArray', the role 'shr5_SensorArray' has cardinality 0..*, and from 'shr5_Fahrzeug', the role 'shr5_Fahrzeug72' has cardinality 0..*.
+An association connects 'shr5_Drohne' and 'shr5_RiggerProgram'. From 'shr5_Drohne', the role 'shr5_Drohne' has cardinality 0..*, and from 'shr5_RiggerProgram', the role 'shr5_RiggerProgram' has cardinality 0..*.
+An association connects 'shr5_Drohne' and 'shr5_RiggerProgram'. From 'shr5_Drohne', the role 'shr5_Drohne75' has cardinality 0..*, and from 'shr5_RiggerProgram', the role 'shr5_RiggerProgram76' has cardinality 0..*.
+An association connects 'shr5_PersonaKomplexForm' and 'shr5_Technomancer'. From 'shr5_PersonaKomplexForm', the role 'shr5_PersonaKomplexForm' has cardinality 0..*, and from 'shr5_Technomancer', the role 'shr5_Technomancer' has cardinality 0..*.
+An association connects 'shr5_Echo' and 'shr5_Technomancer'. From 'shr5_Echo', the role 'shr5_Echo' has cardinality 0..*, and from 'shr5_Technomancer', the role 'shr5_Technomancer79' has cardinality 0..*.
+An association connects 'shr5_PersonaKomplexForm' and 'shr5_KomplexeForm'. From 'shr5_PersonaKomplexForm', the role 'shr5_PersonaKomplexForm81' has cardinality 0..*, and from 'shr5_KomplexeForm', the role 'shr5_KomplexeForm' has cardinality 0..*.
+An association connects 'shr5_LifestyleOption' and 'shr5_Lifestyle'. From 'shr5_LifestyleOption', the role 'shr5_LifestyleOption' has cardinality 0..*, and from 'shr5_Lifestyle', the role 'shr5_Lifestyle' has cardinality 0..*.
+An association connects 'shr5_Critter' and 'shr5_CritterKraft'. From 'shr5_Critter', the role 'shr5_Critter' has cardinality 0..*, and from 'shr5_CritterKraft', the role 'shr5_CritterKraft' has cardinality 0..*.
+An association connects 'shr5_Lizenz' and 'shr5_Sin'. From 'shr5_Lizenz', the role 'Lizenz' has cardinality 0..*, and from 'shr5_Sin', the role 'lizenzTraeger' has cardinality 0..*.
+An association connects 'shr5_Lizenz' and 'shr5_Sin'. From 'shr5_Lizenz', the role 'licences' has cardinality 0..*, and from 'shr5_Sin', the role 'Sin' has cardinality 0..*.
+An association connects 'shr5_CredstickTransaction' and 'shr5_Credstick'. From 'shr5_CredstickTransaction', the role 'shr5_CredstickTransaction' has cardinality 0..*, and from 'shr5_Credstick', the role 'shr5_Credstick' has cardinality 0..*.
+An association connects 'shr5_Munition' and 'shr5_Reichweite'. From 'shr5_Munition', the role 'shr5_Munition' has cardinality 0..*, and from 'shr5_Reichweite', the role 'shr5_Reichweite88' has cardinality 0..*.
+An association connects 'shr5_GebundenerGeist' and 'shr5_Geist'. From 'shr5_GebundenerGeist', the role 'shr5_GebundenerGeist90' has cardinality 0..*, and from 'shr5_Geist', the role 'shr5_Geist' has cardinality 0..*.
+An association connects 'shr5_FertigkeitsGruppe' and 'shr5_StufenPersona'. From 'shr5_FertigkeitsGruppe', the role 'shr5_FertigkeitsGruppe92' has cardinality 0..*, and from 'shr5_StufenPersona', the role 'shr5_StufenPersona' has cardinality 0..*.
+An association connects 'shr5_Fertigkeit' and 'shr5_StufenPersona'. From 'shr5_Fertigkeit', the role 'shr5_Fertigkeit95' has cardinality 0..*, and from 'shr5_StufenPersona', the role 'shr5_StufenPersona94' has cardinality 0..*.
+An association connects 'shr5_CritterKraft' and 'shr5_Geist'. From 'shr5_CritterKraft', the role 'shr5_CritterKraft98' has cardinality 0..*, and from 'shr5_Geist', the role 'shr5_Geist97' has cardinality 0..*.
+An association connects 'shr5_Geist' and 'shr5_CritterKraft'. From 'shr5_Geist', the role 'shr5_Geist100' has cardinality 0..*, and from 'shr5_CritterKraft', the role 'shr5_CritterKraft101' has cardinality 0..*.
+An association connects 'shr5_Identifiable' and 'shr5_Localization'. From 'shr5_Identifiable', the role 'shr5_Identifiable' has cardinality 0..*, and from 'shr5_Localization', the role 'shr5_Localization' has cardinality 0..*.
+An association connects 'shr5_Fertigkeit' and 'shr5_Spezialisierung'. From 'shr5_Fertigkeit', the role 'Fertigkeit' has cardinality 0..*, and from 'shr5_Spezialisierung', the role 'spezialisierungen' has cardinality 0..*.
+An association connects 'shr5_Commlink' and 'shr5_BasicProgram'. From 'shr5_Commlink', the role 'shr5_Commlink' has cardinality 0..*, and from 'shr5_BasicProgram', the role 'shr5_BasicProgram' has cardinality 0..*.
+An association connects 'shr5_Commlink' and 'shr5_Sin'. From 'shr5_Commlink', the role 'shr5_Commlink106' has cardinality 0..*, and from 'shr5_Sin', the role 'shr5_Sin' has cardinality 0..*.
+An association connects 'shr5_EAttribute' and 'shr5_Cyberdeck'. From 'shr5_EAttribute', the role 'shr5_EAttribute108' has cardinality 0..*, and from 'shr5_Cyberdeck', the role 'shr5_Cyberdeck' has cardinality 0..*.
+An association connects 'shr5_Cyberdeck' and 'shr5_MatrixProgram'. From 'shr5_Cyberdeck', the role 'shr5_Cyberdeck110' has cardinality 0..*, and from 'shr5_MatrixProgram', the role 'shr5_MatrixProgram' has cardinality 0..*.
+An association connects 'shr5_MatrixProgram' and 'shr5_Cyberdeck'. From 'shr5_MatrixProgram', the role 'shr5_MatrixProgram113' has cardinality 0..*, and from 'shr5_Cyberdeck', the role 'shr5_Cyberdeck112' has cardinality 0..*.
+An association connects 'shr5_RiggerCommandConsole' and 'shr5_RiggerProgram'. From 'shr5_RiggerCommandConsole', the role 'shr5_RiggerCommandConsole' has cardinality 0..*, and from 'shr5_RiggerProgram', the role 'shr5_RiggerProgram115' has cardinality 0..*.
+An association connects 'shr5_RiggerCommandConsole' and 'shr5_RiggerProgram'. From 'shr5_RiggerCommandConsole', the role 'shr5_RiggerCommandConsole117' has cardinality 0..*, and from 'shr5_RiggerProgram', the role 'shr5_RiggerProgram118' has cardinality 0..*.
+An association connects 'shr5_AutoSoft' and 'shr5_Fertigkeit'. From 'shr5_AutoSoft', the role 'shr5_AutoSoft' has cardinality 0..*, and from 'shr5_Fertigkeit', the role 'shr5_Fertigkeit120' has cardinality 0..*.
+An association connects 'shr5_AbstaktWaffe' and 'shr5_AutoSoft'. From 'shr5_AbstaktWaffe', the role 'shr5_AbstaktWaffe' has cardinality 0..*, and from 'shr5_AutoSoft', the role 'shr5_AutoSoft122' has cardinality 0..*.
+An association connects 'shr5_Drohne' and 'shr5_AutoSoft'. From 'shr5_Drohne', the role 'shr5_Drohne125' has cardinality 0..*, and from 'shr5_AutoSoft', the role 'shr5_AutoSoft124' has cardinality 0..*.
+An association connects 'shr5_Fertigkeit' and 'shr5_Tutorsoft'. From 'shr5_Fertigkeit', the role 'shr5_Fertigkeit127' has cardinality 0..*, and from 'shr5_Tutorsoft', the role 'shr5_Tutorsoft' has cardinality 0..*.
+An association connects 'shr5_Fertigkeit' and 'shr5_SkillSoft'. From 'shr5_Fertigkeit', the role 'shr5_Fertigkeit129' has cardinality 0..*, and from 'shr5_SkillSoft', the role 'shr5_SkillSoft' has cardinality 0..*.
+An association connects 'shr5_MatrixDevice' and 'shr5_PersonalAreaNetwork'. From 'shr5_MatrixDevice', the role 'shr5_MatrixDevice131' has cardinality 0..*, and from 'shr5_PersonalAreaNetwork', the role 'shr5_PersonalAreaNetwork' has cardinality 0..*.
+An association connects 'shr5_MatrixDevice' and 'shr5_PersonalAreaNetwork'. From 'shr5_MatrixDevice', the role 'MatrixDevice' has cardinality 0..*, and from 'shr5_PersonalAreaNetwork', the role 'pan' has cardinality 0..*.
+An association connects 'shr5_Wissensfertigkeit' and 'shr5_Datasoft'. From 'shr5_Wissensfertigkeit', the role 'shr5_Wissensfertigkeit' has cardinality 0..*, and from 'shr5_Datasoft', the role 'shr5_Datasoft' has cardinality 0..*.
+An association connects 'shr5_MatrixDevice' and 'shr5_PersonalAreaNetwork'. From 'shr5_MatrixDevice', the role 'master' has cardinality 0..*, and from 'shr5_PersonalAreaNetwork', the role 'PersonalAreaNetwork' has cardinality 0..*.
+An association connects 'shr5_WeaponMount' and 'shr5_AbstaktWaffe'. From 'shr5_WeaponMount', the role 'shr5_WeaponMount' has cardinality 0..*, and from 'shr5_AbstaktWaffe', the role 'shr5_AbstaktWaffe136' has cardinality 0..*.
+An association connects 'shr5_QiFokus' and 'shr5_KiKraft'. From 'shr5_QiFokus', the role 'shr5_QiFokus' has cardinality 0..*, and from 'shr5_KiKraft', the role 'shr5_KiKraft138' has cardinality 0..*.
+An association connects 'shr5_FokusBinding' and 'shr5_Fokus'. From 'shr5_FokusBinding', the role 'shr5_FokusBinding140' has cardinality 0..*, and from 'shr5_Fokus', the role 'shr5_Fokus' has cardinality 0..*.
+An association connects 'shr5_Magazin' and 'shr5_Feuerwaffe'. From 'shr5_Magazin', the role 'shr5_Magazin142' has cardinality 0..*, and from 'shr5_Feuerwaffe', the role 'shr5_Feuerwaffe143' has cardinality 0..*.
+An association connects 'shr5_Munition' and 'shr5_Magazin'. From 'shr5_Munition', the role 'shr5_Munition146' has cardinality 0..*, and from 'shr5_Magazin', the role 'shr5_Magazin145' has cardinality 0..*.
+An association connects 'shr5_SubstanceContainer' and 'shr5_Substance'. From 'shr5_SubstanceContainer', the role 'shr5_SubstanceContainer' has cardinality 0..*, and from 'shr5_Substance', the role 'shr5_Substance' has cardinality 0..*.
+An association connects 'shr5_EReference' and 'shr5_Capacity'. From 'shr5_EReference', the role 'shr5_EReference' has cardinality 0..*, and from 'shr5_Capacity', the role 'shr5_Capacity' has cardinality 0..*.
+An association connects 'shr5_CyberImplantWeapon' and 'shr5_AbstaktWaffe'. From 'shr5_CyberImplantWeapon', the role 'shr5_CyberImplantWeapon' has cardinality 0..*, and from 'shr5_AbstaktWaffe', the role 'shr5_AbstaktWaffe150' has cardinality 0..*.
+An association connects 'shr5_Geist' and 'shr5_MagischeTradition'. From 'shr5_Geist', the role 'shr5_Geist153' has cardinality 0..*, and from 'shr5_MagischeTradition', the role 'shr5_MagischeTradition152' has cardinality 0..*.
+An association connects 'shr5_GeldWert' and 'shr5_ShoppingTransaction'. From 'shr5_GeldWert', the role 'shr5_GeldWert' has cardinality 0..*, and from 'shr5_ShoppingTransaction', the role 'shr5_ShoppingTransaction' has cardinality 0..*.
+An association connects 'shr5_Credstick' and 'shr5_TransferAmount'. From 'shr5_Credstick', the role 'shr5_Credstick156' has cardinality 0..*, and from 'shr5_TransferAmount', the role 'shr5_TransferAmount' has cardinality 0..*.
+An association connects 'shr5_Credstick' and 'shr5_TransferAmount'. From 'shr5_Credstick', the role 'shr5_Credstick159' has cardinality 0..*, and from 'shr5_TransferAmount', the role 'shr5_TransferAmount158' has cardinality 0..*.
+An association connects 'shr5_Sensor' and 'shr5_SensorFunction'. From 'shr5_Sensor', the role 'shr5_Sensor' has cardinality 0..*, and from 'shr5_SensorFunction', the role 'shr5_SensorFunction' has cardinality 0..*.
+An association connects 'shr5_MartialartTechnique' and 'shr5_MartialartStyle'. From 'shr5_MartialartTechnique', the role 'shr5_MartialartTechnique' has cardinality 0..*, and from 'shr5_MartialartStyle', the role 'shr5_MartialartStyle' has cardinality 0..*.
+An association connects 'shr5_Fertigkeit' and 'shr5_MartialartStyle'. From 'shr5_Fertigkeit', the role 'shr5_Fertigkeit164' has cardinality 0..*, and from 'shr5_MartialartStyle', the role 'shr5_MartialartStyle163' has cardinality 0..*.
+An association connects 'shr5_PersonaMartialartStyle' and 'shr5_MartialartStyle'. From 'shr5_PersonaMartialartStyle', the role 'shr5_PersonaMartialartStyle166' has cardinality 0..*, and from 'shr5_MartialartStyle', the role 'shr5_MartialartStyle167' has cardinality 0..*.
+An association connects 'shr5_PersonaMartialartTechnique' and 'shr5_PersonaMartialartStyle'. From 'shr5_PersonaMartialartTechnique', the role 'shr5_PersonaMartialartTechnique' has cardinality 0..*, and from 'shr5_PersonaMartialartStyle', the role 'shr5_PersonaMartialartStyle169' has cardinality 0..*.
+An association connects 'shr5_MartialartTechnique' and 'shr5_PersonaMartialartTechnique'. From 'shr5_MartialartTechnique', the role 'shr5_MartialartTechnique172' has cardinality 0..*, and from 'shr5_PersonaMartialartTechnique', the role 'shr5_PersonaMartialartTechnique171' has cardinality 0..*.
+An association connects 'shr5_AbtraktGranate' and 'shr5_Substance'. From 'shr5_AbtraktGranate', the role 'shr5_AbtraktGranate' has cardinality 0..*, and from 'shr5_Substance', the role 'shr5_Substance174' has cardinality 0..*.
+An association connects 'shr5_SourceLink' and 'shr5_SourceLink'. From 'shr5_SourceLink', the role 'shr5_SourceLink' has cardinality 0..*, and from 'shr5_SourceLink', the role 'shr5_SourceLink175' has cardinality 0..*.

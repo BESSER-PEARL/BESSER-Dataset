@@ -1,0 +1,684 @@
+The domain model 'gast' describes the core structural elements and their relationships within the system.
+
+The model defines 142 main class(es).
+
+'BranchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_core_Root' represents an important domain concept.
+It has the following attributes: 'linesOfComments', which is of type int; 'linesOfCode', which is of type int.
+
+'gast_accesses_PropertyAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_accesses_VariableAccess' represents an important domain concept.
+It has one attribute: 'write', which is of type bool.
+
+'functions_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_types_GASTStruct' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_types_GenericClass' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_core_BasePath' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'gast_annotations_StructuralAbstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_annotations_Subsystem' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_annotations_Clone' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_accesses_DeclarationTypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_accesses_ParameterInstantiationTypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'SourceEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_statements_Methods' represents an important domain concept.
+It has one attribute: 'methodName', which is of type str.
+
+'gast_types_Member' represents an important domain concept.
+It has the following attributes: 'virtual', which is of type bool; 'final', which is of type bool; 'abstract', which is of type bool; 'internal', which is of type bool; 'static', which is of type bool; 'extern', which is of type bool; 'override', which is of type bool; 'introspectable', which is of type bool; 'visibility', which is of type str; 'typeParameterClassMember', which is of type bool.
+
+'gast_variables_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_statements_JumpStatement' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'gast_statements_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'variables_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_types_TypeAlias' represents an important domain concept.
+It has one attribute: 'innerTypeAlias', which is of type bool.
+
+'gast_types_GASTClass' represents an important domain concept.
+It has the following attributes: 'anonymous', which is of type bool; 'local', which is of type bool; 'primitive', which is of type bool; 'interface', which is of type bool; 'inner', which is of type bool; 'linesOfComments', which is of type int.
+
+'gast_core_Directory' represents an important domain concept.
+It has the following attributes: 'fileSystemPath', which is of type str; 'fullQualifiedPath', which is of type str.
+
+'gast_types_GASTType' represents an important domain concept.
+It has the following attributes: 'referenceType', which is of type bool; 'qualifiedName', which is of type str.
+
+'functions_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_functions_GenericFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'Method' represents an important domain concept.
+It does not declare any attributes.
+
+'types_GASTClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_statements_BlockStatement' represents an important domain concept.
+It has one attribute: 'synchronized', which is of type bool.
+
+'StructuralAbstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_variables_FormalParameter' represents an important domain concept.
+It has one attribute: 'passedByReference', which is of type bool.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeParameterClass' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_variables_Field' represents an important domain concept.
+It has one attribute: 'propertyField', which is of type bool.
+
+'Delegate' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_functions_Constructor' represents an important domain concept.
+It has one attribute: 'initializer', which is of type bool.
+
+'gast_functions_GenericMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'types_TypeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_annotations_Comment' represents an important domain concept.
+It has the following attributes: 'todoCount', which is of type int; 'texts', which is of type str; 'todo', which is of type bool; 'formal', which is of type bool.
+
+'Access' represents an important domain concept.
+It does not declare any attributes.
+
+'variables_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'BasePath' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_statements_ExceptionHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_functions_Delegate' represents an important domain concept.
+It has one attribute: 'innerDelegate', which is of type bool.
+
+'gast_statements_Statement' represents an important domain concept.
+It has the following attributes: 'numberOfComments', which is of type int; 'linesOfCode', which is of type int; 'numberOfEdgesInCFG', which is of type int; 'numberOfNodesInCFG', which is of type int; 'maximumNestingLevel', which is of type int; 'numberOfStatements', which is of type int.
+
+'gast_core_Package' represents an important domain concept.
+It has the following attributes: 'qualifiedName', which is of type str; 'linesOfCode', which is of type int; 'linesOfComments', which is of type int.
+
+'gast_accesses_CompositeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_functions_GenericConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_variables_Variable' represents an important domain concept.
+It has one attribute: 'const', which is of type bool.
+
+'core_GenericEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_functions_Method' represents an important domain concept.
+It has one attribute: 'propertyMethod', which is of type bool.
+
+'Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_functions_GlobalFunction' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'gast_core_Position' represents an important domain concept.
+It has the following attributes: 'startColumn', which is of type int; 'endColumn', which is of type int; 'endLine', which is of type int; 'startLine', which is of type int.
+
+'GlobalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_variables_GlobalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_annotations_ModelAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Position' represents an important domain concept.
+It does not declare any attributes.
+
+'GASTExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DeclarationTypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_core_Identifier' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'gast_core_ModelElement' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'sissyId', which is of type int.
+
+'gast_core_File' represents an important domain concept.
+It has the following attributes: 'sourceFile', which is of type bool; 'assemblyFile', which is of type bool; 'size', which is of type str; 'linesOfCode', which is of type int; 'fullQualifiedPath', which is of type str; 'fileSystemPath', which is of type str.
+
+'CompositeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_accesses_Access' represents an important domain concept.
+It does not declare any attributes.
+
+'types_GASTType' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_types_GASTEnumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'InheritanceTypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'Exit' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_accesses_CastTypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_statements_GASTBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_types_TypeParameterClass' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_statements_LoopStatement' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'GASTClass' represents an important domain concept.
+It does not declare any attributes.
+
+'core_NamedModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'functions_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_accesses_TypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_accesses_BaseAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'CloneInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'ThrowTypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Root' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_types_GASTArray' represents an important domain concept.
+It has one attribute: 'dimensions', which is of type int.
+
+'gast_accesses_FunctionAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'functions_GlobalFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'core_SourceEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Directory' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_types_GASTUnion' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_functions_Destructor' represents an important domain concept.
+It does not declare any attributes.
+
+'Clone' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_annotations_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_accesses_RunTimeTypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'FormalParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_core_GenericEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_accesses_ThrowTypeAccess' represents an important domain concept.
+It has one attribute: 'declared', which is of type bool.
+
+'GlobalFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_types_Reference' represents an important domain concept.
+It has one attribute: 'explicit', which is of type bool.
+
+'gast_functions_Function' represents an important domain concept.
+It has the following attributes: 'numberOfNodesInCFG', which is of type int; 'operator', which is of type bool; 'numberOfStatements', which is of type int; 'maximumNestingLevel', which is of type int; 'linesOfComments', which is of type int; 'numberOfEdgesInCFG', which is of type int; 'linesOfCode', which is of type int.
+
+'gast_statements_GASTExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'GASTType' represents an important domain concept.
+It does not declare any attributes.
+
+'File' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_annotations_Layer' represents an important domain concept.
+It does not declare any attributes.
+
+'Field' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_statements_BranchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_accesses_StaticTypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_variables_LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'annotations_ModelAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Destructor' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_statements_Exit' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gast_accesses_SelfAccess' represents an important domain concept.
+It has one attribute: 'super', which is of type bool.
+
+'gast_types_TypeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_accesses_InheritanceTypeAccess' represents an important domain concept.
+It has one attribute: 'implementationInheritance', which is of type bool.
+
+'gast_accesses_DelegateAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_core_NamedModelElement' represents an important domain concept.
+It has one attribute: 'simpleName', which is of type str.
+
+'Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_statements_SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_core_PackageAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_statements_CatchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_variables_CatchParameter' represents an important domain concept.
+It has one attribute: 'rethrown', which is of type bool.
+
+'gast_annotations_CloneInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'gast_core_SourceEntity' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Status' defines the following possible values: 'LIBRARY', 'FAILEDDEP', 'IMPLICIT', 'NORMAL'.
+The enumeration 'JumpStatementKind' defines the following possible values: 'RETURN', 'THROW', 'JUMP'.
+The enumeration 'Visibilities' defines the following possible values: 'VISIBILITYPROTECTED', 'VISIBILITYPUBLIC', 'VISIBILITYPRIVAT', 'VISIBILITYSTRICTPROTECTED', 'VISIBILITYPACKAGE'.
+The enumeration 'GlobalFunctionKind' defines the following possible values: 'UNITINITIALIZER', 'UNITFINALIZER', 'NORMAL'.
+The enumeration 'LoopStatementKind' defines the following possible values: 'DOWHILE', 'FOREACH', 'FOR', 'WHILE'.
+
+The model also captures inheritance relationships between classes.
+The class 'gast_statements_ExceptionHandler' is a specialization of 'Statement'.
+The class 'gast_statements_Statement' is a specialization of 'SourceEntity'.
+The class 'gast_statements_BlockStatement' is a specialization of 'Statement'.
+The class 'gast_statements_Branch' is a specialization of 'SourceEntity'.
+The class 'gast_statements_GASTExpression' is a specialization of 'SourceEntity'.
+The class 'gast_statements_BranchStatement' is a specialization of 'Statement'.
+The class 'gast_statements_LoopStatement' is a specialization of 'Statement'.
+The class 'gast_statements_CatchBlock' is a specialization of 'BlockStatement'.
+The class 'gast_statements_JumpStatement' is a specialization of 'Statement'.
+The class 'gast_statements_SimpleStatement' is a specialization of 'Statement'.
+The class 'gast_statements_Methods' is a specialization of 'BlockStatement'.
+The class 'gast_core_BasePath' is a specialization of 'ModelElement'.
+The class 'gast_core_ModelElement' is a specialization of 'Identifier'.
+The class 'gast_core_NamedModelElement' is a specialization of 'ModelElement'.
+The class 'gast_core_Package' is a specialization of 'NamedModelElement'.
+The class 'gast_core_GenericEntity' is a specialization of 'ModelElement'.
+The class 'gast_core_Root' is a specialization of 'ModelElement'.
+The class 'gast_core_Directory' is a specialization of 'NamedModelElement'.
+The class 'gast_core_File' is a specialization of 'NamedModelElement'.
+The class 'gast_core_PackageAlias' is a specialization of 'Package'.
+The class 'gast_core_SourceEntity' is a specialization of 'ModelElement'.
+The class 'gast_annotations_Attribute' is a specialization of 'types_GASTClass'.
+The class 'gast_annotations_Attribute' is a specialization of 'annotations_ModelAnnotation'.
+The class 'gast_annotations_Clone' is a specialization of 'core_ModelElement'.
+The class 'gast_annotations_Clone' is a specialization of 'annotations_ModelAnnotation'.
+The class 'gast_annotations_CloneInstance' is a specialization of 'core_ModelElement'.
+The class 'gast_annotations_CloneInstance' is a specialization of 'annotations_ModelAnnotation'.
+The class 'gast_annotations_StructuralAbstraction' is a specialization of 'core_NamedModelElement'.
+The class 'gast_annotations_StructuralAbstraction' is a specialization of 'annotations_ModelAnnotation'.
+The class 'gast_annotations_Comment' is a specialization of 'core_SourceEntity'.
+The class 'gast_annotations_Comment' is a specialization of 'annotations_ModelAnnotation'.
+The class 'gast_annotations_Subsystem' is a specialization of 'StructuralAbstraction'.
+The class 'gast_annotations_Layer' is a specialization of 'StructuralAbstraction'.
+The class 'gast_types_Reference' is a specialization of 'TypeDecorator'.
+The class 'gast_types_TypeDecorator' is a specialization of 'GASTType'.
+The class 'gast_types_GASTType' is a specialization of 'NamedModelElement'.
+The class 'gast_types_GASTArray' is a specialization of 'TypeDecorator'.
+The class 'gast_types_TypeAlias' is a specialization of 'types_Member'.
+The class 'gast_types_TypeAlias' is a specialization of 'types_TypeDecorator'.
+The class 'gast_types_Member' is a specialization of 'SourceEntity'.
+The class 'gast_types_TypeParameterClass' is a specialization of 'GASTClass'.
+The class 'gast_types_GenericClass' is a specialization of 'types_GASTClass'.
+The class 'gast_types_GenericClass' is a specialization of 'core_GenericEntity'.
+The class 'gast_types_GASTEnumeration' is a specialization of 'GASTClass'.
+The class 'gast_types_GASTStruct' is a specialization of 'GASTClass'.
+The class 'gast_types_GASTUnion' is a specialization of 'GASTClass'.
+The class 'gast_types_GASTClass' is a specialization of 'types_Member'.
+The class 'gast_types_GASTClass' is a specialization of 'types_GASTType'.
+The class 'gast_accesses_ParameterInstantiationTypeAccess' is a specialization of 'TypeAccess'.
+The class 'gast_accesses_TypeAccess' is a specialization of 'Access'.
+The class 'gast_accesses_CastTypeAccess' is a specialization of 'TypeAccess'.
+The class 'gast_accesses_CompositeAccess' is a specialization of 'BaseAccess'.
+The class 'gast_accesses_BaseAccess' is a specialization of 'SourceEntity'.
+The class 'gast_accesses_DeclarationTypeAccess' is a specialization of 'TypeAccess'.
+The class 'gast_accesses_ThrowTypeAccess' is a specialization of 'TypeAccess'.
+The class 'gast_accesses_DelegateAccess' is a specialization of 'FunctionAccess'.
+The class 'gast_accesses_FunctionAccess' is a specialization of 'Access'.
+The class 'gast_accesses_InheritanceTypeAccess' is a specialization of 'TypeAccess'.
+The class 'gast_accesses_VariableAccess' is a specialization of 'Access'.
+The class 'gast_accesses_RunTimeTypeAccess' is a specialization of 'TypeAccess'.
+The class 'gast_accesses_SelfAccess' is a specialization of 'VariableAccess'.
+The class 'gast_accesses_StaticTypeAccess' is a specialization of 'TypeAccess'.
+The class 'gast_accesses_PropertyAccess' is a specialization of 'VariableAccess'.
+The class 'gast_accesses_Access' is a specialization of 'BaseAccess'.
+The class 'gast_functions_Delegate' is a specialization of 'functions_Function'.
+The class 'gast_functions_Delegate' is a specialization of 'types_Member'.
+The class 'gast_functions_Delegate' is a specialization of 'types_GASTType'.
+The class 'gast_functions_Constructor' is a specialization of 'functions_Function'.
+The class 'gast_functions_Constructor' is a specialization of 'types_Member'.
+The class 'gast_functions_Destructor' is a specialization of 'functions_Function'.
+The class 'gast_functions_Destructor' is a specialization of 'types_Member'.
+The class 'gast_functions_GenericFunction' is a specialization of 'functions_GlobalFunction'.
+The class 'gast_functions_GenericFunction' is a specialization of 'core_GenericEntity'.
+The class 'gast_functions_GlobalFunction' is a specialization of 'Function'.
+The class 'gast_functions_Method' is a specialization of 'functions_Function'.
+The class 'gast_functions_Method' is a specialization of 'types_Member'.
+The class 'gast_functions_GenericMethod' is a specialization of 'functions_Method'.
+The class 'gast_functions_GenericMethod' is a specialization of 'core_GenericEntity'.
+The class 'gast_functions_GenericConstructor' is a specialization of 'functions_Constructor'.
+The class 'gast_functions_GenericConstructor' is a specialization of 'core_GenericEntity'.
+The class 'gast_functions_Function' is a specialization of 'core_NamedModelElement'.
+The class 'gast_functions_Function' is a specialization of 'core_SourceEntity'.
+The class 'gast_variables_FormalParameter' is a specialization of 'Variable'.
+The class 'gast_variables_Variable' is a specialization of 'core_NamedModelElement'.
+The class 'gast_variables_Variable' is a specialization of 'core_SourceEntity'.
+The class 'gast_variables_CatchParameter' is a specialization of 'Variable'.
+The class 'gast_variables_Field' is a specialization of 'types_Member'.
+The class 'gast_variables_Field' is a specialization of 'variables_Variable'.
+The class 'gast_variables_LocalVariable' is a specialization of 'Variable'.
+The class 'gast_variables_Property' is a specialization of 'variables_Field'.
+The class 'gast_variables_Property' is a specialization of 'types_Member'.
+The class 'gast_variables_GlobalVariable' is a specialization of 'Variable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gast_statements_ExceptionHandler' and 'CatchBlock'. From 'gast_statements_ExceptionHandler', the role 'gast_statements_ExceptionHandler' has cardinality 0..*, and from 'CatchBlock', the role 'CatchBlock' has cardinality 0..*.
+An association connects 'BlockStatement' and 'gast_statements_ExceptionHandler'. From 'BlockStatement', the role 'BlockStatement' has cardinality 0..*, and from 'gast_statements_ExceptionHandler', the role 'gast_statements_ExceptionHandler2' has cardinality 0..*.
+An association connects 'gast_statements_ExceptionHandler' and 'BlockStatement'. From 'gast_statements_ExceptionHandler', the role 'gast_statements_ExceptionHandler4' has cardinality 0..*, and from 'BlockStatement', the role 'BlockStatement5' has cardinality 0..*.
+An association connects 'BaseAccess' and 'gast_statements_Statement'. From 'BaseAccess', the role 'accesses' has cardinality 0..*, and from 'gast_statements_Statement', the role 'BaseAccess' has cardinality 0..*.
+An association connects 'gast_statements_Statement' and 'CloneInstance'. From 'gast_statements_Statement', the role 'CloneInstance' has cardinality 0..*, and from 'CloneInstance', the role 'annotations' has cardinality 0..*.
+An association connects 'BlockStatement' and 'gast_statements_Statement'. From 'BlockStatement', the role 'statements' has cardinality 0..*, and from 'gast_statements_Statement', the role 'BlockStatement9' has cardinality 0..*.
+An association connects 'Statement' and 'gast_statements_Statement'. From 'Statement', the role 'Statement' has cardinality 0..*, and from 'gast_statements_Statement', the role 'gast_statements_Statement' has cardinality 0..*.
+An association connects 'gast_statements_Statement' and 'Branch'. From 'gast_statements_Statement', the role 'Branch' has cardinality 0..*, and from 'Branch', the role 'statements12' has cardinality 0..*.
+An association connects 'gast_statements_Statement' and 'LoopStatement'. From 'gast_statements_Statement', the role 'LoopStatement' has cardinality 0..*, and from 'LoopStatement', the role 'statements14' has cardinality 0..*.
+An association connects 'gast_statements_Statement' and 'Statement'. From 'gast_statements_Statement', the role 'gast_statements_Statement16' has cardinality 0..*, and from 'Statement', the role 'Statement17' has cardinality 0..*.
+An association connects 'gast_statements_Statement' and 'Statement'. From 'gast_statements_Statement', the role 'gast_statements_Statement19' has cardinality 0..*, and from 'Statement', the role 'Statement20' has cardinality 0..*.
+An association connects 'Statement' and 'gast_statements_BlockStatement'. From 'Statement', the role 'statements23' has cardinality 0..*, and from 'gast_statements_BlockStatement', the role 'Statement22' has cardinality 0..*.
+An association connects 'Function' and 'gast_statements_BlockStatement'. From 'Function', the role 'functions' has cardinality 0..*, and from 'gast_statements_BlockStatement', the role 'Function' has cardinality 0..*.
+An association connects 'GASTExpression' and 'gast_statements_Branch'. From 'GASTExpression', the role 'GASTExpression' has cardinality 0..*, and from 'gast_statements_Branch', the role 'gast_statements_Branch' has cardinality 0..*.
+An association connects 'gast_statements_Branch' and 'BranchStatement'. From 'gast_statements_Branch', the role 'BranchStatement' has cardinality 0..*, and from 'BranchStatement', the role 'statements27' has cardinality 0..*.
+An association connects 'Statement' and 'gast_statements_Branch'. From 'Statement', the role 'statements30' has cardinality 0..*, and from 'gast_statements_Branch', the role 'Statement29' has cardinality 0..*.
+An association connects 'gast_statements_BranchStatement' and 'Branch'. From 'gast_statements_BranchStatement', the role 'Branch32' has cardinality 0..*, and from 'Branch', the role 'statements33' has cardinality 0..*.
+An association connects 'GASTExpression' and 'gast_statements_LoopStatement'. From 'GASTExpression', the role 'GASTExpression35' has cardinality 0..*, and from 'gast_statements_LoopStatement', the role 'gast_statements_LoopStatement' has cardinality 0..*.
+An association connects 'gast_statements_LoopStatement' and 'GASTExpression'. From 'gast_statements_LoopStatement', the role 'gast_statements_LoopStatement37' has cardinality 0..*, and from 'GASTExpression', the role 'GASTExpression38' has cardinality 0..*.
+An association connects 'GASTExpression' and 'gast_statements_LoopStatement'. From 'GASTExpression', the role 'GASTExpression41' has cardinality 0..*, and from 'gast_statements_LoopStatement', the role 'gast_statements_LoopStatement40' has cardinality 0..*.
+An association connects 'gast_statements_LoopStatement' and 'Statement'. From 'gast_statements_LoopStatement', the role 'Statement43' has cardinality 0..*, and from 'Statement', the role 'statements44' has cardinality 0..*.
+An association connects 'CatchParameter' and 'gast_statements_CatchBlock'. From 'CatchParameter', the role 'CatchParameter' has cardinality 0..*, and from 'gast_statements_CatchBlock', the role 'gast_statements_CatchBlock' has cardinality 0..*.
+An association connects 'GASTExpression' and 'gast_statements_JumpStatement'. From 'GASTExpression', the role 'GASTExpression47' has cardinality 0..*, and from 'gast_statements_JumpStatement', the role 'gast_statements_JumpStatement' has cardinality 0..*.
+An association connects 'GASTExpression' and 'gast_statements_SimpleStatement'. From 'GASTExpression', the role 'GASTExpression49' has cardinality 0..*, and from 'gast_statements_SimpleStatement', the role 'gast_statements_SimpleStatement' has cardinality 0..*.
+An association connects 'BlockStatement' and 'gast_statements_GASTBehaviour'. From 'BlockStatement', the role 'BlockStatement51' has cardinality 0..*, and from 'gast_statements_GASTBehaviour', the role 'gast_statements_GASTBehaviour' has cardinality 0..*.
+An association connects 'gast_statements_Methods' and 'Exit'. From 'gast_statements_Methods', the role 'gast_statements_Methods' has cardinality 0..*, and from 'Exit', the role 'Exit' has cardinality 0..*.
+An association connects 'Root' and 'gast_core_BasePath'. From 'Root', the role 'core' has cardinality 0..*, and from 'gast_core_BasePath', the role 'Root' has cardinality 0..*.
+An association connects 'gast_core_BasePath' and 'Directory'. From 'gast_core_BasePath', the role 'Directory' has cardinality 0..*, and from 'Directory', the role 'core55' has cardinality 0..*.
+An association connects 'ModelAnnotation' and 'gast_core_ModelElement'. From 'ModelAnnotation', the role 'ModelAnnotation' has cardinality 0..*, and from 'gast_core_ModelElement', the role 'gast_core_ModelElement' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_core_Package'. From 'GASTClass', the role 'GASTClass' has cardinality 0..*, and from 'gast_core_Package', the role 'gast_core_Package' has cardinality 0..*.
+An association connects 'gast_core_Package' and 'GASTClass'. From 'gast_core_Package', the role 'gast_core_Package59' has cardinality 0..*, and from 'GASTClass', the role 'GASTClass60' has cardinality 0..*.
+An association connects 'gast_core_Package' and 'GASTClass'. From 'gast_core_Package', the role 'gast_core_Package62' has cardinality 0..*, and from 'GASTClass', the role 'GASTClass63' has cardinality 0..*.
+An association connects 'gast_core_Package' and 'GASTClass'. From 'gast_core_Package', the role 'gast_core_Package65' has cardinality 0..*, and from 'GASTClass', the role 'GASTClass66' has cardinality 0..*.
+An association connects 'gast_core_Package' and 'Access'. From 'gast_core_Package', the role 'gast_core_Package68' has cardinality 0..*, and from 'Access', the role 'Access' has cardinality 0..*.
+An association connects 'Delegate' and 'gast_core_Package'. From 'Delegate', the role 'functions70' has cardinality 0..*, and from 'gast_core_Package', the role 'Delegate' has cardinality 0..*.
+An association connects 'GlobalFunction' and 'gast_core_Package'. From 'GlobalFunction', the role 'functions72' has cardinality 0..*, and from 'gast_core_Package', the role 'GlobalFunction' has cardinality 0..*.
+An association connects 'GlobalVariable' and 'gast_core_Package'. From 'GlobalVariable', the role 'variables' has cardinality 0..*, and from 'gast_core_Package', the role 'GlobalVariable' has cardinality 0..*.
+An association connects 'Root' and 'gast_core_Package'. From 'Root', the role 'core76' has cardinality 0..*, and from 'gast_core_Package', the role 'Root75' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_core_Package'. From 'GASTClass', the role 'types' has cardinality 0..*, and from 'gast_core_Package', the role 'GASTClass78' has cardinality 0..*.
+An association connects 'Package' and 'gast_core_Package'. From 'Package', the role 'core80' has cardinality 0..*, and from 'gast_core_Package', the role 'Package' has cardinality 0..*.
+An association connects 'gast_core_Package' and 'Package'. From 'gast_core_Package', the role 'Package82' has cardinality 0..*, and from 'Package', the role 'core83' has cardinality 0..*.
+An association connects 'gast_core_Package' and 'Package'. From 'gast_core_Package', the role 'gast_core_Package85' has cardinality 0..*, and from 'Package', the role 'Package86' has cardinality 0..*.
+An association connects 'TypeAlias' and 'gast_core_Package'. From 'TypeAlias', the role 'types88' has cardinality 0..*, and from 'gast_core_Package', the role 'TypeAlias' has cardinality 0..*.
+An association connects 'TypeParameterClass' and 'gast_core_GenericEntity'. From 'TypeParameterClass', the role 'TypeParameterClass' has cardinality 0..*, and from 'gast_core_GenericEntity', the role 'gast_core_GenericEntity' has cardinality 0..*.
+An association connects 'gast_core_Root' and 'Access'. From 'gast_core_Root', the role 'gast_core_Root' has cardinality 0..*, and from 'Access', the role 'Access91' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_core_Root'. From 'GASTClass', the role 'GASTClass94' has cardinality 0..*, and from 'gast_core_Root', the role 'gast_core_Root93' has cardinality 0..*.
+An association connects 'gast_core_Root' and 'GASTClass'. From 'gast_core_Root', the role 'gast_core_Root96' has cardinality 0..*, and from 'GASTClass', the role 'GASTClass97' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_core_Root'. From 'GASTClass', the role 'GASTClass100' has cardinality 0..*, and from 'gast_core_Root', the role 'gast_core_Root99' has cardinality 0..*.
+An association connects 'gast_core_Root' and 'GASTClass'. From 'gast_core_Root', the role 'gast_core_Root102' has cardinality 0..*, and from 'GASTClass', the role 'GASTClass103' has cardinality 0..*.
+An association connects 'ModelElement' and 'gast_core_Root'. From 'ModelElement', the role 'ModelElement' has cardinality 0..*, and from 'gast_core_Root', the role 'gast_core_Root105' has cardinality 0..*.
+An association connects 'gast_core_Root' and 'GlobalVariable'. From 'gast_core_Root', the role 'gast_core_Root107' has cardinality 0..*, and from 'GlobalVariable', the role 'GlobalVariable108' has cardinality 0..*.
+An association connects 'gast_core_Root' and 'Package'. From 'gast_core_Root', the role 'Package110' has cardinality 0..*, and from 'Package', the role 'core111' has cardinality 0..*.
+An association connects 'gast_core_Root' and 'Clone'. From 'gast_core_Root', the role 'Clone' has cardinality 0..*, and from 'Clone', the role 'annotations113' has cardinality 0..*.
+An association connects 'StructuralAbstraction' and 'gast_core_Root'. From 'StructuralAbstraction', the role 'StructuralAbstraction' has cardinality 0..*, and from 'gast_core_Root', the role 'gast_core_Root115' has cardinality 0..*.
+An association connects 'gast_core_Root' and 'GASTType'. From 'gast_core_Root', the role 'gast_core_Root117' has cardinality 0..*, and from 'GASTType', the role 'GASTType' has cardinality 0..*.
+An association connects 'ModelElement' and 'gast_core_Root'. From 'ModelElement', the role 'ModelElement120' has cardinality 0..*, and from 'gast_core_Root', the role 'gast_core_Root119' has cardinality 0..*.
+An association connects 'gast_core_Root' and 'BasePath'. From 'gast_core_Root', the role 'BasePath' has cardinality 0..*, and from 'BasePath', the role 'core122' has cardinality 0..*.
+An association connects 'GlobalFunction' and 'gast_core_Root'. From 'GlobalFunction', the role 'functions125' has cardinality 0..*, and from 'gast_core_Root', the role 'GlobalFunction124' has cardinality 0..*.
+An association connects 'gast_core_Directory' and 'Directory'. From 'gast_core_Directory', the role 'Directory127' has cardinality 0..*, and from 'Directory', the role 'core128' has cardinality 0..*.
+An association connects 'Directory' and 'gast_core_Directory'. From 'Directory', the role 'core131' has cardinality 0..*, and from 'gast_core_Directory', the role 'Directory130' has cardinality 0..*.
+An association connects 'gast_core_Directory' and 'File'. From 'gast_core_Directory', the role 'File' has cardinality 0..*, and from 'File', the role 'core133' has cardinality 0..*.
+An association connects 'gast_core_Directory' and 'BasePath'. From 'gast_core_Directory', the role 'BasePath135' has cardinality 0..*, and from 'BasePath', the role 'core136' has cardinality 0..*.
+An association connects 'gast_core_File' and 'Root'. From 'gast_core_File', the role 'gast_core_File' has cardinality 0..*, and from 'Root', the role 'Root138' has cardinality 0..*.
+An association connects 'GASTType' and 'gast_core_File'. From 'GASTType', the role 'GASTType141' has cardinality 0..*, and from 'gast_core_File', the role 'gast_core_File140' has cardinality 0..*.
+An association connects 'GASTType' and 'gast_core_File'. From 'GASTType', the role 'GASTType144' has cardinality 0..*, and from 'gast_core_File', the role 'gast_core_File143' has cardinality 0..*.
+An association connects 'GlobalVariable' and 'gast_core_File'. From 'GlobalVariable', the role 'GlobalVariable147' has cardinality 0..*, and from 'gast_core_File', the role 'gast_core_File146' has cardinality 0..*.
+An association connects 'GlobalFunction' and 'gast_core_File'. From 'GlobalFunction', the role 'GlobalFunction150' has cardinality 0..*, and from 'gast_core_File', the role 'gast_core_File149' has cardinality 0..*.
+An association connects 'gast_core_File' and 'GlobalFunction'. From 'gast_core_File', the role 'gast_core_File152' has cardinality 0..*, and from 'GlobalFunction', the role 'GlobalFunction153' has cardinality 0..*.
+An association connects 'gast_core_File' and 'GlobalVariable'. From 'gast_core_File', the role 'gast_core_File155' has cardinality 0..*, and from 'GlobalVariable', the role 'GlobalVariable156' has cardinality 0..*.
+An association connects 'Package' and 'gast_core_File'. From 'Package', the role 'Package159' has cardinality 0..*, and from 'gast_core_File', the role 'gast_core_File158' has cardinality 0..*.
+An association connects 'File' and 'gast_core_File'. From 'File', the role 'File162' has cardinality 0..*, and from 'gast_core_File', the role 'gast_core_File161' has cardinality 0..*.
+An association connects 'gast_core_File' and 'Directory'. From 'gast_core_File', the role 'Directory164' has cardinality 0..*, and from 'Directory', the role 'core165' has cardinality 0..*.
+An association connects 'gast_core_Position' and 'File'. From 'gast_core_Position', the role 'gast_core_Position' has cardinality 0..*, and from 'File', the role 'File167' has cardinality 0..*.
+An association connects 'File' and 'gast_core_Position'. From 'File', the role 'File170' has cardinality 0..*, and from 'gast_core_Position', the role 'gast_core_Position169' has cardinality 0..*.
+An association connects 'gast_core_Position' and 'SourceEntity'. From 'gast_core_Position', the role 'SourceEntity' has cardinality 0..*, and from 'SourceEntity', the role 'core172' has cardinality 0..*.
+An association connects 'Package' and 'gast_core_PackageAlias'. From 'Package', the role 'Package174' has cardinality 0..*, and from 'gast_core_PackageAlias', the role 'gast_core_PackageAlias' has cardinality 0..*.
+An association connects 'gast_core_SourceEntity' and 'Position'. From 'gast_core_SourceEntity', the role 'Position' has cardinality 0..*, and from 'Position', the role 'core176' has cardinality 0..*.
+An association connects 'CloneInstance' and 'gast_annotations_Clone'. From 'CloneInstance', the role 'annotations179' has cardinality 0..*, and from 'gast_annotations_Clone', the role 'CloneInstance178' has cardinality 0..*.
+An association connects 'gast_annotations_Clone' and 'Root'. From 'gast_annotations_Clone', the role 'Root181' has cardinality 0..*, and from 'Root', the role 'core182' has cardinality 0..*.
+An association connects 'Statement' and 'gast_annotations_CloneInstance'. From 'Statement', the role 'statements185' has cardinality 0..*, and from 'gast_annotations_CloneInstance', the role 'Statement184' has cardinality 0..*.
+An association connects 'gast_annotations_CloneInstance' and 'Clone'. From 'gast_annotations_CloneInstance', the role 'Clone187' has cardinality 0..*, and from 'Clone', the role 'annotations188' has cardinality 0..*.
+An association connects 'GASTType' and 'gast_types_Reference'. From 'GASTType', the role 'GASTType190' has cardinality 0..*, and from 'gast_types_Reference', the role 'gast_types_Reference' has cardinality 0..*.
+An association connects 'GASTType' and 'gast_types_TypeDecorator'. From 'GASTType', the role 'GASTType192' has cardinality 0..*, and from 'gast_types_TypeDecorator', the role 'gast_types_TypeDecorator' has cardinality 0..*.
+An association connects 'gast_types_TypeDecorator' and 'GASTType'. From 'gast_types_TypeDecorator', the role 'gast_types_TypeDecorator194' has cardinality 0..*, and from 'GASTType', the role 'GASTType195' has cardinality 0..*.
+An association connects 'GASTType' and 'gast_types_GASTArray'. From 'GASTType', the role 'GASTType197' has cardinality 0..*, and from 'gast_types_GASTArray', the role 'gast_types_GASTArray' has cardinality 0..*.
+An association connects 'GASTType' and 'gast_types_TypeAlias'. From 'GASTType', the role 'GASTType199' has cardinality 0..*, and from 'gast_types_TypeAlias', the role 'gast_types_TypeAlias' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_types_TypeAlias'. From 'GASTClass', the role 'types202' has cardinality 0..*, and from 'gast_types_TypeAlias', the role 'GASTClass201' has cardinality 0..*.
+An association connects 'Package' and 'gast_types_TypeAlias'. From 'Package', the role 'core205' has cardinality 0..*, and from 'gast_types_TypeAlias', the role 'Package204' has cardinality 0..*.
+An association connects 'gast_types_Member' and 'Member'. From 'gast_types_Member', the role 'gast_types_Member' has cardinality 0..*, and from 'Member', the role 'Member' has cardinality 0..*.
+An association connects 'gast_types_TypeParameterClass' and 'GASTType'. From 'gast_types_TypeParameterClass', the role 'gast_types_TypeParameterClass' has cardinality 0..*, and from 'GASTType', the role 'GASTType208' has cardinality 0..*.
+An association connects 'TypeAlias' and 'gast_types_GASTClass'. From 'TypeAlias', the role 'types211' has cardinality 0..*, and from 'gast_types_GASTClass', the role 'TypeAlias210' has cardinality 0..*.
+An association connects 'Delegate' and 'gast_types_GASTClass'. From 'Delegate', the role 'functions214' has cardinality 0..*, and from 'gast_types_GASTClass', the role 'Delegate213' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'Constructor'. From 'gast_types_GASTClass', the role 'Constructor' has cardinality 0..*, and from 'Constructor', the role 'functions216' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'Destructor'. From 'gast_types_GASTClass', the role 'Destructor' has cardinality 0..*, and from 'Destructor', the role 'functions218' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'Field'. From 'gast_types_GASTClass', the role 'Field' has cardinality 0..*, and from 'Field', the role 'variables220' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'Method'. From 'gast_types_GASTClass', the role 'Method' has cardinality 0..*, and from 'Method', the role 'functions222' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'Function'. From 'gast_types_GASTClass', the role 'Function224' has cardinality 0..*, and from 'Function', the role 'functions225' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'Package'. From 'gast_types_GASTClass', the role 'Package227' has cardinality 0..*, and from 'Package', the role 'core228' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'GASTClass'. From 'gast_types_GASTClass', the role 'gast_types_GASTClass' has cardinality 0..*, and from 'GASTClass', the role 'GASTClass230' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_types_GASTClass'. From 'GASTClass', the role 'types233' has cardinality 0..*, and from 'gast_types_GASTClass', the role 'GASTClass232' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_types_GASTClass'. From 'GASTClass', the role 'types236' has cardinality 0..*, and from 'gast_types_GASTClass', the role 'GASTClass235' has cardinality 0..*.
+An association connects 'InheritanceTypeAccess' and 'gast_types_GASTClass'. From 'InheritanceTypeAccess', the role 'InheritanceTypeAccess' has cardinality 0..*, and from 'gast_types_GASTClass', the role 'gast_types_GASTClass238' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'Field'. From 'gast_types_GASTClass', the role 'gast_types_GASTClass240' has cardinality 0..*, and from 'Field', the role 'Field241' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'GASTClass'. From 'gast_types_GASTClass', the role 'GASTClass243' has cardinality 0..*, and from 'GASTClass', the role 'types244' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'GASTClass'. From 'gast_types_GASTClass', the role 'GASTClass246' has cardinality 0..*, and from 'GASTClass', the role 'types247' has cardinality 0..*.
+An association connects 'Function' and 'gast_types_GASTClass'. From 'Function', the role 'Function250' has cardinality 0..*, and from 'gast_types_GASTClass', the role 'gast_types_GASTClass249' has cardinality 0..*.
+An association connects 'Property' and 'gast_types_GASTClass'. From 'Property', the role 'Property' has cardinality 0..*, and from 'gast_types_GASTClass', the role 'gast_types_GASTClass252' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'Access'. From 'gast_types_GASTClass', the role 'gast_types_GASTClass254' has cardinality 0..*, and from 'Access', the role 'Access255' has cardinality 0..*.
+An association connects 'gast_types_GASTClass' and 'GASTClass'. From 'gast_types_GASTClass', the role 'gast_types_GASTClass257' has cardinality 0..*, and from 'GASTClass', the role 'GASTClass258' has cardinality 0..*.
+An association connects 'GASTType' and 'gast_accesses_TypeAccess'. From 'GASTType', the role 'GASTType260' has cardinality 0..*, and from 'gast_accesses_TypeAccess', the role 'gast_accesses_TypeAccess' has cardinality 0..*.
+An association connects 'gast_accesses_TypeAccess' and 'GASTType'. From 'gast_accesses_TypeAccess', the role 'gast_accesses_TypeAccess262' has cardinality 0..*, and from 'GASTType', the role 'GASTType263' has cardinality 0..*.
+An association connects 'gast_accesses_CompositeAccess' and 'BaseAccess'. From 'gast_accesses_CompositeAccess', the role 'BaseAccess265' has cardinality 0..*, and from 'BaseAccess', the role 'accesses266' has cardinality 0..*.
+An association connects 'gast_accesses_BaseAccess' and 'Statement'. From 'gast_accesses_BaseAccess', the role 'Statement268' has cardinality 0..*, and from 'Statement', the role 'statements269' has cardinality 0..*.
+An association connects 'gast_accesses_BaseAccess' and 'Statement'. From 'gast_accesses_BaseAccess', the role 'gast_accesses_BaseAccess' has cardinality 0..*, and from 'Statement', the role 'Statement271' has cardinality 0..*.
+An association connects 'gast_accesses_BaseAccess' and 'GASTClass'. From 'gast_accesses_BaseAccess', the role 'gast_accesses_BaseAccess273' has cardinality 0..*, and from 'GASTClass', the role 'GASTClass274' has cardinality 0..*.
+An association connects 'gast_accesses_BaseAccess' and 'Function'. From 'gast_accesses_BaseAccess', the role 'gast_accesses_BaseAccess276' has cardinality 0..*, and from 'Function', the role 'Function277' has cardinality 0..*.
+An association connects 'CompositeAccess' and 'gast_accesses_BaseAccess'. From 'CompositeAccess', the role 'accesses279' has cardinality 0..*, and from 'gast_accesses_BaseAccess', the role 'CompositeAccess' has cardinality 0..*.
+An association connects 'gast_accesses_DeclarationTypeAccess' and 'Function'. From 'gast_accesses_DeclarationTypeAccess', the role 'Function281' has cardinality 0..*, and from 'Function', the role 'functions282' has cardinality 0..*.
+An association connects 'gast_accesses_DeclarationTypeAccess' and 'Variable'. From 'gast_accesses_DeclarationTypeAccess', the role 'Variable' has cardinality 0..*, and from 'Variable', the role 'variables284' has cardinality 0..*.
+An association connects 'Function' and 'gast_accesses_DelegateAccess'. From 'Function', the role 'Function286' has cardinality 0..*, and from 'gast_accesses_DelegateAccess', the role 'gast_accesses_DelegateAccess' has cardinality 0..*.
+An association connects 'Delegate' and 'gast_accesses_DelegateAccess'. From 'Delegate', the role 'Delegate289' has cardinality 0..*, and from 'gast_accesses_DelegateAccess', the role 'gast_accesses_DelegateAccess288' has cardinality 0..*.
+An association connects 'GASTType' and 'gast_accesses_FunctionAccess'. From 'GASTType', the role 'GASTType291' has cardinality 0..*, and from 'gast_accesses_FunctionAccess', the role 'gast_accesses_FunctionAccess' has cardinality 0..*.
+An association connects 'Function' and 'gast_accesses_FunctionAccess'. From 'Function', the role 'Function294' has cardinality 0..*, and from 'gast_accesses_FunctionAccess', the role 'gast_accesses_FunctionAccess293' has cardinality 0..*.
+An association connects 'gast_accesses_VariableAccess' and 'Variable'. From 'gast_accesses_VariableAccess', the role 'gast_accesses_VariableAccess' has cardinality 0..*, and from 'Variable', the role 'Variable296' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_accesses_Access'. From 'GASTClass', the role 'GASTClass298' has cardinality 0..*, and from 'gast_accesses_Access', the role 'gast_accesses_Access' has cardinality 0..*.
+An association connects 'ModelElement' and 'gast_accesses_Access'. From 'ModelElement', the role 'ModelElement301' has cardinality 0..*, and from 'gast_accesses_Access', the role 'gast_accesses_Access300' has cardinality 0..*.
+An association connects 'gast_functions_Delegate' and 'GASTClass'. From 'gast_functions_Delegate', the role 'gast_functions_Delegate' has cardinality 0..*, and from 'GASTClass', the role 'GASTClass303' has cardinality 0..*.
+An association connects 'Function' and 'gast_functions_Delegate'. From 'Function', the role 'Function306' has cardinality 0..*, and from 'gast_functions_Delegate', the role 'gast_functions_Delegate305' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_functions_Delegate'. From 'GASTClass', the role 'types309' has cardinality 0..*, and from 'gast_functions_Delegate', the role 'GASTClass308' has cardinality 0..*.
+An association connects 'Package' and 'gast_functions_Delegate'. From 'Package', the role 'core312' has cardinality 0..*, and from 'gast_functions_Delegate', the role 'Package311' has cardinality 0..*.
+An association connects 'gast_functions_Constructor' and 'GASTClass'. From 'gast_functions_Constructor', the role 'GASTClass314' has cardinality 0..*, and from 'GASTClass', the role 'types315' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_functions_Destructor'. From 'GASTClass', the role 'types318' has cardinality 0..*, and from 'gast_functions_Destructor', the role 'GASTClass317' has cardinality 0..*.
+An association connects 'Package' and 'gast_functions_GlobalFunction'. From 'Package', the role 'core321' has cardinality 0..*, and from 'gast_functions_GlobalFunction', the role 'Package320' has cardinality 0..*.
+An association connects 'Root' and 'gast_functions_GlobalFunction'. From 'Root', the role 'core324' has cardinality 0..*, and from 'gast_functions_GlobalFunction', the role 'Root323' has cardinality 0..*.
+An association connects 'Property' and 'gast_functions_Method'. From 'Property', the role 'Property326' has cardinality 0..*, and from 'gast_functions_Method', the role 'gast_functions_Method' has cardinality 0..*.
+An association connects 'gast_functions_Method' and 'GASTClass'. From 'gast_functions_Method', the role 'GASTClass328' has cardinality 0..*, and from 'GASTClass', the role 'types329' has cardinality 0..*.
+An association connects 'DeclarationTypeAccess' and 'gast_functions_Function'. From 'DeclarationTypeAccess', the role 'accesses331' has cardinality 0..*, and from 'gast_functions_Function', the role 'DeclarationTypeAccess' has cardinality 0..*.
+An association connects 'FormalParameter' and 'gast_functions_Function'. From 'FormalParameter', the role 'variables333' has cardinality 0..*, and from 'gast_functions_Function', the role 'FormalParameter' has cardinality 0..*.
+An association connects 'gast_functions_Function' and 'LocalVariable'. From 'gast_functions_Function', the role 'LocalVariable' has cardinality 0..*, and from 'LocalVariable', the role 'variables335' has cardinality 0..*.
+An association connects 'gast_functions_Function' and 'Statement'. From 'gast_functions_Function', the role 'gast_functions_Function' has cardinality 0..*, and from 'Statement', the role 'Statement337' has cardinality 0..*.
+An association connects 'gast_functions_Function' and 'ThrowTypeAccess'. From 'gast_functions_Function', the role 'gast_functions_Function339' has cardinality 0..*, and from 'ThrowTypeAccess', the role 'ThrowTypeAccess' has cardinality 0..*.
+An association connects 'Access' and 'gast_functions_Function'. From 'Access', the role 'Access342' has cardinality 0..*, and from 'gast_functions_Function', the role 'gast_functions_Function341' has cardinality 0..*.
+An association connects 'gast_functions_Function' and 'BlockStatement'. From 'gast_functions_Function', the role 'BlockStatement344' has cardinality 0..*, and from 'BlockStatement', the role 'statements345' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_functions_Function'. From 'GASTClass', the role 'types348' has cardinality 0..*, and from 'gast_functions_Function', the role 'GASTClass347' has cardinality 0..*.
+An association connects 'gast_variables_FormalParameter' and 'Function'. From 'gast_variables_FormalParameter', the role 'Function350' has cardinality 0..*, and from 'Function', the role 'functions351' has cardinality 0..*.
+An association connects 'GASTType' and 'gast_variables_Variable'. From 'GASTType', the role 'GASTType353' has cardinality 0..*, and from 'gast_variables_Variable', the role 'gast_variables_Variable' has cardinality 0..*.
+An association connects 'gast_variables_Variable' and 'DeclarationTypeAccess'. From 'gast_variables_Variable', the role 'DeclarationTypeAccess355' has cardinality 0..*, and from 'DeclarationTypeAccess', the role 'accesses356' has cardinality 0..*.
+An association connects 'GASTClass' and 'gast_variables_Field'. From 'GASTClass', the role 'types359' has cardinality 0..*, and from 'gast_variables_Field', the role 'GASTClass358' has cardinality 0..*.
+An association connects 'Function' and 'gast_variables_LocalVariable'. From 'Function', the role 'functions362' has cardinality 0..*, and from 'gast_variables_LocalVariable', the role 'Function361' has cardinality 0..*.
+An association connects 'Method' and 'gast_variables_Property'. From 'Method', the role 'Method364' has cardinality 0..*, and from 'gast_variables_Property', the role 'gast_variables_Property' has cardinality 0..*.
+An association connects 'Method' and 'gast_variables_Property'. From 'Method', the role 'Method367' has cardinality 0..*, and from 'gast_variables_Property', the role 'gast_variables_Property366' has cardinality 0..*.
+An association connects 'Package' and 'gast_variables_GlobalVariable'. From 'Package', the role 'core370' has cardinality 0..*, and from 'gast_variables_GlobalVariable', the role 'Package369' has cardinality 0..*.

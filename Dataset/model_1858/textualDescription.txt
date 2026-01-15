@@ -1,0 +1,67 @@
+The domain model 'typeslibrary' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'TypesLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'typeslibrary_TypesLibrary' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'typeslibrary_UserDefinedType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'typeslibrary_TypesLibraryUser' represents an important domain concept.
+It does not declare any attributes.
+
+'typeslibrary_UserDefinedTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'UserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'typeslibrary_NativeType' represents an important domain concept.
+It has the following attributes: 'spec', which is of type str; 'name', which is of type str.
+
+'typeslibrary_SimpleNamedType' represents an important domain concept.
+It does not declare any attributes.
+
+'typeslibrary_UserDefinedTypesLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'typeslibrary_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'typeslibrary_NativeTypesLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'typeslibrary_TypeInstance' represents an important domain concept.
+It has the following attributes: 'length', which is of type int; 'literals', which is of type str; 'precision', which is of type int.
+
+'typeslibrary_ComplexNamedType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TypesLibraryKind' defines the following possible values: 'physicalTypes', 'logicalTypes'.
+The enumeration 'NativeTypeKind' defines the following possible values: 'Simple', 'Enum', 'Length', 'LengthAndPrecision'.
+
+The model also captures inheritance relationships between classes.
+The class 'typeslibrary_NativeTypesLibrary' is a specialization of 'TypesLibrary'.
+The class 'typeslibrary_TypeInstance' is a specialization of 'Type'.
+The class 'typeslibrary_ComplexNamedType' is a specialization of 'UserDefinedType'.
+The class 'typeslibrary_SimpleNamedType' is a specialization of 'UserDefinedType'.
+The class 'typeslibrary_UserDefinedTypeRef' is a specialization of 'Type'.
+The class 'typeslibrary_UserDefinedTypesLibrary' is a specialization of 'TypesLibrary'.
+
+Relationships between classes are modeled using associations.
+An association connects 'typeslibrary_NativeTypesLibrary' and 'typeslibrary_NativeType'. From 'typeslibrary_NativeTypesLibrary', the role 'typeslibrary_NativeTypesLibrary' has cardinality 0..*, and from 'typeslibrary_NativeType', the role 'typeslibrary_NativeType' has cardinality 0..*.
+An association connects 'typeslibrary_NativeType' and 'typeslibrary_TypeInstance'. From 'typeslibrary_NativeType', the role 'typeslibrary_NativeType2' has cardinality 0..*, and from 'typeslibrary_TypeInstance', the role 'typeslibrary_TypeInstance' has cardinality 0..*.
+An association connects 'typeslibrary_NativeType' and 'typeslibrary_NativeType'. From 'typeslibrary_NativeType', the role 'typeslibrary_NativeType3' has cardinality 0..*, and from 'typeslibrary_NativeType', the role 'typeslibrary_NativeType5' has cardinality 0..*.
+An association connects 'typeslibrary_ComplexNamedType' and 'typeslibrary_UserDefinedType'. From 'typeslibrary_ComplexNamedType', the role 'typeslibrary_ComplexNamedType' has cardinality 0..*, and from 'typeslibrary_UserDefinedType', the role 'typeslibrary_UserDefinedType' has cardinality 0..*.
+An association connects 'typeslibrary_TypeInstance' and 'typeslibrary_SimpleNamedType'. From 'typeslibrary_TypeInstance', the role 'typeslibrary_TypeInstance8' has cardinality 0..*, and from 'typeslibrary_SimpleNamedType', the role 'typeslibrary_SimpleNamedType' has cardinality 0..*.
+An association connects 'typeslibrary_UserDefinedTypeRef' and 'typeslibrary_UserDefinedType'. From 'typeslibrary_UserDefinedTypeRef', the role 'typeslibrary_UserDefinedTypeRef' has cardinality 0..*, and from 'typeslibrary_UserDefinedType', the role 'typeslibrary_UserDefinedType10' has cardinality 0..*.
+An association connects 'typeslibrary_UserDefinedType' and 'typeslibrary_UserDefinedTypesLibrary'. From 'typeslibrary_UserDefinedType', the role 'typeslibrary_UserDefinedType12' has cardinality 0..*, and from 'typeslibrary_UserDefinedTypesLibrary', the role 'typeslibrary_UserDefinedTypesLibrary' has cardinality 0..*.
+An association connects 'typeslibrary_TypesLibrary' and 'typeslibrary_TypesLibraryUser'. From 'typeslibrary_TypesLibrary', the role 'typeslibrary_TypesLibrary' has cardinality 0..*, and from 'typeslibrary_TypesLibraryUser', the role 'typeslibrary_TypesLibraryUser' has cardinality 0..*.

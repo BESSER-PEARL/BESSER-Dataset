@@ -1,0 +1,16 @@
+The domain model 'transformationtrace' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'transformationtrace_ActivationTrace' represents an important domain concept.
+It has one attribute: 'ruleName', which is of type str.
+
+'transformationtrace_TransformationTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'transformationtrace_RuleParameterTrace' represents an important domain concept.
+It has the following attributes: 'objectId', which is of type str; 'parameterName', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'transformationtrace_ActivationTrace' and 'transformationtrace_TransformationTrace'. From 'transformationtrace_ActivationTrace', the role 'transformationtrace_ActivationTrace' has cardinality 0..*, and from 'transformationtrace_TransformationTrace', the role 'transformationtrace_TransformationTrace' has cardinality 0..*.
+An association connects 'transformationtrace_ActivationTrace' and 'transformationtrace_RuleParameterTrace'. From 'transformationtrace_ActivationTrace', the role 'transformationtrace_ActivationTrace2' has cardinality 0..*, and from 'transformationtrace_RuleParameterTrace', the role 'transformationtrace_RuleParameterTrace' has cardinality 0..*.

@@ -1,0 +1,606 @@
+The domain model 'dom' describes the core structural elements and their relationships within the system.
+
+The model defines 121 main class(es).
+
+'dom_SelectProperties' represents an important domain concept.
+It has one attribute: 'distinct', which is of type bool.
+
+'dom_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_AttributeProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'QlStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_CollectionFunction' represents an important domain concept.
+It has one attribute: 'function', which is of type str.
+
+'dom_SubQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionFlag' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_PropertyValue' represents an important domain concept.
+It has the following attributes: 'segments', which is of type str; 'classProperty', which is of type bool; 'name', which is of type str.
+
+'ReferenceableByXmadslVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Join' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'fetch', which is of type bool; 'propertyFetch', which is of type bool.
+
+'QueryParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_LikeExpression' represents an important domain concept.
+It has the following attributes: 'not', which is of type bool; 'operator', which is of type str.
+
+'dom_SelectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_CallableStatement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'functionCall', which is of type bool.
+
+'dom_SortOrderElement' represents an important domain concept.
+It has one attribute: 'sortOrder', which is of type str.
+
+'dom_AttributeTextProperty' represents an important domain concept.
+It has the following attributes: 'hstoreColumn', which is of type str; 'labelText', which is of type str; 'unitText', which is of type str; 'tooltipText', which is of type str.
+
+'dom_Operation' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'dom_AttributeValidationProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'QueryParameterReference' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_SqlType' represents an important domain concept.
+It does not declare any attributes.
+
+'ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_EqualityExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_FeatureReference' represents an important domain concept.
+It has one attribute: 'all', which is of type bool.
+
+'dom_Mapper' represents an important domain concept.
+It has the following attributes: 'toRight', which is of type bool; 'toLeft', which is of type bool; 'biDirectional', which is of type bool.
+
+'dom_InCollectionElements' represents an important domain concept.
+It has the following attributes: 'reference', which is of type str; 'name', which is of type str.
+
+'dom_FunctionCall' represents an important domain concept.
+It has one attribute: 'function', which is of type str.
+
+'dom_FromRange' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_SelectClass' represents an important domain concept.
+It has one attribute: 'class', which is of type str.
+
+'dom_Dependant' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ReadOnlyFlag' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_InClass' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'class', which is of type str.
+
+'dom_TransientFlag' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_OneToOne' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Attribute' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type bool; 'composition', which is of type bool; 'defaultValue', which is of type str; 'version', which is of type bool; 'dataTypeName', which is of type str; 'derived', which is of type bool; 'many', which is of type bool; 'reference', which is of type bool; 'required', which is of type bool; 'transient', which is of type bool; 'readOnly', which is of type bool.
+
+'dom_JoinEntity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dom_UnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'dom_DataView' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_QueryParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_PropertyAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_UpdateStatement' represents an important domain concept.
+It has the following attributes: 'versioned', which is of type bool; 'name', which is of type str.
+
+'dom_DeleteStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dom_ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_AttributeFlag' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_MemberOfExpression' represents an important domain concept.
+It has the following attributes: 'memberOf', which is of type str; 'not', which is of type bool; 'operator', which is of type str.
+
+'dom_StringLiteralValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dom_IntegerLiteralValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dom_EmptyLiteralValue' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ConditionsBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Property' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'defaultValue', which is of type str.
+
+'SelectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_PresentableFeature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dom_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_DerivedFlag' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ManyToOne' represents an important domain concept.
+It has the following attributes: 'derived', which is of type bool; 'columnName', which is of type str.
+
+'dom_DelegateOperation' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'name', which is of type str; 'crudOperationType', which is of type str.
+
+'dom_AttributeGroup' represents an important domain concept.
+It has the following attributes: 'sortorder', which is of type bool; 'unique', which is of type bool; 'filter', which is of type bool; 'key', which is of type bool; 'name', which is of type str.
+
+'LiteralValue' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_QueryParameterReference' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_FromClass' represents an important domain concept.
+It has one attribute: 'popertyFetch', which is of type bool.
+
+'dom_DaoOperation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool.
+
+'dom_CallOutputParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dom_LiteralValue' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ManyToMany' represents an important domain concept.
+It has the following attributes: 'inverse', which is of type bool; 'tableName', which is of type str; 'columnName', which is of type str.
+
+'PresentableFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_OneToMany' represents an important domain concept.
+It has one attribute: 'columnName', which is of type str.
+
+'dom_BetweenExpression' represents an important domain concept.
+It has the following attributes: 'not', which is of type bool; 'operator', which is of type str.
+
+'DaoOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_QueryParameterValue' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_CastFunction' represents an important domain concept.
+It has the following attributes: 'function', which is of type str; 'name', which is of type str.
+
+'dom_QuantifiedExpression' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'quantifier', which is of type str.
+
+'dom_DaoFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_SelectObject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dom_IElementWithNoName' represents an important domain concept.
+It has one attribute: 'noName', which is of type str.
+
+'dom_InCollection' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'path', which is of type str.
+
+'DaoFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ExpressionFlag' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_AltWhenClause' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_TrimFunction' represents an important domain concept.
+It has the following attributes: 'mode', which is of type str; 'function', which is of type str.
+
+'dom_DataBaseConstraint' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'dom_BoolLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_DataTypeAndTypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_QueryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ValueObject' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_IncrementerReference' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_ApplicationSession' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_AvailableFlag' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_RequiredFlag' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_WhenClause' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_BooleanLiteralValue' represents an important domain concept.
+It has one attribute: 'isTrue', which is of type bool.
+
+'dom_ValidatorReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Column' represents an important domain concept.
+It has one attribute: 'columnName', which is of type str.
+
+'dom_InsertStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Parameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool.
+
+'AttributeFlag' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_AliasedExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dom_RealLiteralValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dom_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_AttributeSortOrder' represents an important domain concept.
+It has the following attributes: 'asc', which is of type bool; 'desc', which is of type bool.
+
+'dom_AggregateFunction' represents an important domain concept.
+It has the following attributes: 'all', which is of type bool; 'distinct', which is of type bool; 'function', which is of type str; 'from', which is of type str.
+
+'dom_CallInputParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dom_BinaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'dom_InExpression' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'not', which is of type bool.
+
+'dom_CaseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependant' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_NullLiteralValue' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Dao' represents an important domain concept.
+It has the following attributes: 'tableName', which is of type str; 'qualifier', which is of type str; 'discriminator', which is of type str.
+
+'dom_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_PropertyMapping' represents an important domain concept.
+It has the following attributes: 'toLeft', which is of type bool; 'toRight', which is of type bool; 'biDirectional', which is of type bool.
+
+'dom_QlStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JoinEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'IDocumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'dom_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'FromRange' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataBaseConstraintType' defines the following possible values: 'NATURAL', 'NULL', 'INDEX', 'UNIQUE', 'PRIMARY'.
+The enumeration 'CrudOperationType' defines the following possible values: 'ALL', 'UPDATE', 'DELETE', 'NULL', 'CREATE', 'READ'.
+
+The model also captures inheritance relationships between classes.
+The class 'dom_ComplexType' is a specialization of 'ModelElement'.
+The class 'dom_ComplexType' is a specialization of 'Type'.
+The class 'dom_Service' is a specialization of 'ModelElement'.
+The class 'dom_Service' is a specialization of 'Dependant'.
+The class 'dom_Property' is a specialization of 'ReferenceableByXmadslVariable'.
+The class 'dom_Property' is a specialization of 'IDocumentable'.
+The class 'dom_Operation' is a specialization of 'DaoOperation'.
+The class 'dom_Operation' is a specialization of 'IDocumentable'.
+The class 'dom_Parameter' is a specialization of 'QueryParameter'.
+The class 'dom_Parameter' is a specialization of 'QueryParameterReference'.
+The class 'dom_DelegateOperation' is a specialization of 'IDocumentable'.
+The class 'dom_ValueObject' is a specialization of 'ComplexType'.
+The class 'dom_DataView' is a specialization of 'ComplexType'.
+The class 'dom_FeatureReference' is a specialization of 'PresentableFeature'.
+The class 'dom_FeatureReference' is a specialization of 'IDocumentable'.
+The class 'dom_Mapper' is a specialization of 'ModelElement'.
+The class 'dom_Entity' is a specialization of 'ComplexType'.
+The class 'dom_Entity' is a specialization of 'Dependant'.
+The class 'dom_Attribute' is a specialization of 'ReferenceableByXmadslVariable'.
+The class 'dom_Attribute' is a specialization of 'QueryParameterReference'.
+The class 'dom_Attribute' is a specialization of 'PresentableFeature'.
+The class 'dom_Attribute' is a specialization of 'IDocumentable'.
+The class 'dom_AttributeFlag' is a specialization of 'AttributeProperty'.
+The class 'dom_ExpressionFlag' is a specialization of 'AttributeFlag'.
+The class 'dom_RequiredFlag' is a specialization of 'ExpressionFlag'.
+The class 'dom_ReadOnlyFlag' is a specialization of 'ExpressionFlag'.
+The class 'dom_AvailableFlag' is a specialization of 'ExpressionFlag'.
+The class 'dom_DerivedFlag' is a specialization of 'AttributeFlag'.
+The class 'dom_TransientFlag' is a specialization of 'AttributeFlag'.
+The class 'dom_AttributeValidationProperty' is a specialization of 'AttributeProperty'.
+The class 'dom_AttributeTextProperty' is a specialization of 'AttributeProperty'.
+The class 'dom_AttributeGroup' is a specialization of 'IDocumentable'.
+The class 'dom_Dao' is a specialization of 'ModelElement'.
+The class 'dom_Dao' is a specialization of 'Dependant'.
+The class 'dom_QueryOperation' is a specialization of 'DaoOperation'.
+The class 'dom_QueryOperation' is a specialization of 'IDocumentable'.
+The class 'dom_Column' is a specialization of 'DaoFeature'.
+The class 'dom_ManyToOne' is a specialization of 'DaoFeature'.
+The class 'dom_OneToOne' is a specialization of 'DaoFeature'.
+The class 'dom_OneToMany' is a specialization of 'DaoFeature'.
+The class 'dom_ManyToMany' is a specialization of 'DaoFeature'.
+The class 'dom_ApplicationSession' is a specialization of 'ModelElement'.
+The class 'dom_CallableStatement' is a specialization of 'QlStatement'.
+The class 'dom_InsertStatement' is a specialization of 'QlStatement'.
+The class 'dom_DeleteStatement' is a specialization of 'QlStatement'.
+The class 'dom_UpdateStatement' is a specialization of 'QlStatement'.
+The class 'dom_SelectStatement' is a specialization of 'QlStatement'.
+The class 'dom_SelectProperties' is a specialization of 'SelectStatement'.
+The class 'dom_SelectClass' is a specialization of 'SelectStatement'.
+The class 'dom_SelectObject' is a specialization of 'SelectStatement'.
+The class 'dom_FromClass' is a specialization of 'FromRange'.
+The class 'dom_FromClass' is a specialization of 'JoinEntity'.
+The class 'dom_InClass' is a specialization of 'FromRange'.
+The class 'dom_InCollection' is a specialization of 'FromRange'.
+The class 'dom_InCollectionElements' is a specialization of 'FromRange'.
+The class 'dom_Join' is a specialization of 'JoinEntity'.
+The class 'dom_PropertyValue' is a specialization of 'Expression'.
+The class 'dom_FunctionCall' is a specialization of 'Expression'.
+The class 'dom_TrimFunction' is a specialization of 'Expression'.
+The class 'dom_CastFunction' is a specialization of 'Expression'.
+The class 'dom_AggregateFunction' is a specialization of 'Expression'.
+The class 'dom_QueryParameterValue' is a specialization of 'Expression'.
+The class 'dom_QuantifiedExpression' is a specialization of 'Expression'.
+The class 'dom_CaseExpression' is a specialization of 'Expression'.
+The class 'dom_CollectionFunction' is a specialization of 'Expression'.
+The class 'dom_SubQuery' is a specialization of 'Expression'.
+The class 'dom_ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'dom_LiteralValue' is a specialization of 'Expression'.
+The class 'dom_StringLiteralValue' is a specialization of 'LiteralValue'.
+The class 'dom_IntegerLiteralValue' is a specialization of 'LiteralValue'.
+The class 'dom_RealLiteralValue' is a specialization of 'LiteralValue'.
+The class 'dom_BooleanLiteralValue' is a specialization of 'LiteralValue'.
+The class 'dom_NullLiteralValue' is a specialization of 'LiteralValue'.
+The class 'dom_EmptyLiteralValue' is a specialization of 'LiteralValue'.
+The class 'dom_IElementWithNoName' is a specialization of 'ReferenceableByXmadslVariable'.
+The class 'dom_IElementWithNoName' is a specialization of 'QueryParameterReference'.
+The class 'dom_AliasedExpression' is a specialization of 'Expression'.
+The class 'dom_BinaryExpression' is a specialization of 'Expression'.
+The class 'dom_NotExpression' is a specialization of 'Expression'.
+The class 'dom_InExpression' is a specialization of 'Expression'.
+The class 'dom_BetweenExpression' is a specialization of 'Expression'.
+The class 'dom_LikeExpression' is a specialization of 'Expression'.
+The class 'dom_MemberOfExpression' is a specialization of 'Expression'.
+The class 'dom_UnaryExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dom_ComplexType' and 'dom_Attribute'. From 'dom_ComplexType', the role 'dom_ComplexType' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute' has cardinality 0..*.
+An association connects 'dom_ComplexType' and 'dom_Attribute'. From 'dom_ComplexType', the role 'dom_ComplexType2' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute3' has cardinality 0..*.
+An association connects 'dom_Dependant' and 'dom_Service'. From 'dom_Dependant', the role 'dom_Dependant' has cardinality 0..*, and from 'dom_Service', the role 'dom_Service' has cardinality 0..*.
+An association connects 'dom_Service' and 'dom_Operation'. From 'dom_Service', the role 'dom_Service6' has cardinality 0..*, and from 'dom_Operation', the role 'dom_Operation' has cardinality 0..*.
+An association connects 'dom_Service' and 'dom_DelegateOperation'. From 'dom_Service', the role 'dom_Service8' has cardinality 0..*, and from 'dom_DelegateOperation', the role 'dom_DelegateOperation' has cardinality 0..*.
+An association connects 'dom_Property' and 'dom_SimpleType'. From 'dom_Property', the role 'dom_Property' has cardinality 0..*, and from 'dom_SimpleType', the role 'dom_SimpleType' has cardinality 0..*.
+An association connects 'dom_Operation' and 'dom_Parameter'. From 'dom_Operation', the role 'dom_Operation11' has cardinality 0..*, and from 'dom_Parameter', the role 'dom_Parameter' has cardinality 0..*.
+An association connects 'dom_DelegateOperation' and 'dom_Operation'. From 'dom_DelegateOperation', the role 'dom_DelegateOperation14' has cardinality 0..*, and from 'dom_Operation', the role 'dom_Operation13' has cardinality 0..*.
+An association connects 'dom_Type' and 'dom_Parameter'. From 'dom_Type', the role 'dom_Type' has cardinality 0..*, and from 'dom_Parameter', the role 'dom_Parameter16' has cardinality 0..*.
+An association connects 'dom_DataView' and 'dom_DelegateOperation'. From 'dom_DataView', the role 'dom_DataView' has cardinality 0..*, and from 'dom_DelegateOperation', the role 'dom_DelegateOperation18' has cardinality 0..*.
+An association connects 'dom_DelegateOperation' and 'dom_Dao'. From 'dom_DelegateOperation', the role 'dom_DelegateOperation20' has cardinality 0..*, and from 'dom_Dao', the role 'dom_Dao' has cardinality 0..*.
+An association connects 'dom_DelegateOperation' and 'dom_DaoOperation'. From 'dom_DelegateOperation', the role 'dom_DelegateOperation22' has cardinality 0..*, and from 'dom_DaoOperation', the role 'dom_DaoOperation' has cardinality 0..*.
+An association connects 'dom_DelegateOperation' and 'dom_DataView'. From 'dom_DelegateOperation', the role 'dom_DelegateOperation24' has cardinality 0..*, and from 'dom_DataView', the role 'dom_DataView25' has cardinality 0..*.
+An association connects 'dom_DelegateOperation' and 'dom_Expression'. From 'dom_DelegateOperation', the role 'dom_DelegateOperation27' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression' has cardinality 0..*.
+An association connects 'dom_DaoOperation' and 'dom_Type'. From 'dom_DaoOperation', the role 'dom_DaoOperation29' has cardinality 0..*, and from 'dom_Type', the role 'dom_Type30' has cardinality 0..*.
+An association connects 'dom_DataView' and 'dom_DataView'. From 'dom_DataView', the role 'dom_DataView33' has cardinality 0..*, and from 'dom_DataView', the role 'dom_DataView31' has cardinality 0..*.
+An association connects 'dom_DataView' and 'dom_FeatureReference'. From 'dom_DataView', the role 'dom_DataView35' has cardinality 0..*, and from 'dom_FeatureReference', the role 'dom_FeatureReference' has cardinality 0..*.
+An association connects 'dom_FeatureReference' and 'dom_Entity'. From 'dom_FeatureReference', the role 'dom_FeatureReference37' has cardinality 0..*, and from 'dom_Entity', the role 'dom_Entity' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_FeatureReference'. From 'dom_Attribute', the role 'dom_Attribute40' has cardinality 0..*, and from 'dom_FeatureReference', the role 'dom_FeatureReference39' has cardinality 0..*.
+An association connects 'dom_FeatureReference' and 'dom_DataView'. From 'dom_FeatureReference', the role 'dom_FeatureReference42' has cardinality 0..*, and from 'dom_DataView', the role 'dom_DataView43' has cardinality 0..*.
+An association connects 'dom_FeatureReference' and 'dom_AttributeProperty'. From 'dom_FeatureReference', the role 'dom_FeatureReference45' has cardinality 0..*, and from 'dom_AttributeProperty', the role 'dom_AttributeProperty' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_FeatureReference'. From 'dom_Attribute', the role 'dom_Attribute48' has cardinality 0..*, and from 'dom_FeatureReference', the role 'dom_FeatureReference47' has cardinality 0..*.
+An association connects 'dom_Mapper' and 'dom_ComplexType'. From 'dom_Mapper', the role 'dom_Mapper' has cardinality 0..*, and from 'dom_ComplexType', the role 'dom_ComplexType50' has cardinality 0..*.
+An association connects 'dom_ComplexType' and 'dom_Mapper'. From 'dom_ComplexType', the role 'dom_ComplexType53' has cardinality 0..*, and from 'dom_Mapper', the role 'dom_Mapper52' has cardinality 0..*.
+An association connects 'dom_Mapper' and 'dom_PropertyMapping'. From 'dom_Mapper', the role 'dom_Mapper55' has cardinality 0..*, and from 'dom_PropertyMapping', the role 'dom_PropertyMapping' has cardinality 0..*.
+An association connects 'dom_PropertyMapping' and 'dom_Attribute'. From 'dom_PropertyMapping', the role 'dom_PropertyMapping57' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute58' has cardinality 0..*.
+An association connects 'dom_PropertyMapping' and 'dom_Attribute'. From 'dom_PropertyMapping', the role 'dom_PropertyMapping60' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute61' has cardinality 0..*.
+An association connects 'dom_Entity' and 'dom_Entity'. From 'dom_Entity', the role 'dom_Entity62' has cardinality 0..*, and from 'dom_Entity', the role 'dom_Entity64' has cardinality 0..*.
+An association connects 'dom_AttributeGroup' and 'dom_Entity'. From 'dom_AttributeGroup', the role 'dom_AttributeGroup' has cardinality 0..*, and from 'dom_Entity', the role 'dom_Entity66' has cardinality 0..*.
+An association connects 'dom_Entity' and 'dom_ConditionsBlock'. From 'dom_Entity', the role 'dom_Entity68' has cardinality 0..*, and from 'dom_ConditionsBlock', the role 'dom_ConditionsBlock' has cardinality 0..*.
+An association connects 'dom_Entity' and 'dom_Dao'. From 'dom_Entity', the role 'dom_Entity70' has cardinality 0..*, and from 'dom_Dao', the role 'dom_Dao71' has cardinality 0..*.
+An association connects 'dom_AttributeGroup' and 'dom_Entity'. From 'dom_AttributeGroup', the role 'dom_AttributeGroup74' has cardinality 0..*, and from 'dom_Entity', the role 'dom_Entity73' has cardinality 0..*.
+An association connects 'dom_AttributeGroup' and 'dom_Entity'. From 'dom_AttributeGroup', the role 'dom_AttributeGroup77' has cardinality 0..*, and from 'dom_Entity', the role 'dom_Entity76' has cardinality 0..*.
+An association connects 'dom_Entity' and 'dom_Attribute'. From 'dom_Entity', the role 'dom_Entity79' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute80' has cardinality 0..*.
+An association connects 'dom_Entity' and 'dom_Attribute'. From 'dom_Entity', the role 'dom_Entity82' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute83' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_Entity'. From 'dom_Attribute', the role 'dom_Attribute86' has cardinality 0..*, and from 'dom_Entity', the role 'dom_Entity85' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_Entity'. From 'dom_Attribute', the role 'dom_Attribute89' has cardinality 0..*, and from 'dom_Entity', the role 'dom_Entity88' has cardinality 0..*.
+An association connects 'dom_DataTypeAndTypeParameter' and 'dom_Attribute'. From 'dom_DataTypeAndTypeParameter', the role 'dom_DataTypeAndTypeParameter' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute91' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_IncrementerReference'. From 'dom_Attribute', the role 'dom_Attribute93' has cardinality 0..*, and from 'dom_IncrementerReference', the role 'dom_IncrementerReference' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_Attribute'. From 'dom_Attribute', the role 'dom_Attribute96' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute94' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_AttributeProperty'. From 'dom_Attribute', the role 'dom_Attribute98' has cardinality 0..*, and from 'dom_AttributeProperty', the role 'dom_AttributeProperty99' has cardinality 0..*.
+An association connects 'dom_AttributeGroup' and 'dom_Attribute'. From 'dom_AttributeGroup', the role 'dom_AttributeGroup102' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute101' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_Type'. From 'dom_Attribute', the role 'dom_Attribute104' has cardinality 0..*, and from 'dom_Type', the role 'dom_Type105' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_Attribute'. From 'dom_Attribute', the role 'dom_Attribute106' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute108' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_Attribute'. From 'dom_Attribute', the role 'dom_Attribute109' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute111' has cardinality 0..*.
+An association connects 'dom_ExpressionFlag' and 'dom_EqualityExpr'. From 'dom_ExpressionFlag', the role 'dom_ExpressionFlag' has cardinality 0..*, and from 'dom_EqualityExpr', the role 'dom_EqualityExpr' has cardinality 0..*.
+An association connects 'dom_DerivedFlag' and 'dom_BoolLiteral'. From 'dom_DerivedFlag', the role 'dom_DerivedFlag' has cardinality 0..*, and from 'dom_BoolLiteral', the role 'dom_BoolLiteral' has cardinality 0..*.
+An association connects 'dom_TransientFlag' and 'dom_BoolLiteral'. From 'dom_TransientFlag', the role 'dom_TransientFlag' has cardinality 0..*, and from 'dom_BoolLiteral', the role 'dom_BoolLiteral115' has cardinality 0..*.
+An association connects 'dom_AttributeValidationProperty' and 'dom_Constraint'. From 'dom_AttributeValidationProperty', the role 'dom_AttributeValidationProperty' has cardinality 0..*, and from 'dom_Constraint', the role 'dom_Constraint' has cardinality 0..*.
+An association connects 'dom_AttributeValidationProperty' and 'dom_ValidatorReference'. From 'dom_AttributeValidationProperty', the role 'dom_AttributeValidationProperty118' has cardinality 0..*, and from 'dom_ValidatorReference', the role 'dom_ValidatorReference' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_AttributeTextProperty'. From 'dom_Attribute', the role 'dom_Attribute120' has cardinality 0..*, and from 'dom_AttributeTextProperty', the role 'dom_AttributeTextProperty' has cardinality 0..*.
+An association connects 'dom_AttributeSortOrder' and 'dom_AttributeGroup'. From 'dom_AttributeSortOrder', the role 'dom_AttributeSortOrder' has cardinality 0..*, and from 'dom_AttributeGroup', the role 'dom_AttributeGroup122' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_AttributeGroup'. From 'dom_Attribute', the role 'dom_Attribute125' has cardinality 0..*, and from 'dom_AttributeGroup', the role 'dom_AttributeGroup124' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_AttributeSortOrder'. From 'dom_Attribute', the role 'dom_Attribute128' has cardinality 0..*, and from 'dom_AttributeSortOrder', the role 'dom_AttributeSortOrder127' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_DaoFeature'. From 'dom_Attribute', the role 'dom_Attribute130' has cardinality 0..*, and from 'dom_DaoFeature', the role 'dom_DaoFeature' has cardinality 0..*.
+An association connects 'dom_Dao' and 'dom_Entity'. From 'dom_Dao', the role 'dom_Dao132' has cardinality 0..*, and from 'dom_Entity', the role 'dom_Entity133' has cardinality 0..*.
+An association connects 'dom_Operation' and 'dom_Dao'. From 'dom_Operation', the role 'dom_Operation136' has cardinality 0..*, and from 'dom_Dao', the role 'dom_Dao135' has cardinality 0..*.
+An association connects 'dom_QueryOperation' and 'dom_Dao'. From 'dom_QueryOperation', the role 'dom_QueryOperation' has cardinality 0..*, and from 'dom_Dao', the role 'dom_Dao138' has cardinality 0..*.
+An association connects 'dom_DataBaseConstraint' and 'dom_Dao'. From 'dom_DataBaseConstraint', the role 'dom_DataBaseConstraint' has cardinality 0..*, and from 'dom_Dao', the role 'dom_Dao140' has cardinality 0..*.
+An association connects 'dom_Dao' and 'dom_Column'. From 'dom_Dao', the role 'dom_Dao142' has cardinality 0..*, and from 'dom_Column', the role 'dom_Column' has cardinality 0..*.
+An association connects 'dom_Dao' and 'dom_ManyToOne'. From 'dom_Dao', the role 'dom_Dao144' has cardinality 0..*, and from 'dom_ManyToOne', the role 'dom_ManyToOne' has cardinality 0..*.
+An association connects 'dom_Dao' and 'dom_OneToOne'. From 'dom_Dao', the role 'dom_Dao146' has cardinality 0..*, and from 'dom_OneToOne', the role 'dom_OneToOne' has cardinality 0..*.
+An association connects 'dom_Dao' and 'dom_OneToMany'. From 'dom_Dao', the role 'dom_Dao148' has cardinality 0..*, and from 'dom_OneToMany', the role 'dom_OneToMany' has cardinality 0..*.
+An association connects 'dom_Dao' and 'dom_ManyToMany'. From 'dom_Dao', the role 'dom_Dao150' has cardinality 0..*, and from 'dom_ManyToMany', the role 'dom_ManyToMany' has cardinality 0..*.
+An association connects 'dom_Dao' and 'dom_Column'. From 'dom_Dao', the role 'dom_Dao152' has cardinality 0..*, and from 'dom_Column', the role 'dom_Column153' has cardinality 0..*.
+An association connects 'dom_Dao' and 'dom_Column'. From 'dom_Dao', the role 'dom_Dao155' has cardinality 0..*, and from 'dom_Column', the role 'dom_Column156' has cardinality 0..*.
+An association connects 'dom_Column' and 'dom_Dao'. From 'dom_Column', the role 'dom_Column159' has cardinality 0..*, and from 'dom_Dao', the role 'dom_Dao158' has cardinality 0..*.
+An association connects 'dom_Dao' and 'dom_DataBaseConstraint'. From 'dom_Dao', the role 'dom_Dao161' has cardinality 0..*, and from 'dom_DataBaseConstraint', the role 'dom_DataBaseConstraint162' has cardinality 0..*.
+An association connects 'dom_Dao' and 'dom_DataBaseConstraint'. From 'dom_Dao', the role 'dom_Dao164' has cardinality 0..*, and from 'dom_DataBaseConstraint', the role 'dom_DataBaseConstraint165' has cardinality 0..*.
+An association connects 'dom_QueryParameter' and 'dom_QueryOperation'. From 'dom_QueryParameter', the role 'dom_QueryParameter' has cardinality 0..*, and from 'dom_QueryOperation', the role 'dom_QueryOperation167' has cardinality 0..*.
+An association connects 'dom_QlStatement' and 'dom_QueryOperation'. From 'dom_QlStatement', the role 'dom_QlStatement' has cardinality 0..*, and from 'dom_QueryOperation', the role 'dom_QueryOperation169' has cardinality 0..*.
+An association connects 'dom_QueryParameter' and 'dom_Attribute'. From 'dom_QueryParameter', the role 'dom_QueryParameter171' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute172' has cardinality 0..*.
+An association connects 'dom_Column' and 'dom_DataTypeAndTypeParameter'. From 'dom_Column', the role 'dom_Column174' has cardinality 0..*, and from 'dom_DataTypeAndTypeParameter', the role 'dom_DataTypeAndTypeParameter175' has cardinality 0..*.
+An association connects 'dom_Type' and 'dom_Column'. From 'dom_Type', the role 'dom_Type178' has cardinality 0..*, and from 'dom_Column', the role 'dom_Column177' has cardinality 0..*.
+An association connects 'dom_Column' and 'dom_Column'. From 'dom_Column', the role 'dom_Column179' has cardinality 0..*, and from 'dom_Column', the role 'dom_Column181' has cardinality 0..*.
+An association connects 'dom_Type' and 'dom_ManyToOne'. From 'dom_Type', the role 'dom_Type184' has cardinality 0..*, and from 'dom_ManyToOne', the role 'dom_ManyToOne183' has cardinality 0..*.
+An association connects 'dom_SqlType' and 'dom_ManyToOne'. From 'dom_SqlType', the role 'dom_SqlType' has cardinality 0..*, and from 'dom_ManyToOne', the role 'dom_ManyToOne186' has cardinality 0..*.
+An association connects 'dom_Column' and 'dom_ManyToOne'. From 'dom_Column', the role 'dom_Column189' has cardinality 0..*, and from 'dom_ManyToOne', the role 'dom_ManyToOne188' has cardinality 0..*.
+An association connects 'dom_OneToMany' and 'dom_Column'. From 'dom_OneToMany', the role 'dom_OneToMany191' has cardinality 0..*, and from 'dom_Column', the role 'dom_Column192' has cardinality 0..*.
+An association connects 'dom_DataBaseConstraint' and 'dom_Attribute'. From 'dom_DataBaseConstraint', the role 'dom_DataBaseConstraint194' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute195' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_DataBaseConstraint'. From 'dom_Attribute', the role 'dom_Attribute198' has cardinality 0..*, and from 'dom_DataBaseConstraint', the role 'dom_DataBaseConstraint197' has cardinality 0..*.
+An association connects 'dom_ApplicationSession' and 'dom_Property'. From 'dom_ApplicationSession', the role 'dom_ApplicationSession' has cardinality 0..*, and from 'dom_Property', the role 'dom_Property200' has cardinality 0..*.
+An association connects 'dom_Function' and 'dom_ApplicationSession'. From 'dom_Function', the role 'dom_Function' has cardinality 0..*, and from 'dom_ApplicationSession', the role 'dom_ApplicationSession202' has cardinality 0..*.
+An association connects 'dom_ConditionsBlock' and 'dom_ApplicationSession'. From 'dom_ConditionsBlock', the role 'dom_ConditionsBlock205' has cardinality 0..*, and from 'dom_ApplicationSession', the role 'dom_ApplicationSession204' has cardinality 0..*.
+An association connects 'dom_CallInputParameter' and 'dom_CallableStatement'. From 'dom_CallInputParameter', the role 'dom_CallInputParameter' has cardinality 0..*, and from 'dom_CallableStatement', the role 'dom_CallableStatement' has cardinality 0..*.
+An association connects 'dom_CallOutputParameter' and 'dom_CallableStatement'. From 'dom_CallOutputParameter', the role 'dom_CallOutputParameter' has cardinality 0..*, and from 'dom_CallableStatement', the role 'dom_CallableStatement208' has cardinality 0..*.
+An association connects 'dom_CallInputParameter' and 'dom_QueryParameter'. From 'dom_CallInputParameter', the role 'dom_CallInputParameter210' has cardinality 0..*, and from 'dom_QueryParameter', the role 'dom_QueryParameter211' has cardinality 0..*.
+An association connects 'dom_Attribute' and 'dom_CallInputParameter'. From 'dom_Attribute', the role 'dom_Attribute214' has cardinality 0..*, and from 'dom_CallInputParameter', the role 'dom_CallInputParameter213' has cardinality 0..*.
+An association connects 'dom_CallOutputParameter' and 'dom_Attribute'. From 'dom_CallOutputParameter', the role 'dom_CallOutputParameter216' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute217' has cardinality 0..*.
+An association connects 'dom_CallOutputParameter' and 'dom_Attribute'. From 'dom_CallOutputParameter', the role 'dom_CallOutputParameter219' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute220' has cardinality 0..*.
+An association connects 'dom_InsertStatement' and 'dom_Entity'. From 'dom_InsertStatement', the role 'dom_InsertStatement' has cardinality 0..*, and from 'dom_Entity', the role 'dom_Entity222' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_InsertStatement'. From 'dom_Expression', the role 'dom_Expression225' has cardinality 0..*, and from 'dom_InsertStatement', the role 'dom_InsertStatement224' has cardinality 0..*.
+An association connects 'dom_InsertStatement' and 'dom_SelectStatement'. From 'dom_InsertStatement', the role 'dom_InsertStatement227' has cardinality 0..*, and from 'dom_SelectStatement', the role 'dom_SelectStatement' has cardinality 0..*.
+An association connects 'dom_Entity' and 'dom_DeleteStatement'. From 'dom_Entity', the role 'dom_Entity229' has cardinality 0..*, and from 'dom_DeleteStatement', the role 'dom_DeleteStatement' has cardinality 0..*.
+An association connects 'dom_DeleteStatement' and 'dom_Expression'. From 'dom_DeleteStatement', the role 'dom_DeleteStatement231' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression232' has cardinality 0..*.
+An association connects 'dom_UpdateStatement' and 'dom_Entity'. From 'dom_UpdateStatement', the role 'dom_UpdateStatement' has cardinality 0..*, and from 'dom_Entity', the role 'dom_Entity234' has cardinality 0..*.
+An association connects 'dom_UpdateStatement' and 'dom_PropertyAssignment'. From 'dom_UpdateStatement', the role 'dom_UpdateStatement236' has cardinality 0..*, and from 'dom_PropertyAssignment', the role 'dom_PropertyAssignment' has cardinality 0..*.
+An association connects 'dom_UpdateStatement' and 'dom_Expression'. From 'dom_UpdateStatement', the role 'dom_UpdateStatement238' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression239' has cardinality 0..*.
+An association connects 'dom_PropertyAssignment' and 'dom_PropertyValue'. From 'dom_PropertyAssignment', the role 'dom_PropertyAssignment241' has cardinality 0..*, and from 'dom_PropertyValue', the role 'dom_PropertyValue' has cardinality 0..*.
+An association connects 'dom_PropertyAssignment' and 'dom_Expression'. From 'dom_PropertyAssignment', the role 'dom_PropertyAssignment243' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression244' has cardinality 0..*.
+An association connects 'dom_FromRange' and 'dom_SelectStatement'. From 'dom_FromRange', the role 'dom_FromRange' has cardinality 0..*, and from 'dom_SelectStatement', the role 'dom_SelectStatement246' has cardinality 0..*.
+An association connects 'dom_Join' and 'dom_SelectStatement'. From 'dom_Join', the role 'dom_Join' has cardinality 0..*, and from 'dom_SelectStatement', the role 'dom_SelectStatement248' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_SelectStatement'. From 'dom_Expression', the role 'dom_Expression251' has cardinality 0..*, and from 'dom_SelectStatement', the role 'dom_SelectStatement250' has cardinality 0..*.
+An association connects 'dom_SelectStatement' and 'dom_Expression'. From 'dom_SelectStatement', the role 'dom_SelectStatement253' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression254' has cardinality 0..*.
+An association connects 'dom_SelectStatement' and 'dom_Expression'. From 'dom_SelectStatement', the role 'dom_SelectStatement256' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression257' has cardinality 0..*.
+An association connects 'dom_SelectStatement' and 'dom_SortOrderElement'. From 'dom_SelectStatement', the role 'dom_SelectStatement259' has cardinality 0..*, and from 'dom_SortOrderElement', the role 'dom_SortOrderElement' has cardinality 0..*.
+An association connects 'dom_SortOrderElement' and 'dom_Expression'. From 'dom_SortOrderElement', the role 'dom_SortOrderElement261' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression262' has cardinality 0..*.
+An association connects 'dom_SelectProperties' and 'dom_Expression'. From 'dom_SelectProperties', the role 'dom_SelectProperties' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression264' has cardinality 0..*.
+An association connects 'dom_SelectClass' and 'dom_Expression'. From 'dom_SelectClass', the role 'dom_SelectClass' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression266' has cardinality 0..*.
+An association connects 'dom_Entity' and 'dom_FromClass'. From 'dom_Entity', the role 'dom_Entity268' has cardinality 0..*, and from 'dom_FromClass', the role 'dom_FromClass' has cardinality 0..*.
+An association connects 'dom_JoinEntity' and 'dom_Join'. From 'dom_JoinEntity', the role 'dom_JoinEntity' has cardinality 0..*, and from 'dom_Join', the role 'dom_Join270' has cardinality 0..*.
+An association connects 'dom_Join' and 'dom_Attribute'. From 'dom_Join', the role 'dom_Join272' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute273' has cardinality 0..*.
+An association connects 'dom_Join' and 'dom_Expression'. From 'dom_Join', the role 'dom_Join275' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression276' has cardinality 0..*.
+An association connects 'dom_PropertyValue' and 'dom_Expression'. From 'dom_PropertyValue', the role 'dom_PropertyValue278' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression279' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_FunctionCall'. From 'dom_Expression', the role 'dom_Expression281' has cardinality 0..*, and from 'dom_FunctionCall', the role 'dom_FunctionCall' has cardinality 0..*.
+An association connects 'dom_TrimFunction' and 'dom_StringLiteralValue'. From 'dom_TrimFunction', the role 'dom_TrimFunction' has cardinality 0..*, and from 'dom_StringLiteralValue', the role 'dom_StringLiteralValue' has cardinality 0..*.
+An association connects 'dom_TrimFunction' and 'dom_Expression'. From 'dom_TrimFunction', the role 'dom_TrimFunction284' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression285' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_CastFunction'. From 'dom_Expression', the role 'dom_Expression287' has cardinality 0..*, and from 'dom_CastFunction', the role 'dom_CastFunction' has cardinality 0..*.
+An association connects 'dom_AggregateFunction' and 'dom_Expression'. From 'dom_AggregateFunction', the role 'dom_AggregateFunction' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression289' has cardinality 0..*.
+An association connects 'dom_CollectionFunction' and 'dom_AggregateFunction'. From 'dom_CollectionFunction', the role 'dom_CollectionFunction' has cardinality 0..*, and from 'dom_AggregateFunction', the role 'dom_AggregateFunction291' has cardinality 0..*.
+An association connects 'dom_QueryParameterValue' and 'dom_QueryParameterReference'. From 'dom_QueryParameterValue', the role 'dom_QueryParameterValue' has cardinality 0..*, and from 'dom_QueryParameterReference', the role 'dom_QueryParameterReference' has cardinality 0..*.
+An association connects 'dom_QueryParameterValue' and 'dom_Attribute'. From 'dom_QueryParameterValue', the role 'dom_QueryParameterValue294' has cardinality 0..*, and from 'dom_Attribute', the role 'dom_Attribute295' has cardinality 0..*.
+An association connects 'dom_QuantifiedExpression' and 'dom_Expression'. From 'dom_QuantifiedExpression', the role 'dom_QuantifiedExpression' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression297' has cardinality 0..*.
+An association connects 'dom_CaseExpression' and 'dom_WhenClause'. From 'dom_CaseExpression', the role 'dom_CaseExpression' has cardinality 0..*, and from 'dom_WhenClause', the role 'dom_WhenClause' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_CaseExpression'. From 'dom_Expression', the role 'dom_Expression301' has cardinality 0..*, and from 'dom_CaseExpression', the role 'dom_CaseExpression300' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_CaseExpression'. From 'dom_Expression', the role 'dom_Expression304' has cardinality 0..*, and from 'dom_CaseExpression', the role 'dom_CaseExpression303' has cardinality 0..*.
+An association connects 'dom_CaseExpression' and 'dom_AltWhenClause'. From 'dom_CaseExpression', the role 'dom_CaseExpression306' has cardinality 0..*, and from 'dom_AltWhenClause', the role 'dom_AltWhenClause' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_WhenClause'. From 'dom_Expression', the role 'dom_Expression309' has cardinality 0..*, and from 'dom_WhenClause', the role 'dom_WhenClause308' has cardinality 0..*.
+An association connects 'dom_WhenClause' and 'dom_Expression'. From 'dom_WhenClause', the role 'dom_WhenClause311' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression312' has cardinality 0..*.
+An association connects 'dom_AltWhenClause' and 'dom_Expression'. From 'dom_AltWhenClause', the role 'dom_AltWhenClause314' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression315' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_AltWhenClause'. From 'dom_Expression', the role 'dom_Expression318' has cardinality 0..*, and from 'dom_AltWhenClause', the role 'dom_AltWhenClause317' has cardinality 0..*.
+An association connects 'dom_PropertyValue' and 'dom_CollectionFunction'. From 'dom_PropertyValue', the role 'dom_PropertyValue321' has cardinality 0..*, and from 'dom_CollectionFunction', the role 'dom_CollectionFunction320' has cardinality 0..*.
+An association connects 'dom_SubQuery' and 'dom_SelectStatement'. From 'dom_SubQuery', the role 'dom_SubQuery' has cardinality 0..*, and from 'dom_SelectStatement', the role 'dom_SelectStatement323' has cardinality 0..*.
+An association connects 'dom_ParenthesizedExpression' and 'dom_Expression'. From 'dom_ParenthesizedExpression', the role 'dom_ParenthesizedExpression' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression325' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_AliasedExpression'. From 'dom_Expression', the role 'dom_Expression327' has cardinality 0..*, and from 'dom_AliasedExpression', the role 'dom_AliasedExpression' has cardinality 0..*.
+An association connects 'dom_BinaryExpression' and 'dom_Expression'. From 'dom_BinaryExpression', the role 'dom_BinaryExpression' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression329' has cardinality 0..*.
+An association connects 'dom_BinaryExpression' and 'dom_Expression'. From 'dom_BinaryExpression', the role 'dom_BinaryExpression331' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression332' has cardinality 0..*.
+An association connects 'dom_NotExpression' and 'dom_Expression'. From 'dom_NotExpression', the role 'dom_NotExpression' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression334' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_InExpression'. From 'dom_Expression', the role 'dom_Expression336' has cardinality 0..*, and from 'dom_InExpression', the role 'dom_InExpression' has cardinality 0..*.
+An association connects 'dom_InExpression' and 'dom_Expression'. From 'dom_InExpression', the role 'dom_InExpression338' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression339' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_BetweenExpression'. From 'dom_Expression', the role 'dom_Expression341' has cardinality 0..*, and from 'dom_BetweenExpression', the role 'dom_BetweenExpression' has cardinality 0..*.
+An association connects 'dom_BetweenExpression' and 'dom_Expression'. From 'dom_BetweenExpression', the role 'dom_BetweenExpression343' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression344' has cardinality 0..*.
+An association connects 'dom_BetweenExpression' and 'dom_Expression'. From 'dom_BetweenExpression', the role 'dom_BetweenExpression346' has cardinality 0..*, and from 'dom_Expression', the role 'dom_Expression347' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_LikeExpression'. From 'dom_Expression', the role 'dom_Expression349' has cardinality 0..*, and from 'dom_LikeExpression', the role 'dom_LikeExpression' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_LikeExpression'. From 'dom_Expression', the role 'dom_Expression352' has cardinality 0..*, and from 'dom_LikeExpression', the role 'dom_LikeExpression351' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_LikeExpression'. From 'dom_Expression', the role 'dom_Expression355' has cardinality 0..*, and from 'dom_LikeExpression', the role 'dom_LikeExpression354' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_MemberOfExpression'. From 'dom_Expression', the role 'dom_Expression357' has cardinality 0..*, and from 'dom_MemberOfExpression', the role 'dom_MemberOfExpression' has cardinality 0..*.
+An association connects 'dom_Expression' and 'dom_UnaryExpression'. From 'dom_Expression', the role 'dom_Expression359' has cardinality 0..*, and from 'dom_UnaryExpression', the role 'dom_UnaryExpression' has cardinality 0..*.

@@ -1,0 +1,42 @@
+The domain model 'sample' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'sample_Variable' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Type', which is of type str.
+
+'sample_When' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_Scenario' represents an important domain concept.
+It has one attribute: 'Title', which is of type str.
+
+'sample_Annotation' represents an important domain concept.
+It has the following attributes: 'Text', which is of type str; 'Type', which is of type str.
+
+'sample_Given' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_Sentence' represents an important domain concept.
+It has one attribute: 'Text', which is of type str.
+
+'sample_Story' represents an important domain concept.
+It has the following attributes: 'Feature', which is of type str; 'Title', which is of type str; 'Benefit', which is of type str; 'Role', which is of type str.
+
+'sample_Then' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_Register' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'sample_Story' and 'sample_Scenario'. From 'sample_Story', the role 'sample_Story' has cardinality 0..*, and from 'sample_Scenario', the role 'sample_Scenario' has cardinality 0..*.
+An association connects 'sample_When' and 'sample_Scenario'. From 'sample_When', the role 'sample_When' has cardinality 0..*, and from 'sample_Scenario', the role 'sample_Scenario2' has cardinality 0..*.
+An association connects 'sample_Given' and 'sample_Scenario'. From 'sample_Given', the role 'sample_Given' has cardinality 0..*, and from 'sample_Scenario', the role 'sample_Scenario4' has cardinality 0..*.
+An association connects 'sample_Scenario' and 'sample_Then'. From 'sample_Scenario', the role 'sample_Scenario6' has cardinality 0..*, and from 'sample_Then', the role 'sample_Then' has cardinality 0..*.
+An association connects 'sample_Sentence' and 'sample_When'. From 'sample_Sentence', the role 'sample_Sentence' has cardinality 0..*, and from 'sample_When', the role 'sample_When8' has cardinality 0..*.
+An association connects 'sample_Given' and 'sample_Sentence'. From 'sample_Given', the role 'sample_Given10' has cardinality 0..*, and from 'sample_Sentence', the role 'sample_Sentence11' has cardinality 0..*.
+An association connects 'sample_Sentence' and 'sample_Then'. From 'sample_Sentence', the role 'sample_Sentence14' has cardinality 0..*, and from 'sample_Then', the role 'sample_Then13' has cardinality 0..*.
+An association connects 'sample_Sentence' and 'sample_Variable'. From 'sample_Sentence', the role 'sample_Sentence16' has cardinality 0..*, and from 'sample_Variable', the role 'sample_Variable' has cardinality 0..*.
+An association connects 'sample_Annotation' and 'sample_Sentence'. From 'sample_Annotation', the role 'sample_Annotation' has cardinality 0..*, and from 'sample_Sentence', the role 'sample_Sentence18' has cardinality 0..*.
+An association connects 'sample_Story' and 'sample_Register'. From 'sample_Story', the role 'sample_Story20' has cardinality 0..*, and from 'sample_Register', the role 'sample_Register' has cardinality 0..*.

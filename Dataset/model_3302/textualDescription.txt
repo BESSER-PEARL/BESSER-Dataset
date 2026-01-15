@@ -1,0 +1,54 @@
+The domain model 'labels' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'labels_TestDynamicNodeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'StaticNodeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicNodeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'labels_TestStaticNodeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'StaticEdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'labels_TestLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'labels_TestIntegerLabelValue' represents an important domain concept.
+It has one attribute: 'i', which is of type int.
+
+'labels_TestDynamicLabel1' represents an important domain concept.
+It does not declare any attributes.
+
+'labels_TestStaticEdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'labels_TestDynamicEdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'Label' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicEdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'labels_TestDynamicEdgeLabel' is a specialization of 'DynamicEdgeLabel'.
+The class 'labels_TestDynamicLabel1' is a specialization of 'DynamicLabel'.
+The class 'labels_TestDynamicNodeLabel' is a specialization of 'DynamicNodeLabel'.
+The class 'labels_TestIntegerLabelValue' is a specialization of 'LabelValue'.
+The class 'labels_TestLabel' is a specialization of 'Label'.
+The class 'labels_TestStaticEdgeLabel' is a specialization of 'StaticEdgeLabel'.
+The class 'labels_TestStaticNodeLabel' is a specialization of 'StaticNodeLabel'.

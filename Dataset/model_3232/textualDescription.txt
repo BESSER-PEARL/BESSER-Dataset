@@ -1,0 +1,502 @@
+The domain model 'ecdarText' describes the core structural elements and their relationships within the system.
+
+The model defines 98 main class(es).
+
+'ecdarText_ETSpecificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETGreaterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETSingleInitialiser' represents an important domain concept.
+It does not declare any attributes.
+
+'ETExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETBitOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETMinExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ETSpecificationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETPreDecrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ETSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETClockType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETSpecificationReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETSelect' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ecdarText_ETSubtractionAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ETDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETEqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETStructExpression' represents an important domain concept.
+It has one attribute: 'right', which is of type str.
+
+'ecdarText_ETBitLeftAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETDivisionAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETTypeModifiers' represents an important domain concept.
+It has the following attributes: 'meta', which is of type bool; 'urgent', which is of type bool; 'const', which is of type bool.
+
+'ETSpecificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETSpecificationInstantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETSpecificationBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETUnequalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETMultiInitialiser' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETPostIncrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETSpecification' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ecdarText_ETSpecificationCompositionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETEdge' represents an important domain concept.
+It has one attribute: 'controllable', which is of type bool.
+
+'ecdarText_ETTypeIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETImport' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'ecdarText_ETArrayDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ETActionType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETIO' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'ecdarText_ETDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETActionType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETSpecificationConjunctionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETInitialiser' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETLessEqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETNumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ecdarText_ETSpecificationDisjunctionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETModuloExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETStructType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETInputType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETAddExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETBitXORExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETParameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ioType', which is of type str.
+
+'ecdarText_ETMultiplicationAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETIntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETModuloAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETSpecificationTemplate' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETBooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ecdarText_ETVariableID' represents an important domain concept.
+It has the following attributes: 'ioType', which is of type str; 'name', which is of type str.
+
+'ecdarText_ETSpecificationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETBitRightExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETLogicNotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ETInitialiser' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETSpecificationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETMaxExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETLogicOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETBitAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETPostDecrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETMultiplyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETPreIncrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETGreaterEqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETArrayExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETBooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETOutputType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETBitOrAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETFile' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETFieldID' represents an important domain concept.
+It has the following attributes: 'ioType', which is of type str; 'name', which is of type str.
+
+'ecdarText_ETDivideExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETLocation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'universal', which is of type bool; 'urgent', which is of type bool.
+
+'ecdarText_ETBitLeftExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETSubtractExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETTypeID' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ecdarText_ETFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETLogicAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETBitXORAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETBitAndAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETScalarType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETAdditionAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ETTypeIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETBitRightAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETImplyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETMinusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETLessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETDeclarations' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ecdarText_ETForallExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ecdarText_ETExistsExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ETIOType' defines the following possible values: 'OUTPUT', 'INPUT'.
+
+The model also captures inheritance relationships between classes.
+The class 'ecdarText_ETVariableDeclaration' is a specialization of 'ETDeclaration'.
+The class 'ecdarText_ETSingleInitialiser' is a specialization of 'ETInitialiser'.
+The class 'ecdarText_ETMultiInitialiser' is a specialization of 'ETInitialiser'.
+The class 'ecdarText_ETTypeDeclaration' is a specialization of 'ETDeclaration'.
+The class 'ecdarText_ETIntegerType' is a specialization of 'ETTypeIdentifier'.
+The class 'ecdarText_ETClockType' is a specialization of 'ETTypeIdentifier'.
+The class 'ecdarText_ETActionType' is a specialization of 'ETTypeIdentifier'.
+The class 'ecdarText_ETInputType' is a specialization of 'ETActionType'.
+The class 'ecdarText_ETOutputType' is a specialization of 'ETActionType'.
+The class 'ecdarText_ETBooleanType' is a specialization of 'ETTypeIdentifier'.
+The class 'ecdarText_ETScalarType' is a specialization of 'ETTypeIdentifier'.
+The class 'ecdarText_ETStructType' is a specialization of 'ETTypeIdentifier'.
+The class 'ecdarText_ETSpecificationBinding' is a specialization of 'ETSpecification'.
+The class 'ecdarText_ETSpecificationDefinition' is a specialization of 'ETSpecification'.
+The class 'ecdarText_ETSpecificationTemplate' is a specialization of 'ETSpecificationDefinition'.
+The class 'ecdarText_ETTypeReference' is a specialization of 'ETTypeIdentifier'.
+The class 'ecdarText_ETSpecificationDisjunctionExpression' is a specialization of 'ETSpecificationExpression'.
+The class 'ecdarText_ETSpecificationConjunctionExpression' is a specialization of 'ETSpecificationExpression'.
+The class 'ecdarText_ETSpecificationCompositionExpression' is a specialization of 'ETSpecificationExpression'.
+The class 'ecdarText_ETSpecificationReference' is a specialization of 'ETSpecificationExpression'.
+The class 'ecdarText_ETSpecificationInstantiation' is a specialization of 'ETSpecificationExpression'.
+The class 'ecdarText_ETForallExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETExistsExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETImplyExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETLogicOrExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETLogicAndExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETAssignmentExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETAdditionAssignmentExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETSubtractionAssignmentExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETMultiplicationAssignmentExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETDivisionAssignmentExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETModuloAssignmentExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETBitOrAssignmentExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETBitAndAssignmentExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETBitXORAssignmentExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETBitLeftAssignmentExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETBitRightAssignmentExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETConditionalExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETBitOrExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETBitXORExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETBitAndExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETEqualExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETUnequalExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETLessExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETLessEqualExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETGreaterEqualExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETGreaterExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETMinExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETMaxExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETBitLeftExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETBitRightExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETAddExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETSubtractExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETMultiplyExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETDivideExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETModuloExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETPreIncrementExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETPreDecrementExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETLogicNotExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETMinusExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETPostIncrementExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETPostDecrementExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETStructExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETArrayExpression' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETReference' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETBooleanLiteral' is a specialization of 'ETExpression'.
+The class 'ecdarText_ETNumberLiteral' is a specialization of 'ETExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ecdarText_ETFile' and 'ecdarText_ETImport'. From 'ecdarText_ETFile', the role 'ecdarText_ETFile' has cardinality 0..*, and from 'ecdarText_ETImport', the role 'ecdarText_ETImport' has cardinality 0..*.
+An association connects 'ecdarText_ETDeclarations' and 'ecdarText_ETFile'. From 'ecdarText_ETDeclarations', the role 'ecdarText_ETDeclarations' has cardinality 0..*, and from 'ecdarText_ETFile', the role 'ecdarText_ETFile2' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecification' and 'ecdarText_ETFile'. From 'ecdarText_ETSpecification', the role 'ecdarText_ETSpecification' has cardinality 0..*, and from 'ecdarText_ETFile', the role 'ecdarText_ETFile4' has cardinality 0..*.
+An association connects 'ecdarText_ETArrayDeclaration' and 'ecdarText_ETExpression'. From 'ecdarText_ETArrayDeclaration', the role 'ecdarText_ETArrayDeclaration' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETDeclaration' and 'ecdarText_ETDeclarations'. From 'ecdarText_ETDeclaration', the role 'ecdarText_ETDeclaration' has cardinality 0..*, and from 'ecdarText_ETDeclarations', the role 'ecdarText_ETDeclarations7' has cardinality 0..*.
+An association connects 'ecdarText_ETType' and 'ecdarText_ETTypeModifiers'. From 'ecdarText_ETType', the role 'ecdarText_ETType' has cardinality 0..*, and from 'ecdarText_ETTypeModifiers', the role 'ecdarText_ETTypeModifiers' has cardinality 0..*.
+An association connects 'ecdarText_ETType' and 'ecdarText_ETTypeIdentifier'. From 'ecdarText_ETType', the role 'ecdarText_ETType10' has cardinality 0..*, and from 'ecdarText_ETTypeIdentifier', the role 'ecdarText_ETTypeIdentifier' has cardinality 0..*.
+An association connects 'ecdarText_ETVariableDeclaration' and 'ecdarText_ETType'. From 'ecdarText_ETVariableDeclaration', the role 'ecdarText_ETVariableDeclaration' has cardinality 0..*, and from 'ecdarText_ETType', the role 'ecdarText_ETType12' has cardinality 0..*.
+An association connects 'ecdarText_ETVariableID' and 'ecdarText_ETVariableDeclaration'. From 'ecdarText_ETVariableID', the role 'ecdarText_ETVariableID' has cardinality 0..*, and from 'ecdarText_ETVariableDeclaration', the role 'ecdarText_ETVariableDeclaration14' has cardinality 0..*.
+An association connects 'ecdarText_ETArrayDeclaration' and 'ecdarText_ETVariableID'. From 'ecdarText_ETArrayDeclaration', the role 'ecdarText_ETArrayDeclaration17' has cardinality 0..*, and from 'ecdarText_ETVariableID', the role 'ecdarText_ETVariableID16' has cardinality 0..*.
+An association connects 'ecdarText_ETVariableID' and 'ecdarText_ETInitialiser'. From 'ecdarText_ETVariableID', the role 'ecdarText_ETVariableID19' has cardinality 0..*, and from 'ecdarText_ETInitialiser', the role 'ecdarText_ETInitialiser' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETSingleInitialiser'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression21' has cardinality 0..*, and from 'ecdarText_ETSingleInitialiser', the role 'ecdarText_ETSingleInitialiser' has cardinality 0..*.
+An association connects 'ecdarText_ETInitialiser' and 'ecdarText_ETMultiInitialiser'. From 'ecdarText_ETInitialiser', the role 'ecdarText_ETInitialiser23' has cardinality 0..*, and from 'ecdarText_ETMultiInitialiser', the role 'ecdarText_ETMultiInitialiser' has cardinality 0..*.
+An association connects 'ecdarText_ETType' and 'ecdarText_ETTypeDeclaration'. From 'ecdarText_ETType', the role 'ecdarText_ETType25' has cardinality 0..*, and from 'ecdarText_ETTypeDeclaration', the role 'ecdarText_ETTypeDeclaration' has cardinality 0..*.
+An association connects 'ecdarText_ETTypeDeclaration' and 'ecdarText_ETTypeID'. From 'ecdarText_ETTypeDeclaration', the role 'ecdarText_ETTypeDeclaration27' has cardinality 0..*, and from 'ecdarText_ETTypeID', the role 'ecdarText_ETTypeID' has cardinality 0..*.
+An association connects 'ecdarText_ETTypeID' and 'ecdarText_ETArrayDeclaration'. From 'ecdarText_ETTypeID', the role 'ecdarText_ETTypeID29' has cardinality 0..*, and from 'ecdarText_ETArrayDeclaration', the role 'ecdarText_ETArrayDeclaration30' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETIntegerType'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression32' has cardinality 0..*, and from 'ecdarText_ETIntegerType', the role 'ecdarText_ETIntegerType' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETIntegerType'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression35' has cardinality 0..*, and from 'ecdarText_ETIntegerType', the role 'ecdarText_ETIntegerType34' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETScalarType'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression37' has cardinality 0..*, and from 'ecdarText_ETScalarType', the role 'ecdarText_ETScalarType' has cardinality 0..*.
+An association connects 'ecdarText_ETFieldDeclaration' and 'ecdarText_ETStructType'. From 'ecdarText_ETFieldDeclaration', the role 'ecdarText_ETFieldDeclaration' has cardinality 0..*, and from 'ecdarText_ETStructType', the role 'ecdarText_ETStructType' has cardinality 0..*.
+An association connects 'ecdarText_ETFieldDeclaration' and 'ecdarText_ETType'. From 'ecdarText_ETFieldDeclaration', the role 'ecdarText_ETFieldDeclaration40' has cardinality 0..*, and from 'ecdarText_ETType', the role 'ecdarText_ETType41' has cardinality 0..*.
+An association connects 'ecdarText_ETFieldID' and 'ecdarText_ETFieldDeclaration'. From 'ecdarText_ETFieldID', the role 'ecdarText_ETFieldID' has cardinality 0..*, and from 'ecdarText_ETFieldDeclaration', the role 'ecdarText_ETFieldDeclaration43' has cardinality 0..*.
+An association connects 'ecdarText_ETArrayDeclaration' and 'ecdarText_ETFieldID'. From 'ecdarText_ETArrayDeclaration', the role 'ecdarText_ETArrayDeclaration46' has cardinality 0..*, and from 'ecdarText_ETFieldID', the role 'ecdarText_ETFieldID45' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationExpression' and 'ecdarText_ETSpecificationBinding'. From 'ecdarText_ETSpecificationExpression', the role 'ecdarText_ETSpecificationExpression' has cardinality 0..*, and from 'ecdarText_ETSpecificationBinding', the role 'ecdarText_ETSpecificationBinding' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationDefinition' and 'ecdarText_ETSpecificationBody'. From 'ecdarText_ETSpecificationDefinition', the role 'ecdarText_ETSpecificationDefinition' has cardinality 0..*, and from 'ecdarText_ETSpecificationBody', the role 'ecdarText_ETSpecificationBody' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationTemplate' and 'ecdarText_ETParameter'. From 'ecdarText_ETSpecificationTemplate', the role 'ecdarText_ETSpecificationTemplate' has cardinality 0..*, and from 'ecdarText_ETParameter', the role 'ecdarText_ETParameter' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationBody' and 'ecdarText_ETDeclarations'. From 'ecdarText_ETSpecificationBody', the role 'ecdarText_ETSpecificationBody51' has cardinality 0..*, and from 'ecdarText_ETDeclarations', the role 'ecdarText_ETDeclarations52' has cardinality 0..*.
+An association connects 'ecdarText_ETLocation' and 'ecdarText_ETSpecificationBody'. From 'ecdarText_ETLocation', the role 'ecdarText_ETLocation' has cardinality 0..*, and from 'ecdarText_ETSpecificationBody', the role 'ecdarText_ETSpecificationBody54' has cardinality 0..*.
+An association connects 'ecdarText_ETLocation' and 'ecdarText_ETSpecificationBody'. From 'ecdarText_ETLocation', the role 'ecdarText_ETLocation57' has cardinality 0..*, and from 'ecdarText_ETSpecificationBody', the role 'ecdarText_ETSpecificationBody56' has cardinality 0..*.
+An association connects 'ecdarText_ETType' and 'ecdarText_ETParameter'. From 'ecdarText_ETType', the role 'ecdarText_ETType60' has cardinality 0..*, and from 'ecdarText_ETParameter', the role 'ecdarText_ETParameter59' has cardinality 0..*.
+An association connects 'ecdarText_ETArrayDeclaration' and 'ecdarText_ETParameter'. From 'ecdarText_ETArrayDeclaration', the role 'ecdarText_ETArrayDeclaration63' has cardinality 0..*, and from 'ecdarText_ETParameter', the role 'ecdarText_ETParameter62' has cardinality 0..*.
+An association connects 'ecdarText_ETLocation' and 'ecdarText_ETExpression'. From 'ecdarText_ETLocation', the role 'ecdarText_ETLocation65' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression66' has cardinality 0..*.
+An association connects 'ecdarText_ETLocation' and 'ecdarText_ETEdge'. From 'ecdarText_ETLocation', the role 'ecdarText_ETLocation68' has cardinality 0..*, and from 'ecdarText_ETEdge', the role 'ecdarText_ETEdge' has cardinality 0..*.
+An association connects 'ecdarText_ETSelect' and 'ecdarText_ETEdge'. From 'ecdarText_ETSelect', the role 'ecdarText_ETSelect' has cardinality 0..*, and from 'ecdarText_ETEdge', the role 'ecdarText_ETEdge70' has cardinality 0..*.
+An association connects 'ecdarText_ETEdge' and 'ecdarText_ETIO'. From 'ecdarText_ETEdge', the role 'ecdarText_ETEdge72' has cardinality 0..*, and from 'ecdarText_ETIO', the role 'ecdarText_ETIO' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETEdge'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression75' has cardinality 0..*, and from 'ecdarText_ETEdge', the role 'ecdarText_ETEdge74' has cardinality 0..*.
+An association connects 'ecdarText_ETEdge' and 'ecdarText_ETLocation'. From 'ecdarText_ETEdge', the role 'ecdarText_ETEdge77' has cardinality 0..*, and from 'ecdarText_ETLocation', the role 'ecdarText_ETLocation78' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETEdge'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression81' has cardinality 0..*, and from 'ecdarText_ETEdge', the role 'ecdarText_ETEdge80' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETIO'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression84' has cardinality 0..*, and from 'ecdarText_ETIO', the role 'ecdarText_ETIO83' has cardinality 0..*.
+An association connects 'ecdarText_ETType' and 'ecdarText_ETSelect'. From 'ecdarText_ETType', the role 'ecdarText_ETType87' has cardinality 0..*, and from 'ecdarText_ETSelect', the role 'ecdarText_ETSelect86' has cardinality 0..*.
+An association connects 'ecdarText_ETTypeReference' and 'ecdarText_ETTypeID'. From 'ecdarText_ETTypeReference', the role 'ecdarText_ETTypeReference' has cardinality 0..*, and from 'ecdarText_ETTypeID', the role 'ecdarText_ETTypeID89' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationDisjunctionExpression' and 'ecdarText_ETSpecificationExpression'. From 'ecdarText_ETSpecificationDisjunctionExpression', the role 'ecdarText_ETSpecificationDisjunctionExpression' has cardinality 0..*, and from 'ecdarText_ETSpecificationExpression', the role 'ecdarText_ETSpecificationExpression91' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationExpression' and 'ecdarText_ETSpecificationDisjunctionExpression'. From 'ecdarText_ETSpecificationExpression', the role 'ecdarText_ETSpecificationExpression94' has cardinality 0..*, and from 'ecdarText_ETSpecificationDisjunctionExpression', the role 'ecdarText_ETSpecificationDisjunctionExpression93' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationExpression' and 'ecdarText_ETSpecificationConjunctionExpression'. From 'ecdarText_ETSpecificationExpression', the role 'ecdarText_ETSpecificationExpression96' has cardinality 0..*, and from 'ecdarText_ETSpecificationConjunctionExpression', the role 'ecdarText_ETSpecificationConjunctionExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationConjunctionExpression' and 'ecdarText_ETSpecificationExpression'. From 'ecdarText_ETSpecificationConjunctionExpression', the role 'ecdarText_ETSpecificationConjunctionExpression98' has cardinality 0..*, and from 'ecdarText_ETSpecificationExpression', the role 'ecdarText_ETSpecificationExpression99' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationCompositionExpression' and 'ecdarText_ETSpecificationExpression'. From 'ecdarText_ETSpecificationCompositionExpression', the role 'ecdarText_ETSpecificationCompositionExpression' has cardinality 0..*, and from 'ecdarText_ETSpecificationExpression', the role 'ecdarText_ETSpecificationExpression101' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationExpression' and 'ecdarText_ETSpecificationCompositionExpression'. From 'ecdarText_ETSpecificationExpression', the role 'ecdarText_ETSpecificationExpression104' has cardinality 0..*, and from 'ecdarText_ETSpecificationCompositionExpression', the role 'ecdarText_ETSpecificationCompositionExpression103' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationReference' and 'ecdarText_ETSpecification'. From 'ecdarText_ETSpecificationReference', the role 'ecdarText_ETSpecificationReference' has cardinality 0..*, and from 'ecdarText_ETSpecification', the role 'ecdarText_ETSpecification106' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationTemplate' and 'ecdarText_ETSpecificationInstantiation'. From 'ecdarText_ETSpecificationTemplate', the role 'ecdarText_ETSpecificationTemplate108' has cardinality 0..*, and from 'ecdarText_ETSpecificationInstantiation', the role 'ecdarText_ETSpecificationInstantiation' has cardinality 0..*.
+An association connects 'ecdarText_ETSpecificationInstantiation' and 'ecdarText_ETExpression'. From 'ecdarText_ETSpecificationInstantiation', the role 'ecdarText_ETSpecificationInstantiation110' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression111' has cardinality 0..*.
+An association connects 'ecdarText_ETType' and 'ecdarText_ETForallExpression'. From 'ecdarText_ETType', the role 'ecdarText_ETType113' has cardinality 0..*, and from 'ecdarText_ETForallExpression', the role 'ecdarText_ETForallExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETForallExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETForallExpression', the role 'ecdarText_ETForallExpression115' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression116' has cardinality 0..*.
+An association connects 'ecdarText_ETType' and 'ecdarText_ETExistsExpression'. From 'ecdarText_ETType', the role 'ecdarText_ETType118' has cardinality 0..*, and from 'ecdarText_ETExistsExpression', the role 'ecdarText_ETExistsExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETExistsExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression121' has cardinality 0..*, and from 'ecdarText_ETExistsExpression', the role 'ecdarText_ETExistsExpression120' has cardinality 0..*.
+An association connects 'ecdarText_ETImplyExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETImplyExpression', the role 'ecdarText_ETImplyExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression123' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETImplyExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression126' has cardinality 0..*, and from 'ecdarText_ETImplyExpression', the role 'ecdarText_ETImplyExpression125' has cardinality 0..*.
+An association connects 'ecdarText_ETLogicOrExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETLogicOrExpression', the role 'ecdarText_ETLogicOrExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression128' has cardinality 0..*.
+An association connects 'ecdarText_ETLogicOrExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETLogicOrExpression', the role 'ecdarText_ETLogicOrExpression130' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression131' has cardinality 0..*.
+An association connects 'ecdarText_ETLogicAndExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETLogicAndExpression', the role 'ecdarText_ETLogicAndExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression133' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETLogicAndExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression136' has cardinality 0..*, and from 'ecdarText_ETLogicAndExpression', the role 'ecdarText_ETLogicAndExpression135' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression138' has cardinality 0..*, and from 'ecdarText_ETAssignmentExpression', the role 'ecdarText_ETAssignmentExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETAssignmentExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETAssignmentExpression', the role 'ecdarText_ETAssignmentExpression140' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression141' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETAdditionAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression143' has cardinality 0..*, and from 'ecdarText_ETAdditionAssignmentExpression', the role 'ecdarText_ETAdditionAssignmentExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETAdditionAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression146' has cardinality 0..*, and from 'ecdarText_ETAdditionAssignmentExpression', the role 'ecdarText_ETAdditionAssignmentExpression145' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETSubtractionAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression148' has cardinality 0..*, and from 'ecdarText_ETSubtractionAssignmentExpression', the role 'ecdarText_ETSubtractionAssignmentExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETSubtractionAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression151' has cardinality 0..*, and from 'ecdarText_ETSubtractionAssignmentExpression', the role 'ecdarText_ETSubtractionAssignmentExpression150' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETMultiplicationAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression153' has cardinality 0..*, and from 'ecdarText_ETMultiplicationAssignmentExpression', the role 'ecdarText_ETMultiplicationAssignmentExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETMultiplicationAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression156' has cardinality 0..*, and from 'ecdarText_ETMultiplicationAssignmentExpression', the role 'ecdarText_ETMultiplicationAssignmentExpression155' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETDivisionAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression158' has cardinality 0..*, and from 'ecdarText_ETDivisionAssignmentExpression', the role 'ecdarText_ETDivisionAssignmentExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETDivisionAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression161' has cardinality 0..*, and from 'ecdarText_ETDivisionAssignmentExpression', the role 'ecdarText_ETDivisionAssignmentExpression160' has cardinality 0..*.
+An association connects 'ecdarText_ETModuloAssignmentExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETModuloAssignmentExpression', the role 'ecdarText_ETModuloAssignmentExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression163' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETModuloAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression166' has cardinality 0..*, and from 'ecdarText_ETModuloAssignmentExpression', the role 'ecdarText_ETModuloAssignmentExpression165' has cardinality 0..*.
+An association connects 'ecdarText_ETBitOrAssignmentExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETBitOrAssignmentExpression', the role 'ecdarText_ETBitOrAssignmentExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression168' has cardinality 0..*.
+An association connects 'ecdarText_ETBitOrAssignmentExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETBitOrAssignmentExpression', the role 'ecdarText_ETBitOrAssignmentExpression170' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression171' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETBitAndAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression173' has cardinality 0..*, and from 'ecdarText_ETBitAndAssignmentExpression', the role 'ecdarText_ETBitAndAssignmentExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETBitAndAssignmentExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETBitAndAssignmentExpression', the role 'ecdarText_ETBitAndAssignmentExpression175' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression176' has cardinality 0..*.
+An association connects 'ecdarText_ETBitXORAssignmentExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETBitXORAssignmentExpression', the role 'ecdarText_ETBitXORAssignmentExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression178' has cardinality 0..*.
+An association connects 'ecdarText_ETBitXORAssignmentExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETBitXORAssignmentExpression', the role 'ecdarText_ETBitXORAssignmentExpression180' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression181' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETBitLeftAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression183' has cardinality 0..*, and from 'ecdarText_ETBitLeftAssignmentExpression', the role 'ecdarText_ETBitLeftAssignmentExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETBitLeftAssignmentExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression186' has cardinality 0..*, and from 'ecdarText_ETBitLeftAssignmentExpression', the role 'ecdarText_ETBitLeftAssignmentExpression185' has cardinality 0..*.
+An association connects 'ecdarText_ETBitRightAssignmentExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETBitRightAssignmentExpression', the role 'ecdarText_ETBitRightAssignmentExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression188' has cardinality 0..*.
+An association connects 'ecdarText_ETBitRightAssignmentExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETBitRightAssignmentExpression', the role 'ecdarText_ETBitRightAssignmentExpression190' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression191' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETConditionalExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression193' has cardinality 0..*, and from 'ecdarText_ETConditionalExpression', the role 'ecdarText_ETConditionalExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETConditionalExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression196' has cardinality 0..*, and from 'ecdarText_ETConditionalExpression', the role 'ecdarText_ETConditionalExpression195' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETConditionalExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression199' has cardinality 0..*, and from 'ecdarText_ETConditionalExpression', the role 'ecdarText_ETConditionalExpression198' has cardinality 0..*.
+An association connects 'ecdarText_ETBitOrExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETBitOrExpression', the role 'ecdarText_ETBitOrExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression201' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETBitOrExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression204' has cardinality 0..*, and from 'ecdarText_ETBitOrExpression', the role 'ecdarText_ETBitOrExpression203' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETBitXORExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression206' has cardinality 0..*, and from 'ecdarText_ETBitXORExpression', the role 'ecdarText_ETBitXORExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETBitXORExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression209' has cardinality 0..*, and from 'ecdarText_ETBitXORExpression', the role 'ecdarText_ETBitXORExpression208' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETBitAndExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression211' has cardinality 0..*, and from 'ecdarText_ETBitAndExpression', the role 'ecdarText_ETBitAndExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETBitAndExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETBitAndExpression', the role 'ecdarText_ETBitAndExpression213' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression214' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETEqualExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression216' has cardinality 0..*, and from 'ecdarText_ETEqualExpression', the role 'ecdarText_ETEqualExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETEqualExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETEqualExpression', the role 'ecdarText_ETEqualExpression218' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression219' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETUnequalExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression221' has cardinality 0..*, and from 'ecdarText_ETUnequalExpression', the role 'ecdarText_ETUnequalExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETUnequalExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression224' has cardinality 0..*, and from 'ecdarText_ETUnequalExpression', the role 'ecdarText_ETUnequalExpression223' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETLessExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression226' has cardinality 0..*, and from 'ecdarText_ETLessExpression', the role 'ecdarText_ETLessExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETLessExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression229' has cardinality 0..*, and from 'ecdarText_ETLessExpression', the role 'ecdarText_ETLessExpression228' has cardinality 0..*.
+An association connects 'ecdarText_ETLessEqualExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETLessEqualExpression', the role 'ecdarText_ETLessEqualExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression231' has cardinality 0..*.
+An association connects 'ecdarText_ETLessEqualExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETLessEqualExpression', the role 'ecdarText_ETLessEqualExpression233' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression234' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETGreaterEqualExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression236' has cardinality 0..*, and from 'ecdarText_ETGreaterEqualExpression', the role 'ecdarText_ETGreaterEqualExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETGreaterEqualExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression239' has cardinality 0..*, and from 'ecdarText_ETGreaterEqualExpression', the role 'ecdarText_ETGreaterEqualExpression238' has cardinality 0..*.
+An association connects 'ecdarText_ETGreaterExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETGreaterExpression', the role 'ecdarText_ETGreaterExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression241' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETGreaterExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression244' has cardinality 0..*, and from 'ecdarText_ETGreaterExpression', the role 'ecdarText_ETGreaterExpression243' has cardinality 0..*.
+An association connects 'ecdarText_ETMinExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETMinExpression', the role 'ecdarText_ETMinExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression246' has cardinality 0..*.
+An association connects 'ecdarText_ETMinExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETMinExpression', the role 'ecdarText_ETMinExpression248' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression249' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETMaxExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression251' has cardinality 0..*, and from 'ecdarText_ETMaxExpression', the role 'ecdarText_ETMaxExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETMaxExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETMaxExpression', the role 'ecdarText_ETMaxExpression253' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression254' has cardinality 0..*.
+An association connects 'ecdarText_ETBitLeftExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETBitLeftExpression', the role 'ecdarText_ETBitLeftExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression256' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETBitLeftExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression259' has cardinality 0..*, and from 'ecdarText_ETBitLeftExpression', the role 'ecdarText_ETBitLeftExpression258' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETBitRightExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression261' has cardinality 0..*, and from 'ecdarText_ETBitRightExpression', the role 'ecdarText_ETBitRightExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETBitRightExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression264' has cardinality 0..*, and from 'ecdarText_ETBitRightExpression', the role 'ecdarText_ETBitRightExpression263' has cardinality 0..*.
+An association connects 'ecdarText_ETAddExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETAddExpression', the role 'ecdarText_ETAddExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression266' has cardinality 0..*.
+An association connects 'ecdarText_ETAddExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETAddExpression', the role 'ecdarText_ETAddExpression268' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression269' has cardinality 0..*.
+An association connects 'ecdarText_ETSubtractExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETSubtractExpression', the role 'ecdarText_ETSubtractExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression271' has cardinality 0..*.
+An association connects 'ecdarText_ETSubtractExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETSubtractExpression', the role 'ecdarText_ETSubtractExpression273' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression274' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETMultiplyExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression276' has cardinality 0..*, and from 'ecdarText_ETMultiplyExpression', the role 'ecdarText_ETMultiplyExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETMultiplyExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETMultiplyExpression', the role 'ecdarText_ETMultiplyExpression278' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression279' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETDivideExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression281' has cardinality 0..*, and from 'ecdarText_ETDivideExpression', the role 'ecdarText_ETDivideExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETDivideExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression284' has cardinality 0..*, and from 'ecdarText_ETDivideExpression', the role 'ecdarText_ETDivideExpression283' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETModuloExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression286' has cardinality 0..*, and from 'ecdarText_ETModuloExpression', the role 'ecdarText_ETModuloExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETModuloExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETModuloExpression', the role 'ecdarText_ETModuloExpression288' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression289' has cardinality 0..*.
+An association connects 'ecdarText_ETPreIncrementExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETPreIncrementExpression', the role 'ecdarText_ETPreIncrementExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression291' has cardinality 0..*.
+An association connects 'ecdarText_ETPreDecrementExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETPreDecrementExpression', the role 'ecdarText_ETPreDecrementExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression293' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETLogicNotExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression295' has cardinality 0..*, and from 'ecdarText_ETLogicNotExpression', the role 'ecdarText_ETLogicNotExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETMinusExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETMinusExpression', the role 'ecdarText_ETMinusExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression297' has cardinality 0..*.
+An association connects 'ecdarText_ETPostIncrementExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETPostIncrementExpression', the role 'ecdarText_ETPostIncrementExpression' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression299' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETPostDecrementExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression301' has cardinality 0..*, and from 'ecdarText_ETPostDecrementExpression', the role 'ecdarText_ETPostDecrementExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETStructExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression303' has cardinality 0..*, and from 'ecdarText_ETStructExpression', the role 'ecdarText_ETStructExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETExpression' and 'ecdarText_ETArrayExpression'. From 'ecdarText_ETExpression', the role 'ecdarText_ETExpression305' has cardinality 0..*, and from 'ecdarText_ETArrayExpression', the role 'ecdarText_ETArrayExpression' has cardinality 0..*.
+An association connects 'ecdarText_ETArrayExpression' and 'ecdarText_ETExpression'. From 'ecdarText_ETArrayExpression', the role 'ecdarText_ETArrayExpression307' has cardinality 0..*, and from 'ecdarText_ETExpression', the role 'ecdarText_ETExpression308' has cardinality 0..*.
+An association connects 'ecdarText_ETReference' and 'ecdarText_EObject'. From 'ecdarText_ETReference', the role 'ecdarText_ETReference' has cardinality 0..*, and from 'ecdarText_EObject', the role 'ecdarText_EObject' has cardinality 0..*.

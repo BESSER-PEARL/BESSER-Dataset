@@ -1,0 +1,106 @@
+The domain model 'universityextended' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'Visits' represents an important domain concept.
+It does not declare any attributes.
+
+'Tutorial' represents an important domain concept.
+It does not declare any attributes.
+
+'universityextended_people_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'universityextended_University' represents an important domain concept.
+It does not declare any attributes.
+
+'universityextended_administration_Tutorial' represents an important domain concept.
+It does not declare any attributes.
+
+'Assistant' represents an important domain concept.
+It does not declare any attributes.
+
+'universityextended_administration_Room' represents an important domain concept.
+It has the following attributes: 'floor', which is of type int; 'roomnumber', which is of type int; 'building', which is of type str.
+
+'universityextended_people_Student' represents an important domain concept.
+It has one attribute: 'matriculationnumber', which is of type str.
+
+'Room' represents an important domain concept.
+It does not declare any attributes.
+
+'Professor' represents an important domain concept.
+It does not declare any attributes.
+
+'universityextended_administration_Lecture' represents an important domain concept.
+It has one attribute: 'captions', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'universityextended_people_Professor' represents an important domain concept.
+It has one attribute: 'rank', which is of type str.
+
+'universityextended_administration_Event' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'universityextended_people_Assistant' represents an important domain concept.
+It has one attribute: 'isDoctoralCandidate', which is of type bool.
+
+'universityextended_administration_Course' represents an important domain concept.
+It has the following attributes: 'endOfCourse', which is of type date; 'startOfCourse', which is of type date; 'title', which is of type str.
+
+'Time' represents an important domain concept.
+It does not declare any attributes.
+
+'universityextended_connection_Visits' represents an important domain concept.
+It has one attribute: 'motivation', which is of type str.
+
+'Lecture' represents an important domain concept.
+It does not declare any attributes.
+
+'Student' represents an important domain concept.
+It does not declare any attributes.
+
+'universityextended_administration_Time' represents an important domain concept.
+It has the following attributes: 'startHour', which is of type int; 'day', which is of type str; 'endHour', which is of type int.
+
+'Course' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DayOfWeek' defines the following possible values: 'Thursday', 'Monday', 'Tuesday', 'Friday', 'Wednesday'.
+The enumeration 'SalaryRank' defines the following possible values: 'W1', 'W2', 'W3'.
+The enumeration 'Motivation' defines the following possible values: 'HIGH_INTEREST', 'LOW_INTEREST', 'AVERAGE_INTEREST'.
+The enumeration 'Building' defines the following possible values: 'C', 'D', 'B', 'F', 'A', 'G', 'E', 'H'.
+
+The model also captures inheritance relationships between classes.
+The class 'universityextended_people_Student' is a specialization of 'Person'.
+The class 'universityextended_people_Professor' is a specialization of 'Person'.
+The class 'universityextended_people_Assistant' is a specialization of 'Person'.
+The class 'universityextended_administration_Lecture' is a specialization of 'Event'.
+The class 'universityextended_administration_Tutorial' is a specialization of 'Event'.
+
+Relationships between classes are modeled using associations.
+An association connects 'universityextended_University' and 'Person'. From 'universityextended_University', the role 'universityextended_University' has cardinality 0..*, and from 'Person', the role 'Person' has cardinality 0..*.
+An association connects 'Visits' and 'universityextended_University'. From 'Visits', the role 'Visits' has cardinality 0..*, and from 'universityextended_University', the role 'universityextended_University2' has cardinality 0..*.
+An association connects 'Course' and 'universityextended_University'. From 'Course', the role 'Course' has cardinality 0..*, and from 'universityextended_University', the role 'universityextended_University4' has cardinality 0..*.
+An association connects 'Time' and 'universityextended_University'. From 'Time', the role 'Time' has cardinality 0..*, and from 'universityextended_University', the role 'universityextended_University6' has cardinality 0..*.
+An association connects 'universityextended_University' and 'Room'. From 'universityextended_University', the role 'universityextended_University8' has cardinality 0..*, and from 'Room', the role 'Room' has cardinality 0..*.
+An association connects 'Visits' and 'universityextended_people_Student'. From 'Visits', the role 'connection' has cardinality 0..*, and from 'universityextended_people_Student', the role 'Visits10' has cardinality 0..*.
+An association connects 'universityextended_people_Professor' and 'Lecture'. From 'universityextended_people_Professor', the role 'Lecture' has cardinality 0..*, and from 'Lecture', the role 'administration' has cardinality 0..*.
+An association connects 'universityextended_people_Assistant' and 'Tutorial'. From 'universityextended_people_Assistant', the role 'Tutorial' has cardinality 0..*, and from 'Tutorial', the role 'administration13' has cardinality 0..*.
+An association connects 'Lecture' and 'universityextended_administration_Course'. From 'Lecture', the role 'administration16' has cardinality 0..*, and from 'universityextended_administration_Course', the role 'Lecture15' has cardinality 0..*.
+An association connects 'universityextended_administration_Course' and 'Tutorial'. From 'universityextended_administration_Course', the role 'Tutorial18' has cardinality 0..*, and from 'Tutorial', the role 'administration19' has cardinality 0..*.
+An association connects 'universityextended_administration_Course' and 'Visits'. From 'universityextended_administration_Course', the role 'Visits21' has cardinality 0..*, and from 'Visits', the role 'connection22' has cardinality 0..*.
+An association connects 'Course' and 'universityextended_administration_Lecture'. From 'Course', the role 'administration25' has cardinality 0..*, and from 'universityextended_administration_Lecture', the role 'Course24' has cardinality 0..*.
+An association connects 'universityextended_administration_Lecture' and 'Professor'. From 'universityextended_administration_Lecture', the role 'Professor' has cardinality 0..*, and from 'Professor', the role 'people' has cardinality 0..*.
+An association connects 'Course' and 'universityextended_administration_Tutorial'. From 'Course', the role 'administration29' has cardinality 0..*, and from 'universityextended_administration_Tutorial', the role 'Course28' has cardinality 0..*.
+An association connects 'universityextended_administration_Tutorial' and 'Assistant'. From 'universityextended_administration_Tutorial', the role 'Assistant' has cardinality 0..*, and from 'Assistant', the role 'people31' has cardinality 0..*.
+An association connects 'universityextended_administration_Event' and 'Time'. From 'universityextended_administration_Event', the role 'universityextended_administration_Event' has cardinality 0..*, and from 'Time', the role 'Time33' has cardinality 0..*.
+An association connects 'universityextended_administration_Event' and 'Room'. From 'universityextended_administration_Event', the role 'universityextended_administration_Event35' has cardinality 0..*, and from 'Room', the role 'Room36' has cardinality 0..*.
+An association connects 'Course' and 'universityextended_connection_Visits'. From 'Course', the role 'administration39' has cardinality 0..*, and from 'universityextended_connection_Visits', the role 'Course38' has cardinality 0..*.
+An association connects 'universityextended_connection_Visits' and 'Student'. From 'universityextended_connection_Visits', the role 'Student' has cardinality 0..*, and from 'Student', the role 'people41' has cardinality 0..*.

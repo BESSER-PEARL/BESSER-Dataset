@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/dice-project/DICE-Tulsa/Tulsa/Source/AntBuildfile/MetaModels/Lqn2umlTrace.ecore

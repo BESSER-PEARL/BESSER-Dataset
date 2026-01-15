@@ -1,0 +1,147 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'model2Configuration_TracedC' represents an important domain concept.
+It does not declare any attributes.
+
+'Events_trace_GlobalState' represents an important domain concept.
+It does not declare any attributes.
+
+'C_doCExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_model2Configuration_TracedC' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_GlobalState' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_C_doCEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_model2_TracedA' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_EventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_C_doCExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedObjects' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_StaticObjectsPools' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_States_A_a_State' represents an important domain concept.
+It has one attribute: 'a', which is of type int.
+
+'States_trace_GlobalState' represents an important domain concept.
+It does not declare any attributes.
+
+'A_doAEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_A_doAExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'B_b_State' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_A_doAEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'C_doCEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_F' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'model2Configuration_TracedB' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_States_B_b_State' represents an important domain concept.
+It has one attribute: 'b', which is of type int.
+
+'model2_trace_A' represents an important domain concept.
+It does not declare any attributes.
+
+'Events' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_States_C_c_State' represents an important domain concept.
+It does not declare any attributes.
+
+'A_a_State' represents an important domain concept.
+It does not declare any attributes.
+
+'C_c_State' represents an important domain concept.
+It does not declare any attributes.
+
+'EventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Events' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_model2Configuration_TracedB' represents an important domain concept.
+It does not declare any attributes.
+
+'A_doAExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'model2_TracedA' represents an important domain concept.
+It does not declare any attributes.
+
+'States_trace_F' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Traced_TracedObjects' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_Events_A_doAEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_A_doAExitEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_C_doCEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_C_doCExitEventOccurrence' is a specialization of 'EventOccurrence'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_GlobalState' and 'trace_Trace'. From 'trace_GlobalState', the role 'trace_GlobalState' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace' has cardinality 0..*.
+An association connects 'trace_Trace' and 'Events'. From 'trace_Trace', the role 'trace_Trace2' has cardinality 0..*, and from 'Events', the role 'Events' has cardinality 0..*.
+An association connects 'trace_Trace' and 'TracedObjects'. From 'trace_Trace', the role 'trace_Trace4' has cardinality 0..*, and from 'TracedObjects', the role 'TracedObjects' has cardinality 0..*.
+An association connects 'trace_StaticObjectsPools' and 'trace_Trace'. From 'trace_StaticObjectsPools', the role 'trace_StaticObjectsPools' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace6' has cardinality 0..*.
+An association connects 'EventOccurrence' and 'trace_GlobalState'. From 'EventOccurrence', the role 'Events8' has cardinality 0..*, and from 'trace_GlobalState', the role 'EventOccurrence' has cardinality 0..*.
+An association connects 'B_b_State' and 'trace_GlobalState'. From 'B_b_State', the role 'States' has cardinality 0..*, and from 'trace_GlobalState', the role 'B_b_State' has cardinality 0..*.
+An association connects 'C_c_State' and 'trace_GlobalState'. From 'C_c_State', the role 'States11' has cardinality 0..*, and from 'trace_GlobalState', the role 'C_c_State' has cardinality 0..*.
+An association connects 'trace_GlobalState' and 'A_a_State'. From 'trace_GlobalState', the role 'A_a_State' has cardinality 0..*, and from 'A_a_State', the role 'States13' has cardinality 0..*.
+An association connects 'trace_F' and 'trace_StaticObjectsPools'. From 'trace_F', the role 'trace_F' has cardinality 0..*, and from 'trace_StaticObjectsPools', the role 'trace_StaticObjectsPools15' has cardinality 0..*.
+An association connects 'Events_trace_GlobalState' and 'trace_Events_EventOccurrence'. From 'Events_trace_GlobalState', the role 'GlobalState' has cardinality 0..*, and from 'trace_Events_EventOccurrence', the role 'eventsTriggeredDuringState' has cardinality 0..*.
+An association connects 'trace_Events_Events' and 'A_doAEntryEventOccurrence'. From 'trace_Events_Events', the role 'trace_Events_Events' has cardinality 0..*, and from 'A_doAEntryEventOccurrence', the role 'A_doAEntryEventOccurrence' has cardinality 0..*.
+An association connects 'A_doAExitEventOccurrence' and 'trace_Events_Events'. From 'A_doAExitEventOccurrence', the role 'A_doAExitEventOccurrence' has cardinality 0..*, and from 'trace_Events_Events', the role 'trace_Events_Events19' has cardinality 0..*.
+An association connects 'trace_Events_Events' and 'C_doCEntryEventOccurrence'. From 'trace_Events_Events', the role 'trace_Events_Events21' has cardinality 0..*, and from 'C_doCEntryEventOccurrence', the role 'C_doCEntryEventOccurrence' has cardinality 0..*.
+An association connects 'C_doCExitEventOccurrence' and 'trace_Events_Events'. From 'C_doCExitEventOccurrence', the role 'C_doCExitEventOccurrence' has cardinality 0..*, and from 'trace_Events_Events', the role 'trace_Events_Events23' has cardinality 0..*.
+An association connects 'model2_TracedA' and 'trace_Events_A_doAEntryEventOccurrence'. From 'model2_TracedA', the role 'model2_TracedA' has cardinality 0..*, and from 'trace_Events_A_doAEntryEventOccurrence', the role 'trace_Events_A_doAEntryEventOccurrence' has cardinality 0..*.
+An association connects 'model2Configuration_TracedC' and 'trace_Events_A_doAEntryEventOccurrence'. From 'model2Configuration_TracedC', the role 'model2Configuration_TracedC' has cardinality 0..*, and from 'trace_Events_A_doAEntryEventOccurrence', the role 'trace_Events_A_doAEntryEventOccurrence26' has cardinality 0..*.
+An association connects 'A_doAEntryEventOccurrence' and 'trace_Events_A_doAExitEventOccurrence'. From 'A_doAEntryEventOccurrence', the role 'A_doAEntryEventOccurrence28' has cardinality 0..*, and from 'trace_Events_A_doAExitEventOccurrence', the role 'trace_Events_A_doAExitEventOccurrence' has cardinality 0..*.
+An association connects 'trace_Events_C_doCEntryEventOccurrence' and 'model2Configuration_TracedC'. From 'trace_Events_C_doCEntryEventOccurrence', the role 'trace_Events_C_doCEntryEventOccurrence' has cardinality 0..*, and from 'model2Configuration_TracedC', the role 'model2Configuration_TracedC30' has cardinality 0..*.
+An association connects 'model2Configuration_TracedB' and 'trace_Events_C_doCEntryEventOccurrence'. From 'model2Configuration_TracedB', the role 'model2Configuration_TracedB' has cardinality 0..*, and from 'trace_Events_C_doCEntryEventOccurrence', the role 'trace_Events_C_doCEntryEventOccurrence32' has cardinality 0..*.
+An association connects 'C_doCEntryEventOccurrence' and 'trace_Events_C_doCExitEventOccurrence'. From 'C_doCEntryEventOccurrence', the role 'C_doCEntryEventOccurrence34' has cardinality 0..*, and from 'trace_Events_C_doCExitEventOccurrence', the role 'trace_Events_C_doCExitEventOccurrence' has cardinality 0..*.
+An association connects 'model2Configuration_TracedB' and 'trace_States_B_b_State'. From 'model2Configuration_TracedB', the role 'Traced' has cardinality 0..*, and from 'trace_States_B_b_State', the role 'model2Configuration' has cardinality 0..*.
+An association connects 'trace_States_B_b_State' and 'States_trace_GlobalState'. From 'trace_States_B_b_State', the role 'b_b_States' has cardinality 0..*, and from 'States_trace_GlobalState', the role 'GlobalState37' has cardinality 0..*.
+An association connects 'trace_States_C_c_State' and 'States_trace_F'. From 'trace_States_C_c_State', the role 'trace_States_C_c_State' has cardinality 0..*, and from 'States_trace_F', the role 'States_trace_F' has cardinality 0..*.
+An association connects 'model2Configuration_TracedC' and 'trace_States_C_c_State'. From 'model2Configuration_TracedC', the role 'Traced41' has cardinality 0..*, and from 'trace_States_C_c_State', the role 'model2Configuration40' has cardinality 0..*.
+An association connects 'trace_States_C_c_State' and 'States_trace_GlobalState'. From 'trace_States_C_c_State', the role 'c_c_States' has cardinality 0..*, and from 'States_trace_GlobalState', the role 'GlobalState43' has cardinality 0..*.
+An association connects 'model2_TracedA' and 'trace_States_A_a_State'. From 'model2_TracedA', the role 'Traced45' has cardinality 0..*, and from 'trace_States_A_a_State', the role 'model2' has cardinality 0..*.
+An association connects 'States_trace_GlobalState' and 'trace_States_A_a_State'. From 'States_trace_GlobalState', the role 'GlobalState47' has cardinality 0..*, and from 'trace_States_A_a_State', the role 'a_a_States' has cardinality 0..*.
+An association connects 'trace_Traced_TracedObjects' and 'model2Configuration_TracedB'. From 'trace_Traced_TracedObjects', the role 'trace_Traced_TracedObjects' has cardinality 0..*, and from 'model2Configuration_TracedB', the role 'model2Configuration_TracedB49' has cardinality 0..*.
+An association connects 'model2Configuration_TracedC' and 'trace_Traced_TracedObjects'. From 'model2Configuration_TracedC', the role 'model2Configuration_TracedC52' has cardinality 0..*, and from 'trace_Traced_TracedObjects', the role 'trace_Traced_TracedObjects51' has cardinality 0..*.
+An association connects 'trace_Traced_TracedObjects' and 'model2_TracedA'. From 'trace_Traced_TracedObjects', the role 'trace_Traced_TracedObjects54' has cardinality 0..*, and from 'model2_TracedA', the role 'model2_TracedA55' has cardinality 0..*.
+An association connects 'trace_model2Configuration_TracedB' and 'B_b_State'. From 'trace_model2Configuration_TracedB', the role 'B_b_State57' has cardinality 0..*, and from 'B_b_State', the role 'States58' has cardinality 0..*.
+An association connects 'C_c_State' and 'trace_model2Configuration_TracedC'. From 'C_c_State', the role 'States61' has cardinality 0..*, and from 'trace_model2Configuration_TracedC', the role 'C_c_State60' has cardinality 0..*.
+An association connects 'trace_model2_TracedA' and 'model2_trace_A'. From 'trace_model2_TracedA', the role 'trace_model2_TracedA' has cardinality 0..*, and from 'model2_trace_A', the role 'model2_trace_A' has cardinality 0..*.
+An association connects 'A_a_State' and 'trace_model2_TracedA'. From 'A_a_State', the role 'States65' has cardinality 0..*, and from 'trace_model2_TracedA', the role 'A_a_State64' has cardinality 0..*.

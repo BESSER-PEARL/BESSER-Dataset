@@ -1,0 +1,15 @@
+The domain model 'imported_model' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'imported_model_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'imported_model_Book' represents an important domain concept.
+It has one attribute: 'pages', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'E' defines the following possible values: 'A', 'B', 'C'.
+
+Relationships between classes are modeled using associations.
+An association connects 'imported_model_Library' and 'imported_model_Book'. From 'imported_model_Library', the role 'imported_model_Library' has cardinality 0..*, and from 'imported_model_Book', the role 'imported_model_Book' has cardinality 0..*.

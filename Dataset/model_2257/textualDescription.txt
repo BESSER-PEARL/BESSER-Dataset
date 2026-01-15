@@ -1,0 +1,21 @@
+The domain model 'Courses' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'Courses_Answer' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'id', which is of type int; 'pass', which is of type bool.
+
+'Courses_Assignment' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'mandatory', which is of type bool; 'description', which is of type str.
+
+'Courses_Course' represents an important domain concept.
+It has the following attributes: 'credit', which is of type float; 'id', which is of type str; 'name', which is of type str.
+
+'Courses_Person' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'role', which is of type str; 'id', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'Courses_Course' and 'Courses_Person'. From 'Courses_Course', the role 'Courses_Course' has cardinality 0..*, and from 'Courses_Person', the role 'Courses_Person' has cardinality 0..*.
+An association connects 'Courses_Course' and 'Courses_Assignment'. From 'Courses_Course', the role 'Courses_Course2' has cardinality 0..*, and from 'Courses_Assignment', the role 'Courses_Assignment' has cardinality 0..*.
+An association connects 'Courses_Person' and 'Courses_Answer'. From 'Courses_Person', the role 'Courses_Person4' has cardinality 0..*, and from 'Courses_Answer', the role 'Courses_Answer' has cardinality 0..*.
+An association connects 'Courses_Answer' and 'Courses_Assignment'. From 'Courses_Answer', the role 'Courses_Answer7' has cardinality 0..*, and from 'Courses_Assignment', the role 'Courses_Assignment6' has cardinality 0..*.

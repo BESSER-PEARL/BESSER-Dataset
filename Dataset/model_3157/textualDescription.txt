@@ -1,0 +1,529 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 124 main class(es).
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'model_UnaryMinusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ExistsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LessEqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ArgumentedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantifierExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ArrayAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_InitializableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ForallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_EnumerationTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AddExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EnumerableTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EnumerableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ImplyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ElseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RecordAccessExpression' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'model_LogicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ModExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DivExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BasicConstraintDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CommentableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RationalLiteralExpression' represents an important domain concept.
+It has the following attributes: 'denominator', which is of type str; 'numerator', which is of type str.
+
+'model_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RecordLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ArithmeticLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FalseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstraintDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CompositeTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DecimalTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EnumerationLiteralDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SubrangeTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ElseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TrueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ConstraintDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IfThenElseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RationalTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ArgumentedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SelectExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'PredicateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MultiplyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'InitializableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LambdaDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DecimalLiteralExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'model_BooleanTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BooleanLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EnumerationLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NullaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_NumericalTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ValueDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IntegerRangeTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_OpaqueExpression' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'model_XorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IntegerTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ComparisonExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RecordTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ParametricElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'EquivalenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_PredicateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_UnaryPlusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EquivalenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MultiaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparisonExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VoidTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ArrayLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumerableTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_QuantifierExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IntegerRangeLiteralExpression' represents an important domain concept.
+It has the following attributes: 'rightInclusive', which is of type bool; 'leftInclusive', which is of type bool.
+
+'model_FunctionTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DefaultExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IntegerLiteralExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'model_NullaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ParametricElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SubtractExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_GreaterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ArrayTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ExpressionPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ReferenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Comment' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'NumericalTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FieldAssignment' represents an important domain concept.
+It has one attribute: 'reference', which is of type str.
+
+'EnumerableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_InequalityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DivideExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_GreaterEqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FunctionAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'model_ExpressionPackage' is a specialization of 'NamedElement'.
+The class 'model_ExpressionPackage' is a specialization of 'ParametricElement'.
+The class 'model_InitializableElement' is a specialization of 'NamedElement'.
+The class 'model_Declaration' is a specialization of 'NamedElement'.
+The class 'model_ValueDeclaration' is a specialization of 'Declaration'.
+The class 'model_FunctionDeclaration' is a specialization of 'Declaration'.
+The class 'model_FunctionDeclaration' is a specialization of 'ParametricElement'.
+The class 'model_TypeDeclaration' is a specialization of 'Declaration'.
+The class 'model_VariableDeclaration' is a specialization of 'ValueDeclaration'.
+The class 'model_VariableDeclaration' is a specialization of 'InitializableElement'.
+The class 'model_ConstantDeclaration' is a specialization of 'ValueDeclaration'.
+The class 'model_ConstantDeclaration' is a specialization of 'InitializableElement'.
+The class 'model_ParameterDeclaration' is a specialization of 'ValueDeclaration'.
+The class 'model_FieldDeclaration' is a specialization of 'ValueDeclaration'.
+The class 'model_LambdaDeclaration' is a specialization of 'InitializableElement'.
+The class 'model_LambdaDeclaration' is a specialization of 'FunctionDeclaration'.
+The class 'model_TypeReference' is a specialization of 'Type'.
+The class 'model_TypeDefinition' is a specialization of 'Type'.
+The class 'model_NumericalTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'model_CompositeTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'model_VoidTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'model_BooleanTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'model_IntegerTypeDefinition' is a specialization of 'NumericalTypeDefinition'.
+The class 'model_RationalTypeDefinition' is a specialization of 'NumericalTypeDefinition'.
+The class 'model_DecimalTypeDefinition' is a specialization of 'NumericalTypeDefinition'.
+The class 'model_SubrangeTypeDefinition' is a specialization of 'NumericalTypeDefinition'.
+The class 'model_SubrangeTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+The class 'model_EnumerableTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+The class 'model_EnumerationTypeDefinition' is a specialization of 'EnumerableTypeDefinition'.
+The class 'model_EnumerationLiteralDefinition' is a specialization of 'NamedElement'.
+The class 'model_ArrayTypeDefinition' is a specialization of 'EnumerableTypeDefinition'.
+The class 'model_IntegerRangeTypeDefinition' is a specialization of 'EnumerableTypeDefinition'.
+The class 'model_FunctionTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+The class 'model_RecordTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+The class 'model_BasicConstraintDefinition' is a specialization of 'ConstraintDefinition'.
+The class 'model_NullaryExpression' is a specialization of 'Expression'.
+The class 'model_UnaryExpression' is a specialization of 'Expression'.
+The class 'model_BinaryExpression' is a specialization of 'Expression'.
+The class 'model_MultiaryExpression' is a specialization of 'Expression'.
+The class 'model_ArithmeticExpression' is a specialization of 'Expression'.
+The class 'model_LogicExpression' is a specialization of 'Expression'.
+The class 'model_BooleanExpression' is a specialization of 'LogicExpression'.
+The class 'model_PredicateExpression' is a specialization of 'LogicExpression'.
+The class 'model_OpaqueExpression' is a specialization of 'NullaryExpression'.
+The class 'model_ElseExpression' is a specialization of 'NullaryExpression'.
+The class 'model_ElseExpression' is a specialization of 'LogicExpression'.
+The class 'model_DefaultExpression' is a specialization of 'ElseExpression'.
+The class 'model_QuantifierExpression' is a specialization of 'UnaryExpression'.
+The class 'model_QuantifierExpression' is a specialization of 'ParametricElement'.
+The class 'model_QuantifierExpression' is a specialization of 'LogicExpression'.
+The class 'model_AccessExpression' is a specialization of 'Expression'.
+The class 'model_LiteralExpression' is a specialization of 'Expression'.
+The class 'model_EnumerableExpression' is a specialization of 'Expression'.
+The class 'model_ArithmeticLiteralExpression' is a specialization of 'NullaryExpression'.
+The class 'model_ArithmeticLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'model_ArithmeticLiteralExpression' is a specialization of 'ArithmeticExpression'.
+The class 'model_IntegerLiteralExpression' is a specialization of 'ArithmeticLiteralExpression'.
+The class 'model_DecimalLiteralExpression' is a specialization of 'ArithmeticLiteralExpression'.
+The class 'model_RationalLiteralExpression' is a specialization of 'ArithmeticLiteralExpression'.
+The class 'model_BooleanLiteralExpression' is a specialization of 'NullaryExpression'.
+The class 'model_BooleanLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'model_BooleanLiteralExpression' is a specialization of 'BooleanExpression'.
+The class 'model_TrueExpression' is a specialization of 'BooleanLiteralExpression'.
+The class 'model_FalseExpression' is a specialization of 'BooleanLiteralExpression'.
+The class 'model_ArrayLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'model_ArrayLiteralExpression' is a specialization of 'EnumerableExpression'.
+The class 'model_ArrayLiteralExpression' is a specialization of 'MultiaryExpression'.
+The class 'model_IntegerRangeLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'model_IntegerRangeLiteralExpression' is a specialization of 'EnumerableExpression'.
+The class 'model_IntegerRangeLiteralExpression' is a specialization of 'BinaryExpression'.
+The class 'model_RecordLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'model_EnumerationLiteralExpression' is a specialization of 'NullaryExpression'.
+The class 'model_EnumerationLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'model_ReferenceExpression' is a specialization of 'NullaryExpression'.
+The class 'model_IfThenElseExpression' is a specialization of 'Expression'.
+The class 'model_NotExpression' is a specialization of 'BooleanExpression'.
+The class 'model_NotExpression' is a specialization of 'UnaryExpression'.
+The class 'model_ForallExpression' is a specialization of 'QuantifierExpression'.
+The class 'model_ExistsExpression' is a specialization of 'QuantifierExpression'.
+The class 'model_ImplyExpression' is a specialization of 'BooleanExpression'.
+The class 'model_ImplyExpression' is a specialization of 'BinaryExpression'.
+The class 'model_OrExpression' is a specialization of 'BooleanExpression'.
+The class 'model_OrExpression' is a specialization of 'MultiaryExpression'.
+The class 'model_AndExpression' is a specialization of 'BooleanExpression'.
+The class 'model_AndExpression' is a specialization of 'MultiaryExpression'.
+The class 'model_XorExpression' is a specialization of 'BooleanExpression'.
+The class 'model_XorExpression' is a specialization of 'MultiaryExpression'.
+The class 'model_EquivalenceExpression' is a specialization of 'PredicateExpression'.
+The class 'model_EquivalenceExpression' is a specialization of 'BinaryExpression'.
+The class 'model_EqualityExpression' is a specialization of 'EquivalenceExpression'.
+The class 'model_InequalityExpression' is a specialization of 'EquivalenceExpression'.
+The class 'model_ComparisonExpression' is a specialization of 'PredicateExpression'.
+The class 'model_ComparisonExpression' is a specialization of 'BinaryExpression'.
+The class 'model_GreaterExpression' is a specialization of 'ComparisonExpression'.
+The class 'model_GreaterEqualExpression' is a specialization of 'ComparisonExpression'.
+The class 'model_LessExpression' is a specialization of 'ComparisonExpression'.
+The class 'model_LessEqualExpression' is a specialization of 'ComparisonExpression'.
+The class 'model_AddExpression' is a specialization of 'ArithmeticExpression'.
+The class 'model_AddExpression' is a specialization of 'MultiaryExpression'.
+The class 'model_SubtractExpression' is a specialization of 'ArithmeticExpression'.
+The class 'model_SubtractExpression' is a specialization of 'BinaryExpression'.
+The class 'model_MultiplyExpression' is a specialization of 'ArithmeticExpression'.
+The class 'model_MultiplyExpression' is a specialization of 'MultiaryExpression'.
+The class 'model_DivideExpression' is a specialization of 'ArithmeticExpression'.
+The class 'model_DivideExpression' is a specialization of 'BinaryExpression'.
+The class 'model_DivExpression' is a specialization of 'ArithmeticExpression'.
+The class 'model_DivExpression' is a specialization of 'BinaryExpression'.
+The class 'model_ModExpression' is a specialization of 'ArithmeticExpression'.
+The class 'model_ModExpression' is a specialization of 'BinaryExpression'.
+The class 'model_UnaryMinusExpression' is a specialization of 'ArithmeticExpression'.
+The class 'model_UnaryMinusExpression' is a specialization of 'UnaryExpression'.
+The class 'model_UnaryPlusExpression' is a specialization of 'ArithmeticExpression'.
+The class 'model_UnaryPlusExpression' is a specialization of 'UnaryExpression'.
+The class 'model_FunctionAccessExpression' is a specialization of 'AccessExpression'.
+The class 'model_FunctionAccessExpression' is a specialization of 'ArgumentedElement'.
+The class 'model_ArrayAccessExpression' is a specialization of 'AccessExpression'.
+The class 'model_ArrayAccessExpression' is a specialization of 'ArgumentedElement'.
+The class 'model_RecordAccessExpression' is a specialization of 'AccessExpression'.
+The class 'model_SelectExpression' is a specialization of 'AccessExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Comment' and 'model_CommentableElement'. From 'model_Comment', the role 'model_Comment' has cardinality 0..*, and from 'model_CommentableElement', the role 'model_CommentableElement' has cardinality 0..*.
+An association connects 'model_ParametricElement' and 'model_ParameterDeclaration'. From 'model_ParametricElement', the role 'model_ParametricElement' has cardinality 0..*, and from 'model_ParameterDeclaration', the role 'model_ParameterDeclaration' has cardinality 0..*.
+An association connects 'model_ArgumentedElement' and 'model_Expression'. From 'model_ArgumentedElement', the role 'model_ArgumentedElement' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression' has cardinality 0..*.
+An association connects 'model_ExpressionPackage' and 'model_TypeDeclaration'. From 'model_ExpressionPackage', the role 'model_ExpressionPackage' has cardinality 0..*, and from 'model_TypeDeclaration', the role 'model_TypeDeclaration' has cardinality 0..*.
+An association connects 'model_ConstantDeclaration' and 'model_ExpressionPackage'. From 'model_ConstantDeclaration', the role 'model_ConstantDeclaration' has cardinality 0..*, and from 'model_ExpressionPackage', the role 'model_ExpressionPackage5' has cardinality 0..*.
+An association connects 'model_FunctionDeclaration' and 'model_ExpressionPackage'. From 'model_FunctionDeclaration', the role 'model_FunctionDeclaration' has cardinality 0..*, and from 'model_ExpressionPackage', the role 'model_ExpressionPackage7' has cardinality 0..*.
+An association connects 'model_ExpressionPackage' and 'model_BasicConstraintDefinition'. From 'model_ExpressionPackage', the role 'model_ExpressionPackage9' has cardinality 0..*, and from 'model_BasicConstraintDefinition', the role 'model_BasicConstraintDefinition' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_InitializableElement'. From 'model_Expression', the role 'model_Expression11' has cardinality 0..*, and from 'model_InitializableElement', the role 'model_InitializableElement' has cardinality 0..*.
+An association connects 'model_Declaration' and 'model_Type'. From 'model_Declaration', the role 'model_Declaration' has cardinality 0..*, and from 'model_Type', the role 'model_Type' has cardinality 0..*.
+An association connects 'model_TypeDeclaration' and 'model_TypeReference'. From 'model_TypeDeclaration', the role 'model_TypeDeclaration14' has cardinality 0..*, and from 'model_TypeReference', the role 'model_TypeReference' has cardinality 0..*.
+An association connects 'model_SubrangeTypeDefinition' and 'model_Expression'. From 'model_SubrangeTypeDefinition', the role 'model_SubrangeTypeDefinition' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression16' has cardinality 0..*.
+An association connects 'model_SubrangeTypeDefinition' and 'model_Expression'. From 'model_SubrangeTypeDefinition', the role 'model_SubrangeTypeDefinition18' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression19' has cardinality 0..*.
+An association connects 'model_EnumerationTypeDefinition' and 'model_EnumerationLiteralDefinition'. From 'model_EnumerationTypeDefinition', the role 'model_EnumerationTypeDefinition' has cardinality 0..*, and from 'model_EnumerationLiteralDefinition', the role 'model_EnumerationLiteralDefinition' has cardinality 0..*.
+An association connects 'model_ArrayTypeDefinition' and 'model_Type'. From 'model_ArrayTypeDefinition', the role 'model_ArrayTypeDefinition' has cardinality 0..*, and from 'model_Type', the role 'model_Type22' has cardinality 0..*.
+An association connects 'model_ArrayTypeDefinition' and 'model_Expression'. From 'model_ArrayTypeDefinition', the role 'model_ArrayTypeDefinition24' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression25' has cardinality 0..*.
+An association connects 'model_FunctionTypeDefinition' and 'model_Type'. From 'model_FunctionTypeDefinition', the role 'model_FunctionTypeDefinition' has cardinality 0..*, and from 'model_Type', the role 'model_Type27' has cardinality 0..*.
+An association connects 'model_Type' and 'model_FunctionTypeDefinition'. From 'model_Type', the role 'model_Type30' has cardinality 0..*, and from 'model_FunctionTypeDefinition', the role 'model_FunctionTypeDefinition29' has cardinality 0..*.
+An association connects 'model_FieldDeclaration' and 'model_RecordTypeDefinition'. From 'model_FieldDeclaration', the role 'model_FieldDeclaration' has cardinality 0..*, and from 'model_RecordTypeDefinition', the role 'model_RecordTypeDefinition' has cardinality 0..*.
+An association connects 'model_ConstraintDefinition' and 'model_Expression'. From 'model_ConstraintDefinition', the role 'model_ConstraintDefinition' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression33' has cardinality 0..*.
+An association connects 'model_UnaryExpression' and 'model_Expression'. From 'model_UnaryExpression', the role 'model_UnaryExpression' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression35' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_BinaryExpression'. From 'model_Expression', the role 'model_Expression37' has cardinality 0..*, and from 'model_BinaryExpression', the role 'model_BinaryExpression' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_BinaryExpression'. From 'model_Expression', the role 'model_Expression40' has cardinality 0..*, and from 'model_BinaryExpression', the role 'model_BinaryExpression39' has cardinality 0..*.
+An association connects 'model_MultiaryExpression' and 'model_Expression'. From 'model_MultiaryExpression', the role 'model_MultiaryExpression' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression42' has cardinality 0..*.
+An association connects 'model_AccessExpression' and 'model_Expression'. From 'model_AccessExpression', the role 'model_AccessExpression' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression44' has cardinality 0..*.
+An association connects 'model_RecordLiteralExpression' and 'model_FieldAssignment'. From 'model_RecordLiteralExpression', the role 'model_RecordLiteralExpression' has cardinality 0..*, and from 'model_FieldAssignment', the role 'model_FieldAssignment' has cardinality 0..*.
+An association connects 'model_EnumerationLiteralDefinition' and 'model_EnumerationLiteralExpression'. From 'model_EnumerationLiteralDefinition', the role 'model_EnumerationLiteralDefinition47' has cardinality 0..*, and from 'model_EnumerationLiteralExpression', the role 'model_EnumerationLiteralExpression' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_FieldAssignment'. From 'model_Expression', the role 'model_Expression50' has cardinality 0..*, and from 'model_FieldAssignment', the role 'model_FieldAssignment49' has cardinality 0..*.
+An association connects 'model_Declaration' and 'model_ReferenceExpression'. From 'model_Declaration', the role 'model_Declaration52' has cardinality 0..*, and from 'model_ReferenceExpression', the role 'model_ReferenceExpression' has cardinality 0..*.
+An association connects 'model_IfThenElseExpression' and 'model_Expression'. From 'model_IfThenElseExpression', the role 'model_IfThenElseExpression' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression54' has cardinality 0..*.
+An association connects 'model_IfThenElseExpression' and 'model_Expression'. From 'model_IfThenElseExpression', the role 'model_IfThenElseExpression56' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression57' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_IfThenElseExpression'. From 'model_Expression', the role 'model_Expression60' has cardinality 0..*, and from 'model_IfThenElseExpression', the role 'model_IfThenElseExpression59' has cardinality 0..*.

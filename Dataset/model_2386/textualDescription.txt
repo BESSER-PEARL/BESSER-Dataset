@@ -1,0 +1,214 @@
+The domain model 'mm' describes the core structural elements and their relationships within the system.
+
+The model defines 51 main class(es).
+
+'mm_ops_AddTable' represents an important domain concept.
+It has the following attributes: 'owningSchemaName', which is of type str; 'name', which is of type str.
+
+'mm_ops_RemoveIndex' represents an important domain concept.
+It has the following attributes: 'owningSchemaName', which is of type str; 'name', which is of type str.
+
+'mm_ops_UpdateRows' represents an important domain concept.
+It has the following attributes: 'owningSchemaName', which is of type str; 'sourceColumnName', which is of type str; 'whereCondition', which is of type str; 'targetColumnName', which is of type str; 'targetTableName', which is of type str; 'sourceTableName', which is of type str.
+
+'mm_ops_RemoveSequence' represents an important domain concept.
+It has the following attributes: 'owningSchemaName', which is of type str; 'name', which is of type str.
+
+'mm_ops_ModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm_rdb_Column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'defaultValue', which is of type str; 'name', which is of type str; 'isNillable', which is of type str.
+
+'mm_ops_HasNoOwnInstances' represents an important domain concept.
+It has the following attributes: 'tableName', which is of type str; 'whereCondition', which is of type str; 'owningSchemaName', which is of type str.
+
+'mm_ops_AddIndex' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'owningSchemaName', which is of type str; 'columnsNames', which is of type str; 'owningTableName', which is of type str.
+
+'mm_ops_AddSchema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm_ops_AddForeignKey' represents an important domain concept.
+It has the following attributes: 'targetTableName', which is of type str; 'name', which is of type str; 'owningSchemaName', which is of type str; 'owningTableName', which is of type str; 'constrainedColumnName', which is of type str.
+
+'mm_rdb_Index' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm_ops_RenameColumn' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'owningSchemaName', which is of type str; 'newName', which is of type str; 'owningTableName', which is of type str.
+
+'mm_ops_SetDefaultValue' represents an important domain concept.
+It has the following attributes: 'owningTableName', which is of type str; 'owningSchemaName', which is of type str; 'owningColumnName', which is of type str; 'newDefaultValue', which is of type str.
+
+'mm_rdb_Operations' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_ops_AddColumn' represents an important domain concept.
+It has the following attributes: 'owningTableName', which is of type str; 'type', which is of type str; 'defaultValue', which is of type str; 'name', which is of type str; 'owningSchemaName', which is of type str.
+
+'Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'Operations' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_ops_AddPrimaryKey' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'owningSchemaName', which is of type str; 'owningTableName', which is of type str; 'constrainedColumnName', which is of type str.
+
+'mm_ops_RemoveConstraint' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'owningSchemaName', which is of type str; 'owningTableName', which is of type str.
+
+'mm_ops_NillRows' represents an important domain concept.
+It has the following attributes: 'whereCondition', which is of type str; 'tableName', which is of type str; 'columnName', which is of type str; 'owningSchemaName', which is of type str.
+
+'TableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_Unique' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_TableConstraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mm_rdb_ModelRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_ops_InsertRows' represents an important domain concept.
+It has the following attributes: 'targetColumnNames', which is of type str; 'sourceTableName', which is of type str; 'owningSchemaName', which is of type str; 'targetTableName', which is of type str; 'whereCondition', which is of type str; 'sourceColumnsNames', which is of type str.
+
+'mm_ops_GenerateSequenceNumbers' represents an important domain concept.
+It has the following attributes: 'sequenceName', which is of type str; 'owningSchemaName', which is of type str; 'columnName', which is of type str; 'tableName', which is of type str.
+
+'mm_rdb_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ops_ModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_ops_RemoveDefaultValue' represents an important domain concept.
+It has the following attributes: 'owningSchemaName', which is of type str; 'owningColumnName', which is of type str; 'owningTableName', which is of type str.
+
+'mm_ops_DeleteRows' represents an important domain concept.
+It has the following attributes: 'owningSchemaName', which is of type str; 'whereCondition', which is of type str; 'tableName', which is of type str.
+
+'mm_ops_AddSequence' represents an important domain concept.
+It has the following attributes: 'startValue', which is of type int; 'owningSchemaName', which is of type str; 'name', which is of type str.
+
+'Index' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_Sequence' represents an important domain concept.
+It has the following attributes: 'startValue', which is of type int; 'name', which is of type str.
+
+'ModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_ops_RemoveTable' represents an important domain concept.
+It has the following attributes: 'owningSchemaName', which is of type str; 'name', which is of type str.
+
+'mm_rdb_Structure' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_ops_RemoveNotNull' represents an important domain concept.
+It has the following attributes: 'owningSchemaName', which is of type str; 'owningTableName', which is of type str; 'constrainedColumnName', which is of type str.
+
+'mm_ops_RemoveColumn' represents an important domain concept.
+It has the following attributes: 'owningTableName', which is of type str; 'owningSchemaName', which is of type str; 'name', which is of type str.
+
+'mm_rdb_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_ops_AddUnique' represents an important domain concept.
+It has the following attributes: 'owningSchemaName', which is of type str; 'owningTableName', which is of type str; 'constrainedColumnNames', which is of type str; 'name', which is of type str.
+
+'Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_ops_RenameTable' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'owningSchemaName', which is of type str; 'newName', which is of type str.
+
+'mm_ops_SetColumnType' represents an important domain concept.
+It has the following attributes: 'owningSchemaName', which is of type str; 'oldType', which is of type str; 'owningTableName', which is of type str; 'newType', which is of type str; 'owningColumnName', which is of type str.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_ops_HasNoInstances' represents an important domain concept.
+It has the following attributes: 'tableName', which is of type str; 'owningSchemaName', which is of type str.
+
+'mm_ops_AddNotNull' represents an important domain concept.
+It has the following attributes: 'owningTableName', which is of type str; 'owningSchemaName', which is of type str; 'constrainedColumnName', which is of type str.
+
+'Structure' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimitiveType' defines the following possible values: 'char', 'float', 'boolean', 'int'.
+
+The model also captures inheritance relationships between classes.
+The class 'mm_rdb_Operations' is a specialization of 'ModelRoot'.
+The class 'mm_rdb_Structure' is a specialization of 'ModelRoot'.
+The class 'mm_rdb_Unique' is a specialization of 'TableConstraint'.
+The class 'mm_rdb_PrimaryKey' is a specialization of 'TableConstraint'.
+The class 'mm_rdb_ForeignKey' is a specialization of 'TableConstraint'.
+The class 'mm_ops_AddSchema' is a specialization of 'ModelOperation'.
+The class 'mm_ops_AddSequence' is a specialization of 'ModelOperation'.
+The class 'mm_ops_AddTable' is a specialization of 'ModelOperation'.
+The class 'mm_ops_AddIndex' is a specialization of 'ModelOperation'.
+The class 'mm_ops_AddColumn' is a specialization of 'ModelOperation'.
+The class 'mm_ops_AddPrimaryKey' is a specialization of 'ModelOperation'.
+The class 'mm_ops_AddForeignKey' is a specialization of 'ModelOperation'.
+The class 'mm_ops_AddUnique' is a specialization of 'ModelOperation'.
+The class 'mm_ops_AddNotNull' is a specialization of 'ModelOperation'.
+The class 'mm_ops_RemoveNotNull' is a specialization of 'ModelOperation'.
+The class 'mm_ops_RenameTable' is a specialization of 'ModelOperation'.
+The class 'mm_ops_RenameColumn' is a specialization of 'ModelOperation'.
+The class 'mm_ops_SetColumnType' is a specialization of 'ModelOperation'.
+The class 'mm_ops_SetDefaultValue' is a specialization of 'ModelOperation'.
+The class 'mm_ops_RemoveDefaultValue' is a specialization of 'ModelOperation'.
+The class 'mm_ops_RemoveTable' is a specialization of 'ModelOperation'.
+The class 'mm_ops_RemoveColumn' is a specialization of 'ModelOperation'.
+The class 'mm_ops_RemoveConstraint' is a specialization of 'ModelOperation'.
+The class 'mm_ops_RemoveIndex' is a specialization of 'ModelOperation'.
+The class 'mm_ops_RemoveSequence' is a specialization of 'ModelOperation'.
+The class 'mm_ops_UpdateRows' is a specialization of 'ModelOperation'.
+The class 'mm_ops_NillRows' is a specialization of 'ModelOperation'.
+The class 'mm_ops_InsertRows' is a specialization of 'ModelOperation'.
+The class 'mm_ops_DeleteRows' is a specialization of 'ModelOperation'.
+The class 'mm_ops_HasNoOwnInstances' is a specialization of 'ModelOperation'.
+The class 'mm_ops_HasNoInstances' is a specialization of 'ModelOperation'.
+The class 'mm_ops_GenerateSequenceNumbers' is a specialization of 'ModelOperation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mm_rdb_Operations' and 'ops_ModelOperation'. From 'mm_rdb_Operations', the role 'ops' has cardinality 0..*, and from 'ops_ModelOperation', the role 'rdb' has cardinality 0..*.
+An association connects 'mm_rdb_Structure' and 'Schema'. From 'mm_rdb_Structure', the role 'Schema' has cardinality 0..*, and from 'Schema', the role 'rdb2' has cardinality 0..*.
+An association connects 'mm_rdb_Schema' and 'Structure'. From 'mm_rdb_Schema', the role 'Structure' has cardinality 0..*, and from 'Structure', the role 'rdb4' has cardinality 0..*.
+An association connects 'mm_rdb_Schema' and 'Table'. From 'mm_rdb_Schema', the role 'Table' has cardinality 0..*, and from 'Table', the role 'rdb6' has cardinality 0..*.
+An association connects 'mm_rdb_Schema' and 'Sequence'. From 'mm_rdb_Schema', the role 'Sequence' has cardinality 0..*, and from 'Sequence', the role 'rdb8' has cardinality 0..*.
+An association connects 'Index' and 'mm_rdb_Schema'. From 'Index', the role 'rdb10' has cardinality 0..*, and from 'mm_rdb_Schema', the role 'Index' has cardinality 0..*.
+An association connects 'mm_rdb_Sequence' and 'Schema'. From 'mm_rdb_Sequence', the role 'Schema12' has cardinality 0..*, and from 'Schema', the role 'rdb13' has cardinality 0..*.
+An association connects 'Schema' and 'mm_rdb_Index'. From 'Schema', the role 'rdb16' has cardinality 0..*, and from 'mm_rdb_Index', the role 'Schema15' has cardinality 0..*.
+An association connects 'Column' and 'mm_rdb_Index'. From 'Column', the role 'Column' has cardinality 0..*, and from 'mm_rdb_Index', the role 'mm_rdb_Index' has cardinality 0..*.
+An association connects 'mm_rdb_Table' and 'Schema'. From 'mm_rdb_Table', the role 'Schema19' has cardinality 0..*, and from 'Schema', the role 'rdb20' has cardinality 0..*.
+An association connects 'mm_rdb_Table' and 'Column'. From 'mm_rdb_Table', the role 'Column22' has cardinality 0..*, and from 'Column', the role 'rdb23' has cardinality 0..*.
+An association connects 'TableConstraint' and 'mm_rdb_Table'. From 'TableConstraint', the role 'rdb25' has cardinality 0..*, and from 'mm_rdb_Table', the role 'TableConstraint' has cardinality 0..*.
+An association connects 'Table' and 'mm_rdb_Column'. From 'Table', the role 'rdb28' has cardinality 0..*, and from 'mm_rdb_Column', the role 'Table27' has cardinality 0..*.
+An association connects 'mm_rdb_TableConstraint' and 'Table'. From 'mm_rdb_TableConstraint', the role 'Table30' has cardinality 0..*, and from 'Table', the role 'rdb31' has cardinality 0..*.
+An association connects 'Column' and 'mm_rdb_Unique'. From 'Column', the role 'Column33' has cardinality 0..*, and from 'mm_rdb_Unique', the role 'mm_rdb_Unique' has cardinality 0..*.
+An association connects 'Column' and 'mm_rdb_PrimaryKey'. From 'Column', the role 'Column35' has cardinality 0..*, and from 'mm_rdb_PrimaryKey', the role 'mm_rdb_PrimaryKey' has cardinality 0..*.
+An association connects 'Table' and 'mm_rdb_ForeignKey'. From 'Table', the role 'Table37' has cardinality 0..*, and from 'mm_rdb_ForeignKey', the role 'mm_rdb_ForeignKey' has cardinality 0..*.
+An association connects 'mm_rdb_ForeignKey' and 'Column'. From 'mm_rdb_ForeignKey', the role 'mm_rdb_ForeignKey39' has cardinality 0..*, and from 'Column', the role 'Column40' has cardinality 0..*.
+An association connects 'Operations' and 'mm_ops_ModelOperation'. From 'Operations', the role 'rdb42' has cardinality 0..*, and from 'mm_ops_ModelOperation', the role 'Operations' has cardinality 0..*.

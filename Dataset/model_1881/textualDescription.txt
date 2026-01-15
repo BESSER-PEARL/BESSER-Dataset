@@ -1,0 +1,110 @@
+The domain model 'serviceInterfaces' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'JavaTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'serviceInterfaces_InterfaceRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'Pointcut' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_Interface' represents an important domain concept.
+It has the following attributes: 'qName', which is of type str; 'description', which is of type str.
+
+'serviceInterfaces_modelingenv_InjectorAcceptorInterfaceL0' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'serviceInterfaces_modelingenv_JavaInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'Packageable' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_codegen_TransformationLibrary' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'language', which is of type str.
+
+'serviceInterfaces_codegen_InjectorAcceptorInterfaceL1' represents an important domain concept.
+It does not declare any attributes.
+
+'TransformationLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_Packageable' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_modelingenv_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ExtensionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_codegen_ClassPointcut' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_codegen_StatementPoincut' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_modelingenv_SlotPlugInterfaceL0' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_modelingenv_ExtensionPoint' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'serviceInterfaces_modelingenv_JavaClass' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_codegen_MethodPoincut' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_codegen_SlotPlugInterfaceL1' represents an important domain concept.
+It does not declare any attributes.
+
+'serviceInterfaces_modelingenv_JavaTypeDeclaration' represents an important domain concept.
+It has one attribute: 'qualifiedName', which is of type str.
+
+'serviceInterfaces_codegen_Pointcut' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'serviceInterfaces_codegen_ImportElementPointcut' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PointcutType' defines the following possible values: 'AFTER_BODY', 'AFTER', 'BEFORE_BODY', 'BEFORE'.
+The enumeration 'CodeGenLanguage' defines a single possible value: 'ACCELEO'.
+The enumeration 'InjectionMode' defines the following possible values: 'PLAIN_JAVA', 'GOOGLE_JUICE'.
+
+The model also captures inheritance relationships between classes.
+The class 'serviceInterfaces_Package' is a specialization of 'Packageable'.
+The class 'serviceInterfaces_Interface' is a specialization of 'Packageable'.
+The class 'serviceInterfaces_codegen_InjectorAcceptorInterfaceL1' is a specialization of 'Interface'.
+The class 'serviceInterfaces_codegen_SlotPlugInterfaceL1' is a specialization of 'Interface'.
+The class 'serviceInterfaces_codegen_ClassPointcut' is a specialization of 'Pointcut'.
+The class 'serviceInterfaces_codegen_MethodPoincut' is a specialization of 'Pointcut'.
+The class 'serviceInterfaces_codegen_ImportElementPointcut' is a specialization of 'Pointcut'.
+The class 'serviceInterfaces_codegen_StatementPoincut' is a specialization of 'Pointcut'.
+The class 'serviceInterfaces_modelingenv_InjectorAcceptorInterfaceL0' is a specialization of 'Interface'.
+The class 'serviceInterfaces_modelingenv_JavaInterface' is a specialization of 'JavaTypeDeclaration'.
+The class 'serviceInterfaces_modelingenv_JavaClass' is a specialization of 'JavaTypeDeclaration'.
+The class 'serviceInterfaces_modelingenv_SlotPlugInterfaceL0' is a specialization of 'Interface'.
+
+Relationships between classes are modeled using associations.
+An association connects 'serviceInterfaces_InterfaceRepository' and 'serviceInterfaces_Packageable'. From 'serviceInterfaces_InterfaceRepository', the role 'serviceInterfaces_InterfaceRepository' has cardinality 0..*, and from 'serviceInterfaces_Packageable', the role 'serviceInterfaces_Packageable' has cardinality 0..*.
+An association connects 'serviceInterfaces_Package' and 'serviceInterfaces_Packageable'. From 'serviceInterfaces_Package', the role 'serviceInterfaces_Package' has cardinality 0..*, and from 'serviceInterfaces_Packageable', the role 'serviceInterfaces_Packageable2' has cardinality 0..*.
+An association connects 'serviceInterfaces_codegen_InjectorAcceptorInterfaceL1' and 'TransformationLibrary'. From 'serviceInterfaces_codegen_InjectorAcceptorInterfaceL1', the role 'serviceInterfaces_codegen_InjectorAcceptorInterfaceL1' has cardinality 0..*, and from 'TransformationLibrary', the role 'TransformationLibrary' has cardinality 0..*.
+An association connects 'serviceInterfaces_codegen_SlotPlugInterfaceL1' and 'Pointcut'. From 'serviceInterfaces_codegen_SlotPlugInterfaceL1', the role 'serviceInterfaces_codegen_SlotPlugInterfaceL1' has cardinality 0..*, and from 'Pointcut', the role 'Pointcut' has cardinality 0..*.
+An association connects 'JavaTypeDeclaration' and 'serviceInterfaces_modelingenv_InjectorAcceptorInterfaceL0'. From 'JavaTypeDeclaration', the role 'JavaTypeDeclaration' has cardinality 0..*, and from 'serviceInterfaces_modelingenv_InjectorAcceptorInterfaceL0', the role 'serviceInterfaces_modelingenv_InjectorAcceptorInterfaceL0' has cardinality 0..*.
+An association connects 'Operation' and 'serviceInterfaces_modelingenv_JavaInterface'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'serviceInterfaces_modelingenv_JavaInterface', the role 'serviceInterfaces_modelingenv_JavaInterface' has cardinality 0..*.
+An association connects 'Operation' and 'serviceInterfaces_modelingenv_JavaClass'. From 'Operation', the role 'Operation8' has cardinality 0..*, and from 'serviceInterfaces_modelingenv_JavaClass', the role 'serviceInterfaces_modelingenv_JavaClass' has cardinality 0..*.
+An association connects 'serviceInterfaces_modelingenv_SlotPlugInterfaceL0' and 'ExtensionPoint'. From 'serviceInterfaces_modelingenv_SlotPlugInterfaceL0', the role 'serviceInterfaces_modelingenv_SlotPlugInterfaceL0' has cardinality 0..*, and from 'ExtensionPoint', the role 'ExtensionPoint' has cardinality 0..*.

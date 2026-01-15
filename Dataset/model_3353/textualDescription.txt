@@ -1,0 +1,41 @@
+The domain model 'Trmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'Trmodel_Update' represents an important domain concept.
+It has one attribute: 'newName', which is of type str.
+
+'Trmodel_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Trmodel_Delete' represents an important domain concept.
+It does not declare any attributes.
+
+'Trmodel_Column' represents an important domain concept.
+It has the following attributes: 'tableName', which is of type str; 'Name', which is of type str.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Trmodel_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'Trmodel_loader' represents an important domain concept.
+It does not declare any attributes.
+
+'Trmodel_LoadModel' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'Trmodel_Table' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'Trmodel_Add' is a specialization of 'Operation'.
+The class 'Trmodel_Delete' is a specialization of 'Operation'.
+The class 'Trmodel_Update' is a specialization of 'Operation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Trmodel_loader' and 'Trmodel_Operation'. From 'Trmodel_loader', the role 'Trmodel_loader' has cardinality 0..*, and from 'Trmodel_Operation', the role 'Trmodel_Operation' has cardinality 0..*.
+An association connects 'Trmodel_loader' and 'Trmodel_LoadModel'. From 'Trmodel_loader', the role 'Trmodel_loader2' has cardinality 0..*, and from 'Trmodel_LoadModel', the role 'Trmodel_LoadModel' has cardinality 0..*.
+An association connects 'Trmodel_Operation' and 'Trmodel_Table'. From 'Trmodel_Operation', the role 'Trmodel_Operation4' has cardinality 0..*, and from 'Trmodel_Table', the role 'Trmodel_Table' has cardinality 0..*.
+An association connects 'Trmodel_Operation' and 'Trmodel_Column'. From 'Trmodel_Operation', the role 'Trmodel_Operation6' has cardinality 0..*, and from 'Trmodel_Column', the role 'Trmodel_Column' has cardinality 0..*.

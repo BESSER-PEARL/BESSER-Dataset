@@ -1,0 +1,195 @@
+The domain model 'ClassDiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 53 main class(es).
+
+'IFacilityAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Booking_Bill' represents an important domain concept.
+It has one attribute: 'paidAmount', which is of type float.
+
+'ClassDiagram_ApplianceAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ClassDiagram_BillManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_IFacilityAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_IHotelAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_IRoomManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_StaffBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_BookingManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_RoomAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_GuestBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_ServiceBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_IRoomAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_IStaffAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'IBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'IFacilityManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Hotel_Staff' represents an important domain concept.
+It has the following attributes: 'stafftype', which is of type str; 'lastName', which is of type str; 'ssn', which is of type str; 'firstName', which is of type str.
+
+'IApplianceAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Room_RoomKey' represents an important domain concept.
+It has one attribute: 'expirationDate', which is of type date.
+
+'ClassDiagram_RoomAppliance_ApplianceType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ClassDiagram_Company_GuestRecord' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ssn', which is of type str; 'adress', which is of type str; 'payment', which is of type str; 'phoneNumber', which is of type str.
+
+'ClassDiagram_FacilityManager' represents an important domain concept.
+It does not declare any attributes.
+
+'IHotelAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Hotel_Room' represents an important domain concept.
+It has the following attributes: 'maintenceStatus', which is of type bool; 'cleaningStatus', which is of type bool; 'roomNumber', which is of type int.
+
+'IRoomAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_IGuestManager' represents an important domain concept.
+It does not declare any attributes.
+
+'IServiceBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_IApplianceAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Booking_PurchasedService' represents an important domain concept.
+It has the following attributes: 'price', which is of type float; 'name', which is of type str.
+
+'ClassDiagram_GuestManager' represents an important domain concept.
+It does not declare any attributes.
+
+'IStaffAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_IBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Facility_FacilityService' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'price', which is of type float.
+
+'IRoomManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Hotel_Facility' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ClassDiagram_RoomManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_IFacilityManager' represents an important domain concept.
+It does not declare any attributes.
+
+'IBillManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Hotel_Booking' represents an important domain concept.
+It has the following attributes: 'checkedIn', which is of type bool; 'startDate', which is of type date; 'price', which is of type float; 'endDate', which is of type date; 'bookingID', which is of type int.
+
+'ClassDiagram_Booking_BookedService' represents an important domain concept.
+It has the following attributes: 'date', which is of type date; 'price', which is of type float.
+
+'ClassDiagram_FacilityAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Company_Hotel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ClassDiagram_Facility_FacilityType' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ClassDiagram_HotelAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'IGuestManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_IBillManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Room_RoomAppliance' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ClassDiagram_IServiceBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'BookingManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_StaffAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Room_RoomType' represents an important domain concept.
+It has the following attributes: 'price', which is of type float; 'maxNumberOfGuests', which is of type int; 'area', which is of type float.
+
+'ClassDiagram_ApplianceType_ApplianceService' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'price', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StaffType' defines the following possible values: 'Receptionist', 'HouseKeeper', 'Manager', 'Janitor'.
+
+The model also captures inheritance relationships between classes.
+The class 'ClassDiagram_GuestBooking' is a specialization of 'IBooking'.
+The class 'ClassDiagram_StaffBooking' is a specialization of 'BookingManager'.
+The class 'ClassDiagram_FacilityAdministration' is a specialization of 'IFacilityAdministration'.
+The class 'ClassDiagram_ServiceBooking' is a specialization of 'IServiceBooking'.
+The class 'ClassDiagram_FacilityManager' is a specialization of 'IFacilityManager'.
+The class 'ClassDiagram_GuestManager' is a specialization of 'IGuestManager'.
+The class 'ClassDiagram_BillManager' is a specialization of 'IBillManager'.
+The class 'ClassDiagram_HotelAdministration' is a specialization of 'IHotelAdministration'.
+The class 'ClassDiagram_StaffAdministration' is a specialization of 'IStaffAdministration'.
+The class 'ClassDiagram_RoomManager' is a specialization of 'IRoomManager'.
+The class 'ClassDiagram_RoomAdministration' is a specialization of 'IRoomAdministration'.
+The class 'ClassDiagram_ApplianceAdministration' is a specialization of 'IApplianceAdministration'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ClassDiagram_Company_Hotel' and 'ClassDiagram_Company'. From 'ClassDiagram_Company_Hotel', the role 'ClassDiagram_Company_Hotel' has cardinality 0..*, and from 'ClassDiagram_Company', the role 'ClassDiagram_Company' has cardinality 0..*.
+An association connects 'ClassDiagram_Company_GuestRecord' and 'ClassDiagram_Company'. From 'ClassDiagram_Company_GuestRecord', the role 'ClassDiagram_Company_GuestRecord' has cardinality 0..*, and from 'ClassDiagram_Company', the role 'ClassDiagram_Company2' has cardinality 0..*.
+An association connects 'ClassDiagram_Company_Hotel' and 'ClassDiagram_Hotel_Booking'. From 'ClassDiagram_Company_Hotel', the role 'ClassDiagram_Company_Hotel4' has cardinality 0..*, and from 'ClassDiagram_Hotel_Booking', the role 'ClassDiagram_Hotel_Booking' has cardinality 0..*.
+An association connects 'ClassDiagram_Hotel_Room' and 'ClassDiagram_Company_Hotel'. From 'ClassDiagram_Hotel_Room', the role 'ClassDiagram_Hotel_Room' has cardinality 0..*, and from 'ClassDiagram_Company_Hotel', the role 'ClassDiagram_Company_Hotel6' has cardinality 0..*.
+An association connects 'ClassDiagram_Company_Hotel' and 'ClassDiagram_Hotel_Facility'. From 'ClassDiagram_Company_Hotel', the role 'ClassDiagram_Company_Hotel8' has cardinality 0..*, and from 'ClassDiagram_Hotel_Facility', the role 'ClassDiagram_Hotel_Facility' has cardinality 0..*.
+An association connects 'ClassDiagram_Hotel_Staff' and 'ClassDiagram_Company_Hotel'. From 'ClassDiagram_Hotel_Staff', the role 'ClassDiagram_Hotel_Staff' has cardinality 0..*, and from 'ClassDiagram_Company_Hotel', the role 'ClassDiagram_Company_Hotel10' has cardinality 0..*.
+An association connects 'ClassDiagram_Hotel_Booking' and 'ClassDiagram_Booking_BookedService'. From 'ClassDiagram_Hotel_Booking', the role 'ClassDiagram_Hotel_Booking12' has cardinality 0..*, and from 'ClassDiagram_Booking_BookedService', the role 'ClassDiagram_Booking_BookedService' has cardinality 0..*.
+An association connects 'ClassDiagram_Booking_PurchasedService' and 'ClassDiagram_Booking_Bill'. From 'ClassDiagram_Booking_PurchasedService', the role 'ClassDiagram_Booking_PurchasedService' has cardinality 0..*, and from 'ClassDiagram_Booking_Bill', the role 'ClassDiagram_Booking_Bill' has cardinality 0..*.
+An association connects 'ClassDiagram_Hotel_Room' and 'ClassDiagram_Room_RoomAppliance'. From 'ClassDiagram_Hotel_Room', the role 'ClassDiagram_Hotel_Room15' has cardinality 0..*, and from 'ClassDiagram_Room_RoomAppliance', the role 'ClassDiagram_Room_RoomAppliance' has cardinality 0..*.
+An association connects 'ClassDiagram_Hotel_Room' and 'ClassDiagram_Room_RoomType'. From 'ClassDiagram_Hotel_Room', the role 'ClassDiagram_Hotel_Room17' has cardinality 0..*, and from 'ClassDiagram_Room_RoomType', the role 'ClassDiagram_Room_RoomType' has cardinality 0..*.
+An association connects 'ClassDiagram_Hotel_Room' and 'ClassDiagram_Room_RoomKey'. From 'ClassDiagram_Hotel_Room', the role 'ClassDiagram_Hotel_Room19' has cardinality 0..*, and from 'ClassDiagram_Room_RoomKey', the role 'ClassDiagram_Room_RoomKey' has cardinality 0..*.
+An association connects 'ClassDiagram_Room_RoomAppliance' and 'ClassDiagram_RoomAppliance_ApplianceType'. From 'ClassDiagram_Room_RoomAppliance', the role 'ClassDiagram_Room_RoomAppliance21' has cardinality 0..*, and from 'ClassDiagram_RoomAppliance_ApplianceType', the role 'ClassDiagram_RoomAppliance_ApplianceType' has cardinality 0..*.
+An association connects 'ClassDiagram_Room_RoomAppliance' and 'ClassDiagram_Room_RoomType'. From 'ClassDiagram_Room_RoomAppliance', the role 'ClassDiagram_Room_RoomAppliance24' has cardinality 0..*, and from 'ClassDiagram_Room_RoomType', the role 'ClassDiagram_Room_RoomType23' has cardinality 0..*.
+An association connects 'ClassDiagram_Facility_FacilityType' and 'ClassDiagram_Hotel_Facility'. From 'ClassDiagram_Facility_FacilityType', the role 'ClassDiagram_Facility_FacilityType' has cardinality 0..*, and from 'ClassDiagram_Hotel_Facility', the role 'ClassDiagram_Hotel_Facility26' has cardinality 0..*.

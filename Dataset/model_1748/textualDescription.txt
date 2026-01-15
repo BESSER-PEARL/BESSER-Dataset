@@ -1,0 +1,16 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'model_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'model_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Author' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'lastName', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Library' and 'model_Book'. From 'model_Library', the role 'model_Library' has cardinality 0..*, and from 'model_Book', the role 'model_Book' has cardinality 0..*.
+An association connects 'model_Author' and 'model_Book'. From 'model_Author', the role 'model_Author' has cardinality 0..*, and from 'model_Book', the role 'model_Book2' has cardinality 0..*.

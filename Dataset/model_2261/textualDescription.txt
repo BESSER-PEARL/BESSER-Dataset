@@ -1,0 +1,48 @@
+The domain model 'school' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'school_Teacher' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'school_Year' represents an important domain concept.
+It has one attribute: 'startingDate', which is of type int.
+
+'school_Student' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'school_School' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'address', which is of type str.
+
+'school_Course' represents an important domain concept.
+It has the following attributes: 'subject', which is of type str; 'weight', which is of type int.
+
+'school_SpecialisationCourse' represents an important domain concept.
+It has one attribute: 'specialisation', which is of type str.
+
+'Course' represents an important domain concept.
+It does not declare any attributes.
+
+'school_SchoolClass' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'school_SpecialisationCourse' is a specialization of 'Course'.
+
+Relationships between classes are modeled using associations.
+An association connects 'school_Course' and 'school_School'. From 'school_Course', the role 'courses' has cardinality 0..*, and from 'school_School', the role 'School' has cardinality 0..*.
+An association connects 'school_Teacher' and 'school_Course'. From 'school_Teacher', the role 'Teacher' has cardinality 0..*, and from 'school_Course', the role 'courses2' has cardinality 0..*.
+An association connects 'school_Course' and 'school_SchoolClass'. From 'school_Course', the role 'courses4' has cardinality 0..*, and from 'school_SchoolClass', the role 'SchoolClass' has cardinality 0..*.
+An association connects 'school_Year' and 'school_School'. From 'school_Year', the role 'Year' has cardinality 0..*, and from 'school_School', the role 'school' has cardinality 0..*.
+An association connects 'school_Teacher' and 'school_School'. From 'school_Teacher', the role 'Teacher8' has cardinality 0..*, and from 'school_School', the role 'school7' has cardinality 0..*.
+An association connects 'school_School' and 'school_Course'. From 'school_School', the role 'school10' has cardinality 0..*, and from 'school_Course', the role 'Course' has cardinality 0..*.
+An association connects 'school_SchoolClass' and 'school_Year'. From 'school_SchoolClass', the role 'schoolClasses' has cardinality 0..*, and from 'school_Year', the role 'Year12' has cardinality 0..*.
+An association connects 'school_SchoolClass' and 'school_Student'. From 'school_SchoolClass', the role 'schoolClass' has cardinality 0..*, and from 'school_Student', the role 'Student' has cardinality 0..*.
+An association connects 'school_Course' and 'school_SchoolClass'. From 'school_Course', the role 'Course16' has cardinality 0..*, and from 'school_SchoolClass', the role 'schoolClass15' has cardinality 0..*.
+An association connects 'school_Teacher' and 'school_SchoolClass'. From 'school_Teacher', the role 'school_Teacher' has cardinality 0..*, and from 'school_SchoolClass', the role 'school_SchoolClass' has cardinality 0..*.
+An association connects 'school_SchoolClass' and 'school_Student'. From 'school_SchoolClass', the role 'SchoolClass19' has cardinality 0..*, and from 'school_Student', the role 'students' has cardinality 0..*.
+An association connects 'school_Teacher' and 'school_School'. From 'school_Teacher', the role 'teachers' has cardinality 0..*, and from 'school_School', the role 'School21' has cardinality 0..*.
+An association connects 'school_Teacher' and 'school_Course'. From 'school_Teacher', the role 'teacher' has cardinality 0..*, and from 'school_Course', the role 'Course23' has cardinality 0..*.
+An association connects 'school_SchoolClass' and 'school_Teacher'. From 'school_SchoolClass', the role 'school_SchoolClass26' has cardinality 0..*, and from 'school_Teacher', the role 'school_Teacher25' has cardinality 0..*.
+An association connects 'school_Year' and 'school_School'. From 'school_Year', the role 'years' has cardinality 0..*, and from 'school_School', the role 'School28' has cardinality 0..*.
+An association connects 'school_SchoolClass' and 'school_Year'. From 'school_SchoolClass', the role 'SchoolClass30' has cardinality 0..*, and from 'school_Year', the role 'year' has cardinality 0..*.

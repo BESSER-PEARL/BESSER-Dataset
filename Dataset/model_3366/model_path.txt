@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/robotoworks/mechanoid/plugins/com.robotoworks.mechanoid.net/model/generated/NetModel.ecore

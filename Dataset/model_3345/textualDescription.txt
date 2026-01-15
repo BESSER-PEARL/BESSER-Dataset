@@ -1,0 +1,263 @@
+The domain model 'MOFScriptModel' describes the core structural elements and their relationships within the system.
+
+The model defines 50 main class(es).
+
+'MOFScriptModel_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_FunctionCall' represents an important domain concept.
+It has the following attributes: 'isSuperCall', which is of type bool; 'transformationContext', which is of type str; 'name', which is of type str.
+
+'MOFScriptModel_MOFScriptSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_ResultAssignment' represents an important domain concept.
+It has the following attributes: 'resultPart', which is of type str; 'operator', which is of type str.
+
+'MOFScriptModel_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'constant', which is of type bool.
+
+'MOFScriptModel_DebugStatement' represents an important domain concept.
+It has the following attributes: 'specification', which is of type str; 'vars', which is of type str.
+
+'ValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_FileStatement' represents an important domain concept.
+It has the following attributes: 'fileReference', which is of type str; 'use', which is of type bool; 'append', which is of type bool.
+
+'MOFScriptTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptObject' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_ComparisonExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_M2MTrace' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'MOFScriptModel_PointCutExpression' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'expressionString', which is of type str; 'combinationOperator', which is of type str.
+
+'MOFScriptModel_Literal' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str.
+
+'MOFScriptStatementOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_IteratorStatement' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'variable', which is of type str.
+
+'MOFScriptModel_ArithmeticExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'MOFScriptModel_CreateExpressionParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MOFScriptModel_MOFScriptComment' represents an important domain concept.
+It has the following attributes: 'commentText', which is of type str; 'docStyle', which is of type bool; 'singleLine', which is of type bool.
+
+'MOFScriptModel_PrintStatement' represents an important domain concept.
+It has the following attributes: 'context', which is of type str; 'printCommand', which is of type str.
+
+'MOFScriptModel_MOFScriptImport' represents an important domain concept.
+It has the following attributes: 'uri', which is of type str; 'importSemantics', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+'MOFScriptModel_CreateStatement' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'MOFScriptStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_MOFScriptStatementOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_MOFScriptObject' represents an important domain concept.
+It has the following attributes: 'line', which is of type int; 'column', which is of type int.
+
+'MOFScriptModel_GeneralAssignment' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'name', which is of type str.
+
+'MOFScriptModel_Reference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MOFScriptModel_MOFScriptParameter' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'direction', which is of type str; 'name', which is of type str; 'typePrefix', which is of type str.
+
+'MOFScriptModel_SimpleExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_ValueExpression' represents an important domain concept.
+It has one attribute: 'specification', which is of type str.
+
+'MOFScriptModel_PointCut' represents an important domain concept.
+It has the following attributes: 'typeMatch', which is of type str; 'name', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_StatementBlock' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'protected', which is of type bool; 'reference', which is of type str.
+
+'SimpleExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_TransformationRule' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isEntryPoint', which is of type bool; 'accessLevel', which is of type str; 'return', which is of type str; 'isAbstract', which is of type bool.
+
+'MOFScriptModel_MOFScriptTransformation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'extendsName', which is of type str.
+
+'MOFScriptModel_LogicalExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'MOFScriptModel_VariableDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_Advice' represents an important domain concept.
+It has the following attributes: 'pointCutRef', which is of type str; 'code', which is of type str; 'name', which is of type str; 'operator', which is of type str.
+
+'MOFScriptModel_MOFScriptAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_SelectExpression' represents an important domain concept.
+It has the following attributes: 'variable', which is of type str; 'type', which is of type str.
+
+'MOFScriptModel_CreateExpression' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'MOFScriptModel_MOFScriptStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'MOFScriptModel_FunctionCallStatement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ImportType' defines the following possible values: 'TRANSFORMATION', 'LIBRARY'.
+The enumeration 'ArithmeticOperator' defines the following possible values: 'MULT', 'PLUS', 'DIV', 'MINUS'.
+The enumeration 'PointCutCombinationOperator' defines the following possible values: 'AND', 'NONE', 'XOR', 'OR'.
+The enumeration 'AdviceOperator' defines the following possible values: 'AFTER', 'BEFORE', 'AROUND'.
+The enumeration 'ParameterDirection' defines the following possible values: 'OUT', 'IN', 'INOUT'.
+The enumeration 'ImportSemantics' defines the following possible values: 'IMPORT', 'ACCESS'.
+The enumeration 'AccessLevel' defines the following possible values: 'PROTECTED', 'PRIVATE', 'NONE', 'PUBLIC'.
+The enumeration 'AssignmentOperator' defines the following possible values: 'PLUS_EQ', 'EQ'.
+The enumeration 'LogicalOperator' defines the following possible values: 'AND', 'OR', 'NOT', 'NONE'.
+The enumeration 'ComparisonOperator' defines the following possible values: 'GT', 'EQ', 'GE', 'NE', 'LE', 'LT', 'OR', 'AND'.
+The enumeration 'PointCutOperator' defines the following possible values: 'TARGET', 'CALL', 'EXECUTE'.
+The enumeration 'LiteralType' defines the following possible values: 'INTEGER', 'STRING', 'BOOLEAN', 'REAL', 'NULL'.
+
+The model also captures inheritance relationships between classes.
+The class 'MOFScriptModel_TransformationRule' is a specialization of 'MOFScriptStatementOwner'.
+The class 'MOFScriptModel_MOFScriptStatementOwner' is a specialization of 'MOFScriptObject'.
+The class 'MOFScriptModel_MOFScriptComment' is a specialization of 'MOFScriptObject'.
+The class 'MOFScriptModel_MOFScriptStatement' is a specialization of 'MOFScriptStatementOwner'.
+The class 'MOFScriptModel_VariableDeclaration' is a specialization of 'MOFScriptObject'.
+The class 'MOFScriptModel_ValueExpression' is a specialization of 'Expression'.
+The class 'MOFScriptModel_Expression' is a specialization of 'MOFScriptObject'.
+The class 'MOFScriptModel_MOFScriptTransformation' is a specialization of 'MOFScriptObject'.
+The class 'MOFScriptModel_MOFScriptParameter' is a specialization of 'MOFScriptObject'.
+The class 'MOFScriptModel_MOFScriptImport' is a specialization of 'MOFScriptObject'.
+The class 'MOFScriptModel_IteratorStatement' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_LogicalExpression' is a specialization of 'Expression'.
+The class 'MOFScriptModel_SimpleExpression' is a specialization of 'ValueExpression'.
+The class 'MOFScriptModel_FunctionCall' is a specialization of 'SimpleExpression'.
+The class 'MOFScriptModel_CreateStatement' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_ResultAssignment' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_GeneralAssignment' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_Literal' is a specialization of 'SimpleExpression'.
+The class 'MOFScriptModel_Reference' is a specialization of 'SimpleExpression'.
+The class 'MOFScriptModel_FunctionCallStatement' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_PrintStatement' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_ArithmeticExpression' is a specialization of 'ValueExpression'.
+The class 'MOFScriptModel_FileStatement' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_ComparisonExpression' is a specialization of 'Expression'.
+The class 'MOFScriptModel_IfStatement' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_MOFScriptSpecification' is a specialization of 'MOFScriptObject'.
+The class 'MOFScriptModel_BreakStatement' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_WhileStatement' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_MOFScriptAspect' is a specialization of 'MOFScriptTransformation'.
+The class 'MOFScriptModel_Advice' is a specialization of 'MOFScriptStatementOwner'.
+The class 'MOFScriptModel_SelectExpression' is a specialization of 'ValueExpression'.
+The class 'MOFScriptModel_CreateExpression' is a specialization of 'Expression'.
+The class 'MOFScriptModel_CreateExpressionParameter' is a specialization of 'MOFScriptObject'.
+The class 'MOFScriptModel_ReturnStatement' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_VariableDeclarationStatement' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_DebugStatement' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_Trace' is a specialization of 'MOFScriptStatement'.
+The class 'MOFScriptModel_M2MTrace' is a specialization of 'Trace'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MOFScriptModel_MOFScriptTransformation' and 'MOFScriptModel_TransformationRule'. From 'MOFScriptModel_MOFScriptTransformation', the role 'MOFScriptTransformation' has cardinality 0..*, and from 'MOFScriptModel_TransformationRule', the role 'transformationrules' has cardinality 0..*.
+An association connects 'MOFScriptModel_TransformationRule' and 'MOFScriptModel_TransformationRule'. From 'MOFScriptModel_TransformationRule', the role 'MOFScriptModel_TransformationRule' has cardinality 0..*, and from 'MOFScriptModel_TransformationRule', the role 'MOFScriptModel_TransformationRule1' has cardinality 0..*.
+An association connects 'MOFScriptModel_TransformationRule' and 'MOFScriptModel_MOFScriptParameter'. From 'MOFScriptModel_TransformationRule', the role 'MOFScriptModel_TransformationRule4' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptParameter', the role 'MOFScriptModel_MOFScriptParameter' has cardinality 0..*.
+An association connects 'MOFScriptModel_TransformationRule' and 'MOFScriptModel_MOFScriptParameter'. From 'MOFScriptModel_TransformationRule', the role 'MOFScriptModel_TransformationRule6' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptParameter', the role 'MOFScriptModel_MOFScriptParameter7' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptStatementOwner' and 'MOFScriptModel_MOFScriptStatement'. From 'MOFScriptModel_MOFScriptStatementOwner', the role 'owner' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptStatement', the role 'MOFScriptStatement' has cardinality 0..*.
+An association connects 'MOFScriptModel_VariableDeclaration' and 'MOFScriptModel_MOFScriptStatementOwner'. From 'MOFScriptModel_VariableDeclaration', the role 'MOFScriptModel_VariableDeclaration' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptStatementOwner', the role 'MOFScriptModel_MOFScriptStatementOwner' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptStatementOwner' and 'MOFScriptModel_StatementBlock'. From 'MOFScriptModel_MOFScriptStatementOwner', the role 'MOFScriptModel_MOFScriptStatementOwner11' has cardinality 0..*, and from 'MOFScriptModel_StatementBlock', the role 'MOFScriptModel_StatementBlock' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptComment' and 'MOFScriptModel_MOFScriptObject'. From 'MOFScriptModel_MOFScriptComment', the role 'MOFScriptModel_MOFScriptComment' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptObject', the role 'MOFScriptModel_MOFScriptObject' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptStatement' and 'MOFScriptModel_MOFScriptStatementOwner'. From 'MOFScriptModel_MOFScriptStatement', the role 'statements' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptStatementOwner', the role 'MOFScriptStatementOwner' has cardinality 0..*.
+An association connects 'MOFScriptModel_VariableDeclaration' and 'MOFScriptModel_Expression'. From 'MOFScriptModel_VariableDeclaration', the role 'MOFScriptModel_VariableDeclaration15' has cardinality 0..*, and from 'MOFScriptModel_Expression', the role 'MOFScriptModel_Expression' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptStatement' and 'MOFScriptModel_StatementBlock'. From 'MOFScriptModel_MOFScriptStatement', the role 'MOFScriptModel_MOFScriptStatement' has cardinality 0..*, and from 'MOFScriptModel_StatementBlock', the role 'MOFScriptModel_StatementBlock17' has cardinality 0..*.
+An association connects 'MOFScriptModel_VariableDeclaration' and 'MOFScriptModel_MOFScriptTransformation'. From 'MOFScriptModel_VariableDeclaration', the role 'MOFScriptModel_VariableDeclaration19' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptTransformation', the role 'MOFScriptModel_MOFScriptTransformation' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptTransformation' and 'MOFScriptModel_VariableDeclaration'. From 'MOFScriptModel_MOFScriptTransformation', the role 'MOFScriptModel_MOFScriptTransformation21' has cardinality 0..*, and from 'MOFScriptModel_VariableDeclaration', the role 'MOFScriptModel_VariableDeclaration22' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptTransformation' and 'MOFScriptModel_MOFScriptParameter'. From 'MOFScriptModel_MOFScriptTransformation', the role 'MOFScriptModel_MOFScriptTransformation24' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptParameter', the role 'MOFScriptModel_MOFScriptParameter25' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptTransformation' and 'MOFScriptModel_MOFScriptTransformation'. From 'MOFScriptModel_MOFScriptTransformation', the role 'MOFScriptModel_MOFScriptTransformation28' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptTransformation', the role 'MOFScriptModel_MOFScriptTransformation26' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptTransformation' and 'MOFScriptModel_TransformationRule'. From 'MOFScriptModel_MOFScriptTransformation', the role 'owner30' has cardinality 0..*, and from 'MOFScriptModel_TransformationRule', the role 'TransformationRule' has cardinality 0..*.
+An association connects 'MOFScriptModel_Expression' and 'MOFScriptModel_IteratorStatement'. From 'MOFScriptModel_Expression', the role 'MOFScriptModel_Expression32' has cardinality 0..*, and from 'MOFScriptModel_IteratorStatement', the role 'MOFScriptModel_IteratorStatement' has cardinality 0..*.
+An association connects 'MOFScriptModel_IteratorStatement' and 'MOFScriptModel_SimpleExpression'. From 'MOFScriptModel_IteratorStatement', the role 'MOFScriptModel_IteratorStatement34' has cardinality 0..*, and from 'MOFScriptModel_SimpleExpression', the role 'MOFScriptModel_SimpleExpression' has cardinality 0..*.
+An association connects 'MOFScriptModel_IteratorStatement' and 'MOFScriptModel_ValueExpression'. From 'MOFScriptModel_IteratorStatement', the role 'MOFScriptModel_IteratorStatement36' has cardinality 0..*, and from 'MOFScriptModel_ValueExpression', the role 'MOFScriptModel_ValueExpression' has cardinality 0..*.
+An association connects 'MOFScriptModel_ValueExpression' and 'MOFScriptModel_IteratorStatement'. From 'MOFScriptModel_ValueExpression', the role 'MOFScriptModel_ValueExpression39' has cardinality 0..*, and from 'MOFScriptModel_IteratorStatement', the role 'MOFScriptModel_IteratorStatement38' has cardinality 0..*.
+An association connects 'MOFScriptModel_IteratorStatement' and 'MOFScriptModel_ValueExpression'. From 'MOFScriptModel_IteratorStatement', the role 'MOFScriptModel_IteratorStatement41' has cardinality 0..*, and from 'MOFScriptModel_ValueExpression', the role 'MOFScriptModel_ValueExpression42' has cardinality 0..*.
+An association connects 'MOFScriptModel_LogicalExpression' and 'MOFScriptModel_Expression'. From 'MOFScriptModel_LogicalExpression', the role 'MOFScriptModel_LogicalExpression' has cardinality 0..*, and from 'MOFScriptModel_Expression', the role 'MOFScriptModel_Expression44' has cardinality 0..*.
+An association connects 'MOFScriptModel_Expression' and 'MOFScriptModel_LogicalExpression'. From 'MOFScriptModel_Expression', the role 'MOFScriptModel_Expression47' has cardinality 0..*, and from 'MOFScriptModel_LogicalExpression', the role 'MOFScriptModel_LogicalExpression46' has cardinality 0..*.
+An association connects 'MOFScriptModel_SimpleExpression' and 'MOFScriptModel_SimpleExpression'. From 'MOFScriptModel_SimpleExpression', the role 'MOFScriptModel_SimpleExpression50' has cardinality 0..*, and from 'MOFScriptModel_SimpleExpression', the role 'MOFScriptModel_SimpleExpression48' has cardinality 0..*.
+An association connects 'MOFScriptModel_FunctionCall' and 'MOFScriptModel_ValueExpression'. From 'MOFScriptModel_FunctionCall', the role 'MOFScriptModel_FunctionCall' has cardinality 0..*, and from 'MOFScriptModel_ValueExpression', the role 'MOFScriptModel_ValueExpression52' has cardinality 0..*.
+An association connects 'MOFScriptModel_TransformationRule' and 'MOFScriptModel_FunctionCall'. From 'MOFScriptModel_TransformationRule', the role 'MOFScriptModel_TransformationRule55' has cardinality 0..*, and from 'MOFScriptModel_FunctionCall', the role 'MOFScriptModel_FunctionCall54' has cardinality 0..*.
+An association connects 'MOFScriptModel_ResultAssignment' and 'MOFScriptModel_Expression'. From 'MOFScriptModel_ResultAssignment', the role 'MOFScriptModel_ResultAssignment' has cardinality 0..*, and from 'MOFScriptModel_Expression', the role 'MOFScriptModel_Expression57' has cardinality 0..*.
+An association connects 'MOFScriptModel_Expression' and 'MOFScriptModel_GeneralAssignment'. From 'MOFScriptModel_Expression', the role 'MOFScriptModel_Expression59' has cardinality 0..*, and from 'MOFScriptModel_GeneralAssignment', the role 'MOFScriptModel_GeneralAssignment' has cardinality 0..*.
+An association connects 'MOFScriptModel_FunctionCallStatement' and 'MOFScriptModel_FunctionCall'. From 'MOFScriptModel_FunctionCallStatement', the role 'MOFScriptModel_FunctionCallStatement' has cardinality 0..*, and from 'MOFScriptModel_FunctionCall', the role 'MOFScriptModel_FunctionCall61' has cardinality 0..*.
+An association connects 'MOFScriptModel_PrintStatement' and 'MOFScriptModel_ValueExpression'. From 'MOFScriptModel_PrintStatement', the role 'MOFScriptModel_PrintStatement' has cardinality 0..*, and from 'MOFScriptModel_ValueExpression', the role 'MOFScriptModel_ValueExpression63' has cardinality 0..*.
+An association connects 'MOFScriptModel_ArithmeticExpression' and 'MOFScriptModel_ValueExpression'. From 'MOFScriptModel_ArithmeticExpression', the role 'MOFScriptModel_ArithmeticExpression' has cardinality 0..*, and from 'MOFScriptModel_ValueExpression', the role 'MOFScriptModel_ValueExpression65' has cardinality 0..*.
+An association connects 'MOFScriptModel_ValueExpression' and 'MOFScriptModel_ArithmeticExpression'. From 'MOFScriptModel_ValueExpression', the role 'MOFScriptModel_ValueExpression68' has cardinality 0..*, and from 'MOFScriptModel_ArithmeticExpression', the role 'MOFScriptModel_ArithmeticExpression67' has cardinality 0..*.
+An association connects 'MOFScriptModel_ValueExpression' and 'MOFScriptModel_FileStatement'. From 'MOFScriptModel_ValueExpression', the role 'MOFScriptModel_ValueExpression70' has cardinality 0..*, and from 'MOFScriptModel_FileStatement', the role 'MOFScriptModel_FileStatement' has cardinality 0..*.
+An association connects 'MOFScriptModel_ValueExpression' and 'MOFScriptModel_ComparisonExpression'. From 'MOFScriptModel_ValueExpression', the role 'MOFScriptModel_ValueExpression72' has cardinality 0..*, and from 'MOFScriptModel_ComparisonExpression', the role 'MOFScriptModel_ComparisonExpression' has cardinality 0..*.
+An association connects 'MOFScriptModel_ComparisonExpression' and 'MOFScriptModel_ValueExpression'. From 'MOFScriptModel_ComparisonExpression', the role 'MOFScriptModel_ComparisonExpression74' has cardinality 0..*, and from 'MOFScriptModel_ValueExpression', the role 'MOFScriptModel_ValueExpression75' has cardinality 0..*.
+An association connects 'MOFScriptModel_IfStatement' and 'MOFScriptModel_Expression'. From 'MOFScriptModel_IfStatement', the role 'MOFScriptModel_IfStatement' has cardinality 0..*, and from 'MOFScriptModel_Expression', the role 'MOFScriptModel_Expression77' has cardinality 0..*.
+An association connects 'MOFScriptModel_IfStatement' and 'MOFScriptModel_IfStatement'. From 'MOFScriptModel_IfStatement', the role 'MOFScriptModel_IfStatement80' has cardinality 0..*, and from 'MOFScriptModel_IfStatement', the role 'MOFScriptModel_IfStatement78' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptSpecification' and 'MOFScriptModel_MOFScriptTransformation'. From 'MOFScriptModel_MOFScriptSpecification', the role 'MOFScriptModel_MOFScriptSpecification' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptTransformation', the role 'MOFScriptModel_MOFScriptTransformation82' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptImport' and 'MOFScriptModel_MOFScriptSpecification'. From 'MOFScriptModel_MOFScriptImport', the role 'MOFScriptModel_MOFScriptImport' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptSpecification', the role 'MOFScriptModel_MOFScriptSpecification84' has cardinality 0..*.
+An association connects 'MOFScriptModel_Expression' and 'MOFScriptModel_WhileStatement'. From 'MOFScriptModel_Expression', the role 'MOFScriptModel_Expression86' has cardinality 0..*, and from 'MOFScriptModel_WhileStatement', the role 'MOFScriptModel_WhileStatement' has cardinality 0..*.
+An association connects 'MOFScriptModel_Advice' and 'MOFScriptModel_MOFScriptAspect'. From 'MOFScriptModel_Advice', the role 'MOFScriptModel_Advice' has cardinality 0..*, and from 'MOFScriptModel_MOFScriptAspect', the role 'MOFScriptModel_MOFScriptAspect' has cardinality 0..*.
+An association connects 'MOFScriptModel_MOFScriptAspect' and 'MOFScriptModel_PointCut'. From 'MOFScriptModel_MOFScriptAspect', the role 'MOFScriptModel_MOFScriptAspect89' has cardinality 0..*, and from 'MOFScriptModel_PointCut', the role 'MOFScriptModel_PointCut' has cardinality 0..*.
+An association connects 'MOFScriptModel_Advice' and 'MOFScriptModel_PointCut'. From 'MOFScriptModel_Advice', the role 'MOFScriptModel_Advice91' has cardinality 0..*, and from 'MOFScriptModel_PointCut', the role 'MOFScriptModel_PointCut92' has cardinality 0..*.
+An association connects 'MOFScriptModel_PointCutExpression' and 'MOFScriptModel_PointCut'. From 'MOFScriptModel_PointCutExpression', the role 'MOFScriptModel_PointCutExpression' has cardinality 0..*, and from 'MOFScriptModel_PointCut', the role 'MOFScriptModel_PointCut94' has cardinality 0..*.
+An association connects 'MOFScriptModel_PointCutExpression' and 'MOFScriptModel_PointCutExpression'. From 'MOFScriptModel_PointCutExpression', the role 'MOFScriptModel_PointCutExpression97' has cardinality 0..*, and from 'MOFScriptModel_PointCutExpression', the role 'MOFScriptModel_PointCutExpression95' has cardinality 0..*.
+An association connects 'MOFScriptModel_SelectExpression' and 'MOFScriptModel_Expression'. From 'MOFScriptModel_SelectExpression', the role 'MOFScriptModel_SelectExpression' has cardinality 0..*, and from 'MOFScriptModel_Expression', the role 'MOFScriptModel_Expression99' has cardinality 0..*.
+An association connects 'MOFScriptModel_SimpleExpression' and 'MOFScriptModel_SelectExpression'. From 'MOFScriptModel_SimpleExpression', the role 'MOFScriptModel_SimpleExpression102' has cardinality 0..*, and from 'MOFScriptModel_SelectExpression', the role 'MOFScriptModel_SelectExpression101' has cardinality 0..*.
+An association connects 'MOFScriptModel_FunctionCall' and 'MOFScriptModel_SelectExpression'. From 'MOFScriptModel_FunctionCall', the role 'MOFScriptModel_FunctionCall105' has cardinality 0..*, and from 'MOFScriptModel_SelectExpression', the role 'MOFScriptModel_SelectExpression104' has cardinality 0..*.
+An association connects 'MOFScriptModel_CreateExpressionParameter' and 'MOFScriptModel_CreateExpression'. From 'MOFScriptModel_CreateExpressionParameter', the role 'MOFScriptModel_CreateExpressionParameter' has cardinality 0..*, and from 'MOFScriptModel_CreateExpression', the role 'MOFScriptModel_CreateExpression' has cardinality 0..*.
+An association connects 'MOFScriptModel_ValueExpression' and 'MOFScriptModel_CreateExpressionParameter'. From 'MOFScriptModel_ValueExpression', the role 'MOFScriptModel_ValueExpression109' has cardinality 0..*, and from 'MOFScriptModel_CreateExpressionParameter', the role 'MOFScriptModel_CreateExpressionParameter108' has cardinality 0..*.
+An association connects 'MOFScriptModel_ReturnStatement' and 'MOFScriptModel_Expression'. From 'MOFScriptModel_ReturnStatement', the role 'MOFScriptModel_ReturnStatement' has cardinality 0..*, and from 'MOFScriptModel_Expression', the role 'MOFScriptModel_Expression111' has cardinality 0..*.
+An association connects 'MOFScriptModel_VariableDeclaration' and 'MOFScriptModel_VariableDeclarationStatement'. From 'MOFScriptModel_VariableDeclaration', the role 'MOFScriptModel_VariableDeclaration113' has cardinality 0..*, and from 'MOFScriptModel_VariableDeclarationStatement', the role 'MOFScriptModel_VariableDeclarationStatement' has cardinality 0..*.
+An association connects 'MOFScriptModel_Reference' and 'MOFScriptModel_M2MTrace'. From 'MOFScriptModel_Reference', the role 'MOFScriptModel_Reference' has cardinality 0..*, and from 'MOFScriptModel_M2MTrace', the role 'MOFScriptModel_M2MTrace' has cardinality 0..*.
+An association connects 'MOFScriptModel_Reference' and 'MOFScriptModel_M2MTrace'. From 'MOFScriptModel_Reference', the role 'MOFScriptModel_Reference117' has cardinality 0..*, and from 'MOFScriptModel_M2MTrace', the role 'MOFScriptModel_M2MTrace116' has cardinality 0..*.

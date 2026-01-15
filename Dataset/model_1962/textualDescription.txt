@@ -1,0 +1,116 @@
+The domain model 'bibTeX' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'AuthorField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibTeX_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'bibTeX_AuthorField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibTeX_IsbnField' represents an important domain concept.
+It has one attribute: 'isbn', which is of type str.
+
+'bibTeX_UnknownType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'bibTeX_BibtexEntryTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'bibTeX_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'bibTeX_TitleField' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'bibTeX_PublisherField' represents an important domain concept.
+It has one attribute: 'publisher', which is of type str.
+
+'bibTeX_NumberField' represents an important domain concept.
+It has one attribute: 'number', which is of type str.
+
+'bibTeX_MonthField' represents an important domain concept.
+It has one attribute: 'month', which is of type str.
+
+'bibTeX_UnknownField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibTeX_VolumeField' represents an important domain concept.
+It has one attribute: 'volume', which is of type str.
+
+'bibTeX_YearField' represents an important domain concept.
+It has one attribute: 'year', which is of type str.
+
+'bibTeX_NoteField' represents an important domain concept.
+It has one attribute: 'note', which is of type str.
+
+'bibTeX_PagesField' represents an important domain concept.
+It has one attribute: 'pages', which is of type str.
+
+'bibTeX_CiteKey' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'bibTeX_JournalField' represents an important domain concept.
+It has one attribute: 'journal', which is of type str.
+
+'bibTeX_Authors' represents an important domain concept.
+It does not declare any attributes.
+
+'bibTeX_Article' represents an important domain concept.
+It does not declare any attributes.
+
+'bibTeX_UnknownValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'BibtexEntryTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'bibTeX_Fullname' represents an important domain concept.
+It has the following attributes: 'firstname', which is of type str; 'lastname', which is of type str.
+
+'bibTeX_EditionField' represents an important domain concept.
+It has one attribute: 'edition', which is of type str.
+
+'bibTeX_Book' represents an important domain concept.
+It does not declare any attributes.
+
+'bibTeX_AddressField' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'bibTeX_EditorField' represents an important domain concept.
+It has one attribute: 'editor', which is of type str.
+
+'bibTeX_SeriesField' represents an important domain concept.
+It has one attribute: 'series', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'bibTeX_Article' is a specialization of 'BibtexEntryTypes'.
+The class 'bibTeX_Book' is a specialization of 'BibtexEntryTypes'.
+The class 'bibTeX_Authors' is a specialization of 'AuthorField'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bibTeX_Model' and 'bibTeX_BibtexEntryTypes'. From 'bibTeX_Model', the role 'bibTeX_Model' has cardinality 0..*, and from 'bibTeX_BibtexEntryTypes', the role 'bibTeX_BibtexEntryTypes' has cardinality 0..*.
+An association connects 'bibTeX_CiteKey' and 'bibTeX_BibtexEntryTypes'. From 'bibTeX_CiteKey', the role 'bibTeX_CiteKey' has cardinality 0..*, and from 'bibTeX_BibtexEntryTypes', the role 'bibTeX_BibtexEntryTypes2' has cardinality 0..*.
+An association connects 'bibTeX_BibtexEntryTypes' and 'bibTeX_TitleField'. From 'bibTeX_BibtexEntryTypes', the role 'bibTeX_BibtexEntryTypes4' has cardinality 0..*, and from 'bibTeX_TitleField', the role 'bibTeX_TitleField' has cardinality 0..*.
+An association connects 'bibTeX_YearField' and 'bibTeX_BibtexEntryTypes'. From 'bibTeX_YearField', the role 'bibTeX_YearField' has cardinality 0..*, and from 'bibTeX_BibtexEntryTypes', the role 'bibTeX_BibtexEntryTypes6' has cardinality 0..*.
+An association connects 'bibTeX_MonthField' and 'bibTeX_BibtexEntryTypes'. From 'bibTeX_MonthField', the role 'bibTeX_MonthField' has cardinality 0..*, and from 'bibTeX_BibtexEntryTypes', the role 'bibTeX_BibtexEntryTypes8' has cardinality 0..*.
+An association connects 'bibTeX_NoteField' and 'bibTeX_BibtexEntryTypes'. From 'bibTeX_NoteField', the role 'bibTeX_NoteField' has cardinality 0..*, and from 'bibTeX_BibtexEntryTypes', the role 'bibTeX_BibtexEntryTypes10' has cardinality 0..*.
+An association connects 'bibTeX_BibtexEntryTypes' and 'bibTeX_UnknownField'. From 'bibTeX_BibtexEntryTypes', the role 'bibTeX_BibtexEntryTypes12' has cardinality 0..*, and from 'bibTeX_UnknownField', the role 'bibTeX_UnknownField' has cardinality 0..*.
+An association connects 'bibTeX_AuthorField' and 'bibTeX_Article'. From 'bibTeX_AuthorField', the role 'bibTeX_AuthorField' has cardinality 0..*, and from 'bibTeX_Article', the role 'bibTeX_Article' has cardinality 0..*.
+An association connects 'bibTeX_JournalField' and 'bibTeX_Article'. From 'bibTeX_JournalField', the role 'bibTeX_JournalField' has cardinality 0..*, and from 'bibTeX_Article', the role 'bibTeX_Article15' has cardinality 0..*.
+An association connects 'bibTeX_VolumeField' and 'bibTeX_Article'. From 'bibTeX_VolumeField', the role 'bibTeX_VolumeField' has cardinality 0..*, and from 'bibTeX_Article', the role 'bibTeX_Article17' has cardinality 0..*.
+An association connects 'bibTeX_Article' and 'bibTeX_NumberField'. From 'bibTeX_Article', the role 'bibTeX_Article19' has cardinality 0..*, and from 'bibTeX_NumberField', the role 'bibTeX_NumberField' has cardinality 0..*.
+An association connects 'bibTeX_Article' and 'bibTeX_PagesField'. From 'bibTeX_Article', the role 'bibTeX_Article21' has cardinality 0..*, and from 'bibTeX_PagesField', the role 'bibTeX_PagesField' has cardinality 0..*.
+An association connects 'bibTeX_Book' and 'bibTeX_EObject'. From 'bibTeX_Book', the role 'bibTeX_Book' has cardinality 0..*, and from 'bibTeX_EObject', the role 'bibTeX_EObject' has cardinality 0..*.
+An association connects 'bibTeX_PublisherField' and 'bibTeX_Book'. From 'bibTeX_PublisherField', the role 'bibTeX_PublisherField' has cardinality 0..*, and from 'bibTeX_Book', the role 'bibTeX_Book24' has cardinality 0..*.
+An association connects 'bibTeX_EObject' and 'bibTeX_Book'. From 'bibTeX_EObject', the role 'bibTeX_EObject27' has cardinality 0..*, and from 'bibTeX_Book', the role 'bibTeX_Book26' has cardinality 0..*.
+An association connects 'bibTeX_SeriesField' and 'bibTeX_Book'. From 'bibTeX_SeriesField', the role 'bibTeX_SeriesField' has cardinality 0..*, and from 'bibTeX_Book', the role 'bibTeX_Book29' has cardinality 0..*.
+An association connects 'bibTeX_AddressField' and 'bibTeX_Book'. From 'bibTeX_AddressField', the role 'bibTeX_AddressField' has cardinality 0..*, and from 'bibTeX_Book', the role 'bibTeX_Book31' has cardinality 0..*.
+An association connects 'bibTeX_EditionField' and 'bibTeX_Book'. From 'bibTeX_EditionField', the role 'bibTeX_EditionField' has cardinality 0..*, and from 'bibTeX_Book', the role 'bibTeX_Book33' has cardinality 0..*.
+An association connects 'bibTeX_IsbnField' and 'bibTeX_Book'. From 'bibTeX_IsbnField', the role 'bibTeX_IsbnField' has cardinality 0..*, and from 'bibTeX_Book', the role 'bibTeX_Book35' has cardinality 0..*.
+An association connects 'bibTeX_UnknownField' and 'bibTeX_UnknownType'. From 'bibTeX_UnknownField', the role 'bibTeX_UnknownField37' has cardinality 0..*, and from 'bibTeX_UnknownType', the role 'bibTeX_UnknownType' has cardinality 0..*.
+An association connects 'bibTeX_UnknownValue' and 'bibTeX_UnknownField'. From 'bibTeX_UnknownValue', the role 'bibTeX_UnknownValue' has cardinality 0..*, and from 'bibTeX_UnknownField', the role 'bibTeX_UnknownField39' has cardinality 0..*.
+An association connects 'bibTeX_Authors' and 'bibTeX_Fullname'. From 'bibTeX_Authors', the role 'bibTeX_Authors' has cardinality 0..*, and from 'bibTeX_Fullname', the role 'bibTeX_Fullname' has cardinality 0..*.

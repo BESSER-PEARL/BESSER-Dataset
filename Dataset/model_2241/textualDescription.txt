@@ -1,0 +1,96 @@
+The domain model 'oving4' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'oving4_Precondition' represents an important domain concept.
+It has the following attributes: 'creditReduction', which is of type float; 'isMandatory', which is of type bool.
+
+'oving4_Evaluation' represents an important domain concept.
+It has the following attributes: 'totalPercentageResult', which is of type float; 'description', which is of type str; 'creditsReceived', which is of type float; 'completed', which is of type bool.
+
+'oving4_EvaluationElement' represents an important domain concept.
+It has the following attributes: 'attended', which is of type bool; 'type', which is of type str; 'percentageResult', which is of type float; 'weight', which is of type float.
+
+'oving4_Course' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'content', which is of type str; 'credits', which is of type float; 'code', which is of type str; 'examStartDate', which is of type str; 'examEndDate', which is of type str.
+
+'oving4_CourseInstance' represents an important domain concept.
+It has the following attributes: 'sumExerciseHours', which is of type int; 'sumInDepthHours', which is of type int; 'sumLectureHours', which is of type int.
+
+'oving4_Project' represents an important domain concept.
+It has one attribute: 'deadline', which is of type str.
+
+'oving4_PersonRole' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'oving4_TimeTableElement' represents an important domain concept.
+It has the following attributes: 'date', which is of type str; 'room', which is of type str; 'durationInMinutes', which is of type int.
+
+'oving4_CourseWork' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'isMandatory', which is of type bool; 'name', which is of type str.
+
+'oving4_Department' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'oving4_Exam' represents an important domain concept.
+It has the following attributes: 'endDate', which is of type str; 'startDate', which is of type str; 'previousEndDate', which is of type str; 'previousStartDate', which is of type str.
+
+'oving4_TimeTable' represents an important domain concept.
+It has one attribute: 'isRestrictedToProgramsInParallell', which is of type bool.
+
+'oving4_StudyProgram' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'oving4_Assignment' represents an important domain concept.
+It has one attribute: 'deadline', which is of type str.
+
+'oving4_Person' represents an important domain concept.
+It has the following attributes: 'first_name', which is of type str; 'last_name', which is of type str; 'name', which is of type str; 'studyCredits', which is of type float.
+
+'oving4_Root' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StudyProgramType' defines the following possible values: 'MTMART', 'MTDT'.
+The enumeration 'CourseWorkType' defines the following possible values: 'Lecture', 'Exercise', 'InDepth'.
+The enumeration 'EvaluationType' defines the following possible values: 'Exam', 'Assignment', 'Project'.
+The enumeration 'RoleType' defines the following possible values: 'Lecturer', 'Supervisor', 'Student'.
+
+Relationships between classes are modeled using associations.
+An association connects 'oving4_Root' and 'oving4_Department'. From 'oving4_Root', the role 'oving4_Root' has cardinality 0..*, and from 'oving4_Department', the role 'oving4_Department' has cardinality 0..*.
+An association connects 'oving4_Root' and 'oving4_Person'. From 'oving4_Root', the role 'oving4_Root2' has cardinality 0..*, and from 'oving4_Person', the role 'oving4_Person' has cardinality 0..*.
+An association connects 'oving4_Root' and 'oving4_StudyProgram'. From 'oving4_Root', the role 'oving4_Root4' has cardinality 0..*, and from 'oving4_StudyProgram', the role 'oving4_StudyProgram' has cardinality 0..*.
+An association connects 'oving4_Root' and 'oving4_Project'. From 'oving4_Root', the role 'oving4_Root6' has cardinality 0..*, and from 'oving4_Project', the role 'oving4_Project' has cardinality 0..*.
+An association connects 'oving4_Course' and 'oving4_Department'. From 'oving4_Course', the role 'oving4_Course' has cardinality 0..*, and from 'oving4_Department', the role 'oving4_Department8' has cardinality 0..*.
+An association connects 'oving4_PersonRole' and 'oving4_Department'. From 'oving4_PersonRole', the role 'PersonRole' has cardinality 0..*, and from 'oving4_Department', the role 'employedByDepartment' has cardinality 0..*.
+An association connects 'oving4_Course' and 'oving4_StudyProgram'. From 'oving4_Course', the role 'Course' has cardinality 0..*, and from 'oving4_StudyProgram', the role 'studyprogram' has cardinality 0..*.
+An association connects 'oving4_PersonRole' and 'oving4_StudyProgram'. From 'oving4_PersonRole', the role 'PersonRole12' has cardinality 0..*, and from 'oving4_StudyProgram', the role 'employedOfStudyProgram' has cardinality 0..*.
+An association connects 'oving4_PersonRole' and 'oving4_Person'. From 'oving4_PersonRole', the role 'PersonRole14' has cardinality 0..*, and from 'oving4_Person', the role 'person' has cardinality 0..*.
+An association connects 'oving4_Person' and 'oving4_Evaluation'. From 'oving4_Person', the role 'personEvaluated' has cardinality 0..*, and from 'oving4_Evaluation', the role 'Evaluation' has cardinality 0..*.
+An association connects 'oving4_Course' and 'oving4_CourseInstance'. From 'oving4_Course', the role 'ownedBy' has cardinality 0..*, and from 'oving4_CourseInstance', the role 'CourseInstance' has cardinality 0..*.
+An association connects 'oving4_Course' and 'oving4_StudyProgram'. From 'oving4_Course', the role 'containsCourse' has cardinality 0..*, and from 'oving4_StudyProgram', the role 'StudyProgram' has cardinality 0..*.
+An association connects 'oving4_Course' and 'oving4_Precondition'. From 'oving4_Course', the role 'oving4_Course19' has cardinality 0..*, and from 'oving4_Precondition', the role 'oving4_Precondition' has cardinality 0..*.
+An association connects 'oving4_CourseInstance' and 'oving4_TimeTable'. From 'oving4_CourseInstance', the role 'ownedByCourseInstance' has cardinality 0..*, and from 'oving4_TimeTable', the role 'TimeTable' has cardinality 0..*.
+An association connects 'oving4_Course' and 'oving4_CourseInstance'. From 'oving4_Course', the role 'Course22' has cardinality 0..*, and from 'oving4_CourseInstance', the role 'courseInstance' has cardinality 0..*.
+An association connects 'oving4_CourseInstance' and 'oving4_CourseWork'. From 'oving4_CourseInstance', the role 'oving4_CourseInstance' has cardinality 0..*, and from 'oving4_CourseWork', the role 'oving4_CourseWork' has cardinality 0..*.
+An association connects 'oving4_PersonRole' and 'oving4_CourseInstance'. From 'oving4_PersonRole', the role 'PersonRole25' has cardinality 0..*, and from 'oving4_CourseInstance', the role 'memberOfCourse' has cardinality 0..*.
+An association connects 'oving4_CourseInstance' and 'oving4_Evaluation'. From 'oving4_CourseInstance', the role 'courseInstance27' has cardinality 0..*, and from 'oving4_Evaluation', the role 'Evaluation28' has cardinality 0..*.
+An association connects 'oving4_Person' and 'oving4_PersonRole'. From 'oving4_Person', the role 'Person' has cardinality 0..*, and from 'oving4_PersonRole', the role 'hasRole' has cardinality 0..*.
+An association connects 'oving4_StudyProgram' and 'oving4_PersonRole'. From 'oving4_StudyProgram', the role 'StudyProgram31' has cardinality 0..*, and from 'oving4_PersonRole', the role 'hasEmployee' has cardinality 0..*.
+An association connects 'oving4_PersonRole' and 'oving4_CourseInstance'. From 'oving4_PersonRole', the role 'hasMember' has cardinality 0..*, and from 'oving4_CourseInstance', the role 'CourseInstance33' has cardinality 0..*.
+An association connects 'oving4_PersonRole' and 'oving4_Department'. From 'oving4_PersonRole', the role 'hasEmployee35' has cardinality 0..*, and from 'oving4_Department', the role 'Department' has cardinality 0..*.
+An association connects 'oving4_TimeTableElement' and 'oving4_TimeTable'. From 'oving4_TimeTableElement', the role 'oving4_TimeTableElement' has cardinality 0..*, and from 'oving4_TimeTable', the role 'oving4_TimeTable' has cardinality 0..*.
+An association connects 'oving4_StudyProgram' and 'oving4_TimeTable'. From 'oving4_StudyProgram', the role 'oving4_StudyProgram39' has cardinality 0..*, and from 'oving4_TimeTable', the role 'oving4_TimeTable38' has cardinality 0..*.
+An association connects 'oving4_TimeTable' and 'oving4_CourseInstance'. From 'oving4_TimeTable', the role 'hasTimeTable' has cardinality 0..*, and from 'oving4_CourseInstance', the role 'CourseInstance41' has cardinality 0..*.
+An association connects 'oving4_Evaluation' and 'oving4_Person'. From 'oving4_Evaluation', the role 'hasEvaluation' has cardinality 0..*, and from 'oving4_Person', the role 'Person43' has cardinality 0..*.
+An association connects 'oving4_Evaluation' and 'oving4_EvaluationElement'. From 'oving4_Evaluation', the role 'oving4_Evaluation' has cardinality 0..*, and from 'oving4_EvaluationElement', the role 'oving4_EvaluationElement' has cardinality 0..*.
+An association connects 'oving4_Evaluation' and 'oving4_CourseInstance'. From 'oving4_Evaluation', the role 'containsEvaluation' has cardinality 0..*, and from 'oving4_CourseInstance', the role 'CourseInstance46' has cardinality 0..*.
+An association connects 'oving4_Course' and 'oving4_Precondition'. From 'oving4_Course', the role 'oving4_Course49' has cardinality 0..*, and from 'oving4_Precondition', the role 'oving4_Precondition48' has cardinality 0..*.
+An association connects 'oving4_CourseWork' and 'oving4_TimeTableElement'. From 'oving4_CourseWork', the role 'oving4_CourseWork52' has cardinality 0..*, and from 'oving4_TimeTableElement', the role 'oving4_TimeTableElement51' has cardinality 0..*.
+An association connects 'oving4_Exam' and 'oving4_EvaluationElement'. From 'oving4_Exam', the role 'Exam' has cardinality 0..*, and from 'oving4_EvaluationElement', the role 'belongsToEvaluationElement' has cardinality 0..*.
+An association connects 'oving4_EvaluationElement' and 'oving4_Project'. From 'oving4_EvaluationElement', the role 'belongsToEvaluationel' has cardinality 0..*, and from 'oving4_Project', the role 'Project' has cardinality 0..*.
+An association connects 'oving4_Assignment' and 'oving4_EvaluationElement'. From 'oving4_Assignment', the role 'Assignment' has cardinality 0..*, and from 'oving4_EvaluationElement', the role 'belongToEvEl' has cardinality 0..*.
+An association connects 'oving4_Exam' and 'oving4_EvaluationElement'. From 'oving4_Exam', the role 'containsExam' has cardinality 0..*, and from 'oving4_EvaluationElement', the role 'EvaluationElement' has cardinality 0..*.
+An association connects 'oving4_Project' and 'oving4_EvaluationElement'. From 'oving4_Project', the role 'containsProject' has cardinality 0..*, and from 'oving4_EvaluationElement', the role 'EvaluationElement58' has cardinality 0..*.
+An association connects 'oving4_PersonRole' and 'oving4_Project'. From 'oving4_PersonRole', the role 'oving4_PersonRole' has cardinality 0..*, and from 'oving4_Project', the role 'oving4_Project60' has cardinality 0..*.
+An association connects 'oving4_EvaluationElement' and 'oving4_Assignment'. From 'oving4_EvaluationElement', the role 'EvaluationElement62' has cardinality 0..*, and from 'oving4_Assignment', the role 'containsAssignment' has cardinality 0..*.

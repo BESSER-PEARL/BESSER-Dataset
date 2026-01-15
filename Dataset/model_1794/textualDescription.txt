@@ -1,0 +1,230 @@
+The domain model 'RootElement' describes the core structural elements and their relationships within the system.
+
+The model defines 54 main class(es).
+
+'RootElement_CleaningHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_Booking' represents an important domain concept.
+It has one attribute: 'bookingID', which is of type str.
+
+'Cleaning' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_SupportTicketReader' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomAttributeHandling' represents an important domain concept.
+It does not declare any attributes.
+
+'SupportTicketReader' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_RoomStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_HourlyRoomBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_ReceptionHandling' represents an important domain concept.
+It does not declare any attributes.
+
+'ReceptionHandling' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_RoomBooking' represents an important domain concept.
+It has the following attributes: 'bookingStatus', which is of type str; 'endDate', which is of type date; 'startDate', which is of type date.
+
+'Payment' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_FeedbackWriter' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_Feedback' represents an important domain concept.
+It has the following attributes: 'feedbackDescription', which is of type str; 'read', which is of type str; 'rating', which is of type str.
+
+'RootElement_ServiceItemHandling' represents an important domain concept.
+It does not declare any attributes.
+
+'FeedbackReader' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_SysAdmin' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomHandling' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_SupportTicketHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_Room' represents an important domain concept.
+It has the following attributes: 'isOccupied', which is of type str; 'needCleaning', which is of type str; 'name', which is of type str.
+
+'RootElement_HotelSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'FeedbackWriter' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_Staff' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'staffID', which is of type str.
+
+'RootElement_Payment' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_MakeBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_Clerk' represents an important domain concept.
+It does not declare any attributes.
+
+'SupportTicketWriter' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_RoomAttributeHandling' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_RoomFetcher' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_RoomTypeHandling' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_SupportTicketWriter' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_Manager' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_ServiceItem' represents an important domain concept.
+It has the following attributes: 'price', which is of type str; 'description', which is of type str; 'name', which is of type str.
+
+'RootElement_FeedbackReader' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_RoomHandling' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_DailyRoomBooking' represents an important domain concept.
+It has one attribute: 'nbrOfGuests', which is of type str.
+
+'RootElement_Guest' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'phoneNumber', which is of type str; 'mail', which is of type str; 'nextDestination', which is of type str; 'nationality', which is of type str; 'socialSecurityNumber', which is of type str.
+
+'RootElement_RoomAttribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str; 'description', which is of type str.
+
+'RootElement_RoomType' represents an important domain concept.
+It has the following attributes: 'price', which is of type str; 'capacity', which is of type str; 'name', which is of type str.
+
+'Staff' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceItemHandling' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_FeedbackHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_Hotel' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomFetcher' represents an important domain concept.
+It does not declare any attributes.
+
+'Clerk' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomTypeHandling' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_BookingHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_Cleaning' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_SupportTicket' represents an important domain concept.
+It has the following attributes: 'fixed', which is of type str; 'roomName', which is of type str; 'problemDescription', which is of type str.
+
+'SysAdmin' represents an important domain concept.
+It does not declare any attributes.
+
+'MakeBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement_PaymentHandler' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookingStatus' defines the following possible values: 'NONE', 'CHECKED_OUT', 'BOOKED', 'CHECKED_IN'.
+
+The model also captures inheritance relationships between classes.
+The class 'RootElement_Guest' is a specialization of 'SupportTicketWriter'.
+The class 'RootElement_Guest' is a specialization of 'FeedbackWriter'.
+The class 'RootElement_Guest' is a specialization of 'MakeBooking'.
+The class 'RootElement_Staff' is a specialization of 'Cleaning'.
+The class 'RootElement_Staff' is a specialization of 'SupportTicketWriter'.
+The class 'RootElement_Staff' is a specialization of 'SupportTicketReader'.
+The class 'RootElement_Clerk' is a specialization of 'Staff'.
+The class 'RootElement_Clerk' is a specialization of 'ReceptionHandling'.
+The class 'RootElement_Clerk' is a specialization of 'ServiceItemHandling'.
+The class 'RootElement_Clerk' is a specialization of 'MakeBooking'.
+The class 'RootElement_Clerk' is a specialization of 'Payment'.
+The class 'RootElement_Manager' is a specialization of 'Clerk'.
+The class 'RootElement_Manager' is a specialization of 'SysAdmin'.
+The class 'RootElement_Manager' is a specialization of 'FeedbackReader'.
+The class 'RootElement_SysAdmin' is a specialization of 'RoomAttributeHandling'.
+The class 'RootElement_SysAdmin' is a specialization of 'RoomHandling'.
+The class 'RootElement_SysAdmin' is a specialization of 'RoomTypeHandling'.
+The class 'RootElement_BookingHandler' is a specialization of 'ReceptionHandling'.
+The class 'RootElement_BookingHandler' is a specialization of 'MakeBooking'.
+The class 'RootElement_BookingHandler' is a specialization of 'ServiceItemHandling'.
+The class 'RootElement_RoomStructure' is a specialization of 'RoomHandling'.
+The class 'RootElement_RoomStructure' is a specialization of 'RoomTypeHandling'.
+The class 'RootElement_RoomStructure' is a specialization of 'RoomAttributeHandling'.
+The class 'RootElement_RoomStructure' is a specialization of 'RoomFetcher'.
+The class 'RootElement_FeedbackHandler' is a specialization of 'FeedbackReader'.
+The class 'RootElement_FeedbackHandler' is a specialization of 'FeedbackWriter'.
+The class 'RootElement_SupportTicketHandler' is a specialization of 'SupportTicketReader'.
+The class 'RootElement_SupportTicketHandler' is a specialization of 'SupportTicketWriter'.
+The class 'RootElement_CleaningHandler' is a specialization of 'Cleaning'.
+The class 'RootElement_PaymentHandler' is a specialization of 'Payment'.
+The class 'RootElement_DailyRoomBooking' is a specialization of 'RoomBooking'.
+The class 'RootElement_HourlyRoomBooking' is a specialization of 'RoomBooking'.
+The class 'RootElement_Hotel' is a specialization of 'HotelSystem'.
+
+Relationships between classes are modeled using associations.
+An association connects 'RootElement_SupportTicketWriter' and 'RootElement_Guest'. From 'RootElement_SupportTicketWriter', the role 'RootElement_SupportTicketWriter' has cardinality 0..*, and from 'RootElement_Guest', the role 'RootElement_Guest' has cardinality 0..*.
+An association connects 'RootElement_MakeBooking' and 'RootElement_Guest'. From 'RootElement_MakeBooking', the role 'RootElement_MakeBooking' has cardinality 0..*, and from 'RootElement_Guest', the role 'RootElement_Guest2' has cardinality 0..*.
+An association connects 'RootElement_Guest' and 'RootElement_FeedbackWriter'. From 'RootElement_Guest', the role 'RootElement_Guest4' has cardinality 0..*, and from 'RootElement_FeedbackWriter', the role 'RootElement_FeedbackWriter' has cardinality 0..*.
+An association connects 'RootElement_Booking' and 'RootElement_RoomBooking'. From 'RootElement_Booking', the role 'RootElement_Booking' has cardinality 0..*, and from 'RootElement_RoomBooking', the role 'RootElement_RoomBooking' has cardinality 0..*.
+An association connects 'RootElement_Booking' and 'RootElement_Guest'. From 'RootElement_Booking', the role 'RootElement_Booking7' has cardinality 0..*, and from 'RootElement_Guest', the role 'RootElement_Guest8' has cardinality 0..*.
+An association connects 'RootElement_ServiceItem' and 'RootElement_Booking'. From 'RootElement_ServiceItem', the role 'RootElement_ServiceItem' has cardinality 0..*, and from 'RootElement_Booking', the role 'RootElement_Booking10' has cardinality 0..*.
+An association connects 'RootElement_RoomBooking' and 'RootElement_Room'. From 'RootElement_RoomBooking', the role 'RootElement_RoomBooking12' has cardinality 0..*, and from 'RootElement_Room', the role 'RootElement_Room' has cardinality 0..*.
+An association connects 'RootElement_Room' and 'RootElement_RoomType'. From 'RootElement_Room', the role 'RootElement_Room14' has cardinality 0..*, and from 'RootElement_RoomType', the role 'RootElement_RoomType' has cardinality 0..*.
+An association connects 'RootElement_RoomAttribute' and 'RootElement_RoomType'. From 'RootElement_RoomAttribute', the role 'RootElement_RoomAttribute' has cardinality 0..*, and from 'RootElement_RoomType', the role 'RootElement_RoomType16' has cardinality 0..*.
+An association connects 'RootElement_Cleaning' and 'RootElement_Staff'. From 'RootElement_Cleaning', the role 'RootElement_Cleaning' has cardinality 0..*, and from 'RootElement_Staff', the role 'RootElement_Staff' has cardinality 0..*.
+An association connects 'RootElement_Staff' and 'RootElement_SupportTicketReader'. From 'RootElement_Staff', the role 'RootElement_Staff19' has cardinality 0..*, and from 'RootElement_SupportTicketReader', the role 'RootElement_SupportTicketReader' has cardinality 0..*.
+An association connects 'RootElement_Staff' and 'RootElement_SupportTicketWriter'. From 'RootElement_Staff', the role 'RootElement_Staff21' has cardinality 0..*, and from 'RootElement_SupportTicketWriter', the role 'RootElement_SupportTicketWriter22' has cardinality 0..*.
+An association connects 'RootElement_ReceptionHandling' and 'RootElement_Clerk'. From 'RootElement_ReceptionHandling', the role 'RootElement_ReceptionHandling' has cardinality 0..*, and from 'RootElement_Clerk', the role 'RootElement_Clerk' has cardinality 0..*.
+An association connects 'RootElement_ServiceItemHandling' and 'RootElement_Clerk'. From 'RootElement_ServiceItemHandling', the role 'RootElement_ServiceItemHandling' has cardinality 0..*, and from 'RootElement_Clerk', the role 'RootElement_Clerk25' has cardinality 0..*.
+An association connects 'RootElement_Clerk' and 'RootElement_MakeBooking'. From 'RootElement_Clerk', the role 'RootElement_Clerk27' has cardinality 0..*, and from 'RootElement_MakeBooking', the role 'RootElement_MakeBooking28' has cardinality 0..*.
+An association connects 'RootElement_Payment' and 'RootElement_Clerk'. From 'RootElement_Payment', the role 'RootElement_Payment' has cardinality 0..*, and from 'RootElement_Clerk', the role 'RootElement_Clerk30' has cardinality 0..*.
+An association connects 'RootElement_FeedbackReader' and 'RootElement_Manager'. From 'RootElement_FeedbackReader', the role 'RootElement_FeedbackReader' has cardinality 0..*, and from 'RootElement_Manager', the role 'RootElement_Manager' has cardinality 0..*.
+An association connects 'RootElement_Booking' and 'RootElement_BookingHandler'. From 'RootElement_Booking', the role 'RootElement_Booking33' has cardinality 0..*, and from 'RootElement_BookingHandler', the role 'RootElement_BookingHandler' has cardinality 0..*.
+An association connects 'RootElement_BookingHandler' and 'RootElement_RoomFetcher'. From 'RootElement_BookingHandler', the role 'RootElement_BookingHandler35' has cardinality 0..*, and from 'RootElement_RoomFetcher', the role 'RootElement_RoomFetcher' has cardinality 0..*.
+An association connects 'RootElement_RoomStructure' and 'RootElement_Room'. From 'RootElement_RoomStructure', the role 'RootElement_RoomStructure' has cardinality 0..*, and from 'RootElement_Room', the role 'RootElement_Room37' has cardinality 0..*.
+An association connects 'RootElement_RoomStructure' and 'RootElement_RoomType'. From 'RootElement_RoomStructure', the role 'RootElement_RoomStructure39' has cardinality 0..*, and from 'RootElement_RoomType', the role 'RootElement_RoomType40' has cardinality 0..*.
+An association connects 'RootElement_RoomStructure' and 'RootElement_RoomAttribute'. From 'RootElement_RoomStructure', the role 'RootElement_RoomStructure42' has cardinality 0..*, and from 'RootElement_RoomAttribute', the role 'RootElement_RoomAttribute43' has cardinality 0..*.
+An association connects 'RootElement_FeedbackHandler' and 'RootElement_Feedback'. From 'RootElement_FeedbackHandler', the role 'RootElement_FeedbackHandler' has cardinality 0..*, and from 'RootElement_Feedback', the role 'RootElement_Feedback' has cardinality 0..*.
+An association connects 'RootElement_SupportTicket' and 'RootElement_SupportTicketHandler'. From 'RootElement_SupportTicket', the role 'RootElement_SupportTicket' has cardinality 0..*, and from 'RootElement_SupportTicketHandler', the role 'RootElement_SupportTicketHandler' has cardinality 0..*.
+An association connects 'RootElement_CleaningHandler' and 'RootElement_RoomFetcher'. From 'RootElement_CleaningHandler', the role 'RootElement_CleaningHandler' has cardinality 0..*, and from 'RootElement_RoomFetcher', the role 'RootElement_RoomFetcher47' has cardinality 0..*.

@@ -1,0 +1,99 @@
+The domain model 'MicrocontrollerModeling' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'MicrocontrollerModeling_Processor' represents an important domain concept.
+It has the following attributes: 'speed', which is of type int; 'unit', which is of type str.
+
+'MicrocontrollerModeling_ROM' represents an important domain concept.
+It does not declare any attributes.
+
+'MicrocontrollerModeling_RAM' represents an important domain concept.
+It does not declare any attributes.
+
+'MicrocontrollerModeling_PinOperation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MicrocontrollerModeling_Memory' represents an important domain concept.
+It has the following attributes: 'size', which is of type int; 'unit', which is of type str.
+
+'MicrocontrollerModeling_TimerConfig' represents an important domain concept.
+It has the following attributes: 'period', which is of type int; 'name', which is of type str.
+
+'MicrocontrollerModeling_Parameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'MicrocontrollerModeling_EEPROM' represents an important domain concept.
+It does not declare any attributes.
+
+'MicrocontrollerModeling_Instruction' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'MicrocontrollerModeling_Pin' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'nature', which is of type str; 'number', which is of type int.
+
+'MicrocontrollerModeling_Function' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'ROM' represents an important domain concept.
+It does not declare any attributes.
+
+'MicrocontrollerModeling_Flash' represents an important domain concept.
+It does not declare any attributes.
+
+'EEPROM' represents an important domain concept.
+It does not declare any attributes.
+
+'MicrocontrollerModeling_Microcontroller' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'wordMemory', which is of type str; 'manufacturer', which is of type str; 'family', which is of type str.
+
+'MicrocontrollerModeling_CLanguage' represents an important domain concept.
+It has the following attributes: 'hasMain', which is of type bool; 'filesExtension', which is of type str; 'name', which is of type str.
+
+'Memory' represents an important domain concept.
+It does not declare any attributes.
+
+'MicrocontrollerModeling_PinMode' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'MicrocontrollerModeling_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MicrocontrollerModeling_Register' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RegType' defines the following possible values: 'CCR', 'Stack', 'PCounter', 'accumulator', 'general', 'IR', 'ICR'.
+The enumeration 'WordSize' defines the following possible values: 'wd_64bits', 'wd_48bits', 'wd_8bits', 'wd_32bits', 'wd_24bits', 'wd_16bits'.
+The enumeration 'OperationName' defines the following possible values: 'digitalPinRead', 'digitalPinWrite', 'analogPinWrite', 'pinConfigMode', 'analogPinRead'.
+The enumeration 'SpeedUnit' defines the following possible values: 'GHz', 'Mhz', 'MIPS', 'Hz'.
+The enumeration 'MemoryUnit' defines the following possible values: 'Go', 'Mo', 'Ko'.
+The enumeration 'TimerOp' defines a single possible value: 'initializeTimer'.
+The enumeration 'PinModes' defines the following possible values: 'Input', 'Output'.
+The enumeration 'PinNature' defines the following possible values: 'Mixed', 'Digital', 'Analog'.
+
+The model also captures inheritance relationships between classes.
+The class 'MicrocontrollerModeling_TimerConfig' is a specialization of 'Function'.
+The class 'MicrocontrollerModeling_ROM' is a specialization of 'Memory'.
+The class 'MicrocontrollerModeling_EEPROM' is a specialization of 'ROM'.
+The class 'MicrocontrollerModeling_Flash' is a specialization of 'EEPROM'.
+The class 'MicrocontrollerModeling_RAM' is a specialization of 'Memory'.
+The class 'MicrocontrollerModeling_PinOperation' is a specialization of 'Function'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MicrocontrollerModeling_Microcontroller' and 'MicrocontrollerModeling_Pin'. From 'MicrocontrollerModeling_Microcontroller', the role 'MicrocontrollerModeling_Microcontroller' has cardinality 0..*, and from 'MicrocontrollerModeling_Pin', the role 'MicrocontrollerModeling_Pin' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_Microcontroller' and 'MicrocontrollerModeling_CLanguage'. From 'MicrocontrollerModeling_Microcontroller', the role 'MicrocontrollerModeling_Microcontroller2' has cardinality 0..*, and from 'MicrocontrollerModeling_CLanguage', the role 'MicrocontrollerModeling_CLanguage' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_Processor' and 'MicrocontrollerModeling_Microcontroller'. From 'MicrocontrollerModeling_Processor', the role 'MicrocontrollerModeling_Processor' has cardinality 0..*, and from 'MicrocontrollerModeling_Microcontroller', the role 'MicrocontrollerModeling_Microcontroller4' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_ROM' and 'MicrocontrollerModeling_Microcontroller'. From 'MicrocontrollerModeling_ROM', the role 'MicrocontrollerModeling_ROM' has cardinality 0..*, and from 'MicrocontrollerModeling_Microcontroller', the role 'MicrocontrollerModeling_Microcontroller6' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_Microcontroller' and 'MicrocontrollerModeling_Flash'. From 'MicrocontrollerModeling_Microcontroller', the role 'MicrocontrollerModeling_Microcontroller8' has cardinality 0..*, and from 'MicrocontrollerModeling_Flash', the role 'MicrocontrollerModeling_Flash' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_Microcontroller' and 'MicrocontrollerModeling_RAM'. From 'MicrocontrollerModeling_Microcontroller', the role 'MicrocontrollerModeling_Microcontroller10' has cardinality 0..*, and from 'MicrocontrollerModeling_RAM', the role 'MicrocontrollerModeling_RAM' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_Microcontroller' and 'MicrocontrollerModeling_Register'. From 'MicrocontrollerModeling_Microcontroller', the role 'MicrocontrollerModeling_Microcontroller12' has cardinality 0..*, and from 'MicrocontrollerModeling_Register', the role 'MicrocontrollerModeling_Register' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_Library' and 'MicrocontrollerModeling_CLanguage'. From 'MicrocontrollerModeling_Library', the role 'MicrocontrollerModeling_Library' has cardinality 0..*, and from 'MicrocontrollerModeling_CLanguage', the role 'MicrocontrollerModeling_CLanguage14' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_TimerConfig' and 'MicrocontrollerModeling_CLanguage'. From 'MicrocontrollerModeling_TimerConfig', the role 'MicrocontrollerModeling_TimerConfig' has cardinality 0..*, and from 'MicrocontrollerModeling_CLanguage', the role 'MicrocontrollerModeling_CLanguage16' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_CLanguage' and 'MicrocontrollerModeling_PinMode'. From 'MicrocontrollerModeling_CLanguage', the role 'MicrocontrollerModeling_CLanguage18' has cardinality 0..*, and from 'MicrocontrollerModeling_PinMode', the role 'MicrocontrollerModeling_PinMode' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_CLanguage' and 'MicrocontrollerModeling_PinOperation'. From 'MicrocontrollerModeling_CLanguage', the role 'MicrocontrollerModeling_CLanguage20' has cardinality 0..*, and from 'MicrocontrollerModeling_PinOperation', the role 'MicrocontrollerModeling_PinOperation' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_Function' and 'MicrocontrollerModeling_Parameter'. From 'MicrocontrollerModeling_Function', the role 'MicrocontrollerModeling_Function' has cardinality 0..*, and from 'MicrocontrollerModeling_Parameter', the role 'MicrocontrollerModeling_Parameter' has cardinality 0..*.
+An association connects 'MicrocontrollerModeling_Instruction' and 'MicrocontrollerModeling_Function'. From 'MicrocontrollerModeling_Instruction', the role 'MicrocontrollerModeling_Instruction' has cardinality 0..*, and from 'MicrocontrollerModeling_Function', the role 'MicrocontrollerModeling_Function23' has cardinality 0..*.

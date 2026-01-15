@@ -1,0 +1,79 @@
+The domain model 'fsmgen' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'fsmgen_CommonTrigger' represents an important domain concept.
+It has the following attributes: 'trigger', which is of type str; 'hasGuard', which is of type bool.
+
+'fsmgen_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmgen_StateGraphNode' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphItem' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmgen_ModelComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmgen_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmgen_FSMGenElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FSMGenElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmgen_Link' represents an important domain concept.
+It has one attribute: 'ifitemTriggered', which is of type bool.
+
+'fsmgen_Node' represents an important domain concept.
+It has one attribute: 'inheritanceLevel', which is of type int.
+
+'fsmgen_GraphItem' represents an important domain concept.
+It has one attribute: 'inherited', which is of type bool.
+
+'fsmgen_AbstractInterfaceItem' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmgen_TransitionBase' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmgen_StateGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmgen_GraphContainer' represents an important domain concept.
+It has the following attributes: 'initializedCommonData', which is of type bool; 'initializedChainHeads', which is of type bool; 'initializedTriggersInStates', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'fsmgen_GraphContainer' is a specialization of 'FSMGenElement'.
+The class 'fsmgen_Graph' is a specialization of 'FSMGenElement'.
+The class 'fsmgen_GraphItem' is a specialization of 'FSMGenElement'.
+The class 'fsmgen_Node' is a specialization of 'GraphItem'.
+The class 'fsmgen_Link' is a specialization of 'GraphItem'.
+The class 'fsmgen_CommonTrigger' is a specialization of 'FSMGenElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsmgen_Graph' and 'fsmgen_GraphContainer'. From 'fsmgen_Graph', the role 'fsmgen_Graph' has cardinality 0..*, and from 'fsmgen_GraphContainer', the role 'fsmgen_GraphContainer' has cardinality 0..*.
+An association connects 'fsmgen_ModelComponent' and 'fsmgen_GraphContainer'. From 'fsmgen_ModelComponent', the role 'fsmgen_ModelComponent' has cardinality 0..*, and from 'fsmgen_GraphContainer', the role 'fsmgen_GraphContainer2' has cardinality 0..*.
+An association connects 'fsmgen_Graph' and 'fsmgen_Node'. From 'fsmgen_Graph', the role 'graph' has cardinality 0..*, and from 'fsmgen_Node', the role 'Node' has cardinality 0..*.
+An association connects 'fsmgen_Graph' and 'fsmgen_Link'. From 'fsmgen_Graph', the role 'graph5' has cardinality 0..*, and from 'fsmgen_Link', the role 'Link' has cardinality 0..*.
+An association connects 'fsmgen_StateGraph' and 'fsmgen_Graph'. From 'fsmgen_StateGraph', the role 'fsmgen_StateGraph' has cardinality 0..*, and from 'fsmgen_Graph', the role 'fsmgen_Graph7' has cardinality 0..*.
+An association connects 'fsmgen_Graph' and 'fsmgen_Node'. From 'fsmgen_Graph', the role 'subgraph' has cardinality 0..*, and from 'fsmgen_Node', the role 'Node9' has cardinality 0..*.
+An association connects 'fsmgen_Graph' and 'fsmgen_Node'. From 'fsmgen_Graph', the role 'Graph' has cardinality 0..*, and from 'fsmgen_Node', the role 'nodes' has cardinality 0..*.
+An association connects 'fsmgen_Graph' and 'fsmgen_Node'. From 'fsmgen_Graph', the role 'Graph12' has cardinality 0..*, and from 'fsmgen_Node', the role 'node' has cardinality 0..*.
+An association connects 'fsmgen_Node' and 'fsmgen_Link'. From 'fsmgen_Node', the role 'source' has cardinality 0..*, and from 'fsmgen_Link', the role 'Link14' has cardinality 0..*.
+An association connects 'fsmgen_Node' and 'fsmgen_Link'. From 'fsmgen_Node', the role 'target' has cardinality 0..*, and from 'fsmgen_Link', the role 'Link16' has cardinality 0..*.
+An association connects 'fsmgen_Node' and 'fsmgen_StateGraphNode'. From 'fsmgen_Node', the role 'fsmgen_Node' has cardinality 0..*, and from 'fsmgen_StateGraphNode', the role 'fsmgen_StateGraphNode' has cardinality 0..*.
+An association connects 'fsmgen_Node' and 'fsmgen_CommonTrigger'. From 'fsmgen_Node', the role 'fsmgen_Node19' has cardinality 0..*, and from 'fsmgen_CommonTrigger', the role 'fsmgen_CommonTrigger' has cardinality 0..*.
+An association connects 'fsmgen_Graph' and 'fsmgen_Link'. From 'fsmgen_Graph', the role 'Graph21' has cardinality 0..*, and from 'fsmgen_Link', the role 'links' has cardinality 0..*.
+An association connects 'fsmgen_Link' and 'fsmgen_Node'. From 'fsmgen_Link', the role 'outgoing' has cardinality 0..*, and from 'fsmgen_Node', the role 'Node23' has cardinality 0..*.
+An association connects 'fsmgen_Node' and 'fsmgen_Link'. From 'fsmgen_Node', the role 'Node25' has cardinality 0..*, and from 'fsmgen_Link', the role 'incoming' has cardinality 0..*.
+An association connects 'fsmgen_Link' and 'fsmgen_Link'. From 'fsmgen_Link', the role 'fsmgen_Link26' has cardinality 0..*, and from 'fsmgen_Link', the role 'fsmgen_Link' has cardinality 0..*.
+An association connects 'fsmgen_EObject' and 'fsmgen_Link'. From 'fsmgen_EObject', the role 'fsmgen_EObject' has cardinality 0..*, and from 'fsmgen_Link', the role 'fsmgen_Link29' has cardinality 0..*.
+An association connects 'fsmgen_TransitionBase' and 'fsmgen_Link'. From 'fsmgen_TransitionBase', the role 'fsmgen_TransitionBase' has cardinality 0..*, and from 'fsmgen_Link', the role 'fsmgen_Link31' has cardinality 0..*.
+An association connects 'fsmgen_CommonTrigger' and 'fsmgen_EObject'. From 'fsmgen_CommonTrigger', the role 'fsmgen_CommonTrigger33' has cardinality 0..*, and from 'fsmgen_EObject', the role 'fsmgen_EObject34' has cardinality 0..*.
+An association connects 'fsmgen_CommonTrigger' and 'fsmgen_AbstractInterfaceItem'. From 'fsmgen_CommonTrigger', the role 'fsmgen_CommonTrigger36' has cardinality 0..*, and from 'fsmgen_AbstractInterfaceItem', the role 'fsmgen_AbstractInterfaceItem' has cardinality 0..*.
+An association connects 'fsmgen_CommonTrigger' and 'fsmgen_Link'. From 'fsmgen_CommonTrigger', the role 'fsmgen_CommonTrigger38' has cardinality 0..*, and from 'fsmgen_Link', the role 'fsmgen_Link39' has cardinality 0..*.

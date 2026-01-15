@@ -1,0 +1,44 @@
+The domain model 'simpleRDBMS' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'simpleRDBMS_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleRDBMS_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleRDBMS_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleRDBMS_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleRDBMS_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleRDBMS_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleRDBMS_RDBMSModel' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleRDBMS_Schema' is a specialization of 'NamedElement'.
+The class 'simpleRDBMS_Table' is a specialization of 'NamedElement'.
+The class 'simpleRDBMS_Column' is a specialization of 'NamedElement'.
+The class 'simpleRDBMS_ForeignKey' is a specialization of 'NamedElement'.
+The class 'simpleRDBMS_Key' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleRDBMS_Schema' and 'simpleRDBMS_Table'. From 'simpleRDBMS_Schema', the role 'simpleRDBMS_Schema' has cardinality 0..*, and from 'simpleRDBMS_Table', the role 'simpleRDBMS_Table' has cardinality 0..*.
+An association connects 'simpleRDBMS_Table' and 'simpleRDBMS_Column'. From 'simpleRDBMS_Table', the role 'simpleRDBMS_Table2' has cardinality 0..*, and from 'simpleRDBMS_Column', the role 'simpleRDBMS_Column' has cardinality 0..*.
+An association connects 'simpleRDBMS_ForeignKey' and 'simpleRDBMS_Table'. From 'simpleRDBMS_ForeignKey', the role 'simpleRDBMS_ForeignKey' has cardinality 0..*, and from 'simpleRDBMS_Table', the role 'simpleRDBMS_Table4' has cardinality 0..*.
+An association connects 'simpleRDBMS_Table' and 'simpleRDBMS_Key'. From 'simpleRDBMS_Table', the role 'simpleRDBMS_Table6' has cardinality 0..*, and from 'simpleRDBMS_Key', the role 'simpleRDBMS_Key' has cardinality 0..*.
+An association connects 'simpleRDBMS_ForeignKey' and 'simpleRDBMS_Column'. From 'simpleRDBMS_ForeignKey', the role 'simpleRDBMS_ForeignKey8' has cardinality 0..*, and from 'simpleRDBMS_Column', the role 'simpleRDBMS_Column9' has cardinality 0..*.
+An association connects 'simpleRDBMS_ForeignKey' and 'simpleRDBMS_Key'. From 'simpleRDBMS_ForeignKey', the role 'simpleRDBMS_ForeignKey11' has cardinality 0..*, and from 'simpleRDBMS_Key', the role 'simpleRDBMS_Key12' has cardinality 0..*.
+An association connects 'simpleRDBMS_Schema' and 'simpleRDBMS_RDBMSModel'. From 'simpleRDBMS_Schema', the role 'simpleRDBMS_Schema14' has cardinality 0..*, and from 'simpleRDBMS_RDBMSModel', the role 'simpleRDBMS_RDBMSModel' has cardinality 0..*.
+An association connects 'simpleRDBMS_Key' and 'simpleRDBMS_Column'. From 'simpleRDBMS_Key', the role 'simpleRDBMS_Key16' has cardinality 0..*, and from 'simpleRDBMS_Column', the role 'simpleRDBMS_Column17' has cardinality 0..*.

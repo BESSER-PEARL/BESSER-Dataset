@@ -1,0 +1,45 @@
+The domain model 'relational_obeo' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'relational_obeo_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'relational_obeo_Database' represents an important domain concept.
+It has the following attributes: 'url', which is of type str; 'name', which is of type str.
+
+'relational_obeo_Column' represents an important domain concept.
+It has the following attributes: 'isUnique', which is of type bool; 'type', which is of type str; 'isPrimaryKey', which is of type bool; 'name', which is of type str.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_obeo_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'relational_obeo_ModelElement' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'relational_obeo_ForeignKey' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'NUMERIC', 'VARCHAR', 'FLOAT', 'DATE', 'CHAR', 'TIME'.
+
+The model also captures inheritance relationships between classes.
+The class 'relational_obeo_Database' is a specialization of 'ModelElement'.
+The class 'relational_obeo_Schema' is a specialization of 'ModelElement'.
+The class 'relational_obeo_Table' is a specialization of 'ModelElement'.
+The class 'relational_obeo_ForeignKey' is a specialization of 'ModelElement'.
+The class 'relational_obeo_Column' is a specialization of 'ModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'relational_obeo_Database' and 'relational_obeo_Schema'. From 'relational_obeo_Database', the role 'owner' has cardinality 0..*, and from 'relational_obeo_Schema', the role 'Schema' has cardinality 0..*.
+An association connects 'relational_obeo_Table' and 'relational_obeo_Schema'. From 'relational_obeo_Table', the role 'Table' has cardinality 0..*, and from 'relational_obeo_Schema', the role 'owner2' has cardinality 0..*.
+An association connects 'relational_obeo_Schema' and 'relational_obeo_Database'. From 'relational_obeo_Schema', the role 'ownedSchemas' has cardinality 0..*, and from 'relational_obeo_Database', the role 'Database' has cardinality 0..*.
+An association connects 'relational_obeo_Table' and 'relational_obeo_Column'. From 'relational_obeo_Table', the role 'owner5' has cardinality 0..*, and from 'relational_obeo_Column', the role 'Column' has cardinality 0..*.
+An association connects 'relational_obeo_ForeignKey' and 'relational_obeo_Table'. From 'relational_obeo_ForeignKey', the role 'ForeignKey' has cardinality 0..*, and from 'relational_obeo_Table', the role 'foreignTable' has cardinality 0..*.
+An association connects 'relational_obeo_Schema' and 'relational_obeo_Table'. From 'relational_obeo_Schema', the role 'Schema8' has cardinality 0..*, and from 'relational_obeo_Table', the role 'ownedTables' has cardinality 0..*.
+An association connects 'relational_obeo_Table' and 'relational_obeo_ForeignKey'. From 'relational_obeo_Table', the role 'Table10' has cardinality 0..*, and from 'relational_obeo_ForeignKey', the role 'ownedForeignKeys' has cardinality 0..*.
+An association connects 'relational_obeo_Table' and 'relational_obeo_ForeignKey'. From 'relational_obeo_Table', the role 'relational_obeo_Table' has cardinality 0..*, and from 'relational_obeo_ForeignKey', the role 'relational_obeo_ForeignKey' has cardinality 0..*.
+An association connects 'relational_obeo_Table' and 'relational_obeo_Column'. From 'relational_obeo_Table', the role 'Table13' has cardinality 0..*, and from 'relational_obeo_Column', the role 'ownedColumns' has cardinality 0..*.

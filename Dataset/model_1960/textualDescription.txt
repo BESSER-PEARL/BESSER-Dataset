@@ -1,0 +1,45 @@
+The domain model 'addressbook' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Contact' represents an important domain concept.
+It does not declare any attributes.
+
+'addressbook_Person' represents an important domain concept.
+It has one attribute: 'Title', which is of type str.
+
+'addressbook_Company' represents an important domain concept.
+It has one attribute: 'Industry', which is of type str.
+
+'addressbook_Note' represents an important domain concept.
+It has the following attributes: 'Comment', which is of type str; 'Type', which is of type str; 'Author', which is of type str; 'Time', which is of type date.
+
+'addressbook_Contact' represents an important domain concept.
+It has the following attributes: 'Phone', which is of type str; 'Website', which is of type str; 'EMail', which is of type str; 'Name', which is of type str.
+
+'addressbook_AddressBook' represents an important domain concept.
+It does not declare any attributes.
+
+'addressbook_Relationship' represents an important domain concept.
+It has one attribute: 'Type', which is of type str.
+
+'addressbook_Address' represents an important domain concept.
+It has the following attributes: 'HouseNr', which is of type str; 'City', which is of type str; 'Street', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'NoteType' defines the following possible values: 'EMAIL', 'CALL', 'MEETING'.
+The enumeration 'RelationshipType' defines the following possible values: 'Subdivision', 'Boss', 'Employee', 'CoWorker'.
+
+The model also captures inheritance relationships between classes.
+The class 'addressbook_Person' is a specialization of 'Contact'.
+The class 'addressbook_Company' is a specialization of 'Contact'.
+
+Relationships between classes are modeled using associations.
+An association connects 'addressbook_Contact' and 'addressbook_Address'. From 'addressbook_Contact', the role 'addressbook_Contact' has cardinality 0..*, and from 'addressbook_Address', the role 'addressbook_Address' has cardinality 0..*.
+An association connects 'addressbook_Contact' and 'addressbook_Contact'. From 'addressbook_Contact', the role 'addressbook_Contact1' has cardinality 0..*, and from 'addressbook_Contact', the role 'addressbook_Contact3' has cardinality 0..*.
+An association connects 'addressbook_Contact' and 'addressbook_Relationship'. From 'addressbook_Contact', the role 'source' has cardinality 0..*, and from 'addressbook_Relationship', the role 'Relationship' has cardinality 0..*.
+An association connects 'addressbook_Contact' and 'addressbook_Relationship'. From 'addressbook_Contact', the role 'target' has cardinality 0..*, and from 'addressbook_Relationship', the role 'Relationship6' has cardinality 0..*.
+An association connects 'addressbook_Contact' and 'addressbook_Note'. From 'addressbook_Contact', the role 'addressbook_Contact8' has cardinality 0..*, and from 'addressbook_Note', the role 'addressbook_Note' has cardinality 0..*.
+An association connects 'addressbook_AddressBook' and 'addressbook_Contact'. From 'addressbook_AddressBook', the role 'addressbook_AddressBook' has cardinality 0..*, and from 'addressbook_Contact', the role 'addressbook_Contact10' has cardinality 0..*.
+An association connects 'addressbook_Contact' and 'addressbook_Relationship'. From 'addressbook_Contact', the role 'Contact' has cardinality 0..*, and from 'addressbook_Relationship', the role 'isRelated' has cardinality 0..*.
+An association connects 'addressbook_Contact' and 'addressbook_Relationship'. From 'addressbook_Contact', the role 'Contact13' has cardinality 0..*, and from 'addressbook_Relationship', the role 'relates' has cardinality 0..*.

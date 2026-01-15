@@ -1,0 +1,61 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'DocBook_Para' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'DocBook_Section' represents an important domain concept.
+It does not declare any attributes.
+
+'Sect1' represents an important domain concept.
+It does not declare any attributes.
+
+'Book' represents an important domain concept.
+It does not declare any attributes.
+
+'DocBook_TitledElement' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'DocBook_DocBook' represents an important domain concept.
+It does not declare any attributes.
+
+'Sect2' represents an important domain concept.
+It does not declare any attributes.
+
+'DocBook_Sect2' represents an important domain concept.
+It does not declare any attributes.
+
+'Section' represents an important domain concept.
+It does not declare any attributes.
+
+'DocBook_Book' represents an important domain concept.
+It does not declare any attributes.
+
+'DocBook_Article' represents an important domain concept.
+It does not declare any attributes.
+
+'Article' represents an important domain concept.
+It does not declare any attributes.
+
+'TitledElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Para' represents an important domain concept.
+It does not declare any attributes.
+
+'DocBook_Sect1' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'DocBook_Article' is a specialization of 'TitledElement'.
+The class 'DocBook_Section' is a specialization of 'TitledElement'.
+The class 'DocBook_Sect1' is a specialization of 'Section'.
+The class 'DocBook_Sect2' is a specialization of 'Section'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DocBook_DocBook' and 'Book'. From 'DocBook_DocBook', the role 'DocBook_DocBook' has cardinality 0..*, and from 'Book', the role 'Book' has cardinality 0..*.
+An association connects 'Article' and 'DocBook_Book'. From 'Article', the role 'Article' has cardinality 0..*, and from 'DocBook_Book', the role 'DocBook_Book' has cardinality 0..*.
+An association connects 'Sect1' and 'DocBook_Article'. From 'Sect1', the role 'Sect1' has cardinality 0..*, and from 'DocBook_Article', the role 'DocBook_Article' has cardinality 0..*.
+An association connects 'Para' and 'DocBook_Section'. From 'Para', the role 'Para' has cardinality 0..*, and from 'DocBook_Section', the role 'DocBook_Section' has cardinality 0..*.
+An association connects 'DocBook_Sect1' and 'Sect2'. From 'DocBook_Sect1', the role 'DocBook_Sect1' has cardinality 0..*, and from 'Sect2', the role 'Sect2' has cardinality 0..*.

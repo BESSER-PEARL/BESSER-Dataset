@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/luciuscode/test/projectStr/src/main/model/emftest.ecore

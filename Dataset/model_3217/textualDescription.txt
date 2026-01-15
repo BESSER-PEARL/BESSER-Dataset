@@ -1,0 +1,142 @@
+The domain model 'Core' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'ITypeRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IClassFile' represents an important domain concept.
+It has the following attributes: 'isClass', which is of type str; 'isInterface', which is of type str.
+
+'Core_BinaryPackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IMethod' represents an important domain concept.
+It has the following attributes: 'exceptionTypes', which is of type str; 'isMainMethod', which is of type str; 'returnType', which is of type str; 'isConstructor', which is of type str.
+
+'Core_IInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_Parameter' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'PhysicalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_ISourceRange' represents an important domain concept.
+It has the following attributes: 'length', which is of type str; 'offset', which is of type str.
+
+'IJavaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_SourcePackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IMember' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_ITypeRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_ITypeParameter' represents an important domain concept.
+It has one attribute: 'bounds', which is of type str.
+
+'Core_IImportDeclaration' represents an important domain concept.
+It has the following attributes: 'isOnDemand', which is of type str; 'isStatic', which is of type str.
+
+'Core_IPackageFragment' represents an important domain concept.
+It has one attribute: 'isDefaultPackage', which is of type str.
+
+'Core_IPackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'IMember' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IType' represents an important domain concept.
+It has the following attributes: 'fullyQualifiedParametrizedName', which is of type str; 'fullyQualifiedName', which is of type str.
+
+'Core_ISourceReference' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'Core_IJavaModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IJavaElement' represents an important domain concept.
+It has one attribute: 'elementName', which is of type str.
+
+'IPackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_ICompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_IJavaProject' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'ISourceReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Core_PhysicalElement' represents an important domain concept.
+It has the following attributes: 'path', which is of type str; 'isReadOnly', which is of type str.
+
+'Core_IField' represents an important domain concept.
+It has the following attributes: 'constant', which is of type str; 'isEnumConstant', which is of type str; 'isVolatile', which is of type str; 'typeSignature', which is of type str; 'isTransient', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Modifiers' defines the following possible values: 'final', 'annotation', 'protected', 'interface', 'transient', 'native', 'bridge', 'volatile', 'public', 'enum', 'deprecated', 'strictfp', 'super', 'varargs', 'default', 'abstract', 'synchronized', 'private', 'synthetic', 'static'.
+
+The model also captures inheritance relationships between classes.
+The class 'Core_IJavaModel' is a specialization of 'PhysicalElement'.
+The class 'Core_IJavaProject' is a specialization of 'IJavaElement'.
+The class 'Core_IJavaProject' is a specialization of 'PhysicalElement'.
+The class 'Core_IPackageFragmentRoot' is a specialization of 'IJavaElement'.
+The class 'Core_IPackageFragmentRoot' is a specialization of 'PhysicalElement'.
+The class 'Core_BinaryPackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+The class 'Core_SourcePackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+The class 'Core_IPackageFragment' is a specialization of 'IJavaElement'.
+The class 'Core_IPackageFragment' is a specialization of 'PhysicalElement'.
+The class 'Core_ITypeRoot' is a specialization of 'IJavaElement'.
+The class 'Core_ITypeRoot' is a specialization of 'ISourceReference'.
+The class 'Core_ITypeRoot' is a specialization of 'PhysicalElement'.
+The class 'Core_ICompilationUnit' is a specialization of 'ITypeRoot'.
+The class 'Core_IClassFile' is a specialization of 'ITypeRoot'.
+The class 'Core_IImportDeclaration' is a specialization of 'IJavaElement'.
+The class 'Core_IImportDeclaration' is a specialization of 'ISourceReference'.
+The class 'Core_IMember' is a specialization of 'IJavaElement'.
+The class 'Core_IMember' is a specialization of 'ISourceReference'.
+The class 'Core_IType' is a specialization of 'IMember'.
+The class 'Core_ITypeParameter' is a specialization of 'IJavaElement'.
+The class 'Core_ITypeParameter' is a specialization of 'ISourceReference'.
+The class 'Core_IInitializer' is a specialization of 'IMember'.
+The class 'Core_IField' is a specialization of 'IMember'.
+The class 'Core_IMethod' is a specialization of 'IMember'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Core_IJavaProject' and 'Core_IJavaModel'. From 'Core_IJavaProject', the role 'Core_IJavaProject' has cardinality 0..*, and from 'Core_IJavaModel', the role 'Core_IJavaModel' has cardinality 0..*.
+An association connects 'Core_IPackageFragmentRoot' and 'Core_IJavaModel'. From 'Core_IPackageFragmentRoot', the role 'Core_IPackageFragmentRoot' has cardinality 0..*, and from 'Core_IJavaModel', the role 'Core_IJavaModel2' has cardinality 0..*.
+An association connects 'Core_IJavaProject' and 'Core_IPackageFragmentRoot'. From 'Core_IJavaProject', the role 'Core_IJavaProject4' has cardinality 0..*, and from 'Core_IPackageFragmentRoot', the role 'Core_IPackageFragmentRoot5' has cardinality 0..*.
+An association connects 'Core_IJavaProject' and 'Core_IPackageFragmentRoot'. From 'Core_IJavaProject', the role 'Core_IJavaProject7' has cardinality 0..*, and from 'Core_IPackageFragmentRoot', the role 'Core_IPackageFragmentRoot8' has cardinality 0..*.
+An association connects 'Core_IJavaProject' and 'Core_IJavaProject'. From 'Core_IJavaProject', the role 'Core_IJavaProject9' has cardinality 0..*, and from 'Core_IJavaProject', the role 'Core_IJavaProject11' has cardinality 0..*.
+An association connects 'Core_IPackageFragment' and 'Core_IPackageFragmentRoot'. From 'Core_IPackageFragment', the role 'IPackageFragment' has cardinality 0..*, and from 'Core_IPackageFragmentRoot', the role 'packageFragmentRoot' has cardinality 0..*.
+An association connects 'Core_IPackageFragment' and 'Core_IPackageFragmentRoot'. From 'Core_IPackageFragment', the role 'packageFragments' has cardinality 0..*, and from 'Core_IPackageFragmentRoot', the role 'IPackageFragmentRoot' has cardinality 0..*.
+An association connects 'Core_IPackageFragment' and 'Core_IClassFile'. From 'Core_IPackageFragment', the role 'Core_IPackageFragment' has cardinality 0..*, and from 'Core_IClassFile', the role 'Core_IClassFile' has cardinality 0..*.
+An association connects 'Core_ICompilationUnit' and 'Core_IPackageFragment'. From 'Core_ICompilationUnit', the role 'Core_ICompilationUnit' has cardinality 0..*, and from 'Core_IPackageFragment', the role 'Core_IPackageFragment16' has cardinality 0..*.
+An association connects 'Core_IType' and 'Core_ICompilationUnit'. From 'Core_IType', the role 'Core_IType' has cardinality 0..*, and from 'Core_ICompilationUnit', the role 'Core_ICompilationUnit18' has cardinality 0..*.
+An association connects 'Core_IImportDeclaration' and 'Core_ICompilationUnit'. From 'Core_IImportDeclaration', the role 'Core_IImportDeclaration' has cardinality 0..*, and from 'Core_ICompilationUnit', the role 'Core_ICompilationUnit20' has cardinality 0..*.
+An association connects 'Core_ICompilationUnit' and 'Core_IType'. From 'Core_ICompilationUnit', the role 'Core_ICompilationUnit22' has cardinality 0..*, and from 'Core_IType', the role 'Core_IType23' has cardinality 0..*.
+An association connects 'Core_ICompilationUnit' and 'Core_ICompilationUnit'. From 'Core_ICompilationUnit', the role 'Core_ICompilationUnit24' has cardinality 0..*, and from 'Core_ICompilationUnit', the role 'Core_ICompilationUnit26' has cardinality 0..*.
+An association connects 'Core_ICompilationUnit' and 'Core_CompilationUnit'. From 'Core_ICompilationUnit', the role 'Core_ICompilationUnit28' has cardinality 0..*, and from 'Core_CompilationUnit', the role 'Core_CompilationUnit' has cardinality 0..*.
+An association connects 'Core_IType' and 'Core_IClassFile'. From 'Core_IType', the role 'Core_IType31' has cardinality 0..*, and from 'Core_IClassFile', the role 'Core_IClassFile30' has cardinality 0..*.
+An association connects 'Core_ISourceRange' and 'Core_ISourceReference'. From 'Core_ISourceRange', the role 'Core_ISourceRange' has cardinality 0..*, and from 'Core_ISourceReference', the role 'Core_ISourceReference' has cardinality 0..*.
+An association connects 'Core_ISourceRange' and 'Core_IMember'. From 'Core_ISourceRange', the role 'Core_ISourceRange34' has cardinality 0..*, and from 'Core_IMember', the role 'Core_IMember' has cardinality 0..*.
+An association connects 'Core_IMember' and 'Core_ISourceRange'. From 'Core_IMember', the role 'Core_IMember36' has cardinality 0..*, and from 'Core_ISourceRange', the role 'Core_ISourceRange37' has cardinality 0..*.
+An association connects 'Core_IInitializer' and 'Core_IType'. From 'Core_IInitializer', the role 'Core_IInitializer' has cardinality 0..*, and from 'Core_IType', the role 'Core_IType39' has cardinality 0..*.
+An association connects 'Core_IField' and 'Core_IType'. From 'Core_IField', the role 'Core_IField' has cardinality 0..*, and from 'Core_IType', the role 'Core_IType41' has cardinality 0..*.
+An association connects 'Core_IMethod' and 'Core_IType'. From 'Core_IMethod', the role 'Core_IMethod' has cardinality 0..*, and from 'Core_IType', the role 'Core_IType43' has cardinality 0..*.
+An association connects 'Core_IType' and 'Core_IType'. From 'Core_IType', the role 'Core_IType46' has cardinality 0..*, and from 'Core_IType', the role 'Core_IType44' has cardinality 0..*.
+An association connects 'Core_ITypeParameter' and 'Core_IType'. From 'Core_ITypeParameter', the role 'Core_ITypeParameter' has cardinality 0..*, and from 'Core_IType', the role 'Core_IType48' has cardinality 0..*.
+An association connects 'Core_IMethod' and 'Core_Parameter'. From 'Core_IMethod', the role 'Core_IMethod50' has cardinality 0..*, and from 'Core_Parameter', the role 'Core_Parameter' has cardinality 0..*.

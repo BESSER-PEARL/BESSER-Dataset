@@ -1,0 +1,39 @@
+The domain model 'relationaldatabase' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'relationaldatabase_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldatabase_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldatabase_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldatabase_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldatabase_RelationalDatabase' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'relationaldatabase_Table' is a specialization of 'NamedElement'.
+The class 'relationaldatabase_Column' is a specialization of 'NamedElement'.
+The class 'relationaldatabase_ForeignKey' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'relationaldatabase_RelationalDatabase' and 'relationaldatabase_Table'. From 'relationaldatabase_RelationalDatabase', the role 'relationaldatabase_RelationalDatabase' has cardinality 0..*, and from 'relationaldatabase_Table', the role 'relationaldatabase_Table' has cardinality 0..*.
+An association connects 'relationaldatabase_Table' and 'relationaldatabase_Column'. From 'relationaldatabase_Table', the role 'table' has cardinality 0..*, and from 'relationaldatabase_Column', the role 'Column' has cardinality 0..*.
+An association connects 'relationaldatabase_Table' and 'relationaldatabase_Column'. From 'relationaldatabase_Table', the role 'tableAsPrimaryKey' has cardinality 0..*, and from 'relationaldatabase_Column', the role 'Column3' has cardinality 0..*.
+An association connects 'relationaldatabase_Table' and 'relationaldatabase_ForeignKey'. From 'relationaldatabase_Table', the role 'table5' has cardinality 0..*, and from 'relationaldatabase_ForeignKey', the role 'ForeignKey' has cardinality 0..*.
+An association connects 'relationaldatabase_Table' and 'relationaldatabase_Column'. From 'relationaldatabase_Table', the role 'Table' has cardinality 0..*, and from 'relationaldatabase_Column', the role 'columns' has cardinality 0..*.
+An association connects 'relationaldatabase_Table' and 'relationaldatabase_Column'. From 'relationaldatabase_Table', the role 'Table8' has cardinality 0..*, and from 'relationaldatabase_Column', the role 'primaryKey' has cardinality 0..*.
+An association connects 'relationaldatabase_ForeignKey' and 'relationaldatabase_Column'. From 'relationaldatabase_ForeignKey', the role 'ForeignKey10' has cardinality 0..*, and from 'relationaldatabase_Column', the role 'tableColumn' has cardinality 0..*.
+An association connects 'relationaldatabase_ForeignKey' and 'relationaldatabase_Column'. From 'relationaldatabase_ForeignKey', the role 'ForeignKey12' has cardinality 0..*, and from 'relationaldatabase_Column', the role 'foreignColumn' has cardinality 0..*.
+An association connects 'relationaldatabase_Column' and 'relationaldatabase_ForeignKey'. From 'relationaldatabase_Column', the role 'Column14' has cardinality 0..*, and from 'relationaldatabase_ForeignKey', the role 'foreignKeysAsColumn' has cardinality 0..*.
+An association connects 'relationaldatabase_Column' and 'relationaldatabase_ForeignKey'. From 'relationaldatabase_Column', the role 'Column16' has cardinality 0..*, and from 'relationaldatabase_ForeignKey', the role 'foreignKeysAsForeignColumn' has cardinality 0..*.
+An association connects 'relationaldatabase_Table' and 'relationaldatabase_ForeignKey'. From 'relationaldatabase_Table', the role 'Table18' has cardinality 0..*, and from 'relationaldatabase_ForeignKey', the role 'foreignKeys' has cardinality 0..*.

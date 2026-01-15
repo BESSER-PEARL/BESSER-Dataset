@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ObeoNetwork/Database-Designer/plugins/org.obeonetwork.dsl.database/model/database.ecore

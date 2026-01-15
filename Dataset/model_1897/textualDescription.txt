@@ -1,0 +1,175 @@
+The domain model 'emig' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'emig_OpDef' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'emig_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_setterDef' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'emig_EClassOpDef' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_Artifact' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'emig_FilterMigrator' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'emig_EPackageOpDef' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_LocatedElement' represents an important domain concept.
+It has the following attributes: 'endoffset', which is of type int; 'line', which is of type int; 'endline', which is of type int; 'offset', which is of type int.
+
+'emig_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Migrator' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_Migrator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'emig_MigrationLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'emig_EAttributeOpDef' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_DotNavigationObjSX' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_MigratorSX' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_EReferenceOpDef' represents an important domain concept.
+It does not declare any attributes.
+
+'EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_DotNavigationObjDX' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_MyModel' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_MigrationProgram' represents an important domain concept.
+It has the following attributes: 'libs', which is of type str; 'delta', which is of type str; 'artifact', which is of type str; 'migr', which is of type str; 'name', which is of type str.
+
+'emig_MigratorDX' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_RewritingRule' represents an important domain concept.
+It does not declare any attributes.
+
+'emig_Rule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OpDef' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'emig_MigrationProgram' is a specialization of 'LocatedElement'.
+The class 'emig_Artifact' is a specialization of 'LocatedElement'.
+The class 'emig_Rule' is a specialization of 'LocatedElement'.
+The class 'emig_OpDef' is a specialization of 'LocatedElement'.
+The class 'emig_EPackageOpDef' is a specialization of 'OpDef'.
+The class 'emig_EClassOpDef' is a specialization of 'OpDef'.
+The class 'emig_EAttributeOpDef' is a specialization of 'OpDef'.
+The class 'emig_EReferenceOpDef' is a specialization of 'OpDef'.
+The class 'emig_setterDef' is a specialization of 'LocatedElement'.
+The class 'emig_RewritingRule' is a specialization of 'LocatedElement'.
+The class 'emig_Migrator' is a specialization of 'LocatedElement'.
+The class 'emig_MigratorSX' is a specialization of 'Migrator'.
+The class 'emig_MigratorDX' is a specialization of 'Migrator'.
+The class 'emig_FilterMigrator' is a specialization of 'LocatedElement'.
+The class 'emig_DotNavigationObjSX' is a specialization of 'LocatedElement'.
+The class 'emig_DotNavigationObjDX' is a specialization of 'LocatedElement'.
+The class 'emig_Parameter' is a specialization of 'LocatedElement'.
+The class 'emig_Package' is a specialization of 'EPackage'.
+The class 'emig_Class' is a specialization of 'EClass'.
+The class 'emig_Attribute' is a specialization of 'EAttribute'.
+The class 'emig_Reference' is a specialization of 'EReference'.
+
+Relationships between classes are modeled using associations.
+An association connects 'emig_MigrationLibrary' and 'emig_MyModel'. From 'emig_MigrationLibrary', the role 'emig_MigrationLibrary' has cardinality 0..*, and from 'emig_MyModel', the role 'emig_MyModel' has cardinality 0..*.
+An association connects 'emig_MyModel' and 'emig_MigrationProgram'. From 'emig_MyModel', the role 'emig_MyModel2' has cardinality 0..*, and from 'emig_MigrationProgram', the role 'emig_MigrationProgram' has cardinality 0..*.
+An association connects 'emig_Rule' and 'emig_MigrationLibrary'. From 'emig_Rule', the role 'emig_Rule' has cardinality 0..*, and from 'emig_MigrationLibrary', the role 'emig_MigrationLibrary4' has cardinality 0..*.
+An association connects 'emig_MigrationProgram' and 'emig_Artifact'. From 'emig_MigrationProgram', the role 'emig_MigrationProgram6' has cardinality 0..*, and from 'emig_Artifact', the role 'emig_Artifact' has cardinality 0..*.
+An association connects 'emig_MigrationProgram' and 'emig_EPackage'. From 'emig_MigrationProgram', the role 'emig_MigrationProgram8' has cardinality 0..*, and from 'emig_EPackage', the role 'emig_EPackage' has cardinality 0..*.
+An association connects 'emig_Rule' and 'emig_MigrationProgram'. From 'emig_Rule', the role 'emig_Rule11' has cardinality 0..*, and from 'emig_MigrationProgram', the role 'emig_MigrationProgram10' has cardinality 0..*.
+An association connects 'emig_OpDef' and 'emig_Rule'. From 'emig_OpDef', the role 'emig_OpDef' has cardinality 0..*, and from 'emig_Rule', the role 'emig_Rule13' has cardinality 0..*.
+An association connects 'emig_Rule' and 'emig_RewritingRule'. From 'emig_Rule', the role 'emig_Rule15' has cardinality 0..*, and from 'emig_RewritingRule', the role 'emig_RewritingRule' has cardinality 0..*.
+An association connects 'emig_setterDef' and 'emig_OpDef'. From 'emig_setterDef', the role 'emig_setterDef' has cardinality 0..*, and from 'emig_OpDef', the role 'emig_OpDef17' has cardinality 0..*.
+An association connects 'emig_EPackage' and 'emig_EPackageOpDef'. From 'emig_EPackage', the role 'emig_EPackage19' has cardinality 0..*, and from 'emig_EPackageOpDef', the role 'emig_EPackageOpDef' has cardinality 0..*.
+An association connects 'emig_EPackageOpDef' and 'emig_EPackage'. From 'emig_EPackageOpDef', the role 'emig_EPackageOpDef21' has cardinality 0..*, and from 'emig_EPackage', the role 'emig_EPackage22' has cardinality 0..*.
+An association connects 'emig_EPackageOpDef' and 'emig_EClassOpDef'. From 'emig_EPackageOpDef', the role 'emig_EPackageOpDef24' has cardinality 0..*, and from 'emig_EClassOpDef', the role 'emig_EClassOpDef' has cardinality 0..*.
+An association connects 'emig_EClassOpDef' and 'emig_EClass'. From 'emig_EClassOpDef', the role 'emig_EClassOpDef26' has cardinality 0..*, and from 'emig_EClass', the role 'emig_EClass' has cardinality 0..*.
+An association connects 'emig_EClass' and 'emig_EClassOpDef'. From 'emig_EClass', the role 'emig_EClass29' has cardinality 0..*, and from 'emig_EClassOpDef', the role 'emig_EClassOpDef28' has cardinality 0..*.
+An association connects 'emig_EClassOpDef' and 'emig_EAttributeOpDef'. From 'emig_EClassOpDef', the role 'emig_EClassOpDef31' has cardinality 0..*, and from 'emig_EAttributeOpDef', the role 'emig_EAttributeOpDef' has cardinality 0..*.
+An association connects 'emig_EReferenceOpDef' and 'emig_EClassOpDef'. From 'emig_EReferenceOpDef', the role 'emig_EReferenceOpDef' has cardinality 0..*, and from 'emig_EClassOpDef', the role 'emig_EClassOpDef33' has cardinality 0..*.
+An association connects 'emig_EAttributeOpDef' and 'emig_EAttribute'. From 'emig_EAttributeOpDef', the role 'emig_EAttributeOpDef35' has cardinality 0..*, and from 'emig_EAttribute', the role 'emig_EAttribute' has cardinality 0..*.
+An association connects 'emig_EAttributeOpDef' and 'emig_EAttribute'. From 'emig_EAttributeOpDef', the role 'emig_EAttributeOpDef37' has cardinality 0..*, and from 'emig_EAttribute', the role 'emig_EAttribute38' has cardinality 0..*.
+An association connects 'emig_EReferenceOpDef' and 'emig_EReference'. From 'emig_EReferenceOpDef', the role 'emig_EReferenceOpDef40' has cardinality 0..*, and from 'emig_EReference', the role 'emig_EReference' has cardinality 0..*.
+An association connects 'emig_EReference' and 'emig_EReferenceOpDef'. From 'emig_EReference', the role 'emig_EReference43' has cardinality 0..*, and from 'emig_EReferenceOpDef', the role 'emig_EReferenceOpDef42' has cardinality 0..*.
+An association connects 'emig_EStructuralFeature' and 'emig_setterDef'. From 'emig_EStructuralFeature', the role 'emig_EStructuralFeature' has cardinality 0..*, and from 'emig_setterDef', the role 'emig_setterDef45' has cardinality 0..*.
+An association connects 'emig_setterDef' and 'emig_Parameter'. From 'emig_setterDef', the role 'emig_setterDef47' has cardinality 0..*, and from 'emig_Parameter', the role 'emig_Parameter' has cardinality 0..*.
+An association connects 'emig_RewritingRule' and 'emig_MigratorSX'. From 'emig_RewritingRule', the role 'rewritingRule' has cardinality 0..*, and from 'emig_MigratorSX', the role 'MigratorSX' has cardinality 0..*.
+An association connects 'emig_MigratorDX' and 'emig_RewritingRule'. From 'emig_MigratorDX', the role 'MigratorDX' has cardinality 0..*, and from 'emig_RewritingRule', the role 'rewritingRule50' has cardinality 0..*.
+An association connects 'emig_MigratorSX' and 'emig_EClass'. From 'emig_MigratorSX', the role 'emig_MigratorSX' has cardinality 0..*, and from 'emig_EClass', the role 'emig_EClass52' has cardinality 0..*.
+An association connects 'emig_MigratorSX' and 'emig_FilterMigrator'. From 'emig_MigratorSX', the role 'emig_MigratorSX54' has cardinality 0..*, and from 'emig_FilterMigrator', the role 'emig_FilterMigrator' has cardinality 0..*.
+An association connects 'emig_RewritingRule' and 'emig_MigratorSX'. From 'emig_RewritingRule', the role 'RewritingRule' has cardinality 0..*, and from 'emig_MigratorSX', the role 'migratorSX' has cardinality 0..*.
+An association connects 'emig_EClass' and 'emig_MigratorDX'. From 'emig_EClass', the role 'emig_EClass57' has cardinality 0..*, and from 'emig_MigratorDX', the role 'emig_MigratorDX' has cardinality 0..*.
+An association connects 'emig_MigratorDX' and 'emig_FilterMigrator'. From 'emig_MigratorDX', the role 'emig_MigratorDX59' has cardinality 0..*, and from 'emig_FilterMigrator', the role 'emig_FilterMigrator60' has cardinality 0..*.
+An association connects 'emig_RewritingRule' and 'emig_MigratorDX'. From 'emig_RewritingRule', the role 'RewritingRule62' has cardinality 0..*, and from 'emig_MigratorDX', the role 'migratorDX' has cardinality 0..*.
+An association connects 'emig_FilterMigrator' and 'emig_DotNavigationObjSX'. From 'emig_FilterMigrator', the role 'emig_FilterMigrator64' has cardinality 0..*, and from 'emig_DotNavigationObjSX', the role 'emig_DotNavigationObjSX' has cardinality 0..*.
+An association connects 'emig_DotNavigationObjDX' and 'emig_FilterMigrator'. From 'emig_DotNavigationObjDX', the role 'emig_DotNavigationObjDX' has cardinality 0..*, and from 'emig_FilterMigrator', the role 'emig_FilterMigrator66' has cardinality 0..*.
+An association connects 'emig_DotNavigationObjSX' and 'emig_EObject'. From 'emig_DotNavigationObjSX', the role 'emig_DotNavigationObjSX68' has cardinality 0..*, and from 'emig_EObject', the role 'emig_EObject' has cardinality 0..*.
+An association connects 'emig_DotNavigationObjSX' and 'emig_EStructuralFeature'. From 'emig_DotNavigationObjSX', the role 'emig_DotNavigationObjSX70' has cardinality 0..*, and from 'emig_EStructuralFeature', the role 'emig_EStructuralFeature71' has cardinality 0..*.
+An association connects 'emig_DotNavigationObjDX' and 'emig_EObject'. From 'emig_DotNavigationObjDX', the role 'emig_DotNavigationObjDX73' has cardinality 0..*, and from 'emig_EObject', the role 'emig_EObject74' has cardinality 0..*.
+An association connects 'emig_EStructuralFeature' and 'emig_DotNavigationObjDX'. From 'emig_EStructuralFeature', the role 'emig_EStructuralFeature77' has cardinality 0..*, and from 'emig_DotNavigationObjDX', the role 'emig_DotNavigationObjDX76' has cardinality 0..*.

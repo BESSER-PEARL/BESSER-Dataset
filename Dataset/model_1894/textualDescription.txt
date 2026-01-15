@@ -1,0 +1,183 @@
+The domain model 'PSM' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'PSM_JavaDataField' represents an important domain concept.
+It has one attribute: 'FieldValue', which is of type str.
+
+'PSM_JavaAnnotation' represents an important domain concept.
+It has one attribute: 'AnnotationName', which is of type str.
+
+'PSM_SpringServiceLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_JavaClassType' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_SpringDomainLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_SpringControllerLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_JavaSpringWebFluxApplicationProject' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaUserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_ArtifactElement' represents an important domain concept.
+It has the following attributes: 'GeneratingLinesOfCode', which is of type str; 'ArtifactFileName', which is of type str; 'ParentProjectName', which is of type str.
+
+'PSM_JavaDataType' represents an important domain concept.
+It has the following attributes: 'PackageName', which is of type str; 'JsonSchema', which is of type str; 'IsPrimitive', which is of type bool.
+
+'PSM_JavaMethod' represents an important domain concept.
+It has one attribute: 'RootCallingMethod', which is of type str.
+
+'PSM_SpringComponentLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_ConfigurationProperty' represents an important domain concept.
+It has the following attributes: 'ConfigurationProfile', which is of type str; 'PropertyValue', which is of type str; 'FullyQualifiedPropertyName', which is of type str.
+
+'PSM_MicroserviceProject' represents an important domain concept.
+It has one attribute: 'ProjectArtifactId', which is of type str.
+
+'PSM_JavaSpringMVCApplicationProject' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_JavaSpringWebApplicationProject' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaDataField' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_DockerContainerPort' represents an important domain concept.
+It has one attribute: 'ExposesPortsField', which is of type str.
+
+'JavaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_DependencyLibrary' represents an important domain concept.
+It has the following attributes: 'LibraryScope', which is of type str; 'LibraryGroupName', which is of type str; 'LibraryName', which is of type str.
+
+'PSM_SpringRepositoryLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSpringWebApplicationProject' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_SpringModelPojoLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_SpringBootApplicationLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_SpringFeignClientLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_JavaAnnotationParameter' represents an important domain concept.
+It has the following attributes: 'ParameterValue', which is of type str; 'ParameterName', which is of type str.
+
+'PSM_SpringWebApplicationLayer' represents an important domain concept.
+It has one attribute: 'LayerName', which is of type str.
+
+'PSM_DockerContainerDefinition' represents an important domain concept.
+It has the following attributes: 'GeneratesLogs', which is of type bool; 'BuildField', which is of type str; 'ImageField', which is of type str; 'ContainerName', which is of type str.
+
+'PSM_ApplicationProject' represents an important domain concept.
+It has one attribute: 'ProjectArtifactId', which is of type str.
+
+'PSM_JavaMethodParameter' represents an important domain concept.
+It has one attribute: 'ParameterOrder', which is of type int.
+
+'PSM_RootPSM' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_DockerContainerLink' represents an important domain concept.
+It has the following attributes: 'DependencyOrder', which is of type int; 'LinksDependsOnField', which is of type str.
+
+'PSM_JavaUserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'SpringWebApplicationLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_JavaInterfaceType' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_JavaElement' represents an important domain concept.
+It has the following attributes: 'ElementIdentifier', which is of type str; 'ElementProfile', which is of type str.
+
+'MicroserviceProject' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_SpringConfigurationLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'ArtifactElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PSM_DistributedApplicationProject' represents an important domain concept.
+It has the following attributes: 'ApplicationName', which is of type str; 'ProjectPackageURL', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'PSM_DockerContainerDefinition' is a specialization of 'ArtifactElement'.
+The class 'PSM_DockerContainerLink' is a specialization of 'ArtifactElement'.
+The class 'PSM_DockerContainerPort' is a specialization of 'ArtifactElement'.
+The class 'PSM_ApplicationProject' is a specialization of 'ArtifactElement'.
+The class 'PSM_MicroserviceProject' is a specialization of 'ArtifactElement'.
+The class 'PSM_DependencyLibrary' is a specialization of 'ArtifactElement'.
+The class 'PSM_JavaSpringWebApplicationProject' is a specialization of 'MicroserviceProject'.
+The class 'PSM_JavaSpringWebFluxApplicationProject' is a specialization of 'JavaSpringWebApplicationProject'.
+The class 'PSM_JavaSpringMVCApplicationProject' is a specialization of 'JavaSpringWebApplicationProject'.
+The class 'PSM_ConfigurationProperty' is a specialization of 'ArtifactElement'.
+The class 'PSM_SpringWebApplicationLayer' is a specialization of 'ArtifactElement'.
+The class 'PSM_SpringBootApplicationLayer' is a specialization of 'SpringWebApplicationLayer'.
+The class 'PSM_SpringControllerLayer' is a specialization of 'SpringWebApplicationLayer'.
+The class 'PSM_SpringServiceLayer' is a specialization of 'SpringWebApplicationLayer'.
+The class 'PSM_SpringConfigurationLayer' is a specialization of 'SpringWebApplicationLayer'.
+The class 'PSM_SpringFeignClientLayer' is a specialization of 'SpringWebApplicationLayer'.
+The class 'PSM_SpringComponentLayer' is a specialization of 'SpringWebApplicationLayer'.
+The class 'PSM_SpringRepositoryLayer' is a specialization of 'SpringWebApplicationLayer'.
+The class 'PSM_SpringDomainLayer' is a specialization of 'SpringWebApplicationLayer'.
+The class 'PSM_SpringModelPojoLayer' is a specialization of 'SpringWebApplicationLayer'.
+The class 'PSM_JavaElement' is a specialization of 'ArtifactElement'.
+The class 'PSM_JavaAnnotation' is a specialization of 'ArtifactElement'.
+The class 'PSM_JavaAnnotationParameter' is a specialization of 'ArtifactElement'.
+The class 'PSM_JavaDataType' is a specialization of 'JavaElement'.
+The class 'PSM_JavaUserDefinedType' is a specialization of 'JavaDataType'.
+The class 'PSM_JavaClassType' is a specialization of 'JavaUserDefinedType'.
+The class 'PSM_JavaInterfaceType' is a specialization of 'JavaUserDefinedType'.
+The class 'PSM_JavaMethod' is a specialization of 'JavaElement'.
+The class 'PSM_JavaDataField' is a specialization of 'JavaElement'.
+The class 'PSM_JavaMethodParameter' is a specialization of 'JavaDataField'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PSM_RootPSM' and 'PSM_DistributedApplicationProject'. From 'PSM_RootPSM', the role 'PSM_RootPSM' has cardinality 0..*, and from 'PSM_DistributedApplicationProject', the role 'PSM_DistributedApplicationProject' has cardinality 0..*.
+An association connects 'PSM_DockerContainerDefinition' and 'PSM_DistributedApplicationProject'. From 'PSM_DockerContainerDefinition', the role 'PSM_DockerContainerDefinition' has cardinality 0..*, and from 'PSM_DistributedApplicationProject', the role 'PSM_DistributedApplicationProject2' has cardinality 0..*.
+An association connects 'PSM_DistributedApplicationProject' and 'PSM_ApplicationProject'. From 'PSM_DistributedApplicationProject', the role 'PSM_DistributedApplicationProject4' has cardinality 0..*, and from 'PSM_ApplicationProject', the role 'PSM_ApplicationProject' has cardinality 0..*.
+An association connects 'PSM_DockerContainerDefinition' and 'PSM_DockerContainerLink'. From 'PSM_DockerContainerDefinition', the role 'PSM_DockerContainerDefinition6' has cardinality 0..*, and from 'PSM_DockerContainerLink', the role 'PSM_DockerContainerLink' has cardinality 0..*.
+An association connects 'PSM_DockerContainerPort' and 'PSM_DockerContainerDefinition'. From 'PSM_DockerContainerPort', the role 'PSM_DockerContainerPort' has cardinality 0..*, and from 'PSM_DockerContainerDefinition', the role 'PSM_DockerContainerDefinition8' has cardinality 0..*.
+An association connects 'PSM_MicroserviceProject' and 'PSM_ApplicationProject'. From 'PSM_MicroserviceProject', the role 'PSM_MicroserviceProject' has cardinality 0..*, and from 'PSM_ApplicationProject', the role 'PSM_ApplicationProject10' has cardinality 0..*.
+An association connects 'PSM_MicroserviceProject' and 'PSM_DependencyLibrary'. From 'PSM_MicroserviceProject', the role 'PSM_MicroserviceProject12' has cardinality 0..*, and from 'PSM_DependencyLibrary', the role 'PSM_DependencyLibrary' has cardinality 0..*.
+An association connects 'PSM_JavaSpringWebApplicationProject' and 'PSM_ConfigurationProperty'. From 'PSM_JavaSpringWebApplicationProject', the role 'PSM_JavaSpringWebApplicationProject' has cardinality 0..*, and from 'PSM_ConfigurationProperty', the role 'PSM_ConfigurationProperty' has cardinality 0..*.
+An association connects 'PSM_JavaSpringWebApplicationProject' and 'PSM_SpringWebApplicationLayer'. From 'PSM_JavaSpringWebApplicationProject', the role 'PSM_JavaSpringWebApplicationProject15' has cardinality 0..*, and from 'PSM_SpringWebApplicationLayer', the role 'PSM_SpringWebApplicationLayer' has cardinality 0..*.
+An association connects 'PSM_JavaUserDefinedType' and 'PSM_SpringWebApplicationLayer'. From 'PSM_JavaUserDefinedType', the role 'PSM_JavaUserDefinedType' has cardinality 0..*, and from 'PSM_SpringWebApplicationLayer', the role 'PSM_SpringWebApplicationLayer17' has cardinality 0..*.
+An association connects 'PSM_JavaElement' and 'PSM_JavaAnnotation'. From 'PSM_JavaElement', the role 'PSM_JavaElement' has cardinality 0..*, and from 'PSM_JavaAnnotation', the role 'PSM_JavaAnnotation' has cardinality 0..*.
+An association connects 'PSM_JavaAnnotation' and 'PSM_JavaAnnotationParameter'. From 'PSM_JavaAnnotation', the role 'PSM_JavaAnnotation20' has cardinality 0..*, and from 'PSM_JavaAnnotationParameter', the role 'PSM_JavaAnnotationParameter' has cardinality 0..*.
+An association connects 'PSM_JavaUserDefinedType' and 'PSM_JavaMethod'. From 'PSM_JavaUserDefinedType', the role 'PSM_JavaUserDefinedType22' has cardinality 0..*, and from 'PSM_JavaMethod', the role 'PSM_JavaMethod' has cardinality 0..*.
+An association connects 'PSM_JavaUserDefinedType' and 'PSM_JavaUserDefinedType'. From 'PSM_JavaUserDefinedType', the role 'PSM_JavaUserDefinedType25' has cardinality 0..*, and from 'PSM_JavaUserDefinedType', the role 'PSM_JavaUserDefinedType23' has cardinality 0..*.
+An association connects 'PSM_JavaUserDefinedType' and 'PSM_JavaUserDefinedType'. From 'PSM_JavaUserDefinedType', the role 'PSM_JavaUserDefinedType26' has cardinality 0..*, and from 'PSM_JavaUserDefinedType', the role 'PSM_JavaUserDefinedType28' has cardinality 0..*.
+An association connects 'PSM_JavaUserDefinedType' and 'PSM_JavaUserDefinedType'. From 'PSM_JavaUserDefinedType', the role 'PSM_JavaUserDefinedType29' has cardinality 0..*, and from 'PSM_JavaUserDefinedType', the role 'PSM_JavaUserDefinedType31' has cardinality 0..*.
+An association connects 'PSM_JavaDataField' and 'PSM_JavaUserDefinedType'. From 'PSM_JavaDataField', the role 'PSM_JavaDataField' has cardinality 0..*, and from 'PSM_JavaUserDefinedType', the role 'PSM_JavaUserDefinedType33' has cardinality 0..*.
+An association connects 'PSM_JavaClassType' and 'PSM_JavaInterfaceType'. From 'PSM_JavaClassType', the role 'PSM_JavaClassType' has cardinality 0..*, and from 'PSM_JavaInterfaceType', the role 'PSM_JavaInterfaceType' has cardinality 0..*.
+An association connects 'PSM_JavaUserDefinedType' and 'PSM_JavaMethod'. From 'PSM_JavaUserDefinedType', the role 'PSM_JavaUserDefinedType37' has cardinality 0..*, and from 'PSM_JavaMethod', the role 'PSM_JavaMethod36' has cardinality 0..*.
+An association connects 'PSM_JavaMethod' and 'PSM_JavaMethodParameter'. From 'PSM_JavaMethod', the role 'PSM_JavaMethod39' has cardinality 0..*, and from 'PSM_JavaMethodParameter', the role 'PSM_JavaMethodParameter' has cardinality 0..*.
+An association connects 'PSM_JavaMethod' and 'PSM_JavaDataType'. From 'PSM_JavaMethod', the role 'PSM_JavaMethod41' has cardinality 0..*, and from 'PSM_JavaDataType', the role 'PSM_JavaDataType' has cardinality 0..*.
+An association connects 'PSM_JavaMethod' and 'PSM_JavaMethod'. From 'PSM_JavaMethod', the role 'PSM_JavaMethod44' has cardinality 0..*, and from 'PSM_JavaMethod', the role 'PSM_JavaMethod42' has cardinality 0..*.
+An association connects 'PSM_JavaDataField' and 'PSM_JavaDataType'. From 'PSM_JavaDataField', the role 'PSM_JavaDataField46' has cardinality 0..*, and from 'PSM_JavaDataType', the role 'PSM_JavaDataType47' has cardinality 0..*.

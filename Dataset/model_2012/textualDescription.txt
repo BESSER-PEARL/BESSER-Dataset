@@ -1,0 +1,34 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Index' represents an important domain concept.
+It does not declare any attributes.
+
+'Trace_Index' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Trace_Trace' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Trace_Call' represents an important domain concept.
+It has the following attributes: 'DBRowsNumber', which is of type str; 'methodName', which is of type str; 'CPUTime', which is of type str; 'DBAccessesNumber', which is of type str.
+
+'Trace_Level' represents an important domain concept.
+It does not declare any attributes.
+
+'Call' represents an important domain concept.
+It does not declare any attributes.
+
+'Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'Level' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'Trace_Trace' and 'Level'. From 'Trace_Trace', the role '0' has cardinality 0..*, and from 'Level', the role '#' has cardinality 0..*.
+An association connects 'Trace' and 'Trace_Level'. From 'Trace', the role '#3' has cardinality 0..*, and from 'Trace_Level', the role '02' has cardinality 0..*.
+An association connects 'Trace_Level' and 'Call'. From 'Trace_Level', the role '05' has cardinality 0..*, and from 'Call', the role '#6' has cardinality 0..*.
+An association connects 'Trace_Call' and 'Level'. From 'Trace_Call', the role '08' has cardinality 0..*, and from 'Level', the role '#9' has cardinality 0..*.
+An association connects 'Trace_Call' and 'Index'. From 'Trace_Call', the role 'Trace_Call' has cardinality 0..*, and from 'Index', the role 'Index' has cardinality 0..*.

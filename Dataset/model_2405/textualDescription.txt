@@ -1,0 +1,46 @@
+The domain model 'database' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'database_Table' represents an important domain concept.
+It has the following attributes: 'collation', which is of type str; 'storageEngine', which is of type str.
+
+'database_DataBase' represents an important domain concept.
+It does not declare any attributes.
+
+'database_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'database_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'database_Column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'collation', which is of type str; 'default', which is of type str; 'nullable', which is of type bool; 'length', which is of type int.
+
+'database_Unique' represents an important domain concept.
+It does not declare any attributes.
+
+'database_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'Index' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'database_Table' is a specialization of 'NamedElement'.
+The class 'database_Column' is a specialization of 'NamedElement'.
+The class 'database_PrimaryKey' is a specialization of 'Index'.
+The class 'database_Index' is a specialization of 'NamedElement'.
+The class 'database_Unique' is a specialization of 'Index'.
+
+Relationships between classes are modeled using associations.
+An association connects 'database_DataBase' and 'database_Table'. From 'database_DataBase', the role 'database_DataBase' has cardinality 0..*, and from 'database_Table', the role 'database_Table' has cardinality 0..*.
+An association connects 'database_DataBase' and 'database_Table'. From 'database_DataBase', the role 'database_DataBase3' has cardinality 0..*, and from 'database_Table', the role 'database_Table2' has cardinality 0..*.
+An association connects 'database_Table' and 'database_Column'. From 'database_Table', the role 'database_Table5' has cardinality 0..*, and from 'database_Column', the role 'database_Column' has cardinality 0..*.
+An association connects 'database_Index' and 'database_Table'. From 'database_Index', the role 'database_Index' has cardinality 0..*, and from 'database_Table', the role 'database_Table7' has cardinality 0..*.
+An association connects 'database_Table' and 'database_PrimaryKey'. From 'database_Table', the role 'database_Table9' has cardinality 0..*, and from 'database_PrimaryKey', the role 'database_PrimaryKey' has cardinality 0..*.
+An association connects 'database_Unique' and 'database_Table'. From 'database_Unique', the role 'database_Unique' has cardinality 0..*, and from 'database_Table', the role 'database_Table11' has cardinality 0..*.
+An association connects 'database_Column' and 'database_Index'. From 'database_Column', the role 'database_Column14' has cardinality 0..*, and from 'database_Index', the role 'database_Index13' has cardinality 0..*.

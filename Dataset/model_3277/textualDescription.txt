@@ -1,0 +1,12 @@
+The domain model 'data' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'data_Variable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'data_Variables' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'data_Variable' and 'data_Variables'. From 'data_Variable', the role 'data_Variable' has cardinality 0..*, and from 'data_Variables', the role 'data_Variables' has cardinality 0..*.

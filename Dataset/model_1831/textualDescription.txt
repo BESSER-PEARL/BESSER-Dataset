@@ -1,0 +1,196 @@
+The domain model 'jointPackage_BibTeX2DocBook' describes the core structural elements and their relationships within the system.
+
+The model defines 48 main class(es).
+
+'jointPackage_BibTeX2DocBook_TrgSection' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcThesisEntry' represents an important domain concept.
+It has one attribute: 'school', which is of type str.
+
+'jointPackage_BibTeX2DocBook_SrcDatedEntry' represents an important domain concept.
+It has one attribute: 'year', which is of type str.
+
+'jointPackage_BibTeX2DocBook_SrcInCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcBibTeXEntry' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'jointPackage_BibTeX2DocBook_TrgTitledElement' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'SrcTitledEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgPara' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_TrgPara' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'SrcDatedEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgBook' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_TrgArticle' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcMasterThesis' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcBookTitledEntry' represents an important domain concept.
+It has one attribute: 'booktitle', which is of type str.
+
+'TrgSect1' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_JointMM' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcBibTeXFile' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcInProceedings' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgTitledElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcPhDThesis' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcBookTitledEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcTitledEntry' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'SrcBook' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcProceedings' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcThesisEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcMasterThesis' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcAuthoredEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcBibTeXEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcAuthoredEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcTechReport' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcBooklet' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_TrgBook' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcAuthor' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgArticle' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_TrgSect1' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgSect2' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcInBook' represents an important domain concept.
+It has one attribute: 'chapter', which is of type int.
+
+'jointPackage_BibTeX2DocBook_SrcAuthor' represents an important domain concept.
+It has one attribute: 'author', which is of type str.
+
+'TrgSection' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcUnpublished' represents an important domain concept.
+It has one attribute: 'note', which is of type str.
+
+'TrgDocBook' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcProceedings' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcMisc' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_TrgSect2' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcBook' represents an important domain concept.
+It has one attribute: 'publisher', which is of type str.
+
+'jointPackage_BibTeX2DocBook_TrgDocBook' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_BibTeX2DocBook_SrcArticle' represents an important domain concept.
+It has one attribute: 'journal', which is of type str.
+
+'jointPackage_BibTeX2DocBook_SrcManual' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'jointPackage_BibTeX2DocBook_SrcArticle' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcArticle' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcArticle' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcTechReport' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcTechReport' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcTechReport' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcUnpublished' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcUnpublished' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcManual' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcProceedings' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcProceedings' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcInProceedings' is a specialization of 'SrcProceedings'.
+The class 'jointPackage_BibTeX2DocBook_SrcInProceedings' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcInProceedings' is a specialization of 'SrcBookTitledEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcBooklet' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcBook' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcBook' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcBook' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcInCollection' is a specialization of 'SrcBook'.
+The class 'jointPackage_BibTeX2DocBook_SrcInCollection' is a specialization of 'SrcBookTitledEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcInBook' is a specialization of 'SrcBook'.
+The class 'jointPackage_BibTeX2DocBook_SrcPhDThesis' is a specialization of 'SrcThesisEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcMasterThesis' is a specialization of 'SrcThesisEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcAuthoredEntry' is a specialization of 'SrcBibTeXEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcDatedEntry' is a specialization of 'SrcBibTeXEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcTitledEntry' is a specialization of 'SrcBibTeXEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcBookTitledEntry' is a specialization of 'SrcBibTeXEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcMisc' is a specialization of 'SrcBibTeXEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcThesisEntry' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcThesisEntry' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_BibTeX2DocBook_SrcThesisEntry' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_BibTeX2DocBook_TrgArticle' is a specialization of 'TrgTitledElement'.
+The class 'jointPackage_BibTeX2DocBook_TrgSection' is a specialization of 'TrgTitledElement'.
+The class 'jointPackage_BibTeX2DocBook_TrgSect1' is a specialization of 'TrgSection'.
+The class 'jointPackage_BibTeX2DocBook_TrgSect2' is a specialization of 'TrgSection'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jointPackage_BibTeX2DocBook_JointMM' and 'SrcMasterThesis'. From 'jointPackage_BibTeX2DocBook_JointMM', the role 'jointPackage_BibTeX2DocBook_JointMM' has cardinality 0..*, and from 'SrcMasterThesis', the role 'SrcMasterThesis' has cardinality 0..*.
+An association connects 'jointPackage_BibTeX2DocBook_JointMM' and 'TrgDocBook'. From 'jointPackage_BibTeX2DocBook_JointMM', the role 'jointPackage_BibTeX2DocBook_JointMM2' has cardinality 0..*, and from 'TrgDocBook', the role 'TrgDocBook' has cardinality 0..*.
+An association connects 'SrcBibTeXEntry' and 'jointPackage_BibTeX2DocBook_SrcBibTeXFile'. From 'SrcBibTeXEntry', the role 'SrcBibTeXEntry' has cardinality 0..*, and from 'jointPackage_BibTeX2DocBook_SrcBibTeXFile', the role 'jointPackage_BibTeX2DocBook_SrcBibTeXFile' has cardinality 0..*.
+An association connects 'jointPackage_BibTeX2DocBook_SrcAuthoredEntry' and 'SrcAuthor'. From 'jointPackage_BibTeX2DocBook_SrcAuthoredEntry', the role 'jointPackage_BibTeX2DocBook_SrcAuthoredEntry' has cardinality 0..*, and from 'SrcAuthor', the role 'SrcAuthor' has cardinality 0..*.
+An association connects 'TrgBook' and 'jointPackage_BibTeX2DocBook_TrgDocBook'. From 'TrgBook', the role 'TrgBook' has cardinality 0..*, and from 'jointPackage_BibTeX2DocBook_TrgDocBook', the role 'jointPackage_BibTeX2DocBook_TrgDocBook' has cardinality 0..*.
+An association connects 'TrgArticle' and 'jointPackage_BibTeX2DocBook_TrgBook'. From 'TrgArticle', the role 'TrgArticle' has cardinality 0..*, and from 'jointPackage_BibTeX2DocBook_TrgBook', the role 'jointPackage_BibTeX2DocBook_TrgBook' has cardinality 0..*.
+An association connects 'jointPackage_BibTeX2DocBook_TrgArticle' and 'TrgSect1'. From 'jointPackage_BibTeX2DocBook_TrgArticle', the role 'jointPackage_BibTeX2DocBook_TrgArticle' has cardinality 0..*, and from 'TrgSect1', the role 'TrgSect1' has cardinality 0..*.
+An association connects 'jointPackage_BibTeX2DocBook_TrgSection' and 'TrgPara'. From 'jointPackage_BibTeX2DocBook_TrgSection', the role '0' has cardinality 0..*, and from 'TrgPara', the role '#' has cardinality 0..*.
+An association connects 'TrgSect2' and 'jointPackage_BibTeX2DocBook_TrgSect1'. From 'TrgSect2', the role 'TrgSect2' has cardinality 0..*, and from 'jointPackage_BibTeX2DocBook_TrgSect1', the role 'jointPackage_BibTeX2DocBook_TrgSect1' has cardinality 0..*.
+An association connects 'TrgSection' and 'jointPackage_BibTeX2DocBook_TrgPara'. From 'TrgSection', the role '#12' has cardinality 0..*, and from 'jointPackage_BibTeX2DocBook_TrgPara', the role '011' has cardinality 0..*.

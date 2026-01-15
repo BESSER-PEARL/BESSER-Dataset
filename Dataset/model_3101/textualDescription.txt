@@ -1,0 +1,37 @@
+The domain model 'simpleUML_MM' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'simpleUML_MM_Class' represents an important domain concept.
+It has one attribute: 'is_persistent', which is of type bool.
+
+'simpleUML_MM_Attribute' represents an important domain concept.
+It has the following attributes: 'is_primary', which is of type bool; 'name', which is of type str.
+
+'simpleUML_MM_Classifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleUML_MM_Association' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleUML_MM_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleUML_MM_ClassModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleUML_MM_Class' is a specialization of 'Classifier'.
+The class 'simpleUML_MM_PrimitiveDataType' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleUML_MM_Association' and 'simpleUML_MM_Class'. From 'simpleUML_MM_Association', the role 'simpleUML_MM_Association' has cardinality 0..*, and from 'simpleUML_MM_Class', the role 'simpleUML_MM_Class' has cardinality 0..*.
+An association connects 'simpleUML_MM_Association' and 'simpleUML_MM_Class'. From 'simpleUML_MM_Association', the role 'simpleUML_MM_Association2' has cardinality 0..*, and from 'simpleUML_MM_Class', the role 'simpleUML_MM_Class3' has cardinality 0..*.
+An association connects 'simpleUML_MM_Classifier' and 'simpleUML_MM_Attribute'. From 'simpleUML_MM_Classifier', the role 'simpleUML_MM_Classifier' has cardinality 0..*, and from 'simpleUML_MM_Attribute', the role 'simpleUML_MM_Attribute' has cardinality 0..*.
+An association connects 'simpleUML_MM_Attribute' and 'simpleUML_MM_Class'. From 'simpleUML_MM_Attribute', the role 'simpleUML_MM_Attribute7' has cardinality 0..*, and from 'simpleUML_MM_Class', the role 'simpleUML_MM_Class6' has cardinality 0..*.
+An association connects 'simpleUML_MM_Class' and 'simpleUML_MM_Class'. From 'simpleUML_MM_Class', the role 'simpleUML_MM_Class8' has cardinality 0..*, and from 'simpleUML_MM_Class', the role 'simpleUML_MM_Class10' has cardinality 0..*.
+An association connects 'simpleUML_MM_ClassModel' and 'simpleUML_MM_Classifier'. From 'simpleUML_MM_ClassModel', the role 'simpleUML_MM_ClassModel' has cardinality 0..*, and from 'simpleUML_MM_Classifier', the role 'simpleUML_MM_Classifier12' has cardinality 0..*.
+An association connects 'simpleUML_MM_ClassModel' and 'simpleUML_MM_Association'. From 'simpleUML_MM_ClassModel', the role 'simpleUML_MM_ClassModel14' has cardinality 0..*, and from 'simpleUML_MM_Association', the role 'simpleUML_MM_Association15' has cardinality 0..*.

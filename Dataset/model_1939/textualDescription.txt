@@ -1,0 +1,106 @@
+The domain model 'Flights' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'Flights_Bookings' represents an important domain concept.
+It does not declare any attributes.
+
+'Flights_TimeStamp' represents an important domain concept.
+It has one attribute: 'time', which is of type str.
+
+'Flights_Flight' represents an important domain concept.
+It has one attribute: 'newAttribute', which is of type str.
+
+'Flights_Persons' represents an important domain concept.
+It does not declare any attributes.
+
+'Flights_FlightModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Flights_Booking' represents an important domain concept.
+It does not declare any attributes.
+
+'Flights_Person' represents an important domain concept.
+It has one attribute: 'travelState', which is of type str.
+
+'Flights_Planes' represents an important domain concept.
+It does not declare any attributes.
+
+'Flights_FlightContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Flights_Route' represents an important domain concept.
+It has one attribute: 'duration', which is of type int.
+
+'Flights_Airport' represents an important domain concept.
+It has one attribute: 'size', which is of type float.
+
+'Flights_Travel' represents an important domain concept.
+It does not declare any attributes.
+
+'Flights_Airports' represents an important domain concept.
+It does not declare any attributes.
+
+'Flights_FlightObject' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'Flights_Plane' represents an important domain concept.
+It has one attribute: 'capacity', which is of type int.
+
+'Flights_Routes' represents an important domain concept.
+It does not declare any attributes.
+
+'FlightObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Flights_Gate' represents an important domain concept.
+It has one attribute: 'position', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FlightState' defines the following possible values: 'completed', 'inFlight', 'planned'.
+The enumeration 'TravelState' defines the following possible values: 'luggageDroppedOf', 'onBoard', 'unknown', 'checkedIn'.
+
+The model also captures inheritance relationships between classes.
+The class 'Flights_Flight' is a specialization of 'FlightObject'.
+The class 'Flights_Booking' is a specialization of 'FlightObject'.
+The class 'Flights_Route' is a specialization of 'FlightObject'.
+The class 'Flights_Travel' is a specialization of 'FlightObject'.
+The class 'Flights_Person' is a specialization of 'FlightObject'.
+The class 'Flights_Airport' is a specialization of 'FlightObject'.
+The class 'Flights_Plane' is a specialization of 'FlightObject'.
+The class 'Flights_Gate' is a specialization of 'FlightObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Flights_FlightModel' and 'Flights_FlightContainer'. From 'Flights_FlightModel', the role 'Flights_FlightModel' has cardinality 0..*, and from 'Flights_FlightContainer', the role 'Flights_FlightContainer' has cardinality 0..*.
+An association connects 'Flights_FlightModel' and 'Flights_Bookings'. From 'Flights_FlightModel', the role 'Flights_FlightModel2' has cardinality 0..*, and from 'Flights_Bookings', the role 'Flights_Bookings' has cardinality 0..*.
+An association connects 'Flights_FlightModel' and 'Flights_Persons'. From 'Flights_FlightModel', the role 'Flights_FlightModel4' has cardinality 0..*, and from 'Flights_Persons', the role 'Flights_Persons' has cardinality 0..*.
+An association connects 'Flights_Routes' and 'Flights_FlightModel'. From 'Flights_Routes', the role 'Flights_Routes' has cardinality 0..*, and from 'Flights_FlightModel', the role 'Flights_FlightModel6' has cardinality 0..*.
+An association connects 'Flights_FlightModel' and 'Flights_Airports'. From 'Flights_FlightModel', the role 'Flights_FlightModel8' has cardinality 0..*, and from 'Flights_Airports', the role 'Flights_Airports' has cardinality 0..*.
+An association connects 'Flights_FlightModel' and 'Flights_Planes'. From 'Flights_FlightModel', the role 'Flights_FlightModel10' has cardinality 0..*, and from 'Flights_Planes', the role 'Flights_Planes' has cardinality 0..*.
+An association connects 'Flights_FlightModel' and 'Flights_TimeStamp'. From 'Flights_FlightModel', the role 'Flights_FlightModel12' has cardinality 0..*, and from 'Flights_TimeStamp', the role 'Flights_TimeStamp' has cardinality 0..*.
+An association connects 'Flights_FlightContainer' and 'Flights_Flight'. From 'Flights_FlightContainer', the role 'Flights_FlightContainer14' has cardinality 0..*, and from 'Flights_Flight', the role 'Flights_Flight' has cardinality 0..*.
+An association connects 'Flights_Travel' and 'Flights_Flight'. From 'Flights_Travel', the role 'Travel' has cardinality 0..*, and from 'Flights_Flight', the role 'flights' has cardinality 0..*.
+An association connects 'Flights_Flight' and 'Flights_Route'. From 'Flights_Flight', the role 'flights17' has cardinality 0..*, and from 'Flights_Route', the role 'Route' has cardinality 0..*.
+An association connects 'Flights_Gate' and 'Flights_Flight'. From 'Flights_Gate', the role 'Gate' has cardinality 0..*, and from 'Flights_Flight', the role 'outgoingFlights' has cardinality 0..*.
+An association connects 'Flights_Flight' and 'Flights_Gate'. From 'Flights_Flight', the role 'incomingFlights' has cardinality 0..*, and from 'Flights_Gate', the role 'Gate20' has cardinality 0..*.
+An association connects 'Flights_Flight' and 'Flights_Plane'. From 'Flights_Flight', the role 'flights22' has cardinality 0..*, and from 'Flights_Plane', the role 'Plane' has cardinality 0..*.
+An association connects 'Flights_TimeStamp' and 'Flights_Flight'. From 'Flights_TimeStamp', the role 'Flights_TimeStamp25' has cardinality 0..*, and from 'Flights_Flight', the role 'Flights_Flight24' has cardinality 0..*.
+An association connects 'Flights_Flight' and 'Flights_TimeStamp'. From 'Flights_Flight', the role 'Flights_Flight27' has cardinality 0..*, and from 'Flights_TimeStamp', the role 'Flights_TimeStamp28' has cardinality 0..*.
+An association connects 'Flights_Bookings' and 'Flights_Booking'. From 'Flights_Bookings', the role 'Flights_Bookings30' has cardinality 0..*, and from 'Flights_Booking', the role 'Flights_Booking' has cardinality 0..*.
+An association connects 'Flights_Travel' and 'Flights_Booking'. From 'Flights_Travel', the role 'Flights_Travel' has cardinality 0..*, and from 'Flights_Booking', the role 'Flights_Booking32' has cardinality 0..*.
+An association connects 'Flights_Routes' and 'Flights_Route'. From 'Flights_Routes', the role 'Flights_Routes34' has cardinality 0..*, and from 'Flights_Route', the role 'Flights_Route' has cardinality 0..*.
+An association connects 'Flights_Route' and 'Flights_Flight'. From 'Flights_Route', the role 'route' has cardinality 0..*, and from 'Flights_Flight', the role 'Flight' has cardinality 0..*.
+An association connects 'Flights_Airport' and 'Flights_Route'. From 'Flights_Airport', the role 'Airport' has cardinality 0..*, and from 'Flights_Route', the role 'outgoingRoutes' has cardinality 0..*.
+An association connects 'Flights_Route' and 'Flights_Airport'. From 'Flights_Route', the role 'incomingRoutes' has cardinality 0..*, and from 'Flights_Airport', the role 'Airport38' has cardinality 0..*.
+An association connects 'Flights_Travel' and 'Flights_Flight'. From 'Flights_Travel', the role 'travels' has cardinality 0..*, and from 'Flights_Flight', the role 'Flight40' has cardinality 0..*.
+An association connects 'Flights_Travel' and 'Flights_Person'. From 'Flights_Travel', the role 'travels42' has cardinality 0..*, and from 'Flights_Person', the role 'Person' has cardinality 0..*.
+An association connects 'Flights_Person' and 'Flights_Persons'. From 'Flights_Person', the role 'Flights_Person' has cardinality 0..*, and from 'Flights_Persons', the role 'Flights_Persons44' has cardinality 0..*.
+An association connects 'Flights_Person' and 'Flights_Travel'. From 'Flights_Person', the role 'person' has cardinality 0..*, and from 'Flights_Travel', the role 'Travel46' has cardinality 0..*.
+An association connects 'Flights_Airport' and 'Flights_Airports'. From 'Flights_Airport', the role 'Flights_Airport' has cardinality 0..*, and from 'Flights_Airports', the role 'Flights_Airports48' has cardinality 0..*.
+An association connects 'Flights_Gate' and 'Flights_Airport'. From 'Flights_Gate', the role 'Flights_Gate' has cardinality 0..*, and from 'Flights_Airport', the role 'Flights_Airport50' has cardinality 0..*.
+An association connects 'Flights_Route' and 'Flights_Airport'. From 'Flights_Route', the role 'Route52' has cardinality 0..*, and from 'Flights_Airport', the role 'src' has cardinality 0..*.
+An association connects 'Flights_Airport' and 'Flights_Route'. From 'Flights_Airport', the role 'trg' has cardinality 0..*, and from 'Flights_Route', the role 'Route54' has cardinality 0..*.
+An association connects 'Flights_Planes' and 'Flights_Plane'. From 'Flights_Planes', the role 'Flights_Planes56' has cardinality 0..*, and from 'Flights_Plane', the role 'Flights_Plane' has cardinality 0..*.
+An association connects 'Flights_Flight' and 'Flights_Plane'. From 'Flights_Flight', the role 'Flight58' has cardinality 0..*, and from 'Flights_Plane', the role 'plane' has cardinality 0..*.
+An association connects 'Flights_Flight' and 'Flights_Gate'. From 'Flights_Flight', the role 'Flight61' has cardinality 0..*, and from 'Flights_Gate', the role 'src60' has cardinality 0..*.
+An association connects 'Flights_Flight' and 'Flights_Gate'. From 'Flights_Flight', the role 'Flight64' has cardinality 0..*, and from 'Flights_Gate', the role 'trg63' has cardinality 0..*.

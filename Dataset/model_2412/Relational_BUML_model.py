@@ -1,0 +1,132 @@
+####################
+# STRUCTURAL MODEL #
+####################
+
+from besser.BUML.metamodel.structural import (
+    Class, Property, Method, Parameter,
+    BinaryAssociation, Generalization, DomainModel,
+    Enumeration, EnumerationLiteral, Multiplicity,
+    StringType, IntegerType, FloatType, BooleanType,
+    TimeType, DateType, DateTimeType, TimeDeltaType,
+    AnyType, Constraint, AssociationClass, Metadata
+)
+
+# Classes
+Table = Class(name="Table")
+Relational_Table = Class(name="Relational::Table")
+Schema = Class(name="Schema")
+Column = Class(name="Column")
+Relational_Column = Class(name="Relational::Column")
+Relational_Named = Class(name="Relational::Named", is_abstract=True)
+Relational_Schema = Class(name="Relational::Schema")
+Named = Class(name="Named")
+Type = Class(name="Type")
+Relational_Type = Class(name="Relational::Type")
+Relational_System = Class(name="Relational::System")
+
+# Table class attributes and methods
+
+# Relational_Table class attributes and methods
+
+# Schema class attributes and methods
+
+# Column class attributes and methods
+
+# Relational_Column class attributes and methods
+
+# Relational_Named class attributes and methods
+Relational_Named_name: Property = Property(name="name", type=StringType)
+Relational_Named.attributes={Relational_Named_name}
+
+# Relational_Schema class attributes and methods
+
+# Named class attributes and methods
+
+# Type class attributes and methods
+
+# Relational_Type class attributes and methods
+
+# Relational_System class attributes and methods
+
+# Relationships
+ownedElements0: BinaryAssociation = BinaryAssociation(
+    name="ownedElements0",
+    ends={
+        Property(name="#", type=Relational_Schema, multiplicity=Multiplicity(1, 1)),
+        Property(name="0", type=Table, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+owner1: BinaryAssociation = BinaryAssociation(
+    name="owner1",
+    ends={
+        Property(name="#3", type=Relational_Table, multiplicity=Multiplicity(1, 1)),
+        Property(name="02", type=Schema, multiplicity=Multiplicity(1, 1))
+    }
+)
+col4: BinaryAssociation = BinaryAssociation(
+    name="col4",
+    ends={
+        Property(name="#6", type=Relational_Table, multiplicity=Multiplicity(1, 1)),
+        Property(name="05", type=Column, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+key7: BinaryAssociation = BinaryAssociation(
+    name="key7",
+    ends={
+        Property(name="#9", type=Relational_Table, multiplicity=Multiplicity(1, 1)),
+        Property(name="08", type=Column, multiplicity=Multiplicity(0, 9999))
+    }
+)
+owner10: BinaryAssociation = BinaryAssociation(
+    name="owner10",
+    ends={
+        Property(name="#12", type=Relational_Column, multiplicity=Multiplicity(1, 1)),
+        Property(name="011", type=Table, multiplicity=Multiplicity(1, 1))
+    }
+)
+schemas17: BinaryAssociation = BinaryAssociation(
+    name="schemas17",
+    ends={
+        Property(name="Schema", type=Relational_System, multiplicity=Multiplicity(1, 1)),
+        Property(name="Relational_System", type=Schema, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+keyOf13: BinaryAssociation = BinaryAssociation(
+    name="keyOf13",
+    ends={
+        Property(name="#15", type=Relational_Column, multiplicity=Multiplicity(1, 1)),
+        Property(name="014", type=Table, multiplicity=Multiplicity(0, 1))
+    }
+)
+type16: BinaryAssociation = BinaryAssociation(
+    name="type16",
+    ends={
+        Property(name="Type", type=Relational_Column, multiplicity=Multiplicity(1, 1)),
+        Property(name="Relational_Column", type=Type, multiplicity=Multiplicity(1, 1))
+    }
+)
+
+# Generalizations
+gen_Relational_Table_Named = Generalization(general=Named, specific=Relational_Table)
+gen_Relational_Column_Named = Generalization(general=Named, specific=Relational_Column)
+gen_Relational_Schema_Named = Generalization(general=Named, specific=Relational_Schema)
+gen_Relational_Type_Named = Generalization(general=Named, specific=Relational_Type)
+gen_Relational_System_Named = Generalization(general=Named, specific=Relational_System)
+
+# Domain Model
+domain_model = DomainModel(
+    name="PrimitiveTypes",
+    types={Table, Relational_Table, Schema, Column, Relational_Column, Relational_Named, Relational_Schema, Named, Type, Relational_Type, Relational_System},
+    associations={ownedElements0, owner1, col4, key7, owner10, schemas17, keyOf13, type16},
+    generalizations={gen_Relational_Table_Named, gen_Relational_Column_Named, gen_Relational_Schema_Named, gen_Relational_Type_Named, gen_Relational_System_Named},
+    metadata=None
+)
+
+
+###################### 
+ # PROJECT DEFINITION # 
+ ###################### 
+from besser.BUML.metamodel.project import Project 
+from besser.BUML.metamodel.structural.structural import Metadata
+metadata = Metadata(description="New project")
+project = Project(name="sampleModel",models=[domain_model],owner="User",metadata=metadata)

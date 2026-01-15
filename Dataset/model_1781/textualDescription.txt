@@ -1,0 +1,27 @@
+The domain model 'docbook' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'docbook_Sect1Type' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'mixed', which is of type str; 'para', which is of type str.
+
+'docbook_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'docbook_BookType' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'info', which is of type str.
+
+'docbook_ChapterType' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'mixed', which is of type str; 'para', which is of type str.
+
+'docbook_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'mixed', which is of type str; 'info', which is of type str; 'para', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'docbook_ChapterType' and 'docbook_BookType'. From 'docbook_ChapterType', the role 'docbook_ChapterType' has cardinality 0..*, and from 'docbook_BookType', the role 'docbook_BookType' has cardinality 0..*.
+An association connects 'docbook_Sect1Type' and 'docbook_ChapterType'. From 'docbook_Sect1Type', the role 'docbook_Sect1Type' has cardinality 0..*, and from 'docbook_ChapterType', the role 'docbook_ChapterType2' has cardinality 0..*.
+An association connects 'docbook_EStringToStringMapEntry' and 'docbook_DocumentRoot'. From 'docbook_EStringToStringMapEntry', the role 'docbook_EStringToStringMapEntry' has cardinality 0..*, and from 'docbook_DocumentRoot', the role 'docbook_DocumentRoot' has cardinality 0..*.
+An association connects 'docbook_EStringToStringMapEntry' and 'docbook_DocumentRoot'. From 'docbook_EStringToStringMapEntry', the role 'docbook_EStringToStringMapEntry6' has cardinality 0..*, and from 'docbook_DocumentRoot', the role 'docbook_DocumentRoot5' has cardinality 0..*.
+An association connects 'docbook_BookType' and 'docbook_DocumentRoot'. From 'docbook_BookType', the role 'docbook_BookType9' has cardinality 0..*, and from 'docbook_DocumentRoot', the role 'docbook_DocumentRoot8' has cardinality 0..*.
+An association connects 'docbook_ChapterType' and 'docbook_DocumentRoot'. From 'docbook_ChapterType', the role 'docbook_ChapterType12' has cardinality 0..*, and from 'docbook_DocumentRoot', the role 'docbook_DocumentRoot11' has cardinality 0..*.
+An association connects 'docbook_Sect1Type' and 'docbook_DocumentRoot'. From 'docbook_Sect1Type', the role 'docbook_Sect1Type15' has cardinality 0..*, and from 'docbook_DocumentRoot', the role 'docbook_DocumentRoot14' has cardinality 0..*.

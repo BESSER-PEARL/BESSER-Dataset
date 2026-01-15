@@ -1,0 +1,44 @@
+The domain model 'comicBookCollection2' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'comicBookCollection2_Book' represents an important domain concept.
+It has the following attributes: 'publicationDate', which is of type str; 'name', which is of type str.
+
+'comicBookCollection2_Artist' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'comicBookCollection2_Publisher' represents an important domain concept.
+It has one attribute: 'publishersName', which is of type str.
+
+'comicBookCollection2_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'comicBookCollection2_ComicBookCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'comicBookCollection2_Series' represents an important domain concept.
+It has one attribute: 'seriesName', which is of type str.
+
+'comicBookCollection2_Editor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'comicBookCollection2_Book' and 'comicBookCollection2_ComicBookCollection'. From 'comicBookCollection2_Book', the role 'comicBookCollection2_Book' has cardinality 0..*, and from 'comicBookCollection2_ComicBookCollection', the role 'comicBookCollection2_ComicBookCollection' has cardinality 0..*.
+An association connects 'comicBookCollection2_Artist' and 'comicBookCollection2_ComicBookCollection'. From 'comicBookCollection2_Artist', the role 'comicBookCollection2_Artist' has cardinality 0..*, and from 'comicBookCollection2_ComicBookCollection', the role 'comicBookCollection2_ComicBookCollection2' has cardinality 0..*.
+An association connects 'comicBookCollection2_ComicBookCollection' and 'comicBookCollection2_Editor'. From 'comicBookCollection2_ComicBookCollection', the role 'comicBookCollection2_ComicBookCollection4' has cardinality 0..*, and from 'comicBookCollection2_Editor', the role 'comicBookCollection2_Editor' has cardinality 0..*.
+An association connects 'comicBookCollection2_ComicBookCollection' and 'comicBookCollection2_Writer'. From 'comicBookCollection2_ComicBookCollection', the role 'comicBookCollection2_ComicBookCollection6' has cardinality 0..*, and from 'comicBookCollection2_Writer', the role 'comicBookCollection2_Writer' has cardinality 0..*.
+An association connects 'comicBookCollection2_Publisher' and 'comicBookCollection2_ComicBookCollection'. From 'comicBookCollection2_Publisher', the role 'comicBookCollection2_Publisher' has cardinality 0..*, and from 'comicBookCollection2_ComicBookCollection', the role 'comicBookCollection2_ComicBookCollection8' has cardinality 0..*.
+An association connects 'comicBookCollection2_ComicBookCollection' and 'comicBookCollection2_Series'. From 'comicBookCollection2_ComicBookCollection', the role 'comicBookCollection2_ComicBookCollection10' has cardinality 0..*, and from 'comicBookCollection2_Series', the role 'comicBookCollection2_Series' has cardinality 0..*.
+An association connects 'comicBookCollection2_Publisher' and 'comicBookCollection2_Book'. From 'comicBookCollection2_Publisher', the role 'publisher' has cardinality 0..*, and from 'comicBookCollection2_Book', the role 'Book' has cardinality 0..*.
+An association connects 'comicBookCollection2_Series' and 'comicBookCollection2_Book'. From 'comicBookCollection2_Series', the role 'seriesPartOf' has cardinality 0..*, and from 'comicBookCollection2_Book', the role 'Book13' has cardinality 0..*.
+An association connects 'comicBookCollection2_Artist' and 'comicBookCollection2_Book'. From 'comicBookCollection2_Artist', the role 'Artist' has cardinality 0..*, and from 'comicBookCollection2_Book', the role 'booksArtistFor' has cardinality 0..*.
+An association connects 'comicBookCollection2_Editor' and 'comicBookCollection2_Book'. From 'comicBookCollection2_Editor', the role 'Editor' has cardinality 0..*, and from 'comicBookCollection2_Book', the role 'booksEditorFor' has cardinality 0..*.
+An association connects 'comicBookCollection2_Writer' and 'comicBookCollection2_Book'. From 'comicBookCollection2_Writer', the role 'Writer' has cardinality 0..*, and from 'comicBookCollection2_Book', the role 'booksWriterFor' has cardinality 0..*.
+An association connects 'comicBookCollection2_Book' and 'comicBookCollection2_Artist'. From 'comicBookCollection2_Book', the role 'booksCoverArtistFor' has cardinality 0..*, and from 'comicBookCollection2_Artist', the role 'Artist18' has cardinality 0..*.
+An association connects 'comicBookCollection2_Publisher' and 'comicBookCollection2_Book'. From 'comicBookCollection2_Publisher', the role 'Publisher' has cardinality 0..*, and from 'comicBookCollection2_Book', the role 'booksPublished' has cardinality 0..*.
+An association connects 'comicBookCollection2_Book' and 'comicBookCollection2_Series'. From 'comicBookCollection2_Book', the role 'booksInSeries' has cardinality 0..*, and from 'comicBookCollection2_Series', the role 'Series' has cardinality 0..*.
+An association connects 'comicBookCollection2_Book' and 'comicBookCollection2_Artist'. From 'comicBookCollection2_Book', the role 'Book22' has cardinality 0..*, and from 'comicBookCollection2_Artist', the role 'artists' has cardinality 0..*.
+An association connects 'comicBookCollection2_Artist' and 'comicBookCollection2_Book'. From 'comicBookCollection2_Artist', the role 'coverArtist' has cardinality 0..*, and from 'comicBookCollection2_Book', the role 'Book24' has cardinality 0..*.
+An association connects 'comicBookCollection2_Editor' and 'comicBookCollection2_Book'. From 'comicBookCollection2_Editor', the role 'editors' has cardinality 0..*, and from 'comicBookCollection2_Book', the role 'Book26' has cardinality 0..*.
+An association connects 'comicBookCollection2_Book' and 'comicBookCollection2_Writer'. From 'comicBookCollection2_Book', the role 'Book28' has cardinality 0..*, and from 'comicBookCollection2_Writer', the role 'writers' has cardinality 0..*.

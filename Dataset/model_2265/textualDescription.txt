@@ -1,0 +1,18 @@
+The domain model 'TUWien' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'TUWien_Student' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int.
+
+'TUWien_University' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TUWien_Course' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'TUWien_University' and 'TUWien_Course'. From 'TUWien_University', the role 'TUWien_University' has cardinality 0..*, and from 'TUWien_Course', the role 'TUWien_Course' has cardinality 0..*.
+An association connects 'TUWien_Student' and 'TUWien_University'. From 'TUWien_Student', the role 'TUWien_Student' has cardinality 0..*, and from 'TUWien_University', the role 'TUWien_University2' has cardinality 0..*.
+An association connects 'TUWien_Course' and 'TUWien_Student'. From 'TUWien_Course', the role 'Course' has cardinality 0..*, and from 'TUWien_Student', the role 'student' has cardinality 0..*.
+An association connects 'TUWien_Course' and 'TUWien_Student'. From 'TUWien_Course', the role 'course' has cardinality 0..*, and from 'TUWien_Student', the role 'Student' has cardinality 0..*.

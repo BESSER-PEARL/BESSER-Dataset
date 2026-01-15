@@ -1,0 +1,73 @@
+The domain model 'eol_module' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'eol_module_EOLLibraryModule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eol_module_EOLModule' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_module_FormalParameterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_module_OperationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_module_Import' represents an important domain concept.
+It has one attribute: 'imported', which is of type str.
+
+'eol_module_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_module_AnnotationBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_module_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'EOLLibraryModule' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_module_NameExpression' represents an important domain concept.
+It has the following attributes: 'isType', which is of type bool; 'name', which is of type str.
+
+'eol_module_ModelDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_module_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_module_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_module_ExpressionOrStatementBlock' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'eol_module_EOLModule' is a specialization of 'EOLLibraryModule'.
+The class 'eol_module_AnnotationBlock' is a specialization of 'Block'.
+The class 'eol_module_NameExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'eol_module_Import' and 'eol_module_EOLLibraryModule'. From 'eol_module_Import', the role 'eol_module_Import' has cardinality 0..*, and from 'eol_module_EOLLibraryModule', the role 'eol_module_EOLLibraryModule' has cardinality 0..*.
+An association connects 'eol_module_EOLLibraryModule' and 'eol_module_ModelDeclarationStatement'. From 'eol_module_EOLLibraryModule', the role 'eol_module_EOLLibraryModule2' has cardinality 0..*, and from 'eol_module_ModelDeclarationStatement', the role 'eol_module_ModelDeclarationStatement' has cardinality 0..*.
+An association connects 'eol_module_EOLLibraryModule' and 'eol_module_OperationDefinition'. From 'eol_module_EOLLibraryModule', the role 'eol_module_EOLLibraryModule4' has cardinality 0..*, and from 'eol_module_OperationDefinition', the role 'eol_module_OperationDefinition' has cardinality 0..*.
+An association connects 'eol_module_EOLModule' and 'eol_module_Block'. From 'eol_module_EOLModule', the role 'eol_module_EOLModule' has cardinality 0..*, and from 'eol_module_Block', the role 'eol_module_Block' has cardinality 0..*.
+An association connects 'eol_module_EOLLibraryModule' and 'eol_module_Import'. From 'eol_module_EOLLibraryModule', the role 'eol_module_EOLLibraryModule8' has cardinality 0..*, and from 'eol_module_Import', the role 'eol_module_Import7' has cardinality 0..*.
+An association connects 'eol_module_Statement' and 'eol_module_Block'. From 'eol_module_Statement', the role 'eol_module_Statement' has cardinality 0..*, and from 'eol_module_Block', the role 'eol_module_Block10' has cardinality 0..*.
+An association connects 'eol_module_ExpressionOrStatementBlock' and 'eol_module_Block'. From 'eol_module_ExpressionOrStatementBlock', the role 'eol_module_ExpressionOrStatementBlock' has cardinality 0..*, and from 'eol_module_Block', the role 'eol_module_Block12' has cardinality 0..*.
+An association connects 'eol_module_Expression' and 'eol_module_ExpressionOrStatementBlock'. From 'eol_module_Expression', the role 'eol_module_Expression' has cardinality 0..*, and from 'eol_module_ExpressionOrStatementBlock', the role 'eol_module_ExpressionOrStatementBlock14' has cardinality 0..*.
+An association connects 'eol_module_Expression' and 'eol_module_ExpressionOrStatementBlock'. From 'eol_module_Expression', the role 'eol_module_Expression17' has cardinality 0..*, and from 'eol_module_ExpressionOrStatementBlock', the role 'eol_module_ExpressionOrStatementBlock16' has cardinality 0..*.
+An association connects 'eol_module_Type' and 'eol_module_OperationDefinition'. From 'eol_module_Type', the role 'eol_module_Type' has cardinality 0..*, and from 'eol_module_OperationDefinition', the role 'eol_module_OperationDefinition19' has cardinality 0..*.
+An association connects 'eol_module_OperationDefinition' and 'eol_module_Type'. From 'eol_module_OperationDefinition', the role 'eol_module_OperationDefinition21' has cardinality 0..*, and from 'eol_module_Type', the role 'eol_module_Type22' has cardinality 0..*.
+An association connects 'eol_module_OperationDefinition' and 'eol_module_AnnotationBlock'. From 'eol_module_OperationDefinition', the role 'eol_module_OperationDefinition24' has cardinality 0..*, and from 'eol_module_AnnotationBlock', the role 'eol_module_AnnotationBlock' has cardinality 0..*.
+An association connects 'eol_module_Block' and 'eol_module_OperationDefinition'. From 'eol_module_Block', the role 'eol_module_Block27' has cardinality 0..*, and from 'eol_module_OperationDefinition', the role 'eol_module_OperationDefinition26' has cardinality 0..*.
+An association connects 'eol_module_OperationDefinition' and 'eol_module_NameExpression'. From 'eol_module_OperationDefinition', the role 'eol_module_OperationDefinition29' has cardinality 0..*, and from 'eol_module_NameExpression', the role 'eol_module_NameExpression' has cardinality 0..*.
+An association connects 'eol_module_FormalParameterExpression' and 'eol_module_OperationDefinition'. From 'eol_module_FormalParameterExpression', the role 'eol_module_FormalParameterExpression' has cardinality 0..*, and from 'eol_module_OperationDefinition', the role 'eol_module_OperationDefinition31' has cardinality 0..*.

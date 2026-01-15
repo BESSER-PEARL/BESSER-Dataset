@@ -1,0 +1,21 @@
+The domain model 'person' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'person_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'person_CompanyType' represents an important domain concept.
+It does not declare any attributes.
+
+'person_PersonType' represents an important domain concept.
+It has the following attributes: 'age', which is of type str; 'name', which is of type str; 'country', which is of type str; 'email', which is of type str.
+
+'person_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'person_PersonType' and 'person_CompanyType'. From 'person_PersonType', the role 'person_PersonType' has cardinality 0..*, and from 'person_CompanyType', the role 'person_CompanyType' has cardinality 0..*.
+An association connects 'person_DocumentRoot' and 'person_EStringToStringMapEntry'. From 'person_DocumentRoot', the role 'person_DocumentRoot' has cardinality 0..*, and from 'person_EStringToStringMapEntry', the role 'person_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'person_DocumentRoot' and 'person_EStringToStringMapEntry'. From 'person_DocumentRoot', the role 'person_DocumentRoot3' has cardinality 0..*, and from 'person_EStringToStringMapEntry', the role 'person_EStringToStringMapEntry4' has cardinality 0..*.
+An association connects 'person_CompanyType' and 'person_DocumentRoot'. From 'person_CompanyType', the role 'person_CompanyType7' has cardinality 0..*, and from 'person_DocumentRoot', the role 'person_DocumentRoot6' has cardinality 0..*.

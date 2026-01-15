@@ -1,0 +1,54 @@
+The domain model 'metaModelSM' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'metaModelSM_Triggers' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelSM_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelSM_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelSM_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelSM_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelSM_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelSM_State' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelSM_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelSM_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelSM_NewEClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'metaModelSM_NewEClass2' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'metaModelSM_InitialState' is a specialization of 'State'.
+The class 'metaModelSM_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metaModelSM_NewEClass1' and 'metaModelSM_NewEClass2'. From 'metaModelSM_NewEClass1', the role 'metaModelSM_NewEClass1' has cardinality 0..*, and from 'metaModelSM_NewEClass2', the role 'metaModelSM_NewEClass2' has cardinality 0..*.
+An association connects 'metaModelSM_Region' and 'metaModelSM_StateMachine'. From 'metaModelSM_Region', the role 'metaModelSM_Region' has cardinality 0..*, and from 'metaModelSM_StateMachine', the role 'metaModelSM_StateMachine' has cardinality 0..*.
+An association connects 'metaModelSM_Triggers' and 'metaModelSM_State'. From 'metaModelSM_Triggers', the role 'metaModelSM_Triggers' has cardinality 0..*, and from 'metaModelSM_State', the role 'metaModelSM_State' has cardinality 0..*.
+An association connects 'metaModelSM_State' and 'metaModelSM_Region'. From 'metaModelSM_State', the role 'metaModelSM_State4' has cardinality 0..*, and from 'metaModelSM_Region', the role 'metaModelSM_Region5' has cardinality 0..*.
+An association connects 'metaModelSM_Region' and 'metaModelSM_Transition'. From 'metaModelSM_Region', the role 'metaModelSM_Region7' has cardinality 0..*, and from 'metaModelSM_Transition', the role 'metaModelSM_Transition' has cardinality 0..*.
+An association connects 'metaModelSM_Triggers' and 'metaModelSM_Transition'. From 'metaModelSM_Triggers', the role 'metaModelSM_Triggers10' has cardinality 0..*, and from 'metaModelSM_Transition', the role 'metaModelSM_Transition9' has cardinality 0..*.
+An association connects 'metaModelSM_Guard' and 'metaModelSM_Transition'. From 'metaModelSM_Guard', the role 'metaModelSM_Guard' has cardinality 0..*, and from 'metaModelSM_Transition', the role 'metaModelSM_Transition12' has cardinality 0..*.
+An association connects 'metaModelSM_Triggers' and 'metaModelSM_State'. From 'metaModelSM_Triggers', the role 'metaModelSM_Triggers14' has cardinality 0..*, and from 'metaModelSM_State', the role 'metaModelSM_State15' has cardinality 0..*.
+An association connects 'metaModelSM_Triggers' and 'metaModelSM_Signal'. From 'metaModelSM_Triggers', the role 'metaModelSM_Triggers17' has cardinality 0..*, and from 'metaModelSM_Signal', the role 'metaModelSM_Signal' has cardinality 0..*.

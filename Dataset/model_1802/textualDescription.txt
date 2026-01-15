@@ -1,0 +1,185 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'library_Unit' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'code', which is of type str; 'name', which is of type str.
+
+'library_MetricSource' represents an important domain concept.
+It does not declare any attributes.
+
+'library_EquipmentGroup' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'count', which is of type str.
+
+'library_MultiImage' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Equipment' represents an important domain concept.
+It has the following attributes: 'equipmentCode', which is of type str; 'position', which is of type str; 'state', which is of type str; 'redundancy', which is of type str; 'count', which is of type str.
+
+'library_Library' represents an important domain concept.
+It has the following attributes: 'protocols', which is of type str; 'name', which is of type str.
+
+'library_Metric' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Component' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'duration', which is of type str; 'name', which is of type str.
+
+'library_DiagramInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Vendor' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'library_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'library_FunctionRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Meta' represents an important domain concept.
+It does not declare any attributes.
+
+'library_MetricValueRange' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Expression' represents an important domain concept.
+It has the following attributes: 'expressionLines', which is of type str; 'name', which is of type str.
+
+'library_NetXResource' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'library_BaseResource' represents an important domain concept.
+It has the following attributes: 'shortName', which is of type str; 'summaryDisplay', which is of type str; 'detailDisplay', which is of type str; 'expressionName', which is of type str; 'longName', which is of type str.
+
+'library_ProductInfo' represents an important domain concept.
+It has the following attributes: 'productCode', which is of type str; 'salesCode', which is of type str; 'endOfSupportDate', which is of type str; 'endOfSalesDate', which is of type str; 'underDevelopmentDate', which is of type str; 'availableDate', which is of type str.
+
+'library_Parameter' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'description', which is of type str; 'modifiable', which is of type str; 'name', which is of type str; 'expressionName', which is of type str.
+
+'BaseResource' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Protocol' represents an important domain concept.
+It does not declare any attributes.
+
+'Company' represents an important domain concept.
+It does not declare any attributes.
+
+'library_ExpressionResult' represents an important domain concept.
+It has the following attributes: 'targetRange', which is of type str; 'targetKindHint', which is of type str; 'targetIntervalHint', which is of type str.
+
+'library_EquipmentRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'library_BaseExpressionResult' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Lifecycle' represents an important domain concept.
+It does not declare any attributes.
+
+'Base' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseExpressionResult' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Tolerance' represents an important domain concept.
+It has the following attributes: 'level', which is of type str; 'name', which is of type str.
+
+'library_NodeType' represents an important domain concept.
+It has the following attributes: 'leafNode', which is of type str; 'name', which is of type str.
+
+'library_LastEvaluationExpressionResult' represents an important domain concept.
+It has one attribute: 'lastEvalResult', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateType' defines the following possible values: 'STANDBY', 'DEFECT', 'ACTIVE', 'RESERVED', 'IDLE'.
+The enumeration 'RedundancyType' defines the following possible values: 'n1', 'n', '_11'.
+The enumeration 'LevelKind' defines the following possible values: 'GREEN', 'RED', 'AMBER', 'YELLOW'.
+The enumeration 'RangeKind' defines the following possible values: 'TOLERANCE', 'UTILIZATION', 'TRENDED', 'FORECASTCAP', 'DERIVED', 'METRICREMOVE', 'CAP', 'FORECAST', 'METRIC'.
+
+The model also captures inheritance relationships between classes.
+The class 'library_BaseResource' is a specialization of 'Base'.
+The class 'library_Component' is a specialization of 'Base'.
+The class 'library_Equipment' is a specialization of 'Component'.
+The class 'library_EquipmentGroup' is a specialization of 'Base'.
+The class 'library_Expression' is a specialization of 'Base'.
+The class 'library_ExpressionResult' is a specialization of 'BaseExpressionResult'.
+The class 'library_Function' is a specialization of 'Component'.
+The class 'library_LastEvaluationExpressionResult' is a specialization of 'BaseExpressionResult'.
+The class 'library_NetXResource' is a specialization of 'BaseResource'.
+The class 'library_NodeType' is a specialization of 'Base'.
+The class 'library_Parameter' is a specialization of 'Base'.
+The class 'library_ProductInfo' is a specialization of 'Base'.
+The class 'library_Tolerance' is a specialization of 'Base'.
+The class 'library_Unit' is a specialization of 'Base'.
+The class 'library_Vendor' is a specialization of 'Company'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_BaseResource' and 'library_Unit'. From 'library_BaseResource', the role 'library_BaseResource' has cardinality 0..*, and from 'library_Unit', the role 'library_Unit' has cardinality 0..*.
+An association connects 'library_Lifecycle' and 'library_Component'. From 'library_Lifecycle', the role 'library_Lifecycle' has cardinality 0..*, and from 'library_Component', the role 'library_Component' has cardinality 0..*.
+An association connects 'library_Component' and 'library_NetXResource'. From 'library_Component', the role 'componentRef' has cardinality 0..*, and from 'library_NetXResource', the role 'NetXResource' has cardinality 0..*.
+An association connects 'library_Component' and 'library_Metric'. From 'library_Component', the role 'library_Component4' has cardinality 0..*, and from 'library_Metric', the role 'library_Metric' has cardinality 0..*.
+An association connects 'library_Component' and 'library_Expression'. From 'library_Component', the role 'library_Component6' has cardinality 0..*, and from 'library_Expression', the role 'library_Expression' has cardinality 0..*.
+An association connects 'library_Expression' and 'library_Component'. From 'library_Expression', the role 'library_Expression9' has cardinality 0..*, and from 'library_Component', the role 'library_Component8' has cardinality 0..*.
+An association connects 'library_Tolerance' and 'library_Component'. From 'library_Tolerance', the role 'library_Tolerance' has cardinality 0..*, and from 'library_Component', the role 'library_Component11' has cardinality 0..*.
+An association connects 'library_Component' and 'library_Protocol'. From 'library_Component', the role 'library_Component13' has cardinality 0..*, and from 'library_Protocol', the role 'library_Protocol' has cardinality 0..*.
+An association connects 'library_Component' and 'library_Parameter'. From 'library_Component', the role 'library_Component15' has cardinality 0..*, and from 'library_Parameter', the role 'library_Parameter' has cardinality 0..*.
+An association connects 'library_Component' and 'library_NetXResource'. From 'library_Component', the role 'library_Component17' has cardinality 0..*, and from 'library_NetXResource', the role 'library_NetXResource' has cardinality 0..*.
+An association connects 'library_DiagramInfo' and 'library_Component'. From 'library_DiagramInfo', the role 'library_DiagramInfo' has cardinality 0..*, and from 'library_Component', the role 'library_Component19' has cardinality 0..*.
+An association connects 'library_MultiImage' and 'library_Component'. From 'library_MultiImage', the role 'library_MultiImage' has cardinality 0..*, and from 'library_Component', the role 'library_Component21' has cardinality 0..*.
+An association connects 'library_Equipment' and 'library_Equipment'. From 'library_Equipment', the role 'library_Equipment22' has cardinality 0..*, and from 'library_Equipment', the role 'library_Equipment' has cardinality 0..*.
+An association connects 'library_Equipment' and 'library_EquipmentGroup'. From 'library_Equipment', the role 'library_Equipment25' has cardinality 0..*, and from 'library_EquipmentGroup', the role 'library_EquipmentGroup' has cardinality 0..*.
+An association connects 'library_EquipmentRelationship' and 'library_Equipment'. From 'library_EquipmentRelationship', the role 'library_EquipmentRelationship' has cardinality 0..*, and from 'library_Equipment', the role 'library_Equipment27' has cardinality 0..*.
+An association connects 'library_Equipment' and 'library_Equipment'. From 'library_Equipment', the role 'library_Equipment30' has cardinality 0..*, and from 'library_Equipment', the role 'library_Equipment28' has cardinality 0..*.
+An association connects 'library_DiagramInfo' and 'library_EquipmentGroup'. From 'library_DiagramInfo', the role 'library_DiagramInfo33' has cardinality 0..*, and from 'library_EquipmentGroup', the role 'library_EquipmentGroup32' has cardinality 0..*.
+An association connects 'library_NetXResource' and 'library_EquipmentGroup'. From 'library_NetXResource', the role 'library_NetXResource36' has cardinality 0..*, and from 'library_EquipmentGroup', the role 'library_EquipmentGroup35' has cardinality 0..*.
+An association connects 'library_Expression' and 'library_EquipmentGroup'. From 'library_Expression', the role 'library_Expression39' has cardinality 0..*, and from 'library_EquipmentGroup', the role 'library_EquipmentGroup38' has cardinality 0..*.
+An association connects 'library_Equipment' and 'library_EquipmentGroup'. From 'library_Equipment', the role 'library_Equipment42' has cardinality 0..*, and from 'library_EquipmentGroup', the role 'library_EquipmentGroup41' has cardinality 0..*.
+An association connects 'library_Parameter' and 'library_EquipmentGroup'. From 'library_Parameter', the role 'library_Parameter45' has cardinality 0..*, and from 'library_EquipmentGroup', the role 'library_EquipmentGroup44' has cardinality 0..*.
+An association connects 'library_EquipmentGroup' and 'library_NetXResource'. From 'library_EquipmentGroup', the role 'library_EquipmentGroup47' has cardinality 0..*, and from 'library_NetXResource', the role 'library_NetXResource48' has cardinality 0..*.
+An association connects 'library_EquipmentGroup' and 'library_Equipment'. From 'library_EquipmentGroup', the role 'library_EquipmentGroup50' has cardinality 0..*, and from 'library_Equipment', the role 'library_Equipment51' has cardinality 0..*.
+An association connects 'library_Expression' and 'library_EObject'. From 'library_Expression', the role 'library_Expression53' has cardinality 0..*, and from 'library_EObject', the role 'library_EObject' has cardinality 0..*.
+An association connects 'library_ExpressionResult' and 'library_BaseResource'. From 'library_ExpressionResult', the role 'library_ExpressionResult' has cardinality 0..*, and from 'library_BaseResource', the role 'library_BaseResource55' has cardinality 0..*.
+An association connects 'library_ExpressionResult' and 'library_Value'. From 'library_ExpressionResult', the role 'library_ExpressionResult57' has cardinality 0..*, and from 'library_Value', the role 'library_Value' has cardinality 0..*.
+An association connects 'library_Function' and 'library_Function'. From 'library_Function', the role 'library_Function58' has cardinality 0..*, and from 'library_Function', the role 'library_Function' has cardinality 0..*.
+An association connects 'library_FunctionRelationship' and 'library_Function'. From 'library_FunctionRelationship', the role 'library_FunctionRelationship' has cardinality 0..*, and from 'library_Function', the role 'library_Function61' has cardinality 0..*.
+An association connects 'library_Function' and 'library_Function'. From 'library_Function', the role 'library_Function62' has cardinality 0..*, and from 'library_Function', the role 'library_Function64' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Function'. From 'library_Library', the role 'library_Library' has cardinality 0..*, and from 'library_Function', the role 'library_Function66' has cardinality 0..*.
+An association connects 'library_NodeType' and 'library_Library'. From 'library_NodeType', the role 'library_NodeType' has cardinality 0..*, and from 'library_Library', the role 'library_Library68' has cardinality 0..*.
+An association connects 'library_Equipment' and 'library_Library'. From 'library_Equipment', the role 'library_Equipment71' has cardinality 0..*, and from 'library_Library', the role 'library_Library70' has cardinality 0..*.
+An association connects 'library_Metric' and 'library_Library'. From 'library_Metric', the role 'library_Metric74' has cardinality 0..*, and from 'library_Library', the role 'library_Library73' has cardinality 0..*.
+An association connects 'library_Library' and 'library_MetricSource'. From 'library_Library', the role 'library_Library76' has cardinality 0..*, and from 'library_MetricSource', the role 'library_MetricSource' has cardinality 0..*.
+An association connects 'library_Parameter' and 'library_Library'. From 'library_Parameter', the role 'library_Parameter79' has cardinality 0..*, and from 'library_Library', the role 'library_Library78' has cardinality 0..*.
+An association connects 'library_Tolerance' and 'library_Library'. From 'library_Tolerance', the role 'library_Tolerance82' has cardinality 0..*, and from 'library_Library', the role 'library_Library81' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Expression'. From 'library_Library', the role 'library_Library84' has cardinality 0..*, and from 'library_Expression', the role 'library_Expression85' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Unit'. From 'library_Library', the role 'library_Library87' has cardinality 0..*, and from 'library_Unit', the role 'library_Unit88' has cardinality 0..*.
+An association connects 'library_Meta' and 'library_Library'. From 'library_Meta', the role 'library_Meta' has cardinality 0..*, and from 'library_Library', the role 'library_Library90' has cardinality 0..*.
+An association connects 'library_NetXResource' and 'library_Component'. From 'library_NetXResource', the role 'resourceRefs' has cardinality 0..*, and from 'library_Component', the role 'Component' has cardinality 0..*.
+An association connects 'library_NetXResource' and 'library_Metric'. From 'library_NetXResource', the role 'library_NetXResource93' has cardinality 0..*, and from 'library_Metric', the role 'library_Metric94' has cardinality 0..*.
+An association connects 'library_NetXResource' and 'library_MetricValueRange'. From 'library_NetXResource', the role 'library_NetXResource96' has cardinality 0..*, and from 'library_MetricValueRange', the role 'library_MetricValueRange' has cardinality 0..*.
+An association connects 'library_NetXResource' and 'library_Value'. From 'library_NetXResource', the role 'library_NetXResource98' has cardinality 0..*, and from 'library_Value', the role 'library_Value99' has cardinality 0..*.
+An association connects 'library_Value' and 'library_NetXResource'. From 'library_Value', the role 'library_Value102' has cardinality 0..*, and from 'library_NetXResource', the role 'library_NetXResource101' has cardinality 0..*.
+An association connects 'library_NetXResource' and 'library_Value'. From 'library_NetXResource', the role 'library_NetXResource104' has cardinality 0..*, and from 'library_Value', the role 'library_Value105' has cardinality 0..*.
+An association connects 'library_NetXResource' and 'library_Value'. From 'library_NetXResource', the role 'library_NetXResource107' has cardinality 0..*, and from 'library_Value', the role 'library_Value108' has cardinality 0..*.
+An association connects 'library_NetXResource' and 'library_Value'. From 'library_NetXResource', the role 'library_NetXResource110' has cardinality 0..*, and from 'library_Value', the role 'library_Value111' has cardinality 0..*.
+An association connects 'library_Function' and 'library_NodeType'. From 'library_Function', the role 'library_Function114' has cardinality 0..*, and from 'library_NodeType', the role 'library_NodeType113' has cardinality 0..*.
+An association connects 'library_Equipment' and 'library_NodeType'. From 'library_Equipment', the role 'library_Equipment117' has cardinality 0..*, and from 'library_NodeType', the role 'library_NodeType116' has cardinality 0..*.
+An association connects 'library_ProductInfo' and 'library_Equipment'. From 'library_ProductInfo', the role 'library_ProductInfo' has cardinality 0..*, and from 'library_Equipment', the role 'library_Equipment119' has cardinality 0..*.
+An association connects 'library_Function' and 'library_ProductInfo'. From 'library_Function', the role 'library_Function122' has cardinality 0..*, and from 'library_ProductInfo', the role 'library_ProductInfo121' has cardinality 0..*.
+An association connects 'library_ProductInfo' and 'library_NodeType'. From 'library_ProductInfo', the role 'library_ProductInfo124' has cardinality 0..*, and from 'library_NodeType', the role 'library_NodeType125' has cardinality 0..*.
+An association connects 'library_Expression' and 'library_Tolerance'. From 'library_Expression', the role 'library_Expression128' has cardinality 0..*, and from 'library_Tolerance', the role 'library_Tolerance127' has cardinality 0..*.
+An association connects 'library_MultiImage' and 'library_Unit'. From 'library_MultiImage', the role 'library_MultiImage131' has cardinality 0..*, and from 'library_Unit', the role 'library_Unit130' has cardinality 0..*.
+An association connects 'library_ProductInfo' and 'library_Vendor'. From 'library_ProductInfo', the role 'library_ProductInfo133' has cardinality 0..*, and from 'library_Vendor', the role 'library_Vendor' has cardinality 0..*.

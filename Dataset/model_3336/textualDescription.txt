@@ -1,0 +1,324 @@
+The domain model 'jsm' describes the core structural elements and their relationships within the system.
+
+The model defines 71 main class(es).
+
+'AbstractMTypeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MExternalClass' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractMMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_CConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MInterfaceMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MMethodImplementationParameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'final', which is of type bool.
+
+'jsm_AbstractMDeclaredType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jsm_MResource' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'jsm_CBlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMClass' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMMethodLike' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractMResource' represents an important domain concept.
+It has the following attributes: 'derived', which is of type bool; 'name', which is of type str.
+
+'AbstractMTypeWithNameDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MDeclaredMethodImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMMethodImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractModifiers' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractMTypeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractMMethodImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractMImplementableMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MNativeMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractCStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MConstructorParameter' represents an important domain concept.
+It has one attribute: 'final', which is of type bool.
+
+'jsm_AbstractMClass' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MConstantInterfaceFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MMethodDeclarationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractMPackageContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MDeclaredTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_CDeclarationStatement' represents an important domain concept.
+It has one attribute: 'final', which is of type bool.
+
+'AbstractMMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractMInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractCExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractMClassFieldDeclaration' represents an important domain concept.
+It has the following attributes: 'final', which is of type bool; 'visibility', which is of type str.
+
+'AbstractMExternalType' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MDeclaredInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MCompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractMType' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MAbstractClassMethodDeclaration' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'jsm_AbstractMMethodLike' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_CUnparsedStatement' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'AbstractMImplementableMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMPackageContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractModifiers' represents an important domain concept.
+It has the following attributes: 'final', which is of type bool; 'visibility', which is of type str; 'synchronized', which is of type bool.
+
+'jsm_MDirectMethodImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MExternalInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_CIfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_CExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MStaticClassFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MInstanceClassFieldDeclaration' represents an important domain concept.
+It has one attribute: 'transient', which is of type bool.
+
+'AbstractMDeclaredType' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractMExternalType' represents an important domain concept.
+It has one attribute: 'fullQualifiedName', which is of type str.
+
+'jsm_MAbstractDeclaredClass' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractCStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'MDeclaredClass' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMClassFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MExternalTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_CUnparsedExpression' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'jsm_MDeclaredClass' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_AbstractMTypeWithNameDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AbstractCExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MPackage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jsm_MPrimitiveTypeReference' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'jsm_AbstractMTypeReference' represents an important domain concept.
+It has one attribute: 'array', which is of type bool.
+
+'jsm_AbstractMFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMResource' represents an important domain concept.
+It does not declare any attributes.
+
+'jsm_MImplicitMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MPrimitiveTypes' defines the following possible values: 'boolean', 'int', 'float', 'double', 'byte', 'char', 'short', 'long'.
+The enumeration 'MVisibility' defines the following possible values: 'PROTECTED', 'DEFAULT', 'PRIVATE', 'PUBLIC'.
+
+The model also captures inheritance relationships between classes.
+The class 'jsm_MRoot' is a specialization of 'AbstractMPackageContainer'.
+The class 'jsm_MPackage' is a specialization of 'AbstractMPackageContainer'.
+The class 'jsm_MResource' is a specialization of 'AbstractMResource'.
+The class 'jsm_MCompilationUnit' is a specialization of 'AbstractMResource'.
+The class 'jsm_MCompilationUnit' is a specialization of 'AbstractMTypeContainer'.
+The class 'jsm_AbstractMDeclaredType' is a specialization of 'AbstractMTypeContainer'.
+The class 'jsm_MDeclaredTypeReference' is a specialization of 'AbstractMTypeReference'.
+The class 'jsm_MExternalTypeReference' is a specialization of 'AbstractMTypeReference'.
+The class 'jsm_MPrimitiveTypeReference' is a specialization of 'AbstractMTypeReference'.
+The class 'jsm_AbstractMMethodLike' is a specialization of 'AbstractModifiers'.
+The class 'jsm_AbstractMClass' is a specialization of 'AbstractMType'.
+The class 'jsm_MDeclaredClass' is a specialization of 'AbstractMClass'.
+The class 'jsm_MDeclaredClass' is a specialization of 'AbstractMDeclaredType'.
+The class 'jsm_MAbstractDeclaredClass' is a specialization of 'MDeclaredClass'.
+The class 'jsm_MExternalClass' is a specialization of 'AbstractMClass'.
+The class 'jsm_MExternalClass' is a specialization of 'AbstractMExternalType'.
+The class 'jsm_AbstractMInterface' is a specialization of 'AbstractMType'.
+The class 'jsm_MDeclaredInterface' is a specialization of 'AbstractMInterface'.
+The class 'jsm_MDeclaredInterface' is a specialization of 'AbstractMDeclaredType'.
+The class 'jsm_MExternalInterface' is a specialization of 'AbstractMInterface'.
+The class 'jsm_MExternalInterface' is a specialization of 'AbstractMExternalType'.
+The class 'jsm_AbstractMFieldDeclaration' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+The class 'jsm_AbstractMClassFieldDeclaration' is a specialization of 'AbstractMFieldDeclaration'.
+The class 'jsm_MStaticClassFieldDeclaration' is a specialization of 'AbstractMClassFieldDeclaration'.
+The class 'jsm_MInstanceClassFieldDeclaration' is a specialization of 'AbstractMClassFieldDeclaration'.
+The class 'jsm_MConstantInterfaceFieldDeclaration' is a specialization of 'AbstractMFieldDeclaration'.
+The class 'jsm_AbstractMMethodDeclaration' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+The class 'jsm_MMethodDeclarationParameter' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+The class 'jsm_MImplicitMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+The class 'jsm_AbstractMImplementableMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+The class 'jsm_MAbstractClassMethodDeclaration' is a specialization of 'AbstractMImplementableMethodDeclaration'.
+The class 'jsm_MInterfaceMethodDeclaration' is a specialization of 'AbstractMImplementableMethodDeclaration'.
+The class 'jsm_MNativeMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+The class 'jsm_AbstractMMethodImplementation' is a specialization of 'AbstractMMethodLike'.
+The class 'jsm_MDeclaredMethodImplementation' is a specialization of 'AbstractMMethodImplementation'.
+The class 'jsm_MDirectMethodImplementation' is a specialization of 'AbstractMMethodImplementation'.
+The class 'jsm_MConstructor' is a specialization of 'AbstractMMethodLike'.
+The class 'jsm_MConstructorParameter' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+The class 'jsm_CBlockStatement' is a specialization of 'AbstractCStatement'.
+The class 'jsm_CDeclarationStatement' is a specialization of 'AbstractCStatement'.
+The class 'jsm_CDeclarationStatement' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+The class 'jsm_CExpressionStatement' is a specialization of 'AbstractCStatement'.
+The class 'jsm_CIfStatement' is a specialization of 'AbstractCStatement'.
+The class 'jsm_CUnparsedStatement' is a specialization of 'AbstractCStatement'.
+The class 'jsm_CConditionalExpression' is a specialization of 'AbstractCExpression'.
+The class 'jsm_CUnparsedExpression' is a specialization of 'AbstractCExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jsm_MPackage' and 'jsm_AbstractMPackageContainer'. From 'jsm_MPackage', the role 'MPackage' has cardinality 0..*, and from 'jsm_AbstractMPackageContainer', the role 'packageContainer' has cardinality 0..*.
+An association connects 'jsm_AbstractMExternalType' and 'jsm_MRoot'. From 'jsm_AbstractMExternalType', the role 'AbstractMExternalType' has cardinality 0..*, and from 'jsm_MRoot', the role 'root' has cardinality 0..*.
+An association connects 'jsm_MPackage' and 'jsm_AbstractMPackageContainer'. From 'jsm_MPackage', the role 'packages' has cardinality 0..*, and from 'jsm_AbstractMPackageContainer', the role 'AbstractMPackageContainer' has cardinality 0..*.
+An association connects 'jsm_MPackage' and 'jsm_AbstractMResource'. From 'jsm_MPackage', the role 'package' has cardinality 0..*, and from 'jsm_AbstractMResource', the role 'AbstractMResource' has cardinality 0..*.
+An association connects 'jsm_AbstractMResource' and 'jsm_MPackage'. From 'jsm_AbstractMResource', the role 'resources' has cardinality 0..*, and from 'jsm_MPackage', the role 'MPackage5' has cardinality 0..*.
+An association connects 'jsm_AbstractMResource' and 'jsm_AbstractMResource'. From 'jsm_AbstractMResource', the role 'superOf' has cardinality 0..*, and from 'jsm_AbstractMResource', the role 'AbstractMResource8' has cardinality 0..*.
+An association connects 'jsm_AbstractMResource' and 'jsm_AbstractMResource'. From 'jsm_AbstractMResource', the role 'derivedFrom' has cardinality 0..*, and from 'jsm_AbstractMResource', the role 'AbstractMResource11' has cardinality 0..*.
+An association connects 'jsm_AbstractMTypeContainer' and 'jsm_AbstractMDeclaredType'. From 'jsm_AbstractMTypeContainer', the role 'typeContainer' has cardinality 0..*, and from 'jsm_AbstractMDeclaredType', the role 'AbstractMDeclaredType' has cardinality 0..*.
+An association connects 'jsm_AbstractMType' and 'jsm_MCompilationUnit'. From 'jsm_AbstractMType', the role 'jsm_AbstractMType' has cardinality 0..*, and from 'jsm_MCompilationUnit', the role 'jsm_MCompilationUnit' has cardinality 0..*.
+An association connects 'jsm_AbstractMTypeContainer' and 'jsm_AbstractMDeclaredType'. From 'jsm_AbstractMTypeContainer', the role 'AbstractMTypeContainer' has cardinality 0..*, and from 'jsm_AbstractMDeclaredType', the role 'types' has cardinality 0..*.
+An association connects 'jsm_MRoot' and 'jsm_AbstractMExternalType'. From 'jsm_MRoot', the role 'MRoot' has cardinality 0..*, and from 'jsm_AbstractMExternalType', the role 'externalTypes' has cardinality 0..*.
+An association connects 'jsm_MDeclaredTypeReference' and 'jsm_AbstractMDeclaredType'. From 'jsm_MDeclaredTypeReference', the role 'jsm_MDeclaredTypeReference' has cardinality 0..*, and from 'jsm_AbstractMDeclaredType', the role 'jsm_AbstractMDeclaredType' has cardinality 0..*.
+An association connects 'jsm_MExternalTypeReference' and 'jsm_AbstractMExternalType'. From 'jsm_MExternalTypeReference', the role 'jsm_MExternalTypeReference' has cardinality 0..*, and from 'jsm_AbstractMExternalType', the role 'jsm_AbstractMExternalType' has cardinality 0..*.
+An association connects 'jsm_AbstractMMethodLike' and 'jsm_AbstractCStatement'. From 'jsm_AbstractMMethodLike', the role 'jsm_AbstractMMethodLike' has cardinality 0..*, and from 'jsm_AbstractCStatement', the role 'jsm_AbstractCStatement' has cardinality 0..*.
+An association connects 'jsm_AbstractMTypeReference' and 'jsm_AbstractMTypeWithNameDeclaration'. From 'jsm_AbstractMTypeReference', the role 'jsm_AbstractMTypeReference' has cardinality 0..*, and from 'jsm_AbstractMTypeWithNameDeclaration', the role 'jsm_AbstractMTypeWithNameDeclaration' has cardinality 0..*.
+An association connects 'jsm_AbstractMClass' and 'jsm_MDeclaredClass'. From 'jsm_AbstractMClass', the role 'jsm_AbstractMClass' has cardinality 0..*, and from 'jsm_MDeclaredClass', the role 'jsm_MDeclaredClass' has cardinality 0..*.
+An association connects 'jsm_AbstractMInterface' and 'jsm_MDeclaredClass'. From 'jsm_AbstractMInterface', the role 'jsm_AbstractMInterface' has cardinality 0..*, and from 'jsm_MDeclaredClass', the role 'jsm_MDeclaredClass22' has cardinality 0..*.
+An association connects 'jsm_MStaticClassFieldDeclaration' and 'jsm_MDeclaredClass'. From 'jsm_MStaticClassFieldDeclaration', the role 'MStaticClassFieldDeclaration' has cardinality 0..*, and from 'jsm_MDeclaredClass', the role 'owner' has cardinality 0..*.
+An association connects 'jsm_MDeclaredClass' and 'jsm_MInstanceClassFieldDeclaration'. From 'jsm_MDeclaredClass', the role 'owner25' has cardinality 0..*, and from 'jsm_MInstanceClassFieldDeclaration', the role 'MInstanceClassFieldDeclaration' has cardinality 0..*.
+An association connects 'jsm_MConstructor' and 'jsm_MDeclaredClass'. From 'jsm_MConstructor', the role 'MConstructor' has cardinality 0..*, and from 'jsm_MDeclaredClass', the role 'owner27' has cardinality 0..*.
+An association connects 'jsm_MDeclaredClass' and 'jsm_AbstractMMethodImplementation'. From 'jsm_MDeclaredClass', the role 'owner29' has cardinality 0..*, and from 'jsm_AbstractMMethodImplementation', the role 'AbstractMMethodImplementation' has cardinality 0..*.
+An association connects 'jsm_MDeclaredClass' and 'jsm_MNativeMethodDeclaration'. From 'jsm_MDeclaredClass', the role 'owner31' has cardinality 0..*, and from 'jsm_MNativeMethodDeclaration', the role 'MNativeMethodDeclaration' has cardinality 0..*.
+An association connects 'jsm_MAbstractDeclaredClass' and 'jsm_MAbstractClassMethodDeclaration'. From 'jsm_MAbstractDeclaredClass', the role 'owner33' has cardinality 0..*, and from 'jsm_MAbstractClassMethodDeclaration', the role 'MAbstractClassMethodDeclaration' has cardinality 0..*.
+An association connects 'jsm_AbstractMInterface' and 'jsm_MDeclaredInterface'. From 'jsm_AbstractMInterface', the role 'jsm_AbstractMInterface35' has cardinality 0..*, and from 'jsm_MDeclaredInterface', the role 'jsm_MDeclaredInterface' has cardinality 0..*.
+An association connects 'jsm_MDeclaredInterface' and 'jsm_MConstantInterfaceFieldDeclaration'. From 'jsm_MDeclaredInterface', the role 'owner37' has cardinality 0..*, and from 'jsm_MConstantInterfaceFieldDeclaration', the role 'MConstantInterfaceFieldDeclaration' has cardinality 0..*.
+An association connects 'jsm_MDeclaredInterface' and 'jsm_MInterfaceMethodDeclaration'. From 'jsm_MDeclaredInterface', the role 'owner39' has cardinality 0..*, and from 'jsm_MInterfaceMethodDeclaration', the role 'MInterfaceMethodDeclaration' has cardinality 0..*.
+An association connects 'jsm_AbstractCExpression' and 'jsm_AbstractMFieldDeclaration'. From 'jsm_AbstractCExpression', the role 'jsm_AbstractCExpression' has cardinality 0..*, and from 'jsm_AbstractMFieldDeclaration', the role 'jsm_AbstractMFieldDeclaration' has cardinality 0..*.
+An association connects 'jsm_MStaticClassFieldDeclaration' and 'jsm_MDeclaredClass'. From 'jsm_MStaticClassFieldDeclaration', the role 'staticFields' has cardinality 0..*, and from 'jsm_MDeclaredClass', the role 'MDeclaredClass' has cardinality 0..*.
+An association connects 'jsm_MInstanceClassFieldDeclaration' and 'jsm_MDeclaredClass'. From 'jsm_MInstanceClassFieldDeclaration', the role 'instanceFields' has cardinality 0..*, and from 'jsm_MDeclaredClass', the role 'MDeclaredClass43' has cardinality 0..*.
+An association connects 'jsm_MConstantInterfaceFieldDeclaration' and 'jsm_MDeclaredInterface'. From 'jsm_MConstantInterfaceFieldDeclaration', the role 'constants' has cardinality 0..*, and from 'jsm_MDeclaredInterface', the role 'MDeclaredInterface' has cardinality 0..*.
+An association connects 'jsm_AbstractMMethodDeclaration' and 'jsm_MMethodDeclarationParameter'. From 'jsm_AbstractMMethodDeclaration', the role 'methodDeclaration' has cardinality 0..*, and from 'jsm_MMethodDeclarationParameter', the role 'MMethodDeclarationParameter' has cardinality 0..*.
+An association connects 'jsm_AbstractMMethodDeclaration' and 'jsm_MMethodDeclarationParameter'. From 'jsm_AbstractMMethodDeclaration', the role 'AbstractMMethodDeclaration' has cardinality 0..*, and from 'jsm_MMethodDeclarationParameter', the role 'parameters' has cardinality 0..*.
+An association connects 'jsm_MDirectMethodImplementation' and 'jsm_MImplicitMethodDeclaration'. From 'jsm_MDirectMethodImplementation', the role 'MDirectMethodImplementation' has cardinality 0..*, and from 'jsm_MImplicitMethodDeclaration', the role 'declaration' has cardinality 0..*.
+An association connects 'jsm_MDeclaredMethodImplementation' and 'jsm_AbstractMImplementableMethodDeclaration'. From 'jsm_MDeclaredMethodImplementation', the role 'MDeclaredMethodImplementation' has cardinality 0..*, and from 'jsm_AbstractMImplementableMethodDeclaration', the role 'declaration49' has cardinality 0..*.
+An association connects 'jsm_MAbstractClassMethodDeclaration' and 'jsm_MAbstractDeclaredClass'. From 'jsm_MAbstractClassMethodDeclaration', the role 'abstractMethods' has cardinality 0..*, and from 'jsm_MAbstractDeclaredClass', the role 'MAbstractDeclaredClass' has cardinality 0..*.
+An association connects 'jsm_MDeclaredInterface' and 'jsm_MInterfaceMethodDeclaration'. From 'jsm_MDeclaredInterface', the role 'MDeclaredInterface52' has cardinality 0..*, and from 'jsm_MInterfaceMethodDeclaration', the role 'methods' has cardinality 0..*.
+An association connects 'jsm_MNativeMethodDeclaration' and 'jsm_MDeclaredClass'. From 'jsm_MNativeMethodDeclaration', the role 'nativeMethods' has cardinality 0..*, and from 'jsm_MDeclaredClass', the role 'MDeclaredClass54' has cardinality 0..*.
+An association connects 'jsm_AbstractMMethodImplementation' and 'jsm_MDeclaredClass'. From 'jsm_AbstractMMethodImplementation', the role 'implementedMethods' has cardinality 0..*, and from 'jsm_MDeclaredClass', the role 'MDeclaredClass56' has cardinality 0..*.
+An association connects 'jsm_AbstractMMethodImplementation' and 'jsm_MMethodImplementationParameter'. From 'jsm_AbstractMMethodImplementation', the role 'methodImplementation' has cardinality 0..*, and from 'jsm_MMethodImplementationParameter', the role 'MMethodImplementationParameter' has cardinality 0..*.
+An association connects 'jsm_MDeclaredMethodImplementation' and 'jsm_AbstractMImplementableMethodDeclaration'. From 'jsm_MDeclaredMethodImplementation', the role 'implementations' has cardinality 0..*, and from 'jsm_AbstractMImplementableMethodDeclaration', the role 'AbstractMImplementableMethodDeclaration' has cardinality 0..*.
+An association connects 'jsm_MImplicitMethodDeclaration' and 'jsm_MDirectMethodImplementation'. From 'jsm_MImplicitMethodDeclaration', the role 'MImplicitMethodDeclaration' has cardinality 0..*, and from 'jsm_MDirectMethodImplementation', the role 'owner60' has cardinality 0..*.
+An association connects 'jsm_AbstractMMethodImplementation' and 'jsm_MMethodImplementationParameter'. From 'jsm_AbstractMMethodImplementation', the role 'AbstractMMethodImplementation63' has cardinality 0..*, and from 'jsm_MMethodImplementationParameter', the role 'parameters62' has cardinality 0..*.
+An association connects 'jsm_MConstructor' and 'jsm_MDeclaredClass'. From 'jsm_MConstructor', the role 'constructors' has cardinality 0..*, and from 'jsm_MDeclaredClass', the role 'MDeclaredClass65' has cardinality 0..*.
+An association connects 'jsm_MConstructor' and 'jsm_MConstructorParameter'. From 'jsm_MConstructor', the role 'constructor' has cardinality 0..*, and from 'jsm_MConstructorParameter', the role 'MConstructorParameter' has cardinality 0..*.
+An association connects 'jsm_MConstructorParameter' and 'jsm_MConstructor'. From 'jsm_MConstructorParameter', the role 'parameters68' has cardinality 0..*, and from 'jsm_MConstructor', the role 'MConstructor69' has cardinality 0..*.
+An association connects 'jsm_AbstractCStatement' and 'jsm_CBlockStatement'. From 'jsm_AbstractCStatement', the role 'jsm_AbstractCStatement71' has cardinality 0..*, and from 'jsm_CBlockStatement', the role 'jsm_CBlockStatement' has cardinality 0..*.
+An association connects 'jsm_CDeclarationStatement' and 'jsm_AbstractCExpression'. From 'jsm_CDeclarationStatement', the role 'jsm_CDeclarationStatement' has cardinality 0..*, and from 'jsm_AbstractCExpression', the role 'jsm_AbstractCExpression73' has cardinality 0..*.
+An association connects 'jsm_AbstractCExpression' and 'jsm_CExpressionStatement'. From 'jsm_AbstractCExpression', the role 'jsm_AbstractCExpression75' has cardinality 0..*, and from 'jsm_CExpressionStatement', the role 'jsm_CExpressionStatement' has cardinality 0..*.
+An association connects 'jsm_AbstractCExpression' and 'jsm_CIfStatement'. From 'jsm_AbstractCExpression', the role 'jsm_AbstractCExpression77' has cardinality 0..*, and from 'jsm_CIfStatement', the role 'jsm_CIfStatement' has cardinality 0..*.
+An association connects 'jsm_AbstractCStatement' and 'jsm_CIfStatement'. From 'jsm_AbstractCStatement', the role 'jsm_AbstractCStatement80' has cardinality 0..*, and from 'jsm_CIfStatement', the role 'jsm_CIfStatement79' has cardinality 0..*.
+An association connects 'jsm_CIfStatement' and 'jsm_AbstractCStatement'. From 'jsm_CIfStatement', the role 'jsm_CIfStatement82' has cardinality 0..*, and from 'jsm_AbstractCStatement', the role 'jsm_AbstractCStatement83' has cardinality 0..*.
+An association connects 'jsm_AbstractCExpression' and 'jsm_CConditionalExpression'. From 'jsm_AbstractCExpression', the role 'jsm_AbstractCExpression85' has cardinality 0..*, and from 'jsm_CConditionalExpression', the role 'jsm_CConditionalExpression' has cardinality 0..*.
+An association connects 'jsm_CConditionalExpression' and 'jsm_AbstractCExpression'. From 'jsm_CConditionalExpression', the role 'jsm_CConditionalExpression87' has cardinality 0..*, and from 'jsm_AbstractCExpression', the role 'jsm_AbstractCExpression88' has cardinality 0..*.
+An association connects 'jsm_CConditionalExpression' and 'jsm_AbstractCExpression'. From 'jsm_CConditionalExpression', the role 'jsm_CConditionalExpression90' has cardinality 0..*, and from 'jsm_AbstractCExpression', the role 'jsm_AbstractCExpression91' has cardinality 0..*.

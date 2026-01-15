@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/majicmoo/EGLStuff/emfatic/comicBookCollection2/comicBookCollection2.ecore

@@ -1,0 +1,101 @@
+The domain model 'uml2rdbms' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'uml2rdbms_AssociationToForeignKey' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'uml2rdbms_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'ToColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_FromAttributeOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_NonLeafAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'FromAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_PrimitiveToName' represents an important domain concept.
+It has the following attributes: 'typeName', which is of type str; 'name', which is of type str.
+
+'uml2rdbms_ClassToTable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'uml2rdbms_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_ToColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_PackageToSchema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'uml2rdbms_FromAttribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'kind', which is of type str.
+
+'uml2rdbms_AttributeToColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2rdbms_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'FromAttributeOwner' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'uml2rdbms_AttributeToColumn' is a specialization of 'FromAttribute'.
+The class 'uml2rdbms_AttributeToColumn' is a specialization of 'ToColumn'.
+The class 'uml2rdbms_AssociationToForeignKey' is a specialization of 'ToColumn'.
+The class 'uml2rdbms_ClassToTable' is a specialization of 'FromAttributeOwner'.
+The class 'uml2rdbms_ClassToTable' is a specialization of 'ToColumn'.
+The class 'uml2rdbms_NonLeafAttribute' is a specialization of 'FromAttributeOwner'.
+The class 'uml2rdbms_NonLeafAttribute' is a specialization of 'FromAttribute'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uml2rdbms_AttributeToColumn' and 'uml2rdbms_PrimitiveToName'. From 'uml2rdbms_AttributeToColumn', the role 'uml2rdbms_AttributeToColumn' has cardinality 0..*, and from 'uml2rdbms_PrimitiveToName', the role 'uml2rdbms_PrimitiveToName' has cardinality 0..*.
+An association connects 'uml2rdbms_AssociationToForeignKey' and 'uml2rdbms_ClassToTable'. From 'uml2rdbms_AssociationToForeignKey', the role 'uml2rdbms_AssociationToForeignKey' has cardinality 0..*, and from 'uml2rdbms_ClassToTable', the role 'uml2rdbms_ClassToTable' has cardinality 0..*.
+An association connects 'uml2rdbms_ClassToTable' and 'uml2rdbms_AssociationToForeignKey'. From 'uml2rdbms_ClassToTable', the role 'ClassToTable' has cardinality 0..*, and from 'uml2rdbms_AssociationToForeignKey', the role 'associationsToForeignKeys' has cardinality 0..*.
+An association connects 'uml2rdbms_Association' and 'uml2rdbms_AssociationToForeignKey'. From 'uml2rdbms_Association', the role 'uml2rdbms_Association' has cardinality 0..*, and from 'uml2rdbms_AssociationToForeignKey', the role 'uml2rdbms_AssociationToForeignKey4' has cardinality 0..*.
+An association connects 'uml2rdbms_ForeignKey' and 'uml2rdbms_AssociationToForeignKey'. From 'uml2rdbms_ForeignKey', the role 'uml2rdbms_ForeignKey' has cardinality 0..*, and from 'uml2rdbms_AssociationToForeignKey', the role 'uml2rdbms_AssociationToForeignKey6' has cardinality 0..*.
+An association connects 'uml2rdbms_ClassToTable' and 'uml2rdbms_PackageToSchema'. From 'uml2rdbms_ClassToTable', the role 'classesToTables' has cardinality 0..*, and from 'uml2rdbms_PackageToSchema', the role 'PackageToSchema' has cardinality 0..*.
+An association connects 'uml2rdbms_ClassToTable' and 'uml2rdbms_AssociationToForeignKey'. From 'uml2rdbms_ClassToTable', the role 'owner' has cardinality 0..*, and from 'uml2rdbms_AssociationToForeignKey', the role 'AssociationToForeignKey' has cardinality 0..*.
+An association connects 'uml2rdbms_Class' and 'uml2rdbms_ClassToTable'. From 'uml2rdbms_Class', the role 'uml2rdbms_Class' has cardinality 0..*, and from 'uml2rdbms_ClassToTable', the role 'uml2rdbms_ClassToTable10' has cardinality 0..*.
+An association connects 'uml2rdbms_Table' and 'uml2rdbms_ClassToTable'. From 'uml2rdbms_Table', the role 'uml2rdbms_Table' has cardinality 0..*, and from 'uml2rdbms_ClassToTable', the role 'uml2rdbms_ClassToTable12' has cardinality 0..*.
+An association connects 'uml2rdbms_ClassToTable' and 'uml2rdbms_Key'. From 'uml2rdbms_ClassToTable', the role 'uml2rdbms_ClassToTable14' has cardinality 0..*, and from 'uml2rdbms_Key', the role 'uml2rdbms_Key' has cardinality 0..*.
+An association connects 'uml2rdbms_FromAttributeOwner' and 'uml2rdbms_FromAttribute'. From 'uml2rdbms_FromAttributeOwner', the role 'FromAttributeOwner' has cardinality 0..*, and from 'uml2rdbms_FromAttribute', the role 'fromAttributes' has cardinality 0..*.
+An association connects 'uml2rdbms_FromAttribute' and 'uml2rdbms_AttributeToColumn'. From 'uml2rdbms_FromAttribute', the role 'uml2rdbms_FromAttribute' has cardinality 0..*, and from 'uml2rdbms_AttributeToColumn', the role 'uml2rdbms_AttributeToColumn17' has cardinality 0..*.
+An association connects 'uml2rdbms_FromAttribute' and 'uml2rdbms_Attribute'. From 'uml2rdbms_FromAttribute', the role 'uml2rdbms_FromAttribute19' has cardinality 0..*, and from 'uml2rdbms_Attribute', the role 'uml2rdbms_Attribute' has cardinality 0..*.
+An association connects 'uml2rdbms_FromAttributeOwner' and 'uml2rdbms_FromAttribute'. From 'uml2rdbms_FromAttributeOwner', the role 'owner21' has cardinality 0..*, and from 'uml2rdbms_FromAttribute', the role 'FromAttribute' has cardinality 0..*.
+An association connects 'uml2rdbms_ClassToTable' and 'uml2rdbms_PackageToSchema'. From 'uml2rdbms_ClassToTable', the role 'ClassToTable24' has cardinality 0..*, and from 'uml2rdbms_PackageToSchema', the role 'owner23' has cardinality 0..*.
+An association connects 'uml2rdbms_PrimitiveToName' and 'uml2rdbms_PackageToSchema'. From 'uml2rdbms_PrimitiveToName', the role 'PrimitiveToName' has cardinality 0..*, and from 'uml2rdbms_PackageToSchema', the role 'owner26' has cardinality 0..*.
+An association connects 'uml2rdbms_Package' and 'uml2rdbms_PackageToSchema'. From 'uml2rdbms_Package', the role 'uml2rdbms_Package' has cardinality 0..*, and from 'uml2rdbms_PackageToSchema', the role 'uml2rdbms_PackageToSchema' has cardinality 0..*.
+An association connects 'uml2rdbms_Schema' and 'uml2rdbms_PackageToSchema'. From 'uml2rdbms_Schema', the role 'uml2rdbms_Schema' has cardinality 0..*, and from 'uml2rdbms_PackageToSchema', the role 'uml2rdbms_PackageToSchema29' has cardinality 0..*.
+An association connects 'uml2rdbms_PrimitiveToName' and 'uml2rdbms_PackageToSchema'. From 'uml2rdbms_PrimitiveToName', the role 'primitivesToNames' has cardinality 0..*, and from 'uml2rdbms_PackageToSchema', the role 'PackageToSchema31' has cardinality 0..*.
+An association connects 'uml2rdbms_PrimitiveDataType' and 'uml2rdbms_PrimitiveToName'. From 'uml2rdbms_PrimitiveDataType', the role 'uml2rdbms_PrimitiveDataType' has cardinality 0..*, and from 'uml2rdbms_PrimitiveToName', the role 'uml2rdbms_PrimitiveToName33' has cardinality 0..*.
+An association connects 'uml2rdbms_Column' and 'uml2rdbms_ToColumn'. From 'uml2rdbms_Column', the role 'uml2rdbms_Column' has cardinality 0..*, and from 'uml2rdbms_ToColumn', the role 'uml2rdbms_ToColumn' has cardinality 0..*.

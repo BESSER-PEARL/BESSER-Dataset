@@ -1,0 +1,69 @@
+The domain model 'dXP' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'dXP_Enrolment' represents an important domain concept.
+It has the following attributes: 'primary', which is of type str; 'role', which is of type str.
+
+'dXP_Metadata' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'dXP_OrgUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'dXP_AcademicSession' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'schoolYear', which is of type str; 'type', which is of type str; 'startDate', which is of type str; 'endDate', which is of type str.
+
+'dXP_Course' represents an important domain concept.
+It has the following attributes: 'courseCode', which is of type str; 'title', which is of type str.
+
+'Base' represents an important domain concept.
+It does not declare any attributes.
+
+'dXP_Class' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'title', which is of type str; 'classType', which is of type str; 'classCode', which is of type str.
+
+'dXP_User' represents an important domain concept.
+It has the following attributes: 'role', which is of type str; 'identifier', which is of type str; 'userName', which is of type str; 'enabledUser', which is of type str.
+
+'dXP_Base' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'dateLastModified', which is of type str; 'sourceId', which is of type str.
+
+'Org' represents an important domain concept.
+It does not declare any attributes.
+
+'dXP_Org' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'dXP_UserId' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'type', which is of type str.
+
+'dXP_OneRoster' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OrgType' defines the following possible values: 'department', 'Misc', 'Discipline', 'Specjalization', 'school', 'major'.
+The enumeration 'Role' defines the following possible values: 'student', 'teacher'.
+
+The model also captures inheritance relationships between classes.
+The class 'dXP_Course' is a specialization of 'Base'.
+The class 'dXP_AcademicSession' is a specialization of 'Base'.
+The class 'dXP_Class' is a specialization of 'Base'.
+The class 'dXP_User' is a specialization of 'Base'.
+The class 'dXP_Org' is a specialization of 'Base'.
+The class 'dXP_OrgUnit' is a specialization of 'Org'.
+The class 'dXP_Enrolment' is a specialization of 'Base'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dXP_OneRoster' and 'dXP_AcademicSession'. From 'dXP_OneRoster', the role 'dXP_OneRoster' has cardinality 0..*, and from 'dXP_AcademicSession', the role 'dXP_AcademicSession' has cardinality 0..*.
+An association connects 'dXP_OneRoster' and 'dXP_Org'. From 'dXP_OneRoster', the role 'dXP_OneRoster2' has cardinality 0..*, and from 'dXP_Org', the role 'dXP_Org' has cardinality 0..*.
+An association connects 'dXP_OneRoster' and 'dXP_Enrolment'. From 'dXP_OneRoster', the role 'dXP_OneRoster4' has cardinality 0..*, and from 'dXP_Enrolment', the role 'dXP_Enrolment' has cardinality 0..*.
+An association connects 'dXP_Class' and 'dXP_Course'. From 'dXP_Class', the role 'dXP_Class' has cardinality 0..*, and from 'dXP_Course', the role 'dXP_Course' has cardinality 0..*.
+An association connects 'dXP_Base' and 'dXP_Metadata'. From 'dXP_Base', the role 'dXP_Base' has cardinality 0..*, and from 'dXP_Metadata', the role 'dXP_Metadata' has cardinality 0..*.
+An association connects 'dXP_Course' and 'dXP_AcademicSession'. From 'dXP_Course', the role 'dXP_Course9' has cardinality 0..*, and from 'dXP_AcademicSession', the role 'dXP_AcademicSession8' has cardinality 0..*.
+An association connects 'dXP_AcademicSession' and 'dXP_User'. From 'dXP_AcademicSession', the role 'dXP_AcademicSession11' has cardinality 0..*, and from 'dXP_User', the role 'dXP_User' has cardinality 0..*.
+An association connects 'dXP_UserId' and 'dXP_User'. From 'dXP_UserId', the role 'dXP_UserId' has cardinality 0..*, and from 'dXP_User', the role 'dXP_User13' has cardinality 0..*.
+An association connects 'dXP_OrgUnit' and 'dXP_Org'. From 'dXP_OrgUnit', the role 'dXP_OrgUnit' has cardinality 0..*, and from 'dXP_Org', the role 'dXP_Org15' has cardinality 0..*.
+An association connects 'dXP_User' and 'dXP_Enrolment'. From 'dXP_User', the role 'dXP_User18' has cardinality 0..*, and from 'dXP_Enrolment', the role 'dXP_Enrolment17' has cardinality 0..*.
+An association connects 'dXP_Enrolment' and 'dXP_Class'. From 'dXP_Enrolment', the role 'dXP_Enrolment20' has cardinality 0..*, and from 'dXP_Class', the role 'dXP_Class21' has cardinality 0..*.
+An association connects 'dXP_Enrolment' and 'dXP_OrgUnit'. From 'dXP_Enrolment', the role 'dXP_Enrolment23' has cardinality 0..*, and from 'dXP_OrgUnit', the role 'dXP_OrgUnit24' has cardinality 0..*.

@@ -1,0 +1,26 @@
+The domain model 'simpleany' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'simpleany_LibraryType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleany_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'simpleany_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleany_BookType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'author', which is of type str; 'title', which is of type str.
+
+'simpleany_Description' represents an important domain concept.
+It has the following attributes: 'keyword', which is of type str; 'mixed', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleany_BookType' and 'simpleany_Description'. From 'simpleany_BookType', the role 'simpleany_BookType' has cardinality 0..*, and from 'simpleany_Description', the role 'simpleany_Description' has cardinality 0..*.
+An association connects 'simpleany_Description' and 'simpleany_Description'. From 'simpleany_Description', the role 'simpleany_Description3' has cardinality 0..*, and from 'simpleany_Description', the role 'simpleany_Description1' has cardinality 0..*.
+An association connects 'simpleany_DocumentRoot' and 'simpleany_EStringToStringMapEntry'. From 'simpleany_DocumentRoot', the role 'simpleany_DocumentRoot' has cardinality 0..*, and from 'simpleany_EStringToStringMapEntry', the role 'simpleany_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'simpleany_DocumentRoot' and 'simpleany_EStringToStringMapEntry'. From 'simpleany_DocumentRoot', the role 'simpleany_DocumentRoot6' has cardinality 0..*, and from 'simpleany_EStringToStringMapEntry', the role 'simpleany_EStringToStringMapEntry7' has cardinality 0..*.
+An association connects 'simpleany_DocumentRoot' and 'simpleany_LibraryType'. From 'simpleany_DocumentRoot', the role 'simpleany_DocumentRoot9' has cardinality 0..*, and from 'simpleany_LibraryType', the role 'simpleany_LibraryType' has cardinality 0..*.
+An association connects 'simpleany_LibraryType' and 'simpleany_BookType'. From 'simpleany_LibraryType', the role 'simpleany_LibraryType11' has cardinality 0..*, and from 'simpleany_BookType', the role 'simpleany_BookType12' has cardinality 0..*.

@@ -1,0 +1,1300 @@
+The domain model 'project' describes the core structural elements and their relationships within the system.
+
+The model defines 285 main class(es).
+
+'project_Balance' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Copyright' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'project_ResourceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ScenarioIcal' represents an important domain concept.
+It does not declare any attributes.
+
+'StatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Maximum' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Start' represents an important domain concept.
+It has one attribute: 'start', which is of type str.
+
+'WeeklyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'project_SelfContained' represents an important domain concept.
+It has one attribute: 'selfcontained', which is of type str.
+
+'WeeklyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'ColumnAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_TaskRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Navigator' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'project_Efficiency' represents an important domain concept.
+It has one attribute: 'efficiency', which is of type float.
+
+'project_Export' represents an important domain concept.
+It has the following attributes: 'filename', which is of type str; 'id', which is of type str.
+
+'project_Email' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'project_TextReport' represents an important domain concept.
+It does not declare any attributes.
+
+'project_LimitAttribute' represents an important domain concept.
+It has the following attributes: 'start', which is of type str; 'end', which is of type str.
+
+'project_Resource' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'project_Author' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Milestone' represents an important domain concept.
+It has one attribute: 'milestone', which is of type bool.
+
+'project_SupplementReport' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Columns' represents an important domain concept.
+It does not declare any attributes.
+
+'project_HideResource' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Scenarios' represents an important domain concept.
+It does not declare any attributes.
+
+'project_TaskAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_LoadUnit' represents an important domain concept.
+It has one attribute: 'unit', which is of type str.
+
+'project_TimeFormat' represents an important domain concept.
+It has one attribute: 'timeformat', which is of type str.
+
+'project_ProjectAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_MinStart' represents an important domain concept.
+It has one attribute: 'minStart', which is of type str.
+
+'project_Timeoff' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'project_SortJournalEntries' represents an important domain concept.
+It does not declare any attributes.
+
+'project_AccountShare' represents an important domain concept.
+It has one attribute: 'share', which is of type float.
+
+'project_RollupTask' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Fail' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Credit' represents an important domain concept.
+It has the following attributes: 'amount', which is of type float; 'date', which is of type str; 'description', which is of type str.
+
+'CurrencyFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'project_DurationQuantity' represents an important domain concept.
+It has the following attributes: 'value', which is of type float; 'unit', which is of type str.
+
+'project_RichText' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'project_ExtendTask' represents an important domain concept.
+It does not declare any attributes.
+
+'project_TimingResolution' represents an important domain concept.
+It has one attribute: 'timingResolution', which is of type int.
+
+'IcalReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_MonthlyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'project_HideJournalEntry' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'project_Select' represents an important domain concept.
+It has one attribute: 'argument', which is of type str.
+
+'project_TaskAttributes' represents an important domain concept.
+It has the following attributes: 'depends', which is of type bool; 'priority', which is of type bool; 'note', which is of type bool; 'minend', which is of type bool; 'complete', which is of type bool; 'maxstart', which is of type bool; 'none', which is of type bool; 'booking', which is of type bool; 'minstart', which is of type bool; 'responsible', which is of type bool; 'flags', which is of type bool; 'maxend', which is of type bool; 'all', which is of type bool.
+
+'project_Timesheet' represents an important domain concept.
+It does not declare any attributes.
+
+'project_HideReport' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'project_HideAccount' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'project_IcalReport' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'project_Depends' represents an important domain concept.
+It does not declare any attributes.
+
+'project_TaskStatusSheet' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Scheduled' represents an important domain concept.
+It has one attribute: 'scheduled', which is of type bool.
+
+'project_TimesheetReport' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'project_TaskStatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'LimitsAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Depends' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Details' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Timezone' represents an important domain concept.
+It has one attribute: 'timezone', which is of type str.
+
+'Precedes' represents an important domain concept.
+It does not declare any attributes.
+
+'project_FontColor' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'project_ReportPrefix' represents an important domain concept.
+It does not declare any attributes.
+
+'project_TimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Effort' represents an important domain concept.
+It does not declare any attributes.
+
+'project_TaskTimesheet' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Left' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Precedes' represents an important domain concept.
+It does not declare any attributes.
+
+'ReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ProjectIds' represents an important domain concept.
+It has one attribute: 'ids', which is of type str.
+
+'project_SupplementAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'project_IncludeProperties' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'project_BookingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'project_TimesheetReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_TagFile' represents an important domain concept.
+It has the following attributes: 'filename', which is of type str; 'id', which is of type str.
+
+'project_Headline' represents an important domain concept.
+It does not declare any attributes.
+
+'project_StatusSheetReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Title' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'project_Sort' represents an important domain concept.
+It has one attribute: 'tree', which is of type bool.
+
+'project_ResourceRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'SortTasks' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskReport' represents an important domain concept.
+It does not declare any attributes.
+
+'project_IcalReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_RGB' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'TimesheetReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_IncludePropertiesAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Caption' represents an important domain concept.
+It does not declare any attributes.
+
+'Center' represents an important domain concept.
+It does not declare any attributes.
+
+'project_JournalMode' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'project_ResourceAttributes' represents an important domain concept.
+It has the following attributes: 'booking', which is of type bool; 'all', which is of type bool; 'vacation', which is of type bool; 'none', which is of type bool; 'workingHours', which is of type bool.
+
+'project_Footer' represents an important domain concept.
+It does not declare any attributes.
+
+'Details' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Task' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'project_EndCredit' represents an important domain concept.
+It has one attribute: 'credit', which is of type float.
+
+'project_TreeLevel' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+'project_NikuReport' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'project_PurgeResource' represents an important domain concept.
+It has one attribute: 'listAttribute', which is of type str.
+
+'project_ShiftTimesheet' represents an important domain concept.
+It does not declare any attributes.
+
+'project_TrackingScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'Epilog' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Macro' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'project_ToolTip' represents an important domain concept.
+It has one attribute: 'tip', which is of type str.
+
+'project_NewTask' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'id', which is of type str.
+
+'Footer' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Period' represents an important domain concept.
+It does not declare any attributes.
+
+'project_GapLength' represents an important domain concept.
+It does not declare any attributes.
+
+'project_CurrencyFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Shift' represents an important domain concept.
+It has the following attributes: 'replace', which is of type str; 'timezone', which is of type str; 'id', which is of type str; 'name', which is of type str.
+
+'Header' represents an important domain concept.
+It does not declare any attributes.
+
+'project_NikuReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_StatusSheet' represents an important domain concept.
+It does not declare any attributes.
+
+'Left' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Limits' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Shifts' represents an important domain concept.
+It does not declare any attributes.
+
+'Headline' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Currency' represents an important domain concept.
+It has one attribute: 'currency', which is of type str.
+
+'project_Now' represents an important domain concept.
+It has one attribute: 'now', which is of type str.
+
+'project_ExportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Epilog' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Prolog' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Global' represents an important domain concept.
+It does not declare any attributes.
+
+'StatusTimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ListItem' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ListItem' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_WeeklyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'AllocateResourceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Warn' represents an important domain concept.
+It does not declare any attributes.
+
+'project_DailyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'Right' represents an important domain concept.
+It does not declare any attributes.
+
+'NewTaskAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'IncludePropertiesAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceReport' represents an important domain concept.
+It does not declare any attributes.
+
+'Summary' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Defintions' represents an important domain concept.
+It has the following attributes: 'tasks', which is of type bool; 'project', which is of type bool; 'projectids', which is of type bool; 'flags', which is of type bool; 'resources', which is of type bool.
+
+'project_Scale' represents an important domain concept.
+It has one attribute: 'scale', which is of type str.
+
+'project_Include' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'project_AccountAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Scenario' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str; 'active', which is of type str.
+
+'project_Interval4' represents an important domain concept.
+It has the following attributes: 'end', which is of type str; 'start', which is of type str.
+
+'project_Alert' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+'project_WeekStarts' represents an important domain concept.
+It has the following attributes: 'monday', which is of type bool; 'sunday', which is of type bool.
+
+'project_StatusSheetReport' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'project_StatusTimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ProjectAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_PurgeTask' represents an important domain concept.
+It has one attribute: 'listAttribute', which is of type str.
+
+'project_Center' represents an important domain concept.
+It does not declare any attributes.
+
+'project_SupplementResource' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Vacation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'project_TaskReport' represents an important domain concept.
+It does not declare any attributes.
+
+'project_StatusStatusSheet' represents an important domain concept.
+It has the following attributes: 'level', which is of type str; 'text', which is of type str.
+
+'project_StatusTimesheet' represents an important domain concept.
+It has the following attributes: 'level', which is of type str; 'text', which is of type str.
+
+'AccountReport' represents an important domain concept.
+It does not declare any attributes.
+
+'StatusStatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Interval2' represents an important domain concept.
+It has the following attributes: 'end', which is of type str; 'start', which is of type str.
+
+'project_ReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_SupplementTask' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Remaining' represents an important domain concept.
+It does not declare any attributes.
+
+'ShiftsResource' represents an important domain concept.
+It does not declare any attributes.
+
+'project_WeeklyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'project_LimitsAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Mandatory' represents an important domain concept.
+It has one attribute: 'mandatory', which is of type bool.
+
+'project_Booking' represents an important domain concept.
+It has the following attributes: 'overtime', which is of type int; 'sloppy', which is of type int.
+
+'project_Responsible' represents an important domain concept.
+It does not declare any attributes.
+
+'project_StatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ExtendedTaskAttribute' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'project_XBinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Width' represents an important domain concept.
+It has one attribute: 'width', which is of type float.
+
+'project_Summary' represents an important domain concept.
+It does not declare any attributes.
+
+'project_WorkingHours' represents an important domain concept.
+It has one attribute: 'off', which is of type bool.
+
+'TextReport' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Flags' represents an important domain concept.
+It has one attribute: 'flags', which is of type str.
+
+'project_CellText' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Definitions' represents an important domain concept.
+It does not declare any attributes.
+
+'project_HideTask' represents an important domain concept.
+It does not declare any attributes.
+
+'project_YearlyWorkingDays' represents an important domain concept.
+It has one attribute: 'yearlyWorkingDays', which is of type int.
+
+'project_BookingTask' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Priority' represents an important domain concept.
+It has one attribute: 'priority', which is of type int.
+
+'project_Work' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'value', which is of type float.
+
+'project_Extend' represents an important domain concept.
+It has the following attributes: 'inherit', which is of type bool; 'id', which is of type str; 'scenariospecific', which is of type bool; 'name', which is of type str.
+
+'project_Minimum' represents an important domain concept.
+It does not declare any attributes.
+
+'ShiftsTask' represents an important domain concept.
+It does not declare any attributes.
+
+'project_AllocateResource' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Prolog' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ShiftsLimit' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ExtendResource' represents an important domain concept.
+It does not declare any attributes.
+
+'project_LogicalFunctionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'project_MonthlyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ShiftsTask' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ListType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'project_JournalEntry' represents an important domain concept.
+It has the following attributes: 'headline', which is of type str; 'date', which is of type str.
+
+'project_ShiftsResource' represents an important domain concept.
+It does not declare any attributes.
+
+'project_NavigatorAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Formats' represents an important domain concept.
+It has one attribute: 'formats', which is of type str.
+
+'project_Definitions' represents an important domain concept.
+It has the following attributes: 'none', which is of type bool; 'all', which is of type bool.
+
+'project_Interval1' represents an important domain concept.
+It has the following attributes: 'start', which is of type str; 'end', which is of type str.
+
+'project_StatusStatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Weekdays' represents an important domain concept.
+It has the following attributes: 'first', which is of type str; 'last', which is of type str.
+
+'project_AccountReport' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ShiftsAllocate' represents an important domain concept.
+It does not declare any attributes.
+
+'project_LogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskStatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_AccountRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'project_WorkHours' represents an important domain concept.
+It has the following attributes: 'start', which is of type str; 'stop', which is of type str.
+
+'project_ColumnAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_End' represents an important domain concept.
+It has one attribute: 'end', which is of type str.
+
+'project_LogicalAbsoluteIdExression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ExportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Header' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ShortTimeFormat' represents an important domain concept.
+It has one attribute: 'shortTimeFormat', which is of type str.
+
+'project_CellColor' represents an important domain concept.
+It does not declare any attributes.
+
+'project_JvmIdentifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Column' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'project_ChargeSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Account' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'project_DailyWorkingHours' represents an important domain concept.
+It has one attribute: 'dailyWorkingHours', which is of type float.
+
+'project_Interval3' represents an important domain concept.
+It has the following attributes: 'start', which is of type str; 'end', which is of type str.
+
+'SortAccounts' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ExtendedResourceAttribute' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'project_Complete' represents an important domain concept.
+It has one attribute: 'complete', which is of type float.
+
+'project_Duration' represents an important domain concept.
+It does not declare any attributes.
+
+'AccountAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Managers' represents an important domain concept.
+It does not declare any attributes.
+
+'project_NewTaskAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_GapDuration' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Persistent' represents an important domain concept.
+It has one attribute: 'persistent', which is of type bool.
+
+'project_PurgeReport' represents an important domain concept.
+It has one attribute: 'listAttribute', which is of type str.
+
+'project_Limit' represents an important domain concept.
+It does not declare any attributes.
+
+'project_LogicalBooleanLiteral' represents an important domain concept.
+It has one attribute: 'isTrue', which is of type bool.
+
+'project_MaxEnd' represents an important domain concept.
+It has one attribute: 'maxEnd', which is of type str.
+
+'project_Report' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'project_Scheduling' represents an important domain concept.
+It has one attribute: 'scheduling', which is of type str.
+
+'project_Function' represents an important domain concept.
+It has the following attributes: 'distance', which is of type int; 'parentId', which is of type str; 'date', which is of type str; 'level', which is of type int.
+
+'project_RealFormat' represents an important domain concept.
+It has the following attributes: 'fractionDigits', which is of type int; 'negativePrefix', which is of type str; 'negativeSuffix', which is of type str; 'thousandsSeparator', which is of type str; 'fractionSeparator', which is of type str.
+
+'project_SortAccounts' represents an important domain concept.
+It does not declare any attributes.
+
+'project_AccountPrefix' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Right' represents an important domain concept.
+It does not declare any attributes.
+
+'project_NumberFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'project_LogicalNumeralLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'project_Note' represents an important domain concept.
+It has one attribute: 'note', which is of type str.
+
+'DailyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'StatusSheetReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'SortResources' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskTimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'NikuReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Criterion' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'columnId', which is of type str.
+
+'project_LogicalStringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'project_TaskPrefix' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ResourceReport' represents an important domain concept.
+It does not declare any attributes.
+
+'project_RollupAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Caption' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Length' represents an important domain concept.
+It does not declare any attributes.
+
+'GapDuration' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Rate' represents an important domain concept.
+It has one attribute: 'rate', which is of type float.
+
+'project_Project' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'version', which is of type str; 'name', which is of type str.
+
+'project_MinEnd' represents an important domain concept.
+It has one attribute: 'minEnd', which is of type str.
+
+'project_LogicalDateLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'project_TaskTimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'GapLength' represents an important domain concept.
+It does not declare any attributes.
+
+'project_JournalAttributes' represents an important domain concept.
+It has the following attributes: 'property', which is of type bool; 'flags', which is of type bool; 'author', which is of type bool; 'date', which is of type bool; 'propertyid', which is of type bool; 'details', which is of type bool; 'none', which is of type bool; 'timesheet', which is of type bool; 'all', which is of type bool; 'headline', which is of type bool; 'summary', which is of type bool.
+
+'project_TaskDependency' represents an important domain concept.
+It has one attribute: 'policy', which is of type str.
+
+'project_RollupResource' represents an important domain concept.
+It does not declare any attributes.
+
+'SortJournalEntries' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Allocate' represents an important domain concept.
+It does not declare any attributes.
+
+'project_AllocateResourceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'project_SortResources' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ProjectId' represents an important domain concept.
+It has one attribute: 'projectId', which is of type str.
+
+'Maximum' represents an important domain concept.
+It does not declare any attributes.
+
+'project_DailyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'project_ResourcePrefix' represents an important domain concept.
+It does not declare any attributes.
+
+'project_MaxStart' represents an important domain concept.
+It has one attribute: 'maxStart', which is of type str.
+
+'DailyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'project_SortTasks' represents an important domain concept.
+It does not declare any attributes.
+
+'Minimum' represents an important domain concept.
+It does not declare any attributes.
+
+'project_HAlign' represents an important domain concept.
+It has one attribute: 'justification', which is of type str.
+
+'project_Charge' represents an important domain concept.
+It has the following attributes: 'applies', which is of type str; 'amount', which is of type float.
+
+'MonthlyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'MonthlyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'TimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigatorAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PurgeTaskAttribute' defines the following possible values: 'CHARGE', 'PRECEDES', 'BOOKING', 'FAIL', 'FLAGS', 'CHARGESET', 'DEPENDS', 'WARN'.
+The enumeration 'DependsPolicy' defines the following possible values: 'ONSTART', 'ONEND'.
+The enumeration 'ChargeApplies' defines the following possible values: 'PERWEEK', 'ONSTART', 'ONEND', 'PERDAY', 'PERHOUR'.
+The enumeration 'Justification' defines the following possible values: 'CENTER', 'RIGHT', 'LEFT'.
+The enumeration 'SchedulingPolicy' defines the following possible values: 'ASAP', 'ALAP'.
+The enumeration 'TimeUnit' defines the following possible values: 'YEAR', 'DAY', 'HOUR', 'WEEK', 'MONTH', 'MINUTE'.
+The enumeration 'Weekday' defines the following possible values: 'FRI', 'MON', 'TUE', 'SAT', 'WED', 'SUN', 'THR'.
+The enumeration 'WorkQuantityUnit' defines the following possible values: 'MINUTES', 'PERCENT', 'HOURS', 'DAYS'.
+The enumeration 'JournalModeValue' defines the following possible values: 'STATUS_DOWN', 'STATUS_UP', 'ALERTS_DOWN', 'JOURNAL', 'JOURNAL_SUB'.
+The enumeration 'JournalEntrySortCriterion' defines the following possible values: 'DATE_UP', 'ALERT_DOWN', 'PROPERTY_UP', 'DATE_DOWN', 'ALERT_UP'.
+The enumeration 'CriterionDirection' defines the following possible values: 'UP', 'DOWN'.
+The enumeration 'ListTypeValues' defines the following possible values: 'NUMBERED', 'COMMA', 'BULLETS'.
+The enumeration 'YesNo' defines the following possible values: 'NO', 'YES'.
+The enumeration 'ReportFormat' defines the following possible values: 'HTML', 'NIKU', 'CSV'.
+The enumeration 'LoadDisplayUnit' defines the following possible values: 'HOURS', 'LONGAUTO', 'WEEKS', 'YEARS', 'DAYS', 'MINUTES', 'MONTHS', 'SHORTAUTO'.
+The enumeration 'ScaleResolution' defines the following possible values: 'QUARTER', 'DAY', 'YEAR', 'WEEK', 'HOUR', 'MONTH'.
+The enumeration 'SelectArgument' defines the following possible values: 'ORDER', 'MINALLOCATED', 'MAXLOADED', 'RANDOM', 'MINLOADED'.
+The enumeration 'PurgeResourceAttribute' defines the following possible values: 'MANAGERS', 'VACATIONS', 'REPORTS', 'FLAGS', 'WARN', 'FAIL'.
+The enumeration 'ColumnId' defines the following possible values: 'STATUS', 'FREEWORK', 'MINSTART', 'QUARTERLY', 'COMPLETED', 'END', 'WBS', 'FREETIME', 'YEARLY', 'FLAGS', 'NO', 'ALERTSUMMARY', 'HIERARCHINDEX', 'RATE', 'ALERTTREND', 'FOLLOWERS', 'WEEKLY', 'NAME', 'CHART', 'PRECURSOR', 'NOTE', 'RESPONSIBLE', 'CRITICALNESS', 'HOURLY', 'COMPLETE', 'PATHCRITICALNESS', 'DUTIES', 'MONTHLY', 'HEADCOUNT', 'COST', 'PRIORITY', 'SEQNO', 'ID', 'REVENUE', 'DAILY', 'LINE', 'EFFORT', 'RESOURCES', 'DURATION', 'INDEX', 'EFFORTLEFT', 'JOURNAL', 'MINEND', 'EFFICIENCY', 'SCENARIO', 'EMAIL', 'ALERTMESSAGE', 'MAXSTART', 'MAXEND', 'EFFORTDONE', 'TARGETS', 'FTE', 'ALERT', 'START'.
+The enumeration 'AlertLevel' defines the following possible values: 'YELLOW', 'GREEN', 'RED'.
+The enumeration 'PurgeReportAttribute' defines the following possible values: 'SORTACCOUNTS', 'JOURNALATTRIBUTES', 'SORTJOURNALENTRIES', 'DEFINITIONS', 'SORTTASKS', 'FORMATS', 'SCENARIOS', 'SORTRESOURCES', 'FLAGS', 'COLUMNS'.
+
+The model also captures inheritance relationships between classes.
+The class 'project_Account' is a specialization of 'Property'.
+The class 'project_Account' is a specialization of 'AccountAttribute'.
+The class 'project_AccountPrefix' is a specialization of 'IncludePropertiesAttribute'.
+The class 'project_AccountReport' is a specialization of 'Property'.
+The class 'project_AccountReport' is a specialization of 'ReportAttribute'.
+The class 'project_AccountRoot' is a specialization of 'ReportAttribute'.
+The class 'project_Task' is a specialization of 'Property'.
+The class 'project_Task' is a specialization of 'TaskAttribute'.
+The class 'project_Report' is a specialization of 'AccountReport'.
+The class 'project_Report' is a specialization of 'ResourceReport'.
+The class 'project_Report' is a specialization of 'TaskReport'.
+The class 'project_Report' is a specialization of 'TextReport'.
+The class 'project_IcalReport' is a specialization of 'Property'.
+The class 'project_Export' is a specialization of 'Property'.
+The class 'project_Resource' is a specialization of 'Property'.
+The class 'project_Resource' is a specialization of 'ResourceAttribute'.
+The class 'project_Allocate' is a specialization of 'TaskAttribute'.
+The class 'project_Navigator' is a specialization of 'Property'.
+The class 'project_NewTask' is a specialization of 'TimesheetAttribute'.
+The class 'project_NikuReport' is a specialization of 'Property'.
+The class 'project_Alternative' is a specialization of 'AllocateResourceAttribute'.
+The class 'project_Author' is a specialization of 'StatusStatusSheetAttribute'.
+The class 'project_Balance' is a specialization of 'Property'.
+The class 'project_Balance' is a specialization of 'ReportAttribute'.
+The class 'project_BookingTask' is a specialization of 'TaskAttribute'.
+The class 'project_BookingResource' is a specialization of 'ResourceAttribute'.
+The class 'project_Caption' is a specialization of 'ReportAttribute'.
+The class 'project_CellColor' is a specialization of 'ColumnAttribute'.
+The class 'project_CellText' is a specialization of 'ColumnAttribute'.
+The class 'project_Center' is a specialization of 'ReportAttribute'.
+The class 'project_Charge' is a specialization of 'TaskAttribute'.
+The class 'project_ChargeSet' is a specialization of 'TaskAttribute'.
+The class 'project_Columns' is a specialization of 'ReportAttribute'.
+The class 'project_Complete' is a specialization of 'TaskAttribute'.
+The class 'project_Copyright' is a specialization of 'Property'.
+The class 'project_Credit' is a specialization of 'AccountAttribute'.
+The class 'project_Currency' is a specialization of 'ProjectAttribute'.
+The class 'project_CurrencyFormat' is a specialization of 'ProjectAttribute'.
+The class 'project_CurrencyFormat' is a specialization of 'ReportAttribute'.
+The class 'project_DailyMax' is a specialization of 'LimitsAttribute'.
+The class 'project_DailyMin' is a specialization of 'LimitsAttribute'.
+The class 'project_DailyWorkingHours' is a specialization of 'ProjectAttribute'.
+The class 'project_Definitions' is a specialization of 'ExportAttribute'.
+The class 'project_Depends' is a specialization of 'TaskAttribute'.
+The class 'project_Details' is a specialization of 'StatusStatusSheetAttribute'.
+The class 'project_Details' is a specialization of 'StatusTimesheetAttribute'.
+The class 'project_Duration' is a specialization of 'TaskAttribute'.
+The class 'project_Efficiency' is a specialization of 'ResourceAttribute'.
+The class 'project_Effort' is a specialization of 'TaskAttribute'.
+The class 'project_Email' is a specialization of 'ResourceAttribute'.
+The class 'project_End' is a specialization of 'TaskAttribute'.
+The class 'project_End' is a specialization of 'ReportAttribute'.
+The class 'project_End' is a specialization of 'IcalReportAttribute'.
+The class 'project_End' is a specialization of 'ExportAttribute'.
+The class 'project_End' is a specialization of 'NewTaskAttribute'.
+The class 'project_End' is a specialization of 'NikuReportAttribute'.
+The class 'project_End' is a specialization of 'StatusSheetReportAttribute'.
+The class 'project_End' is a specialization of 'TaskTimesheetAttribute'.
+The class 'project_End' is a specialization of 'TimesheetReportAttribute'.
+The class 'project_End' is a specialization of 'ColumnAttribute'.
+The class 'project_EndCredit' is a specialization of 'TaskAttribute'.
+The class 'project_Epilog' is a specialization of 'ReportAttribute'.
+The class 'project_ExtendResource' is a specialization of 'ProjectAttribute'.
+The class 'project_ExtendedResourceAttribute' is a specialization of 'ResourceAttribute'.
+The class 'project_ExtendTask' is a specialization of 'ProjectAttribute'.
+The class 'project_ExtendedTaskAttribute' is a specialization of 'TaskAttribute'.
+The class 'project_Fail' is a specialization of 'TaskAttribute'.
+The class 'project_Fail' is a specialization of 'ResourceAttribute'.
+The class 'project_Flags' is a specialization of 'Property'.
+The class 'project_Flags' is a specialization of 'AccountAttribute'.
+The class 'project_Flags' is a specialization of 'TaskAttribute'.
+The class 'project_Flags' is a specialization of 'ReportAttribute'.
+The class 'project_Flags' is a specialization of 'ResourceAttribute'.
+The class 'project_Flags' is a specialization of 'StatusStatusSheetAttribute'.
+The class 'project_Flags' is a specialization of 'StatusTimesheetAttribute'.
+The class 'project_FontColor' is a specialization of 'ColumnAttribute'.
+The class 'project_Footer' is a specialization of 'ReportAttribute'.
+The class 'project_Formats' is a specialization of 'ReportAttribute'.
+The class 'project_Formats' is a specialization of 'NikuReportAttribute'.
+The class 'project_HAlign' is a specialization of 'ColumnAttribute'.
+The class 'project_Header' is a specialization of 'ReportAttribute'.
+The class 'project_Headline' is a specialization of 'ReportAttribute'.
+The class 'project_Headline' is a specialization of 'NikuReportAttribute'.
+The class 'project_HideAccount' is a specialization of 'ReportAttribute'.
+The class 'project_HideJournalEntry' is a specialization of 'ReportAttribute'.
+The class 'project_HideJournalEntry' is a specialization of 'IcalReportAttribute'.
+The class 'project_HideReport' is a specialization of 'NavigatorAttribute'.
+The class 'project_HideResource' is a specialization of 'ReportAttribute'.
+The class 'project_HideResource' is a specialization of 'IcalReportAttribute'.
+The class 'project_HideResource' is a specialization of 'ExportAttribute'.
+The class 'project_HideResource' is a specialization of 'NikuReportAttribute'.
+The class 'project_HideResource' is a specialization of 'StatusSheetReportAttribute'.
+The class 'project_HideResource' is a specialization of 'TimesheetReportAttribute'.
+The class 'project_HideTask' is a specialization of 'ReportAttribute'.
+The class 'project_HideTask' is a specialization of 'IcalReportAttribute'.
+The class 'project_HideTask' is a specialization of 'ExportAttribute'.
+The class 'project_HideTask' is a specialization of 'NikuReportAttribute'.
+The class 'project_HideTask' is a specialization of 'StatusSheetReportAttribute'.
+The class 'project_Include' is a specialization of 'ProjectAttribute'.
+The class 'project_IncludeProperties' is a specialization of 'Property'.
+The class 'project_JournalAttributes' is a specialization of 'ReportAttribute'.
+The class 'project_JournalEntry' is a specialization of 'ProjectAttribute'.
+The class 'project_JournalEntry' is a specialization of 'TaskAttribute'.
+The class 'project_JournalEntry' is a specialization of 'ResourceAttribute'.
+The class 'project_JournalMode' is a specialization of 'ReportAttribute'.
+The class 'project_Left' is a specialization of 'ReportAttribute'.
+The class 'project_Length' is a specialization of 'TaskAttribute'.
+The class 'project_Limits' is a specialization of 'Property'.
+The class 'project_Limits' is a specialization of 'TaskAttribute'.
+The class 'project_Limits' is a specialization of 'ResourceAttribute'.
+The class 'project_ListItem' is a specialization of 'ColumnAttribute'.
+The class 'project_ListType' is a specialization of 'ColumnAttribute'.
+The class 'project_LoadUnit' is a specialization of 'ReportAttribute'.
+The class 'project_Macro' is a specialization of 'Property'.
+The class 'project_Managers' is a specialization of 'ResourceAttribute'.
+The class 'project_Mandatory' is a specialization of 'AllocateResourceAttribute'.
+The class 'project_MaxEnd' is a specialization of 'TaskAttribute'.
+The class 'project_Maximum' is a specialization of 'LimitsAttribute'.
+The class 'project_MaxStart' is a specialization of 'TaskAttribute'.
+The class 'project_Milestone' is a specialization of 'TaskAttribute'.
+The class 'project_Minimum' is a specialization of 'LimitsAttribute'.
+The class 'project_MinEnd' is a specialization of 'TaskAttribute'.
+The class 'project_MinStart' is a specialization of 'TaskAttribute'.
+The class 'project_MonthlyMax' is a specialization of 'LimitsAttribute'.
+The class 'project_MonthlyMin' is a specialization of 'LimitsAttribute'.
+The class 'project_Note' is a specialization of 'TaskAttribute'.
+The class 'project_Now' is a specialization of 'ProjectAttribute'.
+The class 'project_NumberFormat' is a specialization of 'ProjectAttribute'.
+The class 'project_NumberFormat' is a specialization of 'ReportAttribute'.
+The class 'project_NumberFormat' is a specialization of 'NikuReportAttribute'.
+The class 'project_Period' is a specialization of 'TaskAttribute'.
+The class 'project_Period' is a specialization of 'ReportAttribute'.
+The class 'project_Period' is a specialization of 'IcalReportAttribute'.
+The class 'project_Period' is a specialization of 'ExportAttribute'.
+The class 'project_Period' is a specialization of 'NikuReportAttribute'.
+The class 'project_Period' is a specialization of 'StatusSheetReportAttribute'.
+The class 'project_Period' is a specialization of 'TimesheetReportAttribute'.
+The class 'project_Period' is a specialization of 'ColumnAttribute'.
+The class 'project_Persistent' is a specialization of 'AllocateResourceAttribute'.
+The class 'project_Precedes' is a specialization of 'TaskAttribute'.
+The class 'project_Priority' is a specialization of 'TaskAttribute'.
+The class 'project_Priority' is a specialization of 'NewTaskAttribute'.
+The class 'project_Priority' is a specialization of 'TaskTimesheetAttribute'.
+The class 'project_ProjectId' is a specialization of 'TaskAttribute'.
+The class 'project_ProjectIds' is a specialization of 'Property'.
+The class 'project_Prolog' is a specialization of 'ReportAttribute'.
+The class 'project_PurgeReport' is a specialization of 'ReportAttribute'.
+The class 'project_PurgeResource' is a specialization of 'ResourceAttribute'.
+The class 'project_PurgeTask' is a specialization of 'TaskAttribute'.
+The class 'project_Rate' is a specialization of 'Property'.
+The class 'project_Rate' is a specialization of 'ResourceAttribute'.
+The class 'project_Remaining' is a specialization of 'NewTaskAttribute'.
+The class 'project_Remaining' is a specialization of 'TaskTimesheetAttribute'.
+The class 'project_ReportPrefix' is a specialization of 'IncludePropertiesAttribute'.
+The class 'project_ResourceAttributes' is a specialization of 'ExportAttribute'.
+The class 'project_ResourcePrefix' is a specialization of 'IncludePropertiesAttribute'.
+The class 'project_ResourceReport' is a specialization of 'Property'.
+The class 'project_ResourceReport' is a specialization of 'ReportAttribute'.
+The class 'project_ResourceRoot' is a specialization of 'ReportAttribute'.
+The class 'project_Responsible' is a specialization of 'TaskAttribute'.
+The class 'project_Right' is a specialization of 'ReportAttribute'.
+The class 'project_RollupAccount' is a specialization of 'ReportAttribute'.
+The class 'project_RollupResource' is a specialization of 'ReportAttribute'.
+The class 'project_RollupResource' is a specialization of 'IcalReportAttribute'.
+The class 'project_RollupResource' is a specialization of 'ExportAttribute'.
+The class 'project_RollupTask' is a specialization of 'ReportAttribute'.
+The class 'project_RollupTask' is a specialization of 'IcalReportAttribute'.
+The class 'project_RollupTask' is a specialization of 'ExportAttribute'.
+The class 'project_Scale' is a specialization of 'ColumnAttribute'.
+The class 'project_Scenario' is a specialization of 'ProjectAttribute'.
+The class 'project_ScenarioIcal' is a specialization of 'IcalReportAttribute'.
+The class 'project_Scenarios' is a specialization of 'ReportAttribute'.
+The class 'project_Scenarios' is a specialization of 'ExportAttribute'.
+The class 'project_Scheduled' is a specialization of 'TaskAttribute'.
+The class 'project_Scheduling' is a specialization of 'TaskAttribute'.
+The class 'project_Select' is a specialization of 'AllocateResourceAttribute'.
+The class 'project_SelfContained' is a specialization of 'ReportAttribute'.
+The class 'project_Shift' is a specialization of 'Property'.
+The class 'project_ShiftTimesheet' is a specialization of 'TimesheetAttribute'.
+The class 'project_Shifts' is a specialization of 'ShiftsResource'.
+The class 'project_Shifts' is a specialization of 'ShiftsTask'.
+The class 'project_ShiftsAllocate' is a specialization of 'AllocateResourceAttribute'.
+The class 'project_ShiftsResource' is a specialization of 'ResourceAttribute'.
+The class 'project_ShiftsTask' is a specialization of 'TaskAttribute'.
+The class 'project_ShortTimeFormat' is a specialization of 'ProjectAttribute'.
+The class 'project_Sort' is a specialization of 'SortAccounts'.
+The class 'project_Sort' is a specialization of 'SortJournalEntries'.
+The class 'project_Sort' is a specialization of 'SortResources'.
+The class 'project_Sort' is a specialization of 'SortTasks'.
+The class 'project_SortAccounts' is a specialization of 'ReportAttribute'.
+The class 'project_SortJournalEntries' is a specialization of 'ReportAttribute'.
+The class 'project_SortResources' is a specialization of 'ReportAttribute'.
+The class 'project_SortResources' is a specialization of 'StatusSheetReportAttribute'.
+The class 'project_SortTasks' is a specialization of 'ReportAttribute'.
+The class 'project_SortTasks' is a specialization of 'StatusSheetReportAttribute'.
+The class 'project_Start' is a specialization of 'TaskAttribute'.
+The class 'project_Start' is a specialization of 'ReportAttribute'.
+The class 'project_Start' is a specialization of 'IcalReportAttribute'.
+The class 'project_Start' is a specialization of 'ExportAttribute'.
+The class 'project_Start' is a specialization of 'NikuReportAttribute'.
+The class 'project_Start' is a specialization of 'StatusSheetReportAttribute'.
+The class 'project_Start' is a specialization of 'TimesheetReportAttribute'.
+The class 'project_Start' is a specialization of 'ColumnAttribute'.
+The class 'project_StatusStatusSheet' is a specialization of 'TaskStatusSheetAttribute'.
+The class 'project_StatusTimesheet' is a specialization of 'TaskTimesheetAttribute'.
+The class 'project_StatusTimesheet' is a specialization of 'TimesheetAttribute'.
+The class 'project_StatusSheet' is a specialization of 'Property'.
+The class 'project_StatusSheetReport' is a specialization of 'Property'.
+The class 'project_Summary' is a specialization of 'StatusStatusSheetAttribute'.
+The class 'project_Summary' is a specialization of 'StatusTimesheetAttribute'.
+The class 'project_SupplementAccount' is a specialization of 'Property'.
+The class 'project_SupplementReport' is a specialization of 'Property'.
+The class 'project_SupplementResource' is a specialization of 'Property'.
+The class 'project_SupplementResource' is a specialization of 'ResourceAttribute'.
+The class 'project_SupplementTask' is a specialization of 'Property'.
+The class 'project_SupplementTask' is a specialization of 'TaskAttribute'.
+The class 'project_TagFile' is a specialization of 'Property'.
+The class 'project_TaskStatusSheet' is a specialization of 'StatusSheetAttribute'.
+The class 'project_TaskStatusSheet' is a specialization of 'TaskStatusSheetAttribute'.
+The class 'project_TaskTimesheet' is a specialization of 'TimesheetAttribute'.
+The class 'project_TaskAttributes' is a specialization of 'ExportAttribute'.
+The class 'project_TaskPrefix' is a specialization of 'IncludePropertiesAttribute'.
+The class 'project_TaskReport' is a specialization of 'Property'.
+The class 'project_TaskReport' is a specialization of 'ReportAttribute'.
+The class 'project_TaskRoot' is a specialization of 'ReportAttribute'.
+The class 'project_TextReport' is a specialization of 'Property'.
+The class 'project_TextReport' is a specialization of 'ReportAttribute'.
+The class 'project_TimeFormat' is a specialization of 'ProjectAttribute'.
+The class 'project_TimeFormat' is a specialization of 'ReportAttribute'.
+The class 'project_Timeoff' is a specialization of 'NikuReportAttribute'.
+The class 'project_Timesheet' is a specialization of 'Property'.
+The class 'project_TimesheetReport' is a specialization of 'Property'.
+The class 'project_Timezone' is a specialization of 'ProjectAttribute'.
+The class 'project_Timezone' is a specialization of 'ReportAttribute'.
+The class 'project_Timezone' is a specialization of 'ExportAttribute'.
+The class 'project_TimingResolution' is a specialization of 'ProjectAttribute'.
+The class 'project_Title' is a specialization of 'ReportAttribute'.
+The class 'project_Title' is a specialization of 'NikuReportAttribute'.
+The class 'project_Title' is a specialization of 'ColumnAttribute'.
+The class 'project_ToolTip' is a specialization of 'ColumnAttribute'.
+The class 'project_TrackingScenario' is a specialization of 'ProjectAttribute'.
+The class 'project_Vacation' is a specialization of 'Property'.
+The class 'project_Vacation' is a specialization of 'ResourceAttribute'.
+The class 'project_Warn' is a specialization of 'TaskAttribute'.
+The class 'project_Warn' is a specialization of 'ResourceAttribute'.
+The class 'project_WeekStarts' is a specialization of 'ProjectAttribute'.
+The class 'project_WeeklyMax' is a specialization of 'LimitsAttribute'.
+The class 'project_WeeklyMin' is a specialization of 'LimitsAttribute'.
+The class 'project_Width' is a specialization of 'ColumnAttribute'.
+The class 'project_Work' is a specialization of 'NewTaskAttribute'.
+The class 'project_Work' is a specialization of 'TaskTimesheetAttribute'.
+The class 'project_WorkingHours' is a specialization of 'ProjectAttribute'.
+The class 'project_WorkingHours' is a specialization of 'ResourceAttribute'.
+The class 'project_YearlyWorkingDays' is a specialization of 'ProjectAttribute'.
+The class 'project_DurationQuantity' is a specialization of 'GapDuration'.
+The class 'project_DurationQuantity' is a specialization of 'GapLength'.
+The class 'project_Limit' is a specialization of 'DailyMax'.
+The class 'project_Limit' is a specialization of 'DailyMin'.
+The class 'project_Limit' is a specialization of 'Maximum'.
+The class 'project_Limit' is a specialization of 'Minimum'.
+The class 'project_Limit' is a specialization of 'MonthlyMax'.
+The class 'project_Limit' is a specialization of 'MonthlyMin'.
+The class 'project_Limit' is a specialization of 'WeeklyMax'.
+The class 'project_Limit' is a specialization of 'WeeklyMin'.
+The class 'project_RealFormat' is a specialization of 'CurrencyFormat'.
+The class 'project_RealFormat' is a specialization of 'NumberFormat'.
+The class 'project_TaskDependency' is a specialization of 'Depends'.
+The class 'project_TaskDependency' is a specialization of 'Precedes'.
+The class 'project_RichText' is a specialization of 'Caption'.
+The class 'project_RichText' is a specialization of 'Center'.
+The class 'project_RichText' is a specialization of 'Details'.
+The class 'project_RichText' is a specialization of 'Epilog'.
+The class 'project_RichText' is a specialization of 'Footer'.
+The class 'project_RichText' is a specialization of 'Header'.
+The class 'project_RichText' is a specialization of 'Headline'.
+The class 'project_RichText' is a specialization of 'Left'.
+The class 'project_RichText' is a specialization of 'ListItem'.
+The class 'project_RichText' is a specialization of 'Prolog'.
+The class 'project_RichText' is a specialization of 'Right'.
+The class 'project_RichText' is a specialization of 'Summary'.
+The class 'project_Defintions' is a specialization of 'Definitions'.
+The class 'project_XBinaryOperation' is a specialization of 'LogicalExpression'.
+The class 'project_LogicalFunctionExpression' is a specialization of 'LogicalExpression'.
+The class 'project_LogicalAbsoluteIdExression' is a specialization of 'LogicalExpression'.
+The class 'project_LogicalBooleanLiteral' is a specialization of 'LogicalExpression'.
+The class 'project_LogicalNumeralLiteral' is a specialization of 'LogicalExpression'.
+The class 'project_LogicalStringLiteral' is a specialization of 'LogicalExpression'.
+The class 'project_LogicalDateLiteral' is a specialization of 'LogicalExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'project_Project' and 'project_Global'. From 'project_Project', the role 'project_Project' has cardinality 0..*, and from 'project_Global', the role 'project_Global' has cardinality 0..*.
+An association connects 'project_Global' and 'project_Property'. From 'project_Global', the role 'project_Global2' has cardinality 0..*, and from 'project_Property', the role 'project_Property' has cardinality 0..*.
+An association connects 'project_AccountAttribute' and 'project_Account'. From 'project_AccountAttribute', the role 'project_AccountAttribute' has cardinality 0..*, and from 'project_Account', the role 'project_Account' has cardinality 0..*.
+An association connects 'project_Account' and 'project_AccountPrefix'. From 'project_Account', the role 'project_Account5' has cardinality 0..*, and from 'project_AccountPrefix', the role 'project_AccountPrefix' has cardinality 0..*.
+An association connects 'project_AccountRoot' and 'project_Account'. From 'project_AccountRoot', the role 'project_AccountRoot' has cardinality 0..*, and from 'project_Account', the role 'project_Account7' has cardinality 0..*.
+An association connects 'project_Interval2' and 'project_Project'. From 'project_Interval2', the role 'project_Interval2' has cardinality 0..*, and from 'project_Project', the role 'project_Project9' has cardinality 0..*.
+An association connects 'project_Project' and 'project_ProjectAttribute'. From 'project_Project', the role 'project_Project11' has cardinality 0..*, and from 'project_ProjectAttribute', the role 'project_ProjectAttribute' has cardinality 0..*.
+An association connects 'project_Task' and 'project_TaskAttribute'. From 'project_Task', the role 'project_Task' has cardinality 0..*, and from 'project_TaskAttribute', the role 'project_TaskAttribute' has cardinality 0..*.
+An association connects 'project_ReportAttribute' and 'project_Report'. From 'project_ReportAttribute', the role 'project_ReportAttribute' has cardinality 0..*, and from 'project_Report', the role 'project_Report' has cardinality 0..*.
+An association connects 'project_IcalReport' and 'project_IcalReportAttribute'. From 'project_IcalReport', the role 'project_IcalReport' has cardinality 0..*, and from 'project_IcalReportAttribute', the role 'project_IcalReportAttribute' has cardinality 0..*.
+An association connects 'project_Export' and 'project_ExportAttribute'. From 'project_Export', the role 'project_Export' has cardinality 0..*, and from 'project_ExportAttribute', the role 'project_ExportAttribute' has cardinality 0..*.
+An association connects 'project_Resource' and 'project_ResourceAttribute'. From 'project_Resource', the role 'project_Resource' has cardinality 0..*, and from 'project_ResourceAttribute', the role 'project_ResourceAttribute' has cardinality 0..*.
+An association connects 'project_AllocateResource' and 'project_Allocate'. From 'project_AllocateResource', the role 'project_AllocateResource' has cardinality 0..*, and from 'project_Allocate', the role 'project_Allocate' has cardinality 0..*.
+An association connects 'project_AllocateResource' and 'project_Resource'. From 'project_AllocateResource', the role 'project_AllocateResource19' has cardinality 0..*, and from 'project_Resource', the role 'project_Resource20' has cardinality 0..*.
+An association connects 'project_AllocateResource' and 'project_AllocateResourceAttribute'. From 'project_AllocateResource', the role 'project_AllocateResource22' has cardinality 0..*, and from 'project_AllocateResourceAttribute', the role 'project_AllocateResourceAttribute' has cardinality 0..*.
+An association connects 'project_Navigator' and 'project_NavigatorAttribute'. From 'project_Navigator', the role 'project_Navigator' has cardinality 0..*, and from 'project_NavigatorAttribute', the role 'project_NavigatorAttribute' has cardinality 0..*.
+An association connects 'project_NewTask' and 'project_NewTaskAttribute'. From 'project_NewTask', the role 'project_NewTask' has cardinality 0..*, and from 'project_NewTaskAttribute', the role 'project_NewTaskAttribute' has cardinality 0..*.
+An association connects 'project_NikuReportAttribute' and 'project_NikuReport'. From 'project_NikuReportAttribute', the role 'project_NikuReportAttribute' has cardinality 0..*, and from 'project_NikuReport', the role 'project_NikuReport' has cardinality 0..*.
+An association connects 'project_Alternative' and 'project_Resource'. From 'project_Alternative', the role 'project_Alternative' has cardinality 0..*, and from 'project_Resource', the role 'project_Resource27' has cardinality 0..*.
+An association connects 'project_Resource' and 'project_Author'. From 'project_Resource', the role 'project_Resource29' has cardinality 0..*, and from 'project_Author', the role 'project_Author' has cardinality 0..*.
+An association connects 'project_Account' and 'project_Balance'. From 'project_Account', the role 'project_Account31' has cardinality 0..*, and from 'project_Balance', the role 'project_Balance' has cardinality 0..*.
+An association connects 'project_Balance' and 'project_Account'. From 'project_Balance', the role 'project_Balance33' has cardinality 0..*, and from 'project_Account', the role 'project_Account34' has cardinality 0..*.
+An association connects 'project_Booking' and 'project_Interval4'. From 'project_Booking', the role 'project_Booking' has cardinality 0..*, and from 'project_Interval4', the role 'project_Interval4' has cardinality 0..*.
+An association connects 'project_Resource' and 'project_BookingTask'. From 'project_Resource', the role 'project_Resource37' has cardinality 0..*, and from 'project_BookingTask', the role 'project_BookingTask' has cardinality 0..*.
+An association connects 'project_Booking' and 'project_BookingTask'. From 'project_Booking', the role 'project_Booking40' has cardinality 0..*, and from 'project_BookingTask', the role 'project_BookingTask39' has cardinality 0..*.
+An association connects 'project_Task' and 'project_BookingResource'. From 'project_Task', the role 'project_Task42' has cardinality 0..*, and from 'project_BookingResource', the role 'project_BookingResource' has cardinality 0..*.
+An association connects 'project_BookingResource' and 'project_Booking'. From 'project_BookingResource', the role 'project_BookingResource44' has cardinality 0..*, and from 'project_Booking', the role 'project_Booking45' has cardinality 0..*.
+An association connects 'project_CellColor' and 'project_LogicalExpression'. From 'project_CellColor', the role 'project_CellColor' has cardinality 0..*, and from 'project_LogicalExpression', the role 'project_LogicalExpression' has cardinality 0..*.
+An association connects 'project_CellColor' and 'project_RGB'. From 'project_CellColor', the role 'project_CellColor48' has cardinality 0..*, and from 'project_RGB', the role 'project_RGB' has cardinality 0..*.
+An association connects 'project_CellText' and 'project_LogicalExpression'. From 'project_CellText', the role 'project_CellText' has cardinality 0..*, and from 'project_LogicalExpression', the role 'project_LogicalExpression50' has cardinality 0..*.
+An association connects 'project_ChargeSet' and 'project_AccountShare'. From 'project_ChargeSet', the role 'project_ChargeSet' has cardinality 0..*, and from 'project_AccountShare', the role 'project_AccountShare' has cardinality 0..*.
+An association connects 'project_Column' and 'project_Columns'. From 'project_Column', the role 'project_Column' has cardinality 0..*, and from 'project_Columns', the role 'project_Columns' has cardinality 0..*.
+An association connects 'project_DurationQuantity' and 'project_Duration'. From 'project_DurationQuantity', the role 'project_DurationQuantity' has cardinality 0..*, and from 'project_Duration', the role 'project_Duration' has cardinality 0..*.
+An association connects 'project_Effort' and 'project_DurationQuantity'. From 'project_Effort', the role 'project_Effort' has cardinality 0..*, and from 'project_DurationQuantity', the role 'project_DurationQuantity55' has cardinality 0..*.
+An association connects 'project_ExtendResource' and 'project_Extend'. From 'project_ExtendResource', the role 'project_ExtendResource' has cardinality 0..*, and from 'project_Extend', the role 'project_Extend' has cardinality 0..*.
+An association connects 'project_Extend' and 'project_ExtendedResourceAttribute'. From 'project_Extend', the role 'project_Extend58' has cardinality 0..*, and from 'project_ExtendedResourceAttribute', the role 'project_ExtendedResourceAttribute' has cardinality 0..*.
+An association connects 'project_ExtendTask' and 'project_Extend'. From 'project_ExtendTask', the role 'project_ExtendTask' has cardinality 0..*, and from 'project_Extend', the role 'project_Extend60' has cardinality 0..*.
+An association connects 'project_Extend' and 'project_ExtendedTaskAttribute'. From 'project_Extend', the role 'project_Extend62' has cardinality 0..*, and from 'project_ExtendedTaskAttribute', the role 'project_ExtendedTaskAttribute' has cardinality 0..*.
+An association connects 'project_LogicalExpression' and 'project_Fail'. From 'project_LogicalExpression', the role 'project_LogicalExpression64' has cardinality 0..*, and from 'project_Fail', the role 'project_Fail' has cardinality 0..*.
+An association connects 'project_Scenario' and 'project_Function'. From 'project_Scenario', the role 'project_Scenario' has cardinality 0..*, and from 'project_Function', the role 'project_Function' has cardinality 0..*.
+An association connects 'project_Task' and 'project_Function'. From 'project_Task', the role 'project_Task68' has cardinality 0..*, and from 'project_Function', the role 'project_Function67' has cardinality 0..*.
+An association connects 'project_Resource' and 'project_Function'. From 'project_Resource', the role 'project_Resource71' has cardinality 0..*, and from 'project_Function', the role 'project_Function70' has cardinality 0..*.
+An association connects 'project_LogicalExpression' and 'project_HAlign'. From 'project_LogicalExpression', the role 'project_LogicalExpression73' has cardinality 0..*, and from 'project_HAlign', the role 'project_HAlign' has cardinality 0..*.
+An association connects 'project_LogicalExpression' and 'project_HideReport'. From 'project_LogicalExpression', the role 'project_LogicalExpression75' has cardinality 0..*, and from 'project_HideReport', the role 'project_HideReport' has cardinality 0..*.
+An association connects 'project_LogicalExpression' and 'project_HideResource'. From 'project_LogicalExpression', the role 'project_LogicalExpression77' has cardinality 0..*, and from 'project_HideResource', the role 'project_HideResource' has cardinality 0..*.
+An association connects 'project_LogicalExpression' and 'project_HideTask'. From 'project_LogicalExpression', the role 'project_LogicalExpression79' has cardinality 0..*, and from 'project_HideTask', the role 'project_HideTask' has cardinality 0..*.
+An association connects 'project_IncludePropertiesAttribute' and 'project_IncludeProperties'. From 'project_IncludePropertiesAttribute', the role 'project_IncludePropertiesAttribute' has cardinality 0..*, and from 'project_IncludeProperties', the role 'project_IncludeProperties' has cardinality 0..*.
+An association connects 'project_DurationQuantity' and 'project_Interval1'. From 'project_DurationQuantity', the role 'project_DurationQuantity82' has cardinality 0..*, and from 'project_Interval1', the role 'project_Interval1' has cardinality 0..*.
+An association connects 'project_Interval2' and 'project_DurationQuantity'. From 'project_Interval2', the role 'project_Interval284' has cardinality 0..*, and from 'project_DurationQuantity', the role 'project_DurationQuantity85' has cardinality 0..*.
+An association connects 'project_Interval3' and 'project_DurationQuantity'. From 'project_Interval3', the role 'project_Interval3' has cardinality 0..*, and from 'project_DurationQuantity', the role 'project_DurationQuantity87' has cardinality 0..*.
+An association connects 'project_DurationQuantity' and 'project_Interval4'. From 'project_DurationQuantity', the role 'project_DurationQuantity90' has cardinality 0..*, and from 'project_Interval4', the role 'project_Interval489' has cardinality 0..*.
+An association connects 'project_Alert' and 'project_JournalEntry'. From 'project_Alert', the role 'project_Alert' has cardinality 0..*, and from 'project_JournalEntry', the role 'project_JournalEntry' has cardinality 0..*.
+An association connects 'project_Author' and 'project_JournalEntry'. From 'project_Author', the role 'project_Author94' has cardinality 0..*, and from 'project_JournalEntry', the role 'project_JournalEntry93' has cardinality 0..*.
+An association connects 'project_JournalEntry' and 'project_Details'. From 'project_JournalEntry', the role 'project_JournalEntry96' has cardinality 0..*, and from 'project_Details', the role 'project_Details' has cardinality 0..*.
+An association connects 'project_Summary' and 'project_JournalEntry'. From 'project_Summary', the role 'project_Summary' has cardinality 0..*, and from 'project_JournalEntry', the role 'project_JournalEntry98' has cardinality 0..*.
+An association connects 'project_DurationQuantity' and 'project_Length'. From 'project_DurationQuantity', the role 'project_DurationQuantity100' has cardinality 0..*, and from 'project_Length', the role 'project_Length' has cardinality 0..*.
+An association connects 'project_LimitsAttribute' and 'project_Limits'. From 'project_LimitsAttribute', the role 'project_LimitsAttribute' has cardinality 0..*, and from 'project_Limits', the role 'project_Limits' has cardinality 0..*.
+An association connects 'project_Managers' and 'project_Resource'. From 'project_Managers', the role 'project_Managers' has cardinality 0..*, and from 'project_Resource', the role 'project_Resource103' has cardinality 0..*.
+An association connects 'project_Interval2' and 'project_Period'. From 'project_Interval2', the role 'project_Interval2105' has cardinality 0..*, and from 'project_Period', the role 'project_Period' has cardinality 0..*.
+An association connects 'project_DurationQuantity' and 'project_Remaining'. From 'project_DurationQuantity', the role 'project_DurationQuantity107' has cardinality 0..*, and from 'project_Remaining', the role 'project_Remaining' has cardinality 0..*.
+An association connects 'project_ReportPrefix' and 'project_Report'. From 'project_ReportPrefix', the role 'project_ReportPrefix' has cardinality 0..*, and from 'project_Report', the role 'project_Report109' has cardinality 0..*.
+An association connects 'project_Resource' and 'project_ResourcePrefix'. From 'project_Resource', the role 'project_Resource111' has cardinality 0..*, and from 'project_ResourcePrefix', the role 'project_ResourcePrefix' has cardinality 0..*.
+An association connects 'project_Resource' and 'project_ResourceRoot'. From 'project_Resource', the role 'project_Resource113' has cardinality 0..*, and from 'project_ResourceRoot', the role 'project_ResourceRoot' has cardinality 0..*.
+An association connects 'project_Resource' and 'project_Responsible'. From 'project_Resource', the role 'project_Resource115' has cardinality 0..*, and from 'project_Responsible', the role 'project_Responsible' has cardinality 0..*.
+An association connects 'project_LogicalExpression' and 'project_RollupAccount'. From 'project_LogicalExpression', the role 'project_LogicalExpression117' has cardinality 0..*, and from 'project_RollupAccount', the role 'project_RollupAccount' has cardinality 0..*.
+An association connects 'project_LogicalExpression' and 'project_RollupResource'. From 'project_LogicalExpression', the role 'project_LogicalExpression119' has cardinality 0..*, and from 'project_RollupResource', the role 'project_RollupResource' has cardinality 0..*.
+An association connects 'project_LogicalExpression' and 'project_RollupTask'. From 'project_LogicalExpression', the role 'project_LogicalExpression121' has cardinality 0..*, and from 'project_RollupTask', the role 'project_RollupTask' has cardinality 0..*.
+An association connects 'project_Scenario' and 'project_Scenario'. From 'project_Scenario', the role 'project_Scenario124' has cardinality 0..*, and from 'project_Scenario', the role 'project_Scenario122' has cardinality 0..*.
+An association connects 'project_ScenarioIcal' and 'project_Scenario'. From 'project_ScenarioIcal', the role 'project_ScenarioIcal' has cardinality 0..*, and from 'project_Scenario', the role 'project_Scenario126' has cardinality 0..*.
+An association connects 'project_Scenario' and 'project_Scenarios'. From 'project_Scenario', the role 'project_Scenario128' has cardinality 0..*, and from 'project_Scenarios', the role 'project_Scenarios' has cardinality 0..*.
+An association connects 'project_Vacation' and 'project_Shift'. From 'project_Vacation', the role 'project_Vacation' has cardinality 0..*, and from 'project_Shift', the role 'project_Shift' has cardinality 0..*.
+An association connects 'project_Shift' and 'project_Shift'. From 'project_Shift', the role 'project_Shift130' has cardinality 0..*, and from 'project_Shift', the role 'project_Shift132' has cardinality 0..*.
+An association connects 'project_Shift' and 'project_WorkingHours'. From 'project_Shift', the role 'project_Shift134' has cardinality 0..*, and from 'project_WorkingHours', the role 'project_WorkingHours' has cardinality 0..*.
+An association connects 'project_Shift' and 'project_ShiftTimesheet'. From 'project_Shift', the role 'project_Shift136' has cardinality 0..*, and from 'project_ShiftTimesheet', the role 'project_ShiftTimesheet' has cardinality 0..*.
+An association connects 'project_Shifts' and 'project_ShiftsLimit'. From 'project_Shifts', the role 'project_Shifts' has cardinality 0..*, and from 'project_ShiftsLimit', the role 'project_ShiftsLimit' has cardinality 0..*.
+An association connects 'project_ShiftsLimit' and 'project_Shift'. From 'project_ShiftsLimit', the role 'project_ShiftsLimit139' has cardinality 0..*, and from 'project_Shift', the role 'project_Shift140' has cardinality 0..*.
+An association connects 'project_ShiftsLimit' and 'project_Interval2'. From 'project_ShiftsLimit', the role 'project_ShiftsLimit142' has cardinality 0..*, and from 'project_Interval2', the role 'project_Interval2143' has cardinality 0..*.
+An association connects 'project_Shift' and 'project_ShiftsAllocate'. From 'project_Shift', the role 'project_Shift145' has cardinality 0..*, and from 'project_ShiftsAllocate', the role 'project_ShiftsAllocate' has cardinality 0..*.
+An association connects 'project_ShiftsAllocate' and 'project_Interval3'. From 'project_ShiftsAllocate', the role 'project_ShiftsAllocate147' has cardinality 0..*, and from 'project_Interval3', the role 'project_Interval3148' has cardinality 0..*.
+An association connects 'project_Criterion' and 'project_Sort'. From 'project_Criterion', the role 'project_Criterion' has cardinality 0..*, and from 'project_Sort', the role 'project_Sort' has cardinality 0..*.
+An association connects 'project_StatusStatusSheet' and 'project_StatusStatusSheetAttribute'. From 'project_StatusStatusSheet', the role 'project_StatusStatusSheet' has cardinality 0..*, and from 'project_StatusStatusSheetAttribute', the role 'project_StatusStatusSheetAttribute' has cardinality 0..*.
+An association connects 'project_StatusTimesheet' and 'project_StatusTimesheetAttribute'. From 'project_StatusTimesheet', the role 'project_StatusTimesheet' has cardinality 0..*, and from 'project_StatusTimesheetAttribute', the role 'project_StatusTimesheetAttribute' has cardinality 0..*.
+An association connects 'project_Resource' and 'project_StatusSheet'. From 'project_Resource', the role 'project_Resource153' has cardinality 0..*, and from 'project_StatusSheet', the role 'project_StatusSheet' has cardinality 0..*.
+An association connects 'project_Interval4' and 'project_StatusSheet'. From 'project_Interval4', the role 'project_Interval4156' has cardinality 0..*, and from 'project_StatusSheet', the role 'project_StatusSheet155' has cardinality 0..*.
+An association connects 'project_StatusSheetAttribute' and 'project_StatusSheet'. From 'project_StatusSheetAttribute', the role 'project_StatusSheetAttribute' has cardinality 0..*, and from 'project_StatusSheet', the role 'project_StatusSheet158' has cardinality 0..*.
+An association connects 'project_StatusSheetReportAttribute' and 'project_StatusSheetReport'. From 'project_StatusSheetReportAttribute', the role 'project_StatusSheetReportAttribute' has cardinality 0..*, and from 'project_StatusSheetReport', the role 'project_StatusSheetReport' has cardinality 0..*.
+An association connects 'project_SupplementAccount' and 'project_Account'. From 'project_SupplementAccount', the role 'project_SupplementAccount' has cardinality 0..*, and from 'project_Account', the role 'project_Account161' has cardinality 0..*.
+An association connects 'project_SupplementAccount' and 'project_AccountAttribute'. From 'project_SupplementAccount', the role 'project_SupplementAccount163' has cardinality 0..*, and from 'project_AccountAttribute', the role 'project_AccountAttribute164' has cardinality 0..*.
+An association connects 'project_SupplementReport' and 'project_Report'. From 'project_SupplementReport', the role 'project_SupplementReport' has cardinality 0..*, and from 'project_Report', the role 'project_Report166' has cardinality 0..*.
+An association connects 'project_SupplementReport' and 'project_ReportAttribute'. From 'project_SupplementReport', the role 'project_SupplementReport168' has cardinality 0..*, and from 'project_ReportAttribute', the role 'project_ReportAttribute169' has cardinality 0..*.
+An association connects 'project_SupplementResource' and 'project_Resource'. From 'project_SupplementResource', the role 'project_SupplementResource' has cardinality 0..*, and from 'project_Resource', the role 'project_Resource171' has cardinality 0..*.
+An association connects 'project_ResourceAttribute' and 'project_SupplementResource'. From 'project_ResourceAttribute', the role 'project_ResourceAttribute174' has cardinality 0..*, and from 'project_SupplementResource', the role 'project_SupplementResource173' has cardinality 0..*.
+An association connects 'project_SupplementTask' and 'project_Task'. From 'project_SupplementTask', the role 'project_SupplementTask' has cardinality 0..*, and from 'project_Task', the role 'project_Task176' has cardinality 0..*.
+An association connects 'project_SupplementTask' and 'project_TaskAttribute'. From 'project_SupplementTask', the role 'project_SupplementTask178' has cardinality 0..*, and from 'project_TaskAttribute', the role 'project_TaskAttribute179' has cardinality 0..*.
+An association connects 'project_TagFile' and 'project_HideResource'. From 'project_TagFile', the role 'project_TagFile' has cardinality 0..*, and from 'project_HideResource', the role 'project_HideResource181' has cardinality 0..*.
+An association connects 'project_HideTask' and 'project_TagFile'. From 'project_HideTask', the role 'project_HideTask184' has cardinality 0..*, and from 'project_TagFile', the role 'project_TagFile183' has cardinality 0..*.
+An association connects 'project_RollupResource' and 'project_TagFile'. From 'project_RollupResource', the role 'project_RollupResource187' has cardinality 0..*, and from 'project_TagFile', the role 'project_TagFile186' has cardinality 0..*.
+An association connects 'project_TagFile' and 'project_RollupTask'. From 'project_TagFile', the role 'project_TagFile189' has cardinality 0..*, and from 'project_RollupTask', the role 'project_RollupTask190' has cardinality 0..*.
+An association connects 'project_TaskStatusSheet' and 'project_Task'. From 'project_TaskStatusSheet', the role 'project_TaskStatusSheet' has cardinality 0..*, and from 'project_Task', the role 'project_Task192' has cardinality 0..*.
+An association connects 'project_TaskStatusSheetAttribute' and 'project_TaskStatusSheet'. From 'project_TaskStatusSheetAttribute', the role 'project_TaskStatusSheetAttribute' has cardinality 0..*, and from 'project_TaskStatusSheet', the role 'project_TaskStatusSheet194' has cardinality 0..*.
+An association connects 'project_Task' and 'project_TaskTimesheet'. From 'project_Task', the role 'project_Task196' has cardinality 0..*, and from 'project_TaskTimesheet', the role 'project_TaskTimesheet' has cardinality 0..*.
+An association connects 'project_TaskTimesheet' and 'project_TaskTimesheetAttribute'. From 'project_TaskTimesheet', the role 'project_TaskTimesheet198' has cardinality 0..*, and from 'project_TaskTimesheetAttribute', the role 'project_TaskTimesheetAttribute' has cardinality 0..*.
+An association connects 'project_Task' and 'project_TaskPrefix'. From 'project_Task', the role 'project_Task200' has cardinality 0..*, and from 'project_TaskPrefix', the role 'project_TaskPrefix' has cardinality 0..*.
+An association connects 'project_TaskRoot' and 'project_Task'. From 'project_TaskRoot', the role 'project_TaskRoot' has cardinality 0..*, and from 'project_Task', the role 'project_Task202' has cardinality 0..*.
+An association connects 'project_Timesheet' and 'project_Resource'. From 'project_Timesheet', the role 'project_Timesheet' has cardinality 0..*, and from 'project_Resource', the role 'project_Resource204' has cardinality 0..*.
+An association connects 'project_Interval4' and 'project_Timesheet'. From 'project_Interval4', the role 'project_Interval4207' has cardinality 0..*, and from 'project_Timesheet', the role 'project_Timesheet206' has cardinality 0..*.
+An association connects 'project_TimesheetAttribute' and 'project_Timesheet'. From 'project_TimesheetAttribute', the role 'project_TimesheetAttribute' has cardinality 0..*, and from 'project_Timesheet', the role 'project_Timesheet209' has cardinality 0..*.
+An association connects 'project_TimesheetReportAttribute' and 'project_TimesheetReport'. From 'project_TimesheetReportAttribute', the role 'project_TimesheetReportAttribute' has cardinality 0..*, and from 'project_TimesheetReport', the role 'project_TimesheetReport' has cardinality 0..*.
+An association connects 'project_ToolTip' and 'project_LogicalExpression'. From 'project_ToolTip', the role 'project_ToolTip' has cardinality 0..*, and from 'project_LogicalExpression', the role 'project_LogicalExpression212' has cardinality 0..*.
+An association connects 'project_TrackingScenario' and 'project_Scenario'. From 'project_TrackingScenario', the role 'project_TrackingScenario' has cardinality 0..*, and from 'project_Scenario', the role 'project_Scenario214' has cardinality 0..*.
+An association connects 'project_Interval3' and 'project_Vacation'. From 'project_Interval3', the role 'project_Interval3217' has cardinality 0..*, and from 'project_Vacation', the role 'project_Vacation216' has cardinality 0..*.
+An association connects 'project_LogicalExpression' and 'project_Warn'. From 'project_LogicalExpression', the role 'project_LogicalExpression219' has cardinality 0..*, and from 'project_Warn', the role 'project_Warn' has cardinality 0..*.
+An association connects 'project_WorkingHours' and 'project_Weekdays'. From 'project_WorkingHours', the role 'project_WorkingHours221' has cardinality 0..*, and from 'project_Weekdays', the role 'project_Weekdays' has cardinality 0..*.
+An association connects 'project_WorkingHours' and 'project_WorkHours'. From 'project_WorkingHours', the role 'project_WorkingHours223' has cardinality 0..*, and from 'project_WorkHours', the role 'project_WorkHours' has cardinality 0..*.
+An association connects 'project_Account' and 'project_AccountShare'. From 'project_Account', the role 'project_Account226' has cardinality 0..*, and from 'project_AccountShare', the role 'project_AccountShare225' has cardinality 0..*.
+An association connects 'project_ColumnAttribute' and 'project_Column'. From 'project_ColumnAttribute', the role 'project_ColumnAttribute' has cardinality 0..*, and from 'project_Column', the role 'project_Column228' has cardinality 0..*.
+An association connects 'project_DurationQuantity' and 'project_Limit'. From 'project_DurationQuantity', the role 'project_DurationQuantity230' has cardinality 0..*, and from 'project_Limit', the role 'project_Limit' has cardinality 0..*.
+An association connects 'project_Limit' and 'project_LimitAttribute'. From 'project_Limit', the role 'project_Limit232' has cardinality 0..*, and from 'project_LimitAttribute', the role 'project_LimitAttribute' has cardinality 0..*.
+An association connects 'project_LimitAttribute' and 'project_Interval1'. From 'project_LimitAttribute', the role 'project_LimitAttribute234' has cardinality 0..*, and from 'project_Interval1', the role 'project_Interval1235' has cardinality 0..*.
+An association connects 'project_Resource' and 'project_LimitAttribute'. From 'project_Resource', the role 'project_Resource238' has cardinality 0..*, and from 'project_LimitAttribute', the role 'project_LimitAttribute237' has cardinality 0..*.
+An association connects 'project_TaskDependency' and 'project_Task'. From 'project_TaskDependency', the role 'project_TaskDependency' has cardinality 0..*, and from 'project_Task', the role 'project_Task240' has cardinality 0..*.
+An association connects 'project_GapDuration' and 'project_TaskDependency'. From 'project_GapDuration', the role 'project_GapDuration' has cardinality 0..*, and from 'project_TaskDependency', the role 'project_TaskDependency242' has cardinality 0..*.
+An association connects 'project_GapLength' and 'project_TaskDependency'. From 'project_GapLength', the role 'project_GapLength' has cardinality 0..*, and from 'project_TaskDependency', the role 'project_TaskDependency244' has cardinality 0..*.
+An association connects 'project_LogicalExpression' and 'project_XBinaryOperation'. From 'project_LogicalExpression', the role 'project_LogicalExpression246' has cardinality 0..*, and from 'project_XBinaryOperation', the role 'project_XBinaryOperation' has cardinality 0..*.
+An association connects 'project_JvmIdentifiableElement' and 'project_XBinaryOperation'. From 'project_JvmIdentifiableElement', the role 'project_JvmIdentifiableElement' has cardinality 0..*, and from 'project_XBinaryOperation', the role 'project_XBinaryOperation248' has cardinality 0..*.
+An association connects 'project_XBinaryOperation' and 'project_LogicalExpression'. From 'project_XBinaryOperation', the role 'project_XBinaryOperation250' has cardinality 0..*, and from 'project_LogicalExpression', the role 'project_LogicalExpression251' has cardinality 0..*.
+An association connects 'project_LogicalFunctionExpression' and 'project_Function'. From 'project_LogicalFunctionExpression', the role 'project_LogicalFunctionExpression' has cardinality 0..*, and from 'project_Function', the role 'project_Function253' has cardinality 0..*.

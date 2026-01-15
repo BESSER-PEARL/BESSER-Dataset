@@ -1,0 +1,239 @@
+The domain model 'altarica' describes the core structural elements and their relationships within the system.
+
+The model defines 49 main class(es).
+
+'altarica_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_ARString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_ARBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'altarica_Addition' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'altarica_Multiplication' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'altarica_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_SymbolicConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_NamedType' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_ARNumber' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'altarica_SwitchExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Error' represents an important domain concept.
+It has the following attributes: 'severity', which is of type str; 'message', which is of type str.
+
+'altarica_Equal' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'altarica_FunctionCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'altarica_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_AbstractDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_TransitionAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Observer' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_BaseType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'altarica_Skip' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_NameRef' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_CaseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_TransitionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'altarica_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_TransitionOr' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_LogicalOr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'AbstractDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TransitionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_LogicalAnd' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'altarica_LabeledTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'altarica_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BaseTypeEnum' defines the following possible values: 'INTEGER', 'BOOLEAN'.
+The enumeration 'Severity' defines the following possible values: 'WARNING', 'ERROR'.
+
+The model also captures inheritance relationships between classes.
+The class 'altarica_NamedElement' is a specialization of 'AbstractDeclaration'.
+The class 'altarica_NamedElement' is a specialization of 'Declaration'.
+The class 'altarica_BaseType' is a specialization of 'Type'.
+The class 'altarica_NamedType' is a specialization of 'Type'.
+The class 'altarica_ARBoolean' is a specialization of 'Expression'.
+The class 'altarica_ARString' is a specialization of 'Expression'.
+The class 'altarica_ARNumber' is a specialization of 'Expression'.
+The class 'altarica_NameRef' is a specialization of 'Expression'.
+The class 'altarica_SwitchExpression' is a specialization of 'Expression'.
+The class 'altarica_Domain' is a specialization of 'NamedElement'.
+The class 'altarica_SymbolicConstant' is a specialization of 'NamedElement'.
+The class 'altarica_Node' is a specialization of 'NamedElement'.
+The class 'altarica_Variable' is a specialization of 'NamedElement'.
+The class 'altarica_Attribute' is a specialization of 'NamedElement'.
+The class 'altarica_Event' is a specialization of 'NamedElement'.
+The class 'altarica_Parameter' is a specialization of 'NamedElement'.
+The class 'altarica_Observer' is a specialization of 'NamedElement'.
+The class 'altarica_TransitionAnd' is a specialization of 'TransitionExpression'.
+The class 'altarica_TransitionOr' is a specialization of 'TransitionExpression'.
+The class 'altarica_Transition' is a specialization of 'TransitionExpression'.
+The class 'altarica_Skip' is a specialization of 'Instruction'.
+The class 'altarica_Assignment' is a specialization of 'Instruction'.
+The class 'altarica_Block' is a specialization of 'Instruction'.
+The class 'altarica_Conditional' is a specialization of 'Instruction'.
+The class 'altarica_LogicalOr' is a specialization of 'Expression'.
+The class 'altarica_LogicalAnd' is a specialization of 'Expression'.
+The class 'altarica_Equal' is a specialization of 'Expression'.
+The class 'altarica_Addition' is a specialization of 'Expression'.
+The class 'altarica_Multiplication' is a specialization of 'Expression'.
+The class 'altarica_Not' is a specialization of 'Expression'.
+The class 'altarica_Minus' is a specialization of 'Expression'.
+The class 'altarica_FunctionCall' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'altarica_Model' and 'altarica_Error'. From 'altarica_Model', the role 'altarica_Model' has cardinality 0..*, and from 'altarica_Error', the role 'altarica_Error' has cardinality 0..*.
+An association connects 'altarica_AbstractDeclaration' and 'altarica_Model'. From 'altarica_AbstractDeclaration', the role 'altarica_AbstractDeclaration' has cardinality 0..*, and from 'altarica_Model', the role 'altarica_Model2' has cardinality 0..*.
+An association connects 'altarica_NamedElement' and 'altarica_NamedType'. From 'altarica_NamedElement', the role 'altarica_NamedElement' has cardinality 0..*, and from 'altarica_NamedType', the role 'altarica_NamedType' has cardinality 0..*.
+An association connects 'altarica_NameRef' and 'altarica_LabeledTransition'. From 'altarica_NameRef', the role 'altarica_NameRef' has cardinality 0..*, and from 'altarica_LabeledTransition', the role 'altarica_LabeledTransition' has cardinality 0..*.
+An association connects 'altarica_LabeledTransition' and 'altarica_TransitionExpression'. From 'altarica_LabeledTransition', the role 'altarica_LabeledTransition6' has cardinality 0..*, and from 'altarica_TransitionExpression', the role 'altarica_TransitionExpression' has cardinality 0..*.
+An association connects 'altarica_CaseExpression' and 'altarica_Instruction'. From 'altarica_CaseExpression', the role 'altarica_CaseExpression' has cardinality 0..*, and from 'altarica_Instruction', the role 'altarica_Instruction' has cardinality 0..*.
+An association connects 'altarica_Instruction' and 'altarica_EObject'. From 'altarica_Instruction', the role 'altarica_Instruction9' has cardinality 0..*, and from 'altarica_EObject', the role 'altarica_EObject' has cardinality 0..*.
+An association connects 'altarica_NamedElement' and 'altarica_NameRef'. From 'altarica_NamedElement', the role 'altarica_NamedElement12' has cardinality 0..*, and from 'altarica_NameRef', the role 'altarica_NameRef11' has cardinality 0..*.
+An association connects 'altarica_NameRef' and 'altarica_NameRef'. From 'altarica_NameRef', the role 'altarica_NameRef15' has cardinality 0..*, and from 'altarica_NameRef', the role 'altarica_NameRef13' has cardinality 0..*.
+An association connects 'altarica_SwitchExpression' and 'altarica_CaseExpression'. From 'altarica_SwitchExpression', the role 'altarica_SwitchExpression' has cardinality 0..*, and from 'altarica_CaseExpression', the role 'altarica_CaseExpression17' has cardinality 0..*.
+An association connects 'altarica_Expression' and 'altarica_SwitchExpression'. From 'altarica_Expression', the role 'altarica_Expression' has cardinality 0..*, and from 'altarica_SwitchExpression', the role 'altarica_SwitchExpression19' has cardinality 0..*.
+An association connects 'altarica_CaseExpression' and 'altarica_Expression'. From 'altarica_CaseExpression', the role 'altarica_CaseExpression21' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression22' has cardinality 0..*.
+An association connects 'altarica_Expression' and 'altarica_CaseExpression'. From 'altarica_Expression', the role 'altarica_Expression25' has cardinality 0..*, and from 'altarica_CaseExpression', the role 'altarica_CaseExpression24' has cardinality 0..*.
+An association connects 'altarica_Domain' and 'altarica_NamedElement'. From 'altarica_Domain', the role 'altarica_Domain' has cardinality 0..*, and from 'altarica_NamedElement', the role 'altarica_NamedElement27' has cardinality 0..*.
+An association connects 'altarica_Node' and 'altarica_Declaration'. From 'altarica_Node', the role 'altarica_Node' has cardinality 0..*, and from 'altarica_Declaration', the role 'altarica_Declaration' has cardinality 0..*.
+An association connects 'altarica_LabeledTransition' and 'altarica_Node'. From 'altarica_LabeledTransition', the role 'altarica_LabeledTransition31' has cardinality 0..*, and from 'altarica_Node', the role 'altarica_Node30' has cardinality 0..*.
+An association connects 'altarica_Node' and 'altarica_Instruction'. From 'altarica_Node', the role 'altarica_Node33' has cardinality 0..*, and from 'altarica_Instruction', the role 'altarica_Instruction34' has cardinality 0..*.
+An association connects 'altarica_Type' and 'altarica_Variable'. From 'altarica_Type', the role 'altarica_Type' has cardinality 0..*, and from 'altarica_Variable', the role 'altarica_Variable' has cardinality 0..*.
+An association connects 'altarica_NamedElement' and 'altarica_Variable'. From 'altarica_NamedElement', the role 'altarica_NamedElement38' has cardinality 0..*, and from 'altarica_Variable', the role 'altarica_Variable37' has cardinality 0..*.
+An association connects 'altarica_Expression' and 'altarica_Attribute'. From 'altarica_Expression', the role 'altarica_Expression40' has cardinality 0..*, and from 'altarica_Attribute', the role 'altarica_Attribute' has cardinality 0..*.
+An association connects 'altarica_Event' and 'altarica_NamedElement'. From 'altarica_Event', the role 'altarica_Event' has cardinality 0..*, and from 'altarica_NamedElement', the role 'altarica_NamedElement42' has cardinality 0..*.
+An association connects 'altarica_Type' and 'altarica_Parameter'. From 'altarica_Type', the role 'altarica_Type44' has cardinality 0..*, and from 'altarica_Parameter', the role 'altarica_Parameter' has cardinality 0..*.
+An association connects 'altarica_Expression' and 'altarica_Parameter'. From 'altarica_Expression', the role 'altarica_Expression47' has cardinality 0..*, and from 'altarica_Parameter', the role 'altarica_Parameter46' has cardinality 0..*.
+An association connects 'altarica_Type' and 'altarica_Observer'. From 'altarica_Type', the role 'altarica_Type49' has cardinality 0..*, and from 'altarica_Observer', the role 'altarica_Observer' has cardinality 0..*.
+An association connects 'altarica_Expression' and 'altarica_Observer'. From 'altarica_Expression', the role 'altarica_Expression52' has cardinality 0..*, and from 'altarica_Observer', the role 'altarica_Observer51' has cardinality 0..*.
+An association connects 'altarica_TransitionExpression' and 'altarica_TransitionAnd'. From 'altarica_TransitionExpression', the role 'altarica_TransitionExpression54' has cardinality 0..*, and from 'altarica_TransitionAnd', the role 'altarica_TransitionAnd' has cardinality 0..*.
+An association connects 'altarica_TransitionAnd' and 'altarica_TransitionExpression'. From 'altarica_TransitionAnd', the role 'altarica_TransitionAnd56' has cardinality 0..*, and from 'altarica_TransitionExpression', the role 'altarica_TransitionExpression57' has cardinality 0..*.
+An association connects 'altarica_TransitionOr' and 'altarica_TransitionExpression'. From 'altarica_TransitionOr', the role 'altarica_TransitionOr' has cardinality 0..*, and from 'altarica_TransitionExpression', the role 'altarica_TransitionExpression59' has cardinality 0..*.
+An association connects 'altarica_TransitionExpression' and 'altarica_TransitionOr'. From 'altarica_TransitionExpression', the role 'altarica_TransitionExpression62' has cardinality 0..*, and from 'altarica_TransitionOr', the role 'altarica_TransitionOr61' has cardinality 0..*.
+An association connects 'altarica_Expression' and 'altarica_Transition'. From 'altarica_Expression', the role 'altarica_Expression64' has cardinality 0..*, and from 'altarica_Transition', the role 'altarica_Transition' has cardinality 0..*.
+An association connects 'altarica_Transition' and 'altarica_Instruction'. From 'altarica_Transition', the role 'altarica_Transition66' has cardinality 0..*, and from 'altarica_Instruction', the role 'altarica_Instruction67' has cardinality 0..*.
+An association connects 'altarica_Assignment' and 'altarica_NameRef'. From 'altarica_Assignment', the role 'altarica_Assignment' has cardinality 0..*, and from 'altarica_NameRef', the role 'altarica_NameRef69' has cardinality 0..*.
+An association connects 'altarica_Assignment' and 'altarica_Expression'. From 'altarica_Assignment', the role 'altarica_Assignment71' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression72' has cardinality 0..*.
+An association connects 'altarica_Instruction' and 'altarica_Block'. From 'altarica_Instruction', the role 'altarica_Instruction74' has cardinality 0..*, and from 'altarica_Block', the role 'altarica_Block' has cardinality 0..*.
+An association connects 'altarica_Expression' and 'altarica_Conditional'. From 'altarica_Expression', the role 'altarica_Expression76' has cardinality 0..*, and from 'altarica_Conditional', the role 'altarica_Conditional' has cardinality 0..*.
+An association connects 'altarica_Instruction' and 'altarica_Conditional'. From 'altarica_Instruction', the role 'altarica_Instruction79' has cardinality 0..*, and from 'altarica_Conditional', the role 'altarica_Conditional78' has cardinality 0..*.
+An association connects 'altarica_LogicalOr' and 'altarica_Expression'. From 'altarica_LogicalOr', the role 'altarica_LogicalOr' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression81' has cardinality 0..*.
+An association connects 'altarica_LogicalOr' and 'altarica_Expression'. From 'altarica_LogicalOr', the role 'altarica_LogicalOr83' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression84' has cardinality 0..*.
+An association connects 'altarica_LogicalAnd' and 'altarica_Expression'. From 'altarica_LogicalAnd', the role 'altarica_LogicalAnd' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression86' has cardinality 0..*.
+An association connects 'altarica_LogicalAnd' and 'altarica_Expression'. From 'altarica_LogicalAnd', the role 'altarica_LogicalAnd88' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression89' has cardinality 0..*.
+An association connects 'altarica_Equal' and 'altarica_Expression'. From 'altarica_Equal', the role 'altarica_Equal' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression91' has cardinality 0..*.
+An association connects 'altarica_Expression' and 'altarica_Equal'. From 'altarica_Expression', the role 'altarica_Expression94' has cardinality 0..*, and from 'altarica_Equal', the role 'altarica_Equal93' has cardinality 0..*.
+An association connects 'altarica_Addition' and 'altarica_Expression'. From 'altarica_Addition', the role 'altarica_Addition' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression96' has cardinality 0..*.
+An association connects 'altarica_Expression' and 'altarica_Addition'. From 'altarica_Expression', the role 'altarica_Expression99' has cardinality 0..*, and from 'altarica_Addition', the role 'altarica_Addition98' has cardinality 0..*.
+An association connects 'altarica_Multiplication' and 'altarica_Expression'. From 'altarica_Multiplication', the role 'altarica_Multiplication' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression101' has cardinality 0..*.
+An association connects 'altarica_Multiplication' and 'altarica_Expression'. From 'altarica_Multiplication', the role 'altarica_Multiplication103' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression104' has cardinality 0..*.
+An association connects 'altarica_Not' and 'altarica_Expression'. From 'altarica_Not', the role 'altarica_Not' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression106' has cardinality 0..*.
+An association connects 'altarica_Minus' and 'altarica_Expression'. From 'altarica_Minus', the role 'altarica_Minus' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression108' has cardinality 0..*.
+An association connects 'altarica_FunctionCall' and 'altarica_Expression'. From 'altarica_FunctionCall', the role 'altarica_FunctionCall' has cardinality 0..*, and from 'altarica_Expression', the role 'altarica_Expression110' has cardinality 0..*.

@@ -1,0 +1,163 @@
+The domain model 'JavaSimplified' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'JavaSimplified_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_Method' represents an important domain concept.
+It has one attribute: 'exceptions', which is of type str.
+
+'JavaSimplified_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_CommentedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_InfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'JavaSimplified_Literal' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str.
+
+'JavaSimplified_CommentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_JavaClass' represents an important domain concept.
+It has one attribute: 'imports', which is of type str.
+
+'CommentedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_StringElement' represents an important domain concept.
+It has one attribute: 'strValue', which is of type str.
+
+'JavaSimplified_MethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_Type' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'StringElement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_VariableDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_Comment' represents an important domain concept.
+It has one attribute: 'isJavadoc', which is of type bool.
+
+'JavaSimplified_MethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_ClassInstanceCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_Assignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaSimplified_Name' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'JavaSimplified_Field' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityType' defines the following possible values: 'PRIVATE', 'PUBLIC', 'PACKAGE', 'PROTECTED'.
+The enumeration 'LiteralType' defines the following possible values: 'NULL', 'INTEGER', 'STRING', 'BOOLEAN'.
+The enumeration 'InfixOperatorType' defines the following possible values: 'CONDITIONAL_OR', 'EQUALS', 'NOT_EQUALS', 'CONDITIONAL_AND'.
+The enumeration 'AssignmentOperatorType' defines the following possible values: 'ASSIGN', 'PLUS_ASSIGN'.
+
+The model also captures inheritance relationships between classes.
+The class 'JavaSimplified_Comment' is a specialization of 'StringElement'.
+The class 'JavaSimplified_JavaClass' is a specialization of 'CommentedElement'.
+The class 'JavaSimplified_JavaClass' is a specialization of 'NamedElement'.
+The class 'JavaSimplified_Field' is a specialization of 'StringElement'.
+The class 'JavaSimplified_Field' is a specialization of 'CommentedElement'.
+The class 'JavaSimplified_Field' is a specialization of 'NamedElement'.
+The class 'JavaSimplified_Field' is a specialization of 'TypedElement'.
+The class 'JavaSimplified_Method' is a specialization of 'StringElement'.
+The class 'JavaSimplified_Method' is a specialization of 'CommentedElement'.
+The class 'JavaSimplified_Method' is a specialization of 'NamedElement'.
+The class 'JavaSimplified_Parameter' is a specialization of 'NamedElement'.
+The class 'JavaSimplified_Parameter' is a specialization of 'TypedElement'.
+The class 'JavaSimplified_Statement' is a specialization of 'StringElement'.
+The class 'JavaSimplified_CommentStatement' is a specialization of 'Statement'.
+The class 'JavaSimplified_ExpressionStatement' is a specialization of 'Statement'.
+The class 'JavaSimplified_IfStatement' is a specialization of 'Statement'.
+The class 'JavaSimplified_VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'JavaSimplified_VariableDeclarationStatement' is a specialization of 'TypedElement'.
+The class 'JavaSimplified_VariableDeclarationStatement' is a specialization of 'NamedElement'.
+The class 'JavaSimplified_ReturnStatement' is a specialization of 'Statement'.
+The class 'JavaSimplified_Expression' is a specialization of 'StringElement'.
+The class 'JavaSimplified_Name' is a specialization of 'Expression'.
+The class 'JavaSimplified_CastExpression' is a specialization of 'Expression'.
+The class 'JavaSimplified_MethodInvocation' is a specialization of 'Expression'.
+The class 'JavaSimplified_InfixExpression' is a specialization of 'Expression'.
+The class 'JavaSimplified_Assignment' is a specialization of 'Expression'.
+The class 'JavaSimplified_Literal' is a specialization of 'Expression'.
+The class 'JavaSimplified_ClassInstanceCreation' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'JavaSimplified_NamedElement' and 'JavaSimplified_Name'. From 'JavaSimplified_NamedElement', the role 'JavaSimplified_NamedElement' has cardinality 0..*, and from 'JavaSimplified_Name', the role 'JavaSimplified_Name' has cardinality 0..*.
+An association connects 'JavaSimplified_Type' and 'JavaSimplified_TypedElement'. From 'JavaSimplified_Type', the role 'JavaSimplified_Type' has cardinality 0..*, and from 'JavaSimplified_TypedElement', the role 'JavaSimplified_TypedElement' has cardinality 0..*.
+An association connects 'JavaSimplified_Comment' and 'JavaSimplified_CommentedElement'. From 'JavaSimplified_Comment', the role 'JavaSimplified_Comment' has cardinality 0..*, and from 'JavaSimplified_CommentedElement', the role 'JavaSimplified_CommentedElement' has cardinality 0..*.
+An association connects 'JavaSimplified_JavaClass' and 'JavaSimplified_Field'. From 'JavaSimplified_JavaClass', the role 'JavaSimplified_JavaClass' has cardinality 0..*, and from 'JavaSimplified_Field', the role 'JavaSimplified_Field' has cardinality 0..*.
+An association connects 'JavaSimplified_JavaClass' and 'JavaSimplified_Method'. From 'JavaSimplified_JavaClass', the role 'JavaSimplified_JavaClass5' has cardinality 0..*, and from 'JavaSimplified_Method', the role 'JavaSimplified_Method' has cardinality 0..*.
+An association connects 'JavaSimplified_Expression' and 'JavaSimplified_Field'. From 'JavaSimplified_Expression', the role 'JavaSimplified_Expression' has cardinality 0..*, and from 'JavaSimplified_Field', the role 'JavaSimplified_Field7' has cardinality 0..*.
+An association connects 'JavaSimplified_Method' and 'JavaSimplified_Parameter'. From 'JavaSimplified_Method', the role 'JavaSimplified_Method9' has cardinality 0..*, and from 'JavaSimplified_Parameter', the role 'JavaSimplified_Parameter' has cardinality 0..*.
+An association connects 'JavaSimplified_Method' and 'JavaSimplified_Statement'. From 'JavaSimplified_Method', the role 'JavaSimplified_Method11' has cardinality 0..*, and from 'JavaSimplified_Statement', the role 'JavaSimplified_Statement' has cardinality 0..*.
+An association connects 'JavaSimplified_Type' and 'JavaSimplified_Method'. From 'JavaSimplified_Type', the role 'JavaSimplified_Type14' has cardinality 0..*, and from 'JavaSimplified_Method', the role 'JavaSimplified_Method13' has cardinality 0..*.
+An association connects 'JavaSimplified_CommentStatement' and 'JavaSimplified_Comment'. From 'JavaSimplified_CommentStatement', the role 'JavaSimplified_CommentStatement' has cardinality 0..*, and from 'JavaSimplified_Comment', the role 'JavaSimplified_Comment16' has cardinality 0..*.
+An association connects 'JavaSimplified_Expression' and 'JavaSimplified_ExpressionStatement'. From 'JavaSimplified_Expression', the role 'JavaSimplified_Expression18' has cardinality 0..*, and from 'JavaSimplified_ExpressionStatement', the role 'JavaSimplified_ExpressionStatement' has cardinality 0..*.
+An association connects 'JavaSimplified_Expression' and 'JavaSimplified_IfStatement'. From 'JavaSimplified_Expression', the role 'JavaSimplified_Expression20' has cardinality 0..*, and from 'JavaSimplified_IfStatement', the role 'JavaSimplified_IfStatement' has cardinality 0..*.
+An association connects 'JavaSimplified_Statement' and 'JavaSimplified_IfStatement'. From 'JavaSimplified_Statement', the role 'JavaSimplified_Statement23' has cardinality 0..*, and from 'JavaSimplified_IfStatement', the role 'JavaSimplified_IfStatement22' has cardinality 0..*.
+An association connects 'JavaSimplified_Statement' and 'JavaSimplified_IfStatement'. From 'JavaSimplified_Statement', the role 'JavaSimplified_Statement26' has cardinality 0..*, and from 'JavaSimplified_IfStatement', the role 'JavaSimplified_IfStatement25' has cardinality 0..*.
+An association connects 'JavaSimplified_VariableDeclarationStatement' and 'JavaSimplified_Expression'. From 'JavaSimplified_VariableDeclarationStatement', the role 'JavaSimplified_VariableDeclarationStatement' has cardinality 0..*, and from 'JavaSimplified_Expression', the role 'JavaSimplified_Expression28' has cardinality 0..*.
+An association connects 'JavaSimplified_ReturnStatement' and 'JavaSimplified_Expression'. From 'JavaSimplified_ReturnStatement', the role 'JavaSimplified_ReturnStatement' has cardinality 0..*, and from 'JavaSimplified_Expression', the role 'JavaSimplified_Expression30' has cardinality 0..*.
+An association connects 'JavaSimplified_CastExpression' and 'JavaSimplified_Name'. From 'JavaSimplified_CastExpression', the role 'JavaSimplified_CastExpression' has cardinality 0..*, and from 'JavaSimplified_Name', the role 'JavaSimplified_Name32' has cardinality 0..*.
+An association connects 'JavaSimplified_Type' and 'JavaSimplified_CastExpression'. From 'JavaSimplified_Type', the role 'JavaSimplified_Type35' has cardinality 0..*, and from 'JavaSimplified_CastExpression', the role 'JavaSimplified_CastExpression34' has cardinality 0..*.
+An association connects 'JavaSimplified_Name' and 'JavaSimplified_MethodInvocation'. From 'JavaSimplified_Name', the role 'JavaSimplified_Name37' has cardinality 0..*, and from 'JavaSimplified_MethodInvocation', the role 'JavaSimplified_MethodInvocation' has cardinality 0..*.
+An association connects 'JavaSimplified_MethodInvocation' and 'JavaSimplified_MethodCall'. From 'JavaSimplified_MethodInvocation', the role 'JavaSimplified_MethodInvocation39' has cardinality 0..*, and from 'JavaSimplified_MethodCall', the role 'JavaSimplified_MethodCall' has cardinality 0..*.
+An association connects 'JavaSimplified_Expression' and 'JavaSimplified_MethodCall'. From 'JavaSimplified_Expression', the role 'JavaSimplified_Expression42' has cardinality 0..*, and from 'JavaSimplified_MethodCall', the role 'JavaSimplified_MethodCall41' has cardinality 0..*.
+An association connects 'JavaSimplified_MethodCall' and 'JavaSimplified_MethodCall'. From 'JavaSimplified_MethodCall', the role 'JavaSimplified_MethodCall45' has cardinality 0..*, and from 'JavaSimplified_MethodCall', the role 'JavaSimplified_MethodCall43' has cardinality 0..*.
+An association connects 'JavaSimplified_MethodCall' and 'JavaSimplified_Name'. From 'JavaSimplified_MethodCall', the role 'JavaSimplified_MethodCall47' has cardinality 0..*, and from 'JavaSimplified_Name', the role 'JavaSimplified_Name48' has cardinality 0..*.
+An association connects 'JavaSimplified_InfixExpression' and 'JavaSimplified_Expression'. From 'JavaSimplified_InfixExpression', the role 'JavaSimplified_InfixExpression' has cardinality 0..*, and from 'JavaSimplified_Expression', the role 'JavaSimplified_Expression50' has cardinality 0..*.
+An association connects 'JavaSimplified_InfixExpression' and 'JavaSimplified_Expression'. From 'JavaSimplified_InfixExpression', the role 'JavaSimplified_InfixExpression52' has cardinality 0..*, and from 'JavaSimplified_Expression', the role 'JavaSimplified_Expression53' has cardinality 0..*.
+An association connects 'JavaSimplified_Expression' and 'JavaSimplified_Assignment'. From 'JavaSimplified_Expression', the role 'JavaSimplified_Expression55' has cardinality 0..*, and from 'JavaSimplified_Assignment', the role 'JavaSimplified_Assignment' has cardinality 0..*.
+An association connects 'JavaSimplified_Assignment' and 'JavaSimplified_Expression'. From 'JavaSimplified_Assignment', the role 'JavaSimplified_Assignment57' has cardinality 0..*, and from 'JavaSimplified_Expression', the role 'JavaSimplified_Expression58' has cardinality 0..*.
+An association connects 'JavaSimplified_Expression' and 'JavaSimplified_ClassInstanceCreation'. From 'JavaSimplified_Expression', the role 'JavaSimplified_Expression60' has cardinality 0..*, and from 'JavaSimplified_ClassInstanceCreation', the role 'JavaSimplified_ClassInstanceCreation' has cardinality 0..*.
+An association connects 'JavaSimplified_Type' and 'JavaSimplified_ClassInstanceCreation'. From 'JavaSimplified_Type', the role 'JavaSimplified_Type63' has cardinality 0..*, and from 'JavaSimplified_ClassInstanceCreation', the role 'JavaSimplified_ClassInstanceCreation62' has cardinality 0..*.

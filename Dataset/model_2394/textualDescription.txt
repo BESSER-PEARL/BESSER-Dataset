@@ -1,0 +1,379 @@
+The domain model 'sql' describes the core structural elements and their relationships within the system.
+
+The model defines 94 main class(es).
+
+'sql_datatype_TimeType' represents an important domain concept.
+It has the following attributes: 'withTimeZone', which is of type str; 'precision', which is of type str.
+
+'sql_schema_SQLSchemaDefinitionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectSQLStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_common_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_DatetimeValueFunctionDefaultOption' represents an important domain concept.
+It does not declare any attributes.
+
+'TableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ImplicitlyTypedValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_literal_ExactNumericLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sql_literal_NumericLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_expression_ImplicitlyTypedValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_TableReference' represents an important domain concept.
+It has the following attributes: 'catalogName', which is of type str; 'schemaName', which is of type str.
+
+'sql_schema_ReferentialTableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_NotNullColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_literal_ApproximateNumericLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'sql_common_SchemaQualifiedName' represents an important domain concept.
+It has the following attributes: 'schemaName', which is of type str; 'name', which is of type str; 'catalogName', which is of type str.
+
+'sql_schema_ReferentialColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_UniqueConstraint' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'sql_schema_TableColumnsConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'schema_SQLSchemaDefinitionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_LiteralDefaultOption' represents an important domain concept.
+It does not declare any attributes.
+
+'Separator' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_literal_DateLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'schema_TableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_common_SimpleComment' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_UniqueColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_common_Comment' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sql_literal_CharacterStringLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_datatype_LargeObjectLength' represents an important domain concept.
+It has the following attributes: 'multiplier', which is of type str; 'value', which is of type str; 'units', which is of type str.
+
+'TableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_TableDefinition' represents an important domain concept.
+It has the following attributes: 'scope', which is of type str; 'label', which is of type str.
+
+'sql_literal_TimeLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sql_schema_TableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_literal_DatetimeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'schema_UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'TableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DatetimeType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQLSchemaStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_literal_NationalCharacterStringLiteral' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'schema_TableColumnsConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_literal_TimestampLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sql_datatype_NationalCharacterStringType' represents an important domain concept.
+It has the following attributes: 'length', which is of type str; 'kind', which is of type str.
+
+'sql_datatype_BinaryLargeObjectStringType' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_datatype_TimestampType' represents an important domain concept.
+It has the following attributes: 'withTimeZone', which is of type str; 'precision', which is of type str.
+
+'sql_schema_ReferentialConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_datatype_ApproximateNumericType' represents an important domain concept.
+It has the following attributes: 'precision', which is of type str; 'kind', which is of type str.
+
+'sql_schema_SQLSchemaStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'schema_ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_datatype_ExactNumericType' represents an important domain concept.
+It has the following attributes: 'precision', which is of type str; 'scale', which is of type str; 'kind', which is of type str.
+
+'TableDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TableElementList' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_Column' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sql_schema_ImplicitlyTypedValueSpecificationDefaultOption' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_common_DirectSQLStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_datatype_DatetimeType' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_UniqueTableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_datatype_CharacterStringType' represents an important domain concept.
+It has the following attributes: 'length', which is of type str; 'kind', which is of type str.
+
+'GeneralLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_datatype_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_literal_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sql_common_Separator' represents an important domain concept.
+It does not declare any attributes.
+
+'DatetimeValueFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_common_BracketedComment' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_datatype_PredefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_datatype_DateType' represents an important domain concept.
+It does not declare any attributes.
+
+'DefaultOption' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_function_DatetimeValueFunction' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'precision', which is of type str.
+
+'sql_schema_DefaultOption' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_literal_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'SchemaQualifiedName' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_TableContentsSource' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_literal_GeneralLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_expression_NullSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_datatype_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Dummy' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_datatype_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'schema_ReferentialConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_common_SQLScript' represents an important domain concept.
+It does not declare any attributes.
+
+'LargeObjectLength' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'TableContentsSource' represents an important domain concept.
+It does not declare any attributes.
+
+'PredefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_TableElementList' represents an important domain concept.
+It does not declare any attributes.
+
+'DatetimeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_schema_TableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NationalCharacterStringLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UniqueSpecificationKind' defines the following possible values: 'PRIMARY_KEY', 'UNIQUE'.
+The enumeration 'ApproximateNumericTypeKind' defines the following possible values: 'FLOAT', 'REAL', 'DOUBLE_PRECISION'.
+The enumeration 'DatetimeValueFunctionKind' defines the following possible values: 'CURRENT_DATE', 'CURRENT_TIMESTAMP', 'LOCALTIME', 'LOCALTIMESTAMP', 'CURRENT_TIME'.
+The enumeration 'Multiplier' defines the following possible values: 'G', 'M', 'K'.
+The enumeration 'CharacterStringTypeKind' defines the following possible values: 'CHARACTER', 'CHAR_VARYING', 'CHARACTER_VARYING', 'VARCHAR', 'CHAR'.
+The enumeration 'NationalCharacterStringTypeKind' defines the following possible values: 'NCHAR_VARYING', 'NCHAR', 'NATIONAL_CHAR', 'NATIONAL_CHARACTER', 'NATIONAL_CHARACTER_VARYING', 'NATIONAL_CHAR_VARYING'.
+The enumeration 'CharLengthUnits' defines the following possible values: 'CODE_UNITS', 'OCTETS', 'CHARACTERS'.
+The enumeration 'BinaryLargeObjectStringTypeKind' defines the following possible values: 'BLOB', 'BINARY_LARGE_OBJECT'.
+The enumeration 'ExactNumericTypeKind' defines the following possible values: 'BIGINT', 'DEC', 'SMALLINT', 'DECIMAL', 'INT', 'NUMERIC', 'INTEGER'.
+The enumeration 'TableScope' defines the following possible values: 'GLOBAL_TEMPORARY', 'LOCAL_TEMPORARY', 'PERSISTENT'.
+
+The model also captures inheritance relationships between classes.
+The class 'sql_common_DirectSQLStatement' is a specialization of 'Statement'.
+The class 'sql_common_Separator' is a specialization of 'Statement'.
+The class 'sql_common_Comment' is a specialization of 'Separator'.
+The class 'sql_common_SimpleComment' is a specialization of 'Comment'.
+The class 'sql_common_BracketedComment' is a specialization of 'Comment'.
+The class 'sql_literal_GeneralLiteral' is a specialization of 'Literal'.
+The class 'sql_literal_CharacterStringLiteral' is a specialization of 'NationalCharacterStringLiteral'.
+The class 'sql_literal_NationalCharacterStringLiteral' is a specialization of 'GeneralLiteral'.
+The class 'sql_literal_DatetimeLiteral' is a specialization of 'GeneralLiteral'.
+The class 'sql_literal_BooleanLiteral' is a specialization of 'GeneralLiteral'.
+The class 'sql_literal_DateLiteral' is a specialization of 'DatetimeLiteral'.
+The class 'sql_literal_TimeLiteral' is a specialization of 'DatetimeLiteral'.
+The class 'sql_literal_TimestampLiteral' is a specialization of 'DatetimeLiteral'.
+The class 'sql_literal_ExactNumericLiteral' is a specialization of 'NumericLiteral'.
+The class 'sql_literal_ApproximateNumericLiteral' is a specialization of 'NumericLiteral'.
+The class 'sql_literal_NumericLiteral' is a specialization of 'Literal'.
+The class 'sql_datatype_PredefinedType' is a specialization of 'DataType'.
+The class 'sql_datatype_CharacterStringType' is a specialization of 'PredefinedType'.
+The class 'sql_datatype_NationalCharacterStringType' is a specialization of 'PredefinedType'.
+The class 'sql_datatype_BinaryLargeObjectStringType' is a specialization of 'PredefinedType'.
+The class 'sql_datatype_NumericType' is a specialization of 'PredefinedType'.
+The class 'sql_datatype_BooleanType' is a specialization of 'PredefinedType'.
+The class 'sql_datatype_DatetimeType' is a specialization of 'PredefinedType'.
+The class 'sql_datatype_ExactNumericType' is a specialization of 'NumericType'.
+The class 'sql_datatype_ApproximateNumericType' is a specialization of 'NumericType'.
+The class 'sql_datatype_DateType' is a specialization of 'DatetimeType'.
+The class 'sql_datatype_TimeType' is a specialization of 'DatetimeType'.
+The class 'sql_datatype_TimestampType' is a specialization of 'DatetimeType'.
+The class 'sql_expression_NullSpecification' is a specialization of 'ImplicitlyTypedValueSpecification'.
+The class 'sql_schema_TableDefinition' is a specialization of 'schema_SQLSchemaDefinitionStatement'.
+The class 'sql_schema_TableDefinition' is a specialization of 'EObject'.
+The class 'sql_schema_TableElementList' is a specialization of 'TableContentsSource'.
+The class 'sql_schema_Column' is a specialization of 'TableElement'.
+The class 'sql_schema_TableConstraint' is a specialization of 'schema_TableElement'.
+The class 'sql_schema_TableConstraint' is a specialization of 'EObject'.
+The class 'sql_schema_ColumnConstraint' is a specialization of 'EObject'.
+The class 'sql_schema_NotNullColumnConstraint' is a specialization of 'ColumnConstraint'.
+The class 'sql_schema_UniqueColumnConstraint' is a specialization of 'schema_UniqueConstraint'.
+The class 'sql_schema_UniqueColumnConstraint' is a specialization of 'schema_ColumnConstraint'.
+The class 'sql_schema_ReferentialColumnConstraint' is a specialization of 'schema_ReferentialConstraint'.
+The class 'sql_schema_ReferentialColumnConstraint' is a specialization of 'schema_ColumnConstraint'.
+The class 'sql_schema_SQLSchemaStatement' is a specialization of 'DirectSQLStatement'.
+The class 'sql_schema_SQLSchemaDefinitionStatement' is a specialization of 'SQLSchemaStatement'.
+The class 'sql_schema_LiteralDefaultOption' is a specialization of 'DefaultOption'.
+The class 'sql_schema_DatetimeValueFunctionDefaultOption' is a specialization of 'DefaultOption'.
+The class 'sql_schema_ImplicitlyTypedValueSpecificationDefaultOption' is a specialization of 'DefaultOption'.
+The class 'sql_schema_UniqueTableConstraint' is a specialization of 'schema_UniqueConstraint'.
+The class 'sql_schema_UniqueTableConstraint' is a specialization of 'schema_TableColumnsConstraint'.
+The class 'sql_schema_ReferentialTableConstraint' is a specialization of 'schema_ReferentialConstraint'.
+The class 'sql_schema_ReferentialTableConstraint' is a specialization of 'schema_TableColumnsConstraint'.
+The class 'sql_schema_TableColumnsConstraint' is a specialization of 'TableConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sql_common_SQLScript' and 'Statement'. From 'sql_common_SQLScript', the role 'sql_common_SQLScript' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'SchemaQualifiedName' and 'sql_literal_CharacterStringLiteral'. From 'SchemaQualifiedName', the role 'SchemaQualifiedName' has cardinality 0..*, and from 'sql_literal_CharacterStringLiteral', the role 'sql_literal_CharacterStringLiteral' has cardinality 0..*.
+An association connects 'Separator' and 'sql_literal_NationalCharacterStringLiteral'. From 'Separator', the role 'Separator' has cardinality 0..*, and from 'sql_literal_NationalCharacterStringLiteral', the role 'sql_literal_NationalCharacterStringLiteral' has cardinality 0..*.
+An association connects 'sql_datatype_CharacterStringType' and 'SchemaQualifiedName'. From 'sql_datatype_CharacterStringType', the role 'sql_datatype_CharacterStringType' has cardinality 0..*, and from 'SchemaQualifiedName', the role 'SchemaQualifiedName4' has cardinality 0..*.
+An association connects 'sql_datatype_CharacterStringType' and 'SchemaQualifiedName'. From 'sql_datatype_CharacterStringType', the role 'sql_datatype_CharacterStringType6' has cardinality 0..*, and from 'SchemaQualifiedName', the role 'SchemaQualifiedName7' has cardinality 0..*.
+An association connects 'SchemaQualifiedName' and 'sql_datatype_NationalCharacterStringType'. From 'SchemaQualifiedName', the role 'SchemaQualifiedName9' has cardinality 0..*, and from 'sql_datatype_NationalCharacterStringType', the role 'sql_datatype_NationalCharacterStringType' has cardinality 0..*.
+An association connects 'sql_datatype_BinaryLargeObjectStringType' and 'LargeObjectLength'. From 'sql_datatype_BinaryLargeObjectStringType', the role 'sql_datatype_BinaryLargeObjectStringType' has cardinality 0..*, and from 'LargeObjectLength', the role 'LargeObjectLength' has cardinality 0..*.
+An association connects 'sql_schema_TableDefinition' and 'SchemaQualifiedName'. From 'sql_schema_TableDefinition', the role 'sql_schema_TableDefinition' has cardinality 0..*, and from 'SchemaQualifiedName', the role 'SchemaQualifiedName12' has cardinality 0..*.
+An association connects 'TableContentsSource' and 'sql_schema_TableDefinition'. From 'TableContentsSource', the role 'schema' has cardinality 0..*, and from 'sql_schema_TableDefinition', the role 'TableContentsSource' has cardinality 0..*.
+An association connects 'TableElement' and 'sql_schema_TableElementList'. From 'TableElement', the role 'schema15' has cardinality 0..*, and from 'sql_schema_TableElementList', the role 'TableElement' has cardinality 0..*.
+An association connects 'sql_schema_TableElement' and 'TableElementList'. From 'sql_schema_TableElement', the role 'TableElementList' has cardinality 0..*, and from 'TableElementList', the role 'schema17' has cardinality 0..*.
+An association connects 'DataType' and 'sql_schema_Column'. From 'DataType', the role 'DataType' has cardinality 0..*, and from 'sql_schema_Column', the role 'sql_schema_Column' has cardinality 0..*.
+An association connects 'sql_schema_Column' and 'DefaultOption'. From 'sql_schema_Column', the role 'DefaultOption' has cardinality 0..*, and from 'DefaultOption', the role 'schema20' has cardinality 0..*.
+An association connects 'ColumnConstraint' and 'sql_schema_Column'. From 'ColumnConstraint', the role 'schema22' has cardinality 0..*, and from 'sql_schema_Column', the role 'ColumnConstraint' has cardinality 0..*.
+An association connects 'sql_schema_Column' and 'SchemaQualifiedName'. From 'sql_schema_Column', the role 'sql_schema_Column24' has cardinality 0..*, and from 'SchemaQualifiedName', the role 'SchemaQualifiedName25' has cardinality 0..*.
+An association connects 'sql_schema_TableConstraint' and 'SchemaQualifiedName'. From 'sql_schema_TableConstraint', the role 'sql_schema_TableConstraint' has cardinality 0..*, and from 'SchemaQualifiedName', the role 'SchemaQualifiedName27' has cardinality 0..*.
+An association connects 'TableDefinition' and 'sql_schema_TableContentsSource'. From 'TableDefinition', the role 'schema29' has cardinality 0..*, and from 'sql_schema_TableContentsSource', the role 'TableDefinition' has cardinality 0..*.
+An association connects 'Column' and 'sql_schema_DefaultOption'. From 'Column', the role 'schema31' has cardinality 0..*, and from 'sql_schema_DefaultOption', the role 'Column' has cardinality 0..*.
+An association connects 'Column' and 'sql_schema_ColumnConstraint'. From 'Column', the role 'schema34' has cardinality 0..*, and from 'sql_schema_ColumnConstraint', the role 'Column33' has cardinality 0..*.
+An association connects 'sql_schema_ColumnConstraint' and 'SchemaQualifiedName'. From 'sql_schema_ColumnConstraint', the role 'sql_schema_ColumnConstraint' has cardinality 0..*, and from 'SchemaQualifiedName', the role 'SchemaQualifiedName36' has cardinality 0..*.
+An association connects 'sql_schema_LiteralDefaultOption' and 'Literal'. From 'sql_schema_LiteralDefaultOption', the role 'sql_schema_LiteralDefaultOption' has cardinality 0..*, and from 'Literal', the role 'Literal' has cardinality 0..*.
+An association connects 'sql_schema_DatetimeValueFunctionDefaultOption' and 'DatetimeValueFunction'. From 'sql_schema_DatetimeValueFunctionDefaultOption', the role 'sql_schema_DatetimeValueFunctionDefaultOption' has cardinality 0..*, and from 'DatetimeValueFunction', the role 'DatetimeValueFunction' has cardinality 0..*.
+An association connects 'sql_schema_ImplicitlyTypedValueSpecificationDefaultOption' and 'ImplicitlyTypedValueSpecification'. From 'sql_schema_ImplicitlyTypedValueSpecificationDefaultOption', the role 'sql_schema_ImplicitlyTypedValueSpecificationDefaultOption' has cardinality 0..*, and from 'ImplicitlyTypedValueSpecification', the role 'ImplicitlyTypedValueSpecification' has cardinality 0..*.
+An association connects 'sql_schema_ReferentialConstraint' and 'Column'. From 'sql_schema_ReferentialConstraint', the role 'sql_schema_ReferentialConstraint' has cardinality 0..*, and from 'Column', the role 'Column41' has cardinality 0..*.
+An association connects 'TableReference' and 'sql_schema_ReferentialConstraint'. From 'TableReference', the role 'TableReference' has cardinality 0..*, and from 'sql_schema_ReferentialConstraint', the role 'sql_schema_ReferentialConstraint43' has cardinality 0..*.
+An association connects 'sql_schema_TableReference' and 'TableDefinition'. From 'sql_schema_TableReference', the role 'sql_schema_TableReference' has cardinality 0..*, and from 'TableDefinition', the role 'TableDefinition45' has cardinality 0..*.
+An association connects 'sql_schema_TableColumnsConstraint' and 'Column'. From 'sql_schema_TableColumnsConstraint', the role 'sql_schema_TableColumnsConstraint' has cardinality 0..*, and from 'Column', the role 'Column47' has cardinality 0..*.

@@ -1,0 +1,81 @@
+The domain model 'muddle' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'MuddleElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'muddle_MuddleElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'muddle_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'muddle_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'muddle_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'muddle_Slot' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'muddle_Feature' represents an important domain concept.
+It has the following attributes: 'runtime', which is of type bool; 'many', which is of type bool; 'primary', which is of type bool; 'name', which is of type str.
+
+'muddle_MuddleElementStyle' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'height', which is of type float; 'borderWidth', which is of type float; 'shape', which is of type str; 'x', which is of type float; 'labelFontSize', which is of type int; 'width', which is of type float; 'y', which is of type float.
+
+'muddle_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'muddle_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'muddle_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'muddle_MuddleElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'muddle_LinkElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'muddle_Muddle' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'muddle_MuddleElementType' is a specialization of 'Type'.
+The class 'muddle_LinkElementType' is a specialization of 'MuddleElementType'.
+The class 'muddle_PrimitiveType' is a specialization of 'Type'.
+The class 'muddle_IntegerType' is a specialization of 'PrimitiveType'.
+The class 'muddle_StringType' is a specialization of 'PrimitiveType'.
+The class 'muddle_BooleanType' is a specialization of 'PrimitiveType'.
+The class 'muddle_RealType' is a specialization of 'PrimitiveType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'muddle_Type' and 'muddle_Muddle'. From 'muddle_Type', the role 'muddle_Type' has cardinality 0..*, and from 'muddle_Muddle', the role 'muddle_Muddle' has cardinality 0..*.
+An association connects 'muddle_MuddleElement' and 'muddle_Muddle'. From 'muddle_MuddleElement', the role 'MuddleElement' has cardinality 0..*, and from 'muddle_Muddle', the role 'muddle' has cardinality 0..*.
+An association connects 'muddle_MuddleElement' and 'muddle_Slot'. From 'muddle_MuddleElement', the role 'owningElement' has cardinality 0..*, and from 'muddle_Slot', the role 'Slot' has cardinality 0..*.
+An association connects 'muddle_MuddleElementType' and 'muddle_MuddleElement'. From 'muddle_MuddleElementType', the role 'MuddleElementType' has cardinality 0..*, and from 'muddle_MuddleElement', the role 'instances' has cardinality 0..*.
+An association connects 'muddle_MuddleElement' and 'muddle_Muddle'. From 'muddle_MuddleElement', the role 'elements' has cardinality 0..*, and from 'muddle_Muddle', the role 'Muddle' has cardinality 0..*.
+An association connects 'muddle_MuddleElementStyle' and 'muddle_MuddleElement'. From 'muddle_MuddleElementStyle', the role 'muddle_MuddleElementStyle' has cardinality 0..*, and from 'muddle_MuddleElement', the role 'muddle_MuddleElement' has cardinality 0..*.
+An association connects 'muddle_Slot' and 'muddle_Feature'. From 'muddle_Slot', the role 'slots' has cardinality 0..*, and from 'muddle_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'muddle_MuddleElement' and 'muddle_Slot'. From 'muddle_MuddleElement', the role 'MuddleElement9' has cardinality 0..*, and from 'muddle_Slot', the role 'slots8' has cardinality 0..*.
+An association connects 'muddle_Type' and 'muddle_Feature'. From 'muddle_Type', the role 'muddle_Type11' has cardinality 0..*, and from 'muddle_Feature', the role 'muddle_Feature' has cardinality 0..*.
+An association connects 'muddle_MuddleElementType' and 'muddle_Feature'. From 'muddle_MuddleElementType', the role 'MuddleElementType13' has cardinality 0..*, and from 'muddle_Feature', the role 'features' has cardinality 0..*.
+An association connects 'muddle_Slot' and 'muddle_Feature'. From 'muddle_Slot', the role 'Slot15' has cardinality 0..*, and from 'muddle_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'muddle_MuddleElementType' and 'muddle_MuddleElement'. From 'muddle_MuddleElementType', the role 'type' has cardinality 0..*, and from 'muddle_MuddleElement', the role 'MuddleElement17' has cardinality 0..*.
+An association connects 'muddle_Feature' and 'muddle_MuddleElementType'. From 'muddle_Feature', the role 'Feature19' has cardinality 0..*, and from 'muddle_MuddleElementType', the role 'owningType' has cardinality 0..*.
+An association connects 'muddle_MuddleElementType' and 'muddle_MuddleElementType'. From 'muddle_MuddleElementType', the role 'subTypes' has cardinality 0..*, and from 'muddle_MuddleElementType', the role 'MuddleElementType22' has cardinality 0..*.
+An association connects 'muddle_MuddleElementType' and 'muddle_MuddleElementType'. From 'muddle_MuddleElementType', the role 'superTypes' has cardinality 0..*, and from 'muddle_MuddleElementType', the role 'MuddleElementType25' has cardinality 0..*.
+An association connects 'muddle_LinkElementType' and 'muddle_Feature'. From 'muddle_LinkElementType', the role 'muddle_LinkElementType' has cardinality 0..*, and from 'muddle_Feature', the role 'muddle_Feature27' has cardinality 0..*.
+An association connects 'muddle_LinkElementType' and 'muddle_Feature'. From 'muddle_LinkElementType', the role 'muddle_LinkElementType29' has cardinality 0..*, and from 'muddle_Feature', the role 'muddle_Feature30' has cardinality 0..*.
+An association connects 'muddle_Feature' and 'muddle_LinkElementType'. From 'muddle_Feature', the role 'muddle_Feature33' has cardinality 0..*, and from 'muddle_LinkElementType', the role 'muddle_LinkElementType32' has cardinality 0..*.
+An association connects 'muddle_Feature' and 'muddle_LinkElementType'. From 'muddle_Feature', the role 'muddle_Feature36' has cardinality 0..*, and from 'muddle_LinkElementType', the role 'muddle_LinkElementType35' has cardinality 0..*.

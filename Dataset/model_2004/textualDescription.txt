@@ -1,0 +1,12 @@
+The domain model 'Lqn2umlTrace' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'Lqn2umlTrace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'Lqn2umlTrace_TraceLink' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'targets', which is of type str; 'sources', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Lqn2umlTrace_Trace' and 'Lqn2umlTrace_TraceLink'. From 'Lqn2umlTrace_Trace', the role 'Lqn2umlTrace_Trace' has cardinality 0..*, and from 'Lqn2umlTrace_TraceLink', the role 'Lqn2umlTrace_TraceLink' has cardinality 0..*.

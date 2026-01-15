@@ -1,0 +1,160 @@
+The domain model 'XPath' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'XPath_PrecedingSiblingAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_AncestorAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_NameTest' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_SelfAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_DescendantAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_FollowingSiblingAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_Axis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'XPath_WildCardTest' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_PathExpression' represents an important domain concept.
+It has one attribute: 'isAbsolute', which is of type str.
+
+'XPath_AncestorOrSelfAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_PrecedingAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_Step' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_IsTextTest' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_ChildAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_StringExp' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'XPath_OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_AttributeAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'Axis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_NodeTest' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_IntegerExp' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_DescendantOrSelfAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeTest' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_ParentAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_FollowingAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_LocatedElement' represents an important domain concept.
+It has the following attributes: 'commentsBefore', which is of type str; 'location', which is of type str; 'commentsAfter', which is of type str.
+
+'XPath_FunctionCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_NamespaceAxis' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_IsNodeTest' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'XPath_NamedElement' is a specialization of 'LocatedElement'.
+The class 'XPath_Expression' is a specialization of 'LocatedElement'.
+The class 'XPath_VariableExp' is a specialization of 'Expression'.
+The class 'XPath_VariableExp' is a specialization of 'NamedElement'.
+The class 'XPath_PathExpression' is a specialization of 'Expression'.
+The class 'XPath_Step' is a specialization of 'LocatedElement'.
+The class 'XPath_Predicate' is a specialization of 'LocatedElement'.
+The class 'XPath_OperatorCallExp' is a specialization of 'Expression'.
+The class 'XPath_OperatorCallExp' is a specialization of 'NamedElement'.
+The class 'XPath_FunctionCallExp' is a specialization of 'Expression'.
+The class 'XPath_FunctionCallExp' is a specialization of 'NamedElement'.
+The class 'XPath_LiteralExp' is a specialization of 'Expression'.
+The class 'XPath_IntegerExp' is a specialization of 'LiteralExp'.
+The class 'XPath_StringExp' is a specialization of 'LiteralExp'.
+The class 'XPath_NodeTest' is a specialization of 'LocatedElement'.
+The class 'XPath_NameTest' is a specialization of 'NodeTest'.
+The class 'XPath_NameTest' is a specialization of 'NamedElement'.
+The class 'XPath_WildCardTest' is a specialization of 'NodeTest'.
+The class 'XPath_IsNodeTest' is a specialization of 'NodeTest'.
+The class 'XPath_IsTextTest' is a specialization of 'NodeTest'.
+The class 'XPath_Axis' is a specialization of 'LocatedElement'.
+The class 'XPath_AncestorAxis' is a specialization of 'Axis'.
+The class 'XPath_AncestorOrSelfAxis' is a specialization of 'Axis'.
+The class 'XPath_AttributeAxis' is a specialization of 'Axis'.
+The class 'XPath_ChildAxis' is a specialization of 'Axis'.
+The class 'XPath_DescendantAxis' is a specialization of 'Axis'.
+The class 'XPath_DescendantOrSelfAxis' is a specialization of 'Axis'.
+The class 'XPath_FollowingAxis' is a specialization of 'Axis'.
+The class 'XPath_FollowingSiblingAxis' is a specialization of 'Axis'.
+The class 'XPath_NamespaceAxis' is a specialization of 'Axis'.
+The class 'XPath_ParentAxis' is a specialization of 'Axis'.
+The class 'XPath_PrecedingAxis' is a specialization of 'Axis'.
+The class 'XPath_PrecedingSiblingAxis' is a specialization of 'Axis'.
+The class 'XPath_SelfAxis' is a specialization of 'Axis'.
+
+Relationships between classes are modeled using associations.
+An association connects 'XPath_Step' and 'XPath_PathExpression'. From 'XPath_Step', the role 'XPath_Step' has cardinality 0..*, and from 'XPath_PathExpression', the role 'XPath_PathExpression' has cardinality 0..*.
+An association connects 'XPath_Axis' and 'XPath_Step'. From 'XPath_Axis', the role 'XPath_Axis' has cardinality 0..*, and from 'XPath_Step', the role 'XPath_Step2' has cardinality 0..*.
+An association connects 'XPath_NodeTest' and 'XPath_Step'. From 'XPath_NodeTest', the role 'XPath_NodeTest' has cardinality 0..*, and from 'XPath_Step', the role 'XPath_Step4' has cardinality 0..*.
+An association connects 'XPath_Predicate' and 'XPath_Step'. From 'XPath_Predicate', the role 'XPath_Predicate' has cardinality 0..*, and from 'XPath_Step', the role 'XPath_Step6' has cardinality 0..*.
+An association connects 'XPath_Predicate' and 'XPath_Expression'. From 'XPath_Predicate', the role 'XPath_Predicate8' has cardinality 0..*, and from 'XPath_Expression', the role 'XPath_Expression' has cardinality 0..*.
+An association connects 'XPath_Expression' and 'XPath_OperatorCallExp'. From 'XPath_Expression', the role 'XPath_Expression10' has cardinality 0..*, and from 'XPath_OperatorCallExp', the role 'XPath_OperatorCallExp' has cardinality 0..*.
+An association connects 'XPath_Expression' and 'XPath_OperatorCallExp'. From 'XPath_Expression', the role 'XPath_Expression13' has cardinality 0..*, and from 'XPath_OperatorCallExp', the role 'XPath_OperatorCallExp12' has cardinality 0..*.
+An association connects 'XPath_Expression' and 'XPath_FunctionCallExp'. From 'XPath_Expression', the role 'XPath_Expression15' has cardinality 0..*, and from 'XPath_FunctionCallExp', the role 'XPath_FunctionCallExp' has cardinality 0..*.

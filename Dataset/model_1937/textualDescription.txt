@@ -1,0 +1,33 @@
+The domain model 'addressbook' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'addressbook_Country' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'addressbook_AddressBook' represents an important domain concept.
+It does not declare any attributes.
+
+'addressbook_Person' represents an important domain concept.
+It has the following attributes: 'firstname', which is of type str; 'lastname', which is of type str.
+
+'addressbook_FederalState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'addressbook_Address' represents an important domain concept.
+It has the following attributes: 'street', which is of type str; 'zip', which is of type str; 'city', which is of type str; 'type', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AddressType' defines the following possible values: 'DELIVERY', 'PRIVATE', 'BUSINESS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'addressbook_AddressBook' and 'addressbook_Person'. From 'addressbook_AddressBook', the role 'addressBook' has cardinality 0..*, and from 'addressbook_Person', the role 'Person' has cardinality 0..*.
+An association connects 'addressbook_Country' and 'addressbook_AddressBook'. From 'addressbook_Country', the role 'addressbook_Country' has cardinality 0..*, and from 'addressbook_AddressBook', the role 'addressbook_AddressBook' has cardinality 0..*.
+An association connects 'addressbook_Address' and 'addressbook_Person'. From 'addressbook_Address', the role 'Address' has cardinality 0..*, and from 'addressbook_Person', the role 'person' has cardinality 0..*.
+An association connects 'addressbook_AddressBook' and 'addressbook_Person'. From 'addressbook_AddressBook', the role 'AddressBook' has cardinality 0..*, and from 'addressbook_Person', the role 'persons' has cardinality 0..*.
+An association connects 'addressbook_Country' and 'addressbook_Address'. From 'addressbook_Country', the role 'addressbook_Country5' has cardinality 0..*, and from 'addressbook_Address', the role 'addressbook_Address' has cardinality 0..*.
+An association connects 'addressbook_Address' and 'addressbook_FederalState'. From 'addressbook_Address', the role 'addressbook_Address7' has cardinality 0..*, and from 'addressbook_FederalState', the role 'addressbook_FederalState' has cardinality 0..*.
+An association connects 'addressbook_Address' and 'addressbook_Person'. From 'addressbook_Address', the role 'addresses' has cardinality 0..*, and from 'addressbook_Person', the role 'Person9' has cardinality 0..*.
+An association connects 'addressbook_FederalState' and 'addressbook_Country'. From 'addressbook_FederalState', the role 'FederalState' has cardinality 0..*, and from 'addressbook_Country', the role 'country' has cardinality 0..*.
+An association connects 'addressbook_AddressBook' and 'addressbook_Country'. From 'addressbook_AddressBook', the role 'addressbook_AddressBook13' has cardinality 0..*, and from 'addressbook_Country', the role 'addressbook_Country12' has cardinality 0..*.
+An association connects 'addressbook_Country' and 'addressbook_FederalState'. From 'addressbook_Country', the role 'Country' has cardinality 0..*, and from 'addressbook_FederalState', the role 'federalStates' has cardinality 0..*.

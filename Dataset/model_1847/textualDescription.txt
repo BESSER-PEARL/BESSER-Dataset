@@ -1,0 +1,22 @@
+The domain model 'timetrack' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'timetrack_TimeEntry' represents an important domain concept.
+It has the following attributes: 'from', which is of type date; 'till', which is of type date; 'duration', which is of type date; 'notes', which is of type str; 'day', which is of type date; 'factured', which is of type bool; 'sync_date', which is of type date.
+
+'timetrack_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'timetrack_User' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'password', which is of type str; 'sap_name', which is of type str; 'sap_password', which is of type str.
+
+'timetrack_Project' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'number', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'timetrack_TimeEntry' and 'timetrack_User'. From 'timetrack_TimeEntry', the role 'timetrack_TimeEntry' has cardinality 0..*, and from 'timetrack_User', the role 'timetrack_User' has cardinality 0..*.
+An association connects 'timetrack_Project' and 'timetrack_TimeEntry'. From 'timetrack_Project', the role 'timetrack_Project' has cardinality 0..*, and from 'timetrack_TimeEntry', the role 'timetrack_TimeEntry2' has cardinality 0..*.
+An association connects 'timetrack_User' and 'timetrack_Library'. From 'timetrack_User', the role 'timetrack_User4' has cardinality 0..*, and from 'timetrack_Library', the role 'timetrack_Library' has cardinality 0..*.
+An association connects 'timetrack_Library' and 'timetrack_TimeEntry'. From 'timetrack_Library', the role 'timetrack_Library6' has cardinality 0..*, and from 'timetrack_TimeEntry', the role 'timetrack_TimeEntry7' has cardinality 0..*.
+An association connects 'timetrack_Project' and 'timetrack_Library'. From 'timetrack_Project', the role 'timetrack_Project10' has cardinality 0..*, and from 'timetrack_Library', the role 'timetrack_Library9' has cardinality 0..*.

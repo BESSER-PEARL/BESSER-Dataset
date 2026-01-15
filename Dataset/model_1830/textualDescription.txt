@@ -1,0 +1,196 @@
+The domain model 'jointPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 48 main class(es).
+
+'jointPackage_TrgBook' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_JointMM' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcBook' represents an important domain concept.
+It has one attribute: 'publisher', which is of type str.
+
+'SrcDatedEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcAuthoredEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_TrgDocBook' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcArticle' represents an important domain concept.
+It has one attribute: 'journal', which is of type str.
+
+'jointPackage_SrcTechReport' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcBooklet' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcInBook' represents an important domain concept.
+It has one attribute: 'chapter', which is of type int.
+
+'SrcAuthor' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcTitledEntry' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'TrgArticle' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcTitledEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcAuthor' represents an important domain concept.
+It has one attribute: 'author', which is of type str.
+
+'jointPackage_SrcMisc' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcManual' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcAuthoredEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_TrgPara' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'jointPackage_SrcBibTeXFile' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgPara' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_TrgArticle' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgTitledElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcBibTeXEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcInProceedings' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_TrgTitledElement' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'jointPackage_TrgSect2' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_TrgSection' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgDocBook' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcMasterThesis' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcUnpublished' represents an important domain concept.
+It has one attribute: 'note', which is of type str.
+
+'jointPackage_SrcProceedings' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcDatedEntry' represents an important domain concept.
+It has one attribute: 'year', which is of type str.
+
+'jointPackage_SrcBibTeXEntry' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'TrgBook' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcThesisEntry' represents an important domain concept.
+It has one attribute: 'school', which is of type str.
+
+'SrcBookTitledEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcPhDThesis' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgSection' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcInCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_SrcBookTitledEntry' represents an important domain concept.
+It has one attribute: 'booktitle', which is of type str.
+
+'SrcThesisEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgSect1' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcProceedings' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_TrgSect1' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcMasterThesis' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgSect2' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcBook' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'jointPackage_SrcArticle' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_SrcArticle' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_SrcArticle' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_SrcTechReport' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_SrcTechReport' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_SrcTechReport' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_SrcUnpublished' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_SrcUnpublished' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_SrcManual' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_SrcProceedings' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_SrcProceedings' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_SrcInProceedings' is a specialization of 'SrcProceedings'.
+The class 'jointPackage_SrcInProceedings' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_SrcInProceedings' is a specialization of 'SrcBookTitledEntry'.
+The class 'jointPackage_SrcBooklet' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_SrcBook' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_SrcBook' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_SrcBook' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_SrcInCollection' is a specialization of 'SrcBook'.
+The class 'jointPackage_SrcInCollection' is a specialization of 'SrcBookTitledEntry'.
+The class 'jointPackage_SrcInBook' is a specialization of 'SrcBook'.
+The class 'jointPackage_SrcPhDThesis' is a specialization of 'SrcThesisEntry'.
+The class 'jointPackage_SrcMasterThesis' is a specialization of 'SrcThesisEntry'.
+The class 'jointPackage_SrcAuthoredEntry' is a specialization of 'SrcBibTeXEntry'.
+The class 'jointPackage_SrcDatedEntry' is a specialization of 'SrcBibTeXEntry'.
+The class 'jointPackage_SrcTitledEntry' is a specialization of 'SrcBibTeXEntry'.
+The class 'jointPackage_SrcBookTitledEntry' is a specialization of 'SrcBibTeXEntry'.
+The class 'jointPackage_SrcMisc' is a specialization of 'SrcBibTeXEntry'.
+The class 'jointPackage_SrcThesisEntry' is a specialization of 'SrcAuthoredEntry'.
+The class 'jointPackage_SrcThesisEntry' is a specialization of 'SrcDatedEntry'.
+The class 'jointPackage_SrcThesisEntry' is a specialization of 'SrcTitledEntry'.
+The class 'jointPackage_TrgArticle' is a specialization of 'TrgTitledElement'.
+The class 'jointPackage_TrgSection' is a specialization of 'TrgTitledElement'.
+The class 'jointPackage_TrgSect1' is a specialization of 'TrgSection'.
+The class 'jointPackage_TrgSect2' is a specialization of 'TrgSection'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SrcMasterThesis' and 'jointPackage_JointMM'. From 'SrcMasterThesis', the role 'SrcMasterThesis' has cardinality 0..*, and from 'jointPackage_JointMM', the role 'jointPackage_JointMM' has cardinality 0..*.
+An association connects 'jointPackage_JointMM' and 'TrgDocBook'. From 'jointPackage_JointMM', the role 'jointPackage_JointMM2' has cardinality 0..*, and from 'TrgDocBook', the role 'TrgDocBook' has cardinality 0..*.
+An association connects 'SrcBibTeXEntry' and 'jointPackage_SrcBibTeXFile'. From 'SrcBibTeXEntry', the role 'SrcBibTeXEntry' has cardinality 0..*, and from 'jointPackage_SrcBibTeXFile', the role 'jointPackage_SrcBibTeXFile' has cardinality 0..*.
+An association connects 'jointPackage_SrcAuthoredEntry' and 'SrcAuthor'. From 'jointPackage_SrcAuthoredEntry', the role 'jointPackage_SrcAuthoredEntry' has cardinality 0..*, and from 'SrcAuthor', the role 'SrcAuthor' has cardinality 0..*.
+An association connects 'TrgBook' and 'jointPackage_TrgDocBook'. From 'TrgBook', the role 'TrgBook' has cardinality 0..*, and from 'jointPackage_TrgDocBook', the role 'jointPackage_TrgDocBook' has cardinality 0..*.
+An association connects 'TrgArticle' and 'jointPackage_TrgBook'. From 'TrgArticle', the role 'TrgArticle' has cardinality 0..*, and from 'jointPackage_TrgBook', the role 'jointPackage_TrgBook' has cardinality 0..*.
+An association connects 'TrgSect1' and 'jointPackage_TrgArticle'. From 'TrgSect1', the role 'TrgSect1' has cardinality 0..*, and from 'jointPackage_TrgArticle', the role 'jointPackage_TrgArticle' has cardinality 0..*.
+An association connects 'TrgPara' and 'jointPackage_TrgSection'. From 'TrgPara', the role 'unnamed role' has cardinality 0..*, and from 'jointPackage_TrgSection', the role '0' has cardinality 0..*.
+An association connects 'TrgSect2' and 'jointPackage_TrgSect1'. From 'TrgSect2', the role 'TrgSect2' has cardinality 0..*, and from 'jointPackage_TrgSect1', the role 'jointPackage_TrgSect1' has cardinality 0..*.
+An association connects 'jointPackage_TrgPara' and 'TrgSection'. From 'jointPackage_TrgPara', the role '011' has cardinality 0..*, and from 'TrgSection', the role '12' has cardinality 0..*.

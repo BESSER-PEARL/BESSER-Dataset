@@ -1,0 +1,127 @@
+The domain model 'iot' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'iot_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'iot_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Etiqueta' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str; 'typeName', which is of type str.
+
+'iot_And' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Dispositivo' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iot_Estado' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iot_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_IfBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'iot_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'iot_Transicion' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Equality' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'iot_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'iot_MulOrDiv' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'iot_Evento' represents an important domain concept.
+It has the following attributes: 'typeName', which is of type str; 'name', which is of type str.
+
+'iot_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'iot_IfStatement' is a specialization of 'AbstractElement'.
+The class 'iot_Variable' is a specialization of 'AbstractElement'.
+The class 'iot_Expression' is a specialization of 'AbstractElement'.
+The class 'iot_Or' is a specialization of 'Expression'.
+The class 'iot_And' is a specialization of 'Expression'.
+The class 'iot_Equality' is a specialization of 'Expression'.
+The class 'iot_Comparison' is a specialization of 'Expression'.
+The class 'iot_Plus' is a specialization of 'Expression'.
+The class 'iot_Minus' is a specialization of 'Expression'.
+The class 'iot_MulOrDiv' is a specialization of 'Expression'.
+The class 'iot_Not' is a specialization of 'Expression'.
+The class 'iot_IntConstant' is a specialization of 'Expression'.
+The class 'iot_StringConstant' is a specialization of 'Expression'.
+The class 'iot_BoolConstant' is a specialization of 'Expression'.
+The class 'iot_VariableRef' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iot_Model' and 'iot_Dispositivo'. From 'iot_Model', the role 'iot_Model' has cardinality 0..*, and from 'iot_Dispositivo', the role 'iot_Dispositivo' has cardinality 0..*.
+An association connects 'iot_Dispositivo' and 'iot_Dispositivo'. From 'iot_Dispositivo', the role 'iot_Dispositivo3' has cardinality 0..*, and from 'iot_Dispositivo', the role 'iot_Dispositivo1' has cardinality 0..*.
+An association connects 'iot_Etiqueta' and 'iot_Dispositivo'. From 'iot_Etiqueta', the role 'iot_Etiqueta' has cardinality 0..*, and from 'iot_Dispositivo', the role 'iot_Dispositivo5' has cardinality 0..*.
+An association connects 'iot_Estado' and 'iot_Dispositivo'. From 'iot_Estado', the role 'iot_Estado' has cardinality 0..*, and from 'iot_Dispositivo', the role 'iot_Dispositivo7' has cardinality 0..*.
+An association connects 'iot_Evento' and 'iot_Dispositivo'. From 'iot_Evento', the role 'iot_Evento' has cardinality 0..*, and from 'iot_Dispositivo', the role 'iot_Dispositivo9' has cardinality 0..*.
+An association connects 'iot_Transicion' and 'iot_Dispositivo'. From 'iot_Transicion', the role 'iot_Transicion' has cardinality 0..*, and from 'iot_Dispositivo', the role 'iot_Dispositivo11' has cardinality 0..*.
+An association connects 'iot_Estado' and 'iot_AbstractElement'. From 'iot_Estado', the role 'iot_Estado13' has cardinality 0..*, and from 'iot_AbstractElement', the role 'iot_AbstractElement' has cardinality 0..*.
+An association connects 'iot_Evento' and 'iot_Transicion'. From 'iot_Evento', the role 'iot_Evento16' has cardinality 0..*, and from 'iot_Transicion', the role 'iot_Transicion15' has cardinality 0..*.
+An association connects 'iot_Transicion' and 'iot_Estado'. From 'iot_Transicion', the role 'iot_Transicion18' has cardinality 0..*, and from 'iot_Estado', the role 'iot_Estado19' has cardinality 0..*.
+An association connects 'iot_IfStatement' and 'iot_Expression'. From 'iot_IfStatement', the role 'iot_IfStatement' has cardinality 0..*, and from 'iot_Expression', the role 'iot_Expression' has cardinality 0..*.
+An association connects 'iot_IfBlock' and 'iot_IfStatement'. From 'iot_IfBlock', the role 'iot_IfBlock' has cardinality 0..*, and from 'iot_IfStatement', the role 'iot_IfStatement22' has cardinality 0..*.
+An association connects 'iot_IfBlock' and 'iot_IfStatement'. From 'iot_IfBlock', the role 'iot_IfBlock25' has cardinality 0..*, and from 'iot_IfStatement', the role 'iot_IfStatement24' has cardinality 0..*.
+An association connects 'iot_AbstractElement' and 'iot_IfBlock'. From 'iot_AbstractElement', the role 'iot_AbstractElement28' has cardinality 0..*, and from 'iot_IfBlock', the role 'iot_IfBlock27' has cardinality 0..*.
+An association connects 'iot_Expression' and 'iot_Variable'. From 'iot_Expression', the role 'iot_Expression30' has cardinality 0..*, and from 'iot_Variable', the role 'iot_Variable' has cardinality 0..*.
+An association connects 'iot_Or' and 'iot_Expression'. From 'iot_Or', the role 'iot_Or' has cardinality 0..*, and from 'iot_Expression', the role 'iot_Expression32' has cardinality 0..*.
+An association connects 'iot_Expression' and 'iot_Or'. From 'iot_Expression', the role 'iot_Expression35' has cardinality 0..*, and from 'iot_Or', the role 'iot_Or34' has cardinality 0..*.
+An association connects 'iot_Expression' and 'iot_And'. From 'iot_Expression', the role 'iot_Expression37' has cardinality 0..*, and from 'iot_And', the role 'iot_And' has cardinality 0..*.
+An association connects 'iot_And' and 'iot_Expression'. From 'iot_And', the role 'iot_And39' has cardinality 0..*, and from 'iot_Expression', the role 'iot_Expression40' has cardinality 0..*.
+An association connects 'iot_Equality' and 'iot_Expression'. From 'iot_Equality', the role 'iot_Equality' has cardinality 0..*, and from 'iot_Expression', the role 'iot_Expression42' has cardinality 0..*.
+An association connects 'iot_Expression' and 'iot_Equality'. From 'iot_Expression', the role 'iot_Expression45' has cardinality 0..*, and from 'iot_Equality', the role 'iot_Equality44' has cardinality 0..*.
+An association connects 'iot_Comparison' and 'iot_Expression'. From 'iot_Comparison', the role 'iot_Comparison' has cardinality 0..*, and from 'iot_Expression', the role 'iot_Expression47' has cardinality 0..*.
+An association connects 'iot_Expression' and 'iot_Comparison'. From 'iot_Expression', the role 'iot_Expression50' has cardinality 0..*, and from 'iot_Comparison', the role 'iot_Comparison49' has cardinality 0..*.
+An association connects 'iot_Expression' and 'iot_Plus'. From 'iot_Expression', the role 'iot_Expression52' has cardinality 0..*, and from 'iot_Plus', the role 'iot_Plus' has cardinality 0..*.
+An association connects 'iot_Expression' and 'iot_Plus'. From 'iot_Expression', the role 'iot_Expression55' has cardinality 0..*, and from 'iot_Plus', the role 'iot_Plus54' has cardinality 0..*.
+An association connects 'iot_Expression' and 'iot_Minus'. From 'iot_Expression', the role 'iot_Expression57' has cardinality 0..*, and from 'iot_Minus', the role 'iot_Minus' has cardinality 0..*.
+An association connects 'iot_Minus' and 'iot_Expression'. From 'iot_Minus', the role 'iot_Minus59' has cardinality 0..*, and from 'iot_Expression', the role 'iot_Expression60' has cardinality 0..*.
+An association connects 'iot_Expression' and 'iot_MulOrDiv'. From 'iot_Expression', the role 'iot_Expression62' has cardinality 0..*, and from 'iot_MulOrDiv', the role 'iot_MulOrDiv' has cardinality 0..*.
+An association connects 'iot_Expression' and 'iot_MulOrDiv'. From 'iot_Expression', the role 'iot_Expression65' has cardinality 0..*, and from 'iot_MulOrDiv', the role 'iot_MulOrDiv64' has cardinality 0..*.
+An association connects 'iot_Not' and 'iot_Expression'. From 'iot_Not', the role 'iot_Not' has cardinality 0..*, and from 'iot_Expression', the role 'iot_Expression67' has cardinality 0..*.
+An association connects 'iot_VariableRef' and 'iot_Variable'. From 'iot_VariableRef', the role 'iot_VariableRef' has cardinality 0..*, and from 'iot_Variable', the role 'iot_Variable69' has cardinality 0..*.

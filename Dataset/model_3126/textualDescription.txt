@@ -1,0 +1,52 @@
+The domain model 'umlMM_' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlMM__Classifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umlMM__Association' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umlMM__Class' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'umlMM__PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'umlMM__dummy' represents an important domain concept.
+It does not declare any attributes.
+
+'umlMM__Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umlMM__Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'KIND' defines the following possible values: 'PERSISTENT', 'OTHER'.
+
+The model also captures inheritance relationships between classes.
+The class 'umlMM__Class' is a specialization of 'Classifier'.
+The class 'umlMM__PrimitiveDataType' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'umlMM__Package' and 'umlMM__Classifier'. From 'umlMM__Package', the role 'namespace' has cardinality 0..*, and from 'umlMM__Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'umlMM__Association' and 'umlMM__Package'. From 'umlMM__Association', the role 'Association' has cardinality 0..*, and from 'umlMM__Package', the role 'namespace2' has cardinality 0..*.
+An association connects 'umlMM__dummy' and 'umlMM__Package'. From 'umlMM__dummy', the role 'dummy' has cardinality 0..*, and from 'umlMM__Package', the role 'containsPackage' has cardinality 0..*.
+An association connects 'umlMM__Class' and 'umlMM__Attribute'. From 'umlMM__Class', the role 'owner' has cardinality 0..*, and from 'umlMM__Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'umlMM__Class' and 'umlMM__Class'. From 'umlMM__Class', the role 'Class' has cardinality 0..*, and from 'umlMM__Class', the role 'subclass' has cardinality 0..*.
+An association connects 'umlMM__Class' and 'umlMM__Class'. From 'umlMM__Class', the role 'general' has cardinality 0..*, and from 'umlMM__Class', the role 'Class9' has cardinality 0..*.
+An association connects 'umlMM__Class' and 'umlMM__Association'. From 'umlMM__Class', the role 'source' has cardinality 0..*, and from 'umlMM__Association', the role 'Association11' has cardinality 0..*.
+An association connects 'umlMM__Class' and 'umlMM__Association'. From 'umlMM__Class', the role 'destination' has cardinality 0..*, and from 'umlMM__Association', the role 'Association13' has cardinality 0..*.
+An association connects 'umlMM__Attribute' and 'umlMM__Class'. From 'umlMM__Attribute', the role 'attribute' has cardinality 0..*, and from 'umlMM__Class', the role 'Class15' has cardinality 0..*.
+An association connects 'umlMM__Attribute' and 'umlMM__Classifier'. From 'umlMM__Attribute', the role 'typeOf' has cardinality 0..*, and from 'umlMM__Classifier', the role 'Classifier17' has cardinality 0..*.
+An association connects 'umlMM__Attribute' and 'umlMM__Classifier'. From 'umlMM__Attribute', the role 'Attribute19' has cardinality 0..*, and from 'umlMM__Classifier', the role 'type' has cardinality 0..*.
+An association connects 'umlMM__Package' and 'umlMM__Classifier'. From 'umlMM__Package', the role 'Package' has cardinality 0..*, and from 'umlMM__Classifier', the role 'classifier' has cardinality 0..*.
+An association connects 'umlMM__Package' and 'umlMM__Association'. From 'umlMM__Package', the role 'Package22' has cardinality 0..*, and from 'umlMM__Association', the role 'association' has cardinality 0..*.
+An association connects 'umlMM__Association' and 'umlMM__Class'. From 'umlMM__Association', the role 'sourceOf' has cardinality 0..*, and from 'umlMM__Class', the role 'Class24' has cardinality 0..*.
+An association connects 'umlMM__Class' and 'umlMM__Association'. From 'umlMM__Class', the role 'Class26' has cardinality 0..*, and from 'umlMM__Association', the role 'destinationOf' has cardinality 0..*.
+An association connects 'umlMM__Package' and 'umlMM__dummy'. From 'umlMM__Package', the role 'Package29' has cardinality 0..*, and from 'umlMM__dummy', the role 'dummy28' has cardinality 0..*.

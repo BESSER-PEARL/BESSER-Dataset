@@ -1,0 +1,678 @@
+The domain model 'frameweb' describes the core structural elements and their relationships within the system.
+
+The model defines 165 main class(es).
+
+'frameweb_ClassMappingExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DomainAttribute' represents an important domain concept.
+It has the following attributes: 'isPersistent', which is of type bool; 'isNull', which is of type bool; 'size', which is of type str.
+
+'VocabularyEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_VocabularyClassExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationCompositionWhole' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationGeneralization' represents an important domain concept.
+It does not declare any attributes.
+
+'ProfileApplication' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_TagExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_VocabularyAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Result' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ResultConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_MappingLib' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_AnnotationProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ResultExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DomainGeneralizationSet' represents an important domain concept.
+It has one attribute: 'mapping', which is of type str.
+
+'frameweb_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ResultType' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DAOMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ApplicationPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ServiceClass' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ApplicationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_FramewebModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DomainClass' represents an important domain concept.
+It has one attribute: 'table', which is of type str.
+
+'frameweb_SeviceRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_AttributeMappingExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ClassMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ControllerProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_FramewebProject' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ResultExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_VersionAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DomainPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'VocabularyClassExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DAOInterface' represents an important domain concept.
+It has the following attributes: 'sufix', which is of type str; 'infix', which is of type str.
+
+'frameweb_ViewPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_FrameworkExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_FrameworkApplication' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_UIComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DecimalAttribute' represents an important domain concept.
+It has the following attributes: 'decimalScale', which is of type str; 'decimalPrecision', which is of type str.
+
+'frameweb_SemanticPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Individual' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DomainProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_PageDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_VocabularyClass' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_VocabularyModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DAOClass' represents an important domain concept.
+It has the following attributes: 'prefix', which is of type str; 'sufix', which is of type str; 'infix', which is of type str.
+
+'frameweb_NavigationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ServiceAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_VocabularyDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_PageConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ControllerExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Page' represents an important domain concept.
+It does not declare any attributes.
+
+'Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ChainingDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_MethodCosntraint' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ClassMappingPropery' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DAOGeneralization' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_AttributeMappingExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'Profile' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_TagProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_AttributeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DAOAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ControllerExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DomainMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NamedIndividual' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ChainingConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ClassMappingExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ControllerPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ServiceInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_FrameworkProfile' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'category', which is of type str.
+
+'frameweb_IRI' represents an important domain concept.
+It has the following attributes: 'iriVersion', which is of type str; 'iri', which is of type str.
+
+'NavigationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DAORealization' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ResultProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DAOServiceAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Axiom' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_AnonymousIndividual' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_TagLib' represents an important domain concept.
+It has one attribute: 'prefix', which is of type str.
+
+'frameweb_Association' represents an important domain concept.
+It has one attribute: 'isDerived', which is of type str.
+
+'frameweb_ServiceControllerAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_PersistencePackage' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationGeneralizationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ServiceMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ResultDependency' represents an important domain concept.
+It has the following attributes: 'render', which is of type str; 'ajax', which is of type bool; 'execute', which is of type str.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralString' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ServiceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'GeneralizationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_PersistenceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Vocabulary' represents an important domain concept.
+It has one attribute: 'vocabularyDocument', which is of type str.
+
+'frameweb_ServiceGeneralization' represents an important domain concept.
+It does not declare any attributes.
+
+'DeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ObjectProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_LOBAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_FrontControllerMethod' represents an important domain concept.
+It has one attribute: 'isDefault', which is of type bool.
+
+'NavigationPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_AttributeMappingProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'FrameworkExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_FrontControllerClass' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DomainExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DomainConstraints' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_VocabularyConstraints' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DAOGeneralizationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ControllerSet' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_IOParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_FrontControllerDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_EmbeddedAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_UIComponentField' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DomainAssociation' represents an important domain concept.
+It has the following attributes: 'fetch', which is of type str; 'cascade', which is of type str; 'order', which is of type str; 'collection', which is of type str.
+
+'frameweb_DataProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_ServiceGeneralizationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_VocabularyEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'VocabularyAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DomainGeneralization' represents an important domain concept.
+It does not declare any attributes.
+
+'FramewebModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Template' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_VocabularyProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_VocabularyLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_NavigationCompositionPart' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigationExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_Property' represents an important domain concept.
+It has the following attributes: 'isComposite', which is of type str; 'aggregation', which is of type str; 'isDerived', which is of type str; 'isDerivedUnion', which is of type str; 'default', which is of type str; 'isID', which is of type str.
+
+'frameweb_EntityModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_DateTimeAttribute' represents an important domain concept.
+It has one attribute: 'dateTimePrecision', which is of type str.
+
+'frameweb_ResultSet' represents an important domain concept.
+It does not declare any attributes.
+
+'frameweb_IdAttribute' represents an important domain concept.
+It has one attribute: 'generation', which is of type str.
+
+'frameweb_TagExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'Individual' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FrameworkCategoryList' defines the following possible values: 'DependencyInjection', 'ObjetoRelacional', 'FrontController'.
+The enumeration 'Order' defines the following possible values: 'columnNameDesc', 'columnNameAsc', 'natural'.
+The enumeration 'ConstantNameList' defines the following possible values: 'class', 'DAO', 'interface', 'base', 'Application', 'Controller', 'View', 'impl', 'Domain', 'Persistence'.
+The enumeration 'Collection' defines the following possible values: 'map', 'bag', 'set', 'list'.
+The enumeration 'Generation' defines the following possible values: 'auto', 'none', 'identity', 'sequence', 'table'.
+The enumeration 'Fetch' defines the following possible values: 'eager', 'lazy'.
+The enumeration 'DateTimePrecision' defines the following possible values: 'timestamp', 'date', 'time'.
+The enumeration 'Cascade' defines the following possible values: 'all', 'remove', 'refresh', 'none', 'persist', 'merge'.
+The enumeration 'InheritanceMapping' defines the following possible values: 'union', 'singletable', 'join'.
+The enumeration 'FrameworkKindList' defines the following possible values: 'FrameworkSpecification', 'FrameworkImplementation', 'Custom', 'StandardSpecification'.
+
+The model also captures inheritance relationships between classes.
+The class 'frameweb_FramewebModel' is a specialization of 'Model'.
+The class 'frameweb_FrameworkProfile' is a specialization of 'Profile'.
+The class 'frameweb_EntityModel' is a specialization of 'FramewebModel'.
+The class 'frameweb_NavigationModel' is a specialization of 'FramewebModel'.
+The class 'frameweb_ApplicationModel' is a specialization of 'FramewebModel'.
+The class 'frameweb_PersistenceModel' is a specialization of 'FramewebModel'.
+The class 'frameweb_DomainAssociation' is a specialization of 'Association'.
+The class 'frameweb_DomainAttribute' is a specialization of 'Property'.
+The class 'frameweb_VersionAttribute' is a specialization of 'DomainAttribute'.
+The class 'frameweb_IdAttribute' is a specialization of 'DomainAttribute'.
+The class 'frameweb_LOBAttribute' is a specialization of 'DomainAttribute'.
+The class 'frameweb_EmbeddedAttribute' is a specialization of 'DomainAttribute'.
+The class 'frameweb_DecimalAttribute' is a specialization of 'DomainAttribute'.
+The class 'frameweb_DateTimeAttribute' is a specialization of 'DomainAttribute'.
+The class 'frameweb_Page' is a specialization of 'NavigationClass'.
+The class 'frameweb_Template' is a specialization of 'NavigationClass'.
+The class 'frameweb_DAOInterface' is a specialization of 'Interface'.
+The class 'frameweb_DAOClass' is a specialization of 'Class'.
+The class 'frameweb_DAORealization' is a specialization of 'InterfaceRealization'.
+The class 'frameweb_FrontControllerClass' is a specialization of 'Class'.
+The class 'frameweb_IOParameter' is a specialization of 'NavigationAttribute'.
+The class 'frameweb_ResultDependency' is a specialization of 'NavigationDependency'.
+The class 'frameweb_NavigationAssociation' is a specialization of 'Association'.
+The class 'frameweb_FrontControllerMethod' is a specialization of 'Operation'.
+The class 'frameweb_ServiceClass' is a specialization of 'Class'.
+The class 'frameweb_ServiceInterface' is a specialization of 'Interface'.
+The class 'frameweb_ServiceGeneralization' is a specialization of 'Generalization'.
+The class 'frameweb_ServiceControllerAssociation' is a specialization of 'ServiceAssociation'.
+The class 'frameweb_DomainClass' is a specialization of 'Class'.
+The class 'frameweb_Result' is a specialization of 'Class'.
+The class 'frameweb_FrontControllerDependency' is a specialization of 'NavigationDependency'.
+The class 'frameweb_PageDependency' is a specialization of 'NavigationDependency'.
+The class 'frameweb_ChainingDependency' is a specialization of 'NavigationDependency'.
+The class 'frameweb_DAOServiceAssociation' is a specialization of 'ServiceAssociation'.
+The class 'frameweb_NavigationAttribute' is a specialization of 'Property'.
+The class 'frameweb_NavigationClass' is a specialization of 'Class'.
+The class 'frameweb_DomainMethod' is a specialization of 'Operation'.
+The class 'frameweb_DAOAttribute' is a specialization of 'Property'.
+The class 'frameweb_ServiceMethod' is a specialization of 'Operation'.
+The class 'frameweb_ServiceAttribute' is a specialization of 'Property'.
+The class 'frameweb_ServiceAssociation' is a specialization of 'Association'.
+The class 'frameweb_NavigationDependency' is a specialization of 'Dependency'.
+The class 'frameweb_DAOMethod' is a specialization of 'Operation'.
+The class 'frameweb_DomainPackage' is a specialization of 'Package'.
+The class 'frameweb_ViewPackage' is a specialization of 'NavigationPackage'.
+The class 'frameweb_ControllerPackage' is a specialization of 'NavigationPackage'.
+The class 'frameweb_PersistencePackage' is a specialization of 'Package'.
+The class 'frameweb_ApplicationPackage' is a specialization of 'Package'.
+The class 'frameweb_UIComponent' is a specialization of 'NavigationClass'.
+The class 'frameweb_ResultType' is a specialization of 'Stereotype'.
+The class 'frameweb_NavigationPackage' is a specialization of 'Package'.
+The class 'frameweb_DomainGeneralization' is a specialization of 'Generalization'.
+The class 'frameweb_UIComponentField' is a specialization of 'NavigationAttribute'.
+The class 'frameweb_TagLib' is a specialization of 'Package'.
+The class 'frameweb_Tag' is a specialization of 'Stereotype'.
+The class 'frameweb_NavigationCompositionPart' is a specialization of 'NavigationProperty'.
+The class 'frameweb_NavigationCompositionWhole' is a specialization of 'NavigationProperty'.
+The class 'frameweb_NavigationProperty' is a specialization of 'Property'.
+The class 'frameweb_ResultSet' is a specialization of 'Package'.
+The class 'frameweb_NavigationConstraint' is a specialization of 'Constraint'.
+The class 'frameweb_PageConstraint' is a specialization of 'NavigationConstraint'.
+The class 'frameweb_ResultConstraint' is a specialization of 'NavigationConstraint'.
+The class 'frameweb_MethodCosntraint' is a specialization of 'NavigationConstraint'.
+The class 'frameweb_ChainingConstraint' is a specialization of 'NavigationConstraint'.
+The class 'frameweb_NavigationGeneralization' is a specialization of 'Generalization'.
+The class 'frameweb_DomainConstraints' is a specialization of 'Constraint'.
+The class 'frameweb_DomainProperty' is a specialization of 'Property'.
+The class 'frameweb_DAOGeneralization' is a specialization of 'Generalization'.
+The class 'frameweb_MappingLib' is a specialization of 'Package'.
+The class 'frameweb_ClassMapping' is a specialization of 'Stereotype'.
+The class 'frameweb_AttributeMapping' is a specialization of 'Stereotype'.
+The class 'frameweb_DomainGeneralizationSet' is a specialization of 'GeneralizationSet'.
+The class 'frameweb_FrameworkExtension' is a specialization of 'Extension'.
+The class 'frameweb_TagExtension' is a specialization of 'NavigationExtension'.
+The class 'frameweb_FrameworkApplication' is a specialization of 'ProfileApplication'.
+The class 'frameweb_ControllerExtension' is a specialization of 'NavigationExtension'.
+The class 'frameweb_Controller' is a specialization of 'Stereotype'.
+The class 'frameweb_ControllerSet' is a specialization of 'Package'.
+The class 'frameweb_ResultExtension' is a specialization of 'NavigationExtension'.
+The class 'frameweb_ClassMappingExtension' is a specialization of 'DomainExtension'.
+The class 'frameweb_AttributeMappingExtension' is a specialization of 'DomainExtension'.
+The class 'frameweb_ControllerExtensionEnd' is a specialization of 'ExtensionEnd'.
+The class 'frameweb_TagExtensionEnd' is a specialization of 'ExtensionEnd'.
+The class 'frameweb_ResultExtensionEnd' is a specialization of 'ExtensionEnd'.
+The class 'frameweb_ClassMappingExtensionEnd' is a specialization of 'ExtensionEnd'.
+The class 'frameweb_AttributeMappingExtensionEnd' is a specialization of 'ExtensionEnd'.
+The class 'frameweb_ControllerProperty' is a specialization of 'Property'.
+The class 'frameweb_TagProperty' is a specialization of 'Property'.
+The class 'frameweb_ResultProperty' is a specialization of 'Property'.
+The class 'frameweb_ClassMappingPropery' is a specialization of 'Property'.
+The class 'frameweb_AttributeMappingProperty' is a specialization of 'Property'.
+The class 'frameweb_SeviceRealization' is a specialization of 'InterfaceRealization'.
+The class 'frameweb_NavigationExtension' is a specialization of 'FrameworkExtension'.
+The class 'frameweb_DomainExtension' is a specialization of 'FrameworkExtension'.
+The class 'frameweb_NavigationGeneralizationSet' is a specialization of 'GeneralizationSet'.
+The class 'frameweb_DAOGeneralizationSet' is a specialization of 'GeneralizationSet'.
+The class 'frameweb_ServiceGeneralizationSet' is a specialization of 'GeneralizationSet'.
+The class 'frameweb_SemanticPackage' is a specialization of 'Package'.
+The class 'frameweb_IRI' is a specialization of 'Property'.
+The class 'frameweb_VocabularyModel' is a specialization of 'FramewebModel'.
+The class 'frameweb_Vocabulary' is a specialization of 'Package'.
+The class 'frameweb_Axiom' is a specialization of 'Class'.
+The class 'frameweb_Annotation' is a specialization of 'Class'.
+The class 'frameweb_VocabularyConstraints' is a specialization of 'Constraint'.
+The class 'frameweb_Property' is a specialization of 'StructuralFeature'.
+The class 'frameweb_Property' is a specialization of 'ConnectableElement'.
+The class 'frameweb_Property' is a specialization of 'DeploymentTarget'.
+The class 'frameweb_Association' is a specialization of 'Classifier'.
+The class 'frameweb_Association' is a specialization of 'Relationship'.
+The class 'frameweb_VocabularyAssociation' is a specialization of 'Association'.
+The class 'frameweb_VocabularyProperty' is a specialization of 'Property'.
+The class 'frameweb_VocabularyEntity' is a specialization of 'Classifier'.
+The class 'frameweb_ObjectProperty' is a specialization of 'VocabularyEntity'.
+The class 'frameweb_ObjectProperty' is a specialization of 'VocabularyAssociation'.
+The class 'frameweb_DataProperty' is a specialization of 'VocabularyEntity'.
+The class 'frameweb_DataProperty' is a specialization of 'VocabularyAssociation'.
+The class 'frameweb_AnnotationProperty' is a specialization of 'VocabularyEntity'.
+The class 'frameweb_AnnotationProperty' is a specialization of 'VocabularyAssociation'.
+The class 'frameweb_VocabularyDataType' is a specialization of 'VocabularyEntity'.
+The class 'frameweb_VocabularyDataType' is a specialization of 'DataType'.
+The class 'frameweb_NamedIndividual' is a specialization of 'VocabularyEntity'.
+The class 'frameweb_NamedIndividual' is a specialization of 'Individual'.
+The class 'frameweb_VocabularyClassExpression' is a specialization of 'Class'.
+The class 'frameweb_VocabularyClass' is a specialization of 'VocabularyEntity'.
+The class 'frameweb_VocabularyClass' is a specialization of 'VocabularyClassExpression'.
+The class 'frameweb_AnonymousIndividual' is a specialization of 'Individual'.
+The class 'frameweb_Individual' is a specialization of 'Property'.
+The class 'frameweb_VocabularyLiteral' is a specialization of 'LiteralString'.
+
+Relationships between classes are modeled using associations.
+An association connects 'frameweb_FramewebModel' and 'frameweb_FramewebProject'. From 'frameweb_FramewebModel', the role 'frameweb_FramewebModel' has cardinality 0..*, and from 'frameweb_FramewebProject', the role 'frameweb_FramewebProject' has cardinality 0..*.
+An association connects 'frameweb_FramewebProject' and 'frameweb_FrameworkProfile'. From 'frameweb_FramewebProject', the role 'frameweb_FramewebProject2' has cardinality 0..*, and from 'frameweb_FrameworkProfile', the role 'frameweb_FrameworkProfile' has cardinality 0..*.
+An association connects 'frameweb_TagLib' and 'frameweb_Page'. From 'frameweb_TagLib', the role 'frameweb_TagLib' has cardinality 0..*, and from 'frameweb_Page', the role 'frameweb_Page' has cardinality 0..*.
+An association connects 'frameweb_Template' and 'frameweb_TagLib'. From 'frameweb_Template', the role 'frameweb_Template' has cardinality 0..*, and from 'frameweb_TagLib', the role 'frameweb_TagLib5' has cardinality 0..*.
+An association connects 'frameweb_IOParameter' and 'frameweb_UIComponentField'. From 'frameweb_IOParameter', the role 'inject' has cardinality 0..*, and from 'frameweb_UIComponentField', the role 'UIComponentField' has cardinality 0..*.
+An association connects 'frameweb_ResultDependency' and 'frameweb_Result'. From 'frameweb_ResultDependency', the role 'frameweb_ResultDependency' has cardinality 0..*, and from 'frameweb_Result', the role 'frameweb_Result' has cardinality 0..*.
+An association connects 'frameweb_FrontControllerMethod' and 'frameweb_ResultDependency'. From 'frameweb_FrontControllerMethod', the role 'frameweb_FrontControllerMethod' has cardinality 0..*, and from 'frameweb_ResultDependency', the role 'frameweb_ResultDependency9' has cardinality 0..*.
+An association connects 'frameweb_ResultDependency' and 'frameweb_ResultConstraint'. From 'frameweb_ResultDependency', the role 'frameweb_ResultDependency11' has cardinality 0..*, and from 'frameweb_ResultConstraint', the role 'frameweb_ResultConstraint' has cardinality 0..*.
+An association connects 'frameweb_FrontControllerDependency' and 'frameweb_FrontControllerMethod'. From 'frameweb_FrontControllerDependency', the role 'frameweb_FrontControllerDependency' has cardinality 0..*, and from 'frameweb_FrontControllerMethod', the role 'frameweb_FrontControllerMethod13' has cardinality 0..*.
+An association connects 'frameweb_MethodCosntraint' and 'frameweb_FrontControllerDependency'. From 'frameweb_MethodCosntraint', the role 'frameweb_MethodCosntraint' has cardinality 0..*, and from 'frameweb_FrontControllerDependency', the role 'frameweb_FrontControllerDependency15' has cardinality 0..*.
+An association connects 'frameweb_PageConstraint' and 'frameweb_PageDependency'. From 'frameweb_PageConstraint', the role 'frameweb_PageConstraint' has cardinality 0..*, and from 'frameweb_PageDependency', the role 'frameweb_PageDependency' has cardinality 0..*.
+An association connects 'frameweb_FrontControllerMethod' and 'frameweb_ChainingDependency'. From 'frameweb_FrontControllerMethod', the role 'frameweb_FrontControllerMethod18' has cardinality 0..*, and from 'frameweb_ChainingDependency', the role 'frameweb_ChainingDependency' has cardinality 0..*.
+An association connects 'frameweb_ChainingDependency' and 'frameweb_FrontControllerMethod'. From 'frameweb_ChainingDependency', the role 'frameweb_ChainingDependency20' has cardinality 0..*, and from 'frameweb_FrontControllerMethod', the role 'frameweb_FrontControllerMethod21' has cardinality 0..*.
+An association connects 'frameweb_ChainingDependency' and 'frameweb_ChainingConstraint'. From 'frameweb_ChainingDependency', the role 'frameweb_ChainingDependency23' has cardinality 0..*, and from 'frameweb_ChainingConstraint', the role 'frameweb_ChainingConstraint' has cardinality 0..*.
+An association connects 'frameweb_IOParameter' and 'frameweb_UIComponentField'. From 'frameweb_IOParameter', the role 'IOParameter' has cardinality 0..*, and from 'frameweb_UIComponentField', the role 'display' has cardinality 0..*.
+An association connects 'frameweb_IRI' and 'frameweb_Vocabulary'. From 'frameweb_IRI', the role 'frameweb_IRI' has cardinality 0..*, and from 'frameweb_Vocabulary', the role 'frameweb_Vocabulary' has cardinality 0..*.
+An association connects 'frameweb_Vocabulary' and 'frameweb_IRI'. From 'frameweb_Vocabulary', the role 'frameweb_Vocabulary27' has cardinality 0..*, and from 'frameweb_IRI', the role 'frameweb_IRI28' has cardinality 0..*.
+An association connects 'frameweb_Axiom' and 'frameweb_Vocabulary'. From 'frameweb_Axiom', the role 'frameweb_Axiom' has cardinality 0..*, and from 'frameweb_Vocabulary', the role 'frameweb_Vocabulary30' has cardinality 0..*.
+An association connects 'frameweb_Annotation' and 'frameweb_Vocabulary'. From 'frameweb_Annotation', the role 'frameweb_Annotation' has cardinality 0..*, and from 'frameweb_Vocabulary', the role 'frameweb_Vocabulary32' has cardinality 0..*.
+An association connects 'frameweb_DataType' and 'frameweb_Property'. From 'frameweb_DataType', the role 'frameweb_DataType' has cardinality 0..*, and from 'frameweb_Property', the role 'frameweb_Property' has cardinality 0..*.
+An association connects 'frameweb_Interface' and 'frameweb_Property'. From 'frameweb_Interface', the role 'frameweb_Interface' has cardinality 0..*, and from 'frameweb_Property', the role 'frameweb_Property35' has cardinality 0..*.
+An association connects 'frameweb_Property' and 'frameweb_Property'. From 'frameweb_Property', the role 'Property' has cardinality 0..*, and from 'frameweb_Property', the role 'qualifier' has cardinality 0..*.
+An association connects 'frameweb_Property' and 'frameweb_Property'. From 'frameweb_Property', the role 'Property40' has cardinality 0..*, and from 'frameweb_Property', the role 'associationEnd' has cardinality 0..*.
+An association connects 'frameweb_Property' and 'frameweb_Class'. From 'frameweb_Property', the role 'frameweb_Property42' has cardinality 0..*, and from 'frameweb_Class', the role 'frameweb_Class' has cardinality 0..*.
+An association connects 'frameweb_Property' and 'frameweb_ValueSpecification'. From 'frameweb_Property', the role 'frameweb_Property44' has cardinality 0..*, and from 'frameweb_ValueSpecification', the role 'frameweb_ValueSpecification' has cardinality 0..*.
+An association connects 'frameweb_Property' and 'frameweb_Property'. From 'frameweb_Property', the role 'frameweb_Property47' has cardinality 0..*, and from 'frameweb_Property', the role 'frameweb_Property45' has cardinality 0..*.
+An association connects 'frameweb_Association' and 'frameweb_Property'. From 'frameweb_Association', the role 'Association' has cardinality 0..*, and from 'frameweb_Property', the role 'ownedEnd' has cardinality 0..*.
+An association connects 'frameweb_Property' and 'frameweb_Property'. From 'frameweb_Property', the role 'frameweb_Property49' has cardinality 0..*, and from 'frameweb_Property', the role 'frameweb_Property51' has cardinality 0..*.
+An association connects 'frameweb_Property' and 'frameweb_Property'. From 'frameweb_Property', the role 'frameweb_Property54' has cardinality 0..*, and from 'frameweb_Property', the role 'frameweb_Property52' has cardinality 0..*.
+An association connects 'frameweb_Property' and 'frameweb_Association'. From 'frameweb_Property', the role 'memberEnd' has cardinality 0..*, and from 'frameweb_Association', the role 'Association56' has cardinality 0..*.
+An association connects 'frameweb_Type' and 'frameweb_Association'. From 'frameweb_Type', the role 'frameweb_Type' has cardinality 0..*, and from 'frameweb_Association', the role 'frameweb_Association' has cardinality 0..*.
+An association connects 'frameweb_Association' and 'frameweb_Property'. From 'frameweb_Association', the role 'association' has cardinality 0..*, and from 'frameweb_Property', the role 'Property59' has cardinality 0..*.
+An association connects 'frameweb_Property' and 'frameweb_Association'. From 'frameweb_Property', the role 'Property61' has cardinality 0..*, and from 'frameweb_Association', the role 'owningAssociation' has cardinality 0..*.
+An association connects 'frameweb_Property' and 'frameweb_Association'. From 'frameweb_Property', the role 'frameweb_Property64' has cardinality 0..*, and from 'frameweb_Association', the role 'frameweb_Association63' has cardinality 0..*.
+An association connects 'frameweb_VocabularyEntity' and 'frameweb_IRI'. From 'frameweb_VocabularyEntity', the role 'frameweb_VocabularyEntity' has cardinality 0..*, and from 'frameweb_IRI', the role 'frameweb_IRI66' has cardinality 0..*.
+An association connects 'frameweb_VocabularyClass' and 'frameweb_VocabularyProperty'. From 'frameweb_VocabularyClass', the role 'frameweb_VocabularyClass' has cardinality 0..*, and from 'frameweb_VocabularyProperty', the role 'frameweb_VocabularyProperty' has cardinality 0..*.

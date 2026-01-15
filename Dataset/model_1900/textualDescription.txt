@@ -1,0 +1,254 @@
+The domain model 'fIDL' describes the core structural elements and their relationships within the system.
+
+The model defines 60 main class(es).
+
+'fIDL_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'isTrue', which is of type bool.
+
+'fIDL_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_Attribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'fIDL_Int8Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_Uint32Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_StructMember' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_Uint8Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_UnionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_AttributedDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_InterfaceParameters' represents an important domain concept.
+It has the following attributes: 'resultName', which is of type str; 'name', which is of type str.
+
+'fIDL_VectorType' represents an important domain concept.
+It has one attribute: 'nullable', which is of type bool.
+
+'fIDL_UnionMember' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_RequestType' represents an important domain concept.
+It has one attribute: 'nullable', which is of type bool.
+
+'fIDL_InterfaceMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_Float32Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_Int16Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_EnumMemberValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'fIDL_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fIDL_Declaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fIDL_Int64Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_File' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_Uint16Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'UnionMember' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceMember' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_ConstDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_LibraryHeader' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fIDL_StringType' represents an important domain concept.
+It has one attribute: 'nullable', which is of type bool.
+
+'fIDL_InterfaceMember' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_StructDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_InterfaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_StructField' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fIDL_Uint64Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'File' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_Using' represents an important domain concept.
+It has the following attributes: 'importedNamespace', which is of type str; 'name', which is of type str.
+
+'fIDL_IdentifierType' represents an important domain concept.
+It has one attribute: 'nullable', which is of type bool.
+
+'fIDL_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_Constant' represents an important domain concept.
+It has one attribute: 'ci', which is of type str.
+
+'fIDL_NumberLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumMemberValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_HandleType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'nullable', which is of type bool.
+
+'fIDL_EnumMember' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fIDL_StringLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_Int32Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_Float64Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_UnionField' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fIDL_StatusType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fIDL_ParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fIDL_LibraryHeader' is a specialization of 'File'.
+The class 'fIDL_ConstDeclaration' is a specialization of 'Declaration'.
+The class 'fIDL_ConstDeclaration' is a specialization of 'InterfaceMember'.
+The class 'fIDL_EnumDeclaration' is a specialization of 'Declaration'.
+The class 'fIDL_InterfaceDeclaration' is a specialization of 'Declaration'.
+The class 'fIDL_InterfaceMethod' is a specialization of 'InterfaceMember'.
+The class 'fIDL_StructDeclaration' is a specialization of 'Declaration'.
+The class 'fIDL_UnionDeclaration' is a specialization of 'Declaration'.
+The class 'fIDL_UnionField' is a specialization of 'UnionMember'.
+The class 'fIDL_IdentifierType' is a specialization of 'Type'.
+The class 'fIDL_ArrayType' is a specialization of 'Type'.
+The class 'fIDL_VectorType' is a specialization of 'Type'.
+The class 'fIDL_StringType' is a specialization of 'Type'.
+The class 'fIDL_HandleType' is a specialization of 'Type'.
+The class 'fIDL_RequestType' is a specialization of 'Type'.
+The class 'fIDL_PrimitiveType' is a specialization of 'Type'.
+The class 'fIDL_IntegerType' is a specialization of 'PrimitiveType'.
+The class 'fIDL_Literal' is a specialization of 'Constant'.
+The class 'fIDL_Expression' is a specialization of 'EnumMemberValue'.
+The class 'fIDL_Expression' is a specialization of 'Literal'.
+The class 'fIDL_StatusType' is a specialization of 'PrimitiveType'.
+The class 'fIDL_BooleanType' is a specialization of 'PrimitiveType'.
+The class 'fIDL_Float32Type' is a specialization of 'PrimitiveType'.
+The class 'fIDL_Float64Type' is a specialization of 'PrimitiveType'.
+The class 'fIDL_Int8Type' is a specialization of 'IntegerType'.
+The class 'fIDL_Int16Type' is a specialization of 'IntegerType'.
+The class 'fIDL_Int32Type' is a specialization of 'IntegerType'.
+The class 'fIDL_Int64Type' is a specialization of 'IntegerType'.
+The class 'fIDL_Uint8Type' is a specialization of 'IntegerType'.
+The class 'fIDL_Uint16Type' is a specialization of 'IntegerType'.
+The class 'fIDL_Uint32Type' is a specialization of 'IntegerType'.
+The class 'fIDL_Uint64Type' is a specialization of 'IntegerType'.
+The class 'fIDL_BooleanLiteral' is a specialization of 'Expression'.
+The class 'fIDL_NumberLiteral' is a specialization of 'Expression'.
+The class 'fIDL_StringLiteral' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fIDL_Using' and 'fIDL_LibraryHeader'. From 'fIDL_Using', the role 'fIDL_Using' has cardinality 0..*, and from 'fIDL_LibraryHeader', the role 'fIDL_LibraryHeader' has cardinality 0..*.
+An association connects 'fIDL_AttributedDeclaration' and 'fIDL_LibraryHeader'. From 'fIDL_AttributedDeclaration', the role 'fIDL_AttributedDeclaration' has cardinality 0..*, and from 'fIDL_LibraryHeader', the role 'fIDL_LibraryHeader2' has cardinality 0..*.
+An association connects 'fIDL_AttributedDeclaration' and 'fIDL_Attribute'. From 'fIDL_AttributedDeclaration', the role 'fIDL_AttributedDeclaration4' has cardinality 0..*, and from 'fIDL_Attribute', the role 'fIDL_Attribute' has cardinality 0..*.
+An association connects 'fIDL_AttributedDeclaration' and 'fIDL_Declaration'. From 'fIDL_AttributedDeclaration', the role 'fIDL_AttributedDeclaration6' has cardinality 0..*, and from 'fIDL_Declaration', the role 'fIDL_Declaration' has cardinality 0..*.
+An association connects 'fIDL_ConstDeclaration' and 'fIDL_Type'. From 'fIDL_ConstDeclaration', the role 'fIDL_ConstDeclaration' has cardinality 0..*, and from 'fIDL_Type', the role 'fIDL_Type' has cardinality 0..*.
+An association connects 'fIDL_ConstDeclaration' and 'fIDL_Constant'. From 'fIDL_ConstDeclaration', the role 'fIDL_ConstDeclaration9' has cardinality 0..*, and from 'fIDL_Constant', the role 'fIDL_Constant' has cardinality 0..*.
+An association connects 'fIDL_IntegerType' and 'fIDL_EnumDeclaration'. From 'fIDL_IntegerType', the role 'fIDL_IntegerType' has cardinality 0..*, and from 'fIDL_EnumDeclaration', the role 'fIDL_EnumDeclaration' has cardinality 0..*.
+An association connects 'fIDL_EnumDeclaration' and 'fIDL_EnumMember'. From 'fIDL_EnumDeclaration', the role 'fIDL_EnumDeclaration12' has cardinality 0..*, and from 'fIDL_EnumMember', the role 'fIDL_EnumMember' has cardinality 0..*.
+An association connects 'fIDL_EnumMember' and 'fIDL_EnumMemberValue'. From 'fIDL_EnumMember', the role 'fIDL_EnumMember14' has cardinality 0..*, and from 'fIDL_EnumMemberValue', the role 'fIDL_EnumMemberValue' has cardinality 0..*.
+An association connects 'fIDL_InterfaceDeclaration' and 'fIDL_InterfaceDeclaration'. From 'fIDL_InterfaceDeclaration', the role 'fIDL_InterfaceDeclaration15' has cardinality 0..*, and from 'fIDL_InterfaceDeclaration', the role 'fIDL_InterfaceDeclaration' has cardinality 0..*.
+An association connects 'fIDL_InterfaceMember' and 'fIDL_InterfaceDeclaration'. From 'fIDL_InterfaceMember', the role 'fIDL_InterfaceMember' has cardinality 0..*, and from 'fIDL_InterfaceDeclaration', the role 'fIDL_InterfaceDeclaration18' has cardinality 0..*.
+An association connects 'fIDL_Expression' and 'fIDL_InterfaceMethod'. From 'fIDL_Expression', the role 'fIDL_Expression' has cardinality 0..*, and from 'fIDL_InterfaceMethod', the role 'fIDL_InterfaceMethod' has cardinality 0..*.
+An association connects 'fIDL_InterfaceMethod' and 'fIDL_InterfaceParameters'. From 'fIDL_InterfaceMethod', the role 'fIDL_InterfaceMethod21' has cardinality 0..*, and from 'fIDL_InterfaceParameters', the role 'fIDL_InterfaceParameters' has cardinality 0..*.
+An association connects 'fIDL_InterfaceParameters' and 'fIDL_ParameterList'. From 'fIDL_InterfaceParameters', the role 'fIDL_InterfaceParameters23' has cardinality 0..*, and from 'fIDL_ParameterList', the role 'fIDL_ParameterList' has cardinality 0..*.
+An association connects 'fIDL_ParameterList' and 'fIDL_InterfaceParameters'. From 'fIDL_ParameterList', the role 'fIDL_ParameterList26' has cardinality 0..*, and from 'fIDL_InterfaceParameters', the role 'fIDL_InterfaceParameters25' has cardinality 0..*.
+An association connects 'fIDL_Parameter' and 'fIDL_ParameterList'. From 'fIDL_Parameter', the role 'fIDL_Parameter' has cardinality 0..*, and from 'fIDL_ParameterList', the role 'fIDL_ParameterList28' has cardinality 0..*.
+An association connects 'fIDL_Parameter' and 'fIDL_Type'. From 'fIDL_Parameter', the role 'fIDL_Parameter30' has cardinality 0..*, and from 'fIDL_Type', the role 'fIDL_Type31' has cardinality 0..*.
+An association connects 'fIDL_StructDeclaration' and 'fIDL_StructMember'. From 'fIDL_StructDeclaration', the role 'fIDL_StructDeclaration' has cardinality 0..*, and from 'fIDL_StructMember', the role 'fIDL_StructMember' has cardinality 0..*.
+An association connects 'fIDL_StructMember' and 'fIDL_StructField'. From 'fIDL_StructMember', the role 'fIDL_StructMember34' has cardinality 0..*, and from 'fIDL_StructField', the role 'fIDL_StructField' has cardinality 0..*.
+An association connects 'fIDL_StructMember' and 'fIDL_ConstDeclaration'. From 'fIDL_StructMember', the role 'fIDL_StructMember36' has cardinality 0..*, and from 'fIDL_ConstDeclaration', the role 'fIDL_ConstDeclaration37' has cardinality 0..*.
+An association connects 'fIDL_StructField' and 'fIDL_Type'. From 'fIDL_StructField', the role 'fIDL_StructField39' has cardinality 0..*, and from 'fIDL_Type', the role 'fIDL_Type40' has cardinality 0..*.
+An association connects 'fIDL_StructField' and 'fIDL_Constant'. From 'fIDL_StructField', the role 'fIDL_StructField42' has cardinality 0..*, and from 'fIDL_Constant', the role 'fIDL_Constant43' has cardinality 0..*.
+An association connects 'fIDL_UnionDeclaration' and 'fIDL_ConstDeclaration'. From 'fIDL_UnionDeclaration', the role 'fIDL_UnionDeclaration' has cardinality 0..*, and from 'fIDL_ConstDeclaration', the role 'fIDL_ConstDeclaration45' has cardinality 0..*.
+An association connects 'fIDL_UnionDeclaration' and 'fIDL_UnionMember'. From 'fIDL_UnionDeclaration', the role 'fIDL_UnionDeclaration47' has cardinality 0..*, and from 'fIDL_UnionMember', the role 'fIDL_UnionMember' has cardinality 0..*.
+An association connects 'fIDL_Type' and 'fIDL_UnionField'. From 'fIDL_Type', the role 'fIDL_Type49' has cardinality 0..*, and from 'fIDL_UnionField', the role 'fIDL_UnionField' has cardinality 0..*.
+An association connects 'fIDL_Declaration' and 'fIDL_IdentifierType'. From 'fIDL_Declaration', the role 'fIDL_Declaration51' has cardinality 0..*, and from 'fIDL_IdentifierType', the role 'fIDL_IdentifierType' has cardinality 0..*.
+An association connects 'fIDL_ArrayType' and 'fIDL_Type'. From 'fIDL_ArrayType', the role 'fIDL_ArrayType' has cardinality 0..*, and from 'fIDL_Type', the role 'fIDL_Type53' has cardinality 0..*.
+An association connects 'fIDL_Constant' and 'fIDL_ArrayType'. From 'fIDL_Constant', the role 'fIDL_Constant56' has cardinality 0..*, and from 'fIDL_ArrayType', the role 'fIDL_ArrayType55' has cardinality 0..*.
+An association connects 'fIDL_Type' and 'fIDL_VectorType'. From 'fIDL_Type', the role 'fIDL_Type58' has cardinality 0..*, and from 'fIDL_VectorType', the role 'fIDL_VectorType' has cardinality 0..*.
+An association connects 'fIDL_VectorType' and 'fIDL_Constant'. From 'fIDL_VectorType', the role 'fIDL_VectorType60' has cardinality 0..*, and from 'fIDL_Constant', the role 'fIDL_Constant61' has cardinality 0..*.
+An association connects 'fIDL_StringType' and 'fIDL_Constant'. From 'fIDL_StringType', the role 'fIDL_StringType' has cardinality 0..*, and from 'fIDL_Constant', the role 'fIDL_Constant63' has cardinality 0..*.
+An association connects 'fIDL_RequestType' and 'fIDL_Declaration'. From 'fIDL_RequestType', the role 'fIDL_RequestType' has cardinality 0..*, and from 'fIDL_Declaration', the role 'fIDL_Declaration65' has cardinality 0..*.

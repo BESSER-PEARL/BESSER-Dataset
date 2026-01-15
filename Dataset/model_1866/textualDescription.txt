@@ -1,0 +1,47 @@
+The domain model 'datatypes' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatypes_TypeModel' represents an important domain concept.
+It does not declare any attributes.
+
+'datatypes_Field' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'name', which is of type str.
+
+'datatypes_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'datatypes_DataTypeLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'datatypes_ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatypes_DataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'datatypes_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'datatypes_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'datatypes_DataTypeLibrary' is a specialization of 'AbstractElement'.
+The class 'datatypes_Import' is a specialization of 'AbstractElement'.
+The class 'datatypes_DataType' is a specialization of 'AbstractElement'.
+The class 'datatypes_SimpleType' is a specialization of 'DataType'.
+The class 'datatypes_ComplexType' is a specialization of 'DataType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'datatypes_AbstractElement' and 'datatypes_TypeModel'. From 'datatypes_AbstractElement', the role 'datatypes_AbstractElement' has cardinality 0..*, and from 'datatypes_TypeModel', the role 'datatypes_TypeModel' has cardinality 0..*.
+An association connects 'datatypes_AbstractElement' and 'datatypes_DataTypeLibrary'. From 'datatypes_AbstractElement', the role 'datatypes_AbstractElement2' has cardinality 0..*, and from 'datatypes_DataTypeLibrary', the role 'datatypes_DataTypeLibrary' has cardinality 0..*.
+An association connects 'datatypes_ComplexType' and 'datatypes_ComplexType'. From 'datatypes_ComplexType', the role 'datatypes_ComplexType' has cardinality 0..*, and from 'datatypes_ComplexType', the role 'datatypes_ComplexType3' has cardinality 0..*.
+An association connects 'datatypes_Field' and 'datatypes_ComplexType'. From 'datatypes_Field', the role 'datatypes_Field' has cardinality 0..*, and from 'datatypes_ComplexType', the role 'datatypes_ComplexType6' has cardinality 0..*.
+An association connects 'datatypes_Field' and 'datatypes_DataType'. From 'datatypes_Field', the role 'datatypes_Field8' has cardinality 0..*, and from 'datatypes_DataType', the role 'datatypes_DataType' has cardinality 0..*.

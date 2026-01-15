@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/kchobantonov/org.eclipse.emf.teneo/tests/org.eclipse.emf.teneo.commontest/src/org/eclipse/emf/teneo/test/emf/sample/library.ecore

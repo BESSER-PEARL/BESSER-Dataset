@@ -1,0 +1,123 @@
+The domain model 'expressions' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'expressions_ast_LogicalRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_type_NaturalType' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_expressions_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ast_Expression' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'text', which is of type str.
+
+'expressions_ast_VariableReference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'expressions_type_ResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ast_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expressions_ast_ActionRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_type_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_type_ClockType' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ast_ResourceRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_type_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_type_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ast_TernaryExpression' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'expressions_type_FloatType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_type_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ast_BinaryExpression' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'expressions_ast_Constant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expressions_type_BaseType' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ast_AstVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ast_AbstractRoot' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'expressions_ast_UnaryExpression' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BinaryOperation' defines the following possible values: 'SUB', 'ASSIGN_ADD', 'OR', 'MOD', 'AND', 'ASSIGN_MUL', 'EQ', 'NE', 'GE', 'ASSIGN_MOD', 'LT', 'GT', 'DIV', 'LE', 'MUL', 'ASSIGN_SUB', 'ADD', 'DIFF', 'ASSIGN_DIV', 'ASSIGN'.
+The enumeration 'UnaryOperation' defines the following possible values: 'NOT', 'PLUS', 'MINUS'.
+The enumeration 'TernaryOperation' defines a single possible value: 'QUESTION'.
+The enumeration 'ResolvedType' defines the following possible values: 'resource', 'unknown', 'natural', 'integer', 'float', 'boolean', 'clock'.
+
+The model also captures inheritance relationships between classes.
+The class 'expressions_ast_ActionRoot' is a specialization of 'AbstractRoot'.
+The class 'expressions_ast_LogicalRoot' is a specialization of 'AbstractRoot'.
+The class 'expressions_ast_ResourceRoot' is a specialization of 'AbstractRoot'.
+The class 'expressions_ast_TernaryExpression' is a specialization of 'Expression'.
+The class 'expressions_ast_BinaryExpression' is a specialization of 'Expression'.
+The class 'expressions_ast_UnaryExpression' is a specialization of 'Expression'.
+The class 'expressions_ast_VariableReference' is a specialization of 'Expression'.
+The class 'expressions_ast_Constant' is a specialization of 'Expression'.
+The class 'expressions_ast_Literal' is a specialization of 'Expression'.
+The class 'expressions_type_BaseType' is a specialization of 'Type'.
+The class 'expressions_type_IntegerType' is a specialization of 'BaseType'.
+The class 'expressions_type_BooleanType' is a specialization of 'BaseType'.
+The class 'expressions_type_NaturalType' is a specialization of 'BaseType'.
+The class 'expressions_type_ClockType' is a specialization of 'BaseType'.
+The class 'expressions_type_FloatType' is a specialization of 'BaseType'.
+The class 'expressions_type_ResourceType' is a specialization of 'BaseType'.
+The class 'expressions_type_AnyType' is a specialization of 'BaseType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'VariableReference' and 'expressions_ast_AbstractRoot'. From 'VariableReference', the role 'VariableReference' has cardinality 0..*, and from 'expressions_ast_AbstractRoot', the role 'expressions_ast_AbstractRoot' has cardinality 0..*.
+An association connects 'Expression' and 'expressions_ast_ActionRoot'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'expressions_ast_ActionRoot', the role 'expressions_ast_ActionRoot' has cardinality 0..*.
+An association connects 'expressions_ast_LogicalRoot' and 'Expression'. From 'expressions_ast_LogicalRoot', the role 'expressions_ast_LogicalRoot' has cardinality 0..*, and from 'Expression', the role 'Expression3' has cardinality 0..*.
+An association connects 'Expression' and 'expressions_ast_ResourceRoot'. From 'Expression', the role 'Expression5' has cardinality 0..*, and from 'expressions_ast_ResourceRoot', the role 'expressions_ast_ResourceRoot' has cardinality 0..*.
+An association connects 'Expression' and 'expressions_ast_TernaryExpression'. From 'Expression', the role 'Expression7' has cardinality 0..*, and from 'expressions_ast_TernaryExpression', the role 'expressions_ast_TernaryExpression' has cardinality 0..*.
+An association connects 'Expression' and 'expressions_ast_TernaryExpression'. From 'Expression', the role 'Expression10' has cardinality 0..*, and from 'expressions_ast_TernaryExpression', the role 'expressions_ast_TernaryExpression9' has cardinality 0..*.
+An association connects 'Expression' and 'expressions_ast_TernaryExpression'. From 'Expression', the role 'Expression13' has cardinality 0..*, and from 'expressions_ast_TernaryExpression', the role 'expressions_ast_TernaryExpression12' has cardinality 0..*.
+An association connects 'expressions_ast_BinaryExpression' and 'Expression'. From 'expressions_ast_BinaryExpression', the role 'expressions_ast_BinaryExpression' has cardinality 0..*, and from 'Expression', the role 'Expression15' has cardinality 0..*.
+An association connects 'Expression' and 'expressions_ast_BinaryExpression'. From 'Expression', the role 'Expression18' has cardinality 0..*, and from 'expressions_ast_BinaryExpression', the role 'expressions_ast_BinaryExpression17' has cardinality 0..*.
+An association connects 'Expression' and 'expressions_ast_UnaryExpression'. From 'Expression', the role 'Expression20' has cardinality 0..*, and from 'expressions_ast_UnaryExpression', the role 'expressions_ast_UnaryExpression' has cardinality 0..*.
+An association connects 'expressions_ast_VariableReference' and 'Expression'. From 'expressions_ast_VariableReference', the role 'expressions_ast_VariableReference' has cardinality 0..*, and from 'Expression', the role 'Expression22' has cardinality 0..*.
+An association connects 'expressions_ast_VariableReference' and 'ast_expressions_EObject'. From 'expressions_ast_VariableReference', the role 'expressions_ast_VariableReference24' has cardinality 0..*, and from 'ast_expressions_EObject', the role 'ast_expressions_EObject' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fjavier-umu/mde-data-ree/Y_F9_DDLNormalized2JPA/metamodels/DDL_ORI.ecore

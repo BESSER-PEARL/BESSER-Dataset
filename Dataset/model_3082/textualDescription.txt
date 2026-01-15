@@ -1,0 +1,144 @@
+The domain model 'reqLanguage' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'reqLanguage_Time' represents an important domain concept.
+It has the following attributes: 'timeUnit', which is of type str; 'value', which is of type int.
+
+'reqLanguage_ParamEvent' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+'reqLanguage_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_PrefixCondition' represents an important domain concept.
+It has one attribute: 'prefixFixedSyntax', which is of type str.
+
+'reqLanguage_Operator' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'reqLanguage_PrefixEvent' represents an important domain concept.
+It has one attribute: 'prefixFixedSyntax', which is of type str.
+
+'reqLanguage_Parameter' represents an important domain concept.
+It has the following attributes: 'parameter', which is of type str; 'name', which is of type str.
+
+'reqLanguage_TimingConstraint' represents an important domain concept.
+It has the following attributes: 'minmax', which is of type str; 'timingConstraint', which is of type str.
+
+'reqLanguage_Function' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'function', which is of type str.
+
+'reqLanguage_Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_MainComposition' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_Prefix' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'state', which is of type str.
+
+'reqLanguage_User' represents an important domain concept.
+It has the following attributes: 'user', which is of type str; 'name', which is of type str.
+
+'reqLanguage_MainFunctions' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_System' represents an important domain concept.
+It has the following attributes: 'system', which is of type str; 'name', which is of type str.
+
+'reqLanguage_ReqID' represents an important domain concept.
+It has the following attributes: 'reqID', which is of type str; 'name', which is of type str.
+
+'reqLanguage_ActorEvent' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+'reqLanguage_Value' represents an important domain concept.
+It has the following attributes: 'val', which is of type str; 'value', which is of type int.
+
+'reqLanguage_NoTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_ParameterState' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_PrefixState' represents an important domain concept.
+It has one attribute: 'prefixFixedSyntax', which is of type str.
+
+'reqLanguage_Actor' represents an important domain concept.
+It has the following attributes: 'actor', which is of type str; 'name', which is of type str.
+
+'reqLanguage_StateEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_PrefixRightOperand' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'reqLanguage_MainStateTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_MainAttributes' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_OutTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_Action' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'name', which is of type str.
+
+'reqLanguage_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'reqLanguage_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'attribute', which is of type str; 'type', which is of type str.
+
+'reqLanguage_MainFunction' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'reqLanguage_Requirement' and 'reqLanguage_Model'. From 'reqLanguage_Requirement', the role 'reqLanguage_Requirement' has cardinality 0..*, and from 'reqLanguage_Model', the role 'reqLanguage_Model' has cardinality 0..*.
+An association connects 'reqLanguage_ReqID' and 'reqLanguage_Requirement'. From 'reqLanguage_ReqID', the role 'reqLanguage_ReqID' has cardinality 0..*, and from 'reqLanguage_Requirement', the role 'reqLanguage_Requirement2' has cardinality 0..*.
+An association connects 'reqLanguage_Requirement' and 'reqLanguage_Prefix'. From 'reqLanguage_Requirement', the role 'reqLanguage_Requirement4' has cardinality 0..*, and from 'reqLanguage_Prefix', the role 'reqLanguage_Prefix' has cardinality 0..*.
+An association connects 'reqLanguage_EObject' and 'reqLanguage_Requirement'. From 'reqLanguage_EObject', the role 'reqLanguage_EObject' has cardinality 0..*, and from 'reqLanguage_Requirement', the role 'reqLanguage_Requirement6' has cardinality 0..*.
+An association connects 'reqLanguage_EObject' and 'reqLanguage_Prefix'. From 'reqLanguage_EObject', the role 'reqLanguage_EObject9' has cardinality 0..*, and from 'reqLanguage_Prefix', the role 'reqLanguage_Prefix8' has cardinality 0..*.
+An association connects 'reqLanguage_PrefixRightOperand' and 'reqLanguage_Prefix'. From 'reqLanguage_PrefixRightOperand', the role 'reqLanguage_PrefixRightOperand' has cardinality 0..*, and from 'reqLanguage_Prefix', the role 'reqLanguage_Prefix11' has cardinality 0..*.
+An association connects 'reqLanguage_PrefixRightOperand' and 'reqLanguage_EObject'. From 'reqLanguage_PrefixRightOperand', the role 'reqLanguage_PrefixRightOperand13' has cardinality 0..*, and from 'reqLanguage_EObject', the role 'reqLanguage_EObject14' has cardinality 0..*.
+An association connects 'reqLanguage_EObject' and 'reqLanguage_PrefixState'. From 'reqLanguage_EObject', the role 'reqLanguage_EObject16' has cardinality 0..*, and from 'reqLanguage_PrefixState', the role 'reqLanguage_PrefixState' has cardinality 0..*.
+An association connects 'reqLanguage_EObject' and 'reqLanguage_PrefixCondition'. From 'reqLanguage_EObject', the role 'reqLanguage_EObject18' has cardinality 0..*, and from 'reqLanguage_PrefixCondition', the role 'reqLanguage_PrefixCondition' has cardinality 0..*.
+An association connects 'reqLanguage_Operator' and 'reqLanguage_PrefixCondition'. From 'reqLanguage_Operator', the role 'reqLanguage_Operator' has cardinality 0..*, and from 'reqLanguage_PrefixCondition', the role 'reqLanguage_PrefixCondition20' has cardinality 0..*.
+An association connects 'reqLanguage_Value' and 'reqLanguage_PrefixCondition'. From 'reqLanguage_Value', the role 'reqLanguage_Value' has cardinality 0..*, and from 'reqLanguage_PrefixCondition', the role 'reqLanguage_PrefixCondition22' has cardinality 0..*.
+An association connects 'reqLanguage_TimingConstraint' and 'reqLanguage_PrefixCondition'. From 'reqLanguage_TimingConstraint', the role 'reqLanguage_TimingConstraint' has cardinality 0..*, and from 'reqLanguage_PrefixCondition', the role 'reqLanguage_PrefixCondition24' has cardinality 0..*.
+An association connects 'reqLanguage_PrefixEvent' and 'reqLanguage_EObject'. From 'reqLanguage_PrefixEvent', the role 'reqLanguage_PrefixEvent' has cardinality 0..*, and from 'reqLanguage_EObject', the role 'reqLanguage_EObject26' has cardinality 0..*.
+An association connects 'reqLanguage_EObject' and 'reqLanguage_ParamEvent'. From 'reqLanguage_EObject', the role 'reqLanguage_EObject28' has cardinality 0..*, and from 'reqLanguage_ParamEvent', the role 'reqLanguage_ParamEvent' has cardinality 0..*.
+An association connects 'reqLanguage_Value' and 'reqLanguage_ParamEvent'. From 'reqLanguage_Value', the role 'reqLanguage_Value31' has cardinality 0..*, and from 'reqLanguage_ParamEvent', the role 'reqLanguage_ParamEvent30' has cardinality 0..*.
+An association connects 'reqLanguage_EObject' and 'reqLanguage_ActorEvent'. From 'reqLanguage_EObject', the role 'reqLanguage_EObject33' has cardinality 0..*, and from 'reqLanguage_ActorEvent', the role 'reqLanguage_ActorEvent' has cardinality 0..*.
+An association connects 'reqLanguage_Parameter' and 'reqLanguage_ActorEvent'. From 'reqLanguage_Parameter', the role 'reqLanguage_Parameter' has cardinality 0..*, and from 'reqLanguage_ActorEvent', the role 'reqLanguage_ActorEvent35' has cardinality 0..*.
+An association connects 'reqLanguage_StateEvent' and 'reqLanguage_System'. From 'reqLanguage_StateEvent', the role 'reqLanguage_StateEvent' has cardinality 0..*, and from 'reqLanguage_System', the role 'reqLanguage_System' has cardinality 0..*.
+An association connects 'reqLanguage_StateEvent' and 'reqLanguage_State'. From 'reqLanguage_StateEvent', the role 'reqLanguage_StateEvent38' has cardinality 0..*, and from 'reqLanguage_State', the role 'reqLanguage_State' has cardinality 0..*.
+An association connects 'reqLanguage_Parameter' and 'reqLanguage_ParameterState'. From 'reqLanguage_Parameter', the role 'reqLanguage_Parameter40' has cardinality 0..*, and from 'reqLanguage_ParameterState', the role 'reqLanguage_ParameterState' has cardinality 0..*.
+An association connects 'reqLanguage_EObject' and 'reqLanguage_ParameterState'. From 'reqLanguage_EObject', the role 'reqLanguage_EObject43' has cardinality 0..*, and from 'reqLanguage_ParameterState', the role 'reqLanguage_ParameterState42' has cardinality 0..*.
+An association connects 'reqLanguage_MainFunction' and 'reqLanguage_EObject'. From 'reqLanguage_MainFunction', the role 'reqLanguage_MainFunction' has cardinality 0..*, and from 'reqLanguage_EObject', the role 'reqLanguage_EObject45' has cardinality 0..*.
+An association connects 'reqLanguage_MainFunction' and 'reqLanguage_Action'. From 'reqLanguage_MainFunction', the role 'reqLanguage_MainFunction47' has cardinality 0..*, and from 'reqLanguage_Action', the role 'reqLanguage_Action' has cardinality 0..*.
+An association connects 'reqLanguage_MainComposition' and 'reqLanguage_System'. From 'reqLanguage_MainComposition', the role 'reqLanguage_MainComposition' has cardinality 0..*, and from 'reqLanguage_System', the role 'reqLanguage_System49' has cardinality 0..*.
+An association connects 'reqLanguage_System' and 'reqLanguage_MainComposition'. From 'reqLanguage_System', the role 'reqLanguage_System52' has cardinality 0..*, and from 'reqLanguage_MainComposition', the role 'reqLanguage_MainComposition51' has cardinality 0..*.
+An association connects 'reqLanguage_MainStateTransition' and 'reqLanguage_System'. From 'reqLanguage_MainStateTransition', the role 'reqLanguage_MainStateTransition' has cardinality 0..*, and from 'reqLanguage_System', the role 'reqLanguage_System54' has cardinality 0..*.
+An association connects 'reqLanguage_EObject' and 'reqLanguage_MainStateTransition'. From 'reqLanguage_EObject', the role 'reqLanguage_EObject57' has cardinality 0..*, and from 'reqLanguage_MainStateTransition', the role 'reqLanguage_MainStateTransition56' has cardinality 0..*.
+An association connects 'reqLanguage_Action' and 'reqLanguage_MainStateTransition'. From 'reqLanguage_Action', the role 'reqLanguage_Action60' has cardinality 0..*, and from 'reqLanguage_MainStateTransition', the role 'reqLanguage_MainStateTransition59' has cardinality 0..*.
+An association connects 'reqLanguage_System' and 'reqLanguage_MainAttributes'. From 'reqLanguage_System', the role 'reqLanguage_System62' has cardinality 0..*, and from 'reqLanguage_MainAttributes', the role 'reqLanguage_MainAttributes' has cardinality 0..*.
+An association connects 'reqLanguage_Attribute' and 'reqLanguage_MainAttributes'. From 'reqLanguage_Attribute', the role 'reqLanguage_Attribute' has cardinality 0..*, and from 'reqLanguage_MainAttributes', the role 'reqLanguage_MainAttributes64' has cardinality 0..*.
+An association connects 'reqLanguage_System' and 'reqLanguage_MainFunctions'. From 'reqLanguage_System', the role 'reqLanguage_System66' has cardinality 0..*, and from 'reqLanguage_MainFunctions', the role 'reqLanguage_MainFunctions' has cardinality 0..*.
+An association connects 'reqLanguage_Function' and 'reqLanguage_MainFunctions'. From 'reqLanguage_Function', the role 'reqLanguage_Function' has cardinality 0..*, and from 'reqLanguage_MainFunctions', the role 'reqLanguage_MainFunctions68' has cardinality 0..*.
+An association connects 'reqLanguage_Transition' and 'reqLanguage_EObject'. From 'reqLanguage_Transition', the role 'reqLanguage_Transition' has cardinality 0..*, and from 'reqLanguage_EObject', the role 'reqLanguage_EObject70' has cardinality 0..*.
+An association connects 'reqLanguage_Transition' and 'reqLanguage_EObject'. From 'reqLanguage_Transition', the role 'reqLanguage_Transition72' has cardinality 0..*, and from 'reqLanguage_EObject', the role 'reqLanguage_EObject73' has cardinality 0..*.
+An association connects 'reqLanguage_EObject' and 'reqLanguage_OutTransition'. From 'reqLanguage_EObject', the role 'reqLanguage_EObject75' has cardinality 0..*, and from 'reqLanguage_OutTransition', the role 'reqLanguage_OutTransition' has cardinality 0..*.
+An association connects 'reqLanguage_NoTransition' and 'reqLanguage_EObject'. From 'reqLanguage_NoTransition', the role 'reqLanguage_NoTransition' has cardinality 0..*, and from 'reqLanguage_EObject', the role 'reqLanguage_EObject77' has cardinality 0..*.
+An association connects 'reqLanguage_Action' and 'reqLanguage_Parameter'. From 'reqLanguage_Action', the role 'reqLanguage_Action79' has cardinality 0..*, and from 'reqLanguage_Parameter', the role 'reqLanguage_Parameter80' has cardinality 0..*.
+An association connects 'reqLanguage_Action' and 'reqLanguage_Value'. From 'reqLanguage_Action', the role 'reqLanguage_Action82' has cardinality 0..*, and from 'reqLanguage_Value', the role 'reqLanguage_Value83' has cardinality 0..*.
+An association connects 'reqLanguage_Action' and 'reqLanguage_EObject'. From 'reqLanguage_Action', the role 'reqLanguage_Action85' has cardinality 0..*, and from 'reqLanguage_EObject', the role 'reqLanguage_EObject86' has cardinality 0..*.
+An association connects 'reqLanguage_Time' and 'reqLanguage_TimingConstraint'. From 'reqLanguage_Time', the role 'reqLanguage_Time' has cardinality 0..*, and from 'reqLanguage_TimingConstraint', the role 'reqLanguage_TimingConstraint88' has cardinality 0..*.

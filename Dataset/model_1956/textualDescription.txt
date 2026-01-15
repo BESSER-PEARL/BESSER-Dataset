@@ -1,0 +1,34 @@
+The domain model 'imdb' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'imdb_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'imdb_StaffList' represents an important domain concept.
+It has the following attributes: 'elementType', which is of type str; 'coverPhoto', which is of type str; 'elements', which is of type str; 'name', which is of type str; 'createdDate', which is of type date.
+
+'imdb_User' represents an important domain concept.
+It has the following attributes: 'username', which is of type str; 'watchlist', which is of type str.
+
+'imdb_Movie' represents an important domain concept.
+It has the following attributes: 'runtime', which is of type int; 'releaseDate', which is of type date; 'title', which is of type str; 'criticReviews', which is of type int; 'userRatings', which is of type int; 'rating', which is of type float; 'userReviews', which is of type int; 'genres', which is of type str; 'age', which is of type int; 'synopsis', which is of type str; 'metaScore', which is of type int; 'poster', which is of type str; 'metacriticReviews', which is of type int.
+
+'imdb_db' represents an important domain concept.
+It has one attribute: 'bestOf2014', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StaffListType' defines the following possible values: 'characters', 'titles'.
+The enumeration 'Genre' defines the following possible values: 'Adventure', 'SciFi'.
+
+Relationships between classes are modeled using associations.
+An association connects 'imdb_Movie' and 'imdb_Person'. From 'imdb_Movie', the role 'imdb_Movie' has cardinality 0..*, and from 'imdb_Person', the role 'imdb_Person' has cardinality 0..*.
+An association connects 'imdb_Person' and 'imdb_Movie'. From 'imdb_Person', the role 'imdb_Person3' has cardinality 0..*, and from 'imdb_Movie', the role 'imdb_Movie2' has cardinality 0..*.
+An association connects 'imdb_Movie' and 'imdb_Person'. From 'imdb_Movie', the role 'imdb_Movie5' has cardinality 0..*, and from 'imdb_Person', the role 'imdb_Person6' has cardinality 0..*.
+An association connects 'imdb_Person' and 'imdb_db'. From 'imdb_Person', the role 'imdb_Person8' has cardinality 0..*, and from 'imdb_db', the role 'imdb_db' has cardinality 0..*.
+An association connects 'imdb_db' and 'imdb_Person'. From 'imdb_db', the role 'imdb_db10' has cardinality 0..*, and from 'imdb_Person', the role 'imdb_Person11' has cardinality 0..*.
+An association connects 'imdb_Person' and 'imdb_db'. From 'imdb_Person', the role 'imdb_Person14' has cardinality 0..*, and from 'imdb_db', the role 'imdb_db13' has cardinality 0..*.
+An association connects 'imdb_db' and 'imdb_Movie'. From 'imdb_db', the role 'imdb_db16' has cardinality 0..*, and from 'imdb_Movie', the role 'imdb_Movie17' has cardinality 0..*.
+An association connects 'imdb_db' and 'imdb_StaffList'. From 'imdb_db', the role 'imdb_db19' has cardinality 0..*, and from 'imdb_StaffList', the role 'imdb_StaffList' has cardinality 0..*.
+An association connects 'imdb_db' and 'imdb_User'. From 'imdb_db', the role 'imdb_db21' has cardinality 0..*, and from 'imdb_User', the role 'imdb_User' has cardinality 0..*.
+An association connects 'imdb_User' and 'imdb_StaffList'. From 'imdb_User', the role 'imdb_User24' has cardinality 0..*, and from 'imdb_StaffList', the role 'imdb_StaffList23' has cardinality 0..*.

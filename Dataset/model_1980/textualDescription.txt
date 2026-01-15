@@ -1,0 +1,21 @@
+The domain model 'TraceMetamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'TraceMetamodel_TraceLinkEnd' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'TraceMetamodel_TraceModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TraceMetamodel_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceMetamodel_TraceLink' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'isNonInjective', which is of type bool; 'name', which is of type str; 'isPartial', which is of type bool; 'trule', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'TraceMetamodel_TraceModel' and 'TraceMetamodel_TraceLink'. From 'TraceMetamodel_TraceModel', the role 'TraceMetamodel_TraceModel' has cardinality 0..*, and from 'TraceMetamodel_TraceLink', the role 'TraceMetamodel_TraceLink' has cardinality 0..*.
+An association connects 'TraceMetamodel_TraceLink' and 'TraceMetamodel_TraceLinkEnd'. From 'TraceMetamodel_TraceLink', the role 'TraceMetamodel_TraceLink2' has cardinality 0..*, and from 'TraceMetamodel_TraceLinkEnd', the role 'TraceMetamodel_TraceLinkEnd' has cardinality 0..*.
+An association connects 'TraceMetamodel_TraceLinkEnd' and 'TraceMetamodel_TraceLink'. From 'TraceMetamodel_TraceLinkEnd', the role 'TraceMetamodel_TraceLinkEnd5' has cardinality 0..*, and from 'TraceMetamodel_TraceLink', the role 'TraceMetamodel_TraceLink4' has cardinality 0..*.
+An association connects 'TraceMetamodel_TraceLinkEnd' and 'TraceMetamodel_EObject'. From 'TraceMetamodel_TraceLinkEnd', the role 'TraceMetamodel_TraceLinkEnd7' has cardinality 0..*, and from 'TraceMetamodel_EObject', the role 'TraceMetamodel_EObject' has cardinality 0..*.

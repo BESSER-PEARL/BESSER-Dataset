@@ -1,0 +1,44 @@
+The domain model 'network' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'network_State' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'network_Transition' represents an important domain concept.
+It has one attribute: 'Event', which is of type str.
+
+'network_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'network_Statemachine' represents an important domain concept.
+It does not declare any attributes.
+
+'network_Channel' represents an important domain concept.
+It has one attribute: 'Type', which is of type str.
+
+'network_AbstractElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Event' defines the following possible values: 'SEND', 'RECEIVE'.
+The enumeration 'TypeOfChannel' defines the following possible values: 'Asynchronous', 'Synchronous'.
+
+The model also captures inheritance relationships between classes.
+The class 'network_Network' is a specialization of 'AbstractElement'.
+The class 'network_Statemachine' is a specialization of 'AbstractElement'.
+The class 'network_State' is a specialization of 'AbstractElement'.
+The class 'network_Channel' is a specialization of 'AbstractElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'network_Statemachine' and 'network_Network'. From 'network_Statemachine', the role 'network_Statemachine' has cardinality 0..*, and from 'network_Network', the role 'network_Network' has cardinality 0..*.
+An association connects 'network_Channel' and 'network_Network'. From 'network_Channel', the role 'network_Channel' has cardinality 0..*, and from 'network_Network', the role 'network_Network2' has cardinality 0..*.
+An association connects 'network_Statemachine' and 'network_State'. From 'network_Statemachine', the role 'network_Statemachine4' has cardinality 0..*, and from 'network_State', the role 'network_State' has cardinality 0..*.
+An association connects 'network_State' and 'network_Statemachine'. From 'network_State', the role 'network_State7' has cardinality 0..*, and from 'network_Statemachine', the role 'network_Statemachine6' has cardinality 0..*.
+An association connects 'network_Statemachine' and 'network_Transition'. From 'network_Statemachine', the role 'network_Statemachine9' has cardinality 0..*, and from 'network_Transition', the role 'network_Transition' has cardinality 0..*.
+An association connects 'network_State' and 'network_Transition'. From 'network_State', the role 'network_State12' has cardinality 0..*, and from 'network_Transition', the role 'network_Transition11' has cardinality 0..*.
+An association connects 'network_State' and 'network_Transition'. From 'network_State', the role 'network_State15' has cardinality 0..*, and from 'network_Transition', the role 'network_Transition14' has cardinality 0..*.
+An association connects 'network_Channel' and 'network_Transition'. From 'network_Channel', the role 'network_Channel18' has cardinality 0..*, and from 'network_Transition', the role 'network_Transition17' has cardinality 0..*.

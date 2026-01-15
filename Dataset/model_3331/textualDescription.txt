@@ -1,0 +1,324 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 71 main class(es).
+
+'model_CBlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MResource' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'model_MExternalTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MNativeMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMDeclaredType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMExternalType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MAbstractDeclaredClass' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractCStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MInstanceClassFieldDeclaration' represents an important domain concept.
+It has one attribute: 'transient', which is of type bool.
+
+'AbstractMMethodImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CUnparsedStatement' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'model_AbstractMTypeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMTypeWithNameDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MStaticClassFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMClassFieldDeclaration' represents an important domain concept.
+It has the following attributes: 'final', which is of type bool; 'visibility', which is of type str.
+
+'model_MDeclaredClass' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMResource' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'derived', which is of type bool.
+
+'model_MDeclaredTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractModifiers' represents an important domain concept.
+It has the following attributes: 'final', which is of type bool; 'synchronized', which is of type bool; 'visibility', which is of type str.
+
+'AbstractMInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMTypeWithNameDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_MInterfaceMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MDeclaredMethodImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MMethodDeclarationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CDeclarationStatement' represents an important domain concept.
+It has one attribute: 'final', which is of type bool.
+
+'MDeclaredClass' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractCExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MDirectMethodImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMExternalType' represents an important domain concept.
+It has one attribute: 'fullQualifiedName', which is of type str.
+
+'AbstractMMethodLike' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMResource' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MAbstractClassMethodDeclaration' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'AbstractMMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMPackageContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMClass' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMClassFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MMethodImplementationParameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'final', which is of type bool.
+
+'model_AbstractCExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMTypeReference' represents an important domain concept.
+It has one attribute: 'array', which is of type bool.
+
+'model_MConstantInterfaceFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMPackageContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMImplementableMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MCompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CUnparsedExpression' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'model_AbstractMMethodImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMTypeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMDeclaredType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_AbstractCStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MConstructorParameter' represents an important domain concept.
+It has one attribute: 'final', which is of type bool.
+
+'model_MDeclaredInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MPackage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_MPrimitiveTypeReference' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'model_AbstractMClass' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMImplementableMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CIfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MExternalInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractModifiers' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MExternalClass' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMMethodLike' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MImplicitMethodDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractMInterface' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MVisibility' defines the following possible values: 'PROTECTED', 'PRIVATE', 'DEFAULT', 'PUBLIC'.
+The enumeration 'MPrimitiveTypes' defines the following possible values: 'int', 'char', 'long', 'byte', 'boolean', 'short', 'float', 'double'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_MRoot' is a specialization of 'AbstractMPackageContainer'.
+The class 'model_MPackage' is a specialization of 'AbstractMPackageContainer'.
+The class 'model_MResource' is a specialization of 'AbstractMResource'.
+The class 'model_MCompilationUnit' is a specialization of 'AbstractMResource'.
+The class 'model_MCompilationUnit' is a specialization of 'AbstractMTypeContainer'.
+The class 'model_AbstractMDeclaredType' is a specialization of 'AbstractMTypeContainer'.
+The class 'model_MDeclaredTypeReference' is a specialization of 'AbstractMTypeReference'.
+The class 'model_MExternalTypeReference' is a specialization of 'AbstractMTypeReference'.
+The class 'model_MPrimitiveTypeReference' is a specialization of 'AbstractMTypeReference'.
+The class 'model_AbstractMMethodLike' is a specialization of 'AbstractModifiers'.
+The class 'model_AbstractMClass' is a specialization of 'AbstractMType'.
+The class 'model_MDeclaredClass' is a specialization of 'AbstractMClass'.
+The class 'model_MDeclaredClass' is a specialization of 'AbstractMDeclaredType'.
+The class 'model_MAbstractDeclaredClass' is a specialization of 'MDeclaredClass'.
+The class 'model_MExternalClass' is a specialization of 'AbstractMClass'.
+The class 'model_MExternalClass' is a specialization of 'AbstractMExternalType'.
+The class 'model_AbstractMInterface' is a specialization of 'AbstractMType'.
+The class 'model_MDeclaredInterface' is a specialization of 'AbstractMInterface'.
+The class 'model_MDeclaredInterface' is a specialization of 'AbstractMDeclaredType'.
+The class 'model_MExternalInterface' is a specialization of 'AbstractMInterface'.
+The class 'model_MExternalInterface' is a specialization of 'AbstractMExternalType'.
+The class 'model_AbstractMFieldDeclaration' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+The class 'model_AbstractMClassFieldDeclaration' is a specialization of 'AbstractMFieldDeclaration'.
+The class 'model_MStaticClassFieldDeclaration' is a specialization of 'AbstractMClassFieldDeclaration'.
+The class 'model_MInstanceClassFieldDeclaration' is a specialization of 'AbstractMClassFieldDeclaration'.
+The class 'model_MConstantInterfaceFieldDeclaration' is a specialization of 'AbstractMFieldDeclaration'.
+The class 'model_AbstractMMethodDeclaration' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+The class 'model_MMethodDeclarationParameter' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+The class 'model_MImplicitMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+The class 'model_AbstractMImplementableMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+The class 'model_MAbstractClassMethodDeclaration' is a specialization of 'AbstractMImplementableMethodDeclaration'.
+The class 'model_MInterfaceMethodDeclaration' is a specialization of 'AbstractMImplementableMethodDeclaration'.
+The class 'model_MNativeMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+The class 'model_AbstractMMethodImplementation' is a specialization of 'AbstractMMethodLike'.
+The class 'model_MDeclaredMethodImplementation' is a specialization of 'AbstractMMethodImplementation'.
+The class 'model_MDirectMethodImplementation' is a specialization of 'AbstractMMethodImplementation'.
+The class 'model_MConstructor' is a specialization of 'AbstractMMethodLike'.
+The class 'model_MConstructorParameter' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+The class 'model_CBlockStatement' is a specialization of 'AbstractCStatement'.
+The class 'model_CDeclarationStatement' is a specialization of 'AbstractCStatement'.
+The class 'model_CDeclarationStatement' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+The class 'model_CExpressionStatement' is a specialization of 'AbstractCStatement'.
+The class 'model_CIfStatement' is a specialization of 'AbstractCStatement'.
+The class 'model_CUnparsedStatement' is a specialization of 'AbstractCStatement'.
+The class 'model_CConditionalExpression' is a specialization of 'AbstractCExpression'.
+The class 'model_CUnparsedExpression' is a specialization of 'AbstractCExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_MPackage' and 'model_AbstractMPackageContainer'. From 'model_MPackage', the role 'MPackage' has cardinality 0..*, and from 'model_AbstractMPackageContainer', the role 'packageContainer' has cardinality 0..*.
+An association connects 'model_MRoot' and 'model_AbstractMExternalType'. From 'model_MRoot', the role 'root' has cardinality 0..*, and from 'model_AbstractMExternalType', the role 'AbstractMExternalType' has cardinality 0..*.
+An association connects 'model_MPackage' and 'model_AbstractMPackageContainer'. From 'model_MPackage', the role 'packages' has cardinality 0..*, and from 'model_AbstractMPackageContainer', the role 'AbstractMPackageContainer' has cardinality 0..*.
+An association connects 'model_MPackage' and 'model_AbstractMResource'. From 'model_MPackage', the role 'package' has cardinality 0..*, and from 'model_AbstractMResource', the role 'AbstractMResource' has cardinality 0..*.
+An association connects 'model_AbstractMResource' and 'model_MPackage'. From 'model_AbstractMResource', the role 'resources' has cardinality 0..*, and from 'model_MPackage', the role 'MPackage5' has cardinality 0..*.
+An association connects 'model_AbstractMResource' and 'model_AbstractMResource'. From 'model_AbstractMResource', the role 'superOf' has cardinality 0..*, and from 'model_AbstractMResource', the role 'AbstractMResource8' has cardinality 0..*.
+An association connects 'model_AbstractMResource' and 'model_AbstractMResource'. From 'model_AbstractMResource', the role 'AbstractMResource11' has cardinality 0..*, and from 'model_AbstractMResource', the role 'derivedFrom' has cardinality 0..*.
+An association connects 'model_AbstractMDeclaredType' and 'model_AbstractMTypeContainer'. From 'model_AbstractMDeclaredType', the role 'AbstractMDeclaredType' has cardinality 0..*, and from 'model_AbstractMTypeContainer', the role 'typeContainer' has cardinality 0..*.
+An association connects 'model_MCompilationUnit' and 'model_AbstractMType'. From 'model_MCompilationUnit', the role 'model_MCompilationUnit' has cardinality 0..*, and from 'model_AbstractMType', the role 'model_AbstractMType' has cardinality 0..*.
+An association connects 'model_AbstractMDeclaredType' and 'model_AbstractMTypeContainer'. From 'model_AbstractMDeclaredType', the role 'types' has cardinality 0..*, and from 'model_AbstractMTypeContainer', the role 'AbstractMTypeContainer' has cardinality 0..*.
+An association connects 'model_AbstractMExternalType' and 'model_MRoot'. From 'model_AbstractMExternalType', the role 'externalTypes' has cardinality 0..*, and from 'model_MRoot', the role 'MRoot' has cardinality 0..*.
+An association connects 'model_MDeclaredTypeReference' and 'model_AbstractMDeclaredType'. From 'model_MDeclaredTypeReference', the role 'model_MDeclaredTypeReference' has cardinality 0..*, and from 'model_AbstractMDeclaredType', the role 'model_AbstractMDeclaredType' has cardinality 0..*.
+An association connects 'model_AbstractMExternalType' and 'model_MExternalTypeReference'. From 'model_AbstractMExternalType', the role 'model_AbstractMExternalType' has cardinality 0..*, and from 'model_MExternalTypeReference', the role 'model_MExternalTypeReference' has cardinality 0..*.
+An association connects 'model_AbstractMMethodLike' and 'model_AbstractCStatement'. From 'model_AbstractMMethodLike', the role 'model_AbstractMMethodLike' has cardinality 0..*, and from 'model_AbstractCStatement', the role 'model_AbstractCStatement' has cardinality 0..*.
+An association connects 'model_AbstractMTypeWithNameDeclaration' and 'model_AbstractMTypeReference'. From 'model_AbstractMTypeWithNameDeclaration', the role 'model_AbstractMTypeWithNameDeclaration' has cardinality 0..*, and from 'model_AbstractMTypeReference', the role 'model_AbstractMTypeReference' has cardinality 0..*.
+An association connects 'model_AbstractMClass' and 'model_MDeclaredClass'. From 'model_AbstractMClass', the role 'model_AbstractMClass' has cardinality 0..*, and from 'model_MDeclaredClass', the role 'model_MDeclaredClass' has cardinality 0..*.
+An association connects 'model_MDeclaredClass' and 'model_AbstractMInterface'. From 'model_MDeclaredClass', the role 'model_MDeclaredClass22' has cardinality 0..*, and from 'model_AbstractMInterface', the role 'model_AbstractMInterface' has cardinality 0..*.
+An association connects 'model_MDeclaredClass' and 'model_MStaticClassFieldDeclaration'. From 'model_MDeclaredClass', the role 'owner' has cardinality 0..*, and from 'model_MStaticClassFieldDeclaration', the role 'MStaticClassFieldDeclaration' has cardinality 0..*.
+An association connects 'model_MInstanceClassFieldDeclaration' and 'model_MDeclaredClass'. From 'model_MInstanceClassFieldDeclaration', the role 'MInstanceClassFieldDeclaration' has cardinality 0..*, and from 'model_MDeclaredClass', the role 'owner25' has cardinality 0..*.
+An association connects 'model_MDeclaredClass' and 'model_MConstructor'. From 'model_MDeclaredClass', the role 'owner27' has cardinality 0..*, and from 'model_MConstructor', the role 'MConstructor' has cardinality 0..*.
+An association connects 'model_MDeclaredClass' and 'model_AbstractMMethodImplementation'. From 'model_MDeclaredClass', the role 'owner29' has cardinality 0..*, and from 'model_AbstractMMethodImplementation', the role 'AbstractMMethodImplementation' has cardinality 0..*.
+An association connects 'model_MDeclaredClass' and 'model_MNativeMethodDeclaration'. From 'model_MDeclaredClass', the role 'owner31' has cardinality 0..*, and from 'model_MNativeMethodDeclaration', the role 'MNativeMethodDeclaration' has cardinality 0..*.
+An association connects 'model_MAbstractDeclaredClass' and 'model_MAbstractClassMethodDeclaration'. From 'model_MAbstractDeclaredClass', the role 'owner33' has cardinality 0..*, and from 'model_MAbstractClassMethodDeclaration', the role 'MAbstractClassMethodDeclaration' has cardinality 0..*.
+An association connects 'model_MDeclaredInterface' and 'model_AbstractMInterface'. From 'model_MDeclaredInterface', the role 'model_MDeclaredInterface' has cardinality 0..*, and from 'model_AbstractMInterface', the role 'model_AbstractMInterface35' has cardinality 0..*.
+An association connects 'model_MConstantInterfaceFieldDeclaration' and 'model_MDeclaredInterface'. From 'model_MConstantInterfaceFieldDeclaration', the role 'MConstantInterfaceFieldDeclaration' has cardinality 0..*, and from 'model_MDeclaredInterface', the role 'owner37' has cardinality 0..*.
+An association connects 'model_MInterfaceMethodDeclaration' and 'model_MDeclaredInterface'. From 'model_MInterfaceMethodDeclaration', the role 'MInterfaceMethodDeclaration' has cardinality 0..*, and from 'model_MDeclaredInterface', the role 'owner39' has cardinality 0..*.
+An association connects 'model_AbstractMFieldDeclaration' and 'model_AbstractCExpression'. From 'model_AbstractMFieldDeclaration', the role 'model_AbstractMFieldDeclaration' has cardinality 0..*, and from 'model_AbstractCExpression', the role 'model_AbstractCExpression' has cardinality 0..*.
+An association connects 'model_MDeclaredClass' and 'model_MStaticClassFieldDeclaration'. From 'model_MDeclaredClass', the role 'MDeclaredClass' has cardinality 0..*, and from 'model_MStaticClassFieldDeclaration', the role 'staticFields' has cardinality 0..*.
+An association connects 'model_MInstanceClassFieldDeclaration' and 'model_MDeclaredClass'. From 'model_MInstanceClassFieldDeclaration', the role 'instanceFields' has cardinality 0..*, and from 'model_MDeclaredClass', the role 'MDeclaredClass43' has cardinality 0..*.
+An association connects 'model_MConstantInterfaceFieldDeclaration' and 'model_MDeclaredInterface'. From 'model_MConstantInterfaceFieldDeclaration', the role 'constants' has cardinality 0..*, and from 'model_MDeclaredInterface', the role 'MDeclaredInterface' has cardinality 0..*.
+An association connects 'model_MMethodDeclarationParameter' and 'model_AbstractMMethodDeclaration'. From 'model_MMethodDeclarationParameter', the role 'MMethodDeclarationParameter' has cardinality 0..*, and from 'model_AbstractMMethodDeclaration', the role 'methodDeclaration' has cardinality 0..*.
+An association connects 'model_MMethodDeclarationParameter' and 'model_AbstractMMethodDeclaration'. From 'model_MMethodDeclarationParameter', the role 'parameters' has cardinality 0..*, and from 'model_AbstractMMethodDeclaration', the role 'AbstractMMethodDeclaration' has cardinality 0..*.
+An association connects 'model_MImplicitMethodDeclaration' and 'model_MDirectMethodImplementation'. From 'model_MImplicitMethodDeclaration', the role 'declaration' has cardinality 0..*, and from 'model_MDirectMethodImplementation', the role 'MDirectMethodImplementation' has cardinality 0..*.
+An association connects 'model_AbstractMImplementableMethodDeclaration' and 'model_MDeclaredMethodImplementation'. From 'model_AbstractMImplementableMethodDeclaration', the role 'declaration49' has cardinality 0..*, and from 'model_MDeclaredMethodImplementation', the role 'MDeclaredMethodImplementation' has cardinality 0..*.
+An association connects 'model_MAbstractDeclaredClass' and 'model_MAbstractClassMethodDeclaration'. From 'model_MAbstractDeclaredClass', the role 'MAbstractDeclaredClass' has cardinality 0..*, and from 'model_MAbstractClassMethodDeclaration', the role 'abstractMethods' has cardinality 0..*.
+An association connects 'model_MInterfaceMethodDeclaration' and 'model_MDeclaredInterface'. From 'model_MInterfaceMethodDeclaration', the role 'methods' has cardinality 0..*, and from 'model_MDeclaredInterface', the role 'MDeclaredInterface52' has cardinality 0..*.
+An association connects 'model_MNativeMethodDeclaration' and 'model_MDeclaredClass'. From 'model_MNativeMethodDeclaration', the role 'nativeMethods' has cardinality 0..*, and from 'model_MDeclaredClass', the role 'MDeclaredClass54' has cardinality 0..*.
+An association connects 'model_AbstractMMethodImplementation' and 'model_MDeclaredClass'. From 'model_AbstractMMethodImplementation', the role 'implementedMethods' has cardinality 0..*, and from 'model_MDeclaredClass', the role 'MDeclaredClass56' has cardinality 0..*.
+An association connects 'model_AbstractMMethodImplementation' and 'model_MMethodImplementationParameter'. From 'model_AbstractMMethodImplementation', the role 'methodImplementation' has cardinality 0..*, and from 'model_MMethodImplementationParameter', the role 'MMethodImplementationParameter' has cardinality 0..*.
+An association connects 'model_AbstractMImplementableMethodDeclaration' and 'model_MDeclaredMethodImplementation'. From 'model_AbstractMImplementableMethodDeclaration', the role 'AbstractMImplementableMethodDeclaration' has cardinality 0..*, and from 'model_MDeclaredMethodImplementation', the role 'implementations' has cardinality 0..*.
+An association connects 'model_MDirectMethodImplementation' and 'model_MImplicitMethodDeclaration'. From 'model_MDirectMethodImplementation', the role 'owner60' has cardinality 0..*, and from 'model_MImplicitMethodDeclaration', the role 'MImplicitMethodDeclaration' has cardinality 0..*.
+An association connects 'model_AbstractMMethodImplementation' and 'model_MMethodImplementationParameter'. From 'model_AbstractMMethodImplementation', the role 'AbstractMMethodImplementation63' has cardinality 0..*, and from 'model_MMethodImplementationParameter', the role 'parameters62' has cardinality 0..*.
+An association connects 'model_MConstructor' and 'model_MDeclaredClass'. From 'model_MConstructor', the role 'constructors' has cardinality 0..*, and from 'model_MDeclaredClass', the role 'MDeclaredClass65' has cardinality 0..*.
+An association connects 'model_MConstructorParameter' and 'model_MConstructor'. From 'model_MConstructorParameter', the role 'MConstructorParameter' has cardinality 0..*, and from 'model_MConstructor', the role 'constructor' has cardinality 0..*.
+An association connects 'model_MConstructor' and 'model_MConstructorParameter'. From 'model_MConstructor', the role 'MConstructor69' has cardinality 0..*, and from 'model_MConstructorParameter', the role 'parameters68' has cardinality 0..*.
+An association connects 'model_AbstractCStatement' and 'model_CBlockStatement'. From 'model_AbstractCStatement', the role 'model_AbstractCStatement71' has cardinality 0..*, and from 'model_CBlockStatement', the role 'model_CBlockStatement' has cardinality 0..*.
+An association connects 'model_CDeclarationStatement' and 'model_AbstractCExpression'. From 'model_CDeclarationStatement', the role 'model_CDeclarationStatement' has cardinality 0..*, and from 'model_AbstractCExpression', the role 'model_AbstractCExpression73' has cardinality 0..*.
+An association connects 'model_AbstractCExpression' and 'model_CExpressionStatement'. From 'model_AbstractCExpression', the role 'model_AbstractCExpression75' has cardinality 0..*, and from 'model_CExpressionStatement', the role 'model_CExpressionStatement' has cardinality 0..*.
+An association connects 'model_AbstractCExpression' and 'model_CIfStatement'. From 'model_AbstractCExpression', the role 'model_AbstractCExpression77' has cardinality 0..*, and from 'model_CIfStatement', the role 'model_CIfStatement' has cardinality 0..*.
+An association connects 'model_AbstractCStatement' and 'model_CIfStatement'. From 'model_AbstractCStatement', the role 'model_AbstractCStatement80' has cardinality 0..*, and from 'model_CIfStatement', the role 'model_CIfStatement79' has cardinality 0..*.
+An association connects 'model_CIfStatement' and 'model_AbstractCStatement'. From 'model_CIfStatement', the role 'model_CIfStatement82' has cardinality 0..*, and from 'model_AbstractCStatement', the role 'model_AbstractCStatement83' has cardinality 0..*.
+An association connects 'model_AbstractCExpression' and 'model_CConditionalExpression'. From 'model_AbstractCExpression', the role 'model_AbstractCExpression85' has cardinality 0..*, and from 'model_CConditionalExpression', the role 'model_CConditionalExpression' has cardinality 0..*.
+An association connects 'model_CConditionalExpression' and 'model_AbstractCExpression'. From 'model_CConditionalExpression', the role 'model_CConditionalExpression87' has cardinality 0..*, and from 'model_AbstractCExpression', the role 'model_AbstractCExpression88' has cardinality 0..*.
+An association connects 'model_AbstractCExpression' and 'model_CConditionalExpression'. From 'model_AbstractCExpression', the role 'model_AbstractCExpression91' has cardinality 0..*, and from 'model_CConditionalExpression', the role 'model_CConditionalExpression90' has cardinality 0..*.

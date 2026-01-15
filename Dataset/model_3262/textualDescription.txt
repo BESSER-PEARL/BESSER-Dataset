@@ -1,0 +1,1919 @@
+The domain model 'aadl2' describes the core structural elements and their relationships within the system.
+
+The model defines 368 main class(es).
+
+'Subprogram' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_BusImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SystemType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractNamedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ComponentClassifier' represents an important domain concept.
+It has the following attributes: 'derivedModes', which is of type str; 'noFlows', which is of type str; 'noModes', which is of type str.
+
+'aadl2_ArraySizeProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Subcomponent' represents an important domain concept.
+It has one attribute: 'allModes', which is of type str.
+
+'SubprogramGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'ArraySizeProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_EnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Subprogram' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FlowImplementation' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'aadl2_ThreadGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_NumberType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FlowSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'SystemClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'qualifiedName', which is of type str.
+
+'aadl2_ModelUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramCallSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeaturePrototypeBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ModalPropertyValue' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualBusSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'BusClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessorSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ModalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Abstract' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_RangeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_NumberValue' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SystemPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ContainmentPathElement' represents an important domain concept.
+It has one attribute: 'annexName', which is of type str.
+
+'FeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PropertySet' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualBusSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramGroupPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PropertyAssociation' represents an important domain concept.
+It has the following attributes: 'append', which is of type str; 'constant', which is of type str.
+
+'EnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ProcessorType' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualBusSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FlowEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ParameterConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeatureGroupConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AadlPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_GlobalNamespace' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ImplementationExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualBus' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DataImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_EndToEndFlowSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FlowSpecification' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureGroupConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DataAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Classifier' represents an important domain concept.
+It has the following attributes: 'noProperties', which is of type str; 'noAnnexes', which is of type str; 'noPrototypes', which is of type str.
+
+'DeviceClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualProcessorClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'aadl2_ReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Property' represents an important domain concept.
+It has the following attributes: 'inherit', which is of type str; 'emptyListDefault', which is of type str.
+
+'Access' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ModeBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_MemoryPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ProcessClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DataPort' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ArrayDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Abstract' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SystemClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_NonListType' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PortSpecification' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'category', which is of type str.
+
+'FeatureClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_BusPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualBusPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DirectedFeature' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'ComponentImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'Device' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeaturePrototypeReference' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'SystemSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ComponentTypeRename' represents an important domain concept.
+It has one attribute: 'category', which is of type str.
+
+'aadl2_MemoryImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PropertyConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_MemoryClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ClassifierType' represents an important domain concept.
+It does not declare any attributes.
+
+'Subcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DeviceSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualProcessorClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Prototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ContainedNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'SubprogramGroupSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'PortConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ProcessorSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualProcessorImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_EndToEndFlowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DeviceSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AbstractSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'CalledSubprogram' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ThreadGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Operation' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'aadl2_BusType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Mode' represents an important domain concept.
+It has the following attributes: 'initial', which is of type str; 'derived', which is of type str.
+
+'MemorySubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'SubprogramClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'BusSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ProcessImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeaturePrototype' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramType' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'Bus' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ProcessorSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ModalPath' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ThreadGroupClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AbstractNamedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ThreadType' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_RefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Process' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_BasicPropertyAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AbstractFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeatureGroupPrototypeBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_RealLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'aadl2_PropertyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeatureConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualProcessorSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_TriggerPort' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_BasicProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_RecordType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ArraySize' represents an important domain concept.
+It has one attribute: 'size', which is of type str.
+
+'aadl2_ProcessSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_UnitLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'CallContext' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Data' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ProcessSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ComponentPrototypeBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'NonListType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DataClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_System' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ModeFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberValue' represents an important domain concept.
+It does not declare any attributes.
+
+'DataClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PrivatePackageSection' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeatureGroupConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ThreadGroupImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_NamedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'AccessConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'Thread' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'aadl2_VirtualProcessorPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ProcessorPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ComponentImplementationReference' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualBus' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DefaultAnnexLibrary' represents an important domain concept.
+It has one attribute: 'sourceText', which is of type str.
+
+'ThreadClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ComputedValue' represents an important domain concept.
+It has one attribute: 'function', which is of type str.
+
+'aadl2_AccessConnection' represents an important domain concept.
+It has one attribute: 'accessCategory', which is of type str.
+
+'ModalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeatureClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeatureGroupPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeatureGroupPrototypeActual' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualBusClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'System' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Connection' represents an important domain concept.
+It has one attribute: 'bidirectional', which is of type str.
+
+'aadl2_SubprogramCall' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'Context' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyValue' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ThreadGroupClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AnnexLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_IntegerLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'base', which is of type str.
+
+'aadl2_ModeTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeatureConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramGroupType' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnexSubclause' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeaturePrototypeActual' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Processor' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualBusClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_RangeType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeatureGroupType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_BusSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'DataSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ThreadClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'Memory' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ClassifierValue' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_EventSource' represents an important domain concept.
+It does not declare any attributes.
+
+'TriggerPort' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramGroupSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_MemorySubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PrototypeBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_GroupExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AadlString' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ThreadGroupPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ThreadPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ComponentPrototypeActual' represents an important domain concept.
+It has one attribute: 'category', which is of type str.
+
+'aadl2_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FlowFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AnnexSubclause' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ArrayableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ConnectedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessorClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ComponentType' represents an important domain concept.
+It has one attribute: 'noFeatures', which is of type str.
+
+'aadl2_SystemImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ListType' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_TypeExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'ThreadSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'aadl2_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Prototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DeviceImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualBusImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_MetaclassReference' represents an important domain concept.
+It has the following attributes: 'metaclassName', which is of type str; 'annexName', which is of type str.
+
+'aadl2_FeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ComponentImplementation' represents an important domain concept.
+It has the following attributes: 'noConnections', which is of type str; 'noCalls', which is of type str; 'noSubcomponents', which is of type str.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PortProxy' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'aadl2_DataSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AbstractImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'PrototypeBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ThreadGroupSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnexLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'ThreadGroupSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'SubprogramSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ModeTransitionTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_BusAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ProcessorImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramGroupClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'VirtualProcessorSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'DeviceSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramGroupSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ThreadImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_CalledSubprogram' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Bus' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PublicPackageSection' represents an important domain concept.
+It does not declare any attributes.
+
+'Processor' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageSection' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_EventPort' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassifierFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ProcessType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AadlReal' represents an important domain concept.
+It does not declare any attributes.
+
+'EndToEndFlowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AccessSpecification' represents an important domain concept.
+It has the following attributes: 'category', which is of type str; 'kind', which is of type str.
+
+'aadl2_ProcessorClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramGroupAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessorFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_CallContext' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_BusClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_BehavioredImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AbstractPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualProcessorType' represents an important domain concept.
+It does not declare any attributes.
+
+'RefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_EventDataPort' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ReferenceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Data' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Thread' represents an important domain concept.
+It does not declare any attributes.
+
+'FeaturePrototypeActual' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeatureGroupTypeRename' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ProcessPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PackageRename' represents an important domain concept.
+It has one attribute: 'renameAll', which is of type str.
+
+'VirtualProcessor' represents an important domain concept.
+It does not declare any attributes.
+
+'ContainedNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ArrayRange' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type str; 'lowerBound', which is of type str.
+
+'ModeFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DeviceType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualProcessorSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ThreadGroupSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ListValue' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ModalPath' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AbstractClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ThreadSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AccessConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_RecordValue' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_RecordField' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PortConnectionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Port' represents an important domain concept.
+It has one attribute: 'category', which is of type str.
+
+'aadl2_DefaultAnnexSubclause' represents an important domain concept.
+It has one attribute: 'sourceText', which is of type str.
+
+'InternalFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_InternalFeature' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'aadl2_SystemSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ComponentPrototype' represents an important domain concept.
+It has one attribute: 'array', which is of type str.
+
+'aadl2_PropertyOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_EventDataSource' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AadlInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Access' represents an important domain concept.
+It has the following attributes: 'category', which is of type str; 'kind', which is of type str.
+
+'aadl2_BusSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ParameterConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DeviceClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualBusType' represents an important domain concept.
+It does not declare any attributes.
+
+'Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PortConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AbstractSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramGroupImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_VirtualProcessor' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FlowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SubprogramProxy' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ThreadSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_MemorySubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'MemoryClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_EndToEndFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DataPrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'SubprogramGroupClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_AadlBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DevicePrototype' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_UnitsType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_NumericRange' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ProcessorFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PackageSection' represents an important domain concept.
+It has the following attributes: 'noProperties', which is of type str; 'noAnnexes', which is of type str.
+
+'DirectedFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_ClassifierFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_PropertyValue' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_DataSubcomponent' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_Memory' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_FeatureGroup' represents an important domain concept.
+It has one attribute: 'inverse', which is of type str.
+
+'aadl2_ThreadGroupType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_MemoryType' represents an important domain concept.
+It does not declare any attributes.
+
+'aadl2_SystemSubcomponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'Flow' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AccessCategory' defines the following possible values: 'bus', 'data', 'subprogramGroup', 'subprogram'.
+The enumeration 'OperationKind' defines the following possible values: 'minus', 'plus', 'not', 'and', 'or'.
+The enumeration 'DirectionType' defines the following possible values: 'inOut', 'out', 'in'.
+The enumeration 'ComponentCategory' defines the following possible values: 'virtualProcessor', 'subprogramGroup', 'processor', 'memory', 'device', 'bus', 'abstract', 'data', 'virtualBus', 'process', 'subprogram', 'system', 'threadGroup', 'thread'.
+The enumeration 'AccessType' defines the following possible values: 'provides', 'requires'.
+The enumeration 'FlowKind' defines the following possible values: 'source', 'sink', 'path'.
+The enumeration 'PortCategory' defines the following possible values: 'data', 'eventData', 'event'.
+
+The model also captures inheritance relationships between classes.
+The class 'aadl2_Comment' is a specialization of 'Element'.
+The class 'aadl2_Type' is a specialization of 'NamedElement'.
+The class 'aadl2_NamedElement' is a specialization of 'Element'.
+The class 'aadl2_PropertyAssociation' is a specialization of 'Element'.
+The class 'aadl2_Property' is a specialization of 'BasicProperty'.
+The class 'aadl2_Property' is a specialization of 'AbstractNamedValue'.
+The class 'aadl2_Property' is a specialization of 'ArraySizeProperty'.
+The class 'aadl2_BasicProperty' is a specialization of 'TypedElement'.
+The class 'aadl2_TypedElement' is a specialization of 'NamedElement'.
+The class 'aadl2_PropertyType' is a specialization of 'Type'.
+The class 'aadl2_PropertyExpression' is a specialization of 'Element'.
+The class 'aadl2_MetaclassReference' is a specialization of 'PropertyOwner'.
+The class 'aadl2_PropertyOwner' is a specialization of 'Element'.
+The class 'aadl2_Classifier' is a specialization of 'Namespace'.
+The class 'aadl2_Classifier' is a specialization of 'Type'.
+The class 'aadl2_Namespace' is a specialization of 'NamedElement'.
+The class 'aadl2_ClassifierFeature' is a specialization of 'NamedElement'.
+The class 'aadl2_Generalization' is a specialization of 'DirectedRelationship'.
+The class 'aadl2_DirectedRelationship' is a specialization of 'Relationship'.
+The class 'aadl2_Relationship' is a specialization of 'Element'.
+The class 'aadl2_AnnexSubclause' is a specialization of 'ModalElement'.
+The class 'aadl2_ModalElement' is a specialization of 'NamedElement'.
+The class 'aadl2_Mode' is a specialization of 'ModeFeature'.
+The class 'aadl2_ModeFeature' is a specialization of 'ClassifierFeature'.
+The class 'aadl2_Prototype' is a specialization of 'StructuralFeature'.
+The class 'aadl2_Prototype' is a specialization of 'CalledSubprogram'.
+The class 'aadl2_StructuralFeature' is a specialization of 'RefinableElement'.
+The class 'aadl2_StructuralFeature' is a specialization of 'ClassifierFeature'.
+The class 'aadl2_RefinableElement' is a specialization of 'NamedElement'.
+The class 'aadl2_PrototypeBinding' is a specialization of 'Element'.
+The class 'aadl2_ContainedNamedElement' is a specialization of 'Element'.
+The class 'aadl2_ContainmentPathElement' is a specialization of 'Element'.
+The class 'aadl2_ArrayRange' is a specialization of 'Element'.
+The class 'aadl2_ModalPropertyValue' is a specialization of 'ModalElement'.
+The class 'aadl2_BehavioralFeature' is a specialization of 'ClassifierFeature'.
+The class 'aadl2_ArrayDimension' is a specialization of 'Element'.
+The class 'aadl2_ArraySize' is a specialization of 'Element'.
+The class 'aadl2_ArrayableElement' is a specialization of 'Element'.
+The class 'aadl2_ComponentImplementationReference' is a specialization of 'Element'.
+The class 'aadl2_ComponentImplementation' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_ComponentClassifier' is a specialization of 'Classifier'.
+The class 'aadl2_ComponentClassifier' is a specialization of 'SubcomponentType'.
+The class 'aadl2_ComponentClassifier' is a specialization of 'FeatureClassifier'.
+The class 'aadl2_SubcomponentType' is a specialization of 'Type'.
+The class 'aadl2_ModeTransition' is a specialization of 'ModeFeature'.
+The class 'aadl2_ModeTransitionTrigger' is a specialization of 'Element'.
+The class 'aadl2_Context' is a specialization of 'NamedElement'.
+The class 'aadl2_TriggerPort' is a specialization of 'NamedElement'.
+The class 'aadl2_ComponentType' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_Feature' is a specialization of 'StructuralFeature'.
+The class 'aadl2_Feature' is a specialization of 'FeatureConnectionEnd'.
+The class 'aadl2_Feature' is a specialization of 'ArrayableElement'.
+The class 'aadl2_FeatureConnectionEnd' is a specialization of 'ConnectionEnd'.
+The class 'aadl2_ConnectionEnd' is a specialization of 'NamedElement'.
+The class 'aadl2_ComponentPrototype' is a specialization of 'Prototype'.
+The class 'aadl2_ComponentPrototype' is a specialization of 'SubcomponentType'.
+The class 'aadl2_ComponentPrototype' is a specialization of 'FeatureClassifier'.
+The class 'aadl2_FlowSpecification' is a specialization of 'FlowFeature'.
+The class 'aadl2_FlowSpecification' is a specialization of 'ModalPath'.
+The class 'aadl2_FlowSpecification' is a specialization of 'FlowElement'.
+The class 'aadl2_FlowFeature' is a specialization of 'StructuralFeature'.
+The class 'aadl2_FlowFeature' is a specialization of 'Flow'.
+The class 'aadl2_Flow' is a specialization of 'NamedElement'.
+The class 'aadl2_ModalPath' is a specialization of 'ModalElement'.
+The class 'aadl2_FlowElement' is a specialization of 'EndToEndFlowElement'.
+The class 'aadl2_EndToEndFlowElement' is a specialization of 'NamedElement'.
+The class 'aadl2_FlowEnd' is a specialization of 'Element'.
+The class 'aadl2_TypeExtension' is a specialization of 'Generalization'.
+The class 'aadl2_FeatureGroup' is a specialization of 'DirectedFeature'.
+The class 'aadl2_FeatureGroup' is a specialization of 'Context'.
+The class 'aadl2_FeatureGroup' is a specialization of 'FeatureGroupConnectionEnd'.
+The class 'aadl2_FeatureGroup' is a specialization of 'CallContext'.
+The class 'aadl2_DirectedFeature' is a specialization of 'Feature'.
+The class 'aadl2_FeatureGroupConnectionEnd' is a specialization of 'ConnectionEnd'.
+The class 'aadl2_FeatureGroupType' is a specialization of 'Classifier'.
+The class 'aadl2_FeatureGroupType' is a specialization of 'FeatureType'.
+The class 'aadl2_GroupExtension' is a specialization of 'Generalization'.
+The class 'aadl2_BusAccess' is a specialization of 'Access'.
+The class 'aadl2_BusAccess' is a specialization of 'Bus'.
+The class 'aadl2_Access' is a specialization of 'Feature'.
+The class 'aadl2_Access' is a specialization of 'AccessConnectionEnd'.
+The class 'aadl2_AccessConnectionEnd' is a specialization of 'ConnectionEnd'.
+The class 'aadl2_Bus' is a specialization of 'NamedElement'.
+The class 'aadl2_BusSubcomponentType' is a specialization of 'Bus'.
+The class 'aadl2_BusSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_BusSubcomponentType' is a specialization of 'FeatureClassifier'.
+The class 'aadl2_DataAccess' is a specialization of 'Access'.
+The class 'aadl2_DataAccess' is a specialization of 'Data'.
+The class 'aadl2_DataAccess' is a specialization of 'FlowElement'.
+The class 'aadl2_DataAccess' is a specialization of 'ParameterConnectionEnd'.
+The class 'aadl2_DataAccess' is a specialization of 'PortConnectionEnd'.
+The class 'aadl2_ParameterConnectionEnd' is a specialization of 'ConnectionEnd'.
+The class 'aadl2_PortConnectionEnd' is a specialization of 'ConnectionEnd'.
+The class 'aadl2_Data' is a specialization of 'NamedElement'.
+The class 'aadl2_DataSubcomponentType' is a specialization of 'Data'.
+The class 'aadl2_DataSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_DataSubcomponentType' is a specialization of 'FeatureClassifier'.
+The class 'aadl2_DataPort' is a specialization of 'Port'.
+The class 'aadl2_DataPort' is a specialization of 'Context'.
+The class 'aadl2_DataPort' is a specialization of 'Data'.
+The class 'aadl2_DataPort' is a specialization of 'ParameterConnectionEnd'.
+The class 'aadl2_Port' is a specialization of 'DirectedFeature'.
+The class 'aadl2_Port' is a specialization of 'PortConnectionEnd'.
+The class 'aadl2_Port' is a specialization of 'TriggerPort'.
+The class 'aadl2_EventDataPort' is a specialization of 'Port'.
+The class 'aadl2_EventDataPort' is a specialization of 'Context'.
+The class 'aadl2_EventDataPort' is a specialization of 'Data'.
+The class 'aadl2_EventDataPort' is a specialization of 'ParameterConnectionEnd'.
+The class 'aadl2_EventPort' is a specialization of 'Port'.
+The class 'aadl2_Parameter' is a specialization of 'DirectedFeature'.
+The class 'aadl2_Parameter' is a specialization of 'Context'.
+The class 'aadl2_Parameter' is a specialization of 'ParameterConnectionEnd'.
+The class 'aadl2_SubprogramAccess' is a specialization of 'Access'.
+The class 'aadl2_SubprogramAccess' is a specialization of 'Subprogram'.
+The class 'aadl2_Subprogram' is a specialization of 'NamedElement'.
+The class 'aadl2_Subprogram' is a specialization of 'CalledSubprogram'.
+The class 'aadl2_SubprogramSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_SubprogramSubcomponentType' is a specialization of 'Subprogram'.
+The class 'aadl2_SubprogramSubcomponentType' is a specialization of 'FeatureClassifier'.
+The class 'aadl2_SubprogramGroupAccess' is a specialization of 'Access'.
+The class 'aadl2_SubprogramGroupAccess' is a specialization of 'SubprogramGroup'.
+The class 'aadl2_SubprogramGroupAccess' is a specialization of 'CallContext'.
+The class 'aadl2_SubprogramGroup' is a specialization of 'NamedElement'.
+The class 'aadl2_SubprogramGroupSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_SubprogramGroupSubcomponentType' is a specialization of 'SubprogramGroup'.
+The class 'aadl2_SubprogramGroupSubcomponentType' is a specialization of 'FeatureClassifier'.
+The class 'aadl2_AbstractFeature' is a specialization of 'DirectedFeature'.
+The class 'aadl2_AbstractFeature' is a specialization of 'TriggerPort'.
+The class 'aadl2_FeaturePrototype' is a specialization of 'Prototype'.
+The class 'aadl2_FeatureGroupPrototype' is a specialization of 'Prototype'.
+The class 'aadl2_FeatureGroupPrototype' is a specialization of 'FeatureType'.
+The class 'aadl2_Subcomponent' is a specialization of 'StructuralFeature'.
+The class 'aadl2_Subcomponent' is a specialization of 'ModalElement'.
+The class 'aadl2_Subcomponent' is a specialization of 'Context'.
+The class 'aadl2_Subcomponent' is a specialization of 'FlowElement'.
+The class 'aadl2_Subcomponent' is a specialization of 'ArrayableElement'.
+The class 'aadl2_ModeBinding' is a specialization of 'Element'.
+The class 'aadl2_FlowImplementation' is a specialization of 'ModalPath'.
+The class 'aadl2_FlowImplementation' is a specialization of 'ClassifierFeature'.
+The class 'aadl2_FlowImplementation' is a specialization of 'Flow'.
+The class 'aadl2_FlowSegment' is a specialization of 'Element'.
+The class 'aadl2_Connection' is a specialization of 'StructuralFeature'.
+The class 'aadl2_Connection' is a specialization of 'ModalPath'.
+The class 'aadl2_Connection' is a specialization of 'FlowElement'.
+The class 'aadl2_ConnectedElement' is a specialization of 'Element'.
+The class 'aadl2_ImplementationExtension' is a specialization of 'Generalization'.
+The class 'aadl2_Realization' is a specialization of 'Generalization'.
+The class 'aadl2_EndToEndFlow' is a specialization of 'FlowFeature'.
+The class 'aadl2_EndToEndFlow' is a specialization of 'ModalPath'.
+The class 'aadl2_EndToEndFlow' is a specialization of 'EndToEndFlowElement'.
+The class 'aadl2_EndToEndFlowSegment' is a specialization of 'Element'.
+The class 'aadl2_AbstractSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_AbstractSubcomponent' is a specialization of 'Abstract'.
+The class 'aadl2_Abstract' is a specialization of 'NamedElement'.
+The class 'aadl2_AbstractSubcomponentType' is a specialization of 'Abstract'.
+The class 'aadl2_AbstractSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_AccessConnection' is a specialization of 'Connection'.
+The class 'aadl2_ParameterConnection' is a specialization of 'Connection'.
+The class 'aadl2_PortConnection' is a specialization of 'Connection'.
+The class 'aadl2_FeatureConnection' is a specialization of 'Connection'.
+The class 'aadl2_FeatureGroupConnection' is a specialization of 'Connection'.
+The class 'aadl2_ProcessorFeature' is a specialization of 'StructuralFeature'.
+The class 'aadl2_ProcessorFeature' is a specialization of 'ModalElement'.
+The class 'aadl2_InternalFeature' is a specialization of 'StructuralFeature'.
+The class 'aadl2_InternalFeature' is a specialization of 'ModalElement'.
+The class 'aadl2_InternalFeature' is a specialization of 'FeatureConnectionEnd'.
+The class 'aadl2_InternalFeature' is a specialization of 'PortConnectionEnd'.
+The class 'aadl2_InternalFeature' is a specialization of 'TriggerPort'.
+The class 'aadl2_EventSource' is a specialization of 'InternalFeature'.
+The class 'aadl2_EventDataSource' is a specialization of 'InternalFeature'.
+The class 'aadl2_PortProxy' is a specialization of 'ProcessorFeature'.
+The class 'aadl2_PortProxy' is a specialization of 'FeatureConnectionEnd'.
+The class 'aadl2_PortProxy' is a specialization of 'PortConnectionEnd'.
+The class 'aadl2_PortProxy' is a specialization of 'TriggerPort'.
+The class 'aadl2_SubprogramProxy' is a specialization of 'ProcessorFeature'.
+The class 'aadl2_SubprogramProxy' is a specialization of 'AccessConnectionEnd'.
+The class 'aadl2_SubprogramProxy' is a specialization of 'CalledSubprogram'.
+The class 'aadl2_AnnexLibrary' is a specialization of 'NamedElement'.
+The class 'aadl2_DefaultAnnexLibrary' is a specialization of 'AnnexLibrary'.
+The class 'aadl2_DefaultAnnexSubclause' is a specialization of 'AnnexSubclause'.
+The class 'aadl2_PublicPackageSection' is a specialization of 'PackageSection'.
+The class 'aadl2_PackageSection' is a specialization of 'Namespace'.
+The class 'aadl2_PackageRename' is a specialization of 'NamedElement'.
+The class 'aadl2_AadlPackage' is a specialization of 'ModelUnit'.
+The class 'aadl2_ModelUnit' is a specialization of 'NamedElement'.
+The class 'aadl2_PrivatePackageSection' is a specialization of 'PackageSection'.
+The class 'aadl2_ComponentTypeRename' is a specialization of 'NamedElement'.
+The class 'aadl2_FeatureGroupTypeRename' is a specialization of 'NamedElement'.
+The class 'aadl2_ComponentPrototypeBinding' is a specialization of 'PrototypeBinding'.
+The class 'aadl2_ComponentPrototypeActual' is a specialization of 'ArrayableElement'.
+The class 'aadl2_FeatureGroupPrototypeBinding' is a specialization of 'PrototypeBinding'.
+The class 'aadl2_FeatureGroupPrototypeActual' is a specialization of 'FeaturePrototypeActual'.
+The class 'aadl2_FeaturePrototypeActual' is a specialization of 'ArrayableElement'.
+The class 'aadl2_FeaturePrototypeBinding' is a specialization of 'PrototypeBinding'.
+The class 'aadl2_AccessSpecification' is a specialization of 'FeaturePrototypeActual'.
+The class 'aadl2_PortSpecification' is a specialization of 'FeaturePrototypeActual'.
+The class 'aadl2_FeaturePrototypeReference' is a specialization of 'FeaturePrototypeActual'.
+The class 'aadl2_SubprogramCallSequence' is a specialization of 'BehavioralFeature'.
+The class 'aadl2_SubprogramCallSequence' is a specialization of 'ModalElement'.
+The class 'aadl2_SubprogramCall' is a specialization of 'BehavioralFeature'.
+The class 'aadl2_SubprogramCall' is a specialization of 'Context'.
+The class 'aadl2_BehavioredImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_AbstractType' is a specialization of 'ComponentType'.
+The class 'aadl2_AbstractType' is a specialization of 'AbstractClassifier'.
+The class 'aadl2_AbstractType' is a specialization of 'CallContext'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'AbstractSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'BusSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'DataSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'DeviceSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'MemorySubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'ProcessorSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'ProcessSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'SubprogramGroupSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'SubprogramSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'SystemSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'ThreadGroupSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'ThreadSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'VirtualBusSubcomponentType'.
+The class 'aadl2_AbstractClassifier' is a specialization of 'VirtualProcessorSubcomponentType'.
+The class 'aadl2_VirtualProcessorSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_VirtualProcessorSubcomponentType' is a specialization of 'VirtualProcessor'.
+The class 'aadl2_VirtualProcessor' is a specialization of 'NamedElement'.
+The class 'aadl2_VirtualBusSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_VirtualBusSubcomponentType' is a specialization of 'VirtualBus'.
+The class 'aadl2_VirtualBus' is a specialization of 'NamedElement'.
+The class 'aadl2_ThreadGroupSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_ThreadGroupSubcomponentType' is a specialization of 'ThreadGroup'.
+The class 'aadl2_ThreadGroup' is a specialization of 'NamedElement'.
+The class 'aadl2_ThreadSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_ThreadSubcomponentType' is a specialization of 'Thread'.
+The class 'aadl2_Thread' is a specialization of 'NamedElement'.
+The class 'aadl2_SystemSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_SystemSubcomponentType' is a specialization of 'System'.
+The class 'aadl2_System' is a specialization of 'NamedElement'.
+The class 'aadl2_ProcessSubcomponentType' is a specialization of 'Process'.
+The class 'aadl2_ProcessSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_Process' is a specialization of 'NamedElement'.
+The class 'aadl2_MemorySubcomponentType' is a specialization of 'Memory'.
+The class 'aadl2_MemorySubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_Memory' is a specialization of 'NamedElement'.
+The class 'aadl2_DeviceSubcomponentType' is a specialization of 'Device'.
+The class 'aadl2_DeviceSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_Device' is a specialization of 'NamedElement'.
+The class 'aadl2_ProcessorSubcomponentType' is a specialization of 'Processor'.
+The class 'aadl2_ProcessorSubcomponentType' is a specialization of 'SubcomponentType'.
+The class 'aadl2_Processor' is a specialization of 'NamedElement'.
+The class 'aadl2_AbstractImplementation' is a specialization of 'BehavioredImplementation'.
+The class 'aadl2_AbstractImplementation' is a specialization of 'AbstractClassifier'.
+The class 'aadl2_BusSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_BusSubcomponent' is a specialization of 'AccessConnectionEnd'.
+The class 'aadl2_BusSubcomponent' is a specialization of 'Bus'.
+The class 'aadl2_DataSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_DataSubcomponent' is a specialization of 'AccessConnectionEnd'.
+The class 'aadl2_DataSubcomponent' is a specialization of 'Data'.
+The class 'aadl2_DataSubcomponent' is a specialization of 'ParameterConnectionEnd'.
+The class 'aadl2_DataSubcomponent' is a specialization of 'PortConnectionEnd'.
+The class 'aadl2_DeviceSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_DeviceSubcomponent' is a specialization of 'Device'.
+The class 'aadl2_MemorySubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_MemorySubcomponent' is a specialization of 'Memory'.
+The class 'aadl2_ProcessSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_ProcessSubcomponent' is a specialization of 'Process'.
+The class 'aadl2_ProcessorSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_ProcessorSubcomponent' is a specialization of 'Processor'.
+The class 'aadl2_SystemSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_SystemSubcomponent' is a specialization of 'System'.
+The class 'aadl2_SubprogramSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_SubprogramSubcomponent' is a specialization of 'AccessConnectionEnd'.
+The class 'aadl2_SubprogramSubcomponent' is a specialization of 'Subprogram'.
+The class 'aadl2_SubprogramGroupSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_SubprogramGroupSubcomponent' is a specialization of 'AccessConnectionEnd'.
+The class 'aadl2_SubprogramGroupSubcomponent' is a specialization of 'SubprogramGroup'.
+The class 'aadl2_SubprogramGroupSubcomponent' is a specialization of 'CallContext'.
+The class 'aadl2_ThreadSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_ThreadSubcomponent' is a specialization of 'Thread'.
+The class 'aadl2_ThreadGroupSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_ThreadGroupSubcomponent' is a specialization of 'ThreadGroup'.
+The class 'aadl2_VirtualBusSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_VirtualBusSubcomponent' is a specialization of 'VirtualBus'.
+The class 'aadl2_VirtualProcessorSubcomponent' is a specialization of 'Subcomponent'.
+The class 'aadl2_VirtualProcessorSubcomponent' is a specialization of 'VirtualProcessor'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'AbstractSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'BusSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'DataSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'DeviceSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'MemorySubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'ProcessorSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'ProcessSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'SubprogramGroupSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'SubprogramSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'SystemSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'ThreadGroupSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'ThreadSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'VirtualBusSubcomponentType'.
+The class 'aadl2_AbstractPrototype' is a specialization of 'VirtualProcessorSubcomponentType'.
+The class 'aadl2_BusClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_BusClassifier' is a specialization of 'BusSubcomponentType'.
+The class 'aadl2_BusType' is a specialization of 'ComponentType'.
+The class 'aadl2_BusType' is a specialization of 'BusClassifier'.
+The class 'aadl2_BusImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_BusImplementation' is a specialization of 'BusClassifier'.
+The class 'aadl2_BusPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_BusPrototype' is a specialization of 'BusSubcomponentType'.
+The class 'aadl2_DataClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_DataClassifier' is a specialization of 'DataSubcomponentType'.
+The class 'aadl2_DataType' is a specialization of 'ComponentType'.
+The class 'aadl2_DataType' is a specialization of 'DataClassifier'.
+The class 'aadl2_DataType' is a specialization of 'CallContext'.
+The class 'aadl2_DataImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_DataImplementation' is a specialization of 'DataClassifier'.
+The class 'aadl2_DataPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_DataPrototype' is a specialization of 'DataSubcomponentType'.
+The class 'aadl2_DeviceClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_DeviceClassifier' is a specialization of 'DeviceSubcomponentType'.
+The class 'aadl2_DeviceType' is a specialization of 'ComponentType'.
+The class 'aadl2_DeviceType' is a specialization of 'DeviceClassifier'.
+The class 'aadl2_DeviceImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_DeviceImplementation' is a specialization of 'DeviceClassifier'.
+The class 'aadl2_DevicePrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_DevicePrototype' is a specialization of 'DeviceSubcomponentType'.
+The class 'aadl2_MemoryClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_MemoryClassifier' is a specialization of 'MemorySubcomponentType'.
+The class 'aadl2_MemoryType' is a specialization of 'ComponentType'.
+The class 'aadl2_MemoryType' is a specialization of 'MemoryClassifier'.
+The class 'aadl2_MemoryImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_MemoryImplementation' is a specialization of 'MemoryClassifier'.
+The class 'aadl2_MemoryPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_MemoryPrototype' is a specialization of 'MemorySubcomponentType'.
+The class 'aadl2_SubprogramClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_SubprogramClassifier' is a specialization of 'SubprogramSubcomponentType'.
+The class 'aadl2_SubprogramType' is a specialization of 'ComponentType'.
+The class 'aadl2_SubprogramType' is a specialization of 'SubprogramClassifier'.
+The class 'aadl2_SubprogramType' is a specialization of 'CallContext'.
+The class 'aadl2_SubprogramImplementation' is a specialization of 'BehavioredImplementation'.
+The class 'aadl2_SubprogramImplementation' is a specialization of 'SubprogramClassifier'.
+The class 'aadl2_SubprogramPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_SubprogramPrototype' is a specialization of 'SubprogramSubcomponentType'.
+The class 'aadl2_SubprogramGroupClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_SubprogramGroupClassifier' is a specialization of 'SubprogramGroupSubcomponentType'.
+The class 'aadl2_SubprogramGroupType' is a specialization of 'ComponentType'.
+The class 'aadl2_SubprogramGroupType' is a specialization of 'SubprogramGroupClassifier'.
+The class 'aadl2_SubprogramGroupType' is a specialization of 'CallContext'.
+The class 'aadl2_SubprogramGroupImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_SubprogramGroupImplementation' is a specialization of 'SubprogramGroupClassifier'.
+The class 'aadl2_SubprogramGroupPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_SubprogramGroupPrototype' is a specialization of 'SubprogramGroupSubcomponentType'.
+The class 'aadl2_SystemClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_SystemClassifier' is a specialization of 'SystemSubcomponentType'.
+The class 'aadl2_SystemType' is a specialization of 'ComponentType'.
+The class 'aadl2_SystemType' is a specialization of 'SystemClassifier'.
+The class 'aadl2_SystemImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_SystemImplementation' is a specialization of 'SystemClassifier'.
+The class 'aadl2_SystemPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_SystemPrototype' is a specialization of 'SystemSubcomponentType'.
+The class 'aadl2_ProcessorClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_ProcessorClassifier' is a specialization of 'ProcessorSubcomponentType'.
+The class 'aadl2_ProcessorType' is a specialization of 'ComponentType'.
+The class 'aadl2_ProcessorType' is a specialization of 'ProcessorClassifier'.
+The class 'aadl2_ProcessorImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_ProcessorImplementation' is a specialization of 'ProcessorClassifier'.
+The class 'aadl2_ProcessorPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_ProcessorPrototype' is a specialization of 'ProcessorSubcomponentType'.
+The class 'aadl2_ProcessClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_ProcessClassifier' is a specialization of 'ProcessSubcomponentType'.
+The class 'aadl2_ProcessType' is a specialization of 'ComponentType'.
+The class 'aadl2_ProcessType' is a specialization of 'ProcessClassifier'.
+The class 'aadl2_ProcessImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_ProcessImplementation' is a specialization of 'ProcessClassifier'.
+The class 'aadl2_ProcessPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_ProcessPrototype' is a specialization of 'ProcessSubcomponentType'.
+The class 'aadl2_ThreadClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_ThreadClassifier' is a specialization of 'ThreadSubcomponentType'.
+The class 'aadl2_ThreadType' is a specialization of 'ComponentType'.
+The class 'aadl2_ThreadType' is a specialization of 'ThreadClassifier'.
+The class 'aadl2_ThreadImplementation' is a specialization of 'BehavioredImplementation'.
+The class 'aadl2_ThreadImplementation' is a specialization of 'ThreadClassifier'.
+The class 'aadl2_ThreadPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_ThreadPrototype' is a specialization of 'ThreadSubcomponentType'.
+The class 'aadl2_ThreadGroupClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_ThreadGroupClassifier' is a specialization of 'ThreadGroupSubcomponentType'.
+The class 'aadl2_ThreadGroupType' is a specialization of 'ComponentType'.
+The class 'aadl2_ThreadGroupType' is a specialization of 'ThreadGroupClassifier'.
+The class 'aadl2_ThreadGroupImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_ThreadGroupImplementation' is a specialization of 'ThreadGroupClassifier'.
+The class 'aadl2_ThreadGroupPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_ThreadGroupPrototype' is a specialization of 'ThreadGroupSubcomponentType'.
+The class 'aadl2_VirtualBusClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_VirtualBusClassifier' is a specialization of 'VirtualBusSubcomponentType'.
+The class 'aadl2_VirtualBusType' is a specialization of 'ComponentType'.
+The class 'aadl2_VirtualBusType' is a specialization of 'VirtualBusClassifier'.
+The class 'aadl2_VirtualBusImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_VirtualBusImplementation' is a specialization of 'VirtualBusClassifier'.
+The class 'aadl2_VirtualBusPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_VirtualBusPrototype' is a specialization of 'VirtualBusSubcomponentType'.
+The class 'aadl2_VirtualProcessorClassifier' is a specialization of 'ComponentClassifier'.
+The class 'aadl2_VirtualProcessorClassifier' is a specialization of 'VirtualProcessorSubcomponentType'.
+The class 'aadl2_VirtualProcessorType' is a specialization of 'ComponentType'.
+The class 'aadl2_VirtualProcessorType' is a specialization of 'VirtualProcessorClassifier'.
+The class 'aadl2_VirtualProcessorImplementation' is a specialization of 'ComponentImplementation'.
+The class 'aadl2_VirtualProcessorImplementation' is a specialization of 'VirtualProcessorClassifier'.
+The class 'aadl2_VirtualProcessorPrototype' is a specialization of 'ComponentPrototype'.
+The class 'aadl2_VirtualProcessorPrototype' is a specialization of 'VirtualProcessorSubcomponentType'.
+The class 'aadl2_BasicPropertyAssociation' is a specialization of 'Element'.
+The class 'aadl2_PropertyConstant' is a specialization of 'TypedElement'.
+The class 'aadl2_PropertyConstant' is a specialization of 'AbstractNamedValue'.
+The class 'aadl2_PropertyConstant' is a specialization of 'ArraySizeProperty'.
+The class 'aadl2_StringLiteral' is a specialization of 'PropertyValue'.
+The class 'aadl2_PropertyValue' is a specialization of 'PropertyExpression'.
+The class 'aadl2_NumberValue' is a specialization of 'PropertyValue'.
+The class 'aadl2_UnitLiteral' is a specialization of 'EnumerationLiteral'.
+The class 'aadl2_EnumerationLiteral' is a specialization of 'NamedElement'.
+The class 'aadl2_EnumerationLiteral' is a specialization of 'AbstractNamedValue'.
+The class 'aadl2_ClassifierValue' is a specialization of 'PropertyOwner'.
+The class 'aadl2_ClassifierValue' is a specialization of 'PropertyValue'.
+The class 'aadl2_ReferenceValue' is a specialization of 'ContainedNamedElement'.
+The class 'aadl2_ReferenceValue' is a specialization of 'PropertyValue'.
+The class 'aadl2_BooleanLiteral' is a specialization of 'PropertyValue'.
+The class 'aadl2_RangeValue' is a specialization of 'PropertyValue'.
+The class 'aadl2_IntegerLiteral' is a specialization of 'NumberValue'.
+The class 'aadl2_RealLiteral' is a specialization of 'NumberValue'.
+The class 'aadl2_Operation' is a specialization of 'PropertyExpression'.
+The class 'aadl2_RecordValue' is a specialization of 'PropertyValue'.
+The class 'aadl2_ComputedValue' is a specialization of 'PropertyValue'.
+The class 'aadl2_ListValue' is a specialization of 'PropertyExpression'.
+The class 'aadl2_NamedValue' is a specialization of 'PropertyValue'.
+The class 'aadl2_PropertySet' is a specialization of 'Namespace'.
+The class 'aadl2_PropertySet' is a specialization of 'ModelUnit'.
+The class 'aadl2_GlobalNamespace' is a specialization of 'Namespace'.
+The class 'aadl2_NonListType' is a specialization of 'PropertyType'.
+The class 'aadl2_AadlBoolean' is a specialization of 'NonListType'.
+The class 'aadl2_AadlString' is a specialization of 'NonListType'.
+The class 'aadl2_AadlInteger' is a specialization of 'NumberType'.
+The class 'aadl2_NumberType' is a specialization of 'NonListType'.
+The class 'aadl2_UnitsType' is a specialization of 'EnumerationType'.
+The class 'aadl2_EnumerationType' is a specialization of 'Namespace'.
+The class 'aadl2_EnumerationType' is a specialization of 'NonListType'.
+The class 'aadl2_NumericRange' is a specialization of 'Element'.
+The class 'aadl2_AadlReal' is a specialization of 'NumberType'.
+The class 'aadl2_ClassifierType' is a specialization of 'NonListType'.
+The class 'aadl2_RangeType' is a specialization of 'NonListType'.
+The class 'aadl2_RecordType' is a specialization of 'Namespace'.
+The class 'aadl2_RecordType' is a specialization of 'NonListType'.
+The class 'aadl2_RecordField' is a specialization of 'BasicProperty'.
+The class 'aadl2_ReferenceType' is a specialization of 'NonListType'.
+The class 'aadl2_ListType' is a specialization of 'PropertyType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'aadl2_Element' and 'aadl2_Element'. From 'aadl2_Element', the role 'aadl2_Element0' has cardinality 0..*, and from 'aadl2_Element', the role 'aadl2_Element' has cardinality 0..*.
+An association connects 'aadl2_Element' and 'aadl2_Comment'. From 'aadl2_Element', the role 'aadl2_Element3' has cardinality 0..*, and from 'aadl2_Comment', the role 'aadl2_Comment' has cardinality 0..*.
+An association connects 'aadl2_NamedElement' and 'aadl2_PropertyAssociation'. From 'aadl2_NamedElement', the role 'aadl2_NamedElement' has cardinality 0..*, and from 'aadl2_PropertyAssociation', the role 'aadl2_PropertyAssociation' has cardinality 0..*.
+An association connects 'aadl2_Property' and 'aadl2_PropertyAssociation'. From 'aadl2_Property', the role 'aadl2_Property' has cardinality 0..*, and from 'aadl2_PropertyAssociation', the role 'aadl2_PropertyAssociation6' has cardinality 0..*.
+An association connects 'aadl2_ContainedNamedElement' and 'aadl2_PropertyAssociation'. From 'aadl2_ContainedNamedElement', the role 'aadl2_ContainedNamedElement' has cardinality 0..*, and from 'aadl2_PropertyAssociation', the role 'aadl2_PropertyAssociation8' has cardinality 0..*.
+An association connects 'aadl2_Classifier' and 'aadl2_PropertyAssociation'. From 'aadl2_Classifier', the role 'aadl2_Classifier' has cardinality 0..*, and from 'aadl2_PropertyAssociation', the role 'aadl2_PropertyAssociation10' has cardinality 0..*.
+An association connects 'aadl2_PropertyAssociation' and 'aadl2_ModalPropertyValue'. From 'aadl2_PropertyAssociation', the role 'aadl2_PropertyAssociation12' has cardinality 0..*, and from 'aadl2_ModalPropertyValue', the role 'aadl2_ModalPropertyValue' has cardinality 0..*.
+An association connects 'aadl2_Property' and 'aadl2_PropertyExpression'. From 'aadl2_Property', the role 'aadl2_Property14' has cardinality 0..*, and from 'aadl2_PropertyExpression', the role 'aadl2_PropertyExpression' has cardinality 0..*.
+An association connects 'aadl2_MetaclassReference' and 'aadl2_Property'. From 'aadl2_MetaclassReference', the role 'aadl2_MetaclassReference' has cardinality 0..*, and from 'aadl2_Property', the role 'aadl2_Property16' has cardinality 0..*.
+An association connects 'aadl2_Property' and 'aadl2_Classifier'. From 'aadl2_Property', the role 'aadl2_Property18' has cardinality 0..*, and from 'aadl2_Classifier', the role 'aadl2_Classifier19' has cardinality 0..*.
+An association connects 'aadl2_Property' and 'aadl2_PropertyOwner'. From 'aadl2_Property', the role 'aadl2_Property21' has cardinality 0..*, and from 'aadl2_PropertyOwner', the role 'aadl2_PropertyOwner' has cardinality 0..*.
+An association connects 'aadl2_PropertyType' and 'aadl2_BasicProperty'. From 'aadl2_PropertyType', the role 'aadl2_PropertyType' has cardinality 0..*, and from 'aadl2_BasicProperty', the role 'aadl2_BasicProperty' has cardinality 0..*.
+An association connects 'aadl2_BasicProperty' and 'aadl2_PropertyType'. From 'aadl2_BasicProperty', the role 'aadl2_BasicProperty24' has cardinality 0..*, and from 'aadl2_PropertyType', the role 'aadl2_PropertyType25' has cardinality 0..*.
+An association connects 'aadl2_Type' and 'aadl2_TypedElement'. From 'aadl2_Type', the role 'aadl2_Type' has cardinality 0..*, and from 'aadl2_TypedElement', the role 'aadl2_TypedElement' has cardinality 0..*.
+An association connects 'aadl2_ClassifierFeature' and 'aadl2_Classifier'. From 'aadl2_ClassifierFeature', the role 'ClassifierFeature' has cardinality 0..*, and from 'aadl2_Classifier', the role 'featuringClassifier' has cardinality 0..*.
+An association connects 'aadl2_NamedElement' and 'aadl2_Classifier'. From 'aadl2_NamedElement', the role 'aadl2_NamedElement30' has cardinality 0..*, and from 'aadl2_Classifier', the role 'aadl2_Classifier29' has cardinality 0..*.
+An association connects 'aadl2_Generalization' and 'aadl2_Classifier'. From 'aadl2_Generalization', the role 'Generalization' has cardinality 0..*, and from 'aadl2_Classifier', the role 'specific' has cardinality 0..*.
+An association connects 'aadl2_Classifier' and 'aadl2_Classifier'. From 'aadl2_Classifier', the role 'aadl2_Classifier34' has cardinality 0..*, and from 'aadl2_Classifier', the role 'aadl2_Classifier32' has cardinality 0..*.
+An association connects 'aadl2_Classifier' and 'aadl2_AnnexSubclause'. From 'aadl2_Classifier', the role 'aadl2_Classifier36' has cardinality 0..*, and from 'aadl2_AnnexSubclause', the role 'aadl2_AnnexSubclause' has cardinality 0..*.
+An association connects 'aadl2_Classifier' and 'aadl2_Prototype'. From 'aadl2_Classifier', the role 'aadl2_Classifier38' has cardinality 0..*, and from 'aadl2_Prototype', the role 'aadl2_Prototype' has cardinality 0..*.
+An association connects 'aadl2_Classifier' and 'aadl2_PrototypeBinding'. From 'aadl2_Classifier', the role 'aadl2_Classifier40' has cardinality 0..*, and from 'aadl2_PrototypeBinding', the role 'aadl2_PrototypeBinding' has cardinality 0..*.
+An association connects 'aadl2_NamedElement' and 'aadl2_Namespace'. From 'aadl2_NamedElement', the role 'aadl2_NamedElement42' has cardinality 0..*, and from 'aadl2_Namespace', the role 'aadl2_Namespace' has cardinality 0..*.
+An association connects 'aadl2_Namespace' and 'aadl2_NamedElement'. From 'aadl2_Namespace', the role 'aadl2_Namespace44' has cardinality 0..*, and from 'aadl2_NamedElement', the role 'aadl2_NamedElement45' has cardinality 0..*.
+An association connects 'aadl2_ClassifierFeature' and 'aadl2_Classifier'. From 'aadl2_ClassifierFeature', the role 'classifierFeature' has cardinality 0..*, and from 'aadl2_Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'aadl2_Classifier' and 'aadl2_Generalization'. From 'aadl2_Classifier', the role 'aadl2_Classifier48' has cardinality 0..*, and from 'aadl2_Generalization', the role 'aadl2_Generalization' has cardinality 0..*.
+An association connects 'aadl2_Classifier' and 'aadl2_Generalization'. From 'aadl2_Classifier', the role 'Classifier50' has cardinality 0..*, and from 'aadl2_Generalization', the role 'generalization' has cardinality 0..*.
+An association connects 'aadl2_DirectedRelationship' and 'aadl2_Element'. From 'aadl2_DirectedRelationship', the role 'aadl2_DirectedRelationship' has cardinality 0..*, and from 'aadl2_Element', the role 'aadl2_Element52' has cardinality 0..*.
+An association connects 'aadl2_Element' and 'aadl2_DirectedRelationship'. From 'aadl2_Element', the role 'aadl2_Element55' has cardinality 0..*, and from 'aadl2_DirectedRelationship', the role 'aadl2_DirectedRelationship54' has cardinality 0..*.
+An association connects 'aadl2_Relationship' and 'aadl2_Element'. From 'aadl2_Relationship', the role 'aadl2_Relationship' has cardinality 0..*, and from 'aadl2_Element', the role 'aadl2_Element57' has cardinality 0..*.
+An association connects 'aadl2_Mode' and 'aadl2_ModalElement'. From 'aadl2_Mode', the role 'aadl2_Mode' has cardinality 0..*, and from 'aadl2_ModalElement', the role 'aadl2_ModalElement' has cardinality 0..*.
+An association connects 'aadl2_Prototype' and 'aadl2_Prototype'. From 'aadl2_Prototype', the role 'aadl2_Prototype61' has cardinality 0..*, and from 'aadl2_Prototype', the role 'aadl2_Prototype59' has cardinality 0..*.
+An association connects 'aadl2_RefinableElement' and 'aadl2_Classifier'. From 'aadl2_RefinableElement', the role 'aadl2_RefinableElement' has cardinality 0..*, and from 'aadl2_Classifier', the role 'aadl2_Classifier63' has cardinality 0..*.
+An association connects 'aadl2_RefinableElement' and 'aadl2_RefinableElement'. From 'aadl2_RefinableElement', the role 'aadl2_RefinableElement66' has cardinality 0..*, and from 'aadl2_RefinableElement', the role 'aadl2_RefinableElement64' has cardinality 0..*.
+An association connects 'aadl2_Prototype' and 'aadl2_PrototypeBinding'. From 'aadl2_Prototype', the role 'aadl2_Prototype69' has cardinality 0..*, and from 'aadl2_PrototypeBinding', the role 'aadl2_PrototypeBinding68' has cardinality 0..*.
+An association connects 'aadl2_ContainedNamedElement' and 'aadl2_ContainmentPathElement'. From 'aadl2_ContainedNamedElement', the role 'aadl2_ContainedNamedElement71' has cardinality 0..*, and from 'aadl2_ContainmentPathElement', the role 'aadl2_ContainmentPathElement' has cardinality 0..*.
+An association connects 'aadl2_ArrayRange' and 'aadl2_ContainmentPathElement'. From 'aadl2_ArrayRange', the role 'aadl2_ArrayRange' has cardinality 0..*, and from 'aadl2_ContainmentPathElement', the role 'aadl2_ContainmentPathElement73' has cardinality 0..*.
+An association connects 'aadl2_ContainmentPathElement' and 'aadl2_NamedElement'. From 'aadl2_ContainmentPathElement', the role 'aadl2_ContainmentPathElement75' has cardinality 0..*, and from 'aadl2_NamedElement', the role 'aadl2_NamedElement76' has cardinality 0..*.
+An association connects 'aadl2_ModalPropertyValue' and 'aadl2_PropertyExpression'. From 'aadl2_ModalPropertyValue', the role 'aadl2_ModalPropertyValue78' has cardinality 0..*, and from 'aadl2_PropertyExpression', the role 'aadl2_PropertyExpression79' has cardinality 0..*.
+An association connects 'aadl2_ArraySize' and 'aadl2_ArrayDimension'. From 'aadl2_ArraySize', the role 'aadl2_ArraySize' has cardinality 0..*, and from 'aadl2_ArrayDimension', the role 'aadl2_ArrayDimension' has cardinality 0..*.
+An association connects 'aadl2_ArraySizeProperty' and 'aadl2_ArraySize'. From 'aadl2_ArraySizeProperty', the role 'aadl2_ArraySizeProperty' has cardinality 0..*, and from 'aadl2_ArraySize', the role 'aadl2_ArraySize82' has cardinality 0..*.
+An association connects 'aadl2_ArrayableElement' and 'aadl2_ArrayDimension'. From 'aadl2_ArrayableElement', the role 'aadl2_ArrayableElement' has cardinality 0..*, and from 'aadl2_ArrayDimension', the role 'aadl2_ArrayDimension84' has cardinality 0..*.
+An association connects 'aadl2_ComponentImplementation' and 'aadl2_ComponentImplementationReference'. From 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation' has cardinality 0..*, and from 'aadl2_ComponentImplementationReference', the role 'aadl2_ComponentImplementationReference' has cardinality 0..*.
+An association connects 'aadl2_PrototypeBinding' and 'aadl2_ComponentImplementationReference'. From 'aadl2_PrototypeBinding', the role 'aadl2_PrototypeBinding88' has cardinality 0..*, and from 'aadl2_ComponentImplementationReference', the role 'aadl2_ComponentImplementationReference87' has cardinality 0..*.
+An association connects 'aadl2_ComponentType' and 'aadl2_ComponentImplementation'. From 'aadl2_ComponentType', the role 'aadl2_ComponentType' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation90' has cardinality 0..*.
+An association connects 'aadl2_ComponentImplementation' and 'aadl2_Subcomponent'. From 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation92' has cardinality 0..*, and from 'aadl2_Subcomponent', the role 'aadl2_Subcomponent' has cardinality 0..*.
+An association connects 'aadl2_ComponentImplementation' and 'aadl2_ComponentImplementation'. From 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation95' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation93' has cardinality 0..*.
+An association connects 'aadl2_FlowImplementation' and 'aadl2_ComponentImplementation'. From 'aadl2_FlowImplementation', the role 'aadl2_FlowImplementation' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation97' has cardinality 0..*.
+An association connects 'aadl2_ComponentImplementation' and 'aadl2_Connection'. From 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation99' has cardinality 0..*, and from 'aadl2_Connection', the role 'aadl2_Connection' has cardinality 0..*.
+An association connects 'aadl2_ComponentImplementation' and 'aadl2_ImplementationExtension'. From 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation101' has cardinality 0..*, and from 'aadl2_ImplementationExtension', the role 'aadl2_ImplementationExtension' has cardinality 0..*.
+An association connects 'aadl2_Realization' and 'aadl2_ComponentImplementation'. From 'aadl2_Realization', the role 'aadl2_Realization' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation103' has cardinality 0..*.
+An association connects 'aadl2_EndToEndFlow' and 'aadl2_ComponentImplementation'. From 'aadl2_EndToEndFlow', the role 'aadl2_EndToEndFlow' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation105' has cardinality 0..*.
+An association connects 'aadl2_AbstractSubcomponent' and 'aadl2_ComponentImplementation'. From 'aadl2_AbstractSubcomponent', the role 'aadl2_AbstractSubcomponent' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation107' has cardinality 0..*.
+An association connects 'aadl2_AccessConnection' and 'aadl2_ComponentImplementation'. From 'aadl2_AccessConnection', the role 'aadl2_AccessConnection' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation109' has cardinality 0..*.
+An association connects 'aadl2_ComponentImplementation' and 'aadl2_ParameterConnection'. From 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation111' has cardinality 0..*, and from 'aadl2_ParameterConnection', the role 'aadl2_ParameterConnection' has cardinality 0..*.
+An association connects 'aadl2_ComponentImplementation' and 'aadl2_PortConnection'. From 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation113' has cardinality 0..*, and from 'aadl2_PortConnection', the role 'aadl2_PortConnection' has cardinality 0..*.
+An association connects 'aadl2_FeatureConnection' and 'aadl2_ComponentImplementation'. From 'aadl2_FeatureConnection', the role 'aadl2_FeatureConnection' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation115' has cardinality 0..*.
+An association connects 'aadl2_ComponentImplementation' and 'aadl2_FeatureGroupConnection'. From 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation117' has cardinality 0..*, and from 'aadl2_FeatureGroupConnection', the role 'aadl2_FeatureGroupConnection' has cardinality 0..*.
+An association connects 'aadl2_ProcessorFeature' and 'aadl2_ComponentImplementation'. From 'aadl2_ProcessorFeature', the role 'aadl2_ProcessorFeature' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation119' has cardinality 0..*.
+An association connects 'aadl2_InternalFeature' and 'aadl2_ComponentImplementation'. From 'aadl2_InternalFeature', the role 'aadl2_InternalFeature' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation121' has cardinality 0..*.
+An association connects 'aadl2_EventSource' and 'aadl2_ComponentImplementation'. From 'aadl2_EventSource', the role 'aadl2_EventSource' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation123' has cardinality 0..*.
+An association connects 'aadl2_ComponentImplementation' and 'aadl2_EventDataSource'. From 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation125' has cardinality 0..*, and from 'aadl2_EventDataSource', the role 'aadl2_EventDataSource' has cardinality 0..*.
+An association connects 'aadl2_PortProxy' and 'aadl2_ComponentImplementation'. From 'aadl2_PortProxy', the role 'aadl2_PortProxy' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation127' has cardinality 0..*.
+An association connects 'aadl2_ComponentImplementation' and 'aadl2_SubprogramProxy'. From 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation129' has cardinality 0..*, and from 'aadl2_SubprogramProxy', the role 'aadl2_SubprogramProxy' has cardinality 0..*.
+An association connects 'aadl2_ComponentClassifier' and 'aadl2_Mode'. From 'aadl2_ComponentClassifier', the role 'aadl2_ComponentClassifier' has cardinality 0..*, and from 'aadl2_Mode', the role 'aadl2_Mode131' has cardinality 0..*.
+An association connects 'aadl2_ComponentClassifier' and 'aadl2_ModeTransition'. From 'aadl2_ComponentClassifier', the role 'aadl2_ComponentClassifier133' has cardinality 0..*, and from 'aadl2_ModeTransition', the role 'aadl2_ModeTransition' has cardinality 0..*.
+An association connects 'aadl2_ModeTransition' and 'aadl2_Mode'. From 'aadl2_ModeTransition', the role 'aadl2_ModeTransition135' has cardinality 0..*, and from 'aadl2_Mode', the role 'aadl2_Mode136' has cardinality 0..*.
+An association connects 'aadl2_ModeTransition' and 'aadl2_Mode'. From 'aadl2_ModeTransition', the role 'aadl2_ModeTransition138' has cardinality 0..*, and from 'aadl2_Mode', the role 'aadl2_Mode139' has cardinality 0..*.
+An association connects 'aadl2_ModeTransitionTrigger' and 'aadl2_ModeTransition'. From 'aadl2_ModeTransitionTrigger', the role 'aadl2_ModeTransitionTrigger' has cardinality 0..*, and from 'aadl2_ModeTransition', the role 'aadl2_ModeTransition141' has cardinality 0..*.
+An association connects 'aadl2_ModeTransitionTrigger' and 'aadl2_Context'. From 'aadl2_ModeTransitionTrigger', the role 'aadl2_ModeTransitionTrigger143' has cardinality 0..*, and from 'aadl2_Context', the role 'aadl2_Context' has cardinality 0..*.
+An association connects 'aadl2_ModeTransitionTrigger' and 'aadl2_TriggerPort'. From 'aadl2_ModeTransitionTrigger', the role 'aadl2_ModeTransitionTrigger145' has cardinality 0..*, and from 'aadl2_TriggerPort', the role 'aadl2_TriggerPort' has cardinality 0..*.
+An association connects 'aadl2_ComponentType' and 'aadl2_Feature'. From 'aadl2_ComponentType', the role 'aadl2_ComponentType147' has cardinality 0..*, and from 'aadl2_Feature', the role 'aadl2_Feature' has cardinality 0..*.
+An association connects 'aadl2_ComponentType' and 'aadl2_ComponentType'. From 'aadl2_ComponentType', the role 'aadl2_ComponentType148' has cardinality 0..*, and from 'aadl2_ComponentType', the role 'aadl2_ComponentType150' has cardinality 0..*.
+An association connects 'aadl2_ComponentType' and 'aadl2_FlowSpecification'. From 'aadl2_ComponentType', the role 'aadl2_ComponentType152' has cardinality 0..*, and from 'aadl2_FlowSpecification', the role 'aadl2_FlowSpecification' has cardinality 0..*.
+An association connects 'aadl2_ComponentType' and 'aadl2_TypeExtension'. From 'aadl2_ComponentType', the role 'aadl2_ComponentType154' has cardinality 0..*, and from 'aadl2_TypeExtension', the role 'aadl2_TypeExtension' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroup' and 'aadl2_ComponentType'. From 'aadl2_FeatureGroup', the role 'aadl2_FeatureGroup' has cardinality 0..*, and from 'aadl2_ComponentType', the role 'aadl2_ComponentType156' has cardinality 0..*.
+An association connects 'aadl2_ComponentType' and 'aadl2_AbstractFeature'. From 'aadl2_ComponentType', the role 'aadl2_ComponentType158' has cardinality 0..*, and from 'aadl2_AbstractFeature', the role 'aadl2_AbstractFeature' has cardinality 0..*.
+An association connects 'aadl2_ComponentPrototype' and 'aadl2_Feature'. From 'aadl2_ComponentPrototype', the role 'aadl2_ComponentPrototype' has cardinality 0..*, and from 'aadl2_Feature', the role 'aadl2_Feature160' has cardinality 0..*.
+An association connects 'aadl2_Feature' and 'aadl2_FeatureClassifier'. From 'aadl2_Feature', the role 'aadl2_Feature162' has cardinality 0..*, and from 'aadl2_FeatureClassifier', the role 'aadl2_FeatureClassifier' has cardinality 0..*.
+An association connects 'aadl2_Feature' and 'aadl2_Feature'. From 'aadl2_Feature', the role 'aadl2_Feature165' has cardinality 0..*, and from 'aadl2_Feature', the role 'aadl2_Feature163' has cardinality 0..*.
+An association connects 'aadl2_Feature' and 'aadl2_Classifier'. From 'aadl2_Feature', the role 'aadl2_Feature167' has cardinality 0..*, and from 'aadl2_Classifier', the role 'aadl2_Classifier168' has cardinality 0..*.
+An association connects 'aadl2_ComponentPrototype' and 'aadl2_ComponentClassifier'. From 'aadl2_ComponentPrototype', the role 'aadl2_ComponentPrototype170' has cardinality 0..*, and from 'aadl2_ComponentClassifier', the role 'aadl2_ComponentClassifier171' has cardinality 0..*.
+An association connects 'aadl2_FlowSpecification' and 'aadl2_FlowSpecification'. From 'aadl2_FlowSpecification', the role 'aadl2_FlowSpecification172' has cardinality 0..*, and from 'aadl2_FlowSpecification', the role 'aadl2_FlowSpecification174' has cardinality 0..*.
+An association connects 'aadl2_FlowSpecification' and 'aadl2_FlowEnd'. From 'aadl2_FlowSpecification', the role 'aadl2_FlowSpecification176' has cardinality 0..*, and from 'aadl2_FlowEnd', the role 'aadl2_FlowEnd' has cardinality 0..*.
+An association connects 'aadl2_FlowSpecification' and 'aadl2_FlowEnd'. From 'aadl2_FlowSpecification', the role 'aadl2_FlowSpecification178' has cardinality 0..*, and from 'aadl2_FlowEnd', the role 'aadl2_FlowEnd179' has cardinality 0..*.
+An association connects 'aadl2_ModalPath' and 'aadl2_ModeFeature'. From 'aadl2_ModalPath', the role 'aadl2_ModalPath' has cardinality 0..*, and from 'aadl2_ModeFeature', the role 'aadl2_ModeFeature' has cardinality 0..*.
+An association connects 'aadl2_Context' and 'aadl2_FlowEnd'. From 'aadl2_Context', the role 'aadl2_Context183' has cardinality 0..*, and from 'aadl2_FlowEnd', the role 'aadl2_FlowEnd182' has cardinality 0..*.
+An association connects 'aadl2_Feature' and 'aadl2_FlowEnd'. From 'aadl2_Feature', the role 'aadl2_Feature186' has cardinality 0..*, and from 'aadl2_FlowEnd', the role 'aadl2_FlowEnd185' has cardinality 0..*.
+An association connects 'aadl2_TypeExtension' and 'aadl2_ComponentType'. From 'aadl2_TypeExtension', the role 'aadl2_TypeExtension188' has cardinality 0..*, and from 'aadl2_ComponentType', the role 'aadl2_ComponentType189' has cardinality 0..*.
+An association connects 'aadl2_FeatureType' and 'aadl2_FeatureGroup'. From 'aadl2_FeatureType', the role 'aadl2_FeatureType' has cardinality 0..*, and from 'aadl2_FeatureGroup', the role 'aadl2_FeatureGroup191' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroup' and 'aadl2_FeatureGroupType'. From 'aadl2_FeatureGroup', the role 'aadl2_FeatureGroup193' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupPrototype' and 'aadl2_FeatureGroup'. From 'aadl2_FeatureGroupPrototype', the role 'aadl2_FeatureGroupPrototype' has cardinality 0..*, and from 'aadl2_FeatureGroup', the role 'aadl2_FeatureGroup195' has cardinality 0..*.
+An association connects 'aadl2_Feature' and 'aadl2_FeatureGroupType'. From 'aadl2_Feature', the role 'aadl2_Feature198' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType197' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupType' and 'aadl2_FeatureGroupType'. From 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType199' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType201' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupType' and 'aadl2_FeatureGroupType'. From 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType202' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType204' has cardinality 0..*.
+An association connects 'aadl2_GroupExtension' and 'aadl2_FeatureGroupType'. From 'aadl2_GroupExtension', the role 'aadl2_GroupExtension' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType206' has cardinality 0..*.
+An association connects 'aadl2_BusAccess' and 'aadl2_FeatureGroupType'. From 'aadl2_BusAccess', the role 'aadl2_BusAccess' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType208' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupType' and 'aadl2_DataAccess'. From 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType210' has cardinality 0..*, and from 'aadl2_DataAccess', the role 'aadl2_DataAccess' has cardinality 0..*.
+An association connects 'aadl2_DataPort' and 'aadl2_FeatureGroupType'. From 'aadl2_DataPort', the role 'aadl2_DataPort' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType212' has cardinality 0..*.
+An association connects 'aadl2_EventDataPort' and 'aadl2_FeatureGroupType'. From 'aadl2_EventDataPort', the role 'aadl2_EventDataPort' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType214' has cardinality 0..*.
+An association connects 'aadl2_EventPort' and 'aadl2_FeatureGroupType'. From 'aadl2_EventPort', the role 'aadl2_EventPort' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType216' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupType' and 'aadl2_FeatureGroup'. From 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType218' has cardinality 0..*, and from 'aadl2_FeatureGroup', the role 'aadl2_FeatureGroup219' has cardinality 0..*.
+An association connects 'aadl2_Parameter' and 'aadl2_FeatureGroupType'. From 'aadl2_Parameter', the role 'aadl2_Parameter' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType221' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupType' and 'aadl2_SubprogramAccess'. From 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType223' has cardinality 0..*, and from 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupType' and 'aadl2_SubprogramGroupAccess'. From 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType225' has cardinality 0..*, and from 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess' has cardinality 0..*.
+An association connects 'aadl2_AbstractFeature' and 'aadl2_FeatureGroupType'. From 'aadl2_AbstractFeature', the role 'aadl2_AbstractFeature228' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType227' has cardinality 0..*.
+An association connects 'aadl2_GroupExtension' and 'aadl2_FeatureGroupType'. From 'aadl2_GroupExtension', the role 'aadl2_GroupExtension230' has cardinality 0..*, and from 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType231' has cardinality 0..*.
+An association connects 'aadl2_BusSubcomponentType' and 'aadl2_BusAccess'. From 'aadl2_BusSubcomponentType', the role 'aadl2_BusSubcomponentType' has cardinality 0..*, and from 'aadl2_BusAccess', the role 'aadl2_BusAccess233' has cardinality 0..*.
+An association connects 'aadl2_DataSubcomponentType' and 'aadl2_DataAccess'. From 'aadl2_DataSubcomponentType', the role 'aadl2_DataSubcomponentType' has cardinality 0..*, and from 'aadl2_DataAccess', the role 'aadl2_DataAccess235' has cardinality 0..*.
+An association connects 'aadl2_DataPort' and 'aadl2_DataSubcomponentType'. From 'aadl2_DataPort', the role 'aadl2_DataPort237' has cardinality 0..*, and from 'aadl2_DataSubcomponentType', the role 'aadl2_DataSubcomponentType238' has cardinality 0..*.
+An association connects 'aadl2_DataSubcomponentType' and 'aadl2_EventDataPort'. From 'aadl2_DataSubcomponentType', the role 'aadl2_DataSubcomponentType241' has cardinality 0..*, and from 'aadl2_EventDataPort', the role 'aadl2_EventDataPort240' has cardinality 0..*.
+An association connects 'aadl2_Parameter' and 'aadl2_DataSubcomponentType'. From 'aadl2_Parameter', the role 'aadl2_Parameter243' has cardinality 0..*, and from 'aadl2_DataSubcomponentType', the role 'aadl2_DataSubcomponentType244' has cardinality 0..*.
+An association connects 'aadl2_SubprogramAccess' and 'aadl2_SubprogramSubcomponentType'. From 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess246' has cardinality 0..*, and from 'aadl2_SubprogramSubcomponentType', the role 'aadl2_SubprogramSubcomponentType' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupSubcomponentType' and 'aadl2_SubprogramGroupAccess'. From 'aadl2_SubprogramGroupSubcomponentType', the role 'aadl2_SubprogramGroupSubcomponentType' has cardinality 0..*, and from 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess248' has cardinality 0..*.
+An association connects 'aadl2_FeaturePrototype' and 'aadl2_AbstractFeature'. From 'aadl2_FeaturePrototype', the role 'aadl2_FeaturePrototype' has cardinality 0..*, and from 'aadl2_AbstractFeature', the role 'aadl2_AbstractFeature250' has cardinality 0..*.
+An association connects 'aadl2_ComponentClassifier' and 'aadl2_FeaturePrototype'. From 'aadl2_ComponentClassifier', the role 'aadl2_ComponentClassifier253' has cardinality 0..*, and from 'aadl2_FeaturePrototype', the role 'aadl2_FeaturePrototype252' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupType' and 'aadl2_FeatureGroupPrototype'. From 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType256' has cardinality 0..*, and from 'aadl2_FeatureGroupPrototype', the role 'aadl2_FeatureGroupPrototype255' has cardinality 0..*.
+An association connects 'aadl2_SubcomponentType' and 'aadl2_Subcomponent'. From 'aadl2_SubcomponentType', the role 'aadl2_SubcomponentType' has cardinality 0..*, and from 'aadl2_Subcomponent', the role 'aadl2_Subcomponent258' has cardinality 0..*.
+An association connects 'aadl2_PrototypeBinding' and 'aadl2_Subcomponent'. From 'aadl2_PrototypeBinding', the role 'aadl2_PrototypeBinding261' has cardinality 0..*, and from 'aadl2_Subcomponent', the role 'aadl2_Subcomponent260' has cardinality 0..*.
+An association connects 'aadl2_ComponentPrototype' and 'aadl2_Subcomponent'. From 'aadl2_ComponentPrototype', the role 'aadl2_ComponentPrototype264' has cardinality 0..*, and from 'aadl2_Subcomponent', the role 'aadl2_Subcomponent263' has cardinality 0..*.
+An association connects 'aadl2_Subcomponent' and 'aadl2_ModeBinding'. From 'aadl2_Subcomponent', the role 'aadl2_Subcomponent266' has cardinality 0..*, and from 'aadl2_ModeBinding', the role 'aadl2_ModeBinding' has cardinality 0..*.
+An association connects 'aadl2_ComponentImplementationReference' and 'aadl2_Subcomponent'. From 'aadl2_ComponentImplementationReference', the role 'aadl2_ComponentImplementationReference269' has cardinality 0..*, and from 'aadl2_Subcomponent', the role 'aadl2_Subcomponent268' has cardinality 0..*.
+An association connects 'aadl2_Subcomponent' and 'aadl2_Subcomponent'. From 'aadl2_Subcomponent', the role 'aadl2_Subcomponent272' has cardinality 0..*, and from 'aadl2_Subcomponent', the role 'aadl2_Subcomponent270' has cardinality 0..*.
+An association connects 'aadl2_ComponentClassifier' and 'aadl2_Subcomponent'. From 'aadl2_ComponentClassifier', the role 'aadl2_ComponentClassifier275' has cardinality 0..*, and from 'aadl2_Subcomponent', the role 'aadl2_Subcomponent274' has cardinality 0..*.
+An association connects 'aadl2_Mode' and 'aadl2_ModeBinding'. From 'aadl2_Mode', the role 'aadl2_Mode278' has cardinality 0..*, and from 'aadl2_ModeBinding', the role 'aadl2_ModeBinding277' has cardinality 0..*.
+An association connects 'aadl2_Mode' and 'aadl2_ModeBinding'. From 'aadl2_Mode', the role 'aadl2_Mode281' has cardinality 0..*, and from 'aadl2_ModeBinding', the role 'aadl2_ModeBinding280' has cardinality 0..*.
+An association connects 'aadl2_FlowImplementation' and 'aadl2_FlowSpecification'. From 'aadl2_FlowImplementation', the role 'aadl2_FlowImplementation283' has cardinality 0..*, and from 'aadl2_FlowSpecification', the role 'aadl2_FlowSpecification284' has cardinality 0..*.
+An association connects 'aadl2_FlowImplementation' and 'aadl2_FlowSegment'. From 'aadl2_FlowImplementation', the role 'aadl2_FlowImplementation286' has cardinality 0..*, and from 'aadl2_FlowSegment', the role 'aadl2_FlowSegment' has cardinality 0..*.
+An association connects 'aadl2_FlowElement' and 'aadl2_FlowSegment'. From 'aadl2_FlowElement', the role 'aadl2_FlowElement' has cardinality 0..*, and from 'aadl2_FlowSegment', the role 'aadl2_FlowSegment288' has cardinality 0..*.
+An association connects 'aadl2_FlowSegment' and 'aadl2_Context'. From 'aadl2_FlowSegment', the role 'aadl2_FlowSegment290' has cardinality 0..*, and from 'aadl2_Context', the role 'aadl2_Context291' has cardinality 0..*.
+An association connects 'aadl2_ConnectedElement' and 'aadl2_Connection'. From 'aadl2_ConnectedElement', the role 'aadl2_ConnectedElement' has cardinality 0..*, and from 'aadl2_Connection', the role 'aadl2_Connection293' has cardinality 0..*.
+An association connects 'aadl2_ConnectedElement' and 'aadl2_Connection'. From 'aadl2_ConnectedElement', the role 'aadl2_ConnectedElement296' has cardinality 0..*, and from 'aadl2_Connection', the role 'aadl2_Connection295' has cardinality 0..*.
+An association connects 'aadl2_Connection' and 'aadl2_Connection'. From 'aadl2_Connection', the role 'aadl2_Connection299' has cardinality 0..*, and from 'aadl2_Connection', the role 'aadl2_Connection297' has cardinality 0..*.
+An association connects 'aadl2_ConnectedElement' and 'aadl2_Context'. From 'aadl2_ConnectedElement', the role 'aadl2_ConnectedElement301' has cardinality 0..*, and from 'aadl2_Context', the role 'aadl2_Context302' has cardinality 0..*.
+An association connects 'aadl2_ConnectedElement' and 'aadl2_ConnectionEnd'. From 'aadl2_ConnectedElement', the role 'aadl2_ConnectedElement304' has cardinality 0..*, and from 'aadl2_ConnectionEnd', the role 'aadl2_ConnectionEnd' has cardinality 0..*.
+An association connects 'aadl2_ImplementationExtension' and 'aadl2_ComponentImplementation'. From 'aadl2_ImplementationExtension', the role 'aadl2_ImplementationExtension306' has cardinality 0..*, and from 'aadl2_ComponentImplementation', the role 'aadl2_ComponentImplementation307' has cardinality 0..*.
+An association connects 'aadl2_ComponentType' and 'aadl2_Realization'. From 'aadl2_ComponentType', the role 'aadl2_ComponentType310' has cardinality 0..*, and from 'aadl2_Realization', the role 'aadl2_Realization309' has cardinality 0..*.
+An association connects 'aadl2_EndToEndFlow' and 'aadl2_EndToEndFlow'. From 'aadl2_EndToEndFlow', the role 'aadl2_EndToEndFlow313' has cardinality 0..*, and from 'aadl2_EndToEndFlow', the role 'aadl2_EndToEndFlow311' has cardinality 0..*.
+An association connects 'aadl2_EndToEndFlowSegment' and 'aadl2_EndToEndFlow'. From 'aadl2_EndToEndFlowSegment', the role 'aadl2_EndToEndFlowSegment' has cardinality 0..*, and from 'aadl2_EndToEndFlow', the role 'aadl2_EndToEndFlow315' has cardinality 0..*.
+An association connects 'aadl2_EndToEndFlowSegment' and 'aadl2_EndToEndFlowElement'. From 'aadl2_EndToEndFlowSegment', the role 'aadl2_EndToEndFlowSegment317' has cardinality 0..*, and from 'aadl2_EndToEndFlowElement', the role 'aadl2_EndToEndFlowElement' has cardinality 0..*.
+An association connects 'aadl2_EndToEndFlowSegment' and 'aadl2_Context'. From 'aadl2_EndToEndFlowSegment', the role 'aadl2_EndToEndFlowSegment319' has cardinality 0..*, and from 'aadl2_Context', the role 'aadl2_Context320' has cardinality 0..*.
+An association connects 'aadl2_AbstractSubcomponentType' and 'aadl2_AbstractSubcomponent'. From 'aadl2_AbstractSubcomponentType', the role 'aadl2_AbstractSubcomponentType' has cardinality 0..*, and from 'aadl2_AbstractSubcomponent', the role 'aadl2_AbstractSubcomponent322' has cardinality 0..*.
+An association connects 'aadl2_AnnexLibrary' and 'aadl2_DefaultAnnexLibrary'. From 'aadl2_AnnexLibrary', the role 'aadl2_AnnexLibrary' has cardinality 0..*, and from 'aadl2_DefaultAnnexLibrary', the role 'aadl2_DefaultAnnexLibrary' has cardinality 0..*.
+An association connects 'aadl2_DefaultAnnexSubclause' and 'aadl2_AnnexSubclause'. From 'aadl2_DefaultAnnexSubclause', the role 'aadl2_DefaultAnnexSubclause' has cardinality 0..*, and from 'aadl2_AnnexSubclause', the role 'aadl2_AnnexSubclause325' has cardinality 0..*.
+An association connects 'aadl2_PrivatePackageSection' and 'aadl2_PublicPackageSection'. From 'aadl2_PrivatePackageSection', the role 'PrivatePackageSection' has cardinality 0..*, and from 'aadl2_PublicPackageSection', the role 'publicSection' has cardinality 0..*.
+An association connects 'aadl2_PackageRename' and 'aadl2_PackageSection'. From 'aadl2_PackageRename', the role 'aadl2_PackageRename' has cardinality 0..*, and from 'aadl2_PackageSection', the role 'aadl2_PackageSection' has cardinality 0..*.
+An association connects 'aadl2_ComponentTypeRename' and 'aadl2_PackageSection'. From 'aadl2_ComponentTypeRename', the role 'aadl2_ComponentTypeRename' has cardinality 0..*, and from 'aadl2_PackageSection', the role 'aadl2_PackageSection329' has cardinality 0..*.
+An association connects 'aadl2_PackageSection' and 'aadl2_Classifier'. From 'aadl2_PackageSection', the role 'aadl2_PackageSection331' has cardinality 0..*, and from 'aadl2_Classifier', the role 'aadl2_Classifier332' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupTypeRename' and 'aadl2_PackageSection'. From 'aadl2_FeatureGroupTypeRename', the role 'aadl2_FeatureGroupTypeRename' has cardinality 0..*, and from 'aadl2_PackageSection', the role 'aadl2_PackageSection334' has cardinality 0..*.
+An association connects 'aadl2_AnnexLibrary' and 'aadl2_PackageSection'. From 'aadl2_AnnexLibrary', the role 'aadl2_AnnexLibrary337' has cardinality 0..*, and from 'aadl2_PackageSection', the role 'aadl2_PackageSection336' has cardinality 0..*.
+An association connects 'aadl2_PackageSection' and 'aadl2_ModelUnit'. From 'aadl2_PackageSection', the role 'aadl2_PackageSection339' has cardinality 0..*, and from 'aadl2_ModelUnit', the role 'aadl2_ModelUnit' has cardinality 0..*.
+An association connects 'aadl2_AadlPackage' and 'aadl2_PackageRename'. From 'aadl2_AadlPackage', the role 'aadl2_AadlPackage' has cardinality 0..*, and from 'aadl2_PackageRename', the role 'aadl2_PackageRename341' has cardinality 0..*.
+An association connects 'aadl2_PublicPackageSection' and 'aadl2_AadlPackage'. From 'aadl2_PublicPackageSection', the role 'aadl2_PublicPackageSection' has cardinality 0..*, and from 'aadl2_AadlPackage', the role 'aadl2_AadlPackage343' has cardinality 0..*.
+An association connects 'aadl2_AadlPackage' and 'aadl2_PrivatePackageSection'. From 'aadl2_AadlPackage', the role 'aadl2_AadlPackage345' has cardinality 0..*, and from 'aadl2_PrivatePackageSection', the role 'aadl2_PrivatePackageSection' has cardinality 0..*.
+An association connects 'aadl2_PublicPackageSection' and 'aadl2_AadlPackage'. From 'aadl2_PublicPackageSection', the role 'aadl2_PublicPackageSection348' has cardinality 0..*, and from 'aadl2_AadlPackage', the role 'aadl2_AadlPackage347' has cardinality 0..*.
+An association connects 'aadl2_PrivatePackageSection' and 'aadl2_AadlPackage'. From 'aadl2_PrivatePackageSection', the role 'aadl2_PrivatePackageSection351' has cardinality 0..*, and from 'aadl2_AadlPackage', the role 'aadl2_AadlPackage350' has cardinality 0..*.
+An association connects 'aadl2_PublicPackageSection' and 'aadl2_PrivatePackageSection'. From 'aadl2_PublicPackageSection', the role 'PublicPackageSection' has cardinality 0..*, and from 'aadl2_PrivatePackageSection', the role 'privateSection' has cardinality 0..*.
+An association connects 'aadl2_ComponentType' and 'aadl2_ComponentTypeRename'. From 'aadl2_ComponentType', the role 'aadl2_ComponentType355' has cardinality 0..*, and from 'aadl2_ComponentTypeRename', the role 'aadl2_ComponentTypeRename354' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupType' and 'aadl2_FeatureGroupTypeRename'. From 'aadl2_FeatureGroupType', the role 'aadl2_FeatureGroupType358' has cardinality 0..*, and from 'aadl2_FeatureGroupTypeRename', the role 'aadl2_FeatureGroupTypeRename357' has cardinality 0..*.
+An association connects 'aadl2_ComponentPrototypeBinding' and 'aadl2_ComponentPrototypeActual'. From 'aadl2_ComponentPrototypeBinding', the role 'aadl2_ComponentPrototypeBinding' has cardinality 0..*, and from 'aadl2_ComponentPrototypeActual', the role 'aadl2_ComponentPrototypeActual' has cardinality 0..*.
+An association connects 'aadl2_PrototypeBinding' and 'aadl2_ComponentPrototypeActual'. From 'aadl2_PrototypeBinding', the role 'aadl2_PrototypeBinding362' has cardinality 0..*, and from 'aadl2_ComponentPrototypeActual', the role 'aadl2_ComponentPrototypeActual361' has cardinality 0..*.
+An association connects 'aadl2_ComponentPrototypeActual' and 'aadl2_SubcomponentType'. From 'aadl2_ComponentPrototypeActual', the role 'aadl2_ComponentPrototypeActual364' has cardinality 0..*, and from 'aadl2_SubcomponentType', the role 'aadl2_SubcomponentType365' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupPrototypeBinding' and 'aadl2_FeatureGroupPrototypeActual'. From 'aadl2_FeatureGroupPrototypeBinding', the role 'aadl2_FeatureGroupPrototypeBinding' has cardinality 0..*, and from 'aadl2_FeatureGroupPrototypeActual', the role 'aadl2_FeatureGroupPrototypeActual' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupPrototypeActual' and 'aadl2_PrototypeBinding'. From 'aadl2_FeatureGroupPrototypeActual', the role 'aadl2_FeatureGroupPrototypeActual368' has cardinality 0..*, and from 'aadl2_PrototypeBinding', the role 'aadl2_PrototypeBinding369' has cardinality 0..*.
+An association connects 'aadl2_FeatureGroupPrototypeActual' and 'aadl2_FeatureType'. From 'aadl2_FeatureGroupPrototypeActual', the role 'aadl2_FeatureGroupPrototypeActual371' has cardinality 0..*, and from 'aadl2_FeatureType', the role 'aadl2_FeatureType372' has cardinality 0..*.
+An association connects 'aadl2_FeaturePrototypeBinding' and 'aadl2_FeaturePrototypeActual'. From 'aadl2_FeaturePrototypeBinding', the role 'aadl2_FeaturePrototypeBinding' has cardinality 0..*, and from 'aadl2_FeaturePrototypeActual', the role 'aadl2_FeaturePrototypeActual' has cardinality 0..*.
+An association connects 'aadl2_ComponentClassifier' and 'aadl2_AccessSpecification'. From 'aadl2_ComponentClassifier', the role 'aadl2_ComponentClassifier375' has cardinality 0..*, and from 'aadl2_AccessSpecification', the role 'aadl2_AccessSpecification' has cardinality 0..*.
+An association connects 'aadl2_ComponentPrototype' and 'aadl2_AccessSpecification'. From 'aadl2_ComponentPrototype', the role 'aadl2_ComponentPrototype378' has cardinality 0..*, and from 'aadl2_AccessSpecification', the role 'aadl2_AccessSpecification377' has cardinality 0..*.
+An association connects 'aadl2_PortSpecification' and 'aadl2_ComponentClassifier'. From 'aadl2_PortSpecification', the role 'aadl2_PortSpecification' has cardinality 0..*, and from 'aadl2_ComponentClassifier', the role 'aadl2_ComponentClassifier380' has cardinality 0..*.
+An association connects 'aadl2_ComponentPrototype' and 'aadl2_PortSpecification'. From 'aadl2_ComponentPrototype', the role 'aadl2_ComponentPrototype383' has cardinality 0..*, and from 'aadl2_PortSpecification', the role 'aadl2_PortSpecification382' has cardinality 0..*.
+An association connects 'aadl2_FeaturePrototype' and 'aadl2_FeaturePrototypeReference'. From 'aadl2_FeaturePrototype', the role 'aadl2_FeaturePrototype385' has cardinality 0..*, and from 'aadl2_FeaturePrototypeReference', the role 'aadl2_FeaturePrototypeReference' has cardinality 0..*.
+An association connects 'aadl2_SubprogramCall' and 'aadl2_SubprogramCallSequence'. From 'aadl2_SubprogramCall', the role 'aadl2_SubprogramCall' has cardinality 0..*, and from 'aadl2_SubprogramCallSequence', the role 'aadl2_SubprogramCallSequence' has cardinality 0..*.
+An association connects 'aadl2_CalledSubprogram' and 'aadl2_SubprogramCall'. From 'aadl2_CalledSubprogram', the role 'aadl2_CalledSubprogram' has cardinality 0..*, and from 'aadl2_SubprogramCall', the role 'aadl2_SubprogramCall388' has cardinality 0..*.
+An association connects 'aadl2_CallContext' and 'aadl2_SubprogramCall'. From 'aadl2_CallContext', the role 'aadl2_CallContext' has cardinality 0..*, and from 'aadl2_SubprogramCall', the role 'aadl2_SubprogramCall390' has cardinality 0..*.
+An association connects 'aadl2_SubprogramCall' and 'aadl2_BehavioredImplementation'. From 'aadl2_SubprogramCall', the role 'aadl2_SubprogramCall392' has cardinality 0..*, and from 'aadl2_BehavioredImplementation', the role 'aadl2_BehavioredImplementation' has cardinality 0..*.
+An association connects 'aadl2_SubprogramCallSequence' and 'aadl2_BehavioredImplementation'. From 'aadl2_SubprogramCallSequence', the role 'aadl2_SubprogramCallSequence395' has cardinality 0..*, and from 'aadl2_BehavioredImplementation', the role 'aadl2_BehavioredImplementation394' has cardinality 0..*.
+An association connects 'aadl2_BusAccess' and 'aadl2_AbstractType'. From 'aadl2_BusAccess', the role 'aadl2_BusAccess397' has cardinality 0..*, and from 'aadl2_AbstractType', the role 'aadl2_AbstractType' has cardinality 0..*.
+An association connects 'aadl2_AbstractType' and 'aadl2_DataAccess'. From 'aadl2_AbstractType', the role 'aadl2_AbstractType399' has cardinality 0..*, and from 'aadl2_DataAccess', the role 'aadl2_DataAccess400' has cardinality 0..*.
+An association connects 'aadl2_AbstractType' and 'aadl2_SubprogramAccess'. From 'aadl2_AbstractType', the role 'aadl2_AbstractType402' has cardinality 0..*, and from 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess403' has cardinality 0..*.
+An association connects 'aadl2_AbstractType' and 'aadl2_DataPort'. From 'aadl2_AbstractType', the role 'aadl2_AbstractType405' has cardinality 0..*, and from 'aadl2_DataPort', the role 'aadl2_DataPort406' has cardinality 0..*.
+An association connects 'aadl2_AbstractType' and 'aadl2_EventPort'. From 'aadl2_AbstractType', the role 'aadl2_AbstractType408' has cardinality 0..*, and from 'aadl2_EventPort', the role 'aadl2_EventPort409' has cardinality 0..*.
+An association connects 'aadl2_EventDataPort' and 'aadl2_AbstractType'. From 'aadl2_EventDataPort', the role 'aadl2_EventDataPort412' has cardinality 0..*, and from 'aadl2_AbstractType', the role 'aadl2_AbstractType411' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupAccess' and 'aadl2_AbstractType'. From 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess415' has cardinality 0..*, and from 'aadl2_AbstractType', the role 'aadl2_AbstractType414' has cardinality 0..*.
+An association connects 'aadl2_AbstractImplementation' and 'aadl2_BusSubcomponent'. From 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation' has cardinality 0..*, and from 'aadl2_BusSubcomponent', the role 'aadl2_BusSubcomponent' has cardinality 0..*.
+An association connects 'aadl2_AbstractImplementation' and 'aadl2_DataSubcomponent'. From 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation418' has cardinality 0..*, and from 'aadl2_DataSubcomponent', the role 'aadl2_DataSubcomponent' has cardinality 0..*.
+An association connects 'aadl2_AbstractImplementation' and 'aadl2_DeviceSubcomponent'. From 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation420' has cardinality 0..*, and from 'aadl2_DeviceSubcomponent', the role 'aadl2_DeviceSubcomponent' has cardinality 0..*.
+An association connects 'aadl2_MemorySubcomponent' and 'aadl2_AbstractImplementation'. From 'aadl2_MemorySubcomponent', the role 'aadl2_MemorySubcomponent' has cardinality 0..*, and from 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation422' has cardinality 0..*.
+An association connects 'aadl2_AbstractImplementation' and 'aadl2_ProcessSubcomponent'. From 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation424' has cardinality 0..*, and from 'aadl2_ProcessSubcomponent', the role 'aadl2_ProcessSubcomponent' has cardinality 0..*.
+An association connects 'aadl2_ProcessorSubcomponent' and 'aadl2_AbstractImplementation'. From 'aadl2_ProcessorSubcomponent', the role 'aadl2_ProcessorSubcomponent' has cardinality 0..*, and from 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation426' has cardinality 0..*.
+An association connects 'aadl2_AbstractImplementation' and 'aadl2_SystemSubcomponent'. From 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation428' has cardinality 0..*, and from 'aadl2_SystemSubcomponent', the role 'aadl2_SystemSubcomponent' has cardinality 0..*.
+An association connects 'aadl2_AbstractImplementation' and 'aadl2_SubprogramSubcomponent'. From 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation430' has cardinality 0..*, and from 'aadl2_SubprogramSubcomponent', the role 'aadl2_SubprogramSubcomponent' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupSubcomponent' and 'aadl2_AbstractImplementation'. From 'aadl2_SubprogramGroupSubcomponent', the role 'aadl2_SubprogramGroupSubcomponent' has cardinality 0..*, and from 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation432' has cardinality 0..*.
+An association connects 'aadl2_AbstractImplementation' and 'aadl2_ThreadSubcomponent'. From 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation434' has cardinality 0..*, and from 'aadl2_ThreadSubcomponent', the role 'aadl2_ThreadSubcomponent' has cardinality 0..*.
+An association connects 'aadl2_AbstractImplementation' and 'aadl2_ThreadGroupSubcomponent'. From 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation436' has cardinality 0..*, and from 'aadl2_ThreadGroupSubcomponent', the role 'aadl2_ThreadGroupSubcomponent' has cardinality 0..*.
+An association connects 'aadl2_VirtualBusSubcomponent' and 'aadl2_AbstractImplementation'. From 'aadl2_VirtualBusSubcomponent', the role 'aadl2_VirtualBusSubcomponent' has cardinality 0..*, and from 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation438' has cardinality 0..*.
+An association connects 'aadl2_VirtualProcessorSubcomponent' and 'aadl2_AbstractImplementation'. From 'aadl2_VirtualProcessorSubcomponent', the role 'aadl2_VirtualProcessorSubcomponent' has cardinality 0..*, and from 'aadl2_AbstractImplementation', the role 'aadl2_AbstractImplementation440' has cardinality 0..*.
+An association connects 'aadl2_BusSubcomponent' and 'aadl2_BusSubcomponentType'. From 'aadl2_BusSubcomponent', the role 'aadl2_BusSubcomponent442' has cardinality 0..*, and from 'aadl2_BusSubcomponentType', the role 'aadl2_BusSubcomponentType443' has cardinality 0..*.
+An association connects 'aadl2_DataSubcomponent' and 'aadl2_DataSubcomponentType'. From 'aadl2_DataSubcomponent', the role 'aadl2_DataSubcomponent445' has cardinality 0..*, and from 'aadl2_DataSubcomponentType', the role 'aadl2_DataSubcomponentType446' has cardinality 0..*.
+An association connects 'aadl2_DeviceSubcomponentType' and 'aadl2_DeviceSubcomponent'. From 'aadl2_DeviceSubcomponentType', the role 'aadl2_DeviceSubcomponentType' has cardinality 0..*, and from 'aadl2_DeviceSubcomponent', the role 'aadl2_DeviceSubcomponent448' has cardinality 0..*.
+An association connects 'aadl2_MemorySubcomponent' and 'aadl2_MemorySubcomponentType'. From 'aadl2_MemorySubcomponent', the role 'aadl2_MemorySubcomponent450' has cardinality 0..*, and from 'aadl2_MemorySubcomponentType', the role 'aadl2_MemorySubcomponentType' has cardinality 0..*.
+An association connects 'aadl2_ProcessSubcomponentType' and 'aadl2_ProcessSubcomponent'. From 'aadl2_ProcessSubcomponentType', the role 'aadl2_ProcessSubcomponentType' has cardinality 0..*, and from 'aadl2_ProcessSubcomponent', the role 'aadl2_ProcessSubcomponent452' has cardinality 0..*.
+An association connects 'aadl2_ProcessorSubcomponentType' and 'aadl2_ProcessorSubcomponent'. From 'aadl2_ProcessorSubcomponentType', the role 'aadl2_ProcessorSubcomponentType' has cardinality 0..*, and from 'aadl2_ProcessorSubcomponent', the role 'aadl2_ProcessorSubcomponent454' has cardinality 0..*.
+An association connects 'aadl2_SystemSubcomponentType' and 'aadl2_SystemSubcomponent'. From 'aadl2_SystemSubcomponentType', the role 'aadl2_SystemSubcomponentType' has cardinality 0..*, and from 'aadl2_SystemSubcomponent', the role 'aadl2_SystemSubcomponent456' has cardinality 0..*.
+An association connects 'aadl2_SubprogramSubcomponentType' and 'aadl2_SubprogramSubcomponent'. From 'aadl2_SubprogramSubcomponentType', the role 'aadl2_SubprogramSubcomponentType459' has cardinality 0..*, and from 'aadl2_SubprogramSubcomponent', the role 'aadl2_SubprogramSubcomponent458' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupSubcomponent' and 'aadl2_SubprogramGroupSubcomponentType'. From 'aadl2_SubprogramGroupSubcomponent', the role 'aadl2_SubprogramGroupSubcomponent461' has cardinality 0..*, and from 'aadl2_SubprogramGroupSubcomponentType', the role 'aadl2_SubprogramGroupSubcomponentType462' has cardinality 0..*.
+An association connects 'aadl2_ThreadSubcomponent' and 'aadl2_ThreadSubcomponentType'. From 'aadl2_ThreadSubcomponent', the role 'aadl2_ThreadSubcomponent464' has cardinality 0..*, and from 'aadl2_ThreadSubcomponentType', the role 'aadl2_ThreadSubcomponentType' has cardinality 0..*.
+An association connects 'aadl2_ThreadGroupSubcomponent' and 'aadl2_ThreadGroupSubcomponentType'. From 'aadl2_ThreadGroupSubcomponent', the role 'aadl2_ThreadGroupSubcomponent466' has cardinality 0..*, and from 'aadl2_ThreadGroupSubcomponentType', the role 'aadl2_ThreadGroupSubcomponentType' has cardinality 0..*.
+An association connects 'aadl2_VirtualBusSubcomponent' and 'aadl2_VirtualBusSubcomponentType'. From 'aadl2_VirtualBusSubcomponent', the role 'aadl2_VirtualBusSubcomponent468' has cardinality 0..*, and from 'aadl2_VirtualBusSubcomponentType', the role 'aadl2_VirtualBusSubcomponentType' has cardinality 0..*.
+An association connects 'aadl2_VirtualProcessorSubcomponent' and 'aadl2_VirtualProcessorSubcomponentType'. From 'aadl2_VirtualProcessorSubcomponent', the role 'aadl2_VirtualProcessorSubcomponent470' has cardinality 0..*, and from 'aadl2_VirtualProcessorSubcomponentType', the role 'aadl2_VirtualProcessorSubcomponentType' has cardinality 0..*.
+An association connects 'aadl2_BusAccess' and 'aadl2_BusType'. From 'aadl2_BusAccess', the role 'aadl2_BusAccess472' has cardinality 0..*, and from 'aadl2_BusType', the role 'aadl2_BusType' has cardinality 0..*.
+An association connects 'aadl2_DataPort' and 'aadl2_BusType'. From 'aadl2_DataPort', the role 'aadl2_DataPort475' has cardinality 0..*, and from 'aadl2_BusType', the role 'aadl2_BusType474' has cardinality 0..*.
+An association connects 'aadl2_EventDataPort' and 'aadl2_BusType'. From 'aadl2_EventDataPort', the role 'aadl2_EventDataPort478' has cardinality 0..*, and from 'aadl2_BusType', the role 'aadl2_BusType477' has cardinality 0..*.
+An association connects 'aadl2_BusType' and 'aadl2_EventPort'. From 'aadl2_BusType', the role 'aadl2_BusType480' has cardinality 0..*, and from 'aadl2_EventPort', the role 'aadl2_EventPort481' has cardinality 0..*.
+An association connects 'aadl2_VirtualBusSubcomponent' and 'aadl2_BusImplementation'. From 'aadl2_VirtualBusSubcomponent', the role 'aadl2_VirtualBusSubcomponent483' has cardinality 0..*, and from 'aadl2_BusImplementation', the role 'aadl2_BusImplementation' has cardinality 0..*.
+An association connects 'aadl2_DataType' and 'aadl2_SubprogramAccess'. From 'aadl2_DataType', the role 'aadl2_DataType' has cardinality 0..*, and from 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess485' has cardinality 0..*.
+An association connects 'aadl2_DataType' and 'aadl2_DataAccess'. From 'aadl2_DataType', the role 'aadl2_DataType487' has cardinality 0..*, and from 'aadl2_DataAccess', the role 'aadl2_DataAccess488' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupAccess' and 'aadl2_DataType'. From 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess491' has cardinality 0..*, and from 'aadl2_DataType', the role 'aadl2_DataType490' has cardinality 0..*.
+An association connects 'aadl2_DataImplementation' and 'aadl2_DataSubcomponent'. From 'aadl2_DataImplementation', the role 'aadl2_DataImplementation' has cardinality 0..*, and from 'aadl2_DataSubcomponent', the role 'aadl2_DataSubcomponent493' has cardinality 0..*.
+An association connects 'aadl2_DataImplementation' and 'aadl2_SubprogramSubcomponent'. From 'aadl2_DataImplementation', the role 'aadl2_DataImplementation495' has cardinality 0..*, and from 'aadl2_SubprogramSubcomponent', the role 'aadl2_SubprogramSubcomponent496' has cardinality 0..*.
+An association connects 'aadl2_DataPort' and 'aadl2_DeviceType'. From 'aadl2_DataPort', the role 'aadl2_DataPort498' has cardinality 0..*, and from 'aadl2_DeviceType', the role 'aadl2_DeviceType' has cardinality 0..*.
+An association connects 'aadl2_DeviceType' and 'aadl2_EventDataPort'. From 'aadl2_DeviceType', the role 'aadl2_DeviceType500' has cardinality 0..*, and from 'aadl2_EventDataPort', the role 'aadl2_EventDataPort501' has cardinality 0..*.
+An association connects 'aadl2_EventPort' and 'aadl2_DeviceType'. From 'aadl2_EventPort', the role 'aadl2_EventPort504' has cardinality 0..*, and from 'aadl2_DeviceType', the role 'aadl2_DeviceType503' has cardinality 0..*.
+An association connects 'aadl2_BusAccess' and 'aadl2_DeviceType'. From 'aadl2_BusAccess', the role 'aadl2_BusAccess507' has cardinality 0..*, and from 'aadl2_DeviceType', the role 'aadl2_DeviceType506' has cardinality 0..*.
+An association connects 'aadl2_DeviceType' and 'aadl2_SubprogramAccess'. From 'aadl2_DeviceType', the role 'aadl2_DeviceType509' has cardinality 0..*, and from 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess510' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupAccess' and 'aadl2_DeviceType'. From 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess513' has cardinality 0..*, and from 'aadl2_DeviceType', the role 'aadl2_DeviceType512' has cardinality 0..*.
+An association connects 'aadl2_BusSubcomponent' and 'aadl2_DeviceImplementation'. From 'aadl2_BusSubcomponent', the role 'aadl2_BusSubcomponent515' has cardinality 0..*, and from 'aadl2_DeviceImplementation', the role 'aadl2_DeviceImplementation' has cardinality 0..*.
+An association connects 'aadl2_DeviceImplementation' and 'aadl2_DataSubcomponent'. From 'aadl2_DeviceImplementation', the role 'aadl2_DeviceImplementation517' has cardinality 0..*, and from 'aadl2_DataSubcomponent', the role 'aadl2_DataSubcomponent518' has cardinality 0..*.
+An association connects 'aadl2_VirtualBusSubcomponent' and 'aadl2_DeviceImplementation'. From 'aadl2_VirtualBusSubcomponent', the role 'aadl2_VirtualBusSubcomponent521' has cardinality 0..*, and from 'aadl2_DeviceImplementation', the role 'aadl2_DeviceImplementation520' has cardinality 0..*.
+An association connects 'aadl2_BusAccess' and 'aadl2_MemoryType'. From 'aadl2_BusAccess', the role 'aadl2_BusAccess523' has cardinality 0..*, and from 'aadl2_MemoryType', the role 'aadl2_MemoryType' has cardinality 0..*.
+An association connects 'aadl2_MemoryType' and 'aadl2_DataPort'. From 'aadl2_MemoryType', the role 'aadl2_MemoryType525' has cardinality 0..*, and from 'aadl2_DataPort', the role 'aadl2_DataPort526' has cardinality 0..*.
+An association connects 'aadl2_MemoryType' and 'aadl2_EventDataPort'. From 'aadl2_MemoryType', the role 'aadl2_MemoryType528' has cardinality 0..*, and from 'aadl2_EventDataPort', the role 'aadl2_EventDataPort529' has cardinality 0..*.
+An association connects 'aadl2_EventPort' and 'aadl2_MemoryType'. From 'aadl2_EventPort', the role 'aadl2_EventPort532' has cardinality 0..*, and from 'aadl2_MemoryType', the role 'aadl2_MemoryType531' has cardinality 0..*.
+An association connects 'aadl2_BusSubcomponent' and 'aadl2_MemoryImplementation'. From 'aadl2_BusSubcomponent', the role 'aadl2_BusSubcomponent534' has cardinality 0..*, and from 'aadl2_MemoryImplementation', the role 'aadl2_MemoryImplementation' has cardinality 0..*.
+An association connects 'aadl2_MemorySubcomponent' and 'aadl2_MemoryImplementation'. From 'aadl2_MemorySubcomponent', the role 'aadl2_MemorySubcomponent537' has cardinality 0..*, and from 'aadl2_MemoryImplementation', the role 'aadl2_MemoryImplementation536' has cardinality 0..*.
+An association connects 'aadl2_SubprogramType' and 'aadl2_EventDataPort'. From 'aadl2_SubprogramType', the role 'aadl2_SubprogramType' has cardinality 0..*, and from 'aadl2_EventDataPort', the role 'aadl2_EventDataPort539' has cardinality 0..*.
+An association connects 'aadl2_EventPort' and 'aadl2_SubprogramType'. From 'aadl2_EventPort', the role 'aadl2_EventPort542' has cardinality 0..*, and from 'aadl2_SubprogramType', the role 'aadl2_SubprogramType541' has cardinality 0..*.
+An association connects 'aadl2_SubprogramType' and 'aadl2_Parameter'. From 'aadl2_SubprogramType', the role 'aadl2_SubprogramType544' has cardinality 0..*, and from 'aadl2_Parameter', the role 'aadl2_Parameter545' has cardinality 0..*.
+An association connects 'aadl2_SubprogramType' and 'aadl2_DataAccess'. From 'aadl2_SubprogramType', the role 'aadl2_SubprogramType547' has cardinality 0..*, and from 'aadl2_DataAccess', the role 'aadl2_DataAccess548' has cardinality 0..*.
+An association connects 'aadl2_SubprogramType' and 'aadl2_SubprogramAccess'. From 'aadl2_SubprogramType', the role 'aadl2_SubprogramType550' has cardinality 0..*, and from 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess551' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupAccess' and 'aadl2_SubprogramType'. From 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess554' has cardinality 0..*, and from 'aadl2_SubprogramType', the role 'aadl2_SubprogramType553' has cardinality 0..*.
+An association connects 'aadl2_DataSubcomponent' and 'aadl2_SubprogramImplementation'. From 'aadl2_DataSubcomponent', the role 'aadl2_DataSubcomponent556' has cardinality 0..*, and from 'aadl2_SubprogramImplementation', the role 'aadl2_SubprogramImplementation' has cardinality 0..*.
+An association connects 'aadl2_SubprogramSubcomponent' and 'aadl2_SubprogramImplementation'. From 'aadl2_SubprogramSubcomponent', the role 'aadl2_SubprogramSubcomponent559' has cardinality 0..*, and from 'aadl2_SubprogramImplementation', the role 'aadl2_SubprogramImplementation558' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupType' and 'aadl2_SubprogramAccess'. From 'aadl2_SubprogramGroupType', the role 'aadl2_SubprogramGroupType' has cardinality 0..*, and from 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess561' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupAccess' and 'aadl2_SubprogramGroupType'. From 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess564' has cardinality 0..*, and from 'aadl2_SubprogramGroupType', the role 'aadl2_SubprogramGroupType563' has cardinality 0..*.
+An association connects 'aadl2_SubprogramSubcomponent' and 'aadl2_SubprogramGroupImplementation'. From 'aadl2_SubprogramSubcomponent', the role 'aadl2_SubprogramSubcomponent566' has cardinality 0..*, and from 'aadl2_SubprogramGroupImplementation', the role 'aadl2_SubprogramGroupImplementation' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupImplementation' and 'aadl2_SubprogramGroupSubcomponent'. From 'aadl2_SubprogramGroupImplementation', the role 'aadl2_SubprogramGroupImplementation568' has cardinality 0..*, and from 'aadl2_SubprogramGroupSubcomponent', the role 'aadl2_SubprogramGroupSubcomponent569' has cardinality 0..*.
+An association connects 'aadl2_DataSubcomponent' and 'aadl2_SubprogramGroupImplementation'. From 'aadl2_DataSubcomponent', the role 'aadl2_DataSubcomponent572' has cardinality 0..*, and from 'aadl2_SubprogramGroupImplementation', the role 'aadl2_SubprogramGroupImplementation571' has cardinality 0..*.
+An association connects 'aadl2_SystemType' and 'aadl2_BusAccess'. From 'aadl2_SystemType', the role 'aadl2_SystemType' has cardinality 0..*, and from 'aadl2_BusAccess', the role 'aadl2_BusAccess574' has cardinality 0..*.
+An association connects 'aadl2_DataAccess' and 'aadl2_SystemType'. From 'aadl2_DataAccess', the role 'aadl2_DataAccess577' has cardinality 0..*, and from 'aadl2_SystemType', the role 'aadl2_SystemType576' has cardinality 0..*.
+An association connects 'aadl2_SystemType' and 'aadl2_DataPort'. From 'aadl2_SystemType', the role 'aadl2_SystemType579' has cardinality 0..*, and from 'aadl2_DataPort', the role 'aadl2_DataPort580' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupAccess' and 'aadl2_SystemType'. From 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess583' has cardinality 0..*, and from 'aadl2_SystemType', the role 'aadl2_SystemType582' has cardinality 0..*.
+An association connects 'aadl2_SystemType' and 'aadl2_SubprogramAccess'. From 'aadl2_SystemType', the role 'aadl2_SystemType585' has cardinality 0..*, and from 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess586' has cardinality 0..*.
+An association connects 'aadl2_SystemType' and 'aadl2_EventPort'. From 'aadl2_SystemType', the role 'aadl2_SystemType588' has cardinality 0..*, and from 'aadl2_EventPort', the role 'aadl2_EventPort589' has cardinality 0..*.
+An association connects 'aadl2_SystemType' and 'aadl2_EventDataPort'. From 'aadl2_SystemType', the role 'aadl2_SystemType591' has cardinality 0..*, and from 'aadl2_EventDataPort', the role 'aadl2_EventDataPort592' has cardinality 0..*.
+An association connects 'aadl2_SystemImplementation' and 'aadl2_BusSubcomponent'. From 'aadl2_SystemImplementation', the role 'aadl2_SystemImplementation' has cardinality 0..*, and from 'aadl2_BusSubcomponent', the role 'aadl2_BusSubcomponent594' has cardinality 0..*.
+An association connects 'aadl2_DataSubcomponent' and 'aadl2_SystemImplementation'. From 'aadl2_DataSubcomponent', the role 'aadl2_DataSubcomponent597' has cardinality 0..*, and from 'aadl2_SystemImplementation', the role 'aadl2_SystemImplementation596' has cardinality 0..*.
+An association connects 'aadl2_DeviceSubcomponent' and 'aadl2_SystemImplementation'. From 'aadl2_DeviceSubcomponent', the role 'aadl2_DeviceSubcomponent600' has cardinality 0..*, and from 'aadl2_SystemImplementation', the role 'aadl2_SystemImplementation599' has cardinality 0..*.
+An association connects 'aadl2_MemorySubcomponent' and 'aadl2_SystemImplementation'. From 'aadl2_MemorySubcomponent', the role 'aadl2_MemorySubcomponent603' has cardinality 0..*, and from 'aadl2_SystemImplementation', the role 'aadl2_SystemImplementation602' has cardinality 0..*.
+An association connects 'aadl2_SystemImplementation' and 'aadl2_ProcessSubcomponent'. From 'aadl2_SystemImplementation', the role 'aadl2_SystemImplementation605' has cardinality 0..*, and from 'aadl2_ProcessSubcomponent', the role 'aadl2_ProcessSubcomponent606' has cardinality 0..*.
+An association connects 'aadl2_ProcessorSubcomponent' and 'aadl2_SystemImplementation'. From 'aadl2_ProcessorSubcomponent', the role 'aadl2_ProcessorSubcomponent609' has cardinality 0..*, and from 'aadl2_SystemImplementation', the role 'aadl2_SystemImplementation608' has cardinality 0..*.
+An association connects 'aadl2_SubprogramSubcomponent' and 'aadl2_SystemImplementation'. From 'aadl2_SubprogramSubcomponent', the role 'aadl2_SubprogramSubcomponent612' has cardinality 0..*, and from 'aadl2_SystemImplementation', the role 'aadl2_SystemImplementation611' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupSubcomponent' and 'aadl2_SystemImplementation'. From 'aadl2_SubprogramGroupSubcomponent', the role 'aadl2_SubprogramGroupSubcomponent615' has cardinality 0..*, and from 'aadl2_SystemImplementation', the role 'aadl2_SystemImplementation614' has cardinality 0..*.
+An association connects 'aadl2_SystemImplementation' and 'aadl2_SystemSubcomponent'. From 'aadl2_SystemImplementation', the role 'aadl2_SystemImplementation617' has cardinality 0..*, and from 'aadl2_SystemSubcomponent', the role 'aadl2_SystemSubcomponent618' has cardinality 0..*.
+An association connects 'aadl2_VirtualBusSubcomponent' and 'aadl2_SystemImplementation'. From 'aadl2_VirtualBusSubcomponent', the role 'aadl2_VirtualBusSubcomponent621' has cardinality 0..*, and from 'aadl2_SystemImplementation', the role 'aadl2_SystemImplementation620' has cardinality 0..*.
+An association connects 'aadl2_VirtualProcessorSubcomponent' and 'aadl2_SystemImplementation'. From 'aadl2_VirtualProcessorSubcomponent', the role 'aadl2_VirtualProcessorSubcomponent624' has cardinality 0..*, and from 'aadl2_SystemImplementation', the role 'aadl2_SystemImplementation623' has cardinality 0..*.
+An association connects 'aadl2_DataPort' and 'aadl2_ProcessorType'. From 'aadl2_DataPort', the role 'aadl2_DataPort626' has cardinality 0..*, and from 'aadl2_ProcessorType', the role 'aadl2_ProcessorType' has cardinality 0..*.
+An association connects 'aadl2_ProcessorType' and 'aadl2_EventDataPort'. From 'aadl2_ProcessorType', the role 'aadl2_ProcessorType628' has cardinality 0..*, and from 'aadl2_EventDataPort', the role 'aadl2_EventDataPort629' has cardinality 0..*.
+An association connects 'aadl2_ProcessorType' and 'aadl2_EventPort'. From 'aadl2_ProcessorType', the role 'aadl2_ProcessorType631' has cardinality 0..*, and from 'aadl2_EventPort', the role 'aadl2_EventPort632' has cardinality 0..*.
+An association connects 'aadl2_ProcessorType' and 'aadl2_BusAccess'. From 'aadl2_ProcessorType', the role 'aadl2_ProcessorType634' has cardinality 0..*, and from 'aadl2_BusAccess', the role 'aadl2_BusAccess635' has cardinality 0..*.
+An association connects 'aadl2_ProcessorType' and 'aadl2_SubprogramAccess'. From 'aadl2_ProcessorType', the role 'aadl2_ProcessorType637' has cardinality 0..*, and from 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess638' has cardinality 0..*.
+An association connects 'aadl2_ProcessorType' and 'aadl2_SubprogramGroupAccess'. From 'aadl2_ProcessorType', the role 'aadl2_ProcessorType640' has cardinality 0..*, and from 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess641' has cardinality 0..*.
+An association connects 'aadl2_BusSubcomponent' and 'aadl2_ProcessorImplementation'. From 'aadl2_BusSubcomponent', the role 'aadl2_BusSubcomponent643' has cardinality 0..*, and from 'aadl2_ProcessorImplementation', the role 'aadl2_ProcessorImplementation' has cardinality 0..*.
+An association connects 'aadl2_ProcessorImplementation' and 'aadl2_MemorySubcomponent'. From 'aadl2_ProcessorImplementation', the role 'aadl2_ProcessorImplementation645' has cardinality 0..*, and from 'aadl2_MemorySubcomponent', the role 'aadl2_MemorySubcomponent646' has cardinality 0..*.
+An association connects 'aadl2_VirtualBusSubcomponent' and 'aadl2_ProcessorImplementation'. From 'aadl2_VirtualBusSubcomponent', the role 'aadl2_VirtualBusSubcomponent649' has cardinality 0..*, and from 'aadl2_ProcessorImplementation', the role 'aadl2_ProcessorImplementation648' has cardinality 0..*.
+An association connects 'aadl2_VirtualProcessorSubcomponent' and 'aadl2_ProcessorImplementation'. From 'aadl2_VirtualProcessorSubcomponent', the role 'aadl2_VirtualProcessorSubcomponent652' has cardinality 0..*, and from 'aadl2_ProcessorImplementation', the role 'aadl2_ProcessorImplementation651' has cardinality 0..*.
+An association connects 'aadl2_DataPort' and 'aadl2_ProcessType'. From 'aadl2_DataPort', the role 'aadl2_DataPort654' has cardinality 0..*, and from 'aadl2_ProcessType', the role 'aadl2_ProcessType' has cardinality 0..*.
+An association connects 'aadl2_ProcessType' and 'aadl2_EventDataPort'. From 'aadl2_ProcessType', the role 'aadl2_ProcessType656' has cardinality 0..*, and from 'aadl2_EventDataPort', the role 'aadl2_EventDataPort657' has cardinality 0..*.
+An association connects 'aadl2_ProcessType' and 'aadl2_EventPort'. From 'aadl2_ProcessType', the role 'aadl2_ProcessType659' has cardinality 0..*, and from 'aadl2_EventPort', the role 'aadl2_EventPort660' has cardinality 0..*.
+An association connects 'aadl2_DataAccess' and 'aadl2_ProcessType'. From 'aadl2_DataAccess', the role 'aadl2_DataAccess663' has cardinality 0..*, and from 'aadl2_ProcessType', the role 'aadl2_ProcessType662' has cardinality 0..*.
+An association connects 'aadl2_ProcessType' and 'aadl2_SubprogramAccess'. From 'aadl2_ProcessType', the role 'aadl2_ProcessType665' has cardinality 0..*, and from 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess666' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupAccess' and 'aadl2_ProcessType'. From 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess669' has cardinality 0..*, and from 'aadl2_ProcessType', the role 'aadl2_ProcessType668' has cardinality 0..*.
+An association connects 'aadl2_DataSubcomponent' and 'aadl2_ProcessImplementation'. From 'aadl2_DataSubcomponent', the role 'aadl2_DataSubcomponent671' has cardinality 0..*, and from 'aadl2_ProcessImplementation', the role 'aadl2_ProcessImplementation' has cardinality 0..*.
+An association connects 'aadl2_ProcessImplementation' and 'aadl2_SubprogramSubcomponent'. From 'aadl2_ProcessImplementation', the role 'aadl2_ProcessImplementation673' has cardinality 0..*, and from 'aadl2_SubprogramSubcomponent', the role 'aadl2_SubprogramSubcomponent674' has cardinality 0..*.
+An association connects 'aadl2_ProcessImplementation' and 'aadl2_SubprogramGroupSubcomponent'. From 'aadl2_ProcessImplementation', the role 'aadl2_ProcessImplementation676' has cardinality 0..*, and from 'aadl2_SubprogramGroupSubcomponent', the role 'aadl2_SubprogramGroupSubcomponent677' has cardinality 0..*.
+An association connects 'aadl2_ProcessImplementation' and 'aadl2_ThreadSubcomponent'. From 'aadl2_ProcessImplementation', the role 'aadl2_ProcessImplementation679' has cardinality 0..*, and from 'aadl2_ThreadSubcomponent', the role 'aadl2_ThreadSubcomponent680' has cardinality 0..*.
+An association connects 'aadl2_ProcessImplementation' and 'aadl2_ThreadGroupSubcomponent'. From 'aadl2_ProcessImplementation', the role 'aadl2_ProcessImplementation682' has cardinality 0..*, and from 'aadl2_ThreadGroupSubcomponent', the role 'aadl2_ThreadGroupSubcomponent683' has cardinality 0..*.
+An association connects 'aadl2_ThreadType' and 'aadl2_DataPort'. From 'aadl2_ThreadType', the role 'aadl2_ThreadType' has cardinality 0..*, and from 'aadl2_DataPort', the role 'aadl2_DataPort685' has cardinality 0..*.
+An association connects 'aadl2_ThreadType' and 'aadl2_EventDataPort'. From 'aadl2_ThreadType', the role 'aadl2_ThreadType687' has cardinality 0..*, and from 'aadl2_EventDataPort', the role 'aadl2_EventDataPort688' has cardinality 0..*.
+An association connects 'aadl2_ThreadType' and 'aadl2_EventPort'. From 'aadl2_ThreadType', the role 'aadl2_ThreadType690' has cardinality 0..*, and from 'aadl2_EventPort', the role 'aadl2_EventPort691' has cardinality 0..*.
+An association connects 'aadl2_ThreadType' and 'aadl2_DataAccess'. From 'aadl2_ThreadType', the role 'aadl2_ThreadType693' has cardinality 0..*, and from 'aadl2_DataAccess', the role 'aadl2_DataAccess694' has cardinality 0..*.
+An association connects 'aadl2_ThreadType' and 'aadl2_SubprogramAccess'. From 'aadl2_ThreadType', the role 'aadl2_ThreadType696' has cardinality 0..*, and from 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess697' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupAccess' and 'aadl2_ThreadType'. From 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess700' has cardinality 0..*, and from 'aadl2_ThreadType', the role 'aadl2_ThreadType699' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupSubcomponent' and 'aadl2_ThreadImplementation'. From 'aadl2_SubprogramGroupSubcomponent', the role 'aadl2_SubprogramGroupSubcomponent702' has cardinality 0..*, and from 'aadl2_ThreadImplementation', the role 'aadl2_ThreadImplementation' has cardinality 0..*.
+An association connects 'aadl2_SubprogramSubcomponent' and 'aadl2_ThreadImplementation'. From 'aadl2_SubprogramSubcomponent', the role 'aadl2_SubprogramSubcomponent705' has cardinality 0..*, and from 'aadl2_ThreadImplementation', the role 'aadl2_ThreadImplementation704' has cardinality 0..*.
+An association connects 'aadl2_ThreadImplementation' and 'aadl2_DataSubcomponent'. From 'aadl2_ThreadImplementation', the role 'aadl2_ThreadImplementation707' has cardinality 0..*, and from 'aadl2_DataSubcomponent', the role 'aadl2_DataSubcomponent708' has cardinality 0..*.
+An association connects 'aadl2_DataPort' and 'aadl2_ThreadGroupType'. From 'aadl2_DataPort', the role 'aadl2_DataPort710' has cardinality 0..*, and from 'aadl2_ThreadGroupType', the role 'aadl2_ThreadGroupType' has cardinality 0..*.
+An association connects 'aadl2_ThreadGroupType' and 'aadl2_EventDataPort'. From 'aadl2_ThreadGroupType', the role 'aadl2_ThreadGroupType712' has cardinality 0..*, and from 'aadl2_EventDataPort', the role 'aadl2_EventDataPort713' has cardinality 0..*.
+An association connects 'aadl2_EventPort' and 'aadl2_ThreadGroupType'. From 'aadl2_EventPort', the role 'aadl2_EventPort716' has cardinality 0..*, and from 'aadl2_ThreadGroupType', the role 'aadl2_ThreadGroupType715' has cardinality 0..*.
+An association connects 'aadl2_DataAccess' and 'aadl2_ThreadGroupType'. From 'aadl2_DataAccess', the role 'aadl2_DataAccess719' has cardinality 0..*, and from 'aadl2_ThreadGroupType', the role 'aadl2_ThreadGroupType718' has cardinality 0..*.
+An association connects 'aadl2_SubprogramAccess' and 'aadl2_ThreadGroupType'. From 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess722' has cardinality 0..*, and from 'aadl2_ThreadGroupType', the role 'aadl2_ThreadGroupType721' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupAccess' and 'aadl2_ThreadGroupType'. From 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess725' has cardinality 0..*, and from 'aadl2_ThreadGroupType', the role 'aadl2_ThreadGroupType724' has cardinality 0..*.
+An association connects 'aadl2_DataSubcomponent' and 'aadl2_ThreadGroupImplementation'. From 'aadl2_DataSubcomponent', the role 'aadl2_DataSubcomponent727' has cardinality 0..*, and from 'aadl2_ThreadGroupImplementation', the role 'aadl2_ThreadGroupImplementation' has cardinality 0..*.
+An association connects 'aadl2_ThreadGroupImplementation' and 'aadl2_ThreadSubcomponent'. From 'aadl2_ThreadGroupImplementation', the role 'aadl2_ThreadGroupImplementation729' has cardinality 0..*, and from 'aadl2_ThreadSubcomponent', the role 'aadl2_ThreadSubcomponent730' has cardinality 0..*.
+An association connects 'aadl2_ThreadGroupImplementation' and 'aadl2_ThreadGroupSubcomponent'. From 'aadl2_ThreadGroupImplementation', the role 'aadl2_ThreadGroupImplementation732' has cardinality 0..*, and from 'aadl2_ThreadGroupSubcomponent', the role 'aadl2_ThreadGroupSubcomponent733' has cardinality 0..*.
+An association connects 'aadl2_ThreadGroupImplementation' and 'aadl2_SubprogramSubcomponent'. From 'aadl2_ThreadGroupImplementation', the role 'aadl2_ThreadGroupImplementation735' has cardinality 0..*, and from 'aadl2_SubprogramSubcomponent', the role 'aadl2_SubprogramSubcomponent736' has cardinality 0..*.
+An association connects 'aadl2_ThreadGroupImplementation' and 'aadl2_SubprogramGroupSubcomponent'. From 'aadl2_ThreadGroupImplementation', the role 'aadl2_ThreadGroupImplementation738' has cardinality 0..*, and from 'aadl2_SubprogramGroupSubcomponent', the role 'aadl2_SubprogramGroupSubcomponent739' has cardinality 0..*.
+An association connects 'aadl2_VirtualBusType' and 'aadl2_DataPort'. From 'aadl2_VirtualBusType', the role 'aadl2_VirtualBusType' has cardinality 0..*, and from 'aadl2_DataPort', the role 'aadl2_DataPort741' has cardinality 0..*.
+An association connects 'aadl2_VirtualBusType' and 'aadl2_EventDataPort'. From 'aadl2_VirtualBusType', the role 'aadl2_VirtualBusType743' has cardinality 0..*, and from 'aadl2_EventDataPort', the role 'aadl2_EventDataPort744' has cardinality 0..*.
+An association connects 'aadl2_VirtualBusType' and 'aadl2_EventPort'. From 'aadl2_VirtualBusType', the role 'aadl2_VirtualBusType746' has cardinality 0..*, and from 'aadl2_EventPort', the role 'aadl2_EventPort747' has cardinality 0..*.
+An association connects 'aadl2_VirtualBusImplementation' and 'aadl2_VirtualBusSubcomponent'. From 'aadl2_VirtualBusImplementation', the role 'aadl2_VirtualBusImplementation' has cardinality 0..*, and from 'aadl2_VirtualBusSubcomponent', the role 'aadl2_VirtualBusSubcomponent749' has cardinality 0..*.
+An association connects 'aadl2_VirtualProcessorType' and 'aadl2_DataPort'. From 'aadl2_VirtualProcessorType', the role 'aadl2_VirtualProcessorType' has cardinality 0..*, and from 'aadl2_DataPort', the role 'aadl2_DataPort751' has cardinality 0..*.
+An association connects 'aadl2_VirtualProcessorType' and 'aadl2_EventDataPort'. From 'aadl2_VirtualProcessorType', the role 'aadl2_VirtualProcessorType753' has cardinality 0..*, and from 'aadl2_EventDataPort', the role 'aadl2_EventDataPort754' has cardinality 0..*.
+An association connects 'aadl2_EventPort' and 'aadl2_VirtualProcessorType'. From 'aadl2_EventPort', the role 'aadl2_EventPort757' has cardinality 0..*, and from 'aadl2_VirtualProcessorType', the role 'aadl2_VirtualProcessorType756' has cardinality 0..*.
+An association connects 'aadl2_SubprogramAccess' and 'aadl2_VirtualProcessorType'. From 'aadl2_SubprogramAccess', the role 'aadl2_SubprogramAccess760' has cardinality 0..*, and from 'aadl2_VirtualProcessorType', the role 'aadl2_VirtualProcessorType759' has cardinality 0..*.
+An association connects 'aadl2_SubprogramGroupAccess' and 'aadl2_VirtualProcessorType'. From 'aadl2_SubprogramGroupAccess', the role 'aadl2_SubprogramGroupAccess763' has cardinality 0..*, and from 'aadl2_VirtualProcessorType', the role 'aadl2_VirtualProcessorType762' has cardinality 0..*.
+An association connects 'aadl2_VirtualProcessorImplementation' and 'aadl2_VirtualBusSubcomponent'. From 'aadl2_VirtualProcessorImplementation', the role 'aadl2_VirtualProcessorImplementation' has cardinality 0..*, and from 'aadl2_VirtualBusSubcomponent', the role 'aadl2_VirtualBusSubcomponent765' has cardinality 0..*.
+An association connects 'aadl2_VirtualProcessorImplementation' and 'aadl2_VirtualProcessorSubcomponent'. From 'aadl2_VirtualProcessorImplementation', the role 'aadl2_VirtualProcessorImplementation767' has cardinality 0..*, and from 'aadl2_VirtualProcessorSubcomponent', the role 'aadl2_VirtualProcessorSubcomponent768' has cardinality 0..*.
+An association connects 'aadl2_BasicProperty' and 'aadl2_BasicPropertyAssociation'. From 'aadl2_BasicProperty', the role 'aadl2_BasicProperty770' has cardinality 0..*, and from 'aadl2_BasicPropertyAssociation', the role 'aadl2_BasicPropertyAssociation' has cardinality 0..*.
+An association connects 'aadl2_BasicPropertyAssociation' and 'aadl2_PropertyExpression'. From 'aadl2_BasicPropertyAssociation', the role 'aadl2_BasicPropertyAssociation772' has cardinality 0..*, and from 'aadl2_PropertyExpression', the role 'aadl2_PropertyExpression773' has cardinality 0..*.
+An association connects 'aadl2_PropertyType' and 'aadl2_PropertyConstant'. From 'aadl2_PropertyType', the role 'aadl2_PropertyType775' has cardinality 0..*, and from 'aadl2_PropertyConstant', the role 'aadl2_PropertyConstant' has cardinality 0..*.
+An association connects 'aadl2_PropertyType' and 'aadl2_PropertyConstant'. From 'aadl2_PropertyType', the role 'aadl2_PropertyType778' has cardinality 0..*, and from 'aadl2_PropertyConstant', the role 'aadl2_PropertyConstant777' has cardinality 0..*.
+An association connects 'aadl2_PropertyConstant' and 'aadl2_PropertyExpression'. From 'aadl2_PropertyConstant', the role 'aadl2_PropertyConstant780' has cardinality 0..*, and from 'aadl2_PropertyExpression', the role 'aadl2_PropertyExpression781' has cardinality 0..*.
+An association connects 'aadl2_UnitLiteral' and 'aadl2_NumberValue'. From 'aadl2_UnitLiteral', the role 'aadl2_UnitLiteral' has cardinality 0..*, and from 'aadl2_NumberValue', the role 'aadl2_NumberValue' has cardinality 0..*.
+An association connects 'aadl2_UnitLiteral' and 'aadl2_UnitLiteral'. From 'aadl2_UnitLiteral', the role 'aadl2_UnitLiteral785' has cardinality 0..*, and from 'aadl2_UnitLiteral', the role 'aadl2_UnitLiteral783' has cardinality 0..*.
+An association connects 'aadl2_NumberValue' and 'aadl2_UnitLiteral'. From 'aadl2_NumberValue', the role 'aadl2_NumberValue788' has cardinality 0..*, and from 'aadl2_UnitLiteral', the role 'aadl2_UnitLiteral787' has cardinality 0..*.
+An association connects 'aadl2_ClassifierValue' and 'aadl2_Classifier'. From 'aadl2_ClassifierValue', the role 'aadl2_ClassifierValue' has cardinality 0..*, and from 'aadl2_Classifier', the role 'aadl2_Classifier790' has cardinality 0..*.
+An association connects 'aadl2_PropertyExpression' and 'aadl2_RangeValue'. From 'aadl2_PropertyExpression', the role 'aadl2_PropertyExpression792' has cardinality 0..*, and from 'aadl2_RangeValue', the role 'aadl2_RangeValue' has cardinality 0..*.
+An association connects 'aadl2_PropertyExpression' and 'aadl2_RangeValue'. From 'aadl2_PropertyExpression', the role 'aadl2_PropertyExpression795' has cardinality 0..*, and from 'aadl2_RangeValue', the role 'aadl2_RangeValue794' has cardinality 0..*.
+An association connects 'aadl2_PropertyExpression' and 'aadl2_RangeValue'. From 'aadl2_PropertyExpression', the role 'aadl2_PropertyExpression798' has cardinality 0..*, and from 'aadl2_RangeValue', the role 'aadl2_RangeValue797' has cardinality 0..*.
+An association connects 'aadl2_Operation' and 'aadl2_PropertyExpression'. From 'aadl2_Operation', the role 'aadl2_Operation' has cardinality 0..*, and from 'aadl2_PropertyExpression', the role 'aadl2_PropertyExpression800' has cardinality 0..*.
+An association connects 'aadl2_RecordValue' and 'aadl2_BasicPropertyAssociation'. From 'aadl2_RecordValue', the role 'aadl2_RecordValue' has cardinality 0..*, and from 'aadl2_BasicPropertyAssociation', the role 'aadl2_BasicPropertyAssociation802' has cardinality 0..*.
+An association connects 'aadl2_ListValue' and 'aadl2_PropertyExpression'. From 'aadl2_ListValue', the role 'aadl2_ListValue' has cardinality 0..*, and from 'aadl2_PropertyExpression', the role 'aadl2_PropertyExpression804' has cardinality 0..*.
+An association connects 'aadl2_NamedValue' and 'aadl2_AbstractNamedValue'. From 'aadl2_NamedValue', the role 'aadl2_NamedValue' has cardinality 0..*, and from 'aadl2_AbstractNamedValue', the role 'aadl2_AbstractNamedValue' has cardinality 0..*.
+An association connects 'aadl2_PropertyType' and 'aadl2_PropertySet'. From 'aadl2_PropertyType', the role 'aadl2_PropertyType807' has cardinality 0..*, and from 'aadl2_PropertySet', the role 'aadl2_PropertySet' has cardinality 0..*.
+An association connects 'aadl2_PropertySet' and 'aadl2_Property'. From 'aadl2_PropertySet', the role 'aadl2_PropertySet809' has cardinality 0..*, and from 'aadl2_Property', the role 'aadl2_Property810' has cardinality 0..*.
+An association connects 'aadl2_PropertyConstant' and 'aadl2_PropertySet'. From 'aadl2_PropertyConstant', the role 'aadl2_PropertyConstant813' has cardinality 0..*, and from 'aadl2_PropertySet', the role 'aadl2_PropertySet812' has cardinality 0..*.
+An association connects 'aadl2_PropertySet' and 'aadl2_ModelUnit'. From 'aadl2_PropertySet', the role 'aadl2_PropertySet815' has cardinality 0..*, and from 'aadl2_ModelUnit', the role 'aadl2_ModelUnit816' has cardinality 0..*.
+An association connects 'aadl2_PropertySet' and 'aadl2_AnnexSubclause'. From 'aadl2_PropertySet', the role 'aadl2_PropertySet818' has cardinality 0..*, and from 'aadl2_AnnexSubclause', the role 'aadl2_AnnexSubclause819' has cardinality 0..*.
+An association connects 'aadl2_GlobalNamespace' and 'aadl2_PublicPackageSection'. From 'aadl2_GlobalNamespace', the role 'aadl2_GlobalNamespace' has cardinality 0..*, and from 'aadl2_PublicPackageSection', the role 'aadl2_PublicPackageSection821' has cardinality 0..*.
+An association connects 'aadl2_GlobalNamespace' and 'aadl2_PropertySet'. From 'aadl2_GlobalNamespace', the role 'aadl2_GlobalNamespace823' has cardinality 0..*, and from 'aadl2_PropertySet', the role 'aadl2_PropertySet824' has cardinality 0..*.
+An association connects 'aadl2_NumberType' and 'aadl2_UnitsType'. From 'aadl2_NumberType', the role 'aadl2_NumberType' has cardinality 0..*, and from 'aadl2_UnitsType', the role 'aadl2_UnitsType' has cardinality 0..*.
+An association connects 'aadl2_UnitsType' and 'aadl2_NumberType'. From 'aadl2_UnitsType', the role 'aadl2_UnitsType828' has cardinality 0..*, and from 'aadl2_NumberType', the role 'aadl2_NumberType827' has cardinality 0..*.
+An association connects 'aadl2_NumericRange' and 'aadl2_NumberType'. From 'aadl2_NumericRange', the role 'aadl2_NumericRange' has cardinality 0..*, and from 'aadl2_NumberType', the role 'aadl2_NumberType830' has cardinality 0..*.
+An association connects 'aadl2_EnumerationType' and 'aadl2_EnumerationLiteral'. From 'aadl2_EnumerationType', the role 'aadl2_EnumerationType' has cardinality 0..*, and from 'aadl2_EnumerationLiteral', the role 'aadl2_EnumerationLiteral' has cardinality 0..*.
+An association connects 'aadl2_NumericRange' and 'aadl2_PropertyExpression'. From 'aadl2_NumericRange', the role 'aadl2_NumericRange833' has cardinality 0..*, and from 'aadl2_PropertyExpression', the role 'aadl2_PropertyExpression834' has cardinality 0..*.
+An association connects 'aadl2_PropertyExpression' and 'aadl2_NumericRange'. From 'aadl2_PropertyExpression', the role 'aadl2_PropertyExpression837' has cardinality 0..*, and from 'aadl2_NumericRange', the role 'aadl2_NumericRange836' has cardinality 0..*.
+An association connects 'aadl2_MetaclassReference' and 'aadl2_ClassifierType'. From 'aadl2_MetaclassReference', the role 'aadl2_MetaclassReference839' has cardinality 0..*, and from 'aadl2_ClassifierType', the role 'aadl2_ClassifierType' has cardinality 0..*.
+An association connects 'aadl2_RangeType' and 'aadl2_NumberType'. From 'aadl2_RangeType', the role 'aadl2_RangeType' has cardinality 0..*, and from 'aadl2_NumberType', the role 'aadl2_NumberType841' has cardinality 0..*.
+An association connects 'aadl2_NumberType' and 'aadl2_RangeType'. From 'aadl2_NumberType', the role 'aadl2_NumberType844' has cardinality 0..*, and from 'aadl2_RangeType', the role 'aadl2_RangeType843' has cardinality 0..*.
+An association connects 'aadl2_RecordType' and 'aadl2_BasicProperty'. From 'aadl2_RecordType', the role 'aadl2_RecordType' has cardinality 0..*, and from 'aadl2_BasicProperty', the role 'aadl2_BasicProperty846' has cardinality 0..*.
+An association connects 'aadl2_MetaclassReference' and 'aadl2_ReferenceType'. From 'aadl2_MetaclassReference', the role 'aadl2_MetaclassReference848' has cardinality 0..*, and from 'aadl2_ReferenceType', the role 'aadl2_ReferenceType' has cardinality 0..*.
+An association connects 'aadl2_PropertyType' and 'aadl2_ListType'. From 'aadl2_PropertyType', the role 'aadl2_PropertyType850' has cardinality 0..*, and from 'aadl2_ListType', the role 'aadl2_ListType' has cardinality 0..*.
+An association connects 'aadl2_ListType' and 'aadl2_PropertyType'. From 'aadl2_ListType', the role 'aadl2_ListType852' has cardinality 0..*, and from 'aadl2_PropertyType', the role 'aadl2_PropertyType853' has cardinality 0..*.

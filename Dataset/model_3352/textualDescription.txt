@@ -1,0 +1,16 @@
+The domain model 'DB' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'DB_Table' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'DB_Column' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'DB_Database' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'DB_Table' and 'DB_Database'. From 'DB_Table', the role 'DB_Table' has cardinality 0..*, and from 'DB_Database', the role 'DB_Database' has cardinality 0..*.
+An association connects 'DB_Table' and 'DB_Column'. From 'DB_Table', the role 'DB_Table2' has cardinality 0..*, and from 'DB_Column', the role 'DB_Column' has cardinality 0..*.

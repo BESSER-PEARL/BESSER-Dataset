@@ -1,0 +1,203 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 49 main class(es).
+
+'model_common_NameProvider' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_expression_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'trigger_model_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'TableMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'model_table_PrimaryKeyTableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'TableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_column_UniqueColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_common_ColumnMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'model_table_TableConstraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_column_DefaultStringValueColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Index' represents an important domain concept.
+It does not declare any attributes.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'model_index_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+'model_table_ForeignKeyTableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'model_common_TableMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'ColumnMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'model_column_NotNullColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'NameProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'model_common_StringToTableMappingEntryMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'model_column_CheckColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_trigger_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'model_column_DefaultExpressionValueColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'view_model_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'model_table_UniqueTableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_column_DefaultRealValueColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'IndexedColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_column_PrimaryKeyColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_table_CheckTableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_column_DefaultValueColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DatabaseVersion' represents an important domain concept.
+It does not declare any attributes.
+
+'ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'StringToColumnMappingEntryMap' represents an important domain concept.
+It does not declare any attributes.
+
+'model_column_IndexedColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'model_column_Column' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'model_column_DefaultIntegerValueColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_column_ColumnConstraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'View' represents an important domain concept.
+It does not declare any attributes.
+
+'StringToTableMappingEntryMap' represents an important domain concept.
+It does not declare any attributes.
+
+'model_table_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'model_common_MappingEntry' represents an important domain concept.
+It has the following attributes: 'current', which is of type str; 'previous', which is of type str.
+
+'table_model_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DatabaseVersions' represents an important domain concept.
+It has the following attributes: 'fileName', which is of type str; 'packageName', which is of type str.
+
+'model_common_StringToColumnMappingEntryMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'index_model_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'model_view_View' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'REAL', 'INTEGER', 'NULL', 'BLOB', 'TEXT'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Database' is a specialization of 'NameProvider'.
+The class 'model_table_Table' is a specialization of 'NameProvider'.
+The class 'model_table_PrimaryKeyTableConstraint' is a specialization of 'TableConstraint'.
+The class 'model_table_UniqueTableConstraint' is a specialization of 'TableConstraint'.
+The class 'model_table_CheckTableConstraint' is a specialization of 'TableConstraint'.
+The class 'model_table_ForeignKeyTableConstraint' is a specialization of 'TableConstraint'.
+The class 'model_column_Column' is a specialization of 'NameProvider'.
+The class 'model_column_PrimaryKeyColumnConstraint' is a specialization of 'ColumnConstraint'.
+The class 'model_column_NotNullColumnConstraint' is a specialization of 'ColumnConstraint'.
+The class 'model_column_UniqueColumnConstraint' is a specialization of 'ColumnConstraint'.
+The class 'model_column_CheckColumnConstraint' is a specialization of 'ColumnConstraint'.
+The class 'model_column_DefaultValueColumnConstraint' is a specialization of 'ColumnConstraint'.
+The class 'model_view_View' is a specialization of 'NameProvider'.
+The class 'model_trigger_Trigger' is a specialization of 'NameProvider'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_DatabaseVersion' and 'model_DatabaseVersions'. From 'model_DatabaseVersion', the role 'model_DatabaseVersion' has cardinality 0..*, and from 'model_DatabaseVersions', the role 'model_DatabaseVersions' has cardinality 0..*.
+An association connects 'model_Database' and 'model_DatabaseVersion'. From 'model_Database', the role 'model_Database' has cardinality 0..*, and from 'model_DatabaseVersion', the role 'model_DatabaseVersion2' has cardinality 0..*.
+An association connects 'model_DatabaseVersion' and 'model_DatabaseVersion'. From 'model_DatabaseVersion', the role 'DatabaseVersion' has cardinality 0..*, and from 'model_DatabaseVersion', the role 'nextVersion' has cardinality 0..*.
+An association connects 'model_DatabaseVersion' and 'model_DatabaseVersion'. From 'model_DatabaseVersion', the role 'previousVersion' has cardinality 0..*, and from 'model_DatabaseVersion', the role 'DatabaseVersion7' has cardinality 0..*.
+An association connects 'TableMapping' and 'model_DatabaseVersion'. From 'TableMapping', the role 'TableMapping' has cardinality 0..*, and from 'model_DatabaseVersion', the role 'model_DatabaseVersion9' has cardinality 0..*.
+An association connects 'model_DatabaseVersion' and 'ColumnMapping'. From 'model_DatabaseVersion', the role 'model_DatabaseVersion11' has cardinality 0..*, and from 'ColumnMapping', the role 'ColumnMapping' has cardinality 0..*.
+An association connects 'model_Database' and 'Table'. From 'model_Database', the role 'Table' has cardinality 0..*, and from 'Table', the role 'table' has cardinality 0..*.
+An association connects 'model_Database' and 'View'. From 'model_Database', the role 'View' has cardinality 0..*, and from 'View', the role 'view' has cardinality 0..*.
+An association connects 'model_Database' and 'Trigger'. From 'model_Database', the role 'Trigger' has cardinality 0..*, and from 'Trigger', the role 'trigger' has cardinality 0..*.
+An association connects 'model_Database' and 'Index'. From 'model_Database', the role 'Index' has cardinality 0..*, and from 'Index', the role 'index' has cardinality 0..*.
+An association connects 'StringToTableMappingEntryMap' and 'model_common_TableMapping'. From 'StringToTableMappingEntryMap', the role 'StringToTableMappingEntryMap' has cardinality 0..*, and from 'model_common_TableMapping', the role 'model_common_TableMapping' has cardinality 0..*.
+An association connects 'StringToTableMappingEntryMap' and 'model_common_TableMapping'. From 'StringToTableMappingEntryMap', the role 'StringToTableMappingEntryMap19' has cardinality 0..*, and from 'model_common_TableMapping', the role 'model_common_TableMapping18' has cardinality 0..*.
+An association connects 'StringToColumnMappingEntryMap' and 'model_common_ColumnMapping'. From 'StringToColumnMappingEntryMap', the role 'StringToColumnMappingEntryMap' has cardinality 0..*, and from 'model_common_ColumnMapping', the role 'model_common_ColumnMapping' has cardinality 0..*.
+An association connects 'StringToColumnMappingEntryMap' and 'model_common_ColumnMapping'. From 'StringToColumnMappingEntryMap', the role 'StringToColumnMappingEntryMap23' has cardinality 0..*, and from 'model_common_ColumnMapping', the role 'model_common_ColumnMapping22' has cardinality 0..*.
+An association connects 'table_model_Database' and 'model_table_Table'. From 'table_model_Database', the role 'Database' has cardinality 0..*, and from 'model_table_Table', the role 'tables' has cardinality 0..*.
+An association connects 'Column' and 'model_table_Table'. From 'Column', the role 'column' has cardinality 0..*, and from 'model_table_Table', the role 'Column' has cardinality 0..*.
+An association connects 'TableConstraint' and 'model_table_Table'. From 'TableConstraint', the role 'table27' has cardinality 0..*, and from 'model_table_Table', the role 'TableConstraint' has cardinality 0..*.
+An association connects 'Table' and 'model_table_TableConstraint'. From 'Table', the role 'table30' has cardinality 0..*, and from 'model_table_TableConstraint', the role 'Table29' has cardinality 0..*.
+An association connects 'IndexedColumn' and 'model_table_PrimaryKeyTableConstraint'. From 'IndexedColumn', the role 'IndexedColumn' has cardinality 0..*, and from 'model_table_PrimaryKeyTableConstraint', the role 'model_table_PrimaryKeyTableConstraint' has cardinality 0..*.
+An association connects 'model_table_UniqueTableConstraint' and 'IndexedColumn'. From 'model_table_UniqueTableConstraint', the role 'model_table_UniqueTableConstraint' has cardinality 0..*, and from 'IndexedColumn', the role 'IndexedColumn33' has cardinality 0..*.
+An association connects 'model_table_CheckTableConstraint' and 'Expression'. From 'model_table_CheckTableConstraint', the role 'model_table_CheckTableConstraint' has cardinality 0..*, and from 'Expression', the role 'Expression' has cardinality 0..*.
+An association connects 'model_table_ForeignKeyTableConstraint' and 'Column'. From 'model_table_ForeignKeyTableConstraint', the role 'model_table_ForeignKeyTableConstraint' has cardinality 0..*, and from 'Column', the role 'Column36' has cardinality 0..*.
+An association connects 'Table' and 'model_table_ForeignKeyTableConstraint'. From 'Table', the role 'Table39' has cardinality 0..*, and from 'model_table_ForeignKeyTableConstraint', the role 'model_table_ForeignKeyTableConstraint38' has cardinality 0..*.
+An association connects 'Column' and 'model_table_ForeignKeyTableConstraint'. From 'Column', the role 'Column42' has cardinality 0..*, and from 'model_table_ForeignKeyTableConstraint', the role 'model_table_ForeignKeyTableConstraint41' has cardinality 0..*.
+An association connects 'model_column_Column' and 'Table'. From 'model_column_Column', the role 'Table44' has cardinality 0..*, and from 'Table', the role 'table45' has cardinality 0..*.
+An association connects 'model_column_Column' and 'ColumnConstraint'. From 'model_column_Column', the role 'ColumnConstraint' has cardinality 0..*, and from 'ColumnConstraint', the role 'column47' has cardinality 0..*.
+An association connects 'Column' and 'model_column_IndexedColumn'. From 'Column', the role 'Column49' has cardinality 0..*, and from 'model_column_IndexedColumn', the role 'model_column_IndexedColumn' has cardinality 0..*.
+An association connects 'Column' and 'model_column_ColumnConstraint'. From 'Column', the role 'column52' has cardinality 0..*, and from 'model_column_ColumnConstraint', the role 'Column51' has cardinality 0..*.
+An association connects 'model_column_CheckColumnConstraint' and 'Expression'. From 'model_column_CheckColumnConstraint', the role 'model_column_CheckColumnConstraint' has cardinality 0..*, and from 'Expression', the role 'Expression54' has cardinality 0..*.
+An association connects 'model_view_View' and 'view_model_Database'. From 'model_view_View', the role 'views' has cardinality 0..*, and from 'view_model_Database', the role 'Database56' has cardinality 0..*.
+An association connects 'model_index_Index' and 'index_model_Database'. From 'model_index_Index', the role 'indexes' has cardinality 0..*, and from 'index_model_Database', the role 'Database58' has cardinality 0..*.
+An association connects 'trigger_model_Database' and 'model_trigger_Trigger'. From 'trigger_model_Database', the role 'Database60' has cardinality 0..*, and from 'model_trigger_Trigger', the role 'triggers' has cardinality 0..*.

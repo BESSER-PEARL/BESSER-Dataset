@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ftsrg/viewmodel/plugins/hu.bme.mit.inf.viewmodel.runtime.model/model/viewmodeltrace.ecore

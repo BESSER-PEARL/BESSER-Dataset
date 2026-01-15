@@ -1,0 +1,96 @@
+The domain model 'classes' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'classes_Association' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classes_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'BuiltInType' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Content' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'classes_ConstantRef' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Content' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Class' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classes_Attribute' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'name', which is of type str.
+
+'classes_Constant' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classes_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_ClassRef' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Description' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'classes_ClassModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Description' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_BuiltInType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Visibility' defines the following possible values: 'protected', 'public', 'private'.
+
+The model also captures inheritance relationships between classes.
+The class 'classes_Constant' is a specialization of 'Content'.
+The class 'classes_Constant' is a specialization of 'Description'.
+The class 'classes_Association' is a specialization of 'Content'.
+The class 'classes_Association' is a specialization of 'Description'.
+The class 'classes_Class' is a specialization of 'Content'.
+The class 'classes_Class' is a specialization of 'Description'.
+The class 'classes_Attribute' is a specialization of 'Description'.
+The class 'classes_BuiltInType' is a specialization of 'Type'.
+The class 'classes_StringType' is a specialization of 'BuiltInType'.
+The class 'classes_IntegerType' is a specialization of 'BuiltInType'.
+The class 'classes_ClassRef' is a specialization of 'Type'.
+The class 'classes_IntegerLiteral' is a specialization of 'Value'.
+The class 'classes_ConstantRef' is a specialization of 'Value'.
+
+Relationships between classes are modeled using associations.
+An association connects 'classes_ClassModel' and 'classes_Content'. From 'classes_ClassModel', the role 'classes_ClassModel' has cardinality 0..*, and from 'classes_Content', the role 'classes_Content' has cardinality 0..*.
+An association connects 'classes_Value' and 'classes_Constant'. From 'classes_Value', the role 'classes_Value' has cardinality 0..*, and from 'classes_Constant', the role 'classes_Constant' has cardinality 0..*.
+An association connects 'classes_Class' and 'classes_Association'. From 'classes_Class', the role 'classes_Class' has cardinality 0..*, and from 'classes_Association', the role 'classes_Association' has cardinality 0..*.
+An association connects 'classes_Class' and 'classes_Association'. From 'classes_Class', the role 'classes_Class5' has cardinality 0..*, and from 'classes_Association', the role 'classes_Association4' has cardinality 0..*.
+An association connects 'classes_Association' and 'classes_Value'. From 'classes_Association', the role 'classes_Association7' has cardinality 0..*, and from 'classes_Value', the role 'classes_Value8' has cardinality 0..*.
+An association connects 'classes_Association' and 'classes_Value'. From 'classes_Association', the role 'classes_Association10' has cardinality 0..*, and from 'classes_Value', the role 'classes_Value11' has cardinality 0..*.
+An association connects 'classes_Class' and 'classes_Class'. From 'classes_Class', the role 'classes_Class14' has cardinality 0..*, and from 'classes_Class', the role 'classes_Class12' has cardinality 0..*.
+An association connects 'classes_Class' and 'classes_Attribute'. From 'classes_Class', the role 'classes_Class16' has cardinality 0..*, and from 'classes_Attribute', the role 'classes_Attribute' has cardinality 0..*.
+An association connects 'classes_Type' and 'classes_Attribute'. From 'classes_Type', the role 'classes_Type' has cardinality 0..*, and from 'classes_Attribute', the role 'classes_Attribute18' has cardinality 0..*.
+An association connects 'classes_Attribute' and 'classes_Value'. From 'classes_Attribute', the role 'classes_Attribute20' has cardinality 0..*, and from 'classes_Value', the role 'classes_Value21' has cardinality 0..*.
+An association connects 'classes_Value' and 'classes_Attribute'. From 'classes_Value', the role 'classes_Value24' has cardinality 0..*, and from 'classes_Attribute', the role 'classes_Attribute23' has cardinality 0..*.
+An association connects 'classes_ClassRef' and 'classes_Class'. From 'classes_ClassRef', the role 'classes_ClassRef' has cardinality 0..*, and from 'classes_Class', the role 'classes_Class26' has cardinality 0..*.
+An association connects 'classes_Constant' and 'classes_ConstantRef'. From 'classes_Constant', the role 'classes_Constant28' has cardinality 0..*, and from 'classes_ConstantRef', the role 'classes_ConstantRef' has cardinality 0..*.

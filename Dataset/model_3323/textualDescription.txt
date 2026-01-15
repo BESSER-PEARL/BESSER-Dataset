@@ -1,0 +1,117 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'Java_Annotation' represents an important domain concept.
+It has the following attributes: 'sentenceText', which is of type str; 'type', which is of type str.
+
+'Java_Assignment' represents an important domain concept.
+It has the following attributes: 'objectId', which is of type str; 'variableExpr', which is of type str; 'fieldName', which is of type str.
+
+'Java_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Parameter' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'variableName', which is of type str.
+
+'Java_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Return' represents an important domain concept.
+It has the following attributes: 'fieldName', which is of type str; 'objectId', which is of type str.
+
+'Java_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_MethodCall' represents an important domain concept.
+It has the following attributes: 'methodName', which is of type str; 'variableName', which is of type str.
+
+'Java_Class' represents an important domain concept.
+It has the following attributes: 'isPublic', which is of type bool; 'isStatic', which is of type bool.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Field' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_ObjectType' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectType' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Method' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_Field' represents an important domain concept.
+It has the following attributes: 'isPublic', which is of type bool; 'isPrivate', which is of type bool; 'name', which is of type str; 'isStatic', which is of type bool; 'isProtected', which is of type bool.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'Java_MethodSignature' represents an important domain concept.
+It has the following attributes: 'isPrivate', which is of type bool; 'isProtected', which is of type bool; 'isStatic', which is of type bool; 'isPublic', which is of type bool; 'name', which is of type str.
+
+'Java_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Java_VoidType' is a specialization of 'Type'.
+The class 'Java_ObjectType' is a specialization of 'Type'.
+The class 'Java_PrimitiveType' is a specialization of 'Type'.
+The class 'Java_Class' is a specialization of 'ObjectType'.
+The class 'Java_Interface' is a specialization of 'ObjectType'.
+The class 'Java_Method' is a specialization of 'MethodSignature'.
+The class 'Java_MethodCall' is a specialization of 'Statement'.
+The class 'Java_VariableDeclaration' is a specialization of 'Statement'.
+The class 'Java_Assignment' is a specialization of 'Statement'.
+The class 'Java_Return' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ObjectType' and 'Java_Package'. From 'ObjectType', the role '#' has cardinality 0..*, and from 'Java_Package', the role '0' has cardinality 0..*.
+An association connects 'Java_ObjectType' and 'Package'. From 'Java_ObjectType', the role '02' has cardinality 0..*, and from 'Package', the role '#3' has cardinality 0..*.
+An association connects 'Java_Class' and 'Interface'. From 'Java_Class', the role 'Java_Class' has cardinality 0..*, and from 'Interface', the role 'Interface' has cardinality 0..*.
+An association connects 'Java_Class' and 'Class'. From 'Java_Class', the role 'Java_Class6' has cardinality 0..*, and from 'Class', the role 'Class' has cardinality 0..*.
+An association connects 'Field' and 'Java_Class'. From 'Field', the role '#9' has cardinality 0..*, and from 'Java_Class', the role '08' has cardinality 0..*.
+An association connects 'Java_Class' and 'Method'. From 'Java_Class', the role 'Java_Class11' has cardinality 0..*, and from 'Method', the role 'Method' has cardinality 0..*.
+An association connects 'Java_Interface' and 'Interface'. From 'Java_Interface', the role 'Java_Interface' has cardinality 0..*, and from 'Interface', the role 'Interface13' has cardinality 0..*.
+An association connects 'Java_Interface' and 'MethodSignature'. From 'Java_Interface', the role 'Java_Interface15' has cardinality 0..*, and from 'MethodSignature', the role 'MethodSignature' has cardinality 0..*.
+An association connects 'Java_MethodSignature' and 'Type'. From 'Java_MethodSignature', the role 'Java_MethodSignature' has cardinality 0..*, and from 'Type', the role 'Type' has cardinality 0..*.
+An association connects 'Parameter' and 'Java_MethodSignature'. From 'Parameter', the role 'Parameter' has cardinality 0..*, and from 'Java_MethodSignature', the role 'Java_MethodSignature18' has cardinality 0..*.
+An association connects 'Java_Method' and 'Statement'. From 'Java_Method', the role 'Java_Method' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'Annotation' and 'Java_Method'. From 'Annotation', the role 'Annotation' has cardinality 0..*, and from 'Java_Method', the role 'Java_Method21' has cardinality 0..*.
+An association connects 'Type' and 'Java_Parameter'. From 'Type', the role 'Type23' has cardinality 0..*, and from 'Java_Parameter', the role 'Java_Parameter' has cardinality 0..*.
+An association connects 'Java_Field' and 'Type'. From 'Java_Field', the role 'Java_Field' has cardinality 0..*, and from 'Type', the role 'Type25' has cardinality 0..*.
+An association connects 'Java_Field' and 'Class'. From 'Java_Field', the role '027' has cardinality 0..*, and from 'Class', the role '#28' has cardinality 0..*.
+An association connects 'Type' and 'Java_VariableDeclaration'. From 'Type', the role 'Type30' has cardinality 0..*, and from 'Java_VariableDeclaration', the role 'Java_VariableDeclaration' has cardinality 0..*.

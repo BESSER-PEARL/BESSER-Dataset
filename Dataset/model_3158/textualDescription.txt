@@ -1,0 +1,626 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 151 main class(es).
+
+'C_Expressions_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Declarations_TypeDefDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Main_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Main_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Declarations_ArrayDeclaration' represents an important domain concept.
+It has one attribute: 'dimensions', which is of type str.
+
+'Expressions_Construction' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_DisplacementLogicExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'C_Expressions_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Declarations_PrototypeFunctionDeclaration' represents an important domain concept.
+It has the following attributes: 'functionModifier', which is of type str; 'isAPointer', which is of type str.
+
+'C_Declarations_EnumDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_SimpleLogicExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'C_Sequencers_Goto' represents an important domain concept.
+It does not declare any attributes.
+
+'IterativeCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Types_Struct' represents an important domain concept.
+It does not declare any attributes.
+
+'CompilationDirectiveDeclarations_CompilationDirectiveDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_ConstantExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Main_H_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'C_CompilationDirectiveDeclarations_IfDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Types_Void' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_Access' represents an important domain concept.
+It does not declare any attributes.
+
+'C_CompilationDirectiveDeclarations_ElseDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_ShortLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'C_Expressions_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_VariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_BinaryArithmeticExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Declarations_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'numberOfPointers', which is of type str; 'isAPointer', which is of type str.
+
+'C_Types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_LabelCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'Abstractions_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'C_CompilationDirectiveDeclarations_ComplexDirectiveDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'CompilationDirectiveDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_CompilationDirectiveDeclarations_Elif' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'C_Expressions_ComposedConditionalExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'C_Declarations_FragmentVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Declarations_SimpleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_CompilationDirectiveDeclarations_Include' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Types_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Declarations_SimpleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_AtomicConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Sequencers_Sequencer' represents an important domain concept.
+It does not declare any attributes.
+
+'Expressions_ConstantExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Main_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Declarations_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'IfDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'Commands_LabelCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'DecisionCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_CastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Types_Typedef' represents an important domain concept.
+It does not declare any attributes.
+
+'Main_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Sequencers_Break' represents an important domain concept.
+It does not declare any attributes.
+
+'C_CompilationDirectiveDeclarations_Ifndef' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Types_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Main_FunctionsBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Declarations_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Main_Program' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'Main_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'Expressions_VariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'C_CompilationDirectiveDeclarations_CompilationDirectiveDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Types_Array' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeType' represents an important domain concept.
+It does not declare any attributes.
+
+'CompilationDirectiveDeclarations_ComplexDirectiveDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'CompilationDirectiveDeclarations_Endif' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Commands_DefaultOption' represents an important domain concept.
+It does not declare any attributes.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Access' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Types_CompositeType' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Main_C_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'Commands_CaseOption' represents an important domain concept.
+It does not declare any attributes.
+
+'Main_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_FloatLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'C_Main_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_FlowControlCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expressions_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_DefaultOption' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_CaseOption' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_LogicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_ConstantAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_PrototypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Declarations_FragmentVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_CompilationDirectiveDeclarations_Endif' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Declarations_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Declarations_StructDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_CompilationDirectiveDeclarations_SimpleDirectiveDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_IfCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'Declarations_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Declarations_ArrayDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Main_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'Expressions_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'ComplexDirectiveDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Abstractions_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'C_Expressions_CharLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'SimpleDirectiveDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Declarations_CompositeVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'C_CompilationDirectiveDeclarations_Ifdef' represents an important domain concept.
+It does not declare any attributes.
+
+'Main_DeclarationsBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Expressions_Access' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Main_Function' represents an important domain concept.
+It has the following attributes: 'functionModifier', which is of type str; 'modifier', which is of type str.
+
+'FlowControlCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'Sequencer' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Abstractions_BlockedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_ExpressionCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'Expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Types_FromHeader' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Main_DeclarationsBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Declarations_CompositeVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_ReturnCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'Abstractions_BlockedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'C_CompilationDirectiveDeclarations_Define' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'C_Types_Enum' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_SwitchCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_Construction' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Main_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'C_Types_Char' represents an important domain concept.
+It does not declare any attributes.
+
+'Declarations_PrototypeFunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_WhileCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_IterativeCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Declarations_Declaration' represents an important domain concept.
+It has one attribute: 'modifier', which is of type str.
+
+'C_Commands_ForCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Types_Array' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_ConditionalExpression' represents an important domain concept.
+It has one attribute: 'conector', which is of type str.
+
+'Commands_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Commands_DecisionCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Types_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'BlockedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_PointerVariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'C_Expressions_UnaryArithmeticExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'C_Types_Short' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DisplacementLogicOperatorKind' defines the following possible values: 'LEFT_DISPLACEMENT', 'RIGHT_DISPLACEMENT'.
+The enumeration 'UnaryOperatorKind' defines the following possible values: 'MINUS_MINUS', 'TIMES_EQUALS', 'PLUS_EQUALS', 'DIVIDED_BY_EQUALS', 'MINUS_EQUALS', 'MINUS', 'PLUS_PLUS'.
+The enumeration 'FunctionModifierKind' defines the following possible values: 'none', 'pascal', 'interrupt', 'cdecl'.
+The enumeration 'ModifierKind' defines the following possible values: 'volatile', 'static', 'register', 'none'.
+The enumeration 'SimpleLogicOperatorKind' defines the following possible values: 'NOT', 'XOR', 'AND', 'OR'.
+The enumeration 'RelationalConectorKind' defines the following possible values: 'none', 'NOT', 'OR', 'AND'.
+The enumeration 'RelationalOperatorKind' defines the following possible values: 'none', 'LESS', 'EQUALS', 'NOT_EQUALS', 'GREATER', 'GREATER_EQUALS', 'LESS_EQUALS'.
+The enumeration 'BinaryOperatorKind' defines the following possible values: 'PLUS', 'MINUS', 'DIVIDED_BY', 'MODULE', 'TIMES'.
+
+The model also captures inheritance relationships between classes.
+The class 'C_Types_PrimitiveType' is a specialization of 'Type'.
+The class 'C_Types_CompositeType' is a specialization of 'Type'.
+The class 'C_Types_Char' is a specialization of 'PrimitiveType'.
+The class 'C_Types_Int' is a specialization of 'Types_PrimitiveType'.
+The class 'C_Types_Int' is a specialization of 'Types_Array'.
+The class 'C_Types_Float' is a specialization of 'PrimitiveType'.
+The class 'C_Types_Double' is a specialization of 'PrimitiveType'.
+The class 'C_Types_Short' is a specialization of 'PrimitiveType'.
+The class 'C_Types_Void' is a specialization of 'PrimitiveType'.
+The class 'C_Types_Typedef' is a specialization of 'CompositeType'.
+The class 'C_Types_Array' is a specialization of 'CompositeType'.
+The class 'C_Types_Struct' is a specialization of 'CompositeType'.
+The class 'C_Types_Enum' is a specialization of 'CompositeType'.
+The class 'C_Types_FromHeader' is a specialization of 'Types_Type'.
+The class 'C_Types_FromHeader' is a specialization of 'Abstractions_NamedElement'.
+The class 'C_Main_Unit' is a specialization of 'NamedElement'.
+The class 'C_Main_C_Unit' is a specialization of 'Unit'.
+The class 'C_Main_H_Unit' is a specialization of 'Unit'.
+The class 'C_Main_Function' is a specialization of 'Element'.
+The class 'C_Main_Comment' is a specialization of 'NamedElement'.
+The class 'C_Main_Element' is a specialization of 'NamedElement'.
+The class 'C_Main_DeclarationsBlock' is a specialization of 'Element'.
+The class 'C_Main_FunctionsBlock' is a specialization of 'Element'.
+The class 'C_Declarations_Declaration' is a specialization of 'NamedElement'.
+The class 'C_Declarations_ConstantDeclaration' is a specialization of 'Declaration'.
+The class 'C_Declarations_VariableDeclaration' is a specialization of 'Declaration'.
+The class 'C_Declarations_SimpleVariableDeclaration' is a specialization of 'Declarations_VariableDeclaration'.
+The class 'C_Declarations_SimpleVariableDeclaration' is a specialization of 'Abstractions_BlockedElement'.
+The class 'C_Declarations_PrototypeFunctionDeclaration' is a specialization of 'Declaration'.
+The class 'C_Declarations_FragmentVariableDeclaration' is a specialization of 'Abstractions_NamedElement'.
+The class 'C_Declarations_FragmentVariableDeclaration' is a specialization of 'Declarations_VariableDeclaration'.
+The class 'C_Declarations_CompositeVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'C_Declarations_EnumDeclaration' is a specialization of 'CompositeVariableDeclaration'.
+The class 'C_Declarations_ArrayDeclaration' is a specialization of 'Declarations_CompositeVariableDeclaration'.
+The class 'C_Declarations_ArrayDeclaration' is a specialization of 'Abstractions_BlockedElement'.
+The class 'C_Declarations_StructDeclaration' is a specialization of 'CompositeVariableDeclaration'.
+The class 'C_Declarations_TypeDefDeclaration' is a specialization of 'CompositeVariableDeclaration'.
+The class 'C_CompilationDirectiveDeclarations_SimpleDirectiveDeclaration' is a specialization of 'CompilationDirectiveDeclarations_CompilationDirectiveDeclaration'.
+The class 'C_CompilationDirectiveDeclarations_SimpleDirectiveDeclaration' is a specialization of 'Abstractions_NamedElement'.
+The class 'C_CompilationDirectiveDeclarations_ComplexDirectiveDeclaration' is a specialization of 'CompilationDirectiveDeclaration'.
+The class 'C_CompilationDirectiveDeclarations_Define' is a specialization of 'SimpleDirectiveDeclaration'.
+The class 'C_CompilationDirectiveDeclarations_Include' is a specialization of 'SimpleDirectiveDeclaration'.
+The class 'C_CompilationDirectiveDeclarations_Ifdef' is a specialization of 'CompilationDirectiveDeclarations_ComplexDirectiveDeclaration'.
+The class 'C_CompilationDirectiveDeclarations_Ifdef' is a specialization of 'Abstractions_NamedElement'.
+The class 'C_CompilationDirectiveDeclarations_Ifndef' is a specialization of 'ComplexDirectiveDeclaration'.
+The class 'C_CompilationDirectiveDeclarations_ElseDirective' is a specialization of 'ComplexDirectiveDeclaration'.
+The class 'C_CompilationDirectiveDeclarations_IfDirective' is a specialization of 'ComplexDirectiveDeclaration'.
+The class 'C_CompilationDirectiveDeclarations_Elif' is a specialization of 'IfDirective'.
+The class 'C_Commands_Command' is a specialization of 'BlockedElement'.
+The class 'C_Commands_LabelCommand' is a specialization of 'Commands_Command'.
+The class 'C_Commands_LabelCommand' is a specialization of 'Abstractions_NamedElement'.
+The class 'C_Commands_Assignment' is a specialization of 'Command'.
+The class 'C_Commands_FlowControlCommand' is a specialization of 'Command'.
+The class 'C_Commands_DecisionCommand' is a specialization of 'FlowControlCommand'.
+The class 'C_Commands_ReturnCommand' is a specialization of 'FlowControlCommand'.
+The class 'C_Commands_ExpressionCommand' is a specialization of 'Command'.
+The class 'C_Commands_IfCommand' is a specialization of 'DecisionCommand'.
+The class 'C_Commands_SwitchCommand' is a specialization of 'DecisionCommand'.
+The class 'C_Commands_IterativeCommand' is a specialization of 'Command'.
+The class 'C_Commands_ForCommand' is a specialization of 'IterativeCommand'.
+The class 'C_Commands_WhileCommand' is a specialization of 'IterativeCommand'.
+The class 'C_Expressions_Construction' is a specialization of 'Expression'.
+The class 'C_Expressions_FunctionCall' is a specialization of 'Expressions_Expression'.
+The class 'C_Expressions_FunctionCall' is a specialization of 'Abstractions_NamedElement'.
+The class 'C_Expressions_CastExpression' is a specialization of 'Expression'.
+The class 'C_Expressions_ArithmeticExpression' is a specialization of 'Expression'.
+The class 'C_Expressions_UnaryArithmeticExpression' is a specialization of 'ArithmeticExpression'.
+The class 'C_Expressions_BinaryArithmeticExpression' is a specialization of 'ArithmeticExpression'.
+The class 'C_Expressions_ConditionalExpression' is a specialization of 'Expression'.
+The class 'C_Expressions_AtomicConditionalExpression' is a specialization of 'Expressions_ConditionalExpression'.
+The class 'C_Expressions_AtomicConditionalExpression' is a specialization of 'Abstractions_NamedElement'.
+The class 'C_Expressions_ComposedConditionalExpression' is a specialization of 'ConditionalExpression'.
+The class 'C_Expressions_LogicExpression' is a specialization of 'Expression'.
+The class 'C_Expressions_DisplacementLogicExpression' is a specialization of 'LogicExpression'.
+The class 'C_Expressions_SimpleLogicExpression' is a specialization of 'LogicExpression'.
+The class 'C_Expressions_Access' is a specialization of 'Expressions_Expression'.
+The class 'C_Expressions_Access' is a specialization of 'Abstractions_NamedElement'.
+The class 'C_Expressions_ConstantAccess' is a specialization of 'Access'.
+The class 'C_Expressions_VariableAccess' is a specialization of 'Access'.
+The class 'C_Expressions_ArrayAccess' is a specialization of 'Access'.
+The class 'C_Expressions_PointerVariableAccess' is a specialization of 'VariableAccess'.
+The class 'C_Expressions_PrototypeAccess' is a specialization of 'Access'.
+The class 'C_Expressions_Literal' is a specialization of 'Expression'.
+The class 'C_Expressions_CharLiteral' is a specialization of 'Literal'.
+The class 'C_Expressions_IntLiteral' is a specialization of 'Literal'.
+The class 'C_Expressions_FloatLiteral' is a specialization of 'Literal'.
+The class 'C_Expressions_DoubleLiteral' is a specialization of 'Literal'.
+The class 'C_Expressions_StringLiteral' is a specialization of 'Literal'.
+The class 'C_Expressions_ShortLiteral' is a specialization of 'Literal'.
+The class 'C_Expressions_ConstantExpression' is a specialization of 'Expression'.
+The class 'C_Sequencers_Sequencer' is a specialization of 'BlockedElement'.
+The class 'C_Sequencers_Goto' is a specialization of 'Sequencer'.
+The class 'C_Sequencers_Break' is a specialization of 'Sequencer'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Main_Block' and 'C_Abstractions_BlockedElement'. From 'Main_Block', the role 'Main_Block' has cardinality 0..*, and from 'C_Abstractions_BlockedElement', the role 'C_Abstractions_BlockedElement' has cardinality 0..*.
+An association connects 'C_Main_Program' and 'Main_Unit'. From 'C_Main_Program', the role 'C_Main_Program' has cardinality 0..*, and from 'Main_Unit', the role 'Main_Unit' has cardinality 0..*.
+An association connects 'C_Main_Unit' and 'Main_Comment'. From 'C_Main_Unit', the role 'C_Main_Unit' has cardinality 0..*, and from 'Main_Comment', the role 'Main_Comment' has cardinality 0..*.
+An association connects 'C_Main_C_Unit' and 'Main_Element'. From 'C_Main_C_Unit', the role 'C_Main_C_Unit' has cardinality 0..*, and from 'Main_Element', the role 'Main_Element' has cardinality 0..*.
+An association connects 'Main_DeclarationsBlock' and 'C_Main_H_Unit'. From 'Main_DeclarationsBlock', the role 'Main_DeclarationsBlock' has cardinality 0..*, and from 'C_Main_H_Unit', the role 'C_Main_H_Unit' has cardinality 0..*.
+An association connects 'C_Main_Function' and 'Types_Type'. From 'C_Main_Function', the role 'C_Main_Function' has cardinality 0..*, and from 'Types_Type', the role 'Types_Type' has cardinality 0..*.
+An association connects 'C_Main_Function' and 'Main_Block'. From 'C_Main_Function', the role 'C_Main_Function7' has cardinality 0..*, and from 'Main_Block', the role 'Main_Block8' has cardinality 0..*.
+An association connects 'C_Main_Function' and 'Declarations_Declaration'. From 'C_Main_Function', the role 'C_Main_Function10' has cardinality 0..*, and from 'Declarations_Declaration', the role 'Declarations_Declaration' has cardinality 0..*.
+An association connects 'Abstractions_BlockedElement' and 'C_Main_Block'. From 'Abstractions_BlockedElement', the role 'Abstractions_BlockedElement' has cardinality 0..*, and from 'C_Main_Block', the role 'C_Main_Block' has cardinality 0..*.
+An association connects 'Main_Comment' and 'C_Main_Block'. From 'Main_Comment', the role 'Main_Comment14' has cardinality 0..*, and from 'C_Main_Block', the role 'C_Main_Block13' has cardinality 0..*.
+An association connects 'Declarations_Declaration' and 'C_Main_DeclarationsBlock'. From 'Declarations_Declaration', the role 'Declarations_Declaration16' has cardinality 0..*, and from 'C_Main_DeclarationsBlock', the role 'C_Main_DeclarationsBlock' has cardinality 0..*.
+An association connects 'CompilationDirectiveDeclarations_CompilationDirectiveDeclaration' and 'C_Main_DeclarationsBlock'. From 'CompilationDirectiveDeclarations_CompilationDirectiveDeclaration', the role 'CompilationDirectiveDeclarations_CompilationDirectiveDeclaration' has cardinality 0..*, and from 'C_Main_DeclarationsBlock', the role 'C_Main_DeclarationsBlock18' has cardinality 0..*.
+An association connects 'Main_Function' and 'C_Main_FunctionsBlock'. From 'Main_Function', the role 'Main_Function' has cardinality 0..*, and from 'C_Main_FunctionsBlock', the role 'C_Main_FunctionsBlock' has cardinality 0..*.
+An association connects 'Expressions_Expression' and 'C_Declarations_ConstantDeclaration'. From 'Expressions_Expression', the role 'Expressions_Expression' has cardinality 0..*, and from 'C_Declarations_ConstantDeclaration', the role 'C_Declarations_ConstantDeclaration' has cardinality 0..*.
+An association connects 'C_Declarations_SimpleVariableDeclaration' and 'Types_Type'. From 'C_Declarations_SimpleVariableDeclaration', the role 'C_Declarations_SimpleVariableDeclaration' has cardinality 0..*, and from 'Types_Type', the role 'Types_Type22' has cardinality 0..*.
+An association connects 'C_Declarations_SimpleVariableDeclaration' and 'Declarations_FragmentVariableDeclaration'. From 'C_Declarations_SimpleVariableDeclaration', the role 'C_Declarations_SimpleVariableDeclaration24' has cardinality 0..*, and from 'Declarations_FragmentVariableDeclaration', the role 'Declarations_FragmentVariableDeclaration' has cardinality 0..*.
+An association connects 'C_Declarations_SimpleVariableDeclaration' and 'Expressions_Expression'. From 'C_Declarations_SimpleVariableDeclaration', the role 'C_Declarations_SimpleVariableDeclaration26' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression27' has cardinality 0..*.
+An association connects 'Declarations_VariableDeclaration' and 'C_Declarations_PrototypeFunctionDeclaration'. From 'Declarations_VariableDeclaration', the role 'Declarations_VariableDeclaration' has cardinality 0..*, and from 'C_Declarations_PrototypeFunctionDeclaration', the role 'C_Declarations_PrototypeFunctionDeclaration' has cardinality 0..*.
+An association connects 'Types_Type' and 'C_Declarations_PrototypeFunctionDeclaration'. From 'Types_Type', the role 'Types_Type31' has cardinality 0..*, and from 'C_Declarations_PrototypeFunctionDeclaration', the role 'C_Declarations_PrototypeFunctionDeclaration30' has cardinality 0..*.
+An association connects 'Expressions_Literal' and 'C_Declarations_EnumDeclaration'. From 'Expressions_Literal', the role 'Expressions_Literal' has cardinality 0..*, and from 'C_Declarations_EnumDeclaration', the role 'C_Declarations_EnumDeclaration' has cardinality 0..*.
+An association connects 'Expressions_Construction' and 'C_Declarations_ArrayDeclaration'. From 'Expressions_Construction', the role 'Expressions_Construction' has cardinality 0..*, and from 'C_Declarations_ArrayDeclaration', the role 'C_Declarations_ArrayDeclaration' has cardinality 0..*.
+An association connects 'Types_Type' and 'C_Declarations_ArrayDeclaration'. From 'Types_Type', the role 'Types_Type36' has cardinality 0..*, and from 'C_Declarations_ArrayDeclaration', the role 'C_Declarations_ArrayDeclaration35' has cardinality 0..*.
+An association connects 'Declarations_SimpleVariableDeclaration' and 'C_Declarations_StructDeclaration'. From 'Declarations_SimpleVariableDeclaration', the role 'Declarations_SimpleVariableDeclaration' has cardinality 0..*, and from 'C_Declarations_StructDeclaration', the role 'C_Declarations_StructDeclaration' has cardinality 0..*.
+An association connects 'Types_Type' and 'C_Declarations_TypeDefDeclaration'. From 'Types_Type', the role 'Types_Type39' has cardinality 0..*, and from 'C_Declarations_TypeDefDeclaration', the role 'C_Declarations_TypeDefDeclaration' has cardinality 0..*.
+An association connects 'C_CompilationDirectiveDeclarations_CompilationDirectiveDeclaration' and 'Declarations_Declaration'. From 'C_CompilationDirectiveDeclarations_CompilationDirectiveDeclaration', the role 'C_CompilationDirectiveDeclarations_CompilationDirectiveDeclaration' has cardinality 0..*, and from 'Declarations_Declaration', the role 'Declarations_Declaration41' has cardinality 0..*.
+An association connects 'CompilationDirectiveDeclarations_Endif' and 'C_CompilationDirectiveDeclarations_Ifdef'. From 'CompilationDirectiveDeclarations_Endif', the role 'CompilationDirectiveDeclarations_Endif' has cardinality 0..*, and from 'C_CompilationDirectiveDeclarations_Ifdef', the role 'C_CompilationDirectiveDeclarations_Ifdef' has cardinality 0..*.
+An association connects 'CompilationDirectiveDeclarations_Endif' and 'C_CompilationDirectiveDeclarations_Ifndef'. From 'CompilationDirectiveDeclarations_Endif', the role 'CompilationDirectiveDeclarations_Endif44' has cardinality 0..*, and from 'C_CompilationDirectiveDeclarations_Ifndef', the role 'C_CompilationDirectiveDeclarations_Ifndef' has cardinality 0..*.
+An association connects 'Expressions_ConstantExpression' and 'C_CompilationDirectiveDeclarations_IfDirective'. From 'Expressions_ConstantExpression', the role 'Expressions_ConstantExpression' has cardinality 0..*, and from 'C_CompilationDirectiveDeclarations_IfDirective', the role 'C_CompilationDirectiveDeclarations_IfDirective' has cardinality 0..*.
+An association connects 'C_Commands_LabelCommand' and 'Commands_Command'. From 'C_Commands_LabelCommand', the role 'C_Commands_LabelCommand' has cardinality 0..*, and from 'Commands_Command', the role 'Commands_Command' has cardinality 0..*.
+An association connects 'Expressions_Access' and 'C_Commands_Assignment'. From 'Expressions_Access', the role 'Expressions_Access' has cardinality 0..*, and from 'C_Commands_Assignment', the role 'C_Commands_Assignment' has cardinality 0..*.
+An association connects 'C_Commands_Assignment' and 'Expressions_Expression'. From 'C_Commands_Assignment', the role 'C_Commands_Assignment49' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression50' has cardinality 0..*.
+An association connects 'Expressions_Expression' and 'C_Commands_ReturnCommand'. From 'Expressions_Expression', the role 'Expressions_Expression52' has cardinality 0..*, and from 'C_Commands_ReturnCommand', the role 'C_Commands_ReturnCommand' has cardinality 0..*.
+An association connects 'C_Commands_ExpressionCommand' and 'Expressions_Expression'. From 'C_Commands_ExpressionCommand', the role 'C_Commands_ExpressionCommand' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression54' has cardinality 0..*.
+An association connects 'C_Commands_IfCommand' and 'Expressions_ConditionalExpression'. From 'C_Commands_IfCommand', the role 'C_Commands_IfCommand' has cardinality 0..*, and from 'Expressions_ConditionalExpression', the role 'Expressions_ConditionalExpression' has cardinality 0..*.
+An association connects 'C_Commands_IfCommand' and 'Main_Block'. From 'C_Commands_IfCommand', the role 'C_Commands_IfCommand57' has cardinality 0..*, and from 'Main_Block', the role 'Main_Block58' has cardinality 0..*.
+An association connects 'Main_Block' and 'C_Commands_IfCommand'. From 'Main_Block', the role 'Main_Block61' has cardinality 0..*, and from 'C_Commands_IfCommand', the role 'C_Commands_IfCommand60' has cardinality 0..*.
+An association connects 'C_Commands_SwitchCommand' and 'Expressions_VariableAccess'. From 'C_Commands_SwitchCommand', the role 'C_Commands_SwitchCommand' has cardinality 0..*, and from 'Expressions_VariableAccess', the role 'Expressions_VariableAccess' has cardinality 0..*.
+An association connects 'C_Commands_SwitchCommand' and 'Commands_CaseOption'. From 'C_Commands_SwitchCommand', the role 'C_Commands_SwitchCommand64' has cardinality 0..*, and from 'Commands_CaseOption', the role 'Commands_CaseOption' has cardinality 0..*.
+An association connects 'Commands_DefaultOption' and 'C_Commands_SwitchCommand'. From 'Commands_DefaultOption', the role 'Commands_DefaultOption' has cardinality 0..*, and from 'C_Commands_SwitchCommand', the role 'C_Commands_SwitchCommand66' has cardinality 0..*.
+An association connects 'Expressions_Literal' and 'C_Commands_CaseOption'. From 'Expressions_Literal', the role 'Expressions_Literal68' has cardinality 0..*, and from 'C_Commands_CaseOption', the role 'C_Commands_CaseOption' has cardinality 0..*.
+An association connects 'C_Commands_CaseOption' and 'Main_Block'. From 'C_Commands_CaseOption', the role 'C_Commands_CaseOption70' has cardinality 0..*, and from 'Main_Block', the role 'Main_Block71' has cardinality 0..*.
+An association connects 'Main_Block' and 'C_Commands_DefaultOption'. From 'Main_Block', the role 'Main_Block73' has cardinality 0..*, and from 'C_Commands_DefaultOption', the role 'C_Commands_DefaultOption' has cardinality 0..*.
+An association connects 'Main_Block' and 'C_Commands_IterativeCommand'. From 'Main_Block', the role 'Main_Block75' has cardinality 0..*, and from 'C_Commands_IterativeCommand', the role 'C_Commands_IterativeCommand' has cardinality 0..*.
+An association connects 'Expressions_Expression' and 'C_Commands_ForCommand'. From 'Expressions_Expression', the role 'Expressions_Expression77' has cardinality 0..*, and from 'C_Commands_ForCommand', the role 'C_Commands_ForCommand' has cardinality 0..*.
+An association connects 'Expressions_Expression' and 'C_Commands_ForCommand'. From 'Expressions_Expression', the role 'Expressions_Expression80' has cardinality 0..*, and from 'C_Commands_ForCommand', the role 'C_Commands_ForCommand79' has cardinality 0..*.
+An association connects 'C_Commands_ForCommand' and 'Expressions_Expression'. From 'C_Commands_ForCommand', the role 'C_Commands_ForCommand82' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression83' has cardinality 0..*.
+An association connects 'C_Commands_WhileCommand' and 'Expressions_ConditionalExpression'. From 'C_Commands_WhileCommand', the role 'C_Commands_WhileCommand' has cardinality 0..*, and from 'Expressions_ConditionalExpression', the role 'Expressions_ConditionalExpression85' has cardinality 0..*.
+An association connects 'Expressions_Expression' and 'C_Expressions_Construction'. From 'Expressions_Expression', the role 'Expressions_Expression87' has cardinality 0..*, and from 'C_Expressions_Construction', the role 'C_Expressions_Construction' has cardinality 0..*.
+An association connects 'C_Expressions_FunctionCall' and 'Expressions_Expression'. From 'C_Expressions_FunctionCall', the role 'C_Expressions_FunctionCall' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression89' has cardinality 0..*.
+An association connects 'Types_Type' and 'C_Expressions_CastExpression'. From 'Types_Type', the role 'Types_Type91' has cardinality 0..*, and from 'C_Expressions_CastExpression', the role 'C_Expressions_CastExpression' has cardinality 0..*.
+An association connects 'C_Expressions_CastExpression' and 'Expressions_Expression'. From 'C_Expressions_CastExpression', the role 'C_Expressions_CastExpression93' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression94' has cardinality 0..*.
+An association connects 'C_Expressions_ArithmeticExpression' and 'Expressions_Expression'. From 'C_Expressions_ArithmeticExpression', the role 'C_Expressions_ArithmeticExpression' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression96' has cardinality 0..*.
+An association connects 'C_Expressions_BinaryArithmeticExpression' and 'Expressions_Expression'. From 'C_Expressions_BinaryArithmeticExpression', the role 'C_Expressions_BinaryArithmeticExpression' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression98' has cardinality 0..*.
+An association connects 'C_Expressions_ComposedConditionalExpression' and 'Expressions_Expression'. From 'C_Expressions_ComposedConditionalExpression', the role 'C_Expressions_ComposedConditionalExpression' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression100' has cardinality 0..*.
+An association connects 'C_Expressions_LogicExpression' and 'Expressions_Expression'. From 'C_Expressions_LogicExpression', the role 'C_Expressions_LogicExpression' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression102' has cardinality 0..*.
+An association connects 'C_Expressions_DisplacementLogicExpression' and 'Expressions_Expression'. From 'C_Expressions_DisplacementLogicExpression', the role 'C_Expressions_DisplacementLogicExpression' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression104' has cardinality 0..*.
+An association connects 'C_Expressions_ConstantAccess' and 'Declarations_ConstantDeclaration'. From 'C_Expressions_ConstantAccess', the role 'C_Expressions_ConstantAccess' has cardinality 0..*, and from 'Declarations_ConstantDeclaration', the role 'Declarations_ConstantDeclaration' has cardinality 0..*.
+An association connects 'Declarations_VariableDeclaration' and 'C_Expressions_VariableAccess'. From 'Declarations_VariableDeclaration', the role 'Declarations_VariableDeclaration107' has cardinality 0..*, and from 'C_Expressions_VariableAccess', the role 'C_Expressions_VariableAccess' has cardinality 0..*.
+An association connects 'C_Expressions_ArrayAccess' and 'Declarations_ArrayDeclaration'. From 'C_Expressions_ArrayAccess', the role 'C_Expressions_ArrayAccess' has cardinality 0..*, and from 'Declarations_ArrayDeclaration', the role 'Declarations_ArrayDeclaration' has cardinality 0..*.
+An association connects 'C_Expressions_ArrayAccess' and 'Expressions_Expression'. From 'C_Expressions_ArrayAccess', the role 'C_Expressions_ArrayAccess110' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression111' has cardinality 0..*.
+An association connects 'C_Expressions_ArrayAccess' and 'Expressions_Expression'. From 'C_Expressions_ArrayAccess', the role 'C_Expressions_ArrayAccess113' has cardinality 0..*, and from 'Expressions_Expression', the role 'Expressions_Expression114' has cardinality 0..*.
+An association connects 'C_Expressions_PrototypeAccess' and 'Declarations_PrototypeFunctionDeclaration'. From 'C_Expressions_PrototypeAccess', the role 'C_Expressions_PrototypeAccess' has cardinality 0..*, and from 'Declarations_PrototypeFunctionDeclaration', the role 'Declarations_PrototypeFunctionDeclaration' has cardinality 0..*.
+An association connects 'Commands_LabelCommand' and 'C_Sequencers_Goto'. From 'Commands_LabelCommand', the role 'Commands_LabelCommand' has cardinality 0..*, and from 'C_Sequencers_Goto', the role 'C_Sequencers_Goto' has cardinality 0..*.

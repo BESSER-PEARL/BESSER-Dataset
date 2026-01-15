@@ -1,0 +1,328 @@
+The domain model 'transformation' describes the core structural elements and their relationships within the system.
+
+The model defines 76 main class(es).
+
+'transformation_DataTypeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_GreaterOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Lambda' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'transformation_EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_VariableUse' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_ExtentMetamodel' represents an important domain concept.
+It has one attribute: 'generated', which is of type bool.
+
+'transformation_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_LessOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_ClassLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Map' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_ExplicitMetamodel' represents an important domain concept.
+It has one attribute: 'alias', which is of type str.
+
+'transformation_TargetMetamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Subtraction' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_LogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_ResultMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_EnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_VariableDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'transformation_ETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_AbstractMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_If' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'transformation_CompositeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_EEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_MetamodelDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_And' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_CoalescingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Transformation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'transformation_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_RelationalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_ExtentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Different' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_ContentMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_WhenClause' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Let' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Invocation' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_VariableInitialization' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_FeatureAccess' represents an important domain concept.
+It has the following attributes: 'nullable', which is of type bool; 'spreading', which is of type bool.
+
+'MetamodelDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_TypeOfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_SourceMetamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ContentMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_FeatureMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_ClassMapping' represents an important domain concept.
+It has one attribute: 'default', which is of type bool.
+
+'transformation_ConditionalMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Negation' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'ExplicitMetamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_RealLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'transformation_OtherwiseClause' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformation_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'transformation_ExplicitMetamodel' is a specialization of 'MetamodelDeclaration'.
+The class 'transformation_SourceMetamodel' is a specialization of 'ExplicitMetamodel'.
+The class 'transformation_TargetMetamodel' is a specialization of 'ExplicitMetamodel'.
+The class 'transformation_ExtentMetamodel' is a specialization of 'MetamodelDeclaration'.
+The class 'transformation_DataTypeMapping' is a specialization of 'AbstractMapping'.
+The class 'transformation_ClassMapping' is a specialization of 'AbstractMapping'.
+The class 'transformation_CompositeMapping' is a specialization of 'ContentMapping'.
+The class 'transformation_ConditionalMapping' is a specialization of 'ContentMapping'.
+The class 'transformation_WhenClause' is a specialization of 'CompositeMapping'.
+The class 'transformation_OtherwiseClause' is a specialization of 'CompositeMapping'.
+The class 'transformation_ResultMapping' is a specialization of 'ContentMapping'.
+The class 'transformation_FeatureMapping' is a specialization of 'ContentMapping'.
+The class 'transformation_If' is a specialization of 'Expression'.
+The class 'transformation_Let' is a specialization of 'Expression'.
+The class 'transformation_ConditionalExpression' is a specialization of 'Expression'.
+The class 'transformation_BinaryExpression' is a specialization of 'Expression'.
+The class 'transformation_CoalescingExpression' is a specialization of 'BinaryExpression'.
+The class 'transformation_LogicalExpression' is a specialization of 'BinaryExpression'.
+The class 'transformation_Or' is a specialization of 'LogicalExpression'.
+The class 'transformation_And' is a specialization of 'LogicalExpression'.
+The class 'transformation_EqualityExpression' is a specialization of 'BinaryExpression'.
+The class 'transformation_Equal' is a specialization of 'EqualityExpression'.
+The class 'transformation_Different' is a specialization of 'EqualityExpression'.
+The class 'transformation_RelationalExpression' is a specialization of 'BinaryExpression'.
+The class 'transformation_Less' is a specialization of 'RelationalExpression'.
+The class 'transformation_Greater' is a specialization of 'RelationalExpression'.
+The class 'transformation_LessOrEqual' is a specialization of 'RelationalExpression'.
+The class 'transformation_GreaterOrEqual' is a specialization of 'RelationalExpression'.
+The class 'transformation_ArithmeticExpression' is a specialization of 'BinaryExpression'.
+The class 'transformation_Addition' is a specialization of 'ArithmeticExpression'.
+The class 'transformation_Subtraction' is a specialization of 'ArithmeticExpression'.
+The class 'transformation_Multiplication' is a specialization of 'ArithmeticExpression'.
+The class 'transformation_Division' is a specialization of 'ArithmeticExpression'.
+The class 'transformation_UnaryExpression' is a specialization of 'Expression'.
+The class 'transformation_Negation' is a specialization of 'UnaryExpression'.
+The class 'transformation_Minus' is a specialization of 'UnaryExpression'.
+The class 'transformation_FeatureAccess' is a specialization of 'Expression'.
+The class 'transformation_ExtentExpression' is a specialization of 'Expression'.
+The class 'transformation_TypeOfExpression' is a specialization of 'Expression'.
+The class 'transformation_Invocation' is a specialization of 'Expression'.
+The class 'transformation_Lambda' is a specialization of 'Expression'.
+The class 'transformation_Map' is a specialization of 'Expression'.
+The class 'transformation_Source' is a specialization of 'Expression'.
+The class 'transformation_VariableUse' is a specialization of 'Expression'.
+The class 'transformation_ClassLiteral' is a specialization of 'Expression'.
+The class 'transformation_EnumLiteral' is a specialization of 'Expression'.
+The class 'transformation_BooleanLiteral' is a specialization of 'Expression'.
+The class 'transformation_IntegerLiteral' is a specialization of 'Expression'.
+The class 'transformation_RealLiteral' is a specialization of 'Expression'.
+The class 'transformation_StringLiteral' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'transformation_Transformation' and 'transformation_MetamodelDeclaration'. From 'transformation_Transformation', the role 'transformation_Transformation' has cardinality 0..*, and from 'transformation_MetamodelDeclaration', the role 'transformation_MetamodelDeclaration' has cardinality 0..*.
+An association connects 'transformation_AbstractMapping' and 'transformation_Transformation'. From 'transformation_AbstractMapping', the role 'transformation_AbstractMapping' has cardinality 0..*, and from 'transformation_Transformation', the role 'transformation_Transformation2' has cardinality 0..*.
+An association connects 'transformation_EPackage' and 'transformation_MetamodelDeclaration'. From 'transformation_EPackage', the role 'transformation_EPackage' has cardinality 0..*, and from 'transformation_MetamodelDeclaration', the role 'transformation_MetamodelDeclaration4' has cardinality 0..*.
+An association connects 'transformation_SourceMetamodel' and 'transformation_ExtentMetamodel'. From 'transformation_SourceMetamodel', the role 'transformation_SourceMetamodel' has cardinality 0..*, and from 'transformation_ExtentMetamodel', the role 'transformation_ExtentMetamodel' has cardinality 0..*.
+An association connects 'transformation_DataTypeMapping' and 'transformation_EDataType'. From 'transformation_DataTypeMapping', the role 'transformation_DataTypeMapping' has cardinality 0..*, and from 'transformation_EDataType', the role 'transformation_EDataType' has cardinality 0..*.
+An association connects 'transformation_EDataType' and 'transformation_DataTypeMapping'. From 'transformation_EDataType', the role 'transformation_EDataType9' has cardinality 0..*, and from 'transformation_DataTypeMapping', the role 'transformation_DataTypeMapping8' has cardinality 0..*.
+An association connects 'transformation_ContentMapping' and 'transformation_DataTypeMapping'. From 'transformation_ContentMapping', the role 'transformation_ContentMapping' has cardinality 0..*, and from 'transformation_DataTypeMapping', the role 'transformation_DataTypeMapping11' has cardinality 0..*.
+An association connects 'transformation_ClassMapping' and 'transformation_EClass'. From 'transformation_ClassMapping', the role 'transformation_ClassMapping' has cardinality 0..*, and from 'transformation_EClass', the role 'transformation_EClass' has cardinality 0..*.
+An association connects 'transformation_ClassMapping' and 'transformation_EClass'. From 'transformation_ClassMapping', the role 'transformation_ClassMapping14' has cardinality 0..*, and from 'transformation_EClass', the role 'transformation_EClass15' has cardinality 0..*.
+An association connects 'transformation_ContentMapping' and 'transformation_ClassMapping'. From 'transformation_ContentMapping', the role 'transformation_ContentMapping18' has cardinality 0..*, and from 'transformation_ClassMapping', the role 'transformation_ClassMapping17' has cardinality 0..*.
+An association connects 'transformation_CompositeMapping' and 'transformation_ContentMapping'. From 'transformation_CompositeMapping', the role 'transformation_CompositeMapping' has cardinality 0..*, and from 'transformation_ContentMapping', the role 'transformation_ContentMapping20' has cardinality 0..*.
+An association connects 'transformation_ConditionalMapping' and 'transformation_WhenClause'. From 'transformation_ConditionalMapping', the role 'transformation_ConditionalMapping' has cardinality 0..*, and from 'transformation_WhenClause', the role 'transformation_WhenClause' has cardinality 0..*.
+An association connects 'transformation_OtherwiseClause' and 'transformation_ConditionalMapping'. From 'transformation_OtherwiseClause', the role 'transformation_OtherwiseClause' has cardinality 0..*, and from 'transformation_ConditionalMapping', the role 'transformation_ConditionalMapping23' has cardinality 0..*.
+An association connects 'transformation_Expression' and 'transformation_WhenClause'. From 'transformation_Expression', the role 'transformation_Expression' has cardinality 0..*, and from 'transformation_WhenClause', the role 'transformation_WhenClause25' has cardinality 0..*.
+An association connects 'transformation_Expression' and 'transformation_ResultMapping'. From 'transformation_Expression', the role 'transformation_Expression27' has cardinality 0..*, and from 'transformation_ResultMapping', the role 'transformation_ResultMapping' has cardinality 0..*.
+An association connects 'transformation_EStructuralFeature' and 'transformation_FeatureMapping'. From 'transformation_EStructuralFeature', the role 'transformation_EStructuralFeature' has cardinality 0..*, and from 'transformation_FeatureMapping', the role 'transformation_FeatureMapping' has cardinality 0..*.
+An association connects 'transformation_FeatureMapping' and 'transformation_Expression'. From 'transformation_FeatureMapping', the role 'transformation_FeatureMapping30' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression31' has cardinality 0..*.
+An association connects 'transformation_VariableDefinition' and 'transformation_VariableInitialization'. From 'transformation_VariableDefinition', the role 'transformation_VariableDefinition' has cardinality 0..*, and from 'transformation_VariableInitialization', the role 'transformation_VariableInitialization' has cardinality 0..*.
+An association connects 'transformation_Expression' and 'transformation_VariableInitialization'. From 'transformation_Expression', the role 'transformation_Expression35' has cardinality 0..*, and from 'transformation_VariableInitialization', the role 'transformation_VariableInitialization34' has cardinality 0..*.
+An association connects 'transformation_Expression' and 'transformation_If'. From 'transformation_Expression', the role 'transformation_Expression37' has cardinality 0..*, and from 'transformation_If', the role 'transformation_If' has cardinality 0..*.
+An association connects 'transformation_Expression' and 'transformation_If'. From 'transformation_Expression', the role 'transformation_Expression40' has cardinality 0..*, and from 'transformation_If', the role 'transformation_If39' has cardinality 0..*.
+An association connects 'transformation_If' and 'transformation_Expression'. From 'transformation_If', the role 'transformation_If42' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression43' has cardinality 0..*.
+An association connects 'transformation_VariableInitialization' and 'transformation_Let'. From 'transformation_VariableInitialization', the role 'transformation_VariableInitialization45' has cardinality 0..*, and from 'transformation_Let', the role 'transformation_Let' has cardinality 0..*.
+An association connects 'transformation_Let' and 'transformation_Expression'. From 'transformation_Let', the role 'transformation_Let47' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression48' has cardinality 0..*.
+An association connects 'transformation_Expression' and 'transformation_ConditionalExpression'. From 'transformation_Expression', the role 'transformation_Expression50' has cardinality 0..*, and from 'transformation_ConditionalExpression', the role 'transformation_ConditionalExpression' has cardinality 0..*.
+An association connects 'transformation_ConditionalExpression' and 'transformation_Expression'. From 'transformation_ConditionalExpression', the role 'transformation_ConditionalExpression52' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression53' has cardinality 0..*.
+An association connects 'transformation_ConditionalExpression' and 'transformation_Expression'. From 'transformation_ConditionalExpression', the role 'transformation_ConditionalExpression55' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression56' has cardinality 0..*.
+An association connects 'transformation_BinaryExpression' and 'transformation_Expression'. From 'transformation_BinaryExpression', the role 'transformation_BinaryExpression' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression58' has cardinality 0..*.
+An association connects 'transformation_BinaryExpression' and 'transformation_Expression'. From 'transformation_BinaryExpression', the role 'transformation_BinaryExpression60' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression61' has cardinality 0..*.
+An association connects 'transformation_Expression' and 'transformation_UnaryExpression'. From 'transformation_Expression', the role 'transformation_Expression63' has cardinality 0..*, and from 'transformation_UnaryExpression', the role 'transformation_UnaryExpression' has cardinality 0..*.
+An association connects 'transformation_FeatureAccess' and 'transformation_Expression'. From 'transformation_FeatureAccess', the role 'transformation_FeatureAccess' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression65' has cardinality 0..*.
+An association connects 'transformation_FeatureAccess' and 'transformation_ETypedElement'. From 'transformation_FeatureAccess', the role 'transformation_FeatureAccess67' has cardinality 0..*, and from 'transformation_ETypedElement', the role 'transformation_ETypedElement' has cardinality 0..*.
+An association connects 'transformation_ExtentExpression' and 'transformation_Expression'. From 'transformation_ExtentExpression', the role 'transformation_ExtentExpression' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression69' has cardinality 0..*.
+An association connects 'transformation_Expression' and 'transformation_TypeOfExpression'. From 'transformation_Expression', the role 'transformation_Expression71' has cardinality 0..*, and from 'transformation_TypeOfExpression', the role 'transformation_TypeOfExpression' has cardinality 0..*.
+An association connects 'transformation_Invocation' and 'transformation_Expression'. From 'transformation_Invocation', the role 'transformation_Invocation' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression73' has cardinality 0..*.
+An association connects 'transformation_Expression' and 'transformation_Invocation'. From 'transformation_Expression', the role 'transformation_Expression76' has cardinality 0..*, and from 'transformation_Invocation', the role 'transformation_Invocation75' has cardinality 0..*.
+An association connects 'transformation_VariableDefinition' and 'transformation_Lambda'. From 'transformation_VariableDefinition', the role 'transformation_VariableDefinition78' has cardinality 0..*, and from 'transformation_Lambda', the role 'transformation_Lambda' has cardinality 0..*.
+An association connects 'transformation_Lambda' and 'transformation_Expression'. From 'transformation_Lambda', the role 'transformation_Lambda80' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression81' has cardinality 0..*.
+An association connects 'transformation_Map' and 'transformation_Expression'. From 'transformation_Map', the role 'transformation_Map' has cardinality 0..*, and from 'transformation_Expression', the role 'transformation_Expression83' has cardinality 0..*.
+An association connects 'transformation_Map' and 'transformation_EClassifier'. From 'transformation_Map', the role 'transformation_Map85' has cardinality 0..*, and from 'transformation_EClassifier', the role 'transformation_EClassifier' has cardinality 0..*.
+An association connects 'transformation_VariableUse' and 'transformation_VariableDefinition'. From 'transformation_VariableUse', the role 'transformation_VariableUse' has cardinality 0..*, and from 'transformation_VariableDefinition', the role 'transformation_VariableDefinition87' has cardinality 0..*.
+An association connects 'transformation_ClassLiteral' and 'transformation_EClassifier'. From 'transformation_ClassLiteral', the role 'transformation_ClassLiteral' has cardinality 0..*, and from 'transformation_EClassifier', the role 'transformation_EClassifier89' has cardinality 0..*.
+An association connects 'transformation_EnumLiteral' and 'transformation_EEnumLiteral'. From 'transformation_EnumLiteral', the role 'transformation_EnumLiteral' has cardinality 0..*, and from 'transformation_EEnumLiteral', the role 'transformation_EEnumLiteral' has cardinality 0..*.

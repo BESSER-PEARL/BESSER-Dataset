@@ -1,0 +1,20 @@
+The domain model 'sAAP' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'sAAP_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'default', which is of type bool.
+
+'sAAP_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sAAP_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'sAAP_State' and 'sAAP_Transition'. From 'sAAP_State', the role 'from' has cardinality 0..*, and from 'sAAP_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'sAAP_State' and 'sAAP_Transition'. From 'sAAP_State', the role 'to' has cardinality 0..*, and from 'sAAP_Transition', the role 'Transition2' has cardinality 0..*.
+An association connects 'sAAP_StateMachine' and 'sAAP_State'. From 'sAAP_StateMachine', the role 'sAAP_StateMachine' has cardinality 0..*, and from 'sAAP_State', the role 'sAAP_State' has cardinality 0..*.
+An association connects 'sAAP_StateMachine' and 'sAAP_Transition'. From 'sAAP_StateMachine', the role 'sAAP_StateMachine5' has cardinality 0..*, and from 'sAAP_Transition', the role 'sAAP_Transition' has cardinality 0..*.
+An association connects 'sAAP_State' and 'sAAP_Transition'. From 'sAAP_State', the role 'State' has cardinality 0..*, and from 'sAAP_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'sAAP_State' and 'sAAP_Transition'. From 'sAAP_State', the role 'State8' has cardinality 0..*, and from 'sAAP_Transition', the role 'incoming' has cardinality 0..*.

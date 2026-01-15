@@ -1,0 +1,35 @@
+The domain model 'TokenTrace' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'TokenTrace_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenTrace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenTrace_Token' represents an important domain concept.
+It has the following attributes: 'tokenType', which is of type str; 'message', which is of type str; 'scale', which is of type str; 'referenceCount', which is of type int; 'assignedProbability', which is of type str; 'name', which is of type str; 'computedProbability', which is of type str.
+
+'MultiLiteralConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenTrace_TokenTrace' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'message', which is of type str; 'tokenTraceType', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TokenType' defines the following possible values: 'Basic', 'Sink', 'Intermediate', 'System', 'External', 'Undeveloped', 'Component', 'Unhandled'.
+The enumeration 'TokenTraceType' defines the following possible values: 'TokenGraph', 'MinimalCutSet', 'CompositeParts', 'TokenTrace'.
+
+The model also captures inheritance relationships between classes.
+The class 'TokenTrace_Token' is a specialization of 'MultiLiteralConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'TokenTrace_Token' and 'TokenTrace_TokenTrace'. From 'TokenTrace_Token', the role 'TokenTrace_Token' has cardinality 0..*, and from 'TokenTrace_TokenTrace', the role 'TokenTrace_TokenTrace' has cardinality 0..*.
+An association connects 'TokenTrace_TokenTrace' and 'TokenTrace_EObject'. From 'TokenTrace_TokenTrace', the role 'TokenTrace_TokenTrace2' has cardinality 0..*, and from 'TokenTrace_EObject', the role 'TokenTrace_EObject' has cardinality 0..*.
+An association connects 'TokenTrace_TokenTrace' and 'TokenTrace_Token'. From 'TokenTrace_TokenTrace', the role 'TokenTrace_TokenTrace4' has cardinality 0..*, and from 'TokenTrace_Token', the role 'TokenTrace_Token5' has cardinality 0..*.
+An association connects 'TokenTrace_TokenTrace' and 'TokenTrace_Literal'. From 'TokenTrace_TokenTrace', the role 'TokenTrace_TokenTrace7' has cardinality 0..*, and from 'TokenTrace_Literal', the role 'TokenTrace_Literal' has cardinality 0..*.
+An association connects 'TokenTrace_Token' and 'TokenTrace_Token'. From 'TokenTrace_Token', the role 'TokenTrace_Token10' has cardinality 0..*, and from 'TokenTrace_Token', the role 'TokenTrace_Token8' has cardinality 0..*.
+An association connects 'TokenTrace_EObject' and 'TokenTrace_Token'. From 'TokenTrace_EObject', the role 'TokenTrace_EObject13' has cardinality 0..*, and from 'TokenTrace_Token', the role 'TokenTrace_Token12' has cardinality 0..*.
+An association connects 'TokenTrace_Token' and 'TokenTrace_Literal'. From 'TokenTrace_Token', the role 'TokenTrace_Token15' has cardinality 0..*, and from 'TokenTrace_Literal', the role 'TokenTrace_Literal16' has cardinality 0..*.
+An association connects 'TokenTrace_Token' and 'TokenTrace_Literal'. From 'TokenTrace_Token', the role 'TokenTrace_Token18' has cardinality 0..*, and from 'TokenTrace_Literal', the role 'TokenTrace_Literal19' has cardinality 0..*.

@@ -1,0 +1,18 @@
+The domain model 'UmlTrace' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'UmlTrace_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UmlTrace_TraceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UmlTrace_EClass0' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'UmlTrace_TraceElement' and 'UmlTrace_Class'. From 'UmlTrace_TraceElement', the role 'UmlTrace_TraceElement' has cardinality 0..*, and from 'UmlTrace_Class', the role 'UmlTrace_Class' has cardinality 0..*.
+An association connects 'UmlTrace_Class' and 'UmlTrace_TraceElement'. From 'UmlTrace_Class', the role 'UmlTrace_Class3' has cardinality 0..*, and from 'UmlTrace_TraceElement', the role 'UmlTrace_TraceElement2' has cardinality 0..*.
+An association connects 'UmlTrace_TraceElement' and 'UmlTrace_Class'. From 'UmlTrace_TraceElement', the role 'UmlTrace_TraceElement5' has cardinality 0..*, and from 'UmlTrace_Class', the role 'UmlTrace_Class6' has cardinality 0..*.
+An association connects 'UmlTrace_TraceElement' and 'UmlTrace_Class'. From 'UmlTrace_TraceElement', the role 'UmlTrace_TraceElement8' has cardinality 0..*, and from 'UmlTrace_Class', the role 'UmlTrace_Class9' has cardinality 0..*.

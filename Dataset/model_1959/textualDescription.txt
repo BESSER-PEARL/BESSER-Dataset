@@ -1,0 +1,64 @@
+The domain model 'file' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'File' represents an important domain concept.
+It does not declare any attributes.
+
+'file_FileHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'file_FileOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'FileHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'file_FileLocal' represents an important domain concept.
+It has one attribute: 'FilePath', which is of type str.
+
+'file_FileInMemory' represents an important domain concept.
+It has one attribute: 'Content', which is of type str.
+
+'FileOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'file_Files' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'ByteFile' represents an important domain concept.
+It does not declare any attributes.
+
+'file_File' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'file_ByteFile' represents an important domain concept.
+It has one attribute: 'Encoding', which is of type str.
+
+'file_FileOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'file_FileRemote' represents an important domain concept.
+It has one attribute: 'URL', which is of type str.
+
+'file_FileReaderWriter' represents an important domain concept.
+It has the following attributes: 'Open', which is of type bool; 'ReadFeedback', which is of type str; 'CloseFeedback', which is of type str; 'WriteFeedback', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FileEncoding' defines the following possible values: 'US_ASCII', 'UTF_16BE', 'UTF_8', 'ISO_8859_1', 'UTF_16LE', 'UTF_16'.
+
+The model also captures inheritance relationships between classes.
+The class 'file_FileLocal' is a specialization of 'ByteFile'.
+The class 'file_FileRemote' is a specialization of 'ByteFile'.
+The class 'file_FileInMemory' is a specialization of 'File'.
+The class 'file_FileReaderWriter' is a specialization of 'FileHandler'.
+The class 'file_FileHandler' is a specialization of 'FileOwner'.
+The class 'file_Files' is a specialization of 'FileOwner'.
+The class 'file_ByteFile' is a specialization of 'File'.
+The class 'file_FileOutput' is a specialization of 'FileOwner'.
+
+Relationships between classes are modeled using associations.
+An association connects 'file_FileHandler' and 'file_File'. From 'file_FileHandler', the role 'file_FileHandler' has cardinality 0..*, and from 'file_File', the role 'file_File' has cardinality 0..*.
+An association connects 'file_FileHandler' and 'file_File'. From 'file_FileHandler', the role 'file_FileHandler2' has cardinality 0..*, and from 'file_File', the role 'file_File3' has cardinality 0..*.
+An association connects 'file_File' and 'file_FileOwner'. From 'file_File', the role 'file_File5' has cardinality 0..*, and from 'file_FileOwner', the role 'file_FileOwner' has cardinality 0..*.
+An association connects 'file_File' and 'file_FileOutput'. From 'file_File', the role 'file_File7' has cardinality 0..*, and from 'file_FileOutput', the role 'file_FileOutput' has cardinality 0..*.

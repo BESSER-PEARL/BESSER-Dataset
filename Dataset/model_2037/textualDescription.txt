@@ -1,0 +1,20 @@
+The domain model 'etatma' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'etatma_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'etatma_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'etatma_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'etatma_StateMachine' and 'etatma_Transition'. From 'etatma_StateMachine', the role 'etatma_StateMachine' has cardinality 0..*, and from 'etatma_Transition', the role 'etatma_Transition' has cardinality 0..*.
+An association connects 'etatma_State' and 'etatma_StateMachine'. From 'etatma_State', the role 'etatma_State' has cardinality 0..*, and from 'etatma_StateMachine', the role 'etatma_StateMachine2' has cardinality 0..*.
+An association connects 'etatma_Transition' and 'etatma_State'. From 'etatma_Transition', the role 'outgoing' has cardinality 0..*, and from 'etatma_State', the role 'State' has cardinality 0..*.
+An association connects 'etatma_State' and 'etatma_Transition'. From 'etatma_State', the role 'State5' has cardinality 0..*, and from 'etatma_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'etatma_State' and 'etatma_Transition'. From 'etatma_State', the role 'from' has cardinality 0..*, and from 'etatma_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'etatma_Transition' and 'etatma_State'. From 'etatma_Transition', the role 'Transition8' has cardinality 0..*, and from 'etatma_State', the role 'to' has cardinality 0..*.

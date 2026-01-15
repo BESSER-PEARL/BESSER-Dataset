@@ -1,0 +1,104 @@
+The domain model 'esm' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'esm_EsmEntityStateModel' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_EsmCompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'INavigableMemberContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'IDiagramRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'IEsmStateModel' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_DState' represents an important domain concept.
+It does not declare any attributes.
+
+'IStaticReferenceTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_DStateEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'EsmState' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_IEsmStateModel' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_IEsmState' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'esm_EsmSubStateModel' represents an important domain concept.
+It does not declare any attributes.
+
+'IEsmLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_EsmDerivedState' represents an important domain concept.
+It does not declare any attributes.
+
+'IEsmState' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_DExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_EsmState' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_DEntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_EsmConcurrentState' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_DRichText' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_IEsmLayout' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'DModel' represents an important domain concept.
+It does not declare any attributes.
+
+'esm_EsmTransition' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EsmLayoutDirection' defines the following possible values: 'LEFT', 'UP', 'DOWN', 'DEFAULT', 'RIGHT'.
+The enumeration 'EsmStateKind' defines the following possible values: 'NORMAL', 'FINAL', 'INITIAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'esm_EsmEntityStateModel' is a specialization of 'DModel'.
+The class 'esm_EsmEntityStateModel' is a specialization of 'IEsmStateModel'.
+The class 'esm_EsmEntityStateModel' is a specialization of 'INavigableMemberContainer'.
+The class 'esm_EsmEntityStateModel' is a specialization of 'IStaticReferenceTarget'.
+The class 'esm_EsmEntityStateModel' is a specialization of 'IDiagramRoot'.
+The class 'esm_IEsmStateModel' is a specialization of 'IEsmLayout'.
+The class 'esm_EsmState' is a specialization of 'IEsmState'.
+The class 'esm_EsmDerivedState' is a specialization of 'EsmState'.
+The class 'esm_EsmCompositeState' is a specialization of 'IEsmState'.
+The class 'esm_EsmCompositeState' is a specialization of 'IEsmStateModel'.
+The class 'esm_EsmConcurrentState' is a specialization of 'IEsmState'.
+The class 'esm_EsmSubStateModel' is a specialization of 'IEsmStateModel'.
+The class 'esm_EsmTransition' is a specialization of 'IEsmLayout'.
+
+Relationships between classes are modeled using associations.
+An association connects 'esm_EsmEntityStateModel' and 'esm_DEntityType'. From 'esm_EsmEntityStateModel', the role 'esm_EsmEntityStateModel' has cardinality 0..*, and from 'esm_DEntityType', the role 'esm_DEntityType' has cardinality 0..*.
+An association connects 'esm_IEsmState' and 'esm_IEsmStateModel'. From 'esm_IEsmState', the role 'esm_IEsmState' has cardinality 0..*, and from 'esm_IEsmStateModel', the role 'esm_IEsmStateModel' has cardinality 0..*.
+An association connects 'esm_EsmTransition' and 'esm_IEsmStateModel'. From 'esm_EsmTransition', the role 'esm_EsmTransition' has cardinality 0..*, and from 'esm_IEsmStateModel', the role 'esm_IEsmStateModel3' has cardinality 0..*.
+An association connects 'esm_IEsmState' and 'esm_DState'. From 'esm_IEsmState', the role 'esm_IEsmState5' has cardinality 0..*, and from 'esm_DState', the role 'esm_DState' has cardinality 0..*.
+An association connects 'esm_DRichText' and 'esm_IEsmState'. From 'esm_DRichText', the role 'esm_DRichText' has cardinality 0..*, and from 'esm_IEsmState', the role 'esm_IEsmState7' has cardinality 0..*.
+An association connects 'esm_EsmDerivedState' and 'esm_DExpression'. From 'esm_EsmDerivedState', the role 'esm_EsmDerivedState' has cardinality 0..*, and from 'esm_DExpression', the role 'esm_DExpression' has cardinality 0..*.
+An association connects 'esm_EsmConcurrentState' and 'esm_EsmSubStateModel'. From 'esm_EsmConcurrentState', the role 'esm_EsmConcurrentState' has cardinality 0..*, and from 'esm_EsmSubStateModel', the role 'esm_EsmSubStateModel' has cardinality 0..*.
+An association connects 'esm_EsmTransition' and 'esm_DState'. From 'esm_EsmTransition', the role 'esm_EsmTransition11' has cardinality 0..*, and from 'esm_DState', the role 'esm_DState12' has cardinality 0..*.
+An association connects 'esm_DState' and 'esm_EsmTransition'. From 'esm_DState', the role 'esm_DState15' has cardinality 0..*, and from 'esm_EsmTransition', the role 'esm_EsmTransition14' has cardinality 0..*.
+An association connects 'esm_EsmTransition' and 'esm_DStateEvent'. From 'esm_EsmTransition', the role 'esm_EsmTransition17' has cardinality 0..*, and from 'esm_DStateEvent', the role 'esm_DStateEvent' has cardinality 0..*.
+An association connects 'esm_DExpression' and 'esm_EsmTransition'. From 'esm_DExpression', the role 'esm_DExpression20' has cardinality 0..*, and from 'esm_EsmTransition', the role 'esm_EsmTransition19' has cardinality 0..*.

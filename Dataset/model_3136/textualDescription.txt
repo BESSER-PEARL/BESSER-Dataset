@@ -1,0 +1,221 @@
+The domain model 'UML_14' describes the core structural elements and their relationships within the system.
+
+The model defines 46 main class(es).
+
+'UML_14_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Constraint' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'UML_14_BehavioralFeature' represents an important domain concept.
+It has one attribute: 'isQuery', which is of type bool.
+
+'UML_14_ModelElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UML_14_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_GeneralizableElement' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_AssociationEnd' represents an important domain concept.
+It has the following attributes: 'isNavigable', which is of type bool; 'targetScope', which is of type str; 'aggregation', which is of type str; 'changeability', which is of type str; 'visibility', which is of type str.
+
+'UML_14_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Generalization' represents an important domain concept.
+It has one attribute: 'discriminator', which is of type str.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_MultiplicityRange' represents an important domain concept.
+It has the following attributes: 'upper', which is of type int; 'lower', which is of type int.
+
+'UML_14_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_ElementOwnership' represents an important domain concept.
+It has the following attributes: 'isSpecification', which is of type bool; 'visibility', which is of type str.
+
+'UML_14_NameSpace' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Operation' represents an important domain concept.
+It has the following attributes: 'specification', which is of type str; 'isRoot', which is of type bool; 'isAbstract', which is of type bool; 'isLeaf', which is of type bool.
+
+'UML_14_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Method' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'UML_14_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Attribute' represents an important domain concept.
+It has one attribute: 'initialValue', which is of type str.
+
+'UML_14_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Multiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Permission' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Parameter' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'kind', which is of type str.
+
+'GeneralizableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NameSpace' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'out', 'return', 'in', 'inout'.
+The enumeration 'ChangeableKind' defines the following possible values: 'addOnly', 'frozen', 'changeable'.
+The enumeration 'ScopeKind' defines the following possible values: 'classifier', 'instance'.
+The enumeration 'AggregationKind' defines the following possible values: 'none', 'aggregate', 'composite'.
+The enumeration 'VisibilityKind' defines the following possible values: 'private', 'public', 'package', 'protected'.
+The enumeration 'OrderingKind' defines the following possible values: 'unordered', 'ordered'.
+
+The model also captures inheritance relationships between classes.
+The class 'UML_14_ModelElement' is a specialization of 'Element'.
+The class 'UML_14_Feature' is a specialization of 'ModelElement'.
+The class 'UML_14_NameSpace' is a specialization of 'ModelElement'.
+The class 'UML_14_GeneralizableElement' is a specialization of 'ModelElement'.
+The class 'UML_14_Parameter' is a specialization of 'ModelElement'.
+The class 'UML_14_Constraint' is a specialization of 'ModelElement'.
+The class 'UML_14_Classifier' is a specialization of 'NameSpace'.
+The class 'UML_14_Classifier' is a specialization of 'GeneralizableElement'.
+The class 'UML_14_StructuralFeature' is a specialization of 'Feature'.
+The class 'UML_14_BehavioralFeature' is a specialization of 'Feature'.
+The class 'UML_14_Operation' is a specialization of 'BehavioralFeature'.
+The class 'UML_14_Method' is a specialization of 'BehavioralFeature'.
+The class 'UML_14_Attribute' is a specialization of 'StructuralFeature'.
+The class 'UML_14_Relationship' is a specialization of 'ModelElement'.
+The class 'UML_14_Generalization' is a specialization of 'Relationship'.
+The class 'UML_14_Association' is a specialization of 'Relationship'.
+The class 'UML_14_Association' is a specialization of 'GeneralizableElement'.
+The class 'UML_14_AssociationEnd' is a specialization of 'ModelElement'.
+The class 'UML_14_Class' is a specialization of 'Classifier'.
+The class 'UML_14_AssociationClass' is a specialization of 'Class'.
+The class 'UML_14_AssociationClass' is a specialization of 'Association'.
+The class 'UML_14_Dependency' is a specialization of 'Relationship'.
+The class 'UML_14_Binding' is a specialization of 'Dependency'.
+The class 'UML_14_Abstraction' is a specialization of 'Dependency'.
+The class 'UML_14_Usage' is a specialization of 'Dependency'.
+The class 'UML_14_Permission' is a specialization of 'Dependency'.
+The class 'UML_14_Interface' is a specialization of 'Classifier'.
+The class 'UML_14_DataType' is a specialization of 'Classifier'.
+The class 'UML_14_Primitive' is a specialization of 'DataType'.
+The class 'UML_14_Enumeration' is a specialization of 'DataType'.
+The class 'UML_14_EnumerationLiteral' is a specialization of 'ModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML_14_Constraint' and 'UML_14_ModelElement'. From 'UML_14_Constraint', the role 'Constraint' has cardinality 0..*, and from 'UML_14_ModelElement', the role 'constrainedElement' has cardinality 0..*.
+An association connects 'UML_14_ModelElement' and 'UML_14_Comment'. From 'UML_14_ModelElement', the role 'annotatedElement' has cardinality 0..*, and from 'UML_14_Comment', the role 'Comment' has cardinality 0..*.
+An association connects 'UML_14_Dependency' and 'UML_14_ModelElement'. From 'UML_14_Dependency', the role 'Dependency' has cardinality 0..*, and from 'UML_14_ModelElement', the role 'supplier' has cardinality 0..*.
+An association connects 'UML_14_ModelElement' and 'UML_14_Dependency'. From 'UML_14_ModelElement', the role 'client' has cardinality 0..*, and from 'UML_14_Dependency', the role 'Dependency4' has cardinality 0..*.
+An association connects 'UML_14_Classifier' and 'UML_14_Feature'. From 'UML_14_Classifier', the role 'Classifier' has cardinality 0..*, and from 'UML_14_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'UML_14_Generalization' and 'UML_14_GeneralizableElement'. From 'UML_14_Generalization', the role 'Generalization' has cardinality 0..*, and from 'UML_14_GeneralizableElement', the role 'child' has cardinality 0..*.
+An association connects 'UML_14_Generalization' and 'UML_14_GeneralizableElement'. From 'UML_14_Generalization', the role 'Generalization8' has cardinality 0..*, and from 'UML_14_GeneralizableElement', the role 'parent' has cardinality 0..*.
+An association connects 'UML_14_Classifier' and 'UML_14_Parameter'. From 'UML_14_Classifier', the role 'Classifier10' has cardinality 0..*, and from 'UML_14_Parameter', the role 'typedParameter' has cardinality 0..*.
+An association connects 'UML_14_BehavioralFeature' and 'UML_14_Parameter'. From 'UML_14_BehavioralFeature', the role 'BehavioralFeature' has cardinality 0..*, and from 'UML_14_Parameter', the role 'parameter' has cardinality 0..*.
+An association connects 'UML_14_ModelElement' and 'UML_14_Constraint'. From 'UML_14_ModelElement', the role 'ModelElement' has cardinality 0..*, and from 'UML_14_Constraint', the role 'constraint' has cardinality 0..*.
+An association connects 'UML_14_Feature' and 'UML_14_Classifier'. From 'UML_14_Feature', the role 'Feature' has cardinality 0..*, and from 'UML_14_Classifier', the role 'owner' has cardinality 0..*.
+An association connects 'UML_14_Parameter' and 'UML_14_Classifier'. From 'UML_14_Parameter', the role 'Parameter' has cardinality 0..*, and from 'UML_14_Classifier', the role 'type' has cardinality 0..*.
+An association connects 'UML_14_StructuralFeature' and 'UML_14_Classifier'. From 'UML_14_StructuralFeature', the role 'StructuralFeature' has cardinality 0..*, and from 'UML_14_Classifier', the role 'type16' has cardinality 0..*.
+An association connects 'UML_14_Generalization' and 'UML_14_Classifier'. From 'UML_14_Generalization', the role 'Generalization18' has cardinality 0..*, and from 'UML_14_Classifier', the role 'powertype' has cardinality 0..*.
+An association connects 'UML_14_Classifier' and 'UML_14_AssociationEnd'. From 'UML_14_Classifier', the role 'participant' has cardinality 0..*, and from 'UML_14_AssociationEnd', the role 'AssociationEnd' has cardinality 0..*.
+An association connects 'UML_14_Classifier' and 'UML_14_AssociationEnd'. From 'UML_14_Classifier', the role 'specification' has cardinality 0..*, and from 'UML_14_AssociationEnd', the role 'AssociationEnd21' has cardinality 0..*.
+An association connects 'UML_14_StructuralFeature' and 'UML_14_Classifier'. From 'UML_14_StructuralFeature', the role 'typedFeature' has cardinality 0..*, and from 'UML_14_Classifier', the role 'Classifier23' has cardinality 0..*.
+An association connects 'UML_14_StructuralFeature' and 'UML_14_Multiplicity'. From 'UML_14_StructuralFeature', the role 'UML_14_StructuralFeature' has cardinality 0..*, and from 'UML_14_Multiplicity', the role 'UML_14_Multiplicity' has cardinality 0..*.
+An association connects 'UML_14_BehavioralFeature' and 'UML_14_Parameter'. From 'UML_14_BehavioralFeature', the role 'feature26' has cardinality 0..*, and from 'UML_14_Parameter', the role 'Parameter27' has cardinality 0..*.
+An association connects 'UML_14_MultiplicityRange' and 'UML_14_Multiplicity'. From 'UML_14_MultiplicityRange', the role 'MultiplicityRange' has cardinality 0..*, and from 'UML_14_Multiplicity', the role 'multiplicity' has cardinality 0..*.
+An association connects 'UML_14_Multiplicity' and 'UML_14_MultiplicityRange'. From 'UML_14_Multiplicity', the role 'Multiplicity' has cardinality 0..*, and from 'UML_14_MultiplicityRange', the role 'range' has cardinality 0..*.
+An association connects 'UML_14_Operation' and 'UML_14_Method'. From 'UML_14_Operation', the role 'UML_14_Operation' has cardinality 0..*, and from 'UML_14_Method', the role 'UML_14_Method' has cardinality 0..*.
+An association connects 'UML_14_AssociationEnd' and 'UML_14_Attribute'. From 'UML_14_AssociationEnd', the role 'AssociationEnd32' has cardinality 0..*, and from 'UML_14_Attribute', the role 'qualifier' has cardinality 0..*.
+An association connects 'UML_14_Generalization' and 'UML_14_GeneralizableElement'. From 'UML_14_Generalization', the role 'generalization' has cardinality 0..*, and from 'UML_14_GeneralizableElement', the role 'GeneralizableElement' has cardinality 0..*.
+An association connects 'UML_14_GeneralizableElement' and 'UML_14_Generalization'. From 'UML_14_GeneralizableElement', the role 'GeneralizableElement35' has cardinality 0..*, and from 'UML_14_Generalization', the role 'specialization' has cardinality 0..*.
+An association connects 'UML_14_Classifier' and 'UML_14_Generalization'. From 'UML_14_Classifier', the role 'Classifier37' has cardinality 0..*, and from 'UML_14_Generalization', the role 'powertypeRange' has cardinality 0..*.
+An association connects 'UML_14_Association' and 'UML_14_AssociationEnd'. From 'UML_14_Association', the role 'association' has cardinality 0..*, and from 'UML_14_AssociationEnd', the role 'AssociationEnd39' has cardinality 0..*.
+An association connects 'UML_14_Association' and 'UML_14_AssociationEnd'. From 'UML_14_Association', the role 'Association' has cardinality 0..*, and from 'UML_14_AssociationEnd', the role 'connection' has cardinality 0..*.
+An association connects 'UML_14_AssociationEnd' and 'UML_14_Classifier'. From 'UML_14_AssociationEnd', the role 'association42' has cardinality 0..*, and from 'UML_14_Classifier', the role 'Classifier43' has cardinality 0..*.
+An association connects 'UML_14_AssociationEnd' and 'UML_14_Classifier'. From 'UML_14_AssociationEnd', the role 'specifiedEnd' has cardinality 0..*, and from 'UML_14_Classifier', the role 'Classifier45' has cardinality 0..*.
+An association connects 'UML_14_AssociationEnd' and 'UML_14_Multiplicity'. From 'UML_14_AssociationEnd', the role 'UML_14_AssociationEnd' has cardinality 0..*, and from 'UML_14_Multiplicity', the role 'UML_14_Multiplicity47' has cardinality 0..*.
+An association connects 'UML_14_Attribute' and 'UML_14_AssociationEnd'. From 'UML_14_Attribute', the role 'Attribute' has cardinality 0..*, and from 'UML_14_AssociationEnd', the role 'associationEnd' has cardinality 0..*.
+An association connects 'UML_14_Dependency' and 'UML_14_ModelElement'. From 'UML_14_Dependency', the role 'supplierDependency' has cardinality 0..*, and from 'UML_14_ModelElement', the role 'ModelElement50' has cardinality 0..*.
+An association connects 'UML_14_Dependency' and 'UML_14_ModelElement'. From 'UML_14_Dependency', the role 'clientDependency' has cardinality 0..*, and from 'UML_14_ModelElement', the role 'ModelElement52' has cardinality 0..*.
+An association connects 'UML_14_EnumerationLiteral' and 'UML_14_Enumeration'. From 'UML_14_EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*, and from 'UML_14_Enumeration', the role 'enumeration' has cardinality 0..*.
+An association connects 'UML_14_EnumerationLiteral' and 'UML_14_Enumeration'. From 'UML_14_EnumerationLiteral', the role 'literal' has cardinality 0..*, and from 'UML_14_Enumeration', the role 'Enumeration' has cardinality 0..*.
+An association connects 'UML_14_Comment' and 'UML_14_ModelElement'. From 'UML_14_Comment', the role 'comments' has cardinality 0..*, and from 'UML_14_ModelElement', the role 'ModelElement56' has cardinality 0..*.

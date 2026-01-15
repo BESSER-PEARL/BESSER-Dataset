@@ -1,0 +1,712 @@
+The domain model 'softGalleryLanguage' describes the core structural elements and their relationships within the system.
+
+The model defines 188 main class(es).
+
+'softGalleryLanguage_ExceptionProcess' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_EnableWebSecurity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Policy' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_StorageActionAnnotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ProfileManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_EnableGlobalMethodSecurity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_StorageClient' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ExceptionsType' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_CoreFunctionsDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_MappingType' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_PersistenceDataComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ColumnP' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_SegmentStructureContent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_RequestMappingProduces' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_StyleProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ReactCoreFunctions' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ResponseParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ReactsRelationServ' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_SpringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ResponseEntity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ResponseParameterName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ReactServiceContent' represents an important domain concept.
+It has one attribute: 'functName', which is of type str.
+
+'softGalleryLanguage_DOMConfigurations' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'elements', which is of type str.
+
+'softGalleryLanguage_ArchitectureComponents' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_PostMapping' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_UserException' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Domain' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_DataPersistenceContent' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_UIContent' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_StorageActionMemberType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ReactInformation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_AtributeUserDomain' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ComponentsStylesContent' represents an important domain concept.
+It has one attribute: 'nameStyle', which is of type str.
+
+'softGalleryLanguage_PackageVersion' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_PostgresUser' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_SpringRepositoryAnnotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ReactSubModules' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_Technologies' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_StorageActionReturn' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_SpringComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_AmazonFile' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ViewComponentCont' represents an important domain concept.
+It has one attribute: 'nameView', which is of type str.
+
+'softGalleryLanguage_AlbumManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_StateContent' represents an important domain concept.
+It has the following attributes: 'stateName', which is of type str; 'componentdatatyp', which is of type str.
+
+'softGalleryLanguage_DeleteMapping' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_LayerTarget' represents an important domain concept.
+It has one attribute: 'layerelations', which is of type str.
+
+'softGalleryLanguage_ResponseParameterAnnotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Architecture' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ComponentsStyles' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_NTiers' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_AmazonSimpleStorageService' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_PresentationContent' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_SpringRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ExceptionHandler' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Technology' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_StorageActionMemberName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Trigger' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_DataPersistenceLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_RefTable_p' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ReactModules' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_AmazonElasticComputeCloud' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ControllerSegmentElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_BusinessLogicSegments' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Database' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_OrderSpring' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Layer' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_LandingFunctions' represents an important domain concept.
+It has the following attributes: 'nameCarouselName', which is of type str; 'passPhotoName', which is of type str.
+
+'softGalleryLanguage_AppAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_RequestMappingMethod' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ReactServicesType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_Spring' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_BucketObjectsNotPublic' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Predicate' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_PresentationLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ReactConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ReactActionsContent' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ComponentsLogic' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_PhotoException' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ReactServicesRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_AmazonWebServices' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ViewSchema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_React' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_StorageMember' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Props' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_Row' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_PresentationSegments' represents an important domain concept.
+It has the following attributes: 'presentationSName', which is of type str; 'presentationAName', which is of type str; 'presentationCName', which is of type str.
+
+'softGalleryLanguage_PropsType' represents an important domain concept.
+It has the following attributes: 'propsdatas', which is of type str; 'nameProps', which is of type str.
+
+'softGalleryLanguage_BatchOperation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_BucketAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_LogicStructure' represents an important domain concept.
+It has the following attributes: 'indexCompName', which is of type str; 'appComName', which is of type str.
+
+'softGalleryLanguage_SingleDependencies' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_PhotoActionsFunctions' represents an important domain concept.
+It has the following attributes: 'nameLoad', which is of type str; 'nameGenerico', which is of type str; 'namePhoto', which is of type str.
+
+'softGalleryLanguage_StorageActionMember' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_SpringBootApplication' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_Directories' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_RequestMappingValue' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ReactLibraries' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ReactComponents' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_LayerRelations' represents an important domain concept.
+It has the following attributes: 'layerelations', which is of type str; 'name', which is of type str.
+
+'softGalleryLanguage_Constraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_SubcomponentCont' represents an important domain concept.
+It has one attribute: 'nameSubComp', which is of type str.
+
+'softGalleryLanguage_BusinessLogicLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_NTiersConnections' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ReactServiceContRequest' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_State' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_Autowired' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_AtributePhoto' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ComponentClass' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_SegmentStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ReactInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ReactImports' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ProfileManagementFunctions' represents an important domain concept.
+It has the following attributes: 'editProfileName', which is of type str; 'viewprofileName', which is of type str.
+
+'softGalleryLanguage_ForeignKeyRef' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_LandingActions' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_NTierSource' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ResponseParameterType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_LogicContent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_StylePropertiesContent' represents an important domain concept.
+It has one attribute: 'propName', which is of type str.
+
+'softGalleryLanguage_DirectoryContent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_AmazonFolder' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Functionality' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_SingleFile' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ObjectsPublic' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Metadata' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_RequestMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_Privilege' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Configuration' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_Entities' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_NTierTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_StorageMemberAnnotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ReactFunctions' represents an important domain concept.
+It has the following attributes: 'renderclass', which is of type str; 'lifecycleclass', which is of type str.
+
+'softGalleryLanguage_SpringRepositories' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_AlbumException' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ReactDependenciesSubRules' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_SearchCriteria' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_PackageName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ForeignKey_n' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_Functionalities' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ReactImportContent' represents an important domain concept.
+It has one attribute: 'impName', which is of type str.
+
+'softGalleryLanguage_MultipleFile' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_BusinessLogicContent' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_FrontEnd' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_NTierConnectionContent' represents an important domain concept.
+It has the following attributes: 'nTierName', which is of type str; 'ntierconnection', which is of type str.
+
+'softGalleryLanguage_CriteriaAttributeType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_StorageAction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_EnableAuthorizationServer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ExceptionsDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ReactDependencies' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ReactServiceRequestProps' represents an important domain concept.
+It has the following attributes: 'reqPropDescription', which is of type str; 'reqPropName', which is of type str.
+
+'softGalleryLanguage_ReactConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_Index_p' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_PublicAccess' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Bucket' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Specification' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_SpringEntityAnnotationTypes' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_PutMapping' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MappingType' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_BackEnd' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_DataPersistenceSegments' represents an important domain concept.
+It has the following attributes: 'amazonSName', which is of type str; 'postSName', which is of type str.
+
+'softGalleryLanguage_SpecificationSegmentElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Clause' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_OnlyAuthorized' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_PhotoActions' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_ComponentsUI' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Cluster' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_DatatypeDB' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ReactActions' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_PostgreSQL' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_EnableResourceServer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'softGalleryLanguage_AlbumManagementFunctions' represents an important domain concept.
+It has the following attributes: 'createdAlbName', which is of type str; 'selectAlbName', which is of type str.
+
+'softGalleryLanguage_ReactConfigurations' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_AtributeAlbum' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_AppAccessFunctions' represents an important domain concept.
+It has the following attributes: 'registerName', which is of type str; 'loginName', which is of type str.
+
+'softGalleryLanguage_LayerSource' represents an important domain concept.
+It has one attribute: 'layerelations', which is of type str.
+
+'softGalleryLanguage_ReactDependenciesRules' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_Table_p' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_NTiersRelations' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_RestController' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_StorageMemberType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_ReactLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softGalleryLanguage_GetMapping' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'softGalleryLanguage_RequestMapping' is a specialization of 'MappingType'.
+The class 'softGalleryLanguage_PostMapping' is a specialization of 'MappingType'.
+The class 'softGalleryLanguage_GetMapping' is a specialization of 'MappingType'.
+The class 'softGalleryLanguage_PutMapping' is a specialization of 'MappingType'.
+The class 'softGalleryLanguage_DeleteMapping' is a specialization of 'MappingType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'softGalleryLanguage_Model' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_Model', the role 'softGalleryLanguage_Model' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Domain' and 'softGalleryLanguage_Entity'. From 'softGalleryLanguage_Domain', the role 'softGalleryLanguage_Domain' has cardinality 0..*, and from 'softGalleryLanguage_Entity', the role 'softGalleryLanguage_Entity' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Functionality' and 'softGalleryLanguage_Domain'. From 'softGalleryLanguage_Functionality', the role 'softGalleryLanguage_Functionality' has cardinality 0..*, and from 'softGalleryLanguage_Domain', the role 'softGalleryLanguage_Domain3' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ExceptionsDomain' and 'softGalleryLanguage_Domain'. From 'softGalleryLanguage_ExceptionsDomain', the role 'softGalleryLanguage_ExceptionsDomain' has cardinality 0..*, and from 'softGalleryLanguage_Domain', the role 'softGalleryLanguage_Domain5' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Entities' and 'softGalleryLanguage_Entity'. From 'softGalleryLanguage_Entities', the role 'softGalleryLanguage_Entities' has cardinality 0..*, and from 'softGalleryLanguage_Entity', the role 'softGalleryLanguage_Entity7' has cardinality 0..*.
+An association connects 'softGalleryLanguage_AtributePhoto' and 'softGalleryLanguage_Entities'. From 'softGalleryLanguage_AtributePhoto', the role 'softGalleryLanguage_AtributePhoto' has cardinality 0..*, and from 'softGalleryLanguage_Entities', the role 'softGalleryLanguage_Entities9' has cardinality 0..*.
+An association connects 'softGalleryLanguage_AtributeAlbum' and 'softGalleryLanguage_Entities'. From 'softGalleryLanguage_AtributeAlbum', the role 'softGalleryLanguage_AtributeAlbum' has cardinality 0..*, and from 'softGalleryLanguage_Entities', the role 'softGalleryLanguage_Entities11' has cardinality 0..*.
+An association connects 'softGalleryLanguage_AtributeUserDomain' and 'softGalleryLanguage_Entities'. From 'softGalleryLanguage_AtributeUserDomain', the role 'softGalleryLanguage_AtributeUserDomain' has cardinality 0..*, and from 'softGalleryLanguage_Entities', the role 'softGalleryLanguage_Entities13' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Functionality' and 'softGalleryLanguage_Functionalities'. From 'softGalleryLanguage_Functionality', the role 'softGalleryLanguage_Functionality15' has cardinality 0..*, and from 'softGalleryLanguage_Functionalities', the role 'softGalleryLanguage_Functionalities' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Functionalities' and 'softGalleryLanguage_ProfileManagement'. From 'softGalleryLanguage_Functionalities', the role 'softGalleryLanguage_Functionalities17' has cardinality 0..*, and from 'softGalleryLanguage_ProfileManagement', the role 'softGalleryLanguage_ProfileManagement' has cardinality 0..*.
+An association connects 'softGalleryLanguage_AppAccess' and 'softGalleryLanguage_Functionalities'. From 'softGalleryLanguage_AppAccess', the role 'softGalleryLanguage_AppAccess' has cardinality 0..*, and from 'softGalleryLanguage_Functionalities', the role 'softGalleryLanguage_Functionalities19' has cardinality 0..*.
+An association connects 'softGalleryLanguage_AlbumManagement' and 'softGalleryLanguage_Functionalities'. From 'softGalleryLanguage_AlbumManagement', the role 'softGalleryLanguage_AlbumManagement' has cardinality 0..*, and from 'softGalleryLanguage_Functionalities', the role 'softGalleryLanguage_Functionalities21' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Functionalities' and 'softGalleryLanguage_PhotoActions'. From 'softGalleryLanguage_Functionalities', the role 'softGalleryLanguage_Functionalities23' has cardinality 0..*, and from 'softGalleryLanguage_PhotoActions', the role 'softGalleryLanguage_PhotoActions' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Functionalities' and 'softGalleryLanguage_LandingActions'. From 'softGalleryLanguage_Functionalities', the role 'softGalleryLanguage_Functionalities25' has cardinality 0..*, and from 'softGalleryLanguage_LandingActions', the role 'softGalleryLanguage_LandingActions' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ProfileManagement' and 'softGalleryLanguage_ProfileManagementFunctions'. From 'softGalleryLanguage_ProfileManagement', the role 'softGalleryLanguage_ProfileManagement27' has cardinality 0..*, and from 'softGalleryLanguage_ProfileManagementFunctions', the role 'softGalleryLanguage_ProfileManagementFunctions' has cardinality 0..*.
+An association connects 'softGalleryLanguage_AppAccess' and 'softGalleryLanguage_AppAccessFunctions'. From 'softGalleryLanguage_AppAccess', the role 'softGalleryLanguage_AppAccess29' has cardinality 0..*, and from 'softGalleryLanguage_AppAccessFunctions', the role 'softGalleryLanguage_AppAccessFunctions' has cardinality 0..*.
+An association connects 'softGalleryLanguage_AlbumManagementFunctions' and 'softGalleryLanguage_AlbumManagement'. From 'softGalleryLanguage_AlbumManagementFunctions', the role 'softGalleryLanguage_AlbumManagementFunctions' has cardinality 0..*, and from 'softGalleryLanguage_AlbumManagement', the role 'softGalleryLanguage_AlbumManagement31' has cardinality 0..*.
+An association connects 'softGalleryLanguage_PhotoActions' and 'softGalleryLanguage_PhotoActionsFunctions'. From 'softGalleryLanguage_PhotoActions', the role 'softGalleryLanguage_PhotoActions33' has cardinality 0..*, and from 'softGalleryLanguage_PhotoActionsFunctions', the role 'softGalleryLanguage_PhotoActionsFunctions' has cardinality 0..*.
+An association connects 'softGalleryLanguage_LandingFunctions' and 'softGalleryLanguage_LandingActions'. From 'softGalleryLanguage_LandingFunctions', the role 'softGalleryLanguage_LandingFunctions' has cardinality 0..*, and from 'softGalleryLanguage_LandingActions', the role 'softGalleryLanguage_LandingActions35' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ExceptionsDomain' and 'softGalleryLanguage_ExceptionsType'. From 'softGalleryLanguage_ExceptionsDomain', the role 'softGalleryLanguage_ExceptionsDomain37' has cardinality 0..*, and from 'softGalleryLanguage_ExceptionsType', the role 'softGalleryLanguage_ExceptionsType' has cardinality 0..*.
+An association connects 'softGalleryLanguage_PhotoException' and 'softGalleryLanguage_ExceptionsType'. From 'softGalleryLanguage_PhotoException', the role 'softGalleryLanguage_PhotoException' has cardinality 0..*, and from 'softGalleryLanguage_ExceptionsType', the role 'softGalleryLanguage_ExceptionsType39' has cardinality 0..*.
+An association connects 'softGalleryLanguage_AlbumException' and 'softGalleryLanguage_ExceptionsType'. From 'softGalleryLanguage_AlbumException', the role 'softGalleryLanguage_AlbumException' has cardinality 0..*, and from 'softGalleryLanguage_ExceptionsType', the role 'softGalleryLanguage_ExceptionsType41' has cardinality 0..*.
+An association connects 'softGalleryLanguage_UserException' and 'softGalleryLanguage_ExceptionsType'. From 'softGalleryLanguage_UserException', the role 'softGalleryLanguage_UserException' has cardinality 0..*, and from 'softGalleryLanguage_ExceptionsType', the role 'softGalleryLanguage_ExceptionsType43' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Architecture' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_Architecture', the role 'softGalleryLanguage_Architecture' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject45' has cardinality 0..*.
+An association connects 'softGalleryLanguage_NTiers' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_NTiers', the role 'softGalleryLanguage_NTiers' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject47' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Layer' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_Layer', the role 'softGalleryLanguage_Layer' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject49' has cardinality 0..*.
+An association connects 'softGalleryLanguage_PresentationLayer' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_PresentationLayer', the role 'softGalleryLanguage_PresentationLayer' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject51' has cardinality 0..*.
+An association connects 'softGalleryLanguage_PresentationSegments' and 'softGalleryLanguage_PresentationContent'. From 'softGalleryLanguage_PresentationSegments', the role 'softGalleryLanguage_PresentationSegments' has cardinality 0..*, and from 'softGalleryLanguage_PresentationContent', the role 'softGalleryLanguage_PresentationContent' has cardinality 0..*.
+An association connects 'softGalleryLanguage_BusinessLogicLayer' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_BusinessLogicLayer', the role 'softGalleryLanguage_BusinessLogicLayer' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject54' has cardinality 0..*.
+An association connects 'softGalleryLanguage_BusinessLogicContent' and 'softGalleryLanguage_BusinessLogicSegments'. From 'softGalleryLanguage_BusinessLogicContent', the role 'softGalleryLanguage_BusinessLogicContent' has cardinality 0..*, and from 'softGalleryLanguage_BusinessLogicSegments', the role 'softGalleryLanguage_BusinessLogicSegments' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ControllerSegmentElement' and 'softGalleryLanguage_BusinessLogicSegments'. From 'softGalleryLanguage_ControllerSegmentElement', the role 'softGalleryLanguage_ControllerSegmentElement' has cardinality 0..*, and from 'softGalleryLanguage_BusinessLogicSegments', the role 'softGalleryLanguage_BusinessLogicSegments57' has cardinality 0..*.
+An association connects 'softGalleryLanguage_BusinessLogicSegments' and 'softGalleryLanguage_SpecificationSegmentElement'. From 'softGalleryLanguage_BusinessLogicSegments', the role 'softGalleryLanguage_BusinessLogicSegments59' has cardinality 0..*, and from 'softGalleryLanguage_SpecificationSegmentElement', the role 'softGalleryLanguage_SpecificationSegmentElement' has cardinality 0..*.
+An association connects 'softGalleryLanguage_CriteriaAttributeType' and 'softGalleryLanguage_SpecificationSegmentElement'. From 'softGalleryLanguage_CriteriaAttributeType', the role 'softGalleryLanguage_CriteriaAttributeType' has cardinality 0..*, and from 'softGalleryLanguage_SpecificationSegmentElement', the role 'softGalleryLanguage_SpecificationSegmentElement61' has cardinality 0..*.
+An association connects 'softGalleryLanguage_DataPersistenceContent' and 'softGalleryLanguage_DataPersistenceLayer'. From 'softGalleryLanguage_DataPersistenceContent', the role 'softGalleryLanguage_DataPersistenceContent' has cardinality 0..*, and from 'softGalleryLanguage_DataPersistenceLayer', the role 'softGalleryLanguage_DataPersistenceLayer' has cardinality 0..*.
+An association connects 'softGalleryLanguage_DataPersistenceSegments' and 'softGalleryLanguage_DataPersistenceContent'. From 'softGalleryLanguage_DataPersistenceSegments', the role 'softGalleryLanguage_DataPersistenceSegments' has cardinality 0..*, and from 'softGalleryLanguage_DataPersistenceContent', the role 'softGalleryLanguage_DataPersistenceContent64' has cardinality 0..*.
+An association connects 'softGalleryLanguage_SegmentStructureContent' and 'softGalleryLanguage_SegmentStructure'. From 'softGalleryLanguage_SegmentStructureContent', the role 'softGalleryLanguage_SegmentStructureContent' has cardinality 0..*, and from 'softGalleryLanguage_SegmentStructure', the role 'softGalleryLanguage_SegmentStructure' has cardinality 0..*.
+An association connects 'softGalleryLanguage_DirectoryContent' and 'softGalleryLanguage_SegmentStructureContent'. From 'softGalleryLanguage_DirectoryContent', the role 'softGalleryLanguage_DirectoryContent' has cardinality 0..*, and from 'softGalleryLanguage_SegmentStructureContent', the role 'softGalleryLanguage_SegmentStructureContent67' has cardinality 0..*.
+An association connects 'softGalleryLanguage_EObject' and 'softGalleryLanguage_DirectoryContent'. From 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject70' has cardinality 0..*, and from 'softGalleryLanguage_DirectoryContent', the role 'softGalleryLanguage_DirectoryContent69' has cardinality 0..*.
+An association connects 'softGalleryLanguage_MultipleFile' and 'softGalleryLanguage_Directories'. From 'softGalleryLanguage_MultipleFile', the role 'softGalleryLanguage_MultipleFile' has cardinality 0..*, and from 'softGalleryLanguage_Directories', the role 'softGalleryLanguage_Directories' has cardinality 0..*.
+An association connects 'softGalleryLanguage_LayerRelations' and 'softGalleryLanguage_LayerSource'. From 'softGalleryLanguage_LayerRelations', the role 'softGalleryLanguage_LayerRelations' has cardinality 0..*, and from 'softGalleryLanguage_LayerSource', the role 'softGalleryLanguage_LayerSource' has cardinality 0..*.
+An association connects 'softGalleryLanguage_LayerTarget' and 'softGalleryLanguage_LayerRelations'. From 'softGalleryLanguage_LayerTarget', the role 'softGalleryLanguage_LayerTarget' has cardinality 0..*, and from 'softGalleryLanguage_LayerRelations', the role 'softGalleryLanguage_LayerRelations74' has cardinality 0..*.
+An association connects 'softGalleryLanguage_FrontEnd' and 'softGalleryLanguage_ArchitectureComponents'. From 'softGalleryLanguage_FrontEnd', the role 'softGalleryLanguage_FrontEnd' has cardinality 0..*, and from 'softGalleryLanguage_ArchitectureComponents', the role 'softGalleryLanguage_ArchitectureComponents' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ArchitectureComponents' and 'softGalleryLanguage_BackEnd'. From 'softGalleryLanguage_ArchitectureComponents', the role 'softGalleryLanguage_ArchitectureComponents77' has cardinality 0..*, and from 'softGalleryLanguage_BackEnd', the role 'softGalleryLanguage_BackEnd' has cardinality 0..*.
+An association connects 'softGalleryLanguage_PersistenceDataComponent' and 'softGalleryLanguage_ArchitectureComponents'. From 'softGalleryLanguage_PersistenceDataComponent', the role 'softGalleryLanguage_PersistenceDataComponent' has cardinality 0..*, and from 'softGalleryLanguage_ArchitectureComponents', the role 'softGalleryLanguage_ArchitectureComponents79' has cardinality 0..*.
+An association connects 'softGalleryLanguage_NTiersConnections' and 'softGalleryLanguage_NTierConnectionContent'. From 'softGalleryLanguage_NTiersConnections', the role 'softGalleryLanguage_NTiersConnections' has cardinality 0..*, and from 'softGalleryLanguage_NTierConnectionContent', the role 'softGalleryLanguage_NTierConnectionContent' has cardinality 0..*.
+An association connects 'softGalleryLanguage_NTierSource' and 'softGalleryLanguage_NTierConnectionContent'. From 'softGalleryLanguage_NTierSource', the role 'softGalleryLanguage_NTierSource' has cardinality 0..*, and from 'softGalleryLanguage_NTierConnectionContent', the role 'softGalleryLanguage_NTierConnectionContent82' has cardinality 0..*.
+An association connects 'softGalleryLanguage_NTierConnectionContent' and 'softGalleryLanguage_NTierTarget'. From 'softGalleryLanguage_NTierConnectionContent', the role 'softGalleryLanguage_NTierConnectionContent84' has cardinality 0..*, and from 'softGalleryLanguage_NTierTarget', the role 'softGalleryLanguage_NTierTarget' has cardinality 0..*.
+An association connects 'softGalleryLanguage_NTierSource' and 'softGalleryLanguage_NTiersRelations'. From 'softGalleryLanguage_NTierSource', the role 'softGalleryLanguage_NTierSource86' has cardinality 0..*, and from 'softGalleryLanguage_NTiersRelations', the role 'softGalleryLanguage_NTiersRelations' has cardinality 0..*.
+An association connects 'softGalleryLanguage_NTiersRelations' and 'softGalleryLanguage_NTierTarget'. From 'softGalleryLanguage_NTiersRelations', the role 'softGalleryLanguage_NTiersRelations89' has cardinality 0..*, and from 'softGalleryLanguage_NTierTarget', the role 'softGalleryLanguage_NTierTarget88' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Technologies' and 'softGalleryLanguage_Technology'. From 'softGalleryLanguage_Technologies', the role 'softGalleryLanguage_Technologies' has cardinality 0..*, and from 'softGalleryLanguage_Technology', the role 'softGalleryLanguage_Technology' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Spring' and 'softGalleryLanguage_Technologies'. From 'softGalleryLanguage_Spring', the role 'softGalleryLanguage_Spring' has cardinality 0..*, and from 'softGalleryLanguage_Technologies', the role 'softGalleryLanguage_Technologies92' has cardinality 0..*.
+An association connects 'softGalleryLanguage_React' and 'softGalleryLanguage_Technologies'. From 'softGalleryLanguage_React', the role 'softGalleryLanguage_React' has cardinality 0..*, and from 'softGalleryLanguage_Technologies', the role 'softGalleryLanguage_Technologies94' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Technologies' and 'softGalleryLanguage_PostgreSQL'. From 'softGalleryLanguage_Technologies', the role 'softGalleryLanguage_Technologies96' has cardinality 0..*, and from 'softGalleryLanguage_PostgreSQL', the role 'softGalleryLanguage_PostgreSQL' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Technologies' and 'softGalleryLanguage_AmazonWebServices'. From 'softGalleryLanguage_Technologies', the role 'softGalleryLanguage_Technologies98' has cardinality 0..*, and from 'softGalleryLanguage_AmazonWebServices', the role 'softGalleryLanguage_AmazonWebServices' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Spring' and 'softGalleryLanguage_SpringBootApplication'. From 'softGalleryLanguage_Spring', the role 'softGalleryLanguage_Spring100' has cardinality 0..*, and from 'softGalleryLanguage_SpringBootApplication', the role 'softGalleryLanguage_SpringBootApplication' has cardinality 0..*.
+An association connects 'softGalleryLanguage_SpringBootApplication' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_SpringBootApplication', the role 'softGalleryLanguage_SpringBootApplication102' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject103' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Configuration' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_Configuration', the role 'softGalleryLanguage_Configuration' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject105' has cardinality 0..*.
+An association connects 'softGalleryLanguage_OrderSpring' and 'softGalleryLanguage_SpringComponent'. From 'softGalleryLanguage_OrderSpring', the role 'softGalleryLanguage_OrderSpring' has cardinality 0..*, and from 'softGalleryLanguage_SpringComponent', the role 'softGalleryLanguage_SpringComponent' has cardinality 0..*.
+An association connects 'softGalleryLanguage_EObject' and 'softGalleryLanguage_SpringRepository'. From 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject108' has cardinality 0..*, and from 'softGalleryLanguage_SpringRepository', the role 'softGalleryLanguage_SpringRepository' has cardinality 0..*.
+An association connects 'softGalleryLanguage_RestController' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_RestController', the role 'softGalleryLanguage_RestController' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject110' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Specification' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_Specification', the role 'softGalleryLanguage_Specification' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject112' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ResponseEntity' and 'softGalleryLanguage_MappingType'. From 'softGalleryLanguage_ResponseEntity', the role 'softGalleryLanguage_ResponseEntity' has cardinality 0..*, and from 'softGalleryLanguage_MappingType', the role 'softGalleryLanguage_MappingType' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ResponseParameter' and 'softGalleryLanguage_ResponseEntity'. From 'softGalleryLanguage_ResponseParameter', the role 'softGalleryLanguage_ResponseParameter' has cardinality 0..*, and from 'softGalleryLanguage_ResponseEntity', the role 'softGalleryLanguage_ResponseEntity115' has cardinality 0..*.
+An association connects 'softGalleryLanguage_RequestMappingValue' and 'softGalleryLanguage_RequestMapping'. From 'softGalleryLanguage_RequestMappingValue', the role 'softGalleryLanguage_RequestMappingValue' has cardinality 0..*, and from 'softGalleryLanguage_RequestMapping', the role 'softGalleryLanguage_RequestMapping' has cardinality 0..*.
+An association connects 'softGalleryLanguage_RequestMapping' and 'softGalleryLanguage_RequestMappingMethod'. From 'softGalleryLanguage_RequestMapping', the role 'softGalleryLanguage_RequestMapping118' has cardinality 0..*, and from 'softGalleryLanguage_RequestMappingMethod', the role 'softGalleryLanguage_RequestMappingMethod' has cardinality 0..*.
+An association connects 'softGalleryLanguage_RequestMapping' and 'softGalleryLanguage_RequestMappingProduces'. From 'softGalleryLanguage_RequestMapping', the role 'softGalleryLanguage_RequestMapping120' has cardinality 0..*, and from 'softGalleryLanguage_RequestMappingProduces', the role 'softGalleryLanguage_RequestMappingProduces' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ResponseParameter' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_ResponseParameter', the role 'softGalleryLanguage_ResponseParameter122' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject123' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ExceptionHandler' and 'softGalleryLanguage_ExceptionProcess'. From 'softGalleryLanguage_ExceptionHandler', the role 'softGalleryLanguage_ExceptionHandler' has cardinality 0..*, and from 'softGalleryLanguage_ExceptionProcess', the role 'softGalleryLanguage_ExceptionProcess' has cardinality 0..*.
+An association connects 'softGalleryLanguage_SpringEntity' and 'softGalleryLanguage_SpringEntityAnnotationTypes'. From 'softGalleryLanguage_SpringEntity', the role 'softGalleryLanguage_SpringEntity' has cardinality 0..*, and from 'softGalleryLanguage_SpringEntityAnnotationTypes', the role 'softGalleryLanguage_SpringEntityAnnotationTypes' has cardinality 0..*.
+An association connects 'softGalleryLanguage_StorageClient' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_StorageClient', the role 'softGalleryLanguage_StorageClient' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject127' has cardinality 0..*.
+An association connects 'softGalleryLanguage_EObject' and 'softGalleryLanguage_StorageMember'. From 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject129' has cardinality 0..*, and from 'softGalleryLanguage_StorageMember', the role 'softGalleryLanguage_StorageMember' has cardinality 0..*.
+An association connects 'softGalleryLanguage_EObject' and 'softGalleryLanguage_StorageAction'. From 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject131' has cardinality 0..*, and from 'softGalleryLanguage_StorageAction', the role 'softGalleryLanguage_StorageAction' has cardinality 0..*.
+An association connects 'softGalleryLanguage_StorageActionMember' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_StorageActionMember', the role 'softGalleryLanguage_StorageActionMember' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject133' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactModules' and 'softGalleryLanguage_React'. From 'softGalleryLanguage_ReactModules', the role 'softGalleryLanguage_ReactModules' has cardinality 0..*, and from 'softGalleryLanguage_React', the role 'softGalleryLanguage_React135' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactModules' and 'softGalleryLanguage_ReactSubModules'. From 'softGalleryLanguage_ReactModules', the role 'softGalleryLanguage_ReactModules137' has cardinality 0..*, and from 'softGalleryLanguage_ReactSubModules', the role 'softGalleryLanguage_ReactSubModules' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactSubModules' and 'softGalleryLanguage_ReactConfiguration'. From 'softGalleryLanguage_ReactSubModules', the role 'softGalleryLanguage_ReactSubModules139' has cardinality 0..*, and from 'softGalleryLanguage_ReactConfiguration', the role 'softGalleryLanguage_ReactConfiguration' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactComponents' and 'softGalleryLanguage_ReactSubModules'. From 'softGalleryLanguage_ReactComponents', the role 'softGalleryLanguage_ReactComponents' has cardinality 0..*, and from 'softGalleryLanguage_ReactSubModules', the role 'softGalleryLanguage_ReactSubModules141' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactSubModules' and 'softGalleryLanguage_ReactActions'. From 'softGalleryLanguage_ReactSubModules', the role 'softGalleryLanguage_ReactSubModules143' has cardinality 0..*, and from 'softGalleryLanguage_ReactActions', the role 'softGalleryLanguage_ReactActions' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactSubModules' and 'softGalleryLanguage_ReactLibraries'. From 'softGalleryLanguage_ReactSubModules', the role 'softGalleryLanguage_ReactSubModules145' has cardinality 0..*, and from 'softGalleryLanguage_ReactLibraries', the role 'softGalleryLanguage_ReactLibraries' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactSubModules' and 'softGalleryLanguage_ReactInfo'. From 'softGalleryLanguage_ReactSubModules', the role 'softGalleryLanguage_ReactSubModules147' has cardinality 0..*, and from 'softGalleryLanguage_ReactInfo', the role 'softGalleryLanguage_ReactInfo' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactConfiguration' and 'softGalleryLanguage_ReactDependencies'. From 'softGalleryLanguage_ReactConfiguration', the role 'softGalleryLanguage_ReactConfiguration149' has cardinality 0..*, and from 'softGalleryLanguage_ReactDependencies', the role 'softGalleryLanguage_ReactDependencies' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactConfiguration' and 'softGalleryLanguage_ReactConfigurations'. From 'softGalleryLanguage_ReactConfiguration', the role 'softGalleryLanguage_ReactConfiguration151' has cardinality 0..*, and from 'softGalleryLanguage_ReactConfigurations', the role 'softGalleryLanguage_ReactConfigurations' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactDependenciesRules' and 'softGalleryLanguage_ReactDependencies'. From 'softGalleryLanguage_ReactDependenciesRules', the role 'softGalleryLanguage_ReactDependenciesRules' has cardinality 0..*, and from 'softGalleryLanguage_ReactDependencies', the role 'softGalleryLanguage_ReactDependencies153' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactDependenciesRules' and 'softGalleryLanguage_ReactDependenciesSubRules'. From 'softGalleryLanguage_ReactDependenciesRules', the role 'softGalleryLanguage_ReactDependenciesRules155' has cardinality 0..*, and from 'softGalleryLanguage_ReactDependenciesSubRules', the role 'softGalleryLanguage_ReactDependenciesSubRules' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactDependenciesSubRules' and 'softGalleryLanguage_SingleDependencies'. From 'softGalleryLanguage_ReactDependenciesSubRules', the role 'softGalleryLanguage_ReactDependenciesSubRules157' has cardinality 0..*, and from 'softGalleryLanguage_SingleDependencies', the role 'softGalleryLanguage_SingleDependencies' has cardinality 0..*.
+An association connects 'softGalleryLanguage_SingleDependencies' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_SingleDependencies', the role 'softGalleryLanguage_SingleDependencies159' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject160' has cardinality 0..*.
+An association connects 'softGalleryLanguage_DOMConfigurations' and 'softGalleryLanguage_ReactConfigurations'. From 'softGalleryLanguage_DOMConfigurations', the role 'softGalleryLanguage_DOMConfigurations' has cardinality 0..*, and from 'softGalleryLanguage_ReactConfigurations', the role 'softGalleryLanguage_ReactConfigurations162' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactComponents' and 'softGalleryLanguage_ComponentsLogic'. From 'softGalleryLanguage_ReactComponents', the role 'softGalleryLanguage_ReactComponents164' has cardinality 0..*, and from 'softGalleryLanguage_ComponentsLogic', the role 'softGalleryLanguage_ComponentsLogic' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ComponentsUI' and 'softGalleryLanguage_ReactComponents'. From 'softGalleryLanguage_ComponentsUI', the role 'softGalleryLanguage_ComponentsUI' has cardinality 0..*, and from 'softGalleryLanguage_ReactComponents', the role 'softGalleryLanguage_ReactComponents166' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactComponents' and 'softGalleryLanguage_ComponentsStyles'. From 'softGalleryLanguage_ReactComponents', the role 'softGalleryLanguage_ReactComponents168' has cardinality 0..*, and from 'softGalleryLanguage_ComponentsStyles', the role 'softGalleryLanguage_ComponentsStyles' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ComponentsLogic' and 'softGalleryLanguage_LogicContent'. From 'softGalleryLanguage_ComponentsLogic', the role 'softGalleryLanguage_ComponentsLogic170' has cardinality 0..*, and from 'softGalleryLanguage_LogicContent', the role 'softGalleryLanguage_LogicContent' has cardinality 0..*.
+An association connects 'softGalleryLanguage_LogicContent' and 'softGalleryLanguage_LogicStructure'. From 'softGalleryLanguage_LogicContent', the role 'softGalleryLanguage_LogicContent172' has cardinality 0..*, and from 'softGalleryLanguage_LogicStructure', the role 'softGalleryLanguage_LogicStructure' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ComponentClass' and 'softGalleryLanguage_LogicStructure'. From 'softGalleryLanguage_ComponentClass', the role 'softGalleryLanguage_ComponentClass' has cardinality 0..*, and from 'softGalleryLanguage_LogicStructure', the role 'softGalleryLanguage_LogicStructure174' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ComponentsUI' and 'softGalleryLanguage_UIContent'. From 'softGalleryLanguage_ComponentsUI', the role 'softGalleryLanguage_ComponentsUI176' has cardinality 0..*, and from 'softGalleryLanguage_UIContent', the role 'softGalleryLanguage_UIContent' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ViewComponentCont' and 'softGalleryLanguage_UIContent'. From 'softGalleryLanguage_ViewComponentCont', the role 'softGalleryLanguage_ViewComponentCont' has cardinality 0..*, and from 'softGalleryLanguage_UIContent', the role 'softGalleryLanguage_UIContent178' has cardinality 0..*.
+An association connects 'softGalleryLanguage_UIContent' and 'softGalleryLanguage_SubcomponentCont'. From 'softGalleryLanguage_UIContent', the role 'softGalleryLanguage_UIContent180' has cardinality 0..*, and from 'softGalleryLanguage_SubcomponentCont', the role 'softGalleryLanguage_SubcomponentCont' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ComponentClass' and 'softGalleryLanguage_ViewComponentCont'. From 'softGalleryLanguage_ComponentClass', the role 'softGalleryLanguage_ComponentClass183' has cardinality 0..*, and from 'softGalleryLanguage_ViewComponentCont', the role 'softGalleryLanguage_ViewComponentCont182' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ComponentClass' and 'softGalleryLanguage_SubcomponentCont'. From 'softGalleryLanguage_ComponentClass', the role 'softGalleryLanguage_ComponentClass186' has cardinality 0..*, and from 'softGalleryLanguage_SubcomponentCont', the role 'softGalleryLanguage_SubcomponentCont185' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactImports' and 'softGalleryLanguage_ComponentClass'. From 'softGalleryLanguage_ReactImports', the role 'softGalleryLanguage_ReactImports' has cardinality 0..*, and from 'softGalleryLanguage_ComponentClass', the role 'softGalleryLanguage_ComponentClass188' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ComponentClass' and 'softGalleryLanguage_ReactFunctions'. From 'softGalleryLanguage_ComponentClass', the role 'softGalleryLanguage_ComponentClass190' has cardinality 0..*, and from 'softGalleryLanguage_ReactFunctions', the role 'softGalleryLanguage_ReactFunctions' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ComponentClass' and 'softGalleryLanguage_Props'. From 'softGalleryLanguage_ComponentClass', the role 'softGalleryLanguage_ComponentClass192' has cardinality 0..*, and from 'softGalleryLanguage_Props', the role 'softGalleryLanguage_Props' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactImports' and 'softGalleryLanguage_ReactImportContent'. From 'softGalleryLanguage_ReactImports', the role 'softGalleryLanguage_ReactImports194' has cardinality 0..*, and from 'softGalleryLanguage_ReactImportContent', the role 'softGalleryLanguage_ReactImportContent' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactFunctions' and 'softGalleryLanguage_ReactConstructor'. From 'softGalleryLanguage_ReactFunctions', the role 'softGalleryLanguage_ReactFunctions196' has cardinality 0..*, and from 'softGalleryLanguage_ReactConstructor', the role 'softGalleryLanguage_ReactConstructor' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactFunctions' and 'softGalleryLanguage_ReactCoreFunctions'. From 'softGalleryLanguage_ReactFunctions', the role 'softGalleryLanguage_ReactFunctions198' has cardinality 0..*, and from 'softGalleryLanguage_ReactCoreFunctions', the role 'softGalleryLanguage_ReactCoreFunctions' has cardinality 0..*.
+An association connects 'softGalleryLanguage_State' and 'softGalleryLanguage_ReactConstructor'. From 'softGalleryLanguage_State', the role 'softGalleryLanguage_State' has cardinality 0..*, and from 'softGalleryLanguage_ReactConstructor', the role 'softGalleryLanguage_ReactConstructor200' has cardinality 0..*.
+An association connects 'softGalleryLanguage_CoreFunctionsDeclaration' and 'softGalleryLanguage_ReactConstructor'. From 'softGalleryLanguage_CoreFunctionsDeclaration', the role 'softGalleryLanguage_CoreFunctionsDeclaration' has cardinality 0..*, and from 'softGalleryLanguage_ReactConstructor', the role 'softGalleryLanguage_ReactConstructor202' has cardinality 0..*.
+An association connects 'softGalleryLanguage_StateContent' and 'softGalleryLanguage_State'. From 'softGalleryLanguage_StateContent', the role 'softGalleryLanguage_StateContent' has cardinality 0..*, and from 'softGalleryLanguage_State', the role 'softGalleryLanguage_State204' has cardinality 0..*.
+An association connects 'softGalleryLanguage_PropsType' and 'softGalleryLanguage_Props'. From 'softGalleryLanguage_PropsType', the role 'softGalleryLanguage_PropsType' has cardinality 0..*, and from 'softGalleryLanguage_Props', the role 'softGalleryLanguage_Props206' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ComponentsStyles' and 'softGalleryLanguage_ComponentsStylesContent'. From 'softGalleryLanguage_ComponentsStyles', the role 'softGalleryLanguage_ComponentsStyles208' has cardinality 0..*, and from 'softGalleryLanguage_ComponentsStylesContent', the role 'softGalleryLanguage_ComponentsStylesContent' has cardinality 0..*.
+An association connects 'softGalleryLanguage_StyleProperties' and 'softGalleryLanguage_ComponentsStylesContent'. From 'softGalleryLanguage_StyleProperties', the role 'softGalleryLanguage_StyleProperties' has cardinality 0..*, and from 'softGalleryLanguage_ComponentsStylesContent', the role 'softGalleryLanguage_ComponentsStylesContent210' has cardinality 0..*.
+An association connects 'softGalleryLanguage_StylePropertiesContent' and 'softGalleryLanguage_StyleProperties'. From 'softGalleryLanguage_StylePropertiesContent', the role 'softGalleryLanguage_StylePropertiesContent' has cardinality 0..*, and from 'softGalleryLanguage_StyleProperties', the role 'softGalleryLanguage_StyleProperties212' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactActions' and 'softGalleryLanguage_ReactActionsContent'. From 'softGalleryLanguage_ReactActions', the role 'softGalleryLanguage_ReactActions214' has cardinality 0..*, and from 'softGalleryLanguage_ReactActionsContent', the role 'softGalleryLanguage_ReactActionsContent' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactActionsContent' and 'softGalleryLanguage_ReactServicesRelation'. From 'softGalleryLanguage_ReactActionsContent', the role 'softGalleryLanguage_ReactActionsContent216' has cardinality 0..*, and from 'softGalleryLanguage_ReactServicesRelation', the role 'softGalleryLanguage_ReactServicesRelation' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactServiceContent' and 'softGalleryLanguage_ReactServicesType'. From 'softGalleryLanguage_ReactServiceContent', the role 'softGalleryLanguage_ReactServiceContent' has cardinality 0..*, and from 'softGalleryLanguage_ReactServicesType', the role 'softGalleryLanguage_ReactServicesType' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactServiceContRequest' and 'softGalleryLanguage_ReactServiceContent'. From 'softGalleryLanguage_ReactServiceContRequest', the role 'softGalleryLanguage_ReactServiceContRequest' has cardinality 0..*, and from 'softGalleryLanguage_ReactServiceContent', the role 'softGalleryLanguage_ReactServiceContent219' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactServiceRequestProps' and 'softGalleryLanguage_ReactServiceContRequest'. From 'softGalleryLanguage_ReactServiceRequestProps', the role 'softGalleryLanguage_ReactServiceRequestProps' has cardinality 0..*, and from 'softGalleryLanguage_ReactServiceContRequest', the role 'softGalleryLanguage_ReactServiceContRequest221' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactServicesRelation' and 'softGalleryLanguage_ReactsRelationServ'. From 'softGalleryLanguage_ReactServicesRelation', the role 'softGalleryLanguage_ReactServicesRelation223' has cardinality 0..*, and from 'softGalleryLanguage_ReactsRelationServ', the role 'softGalleryLanguage_ReactsRelationServ' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactServicesType' and 'softGalleryLanguage_ReactsRelationServ'. From 'softGalleryLanguage_ReactServicesType', the role 'softGalleryLanguage_ReactServicesType226' has cardinality 0..*, and from 'softGalleryLanguage_ReactsRelationServ', the role 'softGalleryLanguage_ReactsRelationServ225' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactLibraries' and 'softGalleryLanguage_ReactLibrary'. From 'softGalleryLanguage_ReactLibraries', the role 'softGalleryLanguage_ReactLibraries228' has cardinality 0..*, and from 'softGalleryLanguage_ReactLibrary', the role 'softGalleryLanguage_ReactLibrary' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ReactInfo' and 'softGalleryLanguage_ReactInformation'. From 'softGalleryLanguage_ReactInfo', the role 'softGalleryLanguage_ReactInfo230' has cardinality 0..*, and from 'softGalleryLanguage_ReactInformation', the role 'softGalleryLanguage_ReactInformation' has cardinality 0..*.
+An association connects 'softGalleryLanguage_PostgreSQL' and 'softGalleryLanguage_Cluster'. From 'softGalleryLanguage_PostgreSQL', the role 'softGalleryLanguage_PostgreSQL232' has cardinality 0..*, and from 'softGalleryLanguage_Cluster', the role 'softGalleryLanguage_Cluster' has cardinality 0..*.
+An association connects 'softGalleryLanguage_EObject' and 'softGalleryLanguage_Cluster'. From 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject235' has cardinality 0..*, and from 'softGalleryLanguage_Cluster', the role 'softGalleryLanguage_Cluster234' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Schema' and 'softGalleryLanguage_Database'. From 'softGalleryLanguage_Schema', the role 'softGalleryLanguage_Schema' has cardinality 0..*, and from 'softGalleryLanguage_Database', the role 'softGalleryLanguage_Database' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Schema' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_Schema', the role 'softGalleryLanguage_Schema238' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject239' has cardinality 0..*.
+An association connects 'softGalleryLanguage_EObject' and 'softGalleryLanguage_Table_p'. From 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject241' has cardinality 0..*, and from 'softGalleryLanguage_Table_p', the role 'softGalleryLanguage_Table_p' has cardinality 0..*.
+An association connects 'softGalleryLanguage_EObject' and 'softGalleryLanguage_ForeignKey'. From 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject243' has cardinality 0..*, and from 'softGalleryLanguage_ForeignKey', the role 'softGalleryLanguage_ForeignKey' has cardinality 0..*.
+An association connects 'softGalleryLanguage_ForeignKeyRef' and 'softGalleryLanguage_RefTable_p'. From 'softGalleryLanguage_ForeignKeyRef', the role 'softGalleryLanguage_ForeignKeyRef' has cardinality 0..*, and from 'softGalleryLanguage_RefTable_p', the role 'softGalleryLanguage_RefTable_p' has cardinality 0..*.
+An association connects 'softGalleryLanguage_EObject' and 'softGalleryLanguage_ColumnP'. From 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject246' has cardinality 0..*, and from 'softGalleryLanguage_ColumnP', the role 'softGalleryLanguage_ColumnP' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Policy' and 'softGalleryLanguage_Row'. From 'softGalleryLanguage_Policy', the role 'softGalleryLanguage_Policy' has cardinality 0..*, and from 'softGalleryLanguage_Row', the role 'softGalleryLanguage_Row' has cardinality 0..*.
+An association connects 'softGalleryLanguage_EObject' and 'softGalleryLanguage_PostgresUser'. From 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject249' has cardinality 0..*, and from 'softGalleryLanguage_PostgresUser', the role 'softGalleryLanguage_PostgresUser' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Clause' and 'softGalleryLanguage_Query'. From 'softGalleryLanguage_Clause', the role 'softGalleryLanguage_Clause' has cardinality 0..*, and from 'softGalleryLanguage_Query', the role 'softGalleryLanguage_Query' has cardinality 0..*.
+An association connects 'softGalleryLanguage_EObject' and 'softGalleryLanguage_AmazonWebServices'. From 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject253' has cardinality 0..*, and from 'softGalleryLanguage_AmazonWebServices', the role 'softGalleryLanguage_AmazonWebServices252' has cardinality 0..*.
+An association connects 'softGalleryLanguage_AmazonSimpleStorageService' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_AmazonSimpleStorageService', the role 'softGalleryLanguage_AmazonSimpleStorageService' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject255' has cardinality 0..*.
+An association connects 'softGalleryLanguage_EObject' and 'softGalleryLanguage_Bucket'. From 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject257' has cardinality 0..*, and from 'softGalleryLanguage_Bucket', the role 'softGalleryLanguage_Bucket' has cardinality 0..*.
+An association connects 'softGalleryLanguage_BucketAccess' and 'softGalleryLanguage_EObject'. From 'softGalleryLanguage_BucketAccess', the role 'softGalleryLanguage_BucketAccess' has cardinality 0..*, and from 'softGalleryLanguage_EObject', the role 'softGalleryLanguage_EObject259' has cardinality 0..*.
+An association connects 'softGalleryLanguage_Metadata' and 'softGalleryLanguage_AmazonFile'. From 'softGalleryLanguage_Metadata', the role 'softGalleryLanguage_Metadata' has cardinality 0..*, and from 'softGalleryLanguage_AmazonFile', the role 'softGalleryLanguage_AmazonFile' has cardinality 0..*.

@@ -1,0 +1,57 @@
+The domain model 'DDL' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'DDL_CreateDatabase' represents an important domain concept.
+It has one attribute: 'databaseName', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_CreateTable' represents an important domain concept.
+It has the following attributes: 'tableName', which is of type str; 'commentTable', which is of type str.
+
+'DDL_CreateCk' represents an important domain concept.
+It has the following attributes: 'valuesCk', which is of type str; 'nameColumn', which is of type str; 'nameCk', which is of type str.
+
+'DDL_DataDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_CreateCommentTable' represents an important domain concept.
+It has the following attributes: 'tableName', which is of type str; 'tableComment', which is of type str.
+
+'DDL_CreateFk' represents an important domain concept.
+It has the following attributes: 'nameFk', which is of type str; 'columnName', which is of type str; 'columnReference', which is of type str.
+
+'DDL_DDLDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_CreateColumn' represents an important domain concept.
+It has the following attributes: 'columnType', which is of type str; 'columnNull', which is of type bool; 'columnName', which is of type str; 'commentColumn', which is of type str.
+
+'DataDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'DDL_CreateCommentColumn' represents an important domain concept.
+It has the following attributes: 'tableName', which is of type str; 'columnName', which is of type str; 'columnComment', which is of type str.
+
+'DDL_CreatePk' represents an important domain concept.
+It has the following attributes: 'namePk', which is of type str; 'columnName', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'DDL_DataDefinition' is a specialization of 'Statement'.
+The class 'DDL_CreateDatabase' is a specialization of 'DataDefinition'.
+The class 'DDL_CreateTable' is a specialization of 'DataDefinition'.
+The class 'DDL_CreateCommentTable' is a specialization of 'DataDefinition'.
+The class 'DDL_CreateCommentColumn' is a specialization of 'DataDefinition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DDL_CreateFk' and 'DDL_CreateTable'. From 'DDL_CreateFk', the role 'DDL_CreateFk' has cardinality 0..*, and from 'DDL_CreateTable', the role 'DDL_CreateTable' has cardinality 0..*.
+An association connects 'DDL_CreateTable' and 'DDL_CreateColumn'. From 'DDL_CreateTable', the role 'DDL_CreateTable2' has cardinality 0..*, and from 'DDL_CreateColumn', the role 'DDL_CreateColumn' has cardinality 0..*.
+An association connects 'DDL_CreateTable' and 'DDL_CreatePk'. From 'DDL_CreateTable', the role 'DDL_CreateTable4' has cardinality 0..*, and from 'DDL_CreatePk', the role 'DDL_CreatePk' has cardinality 0..*.
+An association connects 'DDL_CreateFk' and 'DDL_CreateTable'. From 'DDL_CreateFk', the role 'DDL_CreateFk7' has cardinality 0..*, and from 'DDL_CreateTable', the role 'DDL_CreateTable6' has cardinality 0..*.
+An association connects 'DDL_CreateCk' and 'DDL_CreateTable'. From 'DDL_CreateCk', the role 'DDL_CreateCk' has cardinality 0..*, and from 'DDL_CreateTable', the role 'DDL_CreateTable9' has cardinality 0..*.
+An association connects 'DDL_DDLDefinition' and 'DDL_Statement'. From 'DDL_DDLDefinition', the role 'DDL_DDLDefinition' has cardinality 0..*, and from 'DDL_Statement', the role 'DDL_Statement' has cardinality 0..*.

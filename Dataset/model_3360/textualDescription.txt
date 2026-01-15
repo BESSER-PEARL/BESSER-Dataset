@@ -1,0 +1,54 @@
+The domain model 'nosql' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'nosql_Row' represents an important domain concept.
+It does not declare any attributes.
+
+'nosql_ColumnFamily' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'name', which is of type str.
+
+'nosql_Index' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'reference', which is of type str.
+
+'ColumnFamily' represents an important domain concept.
+It does not declare any attributes.
+
+'nosql_KeySpace' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'nosql_Column' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'datatype', which is of type str; 'size', which is of type str.
+
+'nosql_Cell' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'nosql_Options' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'nosql_PK' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'counter', 'text', 'float', 'timeuuid', 'ascii', 'double', 'blob', 'int', 'uuid', 'varchar', 'varint', 'boolean', 'bigint', 'decimal', 'timestamp'.
+
+The model also captures inheritance relationships between classes.
+The class 'nosql_Row' is a specialization of 'ColumnFamily'.
+
+Relationships between classes are modeled using associations.
+An association connects 'nosql_Index' and 'nosql_KeySpace'. From 'nosql_Index', the role 'nosql_Index' has cardinality 0..*, and from 'nosql_KeySpace', the role 'nosql_KeySpace' has cardinality 0..*.
+An association connects 'nosql_KeySpace' and 'nosql_ColumnFamily'. From 'nosql_KeySpace', the role 'nosql_KeySpace2' has cardinality 0..*, and from 'nosql_ColumnFamily', the role 'nosql_ColumnFamily' has cardinality 0..*.
+An association connects 'nosql_KeySpace' and 'nosql_Options'. From 'nosql_KeySpace', the role 'nosql_KeySpace4' has cardinality 0..*, and from 'nosql_Options', the role 'nosql_Options' has cardinality 0..*.
+An association connects 'nosql_KeySpace' and 'nosql_Options'. From 'nosql_KeySpace', the role 'nosql_KeySpace6' has cardinality 0..*, and from 'nosql_Options', the role 'nosql_Options7' has cardinality 0..*.
+An association connects 'nosql_KeySpace' and 'nosql_PK'. From 'nosql_KeySpace', the role 'nosql_KeySpace9' has cardinality 0..*, and from 'nosql_PK', the role 'nosql_PK' has cardinality 0..*.
+An association connects 'nosql_Column' and 'nosql_Index'. From 'nosql_Column', the role 'nosql_Column' has cardinality 0..*, and from 'nosql_Index', the role 'nosql_Index11' has cardinality 0..*.
+An association connects 'nosql_ColumnFamily' and 'nosql_Column'. From 'nosql_ColumnFamily', the role 'nosql_ColumnFamily13' has cardinality 0..*, and from 'nosql_Column', the role 'nosql_Column14' has cardinality 0..*.
+An association connects 'nosql_ColumnFamily' and 'nosql_Options'. From 'nosql_ColumnFamily', the role 'nosql_ColumnFamily16' has cardinality 0..*, and from 'nosql_Options', the role 'nosql_Options17' has cardinality 0..*.
+An association connects 'nosql_PK' and 'nosql_ColumnFamily'. From 'nosql_PK', the role 'nosql_PK20' has cardinality 0..*, and from 'nosql_ColumnFamily', the role 'nosql_ColumnFamily19' has cardinality 0..*.
+An association connects 'nosql_Row' and 'nosql_ColumnFamily'. From 'nosql_Row', the role 'nosql_Row' has cardinality 0..*, and from 'nosql_ColumnFamily', the role 'nosql_ColumnFamily22' has cardinality 0..*.
+An association connects 'nosql_KeySpace' and 'nosql_ColumnFamily'. From 'nosql_KeySpace', the role 'nosql_KeySpace25' has cardinality 0..*, and from 'nosql_ColumnFamily', the role 'nosql_ColumnFamily24' has cardinality 0..*.
+An association connects 'nosql_Column' and 'nosql_ColumnFamily'. From 'nosql_Column', the role 'nosql_Column27' has cardinality 0..*, and from 'nosql_ColumnFamily', the role 'nosql_ColumnFamily28' has cardinality 0..*.
+An association connects 'nosql_PK' and 'nosql_Column'. From 'nosql_PK', the role 'nosql_PK30' has cardinality 0..*, and from 'nosql_Column', the role 'nosql_Column31' has cardinality 0..*.
+An association connects 'nosql_Cell' and 'nosql_Row'. From 'nosql_Cell', the role 'nosql_Cell' has cardinality 0..*, and from 'nosql_Row', the role 'nosql_Row33' has cardinality 0..*.
+An association connects 'nosql_Row' and 'nosql_Column'. From 'nosql_Row', the role 'nosql_Row35' has cardinality 0..*, and from 'nosql_Column', the role 'nosql_Column36' has cardinality 0..*.
+An association connects 'nosql_Cell' and 'nosql_Column'. From 'nosql_Cell', the role 'nosql_Cell38' has cardinality 0..*, and from 'nosql_Column', the role 'nosql_Column39' has cardinality 0..*.

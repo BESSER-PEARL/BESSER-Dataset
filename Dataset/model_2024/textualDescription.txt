@@ -1,0 +1,18 @@
+The domain model 'traces' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'traces_Value' represents an important domain concept.
+It has the following attributes: 'clockMax', which is of type float; 'valueMax', which is of type float; 'clockMin', which is of type float; 'valueMin', which is of type float.
+
+'traces_SimulatorRun' represents an important domain concept.
+It has the following attributes: 'behaviorName', which is of type str; 'timestamp', which is of type date; 'id', which is of type int.
+
+'traces_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'traces_SimulatorRun' and 'traces_Variable'. From 'traces_SimulatorRun', the role 'run' has cardinality 0..*, and from 'traces_Variable', the role 'Variable' has cardinality 0..*.
+An association connects 'traces_Variable' and 'traces_SimulatorRun'. From 'traces_Variable', the role 'variables' has cardinality 0..*, and from 'traces_SimulatorRun', the role 'SimulatorRun' has cardinality 0..*.
+An association connects 'traces_Variable' and 'traces_Value'. From 'traces_Variable', the role 'variable' has cardinality 0..*, and from 'traces_Value', the role 'Value' has cardinality 0..*.
+An association connects 'traces_Value' and 'traces_Variable'. From 'traces_Value', the role 'values' has cardinality 0..*, and from 'traces_Variable', the role 'Variable4' has cardinality 0..*.

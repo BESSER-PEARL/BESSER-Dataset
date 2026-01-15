@@ -1,0 +1,68 @@
+The domain model 'university' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'university_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'university_Book' represents an important domain concept.
+It has the following attributes: 'authorNames', which is of type str; 'ISBN', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'university_PrimitiveType' represents an important domain concept.
+It has the following attributes: 'h', which is of type str; 'a', which is of type str; 'k', which is of type str; 'e', which is of type str; 'c', which is of type str; 'i', which is of type float; 'j', which is of type str; 'm', which is of type str; 'l', which is of type str; 'b', which is of type int; 'f', which is of type float; 'o', which is of type str; 'd', which is of type bool; 'g', which is of type str; 'n', which is of type str; 'bigIntList', which is of type str; 'p', which is of type str.
+
+'university_University' represents an important domain concept.
+It does not declare any attributes.
+
+'university_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'university_Computer' represents an important domain concept.
+It does not declare any attributes.
+
+'university_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'university_Department' represents an important domain concept.
+It does not declare any attributes.
+
+'university_Vehicle' represents an important domain concept.
+It has one attribute: 'registrationNumber', which is of type str.
+
+'university_StaffMember' represents an important domain concept.
+It has one attribute: 'staffMemberType', which is of type str.
+
+'university_Student' represents an important domain concept.
+It has one attribute: 'studentId', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StaffMemberType' defines the following possible values: 'Honary', 'Academic', 'Research', 'Technical', 'Other', 'ResearchStudent', 'Admin'.
+
+The model also captures inheritance relationships between classes.
+The class 'university_University' is a specialization of 'NamedElement'.
+The class 'university_Student' is a specialization of 'NamedElement'.
+The class 'university_Library' is a specialization of 'NamedElement'.
+The class 'university_Computer' is a specialization of 'NamedElement'.
+The class 'university_Book' is a specialization of 'NamedElement'.
+The class 'university_StaffMember' is a specialization of 'NamedElement'.
+The class 'university_Department' is a specialization of 'NamedElement'.
+The class 'university_Module' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'university_Department' and 'university_University'. From 'university_Department', the role 'university_Department' has cardinality 0..*, and from 'university_University', the role 'university_University' has cardinality 0..*.
+An association connects 'university_Library' and 'university_University'. From 'university_Library', the role 'university_Library' has cardinality 0..*, and from 'university_University', the role 'university_University2' has cardinality 0..*.
+An association connects 'university_University' and 'university_StaffMember'. From 'university_University', the role 'university_University4' has cardinality 0..*, and from 'university_StaffMember', the role 'university_StaffMember' has cardinality 0..*.
+An association connects 'university_Student' and 'university_Module'. From 'university_Student', the role 'enrolledStudents' has cardinality 0..*, and from 'university_Module', the role 'Module' has cardinality 0..*.
+An association connects 'university_Student' and 'university_Vehicle'. From 'university_Student', the role 'university_Student' has cardinality 0..*, and from 'university_Vehicle', the role 'university_Vehicle' has cardinality 0..*.
+An association connects 'university_Computer' and 'university_Library'. From 'university_Computer', the role 'university_Computer' has cardinality 0..*, and from 'university_Library', the role 'university_Library8' has cardinality 0..*.
+An association connects 'university_Library' and 'university_Book'. From 'university_Library', the role 'university_Library10' has cardinality 0..*, and from 'university_Book', the role 'university_Book' has cardinality 0..*.
+An association connects 'university_Library' and 'university_Vehicle'. From 'university_Library', the role 'university_Library12' has cardinality 0..*, and from 'university_Vehicle', the role 'university_Vehicle13' has cardinality 0..*.
+An association connects 'university_StaffMember' and 'university_Module'. From 'university_StaffMember', the role 'moduleLecturers' has cardinality 0..*, and from 'university_Module', the role 'Module15' has cardinality 0..*.
+An association connects 'university_Vehicle' and 'university_StaffMember'. From 'university_Vehicle', the role 'university_Vehicle18' has cardinality 0..*, and from 'university_StaffMember', the role 'university_StaffMember17' has cardinality 0..*.
+An association connects 'university_Department' and 'university_StaffMember'. From 'university_Department', the role 'university_Department20' has cardinality 0..*, and from 'university_StaffMember', the role 'university_StaffMember21' has cardinality 0..*.
+An association connects 'university_Department' and 'university_Student'. From 'university_Department', the role 'university_Department23' has cardinality 0..*, and from 'university_Student', the role 'university_Student24' has cardinality 0..*.
+An association connects 'university_StaffMember' and 'university_Module'. From 'university_StaffMember', the role 'StaffMember' has cardinality 0..*, and from 'university_Module', the role 'taughtModules' has cardinality 0..*.
+An association connects 'university_Module' and 'university_Student'. From 'university_Module', the role 'enrolledModules' has cardinality 0..*, and from 'university_Student', the role 'Student' has cardinality 0..*.

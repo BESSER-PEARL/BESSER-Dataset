@@ -1,0 +1,24 @@
+The domain model 'restaurant' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'restaurant_Menu' represents an important domain concept.
+It does not declare any attributes.
+
+'restaurant_Booking' represents an important domain concept.
+It does not declare any attributes.
+
+'restaurant_Waiter' represents an important domain concept.
+It does not declare any attributes.
+
+'restaurant_Restaurant' represents an important domain concept.
+It does not declare any attributes.
+
+'restaurant_Table' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'restaurant_Menu' and 'restaurant_Restaurant'. From 'restaurant_Menu', the role 'restaurant_Menu' has cardinality 0..*, and from 'restaurant_Restaurant', the role 'restaurant_Restaurant' has cardinality 0..*.
+An association connects 'restaurant_Restaurant' and 'restaurant_Table'. From 'restaurant_Restaurant', the role 'restaurant_Restaurant2' has cardinality 0..*, and from 'restaurant_Table', the role 'restaurant_Table' has cardinality 0..*.
+An association connects 'restaurant_Restaurant' and 'restaurant_Waiter'. From 'restaurant_Restaurant', the role 'restaurant_Restaurant4' has cardinality 0..*, and from 'restaurant_Waiter', the role 'restaurant_Waiter' has cardinality 0..*.
+An association connects 'restaurant_Booking' and 'restaurant_Restaurant'. From 'restaurant_Booking', the role 'restaurant_Booking' has cardinality 0..*, and from 'restaurant_Restaurant', the role 'restaurant_Restaurant6' has cardinality 0..*.

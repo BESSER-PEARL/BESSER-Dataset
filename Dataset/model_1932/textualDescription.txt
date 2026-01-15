@@ -1,0 +1,1201 @@
+The domain model 'domain' describes the core structural elements and their relationships within the system.
+
+The model defines 241 main class(es).
+
+'domain_FormView' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_Mappers' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_MenuExtensionRef' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_FormDataControls' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_ReturnValue' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_Formatable' represents an important domain concept.
+It has one attribute: 'format', which is of type str.
+
+'Secured' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_EnumAttribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'uid', which is of type str; 'name', which is of type str.
+
+'domain_HTMLLayerHolder' represents an important domain concept.
+It has one attribute: 'columns', which is of type int.
+
+'domain_DeploymentComponents' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_NickNamed' represents an important domain concept.
+It has one attribute: 'nickname', which is of type str.
+
+'domain_Parameter' represents an important domain concept.
+It has the following attributes: 'order', which is of type int; 'name', which is of type str; 'uid', which is of type str.
+
+'domain_PREQueryTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_POSTQueryTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_MenuFolder' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str; 'extensionPoint', which is of type bool.
+
+'domain_CanvasView' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_FormVariable' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_Domain' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_JavaScriptMapper' represents an important domain concept.
+It has one attribute: 'libraryUrl', which is of type str.
+
+'domain_Recipe' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_DeploymentStarStep' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_DataControl' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'Uielement' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiLangLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationShip' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_EJBService' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_HashProperty' represents an important domain concept.
+It has the following attributes: 'fakeName', which is of type str; 'uid', which is of type str.
+
+'domain_JavaComponent' represents an important domain concept.
+It has the following attributes: 'artifactId', which is of type str; 'groupId', which is of type str; 'version', which is of type str; 'basePackage', which is of type str.
+
+'domain_Ingredient' represents an important domain concept.
+It has the following attributes: 'layer', which is of type str; 'name', which is of type str; 'uid', which is of type str.
+
+'domain_Link' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_Messages' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_DefaultCavas' represents an important domain concept.
+It has one attribute: 'defaultCanvas', which is of type bool.
+
+'domain_ViewInheritance' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_ApplicationRole' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_StyleClass' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_ServerClaster' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_PopupCanvas' represents an important domain concept.
+It has one attribute: 'modal', which is of type bool.
+
+'domain_ConfigHash' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_Menu' represents an important domain concept.
+It has one attribute: 'fakeName', which is of type str.
+
+'domain_InfrastructureLayer' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_MultiLangLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_LayerHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_MenuElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_CSSMapper' represents an important domain concept.
+It has the following attributes: 'libraryUrl', which is of type str; 'fakeTypeName', which is of type str; 'fakePackageName', which is of type str.
+
+'domain_Categorized' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_ApplicationMappers' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextValue' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_DomainApplication' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_Date' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_ApplicationRecipes' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_MenuDefinition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_Window' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Views' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_ORMEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'MenuHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_POSTCreateTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_Attribute' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str; 'pk', which is of type bool.
+
+'domain_Package' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_ViewPortTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_DeploymentSequence' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_ViewArea' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_PREInsertTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_FormParameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'Formatable' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Column' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'label', which is of type str.
+
+'domain_Router' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_SourcesPointer' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_UpdateTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_PREUpdateTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_MenuExtensionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_LinkToLabel' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_PREFormTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'InputElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OptionSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'ProxiesList' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_DomainTypes' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_Query' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_Roles' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_TypePointer' represents an important domain concept.
+It has the following attributes: 'fakeTypeName', which is of type str; 'fakePackageName', which is of type str.
+
+'domain_FlexField' represents an important domain concept.
+It does not declare any attributes.
+
+'Context' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_ApplicationRecipe' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'ViewPortHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_MenuItem' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Image' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Secured' represents an important domain concept.
+It does not declare any attributes.
+
+'ChildrenHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Artifacts' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_Mapper' represents an important domain concept.
+It has the following attributes: 'uiLayer', which is of type bool; 'serviceLayer', which is of type bool; 'uid', which is of type str.
+
+'domain_Tree' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'domain_Datacenter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'Orderable' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_LanguageRef' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_TabCanvas' represents an important domain concept.
+It has one attribute: 'orientation', which is of type str.
+
+'domain_Infrastructure' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_TabPagesInheritance' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_ApplicationStyle' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_LinkToMessage' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_OptionSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_EnabledUIItem' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Server' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_ApplicationMapper' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_QueryParameter' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_MethodPointer' represents an important domain concept.
+It has one attribute: 'fakeMethod', which is of type str.
+
+'domain_Classifier' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'details', which is of type str.
+
+'domain_MenuView' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_DomainArtifact' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_Form' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_QueryVariable' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'uid', which is of type str.
+
+'domain_Orderable' represents an important domain concept.
+It has one attribute: 'order', which is of type int.
+
+'domain_ViewPortHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_TabPage' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Storage' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'DefaultCavas' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Enumarator' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_GenerationHint' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str; 'applyedClass', which is of type str.
+
+'ArtifactRef' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_TypeElement' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_ApplicationUIPackage' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_Styles' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_TypeMapper' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_CanvasFrame' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_ModelMapper' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'artifactRoot', which is of type str; 'artifactExecutionString', which is of type str.
+
+'domain_References' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Operation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_JPAService' represents an important domain concept.
+It does not declare any attributes.
+
+'Categorized' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_ArtificialField' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_OutputText' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_MessageLibrary' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_ChildrenHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_ViewPort' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_StyleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_InfrastructureConnection' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_CheckBox' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Hub' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_PREDeleteTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_InfrastructureComponent' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'Mapper' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_SubMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Artifact' represents an important domain concept.
+It has the following attributes: 'template', which is of type str; 'uid', which is of type str; 'name', which is of type str; 'description', which is of type str.
+
+'domain_TypeDefinition' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_JavaMapper' represents an important domain concept.
+It has the following attributes: 'mappedToClassName', which is of type str; 'artifactId', which is of type str; 'libraryName', which is of type str; 'artifactType', which is of type str; 'groupId', which is of type str; 'version', which is of type str; 'mappedToPackageName', which is of type str.
+
+'domain_Role' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_ApplicationMessages' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_Language' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'defaultLang', which is of type bool; 'lang', which is of type str; 'uid', which is of type str.
+
+'domain_StyleSet' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'MenuElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Canvas' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Uielement' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'ContextParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Controls' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_ContinuousIintegration' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_GrantAccess' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_InputElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_MessageElement' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'NickNamed' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_ContextParameter' represents an important domain concept.
+It has the following attributes: 'operation', which is of type str; 'uid', which is of type str.
+
+'domain_ConfigVariable' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'TypeMapper' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_AreaRef' represents an important domain concept.
+It has one attribute: 'group', which is of type int.
+
+'domain_StylesPackage' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_Group' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_DeploymentComponent' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_DomainApplications' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_MenuHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Specifier' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_Orders' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_ArtifactRef' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_SearchTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_Types' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_Message' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'domain_UIPackage' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_ExpressionPart' represents an important domain concept.
+It has the following attributes: 'order', which is of type int; 'expressionType', which is of type str; 'uid', which is of type str.
+
+'domain_MenuSeparator' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_ModelQuery' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'query', which is of type str; 'name', which is of type str.
+
+'domain_ContextValue' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'constant', which is of type bool; 'uid', which is of type str.
+
+'StyleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_InputText' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_InsertTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_ConfigExtension' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'HTMLLayerHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Property' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'uid', which is of type str; 'fakeName', which is of type str.
+
+'domain_RoleMapper' represents an important domain concept.
+It has the following attributes: 'fakeRoleName', which is of type str; 'localRoleName', which is of type str; 'globalRoleName', which is of type str.
+
+'domain_RelationShip' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'TypeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Password' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodPointer' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Subsystem' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'MenuExtensionRef' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_DropDownSelection' represents an important domain concept.
+It has one attribute: 'initialOptionValue', which is of type str.
+
+'domain_ContextParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_DeleteTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_TypesRepository' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_Option' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'uid', which is of type str.
+
+'domain_ItemIcon' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_ViewElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Translation' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'translation', which is of type str.
+
+'domain_Label' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'SourcesPointer' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Component' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str; 'componentRoot', which is of type str.
+
+'FlexFields' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_OrderBy' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'order', which is of type str.
+
+'domain_UsingMappers' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_KeyValuePair' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str; 'uid', which is of type str.
+
+'domain_Assosiation' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'domain_Recipes' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_Configuration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'EnabledUIItem' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'UsingMappers' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_CreateTrigger' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_EnterpriseInfrastructure' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_Dependency' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_ProxiesList' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_StyleLibrary' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_MappingSpecifier' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_Application' represents an important domain concept.
+It has one attribute: 'uid', which is of type str.
+
+'domain_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_DomainArtifacts' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_ApplicationUILayer' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_Root' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'domain_ApplicationInfrastructureLayer' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'InfrastructureComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'TypePointer' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Button' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'ItemIcon' represents an important domain concept.
+It does not declare any attributes.
+
+'ViewElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_FlexFields' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Relation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isTree', which is of type bool; 'uid', which is of type str.
+
+'CanvasFrame' represents an important domain concept.
+It does not declare any attributes.
+
+'domain_Table' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'rowNumber', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RelationType' defines the following possible values: 'One2Many', 'Many2Many', 'One2One'.
+The enumeration 'Order' defines the following possible values: 'DESC', 'ASC'.
+The enumeration 'Orientation' defines the following possible values: 'Bottom', 'Top', 'Right', 'Left'.
+The enumeration 'PlatformLayers' defines the following possible values: 'UILayer', 'ServiceLayer'.
+The enumeration 'Comparator' defines the following possible values: 'LT', 'NEQ', 'GT', 'LEQ', 'EQ', 'GEQ'.
+
+The model also captures inheritance relationships between classes.
+The class 'domain_DomainArtifacts' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_DomainApplications' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_ORMEntity' is a specialization of 'DomainArtifact'.
+The class 'domain_JPAService' is a specialization of 'DomainArtifact'.
+The class 'domain_EJBService' is a specialization of 'DomainArtifact'.
+The class 'domain_ContinuousIintegration' is a specialization of 'DomainArtifact'.
+The class 'domain_ApplicationStyle' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_ApplicationUILayer' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_ApplicationRecipes' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_ApplicationMappers' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_MethodPointer' is a specialization of 'TypePointer'.
+The class 'domain_MessageLibrary' is a specialization of 'Categorized'.
+The class 'domain_TypeMapper' is a specialization of 'Mapper'.
+The class 'domain_TypeMapper' is a specialization of 'TypePointer'.
+The class 'domain_JavaMapper' is a specialization of 'TypeMapper'.
+The class 'domain_JavaScriptMapper' is a specialization of 'TypeMapper'.
+The class 'domain_CSSMapper' is a specialization of 'Mapper'.
+The class 'domain_RoleMapper' is a specialization of 'Mapper'.
+The class 'domain_Recipe' is a specialization of 'UsingMappers'.
+The class 'domain_Ingredient' is a specialization of 'UsingMappers'.
+The class 'domain_Ingredient' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_Component' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_JavaComponent' is a specialization of 'Component'.
+The class 'domain_ModelMapper' is a specialization of 'ArtifactRef'.
+The class 'domain_RelationShip' is a specialization of 'Categorized'.
+The class 'domain_References' is a specialization of 'RelationShip'.
+The class 'domain_Generalization' is a specialization of 'RelationShip'.
+The class 'domain_Assosiation' is a specialization of 'RelationShip'.
+The class 'domain_Primitive' is a specialization of 'TypeElement'.
+The class 'domain_Type' is a specialization of 'TypeElement'.
+The class 'domain_Type' is a specialization of 'Categorized'.
+The class 'domain_TypeReference' is a specialization of 'TypeElement'.
+The class 'domain_TypeReference' is a specialization of 'TypePointer'.
+The class 'domain_Attribute' is a specialization of 'TypePointer'.
+The class 'domain_Attribute' is a specialization of 'Categorized'.
+The class 'domain_Operation' is a specialization of 'Secured'.
+The class 'domain_Operation' is a specialization of 'Categorized'.
+The class 'domain_Parameter' is a specialization of 'TypePointer'.
+The class 'domain_ReturnValue' is a specialization of 'TypePointer'.
+The class 'domain_Enumarator' is a specialization of 'TypeElement'.
+The class 'domain_Types' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_FormParameter' is a specialization of 'TypePointer'.
+The class 'domain_CanvasFrame' is a specialization of 'StyleElement'.
+The class 'domain_ViewPortHolder' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_ViewElement' is a specialization of 'StyleElement'.
+The class 'domain_ViewElement' is a specialization of 'Categorized'.
+The class 'domain_ViewElement' is a specialization of 'NickNamed'.
+The class 'domain_PopupCanvas' is a specialization of 'CanvasFrame'.
+The class 'domain_PopupCanvas' is a specialization of 'ViewPortHolder'.
+The class 'domain_PopupCanvas' is a specialization of 'DefaultCavas'.
+The class 'domain_PopupCanvas' is a specialization of 'MultiLangLabel'.
+The class 'domain_PopupCanvas' is a specialization of 'Categorized'.
+The class 'domain_PopupCanvas' is a specialization of 'FlexFields'.
+The class 'domain_Canvas' is a specialization of 'CanvasFrame'.
+The class 'domain_Canvas' is a specialization of 'ViewPortHolder'.
+The class 'domain_Canvas' is a specialization of 'DefaultCavas'.
+The class 'domain_Canvas' is a specialization of 'MultiLangLabel'.
+The class 'domain_Canvas' is a specialization of 'Categorized'.
+The class 'domain_Window' is a specialization of 'CanvasFrame'.
+The class 'domain_Window' is a specialization of 'ViewPortHolder'.
+The class 'domain_Window' is a specialization of 'MultiLangLabel'.
+The class 'domain_Window' is a specialization of 'Categorized'.
+The class 'domain_Window' is a specialization of 'Secured'.
+The class 'domain_MenuDefinition' is a specialization of 'StyleElement'.
+The class 'domain_MenuDefinition' is a specialization of 'Categorized'.
+The class 'domain_TabCanvas' is a specialization of 'CanvasFrame'.
+The class 'domain_TabCanvas' is a specialization of 'DefaultCavas'.
+The class 'domain_TabCanvas' is a specialization of 'MultiLangLabel'.
+The class 'domain_TabCanvas' is a specialization of 'Categorized'.
+The class 'domain_TabPage' is a specialization of 'CanvasFrame'.
+The class 'domain_TabPage' is a specialization of 'ViewPortHolder'.
+The class 'domain_TabPage' is a specialization of 'MultiLangLabel'.
+The class 'domain_TabPage' is a specialization of 'Categorized'.
+The class 'domain_TabPage' is a specialization of 'Orderable'.
+The class 'domain_ViewPort' is a specialization of 'ViewElement'.
+The class 'domain_ViewPort' is a specialization of 'Orderable'.
+The class 'domain_ViewArea' is a specialization of 'ViewElement'.
+The class 'domain_ViewArea' is a specialization of 'Orderable'.
+The class 'domain_ViewPortTrigger' is a specialization of 'Trigger'.
+The class 'domain_Context' is a specialization of 'ContextValue'.
+The class 'domain_Context' is a specialization of 'ContextParameters'.
+The class 'domain_StyleClass' is a specialization of 'ContextValue'.
+The class 'domain_FlexField' is a specialization of 'Context'.
+The class 'domain_FlexField' is a specialization of 'Categorized'.
+The class 'domain_Uielement' is a specialization of 'StyleElement'.
+The class 'domain_Uielement' is a specialization of 'NickNamed'.
+The class 'domain_Uielement' is a specialization of 'Categorized'.
+The class 'domain_Uielement' is a specialization of 'Orderable'.
+The class 'domain_Uielement' is a specialization of 'EnabledUIItem'.
+The class 'domain_Uielement' is a specialization of 'FlexFields'.
+The class 'domain_Uielement' is a specialization of 'MenuHolder'.
+The class 'domain_SourcesPointer' is a specialization of 'Uielement'.
+The class 'domain_InputElement' is a specialization of 'SourcesPointer'.
+The class 'domain_Selection' is a specialization of 'StyleElement'.
+The class 'domain_OptionSelection' is a specialization of 'InputElement'.
+The class 'domain_LayerHolder' is a specialization of 'Uielement'.
+The class 'domain_LayerHolder' is a specialization of 'ChildrenHolder'.
+The class 'domain_LayerHolder' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_InputText' is a specialization of 'InputElement'.
+The class 'domain_InputText' is a specialization of 'Formatable'.
+The class 'domain_Password' is a specialization of 'InputElement'.
+The class 'domain_Password' is a specialization of 'Formatable'.
+The class 'domain_Label' is a specialization of 'Uielement'.
+The class 'domain_Label' is a specialization of 'MultiLangLabel'.
+The class 'domain_MessageElement' is a specialization of 'Uielement'.
+The class 'domain_MessageElement' is a specialization of 'MultiLangLabel'.
+The class 'domain_OutputText' is a specialization of 'InputElement'.
+The class 'domain_OutputText' is a specialization of 'Formatable'.
+The class 'domain_CheckBox' is a specialization of 'InputElement'.
+The class 'domain_DropDownSelection' is a specialization of 'OptionSelection'.
+The class 'domain_Image' is a specialization of 'InputElement'.
+The class 'domain_Date' is a specialization of 'InputElement'.
+The class 'domain_Date' is a specialization of 'Formatable'.
+The class 'domain_Button' is a specialization of 'Uielement'.
+The class 'domain_Button' is a specialization of 'MultiLangLabel'.
+The class 'domain_Button' is a specialization of 'ItemIcon'.
+The class 'domain_Column' is a specialization of 'StyleElement'.
+The class 'domain_Column' is a specialization of 'MultiLangLabel'.
+The class 'domain_Column' is a specialization of 'Categorized'.
+The class 'domain_Column' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_Column' is a specialization of 'Orderable'.
+The class 'domain_Table' is a specialization of 'SourcesPointer'.
+The class 'domain_Table' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_Table' is a specialization of 'MultiLangLabel'.
+The class 'domain_Menu' is a specialization of 'Uielement'.
+The class 'domain_Tree' is a specialization of 'SourcesPointer'.
+The class 'domain_Tree' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_Tree' is a specialization of 'MultiLangLabel'.
+The class 'domain_Trigger' is a specialization of 'MethodPointer'.
+The class 'domain_Trigger' is a specialization of 'ContextParameters'.
+The class 'domain_PREFormTrigger' is a specialization of 'Trigger'.
+The class 'domain_PREQueryTrigger' is a specialization of 'Trigger'.
+The class 'domain_POSTQueryTrigger' is a specialization of 'Trigger'.
+The class 'domain_PREInsertTrigger' is a specialization of 'Trigger'.
+The class 'domain_PREDeleteTrigger' is a specialization of 'Trigger'.
+The class 'domain_POSTCreateTrigger' is a specialization of 'Trigger'.
+The class 'domain_PREUpdateTrigger' is a specialization of 'Trigger'.
+The class 'domain_CreateTrigger' is a specialization of 'Trigger'.
+The class 'domain_CreateTrigger' is a specialization of 'ProxiesList'.
+The class 'domain_InsertTrigger' is a specialization of 'Trigger'.
+The class 'domain_InsertTrigger' is a specialization of 'ProxiesList'.
+The class 'domain_UpdateTrigger' is a specialization of 'Trigger'.
+The class 'domain_UpdateTrigger' is a specialization of 'ProxiesList'.
+The class 'domain_DeleteTrigger' is a specialization of 'Trigger'.
+The class 'domain_DeleteTrigger' is a specialization of 'ProxiesList'.
+The class 'domain_SearchTrigger' is a specialization of 'Trigger'.
+The class 'domain_SearchTrigger' is a specialization of 'ProxiesList'.
+The class 'domain_FormVariable' is a specialization of 'TypePointer'.
+The class 'domain_ArtificialField' is a specialization of 'TypePointer'.
+The class 'domain_Datacenter' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_Server' is a specialization of 'InfrastructureComponent'.
+The class 'domain_Router' is a specialization of 'InfrastructureComponent'.
+The class 'domain_Hub' is a specialization of 'InfrastructureComponent'.
+The class 'domain_Storage' is a specialization of 'InfrastructureComponent'.
+The class 'domain_ServerClaster' is a specialization of 'InfrastructureComponent'.
+The class 'domain_MenuElement' is a specialization of 'MultiLangLabel'.
+The class 'domain_MenuElement' is a specialization of 'StyleElement'.
+The class 'domain_MenuElement' is a specialization of 'Categorized'.
+The class 'domain_MenuElement' is a specialization of 'EnabledUIItem'.
+The class 'domain_MenuElement' is a specialization of 'Orderable'.
+The class 'domain_MenuFolder' is a specialization of 'HTMLLayerHolder'.
+The class 'domain_MenuFolder' is a specialization of 'EnabledUIItem'.
+The class 'domain_MenuFolder' is a specialization of 'Categorized'.
+The class 'domain_MenuFolder' is a specialization of 'StyleElement'.
+The class 'domain_MenuFolder' is a specialization of 'MultiLangLabel'.
+The class 'domain_MenuFolder' is a specialization of 'ItemIcon'.
+The class 'domain_MenuItem' is a specialization of 'MenuElement'.
+The class 'domain_MenuItem' is a specialization of 'ItemIcon'.
+The class 'domain_MenuItem' is a specialization of 'FlexFields'.
+The class 'domain_MenuExtensionPoint' is a specialization of 'MenuElement'.
+The class 'domain_MenuExtensionPoint' is a specialization of 'MenuExtensionRef'.
+The class 'domain_SubMenu' is a specialization of 'MenuElement'.
+The class 'domain_SubMenu' is a specialization of 'ItemIcon'.
+The class 'domain_MenuSeparator' is a specialization of 'MenuElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'domain_Domain' and 'domain_DomainArtifacts'. From 'domain_Domain', the role 'parent' has cardinality 0..*, and from 'domain_DomainArtifacts', the role 'DomainArtifacts' has cardinality 0..*.
+An association connects 'domain_DomainTypes' and 'domain_Domain'. From 'domain_DomainTypes', the role 'DomainTypes' has cardinality 0..*, and from 'domain_Domain', the role 'parent2' has cardinality 0..*.
+An association connects 'domain_Domain' and 'domain_DomainApplications'. From 'domain_Domain', the role 'parent4' has cardinality 0..*, and from 'domain_DomainApplications', the role 'DomainApplications' has cardinality 0..*.
+An association connects 'domain_EObject' and 'domain_Domain'. From 'domain_EObject', the role 'domain_EObject' has cardinality 0..*, and from 'domain_Domain', the role 'domain_Domain' has cardinality 0..*.
+An association connects 'domain_Categorized' and 'domain_Classifier'. From 'domain_Categorized', the role 'domain_Categorized' has cardinality 0..*, and from 'domain_Classifier', the role 'domain_Classifier' has cardinality 0..*.
+An association connects 'domain_GenerationHint' and 'domain_Classifier'. From 'domain_GenerationHint', the role 'domain_GenerationHint' has cardinality 0..*, and from 'domain_Classifier', the role 'domain_Classifier8' has cardinality 0..*.
+An association connects 'domain_GrantAccess' and 'domain_Secured'. From 'domain_GrantAccess', the role 'domain_GrantAccess' has cardinality 0..*, and from 'domain_Secured', the role 'domain_Secured' has cardinality 0..*.
+An association connects 'domain_DomainApplication' and 'domain_GrantAccess'. From 'domain_DomainApplication', the role 'domain_DomainApplication' has cardinality 0..*, and from 'domain_GrantAccess', the role 'domain_GrantAccess11' has cardinality 0..*.
+An association connects 'domain_GrantAccess' and 'domain_Role'. From 'domain_GrantAccess', the role 'domain_GrantAccess13' has cardinality 0..*, and from 'domain_Role', the role 'domain_Role' has cardinality 0..*.
+An association connects 'domain_Domain' and 'domain_DomainArtifacts'. From 'domain_Domain', the role 'Domain' has cardinality 0..*, and from 'domain_DomainArtifacts', the role 'domainArtifacts' has cardinality 0..*.
+An association connects 'domain_DomainArtifacts' and 'domain_DomainArtifact'. From 'domain_DomainArtifacts', the role 'parent16' has cardinality 0..*, and from 'domain_DomainArtifact', the role 'DomainArtifact' has cardinality 0..*.
+An association connects 'domain_DomainTypes' and 'domain_TypesRepository'. From 'domain_DomainTypes', the role 'parent18' has cardinality 0..*, and from 'domain_TypesRepository', the role 'TypesRepository' has cardinality 0..*.
+An association connects 'domain_DomainTypes' and 'domain_Domain'. From 'domain_DomainTypes', the role 'domainTypes' has cardinality 0..*, and from 'domain_Domain', the role 'Domain20' has cardinality 0..*.
+An association connects 'domain_DomainApplication' and 'domain_DomainApplications'. From 'domain_DomainApplication', the role 'DomainApplication' has cardinality 0..*, and from 'domain_DomainApplications', the role 'parent22' has cardinality 0..*.
+An association connects 'domain_DomainApplications' and 'domain_Domain'. From 'domain_DomainApplications', the role 'domainApplications' has cardinality 0..*, and from 'domain_Domain', the role 'Domain24' has cardinality 0..*.
+An association connects 'domain_Application' and 'domain_DomainApplication'. From 'domain_Application', the role 'Application' has cardinality 0..*, and from 'domain_DomainApplication', the role 'parent26' has cardinality 0..*.
+An association connects 'domain_DomainApplications' and 'domain_DomainApplication'. From 'domain_DomainApplications', the role 'DomainApplications28' has cardinality 0..*, and from 'domain_DomainApplication', the role 'applications' has cardinality 0..*.
+An association connects 'domain_DomainArtifact' and 'domain_DomainArtifacts'. From 'domain_DomainArtifact', the role 'domainArtifact' has cardinality 0..*, and from 'domain_DomainArtifacts', the role 'DomainArtifacts30' has cardinality 0..*.
+An association connects 'domain_Artifacts' and 'domain_DomainArtifact'. From 'domain_Artifacts', the role 'Artifacts' has cardinality 0..*, and from 'domain_DomainArtifact', the role 'parent32' has cardinality 0..*.
+An association connects 'domain_Artifacts' and 'domain_Artifact'. From 'domain_Artifacts', the role 'parent34' has cardinality 0..*, and from 'domain_Artifact', the role 'Artifact' has cardinality 0..*.
+An association connects 'domain_Artifacts' and 'domain_DomainArtifact'. From 'domain_Artifacts', the role 'artifact' has cardinality 0..*, and from 'domain_DomainArtifact', the role 'DomainArtifact36' has cardinality 0..*.
+An association connects 'domain_Artifacts' and 'domain_EObject'. From 'domain_Artifacts', the role 'domain_Artifacts' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject38' has cardinality 0..*.
+An association connects 'domain_Artifact' and 'domain_Artifacts'. From 'domain_Artifact', the role 'artifacts' has cardinality 0..*, and from 'domain_Artifacts', the role 'Artifacts40' has cardinality 0..*.
+An association connects 'domain_Artifact' and 'domain_ConfigVariable'. From 'domain_Artifact', the role 'parent42' has cardinality 0..*, and from 'domain_ConfigVariable', the role 'ConfigVariable' has cardinality 0..*.
+An association connects 'domain_Artifact' and 'domain_ConfigHash'. From 'domain_Artifact', the role 'parent44' has cardinality 0..*, and from 'domain_ConfigHash', the role 'ConfigHash' has cardinality 0..*.
+An association connects 'domain_Artifact' and 'domain_ModelQuery'. From 'domain_Artifact', the role 'parent46' has cardinality 0..*, and from 'domain_ModelQuery', the role 'ModelQuery' has cardinality 0..*.
+An association connects 'domain_Artifact' and 'domain_Specifier'. From 'domain_Artifact', the role 'parent48' has cardinality 0..*, and from 'domain_Specifier', the role 'Specifier' has cardinality 0..*.
+An association connects 'domain_GenerationHint' and 'domain_Artifact'. From 'domain_GenerationHint', the role 'domain_GenerationHint50' has cardinality 0..*, and from 'domain_Artifact', the role 'domain_Artifact' has cardinality 0..*.
+An association connects 'domain_Artifact' and 'domain_ConfigVariable'. From 'domain_Artifact', the role 'Artifact52' has cardinality 0..*, and from 'domain_ConfigVariable', the role 'configVariables' has cardinality 0..*.
+An association connects 'domain_Artifact' and 'domain_ConfigHash'. From 'domain_Artifact', the role 'Artifact54' has cardinality 0..*, and from 'domain_ConfigHash', the role 'configHashes' has cardinality 0..*.
+An association connects 'domain_ModelQuery' and 'domain_Artifact'. From 'domain_ModelQuery', the role 'modelQuery' has cardinality 0..*, and from 'domain_Artifact', the role 'Artifact56' has cardinality 0..*.
+An association connects 'domain_ModelQuery' and 'domain_QueryParameter'. From 'domain_ModelQuery', the role 'parent58' has cardinality 0..*, and from 'domain_QueryParameter', the role 'QueryParameter' has cardinality 0..*.
+An association connects 'domain_QueryParameter' and 'domain_ModelQuery'. From 'domain_QueryParameter', the role 'parameters' has cardinality 0..*, and from 'domain_ModelQuery', the role 'ModelQuery60' has cardinality 0..*.
+An association connects 'domain_Specifier' and 'domain_Artifact'. From 'domain_Specifier', the role 'specifiers' has cardinality 0..*, and from 'domain_Artifact', the role 'Artifact62' has cardinality 0..*.
+An association connects 'domain_Specifier' and 'domain_Option'. From 'domain_Specifier', the role 'parent64' has cardinality 0..*, and from 'domain_Option', the role 'Option' has cardinality 0..*.
+An association connects 'domain_Specifier' and 'domain_Option'. From 'domain_Specifier', the role 'Specifier66' has cardinality 0..*, and from 'domain_Option', the role 'options' has cardinality 0..*.
+An association connects 'domain_Application' and 'domain_ApplicationRecipes'. From 'domain_Application', the role 'parent68' has cardinality 0..*, and from 'domain_ApplicationRecipes', the role 'ApplicationRecipes' has cardinality 0..*.
+An association connects 'domain_Application' and 'domain_ApplicationMappers'. From 'domain_Application', the role 'parent70' has cardinality 0..*, and from 'domain_ApplicationMappers', the role 'ApplicationMappers' has cardinality 0..*.
+An association connects 'domain_ApplicationUILayer' and 'domain_Application'. From 'domain_ApplicationUILayer', the role 'ApplicationUILayer' has cardinality 0..*, and from 'domain_Application', the role 'parent72' has cardinality 0..*.
+An association connects 'domain_ApplicationInfrastructureLayer' and 'domain_Application'. From 'domain_ApplicationInfrastructureLayer', the role 'ApplicationInfrastructureLayer' has cardinality 0..*, and from 'domain_Application', the role 'parent74' has cardinality 0..*.
+An association connects 'domain_Application' and 'domain_ApplicationStyle'. From 'domain_Application', the role 'parent76' has cardinality 0..*, and from 'domain_ApplicationStyle', the role 'ApplicationStyle' has cardinality 0..*.
+An association connects 'domain_Application' and 'domain_ApplicationRole'. From 'domain_Application', the role 'parent78' has cardinality 0..*, and from 'domain_ApplicationRole', the role 'ApplicationRole' has cardinality 0..*.
+An association connects 'domain_ApplicationMessages' and 'domain_Application'. From 'domain_ApplicationMessages', the role 'ApplicationMessages' has cardinality 0..*, and from 'domain_Application', the role 'parent80' has cardinality 0..*.
+An association connects 'domain_Application' and 'domain_DomainApplication'. From 'domain_Application', the role 'application' has cardinality 0..*, and from 'domain_DomainApplication', the role 'DomainApplication82' has cardinality 0..*.
+An association connects 'domain_EObject' and 'domain_Application'. From 'domain_EObject', the role 'domain_EObject84' has cardinality 0..*, and from 'domain_Application', the role 'domain_Application' has cardinality 0..*.
+An association connects 'domain_ApplicationMessages' and 'domain_Application'. From 'domain_ApplicationMessages', the role 'applicationMessages' has cardinality 0..*, and from 'domain_Application', the role 'Application86' has cardinality 0..*.
+An association connects 'domain_ApplicationMessages' and 'domain_Messages'. From 'domain_ApplicationMessages', the role 'parent88' has cardinality 0..*, and from 'domain_Messages', the role 'Messages' has cardinality 0..*.
+An association connects 'domain_ApplicationRole' and 'domain_Application'. From 'domain_ApplicationRole', the role 'applicationRole' has cardinality 0..*, and from 'domain_Application', the role 'Application90' has cardinality 0..*.
+An association connects 'domain_Roles' and 'domain_ApplicationRole'. From 'domain_Roles', the role 'Roles' has cardinality 0..*, and from 'domain_ApplicationRole', the role 'parent92' has cardinality 0..*.
+An association connects 'domain_Application' and 'domain_ApplicationStyle'. From 'domain_Application', the role 'Application94' has cardinality 0..*, and from 'domain_ApplicationStyle', the role 'applicationStyle' has cardinality 0..*.
+An association connects 'domain_StylesPackage' and 'domain_ApplicationStyle'. From 'domain_StylesPackage', the role 'StylesPackage' has cardinality 0..*, and from 'domain_ApplicationStyle', the role 'parent96' has cardinality 0..*.
+An association connects 'domain_StylesPackage' and 'domain_ApplicationStyle'. From 'domain_StylesPackage', the role 'stylesPackage' has cardinality 0..*, and from 'domain_ApplicationStyle', the role 'ApplicationStyle98' has cardinality 0..*.
+An association connects 'domain_Styles' and 'domain_StylesPackage'. From 'domain_Styles', the role 'Styles' has cardinality 0..*, and from 'domain_StylesPackage', the role 'parent100' has cardinality 0..*.
+An association connects 'domain_ApplicationUILayer' and 'domain_Application'. From 'domain_ApplicationUILayer', the role 'applicationUILayer' has cardinality 0..*, and from 'domain_Application', the role 'Application102' has cardinality 0..*.
+An association connects 'domain_ApplicationUIPackage' and 'domain_ApplicationUILayer'. From 'domain_ApplicationUIPackage', the role 'ApplicationUIPackage' has cardinality 0..*, and from 'domain_ApplicationUILayer', the role 'parent104' has cardinality 0..*.
+An association connects 'domain_ApplicationUILayer' and 'domain_ApplicationUIPackage'. From 'domain_ApplicationUILayer', the role 'ApplicationUILayer106' has cardinality 0..*, and from 'domain_ApplicationUIPackage', the role 'applicationUIPackages' has cardinality 0..*.
+An association connects 'domain_ApplicationUIPackage' and 'domain_UIPackage'. From 'domain_ApplicationUIPackage', the role 'parent108' has cardinality 0..*, and from 'domain_UIPackage', the role 'UIPackage' has cardinality 0..*.
+An association connects 'domain_Application' and 'domain_ApplicationRecipes'. From 'domain_Application', the role 'Application110' has cardinality 0..*, and from 'domain_ApplicationRecipes', the role 'applicationRecipes' has cardinality 0..*.
+An association connects 'domain_ApplicationRecipe' and 'domain_ApplicationRecipes'. From 'domain_ApplicationRecipe', the role 'ApplicationRecipe' has cardinality 0..*, and from 'domain_ApplicationRecipes', the role 'parent112' has cardinality 0..*.
+An association connects 'domain_ApplicationRecipe' and 'domain_Recipes'. From 'domain_ApplicationRecipe', the role 'parent114' has cardinality 0..*, and from 'domain_Recipes', the role 'Recipes' has cardinality 0..*.
+An association connects 'domain_ApplicationRecipes' and 'domain_ApplicationRecipe'. From 'domain_ApplicationRecipes', the role 'ApplicationRecipes116' has cardinality 0..*, and from 'domain_ApplicationRecipe', the role 'recipes' has cardinality 0..*.
+An association connects 'domain_ApplicationMappers' and 'domain_Application'. From 'domain_ApplicationMappers', the role 'applicationMappers' has cardinality 0..*, and from 'domain_Application', the role 'Application118' has cardinality 0..*.
+An association connects 'domain_ApplicationMapper' and 'domain_ApplicationMappers'. From 'domain_ApplicationMapper', the role 'ApplicationMapper' has cardinality 0..*, and from 'domain_ApplicationMappers', the role 'parent120' has cardinality 0..*.
+An association connects 'domain_Mappers' and 'domain_ApplicationMapper'. From 'domain_Mappers', the role 'Mappers' has cardinality 0..*, and from 'domain_ApplicationMapper', the role 'parent122' has cardinality 0..*.
+An association connects 'domain_ApplicationMappers' and 'domain_ApplicationMapper'. From 'domain_ApplicationMappers', the role 'ApplicationMappers124' has cardinality 0..*, and from 'domain_ApplicationMapper', the role 'mappers' has cardinality 0..*.
+An association connects 'domain_MethodPointer' and 'domain_Operation'. From 'domain_MethodPointer', the role 'domain_MethodPointer' has cardinality 0..*, and from 'domain_Operation', the role 'domain_Operation' has cardinality 0..*.
+An association connects 'domain_Messages' and 'domain_ApplicationMessages'. From 'domain_Messages', the role 'messages' has cardinality 0..*, and from 'domain_ApplicationMessages', the role 'ApplicationMessages127' has cardinality 0..*.
+An association connects 'domain_Messages' and 'domain_MessageLibrary'. From 'domain_Messages', the role 'domain_Messages' has cardinality 0..*, and from 'domain_MessageLibrary', the role 'domain_MessageLibrary' has cardinality 0..*.
+An association connects 'domain_Language' and 'domain_Messages'. From 'domain_Language', the role 'domain_Language' has cardinality 0..*, and from 'domain_Messages', the role 'domain_Messages130' has cardinality 0..*.
+An association connects 'domain_EObject' and 'domain_Messages'. From 'domain_EObject', the role 'domain_EObject133' has cardinality 0..*, and from 'domain_Messages', the role 'domain_Messages132' has cardinality 0..*.
+An association connects 'domain_LanguageRef' and 'domain_MessageLibrary'. From 'domain_LanguageRef', the role 'domain_LanguageRef' has cardinality 0..*, and from 'domain_MessageLibrary', the role 'domain_MessageLibrary135' has cardinality 0..*.
+An association connects 'domain_Message' and 'domain_MessageLibrary'. From 'domain_Message', the role 'domain_Message' has cardinality 0..*, and from 'domain_MessageLibrary', the role 'domain_MessageLibrary137' has cardinality 0..*.
+An association connects 'domain_Language' and 'domain_LanguageRef'. From 'domain_Language', the role 'domain_Language140' has cardinality 0..*, and from 'domain_LanguageRef', the role 'domain_LanguageRef139' has cardinality 0..*.
+An association connects 'domain_Translation' and 'domain_Message'. From 'domain_Translation', the role 'domain_Translation' has cardinality 0..*, and from 'domain_Message', the role 'domain_Message142' has cardinality 0..*.
+An association connects 'domain_LanguageRef' and 'domain_Translation'. From 'domain_LanguageRef', the role 'domain_LanguageRef145' has cardinality 0..*, and from 'domain_Translation', the role 'domain_Translation144' has cardinality 0..*.
+An association connects 'domain_ApplicationRole' and 'domain_Roles'. From 'domain_ApplicationRole', the role 'ApplicationRole147' has cardinality 0..*, and from 'domain_Roles', the role 'roles' has cardinality 0..*.
+An association connects 'domain_Roles' and 'domain_Role'. From 'domain_Roles', the role 'domain_Roles' has cardinality 0..*, and from 'domain_Role', the role 'domain_Role149' has cardinality 0..*.
+An association connects 'domain_Group' and 'domain_Roles'. From 'domain_Group', the role 'domain_Group' has cardinality 0..*, and from 'domain_Roles', the role 'domain_Roles151' has cardinality 0..*.
+An association connects 'domain_EObject' and 'domain_Roles'. From 'domain_EObject', the role 'domain_EObject154' has cardinality 0..*, and from 'domain_Roles', the role 'domain_Roles153' has cardinality 0..*.
+An association connects 'domain_Group' and 'domain_Group'. From 'domain_Group', the role 'domain_Group157' has cardinality 0..*, and from 'domain_Group', the role 'domain_Group155' has cardinality 0..*.
+An association connects 'domain_Group' and 'domain_Role'. From 'domain_Group', the role 'domain_Group159' has cardinality 0..*, and from 'domain_Role', the role 'domain_Role160' has cardinality 0..*.
+An association connects 'domain_StylesPackage' and 'domain_Styles'. From 'domain_StylesPackage', the role 'StylesPackage162' has cardinality 0..*, and from 'domain_Styles', the role 'styles' has cardinality 0..*.
+An association connects 'domain_Styles' and 'domain_StyleLibrary'. From 'domain_Styles', the role 'domain_Styles' has cardinality 0..*, and from 'domain_StyleLibrary', the role 'domain_StyleLibrary' has cardinality 0..*.
+An association connects 'domain_Styles' and 'domain_EObject'. From 'domain_Styles', the role 'domain_Styles165' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject166' has cardinality 0..*.
+An association connects 'domain_StyleLibrary' and 'domain_StyleSet'. From 'domain_StyleLibrary', the role 'domain_StyleLibrary168' has cardinality 0..*, and from 'domain_StyleSet', the role 'domain_StyleSet' has cardinality 0..*.
+An association connects 'domain_Mappers' and 'domain_Mapper'. From 'domain_Mappers', the role 'parent170' has cardinality 0..*, and from 'domain_Mapper', the role 'Mapper' has cardinality 0..*.
+An association connects 'domain_Mappers' and 'domain_ApplicationMapper'. From 'domain_Mappers', the role 'mapper' has cardinality 0..*, and from 'domain_ApplicationMapper', the role 'ApplicationMapper172' has cardinality 0..*.
+An association connects 'domain_Mappers' and 'domain_EObject'. From 'domain_Mappers', the role 'domain_Mappers' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject174' has cardinality 0..*.
+An association connects 'domain_Mapper' and 'domain_Mappers'. From 'domain_Mapper', the role 'mappers176' has cardinality 0..*, and from 'domain_Mappers', the role 'Mappers177' has cardinality 0..*.
+An association connects 'domain_CSSMapper' and 'domain_StylesPackage'. From 'domain_CSSMapper', the role 'domain_CSSMapper' has cardinality 0..*, and from 'domain_StylesPackage', the role 'domain_StylesPackage' has cardinality 0..*.
+An association connects 'domain_StyleLibrary' and 'domain_CSSMapper'. From 'domain_StyleLibrary', the role 'domain_StyleLibrary181' has cardinality 0..*, and from 'domain_CSSMapper', the role 'domain_CSSMapper180' has cardinality 0..*.
+An association connects 'domain_RoleMapper' and 'domain_EObject'. From 'domain_RoleMapper', the role 'domain_RoleMapper' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject183' has cardinality 0..*.
+An association connects 'domain_Recipes' and 'domain_Recipe'. From 'domain_Recipes', the role 'parent185' has cardinality 0..*, and from 'domain_Recipe', the role 'Recipe' has cardinality 0..*.
+An association connects 'domain_Recipes' and 'domain_Configuration'. From 'domain_Recipes', the role 'domain_Recipes' has cardinality 0..*, and from 'domain_Configuration', the role 'domain_Configuration' has cardinality 0..*.
+An association connects 'domain_Recipes' and 'domain_Infrastructure'. From 'domain_Recipes', the role 'domain_Recipes188' has cardinality 0..*, and from 'domain_Infrastructure', the role 'domain_Infrastructure' has cardinality 0..*.
+An association connects 'domain_Recipes' and 'domain_ApplicationRecipe'. From 'domain_Recipes', the role 'recipes190' has cardinality 0..*, and from 'domain_ApplicationRecipe', the role 'ApplicationRecipe191' has cardinality 0..*.
+An association connects 'domain_DeploymentSequence' and 'domain_Recipes'. From 'domain_DeploymentSequence', the role 'domain_DeploymentSequence' has cardinality 0..*, and from 'domain_Recipes', the role 'domain_Recipes193' has cardinality 0..*.
+An association connects 'domain_ConfigExtension' and 'domain_Recipes'. From 'domain_ConfigExtension', the role 'domain_ConfigExtension' has cardinality 0..*, and from 'domain_Recipes', the role 'domain_Recipes195' has cardinality 0..*.
+An association connects 'domain_Recipes' and 'domain_EObject'. From 'domain_Recipes', the role 'domain_Recipes197' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject198' has cardinality 0..*.
+An association connects 'domain_DeploymentComponents' and 'domain_DeploymentSequence'. From 'domain_DeploymentComponents', the role 'domain_DeploymentComponents' has cardinality 0..*, and from 'domain_DeploymentSequence', the role 'domain_DeploymentSequence200' has cardinality 0..*.
+An association connects 'domain_DeploymentComponent' and 'domain_DeploymentComponents'. From 'domain_DeploymentComponent', the role 'domain_DeploymentComponent' has cardinality 0..*, and from 'domain_DeploymentComponents', the role 'domain_DeploymentComponents202' has cardinality 0..*.
+An association connects 'domain_DeploymentStarStep' and 'domain_DeploymentComponents'. From 'domain_DeploymentStarStep', the role 'domain_DeploymentStarStep' has cardinality 0..*, and from 'domain_DeploymentComponents', the role 'domain_DeploymentComponents204' has cardinality 0..*.
+An association connects 'domain_EObject' and 'domain_DeploymentComponents'. From 'domain_EObject', the role 'domain_EObject207' has cardinality 0..*, and from 'domain_DeploymentComponents', the role 'domain_DeploymentComponents206' has cardinality 0..*.
+An association connects 'domain_DeploymentComponent' and 'domain_ModelMapper'. From 'domain_DeploymentComponent', the role 'domain_DeploymentComponent209' has cardinality 0..*, and from 'domain_ModelMapper', the role 'domain_ModelMapper' has cardinality 0..*.
+An association connects 'domain_DeploymentComponent' and 'domain_DeploymentComponent'. From 'domain_DeploymentComponent', the role 'domain_DeploymentComponent210' has cardinality 0..*, and from 'domain_DeploymentComponent', the role 'domain_DeploymentComponent212' has cardinality 0..*.
+An association connects 'domain_DeploymentComponent' and 'domain_DeploymentStarStep'. From 'domain_DeploymentComponent', the role 'domain_DeploymentComponent215' has cardinality 0..*, and from 'domain_DeploymentStarStep', the role 'domain_DeploymentStarStep214' has cardinality 0..*.
+An association connects 'domain_UsingMappers' and 'domain_ApplicationMapper'. From 'domain_UsingMappers', the role 'domain_UsingMappers' has cardinality 0..*, and from 'domain_ApplicationMapper', the role 'domain_ApplicationMapper' has cardinality 0..*.
+An association connects 'domain_Recipe' and 'domain_Recipes'. From 'domain_Recipe', the role 'recipe' has cardinality 0..*, and from 'domain_Recipes', the role 'Recipes218' has cardinality 0..*.
+An association connects 'domain_Recipe' and 'domain_Ingredient'. From 'domain_Recipe', the role 'parent220' has cardinality 0..*, and from 'domain_Ingredient', the role 'Ingredient' has cardinality 0..*.
+An association connects 'domain_Infrastructure' and 'domain_Recipe'. From 'domain_Infrastructure', the role 'Infrastructure' has cardinality 0..*, and from 'domain_Recipe', the role 'recipe222' has cardinality 0..*.
+An association connects 'domain_DeploymentSequence' and 'domain_Recipe'. From 'domain_DeploymentSequence', the role 'domain_DeploymentSequence224' has cardinality 0..*, and from 'domain_Recipe', the role 'domain_Recipe' has cardinality 0..*.
+An association connects 'domain_ConfigExtension' and 'domain_Configuration'. From 'domain_ConfigExtension', the role 'domain_ConfigExtension226' has cardinality 0..*, and from 'domain_Configuration', the role 'domain_Configuration227' has cardinality 0..*.
+An association connects 'domain_ConfigExtension' and 'domain_Configuration'. From 'domain_ConfigExtension', the role 'domain_ConfigExtension229' has cardinality 0..*, and from 'domain_Configuration', the role 'domain_Configuration230' has cardinality 0..*.
+An association connects 'domain_Recipe' and 'domain_Ingredient'. From 'domain_Recipe', the role 'Recipe232' has cardinality 0..*, and from 'domain_Ingredient', the role 'ingredients' has cardinality 0..*.
+An association connects 'domain_Component' and 'domain_Ingredient'. From 'domain_Component', the role 'Component' has cardinality 0..*, and from 'domain_Ingredient', the role 'parent234' has cardinality 0..*.
+An association connects 'domain_Ingredient' and 'domain_Component'. From 'domain_Ingredient', the role 'Ingredient236' has cardinality 0..*, and from 'domain_Component', the role 'components' has cardinality 0..*.
+An association connects 'domain_ModelMapper' and 'domain_Component'. From 'domain_ModelMapper', the role 'ModelMapper' has cardinality 0..*, and from 'domain_Component', the role 'parent238' has cardinality 0..*.
+An association connects 'domain_Recipe' and 'domain_Infrastructure'. From 'domain_Recipe', the role 'Recipe240' has cardinality 0..*, and from 'domain_Infrastructure', the role 'infrastructures' has cardinality 0..*.
+An association connects 'domain_Configuration' and 'domain_Infrastructure'. From 'domain_Configuration', the role 'Configuration' has cardinality 0..*, and from 'domain_Infrastructure', the role 'infrastructure' has cardinality 0..*.
+An association connects 'domain_Infrastructure' and 'domain_Configuration'. From 'domain_Infrastructure', the role 'Infrastructure243' has cardinality 0..*, and from 'domain_Configuration', the role 'recipeConfig' has cardinality 0..*.
+An association connects 'domain_Property' and 'domain_Configuration'. From 'domain_Property', the role 'domain_Property' has cardinality 0..*, and from 'domain_Configuration', the role 'domain_Configuration245' has cardinality 0..*.
+An association connects 'domain_HashProperty' and 'domain_Configuration'. From 'domain_HashProperty', the role 'domain_HashProperty' has cardinality 0..*, and from 'domain_Configuration', the role 'domain_Configuration247' has cardinality 0..*.
+An association connects 'domain_Component' and 'domain_ModelMapper'. From 'domain_Component', the role 'Component250' has cardinality 0..*, and from 'domain_ModelMapper', the role 'mappers249' has cardinality 0..*.
+An association connects 'domain_ModelMapper' and 'domain_MappingSpecifier'. From 'domain_ModelMapper', the role 'domain_ModelMapper252' has cardinality 0..*, and from 'domain_MappingSpecifier', the role 'domain_MappingSpecifier' has cardinality 0..*.
+An association connects 'domain_ModelMapper' and 'domain_Query'. From 'domain_ModelMapper', the role 'domain_ModelMapper254' has cardinality 0..*, and from 'domain_Query', the role 'domain_Query' has cardinality 0..*.
+An association connects 'domain_ConfigVariable' and 'domain_Property'. From 'domain_ConfigVariable', the role 'domain_ConfigVariable' has cardinality 0..*, and from 'domain_Property', the role 'domain_Property256' has cardinality 0..*.
+An association connects 'domain_ConfigHash' and 'domain_HashProperty'. From 'domain_ConfigHash', the role 'domain_ConfigHash' has cardinality 0..*, and from 'domain_HashProperty', the role 'domain_HashProperty258' has cardinality 0..*.
+An association connects 'domain_HashProperty' and 'domain_KeyValuePair'. From 'domain_HashProperty', the role 'domain_HashProperty260' has cardinality 0..*, and from 'domain_KeyValuePair', the role 'domain_KeyValuePair' has cardinality 0..*.
+An association connects 'domain_MappingSpecifier' and 'domain_Specifier'. From 'domain_MappingSpecifier', the role 'domain_MappingSpecifier262' has cardinality 0..*, and from 'domain_Specifier', the role 'domain_Specifier' has cardinality 0..*.
+An association connects 'domain_MappingSpecifier' and 'domain_Option'. From 'domain_MappingSpecifier', the role 'domain_MappingSpecifier264' has cardinality 0..*, and from 'domain_Option', the role 'domain_Option' has cardinality 0..*.
+An association connects 'domain_Query' and 'domain_ModelQuery'. From 'domain_Query', the role 'domain_Query266' has cardinality 0..*, and from 'domain_ModelQuery', the role 'domain_ModelQuery' has cardinality 0..*.
+An association connects 'domain_Query' and 'domain_ModelQuery'. From 'domain_Query', the role 'domain_Query268' has cardinality 0..*, and from 'domain_ModelQuery', the role 'domain_ModelQuery269' has cardinality 0..*.
+An association connects 'domain_Query' and 'domain_QueryVariable'. From 'domain_Query', the role 'domain_Query271' has cardinality 0..*, and from 'domain_QueryVariable', the role 'domain_QueryVariable' has cardinality 0..*.
+An association connects 'domain_QueryVariable' and 'domain_QueryParameter'. From 'domain_QueryVariable', the role 'domain_QueryVariable273' has cardinality 0..*, and from 'domain_QueryParameter', the role 'domain_QueryParameter' has cardinality 0..*.
+An association connects 'domain_ArtifactRef' and 'domain_DomainArtifact'. From 'domain_ArtifactRef', the role 'domain_ArtifactRef' has cardinality 0..*, and from 'domain_DomainArtifact', the role 'domain_DomainArtifact' has cardinality 0..*.
+An association connects 'domain_Artifact' and 'domain_ArtifactRef'. From 'domain_Artifact', the role 'domain_Artifact277' has cardinality 0..*, and from 'domain_ArtifactRef', the role 'domain_ArtifactRef276' has cardinality 0..*.
+An association connects 'domain_TypePointer' and 'domain_Package'. From 'domain_TypePointer', the role 'domain_TypePointer' has cardinality 0..*, and from 'domain_Package', the role 'domain_Package' has cardinality 0..*.
+An association connects 'domain_TypeElement' and 'domain_TypePointer'. From 'domain_TypeElement', the role 'domain_TypeElement' has cardinality 0..*, and from 'domain_TypePointer', the role 'domain_TypePointer280' has cardinality 0..*.
+An association connects 'domain_TypeDefinition' and 'domain_TypeElement'. From 'domain_TypeDefinition', the role 'parent282' has cardinality 0..*, and from 'domain_TypeElement', the role 'TypeElement' has cardinality 0..*.
+An association connects 'domain_TypeDefinition' and 'domain_Package'. From 'domain_TypeDefinition', the role 'typedefinition' has cardinality 0..*, and from 'domain_Package', the role 'Package' has cardinality 0..*.
+An association connects 'domain_RelationShip' and 'domain_TypeDefinition'. From 'domain_RelationShip', the role 'domain_RelationShip' has cardinality 0..*, and from 'domain_TypeDefinition', the role 'domain_TypeDefinition' has cardinality 0..*.
+An association connects 'domain_EObject' and 'domain_TypeDefinition'. From 'domain_EObject', the role 'domain_EObject287' has cardinality 0..*, and from 'domain_TypeDefinition', the role 'domain_TypeDefinition286' has cardinality 0..*.
+An association connects 'domain_TypeElement' and 'domain_RelationShip'. From 'domain_TypeElement', the role 'domain_TypeElement290' has cardinality 0..*, and from 'domain_RelationShip', the role 'domain_RelationShip289' has cardinality 0..*.
+An association connects 'domain_RelationShip' and 'domain_TypeElement'. From 'domain_RelationShip', the role 'domain_RelationShip292' has cardinality 0..*, and from 'domain_TypeElement', the role 'domain_TypeElement293' has cardinality 0..*.
+An association connects 'domain_Link' and 'domain_Assosiation'. From 'domain_Link', the role 'domain_Link' has cardinality 0..*, and from 'domain_Assosiation', the role 'domain_Assosiation' has cardinality 0..*.
+An association connects 'domain_Assosiation' and 'domain_Attribute'. From 'domain_Assosiation', the role 'domain_Assosiation296' has cardinality 0..*, and from 'domain_Attribute', the role 'domain_Attribute' has cardinality 0..*.
+An association connects 'domain_Attribute' and 'domain_Assosiation'. From 'domain_Attribute', the role 'domain_Attribute299' has cardinality 0..*, and from 'domain_Assosiation', the role 'domain_Assosiation298' has cardinality 0..*.
+An association connects 'domain_TypePointer' and 'domain_Assosiation'. From 'domain_TypePointer', the role 'domain_TypePointer302' has cardinality 0..*, and from 'domain_Assosiation', the role 'domain_Assosiation301' has cardinality 0..*.
+An association connects 'domain_TypeDefinition' and 'domain_TypeElement'. From 'domain_TypeDefinition', the role 'TypeDefinition' has cardinality 0..*, and from 'domain_TypeElement', the role 'types' has cardinality 0..*.
+An association connects 'domain_Type' and 'domain_Attribute'. From 'domain_Type', the role 'parent305' has cardinality 0..*, and from 'domain_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'domain_Type' and 'domain_Operation'. From 'domain_Type', the role 'parent307' has cardinality 0..*, and from 'domain_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'domain_Type' and 'domain_Attribute'. From 'domain_Type', the role 'Type' has cardinality 0..*, and from 'domain_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'domain_Operation' and 'domain_Type'. From 'domain_Operation', the role 'operations' has cardinality 0..*, and from 'domain_Type', the role 'Type310' has cardinality 0..*.
+An association connects 'domain_Operation' and 'domain_Parameter'. From 'domain_Operation', the role 'parent312' has cardinality 0..*, and from 'domain_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'domain_Operation' and 'domain_ReturnValue'. From 'domain_Operation', the role 'domain_Operation314' has cardinality 0..*, and from 'domain_ReturnValue', the role 'domain_ReturnValue' has cardinality 0..*.
+An association connects 'domain_Parameter' and 'domain_Operation'. From 'domain_Parameter', the role 'parameters316' has cardinality 0..*, and from 'domain_Operation', the role 'Operation317' has cardinality 0..*.
+An association connects 'domain_EnumAttribute' and 'domain_Enumarator'. From 'domain_EnumAttribute', the role 'EnumAttribute' has cardinality 0..*, and from 'domain_Enumarator', the role 'parent319' has cardinality 0..*.
+An association connects 'domain_EnumAttribute' and 'domain_Enumarator'. From 'domain_EnumAttribute', the role 'values' has cardinality 0..*, and from 'domain_Enumarator', the role 'Enumarator' has cardinality 0..*.
+An association connects 'domain_Types' and 'domain_TypesRepository'. From 'domain_Types', the role 'Types' has cardinality 0..*, and from 'domain_TypesRepository', the role 'parent322' has cardinality 0..*.
+An association connects 'domain_TypesRepository' and 'domain_DomainTypes'. From 'domain_TypesRepository', the role 'typesrepository' has cardinality 0..*, and from 'domain_DomainTypes', the role 'DomainTypes324' has cardinality 0..*.
+An association connects 'domain_TypesRepository' and 'domain_EObject'. From 'domain_TypesRepository', the role 'domain_TypesRepository' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject326' has cardinality 0..*.
+An association connects 'domain_Types' and 'domain_TypesRepository'. From 'domain_Types', the role 'typeDefinition' has cardinality 0..*, and from 'domain_TypesRepository', the role 'TypesRepository328' has cardinality 0..*.
+An association connects 'domain_Package' and 'domain_Types'. From 'domain_Package', the role 'Package331' has cardinality 0..*, and from 'domain_Types', the role 'parent330' has cardinality 0..*.
+An association connects 'domain_TypeDefinition' and 'domain_Package'. From 'domain_TypeDefinition', the role 'TypeDefinition334' has cardinality 0..*, and from 'domain_Package', the role 'parent333' has cardinality 0..*.
+An association connects 'domain_Package' and 'domain_Types'. From 'domain_Package', the role 'packages' has cardinality 0..*, and from 'domain_Types', the role 'Types336' has cardinality 0..*.
+An association connects 'domain_UIPackage' and 'domain_ApplicationUIPackage'. From 'domain_UIPackage', the role 'uipackage' has cardinality 0..*, and from 'domain_ApplicationUIPackage', the role 'ApplicationUIPackage338' has cardinality 0..*.
+An association connects 'domain_Form' and 'domain_UIPackage'. From 'domain_Form', the role 'domain_Form' has cardinality 0..*, and from 'domain_UIPackage', the role 'domain_UIPackage' has cardinality 0..*.
+An association connects 'domain_UIPackage' and 'domain_EObject'. From 'domain_UIPackage', the role 'domain_UIPackage341' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject342' has cardinality 0..*.
+An association connects 'domain_FormView' and 'domain_Form'. From 'domain_FormView', the role 'domain_FormView' has cardinality 0..*, and from 'domain_Form', the role 'domain_Form344' has cardinality 0..*.
+An association connects 'domain_Form' and 'domain_FormDataControls'. From 'domain_Form', the role 'domain_Form346' has cardinality 0..*, and from 'domain_FormDataControls', the role 'domain_FormDataControls' has cardinality 0..*.
+An association connects 'domain_Form' and 'domain_FormParameter'. From 'domain_Form', the role 'domain_Form348' has cardinality 0..*, and from 'domain_FormParameter', the role 'domain_FormParameter' has cardinality 0..*.
+An association connects 'domain_FormView' and 'domain_Views'. From 'domain_FormView', the role 'parent350' has cardinality 0..*, and from 'domain_Views', the role 'Views' has cardinality 0..*.
+An association connects 'domain_FormView' and 'domain_Views'. From 'domain_FormView', the role 'FormView' has cardinality 0..*, and from 'domain_Views', the role 'view' has cardinality 0..*.
+An association connects 'domain_Views' and 'domain_CanvasFrame'. From 'domain_Views', the role 'domain_Views' has cardinality 0..*, and from 'domain_CanvasFrame', the role 'domain_CanvasFrame' has cardinality 0..*.
+An association connects 'domain_ViewInheritance' and 'domain_Views'. From 'domain_ViewInheritance', the role 'domain_ViewInheritance' has cardinality 0..*, and from 'domain_Views', the role 'domain_Views354' has cardinality 0..*.
+An association connects 'domain_TabPagesInheritance' and 'domain_Views'. From 'domain_TabPagesInheritance', the role 'domain_TabPagesInheritance' has cardinality 0..*, and from 'domain_Views', the role 'domain_Views356' has cardinality 0..*.
+An association connects 'domain_MenuDefinition' and 'domain_Views'. From 'domain_MenuDefinition', the role 'domain_MenuDefinition' has cardinality 0..*, and from 'domain_Views', the role 'domain_Views358' has cardinality 0..*.
+An association connects 'domain_EObject' and 'domain_Views'. From 'domain_EObject', the role 'domain_EObject361' has cardinality 0..*, and from 'domain_Views', the role 'domain_Views360' has cardinality 0..*.
+An association connects 'domain_Context' and 'domain_MultiLangLabel'. From 'domain_Context', the role 'domain_Context' has cardinality 0..*, and from 'domain_MultiLangLabel', the role 'domain_MultiLangLabel' has cardinality 0..*.
+An association connects 'domain_ViewElement' and 'domain_ViewPortHolder'. From 'domain_ViewElement', the role 'domain_ViewElement' has cardinality 0..*, and from 'domain_ViewPortHolder', the role 'domain_ViewPortHolder' has cardinality 0..*.
+An association connects 'domain_MenuView' and 'domain_MenuDefinition'. From 'domain_MenuView', the role 'MenuView' has cardinality 0..*, and from 'domain_MenuDefinition', the role 'parent365' has cardinality 0..*.
+An association connects 'domain_ViewPortTrigger' and 'domain_ViewPort'. From 'domain_ViewPortTrigger', the role 'domain_ViewPortTrigger' has cardinality 0..*, and from 'domain_ViewPort', the role 'domain_ViewPort' has cardinality 0..*.
+An association connects 'domain_CanvasView' and 'domain_ViewArea'. From 'domain_CanvasView', the role 'CanvasView' has cardinality 0..*, and from 'domain_ViewArea', the role 'parent368' has cardinality 0..*.
+An association connects 'domain_ViewPort' and 'domain_ViewInheritance'. From 'domain_ViewPort', the role 'domain_ViewPort371' has cardinality 0..*, and from 'domain_ViewInheritance', the role 'domain_ViewInheritance370' has cardinality 0..*.
+An association connects 'domain_ViewInheritance' and 'domain_CanvasFrame'. From 'domain_ViewInheritance', the role 'domain_ViewInheritance373' has cardinality 0..*, and from 'domain_CanvasFrame', the role 'domain_CanvasFrame374' has cardinality 0..*.
+An association connects 'domain_TabCanvas' and 'domain_TabPagesInheritance'. From 'domain_TabCanvas', the role 'domain_TabCanvas' has cardinality 0..*, and from 'domain_TabPagesInheritance', the role 'domain_TabPagesInheritance376' has cardinality 0..*.
+An association connects 'domain_TabPage' and 'domain_TabPagesInheritance'. From 'domain_TabPage', the role 'domain_TabPage' has cardinality 0..*, and from 'domain_TabPagesInheritance', the role 'domain_TabPagesInheritance378' has cardinality 0..*.
+An association connects 'domain_FormDataControls' and 'domain_Controls'. From 'domain_FormDataControls', the role 'parent380' has cardinality 0..*, and from 'domain_Controls', the role 'Controls' has cardinality 0..*.
+An association connects 'domain_CanvasView' and 'domain_ViewArea'. From 'domain_CanvasView', the role 'canvasView' has cardinality 0..*, and from 'domain_ViewArea', the role 'ViewArea' has cardinality 0..*.
+An association connects 'domain_CanvasView' and 'domain_LayerHolder'. From 'domain_CanvasView', the role 'domain_CanvasView' has cardinality 0..*, and from 'domain_LayerHolder', the role 'domain_LayerHolder' has cardinality 0..*.
+An association connects 'domain_CanvasView' and 'domain_LinkToLabel'. From 'domain_CanvasView', the role 'domain_CanvasView384' has cardinality 0..*, and from 'domain_LinkToLabel', the role 'domain_LinkToLabel' has cardinality 0..*.
+An association connects 'domain_CanvasView' and 'domain_LinkToMessage'. From 'domain_CanvasView', the role 'domain_CanvasView386' has cardinality 0..*, and from 'domain_LinkToMessage', the role 'domain_LinkToMessage' has cardinality 0..*.
+An association connects 'domain_EObject' and 'domain_CanvasView'. From 'domain_EObject', the role 'domain_EObject389' has cardinality 0..*, and from 'domain_CanvasView', the role 'domain_CanvasView388' has cardinality 0..*.
+An association connects 'domain_LinkToMessage' and 'domain_InputElement'. From 'domain_LinkToMessage', the role 'domain_LinkToMessage391' has cardinality 0..*, and from 'domain_InputElement', the role 'domain_InputElement' has cardinality 0..*.
+An association connects 'domain_MessageElement' and 'domain_LinkToMessage'. From 'domain_MessageElement', the role 'domain_MessageElement' has cardinality 0..*, and from 'domain_LinkToMessage', the role 'domain_LinkToMessage393' has cardinality 0..*.
+An association connects 'domain_LinkToLabel' and 'domain_InputElement'. From 'domain_LinkToLabel', the role 'domain_LinkToLabel395' has cardinality 0..*, and from 'domain_InputElement', the role 'domain_InputElement396' has cardinality 0..*.
+An association connects 'domain_Label' and 'domain_LinkToLabel'. From 'domain_Label', the role 'domain_Label' has cardinality 0..*, and from 'domain_LinkToLabel', the role 'domain_LinkToLabel398' has cardinality 0..*.
+An association connects 'domain_Uielement' and 'domain_ChildrenHolder'. From 'domain_Uielement', the role 'domain_Uielement' has cardinality 0..*, and from 'domain_ChildrenHolder', the role 'domain_ChildrenHolder' has cardinality 0..*.
+An association connects 'domain_EObject' and 'domain_ContextParameter'. From 'domain_EObject', the role 'domain_EObject401' has cardinality 0..*, and from 'domain_ContextParameter', the role 'domain_ContextParameter' has cardinality 0..*.
+An association connects 'domain_ContextValue' and 'domain_ContextParameter'. From 'domain_ContextValue', the role 'domain_ContextValue' has cardinality 0..*, and from 'domain_ContextParameter', the role 'domain_ContextParameter403' has cardinality 0..*.
+An association connects 'domain_ContextValue' and 'domain_ExpressionPart'. From 'domain_ContextValue', the role 'domain_ContextValue405' has cardinality 0..*, and from 'domain_ExpressionPart', the role 'domain_ExpressionPart' has cardinality 0..*.
+An association connects 'domain_ExpressionPart' and 'domain_EObject'. From 'domain_ExpressionPart', the role 'domain_ExpressionPart407' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject408' has cardinality 0..*.
+An association connects 'domain_ContextParameter' and 'domain_ContextParameters'. From 'domain_ContextParameter', the role 'domain_ContextParameter410' has cardinality 0..*, and from 'domain_ContextParameters', the role 'domain_ContextParameters' has cardinality 0..*.
+An association connects 'domain_StyleElement' and 'domain_Context'. From 'domain_StyleElement', the role 'domain_StyleElement' has cardinality 0..*, and from 'domain_Context', the role 'domain_Context412' has cardinality 0..*.
+An association connects 'domain_StyleElement' and 'domain_StyleClass'. From 'domain_StyleElement', the role 'domain_StyleElement414' has cardinality 0..*, and from 'domain_StyleClass', the role 'domain_StyleClass' has cardinality 0..*.
+An association connects 'domain_StyleClass' and 'domain_Classifier'. From 'domain_StyleClass', the role 'domain_StyleClass416' has cardinality 0..*, and from 'domain_Classifier', the role 'domain_Classifier417' has cardinality 0..*.
+An association connects 'domain_FlexField' and 'domain_FlexFields'. From 'domain_FlexField', the role 'domain_FlexField' has cardinality 0..*, and from 'domain_FlexFields', the role 'domain_FlexFields' has cardinality 0..*.
+An association connects 'domain_EnabledUIItem' and 'domain_Context'. From 'domain_EnabledUIItem', the role 'domain_EnabledUIItem' has cardinality 0..*, and from 'domain_Context', the role 'domain_Context420' has cardinality 0..*.
+An association connects 'domain_Uielement' and 'domain_Context'. From 'domain_Uielement', the role 'domain_Uielement422' has cardinality 0..*, and from 'domain_Context', the role 'domain_Context423' has cardinality 0..*.
+An association connects 'domain_Context' and 'domain_Uielement'. From 'domain_Context', the role 'domain_Context426' has cardinality 0..*, and from 'domain_Uielement', the role 'domain_Uielement425' has cardinality 0..*.
+An association connects 'domain_AreaRef' and 'domain_Uielement'. From 'domain_AreaRef', the role 'domain_AreaRef' has cardinality 0..*, and from 'domain_Uielement', the role 'domain_Uielement428' has cardinality 0..*.
+An association connects 'domain_ItemIcon' and 'domain_Context'. From 'domain_ItemIcon', the role 'domain_ItemIcon' has cardinality 0..*, and from 'domain_Context', the role 'domain_Context430' has cardinality 0..*.
+An association connects 'domain_AreaRef' and 'domain_NickNamed'. From 'domain_AreaRef', the role 'domain_AreaRef432' has cardinality 0..*, and from 'domain_NickNamed', the role 'domain_NickNamed' has cardinality 0..*.
+An association connects 'domain_SourcesPointer' and 'domain_DataControl'. From 'domain_SourcesPointer', the role 'domain_SourcesPointer' has cardinality 0..*, and from 'domain_DataControl', the role 'domain_DataControl' has cardinality 0..*.
+An association connects 'domain_EObject' and 'domain_SourcesPointer'. From 'domain_EObject', the role 'domain_EObject436' has cardinality 0..*, and from 'domain_SourcesPointer', the role 'domain_SourcesPointer435' has cardinality 0..*.
+An association connects 'domain_SourcesPointer' and 'domain_Type'. From 'domain_SourcesPointer', the role 'domain_SourcesPointer438' has cardinality 0..*, and from 'domain_Type', the role 'domain_Type' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_SourcesPointer'. From 'domain_DataControl', the role 'domain_DataControl441' has cardinality 0..*, and from 'domain_SourcesPointer', the role 'domain_SourcesPointer440' has cardinality 0..*.
+An association connects 'domain_Selection' and 'domain_EObject'. From 'domain_Selection', the role 'domain_Selection' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject443' has cardinality 0..*.
+An association connects 'domain_Selection' and 'domain_EObject'. From 'domain_Selection', the role 'domain_Selection445' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject446' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_OptionSelection'. From 'domain_DataControl', the role 'domain_DataControl448' has cardinality 0..*, and from 'domain_OptionSelection', the role 'domain_OptionSelection' has cardinality 0..*.
+An association connects 'domain_Type' and 'domain_OptionSelection'. From 'domain_Type', the role 'domain_Type451' has cardinality 0..*, and from 'domain_OptionSelection', the role 'domain_OptionSelection450' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_OptionSelection'. From 'domain_DataControl', the role 'domain_DataControl454' has cardinality 0..*, and from 'domain_OptionSelection', the role 'domain_OptionSelection453' has cardinality 0..*.
+An association connects 'domain_Selection' and 'domain_DropDownSelection'. From 'domain_Selection', the role 'domain_Selection456' has cardinality 0..*, and from 'domain_DropDownSelection', the role 'domain_DropDownSelection' has cardinality 0..*.
+An association connects 'domain_DropDownSelection' and 'domain_Context'. From 'domain_DropDownSelection', the role 'domain_DropDownSelection458' has cardinality 0..*, and from 'domain_Context', the role 'domain_Context459' has cardinality 0..*.
+An association connects 'domain_Column' and 'domain_Uielement'. From 'domain_Column', the role 'domain_Column' has cardinality 0..*, and from 'domain_Uielement', the role 'domain_Uielement461' has cardinality 0..*.
+An association connects 'domain_Table' and 'domain_Column'. From 'domain_Table', the role 'domain_Table' has cardinality 0..*, and from 'domain_Column', the role 'domain_Column463' has cardinality 0..*.
+An association connects 'domain_Tree' and 'domain_Context'. From 'domain_Tree', the role 'domain_Tree' has cardinality 0..*, and from 'domain_Context', the role 'domain_Context465' has cardinality 0..*.
+An association connects 'domain_Tree' and 'domain_Column'. From 'domain_Tree', the role 'domain_Tree467' has cardinality 0..*, and from 'domain_Column', the role 'domain_Column468' has cardinality 0..*.
+An association connects 'domain_Controls' and 'domain_FormDataControls'. From 'domain_Controls', the role 'formControl' has cardinality 0..*, and from 'domain_FormDataControls', the role 'FormDataControls' has cardinality 0..*.
+An association connects 'domain_Controls' and 'domain_Root'. From 'domain_Controls', the role 'domain_Controls' has cardinality 0..*, and from 'domain_Root', the role 'domain_Root' has cardinality 0..*.
+An association connects 'domain_Controls' and 'domain_DataControl'. From 'domain_Controls', the role 'parent472' has cardinality 0..*, and from 'domain_DataControl', the role 'DataControl' has cardinality 0..*.
+An association connects 'domain_Controls' and 'domain_Relation'. From 'domain_Controls', the role 'domain_Controls474' has cardinality 0..*, and from 'domain_Relation', the role 'domain_Relation' has cardinality 0..*.
+An association connects 'domain_Controls' and 'domain_Dependency'. From 'domain_Controls', the role 'domain_Controls476' has cardinality 0..*, and from 'domain_Dependency', the role 'domain_Dependency' has cardinality 0..*.
+An association connects 'domain_EObject' and 'domain_Controls'. From 'domain_EObject', the role 'domain_EObject479' has cardinality 0..*, and from 'domain_Controls', the role 'domain_Controls478' has cardinality 0..*.
+An association connects 'domain_TypePointer' and 'domain_ProxiesList'. From 'domain_TypePointer', the role 'domain_TypePointer481' has cardinality 0..*, and from 'domain_ProxiesList', the role 'domain_ProxiesList' has cardinality 0..*.
+An association connects 'domain_PREFormTrigger' and 'domain_Root'. From 'domain_PREFormTrigger', the role 'domain_PREFormTrigger' has cardinality 0..*, and from 'domain_Root', the role 'domain_Root483' has cardinality 0..*.
+An association connects 'domain_FormVariable' and 'domain_Root'. From 'domain_FormVariable', the role 'domain_FormVariable' has cardinality 0..*, and from 'domain_Root', the role 'domain_Root485' has cardinality 0..*.
+An association connects 'domain_FormVariable' and 'domain_FormParameter'. From 'domain_FormVariable', the role 'domain_FormVariable487' has cardinality 0..*, and from 'domain_FormParameter', the role 'domain_FormParameter488' has cardinality 0..*.
+An association connects 'domain_TypePointer' and 'domain_DataControl'. From 'domain_TypePointer', the role 'domain_TypePointer491' has cardinality 0..*, and from 'domain_DataControl', the role 'domain_DataControl490' has cardinality 0..*.
+An association connects 'domain_TypePointer' and 'domain_DataControl'. From 'domain_TypePointer', the role 'domain_TypePointer494' has cardinality 0..*, and from 'domain_DataControl', the role 'domain_DataControl493' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_Controls'. From 'domain_DataControl', the role 'controls' has cardinality 0..*, and from 'domain_Controls', the role 'Controls496' has cardinality 0..*.
+An association connects 'domain_PREQueryTrigger' and 'domain_DataControl'. From 'domain_PREQueryTrigger', the role 'domain_PREQueryTrigger' has cardinality 0..*, and from 'domain_DataControl', the role 'domain_DataControl498' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_POSTQueryTrigger'. From 'domain_DataControl', the role 'domain_DataControl500' has cardinality 0..*, and from 'domain_POSTQueryTrigger', the role 'domain_POSTQueryTrigger' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_PREInsertTrigger'. From 'domain_DataControl', the role 'domain_DataControl502' has cardinality 0..*, and from 'domain_PREInsertTrigger', the role 'domain_PREInsertTrigger' has cardinality 0..*.
+An association connects 'domain_PREDeleteTrigger' and 'domain_DataControl'. From 'domain_PREDeleteTrigger', the role 'domain_PREDeleteTrigger' has cardinality 0..*, and from 'domain_DataControl', the role 'domain_DataControl504' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_POSTCreateTrigger'. From 'domain_DataControl', the role 'domain_DataControl506' has cardinality 0..*, and from 'domain_POSTCreateTrigger', the role 'domain_POSTCreateTrigger' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_PREUpdateTrigger'. From 'domain_DataControl', the role 'domain_DataControl508' has cardinality 0..*, and from 'domain_PREUpdateTrigger', the role 'domain_PREUpdateTrigger' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_CreateTrigger'. From 'domain_DataControl', the role 'domain_DataControl510' has cardinality 0..*, and from 'domain_CreateTrigger', the role 'domain_CreateTrigger' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_InsertTrigger'. From 'domain_DataControl', the role 'domain_DataControl512' has cardinality 0..*, and from 'domain_InsertTrigger', the role 'domain_InsertTrigger' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_UpdateTrigger'. From 'domain_DataControl', the role 'domain_DataControl514' has cardinality 0..*, and from 'domain_UpdateTrigger', the role 'domain_UpdateTrigger' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_DeleteTrigger'. From 'domain_DataControl', the role 'domain_DataControl516' has cardinality 0..*, and from 'domain_DeleteTrigger', the role 'domain_DeleteTrigger' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_SearchTrigger'. From 'domain_DataControl', the role 'domain_DataControl518' has cardinality 0..*, and from 'domain_SearchTrigger', the role 'domain_SearchTrigger' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_ArtificialField'. From 'domain_DataControl', the role 'parent520' has cardinality 0..*, and from 'domain_ArtificialField', the role 'ArtificialField' has cardinality 0..*.
+An association connects 'domain_ContextParameters' and 'domain_DataControl'. From 'domain_ContextParameters', the role 'domain_ContextParameters523' has cardinality 0..*, and from 'domain_DataControl', the role 'domain_DataControl522' has cardinality 0..*.
+An association connects 'domain_Orders' and 'domain_DataControl'. From 'domain_Orders', the role 'domain_Orders' has cardinality 0..*, and from 'domain_DataControl', the role 'domain_DataControl525' has cardinality 0..*.
+An association connects 'domain_Orders' and 'domain_OrderBy'. From 'domain_Orders', the role 'domain_Orders527' has cardinality 0..*, and from 'domain_OrderBy', the role 'domain_OrderBy' has cardinality 0..*.
+An association connects 'domain_OrderBy' and 'domain_EObject'. From 'domain_OrderBy', the role 'domain_OrderBy529' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject530' has cardinality 0..*.
+An association connects 'domain_Relation' and 'domain_DataControl'. From 'domain_Relation', the role 'domain_Relation532' has cardinality 0..*, and from 'domain_DataControl', the role 'domain_DataControl533' has cardinality 0..*.
+An association connects 'domain_Relation' and 'domain_DataControl'. From 'domain_Relation', the role 'domain_Relation535' has cardinality 0..*, and from 'domain_DataControl', the role 'domain_DataControl536' has cardinality 0..*.
+An association connects 'domain_Relation' and 'domain_Link'. From 'domain_Relation', the role 'domain_Relation538' has cardinality 0..*, and from 'domain_Link', the role 'domain_Link539' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_Dependency'. From 'domain_DataControl', the role 'domain_DataControl542' has cardinality 0..*, and from 'domain_Dependency', the role 'domain_Dependency541' has cardinality 0..*.
+An association connects 'domain_Dependency' and 'domain_DataControl'. From 'domain_Dependency', the role 'domain_Dependency544' has cardinality 0..*, and from 'domain_DataControl', the role 'domain_DataControl545' has cardinality 0..*.
+An association connects 'domain_DataControl' and 'domain_ArtificialField'. From 'domain_DataControl', the role 'DataControl547' has cardinality 0..*, and from 'domain_ArtificialField', the role 'artificialFields' has cardinality 0..*.
+An association connects 'domain_Link' and 'domain_Attribute'. From 'domain_Link', the role 'domain_Link549' has cardinality 0..*, and from 'domain_Attribute', the role 'domain_Attribute550' has cardinality 0..*.
+An association connects 'domain_Attribute' and 'domain_Link'. From 'domain_Attribute', the role 'domain_Attribute553' has cardinality 0..*, and from 'domain_Link', the role 'domain_Link552' has cardinality 0..*.
+An association connects 'domain_ApplicationInfrastructureLayer' and 'domain_Application'. From 'domain_ApplicationInfrastructureLayer', the role 'applicationInfrastructureLayer' has cardinality 0..*, and from 'domain_Application', the role 'Application555' has cardinality 0..*.
+An association connects 'domain_EnterpriseInfrastructure' and 'domain_ApplicationInfrastructureLayer'. From 'domain_EnterpriseInfrastructure', the role 'EnterpriseInfrastructure' has cardinality 0..*, and from 'domain_ApplicationInfrastructureLayer', the role 'parent557' has cardinality 0..*.
+An association connects 'domain_EnterpriseInfrastructure' and 'domain_ApplicationInfrastructureLayer'. From 'domain_EnterpriseInfrastructure', the role 'infarastructure' has cardinality 0..*, and from 'domain_ApplicationInfrastructureLayer', the role 'ApplicationInfrastructureLayer559' has cardinality 0..*.
+An association connects 'domain_Datacenter' and 'domain_EnterpriseInfrastructure'. From 'domain_Datacenter', the role 'Datacenter' has cardinality 0..*, and from 'domain_EnterpriseInfrastructure', the role 'parent561' has cardinality 0..*.
+An association connects 'domain_EnterpriseInfrastructure' and 'domain_InfrastructureConnection'. From 'domain_EnterpriseInfrastructure', the role 'domain_EnterpriseInfrastructure' has cardinality 0..*, and from 'domain_InfrastructureConnection', the role 'domain_InfrastructureConnection' has cardinality 0..*.
+An association connects 'domain_EnterpriseInfrastructure' and 'domain_EObject'. From 'domain_EnterpriseInfrastructure', the role 'domain_EnterpriseInfrastructure564' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject565' has cardinality 0..*.
+An association connects 'domain_Datacenter' and 'domain_EnterpriseInfrastructure'. From 'domain_Datacenter', the role 'datacenters' has cardinality 0..*, and from 'domain_EnterpriseInfrastructure', the role 'EnterpriseInfrastructure567' has cardinality 0..*.
+An association connects 'domain_Datacenter' and 'domain_Subsystem'. From 'domain_Datacenter', the role 'parent569' has cardinality 0..*, and from 'domain_Subsystem', the role 'Subsystem' has cardinality 0..*.
+An association connects 'domain_Subsystem' and 'domain_Datacenter'. From 'domain_Subsystem', the role 'subsystems' has cardinality 0..*, and from 'domain_Datacenter', the role 'Datacenter571' has cardinality 0..*.
+An association connects 'domain_InfrastructureLayer' and 'domain_Subsystem'. From 'domain_InfrastructureLayer', the role 'InfrastructureLayer' has cardinality 0..*, and from 'domain_Subsystem', the role 'parent573' has cardinality 0..*.
+An association connects 'domain_Subsystem' and 'domain_InfrastructureLayer'. From 'domain_Subsystem', the role 'Subsystem575' has cardinality 0..*, and from 'domain_InfrastructureLayer', the role 'infrastructureLayer' has cardinality 0..*.
+An association connects 'domain_InfrastructureLayer' and 'domain_InfrastructureComponent'. From 'domain_InfrastructureLayer', the role 'parent577' has cardinality 0..*, and from 'domain_InfrastructureComponent', the role 'InfrastructureComponent' has cardinality 0..*.
+An association connects 'domain_InfrastructureComponent' and 'domain_InfrastructureConnection'. From 'domain_InfrastructureComponent', the role 'domain_InfrastructureComponent' has cardinality 0..*, and from 'domain_InfrastructureConnection', the role 'domain_InfrastructureConnection579' has cardinality 0..*.
+An association connects 'domain_InfrastructureConnection' and 'domain_InfrastructureComponent'. From 'domain_InfrastructureConnection', the role 'domain_InfrastructureConnection581' has cardinality 0..*, and from 'domain_InfrastructureComponent', the role 'domain_InfrastructureComponent582' has cardinality 0..*.
+An association connects 'domain_InfrastructureLayer' and 'domain_InfrastructureComponent'. From 'domain_InfrastructureLayer', the role 'InfrastructureLayer584' has cardinality 0..*, and from 'domain_InfrastructureComponent', the role 'infrastructureComponent' has cardinality 0..*.
+An association connects 'domain_ServerClaster' and 'domain_Server'. From 'domain_ServerClaster', the role 'domain_ServerClaster' has cardinality 0..*, and from 'domain_Server', the role 'domain_Server' has cardinality 0..*.
+An association connects 'domain_MenuView' and 'domain_MenuDefinition'. From 'domain_MenuView', the role 'menuView' has cardinality 0..*, and from 'domain_MenuDefinition', the role 'MenuDefinition' has cardinality 0..*.
+An association connects 'domain_MenuView' and 'domain_MenuFolder'. From 'domain_MenuView', the role 'domain_MenuView' has cardinality 0..*, and from 'domain_MenuFolder', the role 'domain_MenuFolder' has cardinality 0..*.
+An association connects 'domain_MenuView' and 'domain_EObject'. From 'domain_MenuView', the role 'domain_MenuView589' has cardinality 0..*, and from 'domain_EObject', the role 'domain_EObject590' has cardinality 0..*.
+An association connects 'domain_MenuHolder' and 'domain_MenuFolder'. From 'domain_MenuHolder', the role 'domain_MenuHolder' has cardinality 0..*, and from 'domain_MenuFolder', the role 'domain_MenuFolder592' has cardinality 0..*.
+An association connects 'domain_MenuFolder' and 'domain_MenuExtensionRef'. From 'domain_MenuFolder', the role 'domain_MenuFolder594' has cardinality 0..*, and from 'domain_MenuExtensionRef', the role 'domain_MenuExtensionRef' has cardinality 0..*.
+An association connects 'domain_MenuElement' and 'domain_MenuFolder'. From 'domain_MenuElement', the role 'domain_MenuElement' has cardinality 0..*, and from 'domain_MenuFolder', the role 'domain_MenuFolder596' has cardinality 0..*.
+An association connects 'domain_Context' and 'domain_MenuItem'. From 'domain_Context', the role 'domain_Context598' has cardinality 0..*, and from 'domain_MenuItem', the role 'domain_MenuItem' has cardinality 0..*.
+An association connects 'domain_MenuItem' and 'domain_AreaRef'. From 'domain_MenuItem', the role 'domain_MenuItem600' has cardinality 0..*, and from 'domain_AreaRef', the role 'domain_AreaRef601' has cardinality 0..*.
+An association connects 'domain_MenuFolder' and 'domain_SubMenu'. From 'domain_MenuFolder', the role 'domain_MenuFolder603' has cardinality 0..*, and from 'domain_SubMenu', the role 'domain_SubMenu' has cardinality 0..*.

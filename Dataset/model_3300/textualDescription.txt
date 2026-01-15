@@ -1,0 +1,92 @@
+The domain model 'transport' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'transport_PacketTransportLabelValue' represents an important domain concept.
+It has one attribute: 'capacity', which is of type float.
+
+'PopulationEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'transport_TransportSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'EdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'TransportSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'transport_PipeTransportEdgeLabelValue' represents an important domain concept.
+It has the following attributes: 'maxFlow', which is of type float; 'timePeriod', which is of type str.
+
+'MigrationEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'transport_PipeStyleTransportSystem' represents an important domain concept.
+It has one attribute: 'maxCapacity', which is of type float.
+
+'transport_PipeTransportEdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'transport_PacketStyleTransportSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'transport_PacketTransportLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'transport_PipeTransportEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'transport_PacketStyleTransportSystemDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'transport_LoadUnloadEdge' represents an important domain concept.
+It has one attribute: 'loadingEdge', which is of type bool.
+
+'transport_LoadUnloadEdgeLabel' represents an important domain concept.
+It has one attribute: 'activatedRate', which is of type float.
+
+'EdgeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'transport_STEMTime' represents an important domain concept.
+It does not declare any attributes.
+
+'MigrationEdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'transport_LoadUnloadEdge' is a specialization of 'MigrationEdge'.
+The class 'transport_LoadUnloadEdgeLabel' is a specialization of 'MigrationEdgeLabel'.
+The class 'transport_LoadUnloadEdgeLabel' is a specialization of 'DynamicLabel'.
+The class 'transport_PacketStyleTransportSystem' is a specialization of 'TransportSystem'.
+The class 'transport_PacketTransportLabel' is a specialization of 'NodeLabel'.
+The class 'transport_PipeStyleTransportSystem' is a specialization of 'TransportSystem'.
+The class 'transport_TransportSystem' is a specialization of 'Node'.
+The class 'transport_PacketTransportLabelValue' is a specialization of 'LabelValue'.
+The class 'transport_PacketStyleTransportSystemDecorator' is a specialization of 'EdgeDecorator'.
+The class 'transport_PipeTransportEdge' is a specialization of 'PopulationEdge'.
+The class 'transport_PipeTransportEdgeLabel' is a specialization of 'EdgeLabel'.
+The class 'transport_PipeTransportEdgeLabelValue' is a specialization of 'LabelValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'transport_STEMTime' and 'transport_LoadUnloadEdgeLabel'. From 'transport_STEMTime', the role 'transport_STEMTime' has cardinality 0..*, and from 'transport_LoadUnloadEdgeLabel', the role 'transport_LoadUnloadEdgeLabel' has cardinality 0..*.
+An association connects 'transport_STEMTime' and 'transport_LoadUnloadEdgeLabel'. From 'transport_STEMTime', the role 'transport_STEMTime3' has cardinality 0..*, and from 'transport_LoadUnloadEdgeLabel', the role 'transport_LoadUnloadEdgeLabel2' has cardinality 0..*.
+An association connects 'transport_PacketStyleTransportSystem' and 'transport_PacketTransportLabel'. From 'transport_PacketStyleTransportSystem', the role 'transport_PacketStyleTransportSystem' has cardinality 0..*, and from 'transport_PacketTransportLabel', the role 'transport_PacketTransportLabel' has cardinality 0..*.
+An association connects 'transport_LoadUnloadEdge' and 'transport_PacketStyleTransportSystem'. From 'transport_LoadUnloadEdge', the role 'transport_LoadUnloadEdge' has cardinality 0..*, and from 'transport_PacketStyleTransportSystem', the role 'transport_PacketStyleTransportSystem6' has cardinality 0..*.
+An association connects 'transport_LoadUnloadEdge' and 'transport_PacketStyleTransportSystem'. From 'transport_LoadUnloadEdge', the role 'transport_LoadUnloadEdge9' has cardinality 0..*, and from 'transport_PacketStyleTransportSystem', the role 'transport_PacketStyleTransportSystem8' has cardinality 0..*.
+An association connects 'transport_PipeTransportEdge' and 'transport_PipeStyleTransportSystem'. From 'transport_PipeTransportEdge', the role 'transport_PipeTransportEdge' has cardinality 0..*, and from 'transport_PipeStyleTransportSystem', the role 'transport_PipeStyleTransportSystem' has cardinality 0..*.
+An association connects 'transport_PipeStyleTransportSystem' and 'transport_PipeTransportEdge'. From 'transport_PipeStyleTransportSystem', the role 'transport_PipeStyleTransportSystem12' has cardinality 0..*, and from 'transport_PipeTransportEdge', the role 'transport_PipeTransportEdge13' has cardinality 0..*.

@@ -1,0 +1,55 @@
+The domain model 'ASPT' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'ASPT_TraceNbEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'ASPT_TraceModel' represents an important domain concept.
+It has the following attributes: 'MMS', which is of type str; 'ID', which is of type str.
+
+'TraceProp' represents an important domain concept.
+It does not declare any attributes.
+
+'ASPT_TraceNbProp' represents an important domain concept.
+It does not declare any attributes.
+
+'ASPT_TraceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'ASPT_TraceProp' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'idp', which is of type str; 'idpx', which is of type str.
+
+'TraceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ASPT_TraceEdge' represents an important domain concept.
+It has the following attributes: 'ids', which is of type str; 'idtx', which is of type str; 'idsx', which is of type str; 'idt', which is of type str.
+
+'ASPT_TraceNbNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ASPT_TraceElement' represents an important domain concept.
+It has the following attributes: 'metamodel', which is of type str; 'type', which is of type str; 'id', which is of type str; 'idx', which is of type str.
+
+'TraceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ASPT_TraceLink' represents an important domain concept.
+It has the following attributes: 'idref', which is of type str; 'idrefx', which is of type str; 'relation', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'ASPT_TraceLink' is a specialization of 'TraceElement'.
+The class 'ASPT_TraceNode' is a specialization of 'TraceElement'.
+The class 'ASPT_TraceProp' is a specialization of 'TraceElement'.
+The class 'ASPT_TraceEdge' is a specialization of 'TraceElement'.
+The class 'ASPT_TraceNbNode' is a specialization of 'TraceNode'.
+The class 'ASPT_TraceNbProp' is a specialization of 'TraceProp'.
+The class 'ASPT_TraceNbEdge' is a specialization of 'TraceEdge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ASPT_TraceModel' and 'ASPT_TraceLink'. From 'ASPT_TraceModel', the role 'ASPT_TraceModel' has cardinality 0..*, and from 'ASPT_TraceLink', the role 'ASPT_TraceLink' has cardinality 0..*.
+An association connects 'ASPT_TraceElement' and 'ASPT_TraceModel'. From 'ASPT_TraceElement', the role 'ASPT_TraceElement' has cardinality 0..*, and from 'ASPT_TraceModel', the role 'ASPT_TraceModel2' has cardinality 0..*.

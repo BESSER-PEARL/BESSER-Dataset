@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/nguyenviethoa/e4.xwt/tests/org.eclipse.e4.xwt.emf.test/model/books.ecore

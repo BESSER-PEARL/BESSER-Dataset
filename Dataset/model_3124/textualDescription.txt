@@ -1,0 +1,44 @@
+The domain model 'UML' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'UML_Association' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UML_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UML_Classifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UML_Class' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'UML_Class' is a specialization of 'Classifier'.
+The class 'UML_PrimitiveDataType' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML_Package' and 'UML_Classifier'. From 'UML_Package', the role 'namespace' has cardinality 0..*, and from 'UML_Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'UML_Package' and 'UML_Association'. From 'UML_Package', the role 'namespace2' has cardinality 0..*, and from 'UML_Association', the role 'Association' has cardinality 0..*.
+An association connects 'UML_Class' and 'UML_Attribute'. From 'UML_Class', the role 'owner' has cardinality 0..*, and from 'UML_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'UML_Class' and 'UML_Class'. From 'UML_Class', the role 'subclass' has cardinality 0..*, and from 'UML_Class', the role 'Class' has cardinality 0..*.
+An association connects 'UML_Class' and 'UML_Class'. From 'UML_Class', the role 'Class8' has cardinality 0..*, and from 'UML_Class', the role 'general' has cardinality 0..*.
+An association connects 'UML_Association' and 'UML_Class'. From 'UML_Association', the role 'Association10' has cardinality 0..*, and from 'UML_Class', the role 'source' has cardinality 0..*.
+An association connects 'UML_Association' and 'UML_Class'. From 'UML_Association', the role 'Association12' has cardinality 0..*, and from 'UML_Class', the role 'destination' has cardinality 0..*.
+An association connects 'UML_Attribute' and 'UML_Class'. From 'UML_Attribute', the role 'attribute' has cardinality 0..*, and from 'UML_Class', the role 'Class14' has cardinality 0..*.
+An association connects 'UML_Classifier' and 'UML_Attribute'. From 'UML_Classifier', the role 'Classifier16' has cardinality 0..*, and from 'UML_Attribute', the role 'typeOf' has cardinality 0..*.
+An association connects 'UML_Classifier' and 'UML_Attribute'. From 'UML_Classifier', the role 'type' has cardinality 0..*, and from 'UML_Attribute', the role 'Attribute18' has cardinality 0..*.
+An association connects 'UML_Classifier' and 'UML_Package'. From 'UML_Classifier', the role 'classifier' has cardinality 0..*, and from 'UML_Package', the role 'Package' has cardinality 0..*.
+An association connects 'UML_Package' and 'UML_Association'. From 'UML_Package', the role 'Package21' has cardinality 0..*, and from 'UML_Association', the role 'association' has cardinality 0..*.
+An association connects 'UML_Class' and 'UML_Association'. From 'UML_Class', the role 'Class23' has cardinality 0..*, and from 'UML_Association', the role 'sourceOf' has cardinality 0..*.
+An association connects 'UML_Class' and 'UML_Association'. From 'UML_Class', the role 'Class25' has cardinality 0..*, and from 'UML_Association', the role 'destinationOf' has cardinality 0..*.

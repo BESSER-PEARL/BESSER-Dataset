@@ -1,0 +1,186 @@
+The domain model 'classLayout2Frontend' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'classLayout2Frontend_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_Image' represents an important domain concept.
+It has the following attributes: 'width', which is of type float; 'height', which is of type float.
+
+'classLayout2Frontend_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_RadioButtonGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_IterationFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_CheckList' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_Property' represents an important domain concept.
+It has one attribute: 'defaultValue', which is of type str.
+
+'classLayout2Frontend_List' represents an important domain concept.
+It has one attribute: 'multiple', which is of type bool.
+
+'classLayout2Frontend_Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'AtomicView' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_IterationContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Output' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_Autocomplete' represents an important domain concept.
+It has one attribute: 'multiple', which is of type bool.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementView' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_Output' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_EntityModelElement' represents an important domain concept.
+It has the following attributes: 'displayName', which is of type str; 'name', which is of type str; 'description', which is of type str.
+
+'classLayout2Frontend_ElementView' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'displayName', which is of type str; 'name', which is of type str.
+
+'classLayout2Frontend_Entity' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'classLayout2Frontend_EntitiesModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ContainerView' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'Input' represents an important domain concept.
+It does not declare any attributes.
+
+'Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_SiteView' represents an important domain concept.
+It has the following attributes: 'displayName', which is of type str; 'templateName', which is of type str; 'name', which is of type str; 'templateColor', which is of type str.
+
+'classLayout2Frontend_TextArea' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'isTitle', which is of type bool.
+
+'classLayout2Frontend_InputText' represents an important domain concept.
+It has one attribute: 'multiline', which is of type bool.
+
+'EntityModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_Association' represents an important domain concept.
+It has one attribute: 'many', which is of type bool.
+
+'classLayout2Frontend_FileUpload' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_Project' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classLayout2Frontend_StructuralFeature' represents an important domain concept.
+It has one attribute: 'required', which is of type bool.
+
+'classLayout2Frontend_AtomicView' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_StaticContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_Input' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'classLayout2Frontend_InputForm' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_ContainerView' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'classLayout2Frontend_PageView' represents an important domain concept.
+It has the following attributes: 'layoutType', which is of type str; 'name', which is of type str.
+
+'classLayout2Frontend_Dropdownlist' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LayoutType' defines the following possible values: 'THREE_COLUMNS', 'SINGLE_COLUMN', 'LEFT_BAR', 'RIGHT_BAR', 'TWO_COLUMNS'.
+
+The model also captures inheritance relationships between classes.
+The class 'classLayout2Frontend_Composition' is a specialization of 'Association'.
+The class 'classLayout2Frontend_Association' is a specialization of 'StructuralFeature'.
+The class 'classLayout2Frontend_PropertyType' is a specialization of 'EntityModelElement'.
+The class 'classLayout2Frontend_Property' is a specialization of 'StructuralFeature'.
+The class 'classLayout2Frontend_StructuralFeature' is a specialization of 'EntityModelElement'.
+The class 'classLayout2Frontend_Entity' is a specialization of 'EntityModelElement'.
+The class 'classLayout2Frontend_PrimitiveType' is a specialization of 'PropertyType'.
+The class 'classLayout2Frontend_Literal' is a specialization of 'EntityModelElement'.
+The class 'classLayout2Frontend_Enumeration' is a specialization of 'PropertyType'.
+The class 'classLayout2Frontend_Reference' is a specialization of 'Association'.
+The class 'classLayout2Frontend_AtomicView' is a specialization of 'ElementView'.
+The class 'classLayout2Frontend_Autocomplete' is a specialization of 'Selection'.
+The class 'classLayout2Frontend_Dropdownlist' is a specialization of 'Selection'.
+The class 'classLayout2Frontend_Image' is a specialization of 'Output'.
+The class 'classLayout2Frontend_List' is a specialization of 'Selection'.
+The class 'classLayout2Frontend_Output' is a specialization of 'AtomicView'.
+The class 'classLayout2Frontend_InputText' is a specialization of 'Input'.
+The class 'classLayout2Frontend_StaticContainer' is a specialization of 'ContainerView'.
+The class 'classLayout2Frontend_TextArea' is a specialization of 'Output'.
+The class 'classLayout2Frontend_Selection' is a specialization of 'Input'.
+The class 'classLayout2Frontend_Input' is a specialization of 'AtomicView'.
+The class 'classLayout2Frontend_IterationContainer' is a specialization of 'ContainerView'.
+The class 'classLayout2Frontend_InputForm' is a specialization of 'ContainerView'.
+The class 'classLayout2Frontend_CheckList' is a specialization of 'Selection'.
+The class 'classLayout2Frontend_RadioButtonGroup' is a specialization of 'Selection'.
+The class 'classLayout2Frontend_ContainerView' is a specialization of 'ElementView'.
+The class 'classLayout2Frontend_FileUpload' is a specialization of 'Input'.
+
+Relationships between classes are modeled using associations.
+An association connects 'classLayout2Frontend_Project' and 'classLayout2Frontend_EntitiesModel'. From 'classLayout2Frontend_Project', the role 'classLayout2Frontend_Project' has cardinality 0..*, and from 'classLayout2Frontend_EntitiesModel', the role 'classLayout2Frontend_EntitiesModel' has cardinality 0..*.
+An association connects 'classLayout2Frontend_Project' and 'classLayout2Frontend_SiteView'. From 'classLayout2Frontend_Project', the role 'classLayout2Frontend_Project2' has cardinality 0..*, and from 'classLayout2Frontend_SiteView', the role 'classLayout2Frontend_SiteView' has cardinality 0..*.
+An association connects 'classLayout2Frontend_PageView' and 'classLayout2Frontend_Project'. From 'classLayout2Frontend_PageView', the role 'classLayout2Frontend_PageView' has cardinality 0..*, and from 'classLayout2Frontend_Project', the role 'classLayout2Frontend_Project4' has cardinality 0..*.
+An association connects 'classLayout2Frontend_ContainerView' and 'classLayout2Frontend_Project'. From 'classLayout2Frontend_ContainerView', the role 'classLayout2Frontend_ContainerView' has cardinality 0..*, and from 'classLayout2Frontend_Project', the role 'classLayout2Frontend_Project6' has cardinality 0..*.
+An association connects 'classLayout2Frontend_Entity' and 'classLayout2Frontend_Association'. From 'classLayout2Frontend_Entity', the role 'classLayout2Frontend_Entity' has cardinality 0..*, and from 'classLayout2Frontend_Association', the role 'classLayout2Frontend_Association' has cardinality 0..*.
+An association connects 'classLayout2Frontend_PropertyType' and 'classLayout2Frontend_Property'. From 'classLayout2Frontend_PropertyType', the role 'classLayout2Frontend_PropertyType' has cardinality 0..*, and from 'classLayout2Frontend_Property', the role 'classLayout2Frontend_Property' has cardinality 0..*.
+An association connects 'classLayout2Frontend_EntitiesModel' and 'classLayout2Frontend_EntityModelElement'. From 'classLayout2Frontend_EntitiesModel', the role 'classLayout2Frontend_EntitiesModel10' has cardinality 0..*, and from 'classLayout2Frontend_EntityModelElement', the role 'classLayout2Frontend_EntityModelElement' has cardinality 0..*.
+An association connects 'classLayout2Frontend_Entity' and 'classLayout2Frontend_Entity'. From 'classLayout2Frontend_Entity', the role 'classLayout2Frontend_Entity13' has cardinality 0..*, and from 'classLayout2Frontend_Entity', the role 'classLayout2Frontend_Entity11' has cardinality 0..*.
+An association connects 'classLayout2Frontend_StructuralFeature' and 'classLayout2Frontend_Entity'. From 'classLayout2Frontend_StructuralFeature', the role 'classLayout2Frontend_StructuralFeature' has cardinality 0..*, and from 'classLayout2Frontend_Entity', the role 'classLayout2Frontend_Entity15' has cardinality 0..*.
+An association connects 'classLayout2Frontend_Literal' and 'classLayout2Frontend_Enumeration'. From 'classLayout2Frontend_Literal', the role 'classLayout2Frontend_Literal' has cardinality 0..*, and from 'classLayout2Frontend_Enumeration', the role 'classLayout2Frontend_Enumeration' has cardinality 0..*.
+An association connects 'classLayout2Frontend_AtomicView' and 'classLayout2Frontend_StructuralFeature'. From 'classLayout2Frontend_AtomicView', the role 'classLayout2Frontend_AtomicView' has cardinality 0..*, and from 'classLayout2Frontend_StructuralFeature', the role 'classLayout2Frontend_StructuralFeature18' has cardinality 0..*.
+An association connects 'classLayout2Frontend_Input' and 'classLayout2Frontend_IterationFilter'. From 'classLayout2Frontend_Input', the role 'classLayout2Frontend_Input' has cardinality 0..*, and from 'classLayout2Frontend_IterationFilter', the role 'classLayout2Frontend_IterationFilter' has cardinality 0..*.
+An association connects 'classLayout2Frontend_ElementView' and 'classLayout2Frontend_PageView'. From 'classLayout2Frontend_ElementView', the role 'classLayout2Frontend_ElementView' has cardinality 0..*, and from 'classLayout2Frontend_PageView', the role 'classLayout2Frontend_PageView21' has cardinality 0..*.
+An association connects 'classLayout2Frontend_PageView' and 'classLayout2Frontend_SiteView'. From 'classLayout2Frontend_PageView', the role 'classLayout2Frontend_PageView24' has cardinality 0..*, and from 'classLayout2Frontend_SiteView', the role 'classLayout2Frontend_SiteView23' has cardinality 0..*.
+An association connects 'classLayout2Frontend_IterationContainer' and 'classLayout2Frontend_IterationFilter'. From 'classLayout2Frontend_IterationContainer', the role 'classLayout2Frontend_IterationContainer' has cardinality 0..*, and from 'classLayout2Frontend_IterationFilter', the role 'classLayout2Frontend_IterationFilter26' has cardinality 0..*.
+An association connects 'classLayout2Frontend_ElementView' and 'classLayout2Frontend_ContainerView'. From 'classLayout2Frontend_ElementView', the role 'classLayout2Frontend_ElementView29' has cardinality 0..*, and from 'classLayout2Frontend_ContainerView', the role 'classLayout2Frontend_ContainerView28' has cardinality 0..*.
+An association connects 'classLayout2Frontend_Entity' and 'classLayout2Frontend_ContainerView'. From 'classLayout2Frontend_Entity', the role 'classLayout2Frontend_Entity32' has cardinality 0..*, and from 'classLayout2Frontend_ContainerView', the role 'classLayout2Frontend_ContainerView31' has cardinality 0..*.

@@ -1,0 +1,53 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'Relational_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Relational_System' represents an important domain concept.
+It does not declare any attributes.
+
+'Relational_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'Relational_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'Relational_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Relational_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Relational_Schema' is a specialization of 'Named'.
+The class 'Relational_Table' is a specialization of 'Named'.
+The class 'Relational_Column' is a specialization of 'Named'.
+The class 'Relational_Type' is a specialization of 'Named'.
+The class 'Relational_System' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Relational_Schema' and 'Table'. From 'Relational_Schema', the role '0' has cardinality 0..*, and from 'Table', the role '#' has cardinality 0..*.
+An association connects 'Schema' and 'Relational_Table'. From 'Schema', the role '#3' has cardinality 0..*, and from 'Relational_Table', the role '02' has cardinality 0..*.
+An association connects 'Column' and 'Relational_Table'. From 'Column', the role '#6' has cardinality 0..*, and from 'Relational_Table', the role '05' has cardinality 0..*.
+An association connects 'Column' and 'Relational_Table'. From 'Column', the role '#9' has cardinality 0..*, and from 'Relational_Table', the role '08' has cardinality 0..*.
+An association connects 'Table' and 'Relational_Column'. From 'Table', the role '#12' has cardinality 0..*, and from 'Relational_Column', the role '011' has cardinality 0..*.
+An association connects 'Table' and 'Relational_Column'. From 'Table', the role '#15' has cardinality 0..*, and from 'Relational_Column', the role '014' has cardinality 0..*.
+An association connects 'Type' and 'Relational_Column'. From 'Type', the role 'Type' has cardinality 0..*, and from 'Relational_Column', the role 'Relational_Column' has cardinality 0..*.
+An association connects 'Relational_System' and 'Schema'. From 'Relational_System', the role 'Relational_System' has cardinality 0..*, and from 'Schema', the role 'Schema' has cardinality 0..*.

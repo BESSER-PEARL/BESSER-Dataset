@@ -1,0 +1,191 @@
+The domain model 'CodePack' describes the core structural elements and their relationships within the system.
+
+The model defines 51 main class(es).
+
+'CodePack_DataModels_Booking' represents an important domain concept.
+It has the following attributes: 'contact_phone', which is of type int; 'id', which is of type int; 'date_check_out', which is of type date; 'date_check_in', which is of type date; 'customer_id', which is of type int; 'isCheckedIn', which is of type bool; 'bonus_points_used', which is of type int; 'total_price', which is of type float; 'contact_name', which is of type str; 'payment_id', which is of type int; 'contact_email', which is of type str.
+
+'CodePack_Shared_ContactData' represents an important domain concept.
+It has the following attributes: 'e_mail', which is of type str; 'phone_no', which is of type int; 'full_name', which is of type str.
+
+'IBookings' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_DataModels_Bill' represents an important domain concept.
+It has the following attributes: 'booking_id', which is of type int; 'total_price', which is of type float.
+
+'Booking' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_DataModels_Guest' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'booking_id', which is of type int.
+
+'CodePack_DataBank' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_DataModels_RoomBooked' represents an important domain concept.
+It has the following attributes: 'room_number', which is of type int; 'date_end', which is of type date; 'date_start', which is of type date; 'booking_id', which is of type int.
+
+'CodePack_DataModels_Room' represents an important domain concept.
+It has the following attributes: 'number', which is of type int; 'isAvailable', which is of type bool; 'description', which is of type str; 'room_type', which is of type str.
+
+'IReceptionOperations_rename_required' represents an important domain concept.
+It does not declare any attributes.
+
+'ICheckIn' represents an important domain concept.
+It does not declare any attributes.
+
+'ReceptionHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'CheckInHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_DataModels_ServiceType' represents an important domain concept.
+It has the following attributes: 'type_name', which is of type str; 'price', which is of type float; 'description', which is of type str.
+
+'CodePack_IReceptionOperations_rename_required' represents an important domain concept.
+It does not declare any attributes.
+
+'PaymentData' represents an important domain concept.
+It does not declare any attributes.
+
+'IStaffAuthentication' represents an important domain concept.
+It does not declare any attributes.
+
+'CustomerHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_DataModels_StaffRole' represents an important domain concept.
+It has the following attributes: 'canManageRooms', which is of type bool; 'canManageAccounts', which is of type bool; 'canManageBookings', which is of type bool; 'name', which is of type str; 'canManageServices', which is of type bool.
+
+'CodePack_IUserAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'StaffRole' represents an important domain concept.
+It does not declare any attributes.
+
+'Backend_CodePack_BankComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_Backend_CustomerHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_IBookings' represents an important domain concept.
+It does not declare any attributes.
+
+'Guest' represents an important domain concept.
+It does not declare any attributes.
+
+'StaffMember' represents an important domain concept.
+It does not declare any attributes.
+
+'IUserAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_DataModels_PaymentData' represents an important domain concept.
+It has the following attributes: 'cc_first_name', which is of type str; 'cc_year', which is of type int; 'cc_number', which is of type str; 'cc_month', which is of type int; 'cc_ccv', which is of type str; 'cc_last_name', which is of type str; 'id', which is of type int.
+
+'CodePack_IManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_StaffGUI' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceType' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_DataModels_Customer' represents an important domain concept.
+It has the following attributes: 'bonus_points', which is of type int; 'e_mail', which is of type str; 'customer_id', which is of type int; 'date_of_birth', which is of type date; 'last_name', which is of type str; 'payment_id', which is of type int; 'first_name', which is of type str; 'password', which is of type str; 'phone_no', which is of type int.
+
+'RoomType' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_Backend_CheckInHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_IStaffAuthentication' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_Backend_ManagementHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_ICheckIn' represents an important domain concept.
+It does not declare any attributes.
+
+'IManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'ManagementHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_DataModels_ExtraService' represents an important domain concept.
+It has the following attributes: 'date_start', which is of type date; 'date_end', which is of type date; 'type', which is of type str; 'booking_id', which is of type int; 'total_price', which is of type float.
+
+'IStaffAdmin' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomBooked' represents an important domain concept.
+It does not declare any attributes.
+
+'Customer' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtraService' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_Backend_ReceptionHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_DataModels_StaffMember' represents an important domain concept.
+It has the following attributes: 'full_name', which is of type str; 'password', which is of type str; 'email', which is of type str; 'role_name', which is of type str; 'phone_no', which is of type int; 'pers_no', which is of type str.
+
+'Room' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_IStaffAdmin' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_UserGUI' represents an important domain concept.
+It does not declare any attributes.
+
+'CodePack_DataModels_RoomType' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'max_guests', which is of type int; 'rate', which is of type float; 'typename', which is of type str.
+
+'CodePack_CheckInMachine' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'CodePack_IUserAccount' is a specialization of 'IBookings'.
+The class 'CodePack_IManagement' is a specialization of 'IStaffAdmin'.
+The class 'CodePack_IManagement' is a specialization of 'IStaffAuthentication'.
+The class 'CodePack_IReceptionOperations_rename_required' is a specialization of 'IBookings'.
+The class 'CodePack_IReceptionOperations_rename_required' is a specialization of 'ICheckIn'.
+The class 'CodePack_IReceptionOperations_rename_required' is a specialization of 'IStaffAuthentication'.
+The class 'CodePack_Backend_CustomerHandler' is a specialization of 'IUserAccount'.
+The class 'CodePack_Backend_ReceptionHandler' is a specialization of 'IReceptionOperations_rename_required'.
+The class 'CodePack_Backend_CheckInHandler' is a specialization of 'ICheckIn'.
+The class 'CodePack_Backend_ManagementHandler' is a specialization of 'IManagement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ManagementHandler' and 'CodePack_StaffGUI'. From 'ManagementHandler', the role 'ManagementHandler' has cardinality 0..*, and from 'CodePack_StaffGUI', the role 'CodePack_StaffGUI' has cardinality 0..*.
+An association connects 'ReceptionHandler' and 'CodePack_StaffGUI'. From 'ReceptionHandler', the role 'ReceptionHandler' has cardinality 0..*, and from 'CodePack_StaffGUI', the role 'CodePack_StaffGUI2' has cardinality 0..*.
+An association connects 'CodePack_UserGUI' and 'CustomerHandler'. From 'CodePack_UserGUI', the role 'CodePack_UserGUI' has cardinality 0..*, and from 'CustomerHandler', the role 'CustomerHandler' has cardinality 0..*.
+An association connects 'CheckInHandler' and 'CodePack_CheckInMachine'. From 'CheckInHandler', the role 'CheckInHandler' has cardinality 0..*, and from 'CodePack_CheckInMachine', the role 'CodePack_CheckInMachine' has cardinality 0..*.
+An association connects 'Room' and 'CodePack_DataBank'. From 'Room', the role 'Room' has cardinality 0..*, and from 'CodePack_DataBank', the role 'CodePack_DataBank' has cardinality 0..*.
+An association connects 'CodePack_DataBank' and 'Booking'. From 'CodePack_DataBank', the role 'CodePack_DataBank7' has cardinality 0..*, and from 'Booking', the role 'Booking' has cardinality 0..*.
+An association connects 'Customer' and 'CodePack_DataBank'. From 'Customer', the role 'Customer' has cardinality 0..*, and from 'CodePack_DataBank', the role 'CodePack_DataBank9' has cardinality 0..*.
+An association connects 'CodePack_DataBank' and 'RoomType'. From 'CodePack_DataBank', the role 'CodePack_DataBank11' has cardinality 0..*, and from 'RoomType', the role 'RoomType' has cardinality 0..*.
+An association connects 'PaymentData' and 'CodePack_DataBank'. From 'PaymentData', the role 'PaymentData' has cardinality 0..*, and from 'CodePack_DataBank', the role 'CodePack_DataBank13' has cardinality 0..*.
+An association connects 'CodePack_DataBank' and 'RoomBooked'. From 'CodePack_DataBank', the role 'CodePack_DataBank15' has cardinality 0..*, and from 'RoomBooked', the role 'RoomBooked' has cardinality 0..*.
+An association connects 'CodePack_DataBank' and 'ExtraService'. From 'CodePack_DataBank', the role 'CodePack_DataBank17' has cardinality 0..*, and from 'ExtraService', the role 'ExtraService' has cardinality 0..*.
+An association connects 'CodePack_DataBank' and 'ServiceType'. From 'CodePack_DataBank', the role 'CodePack_DataBank19' has cardinality 0..*, and from 'ServiceType', the role 'ServiceType' has cardinality 0..*.
+An association connects 'CodePack_DataBank' and 'Guest'. From 'CodePack_DataBank', the role 'CodePack_DataBank21' has cardinality 0..*, and from 'Guest', the role 'Guest' has cardinality 0..*.
+An association connects 'StaffRole' and 'CodePack_DataBank'. From 'StaffRole', the role 'StaffRole' has cardinality 0..*, and from 'CodePack_DataBank', the role 'CodePack_DataBank23' has cardinality 0..*.
+An association connects 'CodePack_DataBank' and 'StaffMember'. From 'CodePack_DataBank', the role 'CodePack_DataBank25' has cardinality 0..*, and from 'StaffMember', the role 'StaffMember' has cardinality 0..*.
+An association connects 'CodePack_DataModels_RoomBooked' and 'Booking'. From 'CodePack_DataModels_RoomBooked', the role 'CodePack_DataModels_RoomBooked' has cardinality 0..*, and from 'Booking', the role 'Booking27' has cardinality 0..*.
+An association connects 'Room' and 'CodePack_DataModels_Bill'. From 'Room', the role 'Room29' has cardinality 0..*, and from 'CodePack_DataModels_Bill', the role 'CodePack_DataModels_Bill' has cardinality 0..*.
+An association connects 'CodePack_DataModels_Bill' and 'ExtraService'. From 'CodePack_DataModels_Bill', the role 'CodePack_DataModels_Bill31' has cardinality 0..*, and from 'ExtraService', the role 'ExtraService32' has cardinality 0..*.
+An association connects 'CodePack_DataModels_Booking' and 'Room'. From 'CodePack_DataModels_Booking', the role 'CodePack_DataModels_Booking' has cardinality 0..*, and from 'Room', the role 'Room34' has cardinality 0..*.
+An association connects 'Backend_CodePack_BankComponent' and 'CodePack_Backend_CustomerHandler'. From 'Backend_CodePack_BankComponent', the role 'Backend_CodePack_BankComponent' has cardinality 0..*, and from 'CodePack_Backend_CustomerHandler', the role 'CodePack_Backend_CustomerHandler' has cardinality 0..*.
+An association connects 'CodePack_Backend_ReceptionHandler' and 'Backend_CodePack_BankComponent'. From 'CodePack_Backend_ReceptionHandler', the role 'CodePack_Backend_ReceptionHandler' has cardinality 0..*, and from 'Backend_CodePack_BankComponent', the role 'Backend_CodePack_BankComponent37' has cardinality 0..*.

@@ -1,0 +1,18 @@
+The domain model 'mteach' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'mteach_Professor' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'firstName', which is of type str.
+
+'mteach_Course' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'time', which is of type int; 'coefficient', which is of type float.
+
+'mteach_Topic' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'mteach_Professor' and 'mteach_Course'. From 'mteach_Professor', the role 'professor' has cardinality 0..*, and from 'mteach_Course', the role 'Course' has cardinality 0..*.
+An association connects 'mteach_Course' and 'mteach_Topic'. From 'mteach_Course', the role 'course' has cardinality 0..*, and from 'mteach_Topic', the role 'Topic' has cardinality 0..*.
+An association connects 'mteach_Professor' and 'mteach_Course'. From 'mteach_Professor', the role 'Professor' has cardinality 0..*, and from 'mteach_Course', the role 'teachedCourses' has cardinality 0..*.
+An association connects 'mteach_Course' and 'mteach_Topic'. From 'mteach_Course', the role 'Course4' has cardinality 0..*, and from 'mteach_Topic', the role 'topics' has cardinality 0..*.

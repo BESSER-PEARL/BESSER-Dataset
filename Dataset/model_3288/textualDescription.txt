@@ -1,0 +1,77 @@
+The domain model 'base' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'base_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'base_RealLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'base_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'base_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'base_LiteralArray' represents an important domain concept.
+It does not declare any attributes.
+
+'base_Documentation' represents an important domain concept.
+It has one attribute: 'lines', which is of type str.
+
+'base_Import' represents an important domain concept.
+It has the following attributes: 'importedNamespace', which is of type str; 'importURI', which is of type str.
+
+'base_NumberLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'base_AnnotationAttribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'optional', which is of type bool.
+
+'base_KeyValue' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'base_EnumAnnotationAttribute' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'base_SimpleAnnotationAttribute' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'base_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'NumberLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'base_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'isTrue', which is of type bool.
+
+'base_AnnotationType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'targets', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LiteralType' defines the following possible values: 'BOOL', 'INT', 'CHAR', 'REAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'base_SimpleAnnotationAttribute' is a specialization of 'AnnotationAttribute'.
+The class 'base_EnumAnnotationAttribute' is a specialization of 'AnnotationAttribute'.
+The class 'base_BooleanLiteral' is a specialization of 'Literal'.
+The class 'base_NumberLiteral' is a specialization of 'Literal'.
+The class 'base_RealLiteral' is a specialization of 'NumberLiteral'.
+The class 'base_IntLiteral' is a specialization of 'NumberLiteral'.
+The class 'base_StringLiteral' is a specialization of 'Literal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'base_AnnotationType' and 'base_Annotation'. From 'base_AnnotationType', the role 'base_AnnotationType' has cardinality 0..*, and from 'base_Annotation', the role 'base_Annotation' has cardinality 0..*.
+An association connects 'base_KeyValue' and 'base_Annotation'. From 'base_KeyValue', the role 'base_KeyValue' has cardinality 0..*, and from 'base_Annotation', the role 'base_Annotation2' has cardinality 0..*.
+An association connects 'base_Literal' and 'base_KeyValue'. From 'base_Literal', the role 'base_Literal' has cardinality 0..*, and from 'base_KeyValue', the role 'base_KeyValue4' has cardinality 0..*.
+An association connects 'base_AnnotationType' and 'base_Documentation'. From 'base_AnnotationType', the role 'base_AnnotationType6' has cardinality 0..*, and from 'base_Documentation', the role 'base_Documentation' has cardinality 0..*.
+An association connects 'base_AnnotationAttribute' and 'base_AnnotationType'. From 'base_AnnotationAttribute', the role 'base_AnnotationAttribute' has cardinality 0..*, and from 'base_AnnotationType', the role 'base_AnnotationType8' has cardinality 0..*.
+An association connects 'base_Literal' and 'base_LiteralArray'. From 'base_Literal', the role 'base_Literal10' has cardinality 0..*, and from 'base_LiteralArray', the role 'base_LiteralArray' has cardinality 0..*.

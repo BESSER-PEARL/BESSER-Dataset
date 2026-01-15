@@ -1,0 +1,40 @@
+The domain model 'rdpl' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'rdpl_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rdpl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rdpl_Column' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ctype', which is of type str; 'stype', which is of type str.
+
+'rdpl_RecordElement' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'rdpl_Record' represents an important domain concept.
+It does not declare any attributes.
+
+'rdpl_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'rdpl_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BasicType' defines the following possible values: 'INT', 'CHAR', 'REAL', 'BOOL'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rdpl_Schema' and 'rdpl_Table'. From 'rdpl_Schema', the role 'rdpl_Schema' has cardinality 0..*, and from 'rdpl_Table', the role 'rdpl_Table' has cardinality 0..*.
+An association connects 'rdpl_Type' and 'rdpl_Schema'. From 'rdpl_Type', the role 'rdpl_Type' has cardinality 0..*, and from 'rdpl_Schema', the role 'rdpl_Schema2' has cardinality 0..*.
+An association connects 'rdpl_Table' and 'rdpl_Column'. From 'rdpl_Table', the role 'rdpl_Table4' has cardinality 0..*, and from 'rdpl_Column', the role 'rdpl_Column' has cardinality 0..*.
+An association connects 'rdpl_Column' and 'rdpl_Table'. From 'rdpl_Column', the role 'rdpl_Column7' has cardinality 0..*, and from 'rdpl_Table', the role 'rdpl_Table6' has cardinality 0..*.
+An association connects 'rdpl_Table' and 'rdpl_Record'. From 'rdpl_Table', the role 'rdpl_Table9' has cardinality 0..*, and from 'rdpl_Record', the role 'rdpl_Record' has cardinality 0..*.
+An association connects 'rdpl_Table' and 'rdpl_ForeignKey'. From 'rdpl_Table', the role 'rdpl_Table11' has cardinality 0..*, and from 'rdpl_ForeignKey', the role 'rdpl_ForeignKey' has cardinality 0..*.
+An association connects 'rdpl_ForeignKey' and 'rdpl_Table'. From 'rdpl_ForeignKey', the role 'rdpl_ForeignKey13' has cardinality 0..*, and from 'rdpl_Table', the role 'rdpl_Table14' has cardinality 0..*.
+An association connects 'rdpl_ForeignKey' and 'rdpl_Column'. From 'rdpl_ForeignKey', the role 'rdpl_ForeignKey16' has cardinality 0..*, and from 'rdpl_Column', the role 'rdpl_Column17' has cardinality 0..*.
+An association connects 'rdpl_Record' and 'rdpl_RecordElement'. From 'rdpl_Record', the role 'rdpl_Record19' has cardinality 0..*, and from 'rdpl_RecordElement', the role 'rdpl_RecordElement' has cardinality 0..*.
+An association connects 'rdpl_Column' and 'rdpl_RecordElement'. From 'rdpl_Column', the role 'rdpl_Column22' has cardinality 0..*, and from 'rdpl_RecordElement', the role 'rdpl_RecordElement21' has cardinality 0..*.
+An association connects 'rdpl_Type' and 'rdpl_Column'. From 'rdpl_Type', the role 'rdpl_Type25' has cardinality 0..*, and from 'rdpl_Column', the role 'rdpl_Column24' has cardinality 0..*.

@@ -1,0 +1,31 @@
+The domain model 'entities' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'entities_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entities_ReferenceProperty' represents an important domain concept.
+It has one attribute: 'many', which is of type bool.
+
+'entities_SimpleProperty' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Property' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'entities_SimpleProperty' is a specialization of 'Property'.
+The class 'entities_ReferenceProperty' is a specialization of 'Property'.
+
+Relationships between classes are modeled using associations.
+An association connects 'entities_Model' and 'entities_Entity'. From 'entities_Model', the role 'entities_Model' has cardinality 0..*, and from 'entities_Entity', the role 'entities_Entity' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_Entity'. From 'entities_Entity', the role 'entities_Entity1' has cardinality 0..*, and from 'entities_Entity', the role 'entities_Entity3' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_Property'. From 'entities_Entity', the role 'entities_Entity5' has cardinality 0..*, and from 'entities_Property', the role 'entities_Property' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_ReferenceProperty'. From 'entities_Entity', the role 'entities_Entity7' has cardinality 0..*, and from 'entities_ReferenceProperty', the role 'entities_ReferenceProperty' has cardinality 0..*.

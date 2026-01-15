@@ -1,0 +1,35 @@
+The domain model 'traceability' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'traceability_EDFD' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_EDFDToGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_EDFDGraphTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_NamedEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_GraphEndToEndTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'traceability_EDFDGraphTrace' and 'traceability_EDFDToGraph'. From 'traceability_EDFDGraphTrace', the role 'traceability_EDFDGraphTrace' has cardinality 0..*, and from 'traceability_EDFDToGraph', the role 'traceability_EDFDToGraph' has cardinality 0..*.
+An association connects 'traceability_EDFD' and 'traceability_EDFDToGraph'. From 'traceability_EDFD', the role 'traceability_EDFD' has cardinality 0..*, and from 'traceability_EDFDToGraph', the role 'traceability_EDFDToGraph2' has cardinality 0..*.
+An association connects 'traceability_EDFDToGraph' and 'traceability_Graph'. From 'traceability_EDFDToGraph', the role 'traceability_EDFDToGraph4' has cardinality 0..*, and from 'traceability_Graph', the role 'traceability_Graph' has cardinality 0..*.
+An association connects 'traceability_Graph' and 'traceability_EDFDToGraph'. From 'traceability_Graph', the role 'traceability_Graph7' has cardinality 0..*, and from 'traceability_EDFDToGraph', the role 'traceability_EDFDToGraph6' has cardinality 0..*.
+An association connects 'traceability_GraphEndToEndTrace' and 'traceability_EDFDToGraph'. From 'traceability_GraphEndToEndTrace', the role 'traceability_GraphEndToEndTrace' has cardinality 0..*, and from 'traceability_EDFDToGraph', the role 'traceability_EDFDToGraph9' has cardinality 0..*.
+An association connects 'traceability_EDFDGraphTrace' and 'traceability_NamedEntity'. From 'traceability_EDFDGraphTrace', the role 'traceability_EDFDGraphTrace11' has cardinality 0..*, and from 'traceability_NamedEntity', the role 'traceability_NamedEntity' has cardinality 0..*.
+An association connects 'traceability_Identifiable' and 'traceability_EDFDGraphTrace'. From 'traceability_Identifiable', the role 'traceability_Identifiable' has cardinality 0..*, and from 'traceability_EDFDGraphTrace', the role 'traceability_EDFDGraphTrace13' has cardinality 0..*.
+An association connects 'traceability_GraphEndToEndTrace' and 'traceability_Identifiable'. From 'traceability_GraphEndToEndTrace', the role 'traceability_GraphEndToEndTrace15' has cardinality 0..*, and from 'traceability_Identifiable', the role 'traceability_Identifiable16' has cardinality 0..*.
+An association connects 'traceability_Identifiable' and 'traceability_GraphEndToEndTrace'. From 'traceability_Identifiable', the role 'traceability_Identifiable19' has cardinality 0..*, and from 'traceability_GraphEndToEndTrace', the role 'traceability_GraphEndToEndTrace18' has cardinality 0..*.

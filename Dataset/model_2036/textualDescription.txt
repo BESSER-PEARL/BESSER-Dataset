@@ -1,0 +1,52 @@
+The domain model 'stm' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'stm_Guard' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stm_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stm_GuardCall' represents an important domain concept.
+It has one attribute: 'parameters', which is of type str.
+
+'stm_SelfEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'stm_Command' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stm_Statemachine' represents an important domain concept.
+It does not declare any attributes.
+
+'stm_Parameter' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'stm_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'stm_Event' and 'stm_Statemachine'. From 'stm_Event', the role 'stm_Event' has cardinality 0..*, and from 'stm_Statemachine', the role 'stm_Statemachine' has cardinality 0..*.
+An association connects 'stm_Command' and 'stm_Statemachine'. From 'stm_Command', the role 'stm_Command' has cardinality 0..*, and from 'stm_Statemachine', the role 'stm_Statemachine2' has cardinality 0..*.
+An association connects 'stm_Guard' and 'stm_Statemachine'. From 'stm_Guard', the role 'stm_Guard' has cardinality 0..*, and from 'stm_Statemachine', the role 'stm_Statemachine4' has cardinality 0..*.
+An association connects 'stm_Statemachine' and 'stm_State'. From 'stm_Statemachine', the role 'stm_Statemachine6' has cardinality 0..*, and from 'stm_State', the role 'stm_State' has cardinality 0..*.
+An association connects 'stm_State' and 'stm_Command'. From 'stm_State', the role 'stm_State8' has cardinality 0..*, and from 'stm_Command', the role 'stm_Command9' has cardinality 0..*.
+An association connects 'stm_State' and 'stm_Command'. From 'stm_State', the role 'stm_State11' has cardinality 0..*, and from 'stm_Command', the role 'stm_Command12' has cardinality 0..*.
+An association connects 'stm_State' and 'stm_Command'. From 'stm_State', the role 'stm_State14' has cardinality 0..*, and from 'stm_Command', the role 'stm_Command15' has cardinality 0..*.
+An association connects 'stm_State' and 'stm_State'. From 'stm_State', the role 'stm_State18' has cardinality 0..*, and from 'stm_State', the role 'stm_State16' has cardinality 0..*.
+An association connects 'stm_SelfEvent' and 'stm_State'. From 'stm_SelfEvent', the role 'stm_SelfEvent' has cardinality 0..*, and from 'stm_State', the role 'stm_State20' has cardinality 0..*.
+An association connects 'stm_State' and 'stm_Transition'. From 'stm_State', the role 'stm_State22' has cardinality 0..*, and from 'stm_Transition', the role 'stm_Transition' has cardinality 0..*.
+An association connects 'stm_State' and 'stm_Command'. From 'stm_State', the role 'stm_State24' has cardinality 0..*, and from 'stm_Command', the role 'stm_Command25' has cardinality 0..*.
+An association connects 'stm_Transition' and 'stm_Event'. From 'stm_Transition', the role 'stm_Transition27' has cardinality 0..*, and from 'stm_Event', the role 'stm_Event28' has cardinality 0..*.
+An association connects 'stm_Transition' and 'stm_GuardCall'. From 'stm_Transition', the role 'stm_Transition30' has cardinality 0..*, and from 'stm_GuardCall', the role 'stm_GuardCall' has cardinality 0..*.
+An association connects 'stm_Transition' and 'stm_State'. From 'stm_Transition', the role 'stm_Transition32' has cardinality 0..*, and from 'stm_State', the role 'stm_State33' has cardinality 0..*.
+An association connects 'stm_Command' and 'stm_Transition'. From 'stm_Command', the role 'stm_Command36' has cardinality 0..*, and from 'stm_Transition', the role 'stm_Transition35' has cardinality 0..*.
+An association connects 'stm_SelfEvent' and 'stm_Event'. From 'stm_SelfEvent', the role 'stm_SelfEvent38' has cardinality 0..*, and from 'stm_Event', the role 'stm_Event39' has cardinality 0..*.
+An association connects 'stm_SelfEvent' and 'stm_GuardCall'. From 'stm_SelfEvent', the role 'stm_SelfEvent41' has cardinality 0..*, and from 'stm_GuardCall', the role 'stm_GuardCall42' has cardinality 0..*.
+An association connects 'stm_SelfEvent' and 'stm_Command'. From 'stm_SelfEvent', the role 'stm_SelfEvent44' has cardinality 0..*, and from 'stm_Command', the role 'stm_Command45' has cardinality 0..*.
+An association connects 'stm_GuardCall' and 'stm_Guard'. From 'stm_GuardCall', the role 'stm_GuardCall47' has cardinality 0..*, and from 'stm_Guard', the role 'stm_Guard48' has cardinality 0..*.
+An association connects 'stm_Guard' and 'stm_Parameter'. From 'stm_Guard', the role 'stm_Guard50' has cardinality 0..*, and from 'stm_Parameter', the role 'stm_Parameter' has cardinality 0..*.

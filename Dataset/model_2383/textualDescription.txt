@@ -1,0 +1,28 @@
+The domain model 'tables' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'tables_Column' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'tables_ForeignKey' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tables_Database' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tables_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'integer', 'float', 'string', 'datetime', 'bool'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tables_Database' and 'tables_Table'. From 'tables_Database', the role 'database' has cardinality 0..*, and from 'tables_Table', the role 'Table' has cardinality 0..*.
+An association connects 'tables_Table' and 'tables_Column'. From 'tables_Table', the role 'table' has cardinality 0..*, and from 'tables_Column', the role 'Column' has cardinality 0..*.
+An association connects 'tables_Table' and 'tables_Database'. From 'tables_Table', the role 'tables' has cardinality 0..*, and from 'tables_Database', the role 'Database' has cardinality 0..*.
+An association connects 'tables_Table' and 'tables_Column'. From 'tables_Table', the role 'tables_Table' has cardinality 0..*, and from 'tables_Column', the role 'tables_Column' has cardinality 0..*.
+An association connects 'tables_Table' and 'tables_Column'. From 'tables_Table', the role 'Table5' has cardinality 0..*, and from 'tables_Column', the role 'columns' has cardinality 0..*.
+An association connects 'tables_ForeignKey' and 'tables_Column'. From 'tables_ForeignKey', the role 'ForeignKey' has cardinality 0..*, and from 'tables_Column', the role 'column' has cardinality 0..*.
+An association connects 'tables_Table' and 'tables_ForeignKey'. From 'tables_Table', the role 'tables_Table8' has cardinality 0..*, and from 'tables_ForeignKey', the role 'tables_ForeignKey' has cardinality 0..*.
+An association connects 'tables_Column' and 'tables_ForeignKey'. From 'tables_Column', the role 'Column10' has cardinality 0..*, and from 'tables_ForeignKey', the role 'foreign_key' has cardinality 0..*.

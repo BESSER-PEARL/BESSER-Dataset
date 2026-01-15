@@ -1,0 +1,45 @@
+The domain model 'ingest' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'SqoopImport' represents an important domain concept.
+It does not declare any attributes.
+
+'SqoopHiveImport' represents an important domain concept.
+It does not declare any attributes.
+
+'ingest_SqoopHiveImport' represents an important domain concept.
+It has the following attributes: 'targetHiveDatabase', which is of type str; 'targetHiveTable', which is of type str.
+
+'ingest_DbSchema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ingest_DbColumn' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'jdbcPrecision', which is of type int; 'jdbcScale', which is of type int; 'jdbcType', which is of type int.
+
+'ingest_Catalogue' represents an important domain concept.
+It does not declare any attributes.
+
+'ingest_DbTable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ingest_SqoopHiveIncrementalImport' represents an important domain concept.
+It does not declare any attributes.
+
+'ingest_SqoopImport' represents an important domain concept.
+It does not declare any attributes.
+
+'ingest_Database' represents an important domain concept.
+It has the following attributes: 'jdbcPassword', which is of type str; 'label', which is of type str; 'jdbcUser', which is of type str; 'jdbcDriver', which is of type str; 'jdbcUrl', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'ingest_SqoopHiveImport' is a specialization of 'SqoopImport'.
+The class 'ingest_SqoopHiveIncrementalImport' is a specialization of 'SqoopHiveImport'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ingest_DbSchema' and 'ingest_Database'. From 'ingest_DbSchema', the role 'ingest_DbSchema' has cardinality 0..*, and from 'ingest_Database', the role 'ingest_Database' has cardinality 0..*.
+An association connects 'ingest_DbTable' and 'ingest_DbColumn'. From 'ingest_DbTable', the role 'ingest_DbTable' has cardinality 0..*, and from 'ingest_DbColumn', the role 'ingest_DbColumn' has cardinality 0..*.
+An association connects 'ingest_DbTable' and 'ingest_SqoopImport'. From 'ingest_DbTable', the role 'ingest_DbTable3' has cardinality 0..*, and from 'ingest_SqoopImport', the role 'ingest_SqoopImport' has cardinality 0..*.
+An association connects 'ingest_DbSchema' and 'ingest_DbTable'. From 'ingest_DbSchema', the role 'ingest_DbSchema5' has cardinality 0..*, and from 'ingest_DbTable', the role 'ingest_DbTable6' has cardinality 0..*.
+An association connects 'ingest_DbColumn' and 'ingest_SqoopHiveIncrementalImport'. From 'ingest_DbColumn', the role 'ingest_DbColumn8' has cardinality 0..*, and from 'ingest_SqoopHiveIncrementalImport', the role 'ingest_SqoopHiveIncrementalImport' has cardinality 0..*.
+An association connects 'ingest_Database' and 'ingest_Catalogue'. From 'ingest_Database', the role 'ingest_Database10' has cardinality 0..*, and from 'ingest_Catalogue', the role 'ingest_Catalogue' has cardinality 0..*.

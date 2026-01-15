@@ -1,0 +1,26 @@
+The domain model 'schoollibrary' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Library' represents an important domain concept.
+It does not declare any attributes.
+
+'Book' represents an important domain concept.
+It does not declare any attributes.
+
+'Asset' represents an important domain concept.
+It does not declare any attributes.
+
+'schoollibrary_SchoolLibrary' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'schoollibrary_Asset' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'schoollibrary_SchoolBook' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'schoollibrary_SchoolBook' is a specialization of 'Book'.
+The class 'schoollibrary_SchoolBook' is a specialization of 'Asset'.
+The class 'schoollibrary_SchoolLibrary' is a specialization of 'Library'.

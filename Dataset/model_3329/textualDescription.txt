@@ -1,0 +1,64 @@
+The domain model 'psample' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'psample_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'psample_Object' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'psample_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'psample_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'psample_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'psample_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'psample_PrimitiveTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'psample_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'psample_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'psample_Package' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Visibility' defines the following possible values: 'public', 'private', 'protected'.
+The enumeration 'PrimitiveTypes' defines the following possible values: 'string', 'int', 'double', 'bool'.
+
+The model also captures inheritance relationships between classes.
+The class 'psample_Class' is a specialization of 'TypedElement'.
+The class 'psample_Member' is a specialization of 'Type'.
+The class 'psample_PrimitiveTypeVariable' is a specialization of 'Type'.
+The class 'psample_Interface' is a specialization of 'TypedElement'.
+The class 'psample_Function' is a specialization of 'Member'.
+The class 'psample_Variable' is a specialization of 'Member'.
+The class 'psample_Type' is a specialization of 'Object'.
+The class 'psample_TypedElement' is a specialization of 'Object'.
+
+Relationships between classes are modeled using associations.
+An association connects 'psample_TypedElement' and 'psample_Package'. From 'psample_TypedElement', the role 'psample_TypedElement' has cardinality 0..*, and from 'psample_Package', the role 'psample_Package' has cardinality 0..*.
+An association connects 'psample_Member' and 'psample_Class'. From 'psample_Member', the role 'psample_Member' has cardinality 0..*, and from 'psample_Class', the role 'psample_Class' has cardinality 0..*.
+An association connects 'psample_PrimitiveTypeVariable' and 'psample_Class'. From 'psample_PrimitiveTypeVariable', the role 'psample_PrimitiveTypeVariable' has cardinality 0..*, and from 'psample_Class', the role 'psample_Class3' has cardinality 0..*.

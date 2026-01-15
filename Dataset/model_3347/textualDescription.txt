@@ -1,0 +1,386 @@
+The domain model 'swrtj' describes the core structural elements and their relationships within the system.
+
+The model defines 86 main class(es).
+
+'swrtj_ProvidedMethod' represents an important domain concept.
+It has one attribute: 'isSynchronized', which is of type bool.
+
+'swrtj_NestedTraitExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Type' represents an important domain concept.
+It has one attribute: 'primitiveType', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_ParameterReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Field' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Element' represents an important domain concept.
+It has the following attributes: 'construct', which is of type str; 'name', which is of type str.
+
+'swrtj_NestedBooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_RecordExclude' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_LocalParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_TraitElement' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_NestedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AtomicBooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseRecord' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_TraitExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_TraitName' represents an important domain concept.
+It does not declare any attributes.
+
+'RecordOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Constructor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swrtj_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'Start' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Expression' represents an important domain concept.
+It has the following attributes: 'sign', which is of type str; 'operatorList', which is of type str.
+
+'swrtj_Import' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'swrtj_FieldDeclaration' represents an important domain concept.
+It has one attribute: 'modifier', which is of type str.
+
+'BaseTrait' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_TraitAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_RecordOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_BaseRecord' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'swrtj_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_AnonimousRecord' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_TraitMethodRename' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_This' represents an important domain concept.
+It has one attribute: 'this', which is of type bool.
+
+'swrtj_RecordExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Output' represents an important domain concept.
+It has one attribute: 'output', which is of type bool.
+
+'swrtj_ParameterAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_RequiredMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_RecordName' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_NestedRecordExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_FormalParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Cast' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_TraitFieldRename' represents an important domain concept.
+It does not declare any attributes.
+
+'Method' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Message' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_RecordRename' represents an important domain concept.
+It does not declare any attributes.
+
+'Message' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_TraitExclude' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_MethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_FieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_CompareOperator' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'swrtj_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_RequiredField' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_SimpleComparation' represents an important domain concept.
+It does not declare any attributes.
+
+'TraitOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swrtj_BaseTrait' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_AtomicBooleanExpression' represents an important domain concept.
+It has one attribute: 'negated', which is of type bool.
+
+'swrtj_TraitOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'swrtj_AnonimousTrait' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Null' represents an important domain concept.
+It has one attribute: 'null', which is of type bool.
+
+'swrtj_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_MethodName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swrtj_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_GenericExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_ConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'GenericExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Input' represents an important domain concept.
+It has one attribute: 'input', which is of type bool.
+
+'swrtj_File' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_BooleanConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'swrtj_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Record' represents an important domain concept.
+It does not declare any attributes.
+
+'TraitElement' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_Args' represents an important domain concept.
+It has one attribute: 'args', which is of type bool.
+
+'swrtj_FieldName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'swrtj_IfThenElseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_DottedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'swrtj_BooleanOperator' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'swrtj_Trait' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'swrtj_Interface' is a specialization of 'Element'.
+The class 'swrtj_Record' is a specialization of 'Element'.
+The class 'swrtj_Trait' is a specialization of 'Element'.
+The class 'swrtj_Class' is a specialization of 'Element'.
+The class 'swrtj_Program' is a specialization of 'Element'.
+The class 'swrtj_AnonimousRecord' is a specialization of 'BaseRecord'.
+The class 'swrtj_RecordName' is a specialization of 'BaseRecord'.
+The class 'swrtj_NestedRecordExpression' is a specialization of 'BaseRecord'.
+The class 'swrtj_AnonimousTrait' is a specialization of 'BaseTrait'.
+The class 'swrtj_TraitName' is a specialization of 'BaseTrait'.
+The class 'swrtj_NestedTraitExpression' is a specialization of 'BaseTrait'.
+The class 'swrtj_Field' is a specialization of 'TraitElement'.
+The class 'swrtj_Method' is a specialization of 'TraitElement'.
+The class 'swrtj_ExpressionStatement' is a specialization of 'Statement'.
+The class 'swrtj_IfThenElseStatement' is a specialization of 'Statement'.
+The class 'swrtj_WhileStatement' is a specialization of 'Statement'.
+The class 'swrtj_SimpleComparation' is a specialization of 'AtomicBooleanExpression'.
+The class 'swrtj_NestedBooleanExpression' is a specialization of 'AtomicBooleanExpression'.
+The class 'swrtj_Null' is a specialization of 'Start'.
+The class 'swrtj_Input' is a specialization of 'Start'.
+The class 'swrtj_Args' is a specialization of 'Start'.
+The class 'swrtj_Output' is a specialization of 'Start'.
+The class 'swrtj_BooleanConstant' is a specialization of 'Start'.
+The class 'swrtj_Number' is a specialization of 'Start'.
+The class 'swrtj_StringConstant' is a specialization of 'Start'.
+The class 'swrtj_This' is a specialization of 'Start'.
+The class 'swrtj_ParameterReference' is a specialization of 'Start'.
+The class 'swrtj_ConstructorInvocation' is a specialization of 'Start'.
+The class 'swrtj_Cast' is a specialization of 'Start'.
+The class 'swrtj_NestedExpression' is a specialization of 'Start'.
+The class 'swrtj_MethodInvocation' is a specialization of 'Message'.
+The class 'swrtj_FieldAccess' is a specialization of 'Message'.
+The class 'swrtj_ParameterAssignment' is a specialization of 'Start'.
+The class 'swrtj_RecordExclude' is a specialization of 'RecordOperation'.
+The class 'swrtj_RecordRename' is a specialization of 'RecordOperation'.
+The class 'swrtj_TraitExclude' is a specialization of 'TraitOperation'.
+The class 'swrtj_TraitAlias' is a specialization of 'TraitOperation'.
+The class 'swrtj_TraitMethodRename' is a specialization of 'TraitOperation'.
+The class 'swrtj_TraitFieldRename' is a specialization of 'TraitOperation'.
+The class 'swrtj_FieldDeclaration' is a specialization of 'Field'.
+The class 'swrtj_RequiredField' is a specialization of 'Field'.
+The class 'swrtj_RequiredMethod' is a specialization of 'Method'.
+The class 'swrtj_ProvidedMethod' is a specialization of 'Method'.
+The class 'swrtj_FormalParameter' is a specialization of 'Parameter'.
+The class 'swrtj_BooleanExpression' is a specialization of 'GenericExpression'.
+The class 'swrtj_LocalParameter' is a specialization of 'Parameter'.
+The class 'swrtj_Expression' is a specialization of 'GenericExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'swrtj_File' and 'swrtj_Import'. From 'swrtj_File', the role 'swrtj_File' has cardinality 0..*, and from 'swrtj_Import', the role 'swrtj_Import' has cardinality 0..*.
+An association connects 'swrtj_File' and 'swrtj_Element'. From 'swrtj_File', the role 'swrtj_File2' has cardinality 0..*, and from 'swrtj_Element', the role 'swrtj_Element' has cardinality 0..*.
+An association connects 'swrtj_Interface' and 'swrtj_Interface'. From 'swrtj_Interface', the role 'swrtj_Interface3' has cardinality 0..*, and from 'swrtj_Interface', the role 'swrtj_Interface' has cardinality 0..*.
+An association connects 'swrtj_Method' and 'swrtj_Interface'. From 'swrtj_Method', the role 'swrtj_Method' has cardinality 0..*, and from 'swrtj_Interface', the role 'swrtj_Interface6' has cardinality 0..*.
+An association connects 'swrtj_RecordExpression' and 'swrtj_Record'. From 'swrtj_RecordExpression', the role 'swrtj_RecordExpression' has cardinality 0..*, and from 'swrtj_Record', the role 'swrtj_Record' has cardinality 0..*.
+An association connects 'swrtj_TraitExpression' and 'swrtj_Trait'. From 'swrtj_TraitExpression', the role 'swrtj_TraitExpression' has cardinality 0..*, and from 'swrtj_Trait', the role 'swrtj_Trait' has cardinality 0..*.
+An association connects 'swrtj_Interface' and 'swrtj_Class'. From 'swrtj_Interface', the role 'swrtj_Interface10' has cardinality 0..*, and from 'swrtj_Class', the role 'swrtj_Class' has cardinality 0..*.
+An association connects 'swrtj_Class' and 'swrtj_RecordExpression'. From 'swrtj_Class', the role 'swrtj_Class12' has cardinality 0..*, and from 'swrtj_RecordExpression', the role 'swrtj_RecordExpression13' has cardinality 0..*.
+An association connects 'swrtj_TraitExpression' and 'swrtj_Class'. From 'swrtj_TraitExpression', the role 'swrtj_TraitExpression16' has cardinality 0..*, and from 'swrtj_Class', the role 'swrtj_Class15' has cardinality 0..*.
+An association connects 'swrtj_Class' and 'swrtj_Constructor'. From 'swrtj_Class', the role 'swrtj_Class18' has cardinality 0..*, and from 'swrtj_Constructor', the role 'swrtj_Constructor' has cardinality 0..*.
+An association connects 'swrtj_Block' and 'swrtj_Program'. From 'swrtj_Block', the role 'swrtj_Block' has cardinality 0..*, and from 'swrtj_Program', the role 'swrtj_Program' has cardinality 0..*.
+An association connects 'swrtj_RecordExpression' and 'swrtj_BaseRecord'. From 'swrtj_RecordExpression', the role 'swrtj_RecordExpression21' has cardinality 0..*, and from 'swrtj_BaseRecord', the role 'swrtj_BaseRecord' has cardinality 0..*.
+An association connects 'swrtj_RecordOperation' and 'swrtj_BaseRecord'. From 'swrtj_RecordOperation', the role 'swrtj_RecordOperation' has cardinality 0..*, and from 'swrtj_BaseRecord', the role 'swrtj_BaseRecord23' has cardinality 0..*.
+An association connects 'swrtj_AnonimousRecord' and 'swrtj_Field'. From 'swrtj_AnonimousRecord', the role 'swrtj_AnonimousRecord' has cardinality 0..*, and from 'swrtj_Field', the role 'swrtj_Field' has cardinality 0..*.
+An association connects 'swrtj_Record' and 'swrtj_RecordName'. From 'swrtj_Record', the role 'swrtj_Record26' has cardinality 0..*, and from 'swrtj_RecordName', the role 'swrtj_RecordName' has cardinality 0..*.
+An association connects 'swrtj_NestedRecordExpression' and 'swrtj_RecordExpression'. From 'swrtj_NestedRecordExpression', the role 'swrtj_NestedRecordExpression' has cardinality 0..*, and from 'swrtj_RecordExpression', the role 'swrtj_RecordExpression28' has cardinality 0..*.
+An association connects 'swrtj_BaseTrait' and 'swrtj_TraitExpression'. From 'swrtj_BaseTrait', the role 'swrtj_BaseTrait' has cardinality 0..*, and from 'swrtj_TraitExpression', the role 'swrtj_TraitExpression30' has cardinality 0..*.
+An association connects 'swrtj_BaseTrait' and 'swrtj_TraitOperation'. From 'swrtj_BaseTrait', the role 'swrtj_BaseTrait32' has cardinality 0..*, and from 'swrtj_TraitOperation', the role 'swrtj_TraitOperation' has cardinality 0..*.
+An association connects 'swrtj_AnonimousTrait' and 'swrtj_TraitElement'. From 'swrtj_AnonimousTrait', the role 'swrtj_AnonimousTrait' has cardinality 0..*, and from 'swrtj_TraitElement', the role 'swrtj_TraitElement' has cardinality 0..*.
+An association connects 'swrtj_TraitName' and 'swrtj_Trait'. From 'swrtj_TraitName', the role 'swrtj_TraitName' has cardinality 0..*, and from 'swrtj_Trait', the role 'swrtj_Trait35' has cardinality 0..*.
+An association connects 'swrtj_NestedTraitExpression' and 'swrtj_TraitExpression'. From 'swrtj_NestedTraitExpression', the role 'swrtj_NestedTraitExpression' has cardinality 0..*, and from 'swrtj_TraitExpression', the role 'swrtj_TraitExpression37' has cardinality 0..*.
+An association connects 'swrtj_Type' and 'swrtj_Field'. From 'swrtj_Type', the role 'swrtj_Type' has cardinality 0..*, and from 'swrtj_Field', the role 'swrtj_Field39' has cardinality 0..*.
+An association connects 'swrtj_Field' and 'swrtj_FieldName'. From 'swrtj_Field', the role 'swrtj_Field41' has cardinality 0..*, and from 'swrtj_FieldName', the role 'swrtj_FieldName' has cardinality 0..*.
+An association connects 'swrtj_Type' and 'swrtj_Method'. From 'swrtj_Type', the role 'swrtj_Type44' has cardinality 0..*, and from 'swrtj_Method', the role 'swrtj_Method43' has cardinality 0..*.
+An association connects 'swrtj_Method' and 'swrtj_MethodName'. From 'swrtj_Method', the role 'swrtj_Method46' has cardinality 0..*, and from 'swrtj_MethodName', the role 'swrtj_MethodName' has cardinality 0..*.
+An association connects 'swrtj_Parameter' and 'swrtj_Method'. From 'swrtj_Parameter', the role 'swrtj_Parameter' has cardinality 0..*, and from 'swrtj_Method', the role 'swrtj_Method48' has cardinality 0..*.
+An association connects 'swrtj_Parameter' and 'swrtj_Constructor'. From 'swrtj_Parameter', the role 'swrtj_Parameter51' has cardinality 0..*, and from 'swrtj_Constructor', the role 'swrtj_Constructor50' has cardinality 0..*.
+An association connects 'swrtj_Constructor' and 'swrtj_Block'. From 'swrtj_Constructor', the role 'swrtj_Constructor53' has cardinality 0..*, and from 'swrtj_Block', the role 'swrtj_Block54' has cardinality 0..*.
+An association connects 'swrtj_GenericExpression' and 'swrtj_ReturnStatement'. From 'swrtj_GenericExpression', the role 'swrtj_GenericExpression' has cardinality 0..*, and from 'swrtj_ReturnStatement', the role 'swrtj_ReturnStatement' has cardinality 0..*.
+An association connects 'swrtj_Parameter' and 'swrtj_Type'. From 'swrtj_Parameter', the role 'swrtj_Parameter57' has cardinality 0..*, and from 'swrtj_Type', the role 'swrtj_Type58' has cardinality 0..*.
+An association connects 'swrtj_Interface' and 'swrtj_Type'. From 'swrtj_Interface', the role 'swrtj_Interface61' has cardinality 0..*, and from 'swrtj_Type', the role 'swrtj_Type60' has cardinality 0..*.
+An association connects 'swrtj_Block' and 'swrtj_Parameter'. From 'swrtj_Block', the role 'swrtj_Block63' has cardinality 0..*, and from 'swrtj_Parameter', the role 'swrtj_Parameter64' has cardinality 0..*.
+An association connects 'swrtj_Statement' and 'swrtj_Block'. From 'swrtj_Statement', the role 'swrtj_Statement' has cardinality 0..*, and from 'swrtj_Block', the role 'swrtj_Block66' has cardinality 0..*.
+An association connects 'swrtj_GenericExpression' and 'swrtj_ExpressionStatement'. From 'swrtj_GenericExpression', the role 'swrtj_GenericExpression68' has cardinality 0..*, and from 'swrtj_ExpressionStatement', the role 'swrtj_ExpressionStatement' has cardinality 0..*.
+An association connects 'swrtj_IfThenElseStatement' and 'swrtj_GenericExpression'. From 'swrtj_IfThenElseStatement', the role 'swrtj_IfThenElseStatement' has cardinality 0..*, and from 'swrtj_GenericExpression', the role 'swrtj_GenericExpression70' has cardinality 0..*.
+An association connects 'swrtj_Block' and 'swrtj_IfThenElseStatement'. From 'swrtj_Block', the role 'swrtj_Block73' has cardinality 0..*, and from 'swrtj_IfThenElseStatement', the role 'swrtj_IfThenElseStatement72' has cardinality 0..*.
+An association connects 'swrtj_IfThenElseStatement' and 'swrtj_Block'. From 'swrtj_IfThenElseStatement', the role 'swrtj_IfThenElseStatement75' has cardinality 0..*, and from 'swrtj_Block', the role 'swrtj_Block76' has cardinality 0..*.
+An association connects 'swrtj_GenericExpression' and 'swrtj_WhileStatement'. From 'swrtj_GenericExpression', the role 'swrtj_GenericExpression78' has cardinality 0..*, and from 'swrtj_WhileStatement', the role 'swrtj_WhileStatement' has cardinality 0..*.
+An association connects 'swrtj_Block' and 'swrtj_WhileStatement'. From 'swrtj_Block', the role 'swrtj_Block81' has cardinality 0..*, and from 'swrtj_WhileStatement', the role 'swrtj_WhileStatement80' has cardinality 0..*.
+An association connects 'swrtj_SimpleComparation' and 'swrtj_GenericExpression'. From 'swrtj_SimpleComparation', the role 'swrtj_SimpleComparation' has cardinality 0..*, and from 'swrtj_GenericExpression', the role 'swrtj_GenericExpression83' has cardinality 0..*.
+An association connects 'swrtj_CompareOperator' and 'swrtj_SimpleComparation'. From 'swrtj_CompareOperator', the role 'swrtj_CompareOperator' has cardinality 0..*, and from 'swrtj_SimpleComparation', the role 'swrtj_SimpleComparation85' has cardinality 0..*.
+An association connects 'swrtj_SimpleComparation' and 'swrtj_GenericExpression'. From 'swrtj_SimpleComparation', the role 'swrtj_SimpleComparation87' has cardinality 0..*, and from 'swrtj_GenericExpression', the role 'swrtj_GenericExpression88' has cardinality 0..*.
+An association connects 'swrtj_GenericExpression' and 'swrtj_NestedBooleanExpression'. From 'swrtj_GenericExpression', the role 'swrtj_GenericExpression90' has cardinality 0..*, and from 'swrtj_NestedBooleanExpression', the role 'swrtj_NestedBooleanExpression' has cardinality 0..*.
+An association connects 'swrtj_Start' and 'swrtj_DottedExpression'. From 'swrtj_Start', the role 'swrtj_Start' has cardinality 0..*, and from 'swrtj_DottedExpression', the role 'swrtj_DottedExpression' has cardinality 0..*.
+An association connects 'swrtj_DottedExpression' and 'swrtj_DottedExpression'. From 'swrtj_DottedExpression', the role 'swrtj_DottedExpression92' has cardinality 0..*, and from 'swrtj_DottedExpression', the role 'swrtj_DottedExpression94' has cardinality 0..*.
+An association connects 'swrtj_Message' and 'swrtj_DottedExpression'. From 'swrtj_Message', the role 'swrtj_Message' has cardinality 0..*, and from 'swrtj_DottedExpression', the role 'swrtj_DottedExpression96' has cardinality 0..*.
+An association connects 'swrtj_DottedExpression' and 'swrtj_GenericExpression'. From 'swrtj_DottedExpression', the role 'swrtj_DottedExpression98' has cardinality 0..*, and from 'swrtj_GenericExpression', the role 'swrtj_GenericExpression99' has cardinality 0..*.
+An association connects 'swrtj_ParameterReference' and 'swrtj_Parameter'. From 'swrtj_ParameterReference', the role 'swrtj_ParameterReference' has cardinality 0..*, and from 'swrtj_Parameter', the role 'swrtj_Parameter101' has cardinality 0..*.
+An association connects 'swrtj_ConstructorInvocation' and 'swrtj_Class'. From 'swrtj_ConstructorInvocation', the role 'swrtj_ConstructorInvocation' has cardinality 0..*, and from 'swrtj_Class', the role 'swrtj_Class103' has cardinality 0..*.
+An association connects 'swrtj_ConstructorInvocation' and 'swrtj_GenericExpression'. From 'swrtj_ConstructorInvocation', the role 'swrtj_ConstructorInvocation105' has cardinality 0..*, and from 'swrtj_GenericExpression', the role 'swrtj_GenericExpression106' has cardinality 0..*.
+An association connects 'swrtj_Type' and 'swrtj_Cast'. From 'swrtj_Type', the role 'swrtj_Type108' has cardinality 0..*, and from 'swrtj_Cast', the role 'swrtj_Cast' has cardinality 0..*.
+An association connects 'swrtj_Cast' and 'swrtj_Start'. From 'swrtj_Cast', the role 'swrtj_Cast110' has cardinality 0..*, and from 'swrtj_Start', the role 'swrtj_Start111' has cardinality 0..*.
+An association connects 'swrtj_NestedExpression' and 'swrtj_GenericExpression'. From 'swrtj_NestedExpression', the role 'swrtj_NestedExpression' has cardinality 0..*, and from 'swrtj_GenericExpression', the role 'swrtj_GenericExpression113' has cardinality 0..*.
+An association connects 'swrtj_MethodName' and 'swrtj_MethodInvocation'. From 'swrtj_MethodName', the role 'swrtj_MethodName115' has cardinality 0..*, and from 'swrtj_MethodInvocation', the role 'swrtj_MethodInvocation' has cardinality 0..*.
+An association connects 'swrtj_GenericExpression' and 'swrtj_MethodInvocation'. From 'swrtj_GenericExpression', the role 'swrtj_GenericExpression118' has cardinality 0..*, and from 'swrtj_MethodInvocation', the role 'swrtj_MethodInvocation117' has cardinality 0..*.
+An association connects 'swrtj_FieldName' and 'swrtj_FieldAccess'. From 'swrtj_FieldName', the role 'swrtj_FieldName120' has cardinality 0..*, and from 'swrtj_FieldAccess', the role 'swrtj_FieldAccess' has cardinality 0..*.
+An association connects 'swrtj_Parameter' and 'swrtj_ParameterAssignment'. From 'swrtj_Parameter', the role 'swrtj_Parameter122' has cardinality 0..*, and from 'swrtj_ParameterAssignment', the role 'swrtj_ParameterAssignment' has cardinality 0..*.
+An association connects 'swrtj_ParameterAssignment' and 'swrtj_GenericExpression'. From 'swrtj_ParameterAssignment', the role 'swrtj_ParameterAssignment124' has cardinality 0..*, and from 'swrtj_GenericExpression', the role 'swrtj_GenericExpression125' has cardinality 0..*.
+An association connects 'swrtj_FieldName' and 'swrtj_RecordExclude'. From 'swrtj_FieldName', the role 'swrtj_FieldName127' has cardinality 0..*, and from 'swrtj_RecordExclude', the role 'swrtj_RecordExclude' has cardinality 0..*.
+An association connects 'swrtj_FieldName' and 'swrtj_RecordRename'. From 'swrtj_FieldName', the role 'swrtj_FieldName129' has cardinality 0..*, and from 'swrtj_RecordRename', the role 'swrtj_RecordRename' has cardinality 0..*.
+An association connects 'swrtj_FieldName' and 'swrtj_RecordRename'. From 'swrtj_FieldName', the role 'swrtj_FieldName132' has cardinality 0..*, and from 'swrtj_RecordRename', the role 'swrtj_RecordRename131' has cardinality 0..*.
+An association connects 'swrtj_MethodName' and 'swrtj_TraitExclude'. From 'swrtj_MethodName', the role 'swrtj_MethodName134' has cardinality 0..*, and from 'swrtj_TraitExclude', the role 'swrtj_TraitExclude' has cardinality 0..*.
+An association connects 'swrtj_TraitAlias' and 'swrtj_MethodName'. From 'swrtj_TraitAlias', the role 'swrtj_TraitAlias' has cardinality 0..*, and from 'swrtj_MethodName', the role 'swrtj_MethodName136' has cardinality 0..*.
+An association connects 'swrtj_TraitAlias' and 'swrtj_MethodName'. From 'swrtj_TraitAlias', the role 'swrtj_TraitAlias138' has cardinality 0..*, and from 'swrtj_MethodName', the role 'swrtj_MethodName139' has cardinality 0..*.
+An association connects 'swrtj_TraitMethodRename' and 'swrtj_MethodName'. From 'swrtj_TraitMethodRename', the role 'swrtj_TraitMethodRename' has cardinality 0..*, and from 'swrtj_MethodName', the role 'swrtj_MethodName141' has cardinality 0..*.
+An association connects 'swrtj_MethodName' and 'swrtj_TraitMethodRename'. From 'swrtj_MethodName', the role 'swrtj_MethodName144' has cardinality 0..*, and from 'swrtj_TraitMethodRename', the role 'swrtj_TraitMethodRename143' has cardinality 0..*.
+An association connects 'swrtj_FieldName' and 'swrtj_TraitFieldRename'. From 'swrtj_FieldName', the role 'swrtj_FieldName146' has cardinality 0..*, and from 'swrtj_TraitFieldRename', the role 'swrtj_TraitFieldRename' has cardinality 0..*.
+An association connects 'swrtj_TraitFieldRename' and 'swrtj_FieldName'. From 'swrtj_TraitFieldRename', the role 'swrtj_TraitFieldRename148' has cardinality 0..*, and from 'swrtj_FieldName', the role 'swrtj_FieldName149' has cardinality 0..*.
+An association connects 'swrtj_Block' and 'swrtj_ProvidedMethod'. From 'swrtj_Block', the role 'swrtj_Block151' has cardinality 0..*, and from 'swrtj_ProvidedMethod', the role 'swrtj_ProvidedMethod' has cardinality 0..*.
+An association connects 'swrtj_ProvidedMethod' and 'swrtj_ReturnStatement'. From 'swrtj_ProvidedMethod', the role 'swrtj_ProvidedMethod153' has cardinality 0..*, and from 'swrtj_ReturnStatement', the role 'swrtj_ReturnStatement154' has cardinality 0..*.
+An association connects 'swrtj_AtomicBooleanExpression' and 'swrtj_BooleanExpression'. From 'swrtj_AtomicBooleanExpression', the role 'swrtj_AtomicBooleanExpression' has cardinality 0..*, and from 'swrtj_BooleanExpression', the role 'swrtj_BooleanExpression' has cardinality 0..*.
+An association connects 'swrtj_BooleanExpression' and 'swrtj_BooleanOperator'. From 'swrtj_BooleanExpression', the role 'swrtj_BooleanExpression157' has cardinality 0..*, and from 'swrtj_BooleanOperator', the role 'swrtj_BooleanOperator' has cardinality 0..*.
+An association connects 'swrtj_GenericExpression' and 'swrtj_LocalParameter'. From 'swrtj_GenericExpression', the role 'swrtj_GenericExpression159' has cardinality 0..*, and from 'swrtj_LocalParameter', the role 'swrtj_LocalParameter' has cardinality 0..*.
+An association connects 'swrtj_Expression' and 'swrtj_DottedExpression'. From 'swrtj_Expression', the role 'swrtj_Expression' has cardinality 0..*, and from 'swrtj_DottedExpression', the role 'swrtj_DottedExpression161' has cardinality 0..*.

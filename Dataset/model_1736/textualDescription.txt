@@ -1,0 +1,46 @@
+The domain model 'bookstore' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'bookstore_Ent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bookstore_Person' represents an important domain concept.
+It has the following attributes: 'achternaam', which is of type str; 'voornaam', which is of type str.
+
+'bookstore_Cd' represents an important domain concept.
+It has the following attributes: 'bandArtist', which is of type str; 'albumName', which is of type str.
+
+'bookstore_Book' represents an important domain concept.
+It has the following attributes: 'pages', which is of type int; 'title', which is of type str.
+
+'bookstore_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'bookstore_Dvd' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'bookstore_Magazine' represents an important domain concept.
+It has the following attributes: 'pages', which is of type int; 'title', which is of type str; 'version', which is of type str.
+
+'Ent' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'bookstore_Person' is a specialization of 'Ent'.
+The class 'bookstore_Book' is a specialization of 'Ent'.
+The class 'bookstore_Magazine' is a specialization of 'Ent'.
+The class 'bookstore_Dvd' is a specialization of 'Ent'.
+The class 'bookstore_Cd' is a specialization of 'Ent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bookstore_Model' and 'bookstore_Ent'. From 'bookstore_Model', the role 'bookstore_Model' has cardinality 0..*, and from 'bookstore_Ent', the role 'bookstore_Ent' has cardinality 0..*.
+An association connects 'bookstore_Person' and 'bookstore_Person'. From 'bookstore_Person', the role 'bookstore_Person1' has cardinality 0..*, and from 'bookstore_Person', the role 'bookstore_Person' has cardinality 0..*.
+An association connects 'bookstore_Book' and 'bookstore_Book'. From 'bookstore_Book', the role 'bookstore_Book3' has cardinality 0..*, and from 'bookstore_Book', the role 'bookstore_Book' has cardinality 0..*.
+An association connects 'bookstore_Person' and 'bookstore_Book'. From 'bookstore_Person', the role 'bookstore_Person7' has cardinality 0..*, and from 'bookstore_Book', the role 'bookstore_Book6' has cardinality 0..*.
+An association connects 'bookstore_Person' and 'bookstore_Magazine'. From 'bookstore_Person', the role 'bookstore_Person9' has cardinality 0..*, and from 'bookstore_Magazine', the role 'bookstore_Magazine' has cardinality 0..*.
+An association connects 'bookstore_Person' and 'bookstore_Dvd'. From 'bookstore_Person', the role 'bookstore_Person11' has cardinality 0..*, and from 'bookstore_Dvd', the role 'bookstore_Dvd' has cardinality 0..*.
+An association connects 'bookstore_Dvd' and 'bookstore_Book'. From 'bookstore_Dvd', the role 'bookstore_Dvd13' has cardinality 0..*, and from 'bookstore_Book', the role 'bookstore_Book14' has cardinality 0..*.
+An association connects 'bookstore_Person' and 'bookstore_Dvd'. From 'bookstore_Person', the role 'bookstore_Person17' has cardinality 0..*, and from 'bookstore_Dvd', the role 'bookstore_Dvd16' has cardinality 0..*.
+An association connects 'bookstore_Dvd' and 'bookstore_Dvd'. From 'bookstore_Dvd', the role 'bookstore_Dvd20' has cardinality 0..*, and from 'bookstore_Dvd', the role 'bookstore_Dvd18' has cardinality 0..*.
+An association connects 'bookstore_Person' and 'bookstore_Cd'. From 'bookstore_Person', the role 'bookstore_Person22' has cardinality 0..*, and from 'bookstore_Cd', the role 'bookstore_Cd' has cardinality 0..*.

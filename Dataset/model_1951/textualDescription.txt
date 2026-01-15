@@ -1,0 +1,606 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 139 main class(es).
+
+'model_types_PointerType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_datasources_CompoundQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'model_datasources_RunnableQuery' represents an important domain concept.
+It has the following attributes: 'targetVariablePath', which is of type str; 'queryPath', which is of type str; 'booleanOperator', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_instances_Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Expression' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'model_types_JSONType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_datasources_ProcessQuery' represents an important domain concept.
+It has one attribute: 'queryProcessorId', which is of type str.
+
+'model_datasources_SimpleQuery' represents an important domain concept.
+It has the following attributes: 'query', which is of type str; 'countQuery', which is of type str.
+
+'model_values_Argument' represents an important domain concept.
+It has one attribute: 'argument', which is of type str.
+
+'PhysicalQuantity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ISynchable' represents an important domain concept.
+It has one attribute: 'synched', which is of type str.
+
+'model_values_DoubleArray' represents an important domain concept.
+It has one attribute: 'elements', which is of type str.
+
+'model_values_Text' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'model_values_AArrayValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_HTML' represents an important domain concept.
+It has one attribute: 'html', which is of type str.
+
+'model_ExternalDomainModel' represents an important domain concept.
+It has one attribute: 'fileFormat', which is of type str.
+
+'model_types_CompositeVisualType' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'ISynchable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Sphere' represents an important domain concept.
+It has one attribute: 'radius', which is of type str.
+
+'model_values_SkeletonAnimation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_GeppettoModel' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'model_values_TimeSeries' represents an important domain concept.
+It has the following attributes: 'scalingFactor', which is of type str; 'value', which is of type str.
+
+'model_values_FunctionPlot' represents an important domain concept.
+It has the following attributes: 'stepValue', which is of type str; 'title', which is of type str; 'xAxisLabel', which is of type str; 'finalValue', which is of type str; 'yAxisLabel', which is of type str; 'initialValue', which is of type str.
+
+'datasources_model_StringToStringMap' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionPlot' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Cylinder' represents an important domain concept.
+It has the following attributes: 'height', which is of type str; 'bottomRadius', which is of type str; 'topRadius', which is of type str.
+
+'model_types_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'StringToValueMap' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_Type' represents an important domain concept.
+It has one attribute: 'abstract', which is of type str.
+
+'model_datasources_QueryMatchingCriteria' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_ImportValue' represents an important domain concept.
+It has one attribute: 'modelInterpreterId', which is of type str.
+
+'model_values_VisualValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Collada' represents an important domain concept.
+It has one attribute: 'collada', which is of type str.
+
+'model_values_Quantity' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'scalingFactor', which is of type str.
+
+'model_values_URL' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'model_values_Pointer' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'Image' represents an important domain concept.
+It does not declare any attributes.
+
+'AQueryResult' represents an important domain concept.
+It does not declare any attributes.
+
+'DataSourceLibraryConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_datasources_Query' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'runForCount', which is of type str.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_ExpressionType' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_URLType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_CompositeType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_ArrayElement' represents an important domain concept.
+It has one attribute: 'index', which is of type str.
+
+'model_GeppettoLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Tag' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Quantity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DomainModel' represents an important domain concept.
+It has one attribute: 'domainModel', which is of type str.
+
+'model_ModelFormat' represents an important domain concept.
+It has one attribute: 'modelFormat', which is of type str.
+
+'Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeToValueMap' represents an important domain concept.
+It does not declare any attributes.
+
+'DataSource' represents an important domain concept.
+It does not declare any attributes.
+
+'Text' represents an important domain concept.
+It does not declare any attributes.
+
+'MetadataValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Dynamics' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'model_World' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_QuantityType' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'model_variables_Variable' represents an important domain concept.
+It has one attribute: 'static', which is of type str.
+
+'model_values_SkeletonTransformation' represents an important domain concept.
+It has one attribute: 'skeletonTransformation', which is of type str.
+
+'model_datasources_QueryResults' represents an important domain concept.
+It has the following attributes: 'header', which is of type str; 'id', which is of type str.
+
+'Point' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Unit' represents an important domain concept.
+It has one attribute: 'unit', which is of type str.
+
+'model_values_OBJ' represents an important domain concept.
+It has one attribute: 'obj', which is of type str.
+
+'model_values_StringToValueMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'datasources_model_GeppettoLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_ImportType' represents an important domain concept.
+It has the following attributes: 'autoresolve', which is of type str; 'modelInterpreterId', which is of type str; 'url', which is of type str; 'referenceURL', which is of type str.
+
+'Dynamics' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainModel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ExperimentState' represents an important domain concept.
+It has the following attributes: 'projectId', which is of type str; 'experimentId', which is of type str.
+
+'model_types_SimpleArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'URL' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_DynamicsType' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_PointerElement' represents an important domain concept.
+It has one attribute: 'index', which is of type str.
+
+'model_types_ArrayType' represents an important domain concept.
+It has one attribute: 'size', which is of type str.
+
+'model_values_Composite' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_MDTimeSeries' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_JSON' represents an important domain concept.
+It has one attribute: 'json', which is of type str.
+
+'VisualValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_ParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_variables_TypeToValueMap' represents an important domain concept.
+It does not declare any attributes.
+
+'HTML' represents an important domain concept.
+It does not declare any attributes.
+
+'SkeletonTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_ArgumentType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_VisualGroup' represents an important domain concept.
+It has the following attributes: 'lowSpectrumColor', which is of type str; 'type', which is of type str; 'highSpectrumColor', which is of type str.
+
+'model_values_StringArray' represents an important domain concept.
+It has one attribute: 'elements', which is of type str.
+
+'model_types_MetadataType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Node' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'model_LibraryManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Pointer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_StateVariableType' represents an important domain concept.
+It does not declare any attributes.
+
+'PointerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_datasources_DataSource' represents an important domain concept.
+It has the following attributes: 'dataSourceService', which is of type str; 'url', which is of type str.
+
+'model_instances_SimpleInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'model_datasources_DataSourceLibraryConfiguration' represents an important domain concept.
+It has the following attributes: 'format', which is of type str; 'modelInterpreterId', which is of type str.
+
+'model_values_MetadataValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Image' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'data', which is of type str; 'reference', which is of type str; 'format', which is of type str.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_VisualGroupElement' represents an important domain concept.
+It has one attribute: 'defaultColor', which is of type str.
+
+'model_datasources_AQueryResult' represents an important domain concept.
+It does not declare any attributes.
+
+'model_StringToStringMap' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'VisualGroupElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VariableValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_PhysicalQuantity' represents an important domain concept.
+It does not declare any attributes.
+
+'types_model_DomainModel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_ArrayValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Composite' represents an important domain concept.
+It does not declare any attributes.
+
+'Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'model_datasources_CompoundRefQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Point' represents an important domain concept.
+It has the following attributes: 'y', which is of type str; 'z', which is of type str; 'x', which is of type str.
+
+'model_values_GenericArray' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Particles' represents an important domain concept.
+It does not declare any attributes.
+
+'QueryMatchingCriteria' represents an important domain concept.
+It does not declare any attributes.
+
+'model_datasources_SerializableQueryResult' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'model_types_HTMLType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_TextType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_VisualType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_IntArray' represents an important domain concept.
+It has one attribute: 'elements', which is of type str.
+
+'model_types_ImageType' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_instances_SimpleConnectionInstance' represents an important domain concept.
+It has one attribute: 'connectivity', which is of type str.
+
+'model_types_ConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'JSON' represents an important domain concept.
+It does not declare any attributes.
+
+'model_values_Connection' represents an important domain concept.
+It has one attribute: 'connectivity', which is of type str.
+
+'ArrayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_PointType' represents an important domain concept.
+It does not declare any attributes.
+
+'AArrayValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_datasources_QueryResult' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'model_values_Metadata' represents an important domain concept.
+It does not declare any attributes.
+
+'Query' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FileFormat' defines the following possible values: 'HDF5', 'ZIP'.
+The enumeration 'BooleanOperator' defines the following possible values: 'AND', 'NAND', 'OR'.
+The enumeration 'Connectivity' defines the following possible values: 'DIRECTIONAL', 'BIDIRECTIONAL', 'NON_DIRECTIONAL'.
+The enumeration 'ImageFormat' defines the following possible values: 'DZI', 'TIFF', 'IIP', 'NIFTI', 'DCM', 'GOOGLE_MAP', 'PNG', 'JPEG'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Node' is a specialization of 'ISynchable'.
+The class 'model_GeppettoLibrary' is a specialization of 'Node'.
+The class 'model_Tag' is a specialization of 'ISynchable'.
+The class 'model_ExternalDomainModel' is a specialization of 'DomainModel'.
+The class 'model_World' is a specialization of 'Node'.
+The class 'model_types_Type' is a specialization of 'Node'.
+The class 'model_types_VisualType' is a specialization of 'Type'.
+The class 'model_types_ImportType' is a specialization of 'Type'.
+The class 'model_types_CompositeType' is a specialization of 'Type'.
+The class 'model_types_PointerType' is a specialization of 'Type'.
+The class 'model_types_QuantityType' is a specialization of 'Type'.
+The class 'model_types_ParameterType' is a specialization of 'Type'.
+The class 'model_types_StateVariableType' is a specialization of 'Type'.
+The class 'model_types_DynamicsType' is a specialization of 'Type'.
+The class 'model_types_ArgumentType' is a specialization of 'Type'.
+The class 'model_types_ExpressionType' is a specialization of 'Type'.
+The class 'model_types_HTMLType' is a specialization of 'Type'.
+The class 'model_types_JSONType' is a specialization of 'Type'.
+The class 'model_types_TextType' is a specialization of 'Type'.
+The class 'model_types_URLType' is a specialization of 'Type'.
+The class 'model_types_PointType' is a specialization of 'Type'.
+The class 'model_types_ArrayType' is a specialization of 'Type'.
+The class 'model_types_CompositeVisualType' is a specialization of 'VisualType'.
+The class 'model_types_ConnectionType' is a specialization of 'Type'.
+The class 'model_types_SimpleType' is a specialization of 'Type'.
+The class 'model_types_ImageType' is a specialization of 'Type'.
+The class 'model_types_SimpleArrayType' is a specialization of 'Type'.
+The class 'model_types_MetadataType' is a specialization of 'Type'.
+The class 'model_values_Value' is a specialization of 'ISynchable'.
+The class 'model_values_Composite' is a specialization of 'Value'.
+The class 'model_values_Quantity' is a specialization of 'Value'.
+The class 'model_values_PhysicalQuantity' is a specialization of 'Quantity'.
+The class 'model_values_Unit' is a specialization of 'Value'.
+The class 'model_values_TimeSeries' is a specialization of 'Value'.
+The class 'model_values_MDTimeSeries' is a specialization of 'Value'.
+The class 'model_values_MetadataValue' is a specialization of 'Value'.
+The class 'model_values_Text' is a specialization of 'MetadataValue'.
+The class 'model_values_URL' is a specialization of 'MetadataValue'.
+The class 'model_values_HTML' is a specialization of 'MetadataValue'.
+The class 'model_values_Pointer' is a specialization of 'Value'.
+The class 'model_values_Point' is a specialization of 'Value'.
+The class 'model_values_Dynamics' is a specialization of 'Value'.
+The class 'model_values_Function' is a specialization of 'Value'.
+The class 'model_values_Argument' is a specialization of 'Value'.
+The class 'model_values_Expression' is a specialization of 'Value'.
+The class 'model_values_VisualValue' is a specialization of 'Value'.
+The class 'model_values_Collada' is a specialization of 'VisualValue'.
+The class 'model_values_OBJ' is a specialization of 'VisualValue'.
+The class 'model_values_Sphere' is a specialization of 'VisualValue'.
+The class 'model_values_Cylinder' is a specialization of 'VisualValue'.
+The class 'model_values_Particles' is a specialization of 'Value'.
+The class 'model_values_SkeletonAnimation' is a specialization of 'VisualValue'.
+The class 'model_values_VisualGroupElement' is a specialization of 'Node'.
+The class 'model_values_VisualGroup' is a specialization of 'Node'.
+The class 'model_values_Connection' is a specialization of 'Value'.
+The class 'model_values_ArrayElement' is a specialization of 'Value'.
+The class 'model_values_ArrayValue' is a specialization of 'Value'.
+The class 'model_values_Image' is a specialization of 'Value'.
+The class 'model_values_ImportValue' is a specialization of 'Value'.
+The class 'model_values_Metadata' is a specialization of 'MetadataValue'.
+The class 'model_values_JSON' is a specialization of 'MetadataValue'.
+The class 'model_values_GenericArray' is a specialization of 'AArrayValue'.
+The class 'model_values_StringArray' is a specialization of 'AArrayValue'.
+The class 'model_values_IntArray' is a specialization of 'AArrayValue'.
+The class 'model_values_DoubleArray' is a specialization of 'AArrayValue'.
+The class 'model_values_AArrayValue' is a specialization of 'Value'.
+The class 'model_variables_Variable' is a specialization of 'Node'.
+The class 'model_datasources_DataSource' is a specialization of 'Node'.
+The class 'model_datasources_Query' is a specialization of 'Node'.
+The class 'model_datasources_ProcessQuery' is a specialization of 'Query'.
+The class 'model_datasources_SimpleQuery' is a specialization of 'Query'.
+The class 'model_datasources_CompoundQuery' is a specialization of 'Query'.
+The class 'model_datasources_CompoundRefQuery' is a specialization of 'Query'.
+The class 'model_datasources_QueryResult' is a specialization of 'AQueryResult'.
+The class 'model_datasources_SerializableQueryResult' is a specialization of 'AQueryResult'.
+The class 'model_instances_Instance' is a specialization of 'Node'.
+The class 'model_instances_SimpleInstance' is a specialization of 'Instance'.
+The class 'model_instances_SimpleConnectionInstance' is a specialization of 'Instance'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_GeppettoModel' and 'Variable'. From 'model_GeppettoModel', the role 'model_GeppettoModel' has cardinality 0..*, and from 'Variable', the role 'Variable' has cardinality 0..*.
+An association connects 'model_GeppettoModel' and 'model_World'. From 'model_GeppettoModel', the role 'model_GeppettoModel2' has cardinality 0..*, and from 'model_World', the role 'model_World' has cardinality 0..*.
+An association connects 'model_GeppettoLibrary' and 'model_GeppettoModel'. From 'model_GeppettoLibrary', the role 'model_GeppettoLibrary' has cardinality 0..*, and from 'model_GeppettoModel', the role 'model_GeppettoModel4' has cardinality 0..*.
+An association connects 'model_Tag' and 'model_GeppettoModel'. From 'model_Tag', the role 'model_Tag' has cardinality 0..*, and from 'model_GeppettoModel', the role 'model_GeppettoModel6' has cardinality 0..*.
+An association connects 'model_GeppettoModel' and 'DataSource'. From 'model_GeppettoModel', the role 'model_GeppettoModel8' has cardinality 0..*, and from 'DataSource', the role 'DataSource' has cardinality 0..*.
+An association connects 'model_GeppettoModel' and 'Query'. From 'model_GeppettoModel', the role 'model_GeppettoModel10' has cardinality 0..*, and from 'Query', the role 'Query' has cardinality 0..*.
+An association connects 'model_Tag' and 'model_Node'. From 'model_Tag', the role 'model_Tag12' has cardinality 0..*, and from 'model_Node', the role 'model_Node' has cardinality 0..*.
+An association connects 'model_GeppettoLibrary' and 'Type'. From 'model_GeppettoLibrary', the role 'model_GeppettoLibrary14' has cardinality 0..*, and from 'Type', the role 'Type' has cardinality 0..*.
+An association connects 'Type' and 'model_GeppettoLibrary'. From 'Type', the role 'Type17' has cardinality 0..*, and from 'model_GeppettoLibrary', the role 'model_GeppettoLibrary16' has cardinality 0..*.
+An association connects 'model_LibraryManager' and 'model_GeppettoLibrary'. From 'model_LibraryManager', the role 'model_LibraryManager' has cardinality 0..*, and from 'model_GeppettoLibrary', the role 'model_GeppettoLibrary19' has cardinality 0..*.
+An association connects 'model_ExperimentState' and 'model_VariableValue'. From 'model_ExperimentState', the role 'model_ExperimentState' has cardinality 0..*, and from 'model_VariableValue', the role 'model_VariableValue' has cardinality 0..*.
+An association connects 'model_ExperimentState' and 'model_VariableValue'. From 'model_ExperimentState', the role 'model_ExperimentState22' has cardinality 0..*, and from 'model_VariableValue', the role 'model_VariableValue23' has cardinality 0..*.
+An association connects 'Pointer' and 'model_VariableValue'. From 'Pointer', the role 'Pointer' has cardinality 0..*, and from 'model_VariableValue', the role 'model_VariableValue25' has cardinality 0..*.
+An association connects 'Value' and 'model_VariableValue'. From 'Value', the role 'Value' has cardinality 0..*, and from 'model_VariableValue', the role 'model_VariableValue27' has cardinality 0..*.
+An association connects 'model_Tag' and 'model_Tag'. From 'model_Tag', the role 'model_Tag28' has cardinality 0..*, and from 'model_Tag', the role 'model_Tag30' has cardinality 0..*.
+An association connects 'model_DomainModel' and 'model_ModelFormat'. From 'model_DomainModel', the role 'model_DomainModel' has cardinality 0..*, and from 'model_ModelFormat', the role 'model_ModelFormat' has cardinality 0..*.
+An association connects 'model_World' and 'Variable'. From 'model_World', the role 'model_World33' has cardinality 0..*, and from 'Variable', the role 'Variable34' has cardinality 0..*.
+An association connects 'model_World' and 'Instance'. From 'model_World', the role 'model_World36' has cardinality 0..*, and from 'Instance', the role 'Instance' has cardinality 0..*.
+An association connects 'Type' and 'model_types_Type'. From 'Type', the role 'Type38' has cardinality 0..*, and from 'model_types_Type', the role 'model_types_Type' has cardinality 0..*.
+An association connects 'VisualType' and 'model_types_Type'. From 'VisualType', the role 'VisualType' has cardinality 0..*, and from 'model_types_Type', the role 'model_types_Type40' has cardinality 0..*.
+An association connects 'Variable' and 'model_types_Type'. From 'Variable', the role 'variables' has cardinality 0..*, and from 'model_types_Type', the role 'Variable42' has cardinality 0..*.
+An association connects 'types_model_DomainModel' and 'model_types_Type'. From 'types_model_DomainModel', the role 'types_model_DomainModel' has cardinality 0..*, and from 'model_types_Type', the role 'model_types_Type44' has cardinality 0..*.
+An association connects 'model_types_VisualType' and 'VisualValue'. From 'model_types_VisualType', the role 'model_types_VisualType' has cardinality 0..*, and from 'VisualValue', the role 'VisualValue' has cardinality 0..*.
+An association connects 'model_types_CompositeType' and 'Variable'. From 'model_types_CompositeType', the role 'model_types_CompositeType' has cardinality 0..*, and from 'Variable', the role 'Variable47' has cardinality 0..*.
+An association connects 'model_types_CompositeType' and 'Composite'. From 'model_types_CompositeType', the role 'model_types_CompositeType49' has cardinality 0..*, and from 'Composite', the role 'Composite' has cardinality 0..*.
+An association connects 'model_types_PointerType' and 'Pointer'. From 'model_types_PointerType', the role 'model_types_PointerType' has cardinality 0..*, and from 'Pointer', the role 'Pointer51' has cardinality 0..*.
+An association connects 'model_types_QuantityType' and 'Quantity'. From 'model_types_QuantityType', the role 'model_types_QuantityType' has cardinality 0..*, and from 'Quantity', the role 'Quantity' has cardinality 0..*.
+An association connects 'model_types_ParameterType' and 'Quantity'. From 'model_types_ParameterType', the role 'model_types_ParameterType' has cardinality 0..*, and from 'Quantity', the role 'Quantity54' has cardinality 0..*.
+An association connects 'Quantity' and 'model_types_StateVariableType'. From 'Quantity', the role 'Quantity56' has cardinality 0..*, and from 'model_types_StateVariableType', the role 'model_types_StateVariableType' has cardinality 0..*.
+An association connects 'model_types_DynamicsType' and 'Dynamics'. From 'model_types_DynamicsType', the role 'model_types_DynamicsType' has cardinality 0..*, and from 'Dynamics', the role 'Dynamics' has cardinality 0..*.
+An association connects 'Argument' and 'model_types_ArgumentType'. From 'Argument', the role 'Argument' has cardinality 0..*, and from 'model_types_ArgumentType', the role 'model_types_ArgumentType' has cardinality 0..*.
+An association connects 'model_types_ExpressionType' and 'Expression'. From 'model_types_ExpressionType', the role 'model_types_ExpressionType' has cardinality 0..*, and from 'Expression', the role 'Expression' has cardinality 0..*.
+An association connects 'model_types_HTMLType' and 'HTML'. From 'model_types_HTMLType', the role 'model_types_HTMLType' has cardinality 0..*, and from 'HTML', the role 'HTML' has cardinality 0..*.
+An association connects 'JSON' and 'model_types_JSONType'. From 'JSON', the role 'JSON' has cardinality 0..*, and from 'model_types_JSONType', the role 'model_types_JSONType' has cardinality 0..*.
+An association connects 'Text' and 'model_types_TextType'. From 'Text', the role 'Text' has cardinality 0..*, and from 'model_types_TextType', the role 'model_types_TextType' has cardinality 0..*.
+An association connects 'model_types_URLType' and 'URL'. From 'model_types_URLType', the role 'model_types_URLType' has cardinality 0..*, and from 'URL', the role 'URL' has cardinality 0..*.
+An association connects 'model_types_PointType' and 'Point'. From 'model_types_PointType', the role 'model_types_PointType' has cardinality 0..*, and from 'Point', the role 'Point' has cardinality 0..*.
+An association connects 'model_types_ArrayType' and 'Type'. From 'model_types_ArrayType', the role 'model_types_ArrayType' has cardinality 0..*, and from 'Type', the role 'Type66' has cardinality 0..*.
+An association connects 'model_types_ArrayType' and 'ArrayValue'. From 'model_types_ArrayType', the role 'model_types_ArrayType68' has cardinality 0..*, and from 'ArrayValue', the role 'ArrayValue' has cardinality 0..*.
+An association connects 'model_types_CompositeVisualType' and 'Variable'. From 'model_types_CompositeVisualType', the role 'model_types_CompositeVisualType' has cardinality 0..*, and from 'Variable', the role 'Variable70' has cardinality 0..*.
+An association connects 'model_types_CompositeVisualType' and 'VisualGroup'. From 'model_types_CompositeVisualType', the role 'model_types_CompositeVisualType72' has cardinality 0..*, and from 'VisualGroup', the role 'VisualGroup' has cardinality 0..*.
+An association connects 'Variable' and 'model_types_ConnectionType'. From 'Variable', the role 'Variable74' has cardinality 0..*, and from 'model_types_ConnectionType', the role 'model_types_ConnectionType' has cardinality 0..*.
+An association connects 'model_types_ConnectionType' and 'Composite'. From 'model_types_ConnectionType', the role 'model_types_ConnectionType76' has cardinality 0..*, and from 'Composite', the role 'Composite77' has cardinality 0..*.
+An association connects 'Image' and 'model_types_ImageType'. From 'Image', the role 'Image' has cardinality 0..*, and from 'model_types_ImageType', the role 'model_types_ImageType' has cardinality 0..*.
+An association connects 'model_types_SimpleArrayType' and 'AArrayValue'. From 'model_types_SimpleArrayType', the role 'model_types_SimpleArrayType' has cardinality 0..*, and from 'AArrayValue', the role 'AArrayValue' has cardinality 0..*.
+An association connects 'model_values_Composite' and 'StringToValueMap'. From 'model_values_Composite', the role 'model_values_Composite' has cardinality 0..*, and from 'StringToValueMap', the role 'StringToValueMap' has cardinality 0..*.
+An association connects 'model_values_StringToValueMap' and 'Value'. From 'model_values_StringToValueMap', the role 'model_values_StringToValueMap' has cardinality 0..*, and from 'Value', the role 'Value82' has cardinality 0..*.
+An association connects 'model_values_PhysicalQuantity' and 'Unit'. From 'model_values_PhysicalQuantity', the role 'model_values_PhysicalQuantity' has cardinality 0..*, and from 'Unit', the role 'Unit' has cardinality 0..*.
+An association connects 'Unit' and 'model_values_TimeSeries'. From 'Unit', the role 'Unit85' has cardinality 0..*, and from 'model_values_TimeSeries', the role 'model_values_TimeSeries' has cardinality 0..*.
+An association connects 'Value' and 'model_values_MDTimeSeries'. From 'Value', the role 'Value87' has cardinality 0..*, and from 'model_values_MDTimeSeries', the role 'model_values_MDTimeSeries' has cardinality 0..*.
+An association connects 'PointerElement' and 'model_values_Pointer'. From 'PointerElement', the role 'PointerElement' has cardinality 0..*, and from 'model_values_Pointer', the role 'model_values_Pointer' has cardinality 0..*.
+An association connects 'Point' and 'model_values_Pointer'. From 'Point', the role 'Point91' has cardinality 0..*, and from 'model_values_Pointer', the role 'model_values_Pointer90' has cardinality 0..*.
+An association connects 'model_values_PointerElement' and 'Variable'. From 'model_values_PointerElement', the role 'model_values_PointerElement' has cardinality 0..*, and from 'Variable', the role 'Variable93' has cardinality 0..*.
+An association connects 'model_values_PointerElement' and 'Type'. From 'model_values_PointerElement', the role 'model_values_PointerElement95' has cardinality 0..*, and from 'Type', the role 'Type96' has cardinality 0..*.
+An association connects 'PhysicalQuantity' and 'model_values_Dynamics'. From 'PhysicalQuantity', the role 'PhysicalQuantity' has cardinality 0..*, and from 'model_values_Dynamics', the role 'model_values_Dynamics' has cardinality 0..*.
+An association connects 'Function' and 'model_values_Dynamics'. From 'Function', the role 'Function' has cardinality 0..*, and from 'model_values_Dynamics', the role 'model_values_Dynamics99' has cardinality 0..*.
+An association connects 'model_values_Function' and 'Argument'. From 'model_values_Function', the role 'model_values_Function' has cardinality 0..*, and from 'Argument', the role 'Argument101' has cardinality 0..*.
+An association connects 'Expression' and 'model_values_Function'. From 'Expression', the role 'Expression104' has cardinality 0..*, and from 'model_values_Function', the role 'model_values_Function103' has cardinality 0..*.
+An association connects 'model_values_Function' and 'FunctionPlot'. From 'model_values_Function', the role 'model_values_Function106' has cardinality 0..*, and from 'FunctionPlot', the role 'FunctionPlot' has cardinality 0..*.
+An association connects 'VisualGroupElement' and 'model_values_VisualValue'. From 'VisualGroupElement', the role 'VisualGroupElement' has cardinality 0..*, and from 'model_values_VisualValue', the role 'model_values_VisualValue' has cardinality 0..*.
+An association connects 'model_values_VisualValue' and 'Point'. From 'model_values_VisualValue', the role 'model_values_VisualValue109' has cardinality 0..*, and from 'Point', the role 'Point110' has cardinality 0..*.
+An association connects 'Point' and 'model_values_Cylinder'. From 'Point', the role 'Point112' has cardinality 0..*, and from 'model_values_Cylinder', the role 'model_values_Cylinder' has cardinality 0..*.
+An association connects 'model_values_Particles' and 'Point'. From 'model_values_Particles', the role 'model_values_Particles' has cardinality 0..*, and from 'Point', the role 'Point114' has cardinality 0..*.
+An association connects 'model_values_SkeletonAnimation' and 'SkeletonTransformation'. From 'model_values_SkeletonAnimation', the role 'model_values_SkeletonAnimation' has cardinality 0..*, and from 'SkeletonTransformation', the role 'SkeletonTransformation' has cardinality 0..*.
+An association connects 'Quantity' and 'model_values_VisualGroupElement'. From 'Quantity', the role 'Quantity117' has cardinality 0..*, and from 'model_values_VisualGroupElement', the role 'model_values_VisualGroupElement' has cardinality 0..*.
+An association connects 'VisualGroupElement' and 'model_values_VisualGroup'. From 'VisualGroupElement', the role 'VisualGroupElement119' has cardinality 0..*, and from 'model_values_VisualGroup', the role 'model_values_VisualGroup' has cardinality 0..*.
+An association connects 'model_values_Connection' and 'Pointer'. From 'model_values_Connection', the role 'model_values_Connection' has cardinality 0..*, and from 'Pointer', the role 'Pointer121' has cardinality 0..*.
+An association connects 'model_values_Connection' and 'Pointer'. From 'model_values_Connection', the role 'model_values_Connection123' has cardinality 0..*, and from 'Pointer', the role 'Pointer124' has cardinality 0..*.
+An association connects 'Point' and 'model_values_ArrayElement'. From 'Point', the role 'Point126' has cardinality 0..*, and from 'model_values_ArrayElement', the role 'model_values_ArrayElement' has cardinality 0..*.
+An association connects 'Value' and 'model_values_ArrayElement'. From 'Value', the role 'Value129' has cardinality 0..*, and from 'model_values_ArrayElement', the role 'model_values_ArrayElement128' has cardinality 0..*.
+An association connects 'ArrayElement' and 'model_values_ArrayValue'. From 'ArrayElement', the role 'ArrayElement' has cardinality 0..*, and from 'model_values_ArrayValue', the role 'model_values_ArrayValue' has cardinality 0..*.
+An association connects 'model_values_Metadata' and 'StringToValueMap'. From 'model_values_Metadata', the role 'model_values_Metadata' has cardinality 0..*, and from 'StringToValueMap', the role 'StringToValueMap132' has cardinality 0..*.
+An association connects 'model_values_GenericArray' and 'Value'. From 'model_values_GenericArray', the role 'model_values_GenericArray' has cardinality 0..*, and from 'Value', the role 'Value134' has cardinality 0..*.
+An association connects 'Type' and 'model_variables_Variable'. From 'Type', the role 'Type136' has cardinality 0..*, and from 'model_variables_Variable', the role 'model_variables_Variable' has cardinality 0..*.
+An association connects 'Type' and 'model_variables_Variable'. From 'Type', the role 'types' has cardinality 0..*, and from 'model_variables_Variable', the role 'Type138' has cardinality 0..*.
+An association connects 'TypeToValueMap' and 'model_variables_Variable'. From 'TypeToValueMap', the role 'TypeToValueMap' has cardinality 0..*, and from 'model_variables_Variable', the role 'model_variables_Variable140' has cardinality 0..*.
+An association connects 'Point' and 'model_variables_Variable'. From 'Point', the role 'Point143' has cardinality 0..*, and from 'model_variables_Variable', the role 'model_variables_Variable142' has cardinality 0..*.
+An association connects 'Type' and 'model_variables_TypeToValueMap'. From 'Type', the role 'Type145' has cardinality 0..*, and from 'model_variables_TypeToValueMap', the role 'model_variables_TypeToValueMap' has cardinality 0..*.
+An association connects 'Value' and 'model_variables_TypeToValueMap'. From 'Value', the role 'Value148' has cardinality 0..*, and from 'model_variables_TypeToValueMap', the role 'model_variables_TypeToValueMap147' has cardinality 0..*.
+An association connects 'model_datasources_DataSource' and 'DataSourceLibraryConfiguration'. From 'model_datasources_DataSource', the role 'model_datasources_DataSource' has cardinality 0..*, and from 'DataSourceLibraryConfiguration', the role 'DataSourceLibraryConfiguration' has cardinality 0..*.
+An association connects 'model_datasources_DataSource' and 'Query'. From 'model_datasources_DataSource', the role 'model_datasources_DataSource151' has cardinality 0..*, and from 'Query', the role 'Query152' has cardinality 0..*.
+An association connects 'datasources_model_GeppettoLibrary' and 'model_datasources_DataSource'. From 'datasources_model_GeppettoLibrary', the role 'datasources_model_GeppettoLibrary' has cardinality 0..*, and from 'model_datasources_DataSource', the role 'model_datasources_DataSource154' has cardinality 0..*.
+An association connects 'datasources_model_GeppettoLibrary' and 'model_datasources_DataSource'. From 'datasources_model_GeppettoLibrary', the role 'datasources_model_GeppettoLibrary157' has cardinality 0..*, and from 'model_datasources_DataSource', the role 'model_datasources_DataSource156' has cardinality 0..*.
+An association connects 'Query' and 'model_datasources_DataSource'. From 'Query', the role 'Query160' has cardinality 0..*, and from 'model_datasources_DataSource', the role 'model_datasources_DataSource159' has cardinality 0..*.
+An association connects 'model_datasources_DataSourceLibraryConfiguration' and 'datasources_model_GeppettoLibrary'. From 'model_datasources_DataSourceLibraryConfiguration', the role 'model_datasources_DataSourceLibraryConfiguration' has cardinality 0..*, and from 'datasources_model_GeppettoLibrary', the role 'datasources_model_GeppettoLibrary162' has cardinality 0..*.
+An association connects 'model_datasources_Query' and 'QueryMatchingCriteria'. From 'model_datasources_Query', the role 'model_datasources_Query' has cardinality 0..*, and from 'QueryMatchingCriteria', the role 'QueryMatchingCriteria' has cardinality 0..*.
+An association connects 'Type' and 'model_datasources_Query'. From 'Type', the role 'Type166' has cardinality 0..*, and from 'model_datasources_Query', the role 'model_datasources_Query165' has cardinality 0..*.
+An association connects 'datasources_model_StringToStringMap' and 'model_datasources_ProcessQuery'. From 'datasources_model_StringToStringMap', the role 'datasources_model_StringToStringMap' has cardinality 0..*, and from 'model_datasources_ProcessQuery', the role 'model_datasources_ProcessQuery' has cardinality 0..*.
+An association connects 'model_datasources_CompoundQuery' and 'Query'. From 'model_datasources_CompoundQuery', the role 'model_datasources_CompoundQuery' has cardinality 0..*, and from 'Query', the role 'Query169' has cardinality 0..*.
+An association connects 'Query' and 'model_datasources_CompoundRefQuery'. From 'Query', the role 'Query171' has cardinality 0..*, and from 'model_datasources_CompoundRefQuery', the role 'model_datasources_CompoundRefQuery' has cardinality 0..*.
+An association connects 'model_datasources_QueryResults' and 'AQueryResult'. From 'model_datasources_QueryResults', the role 'model_datasources_QueryResults' has cardinality 0..*, and from 'AQueryResult', the role 'AQueryResult' has cardinality 0..*.
+An association connects 'model_datasources_QueryMatchingCriteria' and 'Type'. From 'model_datasources_QueryMatchingCriteria', the role 'model_datasources_QueryMatchingCriteria' has cardinality 0..*, and from 'Type', the role 'Type174' has cardinality 0..*.
+An association connects 'Type' and 'model_instances_Instance'. From 'Type', the role 'Type176' has cardinality 0..*, and from 'model_instances_Instance', the role 'model_instances_Instance' has cardinality 0..*.
+An association connects 'Value' and 'model_instances_Instance'. From 'Value', the role 'Value179' has cardinality 0..*, and from 'model_instances_Instance', the role 'model_instances_Instance178' has cardinality 0..*.
+An association connects 'model_instances_SimpleInstance' and 'VisualValue'. From 'model_instances_SimpleInstance', the role 'model_instances_SimpleInstance' has cardinality 0..*, and from 'VisualValue', the role 'VisualValue181' has cardinality 0..*.
+An association connects 'Point' and 'model_instances_SimpleInstance'. From 'Point', the role 'Point184' has cardinality 0..*, and from 'model_instances_SimpleInstance', the role 'model_instances_SimpleInstance183' has cardinality 0..*.
+An association connects 'model_instances_SimpleConnectionInstance' and 'Instance'. From 'model_instances_SimpleConnectionInstance', the role 'model_instances_SimpleConnectionInstance' has cardinality 0..*, and from 'Instance', the role 'Instance186' has cardinality 0..*.
+An association connects 'Instance' and 'model_instances_SimpleConnectionInstance'. From 'Instance', the role 'Instance189' has cardinality 0..*, and from 'model_instances_SimpleConnectionInstance', the role 'model_instances_SimpleConnectionInstance188' has cardinality 0..*.

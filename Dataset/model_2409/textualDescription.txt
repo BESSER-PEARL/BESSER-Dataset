@@ -1,0 +1,20 @@
+The domain model 'relationalMetaModel' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'relationalMetaModel_RelationalSchema' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'relationalMetaModel_RelationalForeignKey' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'relationalMetaModel_RelationalTable' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'relationalMetaModel_RelationalSchema' and 'relationalMetaModel_RelationalTable'. From 'relationalMetaModel_RelationalSchema', the role 'Schema' has cardinality 0..*, and from 'relationalMetaModel_RelationalTable', the role 'RelationalTable' has cardinality 0..*.
+An association connects 'relationalMetaModel_RelationalSchema' and 'relationalMetaModel_RelationalTable'. From 'relationalMetaModel_RelationalSchema', the role 'RelationalSchema' has cardinality 0..*, and from 'relationalMetaModel_RelationalTable', the role 'Tables' has cardinality 0..*.
+An association connects 'relationalMetaModel_RelationalForeignKey' and 'relationalMetaModel_RelationalTable'. From 'relationalMetaModel_RelationalForeignKey', the role 'RelationalForeignKey' has cardinality 0..*, and from 'relationalMetaModel_RelationalTable', the role 'OwnedByTable' has cardinality 0..*.
+An association connects 'relationalMetaModel_RelationalTable' and 'relationalMetaModel_RelationalForeignKey'. From 'relationalMetaModel_RelationalTable', the role 'ReferencedTable' has cardinality 0..*, and from 'relationalMetaModel_RelationalForeignKey', the role 'RelationalForeignKey4' has cardinality 0..*.
+An association connects 'relationalMetaModel_RelationalTable' and 'relationalMetaModel_RelationalForeignKey'. From 'relationalMetaModel_RelationalTable', the role 'RelationalTable6' has cardinality 0..*, and from 'relationalMetaModel_RelationalForeignKey', the role 'ForeignKeys' has cardinality 0..*.
+An association connects 'relationalMetaModel_RelationalTable' and 'relationalMetaModel_RelationalForeignKey'. From 'relationalMetaModel_RelationalTable', the role 'RelationalTable8' has cardinality 0..*, and from 'relationalMetaModel_RelationalForeignKey', the role 'ReferencedBy' has cardinality 0..*.

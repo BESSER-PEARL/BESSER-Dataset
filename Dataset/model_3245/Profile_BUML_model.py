@@ -1,0 +1,107 @@
+####################
+# STRUCTURAL MODEL #
+####################
+
+from besser.BUML.metamodel.structural import (
+    Class, Property, Method, Parameter,
+    BinaryAssociation, Generalization, DomainModel,
+    Enumeration, EnumerationLiteral, Multiplicity,
+    StringType, IntegerType, FloatType, BooleanType,
+    TimeType, DateType, DateTimeType, TimeDeltaType,
+    AnyType, Constraint, AssociationClass, Metadata
+)
+
+# Enumerations
+ResourceType: Enumeration = Enumeration(
+    name="ResourceType",
+    literals={
+            EnumerationLiteral(name="cpu"),
+			EnumerationLiteral(name="memory"),
+			EnumerationLiteral(name="bandwidth"),
+			EnumerationLiteral(name="power"),
+			EnumerationLiteral(name="port")
+    }
+)
+
+ConstraintType: Enumeration = Enumeration(
+    name="ConstraintType",
+    literals={
+            EnumerationLiteral(name="Minimum"),
+			EnumerationLiteral(name="Maximum"),
+			EnumerationLiteral(name="Average")
+    }
+)
+
+ConstraintOperation: Enumeration = Enumeration(
+    name="ConstraintOperation",
+    literals={
+            EnumerationLiteral(name="Less"),
+			EnumerationLiteral(name="LessOrEqual"),
+			EnumerationLiteral(name="Equal"),
+			EnumerationLiteral(name="GreaterOrEqual"),
+			EnumerationLiteral(name="Greater")
+    }
+)
+
+# Classes
+profile_PlatformProfile = Class(name="profile::PlatformProfile")
+profile_Resource = Class(name="profile::Resource")
+profile_Constraint = Class(name="profile::Constraint")
+
+# profile_PlatformProfile class attributes and methods
+profile_PlatformProfile_name: Property = Property(name="name", type=StringType)
+profile_PlatformProfile.attributes={profile_PlatformProfile_name}
+
+# profile_Resource class attributes and methods
+profile_Resource_name: Property = Property(name="name", type=StringType)
+profile_Resource_type: Property = Property(name="type", type=StringType)
+profile_Resource_weight: Property = Property(name="weight", type=IntegerType)
+profile_Resource.attributes={profile_Resource_weight, profile_Resource_type, profile_Resource_name}
+
+# profile_Constraint class attributes and methods
+profile_Constraint_type: Property = Property(name="type", type=StringType)
+profile_Constraint_isDerivation: Property = Property(name="isDerivation", type=BooleanType)
+profile_Constraint_operation: Property = Property(name="operation", type=StringType)
+profile_Constraint_bound: Property = Property(name="bound", type=IntegerType)
+profile_Constraint.attributes={profile_Constraint_operation, profile_Constraint_bound, profile_Constraint_isDerivation, profile_Constraint_type}
+
+# Relationships
+references3: BinaryAssociation = BinaryAssociation(
+    name="references3",
+    ends={
+        Property(name="profile_Resource5", type=profile_Constraint, multiplicity=Multiplicity(1, 1)),
+        Property(name="profile_Constraint4", type=profile_Resource, multiplicity=Multiplicity(0, 1))
+    }
+)
+resources0: BinaryAssociation = BinaryAssociation(
+    name="resources0",
+    ends={
+        Property(name="profile_Resource", type=profile_PlatformProfile, multiplicity=Multiplicity(1, 1)),
+        Property(name="profile_PlatformProfile", type=profile_Resource, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+constraints1: BinaryAssociation = BinaryAssociation(
+    name="constraints1",
+    ends={
+        Property(name="profile_Constraint", type=profile_PlatformProfile, multiplicity=Multiplicity(1, 1)),
+        Property(name="profile_PlatformProfile2", type=profile_Constraint, multiplicity=Multiplicity(0, 9999), is_composite=True)
+    }
+)
+
+# Domain Model
+domain_model = DomainModel(
+    name="profile",
+    types={profile_PlatformProfile, profile_Resource, profile_Constraint, ResourceType, ConstraintType, ConstraintOperation},
+    associations={references3, resources0, constraints1},
+    generalizations={},
+    metadata=None
+)
+
+
+###################### 
+ # PROJECT DEFINITION # 
+ ###################### 
+from besser.BUML.metamodel.project import Project 
+from besser.BUML.metamodel.structural.structural import Metadata
+metadata = Metadata(description="New project")
+project = Project(name="sampleModel",models=[domain_model],owner="User",metadata=metadata)

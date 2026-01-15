@@ -1,0 +1,104 @@
+The domain model 'bibtexml' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'bibtexml_InproceedingsType' represents an important domain concept.
+It has the following attributes: 'number', which is of type str; 'note', which is of type str; 'key', which is of type str; 'series', which is of type str; 'address', which is of type str; 'publisher', which is of type str; 'volume', which is of type str; 'organization', which is of type str; 'title', which is of type str; 'doi', which is of type str; 'author', which is of type str; 'month', which is of type str; 'url', which is of type str; 'year', which is of type str; 'crossref', which is of type str; 'booktitle', which is of type str; 'editor', which is of type str; 'pages', which is of type str.
+
+'bibtexml_ProceedingsType' represents an important domain concept.
+It has the following attributes: 'crossref', which is of type str; 'organization', which is of type str; 'publisher', which is of type str; 'month', which is of type str; 'note', which is of type str; 'url', which is of type str; 'editor', which is of type str; 'series', which is of type str; 'address', which is of type str; 'volume', which is of type str; 'key', which is of type str; 'title', which is of type str; 'doi', which is of type str; 'number', which is of type str; 'year', which is of type str.
+
+'BibTeXMLEntriesClass' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtexml_BookletType' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'key', which is of type str; 'url', which is of type str; 'address', which is of type str; 'year', which is of type str; 'month', which is of type str; 'note', which is of type str; 'doi', which is of type str; 'crossref', which is of type str; 'howpublished', which is of type str; 'author', which is of type str.
+
+'bibtexml_MiscType' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'crossref', which is of type str; 'url', which is of type str; 'note', which is of type str; 'author', which is of type str; 'howpublished', which is of type str; 'doi', which is of type str; 'month', which is of type str; 'year', which is of type str; 'key', which is of type str.
+
+'bibtexml_IncollectionType' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'booktitle', which is of type str; 'key', which is of type str; 'author', which is of type str; 'note', which is of type str; 'month', which is of type str; 'edition', which is of type str; 'crossref', which is of type str; 'address', which is of type str; 'pages', which is of type str; 'type', which is of type str; 'chapter', which is of type str; 'editor', which is of type str; 'year', which is of type str; 'doi', which is of type str; 'url', which is of type str; 'volume', which is of type str; 'publisher', which is of type str; 'number', which is of type str; 'series', which is of type str.
+
+'bibtexml_FileType' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtexml_BookType' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'year', which is of type str; 'doi', which is of type str; 'author', which is of type str; 'publisher', which is of type str; 'url', which is of type str; 'address', which is of type str; 'number', which is of type str; 'series', which is of type str; 'key', which is of type str; 'volume', which is of type str; 'edition', which is of type str; 'note', which is of type str; 'month', which is of type str; 'crossref', which is of type str; 'editor', which is of type str.
+
+'bibtexml_ArticleType' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'doi', which is of type str; 'journal', which is of type str; 'month', which is of type str; 'author', which is of type str; 'note', which is of type str; 'url', which is of type str; 'crossref', which is of type str; 'pages', which is of type str; 'year', which is of type str; 'volume', which is of type str; 'title', which is of type str; 'number', which is of type str.
+
+'bibtexml_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'edition', which is of type str; 'school', which is of type str; 'journal', which is of type str; 'month', which is of type str; 'author', which is of type str; 'crossref', which is of type str; 'mixed', which is of type str; 'number', which is of type str; 'year', which is of type str; 'title', which is of type str; 'doi', which is of type str; 'howpublished', which is of type str; 'chapter', which is of type str; 'annote', which is of type str; 'pages', which is of type str; 'institution', which is of type str; 'url', which is of type str; 'organization', which is of type str; 'booktitle', which is of type str; 'key', which is of type str; 'address', which is of type str; 'editor', which is of type str; 'publisher', which is of type str; 'type', which is of type str; 'note', which is of type str; 'volume', which is of type str; 'series', which is of type str.
+
+'bibtexml_ManualType' represents an important domain concept.
+It has the following attributes: 'crossref', which is of type str; 'note', which is of type str; 'month', which is of type str; 'year', which is of type str; 'author', which is of type str; 'edition', which is of type str; 'address', which is of type str; 'doi', which is of type str; 'title', which is of type str; 'url', which is of type str; 'organization', which is of type str; 'key', which is of type str.
+
+'bibtexml_TechreportType' represents an important domain concept.
+It has the following attributes: 'doi', which is of type str; 'crossref', which is of type str; 'title', which is of type str; 'key', which is of type str; 'address', which is of type str; 'month', which is of type str; 'institution', which is of type str; 'type', which is of type str; 'url', which is of type str; 'note', which is of type str; 'author', which is of type str; 'number', which is of type str; 'year', which is of type str.
+
+'bibtexml_BibTeXMLEntriesClass' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtexml_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtexml_ConferenceType' represents an important domain concept.
+It has the following attributes: 'volume', which is of type str; 'organization', which is of type str; 'note', which is of type str; 'year', which is of type str; 'title', which is of type str; 'number', which is of type str; 'url', which is of type str; 'address', which is of type str; 'pages', which is of type str; 'month', which is of type str; 'doi', which is of type str; 'author', which is of type str; 'crossref', which is of type str; 'publisher', which is of type str; 'key', which is of type str; 'booktitle', which is of type str; 'series', which is of type str; 'editor', which is of type str.
+
+'bibtexml_BibTeXMLEntryType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'bibtexml_InbookType' represents an important domain concept.
+It has the following attributes: 'chapter', which is of type str; 'volume', which is of type str; 'editor', which is of type str; 'edition', which is of type str; 'year', which is of type str; 'note', which is of type str; 'crossref', which is of type str; 'series', which is of type str; 'title', which is of type str; 'type', which is of type str; 'author', which is of type str; 'publisher', which is of type str; 'pages', which is of type str; 'key', which is of type str; 'month', which is of type str; 'number', which is of type str; 'pages1', which is of type str; 'address', which is of type str; 'url', which is of type str; 'doi', which is of type str.
+
+'bibtexml_PhdthesisType' represents an important domain concept.
+It has the following attributes: 'year', which is of type str; 'crossref', which is of type str; 'type', which is of type str; 'title', which is of type str; 'key', which is of type str; 'author', which is of type str; 'note', which is of type str; 'address', which is of type str; 'school', which is of type str; 'url', which is of type str; 'month', which is of type str; 'doi', which is of type str.
+
+'bibtexml_UnpublishedType' represents an important domain concept.
+It has the following attributes: 'year', which is of type str; 'doi', which is of type str; 'key', which is of type str; 'crossref', which is of type str; 'url', which is of type str; 'note', which is of type str; 'author', which is of type str; 'month', which is of type str; 'title', which is of type str.
+
+'bibtexml_MastersthesisType' represents an important domain concept.
+It has the following attributes: 'author', which is of type str; 'school', which is of type str; 'doi', which is of type str; 'year', which is of type str; 'url', which is of type str; 'title', which is of type str; 'type', which is of type str; 'month', which is of type str; 'key', which is of type str; 'note', which is of type str; 'address', which is of type str; 'crossref', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MonthStringType' defines the following possible values: 'Feb', 'Jun', 'May', 'Jul', 'Mar', 'Dec', 'Aug', 'Apr', 'Oct', 'Nov', 'Sep', 'Jan'.
+
+The model also captures inheritance relationships between classes.
+The class 'bibtexml_BibTeXMLEntryType' is a specialization of 'BibTeXMLEntriesClass'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bibtexml_ArticleType' and 'bibtexml_BibTeXMLEntriesClass'. From 'bibtexml_ArticleType', the role 'bibtexml_ArticleType' has cardinality 0..*, and from 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass' has cardinality 0..*.
+An association connects 'bibtexml_BookType' and 'bibtexml_BibTeXMLEntriesClass'. From 'bibtexml_BookType', the role 'bibtexml_BookType' has cardinality 0..*, and from 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass2' has cardinality 0..*.
+An association connects 'bibtexml_BibTeXMLEntriesClass' and 'bibtexml_BookletType'. From 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass4' has cardinality 0..*, and from 'bibtexml_BookletType', the role 'bibtexml_BookletType' has cardinality 0..*.
+An association connects 'bibtexml_BibTeXMLEntriesClass' and 'bibtexml_ManualType'. From 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass6' has cardinality 0..*, and from 'bibtexml_ManualType', the role 'bibtexml_ManualType' has cardinality 0..*.
+An association connects 'bibtexml_BibTeXMLEntriesClass' and 'bibtexml_TechreportType'. From 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass8' has cardinality 0..*, and from 'bibtexml_TechreportType', the role 'bibtexml_TechreportType' has cardinality 0..*.
+An association connects 'bibtexml_MastersthesisType' and 'bibtexml_BibTeXMLEntriesClass'. From 'bibtexml_MastersthesisType', the role 'bibtexml_MastersthesisType' has cardinality 0..*, and from 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass10' has cardinality 0..*.
+An association connects 'bibtexml_PhdthesisType' and 'bibtexml_BibTeXMLEntriesClass'. From 'bibtexml_PhdthesisType', the role 'bibtexml_PhdthesisType' has cardinality 0..*, and from 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass12' has cardinality 0..*.
+An association connects 'bibtexml_BibTeXMLEntriesClass' and 'bibtexml_InbookType'. From 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass14' has cardinality 0..*, and from 'bibtexml_InbookType', the role 'bibtexml_InbookType' has cardinality 0..*.
+An association connects 'bibtexml_IncollectionType' and 'bibtexml_BibTeXMLEntriesClass'. From 'bibtexml_IncollectionType', the role 'bibtexml_IncollectionType' has cardinality 0..*, and from 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass16' has cardinality 0..*.
+An association connects 'bibtexml_BibTeXMLEntriesClass' and 'bibtexml_ProceedingsType'. From 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass18' has cardinality 0..*, and from 'bibtexml_ProceedingsType', the role 'bibtexml_ProceedingsType' has cardinality 0..*.
+An association connects 'bibtexml_BibTeXMLEntriesClass' and 'bibtexml_InproceedingsType'. From 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass20' has cardinality 0..*, and from 'bibtexml_InproceedingsType', the role 'bibtexml_InproceedingsType' has cardinality 0..*.
+An association connects 'bibtexml_ConferenceType' and 'bibtexml_BibTeXMLEntriesClass'. From 'bibtexml_ConferenceType', the role 'bibtexml_ConferenceType' has cardinality 0..*, and from 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass22' has cardinality 0..*.
+An association connects 'bibtexml_UnpublishedType' and 'bibtexml_BibTeXMLEntriesClass'. From 'bibtexml_UnpublishedType', the role 'bibtexml_UnpublishedType' has cardinality 0..*, and from 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass24' has cardinality 0..*.
+An association connects 'bibtexml_BibTeXMLEntriesClass' and 'bibtexml_MiscType'. From 'bibtexml_BibTeXMLEntriesClass', the role 'bibtexml_BibTeXMLEntriesClass26' has cardinality 0..*, and from 'bibtexml_MiscType', the role 'bibtexml_MiscType' has cardinality 0..*.
+An association connects 'bibtexml_DocumentRoot' and 'bibtexml_EStringToStringMapEntry'. From 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot' has cardinality 0..*, and from 'bibtexml_EStringToStringMapEntry', the role 'bibtexml_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'bibtexml_DocumentRoot' and 'bibtexml_EStringToStringMapEntry'. From 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot29' has cardinality 0..*, and from 'bibtexml_EStringToStringMapEntry', the role 'bibtexml_EStringToStringMapEntry30' has cardinality 0..*.
+An association connects 'bibtexml_ArticleType' and 'bibtexml_DocumentRoot'. From 'bibtexml_ArticleType', the role 'bibtexml_ArticleType33' has cardinality 0..*, and from 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot32' has cardinality 0..*.
+An association connects 'bibtexml_DocumentRoot' and 'bibtexml_BookType'. From 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot35' has cardinality 0..*, and from 'bibtexml_BookType', the role 'bibtexml_BookType36' has cardinality 0..*.
+An association connects 'bibtexml_DocumentRoot' and 'bibtexml_BookletType'. From 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot38' has cardinality 0..*, and from 'bibtexml_BookletType', the role 'bibtexml_BookletType39' has cardinality 0..*.
+An association connects 'bibtexml_DocumentRoot' and 'bibtexml_ConferenceType'. From 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot41' has cardinality 0..*, and from 'bibtexml_ConferenceType', the role 'bibtexml_ConferenceType42' has cardinality 0..*.
+An association connects 'bibtexml_BibTeXMLEntryType' and 'bibtexml_DocumentRoot'. From 'bibtexml_BibTeXMLEntryType', the role 'bibtexml_BibTeXMLEntryType' has cardinality 0..*, and from 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot44' has cardinality 0..*.
+An association connects 'bibtexml_FileType' and 'bibtexml_DocumentRoot'. From 'bibtexml_FileType', the role 'bibtexml_FileType' has cardinality 0..*, and from 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot46' has cardinality 0..*.
+An association connects 'bibtexml_InbookType' and 'bibtexml_DocumentRoot'. From 'bibtexml_InbookType', the role 'bibtexml_InbookType49' has cardinality 0..*, and from 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot48' has cardinality 0..*.
+An association connects 'bibtexml_IncollectionType' and 'bibtexml_DocumentRoot'. From 'bibtexml_IncollectionType', the role 'bibtexml_IncollectionType52' has cardinality 0..*, and from 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot51' has cardinality 0..*.
+An association connects 'bibtexml_DocumentRoot' and 'bibtexml_InproceedingsType'. From 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot54' has cardinality 0..*, and from 'bibtexml_InproceedingsType', the role 'bibtexml_InproceedingsType55' has cardinality 0..*.
+An association connects 'bibtexml_DocumentRoot' and 'bibtexml_ManualType'. From 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot57' has cardinality 0..*, and from 'bibtexml_ManualType', the role 'bibtexml_ManualType58' has cardinality 0..*.
+An association connects 'bibtexml_DocumentRoot' and 'bibtexml_MastersthesisType'. From 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot60' has cardinality 0..*, and from 'bibtexml_MastersthesisType', the role 'bibtexml_MastersthesisType61' has cardinality 0..*.
+An association connects 'bibtexml_MiscType' and 'bibtexml_DocumentRoot'. From 'bibtexml_MiscType', the role 'bibtexml_MiscType64' has cardinality 0..*, and from 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot63' has cardinality 0..*.
+An association connects 'bibtexml_PhdthesisType' and 'bibtexml_DocumentRoot'. From 'bibtexml_PhdthesisType', the role 'bibtexml_PhdthesisType67' has cardinality 0..*, and from 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot66' has cardinality 0..*.
+An association connects 'bibtexml_ProceedingsType' and 'bibtexml_DocumentRoot'. From 'bibtexml_ProceedingsType', the role 'bibtexml_ProceedingsType70' has cardinality 0..*, and from 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot69' has cardinality 0..*.
+An association connects 'bibtexml_TechreportType' and 'bibtexml_DocumentRoot'. From 'bibtexml_TechreportType', the role 'bibtexml_TechreportType73' has cardinality 0..*, and from 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot72' has cardinality 0..*.
+An association connects 'bibtexml_DocumentRoot' and 'bibtexml_UnpublishedType'. From 'bibtexml_DocumentRoot', the role 'bibtexml_DocumentRoot75' has cardinality 0..*, and from 'bibtexml_UnpublishedType', the role 'bibtexml_UnpublishedType76' has cardinality 0..*.
+An association connects 'bibtexml_FileType' and 'bibtexml_BibTeXMLEntryType'. From 'bibtexml_FileType', the role 'bibtexml_FileType78' has cardinality 0..*, and from 'bibtexml_BibTeXMLEntryType', the role 'bibtexml_BibTeXMLEntryType79' has cardinality 0..*.

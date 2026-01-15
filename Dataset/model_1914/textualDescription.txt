@@ -1,0 +1,134 @@
+The domain model 'se' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'se_roomManager_IHotelRoomManager' represents an important domain concept.
+It does not declare any attributes.
+
+'se_roomManager_IHotelRoomProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bookingSystem_IEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'se_roomManager_RoomManager' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bookingSystem_CheckOutEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'IHotelRoomProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'roomManager_IRoom' represents an important domain concept.
+It does not declare any attributes.
+
+'IEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'IRoomType' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bookingSystem_AbstractEvent' represents an important domain concept.
+It has the following attributes: 'bookingID', which is of type int; 'timestamp', which is of type str; 'eventType', which is of type str.
+
+'se_roomManager_Room' represents an important domain concept.
+It has the following attributes: 'blocked', which is of type bool; 'extraCostDescriptions', which is of type str; 'occupied', which is of type bool; 'extraCostPrice', which is of type float; 'roomNumber', which is of type int.
+
+'se_roomManager_IHotelStartupProvies' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingSystem_IEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bookingSystem_IHotelBookingManager' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingSystem_IHotelCustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'IRoom' represents an important domain concept.
+It does not declare any attributes.
+
+'roomManager_IHotelRoomProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bookingSystem_IBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bookingSystem_Booking' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'firstName', which is of type str; 'id', which is of type int; 'startDate', which is of type str; 'endDate', which is of type str.
+
+'bookingSystem_IHotelBookingManager' represents an important domain concept.
+It does not declare any attributes.
+
+'se_roomManager_IRoom' represents an important domain concept.
+It does not declare any attributes.
+
+'IHotelCustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'roomManager_IHotelStartupProvies' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingSystem_IBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bookingSystem_IHotelCustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'roomManager_IHotelRoomManager' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bookingSystem_BookingSystem' represents an important domain concept.
+It has one attribute: 'bookingId', which is of type int.
+
+'IBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bookingSystem_CheckInEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'se_roomManager_IRoomType' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bookingSystem_FreeRoomTypesDTO' represents an important domain concept.
+It has the following attributes: 'pricePerNight', which is of type float; 'numFreeRooms', which is of type int; 'roomTypeDescription', which is of type str; 'numBeds', which is of type int.
+
+'se_roomManager_RoomType' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'numberOfBeds', which is of type int; 'price', which is of type float; 'name', which is of type str.
+
+'roomManager_IRoomType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EventType' defines the following possible values: 'CHECK_OUT', 'CHECK_IN'.
+
+The model also captures inheritance relationships between classes.
+The class 'se_bookingSystem_CheckInEvent' is a specialization of 'AbstractEvent'.
+The class 'se_bookingSystem_AbstractEvent' is a specialization of 'IEvent'.
+The class 'se_bookingSystem_CheckOutEvent' is a specialization of 'AbstractEvent'.
+The class 'se_bookingSystem_BookingSystem' is a specialization of 'bookingSystem_IHotelBookingManager'.
+The class 'se_bookingSystem_BookingSystem' is a specialization of 'bookingSystem_IHotelCustomerProvides'.
+The class 'se_bookingSystem_IHotelBookingManager' is a specialization of 'IHotelCustomerProvides'.
+The class 'se_bookingSystem_Booking' is a specialization of 'IBooking'.
+The class 'se_roomManager_RoomType' is a specialization of 'IRoomType'.
+The class 'se_roomManager_RoomManager' is a specialization of 'roomManager_IHotelStartupProvies'.
+The class 'se_roomManager_RoomManager' is a specialization of 'roomManager_IHotelRoomProvider'.
+The class 'se_roomManager_RoomManager' is a specialization of 'roomManager_IHotelRoomManager'.
+The class 'se_roomManager_IHotelRoomManager' is a specialization of 'IHotelRoomProvider'.
+The class 'se_roomManager_Room' is a specialization of 'IRoom'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bookingSystem_IEvent' and 'se_bookingSystem_BookingSystem'. From 'bookingSystem_IEvent', the role 'bookingSystem_IEvent' has cardinality 0..*, and from 'se_bookingSystem_BookingSystem', the role 'se_bookingSystem_BookingSystem' has cardinality 0..*.
+An association connects 'bookingSystem_IBooking' and 'se_bookingSystem_BookingSystem'. From 'bookingSystem_IBooking', the role 'bookingSystem_IBooking' has cardinality 0..*, and from 'se_bookingSystem_BookingSystem', the role 'se_bookingSystem_BookingSystem2' has cardinality 0..*.
+An association connects 'se_bookingSystem_BookingSystem' and 'roomManager_IHotelRoomProvider'. From 'se_bookingSystem_BookingSystem', the role 'se_bookingSystem_BookingSystem4' has cardinality 0..*, and from 'roomManager_IHotelRoomProvider', the role 'roomManager_IHotelRoomProvider' has cardinality 0..*.
+An association connects 'se_bookingSystem_BookingSystem' and 'roomManager_IRoom'. From 'se_bookingSystem_BookingSystem', the role 'se_bookingSystem_BookingSystem6' has cardinality 0..*, and from 'roomManager_IRoom', the role 'roomManager_IRoom' has cardinality 0..*.
+An association connects 'se_bookingSystem_Booking' and 'roomManager_IRoom'. From 'se_bookingSystem_Booking', the role 'se_bookingSystem_Booking' has cardinality 0..*, and from 'roomManager_IRoom', the role 'roomManager_IRoom8' has cardinality 0..*.
+An association connects 'se_bookingSystem_Booking' and 'roomManager_IRoom'. From 'se_bookingSystem_Booking', the role 'se_bookingSystem_Booking10' has cardinality 0..*, and from 'roomManager_IRoom', the role 'roomManager_IRoom11' has cardinality 0..*.
+An association connects 'se_roomManager_RoomManager' and 'roomManager_IRoomType'. From 'se_roomManager_RoomManager', the role 'se_roomManager_RoomManager' has cardinality 0..*, and from 'roomManager_IRoomType', the role 'roomManager_IRoomType' has cardinality 0..*.
+An association connects 'se_roomManager_RoomManager' and 'roomManager_IRoom'. From 'se_roomManager_RoomManager', the role 'se_roomManager_RoomManager14' has cardinality 0..*, and from 'roomManager_IRoom', the role 'roomManager_IRoom15' has cardinality 0..*.
+An association connects 'se_roomManager_Room' and 'roomManager_IRoomType'. From 'se_roomManager_Room', the role 'se_roomManager_Room' has cardinality 0..*, and from 'roomManager_IRoomType', the role 'roomManager_IRoomType17' has cardinality 0..*.

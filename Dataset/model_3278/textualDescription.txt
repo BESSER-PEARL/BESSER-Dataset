@@ -1,0 +1,16 @@
+The domain model 'sm' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'sm_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'sm_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'sm_State' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'sm_Variable' and 'sm_State'. From 'sm_Variable', the role 'sm_Variable' has cardinality 0..*, and from 'sm_State', the role 'sm_State' has cardinality 0..*.
+An association connects 'sm_StateMachine' and 'sm_State'. From 'sm_StateMachine', the role 'sm_StateMachine' has cardinality 0..*, and from 'sm_State', the role 'sm_State2' has cardinality 0..*.

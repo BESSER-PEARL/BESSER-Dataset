@@ -1,0 +1,1757 @@
+The domain model 'oaam' describes the core structural elements and their relationships within the system.
+
+The model defines 341 main class(es).
+
+'DeviceTypeRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_TaskGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_SignalGroupRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_Functions' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_hardware_Hardware' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_ConnectionType' represents an important domain concept.
+It has the following attributes: 'isPower', which is of type bool; 'isInformation', which is of type bool; 'isSwitched', which is of type bool; 'isWireless', which is of type bool; 'maxLength', which is of type float; 'nJoints', which is of type int; 'directConnectionsAllowed', which is of type bool; 'requiresMaster', which is of type bool; 'maxInterfaceToJointDistance', which is of type float; 'nEndPoints', which is of type int; 'isUnidirectional', which is of type bool; 'allowsCircles', which is of type bool; 'nStartingPoints', which is of type int; 'maxJointBranches', which is of type int.
+
+'oaam_functions_TaskRedundancy' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_RotaryPower' represents an important domain concept.
+It has the following attributes: 'angularVelocity', which is of type float; 'momentum', which is of type float.
+
+'oaam_restrictions_TaskSymmetryRestriction' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'DeviceType' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_anatomy_DuctOpening' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_scenario_VariantDependentElementA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_TaskRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_TaskGroupRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+'restrictions_ConnectionRestrinctionA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_scenario_Scenario' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_anatomy_AnatomyContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_hardware_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_TaskParameter' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'oaam_library_DeviceTypeDissimilarity' represents an important domain concept.
+It has one attribute: 'percentageOfCommonHardware', which is of type float.
+
+'TaskAtomicRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_SignalGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_SignalOnConnectionOrDeviceCapability' represents an important domain concept.
+It has one attribute: 'worstCaseTransmissionTime', which is of type float.
+
+'PowerSourceRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'InputDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectionInDuctOrLocationCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_Suballocations' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_BoolOperation' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'OutputDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_scenario_OperationMode' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_RequiredInformationA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_MessageOnConnectionOrDeviceCapability' represents an important domain concept.
+It has one attribute: 'worstCaseTransmissionTime', which is of type float.
+
+'AreaRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'library_ResourceProviderInstanceA' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationModeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_Subsystem' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidedInformationA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_DeviceInLocationCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_SubdeviceAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_scenario_ScenarioContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'SegregationRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_RestrictionsContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskTypeDissimilarity' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_FunctionsContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'SubconnectionInDeviceCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_CapabilityA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_BoolNot' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_SegregationRestriction' represents an important domain concept.
+It has the following attributes: 'dissimilarPowerSource', which is of type bool; 'dissimilarArea', which is of type bool; 'dissimilarTechnology', which is of type bool; 'dissimilarLocation', which is of type bool.
+
+'oaam_allocations_SubconnectionAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_ResourceAlternatives' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationMode' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_Signal' represents an important domain concept.
+It has the following attributes: 'outIndex', which is of type int; 'inIndex', which is of type int.
+
+'oaam_common_AttributeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_Resource' represents an important domain concept.
+It has one attribute: 'count', which is of type float.
+
+'anatomy_AnatomyContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'LocationSymmetry' represents an important domain concept.
+It does not declare any attributes.
+
+'InputSegregation' represents an important domain concept.
+It does not declare any attributes.
+
+'SignalInMessageCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_Character' represents an important domain concept.
+It has the following attributes: 'nBits', which is of type int; 'encoding', which is of type str.
+
+'Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'AreaSymmetry' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_CapabilitiesContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_TaskOnDeviceCapability' represents an important domain concept.
+It has the following attributes: 'worstCaseExecutionTime', which is of type float; 'failureProbability', which is of type float.
+
+'oaam_common_AttributeContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_ResourceType' represents an important domain concept.
+It has the following attributes: 'isPropagated', which is of type bool; 'isConsumed', which is of type bool; 'isConfigurable', which is of type bool; 'isDistinguishable', which is of type bool; 'unit', which is of type str; 'isIo', which is of type bool; 'direction', which is of type str.
+
+'ExternalTaskLink' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectionRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'DataTypeA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_IoGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'Task' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_ProvidedInformationA' represents an important domain concept.
+It does not declare any attributes.
+
+'AllocationsContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_ResourceTypeModifierLevel' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_Byte' represents an important domain concept.
+It has one attribute: 'nBits', which is of type int.
+
+'PowerSource' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_TimeDelayRestriction' represents an important domain concept.
+It has one attribute: 'delay', which is of type float.
+
+'oaam_library_OutputDeclaration' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'range', which is of type str; 'postcondition', which is of type str; 'upperBound', which is of type int; 'unit', which is of type str.
+
+'oaam_restrictions_SynchronicityRestriction' represents an important domain concept.
+It has one attribute: 'maxJitter', which is of type float.
+
+'oaam_library_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_ConnectionInDuctOrLocationCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'DuctOpeningDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Device' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_DuctType' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_AttributeA' represents an important domain concept.
+It does not declare any attributes.
+
+'Bus' represents an important domain concept.
+It does not declare any attributes.
+
+'common_BoolA' represents an important domain concept.
+It does not declare any attributes.
+
+'IoGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_Schedule' represents an important domain concept.
+It has the following attributes: 'rate', which is of type float; 'isPeriodic', which is of type bool; 'priority', which is of type int.
+
+'oaam_systems_LinearPower' represents an important domain concept.
+It has the following attributes: 'force', which is of type float; 'velocity', which is of type float.
+
+'allocations_AllocationsContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_anatomy_Anatomy' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_Subrestrictions' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_ExternalTaskLink' represents an important domain concept.
+It has one attribute: 'filter', which is of type str.
+
+'SubmessageInMessageCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_SystemsContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_scenario_ScenarioParameterNumeric' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'MessageOnConnectionOrDeviceCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_TaskInputTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'ScenarioParameterA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_ExternalOutputLink' represents an important domain concept.
+It has one attribute: 'filter', which is of type str.
+
+'LibraryContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionsContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'capabilities_CapabilitiesContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_ResourceProviderInstanceA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_ResourceBundle' represents an important domain concept.
+It has the following attributes: 'mtbf', which is of type float; 'cost', which is of type float; 'mass', which is of type float.
+
+'oaam_anatomy_Duct' represents an important domain concept.
+It has one attribute: 'length', which is of type float.
+
+'CapabilitiesContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_TaskType' represents an important domain concept.
+It has the following attributes: 'preferredExecutionRate', which is of type float; 'isDeterministic', which is of type bool.
+
+'InformationPower' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_anatomy_LocationSymmetry' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_AttributeNumeric' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'TaskSymmetryRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceAlternatives' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_hardware_Io' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_SignalAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_ScheduledTime' represents an important domain concept.
+It has the following attributes: 'restart', which is of type bool; 'duration', which is of type float; 'startTime', which is of type float; 'cycle', which is of type int.
+
+'oaam_library_ResourceTypeModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_hardware_Subhardware' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_ResourceGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'SignalOnConnectionOrDeviceCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'Duct' represents an important domain concept.
+It does not declare any attributes.
+
+'systems_RequiredInformationA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_Integer' represents an important domain concept.
+It has the following attributes: 'nBits', which is of type int; 'endianess', which is of type str; 'signed', which is of type bool.
+
+'Location' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceTypeDissimilarity' represents an important domain concept.
+It does not declare any attributes.
+
+'restrictions_RestrictionsContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageOnBusCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_SubfunctionRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_DataTypeA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_TaskParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_scenario_ScenarioParameterA' represents an important domain concept.
+It does not declare any attributes.
+
+'restrictions_DeviceRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+'DuctType' represents an important domain concept.
+It does not declare any attributes.
+
+'ScenarioContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'ExternalOutputLink' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_TaskInputState' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'oaam_restrictions_DeviceRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_AllocationsContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'DuctOpening' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_MessageA' represents an important domain concept.
+It has the following attributes: 'length', which is of type int; 'isPersistent', which is of type bool.
+
+'DeviceTypeDissimilarity' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceTypeModifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_IoType' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'oaam_library_ResourceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_TaskAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'Output' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_ConnectionRestriction' represents an important domain concept.
+It has the following attributes: 'connectionName', which is of type str; 'isForbidden', which is of type bool.
+
+'SubdeviceAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_scenario_OperationModeReference' represents an important domain concept.
+It has one attribute: 'activeProbability', which is of type float.
+
+'DeviceAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectionTypeRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskSymmetry' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceTypeModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_ConnectionAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'library_ResourceProviderA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_Capabilities' represents an important domain concept.
+It does not declare any attributes.
+
+'library_ResourceConsumerA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_HydraulicPower' represents an important domain concept.
+It has the following attributes: 'massFlowRate', which is of type float; 'pressure', which is of type float.
+
+'capabilities_CapabilityA' represents an important domain concept.
+It does not declare any attributes.
+
+'BusType' represents an important domain concept.
+It does not declare any attributes.
+
+'FaultPropagation' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_DeviceType' represents an important domain concept.
+It has the following attributes: 'cost', which is of type float; 'isSubdevice', which is of type bool; 'isSelfManaging', which is of type bool; 'mtbf', which is of type float; 'canHaveSubdevices', which is of type bool; 'weight', which is of type float.
+
+'IoType' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_scenario_ModeDependentElementA' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectionAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_InformationSignal' represents an important domain concept.
+It has the following attributes: 'rate', which is of type float; 'latency', which is of type float; 'resolution', which is of type float; 'unit', which is of type str; 'accuracy', which is of type float.
+
+'Subanatomy' represents an important domain concept.
+It does not declare any attributes.
+
+'TimeDelayRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_ResourceProviderA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_BusType' represents an important domain concept.
+It has the following attributes: 'requiresMaster', which is of type bool; 'mtbf', which is of type float; 'isSelfManaging', which is of type bool.
+
+'oaam_scenario_Subscenario' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'System' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskOnDeviceCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_hardware_DeviceSymmetry' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_Architecture' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskOutputTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'ScheduledTime' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_Message' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_FaultPropagation' represents an important domain concept.
+It has one attribute: 'outputState', which is of type str.
+
+'oaam_functions_Input' represents an important domain concept.
+It has one attribute: 'queueLength', which is of type int.
+
+'oaam_common_AttributeString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'scenario_ModeDependentElementA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_InformationFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'SignalAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_anatomy_AreaSymmetry' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskStateDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_TaskAtomicRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_Systems' represents an important domain concept.
+It does not declare any attributes.
+
+'common_OaamBaseElementA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_MessageOnBusCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'Anatomy' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_scenario_ScenarioParameterBool' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'oaam_anatomy_Position3D' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'z', which is of type float; 'y', which is of type float.
+
+'oaam_library_IoDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Suballocations' represents an important domain concept.
+It does not declare any attributes.
+
+'DeviceSymmetry' represents an important domain concept.
+It does not declare any attributes.
+
+'Position3D' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_MessageSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskInputTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_MessageType' represents an important domain concept.
+It has the following attributes: 'maxLength', which is of type int; 'minLength', which is of type int; 'alignment', which is of type int.
+
+'oaam_capabilities_SubdeviceInDeviceCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'WireType' represents an important domain concept.
+It does not declare any attributes.
+
+'Subscenario' represents an important domain concept.
+It does not declare any attributes.
+
+'DeviceInLocationCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolA' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceTypeModifierLevel' represents an important domain concept.
+It does not declare any attributes.
+
+'SubconnectionAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'Restrictions' represents an important domain concept.
+It does not declare any attributes.
+
+'Struct' represents an important domain concept.
+It does not declare any attributes.
+
+'Variant' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_ResourceTypeModifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Input' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_ResourceConsumption' represents an important domain concept.
+It has one attribute: 'count', which is of type float.
+
+'oaam_library_PowerSource' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_ConnectionTypeRestriction' represents an important domain concept.
+It has the following attributes: 'connectionTypeName', which is of type str; 'isForbidden', which is of type bool.
+
+'oaam_library_TaskOutputTrigger' represents an important domain concept.
+It has the following attributes: 'isFixedRate', which is of type bool; 'fixedRate', which is of type float.
+
+'oaam_restrictions_DeviceTypeRestriction' represents an important domain concept.
+It has the following attributes: 'deviceTypeName', which is of type str; 'isForbidden', which is of type bool.
+
+'Submessage' represents an important domain concept.
+It does not declare any attributes.
+
+'IoDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_scenario_Variant' represents an important domain concept.
+It does not declare any attributes.
+
+'LocationRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'Subrestrictions' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageType' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_WireType' represents an important domain concept.
+It has the following attributes: 'minBendingRadius', which is of type float; 'nShields', which is of type int; 'mtbf', which is of type float; 'specificPrice', which is of type float; 'specificWeight', which is of type float; 'nConductors', which is of type int.
+
+'oaam_systems_InputSegregation' represents an important domain concept.
+It has the following attributes: 'dissimilarTechnology', which is of type bool; 'dissimilarRoute', which is of type bool; 'dissimilarSource', which is of type bool.
+
+'Sublibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'Message' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_InformationMaterial' represents an important domain concept.
+It has the following attributes: 'velocity', which is of type float; 'density', which is of type float.
+
+'SignalToMessageAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'Subfunctions' represents an important domain concept.
+It does not declare any attributes.
+
+'DeviceRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_TaskStateDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_LocationType' represents an important domain concept.
+It has one attribute: 'isJoint', which is of type bool.
+
+'Hardware' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_LocationRestriction' represents an important domain concept.
+It has the following attributes: 'isForbidden', which is of type bool; 'locationName', which is of type str.
+
+'Subsystem' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_DeviceRestriction' represents an important domain concept.
+It has the following attributes: 'isForbidden', which is of type bool; 'deviceName', which is of type str.
+
+'MessageSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'restrictions_TaskRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_FailureCondition' represents an important domain concept.
+It has the following attributes: 'maxOccurrenceProbability', which is of type float; 'noSingleFailure', which is of type bool.
+
+'oaam_common_Boolean' represents an important domain concept.
+It has one attribute: 'nBits', which is of type int.
+
+'restrictions_TaskGroupRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+'SignalType' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_hardware_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceConsumption' represents an important domain concept.
+It does not declare any attributes.
+
+'hardware_HardwareContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'restrictions_SubfunctionRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_SignalType' represents an important domain concept.
+It does not declare any attributes.
+
+'Subcapabilities' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_InformationPower' represents an important domain concept.
+It has one attribute: 'power', which is of type float.
+
+'systems_ProvidedInformationA' represents an important domain concept.
+It does not declare any attributes.
+
+'FailureCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'scenario_ScenarioParameterA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_DeviceTypeSymmetry' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_hardware_HardwareContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'AnatomyContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_PowerSourceRestriction' represents an important domain concept.
+It has the following attributes: 'isForbidden', which is of type bool; 'powerSourceName', which is of type str.
+
+'Schedule' represents an important domain concept.
+It does not declare any attributes.
+
+'Library' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'Scenario' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_hardware_Bus' represents an important domain concept.
+It does not declare any attributes.
+
+'SignalAssignmentSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_SignalAssignmentSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_TaskSymmetry' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_anatomy_Location' represents an important domain concept.
+It has one attribute: 'length', which is of type float.
+
+'oaam_anatomy_Subanatomy' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_SignalToMessageAssignment' represents an important domain concept.
+It has one attribute: 'position', which is of type int.
+
+'oaam_restrictions_ConnectionRestrinctionA' represents an important domain concept.
+It does not declare any attributes.
+
+'OutputIntegrityState' represents an important domain concept.
+It does not declare any attributes.
+
+'Subhardware' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_SubmessageInMessageCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'Functions' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_systems_ElectricPower' represents an important domain concept.
+It has the following attributes: 'current', which is of type float; 'voltage', which is of type float; 'frequency', which is of type float; 'nPhases', which is of type int.
+
+'oaam_common_BoolA' represents an important domain concept.
+It does not declare any attributes.
+
+'SynchronicityRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'Area' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_AreaRestriction' represents an important domain concept.
+It has the following attributes: 'isForbidden', which is of type bool; 'areaName', which is of type str.
+
+'OaamBaseElementA' represents an important domain concept.
+It does not declare any attributes.
+
+'Capabilities' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_Array' represents an important domain concept.
+It has the following attributes: 'alignment', which is of type int; 'nElements', which is of type int.
+
+'restrictions_SignalGroupRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_LibraryContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'systems_SystemsContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_restrictions_SignalRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_InputDeclaration' represents an important domain concept.
+It has the following attributes: 'precondition', which is of type str; 'lowerBound', which is of type int; 'upperBound', which is of type int; 'unit', which is of type str; 'range', which is of type str.
+
+'RequiredInformationA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_DeviceAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeA' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskRedundancy' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_AttributeDefinition' represents an important domain concept.
+It has the following attributes: 'dataType', which is of type str; 'target', which is of type str.
+
+'oaam_library_TaskTypeDissimilarity' represents an important domain concept.
+It has one attribute: 'percentageOfCommonCode', which is of type float.
+
+'SubdeviceInDeviceCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_Submessage' represents an important domain concept.
+It has one attribute: 'position', which is of type int.
+
+'TaskInputState' represents an important domain concept.
+It does not declare any attributes.
+
+'SignalGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_SignalInMessageCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_OutputIntegrityState' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'oaam_restrictions_Restrictions' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_DuctOpeningDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'scenario_VariantDependentElementA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_Subfunctions' represents an important domain concept.
+It has the following attributes: 'multiplicityMin', which is of type int; 'multiplicityMax', which is of type int.
+
+'Allocations' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceBundle' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolNot' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_ResourceTypeDissimilarity' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_anatomy_Area' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageA' represents an important domain concept.
+It does not declare any attributes.
+
+'SystemsContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectionAssignmentSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_Allocations' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_FloatingPoint' represents an important domain concept.
+It has the following attributes: 'endianess', which is of type str; 'nBits', which is of type int.
+
+'oaam_systems_System' represents an important domain concept.
+It does not declare any attributes.
+
+'LocationType' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_Struct' represents an important domain concept.
+It has the following attributes: 'alignment', which is of type int; 'isAbstract', which is of type bool.
+
+'oaam_library_Sublibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'InformationFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskType' represents an important domain concept.
+It does not declare any attributes.
+
+'Io' represents an important domain concept.
+It does not declare any attributes.
+
+'Systems' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_capabilities_SubconnectionInDeviceCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_common_OaamBaseElementA' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'modifier', which is of type str; 'id', which is of type str; 'modified', which is of type date; 'traceLink', which is of type str; 'documentation', which is of type str; 'name', which is of type str.
+
+'DeviceTypeSymmetry' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_Output' represents an important domain concept.
+It has one attribute: 'fixedRate', which is of type float.
+
+'oaam_capabilities_Subcapabilities' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_allocations_ConnectionAssignmentSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_library_ResourceConsumerA' represents an important domain concept.
+It does not declare any attributes.
+
+'oaam_functions_Task' represents an important domain concept.
+It has the following attributes: 'nParallels', which is of type int; 'fixedRate', which is of type float.
+
+'RestrictionsContainerA' represents an important domain concept.
+It does not declare any attributes.
+
+'restrictions_SignalRestrictionA' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AttributeTargetsE' defines the following possible values: 'RESOURCE_GROUP', 'AREA', 'DEVICE', 'LOCATION_TYPE', 'DUCT', 'VARIANT', 'DUCT_TYPE', 'WIRE_TYPE', 'SIGNAL_TYPE', 'RESOURCE', 'DEVICE_TYPE', 'RESOURCE_TYPE', 'TASK', 'RESOURCE_ALTERNATIVE', 'LOCATION', 'CONNECTION', 'SIGNAL', 'RESOURCE_BUNDLE', 'TASK_TYPE', 'CONNECTION_TYPE'.
+The enumeration 'AttributeTypesE' defines the following possible values: 'BOOL', 'NUMERIC', 'STRING'.
+The enumeration 'EndianessE' defines the following possible values: 'LITTLE', 'BIG'.
+The enumeration 'SymmetryTypesE' defines the following possible values: 'DEVICE', 'LOCATION', 'AREA', 'DEVICE_TYPE'.
+The enumeration 'BoolOperationTypesE' defines the following possible values: 'AND', 'XOR', 'OR'.
+The enumeration 'IntegretyStateE' defines the following possible values: 'FAILED', 'UNKNOWN', 'OK'.
+The enumeration 'IoDirectionE' defines the following possible values: 'NONE', 'BOTH', 'OUT', 'IN'.
+
+The model also captures inheritance relationships between classes.
+The class 'oaam_Architecture' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_common_AttributeA' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_common_AttributeString' is a specialization of 'AttributeA'.
+The class 'oaam_common_AttributeNumeric' is a specialization of 'AttributeA'.
+The class 'oaam_common_AttributeContainment' is a specialization of 'AttributeA'.
+The class 'oaam_common_AttributeReference' is a specialization of 'AttributeA'.
+The class 'oaam_common_BoolOperation' is a specialization of 'common_BoolA'.
+The class 'oaam_common_BoolOperation' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_common_BoolNot' is a specialization of 'common_BoolA'.
+The class 'oaam_common_BoolNot' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_common_DataTypeA' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_common_Integer' is a specialization of 'DataTypeA'.
+The class 'oaam_common_Array' is a specialization of 'DataTypeA'.
+The class 'oaam_common_Struct' is a specialization of 'DataTypeA'.
+The class 'oaam_common_FloatingPoint' is a specialization of 'DataTypeA'.
+The class 'oaam_common_Byte' is a specialization of 'DataTypeA'.
+The class 'oaam_common_Character' is a specialization of 'DataTypeA'.
+The class 'oaam_common_Boolean' is a specialization of 'DataTypeA'.
+The class 'oaam_library_LibraryContainerA' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_ResourceType' is a specialization of 'library_ResourceConsumerA'.
+The class 'oaam_library_ResourceType' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_Resource' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_ResourceAlternatives' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_ResourceBundle' is a specialization of 'library_ResourceConsumerA'.
+The class 'oaam_library_ResourceBundle' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_TaskType' is a specialization of 'library_ResourceConsumerA'.
+The class 'oaam_library_TaskType' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_SignalType' is a specialization of 'library_ResourceConsumerA'.
+The class 'oaam_library_SignalType' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_DeviceType' is a specialization of 'library_ResourceConsumerA'.
+The class 'oaam_library_DeviceType' is a specialization of 'library_ResourceProviderA'.
+The class 'oaam_library_DeviceType' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_ConnectionType' is a specialization of 'library_ResourceProviderA'.
+The class 'oaam_library_ConnectionType' is a specialization of 'library_ResourceConsumerA'.
+The class 'oaam_library_ConnectionType' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_LocationType' is a specialization of 'library_ResourceProviderA'.
+The class 'oaam_library_LocationType' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_DuctType' is a specialization of 'library_ResourceProviderA'.
+The class 'oaam_library_DuctType' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_WireType' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_IoType' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_InputDeclaration' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_OutputDeclaration' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_IoDeclaration' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_DuctOpeningDeclaration' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_ResourceGroup' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_DeviceTypeSymmetry' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_IoGroup' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_AttributeDefinition' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_FaultPropagation' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_TaskInputState' is a specialization of 'common_BoolA'.
+The class 'oaam_library_TaskInputState' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_PowerSource' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_ResourceLink' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_ResourceTypeModifier' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_ResourceTypeModifierLevel' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_ResourceTypeModifierLevel' is a specialization of 'library_ResourceConsumerA'.
+The class 'oaam_library_ResourceTypeModifierReference' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_TaskTypeDissimilarity' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_DeviceTypeDissimilarity' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_ResourceTypeDissimilarity' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_TaskOutputTrigger' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_TaskInputTrigger' is a specialization of 'common_BoolA'.
+The class 'oaam_library_TaskInputTrigger' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_TaskStateDeclaration' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_TaskParameterDeclaration' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_library_BusType' is a specialization of 'library_ResourceProviderA'.
+The class 'oaam_library_BusType' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_MessageType' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_library_MessageType' is a specialization of 'library_ResourceConsumerA'.
+The class 'oaam_library_MessageType' is a specialization of 'library_ResourceProviderA'.
+The class 'oaam_library_Library' is a specialization of 'LibraryContainerA'.
+The class 'oaam_library_Sublibrary' is a specialization of 'LibraryContainerA'.
+The class 'oaam_scenario_ScenarioParameterA' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_scenario_ScenarioParameterA' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_scenario_ScenarioContainerA' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_scenario_OperationMode' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_scenario_OperationMode' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_scenario_ScenarioParameterNumeric' is a specialization of 'scenario_ScenarioParameterA'.
+The class 'oaam_scenario_ScenarioParameterNumeric' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_scenario_ScenarioParameterBool' is a specialization of 'scenario_ScenarioParameterA'.
+The class 'oaam_scenario_ScenarioParameterBool' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_scenario_Variant' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_scenario_Variant' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_scenario_OperationModeReference' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_scenario_Scenario' is a specialization of 'ScenarioContainerA'.
+The class 'oaam_scenario_Subscenario' is a specialization of 'ScenarioContainerA'.
+The class 'oaam_systems_SystemsContainerA' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_systems_Systems' is a specialization of 'SystemsContainerA'.
+The class 'oaam_systems_Subsystem' is a specialization of 'systems_SystemsContainerA'.
+The class 'oaam_systems_Subsystem' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_systems_Subsystem' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_systems_System' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_systems_System' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_systems_System' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_systems_InformationFlow' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_systems_InformationFlow' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_systems_InformationFlow' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_systems_InformationSignal' is a specialization of 'systems_ProvidedInformationA'.
+The class 'oaam_systems_InformationSignal' is a specialization of 'systems_RequiredInformationA'.
+The class 'oaam_systems_InformationSignal' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_systems_InformationSignal' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_systems_InformationSignal' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_systems_InformationMaterial' is a specialization of 'systems_ProvidedInformationA'.
+The class 'oaam_systems_InformationMaterial' is a specialization of 'systems_RequiredInformationA'.
+The class 'oaam_systems_InformationMaterial' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_systems_InformationMaterial' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_systems_InformationMaterial' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_systems_InformationPower' is a specialization of 'systems_ProvidedInformationA'.
+The class 'oaam_systems_InformationPower' is a specialization of 'systems_RequiredInformationA'.
+The class 'oaam_systems_InformationPower' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_systems_InformationPower' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_systems_InformationPower' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_systems_ElectricPower' is a specialization of 'InformationPower'.
+The class 'oaam_systems_HydraulicPower' is a specialization of 'InformationPower'.
+The class 'oaam_systems_RotaryPower' is a specialization of 'InformationPower'.
+The class 'oaam_systems_LinearPower' is a specialization of 'InformationPower'.
+The class 'oaam_systems_InputSegregation' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_functions_Functions' is a specialization of 'FunctionsContainerA'.
+The class 'oaam_functions_FunctionsContainerA' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_FunctionsContainerA' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_FunctionsContainerA' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_Task' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_Task' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_Task' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_ExternalTaskLink' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_ExternalTaskLink' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_ExternalTaskLink' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_TaskGroup' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_TaskGroup' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_TaskGroup' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_TaskSymmetry' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_TaskSymmetry' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_TaskSymmetry' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_TaskRedundancy' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_TaskRedundancy' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_TaskRedundancy' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_FailureCondition' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_FailureCondition' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_FailureCondition' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_OutputIntegrityState' is a specialization of 'common_BoolA'.
+The class 'oaam_functions_OutputIntegrityState' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_OutputIntegrityState' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_OutputIntegrityState' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_Signal' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_Signal' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_Signal' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_SignalGroup' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_SignalGroup' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_SignalGroup' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_Input' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_Input' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_Input' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_Output' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_Output' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_Output' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_ExternalOutputLink' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_functions_ExternalOutputLink' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_functions_ExternalOutputLink' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_functions_Subfunctions' is a specialization of 'FunctionsContainerA'.
+The class 'oaam_functions_TaskParameter' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_hardware_HardwareContainerA' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_hardware_Device' is a specialization of 'library_ResourceProviderInstanceA'.
+The class 'oaam_hardware_Device' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_hardware_Device' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_hardware_Device' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_hardware_Connection' is a specialization of 'library_ResourceProviderInstanceA'.
+The class 'oaam_hardware_Connection' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_hardware_Connection' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_hardware_Connection' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_hardware_Io' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_hardware_Io' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_hardware_Io' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_hardware_DeviceSymmetry' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_hardware_DeviceSymmetry' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_hardware_DeviceSymmetry' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_hardware_Hardware' is a specialization of 'hardware_HardwareContainerA'.
+The class 'oaam_hardware_Hardware' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_hardware_Hardware' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_hardware_Subhardware' is a specialization of 'hardware_HardwareContainerA'.
+The class 'oaam_hardware_Subhardware' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_hardware_Subhardware' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_hardware_Bus' is a specialization of 'library_ResourceProviderInstanceA'.
+The class 'oaam_hardware_Bus' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_hardware_Bus' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_hardware_Bus' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_anatomy_AnatomyContainerA' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_anatomy_Location' is a specialization of 'library_ResourceProviderInstanceA'.
+The class 'oaam_anatomy_Location' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_anatomy_Location' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_anatomy_Location' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_anatomy_Area' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_anatomy_Area' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_anatomy_Area' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_anatomy_Duct' is a specialization of 'library_ResourceProviderInstanceA'.
+The class 'oaam_anatomy_Duct' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_anatomy_Duct' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_anatomy_Duct' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_anatomy_DuctOpening' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_anatomy_DuctOpening' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_anatomy_DuctOpening' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_anatomy_Position3D' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_anatomy_Position3D' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_anatomy_Position3D' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_anatomy_LocationSymmetry' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_anatomy_LocationSymmetry' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_anatomy_LocationSymmetry' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_anatomy_AreaSymmetry' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_anatomy_AreaSymmetry' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_anatomy_AreaSymmetry' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_anatomy_Subanatomy' is a specialization of 'anatomy_AnatomyContainerA'.
+The class 'oaam_anatomy_Subanatomy' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_anatomy_Subanatomy' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_anatomy_Anatomy' is a specialization of 'AnatomyContainerA'.
+The class 'oaam_capabilities_CapabilitiesContainerA' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_capabilities_TaskOnDeviceCapability' is a specialization of 'capabilities_CapabilityA'.
+The class 'oaam_capabilities_TaskOnDeviceCapability' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_capabilities_TaskOnDeviceCapability' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_capabilities_TaskOnDeviceCapability' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_capabilities_DeviceInLocationCapability' is a specialization of 'capabilities_CapabilityA'.
+The class 'oaam_capabilities_DeviceInLocationCapability' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_capabilities_DeviceInLocationCapability' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_capabilities_DeviceInLocationCapability' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_capabilities_ConnectionInDuctOrLocationCapability' is a specialization of 'capabilities_CapabilityA'.
+The class 'oaam_capabilities_ConnectionInDuctOrLocationCapability' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_capabilities_ConnectionInDuctOrLocationCapability' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_capabilities_ConnectionInDuctOrLocationCapability' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_capabilities_SignalOnConnectionOrDeviceCapability' is a specialization of 'capabilities_CapabilityA'.
+The class 'oaam_capabilities_SignalOnConnectionOrDeviceCapability' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_capabilities_SignalOnConnectionOrDeviceCapability' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_capabilities_SignalOnConnectionOrDeviceCapability' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_capabilities_SubdeviceInDeviceCapability' is a specialization of 'capabilities_CapabilityA'.
+The class 'oaam_capabilities_SubdeviceInDeviceCapability' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_capabilities_SubdeviceInDeviceCapability' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_capabilities_SubdeviceInDeviceCapability' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_capabilities_SubconnectionInDeviceCapability' is a specialization of 'capabilities_CapabilityA'.
+The class 'oaam_capabilities_SubconnectionInDeviceCapability' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_capabilities_SubconnectionInDeviceCapability' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_capabilities_SubconnectionInDeviceCapability' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_capabilities_ResourceConsumption' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_capabilities_MessageOnBusCapability' is a specialization of 'capabilities_CapabilityA'.
+The class 'oaam_capabilities_MessageOnBusCapability' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_capabilities_MessageOnBusCapability' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_capabilities_MessageOnBusCapability' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_capabilities_MessageOnConnectionOrDeviceCapability' is a specialization of 'capabilities_CapabilityA'.
+The class 'oaam_capabilities_MessageOnConnectionOrDeviceCapability' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_capabilities_MessageOnConnectionOrDeviceCapability' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_capabilities_MessageOnConnectionOrDeviceCapability' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_capabilities_SubmessageInMessageCapability' is a specialization of 'capabilities_CapabilityA'.
+The class 'oaam_capabilities_SubmessageInMessageCapability' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_capabilities_SubmessageInMessageCapability' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_capabilities_SubmessageInMessageCapability' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_capabilities_SignalInMessageCapability' is a specialization of 'capabilities_CapabilityA'.
+The class 'oaam_capabilities_SignalInMessageCapability' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_capabilities_SignalInMessageCapability' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_capabilities_SignalInMessageCapability' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_capabilities_Capabilities' is a specialization of 'CapabilitiesContainerA'.
+The class 'oaam_capabilities_Subcapabilities' is a specialization of 'capabilities_CapabilitiesContainerA'.
+The class 'oaam_capabilities_Subcapabilities' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_capabilities_Subcapabilities' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_RestrictionsContainerA' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_restrictions_Restrictions' is a specialization of 'RestrictionsContainerA'.
+The class 'oaam_restrictions_LocationRestriction' is a specialization of 'restrictions_TaskRestrictionA'.
+The class 'oaam_restrictions_LocationRestriction' is a specialization of 'restrictions_TaskGroupRestrictionA'.
+The class 'oaam_restrictions_LocationRestriction' is a specialization of 'restrictions_SignalRestrictionA'.
+The class 'oaam_restrictions_LocationRestriction' is a specialization of 'restrictions_SignalGroupRestrictionA'.
+The class 'oaam_restrictions_LocationRestriction' is a specialization of 'restrictions_SubfunctionRestrictionA'.
+The class 'oaam_restrictions_LocationRestriction' is a specialization of 'restrictions_DeviceRestrictionA'.
+The class 'oaam_restrictions_LocationRestriction' is a specialization of 'restrictions_ConnectionRestrinctionA'.
+The class 'oaam_restrictions_LocationRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_LocationRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_LocationRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_AreaRestriction' is a specialization of 'restrictions_TaskRestrictionA'.
+The class 'oaam_restrictions_AreaRestriction' is a specialization of 'restrictions_TaskGroupRestrictionA'.
+The class 'oaam_restrictions_AreaRestriction' is a specialization of 'restrictions_SignalRestrictionA'.
+The class 'oaam_restrictions_AreaRestriction' is a specialization of 'restrictions_SignalGroupRestrictionA'.
+The class 'oaam_restrictions_AreaRestriction' is a specialization of 'restrictions_SubfunctionRestrictionA'.
+The class 'oaam_restrictions_AreaRestriction' is a specialization of 'restrictions_DeviceRestrictionA'.
+The class 'oaam_restrictions_AreaRestriction' is a specialization of 'restrictions_ConnectionRestrinctionA'.
+The class 'oaam_restrictions_AreaRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_AreaRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_AreaRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_PowerSourceRestriction' is a specialization of 'restrictions_TaskRestrictionA'.
+The class 'oaam_restrictions_PowerSourceRestriction' is a specialization of 'restrictions_TaskGroupRestrictionA'.
+The class 'oaam_restrictions_PowerSourceRestriction' is a specialization of 'restrictions_SignalRestrictionA'.
+The class 'oaam_restrictions_PowerSourceRestriction' is a specialization of 'restrictions_SignalGroupRestrictionA'.
+The class 'oaam_restrictions_PowerSourceRestriction' is a specialization of 'restrictions_SubfunctionRestrictionA'.
+The class 'oaam_restrictions_PowerSourceRestriction' is a specialization of 'restrictions_DeviceRestrictionA'.
+The class 'oaam_restrictions_PowerSourceRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_PowerSourceRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_PowerSourceRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_DeviceRestriction' is a specialization of 'restrictions_TaskRestrictionA'.
+The class 'oaam_restrictions_DeviceRestriction' is a specialization of 'restrictions_TaskGroupRestrictionA'.
+The class 'oaam_restrictions_DeviceRestriction' is a specialization of 'restrictions_SignalRestrictionA'.
+The class 'oaam_restrictions_DeviceRestriction' is a specialization of 'restrictions_SignalGroupRestrictionA'.
+The class 'oaam_restrictions_DeviceRestriction' is a specialization of 'restrictions_SubfunctionRestrictionA'.
+The class 'oaam_restrictions_DeviceRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_DeviceRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_DeviceRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_DeviceTypeRestriction' is a specialization of 'restrictions_TaskRestrictionA'.
+The class 'oaam_restrictions_DeviceTypeRestriction' is a specialization of 'restrictions_TaskGroupRestrictionA'.
+The class 'oaam_restrictions_DeviceTypeRestriction' is a specialization of 'restrictions_SignalRestrictionA'.
+The class 'oaam_restrictions_DeviceTypeRestriction' is a specialization of 'restrictions_SignalGroupRestrictionA'.
+The class 'oaam_restrictions_DeviceTypeRestriction' is a specialization of 'restrictions_SubfunctionRestrictionA'.
+The class 'oaam_restrictions_DeviceTypeRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_DeviceTypeRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_DeviceTypeRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_ConnectionTypeRestriction' is a specialization of 'restrictions_SignalRestrictionA'.
+The class 'oaam_restrictions_ConnectionTypeRestriction' is a specialization of 'restrictions_SignalGroupRestrictionA'.
+The class 'oaam_restrictions_ConnectionTypeRestriction' is a specialization of 'restrictions_SubfunctionRestrictionA'.
+The class 'oaam_restrictions_ConnectionTypeRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_ConnectionTypeRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_ConnectionTypeRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_ConnectionRestriction' is a specialization of 'restrictions_SignalRestrictionA'.
+The class 'oaam_restrictions_ConnectionRestriction' is a specialization of 'restrictions_SignalGroupRestrictionA'.
+The class 'oaam_restrictions_ConnectionRestriction' is a specialization of 'restrictions_SubfunctionRestrictionA'.
+The class 'oaam_restrictions_ConnectionRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_ConnectionRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_ConnectionRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_SegregationRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_SegregationRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_SegregationRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_SynchronicityRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_SynchronicityRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_SynchronicityRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_SynchronicityRestriction' is a specialization of 'restrictions_TaskRestrictionA'.
+The class 'oaam_restrictions_TaskAtomicRestriction' is a specialization of 'restrictions_TaskRestrictionA'.
+The class 'oaam_restrictions_TaskAtomicRestriction' is a specialization of 'restrictions_TaskGroupRestrictionA'.
+The class 'oaam_restrictions_TaskAtomicRestriction' is a specialization of 'restrictions_SubfunctionRestrictionA'.
+The class 'oaam_restrictions_TaskAtomicRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_TaskAtomicRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_TaskAtomicRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_TaskSymmetryRestriction' is a specialization of 'restrictions_TaskRestrictionA'.
+The class 'oaam_restrictions_TaskSymmetryRestriction' is a specialization of 'restrictions_TaskGroupRestrictionA'.
+The class 'oaam_restrictions_TaskSymmetryRestriction' is a specialization of 'restrictions_SubfunctionRestrictionA'.
+The class 'oaam_restrictions_TaskSymmetryRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_TaskSymmetryRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_TaskSymmetryRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_TimeDelayRestriction' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_restrictions_TimeDelayRestriction' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_restrictions_TimeDelayRestriction' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_Subrestrictions' is a specialization of 'restrictions_RestrictionsContainerA'.
+The class 'oaam_restrictions_Subrestrictions' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_restrictions_Subrestrictions' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_AllocationsContainerA' is a specialization of 'OaamBaseElementA'.
+The class 'oaam_allocations_TaskAssignment' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_TaskAssignment' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_TaskAssignment' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_SignalAssignment' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_SignalAssignment' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_SignalAssignment' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_ConnectionAssignment' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_ConnectionAssignment' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_ConnectionAssignment' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_SignalAssignmentSegment' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_SignalAssignmentSegment' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_SignalAssignmentSegment' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_DeviceAssignment' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_DeviceAssignment' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_DeviceAssignment' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_ConnectionAssignmentSegment' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_ConnectionAssignmentSegment' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_ConnectionAssignmentSegment' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_SubdeviceAssignment' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_SubdeviceAssignment' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_SubdeviceAssignment' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_SubconnectionAssignment' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_SubconnectionAssignment' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_SubconnectionAssignment' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_Schedule' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_Schedule' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_Schedule' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_ScheduledTime' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_ScheduledTime' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_ScheduledTime' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_MessageA' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_MessageA' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_MessageA' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_MessageSegment' is a specialization of 'common_OaamBaseElementA'.
+The class 'oaam_allocations_MessageSegment' is a specialization of 'scenario_VariantDependentElementA'.
+The class 'oaam_allocations_MessageSegment' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_Message' is a specialization of 'MessageA'.
+The class 'oaam_allocations_Submessage' is a specialization of 'MessageA'.
+The class 'oaam_allocations_Allocations' is a specialization of 'AllocationsContainerA'.
+The class 'oaam_allocations_Suballocations' is a specialization of 'allocations_AllocationsContainerA'.
+The class 'oaam_allocations_Suballocations' is a specialization of 'scenario_ModeDependentElementA'.
+The class 'oaam_allocations_Suballocations' is a specialization of 'scenario_VariantDependentElementA'.
+
+Relationships between classes are modeled using associations.
+An association connects 'oaam_Architecture' and 'oaam_Architecture'. From 'oaam_Architecture', the role 'oaam_Architecture' has cardinality 0..*, and from 'oaam_Architecture', the role 'oaam_Architecture0' has cardinality 0..*.
+An association connects 'oaam_Architecture' and 'Library'. From 'oaam_Architecture', the role 'oaam_Architecture3' has cardinality 0..*, and from 'Library', the role 'Library' has cardinality 0..*.
+An association connects 'oaam_Architecture' and 'Scenario'. From 'oaam_Architecture', the role 'oaam_Architecture5' has cardinality 0..*, and from 'Scenario', the role 'Scenario' has cardinality 0..*.
+An association connects 'oaam_Architecture' and 'Systems'. From 'oaam_Architecture', the role 'oaam_Architecture7' has cardinality 0..*, and from 'Systems', the role 'Systems' has cardinality 0..*.
+An association connects 'Functions' and 'oaam_Architecture'. From 'Functions', the role 'Functions' has cardinality 0..*, and from 'oaam_Architecture', the role 'oaam_Architecture9' has cardinality 0..*.
+An association connects 'Hardware' and 'oaam_Architecture'. From 'Hardware', the role 'Hardware' has cardinality 0..*, and from 'oaam_Architecture', the role 'oaam_Architecture11' has cardinality 0..*.
+An association connects 'Anatomy' and 'oaam_Architecture'. From 'Anatomy', the role 'Anatomy' has cardinality 0..*, and from 'oaam_Architecture', the role 'oaam_Architecture13' has cardinality 0..*.
+An association connects 'Capabilities' and 'oaam_Architecture'. From 'Capabilities', the role 'Capabilities' has cardinality 0..*, and from 'oaam_Architecture', the role 'oaam_Architecture15' has cardinality 0..*.
+An association connects 'oaam_Architecture' and 'Restrictions'. From 'oaam_Architecture', the role 'oaam_Architecture17' has cardinality 0..*, and from 'Restrictions', the role 'Restrictions' has cardinality 0..*.
+An association connects 'oaam_Architecture' and 'Allocations'. From 'oaam_Architecture', the role 'oaam_Architecture19' has cardinality 0..*, and from 'Allocations', the role 'Allocations' has cardinality 0..*.
+An association connects 'AttributeA' and 'oaam_common_OaamBaseElementA'. From 'AttributeA', the role 'AttributeA' has cardinality 0..*, and from 'oaam_common_OaamBaseElementA', the role 'oaam_common_OaamBaseElementA' has cardinality 0..*.
+An association connects 'oaam_common_AttributeContainment' and 'OaamBaseElementA'. From 'oaam_common_AttributeContainment', the role 'oaam_common_AttributeContainment' has cardinality 0..*, and from 'OaamBaseElementA', the role 'OaamBaseElementA' has cardinality 0..*.
+An association connects 'oaam_common_AttributeReference' and 'OaamBaseElementA'. From 'oaam_common_AttributeReference', the role 'oaam_common_AttributeReference' has cardinality 0..*, and from 'OaamBaseElementA', the role 'OaamBaseElementA23' has cardinality 0..*.
+An association connects 'oaam_common_BoolOperation' and 'BoolA'. From 'oaam_common_BoolOperation', the role 'oaam_common_BoolOperation' has cardinality 0..*, and from 'BoolA', the role 'BoolA' has cardinality 0..*.
+An association connects 'BoolA' and 'oaam_common_BoolOperation'. From 'BoolA', the role 'BoolA27' has cardinality 0..*, and from 'oaam_common_BoolOperation', the role 'oaam_common_BoolOperation26' has cardinality 0..*.
+An association connects 'oaam_common_BoolNot' and 'BoolA'. From 'oaam_common_BoolNot', the role 'oaam_common_BoolNot' has cardinality 0..*, and from 'BoolA', the role 'BoolA29' has cardinality 0..*.
+An association connects 'oaam_common_Array' and 'DataTypeA'. From 'oaam_common_Array', the role 'oaam_common_Array' has cardinality 0..*, and from 'DataTypeA', the role 'DataTypeA' has cardinality 0..*.
+An association connects 'DataTypeA' and 'oaam_common_Struct'. From 'DataTypeA', the role 'DataTypeA32' has cardinality 0..*, and from 'oaam_common_Struct', the role 'oaam_common_Struct' has cardinality 0..*.
+An association connects 'Struct' and 'oaam_common_Struct'. From 'Struct', the role 'Struct' has cardinality 0..*, and from 'oaam_common_Struct', the role 'oaam_common_Struct34' has cardinality 0..*.
+An association connects 'Resource' and 'oaam_library_ResourceConsumerA'. From 'Resource', the role 'Resource' has cardinality 0..*, and from 'oaam_library_ResourceConsumerA', the role 'oaam_library_ResourceConsumerA' has cardinality 0..*.
+An association connects 'oaam_library_ResourceConsumerA' and 'ResourceGroup'. From 'oaam_library_ResourceConsumerA', the role 'oaam_library_ResourceConsumerA37' has cardinality 0..*, and from 'ResourceGroup', the role 'ResourceGroup' has cardinality 0..*.
+An association connects 'ResourceBundle' and 'oaam_library_ResourceProviderA'. From 'ResourceBundle', the role 'ResourceBundle' has cardinality 0..*, and from 'oaam_library_ResourceProviderA', the role 'oaam_library_ResourceProviderA' has cardinality 0..*.
+An association connects 'oaam_library_ResourceProviderA' and 'ResourceType'. From 'oaam_library_ResourceProviderA', the role 'oaam_library_ResourceProviderA40' has cardinality 0..*, and from 'ResourceType', the role 'ResourceType' has cardinality 0..*.
+An association connects 'ResourceGroup' and 'oaam_library_ResourceProviderA'. From 'ResourceGroup', the role 'ResourceGroup43' has cardinality 0..*, and from 'oaam_library_ResourceProviderA', the role 'oaam_library_ResourceProviderA42' has cardinality 0..*.
+An association connects 'ResourceLink' and 'oaam_library_ResourceProviderA'. From 'ResourceLink', the role 'ResourceLink' has cardinality 0..*, and from 'oaam_library_ResourceProviderA', the role 'oaam_library_ResourceProviderA45' has cardinality 0..*.
+An association connects 'oaam_library_ResourceProviderInstanceA' and 'ResourceTypeModifierLevel'. From 'oaam_library_ResourceProviderInstanceA', the role 'oaam_library_ResourceProviderInstanceA' has cardinality 0..*, and from 'ResourceTypeModifierLevel', the role 'ResourceTypeModifierLevel' has cardinality 0..*.
+An association connects 'oaam_library_LibraryContainerA' and 'DataTypeA'. From 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA' has cardinality 0..*, and from 'DataTypeA', the role 'DataTypeA48' has cardinality 0..*.
+An association connects 'ResourceType' and 'oaam_library_LibraryContainerA'. From 'ResourceType', the role 'ResourceType51' has cardinality 0..*, and from 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA50' has cardinality 0..*.
+An association connects 'oaam_library_LibraryContainerA' and 'ResourceBundle'. From 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA53' has cardinality 0..*, and from 'ResourceBundle', the role 'ResourceBundle54' has cardinality 0..*.
+An association connects 'ResourceTypeModifier' and 'oaam_library_LibraryContainerA'. From 'ResourceTypeModifier', the role 'ResourceTypeModifier' has cardinality 0..*, and from 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA56' has cardinality 0..*.
+An association connects 'ResourceTypeDissimilarity' and 'oaam_library_LibraryContainerA'. From 'ResourceTypeDissimilarity', the role 'ResourceTypeDissimilarity' has cardinality 0..*, and from 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA58' has cardinality 0..*.
+An association connects 'TaskType' and 'oaam_library_LibraryContainerA'. From 'TaskType', the role 'TaskType' has cardinality 0..*, and from 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA60' has cardinality 0..*.
+An association connects 'oaam_library_LibraryContainerA' and 'TaskTypeDissimilarity'. From 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA62' has cardinality 0..*, and from 'TaskTypeDissimilarity', the role 'TaskTypeDissimilarity' has cardinality 0..*.
+An association connects 'oaam_library_LibraryContainerA' and 'SignalType'. From 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA64' has cardinality 0..*, and from 'SignalType', the role 'SignalType' has cardinality 0..*.
+An association connects 'DeviceType' and 'oaam_library_LibraryContainerA'. From 'DeviceType', the role 'DeviceType' has cardinality 0..*, and from 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA66' has cardinality 0..*.
+An association connects 'oaam_library_LibraryContainerA' and 'DeviceTypeSymmetry'. From 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA68' has cardinality 0..*, and from 'DeviceTypeSymmetry', the role 'DeviceTypeSymmetry' has cardinality 0..*.
+An association connects 'oaam_library_LibraryContainerA' and 'DeviceTypeDissimilarity'. From 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA70' has cardinality 0..*, and from 'DeviceTypeDissimilarity', the role 'DeviceTypeDissimilarity' has cardinality 0..*.
+An association connects 'oaam_library_LibraryContainerA' and 'ConnectionType'. From 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA72' has cardinality 0..*, and from 'ConnectionType', the role 'ConnectionType' has cardinality 0..*.
+An association connects 'WireType' and 'oaam_library_LibraryContainerA'. From 'WireType', the role 'WireType' has cardinality 0..*, and from 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA74' has cardinality 0..*.
+An association connects 'oaam_library_LibraryContainerA' and 'LocationType'. From 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA76' has cardinality 0..*, and from 'LocationType', the role 'LocationType' has cardinality 0..*.
+An association connects 'DuctType' and 'oaam_library_LibraryContainerA'. From 'DuctType', the role 'DuctType' has cardinality 0..*, and from 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA78' has cardinality 0..*.
+An association connects 'oaam_library_LibraryContainerA' and 'AttributeDefinition'. From 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA80' has cardinality 0..*, and from 'AttributeDefinition', the role 'AttributeDefinition' has cardinality 0..*.
+An association connects 'PowerSource' and 'oaam_library_LibraryContainerA'. From 'PowerSource', the role 'PowerSource' has cardinality 0..*, and from 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA82' has cardinality 0..*.
+An association connects 'oaam_library_LibraryContainerA' and 'Sublibrary'. From 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA84' has cardinality 0..*, and from 'Sublibrary', the role 'Sublibrary' has cardinality 0..*.
+An association connects 'oaam_library_LibraryContainerA' and 'IoType'. From 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA86' has cardinality 0..*, and from 'IoType', the role 'IoType' has cardinality 0..*.
+An association connects 'BusType' and 'oaam_library_LibraryContainerA'. From 'BusType', the role 'BusType' has cardinality 0..*, and from 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA88' has cardinality 0..*.
+An association connects 'MessageType' and 'oaam_library_LibraryContainerA'. From 'MessageType', the role 'MessageType' has cardinality 0..*, and from 'oaam_library_LibraryContainerA', the role 'oaam_library_LibraryContainerA90' has cardinality 0..*.
+An association connects 'oaam_library_ResourceType' and 'Resource'. From 'oaam_library_ResourceType', the role 'oaam_library_ResourceType' has cardinality 0..*, and from 'Resource', the role 'Resource92' has cardinality 0..*.
+An association connects 'ResourceTypeModifierReference' and 'oaam_library_ResourceType'. From 'ResourceTypeModifierReference', the role 'ResourceTypeModifierReference' has cardinality 0..*, and from 'oaam_library_ResourceType', the role 'oaam_library_ResourceType94' has cardinality 0..*.
+An association connects 'oaam_library_ResourceType' and 'ResourceAlternatives'. From 'oaam_library_ResourceType', the role 'oaam_library_ResourceType96' has cardinality 0..*, and from 'ResourceAlternatives', the role 'ResourceAlternatives' has cardinality 0..*.
+An association connects 'oaam_library_Resource' and 'ResourceType'. From 'oaam_library_Resource', the role 'oaam_library_Resource' has cardinality 0..*, and from 'ResourceType', the role 'ResourceType98' has cardinality 0..*.
+An association connects 'oaam_library_Resource' and 'ResourceTypeModifierLevel'. From 'oaam_library_Resource', the role 'oaam_library_Resource100' has cardinality 0..*, and from 'ResourceTypeModifierLevel', the role 'ResourceTypeModifierLevel101' has cardinality 0..*.
+An association connects 'Resource' and 'oaam_library_ResourceAlternatives'. From 'Resource', the role 'Resource103' has cardinality 0..*, and from 'oaam_library_ResourceAlternatives', the role 'oaam_library_ResourceAlternatives' has cardinality 0..*.
+An association connects 'oaam_library_ResourceBundle' and 'Resource'. From 'oaam_library_ResourceBundle', the role 'oaam_library_ResourceBundle' has cardinality 0..*, and from 'Resource', the role 'Resource105' has cardinality 0..*.
+An association connects 'OutputDeclaration' and 'oaam_library_TaskType'. From 'OutputDeclaration', the role 'OutputDeclaration' has cardinality 0..*, and from 'oaam_library_TaskType', the role 'oaam_library_TaskType' has cardinality 0..*.
+An association connects 'oaam_library_TaskType' and 'InputDeclaration'. From 'oaam_library_TaskType', the role 'oaam_library_TaskType108' has cardinality 0..*, and from 'InputDeclaration', the role 'InputDeclaration' has cardinality 0..*.
+An association connects 'TaskStateDeclaration' and 'oaam_library_TaskType'. From 'TaskStateDeclaration', the role 'TaskStateDeclaration' has cardinality 0..*, and from 'oaam_library_TaskType', the role 'oaam_library_TaskType110' has cardinality 0..*.
+An association connects 'TaskParameterDeclaration' and 'oaam_library_TaskType'. From 'TaskParameterDeclaration', the role 'TaskParameterDeclaration' has cardinality 0..*, and from 'oaam_library_TaskType', the role 'oaam_library_TaskType112' has cardinality 0..*.
+An association connects 'DataTypeA' and 'oaam_library_SignalType'. From 'DataTypeA', the role 'DataTypeA114' has cardinality 0..*, and from 'oaam_library_SignalType', the role 'oaam_library_SignalType' has cardinality 0..*.
+An association connects 'IoDeclaration' and 'oaam_library_DeviceType'. From 'IoDeclaration', the role 'IoDeclaration' has cardinality 0..*, and from 'oaam_library_DeviceType', the role 'oaam_library_DeviceType' has cardinality 0..*.
+An association connects 'IoGroup' and 'oaam_library_DeviceType'. From 'IoGroup', the role 'IoGroup' has cardinality 0..*, and from 'oaam_library_DeviceType', the role 'oaam_library_DeviceType117' has cardinality 0..*.
+An association connects 'WireType' and 'oaam_library_ConnectionType'. From 'WireType', the role 'WireType119' has cardinality 0..*, and from 'oaam_library_ConnectionType', the role 'oaam_library_ConnectionType' has cardinality 0..*.
+An association connects 'ResourceType' and 'oaam_library_ConnectionType'. From 'ResourceType', the role 'ResourceType122' has cardinality 0..*, and from 'oaam_library_ConnectionType', the role 'oaam_library_ConnectionType121' has cardinality 0..*.
+An association connects 'oaam_library_ConnectionType' and 'ResourceType'. From 'oaam_library_ConnectionType', the role 'oaam_library_ConnectionType124' has cardinality 0..*, and from 'ResourceType', the role 'ResourceType125' has cardinality 0..*.
+An association connects 'oaam_library_ConnectionType' and 'DeviceType'. From 'oaam_library_ConnectionType', the role 'oaam_library_ConnectionType127' has cardinality 0..*, and from 'DeviceType', the role 'DeviceType128' has cardinality 0..*.
+An association connects 'MessageType' and 'oaam_library_ConnectionType'. From 'MessageType', the role 'MessageType131' has cardinality 0..*, and from 'oaam_library_ConnectionType', the role 'oaam_library_ConnectionType130' has cardinality 0..*.
+An association connects 'oaam_library_LocationType' and 'DuctOpeningDeclaration'. From 'oaam_library_LocationType', the role 'oaam_library_LocationType' has cardinality 0..*, and from 'DuctOpeningDeclaration', the role 'DuctOpeningDeclaration' has cardinality 0..*.
+An association connects 'DataTypeA' and 'oaam_library_InputDeclaration'. From 'DataTypeA', the role 'DataTypeA134' has cardinality 0..*, and from 'oaam_library_InputDeclaration', the role 'oaam_library_InputDeclaration' has cardinality 0..*.
+An association connects 'TaskOutputTrigger' and 'oaam_library_OutputDeclaration'. From 'TaskOutputTrigger', the role 'TaskOutputTrigger' has cardinality 0..*, and from 'oaam_library_OutputDeclaration', the role 'oaam_library_OutputDeclaration' has cardinality 0..*.
+An association connects 'oaam_library_OutputDeclaration' and 'DataTypeA'. From 'oaam_library_OutputDeclaration', the role 'oaam_library_OutputDeclaration137' has cardinality 0..*, and from 'DataTypeA', the role 'DataTypeA138' has cardinality 0..*.
+An association connects 'oaam_library_OutputDeclaration' and 'FaultPropagation'. From 'oaam_library_OutputDeclaration', the role 'oaam_library_OutputDeclaration140' has cardinality 0..*, and from 'FaultPropagation', the role 'FaultPropagation' has cardinality 0..*.
+An association connects 'Resource' and 'oaam_library_IoDeclaration'. From 'Resource', the role 'Resource142' has cardinality 0..*, and from 'oaam_library_IoDeclaration', the role 'oaam_library_IoDeclaration' has cardinality 0..*.
+An association connects 'oaam_library_IoDeclaration' and 'IoType'. From 'oaam_library_IoDeclaration', the role 'oaam_library_IoDeclaration144' has cardinality 0..*, and from 'IoType', the role 'IoType145' has cardinality 0..*.
+An association connects 'Resource' and 'oaam_library_ResourceGroup'. From 'Resource', the role 'Resource147' has cardinality 0..*, and from 'oaam_library_ResourceGroup', the role 'oaam_library_ResourceGroup' has cardinality 0..*.
+An association connects 'DeviceType' and 'oaam_library_DeviceTypeSymmetry'. From 'DeviceType', the role 'DeviceType149' has cardinality 0..*, and from 'oaam_library_DeviceTypeSymmetry', the role 'oaam_library_DeviceTypeSymmetry' has cardinality 0..*.
+An association connects 'oaam_library_IoGroup' and 'IoDeclaration'. From 'oaam_library_IoGroup', the role 'oaam_library_IoGroup' has cardinality 0..*, and from 'IoDeclaration', the role 'IoDeclaration151' has cardinality 0..*.
+An association connects 'BoolA' and 'oaam_library_FaultPropagation'. From 'BoolA', the role 'BoolA153' has cardinality 0..*, and from 'oaam_library_FaultPropagation', the role 'oaam_library_FaultPropagation' has cardinality 0..*.
+An association connects 'oaam_library_FaultPropagation' and 'BoolOperation'. From 'oaam_library_FaultPropagation', the role 'oaam_library_FaultPropagation155' has cardinality 0..*, and from 'BoolOperation', the role 'BoolOperation' has cardinality 0..*.
+An association connects 'BoolNot' and 'oaam_library_FaultPropagation'. From 'BoolNot', the role 'BoolNot' has cardinality 0..*, and from 'oaam_library_FaultPropagation', the role 'oaam_library_FaultPropagation157' has cardinality 0..*.
+An association connects 'TaskInputState' and 'oaam_library_FaultPropagation'. From 'TaskInputState', the role 'TaskInputState' has cardinality 0..*, and from 'oaam_library_FaultPropagation', the role 'oaam_library_FaultPropagation159' has cardinality 0..*.
+An association connects 'oaam_library_TaskInputState' and 'InputDeclaration'. From 'oaam_library_TaskInputState', the role 'oaam_library_TaskInputState' has cardinality 0..*, and from 'InputDeclaration', the role 'InputDeclaration161' has cardinality 0..*.
+An association connects 'oaam_library_ResourceLink' and 'Resource'. From 'oaam_library_ResourceLink', the role 'oaam_library_ResourceLink' has cardinality 0..*, and from 'Resource', the role 'Resource163' has cardinality 0..*.
+An association connects 'oaam_library_ResourceLink' and 'Resource'. From 'oaam_library_ResourceLink', the role 'oaam_library_ResourceLink165' has cardinality 0..*, and from 'Resource', the role 'Resource166' has cardinality 0..*.
+An association connects 'ResourceTypeModifierLevel' and 'oaam_library_ResourceTypeModifier'. From 'ResourceTypeModifierLevel', the role 'ResourceTypeModifierLevel168' has cardinality 0..*, and from 'oaam_library_ResourceTypeModifier', the role 'oaam_library_ResourceTypeModifier' has cardinality 0..*.
+An association connects 'oaam_library_ResourceTypeModifierLevel' and 'ResourceTypeModifierLevel'. From 'oaam_library_ResourceTypeModifierLevel', the role 'oaam_library_ResourceTypeModifierLevel' has cardinality 0..*, and from 'ResourceTypeModifierLevel', the role 'ResourceTypeModifierLevel170' has cardinality 0..*.
+An association connects 'ResourceTypeModifierLevel' and 'oaam_library_ResourceTypeModifierLevel'. From 'ResourceTypeModifierLevel', the role 'ResourceTypeModifierLevel173' has cardinality 0..*, and from 'oaam_library_ResourceTypeModifierLevel', the role 'oaam_library_ResourceTypeModifierLevel172' has cardinality 0..*.
+An association connects 'ResourceTypeModifier' and 'oaam_library_ResourceTypeModifierReference'. From 'ResourceTypeModifier', the role 'ResourceTypeModifier175' has cardinality 0..*, and from 'oaam_library_ResourceTypeModifierReference', the role 'oaam_library_ResourceTypeModifierReference' has cardinality 0..*.
+An association connects 'oaam_library_ResourceTypeModifierReference' and 'ResourceTypeModifierLevel'. From 'oaam_library_ResourceTypeModifierReference', the role 'oaam_library_ResourceTypeModifierReference177' has cardinality 0..*, and from 'ResourceTypeModifierLevel', the role 'ResourceTypeModifierLevel178' has cardinality 0..*.
+An association connects 'TaskType' and 'oaam_library_TaskTypeDissimilarity'. From 'TaskType', the role 'TaskType180' has cardinality 0..*, and from 'oaam_library_TaskTypeDissimilarity', the role 'oaam_library_TaskTypeDissimilarity' has cardinality 0..*.
+An association connects 'oaam_library_DeviceTypeDissimilarity' and 'DeviceType'. From 'oaam_library_DeviceTypeDissimilarity', the role 'oaam_library_DeviceTypeDissimilarity' has cardinality 0..*, and from 'DeviceType', the role 'DeviceType182' has cardinality 0..*.
+An association connects 'oaam_library_ResourceTypeDissimilarity' and 'ResourceType'. From 'oaam_library_ResourceTypeDissimilarity', the role 'oaam_library_ResourceTypeDissimilarity' has cardinality 0..*, and from 'ResourceType', the role 'ResourceType184' has cardinality 0..*.
+An association connects 'BoolA' and 'oaam_library_TaskOutputTrigger'. From 'BoolA', the role 'BoolA186' has cardinality 0..*, and from 'oaam_library_TaskOutputTrigger', the role 'oaam_library_TaskOutputTrigger' has cardinality 0..*.
+An association connects 'BoolOperation' and 'oaam_library_TaskOutputTrigger'. From 'BoolOperation', the role 'BoolOperation189' has cardinality 0..*, and from 'oaam_library_TaskOutputTrigger', the role 'oaam_library_TaskOutputTrigger188' has cardinality 0..*.
+An association connects 'BoolNot' and 'oaam_library_TaskOutputTrigger'. From 'BoolNot', the role 'BoolNot192' has cardinality 0..*, and from 'oaam_library_TaskOutputTrigger', the role 'oaam_library_TaskOutputTrigger191' has cardinality 0..*.
+An association connects 'TaskInputTrigger' and 'oaam_library_TaskOutputTrigger'. From 'TaskInputTrigger', the role 'TaskInputTrigger' has cardinality 0..*, and from 'oaam_library_TaskOutputTrigger', the role 'oaam_library_TaskOutputTrigger194' has cardinality 0..*.
+An association connects 'oaam_library_TaskInputTrigger' and 'InputDeclaration'. From 'oaam_library_TaskInputTrigger', the role 'oaam_library_TaskInputTrigger' has cardinality 0..*, and from 'InputDeclaration', the role 'InputDeclaration196' has cardinality 0..*.
+An association connects 'DataTypeA' and 'oaam_library_TaskStateDeclaration'. From 'DataTypeA', the role 'DataTypeA198' has cardinality 0..*, and from 'oaam_library_TaskStateDeclaration', the role 'oaam_library_TaskStateDeclaration' has cardinality 0..*.
+An association connects 'oaam_library_TaskParameterDeclaration' and 'DataTypeA'. From 'oaam_library_TaskParameterDeclaration', the role 'oaam_library_TaskParameterDeclaration' has cardinality 0..*, and from 'DataTypeA', the role 'DataTypeA200' has cardinality 0..*.
+An association connects 'oaam_library_BusType' and 'DeviceType'. From 'oaam_library_BusType', the role 'oaam_library_BusType' has cardinality 0..*, and from 'DeviceType', the role 'DeviceType202' has cardinality 0..*.
+An association connects 'oaam_library_BusType' and 'ConnectionType'. From 'oaam_library_BusType', the role 'oaam_library_BusType204' has cardinality 0..*, and from 'ConnectionType', the role 'ConnectionType205' has cardinality 0..*.
+An association connects 'MessageType' and 'oaam_library_BusType'. From 'MessageType', the role 'MessageType208' has cardinality 0..*, and from 'oaam_library_BusType', the role 'oaam_library_BusType207' has cardinality 0..*.
+An association connects 'oaam_library_MessageType' and 'DataTypeA'. From 'oaam_library_MessageType', the role 'oaam_library_MessageType' has cardinality 0..*, and from 'DataTypeA', the role 'DataTypeA210' has cardinality 0..*.
+An association connects 'DataTypeA' and 'oaam_library_MessageType'. From 'DataTypeA', the role 'DataTypeA213' has cardinality 0..*, and from 'oaam_library_MessageType', the role 'oaam_library_MessageType212' has cardinality 0..*.
+An association connects 'oaam_scenario_ModeDependentElementA' and 'OperationModeReference'. From 'oaam_scenario_ModeDependentElementA', the role 'oaam_scenario_ModeDependentElementA' has cardinality 0..*, and from 'OperationModeReference', the role 'OperationModeReference' has cardinality 0..*.
+An association connects 'Variant' and 'oaam_scenario_VariantDependentElementA'. From 'Variant', the role 'Variant' has cardinality 0..*, and from 'oaam_scenario_VariantDependentElementA', the role 'oaam_scenario_VariantDependentElementA' has cardinality 0..*.
+An association connects 'oaam_scenario_ScenarioContainerA' and 'ScenarioParameterA'. From 'oaam_scenario_ScenarioContainerA', the role 'oaam_scenario_ScenarioContainerA' has cardinality 0..*, and from 'ScenarioParameterA', the role 'ScenarioParameterA' has cardinality 0..*.
+An association connects 'oaam_scenario_ScenarioContainerA' and 'Variant'. From 'oaam_scenario_ScenarioContainerA', the role 'oaam_scenario_ScenarioContainerA218' has cardinality 0..*, and from 'Variant', the role 'Variant219' has cardinality 0..*.
+An association connects 'OperationMode' and 'oaam_scenario_ScenarioContainerA'. From 'OperationMode', the role 'OperationMode' has cardinality 0..*, and from 'oaam_scenario_ScenarioContainerA', the role 'oaam_scenario_ScenarioContainerA221' has cardinality 0..*.
+An association connects 'Subscenario' and 'oaam_scenario_ScenarioContainerA'. From 'Subscenario', the role 'Subscenario' has cardinality 0..*, and from 'oaam_scenario_ScenarioContainerA', the role 'oaam_scenario_ScenarioContainerA223' has cardinality 0..*.
+An association connects 'OperationMode' and 'oaam_scenario_OperationModeReference'. From 'OperationMode', the role 'OperationMode225' has cardinality 0..*, and from 'oaam_scenario_OperationModeReference', the role 'oaam_scenario_OperationModeReference' has cardinality 0..*.
+An association connects 'System' and 'oaam_systems_SystemsContainerA'. From 'System', the role 'System' has cardinality 0..*, and from 'oaam_systems_SystemsContainerA', the role 'oaam_systems_SystemsContainerA' has cardinality 0..*.
+An association connects 'InformationFlow' and 'oaam_systems_SystemsContainerA'. From 'InformationFlow', the role 'InformationFlow' has cardinality 0..*, and from 'oaam_systems_SystemsContainerA', the role 'oaam_systems_SystemsContainerA228' has cardinality 0..*.
+An association connects 'oaam_systems_SystemsContainerA' and 'InputSegregation'. From 'oaam_systems_SystemsContainerA', the role 'oaam_systems_SystemsContainerA230' has cardinality 0..*, and from 'InputSegregation', the role 'InputSegregation' has cardinality 0..*.
+An association connects 'Subsystem' and 'oaam_systems_SystemsContainerA'. From 'Subsystem', the role 'Subsystem' has cardinality 0..*, and from 'oaam_systems_SystemsContainerA', the role 'oaam_systems_SystemsContainerA232' has cardinality 0..*.
+An association connects 'oaam_systems_System' and 'ProvidedInformationA'. From 'oaam_systems_System', the role 'oaam_systems_System' has cardinality 0..*, and from 'ProvidedInformationA', the role 'ProvidedInformationA' has cardinality 0..*.
+An association connects 'oaam_systems_System' and 'RequiredInformationA'. From 'oaam_systems_System', the role 'oaam_systems_System235' has cardinality 0..*, and from 'RequiredInformationA', the role 'RequiredInformationA' has cardinality 0..*.
+An association connects 'oaam_systems_InformationFlow' and 'ProvidedInformationA'. From 'oaam_systems_InformationFlow', the role 'oaam_systems_InformationFlow' has cardinality 0..*, and from 'ProvidedInformationA', the role 'ProvidedInformationA237' has cardinality 0..*.
+An association connects 'oaam_systems_InformationFlow' and 'RequiredInformationA'. From 'oaam_systems_InformationFlow', the role 'oaam_systems_InformationFlow239' has cardinality 0..*, and from 'RequiredInformationA', the role 'RequiredInformationA240' has cardinality 0..*.
+An association connects 'RequiredInformationA' and 'oaam_systems_InputSegregation'. From 'RequiredInformationA', the role 'RequiredInformationA242' has cardinality 0..*, and from 'oaam_systems_InputSegregation', the role 'oaam_systems_InputSegregation' has cardinality 0..*.
+An association connects 'RequiredInformationA' and 'oaam_systems_InputSegregation'. From 'RequiredInformationA', the role 'RequiredInformationA245' has cardinality 0..*, and from 'oaam_systems_InputSegregation', the role 'oaam_systems_InputSegregation244' has cardinality 0..*.
+An association connects 'oaam_functions_FunctionsContainerA' and 'Task'. From 'oaam_functions_FunctionsContainerA', the role 'oaam_functions_FunctionsContainerA' has cardinality 0..*, and from 'Task', the role 'Task' has cardinality 0..*.
+An association connects 'ExternalTaskLink' and 'oaam_functions_FunctionsContainerA'. From 'ExternalTaskLink', the role 'ExternalTaskLink' has cardinality 0..*, and from 'oaam_functions_FunctionsContainerA', the role 'oaam_functions_FunctionsContainerA248' has cardinality 0..*.
+An association connects 'oaam_functions_FunctionsContainerA' and 'TaskGroup'. From 'oaam_functions_FunctionsContainerA', the role 'oaam_functions_FunctionsContainerA250' has cardinality 0..*, and from 'TaskGroup', the role 'TaskGroup' has cardinality 0..*.
+An association connects 'TaskSymmetry' and 'oaam_functions_FunctionsContainerA'. From 'TaskSymmetry', the role 'TaskSymmetry' has cardinality 0..*, and from 'oaam_functions_FunctionsContainerA', the role 'oaam_functions_FunctionsContainerA252' has cardinality 0..*.
+An association connects 'oaam_functions_FunctionsContainerA' and 'TaskRedundancy'. From 'oaam_functions_FunctionsContainerA', the role 'oaam_functions_FunctionsContainerA254' has cardinality 0..*, and from 'TaskRedundancy', the role 'TaskRedundancy' has cardinality 0..*.
+An association connects 'oaam_functions_FunctionsContainerA' and 'Signal'. From 'oaam_functions_FunctionsContainerA', the role 'oaam_functions_FunctionsContainerA256' has cardinality 0..*, and from 'Signal', the role 'Signal' has cardinality 0..*.
+An association connects 'oaam_functions_FunctionsContainerA' and 'SignalGroup'. From 'oaam_functions_FunctionsContainerA', the role 'oaam_functions_FunctionsContainerA258' has cardinality 0..*, and from 'SignalGroup', the role 'SignalGroup' has cardinality 0..*.
+An association connects 'oaam_functions_FunctionsContainerA' and 'FailureCondition'. From 'oaam_functions_FunctionsContainerA', the role 'oaam_functions_FunctionsContainerA260' has cardinality 0..*, and from 'FailureCondition', the role 'FailureCondition' has cardinality 0..*.
+An association connects 'Subfunctions' and 'oaam_functions_FunctionsContainerA'. From 'Subfunctions', the role 'Subfunctions' has cardinality 0..*, and from 'oaam_functions_FunctionsContainerA', the role 'oaam_functions_FunctionsContainerA262' has cardinality 0..*.
+An association connects 'TaskType' and 'oaam_functions_Task'. From 'TaskType', the role 'TaskType264' has cardinality 0..*, and from 'oaam_functions_Task', the role 'oaam_functions_Task' has cardinality 0..*.
+An association connects 'Input' and 'oaam_functions_Task'. From 'Input', the role 'Input' has cardinality 0..*, and from 'oaam_functions_Task', the role 'oaam_functions_Task266' has cardinality 0..*.
+An association connects 'oaam_functions_Task' and 'Output'. From 'oaam_functions_Task', the role 'oaam_functions_Task268' has cardinality 0..*, and from 'Output', the role 'Output' has cardinality 0..*.
+An association connects 'oaam_functions_Task' and 'System'. From 'oaam_functions_Task', the role 'oaam_functions_Task270' has cardinality 0..*, and from 'System', the role 'System271' has cardinality 0..*.
+An association connects 'Device' and 'oaam_functions_Task'. From 'Device', the role 'Device' has cardinality 0..*, and from 'oaam_functions_Task', the role 'oaam_functions_Task273' has cardinality 0..*.
+An association connects 'TaskParameter' and 'oaam_functions_Task'. From 'TaskParameter', the role 'TaskParameter' has cardinality 0..*, and from 'oaam_functions_Task', the role 'oaam_functions_Task275' has cardinality 0..*.
+An association connects 'TaskType' and 'oaam_functions_ExternalTaskLink'. From 'TaskType', the role 'TaskType277' has cardinality 0..*, and from 'oaam_functions_ExternalTaskLink', the role 'oaam_functions_ExternalTaskLink' has cardinality 0..*.
+An association connects 'oaam_functions_ExternalTaskLink' and 'Input'. From 'oaam_functions_ExternalTaskLink', the role 'oaam_functions_ExternalTaskLink279' has cardinality 0..*, and from 'Input', the role 'Input280' has cardinality 0..*.
+An association connects 'Output' and 'oaam_functions_ExternalTaskLink'. From 'Output', the role 'Output283' has cardinality 0..*, and from 'oaam_functions_ExternalTaskLink', the role 'oaam_functions_ExternalTaskLink282' has cardinality 0..*.
+An association connects 'oaam_functions_ExternalTaskLink' and 'Task'. From 'oaam_functions_ExternalTaskLink', the role 'oaam_functions_ExternalTaskLink285' has cardinality 0..*, and from 'Task', the role 'Task286' has cardinality 0..*.
+An association connects 'Task' and 'oaam_functions_TaskGroup'. From 'Task', the role 'Task288' has cardinality 0..*, and from 'oaam_functions_TaskGroup', the role 'oaam_functions_TaskGroup' has cardinality 0..*.
+An association connects 'Task' and 'oaam_functions_TaskSymmetry'. From 'Task', the role 'Task290' has cardinality 0..*, and from 'oaam_functions_TaskSymmetry', the role 'oaam_functions_TaskSymmetry' has cardinality 0..*.
+An association connects 'Task' and 'oaam_functions_TaskRedundancy'. From 'Task', the role 'Task292' has cardinality 0..*, and from 'oaam_functions_TaskRedundancy', the role 'oaam_functions_TaskRedundancy' has cardinality 0..*.
+An association connects 'oaam_functions_FailureCondition' and 'BoolA'. From 'oaam_functions_FailureCondition', the role 'oaam_functions_FailureCondition' has cardinality 0..*, and from 'BoolA', the role 'BoolA294' has cardinality 0..*.
+An association connects 'BoolOperation' and 'oaam_functions_FailureCondition'. From 'BoolOperation', the role 'BoolOperation297' has cardinality 0..*, and from 'oaam_functions_FailureCondition', the role 'oaam_functions_FailureCondition296' has cardinality 0..*.
+An association connects 'oaam_functions_FailureCondition' and 'BoolNot'. From 'oaam_functions_FailureCondition', the role 'oaam_functions_FailureCondition299' has cardinality 0..*, and from 'BoolNot', the role 'BoolNot300' has cardinality 0..*.
+An association connects 'oaam_functions_FailureCondition' and 'OutputIntegrityState'. From 'oaam_functions_FailureCondition', the role 'oaam_functions_FailureCondition302' has cardinality 0..*, and from 'OutputIntegrityState', the role 'OutputIntegrityState' has cardinality 0..*.
+An association connects 'Output' and 'oaam_functions_OutputIntegrityState'. From 'Output', the role 'Output304' has cardinality 0..*, and from 'oaam_functions_OutputIntegrityState', the role 'oaam_functions_OutputIntegrityState' has cardinality 0..*.
+An association connects 'Output' and 'oaam_functions_Signal'. From 'Output', the role 'Output306' has cardinality 0..*, and from 'oaam_functions_Signal', the role 'oaam_functions_Signal' has cardinality 0..*.
+An association connects 'Input' and 'oaam_functions_Signal'. From 'Input', the role 'Input309' has cardinality 0..*, and from 'oaam_functions_Signal', the role 'oaam_functions_Signal308' has cardinality 0..*.
+An association connects 'oaam_functions_Signal' and 'SignalType'. From 'oaam_functions_Signal', the role 'oaam_functions_Signal311' has cardinality 0..*, and from 'SignalType', the role 'SignalType312' has cardinality 0..*.
+An association connects 'Connection' and 'oaam_functions_Signal'. From 'Connection', the role 'Connection' has cardinality 0..*, and from 'oaam_functions_Signal', the role 'oaam_functions_Signal314' has cardinality 0..*.
+An association connects 'oaam_functions_SignalGroup' and 'Signal'. From 'oaam_functions_SignalGroup', the role 'oaam_functions_SignalGroup' has cardinality 0..*, and from 'Signal', the role 'Signal316' has cardinality 0..*.
+An association connects 'oaam_functions_Input' and 'InputDeclaration'. From 'oaam_functions_Input', the role 'oaam_functions_Input' has cardinality 0..*, and from 'InputDeclaration', the role 'InputDeclaration318' has cardinality 0..*.
+An association connects 'oaam_functions_Input' and 'RequiredInformationA'. From 'oaam_functions_Input', the role 'oaam_functions_Input320' has cardinality 0..*, and from 'RequiredInformationA', the role 'RequiredInformationA321' has cardinality 0..*.
+An association connects 'Io' and 'oaam_functions_Input'. From 'Io', the role 'Io' has cardinality 0..*, and from 'oaam_functions_Input', the role 'oaam_functions_Input323' has cardinality 0..*.
+An association connects 'ExternalOutputLink' and 'oaam_functions_Input'. From 'ExternalOutputLink', the role 'ExternalOutputLink' has cardinality 0..*, and from 'oaam_functions_Input', the role 'oaam_functions_Input325' has cardinality 0..*.
+An association connects 'ProvidedInformationA' and 'oaam_functions_Output'. From 'ProvidedInformationA', the role 'ProvidedInformationA327' has cardinality 0..*, and from 'oaam_functions_Output', the role 'oaam_functions_Output' has cardinality 0..*.
+An association connects 'oaam_functions_Output' and 'OutputDeclaration'. From 'oaam_functions_Output', the role 'oaam_functions_Output329' has cardinality 0..*, and from 'OutputDeclaration', the role 'OutputDeclaration330' has cardinality 0..*.
+An association connects 'Io' and 'oaam_functions_Output'. From 'Io', the role 'Io333' has cardinality 0..*, and from 'oaam_functions_Output', the role 'oaam_functions_Output332' has cardinality 0..*.
+An association connects 'oaam_functions_ExternalOutputLink' and 'Output'. From 'oaam_functions_ExternalOutputLink', the role 'oaam_functions_ExternalOutputLink' has cardinality 0..*, and from 'Output', the role 'Output335' has cardinality 0..*.
+An association connects 'oaam_functions_TaskParameter' and 'TaskParameterDeclaration'. From 'oaam_functions_TaskParameter', the role 'oaam_functions_TaskParameter' has cardinality 0..*, and from 'TaskParameterDeclaration', the role 'TaskParameterDeclaration337' has cardinality 0..*.
+An association connects 'oaam_hardware_HardwareContainerA' and 'Device'. From 'oaam_hardware_HardwareContainerA', the role 'oaam_hardware_HardwareContainerA' has cardinality 0..*, and from 'Device', the role 'Device339' has cardinality 0..*.
+An association connects 'DeviceSymmetry' and 'oaam_hardware_HardwareContainerA'. From 'DeviceSymmetry', the role 'DeviceSymmetry' has cardinality 0..*, and from 'oaam_hardware_HardwareContainerA', the role 'oaam_hardware_HardwareContainerA341' has cardinality 0..*.
+An association connects 'oaam_hardware_HardwareContainerA' and 'Connection'. From 'oaam_hardware_HardwareContainerA', the role 'oaam_hardware_HardwareContainerA343' has cardinality 0..*, and from 'Connection', the role 'Connection344' has cardinality 0..*.
+An association connects 'Subhardware' and 'oaam_hardware_HardwareContainerA'. From 'Subhardware', the role 'Subhardware' has cardinality 0..*, and from 'oaam_hardware_HardwareContainerA', the role 'oaam_hardware_HardwareContainerA346' has cardinality 0..*.
+An association connects 'Bus' and 'oaam_hardware_HardwareContainerA'. From 'Bus', the role 'Bus' has cardinality 0..*, and from 'oaam_hardware_HardwareContainerA', the role 'oaam_hardware_HardwareContainerA348' has cardinality 0..*.
+An association connects 'DeviceType' and 'oaam_hardware_Device'. From 'DeviceType', the role 'DeviceType350' has cardinality 0..*, and from 'oaam_hardware_Device', the role 'oaam_hardware_Device' has cardinality 0..*.
+An association connects 'oaam_hardware_Device' and 'Io'. From 'oaam_hardware_Device', the role 'oaam_hardware_Device352' has cardinality 0..*, and from 'Io', the role 'Io353' has cardinality 0..*.
+An association connects 'oaam_hardware_Device' and 'Device'. From 'oaam_hardware_Device', the role 'oaam_hardware_Device355' has cardinality 0..*, and from 'Device', the role 'Device356' has cardinality 0..*.
+An association connects 'oaam_hardware_Device' and 'Location'. From 'oaam_hardware_Device', the role 'oaam_hardware_Device358' has cardinality 0..*, and from 'Location', the role 'Location' has cardinality 0..*.
+An association connects 'oaam_hardware_Device' and 'PowerSource'. From 'oaam_hardware_Device', the role 'oaam_hardware_Device360' has cardinality 0..*, and from 'PowerSource', the role 'PowerSource361' has cardinality 0..*.
+An association connects 'Connection' and 'oaam_hardware_Device'. From 'Connection', the role 'Connection364' has cardinality 0..*, and from 'oaam_hardware_Device', the role 'oaam_hardware_Device363' has cardinality 0..*.
+An association connects 'ConnectionType' and 'oaam_hardware_Connection'. From 'ConnectionType', the role 'ConnectionType366' has cardinality 0..*, and from 'oaam_hardware_Connection', the role 'oaam_hardware_Connection' has cardinality 0..*.
+An association connects 'oaam_hardware_Connection' and 'Io'. From 'oaam_hardware_Connection', the role 'oaam_hardware_Connection368' has cardinality 0..*, and from 'Io', the role 'Io369' has cardinality 0..*.
+An association connects 'Io' and 'oaam_hardware_Connection'. From 'Io', the role 'Io372' has cardinality 0..*, and from 'oaam_hardware_Connection', the role 'oaam_hardware_Connection371' has cardinality 0..*.
+An association connects 'oaam_hardware_Connection' and 'Io'. From 'oaam_hardware_Connection', the role 'oaam_hardware_Connection374' has cardinality 0..*, and from 'Io', the role 'Io375' has cardinality 0..*.
+An association connects 'oaam_hardware_Io' and 'IoDeclaration'. From 'oaam_hardware_Io', the role 'oaam_hardware_Io' has cardinality 0..*, and from 'IoDeclaration', the role 'IoDeclaration377' has cardinality 0..*.
+An association connects 'oaam_hardware_DeviceSymmetry' and 'Device'. From 'oaam_hardware_DeviceSymmetry', the role 'oaam_hardware_DeviceSymmetry' has cardinality 0..*, and from 'Device', the role 'Device379' has cardinality 0..*.
+An association connects 'BusType' and 'oaam_hardware_Bus'. From 'BusType', the role 'BusType381' has cardinality 0..*, and from 'oaam_hardware_Bus', the role 'oaam_hardware_Bus' has cardinality 0..*.
+An association connects 'oaam_hardware_Bus' and 'Connection'. From 'oaam_hardware_Bus', the role 'oaam_hardware_Bus383' has cardinality 0..*, and from 'Connection', the role 'Connection384' has cardinality 0..*.
+An association connects 'oaam_hardware_Bus' and 'Device'. From 'oaam_hardware_Bus', the role 'oaam_hardware_Bus386' has cardinality 0..*, and from 'Device', the role 'Device387' has cardinality 0..*.
+An association connects 'oaam_anatomy_AnatomyContainerA' and 'Location'. From 'oaam_anatomy_AnatomyContainerA', the role 'oaam_anatomy_AnatomyContainerA' has cardinality 0..*, and from 'Location', the role 'Location389' has cardinality 0..*.
+An association connects 'LocationSymmetry' and 'oaam_anatomy_AnatomyContainerA'. From 'LocationSymmetry', the role 'LocationSymmetry' has cardinality 0..*, and from 'oaam_anatomy_AnatomyContainerA', the role 'oaam_anatomy_AnatomyContainerA391' has cardinality 0..*.
+An association connects 'oaam_anatomy_AnatomyContainerA' and 'Duct'. From 'oaam_anatomy_AnatomyContainerA', the role 'oaam_anatomy_AnatomyContainerA393' has cardinality 0..*, and from 'Duct', the role 'Duct' has cardinality 0..*.
+An association connects 'oaam_anatomy_AnatomyContainerA' and 'Area'. From 'oaam_anatomy_AnatomyContainerA', the role 'oaam_anatomy_AnatomyContainerA395' has cardinality 0..*, and from 'Area', the role 'Area' has cardinality 0..*.
+An association connects 'Subanatomy' and 'oaam_anatomy_AnatomyContainerA'. From 'Subanatomy', the role 'Subanatomy' has cardinality 0..*, and from 'oaam_anatomy_AnatomyContainerA', the role 'oaam_anatomy_AnatomyContainerA397' has cardinality 0..*.
+An association connects 'AreaSymmetry' and 'oaam_anatomy_AnatomyContainerA'. From 'AreaSymmetry', the role 'AreaSymmetry' has cardinality 0..*, and from 'oaam_anatomy_AnatomyContainerA', the role 'oaam_anatomy_AnatomyContainerA399' has cardinality 0..*.
+An association connects 'LocationType' and 'oaam_anatomy_Location'. From 'LocationType', the role 'LocationType401' has cardinality 0..*, and from 'oaam_anatomy_Location', the role 'oaam_anatomy_Location' has cardinality 0..*.
+An association connects 'oaam_anatomy_Location' and 'Position3D'. From 'oaam_anatomy_Location', the role 'oaam_anatomy_Location403' has cardinality 0..*, and from 'Position3D', the role 'Position3D' has cardinality 0..*.
+An association connects 'oaam_anatomy_Location' and 'DuctOpening'. From 'oaam_anatomy_Location', the role 'oaam_anatomy_Location405' has cardinality 0..*, and from 'DuctOpening', the role 'DuctOpening' has cardinality 0..*.
+An association connects 'Location' and 'oaam_anatomy_Area'. From 'Location', the role 'Location407' has cardinality 0..*, and from 'oaam_anatomy_Area', the role 'oaam_anatomy_Area' has cardinality 0..*.
+An association connects 'Duct' and 'oaam_anatomy_Area'. From 'Duct', the role 'Duct410' has cardinality 0..*, and from 'oaam_anatomy_Area', the role 'oaam_anatomy_Area409' has cardinality 0..*.
+An association connects 'oaam_anatomy_Duct' and 'DuctType'. From 'oaam_anatomy_Duct', the role 'oaam_anatomy_Duct' has cardinality 0..*, and from 'DuctType', the role 'DuctType412' has cardinality 0..*.
+An association connects 'DuctOpening' and 'oaam_anatomy_Duct'. From 'DuctOpening', the role 'DuctOpening415' has cardinality 0..*, and from 'oaam_anatomy_Duct', the role 'oaam_anatomy_Duct414' has cardinality 0..*.
+An association connects 'oaam_anatomy_Duct' and 'DuctOpening'. From 'oaam_anatomy_Duct', the role 'oaam_anatomy_Duct417' has cardinality 0..*, and from 'DuctOpening', the role 'DuctOpening418' has cardinality 0..*.
+An association connects 'Position3D' and 'oaam_anatomy_DuctOpening'. From 'Position3D', the role 'Position3D420' has cardinality 0..*, and from 'oaam_anatomy_DuctOpening', the role 'oaam_anatomy_DuctOpening' has cardinality 0..*.
+An association connects 'DuctOpeningDeclaration' and 'oaam_anatomy_DuctOpening'. From 'DuctOpeningDeclaration', the role 'DuctOpeningDeclaration423' has cardinality 0..*, and from 'oaam_anatomy_DuctOpening', the role 'oaam_anatomy_DuctOpening422' has cardinality 0..*.
+An association connects 'Location' and 'oaam_anatomy_LocationSymmetry'. From 'Location', the role 'Location425' has cardinality 0..*, and from 'oaam_anatomy_LocationSymmetry', the role 'oaam_anatomy_LocationSymmetry' has cardinality 0..*.
+An association connects 'Area' and 'oaam_anatomy_AreaSymmetry'. From 'Area', the role 'Area427' has cardinality 0..*, and from 'oaam_anatomy_AreaSymmetry', the role 'oaam_anatomy_AreaSymmetry' has cardinality 0..*.
+An association connects 'ResourceConsumption' and 'oaam_capabilities_CapabilityA'. From 'ResourceConsumption', the role 'ResourceConsumption' has cardinality 0..*, and from 'oaam_capabilities_CapabilityA', the role 'oaam_capabilities_CapabilityA' has cardinality 0..*.
+An association connects 'oaam_capabilities_CapabilitiesContainerA' and 'TaskOnDeviceCapability'. From 'oaam_capabilities_CapabilitiesContainerA', the role 'oaam_capabilities_CapabilitiesContainerA' has cardinality 0..*, and from 'TaskOnDeviceCapability', the role 'TaskOnDeviceCapability' has cardinality 0..*.
+An association connects 'SignalOnConnectionOrDeviceCapability' and 'oaam_capabilities_CapabilitiesContainerA'. From 'SignalOnConnectionOrDeviceCapability', the role 'SignalOnConnectionOrDeviceCapability' has cardinality 0..*, and from 'oaam_capabilities_CapabilitiesContainerA', the role 'oaam_capabilities_CapabilitiesContainerA431' has cardinality 0..*.
+An association connects 'DeviceInLocationCapability' and 'oaam_capabilities_CapabilitiesContainerA'. From 'DeviceInLocationCapability', the role 'DeviceInLocationCapability' has cardinality 0..*, and from 'oaam_capabilities_CapabilitiesContainerA', the role 'oaam_capabilities_CapabilitiesContainerA433' has cardinality 0..*.
+An association connects 'SubdeviceInDeviceCapability' and 'oaam_capabilities_CapabilitiesContainerA'. From 'SubdeviceInDeviceCapability', the role 'SubdeviceInDeviceCapability' has cardinality 0..*, and from 'oaam_capabilities_CapabilitiesContainerA', the role 'oaam_capabilities_CapabilitiesContainerA435' has cardinality 0..*.
+An association connects 'ConnectionInDuctOrLocationCapability' and 'oaam_capabilities_CapabilitiesContainerA'. From 'ConnectionInDuctOrLocationCapability', the role 'ConnectionInDuctOrLocationCapability' has cardinality 0..*, and from 'oaam_capabilities_CapabilitiesContainerA', the role 'oaam_capabilities_CapabilitiesContainerA437' has cardinality 0..*.
+An association connects 'oaam_capabilities_CapabilitiesContainerA' and 'Subcapabilities'. From 'oaam_capabilities_CapabilitiesContainerA', the role 'oaam_capabilities_CapabilitiesContainerA439' has cardinality 0..*, and from 'Subcapabilities', the role 'Subcapabilities' has cardinality 0..*.
+An association connects 'oaam_capabilities_CapabilitiesContainerA' and 'SubconnectionInDeviceCapability'. From 'oaam_capabilities_CapabilitiesContainerA', the role 'oaam_capabilities_CapabilitiesContainerA441' has cardinality 0..*, and from 'SubconnectionInDeviceCapability', the role 'SubconnectionInDeviceCapability' has cardinality 0..*.
+An association connects 'oaam_capabilities_CapabilitiesContainerA' and 'MessageOnBusCapability'. From 'oaam_capabilities_CapabilitiesContainerA', the role 'oaam_capabilities_CapabilitiesContainerA443' has cardinality 0..*, and from 'MessageOnBusCapability', the role 'MessageOnBusCapability' has cardinality 0..*.
+An association connects 'oaam_capabilities_CapabilitiesContainerA' and 'SubmessageInMessageCapability'. From 'oaam_capabilities_CapabilitiesContainerA', the role 'oaam_capabilities_CapabilitiesContainerA445' has cardinality 0..*, and from 'SubmessageInMessageCapability', the role 'SubmessageInMessageCapability' has cardinality 0..*.
+An association connects 'oaam_capabilities_CapabilitiesContainerA' and 'SignalInMessageCapability'. From 'oaam_capabilities_CapabilitiesContainerA', the role 'oaam_capabilities_CapabilitiesContainerA447' has cardinality 0..*, and from 'SignalInMessageCapability', the role 'SignalInMessageCapability' has cardinality 0..*.
+An association connects 'oaam_capabilities_CapabilitiesContainerA' and 'MessageOnConnectionOrDeviceCapability'. From 'oaam_capabilities_CapabilitiesContainerA', the role 'oaam_capabilities_CapabilitiesContainerA449' has cardinality 0..*, and from 'MessageOnConnectionOrDeviceCapability', the role 'MessageOnConnectionOrDeviceCapability' has cardinality 0..*.
+An association connects 'TaskType' and 'oaam_capabilities_TaskOnDeviceCapability'. From 'TaskType', the role 'TaskType451' has cardinality 0..*, and from 'oaam_capabilities_TaskOnDeviceCapability', the role 'oaam_capabilities_TaskOnDeviceCapability' has cardinality 0..*.
+An association connects 'DeviceType' and 'oaam_capabilities_TaskOnDeviceCapability'. From 'DeviceType', the role 'DeviceType454' has cardinality 0..*, and from 'oaam_capabilities_TaskOnDeviceCapability', the role 'oaam_capabilities_TaskOnDeviceCapability453' has cardinality 0..*.
+An association connects 'DeviceType' and 'oaam_capabilities_DeviceInLocationCapability'. From 'DeviceType', the role 'DeviceType456' has cardinality 0..*, and from 'oaam_capabilities_DeviceInLocationCapability', the role 'oaam_capabilities_DeviceInLocationCapability' has cardinality 0..*.
+An association connects 'oaam_capabilities_DeviceInLocationCapability' and 'LocationType'. From 'oaam_capabilities_DeviceInLocationCapability', the role 'oaam_capabilities_DeviceInLocationCapability458' has cardinality 0..*, and from 'LocationType', the role 'LocationType459' has cardinality 0..*.
+An association connects 'oaam_capabilities_ConnectionInDuctOrLocationCapability' and 'ConnectionType'. From 'oaam_capabilities_ConnectionInDuctOrLocationCapability', the role 'oaam_capabilities_ConnectionInDuctOrLocationCapability' has cardinality 0..*, and from 'ConnectionType', the role 'ConnectionType461' has cardinality 0..*.
+An association connects 'LocationType' and 'oaam_capabilities_ConnectionInDuctOrLocationCapability'. From 'LocationType', the role 'LocationType464' has cardinality 0..*, and from 'oaam_capabilities_ConnectionInDuctOrLocationCapability', the role 'oaam_capabilities_ConnectionInDuctOrLocationCapability463' has cardinality 0..*.
+An association connects 'DuctType' and 'oaam_capabilities_ConnectionInDuctOrLocationCapability'. From 'DuctType', the role 'DuctType467' has cardinality 0..*, and from 'oaam_capabilities_ConnectionInDuctOrLocationCapability', the role 'oaam_capabilities_ConnectionInDuctOrLocationCapability466' has cardinality 0..*.
+An association connects 'oaam_capabilities_SignalOnConnectionOrDeviceCapability' and 'SignalType'. From 'oaam_capabilities_SignalOnConnectionOrDeviceCapability', the role 'oaam_capabilities_SignalOnConnectionOrDeviceCapability' has cardinality 0..*, and from 'SignalType', the role 'SignalType469' has cardinality 0..*.
+An association connects 'DeviceType' and 'oaam_capabilities_SignalOnConnectionOrDeviceCapability'. From 'DeviceType', the role 'DeviceType472' has cardinality 0..*, and from 'oaam_capabilities_SignalOnConnectionOrDeviceCapability', the role 'oaam_capabilities_SignalOnConnectionOrDeviceCapability471' has cardinality 0..*.
+An association connects 'ConnectionType' and 'oaam_capabilities_SignalOnConnectionOrDeviceCapability'. From 'ConnectionType', the role 'ConnectionType475' has cardinality 0..*, and from 'oaam_capabilities_SignalOnConnectionOrDeviceCapability', the role 'oaam_capabilities_SignalOnConnectionOrDeviceCapability474' has cardinality 0..*.
+An association connects 'DeviceType' and 'oaam_capabilities_SubdeviceInDeviceCapability'. From 'DeviceType', the role 'DeviceType477' has cardinality 0..*, and from 'oaam_capabilities_SubdeviceInDeviceCapability', the role 'oaam_capabilities_SubdeviceInDeviceCapability' has cardinality 0..*.
+An association connects 'oaam_capabilities_SubdeviceInDeviceCapability' and 'DeviceType'. From 'oaam_capabilities_SubdeviceInDeviceCapability', the role 'oaam_capabilities_SubdeviceInDeviceCapability479' has cardinality 0..*, and from 'DeviceType', the role 'DeviceType480' has cardinality 0..*.
+An association connects 'ConnectionType' and 'oaam_capabilities_SubconnectionInDeviceCapability'. From 'ConnectionType', the role 'ConnectionType482' has cardinality 0..*, and from 'oaam_capabilities_SubconnectionInDeviceCapability', the role 'oaam_capabilities_SubconnectionInDeviceCapability' has cardinality 0..*.
+An association connects 'oaam_capabilities_SubconnectionInDeviceCapability' and 'DeviceType'. From 'oaam_capabilities_SubconnectionInDeviceCapability', the role 'oaam_capabilities_SubconnectionInDeviceCapability484' has cardinality 0..*, and from 'DeviceType', the role 'DeviceType485' has cardinality 0..*.
+An association connects 'oaam_capabilities_ResourceConsumption' and 'Resource'. From 'oaam_capabilities_ResourceConsumption', the role 'oaam_capabilities_ResourceConsumption' has cardinality 0..*, and from 'Resource', the role 'Resource487' has cardinality 0..*.
+An association connects 'oaam_capabilities_ResourceConsumption' and 'ResourceType'. From 'oaam_capabilities_ResourceConsumption', the role 'oaam_capabilities_ResourceConsumption489' has cardinality 0..*, and from 'ResourceType', the role 'ResourceType490' has cardinality 0..*.
+An association connects 'BusType' and 'oaam_capabilities_MessageOnBusCapability'. From 'BusType', the role 'BusType492' has cardinality 0..*, and from 'oaam_capabilities_MessageOnBusCapability', the role 'oaam_capabilities_MessageOnBusCapability' has cardinality 0..*.
+An association connects 'MessageType' and 'oaam_capabilities_MessageOnBusCapability'. From 'MessageType', the role 'MessageType495' has cardinality 0..*, and from 'oaam_capabilities_MessageOnBusCapability', the role 'oaam_capabilities_MessageOnBusCapability494' has cardinality 0..*.
+An association connects 'oaam_capabilities_MessageOnConnectionOrDeviceCapability' and 'MessageType'. From 'oaam_capabilities_MessageOnConnectionOrDeviceCapability', the role 'oaam_capabilities_MessageOnConnectionOrDeviceCapability' has cardinality 0..*, and from 'MessageType', the role 'MessageType497' has cardinality 0..*.
+An association connects 'DeviceType' and 'oaam_capabilities_MessageOnConnectionOrDeviceCapability'. From 'DeviceType', the role 'DeviceType500' has cardinality 0..*, and from 'oaam_capabilities_MessageOnConnectionOrDeviceCapability', the role 'oaam_capabilities_MessageOnConnectionOrDeviceCapability499' has cardinality 0..*.
+An association connects 'oaam_capabilities_MessageOnConnectionOrDeviceCapability' and 'ConnectionType'. From 'oaam_capabilities_MessageOnConnectionOrDeviceCapability', the role 'oaam_capabilities_MessageOnConnectionOrDeviceCapability502' has cardinality 0..*, and from 'ConnectionType', the role 'ConnectionType503' has cardinality 0..*.
+An association connects 'MessageType' and 'oaam_capabilities_SubmessageInMessageCapability'. From 'MessageType', the role 'MessageType505' has cardinality 0..*, and from 'oaam_capabilities_SubmessageInMessageCapability', the role 'oaam_capabilities_SubmessageInMessageCapability' has cardinality 0..*.
+An association connects 'MessageType' and 'oaam_capabilities_SubmessageInMessageCapability'. From 'MessageType', the role 'MessageType508' has cardinality 0..*, and from 'oaam_capabilities_SubmessageInMessageCapability', the role 'oaam_capabilities_SubmessageInMessageCapability507' has cardinality 0..*.
+An association connects 'oaam_capabilities_SignalInMessageCapability' and 'MessageType'. From 'oaam_capabilities_SignalInMessageCapability', the role 'oaam_capabilities_SignalInMessageCapability' has cardinality 0..*, and from 'MessageType', the role 'MessageType510' has cardinality 0..*.
+An association connects 'oaam_capabilities_SignalInMessageCapability' and 'SignalType'. From 'oaam_capabilities_SignalInMessageCapability', the role 'oaam_capabilities_SignalInMessageCapability512' has cardinality 0..*, and from 'SignalType', the role 'SignalType513' has cardinality 0..*.
+An association connects 'DeviceTypeRestriction' and 'oaam_restrictions_RestrictionsContainerA'. From 'DeviceTypeRestriction', the role 'DeviceTypeRestriction' has cardinality 0..*, and from 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA' has cardinality 0..*.
+An association connects 'oaam_restrictions_RestrictionsContainerA' and 'DeviceRestriction'. From 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA516' has cardinality 0..*, and from 'DeviceRestriction', the role 'DeviceRestriction' has cardinality 0..*.
+An association connects 'LocationRestriction' and 'oaam_restrictions_RestrictionsContainerA'. From 'LocationRestriction', the role 'LocationRestriction' has cardinality 0..*, and from 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA518' has cardinality 0..*.
+An association connects 'AreaRestriction' and 'oaam_restrictions_RestrictionsContainerA'. From 'AreaRestriction', the role 'AreaRestriction' has cardinality 0..*, and from 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA520' has cardinality 0..*.
+An association connects 'oaam_restrictions_RestrictionsContainerA' and 'PowerSourceRestriction'. From 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA522' has cardinality 0..*, and from 'PowerSourceRestriction', the role 'PowerSourceRestriction' has cardinality 0..*.
+An association connects 'TaskAtomicRestriction' and 'oaam_restrictions_RestrictionsContainerA'. From 'TaskAtomicRestriction', the role 'TaskAtomicRestriction' has cardinality 0..*, and from 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA524' has cardinality 0..*.
+An association connects 'oaam_restrictions_RestrictionsContainerA' and 'TaskSymmetryRestriction'. From 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA526' has cardinality 0..*, and from 'TaskSymmetryRestriction', the role 'TaskSymmetryRestriction' has cardinality 0..*.
+An association connects 'SynchronicityRestriction' and 'oaam_restrictions_RestrictionsContainerA'. From 'SynchronicityRestriction', the role 'SynchronicityRestriction' has cardinality 0..*, and from 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA528' has cardinality 0..*.
+An association connects 'ConnectionRestriction' and 'oaam_restrictions_RestrictionsContainerA'. From 'ConnectionRestriction', the role 'ConnectionRestriction' has cardinality 0..*, and from 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA530' has cardinality 0..*.
+An association connects 'ConnectionTypeRestriction' and 'oaam_restrictions_RestrictionsContainerA'. From 'ConnectionTypeRestriction', the role 'ConnectionTypeRestriction' has cardinality 0..*, and from 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA532' has cardinality 0..*.
+An association connects 'SegregationRestriction' and 'oaam_restrictions_RestrictionsContainerA'. From 'SegregationRestriction', the role 'SegregationRestriction' has cardinality 0..*, and from 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA534' has cardinality 0..*.
+An association connects 'Subrestrictions' and 'oaam_restrictions_RestrictionsContainerA'. From 'Subrestrictions', the role 'Subrestrictions' has cardinality 0..*, and from 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA536' has cardinality 0..*.
+An association connects 'TimeDelayRestriction' and 'oaam_restrictions_RestrictionsContainerA'. From 'TimeDelayRestriction', the role 'TimeDelayRestriction' has cardinality 0..*, and from 'oaam_restrictions_RestrictionsContainerA', the role 'oaam_restrictions_RestrictionsContainerA538' has cardinality 0..*.
+An association connects 'Device' and 'oaam_restrictions_DeviceRestrictionA'. From 'Device', the role 'Device540' has cardinality 0..*, and from 'oaam_restrictions_DeviceRestrictionA', the role 'oaam_restrictions_DeviceRestrictionA' has cardinality 0..*.
+An association connects 'Connection' and 'oaam_restrictions_ConnectionRestrinctionA'. From 'Connection', the role 'Connection542' has cardinality 0..*, and from 'oaam_restrictions_ConnectionRestrinctionA', the role 'oaam_restrictions_ConnectionRestrinctionA' has cardinality 0..*.
+An association connects 'oaam_restrictions_TaskRestrictionA' and 'Task'. From 'oaam_restrictions_TaskRestrictionA', the role 'oaam_restrictions_TaskRestrictionA' has cardinality 0..*, and from 'Task', the role 'Task544' has cardinality 0..*.
+An association connects 'oaam_restrictions_SignalRestrictionA' and 'Signal'. From 'oaam_restrictions_SignalRestrictionA', the role 'oaam_restrictions_SignalRestrictionA' has cardinality 0..*, and from 'Signal', the role 'Signal546' has cardinality 0..*.
+An association connects 'oaam_restrictions_SubfunctionRestrictionA' and 'Subfunctions'. From 'oaam_restrictions_SubfunctionRestrictionA', the role 'oaam_restrictions_SubfunctionRestrictionA' has cardinality 0..*, and from 'Subfunctions', the role 'Subfunctions548' has cardinality 0..*.
+An association connects 'TaskGroup' and 'oaam_restrictions_TaskGroupRestrictionA'. From 'TaskGroup', the role 'TaskGroup550' has cardinality 0..*, and from 'oaam_restrictions_TaskGroupRestrictionA', the role 'oaam_restrictions_TaskGroupRestrictionA' has cardinality 0..*.
+An association connects 'SignalGroup' and 'oaam_restrictions_SignalGroupRestrictionA'. From 'SignalGroup', the role 'SignalGroup552' has cardinality 0..*, and from 'oaam_restrictions_SignalGroupRestrictionA', the role 'oaam_restrictions_SignalGroupRestrictionA' has cardinality 0..*.
+An association connects 'Location' and 'oaam_restrictions_LocationRestriction'. From 'Location', the role 'Location554' has cardinality 0..*, and from 'oaam_restrictions_LocationRestriction', the role 'oaam_restrictions_LocationRestriction' has cardinality 0..*.
+An association connects 'Area' and 'oaam_restrictions_AreaRestriction'. From 'Area', the role 'Area556' has cardinality 0..*, and from 'oaam_restrictions_AreaRestriction', the role 'oaam_restrictions_AreaRestriction' has cardinality 0..*.
+An association connects 'oaam_restrictions_PowerSourceRestriction' and 'PowerSource'. From 'oaam_restrictions_PowerSourceRestriction', the role 'oaam_restrictions_PowerSourceRestriction' has cardinality 0..*, and from 'PowerSource', the role 'PowerSource558' has cardinality 0..*.
+An association connects 'Device' and 'oaam_restrictions_DeviceRestriction'. From 'Device', the role 'Device560' has cardinality 0..*, and from 'oaam_restrictions_DeviceRestriction', the role 'oaam_restrictions_DeviceRestriction' has cardinality 0..*.
+An association connects 'oaam_restrictions_DeviceTypeRestriction' and 'DeviceType'. From 'oaam_restrictions_DeviceTypeRestriction', the role 'oaam_restrictions_DeviceTypeRestriction' has cardinality 0..*, and from 'DeviceType', the role 'DeviceType562' has cardinality 0..*.
+An association connects 'oaam_restrictions_ConnectionTypeRestriction' and 'ConnectionType'. From 'oaam_restrictions_ConnectionTypeRestriction', the role 'oaam_restrictions_ConnectionTypeRestriction' has cardinality 0..*, and from 'ConnectionType', the role 'ConnectionType564' has cardinality 0..*.
+An association connects 'oaam_restrictions_ConnectionRestriction' and 'Connection'. From 'oaam_restrictions_ConnectionRestriction', the role 'oaam_restrictions_ConnectionRestriction' has cardinality 0..*, and from 'Connection', the role 'Connection566' has cardinality 0..*.
+An association connects 'Task' and 'oaam_restrictions_SegregationRestriction'. From 'Task', the role 'Task568' has cardinality 0..*, and from 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction' has cardinality 0..*.
+An association connects 'oaam_restrictions_SegregationRestriction' and 'Task'. From 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction570' has cardinality 0..*, and from 'Task', the role 'Task571' has cardinality 0..*.
+An association connects 'oaam_restrictions_SegregationRestriction' and 'FunctionsContainerA'. From 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction573' has cardinality 0..*, and from 'FunctionsContainerA', the role 'FunctionsContainerA' has cardinality 0..*.
+An association connects 'oaam_restrictions_SegregationRestriction' and 'FunctionsContainerA'. From 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction575' has cardinality 0..*, and from 'FunctionsContainerA', the role 'FunctionsContainerA576' has cardinality 0..*.
+An association connects 'oaam_restrictions_SegregationRestriction' and 'Signal'. From 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction578' has cardinality 0..*, and from 'Signal', the role 'Signal579' has cardinality 0..*.
+An association connects 'Signal' and 'oaam_restrictions_SegregationRestriction'. From 'Signal', the role 'Signal582' has cardinality 0..*, and from 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction581' has cardinality 0..*.
+An association connects 'oaam_restrictions_SegregationRestriction' and 'TaskGroup'. From 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction584' has cardinality 0..*, and from 'TaskGroup', the role 'TaskGroup585' has cardinality 0..*.
+An association connects 'TaskGroup' and 'oaam_restrictions_SegregationRestriction'. From 'TaskGroup', the role 'TaskGroup588' has cardinality 0..*, and from 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction587' has cardinality 0..*.
+An association connects 'oaam_restrictions_SegregationRestriction' and 'SignalGroup'. From 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction590' has cardinality 0..*, and from 'SignalGroup', the role 'SignalGroup591' has cardinality 0..*.
+An association connects 'oaam_restrictions_SegregationRestriction' and 'SignalGroup'. From 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction593' has cardinality 0..*, and from 'SignalGroup', the role 'SignalGroup594' has cardinality 0..*.
+An association connects 'oaam_restrictions_SegregationRestriction' and 'Device'. From 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction596' has cardinality 0..*, and from 'Device', the role 'Device597' has cardinality 0..*.
+An association connects 'oaam_restrictions_SegregationRestriction' and 'Device'. From 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction599' has cardinality 0..*, and from 'Device', the role 'Device600' has cardinality 0..*.
+An association connects 'oaam_restrictions_SegregationRestriction' and 'Connection'. From 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction602' has cardinality 0..*, and from 'Connection', the role 'Connection603' has cardinality 0..*.
+An association connects 'oaam_restrictions_SegregationRestriction' and 'Connection'. From 'oaam_restrictions_SegregationRestriction', the role 'oaam_restrictions_SegregationRestriction605' has cardinality 0..*, and from 'Connection', the role 'Connection606' has cardinality 0..*.
+An association connects 'Task' and 'oaam_restrictions_TimeDelayRestriction'. From 'Task', the role 'Task608' has cardinality 0..*, and from 'oaam_restrictions_TimeDelayRestriction', the role 'oaam_restrictions_TimeDelayRestriction' has cardinality 0..*.
+An association connects 'oaam_restrictions_TimeDelayRestriction' and 'Task'. From 'oaam_restrictions_TimeDelayRestriction', the role 'oaam_restrictions_TimeDelayRestriction610' has cardinality 0..*, and from 'Task', the role 'Task611' has cardinality 0..*.
+An association connects 'oaam_allocations_AllocationsContainerA' and 'DeviceAssignment'. From 'oaam_allocations_AllocationsContainerA', the role 'oaam_allocations_AllocationsContainerA' has cardinality 0..*, and from 'DeviceAssignment', the role 'DeviceAssignment' has cardinality 0..*.
+An association connects 'oaam_allocations_AllocationsContainerA' and 'SubdeviceAssignment'. From 'oaam_allocations_AllocationsContainerA', the role 'oaam_allocations_AllocationsContainerA614' has cardinality 0..*, and from 'SubdeviceAssignment', the role 'SubdeviceAssignment' has cardinality 0..*.
+An association connects 'oaam_allocations_AllocationsContainerA' and 'ConnectionAssignment'. From 'oaam_allocations_AllocationsContainerA', the role 'oaam_allocations_AllocationsContainerA616' has cardinality 0..*, and from 'ConnectionAssignment', the role 'ConnectionAssignment' has cardinality 0..*.
+An association connects 'TaskAssignment' and 'oaam_allocations_AllocationsContainerA'. From 'TaskAssignment', the role 'TaskAssignment' has cardinality 0..*, and from 'oaam_allocations_AllocationsContainerA', the role 'oaam_allocations_AllocationsContainerA618' has cardinality 0..*.
+An association connects 'SignalAssignment' and 'oaam_allocations_AllocationsContainerA'. From 'SignalAssignment', the role 'SignalAssignment' has cardinality 0..*, and from 'oaam_allocations_AllocationsContainerA', the role 'oaam_allocations_AllocationsContainerA620' has cardinality 0..*.
+An association connects 'Suballocations' and 'oaam_allocations_AllocationsContainerA'. From 'Suballocations', the role 'Suballocations' has cardinality 0..*, and from 'oaam_allocations_AllocationsContainerA', the role 'oaam_allocations_AllocationsContainerA622' has cardinality 0..*.
+An association connects 'oaam_allocations_AllocationsContainerA' and 'SubconnectionAssignment'. From 'oaam_allocations_AllocationsContainerA', the role 'oaam_allocations_AllocationsContainerA624' has cardinality 0..*, and from 'SubconnectionAssignment', the role 'SubconnectionAssignment' has cardinality 0..*.
+An association connects 'oaam_allocations_AllocationsContainerA' and 'Message'. From 'oaam_allocations_AllocationsContainerA', the role 'oaam_allocations_AllocationsContainerA626' has cardinality 0..*, and from 'Message', the role 'Message' has cardinality 0..*.
+An association connects 'oaam_allocations_TaskAssignment' and 'TaskOnDeviceCapability'. From 'oaam_allocations_TaskAssignment', the role 'oaam_allocations_TaskAssignment' has cardinality 0..*, and from 'TaskOnDeviceCapability', the role 'TaskOnDeviceCapability628' has cardinality 0..*.
+An association connects 'oaam_allocations_TaskAssignment' and 'Task'. From 'oaam_allocations_TaskAssignment', the role 'oaam_allocations_TaskAssignment630' has cardinality 0..*, and from 'Task', the role 'Task631' has cardinality 0..*.
+An association connects 'Device' and 'oaam_allocations_TaskAssignment'. From 'Device', the role 'Device634' has cardinality 0..*, and from 'oaam_allocations_TaskAssignment', the role 'oaam_allocations_TaskAssignment633' has cardinality 0..*.
+An association connects 'oaam_allocations_TaskAssignment' and 'Schedule'. From 'oaam_allocations_TaskAssignment', the role 'oaam_allocations_TaskAssignment636' has cardinality 0..*, and from 'Schedule', the role 'Schedule' has cardinality 0..*.
+An association connects 'SignalAssignmentSegment' and 'oaam_allocations_SignalAssignment'. From 'SignalAssignmentSegment', the role 'SignalAssignmentSegment' has cardinality 0..*, and from 'oaam_allocations_SignalAssignment', the role 'oaam_allocations_SignalAssignment' has cardinality 0..*.
+An association connects 'Signal' and 'oaam_allocations_SignalAssignment'. From 'Signal', the role 'Signal640' has cardinality 0..*, and from 'oaam_allocations_SignalAssignment', the role 'oaam_allocations_SignalAssignment639' has cardinality 0..*.
+An association connects 'ConnectionAssignmentSegment' and 'oaam_allocations_ConnectionAssignment'. From 'ConnectionAssignmentSegment', the role 'ConnectionAssignmentSegment' has cardinality 0..*, and from 'oaam_allocations_ConnectionAssignment', the role 'oaam_allocations_ConnectionAssignment' has cardinality 0..*.
+An association connects 'Connection' and 'oaam_allocations_ConnectionAssignment'. From 'Connection', the role 'Connection644' has cardinality 0..*, and from 'oaam_allocations_ConnectionAssignment', the role 'oaam_allocations_ConnectionAssignment643' has cardinality 0..*.
+An association connects 'SignalOnConnectionOrDeviceCapability' and 'oaam_allocations_SignalAssignmentSegment'. From 'SignalOnConnectionOrDeviceCapability', the role 'SignalOnConnectionOrDeviceCapability646' has cardinality 0..*, and from 'oaam_allocations_SignalAssignmentSegment', the role 'oaam_allocations_SignalAssignmentSegment' has cardinality 0..*.
+An association connects 'Device' and 'oaam_allocations_SignalAssignmentSegment'. From 'Device', the role 'Device649' has cardinality 0..*, and from 'oaam_allocations_SignalAssignmentSegment', the role 'oaam_allocations_SignalAssignmentSegment648' has cardinality 0..*.
+An association connects 'Connection' and 'oaam_allocations_SignalAssignmentSegment'. From 'Connection', the role 'Connection652' has cardinality 0..*, and from 'oaam_allocations_SignalAssignmentSegment', the role 'oaam_allocations_SignalAssignmentSegment651' has cardinality 0..*.
+An association connects 'Schedule' and 'oaam_allocations_SignalAssignmentSegment'. From 'Schedule', the role 'Schedule655' has cardinality 0..*, and from 'oaam_allocations_SignalAssignmentSegment', the role 'oaam_allocations_SignalAssignmentSegment654' has cardinality 0..*.
+An association connects 'oaam_allocations_DeviceAssignment' and 'Device'. From 'oaam_allocations_DeviceAssignment', the role 'oaam_allocations_DeviceAssignment' has cardinality 0..*, and from 'Device', the role 'Device657' has cardinality 0..*.
+An association connects 'Location' and 'oaam_allocations_DeviceAssignment'. From 'Location', the role 'Location660' has cardinality 0..*, and from 'oaam_allocations_DeviceAssignment', the role 'oaam_allocations_DeviceAssignment659' has cardinality 0..*.
+An association connects 'DeviceInLocationCapability' and 'oaam_allocations_DeviceAssignment'. From 'DeviceInLocationCapability', the role 'DeviceInLocationCapability663' has cardinality 0..*, and from 'oaam_allocations_DeviceAssignment', the role 'oaam_allocations_DeviceAssignment662' has cardinality 0..*.
+An association connects 'oaam_allocations_ConnectionAssignmentSegment' and 'ConnectionInDuctOrLocationCapability'. From 'oaam_allocations_ConnectionAssignmentSegment', the role 'oaam_allocations_ConnectionAssignmentSegment' has cardinality 0..*, and from 'ConnectionInDuctOrLocationCapability', the role 'ConnectionInDuctOrLocationCapability665' has cardinality 0..*.
+An association connects 'Location' and 'oaam_allocations_ConnectionAssignmentSegment'. From 'Location', the role 'Location668' has cardinality 0..*, and from 'oaam_allocations_ConnectionAssignmentSegment', the role 'oaam_allocations_ConnectionAssignmentSegment667' has cardinality 0..*.
+An association connects 'Duct' and 'oaam_allocations_ConnectionAssignmentSegment'. From 'Duct', the role 'Duct671' has cardinality 0..*, and from 'oaam_allocations_ConnectionAssignmentSegment', the role 'oaam_allocations_ConnectionAssignmentSegment670' has cardinality 0..*.
+An association connects 'oaam_allocations_SubdeviceAssignment' and 'SubdeviceInDeviceCapability'. From 'oaam_allocations_SubdeviceAssignment', the role 'oaam_allocations_SubdeviceAssignment' has cardinality 0..*, and from 'SubdeviceInDeviceCapability', the role 'SubdeviceInDeviceCapability673' has cardinality 0..*.
+An association connects 'Device' and 'oaam_allocations_SubdeviceAssignment'. From 'Device', the role 'Device676' has cardinality 0..*, and from 'oaam_allocations_SubdeviceAssignment', the role 'oaam_allocations_SubdeviceAssignment675' has cardinality 0..*.
+An association connects 'oaam_allocations_SubdeviceAssignment' and 'Device'. From 'oaam_allocations_SubdeviceAssignment', the role 'oaam_allocations_SubdeviceAssignment678' has cardinality 0..*, and from 'Device', the role 'Device679' has cardinality 0..*.
+An association connects 'oaam_allocations_SubconnectionAssignment' and 'SubconnectionInDeviceCapability'. From 'oaam_allocations_SubconnectionAssignment', the role 'oaam_allocations_SubconnectionAssignment' has cardinality 0..*, and from 'SubconnectionInDeviceCapability', the role 'SubconnectionInDeviceCapability681' has cardinality 0..*.
+An association connects 'Connection' and 'oaam_allocations_SubconnectionAssignment'. From 'Connection', the role 'Connection684' has cardinality 0..*, and from 'oaam_allocations_SubconnectionAssignment', the role 'oaam_allocations_SubconnectionAssignment683' has cardinality 0..*.
+An association connects 'oaam_allocations_SubconnectionAssignment' and 'Device'. From 'oaam_allocations_SubconnectionAssignment', the role 'oaam_allocations_SubconnectionAssignment686' has cardinality 0..*, and from 'Device', the role 'Device687' has cardinality 0..*.
+An association connects 'ScheduledTime' and 'oaam_allocations_Schedule'. From 'ScheduledTime', the role 'ScheduledTime' has cardinality 0..*, and from 'oaam_allocations_Schedule', the role 'oaam_allocations_Schedule' has cardinality 0..*.
+An association connects 'oaam_allocations_MessageA' and 'Schedule'. From 'oaam_allocations_MessageA', the role 'oaam_allocations_MessageA' has cardinality 0..*, and from 'Schedule', the role 'Schedule690' has cardinality 0..*.
+An association connects 'oaam_allocations_MessageA' and 'Submessage'. From 'oaam_allocations_MessageA', the role 'oaam_allocations_MessageA692' has cardinality 0..*, and from 'Submessage', the role 'Submessage' has cardinality 0..*.
+An association connects 'oaam_allocations_MessageA' and 'SignalToMessageAssignment'. From 'oaam_allocations_MessageA', the role 'oaam_allocations_MessageA694' has cardinality 0..*, and from 'SignalToMessageAssignment', the role 'SignalToMessageAssignment' has cardinality 0..*.
+An association connects 'oaam_allocations_MessageA' and 'MessageSegment'. From 'oaam_allocations_MessageA', the role 'oaam_allocations_MessageA696' has cardinality 0..*, and from 'MessageSegment', the role 'MessageSegment' has cardinality 0..*.
+An association connects 'MessageType' and 'oaam_allocations_MessageA'. From 'MessageType', the role 'MessageType699' has cardinality 0..*, and from 'oaam_allocations_MessageA', the role 'oaam_allocations_MessageA698' has cardinality 0..*.
+An association connects 'MessageOnConnectionOrDeviceCapability' and 'oaam_allocations_MessageSegment'. From 'MessageOnConnectionOrDeviceCapability', the role 'MessageOnConnectionOrDeviceCapability701' has cardinality 0..*, and from 'oaam_allocations_MessageSegment', the role 'oaam_allocations_MessageSegment' has cardinality 0..*.
+An association connects 'Device' and 'oaam_allocations_MessageSegment'. From 'Device', the role 'Device704' has cardinality 0..*, and from 'oaam_allocations_MessageSegment', the role 'oaam_allocations_MessageSegment703' has cardinality 0..*.
+An association connects 'Connection' and 'oaam_allocations_MessageSegment'. From 'Connection', the role 'Connection707' has cardinality 0..*, and from 'oaam_allocations_MessageSegment', the role 'oaam_allocations_MessageSegment706' has cardinality 0..*.
+An association connects 'MessageOnBusCapability' and 'oaam_allocations_Message'. From 'MessageOnBusCapability', the role 'MessageOnBusCapability709' has cardinality 0..*, and from 'oaam_allocations_Message', the role 'oaam_allocations_Message' has cardinality 0..*.
+An association connects 'oaam_allocations_Message' and 'Bus'. From 'oaam_allocations_Message', the role 'oaam_allocations_Message711' has cardinality 0..*, and from 'Bus', the role 'Bus712' has cardinality 0..*.
+An association connects 'oaam_allocations_Message' and 'Device'. From 'oaam_allocations_Message', the role 'oaam_allocations_Message714' has cardinality 0..*, and from 'Device', the role 'Device715' has cardinality 0..*.
+An association connects 'Device' and 'oaam_allocations_Message'. From 'Device', the role 'Device718' has cardinality 0..*, and from 'oaam_allocations_Message', the role 'oaam_allocations_Message717' has cardinality 0..*.
+An association connects 'oaam_allocations_Submessage' and 'SubmessageInMessageCapability'. From 'oaam_allocations_Submessage', the role 'oaam_allocations_Submessage' has cardinality 0..*, and from 'SubmessageInMessageCapability', the role 'SubmessageInMessageCapability720' has cardinality 0..*.
+An association connects 'oaam_allocations_SignalToMessageAssignment' and 'Signal'. From 'oaam_allocations_SignalToMessageAssignment', the role 'oaam_allocations_SignalToMessageAssignment' has cardinality 0..*, and from 'Signal', the role 'Signal722' has cardinality 0..*.
+An association connects 'oaam_allocations_SignalToMessageAssignment' and 'AttributeA'. From 'oaam_allocations_SignalToMessageAssignment', the role 'oaam_allocations_SignalToMessageAssignment724' has cardinality 0..*, and from 'AttributeA', the role 'AttributeA725' has cardinality 0..*.
+An association connects 'Variant' and 'oaam_allocations_SignalToMessageAssignment'. From 'Variant', the role 'Variant728' has cardinality 0..*, and from 'oaam_allocations_SignalToMessageAssignment', the role 'oaam_allocations_SignalToMessageAssignment727' has cardinality 0..*.
+An association connects 'OperationModeReference' and 'oaam_allocations_SignalToMessageAssignment'. From 'OperationModeReference', the role 'OperationModeReference731' has cardinality 0..*, and from 'oaam_allocations_SignalToMessageAssignment', the role 'oaam_allocations_SignalToMessageAssignment730' has cardinality 0..*.
+An association connects 'DataTypeA' and 'oaam_allocations_SignalToMessageAssignment'. From 'DataTypeA', the role 'DataTypeA734' has cardinality 0..*, and from 'oaam_allocations_SignalToMessageAssignment', the role 'oaam_allocations_SignalToMessageAssignment733' has cardinality 0..*.
+An association connects 'SignalInMessageCapability' and 'oaam_allocations_SignalToMessageAssignment'. From 'SignalInMessageCapability', the role 'SignalInMessageCapability737' has cardinality 0..*, and from 'oaam_allocations_SignalToMessageAssignment', the role 'oaam_allocations_SignalToMessageAssignment736' has cardinality 0..*.

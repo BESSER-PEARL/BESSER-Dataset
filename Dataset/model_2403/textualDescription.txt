@@ -1,0 +1,311 @@
+The domain model 'SQL2003' describes the core structural elements and their relationships within the system.
+
+The model defines 65 main class(es).
+
+'SQL2003_ParameterWithMode' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'SQL2003_Trigger' represents an important domain concept.
+It has the following attributes: 'event', which is of type str; 'triggeredAction', which is of type str; 'name', which is of type str; 'actionTime', which is of type str.
+
+'SQL2003_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_NotNull' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_MethodParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_BinaryStringType' represents an important domain concept.
+It has the following attributes: 'length_def', which is of type str; 'descriptor', which is of type str.
+
+'DerivedTable' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_IntervalType' represents an important domain concept.
+It has one attribute: 'descriptor', which is of type str.
+
+'SQL2003_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_NumericType' represents an important domain concept.
+It has one attribute: 'descriptor', which is of type str.
+
+'SQL2003_IntervalFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'SQL2003_DatetimeType' represents an important domain concept.
+It has one attribute: 'descriptor', which is of type str.
+
+'PredefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_TableCheckConstraint' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'SQL2003_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_Column' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'SQL2003_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_ROW' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_DatetimeFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'SQL2003_StringFeature' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'SQL2003_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Restriction' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_TypedTable' represents an important domain concept.
+It does not declare any attributes.
+
+'BehaviouralComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_View' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'TableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstructedType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_DerivedTable' represents an important domain concept.
+It has one attribute: 'query_expression', which is of type str.
+
+'SQL2003_PredefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_ARRAY' represents an important domain concept.
+It has one attribute: 'num_elements', which is of type str.
+
+'SQL2003_Attribute' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'SQL2003_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_Restriction' represents an important domain concept.
+It has one attribute: 'NameColumns', which is of type str.
+
+'SQL2003_StructuredType' represents an important domain concept.
+It has the following attributes: 'is_instantiable', which is of type bool; 'is_final', which is of type bool.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_UserDefinedType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_BooleanType' represents an important domain concept.
+It has one attribute: 'descriptor', which is of type str.
+
+'SQL2003_StructuralComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_TableConstraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BaseTable' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_XMLType' represents an important domain concept.
+It has one attribute: 'descriptor', which is of type str.
+
+'SQL2003_CharacterStringType' represents an important domain concept.
+It has the following attributes: 'descriptor', which is of type str; 'length_def', which is of type str.
+
+'SQL2003_MULTISET' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_Method' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'name', which is of type str.
+
+'SQL2003_BehaviouralComponent' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'name', which is of type str.
+
+'SQL2003_ConstructedType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_BaseTable' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_ReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_ReferentialConstraint' represents an important domain concept.
+It has the following attributes: 'update_action', which is of type str; 'delete_action', which is of type str; 'match', which is of type str.
+
+'SQL2003_DistinctType' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_NumericFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StringFeatures' defines the following possible values: 'multiplier', 'length', 'unit'.
+The enumeration 'IntervalFeatures' defines the following possible values: 'start_leading_precision', 'second_precision', 'leading_precision', 'end_leading_precision'.
+The enumeration 'MatchTypes' defines the following possible values: 'SIMPLE', 'TOTAL', 'PARTIAL'.
+The enumeration 'ParameterMode' defines the following possible values: 'OUT', 'IN', 'INOUT'.
+The enumeration 'BooleanTypes' defines a single possible value: 'BOOLEAN'.
+The enumeration 'NumericTypes' defines the following possible values: 'INTEGER', 'SMALLINT', 'BIGINT', 'DECIMAL', 'DOUBLEPRECISION', 'REAL', 'FLOAT', 'NUMERIC'.
+The enumeration 'ReferentialAction' defines the following possible values: 'RESTRICT', 'SET_NULL', 'SET_DEFAULT', 'CASCADE', 'NO_ACTION'.
+The enumeration 'TriggerActionTime' defines the following possible values: 'AFTER', 'BEFORE'.
+The enumeration 'NumericRadix' defines the following possible values: 'DECIMAL', 'BINARY'.
+The enumeration 'NumericFeatures' defines the following possible values: 'precision', 'scale', 'radix'.
+The enumeration 'DatetimeFeatures' defines a single possible value: 'precision'.
+The enumeration 'TriggerEvent' defines the following possible values: 'UPDATE', 'DELETE', 'INSERT'.
+The enumeration 'IntervalTypes' defines the following possible values: 'YEAR_MONTH', 'DAY_SECOND', 'MONTH', 'DAY', 'DAY_HOUR', 'DAY_MINUTE', 'HOUR_SECOND', 'SECOND', 'YEAR', 'HOUR_MINUTE', 'HOUR', 'MINUTE', 'MINUTE_SECOND'.
+The enumeration 'XMLTypes' defines a single possible value: 'XMLTYPE'.
+The enumeration 'Unit' defines the following possible values: 'OCTETS', 'CHARACTERS'.
+The enumeration 'CharacterStringTypes' defines the following possible values: 'CHARACTERLARGEOBJECT', 'CHARACTERVARYING', 'CHARACTER'.
+The enumeration 'DatetimeTypes' defines the following possible values: 'TIMEWITHOUTTIMEZONE', 'TIMEWITHTIMEZONE', 'TIMESTAMPWITHTIMEZONE', 'TIMESTAMPWITHOUTTIMEZONE', 'DATE'.
+The enumeration 'BinaryStringTypes' defines the following possible values: 'BINARYLARGEOBJECT', 'BINARYVARYING', 'BINARY'.
+The enumeration 'Multiplier' defines the following possible values: 'G', 'K', 'P', 'M', 'T'.
+
+The model also captures inheritance relationships between classes.
+The class 'SQL2003_ARRAY' is a specialization of 'CollectionType'.
+The class 'SQL2003_Attribute' is a specialization of 'StructuralComponent'.
+The class 'SQL2003_BaseTable' is a specialization of 'Table'.
+The class 'SQL2003_BinaryStringType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_BooleanType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_CharacterStringType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_CollectionType' is a specialization of 'ConstructedType'.
+The class 'SQL2003_Column' is a specialization of 'StructuralComponent'.
+The class 'SQL2003_ColumnConstraint' is a specialization of 'Restriction'.
+The class 'SQL2003_ConstructedType' is a specialization of 'DataType'.
+The class 'SQL2003_DatetimeFeature' is a specialization of 'Feature'.
+The class 'SQL2003_DatetimeType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_DerivedTable' is a specialization of 'Table'.
+The class 'SQL2003_DistinctType' is a specialization of 'UserDefinedType'.
+The class 'SQL2003_Field' is a specialization of 'StructuralComponent'.
+The class 'SQL2003_Function' is a specialization of 'BehaviouralComponent'.
+The class 'SQL2003_IntervalFeature' is a specialization of 'Feature'.
+The class 'SQL2003_IntervalType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_MULTISET' is a specialization of 'CollectionType'.
+The class 'SQL2003_MethodParameter' is a specialization of 'Parameter'.
+The class 'SQL2003_NotNull' is a specialization of 'ColumnConstraint'.
+The class 'SQL2003_NumericFeature' is a specialization of 'Feature'.
+The class 'SQL2003_NumericType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_ParameterWithMode' is a specialization of 'Parameter'.
+The class 'SQL2003_PredefinedType' is a specialization of 'DataType'.
+The class 'SQL2003_PrimaryKey' is a specialization of 'UniqueConstraint'.
+The class 'SQL2003_Procedure' is a specialization of 'BehaviouralComponent'.
+The class 'SQL2003_ROW' is a specialization of 'ConstructedType'.
+The class 'SQL2003_ReferenceType' is a specialization of 'ConstructedType'.
+The class 'SQL2003_ReferentialConstraint' is a specialization of 'TableConstraint'.
+The class 'SQL2003_StringFeature' is a specialization of 'Feature'.
+The class 'SQL2003_StructuredType' is a specialization of 'UserDefinedType'.
+The class 'SQL2003_TableCheckConstraint' is a specialization of 'TableConstraint'.
+The class 'SQL2003_TableConstraint' is a specialization of 'Restriction'.
+The class 'SQL2003_TypedTable' is a specialization of 'BaseTable'.
+The class 'SQL2003_UniqueConstraint' is a specialization of 'TableConstraint'.
+The class 'SQL2003_UserDefinedType' is a specialization of 'DataType'.
+The class 'SQL2003_View' is a specialization of 'DerivedTable'.
+The class 'SQL2003_XMLType' is a specialization of 'PredefinedType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SQL2003_StructuredType' and 'SQL2003_Attribute'. From 'SQL2003_StructuredType', the role 'StructuredType' has cardinality 0..*, and from 'SQL2003_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'SQL2003_BehaviouralComponent' and 'SQL2003_Schema'. From 'SQL2003_BehaviouralComponent', the role 'behaviouralComponents' has cardinality 0..*, and from 'SQL2003_Schema', the role 'Schema' has cardinality 0..*.
+An association connects 'SQL2003_BehaviouralComponent' and 'SQL2003_ParameterWithMode'. From 'SQL2003_BehaviouralComponent', the role 'behaviouralComponent' has cardinality 0..*, and from 'SQL2003_ParameterWithMode', the role 'ParameterWithMode' has cardinality 0..*.
+An association connects 'SQL2003_CollectionType' and 'SQL2003_CollectionType'. From 'SQL2003_CollectionType', the role 'SQL2003_CollectionType' has cardinality 0..*, and from 'SQL2003_CollectionType', the role 'SQL2003_CollectionType3' has cardinality 0..*.
+An association connects 'SQL2003_CollectionType' and 'SQL2003_DataType'. From 'SQL2003_CollectionType', the role 'SQL2003_CollectionType6' has cardinality 0..*, and from 'SQL2003_DataType', the role 'SQL2003_DataType' has cardinality 0..*.
+An association connects 'SQL2003_Column' and 'SQL2003_Table'. From 'SQL2003_Column', the role 'columns' has cardinality 0..*, and from 'SQL2003_Table', the role 'Table' has cardinality 0..*.
+An association connects 'SQL2003_DataType' and 'SQL2003_Schema'. From 'SQL2003_DataType', the role 'datatypes' has cardinality 0..*, and from 'SQL2003_Schema', the role 'Schema9' has cardinality 0..*.
+An association connects 'SQL2003_DistinctType' and 'SQL2003_PredefinedType'. From 'SQL2003_DistinctType', the role 'is_source_of' has cardinality 0..*, and from 'SQL2003_PredefinedType', the role 'PredefinedType' has cardinality 0..*.
+An association connects 'SQL2003_Feature' and 'SQL2003_DistinctType'. From 'SQL2003_Feature', the role 'SQL2003_Feature' has cardinality 0..*, and from 'SQL2003_DistinctType', the role 'SQL2003_DistinctType' has cardinality 0..*.
+An association connects 'SQL2003_Field' and 'SQL2003_ROW'. From 'SQL2003_Field', the role 'fields' has cardinality 0..*, and from 'SQL2003_ROW', the role 'ROW' has cardinality 0..*.
+An association connects 'SQL2003_Function' and 'SQL2003_DataType'. From 'SQL2003_Function', the role 'SQL2003_Function' has cardinality 0..*, and from 'SQL2003_DataType', the role 'SQL2003_DataType14' has cardinality 0..*.
+An association connects 'SQL2003_Method' and 'SQL2003_Method'. From 'SQL2003_Method', the role 'SQL2003_Method' has cardinality 0..*, and from 'SQL2003_Method', the role 'SQL2003_Method15' has cardinality 0..*.
+An association connects 'SQL2003_Method' and 'SQL2003_StructuredType'. From 'SQL2003_Method', the role 'methods' has cardinality 0..*, and from 'SQL2003_StructuredType', the role 'StructuredType18' has cardinality 0..*.
+An association connects 'SQL2003_DataType' and 'SQL2003_Method'. From 'SQL2003_DataType', the role 'SQL2003_DataType21' has cardinality 0..*, and from 'SQL2003_Method', the role 'SQL2003_Method20' has cardinality 0..*.
+An association connects 'SQL2003_Method' and 'SQL2003_MethodParameter'. From 'SQL2003_Method', the role 'method' has cardinality 0..*, and from 'SQL2003_MethodParameter', the role 'MethodParameter' has cardinality 0..*.
+An association connects 'SQL2003_Method' and 'SQL2003_MethodParameter'. From 'SQL2003_Method', the role 'Method' has cardinality 0..*, and from 'SQL2003_MethodParameter', the role 'parameters' has cardinality 0..*.
+An association connects 'SQL2003_Parameter' and 'SQL2003_DataType'. From 'SQL2003_Parameter', the role 'SQL2003_Parameter' has cardinality 0..*, and from 'SQL2003_DataType', the role 'SQL2003_DataType25' has cardinality 0..*.
+An association connects 'SQL2003_BehaviouralComponent' and 'SQL2003_ParameterWithMode'. From 'SQL2003_BehaviouralComponent', the role 'BehaviouralComponent' has cardinality 0..*, and from 'SQL2003_ParameterWithMode', the role 'parametersWithMode' has cardinality 0..*.
+An association connects 'SQL2003_PredefinedType' and 'SQL2003_DistinctType'. From 'SQL2003_PredefinedType', the role 'source_type' has cardinality 0..*, and from 'SQL2003_DistinctType', the role 'DistinctType' has cardinality 0..*.
+An association connects 'SQL2003_ROW' and 'SQL2003_ROW'. From 'SQL2003_ROW', the role 'ROW30' has cardinality 0..*, and from 'SQL2003_ROW', the role 'sub_types' has cardinality 0..*.
+An association connects 'SQL2003_ROW' and 'SQL2003_Field'. From 'SQL2003_ROW', the role 'row' has cardinality 0..*, and from 'SQL2003_Field', the role 'Field' has cardinality 0..*.
+An association connects 'SQL2003_ROW' and 'SQL2003_ROW'. From 'SQL2003_ROW', the role 'super_type' has cardinality 0..*, and from 'SQL2003_ROW', the role 'ROW34' has cardinality 0..*.
+An association connects 'SQL2003_ReferenceType' and 'SQL2003_StructuredType'. From 'SQL2003_ReferenceType', the role 'SQL2003_ReferenceType' has cardinality 0..*, and from 'SQL2003_StructuredType', the role 'SQL2003_StructuredType' has cardinality 0..*.
+An association connects 'SQL2003_UniqueConstraint' and 'SQL2003_ReferentialConstraint'. From 'SQL2003_UniqueConstraint', the role 'SQL2003_UniqueConstraint' has cardinality 0..*, and from 'SQL2003_ReferentialConstraint', the role 'SQL2003_ReferentialConstraint' has cardinality 0..*.
+An association connects 'SQL2003_Restriction' and 'SQL2003_Table'. From 'SQL2003_Restriction', the role 'restrictions' has cardinality 0..*, and from 'SQL2003_Table', the role 'Table38' has cardinality 0..*.
+An association connects 'SQL2003_StructuralComponent' and 'SQL2003_Restriction'. From 'SQL2003_StructuralComponent', the role 'StructuralComponent' has cardinality 0..*, and from 'SQL2003_Restriction', the role 'restrictions40' has cardinality 0..*.
+An association connects 'SQL2003_BehaviouralComponent' and 'SQL2003_Schema'. From 'SQL2003_BehaviouralComponent', the role 'BehaviouralComponent42' has cardinality 0..*, and from 'SQL2003_Schema', the role 'schema' has cardinality 0..*.
+An association connects 'SQL2003_DataType' and 'SQL2003_Schema'. From 'SQL2003_DataType', the role 'DataType' has cardinality 0..*, and from 'SQL2003_Schema', the role 'schema44' has cardinality 0..*.
+An association connects 'SQL2003_Table' and 'SQL2003_Schema'. From 'SQL2003_Table', the role 'Table47' has cardinality 0..*, and from 'SQL2003_Schema', the role 'schema46' has cardinality 0..*.
+An association connects 'SQL2003_DataType' and 'SQL2003_StructuralComponent'. From 'SQL2003_DataType', the role 'SQL2003_DataType49' has cardinality 0..*, and from 'SQL2003_StructuralComponent', the role 'SQL2003_StructuralComponent' has cardinality 0..*.
+An association connects 'SQL2003_StructuralComponent' and 'SQL2003_View'. From 'SQL2003_StructuralComponent', the role 'components' has cardinality 0..*, and from 'SQL2003_View', the role 'View' has cardinality 0..*.
+An association connects 'SQL2003_Restriction' and 'SQL2003_StructuralComponent'. From 'SQL2003_Restriction', the role 'Restriction' has cardinality 0..*, and from 'SQL2003_StructuralComponent', the role 'columns52' has cardinality 0..*.
+An association connects 'SQL2003_StructuralComponent' and 'SQL2003_Feature'. From 'SQL2003_StructuralComponent', the role 'SQL2003_StructuralComponent54' has cardinality 0..*, and from 'SQL2003_Feature', the role 'SQL2003_Feature55' has cardinality 0..*.
+An association connects 'SQL2003_StructuredType' and 'SQL2003_StructuredType'. From 'SQL2003_StructuredType', the role 'SQL2003_StructuredType58' has cardinality 0..*, and from 'SQL2003_StructuredType', the role 'SQL2003_StructuredType56' has cardinality 0..*.
+An association connects 'SQL2003_Attribute' and 'SQL2003_StructuredType'. From 'SQL2003_Attribute', the role 'Attribute' has cardinality 0..*, and from 'SQL2003_StructuredType', the role 'structured' has cardinality 0..*.
+An association connects 'SQL2003_Method' and 'SQL2003_StructuredType'. From 'SQL2003_Method', the role 'Method62' has cardinality 0..*, and from 'SQL2003_StructuredType', the role 'structured61' has cardinality 0..*.
+An association connects 'SQL2003_TypedTable' and 'SQL2003_StructuredType'. From 'SQL2003_TypedTable', the role 'TypedTable' has cardinality 0..*, and from 'SQL2003_StructuredType', the role 'structured64' has cardinality 0..*.
+An association connects 'SQL2003_Table' and 'SQL2003_Schema'. From 'SQL2003_Table', the role 'tables' has cardinality 0..*, and from 'SQL2003_Schema', the role 'Schema66' has cardinality 0..*.
+An association connects 'SQL2003_Table' and 'SQL2003_Column'. From 'SQL2003_Table', the role 'table' has cardinality 0..*, and from 'SQL2003_Column', the role 'Column' has cardinality 0..*.
+An association connects 'SQL2003_Table' and 'SQL2003_View'. From 'SQL2003_Table', the role 'tables69' has cardinality 0..*, and from 'SQL2003_View', the role 'View70' has cardinality 0..*.
+An association connects 'SQL2003_Trigger' and 'SQL2003_Table'. From 'SQL2003_Trigger', the role 'Trigger' has cardinality 0..*, and from 'SQL2003_Table', the role 'table72' has cardinality 0..*.
+An association connects 'SQL2003_Restriction' and 'SQL2003_Table'. From 'SQL2003_Restriction', the role 'Restriction75' has cardinality 0..*, and from 'SQL2003_Table', the role 'table74' has cardinality 0..*.
+An association connects 'SQL2003_Trigger' and 'SQL2003_Table'. From 'SQL2003_Trigger', the role 'triggers' has cardinality 0..*, and from 'SQL2003_Table', the role 'Table77' has cardinality 0..*.
+An association connects 'SQL2003_StructuralComponent' and 'SQL2003_Trigger'. From 'SQL2003_StructuralComponent', the role 'SQL2003_StructuralComponent79' has cardinality 0..*, and from 'SQL2003_Trigger', the role 'SQL2003_Trigger' has cardinality 0..*.
+An association connects 'SQL2003_StructuredType' and 'SQL2003_TypedTable'. From 'SQL2003_StructuredType', the role 'StructuredType81' has cardinality 0..*, and from 'SQL2003_TypedTable', the role 'typed' has cardinality 0..*.
+An association connects 'SQL2003_TypedTable' and 'SQL2003_TypedTable'. From 'SQL2003_TypedTable', the role 'TypedTable84' has cardinality 0..*, and from 'SQL2003_TypedTable', the role 'subtables' has cardinality 0..*.
+An association connects 'SQL2003_TypedTable' and 'SQL2003_TypedTable'. From 'SQL2003_TypedTable', the role 'TypedTable87' has cardinality 0..*, and from 'SQL2003_TypedTable', the role 'supertable' has cardinality 0..*.
+An association connects 'SQL2003_View' and 'SQL2003_Table'. From 'SQL2003_View', the role 'views' has cardinality 0..*, and from 'SQL2003_Table', the role 'Table89' has cardinality 0..*.
+An association connects 'SQL2003_View' and 'SQL2003_StructuralComponent'. From 'SQL2003_View', the role 'views91' has cardinality 0..*, and from 'SQL2003_StructuralComponent', the role 'StructuralComponent92' has cardinality 0..*.

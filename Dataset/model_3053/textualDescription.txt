@@ -1,0 +1,50 @@
+The domain model 'hibernate' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'hibernate_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hibernate_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'hibernate_DataType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'hibernate_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'hibernate_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'hibernate_Entity' represents an important domain concept.
+It has one attribute: 'annotations', which is of type str.
+
+'hibernate_Feature' represents an important domain concept.
+It has the following attributes: 'annotations', which is of type str; 'many', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataTypes' defines the following possible values: 'Object', 'Boolean', 'String', 'Long', 'Integer', 'Double'.
+The enumeration 'FetureAnnotation' defines the following possible values: 'Id', 'Index', 'Load', 'Ignore'.
+The enumeration 'EntityAnnotation' defines a single possible value: 'Cache'.
+
+The model also captures inheritance relationships between classes.
+The class 'hibernate_Module' is a specialization of 'NamedElement'.
+The class 'hibernate_Package' is a specialization of 'NamedElement'.
+The class 'hibernate_Entity' is a specialization of 'NamedElement'.
+The class 'hibernate_Feature' is a specialization of 'NamedElement'.
+The class 'hibernate_Reference' is a specialization of 'Feature'.
+The class 'hibernate_DataType' is a specialization of 'Feature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hibernate_Package' and 'hibernate_Module'. From 'hibernate_Package', the role 'hibernate_Package' has cardinality 0..*, and from 'hibernate_Module', the role 'hibernate_Module' has cardinality 0..*.
+An association connects 'hibernate_Package' and 'hibernate_Entity'. From 'hibernate_Package', the role 'hibernate_Package2' has cardinality 0..*, and from 'hibernate_Entity', the role 'hibernate_Entity' has cardinality 0..*.
+An association connects 'hibernate_Entity' and 'hibernate_Feature'. From 'hibernate_Entity', the role 'hibernate_Entity4' has cardinality 0..*, and from 'hibernate_Feature', the role 'hibernate_Feature' has cardinality 0..*.
+An association connects 'hibernate_Entity' and 'hibernate_Entity'. From 'hibernate_Entity', the role 'hibernate_Entity7' has cardinality 0..*, and from 'hibernate_Entity', the role 'hibernate_Entity5' has cardinality 0..*.
+An association connects 'hibernate_Reference' and 'hibernate_Entity'. From 'hibernate_Reference', the role 'hibernate_Reference' has cardinality 0..*, and from 'hibernate_Entity', the role 'hibernate_Entity9' has cardinality 0..*.

@@ -1,0 +1,12 @@
+The domain model 'Library' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'Library_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'Library_Cards' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'Library_Cards' and 'Library_Library'. From 'Library_Cards', the role 'Library_Cards' has cardinality 0..*, and from 'Library_Library', the role 'Library_Library' has cardinality 0..*.

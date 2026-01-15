@@ -1,0 +1,125 @@
+The domain model 'standard' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'IntegrationLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_IntegrationLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_StandardPopulationInitializer' represents an important domain concept.
+It has the following attributes: 'useDensity', which is of type bool; 'individuals', which is of type float.
+
+'standard_DemographicPopulationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegrationLabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardPopulationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicNodeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_YetiPopulationInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegrationDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_StochasticStandardPopulationModel' represents an important domain concept.
+It has one attribute: 'gain', which is of type float.
+
+'Modifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'PopulationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_PopulationLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_PopulationModelLabel' represents an important domain concept.
+It has one attribute: 'populationIdentifier', which is of type str.
+
+'NodeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_PopulationGroup' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'fraction', which is of type float.
+
+'standard_SeasonalPopulationModel' represents an important domain concept.
+It has the following attributes: 'period', which is of type float; 'phase', which is of type float; 'useLatitude', which is of type bool; 'modulationAmplitude', which is of type float.
+
+'PopulationInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_PopulationModelLabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_PopulationModel' represents an important domain concept.
+It has the following attributes: 'populationIdentifier', which is of type str; 'targetISOKey', which is of type str; 'name', which is of type str.
+
+'standard_StandardPopulationModelLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_IntegrationDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'EarthSciencePopulationInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_IntegrationLabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'PopulationModelLabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_StandardPopulationModelLabelValue' represents an important domain concept.
+It has the following attributes: 'incidence', which is of type float; 'density', which is of type float; 'count', which is of type float; 'births', which is of type float; 'deaths', which is of type float.
+
+'standard_PopulationInitializer' represents an important domain concept.
+It has the following attributes: 'populationIdentifier', which is of type str; 'targetISOKey', which is of type str.
+
+'standard_StandardPopulationModel' represents an important domain concept.
+It has the following attributes: 'deathRate', which is of type float; 'timePeriod', which is of type str; 'birthRate', which is of type float.
+
+'PopulationModelLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_EarthSciencePopulationInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'standard_PopulationModel' is a specialization of 'NodeDecorator'.
+The class 'standard_PopulationModel' is a specialization of 'Modifiable'.
+The class 'standard_StandardPopulationModel' is a specialization of 'PopulationModel'.
+The class 'standard_StandardPopulationModel' is a specialization of 'IntegrationDecorator'.
+The class 'standard_PopulationModelLabel' is a specialization of 'DynamicNodeLabel'.
+The class 'standard_StandardPopulationModelLabel' is a specialization of 'PopulationModelLabel'.
+The class 'standard_StandardPopulationModelLabel' is a specialization of 'IntegrationLabel'.
+The class 'standard_PopulationModelLabelValue' is a specialization of 'LabelValue'.
+The class 'standard_StandardPopulationModelLabelValue' is a specialization of 'PopulationModelLabelValue'.
+The class 'standard_StandardPopulationModelLabelValue' is a specialization of 'IntegrationLabelValue'.
+The class 'standard_StochasticStandardPopulationModel' is a specialization of 'StandardPopulationModel'.
+The class 'standard_DemographicPopulationModel' is a specialization of 'StandardPopulationModel'.
+The class 'standard_PopulationInitializer' is a specialization of 'NodeDecorator'.
+The class 'standard_PopulationInitializer' is a specialization of 'Modifiable'.
+The class 'standard_StandardPopulationInitializer' is a specialization of 'PopulationInitializer'.
+The class 'standard_SeasonalPopulationModel' is a specialization of 'StandardPopulationModel'.
+The class 'standard_EarthSciencePopulationInitializer' is a specialization of 'PopulationInitializer'.
+The class 'standard_YetiPopulationInitializer' is a specialization of 'EarthSciencePopulationInitializer'.
+
+Relationships between classes are modeled using associations.
+An association connects 'standard_PopulationModelLabel' and 'standard_PopulationLabel'. From 'standard_PopulationModelLabel', the role 'standard_PopulationModelLabel' has cardinality 0..*, and from 'standard_PopulationLabel', the role 'standard_PopulationLabel' has cardinality 0..*.
+An association connects 'standard_StandardPopulationModelLabelValue' and 'standard_StandardPopulationModelLabel'. From 'standard_StandardPopulationModelLabelValue', the role 'standard_StandardPopulationModelLabelValue' has cardinality 0..*, and from 'standard_StandardPopulationModelLabel', the role 'standard_StandardPopulationModelLabel' has cardinality 0..*.
+An association connects 'standard_StandardPopulationModelLabelValue' and 'standard_StandardPopulationModelLabel'. From 'standard_StandardPopulationModelLabelValue', the role 'standard_StandardPopulationModelLabelValue4' has cardinality 0..*, and from 'standard_StandardPopulationModelLabel', the role 'standard_StandardPopulationModelLabel3' has cardinality 0..*.
+An association connects 'standard_StandardPopulationModelLabel' and 'standard_StandardPopulationModelLabelValue'. From 'standard_StandardPopulationModelLabel', the role 'standard_StandardPopulationModelLabel6' has cardinality 0..*, and from 'standard_StandardPopulationModelLabelValue', the role 'standard_StandardPopulationModelLabelValue7' has cardinality 0..*.
+An association connects 'standard_StandardPopulationModelLabel' and 'standard_StandardPopulationModelLabelValue'. From 'standard_StandardPopulationModelLabel', the role 'standard_StandardPopulationModelLabel9' has cardinality 0..*, and from 'standard_StandardPopulationModelLabelValue', the role 'standard_StandardPopulationModelLabelValue10' has cardinality 0..*.
+An association connects 'standard_StandardPopulationModelLabelValue' and 'standard_StandardPopulationModelLabel'. From 'standard_StandardPopulationModelLabelValue', the role 'standard_StandardPopulationModelLabelValue13' has cardinality 0..*, and from 'standard_StandardPopulationModelLabel', the role 'standard_StandardPopulationModelLabel12' has cardinality 0..*.
+An association connects 'standard_DemographicPopulationModel' and 'standard_PopulationGroup'. From 'standard_DemographicPopulationModel', the role 'standard_DemographicPopulationModel' has cardinality 0..*, and from 'standard_PopulationGroup', the role 'standard_PopulationGroup' has cardinality 0..*.

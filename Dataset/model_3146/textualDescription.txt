@@ -1,0 +1,54 @@
+The domain model 'XPath' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'XPath_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_LocatedElement' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'commentsBefore', which is of type str; 'commentsAfter', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_StringExp' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'XPath_IntegerExp' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'XPath_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'XPath_OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'XPath_NamedElement' is a specialization of 'LocatedElement'.
+The class 'XPath_Expression' is a specialization of 'LocatedElement'.
+The class 'XPath_VariableExp' is a specialization of 'Expression'.
+The class 'XPath_VariableExp' is a specialization of 'NamedElement'.
+The class 'XPath_LiteralExp' is a specialization of 'Expression'.
+The class 'XPath_IntegerExp' is a specialization of 'LiteralExp'.
+The class 'XPath_StringExp' is a specialization of 'LiteralExp'.
+The class 'XPath_OperatorCallExp' is a specialization of 'NamedElement'.
+The class 'XPath_OperatorCallExp' is a specialization of 'LocatedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'XPath_Expression' and 'XPath_OperatorCallExp'. From 'XPath_Expression', the role 'XPath_Expression' has cardinality 0..*, and from 'XPath_OperatorCallExp', the role 'XPath_OperatorCallExp' has cardinality 0..*.
+An association connects 'XPath_Expression' and 'XPath_OperatorCallExp'. From 'XPath_Expression', the role 'XPath_Expression3' has cardinality 0..*, and from 'XPath_OperatorCallExp', the role 'XPath_OperatorCallExp2' has cardinality 0..*.

@@ -1,0 +1,20 @@
+The domain model 'PersonCompany' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'PersonCompany_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PersonCompany_Job' represents an important domain concept.
+It has one attribute: 'salary', which is of type int.
+
+'PersonCompany_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'PersonCompany_Job' and 'PersonCompany_Person'. From 'PersonCompany_Job', the role 'Job' has cardinality 0..*, and from 'PersonCompany_Person', the role 'PersonJob_Person_role_employee' has cardinality 0..*.
+An association connects 'PersonCompany_Job' and 'PersonCompany_Company'. From 'PersonCompany_Job', the role 'Job2' has cardinality 0..*, and from 'PersonCompany_Company', the role 'CompanyJob_Company_role_employer' has cardinality 0..*.
+An association connects 'PersonCompany_Job' and 'PersonCompany_Person'. From 'PersonCompany_Job', the role 'PersonJob_Job_role_job' has cardinality 0..*, and from 'PersonCompany_Person', the role 'Person' has cardinality 0..*.
+An association connects 'PersonCompany_Job' and 'PersonCompany_Company'. From 'PersonCompany_Job', the role 'CompanyJob_Job_role_job' has cardinality 0..*, and from 'PersonCompany_Company', the role 'Company' has cardinality 0..*.
+An association connects 'PersonCompany_Job' and 'PersonCompany_Job'. From 'PersonCompany_Job', the role 'Job7' has cardinality 0..*, and from 'PersonCompany_Job', the role 'BossWorker_Job_role_boss' has cardinality 0..*.
+An association connects 'PersonCompany_Job' and 'PersonCompany_Job'. From 'PersonCompany_Job', the role 'Job10' has cardinality 0..*, and from 'PersonCompany_Job', the role 'BossWorker_Job_role_worker' has cardinality 0..*.

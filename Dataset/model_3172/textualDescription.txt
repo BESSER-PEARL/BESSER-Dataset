@@ -1,0 +1,96 @@
+The domain model 'expressions' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'expressions_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'expressions_Equality' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'expressions_EvalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_And' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ExpressionsModel' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_MulOrDiv' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'expressions_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expressions_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expressions_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'expressions_Variable' is a specialization of 'AbstractElement'.
+The class 'expressions_EvalExpression' is a specialization of 'AbstractElement'.
+The class 'expressions_Or' is a specialization of 'Expression'.
+The class 'expressions_And' is a specialization of 'Expression'.
+The class 'expressions_Equality' is a specialization of 'Expression'.
+The class 'expressions_Comparison' is a specialization of 'Expression'.
+The class 'expressions_Plus' is a specialization of 'Expression'.
+The class 'expressions_Minus' is a specialization of 'Expression'.
+The class 'expressions_MulOrDiv' is a specialization of 'Expression'.
+The class 'expressions_Not' is a specialization of 'Expression'.
+The class 'expressions_IntConstant' is a specialization of 'Expression'.
+The class 'expressions_StringConstant' is a specialization of 'Expression'.
+The class 'expressions_BoolConstant' is a specialization of 'Expression'.
+The class 'expressions_VariableRef' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expressions_AbstractElement' and 'expressions_ExpressionsModel'. From 'expressions_AbstractElement', the role 'expressions_AbstractElement' has cardinality 0..*, and from 'expressions_ExpressionsModel', the role 'expressions_ExpressionsModel' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_AbstractElement'. From 'expressions_Expression', the role 'expressions_Expression' has cardinality 0..*, and from 'expressions_AbstractElement', the role 'expressions_AbstractElement2' has cardinality 0..*.
+An association connects 'expressions_Or' and 'expressions_Expression'. From 'expressions_Or', the role 'expressions_Or' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression4' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_Or'. From 'expressions_Expression', the role 'expressions_Expression7' has cardinality 0..*, and from 'expressions_Or', the role 'expressions_Or6' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_And'. From 'expressions_Expression', the role 'expressions_Expression9' has cardinality 0..*, and from 'expressions_And', the role 'expressions_And' has cardinality 0..*.
+An association connects 'expressions_And' and 'expressions_Expression'. From 'expressions_And', the role 'expressions_And11' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression12' has cardinality 0..*.
+An association connects 'expressions_Equality' and 'expressions_Expression'. From 'expressions_Equality', the role 'expressions_Equality' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression14' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_Equality'. From 'expressions_Expression', the role 'expressions_Expression17' has cardinality 0..*, and from 'expressions_Equality', the role 'expressions_Equality16' has cardinality 0..*.
+An association connects 'expressions_Comparison' and 'expressions_Expression'. From 'expressions_Comparison', the role 'expressions_Comparison' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression19' has cardinality 0..*.
+An association connects 'expressions_Comparison' and 'expressions_Expression'. From 'expressions_Comparison', the role 'expressions_Comparison21' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression22' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_Plus'. From 'expressions_Expression', the role 'expressions_Expression24' has cardinality 0..*, and from 'expressions_Plus', the role 'expressions_Plus' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_Plus'. From 'expressions_Expression', the role 'expressions_Expression27' has cardinality 0..*, and from 'expressions_Plus', the role 'expressions_Plus26' has cardinality 0..*.
+An association connects 'expressions_Minus' and 'expressions_Expression'. From 'expressions_Minus', the role 'expressions_Minus' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression29' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_Minus'. From 'expressions_Expression', the role 'expressions_Expression32' has cardinality 0..*, and from 'expressions_Minus', the role 'expressions_Minus31' has cardinality 0..*.
+An association connects 'expressions_MulOrDiv' and 'expressions_Expression'. From 'expressions_MulOrDiv', the role 'expressions_MulOrDiv' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression34' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_MulOrDiv'. From 'expressions_Expression', the role 'expressions_Expression37' has cardinality 0..*, and from 'expressions_MulOrDiv', the role 'expressions_MulOrDiv36' has cardinality 0..*.
+An association connects 'expressions_Not' and 'expressions_Expression'. From 'expressions_Not', the role 'expressions_Not' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression39' has cardinality 0..*.
+An association connects 'expressions_Variable' and 'expressions_VariableRef'. From 'expressions_Variable', the role 'expressions_Variable' has cardinality 0..*, and from 'expressions_VariableRef', the role 'expressions_VariableRef' has cardinality 0..*.

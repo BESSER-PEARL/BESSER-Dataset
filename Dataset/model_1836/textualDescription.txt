@@ -1,0 +1,118 @@
+The domain model 'HotelManagementClassDiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'HotelManagementClassDiagram_Customer' represents an important domain concept.
+It has the following attributes: 'miscInfo', which is of type str; 'bonusPoints', which is of type int; 'customerID', which is of type int.
+
+'DBInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_Interaction2' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_Interaction5' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_Creditcard' represents an important domain concept.
+It has the following attributes: 'number', which is of type str; 'expirationYear', which is of type int; 'cvc', which is of type int; 'owner', which is of type str; 'expirationMonth', which is of type int.
+
+'HotelManagementClassDiagram_BookingController' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_Hotel' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'address', which is of type str; 'rank', which is of type float.
+
+'HotelManagementClassDiagram_DBInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_Extra' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'HotelManagementClassDiagram_Person' represents an important domain concept.
+It has the following attributes: 'country', which is of type str; 'postalCode', which is of type str; 'phoneNumber', which is of type str; 'gender', which is of type str; 'title', which is of type str; 'name', which is of type str; 'SSNumber', which is of type str; 'city', which is of type str; 'street', which is of type str.
+
+'HotelManagementClassDiagram_Discount' represents an important domain concept.
+It has the following attributes: 'amount', which is of type float; 'isPercentage', which is of type str; 'name', which is of type str.
+
+'Extra' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_Room' represents an important domain concept.
+It has the following attributes: 'internalComment', which is of type str; 'underCleaning', which is of type bool; 'size', which is of type float; 'maxNbrPeople', which is of type int; 'type', which is of type str; 'roomNumber', which is of type int; 'underRepair', which is of type bool.
+
+'HotelManagementClassDiagram_Booking' represents an important domain concept.
+It has the following attributes: 'internalComments', which is of type str; 'startDate', which is of type date; 'checkedOut', which is of type bool; 'roomTypes', which is of type str; 'externalComments', which is of type str; 'created', which is of type date; 'endDate', which is of type date; 'checkedIn', which is of type bool; 'bookingId', which is of type int.
+
+'HotelManagementClassDiagram_ManagementController' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_Costable' represents an important domain concept.
+It has one attribute: 'price', which is of type float.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_Bill' represents an important domain concept.
+It has the following attributes: 'paid', which is of type bool; 'final', which is of type bool; 'totalPrice', which is of type float.
+
+'HotelManagementClassDiagram_Interaction3' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_Interaction4' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_Interaction1' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_FakeDBContext' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_EmployeeType' represents an important domain concept.
+It has the following attributes: 'acessLevel', which is of type int; 'type', which is of type str.
+
+'Costable' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_Employee' represents an important domain concept.
+It has the following attributes: 'workRate', which is of type float; 'password', which is of type str; 'employeeID', which is of type int; 'salary', which is of type float.
+
+'HotelManagementClassDiagram_Addon' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelManagementClassDiagram_MaintenanceController' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RoomType' defines the following possible values: 'Suite', 'Single', 'Double', 'Family'.
+The enumeration 'EType' defines the following possible values: 'Receptionist', 'Manager', 'Cleaner'.
+
+The model also captures inheritance relationships between classes.
+The class 'HotelManagementClassDiagram_Employee' is a specialization of 'Person'.
+The class 'HotelManagementClassDiagram_Addon' is a specialization of 'Extra'.
+The class 'HotelManagementClassDiagram_Addon' is a specialization of 'Costable'.
+The class 'HotelManagementClassDiagram_Room' is a specialization of 'Costable'.
+The class 'HotelManagementClassDiagram_Customer' is a specialization of 'Person'.
+The class 'HotelManagementClassDiagram_FakeDBContext' is a specialization of 'DBInterface'.
+
+Relationships between classes are modeled using associations.
+An association connects 'HotelManagementClassDiagram_Employee' and 'HotelManagementClassDiagram_EmployeeType'. From 'HotelManagementClassDiagram_Employee', the role 'HotelManagementClassDiagram_Employee' has cardinality 0..*, and from 'HotelManagementClassDiagram_EmployeeType', the role 'HotelManagementClassDiagram_EmployeeType' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Creditcard' and 'HotelManagementClassDiagram_Booking'. From 'HotelManagementClassDiagram_Creditcard', the role 'HotelManagementClassDiagram_Creditcard' has cardinality 0..*, and from 'HotelManagementClassDiagram_Booking', the role 'HotelManagementClassDiagram_Booking' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Booking' and 'HotelManagementClassDiagram_Addon'. From 'HotelManagementClassDiagram_Booking', the role 'HotelManagementClassDiagram_Booking3' has cardinality 0..*, and from 'HotelManagementClassDiagram_Addon', the role 'HotelManagementClassDiagram_Addon' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Booking' and 'HotelManagementClassDiagram_Room'. From 'HotelManagementClassDiagram_Booking', the role 'HotelManagementClassDiagram_Booking5' has cardinality 0..*, and from 'HotelManagementClassDiagram_Room', the role 'HotelManagementClassDiagram_Room' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Customer' and 'HotelManagementClassDiagram_Booking'. From 'HotelManagementClassDiagram_Customer', the role 'HotelManagementClassDiagram_Customer' has cardinality 0..*, and from 'HotelManagementClassDiagram_Booking', the role 'HotelManagementClassDiagram_Booking7' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Discount' and 'HotelManagementClassDiagram_Booking'. From 'HotelManagementClassDiagram_Discount', the role 'HotelManagementClassDiagram_Discount' has cardinality 0..*, and from 'HotelManagementClassDiagram_Booking', the role 'HotelManagementClassDiagram_Booking9' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Booking' and 'HotelManagementClassDiagram_Bill'. From 'HotelManagementClassDiagram_Booking', the role 'HotelManagementClassDiagram_Booking11' has cardinality 0..*, and from 'HotelManagementClassDiagram_Bill', the role 'HotelManagementClassDiagram_Bill' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Costable' and 'HotelManagementClassDiagram_Discount'. From 'HotelManagementClassDiagram_Costable', the role 'HotelManagementClassDiagram_Costable' has cardinality 0..*, and from 'HotelManagementClassDiagram_Discount', the role 'HotelManagementClassDiagram_Discount13' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Bill' and 'HotelManagementClassDiagram_Costable'. From 'HotelManagementClassDiagram_Bill', the role 'HotelManagementClassDiagram_Bill15' has cardinality 0..*, and from 'HotelManagementClassDiagram_Costable', the role 'HotelManagementClassDiagram_Costable16' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Customer' and 'HotelManagementClassDiagram_Bill'. From 'HotelManagementClassDiagram_Customer', the role 'HotelManagementClassDiagram_Customer19' has cardinality 0..*, and from 'HotelManagementClassDiagram_Bill', the role 'HotelManagementClassDiagram_Bill18' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_MaintenanceController' and 'HotelManagementClassDiagram_Room'. From 'HotelManagementClassDiagram_MaintenanceController', the role 'HotelManagementClassDiagram_MaintenanceController' has cardinality 0..*, and from 'HotelManagementClassDiagram_Room', the role 'HotelManagementClassDiagram_Room21' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Hotel' and 'HotelManagementClassDiagram_BookingController'. From 'HotelManagementClassDiagram_Hotel', the role 'HotelManagementClassDiagram_Hotel' has cardinality 0..*, and from 'HotelManagementClassDiagram_BookingController', the role 'HotelManagementClassDiagram_BookingController' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Hotel' and 'HotelManagementClassDiagram_MaintenanceController'. From 'HotelManagementClassDiagram_Hotel', the role 'HotelManagementClassDiagram_Hotel24' has cardinality 0..*, and from 'HotelManagementClassDiagram_MaintenanceController', the role 'HotelManagementClassDiagram_MaintenanceController25' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Hotel' and 'HotelManagementClassDiagram_ManagementController'. From 'HotelManagementClassDiagram_Hotel', the role 'HotelManagementClassDiagram_Hotel27' has cardinality 0..*, and from 'HotelManagementClassDiagram_ManagementController', the role 'HotelManagementClassDiagram_ManagementController' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Hotel' and 'HotelManagementClassDiagram_Employee'. From 'HotelManagementClassDiagram_Hotel', the role 'HotelManagementClassDiagram_Hotel29' has cardinality 0..*, and from 'HotelManagementClassDiagram_Employee', the role 'HotelManagementClassDiagram_Employee30' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Employee' and 'HotelManagementClassDiagram_Interaction1'. From 'HotelManagementClassDiagram_Employee', the role 'HotelManagementClassDiagram_Employee32' has cardinality 0..*, and from 'HotelManagementClassDiagram_Interaction1', the role 'HotelManagementClassDiagram_Interaction1' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Employee' and 'HotelManagementClassDiagram_Interaction2'. From 'HotelManagementClassDiagram_Employee', the role 'HotelManagementClassDiagram_Employee34' has cardinality 0..*, and from 'HotelManagementClassDiagram_Interaction2', the role 'HotelManagementClassDiagram_Interaction2' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Interaction3' and 'HotelManagementClassDiagram_MaintenanceController'. From 'HotelManagementClassDiagram_Interaction3', the role 'HotelManagementClassDiagram_Interaction3' has cardinality 0..*, and from 'HotelManagementClassDiagram_MaintenanceController', the role 'HotelManagementClassDiagram_MaintenanceController36' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Interaction4' and 'HotelManagementClassDiagram_Employee'. From 'HotelManagementClassDiagram_Interaction4', the role 'HotelManagementClassDiagram_Interaction4' has cardinality 0..*, and from 'HotelManagementClassDiagram_Employee', the role 'HotelManagementClassDiagram_Employee38' has cardinality 0..*.
+An association connects 'HotelManagementClassDiagram_Interaction5' and 'HotelManagementClassDiagram_Booking'. From 'HotelManagementClassDiagram_Interaction5', the role 'HotelManagementClassDiagram_Interaction5' has cardinality 0..*, and from 'HotelManagementClassDiagram_Booking', the role 'HotelManagementClassDiagram_Booking40' has cardinality 0..*.

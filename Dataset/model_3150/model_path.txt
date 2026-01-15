@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/huybuidac20593/yakindu/BASE/tags/M_SCT2_05/org.eclipselabs.mscript/plugins/org.eclipselabs.mscript.language/model/Mscript.ecore

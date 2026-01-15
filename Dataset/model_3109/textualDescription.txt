@@ -1,0 +1,31 @@
+The domain model 'ClassM' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'ClassM_Classifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ClassM_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassM_Attribute' represents an important domain concept.
+It has the following attributes: 'is_primary', which is of type bool; 'name', which is of type str.
+
+'ClassM_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassM_Class' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ClassM_Class' is a specialization of 'Classifier'.
+The class 'ClassM_PrimitiveType' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ClassM_Class' and 'ClassM_Attribute'. From 'ClassM_Class', the role 'owner' has cardinality 0..*, and from 'ClassM_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'ClassM_Classifier' and 'ClassM_Attribute'. From 'ClassM_Classifier', the role 'ClassM_Classifier' has cardinality 0..*, and from 'ClassM_Attribute', the role 'ClassM_Attribute' has cardinality 0..*.
+An association connects 'ClassM_Class' and 'ClassM_Attribute'. From 'ClassM_Class', the role 'Class' has cardinality 0..*, and from 'ClassM_Attribute', the role 'attrs' has cardinality 0..*.
+An association connects 'ClassM_Model' and 'ClassM_Classifier'. From 'ClassM_Model', the role 'ClassM_Model' has cardinality 0..*, and from 'ClassM_Classifier', the role 'ClassM_Classifier4' has cardinality 0..*.

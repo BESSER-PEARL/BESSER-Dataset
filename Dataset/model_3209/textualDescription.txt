@@ -1,0 +1,24 @@
+The domain model 'rm' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'rm_Device' represents an important domain concept.
+It has one attribute: 'cacheSize', which is of type int.
+
+'rm_ResourceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'rm_MemoryCellReference' represents an important domain concept.
+It has the following attributes: 'endCellIndex', which is of type int; 'startCellIndex', which is of type int.
+
+'rm_Memory' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'rm_VariableReference' represents an important domain concept.
+It has the following attributes: 'memoryCellIndex', which is of type int; 'variable', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'rm_ResourceModel' and 'rm_Device'. From 'rm_ResourceModel', the role 'rm_ResourceModel' has cardinality 0..*, and from 'rm_Device', the role 'rm_Device' has cardinality 0..*.
+An association connects 'rm_ResourceModel' and 'rm_Memory'. From 'rm_ResourceModel', the role 'rm_ResourceModel2' has cardinality 0..*, and from 'rm_Memory', the role 'rm_Memory' has cardinality 0..*.
+An association connects 'rm_Device' and 'rm_MemoryCellReference'. From 'rm_Device', the role 'rm_Device4' has cardinality 0..*, and from 'rm_MemoryCellReference', the role 'rm_MemoryCellReference' has cardinality 0..*.
+An association connects 'rm_Memory' and 'rm_VariableReference'. From 'rm_Memory', the role 'rm_Memory6' has cardinality 0..*, and from 'rm_VariableReference', the role 'rm_VariableReference' has cardinality 0..*.

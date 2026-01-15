@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/qvt/qvtr2coq/edu.kit.ipd.sdq.mdsd.uml2rdbms/mediniQVT/umlMM.ecore

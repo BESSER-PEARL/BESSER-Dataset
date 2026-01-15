@@ -1,0 +1,40 @@
+The domain model 'MediaPlayer' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'MediaPlayer_BaseObject' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'propertyChangeSupport', which is of type str.
+
+'MediaPlayer_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'MediaPlayer_MediaObject' represents an important domain concept.
+It has the following attributes: 'state', which is of type str; 'location', which is of type str; 'year', which is of type int; 'artist', which is of type str; 'title', which is of type str; 'album', which is of type str.
+
+'MediaPlayer_PlayLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'MediaPlayer_MediaApi' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseObject' represents an important domain concept.
+It does not declare any attributes.
+
+'MediaPlayer_Playlist' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'repeat', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'State' defines the following possible values: 'STOPPED', 'PLAYING', 'PAUSED'.
+
+The model also captures inheritance relationships between classes.
+The class 'MediaPlayer_Playlist' is a specialization of 'BaseObject'.
+The class 'MediaPlayer_MediaObject' is a specialization of 'BaseObject'.
+The class 'MediaPlayer_Library' is a specialization of 'BaseObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MediaPlayer_Playlist' and 'MediaPlayer_MediaObject'. From 'MediaPlayer_Playlist', the role 'MediaPlayer_Playlist' has cardinality 0..*, and from 'MediaPlayer_MediaObject', the role 'MediaPlayer_MediaObject' has cardinality 0..*.
+An association connects 'MediaPlayer_MediaApi' and 'MediaPlayer_MediaObject'. From 'MediaPlayer_MediaApi', the role 'MediaPlayer_MediaApi' has cardinality 0..*, and from 'MediaPlayer_MediaObject', the role 'MediaPlayer_MediaObject2' has cardinality 0..*.
+An association connects 'MediaPlayer_MediaApi' and 'MediaPlayer_MediaObject'. From 'MediaPlayer_MediaApi', the role 'MediaPlayer_MediaApi4' has cardinality 0..*, and from 'MediaPlayer_MediaObject', the role 'MediaPlayer_MediaObject5' has cardinality 0..*.
+An association connects 'MediaPlayer_MediaApi' and 'MediaPlayer_PlayLayer'. From 'MediaPlayer_MediaApi', the role 'MediaPlayer_MediaApi7' has cardinality 0..*, and from 'MediaPlayer_PlayLayer', the role 'MediaPlayer_PlayLayer' has cardinality 0..*.
+An association connects 'MediaPlayer_PlayLayer' and 'MediaPlayer_Library'. From 'MediaPlayer_PlayLayer', the role 'MediaPlayer_PlayLayer9' has cardinality 0..*, and from 'MediaPlayer_Library', the role 'MediaPlayer_Library' has cardinality 0..*.
+An association connects 'MediaPlayer_MediaObject' and 'MediaPlayer_Library'. From 'MediaPlayer_MediaObject', the role 'MediaPlayer_MediaObject12' has cardinality 0..*, and from 'MediaPlayer_Library', the role 'MediaPlayer_Library11' has cardinality 0..*.

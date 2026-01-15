@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/capella-addons/xmlpivot/plugins/org.polarsys.capella.core.semantic.data.gen/model/interaction.ecore

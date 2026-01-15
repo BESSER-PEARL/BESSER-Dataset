@@ -1,0 +1,63 @@
+The domain model 'tdt4250' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'tdt4250_Teacher' represents an important domain concept.
+It has one attribute: 'role', which is of type str.
+
+'tdt4250_Answer' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'tdt4250__bDXQcCdxEeKsSJflfBDxuw' represents an important domain concept.
+It does not declare any attributes.
+
+'tdt4250_Person' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ID', which is of type int.
+
+'_bDXQcCdxEeKsSJflfBDxuw' represents an important domain concept.
+It does not declare any attributes.
+
+'tdt4250_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'tdt4250__bDTmECdxEeKsSJflfBDxuw' represents an important domain concept.
+It does not declare any attributes.
+
+'tdt4250__bDIm8SdxEeKsSJflfBDxuw' represents an important domain concept.
+It does not declare any attributes.
+
+'tdt4250_Assignment' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'mandatory', which is of type bool; 'content', which is of type str; 'ID', which is of type int.
+
+'tdt4250__bDSX8CdxEeKsSJflfBDxuw' represents an important domain concept.
+It does not declare any attributes.
+
+'tdt4250__bDYekCdxEeKsSJflfBDxuw' represents an important domain concept.
+It does not declare any attributes.
+
+'tdt4250_Course' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'credit', which is of type int; 'ID', which is of type int.
+
+'tdt4250__bDNfcCdxEeKsSJflfBDxuw' represents an important domain concept.
+It does not declare any attributes.
+
+'tdt4250_Student' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ResponsibilityRole' defines the following possible values: 'COORDINATOR', 'ASSISTANT', 'LECTURER'.
+
+The model also captures inheritance relationships between classes.
+The class 'tdt4250_Student' is a specialization of '_bDXQcCdxEeKsSJflfBDxuw'.
+The class 'tdt4250_Teacher' is a specialization of '_bDXQcCdxEeKsSJflfBDxuw'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tdt4250_Course' and 'tdt4250__bDNfcCdxEeKsSJflfBDxuw'. From 'tdt4250_Course', the role 'tdt4250_Course' has cardinality 0..*, and from 'tdt4250__bDNfcCdxEeKsSJflfBDxuw', the role 'tdt4250__bDNfcCdxEeKsSJflfBDxuw' has cardinality 0..*.
+An association connects 'tdt4250_Course' and 'tdt4250__bDTmECdxEeKsSJflfBDxuw'. From 'tdt4250_Course', the role 'tdt4250_Course2' has cardinality 0..*, and from 'tdt4250__bDTmECdxEeKsSJflfBDxuw', the role 'tdt4250__bDTmECdxEeKsSJflfBDxuw' has cardinality 0..*.
+An association connects 'tdt4250__bDYekCdxEeKsSJflfBDxuw' and 'tdt4250_Course'. From 'tdt4250__bDYekCdxEeKsSJflfBDxuw', the role 'tdt4250__bDYekCdxEeKsSJflfBDxuw' has cardinality 0..*, and from 'tdt4250_Course', the role 'tdt4250_Course4' has cardinality 0..*.
+An association connects 'tdt4250_Assignment' and 'tdt4250__bDSX8CdxEeKsSJflfBDxuw'. From 'tdt4250_Assignment', the role 'tdt4250_Assignment' has cardinality 0..*, and from 'tdt4250__bDSX8CdxEeKsSJflfBDxuw', the role 'tdt4250__bDSX8CdxEeKsSJflfBDxuw' has cardinality 0..*.
+An association connects 'tdt4250__bDIm8SdxEeKsSJflfBDxuw' and 'tdt4250_Student'. From 'tdt4250__bDIm8SdxEeKsSJflfBDxuw', the role 'tdt4250__bDIm8SdxEeKsSJflfBDxuw' has cardinality 0..*, and from 'tdt4250_Student', the role 'tdt4250_Student' has cardinality 0..*.
+An association connects 'tdt4250_Student' and 'tdt4250__bDSX8CdxEeKsSJflfBDxuw'. From 'tdt4250_Student', the role 'tdt4250_Student8' has cardinality 0..*, and from 'tdt4250__bDSX8CdxEeKsSJflfBDxuw', the role 'tdt4250__bDSX8CdxEeKsSJflfBDxuw9' has cardinality 0..*.
+An association connects 'tdt4250_Teacher' and 'tdt4250__bDIm8SdxEeKsSJflfBDxuw'. From 'tdt4250_Teacher', the role 'tdt4250_Teacher' has cardinality 0..*, and from 'tdt4250__bDIm8SdxEeKsSJflfBDxuw', the role 'tdt4250__bDIm8SdxEeKsSJflfBDxuw11' has cardinality 0..*.
+An association connects 'tdt4250_Root' and 'tdt4250__bDIm8SdxEeKsSJflfBDxuw'. From 'tdt4250_Root', the role 'tdt4250_Root' has cardinality 0..*, and from 'tdt4250__bDIm8SdxEeKsSJflfBDxuw', the role 'tdt4250__bDIm8SdxEeKsSJflfBDxuw13' has cardinality 0..*.
+An association connects 'tdt4250_Root' and 'tdt4250__bDXQcCdxEeKsSJflfBDxuw'. From 'tdt4250_Root', the role 'tdt4250_Root15' has cardinality 0..*, and from 'tdt4250__bDXQcCdxEeKsSJflfBDxuw', the role 'tdt4250__bDXQcCdxEeKsSJflfBDxuw' has cardinality 0..*.

@@ -1,0 +1,347 @@
+The domain model 'urml' describes the core structural elements and their relationships within the system.
+
+The model defines 66 main class(es).
+
+'urml_ConditionalAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_LogStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Capsule' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'root', which is of type bool.
+
+'urml_CapsuleInst' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'urml_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Port' represents an important domain concept.
+It has the following attributes: 'conjugated', which is of type bool; 'name', which is of type str.
+
+'urml_LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_StatementOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Transition' represents an important domain concept.
+It has the following attributes: 'universal', which is of type bool; 'name', which is of type str; 'init', which is of type bool.
+
+'urml_TimerPort' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'urml_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Operation' represents an important domain concept.
+It has the following attributes: 'isBool', which is of type bool; 'isVoid', which is of type bool; 'name', which is of type str; 'isInt', which is of type bool.
+
+'urml_NoOp' represents an important domain concept.
+It does not declare any attributes.
+
+'StringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Modulo' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Signal' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_InformTimer' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_BoolLiteral' represents an important domain concept.
+It has one attribute: 'true', which is of type bool.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_ConcatenateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_IfStatementOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_IntLiteral' represents an important domain concept.
+It has one attribute: 'int', which is of type int.
+
+'urml_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_LocalVar' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Trigger_in' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Invoke' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'urml_IncomingVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_State_' represents an important domain concept.
+It has the following attributes: 'final', which is of type bool; 'name', which is of type str.
+
+'urml_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Trigger_out' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_OperationCode' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_ActionCode' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_NotBooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_SendTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_ConditionalOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_WhileLoopOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Divide' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignable' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Assignable' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_GreaterThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Variable' represents an important domain concept.
+It has one attribute: 'assign', which is of type bool.
+
+'urml_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_StringExpression' represents an important domain concept.
+It has one attribute: 'str', which is of type str.
+
+'urml_Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Protocol' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'urml_LogPort' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'urml_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_LessThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'urml_Identifiable' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isInt', which is of type bool; 'isBool', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'urml_LocalVar' is a specialization of 'Assignable'.
+The class 'urml_Attribute' is a specialization of 'Assignable'.
+The class 'urml_IncomingVariable' is a specialization of 'Identifiable'.
+The class 'urml_WhileLoopOperation' is a specialization of 'StatementOperation'.
+The class 'urml_IfStatementOperation' is a specialization of 'StatementOperation'.
+The class 'urml_ReturnStatement' is a specialization of 'StatementOperation'.
+The class 'urml_Variable' is a specialization of 'StatementOperation'.
+The class 'urml_Variable' is a specialization of 'Statement'.
+The class 'urml_SendTrigger' is a specialization of 'StatementOperation'.
+The class 'urml_SendTrigger' is a specialization of 'Statement'.
+The class 'urml_InformTimer' is a specialization of 'StatementOperation'.
+The class 'urml_InformTimer' is a specialization of 'Statement'.
+The class 'urml_NoOp' is a specialization of 'StatementOperation'.
+The class 'urml_NoOp' is a specialization of 'Statement'.
+The class 'urml_Invoke' is a specialization of 'StatementOperation'.
+The class 'urml_Invoke' is a specialization of 'Statement'.
+The class 'urml_Assignment' is a specialization of 'StatementOperation'.
+The class 'urml_Assignment' is a specialization of 'Statement'.
+The class 'urml_Assignable' is a specialization of 'Identifiable'.
+The class 'urml_WhileLoop' is a specialization of 'Statement'.
+The class 'urml_IfStatement' is a specialization of 'Statement'.
+The class 'urml_LogStatement' is a specialization of 'StatementOperation'.
+The class 'urml_LogStatement' is a specialization of 'Statement'.
+The class 'urml_NotBooleanExpression' is a specialization of 'Expression'.
+The class 'urml_Literal' is a specialization of 'Expression'.
+The class 'urml_IntLiteral' is a specialization of 'Literal'.
+The class 'urml_Identifier' is a specialization of 'Expression'.
+The class 'urml_FunctionCall' is a specialization of 'Literal'.
+The class 'urml_BoolLiteral' is a specialization of 'Literal'.
+The class 'urml_ConcatenateExpression' is a specialization of 'StringExpression'.
+The class 'urml_ConditionalOrExpression' is a specialization of 'Expression'.
+The class 'urml_ConditionalAndExpression' is a specialization of 'Expression'.
+The class 'urml_LessThanOrEqual' is a specialization of 'Expression'.
+The class 'urml_LessThan' is a specialization of 'Expression'.
+The class 'urml_GreaterThanOrEqual' is a specialization of 'Expression'.
+The class 'urml_GreaterThan' is a specialization of 'Expression'.
+The class 'urml_Equal' is a specialization of 'Expression'.
+The class 'urml_NotEqual' is a specialization of 'Expression'.
+The class 'urml_Plus' is a specialization of 'Expression'.
+The class 'urml_Minus' is a specialization of 'Expression'.
+The class 'urml_Multiply' is a specialization of 'Expression'.
+The class 'urml_Divide' is a specialization of 'Expression'.
+The class 'urml_Modulo' is a specialization of 'Expression'.
+The class 'urml_UnaryExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'urml_Model' and 'urml_Capsule'. From 'urml_Model', the role 'urml_Model' has cardinality 0..*, and from 'urml_Capsule', the role 'urml_Capsule' has cardinality 0..*.
+An association connects 'urml_Model' and 'urml_Protocol'. From 'urml_Model', the role 'urml_Model2' has cardinality 0..*, and from 'urml_Protocol', the role 'urml_Protocol' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_Attribute'. From 'urml_Expression', the role 'urml_Expression' has cardinality 0..*, and from 'urml_Attribute', the role 'urml_Attribute' has cardinality 0..*.
+An association connects 'urml_Protocol' and 'urml_Signal'. From 'urml_Protocol', the role 'urml_Protocol5' has cardinality 0..*, and from 'urml_Signal', the role 'urml_Signal' has cardinality 0..*.
+An association connects 'urml_Signal' and 'urml_Protocol'. From 'urml_Signal', the role 'urml_Signal8' has cardinality 0..*, and from 'urml_Protocol', the role 'urml_Protocol7' has cardinality 0..*.
+An association connects 'urml_LocalVar' and 'urml_Signal'. From 'urml_LocalVar', the role 'urml_LocalVar' has cardinality 0..*, and from 'urml_Signal', the role 'urml_Signal10' has cardinality 0..*.
+An association connects 'urml_Port' and 'urml_Capsule'. From 'urml_Port', the role 'urml_Port' has cardinality 0..*, and from 'urml_Capsule', the role 'urml_Capsule12' has cardinality 0..*.
+An association connects 'urml_Port' and 'urml_Capsule'. From 'urml_Port', the role 'urml_Port15' has cardinality 0..*, and from 'urml_Capsule', the role 'urml_Capsule14' has cardinality 0..*.
+An association connects 'urml_TimerPort' and 'urml_Capsule'. From 'urml_TimerPort', the role 'urml_TimerPort' has cardinality 0..*, and from 'urml_Capsule', the role 'urml_Capsule17' has cardinality 0..*.
+An association connects 'urml_Capsule' and 'urml_LogPort'. From 'urml_Capsule', the role 'urml_Capsule19' has cardinality 0..*, and from 'urml_LogPort', the role 'urml_LogPort' has cardinality 0..*.
+An association connects 'urml_Capsule' and 'urml_Attribute'. From 'urml_Capsule', the role 'urml_Capsule21' has cardinality 0..*, and from 'urml_Attribute', the role 'urml_Attribute22' has cardinality 0..*.
+An association connects 'urml_Capsule' and 'urml_CapsuleInst'. From 'urml_Capsule', the role 'urml_Capsule24' has cardinality 0..*, and from 'urml_CapsuleInst', the role 'urml_CapsuleInst' has cardinality 0..*.
+An association connects 'urml_Connector' and 'urml_Capsule'. From 'urml_Connector', the role 'urml_Connector' has cardinality 0..*, and from 'urml_Capsule', the role 'urml_Capsule26' has cardinality 0..*.
+An association connects 'urml_Operation' and 'urml_Capsule'. From 'urml_Operation', the role 'urml_Operation' has cardinality 0..*, and from 'urml_Capsule', the role 'urml_Capsule28' has cardinality 0..*.
+An association connects 'urml_Capsule' and 'urml_StateMachine'. From 'urml_Capsule', the role 'urml_Capsule30' has cardinality 0..*, and from 'urml_StateMachine', the role 'urml_StateMachine' has cardinality 0..*.
+An association connects 'urml_Operation' and 'urml_LocalVar'. From 'urml_Operation', the role 'urml_Operation32' has cardinality 0..*, and from 'urml_LocalVar', the role 'urml_LocalVar33' has cardinality 0..*.
+An association connects 'urml_Operation' and 'urml_OperationCode'. From 'urml_Operation', the role 'urml_Operation35' has cardinality 0..*, and from 'urml_OperationCode', the role 'urml_OperationCode' has cardinality 0..*.
+An association connects 'urml_Port' and 'urml_Protocol'. From 'urml_Port', the role 'urml_Port37' has cardinality 0..*, and from 'urml_Protocol', the role 'urml_Protocol38' has cardinality 0..*.
+An association connects 'urml_Connector' and 'urml_CapsuleInst'. From 'urml_Connector', the role 'urml_Connector40' has cardinality 0..*, and from 'urml_CapsuleInst', the role 'urml_CapsuleInst41' has cardinality 0..*.
+An association connects 'urml_Connector' and 'urml_Port'. From 'urml_Connector', the role 'urml_Connector43' has cardinality 0..*, and from 'urml_Port', the role 'urml_Port44' has cardinality 0..*.
+An association connects 'urml_Connector' and 'urml_CapsuleInst'. From 'urml_Connector', the role 'urml_Connector46' has cardinality 0..*, and from 'urml_CapsuleInst', the role 'urml_CapsuleInst47' has cardinality 0..*.
+An association connects 'urml_Port' and 'urml_Connector'. From 'urml_Port', the role 'urml_Port50' has cardinality 0..*, and from 'urml_Connector', the role 'urml_Connector49' has cardinality 0..*.
+An association connects 'urml_Capsule' and 'urml_CapsuleInst'. From 'urml_Capsule', the role 'urml_Capsule53' has cardinality 0..*, and from 'urml_CapsuleInst', the role 'urml_CapsuleInst52' has cardinality 0..*.
+An association connects 'urml_StateMachine' and 'urml_State_'. From 'urml_StateMachine', the role 'urml_StateMachine55' has cardinality 0..*, and from 'urml_State_', the role 'urml_State_' has cardinality 0..*.
+An association connects 'urml_Transition' and 'urml_StateMachine'. From 'urml_Transition', the role 'urml_Transition' has cardinality 0..*, and from 'urml_StateMachine', the role 'urml_StateMachine57' has cardinality 0..*.
+An association connects 'urml_ActionCode' and 'urml_State_'. From 'urml_ActionCode', the role 'urml_ActionCode' has cardinality 0..*, and from 'urml_State_', the role 'urml_State_59' has cardinality 0..*.
+An association connects 'urml_ActionCode' and 'urml_State_'. From 'urml_ActionCode', the role 'urml_ActionCode62' has cardinality 0..*, and from 'urml_State_', the role 'urml_State_61' has cardinality 0..*.
+An association connects 'urml_State_' and 'urml_StateMachine'. From 'urml_State_', the role 'urml_State_64' has cardinality 0..*, and from 'urml_StateMachine', the role 'urml_StateMachine65' has cardinality 0..*.
+An association connects 'urml_Transition' and 'urml_State_'. From 'urml_Transition', the role 'urml_Transition67' has cardinality 0..*, and from 'urml_State_', the role 'urml_State_68' has cardinality 0..*.
+An association connects 'urml_State_' and 'urml_Transition'. From 'urml_State_', the role 'urml_State_71' has cardinality 0..*, and from 'urml_Transition', the role 'urml_Transition70' has cardinality 0..*.
+An association connects 'urml_Transition' and 'urml_Expression'. From 'urml_Transition', the role 'urml_Transition73' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression74' has cardinality 0..*.
+An association connects 'urml_Transition' and 'urml_Trigger_in'. From 'urml_Transition', the role 'urml_Transition76' has cardinality 0..*, and from 'urml_Trigger_in', the role 'urml_Trigger_in' has cardinality 0..*.
+An association connects 'urml_Transition' and 'urml_TimerPort'. From 'urml_Transition', the role 'urml_Transition78' has cardinality 0..*, and from 'urml_TimerPort', the role 'urml_TimerPort79' has cardinality 0..*.
+An association connects 'urml_Transition' and 'urml_ActionCode'. From 'urml_Transition', the role 'urml_Transition81' has cardinality 0..*, and from 'urml_ActionCode', the role 'urml_ActionCode82' has cardinality 0..*.
+An association connects 'urml_Port' and 'urml_Trigger_in'. From 'urml_Port', the role 'urml_Port85' has cardinality 0..*, and from 'urml_Trigger_in', the role 'urml_Trigger_in84' has cardinality 0..*.
+An association connects 'urml_Signal' and 'urml_Trigger_in'. From 'urml_Signal', the role 'urml_Signal88' has cardinality 0..*, and from 'urml_Trigger_in', the role 'urml_Trigger_in87' has cardinality 0..*.
+An association connects 'urml_IncomingVariable' and 'urml_Trigger_in'. From 'urml_IncomingVariable', the role 'urml_IncomingVariable' has cardinality 0..*, and from 'urml_Trigger_in', the role 'urml_Trigger_in90' has cardinality 0..*.
+An association connects 'urml_Port' and 'urml_Trigger_out'. From 'urml_Port', the role 'urml_Port92' has cardinality 0..*, and from 'urml_Trigger_out', the role 'urml_Trigger_out' has cardinality 0..*.
+An association connects 'urml_Trigger_out' and 'urml_Signal'. From 'urml_Trigger_out', the role 'urml_Trigger_out94' has cardinality 0..*, and from 'urml_Signal', the role 'urml_Signal95' has cardinality 0..*.
+An association connects 'urml_Trigger_out' and 'urml_Expression'. From 'urml_Trigger_out', the role 'urml_Trigger_out97' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression98' has cardinality 0..*.
+An association connects 'urml_StatementOperation' and 'urml_OperationCode'. From 'urml_StatementOperation', the role 'urml_StatementOperation' has cardinality 0..*, and from 'urml_OperationCode', the role 'urml_OperationCode100' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_WhileLoopOperation'. From 'urml_Expression', the role 'urml_Expression102' has cardinality 0..*, and from 'urml_WhileLoopOperation', the role 'urml_WhileLoopOperation' has cardinality 0..*.
+An association connects 'urml_WhileLoopOperation' and 'urml_StatementOperation'. From 'urml_WhileLoopOperation', the role 'urml_WhileLoopOperation104' has cardinality 0..*, and from 'urml_StatementOperation', the role 'urml_StatementOperation105' has cardinality 0..*.
+An association connects 'urml_IfStatementOperation' and 'urml_Expression'. From 'urml_IfStatementOperation', the role 'urml_IfStatementOperation' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression107' has cardinality 0..*.
+An association connects 'urml_StatementOperation' and 'urml_IfStatementOperation'. From 'urml_StatementOperation', the role 'urml_StatementOperation110' has cardinality 0..*, and from 'urml_IfStatementOperation', the role 'urml_IfStatementOperation109' has cardinality 0..*.
+An association connects 'urml_IfStatementOperation' and 'urml_StatementOperation'. From 'urml_IfStatementOperation', the role 'urml_IfStatementOperation112' has cardinality 0..*, and from 'urml_StatementOperation', the role 'urml_StatementOperation113' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_ReturnStatement'. From 'urml_Expression', the role 'urml_Expression115' has cardinality 0..*, and from 'urml_ReturnStatement', the role 'urml_ReturnStatement' has cardinality 0..*.
+An association connects 'urml_ActionCode' and 'urml_Statement'. From 'urml_ActionCode', the role 'urml_ActionCode117' has cardinality 0..*, and from 'urml_Statement', the role 'urml_Statement' has cardinality 0..*.
+An association connects 'urml_Variable' and 'urml_LocalVar'. From 'urml_Variable', the role 'urml_Variable' has cardinality 0..*, and from 'urml_LocalVar', the role 'urml_LocalVar119' has cardinality 0..*.
+An association connects 'urml_Variable' and 'urml_Expression'. From 'urml_Variable', the role 'urml_Variable121' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression122' has cardinality 0..*.
+An association connects 'urml_Trigger_out' and 'urml_SendTrigger'. From 'urml_Trigger_out', the role 'urml_Trigger_out124' has cardinality 0..*, and from 'urml_SendTrigger', the role 'urml_SendTrigger' has cardinality 0..*.
+An association connects 'urml_TimerPort' and 'urml_InformTimer'. From 'urml_TimerPort', the role 'urml_TimerPort126' has cardinality 0..*, and from 'urml_InformTimer', the role 'urml_InformTimer' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_InformTimer'. From 'urml_Expression', the role 'urml_Expression129' has cardinality 0..*, and from 'urml_InformTimer', the role 'urml_InformTimer128' has cardinality 0..*.
+An association connects 'urml_Operation' and 'urml_Invoke'. From 'urml_Operation', the role 'urml_Operation131' has cardinality 0..*, and from 'urml_Invoke', the role 'urml_Invoke' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_Invoke'. From 'urml_Expression', the role 'urml_Expression134' has cardinality 0..*, and from 'urml_Invoke', the role 'urml_Invoke133' has cardinality 0..*.
+An association connects 'urml_Assignable' and 'urml_Assignment'. From 'urml_Assignable', the role 'urml_Assignable' has cardinality 0..*, and from 'urml_Assignment', the role 'urml_Assignment' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_Assignment'. From 'urml_Expression', the role 'urml_Expression138' has cardinality 0..*, and from 'urml_Assignment', the role 'urml_Assignment137' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_WhileLoop'. From 'urml_Expression', the role 'urml_Expression140' has cardinality 0..*, and from 'urml_WhileLoop', the role 'urml_WhileLoop' has cardinality 0..*.
+An association connects 'urml_WhileLoop' and 'urml_Statement'. From 'urml_WhileLoop', the role 'urml_WhileLoop142' has cardinality 0..*, and from 'urml_Statement', the role 'urml_Statement143' has cardinality 0..*.
+An association connects 'urml_IfStatement' and 'urml_Expression'. From 'urml_IfStatement', the role 'urml_IfStatement' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression145' has cardinality 0..*.
+An association connects 'urml_IfStatement' and 'urml_Statement'. From 'urml_IfStatement', the role 'urml_IfStatement147' has cardinality 0..*, and from 'urml_Statement', the role 'urml_Statement148' has cardinality 0..*.
+An association connects 'urml_Statement' and 'urml_IfStatement'. From 'urml_Statement', the role 'urml_Statement151' has cardinality 0..*, and from 'urml_IfStatement', the role 'urml_IfStatement150' has cardinality 0..*.
+An association connects 'urml_LogPort' and 'urml_LogStatement'. From 'urml_LogPort', the role 'urml_LogPort153' has cardinality 0..*, and from 'urml_LogStatement', the role 'urml_LogStatement' has cardinality 0..*.
+An association connects 'urml_StringExpression' and 'urml_LogStatement'. From 'urml_StringExpression', the role 'urml_StringExpression' has cardinality 0..*, and from 'urml_LogStatement', the role 'urml_LogStatement155' has cardinality 0..*.
+An association connects 'urml_StringExpression' and 'urml_Expression'. From 'urml_StringExpression', the role 'urml_StringExpression157' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression158' has cardinality 0..*.
+An association connects 'urml_NotBooleanExpression' and 'urml_Expression'. From 'urml_NotBooleanExpression', the role 'urml_NotBooleanExpression' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression160' has cardinality 0..*.
+An association connects 'urml_Identifier' and 'urml_Identifiable'. From 'urml_Identifier', the role 'urml_Identifier' has cardinality 0..*, and from 'urml_Identifiable', the role 'urml_Identifiable' has cardinality 0..*.
+An association connects 'urml_Operation' and 'urml_FunctionCall'. From 'urml_Operation', the role 'urml_Operation163' has cardinality 0..*, and from 'urml_FunctionCall', the role 'urml_FunctionCall' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_FunctionCall'. From 'urml_Expression', the role 'urml_Expression166' has cardinality 0..*, and from 'urml_FunctionCall', the role 'urml_FunctionCall165' has cardinality 0..*.
+An association connects 'urml_ConcatenateExpression' and 'urml_StringExpression'. From 'urml_ConcatenateExpression', the role 'urml_ConcatenateExpression' has cardinality 0..*, and from 'urml_StringExpression', the role 'urml_StringExpression168' has cardinality 0..*.
+An association connects 'urml_StringExpression' and 'urml_ConcatenateExpression'. From 'urml_StringExpression', the role 'urml_StringExpression171' has cardinality 0..*, and from 'urml_ConcatenateExpression', the role 'urml_ConcatenateExpression170' has cardinality 0..*.
+An association connects 'urml_ConditionalOrExpression' and 'urml_Expression'. From 'urml_ConditionalOrExpression', the role 'urml_ConditionalOrExpression' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression173' has cardinality 0..*.
+An association connects 'urml_ConditionalOrExpression' and 'urml_Expression'. From 'urml_ConditionalOrExpression', the role 'urml_ConditionalOrExpression175' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression176' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_ConditionalAndExpression'. From 'urml_Expression', the role 'urml_Expression178' has cardinality 0..*, and from 'urml_ConditionalAndExpression', the role 'urml_ConditionalAndExpression' has cardinality 0..*.
+An association connects 'urml_ConditionalAndExpression' and 'urml_Expression'. From 'urml_ConditionalAndExpression', the role 'urml_ConditionalAndExpression180' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression181' has cardinality 0..*.
+An association connects 'urml_LessThanOrEqual' and 'urml_Expression'. From 'urml_LessThanOrEqual', the role 'urml_LessThanOrEqual' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression183' has cardinality 0..*.
+An association connects 'urml_LessThanOrEqual' and 'urml_Expression'. From 'urml_LessThanOrEqual', the role 'urml_LessThanOrEqual185' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression186' has cardinality 0..*.
+An association connects 'urml_LessThan' and 'urml_Expression'. From 'urml_LessThan', the role 'urml_LessThan' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression188' has cardinality 0..*.
+An association connects 'urml_LessThan' and 'urml_Expression'. From 'urml_LessThan', the role 'urml_LessThan190' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression191' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_GreaterThanOrEqual'. From 'urml_Expression', the role 'urml_Expression193' has cardinality 0..*, and from 'urml_GreaterThanOrEqual', the role 'urml_GreaterThanOrEqual' has cardinality 0..*.
+An association connects 'urml_GreaterThanOrEqual' and 'urml_Expression'. From 'urml_GreaterThanOrEqual', the role 'urml_GreaterThanOrEqual195' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression196' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_GreaterThan'. From 'urml_Expression', the role 'urml_Expression198' has cardinality 0..*, and from 'urml_GreaterThan', the role 'urml_GreaterThan' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_GreaterThan'. From 'urml_Expression', the role 'urml_Expression201' has cardinality 0..*, and from 'urml_GreaterThan', the role 'urml_GreaterThan200' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_Equal'. From 'urml_Expression', the role 'urml_Expression203' has cardinality 0..*, and from 'urml_Equal', the role 'urml_Equal' has cardinality 0..*.
+An association connects 'urml_Equal' and 'urml_Expression'. From 'urml_Equal', the role 'urml_Equal205' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression206' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_NotEqual'. From 'urml_Expression', the role 'urml_Expression208' has cardinality 0..*, and from 'urml_NotEqual', the role 'urml_NotEqual' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_NotEqual'. From 'urml_Expression', the role 'urml_Expression211' has cardinality 0..*, and from 'urml_NotEqual', the role 'urml_NotEqual210' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_Plus'. From 'urml_Expression', the role 'urml_Expression213' has cardinality 0..*, and from 'urml_Plus', the role 'urml_Plus' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_Plus'. From 'urml_Expression', the role 'urml_Expression216' has cardinality 0..*, and from 'urml_Plus', the role 'urml_Plus215' has cardinality 0..*.
+An association connects 'urml_Minus' and 'urml_Expression'. From 'urml_Minus', the role 'urml_Minus' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression218' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_Minus'. From 'urml_Expression', the role 'urml_Expression221' has cardinality 0..*, and from 'urml_Minus', the role 'urml_Minus220' has cardinality 0..*.
+An association connects 'urml_Multiply' and 'urml_Expression'. From 'urml_Multiply', the role 'urml_Multiply' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression223' has cardinality 0..*.
+An association connects 'urml_Multiply' and 'urml_Expression'. From 'urml_Multiply', the role 'urml_Multiply225' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression226' has cardinality 0..*.
+An association connects 'urml_Divide' and 'urml_Expression'. From 'urml_Divide', the role 'urml_Divide' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression228' has cardinality 0..*.
+An association connects 'urml_Divide' and 'urml_Expression'. From 'urml_Divide', the role 'urml_Divide230' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression231' has cardinality 0..*.
+An association connects 'urml_Modulo' and 'urml_Expression'. From 'urml_Modulo', the role 'urml_Modulo' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression233' has cardinality 0..*.
+An association connects 'urml_Expression' and 'urml_Modulo'. From 'urml_Expression', the role 'urml_Expression236' has cardinality 0..*, and from 'urml_Modulo', the role 'urml_Modulo235' has cardinality 0..*.
+An association connects 'urml_UnaryExpression' and 'urml_Expression'. From 'urml_UnaryExpression', the role 'urml_UnaryExpression' has cardinality 0..*, and from 'urml_Expression', the role 'urml_Expression238' has cardinality 0..*.

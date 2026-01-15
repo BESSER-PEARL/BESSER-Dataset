@@ -1,0 +1,186 @@
+The domain model 'hlp' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_AddExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_HighLevelProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_AtomicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclarationScope' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_ScheduleInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_MultiplyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AtomicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_SynchronizedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_ParenthesisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_UnaryMinusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_LiteralValue' represents an important domain concept.
+It has one attribute: 'rawValue', which is of type str.
+
+'hlp_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_ForLoop' represents an important domain concept.
+It has one attribute: 'incrementing', which is of type bool.
+
+'hlp_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_Nameable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_SubtractExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_Condition' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'hlp_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_DivideExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_ConditionalLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_VariableDeclarationScope' represents an important domain concept.
+It does not declare any attributes.
+
+'hlp_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ComparisonOperator' defines the following possible values: 'GREATER_THAN_OR_EQUAL', 'LESS_THAN', 'GREATER_THAN', 'UNEQUAL', 'EQUAL', 'LESS_THAN_OR_EQUAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'hlp_HighLevelProgram' is a specialization of 'VariableDeclarationScope'.
+The class 'hlp_HighLevelProgram' is a specialization of 'Nameable'.
+The class 'hlp_Variable' is a specialization of 'Nameable'.
+The class 'hlp_Assignment' is a specialization of 'Statement'.
+The class 'hlp_LiteralValue' is a specialization of 'AtomicExpression'.
+The class 'hlp_AddExpression' is a specialization of 'ArithmeticExpression'.
+The class 'hlp_VariableReference' is a specialization of 'AtomicExpression'.
+The class 'hlp_AtomicExpression' is a specialization of 'Expression'.
+The class 'hlp_BinaryExpression' is a specialization of 'Expression'.
+The class 'hlp_SubtractExpression' is a specialization of 'ArithmeticExpression'.
+The class 'hlp_MultiplyExpression' is a specialization of 'ArithmeticExpression'.
+The class 'hlp_DivideExpression' is a specialization of 'ArithmeticExpression'.
+The class 'hlp_ParenthesisExpression' is a specialization of 'Expression'.
+The class 'hlp_IfStatement' is a specialization of 'Statement'.
+The class 'hlp_Loop' is a specialization of 'Statement'.
+The class 'hlp_ConditionalLoop' is a specialization of 'Loop'.
+The class 'hlp_WhileLoop' is a specialization of 'ConditionalLoop'.
+The class 'hlp_ForLoop' is a specialization of 'Loop'.
+The class 'hlp_ExpressionStatement' is a specialization of 'Statement'.
+The class 'hlp_UnaryExpression' is a specialization of 'Expression'.
+The class 'hlp_UnaryMinusExpression' is a specialization of 'UnaryExpression'.
+The class 'hlp_ArithmeticExpression' is a specialization of 'BinaryExpression'.
+The class 'hlp_SynchronizedStatement' is a specialization of 'Statement'.
+The class 'hlp_Task' is a specialization of 'VariableDeclarationScope'.
+The class 'hlp_Task' is a specialization of 'Nameable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hlp_HighLevelProgram' and 'hlp_Task'. From 'hlp_HighLevelProgram', the role 'hlp_HighLevelProgram' has cardinality 0..*, and from 'hlp_Task', the role 'hlp_Task' has cardinality 0..*.
+An association connects 'hlp_ScheduleInstruction' and 'hlp_HighLevelProgram'. From 'hlp_ScheduleInstruction', the role 'hlp_ScheduleInstruction' has cardinality 0..*, and from 'hlp_HighLevelProgram', the role 'hlp_HighLevelProgram2' has cardinality 0..*.
+An association connects 'hlp_VariableDeclaration' and 'hlp_Variable'. From 'hlp_VariableDeclaration', the role 'hlp_VariableDeclaration' has cardinality 0..*, and from 'hlp_Variable', the role 'hlp_Variable' has cardinality 0..*.
+An association connects 'hlp_VariableDeclaration' and 'hlp_Expression'. From 'hlp_VariableDeclaration', the role 'hlp_VariableDeclaration5' has cardinality 0..*, and from 'hlp_Expression', the role 'hlp_Expression' has cardinality 0..*.
+An association connects 'hlp_Assignment' and 'hlp_VariableReference'. From 'hlp_Assignment', the role 'hlp_Assignment' has cardinality 0..*, and from 'hlp_VariableReference', the role 'hlp_VariableReference' has cardinality 0..*.
+An association connects 'hlp_Expression' and 'hlp_Assignment'. From 'hlp_Expression', the role 'hlp_Expression9' has cardinality 0..*, and from 'hlp_Assignment', the role 'hlp_Assignment8' has cardinality 0..*.
+An association connects 'hlp_VariableReference' and 'hlp_Variable'. From 'hlp_VariableReference', the role 'hlp_VariableReference11' has cardinality 0..*, and from 'hlp_Variable', the role 'hlp_Variable12' has cardinality 0..*.
+An association connects 'hlp_BinaryExpression' and 'hlp_Expression'. From 'hlp_BinaryExpression', the role 'hlp_BinaryExpression' has cardinality 0..*, and from 'hlp_Expression', the role 'hlp_Expression14' has cardinality 0..*.
+An association connects 'hlp_BinaryExpression' and 'hlp_Expression'. From 'hlp_BinaryExpression', the role 'hlp_BinaryExpression16' has cardinality 0..*, and from 'hlp_Expression', the role 'hlp_Expression17' has cardinality 0..*.
+An association connects 'hlp_Expression' and 'hlp_ParenthesisExpression'. From 'hlp_Expression', the role 'hlp_Expression19' has cardinality 0..*, and from 'hlp_ParenthesisExpression', the role 'hlp_ParenthesisExpression' has cardinality 0..*.
+An association connects 'hlp_Block' and 'hlp_Statement'. From 'hlp_Block', the role 'hlp_Block' has cardinality 0..*, and from 'hlp_Statement', the role 'hlp_Statement' has cardinality 0..*.
+An association connects 'hlp_IfStatement' and 'hlp_Block'. From 'hlp_IfStatement', the role 'hlp_IfStatement' has cardinality 0..*, and from 'hlp_Block', the role 'hlp_Block22' has cardinality 0..*.
+An association connects 'hlp_Block' and 'hlp_IfStatement'. From 'hlp_Block', the role 'hlp_Block25' has cardinality 0..*, and from 'hlp_IfStatement', the role 'hlp_IfStatement24' has cardinality 0..*.
+An association connects 'hlp_IfStatement' and 'hlp_Condition'. From 'hlp_IfStatement', the role 'hlp_IfStatement27' has cardinality 0..*, and from 'hlp_Condition', the role 'hlp_Condition' has cardinality 0..*.
+An association connects 'hlp_Expression' and 'hlp_Condition'. From 'hlp_Expression', the role 'hlp_Expression30' has cardinality 0..*, and from 'hlp_Condition', the role 'hlp_Condition29' has cardinality 0..*.
+An association connects 'hlp_Expression' and 'hlp_Condition'. From 'hlp_Expression', the role 'hlp_Expression33' has cardinality 0..*, and from 'hlp_Condition', the role 'hlp_Condition32' has cardinality 0..*.
+An association connects 'hlp_VariableDeclaration' and 'hlp_VariableDeclarationScope'. From 'hlp_VariableDeclaration', the role 'hlp_VariableDeclaration35' has cardinality 0..*, and from 'hlp_VariableDeclarationScope', the role 'hlp_VariableDeclarationScope' has cardinality 0..*.
+An association connects 'hlp_Block' and 'hlp_Loop'. From 'hlp_Block', the role 'hlp_Block37' has cardinality 0..*, and from 'hlp_Loop', the role 'hlp_Loop' has cardinality 0..*.
+An association connects 'hlp_ConditionalLoop' and 'hlp_Condition'. From 'hlp_ConditionalLoop', the role 'hlp_ConditionalLoop' has cardinality 0..*, and from 'hlp_Condition', the role 'hlp_Condition39' has cardinality 0..*.
+An association connects 'hlp_VariableReference' and 'hlp_ForLoop'. From 'hlp_VariableReference', the role 'hlp_VariableReference41' has cardinality 0..*, and from 'hlp_ForLoop', the role 'hlp_ForLoop' has cardinality 0..*.
+An association connects 'hlp_ForLoop' and 'hlp_Expression'. From 'hlp_ForLoop', the role 'hlp_ForLoop43' has cardinality 0..*, and from 'hlp_Expression', the role 'hlp_Expression44' has cardinality 0..*.
+An association connects 'hlp_Expression' and 'hlp_ForLoop'. From 'hlp_Expression', the role 'hlp_Expression47' has cardinality 0..*, and from 'hlp_ForLoop', the role 'hlp_ForLoop46' has cardinality 0..*.
+An association connects 'hlp_ExpressionStatement' and 'hlp_Expression'. From 'hlp_ExpressionStatement', the role 'hlp_ExpressionStatement' has cardinality 0..*, and from 'hlp_Expression', the role 'hlp_Expression49' has cardinality 0..*.
+An association connects 'hlp_Expression' and 'hlp_UnaryExpression'. From 'hlp_Expression', the role 'hlp_Expression51' has cardinality 0..*, and from 'hlp_UnaryExpression', the role 'hlp_UnaryExpression' has cardinality 0..*.
+An association connects 'hlp_Block' and 'hlp_SynchronizedStatement'. From 'hlp_Block', the role 'hlp_Block53' has cardinality 0..*, and from 'hlp_SynchronizedStatement', the role 'hlp_SynchronizedStatement' has cardinality 0..*.
+An association connects 'hlp_SynchronizedStatement' and 'hlp_VariableReference'. From 'hlp_SynchronizedStatement', the role 'hlp_SynchronizedStatement55' has cardinality 0..*, and from 'hlp_VariableReference', the role 'hlp_VariableReference56' has cardinality 0..*.
+An association connects 'hlp_Task' and 'hlp_Block'. From 'hlp_Task', the role 'hlp_Task58' has cardinality 0..*, and from 'hlp_Block', the role 'hlp_Block59' has cardinality 0..*.
+An association connects 'hlp_Task' and 'hlp_ScheduleInstruction'. From 'hlp_Task', the role 'hlp_Task62' has cardinality 0..*, and from 'hlp_ScheduleInstruction', the role 'hlp_ScheduleInstruction61' has cardinality 0..*.

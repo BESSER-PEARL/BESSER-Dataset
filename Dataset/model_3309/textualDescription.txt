@@ -1,0 +1,45 @@
+The domain model 'decorators' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'decorators_NodeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'decorators_GraphDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'decorators_TestGraphDecorator1' represents an important domain concept.
+It does not declare any attributes.
+
+'EdgeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'decorators_TestScenarioGraphDecorator1' represents an important domain concept.
+It has the following attributes: 'stringValue', which is of type str; 'doubleValue', which is of type float; 'intValue', which is of type int; 'booleanValue', which is of type bool.
+
+'decorators_STEMTime' represents an important domain concept.
+It does not declare any attributes.
+
+'decorators_EdgeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'decorators_TestNodeDecorator1' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'decorators_TestEdgeDecorator1' represents an important domain concept.
+It has the following attributes: 'nodeAURI', which is of type str; 'nodeBURI', which is of type str; 'edgeURI', which is of type str.
+
+'GraphDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'decorators_TestEdgeDecorator1' is a specialization of 'EdgeDecorator'.
+The class 'decorators_TestGraphDecorator1' is a specialization of 'GraphDecorator'.
+The class 'decorators_TestNodeDecorator1' is a specialization of 'NodeDecorator'.
+The class 'decorators_TestScenarioGraphDecorator1' is a specialization of 'GraphDecorator'.
+
+Relationships between classes are modeled using associations.
+An association connects 'decorators_TestScenarioGraphDecorator1' and 'decorators_STEMTime'. From 'decorators_TestScenarioGraphDecorator1', the role 'decorators_TestScenarioGraphDecorator1' has cardinality 0..*, and from 'decorators_STEMTime', the role 'decorators_STEMTime' has cardinality 0..*.

@@ -1,0 +1,75 @@
+The domain model 'sedml' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'sedml_listOfTasks' represents an important domain concept.
+It does not declare any attributes.
+
+'sedml_task' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'sedml_dataGenerator' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'sedml_math' represents an important domain concept.
+It has one attribute: 'xlms', which is of type str.
+
+'sedml_listOfVariables' represents an important domain concept.
+It does not declare any attributes.
+
+'sedml_uniformTimeCourse' represents an important domain concept.
+It has the following attributes: 'initialTime', which is of type int; 'outputStartTime', which is of type int; 'numberOfPoints', which is of type int; 'outputEndTime', which is of type int; 'id', which is of type str.
+
+'sedml_variable' represents an important domain concept.
+It has the following attributes: 'symbol', which is of type str; 'id', which is of type str; 'target', which is of type str.
+
+'sedml_algorithm' represents an important domain concept.
+It has one attribute: 'kisaoID', which is of type str.
+
+'sedml_listOfDataGenerators' represents an important domain concept.
+It does not declare any attributes.
+
+'sedml_sedML' represents an important domain concept.
+It has the following attributes: 'level', which is of type int; 'version', which is of type int.
+
+'sedml_listOfOutputs' represents an important domain concept.
+It does not declare any attributes.
+
+'sedml_listOfCurves' represents an important domain concept.
+It does not declare any attributes.
+
+'sedml_curve' represents an important domain concept.
+It has the following attributes: 'yDataReference', which is of type str; 'id', which is of type str; 'xDataReference', which is of type str; 'logX', which is of type str; 'logY', which is of type str.
+
+'sedml_listOfSimulations' represents an important domain concept.
+It does not declare any attributes.
+
+'sedml_listOfModels' represents an important domain concept.
+It does not declare any attributes.
+
+'sedml_model' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'id', which is of type str; 'language', which is of type str; 'name', which is of type str.
+
+'sedml_plot2D' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'sedml_listOfSimulations' and 'sedml_sedML'. From 'sedml_listOfSimulations', the role 'sedml_listOfSimulations' has cardinality 0..*, and from 'sedml_sedML', the role 'sedml_sedML' has cardinality 0..*.
+An association connects 'sedml_sedML' and 'sedml_listOfModels'. From 'sedml_sedML', the role 'sedml_sedML2' has cardinality 0..*, and from 'sedml_listOfModels', the role 'sedml_listOfModels' has cardinality 0..*.
+An association connects 'sedml_sedML' and 'sedml_listOfTasks'. From 'sedml_sedML', the role 'sedml_sedML4' has cardinality 0..*, and from 'sedml_listOfTasks', the role 'sedml_listOfTasks' has cardinality 0..*.
+An association connects 'sedml_listOfDataGenerators' and 'sedml_sedML'. From 'sedml_listOfDataGenerators', the role 'sedml_listOfDataGenerators' has cardinality 0..*, and from 'sedml_sedML', the role 'sedml_sedML6' has cardinality 0..*.
+An association connects 'sedml_listOfOutputs' and 'sedml_sedML'. From 'sedml_listOfOutputs', the role 'sedml_listOfOutputs' has cardinality 0..*, and from 'sedml_sedML', the role 'sedml_sedML8' has cardinality 0..*.
+An association connects 'sedml_uniformTimeCourse' and 'sedml_listOfSimulations'. From 'sedml_uniformTimeCourse', the role 'sedml_uniformTimeCourse' has cardinality 0..*, and from 'sedml_listOfSimulations', the role 'sedml_listOfSimulations10' has cardinality 0..*.
+An association connects 'sedml_listOfModels' and 'sedml_model'. From 'sedml_listOfModels', the role 'sedml_listOfModels12' has cardinality 0..*, and from 'sedml_model', the role 'sedml_model' has cardinality 0..*.
+An association connects 'sedml_task' and 'sedml_listOfTasks'. From 'sedml_task', the role 'sedml_task' has cardinality 0..*, and from 'sedml_listOfTasks', the role 'sedml_listOfTasks14' has cardinality 0..*.
+An association connects 'sedml_dataGenerator' and 'sedml_listOfDataGenerators'. From 'sedml_dataGenerator', the role 'sedml_dataGenerator' has cardinality 0..*, and from 'sedml_listOfDataGenerators', the role 'sedml_listOfDataGenerators16' has cardinality 0..*.
+An association connects 'sedml_plot2D' and 'sedml_listOfOutputs'. From 'sedml_plot2D', the role 'sedml_plot2D' has cardinality 0..*, and from 'sedml_listOfOutputs', the role 'sedml_listOfOutputs18' has cardinality 0..*.
+An association connects 'sedml_algorithm' and 'sedml_uniformTimeCourse'. From 'sedml_algorithm', the role 'sedml_algorithm' has cardinality 0..*, and from 'sedml_uniformTimeCourse', the role 'sedml_uniformTimeCourse20' has cardinality 0..*.
+An association connects 'sedml_task' and 'sedml_model'. From 'sedml_task', the role 'sedml_task22' has cardinality 0..*, and from 'sedml_model', the role 'sedml_model23' has cardinality 0..*.
+An association connects 'sedml_task' and 'sedml_uniformTimeCourse'. From 'sedml_task', the role 'sedml_task25' has cardinality 0..*, and from 'sedml_uniformTimeCourse', the role 'sedml_uniformTimeCourse26' has cardinality 0..*.
+An association connects 'sedml_listOfCurves' and 'sedml_plot2D'. From 'sedml_listOfCurves', the role 'sedml_listOfCurves' has cardinality 0..*, and from 'sedml_plot2D', the role 'sedml_plot2D28' has cardinality 0..*.
+An association connects 'sedml_curve' and 'sedml_listOfCurves'. From 'sedml_curve', the role 'sedml_curve' has cardinality 0..*, and from 'sedml_listOfCurves', the role 'sedml_listOfCurves30' has cardinality 0..*.
+An association connects 'sedml_listOfVariables' and 'sedml_dataGenerator'. From 'sedml_listOfVariables', the role 'sedml_listOfVariables' has cardinality 0..*, and from 'sedml_dataGenerator', the role 'sedml_dataGenerator32' has cardinality 0..*.
+An association connects 'sedml_dataGenerator' and 'sedml_math'. From 'sedml_dataGenerator', the role 'sedml_dataGenerator34' has cardinality 0..*, and from 'sedml_math', the role 'sedml_math' has cardinality 0..*.
+An association connects 'sedml_listOfVariables' and 'sedml_variable'. From 'sedml_listOfVariables', the role 'sedml_listOfVariables36' has cardinality 0..*, and from 'sedml_variable', the role 'sedml_variable' has cardinality 0..*.
+An association connects 'sedml_variable' and 'sedml_task'. From 'sedml_variable', the role 'sedml_variable38' has cardinality 0..*, and from 'sedml_task', the role 'sedml_task39' has cardinality 0..*.

@@ -1,0 +1,31 @@
+The domain model 'sQL' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'sQL_Column' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'isNull', which is of type bool.
+
+'sQL_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'sQL_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sQL_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'sQL_DataBase' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'boolean', 'varchar', 'number', 'date', 'int'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sQL_DataBase' and 'sQL_Table'. From 'sQL_DataBase', the role 'sQL_DataBase' has cardinality 0..*, and from 'sQL_Table', the role 'sQL_Table' has cardinality 0..*.
+An association connects 'sQL_Table' and 'sQL_Column'. From 'sQL_Table', the role 'sQL_Table2' has cardinality 0..*, and from 'sQL_Column', the role 'sQL_Column' has cardinality 0..*.
+An association connects 'sQL_PrimaryKey' and 'sQL_Table'. From 'sQL_PrimaryKey', the role 'sQL_PrimaryKey' has cardinality 0..*, and from 'sQL_Table', the role 'sQL_Table4' has cardinality 0..*.
+An association connects 'sQL_ForeignKey' and 'sQL_Table'. From 'sQL_ForeignKey', the role 'sQL_ForeignKey' has cardinality 0..*, and from 'sQL_Table', the role 'sQL_Table6' has cardinality 0..*.
+An association connects 'sQL_PrimaryKey' and 'sQL_Column'. From 'sQL_PrimaryKey', the role 'sQL_PrimaryKey8' has cardinality 0..*, and from 'sQL_Column', the role 'sQL_Column9' has cardinality 0..*.
+An association connects 'sQL_ForeignKey' and 'sQL_Column'. From 'sQL_ForeignKey', the role 'sQL_ForeignKey11' has cardinality 0..*, and from 'sQL_Column', the role 'sQL_Column12' has cardinality 0..*.
+An association connects 'sQL_Table' and 'sQL_ForeignKey'. From 'sQL_Table', the role 'sQL_Table15' has cardinality 0..*, and from 'sQL_ForeignKey', the role 'sQL_ForeignKey14' has cardinality 0..*.
+An association connects 'sQL_ForeignKey' and 'sQL_Column'. From 'sQL_ForeignKey', the role 'sQL_ForeignKey17' has cardinality 0..*, and from 'sQL_Column', the role 'sQL_Column18' has cardinality 0..*.

@@ -1,0 +1,340 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 78 main class(es).
+
+'kernel_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_RelationInstanceDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_AbstractRelationDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_expressions_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_RepositoryDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_kernel_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_kernel_NamedDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_BlockStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_TransitionDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_statements_ReturnStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_VariableDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_expressions_ParenExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_literals_FieldLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_RepositoryDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_LibraryDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_literals_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ClockRDL_kernel_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_statements_ConditionalStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_FunctionDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_literals_RecordLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_AbstractRelationDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'literals_ClockLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_RelationInstanceDecl' represents an important domain concept.
+It has one attribute: 'qualifiedName', which is of type str.
+
+'ClockRDL_expressions_PrefixedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_ConstantDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'kernel_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_FormalToActualMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'literals_FieldLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_kernel_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ClockRDL_literals_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ClockRDL_kernel_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_expressions_SelectedExp' represents an important domain concept.
+It has one attribute: 'selector', which is of type str.
+
+'ClockRDL_declarations_SystemDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ClockReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_literals_ClockLiteral' represents an important domain concept.
+It has the following attributes: 'isInternal', which is of type str; 'name', which is of type str.
+
+'ClockRDL_declarations_LibraryItemDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'kernel_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_PrefixedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_statements_LoopStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'kernel_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_expressions_UnaryExp' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ClockRDL_declarations_PrimitiveFunctionDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_statements_AssignmentStmt' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'declarations_ArgumentDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'kernel_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_AbstractFunctionDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractRelationDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_statements_BlockStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_literals_ArrayLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_CompositeRelationDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'kernel_NamedDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_LibraryItemDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_TransitionDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_expressions_IndexedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_PrimitiveRelationDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_expressions_ReferenceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_FormalToActualMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'RepositoryDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_expressions_ClockReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_literals_QueueLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_kernel_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_ArgumentDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_ClockDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractFunctionDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'PrefixedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_expressions_ConditionalExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_expressions_FunctionCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_declarations_ClockDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockRDL_expressions_BinaryExp' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UnaryOperator' defines the following possible values: 'UNOT', 'UPLUS', 'UMINUS'.
+The enumeration 'BinaryOperator' defines the following possible values: 'BEQ', 'BGE', 'BGT', 'BDIV', 'BNE', 'BLE', 'BPLUS', 'BLT', 'BMINUS', 'BMOD', 'BNOR', 'BMUL', 'BXOR', 'BOR', 'BNAND', 'BAND'.
+The enumeration 'AssignmentOperator' defines the following possible values: 'MINUSASSIGN', 'ANDASSIGN', 'DIVASSIGN', 'PLUSASSIGN', 'MODASSIGN', 'MULTASSIGN', 'ASSIGN', 'ORASSIGN'.
+
+The model also captures inheritance relationships between classes.
+The class 'ClockRDL_kernel_NamedElement' is a specialization of 'Element'.
+The class 'ClockRDL_kernel_Declaration' is a specialization of 'Element'.
+The class 'ClockRDL_kernel_NamedDeclaration' is a specialization of 'kernel_Declaration'.
+The class 'ClockRDL_kernel_NamedDeclaration' is a specialization of 'kernel_NamedElement'.
+The class 'ClockRDL_kernel_Statement' is a specialization of 'Element'.
+The class 'ClockRDL_kernel_Expression' is a specialization of 'kernel_Element'.
+The class 'ClockRDL_kernel_Expression' is a specialization of 'kernel_Statement'.
+The class 'ClockRDL_expressions_Literal' is a specialization of 'Expression'.
+The class 'ClockRDL_expressions_ParenExp' is a specialization of 'Expression'.
+The class 'ClockRDL_expressions_PrefixedExp' is a specialization of 'Expression'.
+The class 'ClockRDL_expressions_IndexedExp' is a specialization of 'PrefixedExp'.
+The class 'ClockRDL_expressions_SelectedExp' is a specialization of 'PrefixedExp'.
+The class 'ClockRDL_expressions_FunctionCallExp' is a specialization of 'expressions_PrefixedExp'.
+The class 'ClockRDL_expressions_FunctionCallExp' is a specialization of 'kernel_Statement'.
+The class 'ClockRDL_expressions_ReferenceExp' is a specialization of 'Expression'.
+The class 'ClockRDL_expressions_ClockReference' is a specialization of 'ReferenceExp'.
+The class 'ClockRDL_expressions_UnaryExp' is a specialization of 'Expression'.
+The class 'ClockRDL_expressions_BinaryExp' is a specialization of 'Expression'.
+The class 'ClockRDL_expressions_ConditionalExp' is a specialization of 'Expression'.
+The class 'ClockRDL_literals_IntegerLiteral' is a specialization of 'Literal'.
+The class 'ClockRDL_literals_BooleanLiteral' is a specialization of 'Literal'.
+The class 'ClockRDL_literals_ArrayLiteral' is a specialization of 'Literal'.
+The class 'ClockRDL_literals_FieldLiteral' is a specialization of 'kernel_NamedElement'.
+The class 'ClockRDL_literals_FieldLiteral' is a specialization of 'expressions_Literal'.
+The class 'ClockRDL_literals_RecordLiteral' is a specialization of 'Literal'.
+The class 'ClockRDL_literals_QueueLiteral' is a specialization of 'Literal'.
+The class 'ClockRDL_literals_ClockLiteral' is a specialization of 'Literal'.
+The class 'ClockRDL_statements_AssignmentStmt' is a specialization of 'Statement'.
+The class 'ClockRDL_statements_ConditionalStmt' is a specialization of 'Statement'.
+The class 'ClockRDL_statements_LoopStmt' is a specialization of 'Statement'.
+The class 'ClockRDL_statements_ReturnStmt' is a specialization of 'Statement'.
+The class 'ClockRDL_statements_BlockStmt' is a specialization of 'Statement'.
+The class 'ClockRDL_declarations_ClockDecl' is a specialization of 'NamedDeclaration'.
+The class 'ClockRDL_declarations_VariableDecl' is a specialization of 'NamedDeclaration'.
+The class 'ClockRDL_declarations_ConstantDecl' is a specialization of 'VariableDecl'.
+The class 'ClockRDL_declarations_ArgumentDecl' is a specialization of 'NamedDeclaration'.
+The class 'ClockRDL_declarations_AbstractFunctionDecl' is a specialization of 'NamedDeclaration'.
+The class 'ClockRDL_declarations_PrimitiveFunctionDecl' is a specialization of 'AbstractFunctionDecl'.
+The class 'ClockRDL_declarations_FunctionDecl' is a specialization of 'AbstractFunctionDecl'.
+The class 'ClockRDL_declarations_TransitionDecl' is a specialization of 'Declaration'.
+The class 'ClockRDL_declarations_AbstractRelationDecl' is a specialization of 'kernel_NamedDeclaration'.
+The class 'ClockRDL_declarations_AbstractRelationDecl' is a specialization of 'declarations_LibraryItemDecl'.
+The class 'ClockRDL_declarations_PrimitiveRelationDecl' is a specialization of 'AbstractRelationDecl'.
+The class 'ClockRDL_declarations_CompositeRelationDecl' is a specialization of 'AbstractRelationDecl'.
+The class 'ClockRDL_declarations_RelationInstanceDecl' is a specialization of 'NamedDeclaration'.
+The class 'ClockRDL_declarations_LibraryItemDecl' is a specialization of 'Declaration'.
+The class 'ClockRDL_declarations_RepositoryDecl' is a specialization of 'NamedDeclaration'.
+The class 'ClockRDL_declarations_LibraryDecl' is a specialization of 'declarations_RepositoryDecl'.
+The class 'ClockRDL_declarations_LibraryDecl' is a specialization of 'declarations_LibraryItemDecl'.
+The class 'ClockRDL_declarations_SystemDecl' is a specialization of 'RepositoryDecl'.
+
+Relationships between classes are modeled using associations.
+An association connects 'kernel_Expression' and 'ClockRDL_expressions_ParenExp'. From 'kernel_Expression', the role 'kernel_Expression' has cardinality 0..*, and from 'ClockRDL_expressions_ParenExp', the role 'ClockRDL_expressions_ParenExp' has cardinality 0..*.
+An association connects 'ClockRDL_expressions_PrefixedExp' and 'kernel_Expression'. From 'ClockRDL_expressions_PrefixedExp', the role 'ClockRDL_expressions_PrefixedExp' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression2' has cardinality 0..*.
+An association connects 'kernel_Expression' and 'ClockRDL_expressions_IndexedExp'. From 'kernel_Expression', the role 'kernel_Expression4' has cardinality 0..*, and from 'ClockRDL_expressions_IndexedExp', the role 'ClockRDL_expressions_IndexedExp' has cardinality 0..*.
+An association connects 'kernel_Expression' and 'ClockRDL_expressions_FunctionCallExp'. From 'kernel_Expression', the role 'kernel_Expression6' has cardinality 0..*, and from 'ClockRDL_expressions_FunctionCallExp', the role 'ClockRDL_expressions_FunctionCallExp' has cardinality 0..*.
+An association connects 'ClockRDL_expressions_ReferenceExp' and 'kernel_NamedDeclaration'. From 'ClockRDL_expressions_ReferenceExp', the role 'ClockRDL_expressions_ReferenceExp' has cardinality 0..*, and from 'kernel_NamedDeclaration', the role 'kernel_NamedDeclaration' has cardinality 0..*.
+An association connects 'ClockRDL_expressions_UnaryExp' and 'kernel_Expression'. From 'ClockRDL_expressions_UnaryExp', the role 'ClockRDL_expressions_UnaryExp' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression9' has cardinality 0..*.
+An association connects 'ClockRDL_expressions_BinaryExp' and 'kernel_Expression'. From 'ClockRDL_expressions_BinaryExp', the role 'ClockRDL_expressions_BinaryExp' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression11' has cardinality 0..*.
+An association connects 'ClockRDL_expressions_BinaryExp' and 'kernel_Expression'. From 'ClockRDL_expressions_BinaryExp', the role 'ClockRDL_expressions_BinaryExp13' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression14' has cardinality 0..*.
+An association connects 'kernel_Expression' and 'ClockRDL_expressions_ConditionalExp'. From 'kernel_Expression', the role 'kernel_Expression16' has cardinality 0..*, and from 'ClockRDL_expressions_ConditionalExp', the role 'ClockRDL_expressions_ConditionalExp' has cardinality 0..*.
+An association connects 'kernel_Expression' and 'ClockRDL_expressions_ConditionalExp'. From 'kernel_Expression', the role 'kernel_Expression19' has cardinality 0..*, and from 'ClockRDL_expressions_ConditionalExp', the role 'ClockRDL_expressions_ConditionalExp18' has cardinality 0..*.
+An association connects 'ClockRDL_expressions_ConditionalExp' and 'kernel_Expression'. From 'ClockRDL_expressions_ConditionalExp', the role 'ClockRDL_expressions_ConditionalExp21' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression22' has cardinality 0..*.
+An association connects 'kernel_Expression' and 'ClockRDL_literals_ArrayLiteral'. From 'kernel_Expression', the role 'kernel_Expression24' has cardinality 0..*, and from 'ClockRDL_literals_ArrayLiteral', the role 'ClockRDL_literals_ArrayLiteral' has cardinality 0..*.
+An association connects 'ClockRDL_literals_FieldLiteral' and 'kernel_Expression'. From 'ClockRDL_literals_FieldLiteral', the role 'ClockRDL_literals_FieldLiteral' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression26' has cardinality 0..*.
+An association connects 'ClockRDL_literals_RecordLiteral' and 'literals_FieldLiteral'. From 'ClockRDL_literals_RecordLiteral', the role 'ClockRDL_literals_RecordLiteral' has cardinality 0..*, and from 'literals_FieldLiteral', the role 'literals_FieldLiteral' has cardinality 0..*.
+An association connects 'kernel_Expression' and 'ClockRDL_literals_QueueLiteral'. From 'kernel_Expression', the role 'kernel_Expression29' has cardinality 0..*, and from 'ClockRDL_literals_QueueLiteral', the role 'ClockRDL_literals_QueueLiteral' has cardinality 0..*.
+An association connects 'ClockRDL_statements_AssignmentStmt' and 'kernel_Expression'. From 'ClockRDL_statements_AssignmentStmt', the role 'ClockRDL_statements_AssignmentStmt' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression31' has cardinality 0..*.
+An association connects 'ClockRDL_statements_AssignmentStmt' and 'kernel_Expression'. From 'ClockRDL_statements_AssignmentStmt', the role 'ClockRDL_statements_AssignmentStmt33' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression34' has cardinality 0..*.
+An association connects 'ClockRDL_statements_ConditionalStmt' and 'kernel_Expression'. From 'ClockRDL_statements_ConditionalStmt', the role 'ClockRDL_statements_ConditionalStmt' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression36' has cardinality 0..*.
+An association connects 'statements_BlockStmt' and 'ClockRDL_statements_ConditionalStmt'. From 'statements_BlockStmt', the role 'statements_BlockStmt' has cardinality 0..*, and from 'ClockRDL_statements_ConditionalStmt', the role 'ClockRDL_statements_ConditionalStmt38' has cardinality 0..*.
+An association connects 'ClockRDL_statements_ConditionalStmt' and 'statements_BlockStmt'. From 'ClockRDL_statements_ConditionalStmt', the role 'ClockRDL_statements_ConditionalStmt40' has cardinality 0..*, and from 'statements_BlockStmt', the role 'statements_BlockStmt41' has cardinality 0..*.
+An association connects 'ClockRDL_statements_LoopStmt' and 'kernel_Expression'. From 'ClockRDL_statements_LoopStmt', the role 'ClockRDL_statements_LoopStmt' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression43' has cardinality 0..*.
+An association connects 'ClockRDL_statements_LoopStmt' and 'statements_BlockStmt'. From 'ClockRDL_statements_LoopStmt', the role 'ClockRDL_statements_LoopStmt45' has cardinality 0..*, and from 'statements_BlockStmt', the role 'statements_BlockStmt46' has cardinality 0..*.
+An association connects 'ClockRDL_statements_ReturnStmt' and 'kernel_Expression'. From 'ClockRDL_statements_ReturnStmt', the role 'ClockRDL_statements_ReturnStmt' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression48' has cardinality 0..*.
+An association connects 'ClockRDL_statements_BlockStmt' and 'kernel_NamedDeclaration'. From 'ClockRDL_statements_BlockStmt', the role 'ClockRDL_statements_BlockStmt' has cardinality 0..*, and from 'kernel_NamedDeclaration', the role 'kernel_NamedDeclaration50' has cardinality 0..*.
+An association connects 'ClockRDL_statements_BlockStmt' and 'kernel_Statement'. From 'ClockRDL_statements_BlockStmt', the role 'ClockRDL_statements_BlockStmt52' has cardinality 0..*, and from 'kernel_Statement', the role 'kernel_Statement' has cardinality 0..*.
+An association connects 'literals_ClockLiteral' and 'ClockRDL_declarations_ClockDecl'. From 'literals_ClockLiteral', the role 'literals_ClockLiteral' has cardinality 0..*, and from 'ClockRDL_declarations_ClockDecl', the role 'ClockRDL_declarations_ClockDecl' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_VariableDecl' and 'kernel_Expression'. From 'ClockRDL_declarations_VariableDecl', the role 'ClockRDL_declarations_VariableDecl' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression55' has cardinality 0..*.
+An association connects 'declarations_ArgumentDecl' and 'ClockRDL_declarations_AbstractFunctionDecl'. From 'declarations_ArgumentDecl', the role 'declarations_ArgumentDecl' has cardinality 0..*, and from 'ClockRDL_declarations_AbstractFunctionDecl', the role 'ClockRDL_declarations_AbstractFunctionDecl' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_FunctionDecl' and 'statements_BlockStmt'. From 'ClockRDL_declarations_FunctionDecl', the role 'ClockRDL_declarations_FunctionDecl' has cardinality 0..*, and from 'statements_BlockStmt', the role 'statements_BlockStmt58' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_TransitionDecl' and 'kernel_Expression'. From 'ClockRDL_declarations_TransitionDecl', the role 'ClockRDL_declarations_TransitionDecl' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression60' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_TransitionDecl' and 'expressions_ClockReference'. From 'ClockRDL_declarations_TransitionDecl', the role 'ClockRDL_declarations_TransitionDecl62' has cardinality 0..*, and from 'expressions_ClockReference', the role 'expressions_ClockReference' has cardinality 0..*.
+An association connects 'kernel_Statement' and 'ClockRDL_declarations_TransitionDecl'. From 'kernel_Statement', the role 'kernel_Statement65' has cardinality 0..*, and from 'ClockRDL_declarations_TransitionDecl', the role 'ClockRDL_declarations_TransitionDecl64' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_AbstractRelationDecl' and 'declarations_ArgumentDecl'. From 'ClockRDL_declarations_AbstractRelationDecl', the role 'ClockRDL_declarations_AbstractRelationDecl' has cardinality 0..*, and from 'declarations_ArgumentDecl', the role 'declarations_ArgumentDecl67' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_AbstractRelationDecl' and 'kernel_NamedDeclaration'. From 'ClockRDL_declarations_AbstractRelationDecl', the role 'ClockRDL_declarations_AbstractRelationDecl69' has cardinality 0..*, and from 'kernel_NamedDeclaration', the role 'kernel_NamedDeclaration70' has cardinality 0..*.
+An association connects 'declarations_TransitionDecl' and 'ClockRDL_declarations_PrimitiveRelationDecl'. From 'declarations_TransitionDecl', the role 'declarations_TransitionDecl' has cardinality 0..*, and from 'ClockRDL_declarations_PrimitiveRelationDecl', the role 'ClockRDL_declarations_PrimitiveRelationDecl' has cardinality 0..*.
+An association connects 'declarations_ClockDecl' and 'ClockRDL_declarations_CompositeRelationDecl'. From 'declarations_ClockDecl', the role 'declarations_ClockDecl' has cardinality 0..*, and from 'ClockRDL_declarations_CompositeRelationDecl', the role 'ClockRDL_declarations_CompositeRelationDecl' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_CompositeRelationDecl' and 'declarations_RelationInstanceDecl'. From 'ClockRDL_declarations_CompositeRelationDecl', the role 'ClockRDL_declarations_CompositeRelationDecl74' has cardinality 0..*, and from 'declarations_RelationInstanceDecl', the role 'declarations_RelationInstanceDecl' has cardinality 0..*.
+An association connects 'declarations_AbstractRelationDecl' and 'ClockRDL_declarations_RelationInstanceDecl'. From 'declarations_AbstractRelationDecl', the role 'declarations_AbstractRelationDecl' has cardinality 0..*, and from 'ClockRDL_declarations_RelationInstanceDecl', the role 'ClockRDL_declarations_RelationInstanceDecl' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_RelationInstanceDecl' and 'declarations_FormalToActualMapEntry'. From 'ClockRDL_declarations_RelationInstanceDecl', the role 'ClockRDL_declarations_RelationInstanceDecl77' has cardinality 0..*, and from 'declarations_FormalToActualMapEntry', the role 'declarations_FormalToActualMapEntry' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_FormalToActualMapEntry' and 'kernel_Expression'. From 'ClockRDL_declarations_FormalToActualMapEntry', the role 'ClockRDL_declarations_FormalToActualMapEntry' has cardinality 0..*, and from 'kernel_Expression', the role 'kernel_Expression79' has cardinality 0..*.
+An association connects 'kernel_Declaration' and 'ClockRDL_declarations_FormalToActualMapEntry'. From 'kernel_Declaration', the role 'kernel_Declaration' has cardinality 0..*, and from 'ClockRDL_declarations_FormalToActualMapEntry', the role 'ClockRDL_declarations_FormalToActualMapEntry81' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_LibraryItemDecl' and 'declarations_RepositoryDecl'. From 'ClockRDL_declarations_LibraryItemDecl', the role '0' has cardinality 0..*, and from 'declarations_RepositoryDecl', the role '#' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_RepositoryDecl' and 'declarations_LibraryItemDecl'. From 'ClockRDL_declarations_RepositoryDecl', the role '084' has cardinality 0..*, and from 'declarations_LibraryItemDecl', the role '#85' has cardinality 0..*.
+An association connects 'ClockRDL_declarations_SystemDecl' and 'declarations_RelationInstanceDecl'. From 'ClockRDL_declarations_SystemDecl', the role 'ClockRDL_declarations_SystemDecl' has cardinality 0..*, and from 'declarations_RelationInstanceDecl', the role 'declarations_RelationInstanceDecl87' has cardinality 0..*.

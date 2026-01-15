@@ -1,0 +1,204 @@
+The domain model 'netModel' describes the core structural elements and their relationships within the system.
+
+The model defines 48 main class(es).
+
+'netModel_ParamsBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_SimpleMember' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BlockType' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_EnumMember' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'assignment', which is of type bool; 'value', which is of type int.
+
+'netModel_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'netModel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_Model' represents an important domain concept.
+It has one attribute: 'packageName', which is of type str.
+
+'netModel_ClientBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_StringLiteral' represents an important domain concept.
+It has one attribute: 'literal', which is of type str.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_LongType' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_TypedMember' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_DoubleType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_BlockType' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_ComplexTypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_EnumTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_NumericLiteral' represents an important domain concept.
+It has one attribute: 'literal', which is of type str.
+
+'netModel_UserTypeDeclaration' represents an important domain concept.
+It has the following attributes: 'keyword', which is of type str; 'nogen', which is of type bool.
+
+'HttpMethodBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_SimpleMemberAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_BodyBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_HttpMethod' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'netModel_NumericType' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_EnumTypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ClientBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_ComplexTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_Client' represents an important domain concept.
+It has one attribute: 'baseUrl', which is of type str.
+
+'netModel_HttpMethodBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'IntrinsicType' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_HeaderBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_Path' represents an important domain concept.
+It has one attribute: 'arb', which is of type str.
+
+'netModel_IntrinsicType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'netModel_GenericListType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'netModel_UserType' represents an important domain concept.
+It does not declare any attributes.
+
+'UserTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_ResponseBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_Header' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'netModel_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'literal', which is of type str.
+
+'netModel_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'netModel_Declaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'netModel_SkipMember' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BooleanValue' defines the following possible values: 'false', 'true'.
+The enumeration 'HttpMethodType' defines the following possible values: 'patch', 'post', 'delete', 'put', 'get'.
+
+The model also captures inheritance relationships between classes.
+The class 'netModel_Client' is a specialization of 'Declaration'.
+The class 'netModel_HeaderBlock' is a specialization of 'ClientBlock'.
+The class 'netModel_HeaderBlock' is a specialization of 'HttpMethodBlock'.
+The class 'netModel_HttpMethod' is a specialization of 'ClientBlock'.
+The class 'netModel_ParamsBlock' is a specialization of 'ClientBlock'.
+The class 'netModel_ParamsBlock' is a specialization of 'HttpMethodBlock'.
+The class 'netModel_BodyBlock' is a specialization of 'HttpMethodBlock'.
+The class 'netModel_ResponseBlock' is a specialization of 'HttpMethodBlock'.
+The class 'netModel_TypedMember' is a specialization of 'Member'.
+The class 'netModel_SkipMember' is a specialization of 'Member'.
+The class 'netModel_Type' is a specialization of 'BlockType'.
+The class 'netModel_GenericListType' is a specialization of 'Type'.
+The class 'netModel_UserType' is a specialization of 'Type'.
+The class 'netModel_UserTypeDeclaration' is a specialization of 'Declaration'.
+The class 'netModel_ComplexTypeDeclaration' is a specialization of 'UserTypeDeclaration'.
+The class 'netModel_EnumTypeDeclaration' is a specialization of 'UserTypeDeclaration'.
+The class 'netModel_ComplexTypeLiteral' is a specialization of 'BlockType'.
+The class 'netModel_IntrinsicType' is a specialization of 'Type'.
+The class 'netModel_StringType' is a specialization of 'IntrinsicType'.
+The class 'netModel_BooleanType' is a specialization of 'IntrinsicType'.
+The class 'netModel_NumericType' is a specialization of 'IntrinsicType'.
+The class 'netModel_IntegerType' is a specialization of 'NumericType'.
+The class 'netModel_LongType' is a specialization of 'NumericType'.
+The class 'netModel_DoubleType' is a specialization of 'NumericType'.
+The class 'netModel_BooleanLiteral' is a specialization of 'Literal'.
+The class 'netModel_StringLiteral' is a specialization of 'Literal'.
+The class 'netModel_NumericLiteral' is a specialization of 'Literal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'netModel_Model' and 'netModel_Declaration'. From 'netModel_Model', the role 'netModel_Model' has cardinality 0..*, and from 'netModel_Declaration', the role 'netModel_Declaration' has cardinality 0..*.
+An association connects 'netModel_ClientBlock' and 'netModel_Client'. From 'netModel_ClientBlock', the role 'netModel_ClientBlock' has cardinality 0..*, and from 'netModel_Client', the role 'netModel_Client' has cardinality 0..*.
+An association connects 'netModel_Header' and 'netModel_HeaderBlock'. From 'netModel_Header', the role 'netModel_Header' has cardinality 0..*, and from 'netModel_HeaderBlock', the role 'netModel_HeaderBlock' has cardinality 0..*.
+An association connects 'netModel_HttpMethod' and 'netModel_Path'. From 'netModel_HttpMethod', the role 'netModel_HttpMethod' has cardinality 0..*, and from 'netModel_Path', the role 'netModel_Path' has cardinality 0..*.
+An association connects 'netModel_HttpMethodBlock' and 'netModel_HttpMethod'. From 'netModel_HttpMethodBlock', the role 'netModel_HttpMethodBlock' has cardinality 0..*, and from 'netModel_HttpMethod', the role 'netModel_HttpMethod5' has cardinality 0..*.
+An association connects 'netModel_SimpleMemberAssignment' and 'netModel_Path'. From 'netModel_SimpleMemberAssignment', the role 'netModel_SimpleMemberAssignment' has cardinality 0..*, and from 'netModel_Path', the role 'netModel_Path7' has cardinality 0..*.
+An association connects 'netModel_ParamsBlock' and 'netModel_SimpleMemberAssignment'. From 'netModel_ParamsBlock', the role 'netModel_ParamsBlock' has cardinality 0..*, and from 'netModel_SimpleMemberAssignment', the role 'netModel_SimpleMemberAssignment9' has cardinality 0..*.
+An association connects 'netModel_SimpleMember' and 'netModel_SimpleMemberAssignment'. From 'netModel_SimpleMember', the role 'netModel_SimpleMember' has cardinality 0..*, and from 'netModel_SimpleMemberAssignment', the role 'netModel_SimpleMemberAssignment11' has cardinality 0..*.
+An association connects 'netModel_Literal' and 'netModel_SimpleMemberAssignment'. From 'netModel_Literal', the role 'netModel_Literal' has cardinality 0..*, and from 'netModel_SimpleMemberAssignment', the role 'netModel_SimpleMemberAssignment13' has cardinality 0..*.
+An association connects 'netModel_BodyBlock' and 'netModel_BlockType'. From 'netModel_BodyBlock', the role 'netModel_BodyBlock' has cardinality 0..*, and from 'netModel_BlockType', the role 'netModel_BlockType' has cardinality 0..*.
+An association connects 'netModel_ComplexTypeDeclaration' and 'netModel_ResponseBlock'. From 'netModel_ComplexTypeDeclaration', the role 'netModel_ComplexTypeDeclaration' has cardinality 0..*, and from 'netModel_ResponseBlock', the role 'netModel_ResponseBlock' has cardinality 0..*.
+An association connects 'netModel_ResponseBlock' and 'netModel_BlockType'. From 'netModel_ResponseBlock', the role 'netModel_ResponseBlock17' has cardinality 0..*, and from 'netModel_BlockType', the role 'netModel_BlockType18' has cardinality 0..*.
+An association connects 'netModel_TypedMember' and 'netModel_Type'. From 'netModel_TypedMember', the role 'netModel_TypedMember' has cardinality 0..*, and from 'netModel_Type', the role 'netModel_Type' has cardinality 0..*.
+An association connects 'netModel_ComplexTypeLiteral' and 'netModel_SkipMember'. From 'netModel_ComplexTypeLiteral', the role 'netModel_ComplexTypeLiteral' has cardinality 0..*, and from 'netModel_SkipMember', the role 'netModel_SkipMember' has cardinality 0..*.
+An association connects 'netModel_SimpleMember' and 'netModel_IntrinsicType'. From 'netModel_SimpleMember', the role 'netModel_SimpleMember22' has cardinality 0..*, and from 'netModel_IntrinsicType', the role 'netModel_IntrinsicType' has cardinality 0..*.
+An association connects 'netModel_Type' and 'netModel_GenericListType'. From 'netModel_Type', the role 'netModel_Type24' has cardinality 0..*, and from 'netModel_GenericListType', the role 'netModel_GenericListType' has cardinality 0..*.
+An association connects 'netModel_UserType' and 'netModel_UserTypeDeclaration'. From 'netModel_UserType', the role 'netModel_UserType' has cardinality 0..*, and from 'netModel_UserTypeDeclaration', the role 'netModel_UserTypeDeclaration' has cardinality 0..*.
+An association connects 'netModel_ComplexTypeLiteral' and 'netModel_ComplexTypeDeclaration'. From 'netModel_ComplexTypeLiteral', the role 'netModel_ComplexTypeLiteral28' has cardinality 0..*, and from 'netModel_ComplexTypeDeclaration', the role 'netModel_ComplexTypeDeclaration27' has cardinality 0..*.
+An association connects 'netModel_IntegerType' and 'netModel_EnumTypeDeclaration'. From 'netModel_IntegerType', the role 'netModel_IntegerType' has cardinality 0..*, and from 'netModel_EnumTypeDeclaration', the role 'netModel_EnumTypeDeclaration' has cardinality 0..*.
+An association connects 'netModel_EnumTypeLiteral' and 'netModel_EnumTypeDeclaration'. From 'netModel_EnumTypeLiteral', the role 'netModel_EnumTypeLiteral' has cardinality 0..*, and from 'netModel_EnumTypeDeclaration', the role 'netModel_EnumTypeDeclaration31' has cardinality 0..*.
+An association connects 'netModel_EnumMember' and 'netModel_EnumTypeLiteral'. From 'netModel_EnumMember', the role 'netModel_EnumMember' has cardinality 0..*, and from 'netModel_EnumTypeLiteral', the role 'netModel_EnumTypeLiteral33' has cardinality 0..*.
+An association connects 'netModel_Member' and 'netModel_ComplexTypeLiteral'. From 'netModel_Member', the role 'netModel_Member' has cardinality 0..*, and from 'netModel_ComplexTypeLiteral', the role 'netModel_ComplexTypeLiteral35' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/simonstastny/Modellbasert-utvikling-av-informasjonssystemer/5-bpmn/model.ecore

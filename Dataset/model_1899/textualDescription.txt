@@ -1,0 +1,293 @@
+The domain model 'dsl' describes the core structural elements and their relationships within the system.
+
+The model defines 61 main class(es).
+
+'File' represents an important domain concept.
+It does not declare any attributes.
+
+'UIComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Json' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Descriptor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Property' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_JeeProject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Subproject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_AbstractFrontElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_MethodBack' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_ServiceFront' represents an important domain concept.
+It has the following attributes: 'method', which is of type str; 'name', which is of type str.
+
+'dsl_Operation' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'dsl_RelationArch' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'name', which is of type str.
+
+'dsl_SublayerSegment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_RouterComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_GenericClass' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Md' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_JavaApp' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_NativeClass' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Technology' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Submodule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Annotation' represents an important domain concept.
+It has one attribute: 'propertie', which is of type str.
+
+'dsl_LayerSegmentRelation' represents an important domain concept.
+It has one attribute: 'layerSegment', which is of type str.
+
+'dsl_Js' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Functionality' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Einterface' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Architecture' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_SpecialEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Layer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Container' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Css' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Directory' represents an important domain concept.
+It has the following attributes: 'purpose', which is of type str; 'name', which is of type str.
+
+'dsl_Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_System' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ActionDispatcher' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Operateson' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_RelationDom' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Reducer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_LayerSegment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_AbstractMethod' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_EntityName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Transaction' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'dsl_Eclass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Eclass' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_File' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'dsl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Library' represents an important domain concept.
+It has the following attributes: 'isNative', which is of type str; 'name', which is of type str.
+
+'dsl_GeneralEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ReactApp' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_UIComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Epackage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_ActionCreator' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'AbstractFrontElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_JsModule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_AbstractClass' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Visualizer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'dsl_Type' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_AbstractClass' is a specialization of 'Eclass'.
+The class 'dsl_GenericClass' is a specialization of 'Eclass'.
+The class 'dsl_NativeClass' is a specialization of 'Eclass'.
+The class 'dsl_Annotation' is a specialization of 'Eclass'.
+The class 'dsl_ReactApp' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_Functionality' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_RouterComponent' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_RouterComponent' is a specialization of 'UIComponent'.
+The class 'dsl_Container' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_Visualizer' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_Visualizer' is a specialization of 'UIComponent'.
+The class 'dsl_ServiceFront' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_Directory' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_File' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_Md' is a specialization of 'File'.
+The class 'dsl_Js' is a specialization of 'File'.
+The class 'dsl_Json' is a specialization of 'File'.
+The class 'dsl_Css' is a specialization of 'File'.
+The class 'dsl_State' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_Action' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_ActionCreator' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_ActionDispatcher' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_Reducer' is a specialization of 'AbstractFrontElement'.
+The class 'dsl_JsModule' is a specialization of 'AbstractFrontElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dsl_Domain' and 'dsl_System'. From 'dsl_Domain', the role 'dsl_Domain' has cardinality 0..*, and from 'dsl_System', the role 'dsl_System' has cardinality 0..*.
+An association connects 'dsl_Architecture' and 'dsl_System'. From 'dsl_Architecture', the role 'dsl_Architecture' has cardinality 0..*, and from 'dsl_System', the role 'dsl_System2' has cardinality 0..*.
+An association connects 'dsl_System' and 'dsl_Technology'. From 'dsl_System', the role 'dsl_System4' has cardinality 0..*, and from 'dsl_Technology', the role 'dsl_Technology' has cardinality 0..*.
+An association connects 'dsl_Domain' and 'dsl_Type'. From 'dsl_Domain', the role 'dsl_Domain6' has cardinality 0..*, and from 'dsl_Type', the role 'dsl_Type' has cardinality 0..*.
+An association connects 'dsl_Domain' and 'dsl_Module'. From 'dsl_Domain', the role 'dsl_Domain8' has cardinality 0..*, and from 'dsl_Module', the role 'dsl_Module' has cardinality 0..*.
+An association connects 'dsl_Domain' and 'dsl_RelationDom'. From 'dsl_Domain', the role 'dsl_Domain10' has cardinality 0..*, and from 'dsl_RelationDom', the role 'dsl_RelationDom' has cardinality 0..*.
+An association connects 'dsl_Module' and 'dsl_Submodule'. From 'dsl_Module', the role 'dsl_Module12' has cardinality 0..*, and from 'dsl_Submodule', the role 'dsl_Submodule' has cardinality 0..*.
+An association connects 'dsl_Submodule' and 'dsl_Operation'. From 'dsl_Submodule', the role 'dsl_Submodule14' has cardinality 0..*, and from 'dsl_Operation', the role 'dsl_Operation' has cardinality 0..*.
+An association connects 'dsl_Submodule' and 'dsl_EObject'. From 'dsl_Submodule', the role 'dsl_Submodule16' has cardinality 0..*, and from 'dsl_EObject', the role 'dsl_EObject' has cardinality 0..*.
+An association connects 'dsl_EntityName' and 'dsl_Operation'. From 'dsl_EntityName', the role 'dsl_EntityName' has cardinality 0..*, and from 'dsl_Operation', the role 'dsl_Operation18' has cardinality 0..*.
+An association connects 'dsl_GeneralEntity' and 'dsl_EntityName'. From 'dsl_GeneralEntity', the role 'dsl_GeneralEntity' has cardinality 0..*, and from 'dsl_EntityName', the role 'dsl_EntityName20' has cardinality 0..*.
+An association connects 'dsl_GeneralEntity' and 'dsl_Property'. From 'dsl_GeneralEntity', the role 'dsl_GeneralEntity22' has cardinality 0..*, and from 'dsl_Property', the role 'dsl_Property' has cardinality 0..*.
+An association connects 'dsl_Type' and 'dsl_Property'. From 'dsl_Type', the role 'dsl_Type25' has cardinality 0..*, and from 'dsl_Property', the role 'dsl_Property24' has cardinality 0..*.
+An association connects 'dsl_EntityName' and 'dsl_SpecialEntity'. From 'dsl_EntityName', the role 'dsl_EntityName27' has cardinality 0..*, and from 'dsl_SpecialEntity', the role 'dsl_SpecialEntity' has cardinality 0..*.
+An association connects 'dsl_SpecialEntity' and 'dsl_Property'. From 'dsl_SpecialEntity', the role 'dsl_SpecialEntity29' has cardinality 0..*, and from 'dsl_Property', the role 'dsl_Property30' has cardinality 0..*.
+An association connects 'dsl_Transaction' and 'dsl_SpecialEntity'. From 'dsl_Transaction', the role 'dsl_Transaction' has cardinality 0..*, and from 'dsl_SpecialEntity', the role 'dsl_SpecialEntity32' has cardinality 0..*.
+An association connects 'dsl_Operateson' and 'dsl_Transaction'. From 'dsl_Operateson', the role 'dsl_Operateson' has cardinality 0..*, and from 'dsl_Transaction', the role 'dsl_Transaction34' has cardinality 0..*.
+An association connects 'dsl_EntityName' and 'dsl_Operateson'. From 'dsl_EntityName', the role 'dsl_EntityName37' has cardinality 0..*, and from 'dsl_Operateson', the role 'dsl_Operateson36' has cardinality 0..*.
+An association connects 'dsl_RelationDom' and 'dsl_EntityName'. From 'dsl_RelationDom', the role 'dsl_RelationDom39' has cardinality 0..*, and from 'dsl_EntityName', the role 'dsl_EntityName40' has cardinality 0..*.
+An association connects 'dsl_RelationDom' and 'dsl_EntityName'. From 'dsl_RelationDom', the role 'dsl_RelationDom42' has cardinality 0..*, and from 'dsl_EntityName', the role 'dsl_EntityName43' has cardinality 0..*.
+An association connects 'dsl_Component' and 'dsl_Architecture'. From 'dsl_Component', the role 'dsl_Component' has cardinality 0..*, and from 'dsl_Architecture', the role 'dsl_Architecture45' has cardinality 0..*.
+An association connects 'dsl_RelationArch' and 'dsl_Architecture'. From 'dsl_RelationArch', the role 'dsl_RelationArch' has cardinality 0..*, and from 'dsl_Architecture', the role 'dsl_Architecture47' has cardinality 0..*.
+An association connects 'dsl_Component' and 'dsl_Layer'. From 'dsl_Component', the role 'dsl_Component49' has cardinality 0..*, and from 'dsl_Layer', the role 'dsl_Layer' has cardinality 0..*.
+An association connects 'dsl_LayerSegment' and 'dsl_Layer'. From 'dsl_LayerSegment', the role 'dsl_LayerSegment' has cardinality 0..*, and from 'dsl_Layer', the role 'dsl_Layer51' has cardinality 0..*.
+An association connects 'dsl_LayerSegment' and 'dsl_LayerSegmentRelation'. From 'dsl_LayerSegment', the role 'dsl_LayerSegment53' has cardinality 0..*, and from 'dsl_LayerSegmentRelation', the role 'dsl_LayerSegmentRelation' has cardinality 0..*.
+An association connects 'dsl_LayerSegment' and 'dsl_SublayerSegment'. From 'dsl_LayerSegment', the role 'dsl_LayerSegment55' has cardinality 0..*, and from 'dsl_SublayerSegment', the role 'dsl_SublayerSegment' has cardinality 0..*.
+An association connects 'dsl_Technology' and 'dsl_JavaApp'. From 'dsl_Technology', the role 'dsl_Technology57' has cardinality 0..*, and from 'dsl_JavaApp', the role 'dsl_JavaApp' has cardinality 0..*.
+An association connects 'dsl_Technology' and 'dsl_ReactApp'. From 'dsl_Technology', the role 'dsl_Technology59' has cardinality 0..*, and from 'dsl_ReactApp', the role 'dsl_ReactApp' has cardinality 0..*.
+An association connects 'dsl_JeeProject' and 'dsl_JavaApp'. From 'dsl_JeeProject', the role 'dsl_JeeProject' has cardinality 0..*, and from 'dsl_JavaApp', the role 'dsl_JavaApp61' has cardinality 0..*.
+An association connects 'dsl_JeeProject' and 'dsl_Subproject'. From 'dsl_JeeProject', the role 'dsl_JeeProject63' has cardinality 0..*, and from 'dsl_Subproject', the role 'dsl_Subproject' has cardinality 0..*.
+An association connects 'dsl_Epackage' and 'dsl_Subproject'. From 'dsl_Epackage', the role 'dsl_Epackage' has cardinality 0..*, and from 'dsl_Subproject', the role 'dsl_Subproject65' has cardinality 0..*.
+An association connects 'dsl_Library' and 'dsl_Subproject'. From 'dsl_Library', the role 'dsl_Library' has cardinality 0..*, and from 'dsl_Subproject', the role 'dsl_Subproject67' has cardinality 0..*.
+An association connects 'dsl_Subproject' and 'dsl_Descriptor'. From 'dsl_Subproject', the role 'dsl_Subproject69' has cardinality 0..*, and from 'dsl_Descriptor', the role 'dsl_Descriptor' has cardinality 0..*.
+An association connects 'dsl_AbstractClass' and 'dsl_Attribute'. From 'dsl_AbstractClass', the role 'dsl_AbstractClass' has cardinality 0..*, and from 'dsl_Attribute', the role 'dsl_Attribute' has cardinality 0..*.
+An association connects 'dsl_AbstractClass' and 'dsl_MethodBack'. From 'dsl_AbstractClass', the role 'dsl_AbstractClass72' has cardinality 0..*, and from 'dsl_MethodBack', the role 'dsl_MethodBack' has cardinality 0..*.
+An association connects 'dsl_Annotation' and 'dsl_AbstractClass'. From 'dsl_Annotation', the role 'dsl_Annotation' has cardinality 0..*, and from 'dsl_AbstractClass', the role 'dsl_AbstractClass74' has cardinality 0..*.
+An association connects 'dsl_AbstractMethod' and 'dsl_AbstractClass'. From 'dsl_AbstractMethod', the role 'dsl_AbstractMethod' has cardinality 0..*, and from 'dsl_AbstractClass', the role 'dsl_AbstractClass76' has cardinality 0..*.
+An association connects 'dsl_GenericClass' and 'dsl_Attribute'. From 'dsl_GenericClass', the role 'dsl_GenericClass' has cardinality 0..*, and from 'dsl_Attribute', the role 'dsl_Attribute78' has cardinality 0..*.
+An association connects 'dsl_MethodBack' and 'dsl_GenericClass'. From 'dsl_MethodBack', the role 'dsl_MethodBack81' has cardinality 0..*, and from 'dsl_GenericClass', the role 'dsl_GenericClass80' has cardinality 0..*.
+An association connects 'dsl_GenericClass' and 'dsl_Annotation'. From 'dsl_GenericClass', the role 'dsl_GenericClass83' has cardinality 0..*, and from 'dsl_Annotation', the role 'dsl_Annotation84' has cardinality 0..*.
+An association connects 'dsl_AbstractClass' and 'dsl_GenericClass'. From 'dsl_AbstractClass', the role 'dsl_AbstractClass87' has cardinality 0..*, and from 'dsl_GenericClass', the role 'dsl_GenericClass86' has cardinality 0..*.
+An association connects 'dsl_GenericClass' and 'dsl_Einterface'. From 'dsl_GenericClass', the role 'dsl_GenericClass89' has cardinality 0..*, and from 'dsl_Einterface', the role 'dsl_Einterface' has cardinality 0..*.
+An association connects 'dsl_Einterface' and 'dsl_Attribute'. From 'dsl_Einterface', the role 'dsl_Einterface91' has cardinality 0..*, and from 'dsl_Attribute', the role 'dsl_Attribute92' has cardinality 0..*.
+An association connects 'dsl_Einterface' and 'dsl_AbstractMethod'. From 'dsl_Einterface', the role 'dsl_Einterface94' has cardinality 0..*, and from 'dsl_AbstractMethod', the role 'dsl_AbstractMethod95' has cardinality 0..*.
+An association connects 'dsl_NativeClass' and 'dsl_Attribute'. From 'dsl_NativeClass', the role 'dsl_NativeClass' has cardinality 0..*, and from 'dsl_Attribute', the role 'dsl_Attribute97' has cardinality 0..*.
+An association connects 'dsl_MethodBack' and 'dsl_NativeClass'. From 'dsl_MethodBack', the role 'dsl_MethodBack100' has cardinality 0..*, and from 'dsl_NativeClass', the role 'dsl_NativeClass99' has cardinality 0..*.
+An association connects 'dsl_Attribute' and 'dsl_Eclass'. From 'dsl_Attribute', the role 'dsl_Attribute102' has cardinality 0..*, and from 'dsl_Eclass', the role 'dsl_Eclass' has cardinality 0..*.
+An association connects 'dsl_Eclass' and 'dsl_Epackage'. From 'dsl_Eclass', the role 'dsl_Eclass105' has cardinality 0..*, and from 'dsl_Epackage', the role 'dsl_Epackage104' has cardinality 0..*.
+An association connects 'dsl_Eclass' and 'dsl_MethodBack'. From 'dsl_Eclass', the role 'dsl_Eclass108' has cardinality 0..*, and from 'dsl_MethodBack', the role 'dsl_MethodBack107' has cardinality 0..*.
+An association connects 'dsl_MethodBack' and 'dsl_Eclass'. From 'dsl_MethodBack', the role 'dsl_MethodBack110' has cardinality 0..*, and from 'dsl_Eclass', the role 'dsl_Eclass111' has cardinality 0..*.
+An association connects 'dsl_AbstractMethod' and 'dsl_Eclass'. From 'dsl_AbstractMethod', the role 'dsl_AbstractMethod113' has cardinality 0..*, and from 'dsl_Eclass', the role 'dsl_Eclass114' has cardinality 0..*.
+An association connects 'dsl_AbstractMethod' and 'dsl_Eclass'. From 'dsl_AbstractMethod', the role 'dsl_AbstractMethod116' has cardinality 0..*, and from 'dsl_Eclass', the role 'dsl_Eclass117' has cardinality 0..*.
+An association connects 'dsl_Library' and 'dsl_Annotation'. From 'dsl_Library', the role 'dsl_Library119' has cardinality 0..*, and from 'dsl_Annotation', the role 'dsl_Annotation120' has cardinality 0..*.
+An association connects 'dsl_ReactApp' and 'dsl_AbstractFrontElement'. From 'dsl_ReactApp', the role 'dsl_ReactApp122' has cardinality 0..*, and from 'dsl_AbstractFrontElement', the role 'dsl_AbstractFrontElement' has cardinality 0..*.
+An association connects 'dsl_ReactApp' and 'dsl_Functionality'. From 'dsl_ReactApp', the role 'dsl_ReactApp124' has cardinality 0..*, and from 'dsl_Functionality', the role 'dsl_Functionality' has cardinality 0..*.
+An association connects 'dsl_ReactApp' and 'dsl_Directory'. From 'dsl_ReactApp', the role 'dsl_ReactApp126' has cardinality 0..*, and from 'dsl_Directory', the role 'dsl_Directory' has cardinality 0..*.
+An association connects 'dsl_ReactApp' and 'dsl_JsModule'. From 'dsl_ReactApp', the role 'dsl_ReactApp128' has cardinality 0..*, and from 'dsl_JsModule', the role 'dsl_JsModule' has cardinality 0..*.
+An association connects 'dsl_RouterComponent' and 'dsl_Functionality'. From 'dsl_RouterComponent', the role 'dsl_RouterComponent' has cardinality 0..*, and from 'dsl_Functionality', the role 'dsl_Functionality130' has cardinality 0..*.
+An association connects 'dsl_Container' and 'dsl_Functionality'. From 'dsl_Container', the role 'dsl_Container' has cardinality 0..*, and from 'dsl_Functionality', the role 'dsl_Functionality132' has cardinality 0..*.
+An association connects 'dsl_Visualizer' and 'dsl_Functionality'. From 'dsl_Visualizer', the role 'dsl_Visualizer' has cardinality 0..*, and from 'dsl_Functionality', the role 'dsl_Functionality134' has cardinality 0..*.
+An association connects 'dsl_Functionality' and 'dsl_State'. From 'dsl_Functionality', the role 'dsl_Functionality136' has cardinality 0..*, and from 'dsl_State', the role 'dsl_State' has cardinality 0..*.
+An association connects 'dsl_Functionality' and 'dsl_ServiceFront'. From 'dsl_Functionality', the role 'dsl_Functionality138' has cardinality 0..*, and from 'dsl_ServiceFront', the role 'dsl_ServiceFront' has cardinality 0..*.
+An association connects 'dsl_Functionality' and 'dsl_Directory'. From 'dsl_Functionality', the role 'dsl_Functionality140' has cardinality 0..*, and from 'dsl_Directory', the role 'dsl_Directory141' has cardinality 0..*.
+An association connects 'dsl_RouterComponent' and 'dsl_AbstractFrontElement'. From 'dsl_RouterComponent', the role 'dsl_RouterComponent143' has cardinality 0..*, and from 'dsl_AbstractFrontElement', the role 'dsl_AbstractFrontElement144' has cardinality 0..*.
+An association connects 'dsl_RouterComponent' and 'dsl_UIComponent'. From 'dsl_RouterComponent', the role 'dsl_RouterComponent146' has cardinality 0..*, and from 'dsl_UIComponent', the role 'dsl_UIComponent' has cardinality 0..*.
+An association connects 'dsl_AbstractFrontElement' and 'dsl_Container'. From 'dsl_AbstractFrontElement', the role 'dsl_AbstractFrontElement149' has cardinality 0..*, and from 'dsl_Container', the role 'dsl_Container148' has cardinality 0..*.
+An association connects 'dsl_AbstractFrontElement' and 'dsl_Visualizer'. From 'dsl_AbstractFrontElement', the role 'dsl_AbstractFrontElement152' has cardinality 0..*, and from 'dsl_Visualizer', the role 'dsl_Visualizer151' has cardinality 0..*.
+An association connects 'dsl_ServiceFront' and 'dsl_JsModule'. From 'dsl_ServiceFront', the role 'dsl_ServiceFront154' has cardinality 0..*, and from 'dsl_JsModule', the role 'dsl_JsModule155' has cardinality 0..*.
+An association connects 'dsl_File' and 'dsl_Directory'. From 'dsl_File', the role 'dsl_File' has cardinality 0..*, and from 'dsl_Directory', the role 'dsl_Directory157' has cardinality 0..*.
+An association connects 'dsl_Directory' and 'dsl_Directory'. From 'dsl_Directory', the role 'dsl_Directory158' has cardinality 0..*, and from 'dsl_Directory', the role 'dsl_Directory160' has cardinality 0..*.
+An association connects 'dsl_Action' and 'dsl_State'. From 'dsl_Action', the role 'dsl_Action' has cardinality 0..*, and from 'dsl_State', the role 'dsl_State162' has cardinality 0..*.
+An association connects 'dsl_Reducer' and 'dsl_State'. From 'dsl_Reducer', the role 'dsl_Reducer' has cardinality 0..*, and from 'dsl_State', the role 'dsl_State164' has cardinality 0..*.
+An association connects 'dsl_Action' and 'dsl_ActionCreator'. From 'dsl_Action', the role 'dsl_Action166' has cardinality 0..*, and from 'dsl_ActionCreator', the role 'dsl_ActionCreator' has cardinality 0..*.
+An association connects 'dsl_ActionDispatcher' and 'dsl_Action'. From 'dsl_ActionDispatcher', the role 'dsl_ActionDispatcher' has cardinality 0..*, and from 'dsl_Action', the role 'dsl_Action168' has cardinality 0..*.
+An association connects 'dsl_Directory' and 'dsl_Action'. From 'dsl_Directory', the role 'dsl_Directory171' has cardinality 0..*, and from 'dsl_Action', the role 'dsl_Action170' has cardinality 0..*.
+An association connects 'dsl_ActionDispatcher' and 'dsl_ActionCreator'. From 'dsl_ActionDispatcher', the role 'dsl_ActionDispatcher173' has cardinality 0..*, and from 'dsl_ActionCreator', the role 'dsl_ActionCreator174' has cardinality 0..*.
+An association connects 'dsl_Reducer' and 'dsl_AbstractFrontElement'. From 'dsl_Reducer', the role 'dsl_Reducer176' has cardinality 0..*, and from 'dsl_AbstractFrontElement', the role 'dsl_AbstractFrontElement177' has cardinality 0..*.
+An association connects 'dsl_Directory' and 'dsl_JsModule'. From 'dsl_Directory', the role 'dsl_Directory180' has cardinality 0..*, and from 'dsl_JsModule', the role 'dsl_JsModule179' has cardinality 0..*.

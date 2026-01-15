@@ -1,0 +1,316 @@
+The domain model 'SQL2003_evo' describes the core structural elements and their relationships within the system.
+
+The model defines 66 main class(es).
+
+'SQL2003_evo_NumericType' represents an important domain concept.
+It has one attribute: 'descriptor', which is of type str.
+
+'SQL2003_evo_BaseTable' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_DatetimeType' represents an important domain concept.
+It has one attribute: 'descriptor', which is of type str.
+
+'SQL2003_evo_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_evo_Column' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'SQL2003_evo_TypedTable' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_TableConstraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_evo_ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_BinaryStringType' represents an important domain concept.
+It has the following attributes: 'descriptor', which is of type str; 'length_def', which is of type str.
+
+'SQL2003_evo_UserDefinedType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_StringFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'SQL2003_evo_Method' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'name', which is of type str.
+
+'SQL2003_evo_TableCheckConstraint' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'PredefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'UserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_DerivedTable' represents an important domain concept.
+It has one attribute: 'query_expression', which is of type str.
+
+'BaseTable' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_MethodParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_ARRAY' represents an important domain concept.
+It has one attribute: 'num_elements', which is of type str.
+
+'SQL2003_evo_StructuredType' represents an important domain concept.
+It has the following attributes: 'is_final', which is of type bool; 'is_instantiable', which is of type bool.
+
+'SQL2003_evo_MULTISET' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_Restriction' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_IntervalFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_DistinctType' represents an important domain concept.
+It does not declare any attributes.
+
+'Restriction' represents an important domain concept.
+It does not declare any attributes.
+
+'BehaviouralComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_Trigger' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_evo_TriggerDescriptor' represents an important domain concept.
+It has the following attributes: 'level', which is of type str; 'triggeredAction', which is of type str; 'actionTime', which is of type str; 'event', which is of type str.
+
+'SQL2003_evo_PredefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_evo_StructuralComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_evo_BehaviouralComponent' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'name', which is of type str.
+
+'SQL2003_evo_View' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_CharacterStringType' represents an important domain concept.
+It has the following attributes: 'length_def', which is of type str; 'descriptor', which is of type str.
+
+'SQL2003_evo_ParameterWithMode' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'SQL2003_evo_ConstructedType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_evo_NotNull' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_DatetimeFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'SQL2003_evo_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'DerivedTable' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_NumericFeature' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'SQL2003_evo_ROW' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_IntervalType' represents an important domain concept.
+It has one attribute: 'descriptor', which is of type str.
+
+'SQL2003_evo_BooleanType' represents an important domain concept.
+It has one attribute: 'descriptor', which is of type str.
+
+'SQL2003_evo_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_Attribute' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'ConstructedType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_XMLType' represents an important domain concept.
+It has one attribute: 'descriptor', which is of type str.
+
+'ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_ReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'TableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'SQL2003_evo_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SQL2003_evo_ReferentialConstraint' represents an important domain concept.
+It has the following attributes: 'update_action', which is of type str; 'delete_action', which is of type str; 'match', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CharacterStringTypes' defines the following possible values: 'CHARACTER', 'CHARACTERLARGEOBJECT', 'CHARACTERVARYING'.
+The enumeration 'MatchTypes' defines the following possible values: 'SIMPLE', 'TOTAL', 'PARTIAL'.
+The enumeration 'StringFeatures' defines the following possible values: 'length', 'unit', 'multiplier'.
+The enumeration 'DatetimeFeatures' defines a single possible value: 'precision'.
+The enumeration 'BinaryStringTypes' defines the following possible values: 'BINARY', 'BINARYVARYING', 'BINARYLARGEOBJECT'.
+The enumeration 'ReferentialAction' defines the following possible values: 'NO_ACTION', 'SET_NULL', 'SET_DEFAULT', 'RESTRICT', 'CASCADE'.
+The enumeration 'TriggerEvent' defines the following possible values: 'UPDATE', 'INSERT', 'DELETE'.
+The enumeration 'ParameterMode' defines the following possible values: 'OUT', 'INOUT', 'IN'.
+The enumeration 'Multiplier' defines the following possible values: 'M', 'K', 'P', 'T', 'G'.
+The enumeration 'XMLTypes' defines a single possible value: 'XMLTYPE'.
+The enumeration 'DatetimeTypes' defines the following possible values: 'DATE', 'TIMEWITHOUTTIMEZONE', 'TIMESTAMPWITHOUTTIMEZONE', 'TIMEWITHTIMEZONE', 'TIMESTAMPWITHTIMEZONE'.
+The enumeration 'TriggerActionTime' defines the following possible values: 'AFTER', 'BEFORE'.
+The enumeration 'Unit' defines the following possible values: 'CHARACTERS', 'OCTETS'.
+The enumeration 'TriggerLevel' defines the following possible values: 'STATEMENT_LEVEL', 'ROW_LEVEL'.
+The enumeration 'NumericFeatures' defines the following possible values: 'radix', 'precision', 'scale'.
+The enumeration 'IntervalTypes' defines the following possible values: 'DAY_SECOND', 'HOUR_MINUTE', 'SECOND', 'DAY', 'HOUR', 'MONTH', 'YEAR', 'MINUTE', 'MINUTE_SECOND', 'HOUR_SECOND', 'DAY_MINUTE', 'YEAR_MONTH', 'DAY_HOUR'.
+The enumeration 'IntervalFeatures' defines the following possible values: 'leading_precision', 'second_precision', 'end_leading_precision', 'start_leading_precision'.
+The enumeration 'NumericTypes' defines the following possible values: 'FLOAT', 'SMALLINT', 'DECIMAL', 'DOUBLEPRECISION', 'REAL', 'INTEGER', 'NUMERIC', 'BIGINT'.
+The enumeration 'NumericRadix' defines the following possible values: 'BINARY', 'DECIMAL'.
+The enumeration 'BooleanTypes' defines a single possible value: 'BOOLEAN'.
+
+The model also captures inheritance relationships between classes.
+The class 'SQL2003_evo_ARRAY' is a specialization of 'CollectionType'.
+The class 'SQL2003_evo_Attribute' is a specialization of 'StructuralComponent'.
+The class 'SQL2003_evo_BaseTable' is a specialization of 'Table'.
+The class 'SQL2003_evo_BinaryStringType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_evo_BooleanType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_evo_CharacterStringType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_evo_CollectionType' is a specialization of 'ConstructedType'.
+The class 'SQL2003_evo_Column' is a specialization of 'StructuralComponent'.
+The class 'SQL2003_evo_ColumnConstraint' is a specialization of 'Restriction'.
+The class 'SQL2003_evo_ConstructedType' is a specialization of 'DataType'.
+The class 'SQL2003_evo_DatetimeFeature' is a specialization of 'Feature'.
+The class 'SQL2003_evo_DatetimeType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_evo_DerivedTable' is a specialization of 'Table'.
+The class 'SQL2003_evo_DistinctType' is a specialization of 'UserDefinedType'.
+The class 'SQL2003_evo_Field' is a specialization of 'StructuralComponent'.
+The class 'SQL2003_evo_Function' is a specialization of 'BehaviouralComponent'.
+The class 'SQL2003_evo_IntervalFeature' is a specialization of 'Feature'.
+The class 'SQL2003_evo_IntervalType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_evo_MULTISET' is a specialization of 'CollectionType'.
+The class 'SQL2003_evo_MethodParameter' is a specialization of 'Parameter'.
+The class 'SQL2003_evo_NotNull' is a specialization of 'ColumnConstraint'.
+The class 'SQL2003_evo_NumericFeature' is a specialization of 'Feature'.
+The class 'SQL2003_evo_NumericType' is a specialization of 'PredefinedType'.
+The class 'SQL2003_evo_ParameterWithMode' is a specialization of 'Parameter'.
+The class 'SQL2003_evo_PredefinedType' is a specialization of 'DataType'.
+The class 'SQL2003_evo_PrimaryKey' is a specialization of 'UniqueConstraint'.
+The class 'SQL2003_evo_Procedure' is a specialization of 'BehaviouralComponent'.
+The class 'SQL2003_evo_ROW' is a specialization of 'ConstructedType'.
+The class 'SQL2003_evo_ReferenceType' is a specialization of 'ConstructedType'.
+The class 'SQL2003_evo_ReferentialConstraint' is a specialization of 'TableConstraint'.
+The class 'SQL2003_evo_StringFeature' is a specialization of 'Feature'.
+The class 'SQL2003_evo_StructuredType' is a specialization of 'UserDefinedType'.
+The class 'SQL2003_evo_TableCheckConstraint' is a specialization of 'TableConstraint'.
+The class 'SQL2003_evo_TableConstraint' is a specialization of 'Restriction'.
+The class 'SQL2003_evo_Trigger' is a specialization of 'Restriction'.
+The class 'SQL2003_evo_TypedTable' is a specialization of 'BaseTable'.
+The class 'SQL2003_evo_UniqueConstraint' is a specialization of 'TableConstraint'.
+The class 'SQL2003_evo_UserDefinedType' is a specialization of 'DataType'.
+The class 'SQL2003_evo_View' is a specialization of 'DerivedTable'.
+The class 'SQL2003_evo_XMLType' is a specialization of 'PredefinedType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SQL2003_evo_Attribute' and 'SQL2003_evo_StructuredType'. From 'SQL2003_evo_Attribute', the role 'attributes' has cardinality 0..*, and from 'SQL2003_evo_StructuredType', the role 'StructuredType' has cardinality 0..*.
+An association connects 'SQL2003_evo_Schema' and 'SQL2003_evo_BehaviouralComponent'. From 'SQL2003_evo_Schema', the role 'Schema' has cardinality 0..*, and from 'SQL2003_evo_BehaviouralComponent', the role 'behaviouralComponents' has cardinality 0..*.
+An association connects 'SQL2003_evo_BehaviouralComponent' and 'SQL2003_evo_ParameterWithMode'. From 'SQL2003_evo_BehaviouralComponent', the role 'behaviouralComponent' has cardinality 0..*, and from 'SQL2003_evo_ParameterWithMode', the role 'ParameterWithMode' has cardinality 0..*.
+An association connects 'SQL2003_evo_CollectionType' and 'SQL2003_evo_CollectionType'. From 'SQL2003_evo_CollectionType', the role 'SQL2003_evo_CollectionType3' has cardinality 0..*, and from 'SQL2003_evo_CollectionType', the role 'SQL2003_evo_CollectionType' has cardinality 0..*.
+An association connects 'SQL2003_evo_CollectionType' and 'SQL2003_evo_DataType'. From 'SQL2003_evo_CollectionType', the role 'SQL2003_evo_CollectionType6' has cardinality 0..*, and from 'SQL2003_evo_DataType', the role 'SQL2003_evo_DataType' has cardinality 0..*.
+An association connects 'SQL2003_evo_Table' and 'SQL2003_evo_Column'. From 'SQL2003_evo_Table', the role 'Table' has cardinality 0..*, and from 'SQL2003_evo_Column', the role 'columns' has cardinality 0..*.
+An association connects 'SQL2003_evo_Schema' and 'SQL2003_evo_DataType'. From 'SQL2003_evo_Schema', the role 'Schema9' has cardinality 0..*, and from 'SQL2003_evo_DataType', the role 'datatypes' has cardinality 0..*.
+An association connects 'SQL2003_evo_PredefinedType' and 'SQL2003_evo_DistinctType'. From 'SQL2003_evo_PredefinedType', the role 'PredefinedType' has cardinality 0..*, and from 'SQL2003_evo_DistinctType', the role 'is_source_of' has cardinality 0..*.
+An association connects 'SQL2003_evo_DistinctType' and 'SQL2003_evo_Feature'. From 'SQL2003_evo_DistinctType', the role 'SQL2003_evo_DistinctType' has cardinality 0..*, and from 'SQL2003_evo_Feature', the role 'SQL2003_evo_Feature' has cardinality 0..*.
+An association connects 'SQL2003_evo_Field' and 'SQL2003_evo_ROW'. From 'SQL2003_evo_Field', the role 'fields' has cardinality 0..*, and from 'SQL2003_evo_ROW', the role 'ROW' has cardinality 0..*.
+An association connects 'SQL2003_evo_DataType' and 'SQL2003_evo_Function'. From 'SQL2003_evo_DataType', the role 'SQL2003_evo_DataType14' has cardinality 0..*, and from 'SQL2003_evo_Function', the role 'SQL2003_evo_Function' has cardinality 0..*.
+An association connects 'SQL2003_evo_Method' and 'SQL2003_evo_Method'. From 'SQL2003_evo_Method', the role 'SQL2003_evo_Method' has cardinality 0..*, and from 'SQL2003_evo_Method', the role 'SQL2003_evo_Method15' has cardinality 0..*.
+An association connects 'SQL2003_evo_Method' and 'SQL2003_evo_StructuredType'. From 'SQL2003_evo_Method', the role 'methods' has cardinality 0..*, and from 'SQL2003_evo_StructuredType', the role 'StructuredType18' has cardinality 0..*.
+An association connects 'SQL2003_evo_Method' and 'SQL2003_evo_DataType'. From 'SQL2003_evo_Method', the role 'SQL2003_evo_Method20' has cardinality 0..*, and from 'SQL2003_evo_DataType', the role 'SQL2003_evo_DataType21' has cardinality 0..*.
+An association connects 'SQL2003_evo_Method' and 'SQL2003_evo_MethodParameter'. From 'SQL2003_evo_Method', the role 'method' has cardinality 0..*, and from 'SQL2003_evo_MethodParameter', the role 'MethodParameter' has cardinality 0..*.
+An association connects 'SQL2003_evo_Method' and 'SQL2003_evo_MethodParameter'. From 'SQL2003_evo_Method', the role 'Method' has cardinality 0..*, and from 'SQL2003_evo_MethodParameter', the role 'parameters' has cardinality 0..*.
+An association connects 'SQL2003_evo_Parameter' and 'SQL2003_evo_DataType'. From 'SQL2003_evo_Parameter', the role 'SQL2003_evo_Parameter' has cardinality 0..*, and from 'SQL2003_evo_DataType', the role 'SQL2003_evo_DataType25' has cardinality 0..*.
+An association connects 'SQL2003_evo_ParameterWithMode' and 'SQL2003_evo_BehaviouralComponent'. From 'SQL2003_evo_ParameterWithMode', the role 'parametersWithMode' has cardinality 0..*, and from 'SQL2003_evo_BehaviouralComponent', the role 'BehaviouralComponent' has cardinality 0..*.
+An association connects 'SQL2003_evo_DistinctType' and 'SQL2003_evo_PredefinedType'. From 'SQL2003_evo_DistinctType', the role 'DistinctType' has cardinality 0..*, and from 'SQL2003_evo_PredefinedType', the role 'source_type' has cardinality 0..*.
+An association connects 'SQL2003_evo_ROW' and 'SQL2003_evo_ROW'. From 'SQL2003_evo_ROW', the role 'sub_types' has cardinality 0..*, and from 'SQL2003_evo_ROW', the role 'ROW30' has cardinality 0..*.
+An association connects 'SQL2003_evo_Field' and 'SQL2003_evo_ROW'. From 'SQL2003_evo_Field', the role 'Field' has cardinality 0..*, and from 'SQL2003_evo_ROW', the role 'row' has cardinality 0..*.
+An association connects 'SQL2003_evo_ROW' and 'SQL2003_evo_ROW'. From 'SQL2003_evo_ROW', the role 'super_type' has cardinality 0..*, and from 'SQL2003_evo_ROW', the role 'ROW34' has cardinality 0..*.
+An association connects 'SQL2003_evo_ReferenceType' and 'SQL2003_evo_StructuredType'. From 'SQL2003_evo_ReferenceType', the role 'SQL2003_evo_ReferenceType' has cardinality 0..*, and from 'SQL2003_evo_StructuredType', the role 'SQL2003_evo_StructuredType' has cardinality 0..*.
+An association connects 'SQL2003_evo_UniqueConstraint' and 'SQL2003_evo_ReferentialConstraint'. From 'SQL2003_evo_UniqueConstraint', the role 'SQL2003_evo_UniqueConstraint' has cardinality 0..*, and from 'SQL2003_evo_ReferentialConstraint', the role 'SQL2003_evo_ReferentialConstraint' has cardinality 0..*.
+An association connects 'SQL2003_evo_Restriction' and 'SQL2003_evo_Table'. From 'SQL2003_evo_Restriction', the role 'restrictions' has cardinality 0..*, and from 'SQL2003_evo_Table', the role 'Table38' has cardinality 0..*.
+An association connects 'SQL2003_evo_Restriction' and 'SQL2003_evo_StructuralComponent'. From 'SQL2003_evo_Restriction', the role 'restrictions40' has cardinality 0..*, and from 'SQL2003_evo_StructuralComponent', the role 'StructuralComponent' has cardinality 0..*.
+An association connects 'SQL2003_evo_Schema' and 'SQL2003_evo_BehaviouralComponent'. From 'SQL2003_evo_Schema', the role 'schema' has cardinality 0..*, and from 'SQL2003_evo_BehaviouralComponent', the role 'BehaviouralComponent42' has cardinality 0..*.
+An association connects 'SQL2003_evo_Schema' and 'SQL2003_evo_DataType'. From 'SQL2003_evo_Schema', the role 'schema44' has cardinality 0..*, and from 'SQL2003_evo_DataType', the role 'DataType' has cardinality 0..*.
+An association connects 'SQL2003_evo_Table' and 'SQL2003_evo_Schema'. From 'SQL2003_evo_Table', the role 'Table47' has cardinality 0..*, and from 'SQL2003_evo_Schema', the role 'schema46' has cardinality 0..*.
+An association connects 'SQL2003_evo_DataType' and 'SQL2003_evo_StructuralComponent'. From 'SQL2003_evo_DataType', the role 'SQL2003_evo_DataType49' has cardinality 0..*, and from 'SQL2003_evo_StructuralComponent', the role 'SQL2003_evo_StructuralComponent' has cardinality 0..*.
+An association connects 'SQL2003_evo_StructuralComponent' and 'SQL2003_evo_View'. From 'SQL2003_evo_StructuralComponent', the role 'components' has cardinality 0..*, and from 'SQL2003_evo_View', the role 'View' has cardinality 0..*.
+An association connects 'SQL2003_evo_Restriction' and 'SQL2003_evo_StructuralComponent'. From 'SQL2003_evo_Restriction', the role 'Restriction' has cardinality 0..*, and from 'SQL2003_evo_StructuralComponent', the role 'columns52' has cardinality 0..*.
+An association connects 'SQL2003_evo_StructuralComponent' and 'SQL2003_evo_Feature'. From 'SQL2003_evo_StructuralComponent', the role 'SQL2003_evo_StructuralComponent54' has cardinality 0..*, and from 'SQL2003_evo_Feature', the role 'SQL2003_evo_Feature55' has cardinality 0..*.
+An association connects 'SQL2003_evo_StructuredType' and 'SQL2003_evo_StructuredType'. From 'SQL2003_evo_StructuredType', the role 'SQL2003_evo_StructuredType56' has cardinality 0..*, and from 'SQL2003_evo_StructuredType', the role 'SQL2003_evo_StructuredType58' has cardinality 0..*.
+An association connects 'SQL2003_evo_Attribute' and 'SQL2003_evo_StructuredType'. From 'SQL2003_evo_Attribute', the role 'Attribute' has cardinality 0..*, and from 'SQL2003_evo_StructuredType', the role 'structured' has cardinality 0..*.
+An association connects 'SQL2003_evo_Method' and 'SQL2003_evo_StructuredType'. From 'SQL2003_evo_Method', the role 'Method62' has cardinality 0..*, and from 'SQL2003_evo_StructuredType', the role 'structured61' has cardinality 0..*.
+An association connects 'SQL2003_evo_TypedTable' and 'SQL2003_evo_StructuredType'. From 'SQL2003_evo_TypedTable', the role 'TypedTable' has cardinality 0..*, and from 'SQL2003_evo_StructuredType', the role 'structured64' has cardinality 0..*.
+An association connects 'SQL2003_evo_Schema' and 'SQL2003_evo_Table'. From 'SQL2003_evo_Schema', the role 'Schema66' has cardinality 0..*, and from 'SQL2003_evo_Table', the role 'tables' has cardinality 0..*.
+An association connects 'SQL2003_evo_Column' and 'SQL2003_evo_Table'. From 'SQL2003_evo_Column', the role 'Column' has cardinality 0..*, and from 'SQL2003_evo_Table', the role 'table' has cardinality 0..*.
+An association connects 'SQL2003_evo_View' and 'SQL2003_evo_Table'. From 'SQL2003_evo_View', the role 'View70' has cardinality 0..*, and from 'SQL2003_evo_Table', the role 'tables69' has cardinality 0..*.
+An association connects 'SQL2003_evo_Table' and 'SQL2003_evo_Restriction'. From 'SQL2003_evo_Table', the role 'table72' has cardinality 0..*, and from 'SQL2003_evo_Restriction', the role 'Restriction73' has cardinality 0..*.
+An association connects 'SQL2003_evo_Trigger' and 'SQL2003_evo_TriggerDescriptor'. From 'SQL2003_evo_Trigger', the role 'trigger' has cardinality 0..*, and from 'SQL2003_evo_TriggerDescriptor', the role 'TriggerDescriptor' has cardinality 0..*.
+An association connects 'SQL2003_evo_StructuralComponent' and 'SQL2003_evo_Trigger'. From 'SQL2003_evo_StructuralComponent', the role 'SQL2003_evo_StructuralComponent76' has cardinality 0..*, and from 'SQL2003_evo_Trigger', the role 'SQL2003_evo_Trigger' has cardinality 0..*.
+An association connects 'SQL2003_evo_TriggerDescriptor' and 'SQL2003_evo_Trigger'. From 'SQL2003_evo_TriggerDescriptor', the role 'description' has cardinality 0..*, and from 'SQL2003_evo_Trigger', the role 'Trigger' has cardinality 0..*.
+An association connects 'SQL2003_evo_StructuredType' and 'SQL2003_evo_TypedTable'. From 'SQL2003_evo_StructuredType', the role 'StructuredType79' has cardinality 0..*, and from 'SQL2003_evo_TypedTable', the role 'typed' has cardinality 0..*.
+An association connects 'SQL2003_evo_TypedTable' and 'SQL2003_evo_TypedTable'. From 'SQL2003_evo_TypedTable', the role 'TypedTable82' has cardinality 0..*, and from 'SQL2003_evo_TypedTable', the role 'subtables' has cardinality 0..*.
+An association connects 'SQL2003_evo_TypedTable' and 'SQL2003_evo_TypedTable'. From 'SQL2003_evo_TypedTable', the role 'TypedTable85' has cardinality 0..*, and from 'SQL2003_evo_TypedTable', the role 'supertable' has cardinality 0..*.
+An association connects 'SQL2003_evo_Table' and 'SQL2003_evo_View'. From 'SQL2003_evo_Table', the role 'Table87' has cardinality 0..*, and from 'SQL2003_evo_View', the role 'views' has cardinality 0..*.
+An association connects 'SQL2003_evo_View' and 'SQL2003_evo_StructuralComponent'. From 'SQL2003_evo_View', the role 'views89' has cardinality 0..*, and from 'SQL2003_evo_StructuralComponent', the role 'StructuralComponent90' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/anatlyzer/a2l/examples/example.proc2docbook/metamodels/DocBook.ecore

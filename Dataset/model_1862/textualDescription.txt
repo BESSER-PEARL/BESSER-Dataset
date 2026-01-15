@@ -1,0 +1,29 @@
+The domain model 'beans' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'beans_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'beans_Bean' represents an important domain concept.
+It does not declare any attributes.
+
+'beans_BeanProperty' represents an important domain concept.
+It has the following attributes: 'typeName', which is of type str; 'changeable', which is of type bool.
+
+'beans_BeanLibrary' represents an important domain concept.
+It has one attribute: 'packageName', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'beans_BeanLibrary' is a specialization of 'NamedElement'.
+The class 'beans_Bean' is a specialization of 'NamedElement'.
+The class 'beans_BeanProperty' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'beans_Bean' and 'beans_BeanLibrary'. From 'beans_Bean', the role 'Bean' has cardinality 0..*, and from 'beans_BeanLibrary', the role 'beanLibrary' has cardinality 0..*.
+An association connects 'beans_BeanLibrary' and 'beans_Bean'. From 'beans_BeanLibrary', the role 'BeanLibrary' has cardinality 0..*, and from 'beans_Bean', the role 'beans' has cardinality 0..*.
+An association connects 'beans_Bean' and 'beans_BeanProperty'. From 'beans_Bean', the role 'bean' has cardinality 0..*, and from 'beans_BeanProperty', the role 'BeanProperty' has cardinality 0..*.
+An association connects 'beans_BeanProperty' and 'beans_Bean'. From 'beans_BeanProperty', the role 'properties' has cardinality 0..*, and from 'beans_Bean', the role 'Bean4' has cardinality 0..*.

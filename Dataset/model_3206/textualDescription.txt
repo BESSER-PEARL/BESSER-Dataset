@@ -1,0 +1,237 @@
+The domain model 'NQC' describes the core structural elements and their relationships within the system.
+
+The model defines 49 main class(es).
+
+'NQC_Variable' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Type', which is of type str.
+
+'NQC_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_GlobalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_StartStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_GoToStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_ControlStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_Subroutine' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'NQC_CompoundExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstantExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'CompoundExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_ArrayExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'CallStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_StopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_Label' represents an important domain concept.
+It has one attribute: 'Label', which is of type str.
+
+'NQC_BinaryExpression' represents an important domain concept.
+It has one attribute: 'Operator', which is of type str.
+
+'NQC_Case' represents an important domain concept.
+It has one attribute: 'IsDefault', which is of type bool.
+
+'NQC_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_Program' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'NQC_BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_Task' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'NQC_UntilStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_DoWhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_Function' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'NQC_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_CallStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_BooleanConstant' represents an important domain concept.
+It has one attribute: 'Value', which is of type bool.
+
+'NQC_ConstantExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_ValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_IntegerConstant' represents an important domain concept.
+It has one attribute: 'Value', which is of type int.
+
+'NQC_SubroutineCall' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_VariableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NQC_AssignmentStatement' represents an important domain concept.
+It has one attribute: 'Operator', which is of type str.
+
+'NQC_RepeatStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TypeEnum' defines the following possible values: 'IntegerArray', 'Integer'.
+The enumeration 'AssignmentStatementEnum' defines a single possible value: 'assign'.
+The enumeration 'BinaryOperatorEnum' defines the following possible values: 'less', 'bitand', 'notequal', 'minus', 'equal', 'geq', 'times', 'and', 'plus', 'or', 'leq', 'greater', 'mod', 'bitor', 'div'.
+
+The model also captures inheritance relationships between classes.
+The class 'NQC_Parameter' is a specialization of 'Variable'.
+The class 'NQC_LocalVariable' is a specialization of 'Variable'.
+The class 'NQC_GlobalVariable' is a specialization of 'Variable'.
+The class 'NQC_AssignmentStatement' is a specialization of 'Statement'.
+The class 'NQC_BlockStatement' is a specialization of 'Statement'.
+The class 'NQC_BreakStatement' is a specialization of 'Statement'.
+The class 'NQC_ContinueStatement' is a specialization of 'Statement'.
+The class 'NQC_ControlStructure' is a specialization of 'Statement'.
+The class 'NQC_EmptyStatement' is a specialization of 'Statement'.
+The class 'NQC_Expression' is a specialization of 'Statement'.
+The class 'NQC_ReturnStatement' is a specialization of 'Statement'.
+The class 'NQC_StartStatement' is a specialization of 'Statement'.
+The class 'NQC_StopStatement' is a specialization of 'Statement'.
+The class 'NQC_DoWhileStatement' is a specialization of 'ControlStructure'.
+The class 'NQC_ForStatement' is a specialization of 'ControlStructure'.
+The class 'NQC_GoToStatement' is a specialization of 'ControlStructure'.
+The class 'NQC_IfStatement' is a specialization of 'ControlStructure'.
+The class 'NQC_RepeatStatement' is a specialization of 'ControlStructure'.
+The class 'NQC_SwitchStatement' is a specialization of 'ControlStructure'.
+The class 'NQC_UntilStatement' is a specialization of 'ControlStructure'.
+The class 'NQC_WhileStatement' is a specialization of 'ControlStructure'.
+The class 'NQC_ValueExpression' is a specialization of 'Expression'.
+The class 'NQC_VariableExpression' is a specialization of 'ValueExpression'.
+The class 'NQC_ArrayExpression' is a specialization of 'VariableExpression'.
+The class 'NQC_ConstantExpression' is a specialization of 'ValueExpression'.
+The class 'NQC_BooleanConstant' is a specialization of 'ConstantExpression'.
+The class 'NQC_IntegerConstant' is a specialization of 'ConstantExpression'.
+The class 'NQC_CompoundExpression' is a specialization of 'Expression'.
+The class 'NQC_BinaryExpression' is a specialization of 'CompoundExpression'.
+The class 'NQC_CallStatement' is a specialization of 'Statement'.
+The class 'NQC_FunctionCall' is a specialization of 'CallStatement'.
+The class 'NQC_SubroutineCall' is a specialization of 'CallStatement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'NQC_Task' and 'NQC_Program'. From 'NQC_Task', the role 'NQC_Task' has cardinality 0..*, and from 'NQC_Program', the role 'NQC_Program' has cardinality 0..*.
+An association connects 'NQC_Program' and 'NQC_Function'. From 'NQC_Program', the role 'NQC_Program2' has cardinality 0..*, and from 'NQC_Function', the role 'NQC_Function' has cardinality 0..*.
+An association connects 'NQC_Program' and 'NQC_Subroutine'. From 'NQC_Program', the role 'NQC_Program4' has cardinality 0..*, and from 'NQC_Subroutine', the role 'NQC_Subroutine' has cardinality 0..*.
+An association connects 'NQC_Program' and 'NQC_GlobalVariable'. From 'NQC_Program', the role 'NQC_Program6' has cardinality 0..*, and from 'NQC_GlobalVariable', the role 'NQC_GlobalVariable' has cardinality 0..*.
+An association connects 'NQC_Statement' and 'NQC_Task'. From 'NQC_Statement', the role 'NQC_Statement' has cardinality 0..*, and from 'NQC_Task', the role 'NQC_Task8' has cardinality 0..*.
+An association connects 'NQC_LocalVariable' and 'NQC_Task'. From 'NQC_LocalVariable', the role 'NQC_LocalVariable' has cardinality 0..*, and from 'NQC_Task', the role 'NQC_Task10' has cardinality 0..*.
+An association connects 'NQC_Function' and 'NQC_Statement'. From 'NQC_Function', the role 'NQC_Function12' has cardinality 0..*, and from 'NQC_Statement', the role 'NQC_Statement13' has cardinality 0..*.
+An association connects 'NQC_Function' and 'NQC_LocalVariable'. From 'NQC_Function', the role 'NQC_Function15' has cardinality 0..*, and from 'NQC_LocalVariable', the role 'NQC_LocalVariable16' has cardinality 0..*.
+An association connects 'NQC_Parameter' and 'NQC_Function'. From 'NQC_Parameter', the role 'NQC_Parameter' has cardinality 0..*, and from 'NQC_Function', the role 'NQC_Function18' has cardinality 0..*.
+An association connects 'NQC_Statement' and 'NQC_Subroutine'. From 'NQC_Statement', the role 'NQC_Statement21' has cardinality 0..*, and from 'NQC_Subroutine', the role 'NQC_Subroutine20' has cardinality 0..*.
+An association connects 'NQC_LocalVariable' and 'NQC_Subroutine'. From 'NQC_LocalVariable', the role 'NQC_LocalVariable24' has cardinality 0..*, and from 'NQC_Subroutine', the role 'NQC_Subroutine23' has cardinality 0..*.
+An association connects 'NQC_ConstantExpression' and 'NQC_Variable'. From 'NQC_ConstantExpression', the role 'NQC_ConstantExpression' has cardinality 0..*, and from 'NQC_Variable', the role 'NQC_Variable' has cardinality 0..*.
+An association connects 'NQC_IntegerConstant' and 'NQC_Variable'. From 'NQC_IntegerConstant', the role 'NQC_IntegerConstant' has cardinality 0..*, and from 'NQC_Variable', the role 'NQC_Variable27' has cardinality 0..*.
+An association connects 'NQC_Statement' and 'NQC_Label'. From 'NQC_Statement', the role 'NQC_Statement29' has cardinality 0..*, and from 'NQC_Label', the role 'NQC_Label' has cardinality 0..*.
+An association connects 'NQC_VariableExpression' and 'NQC_AssignmentStatement'. From 'NQC_VariableExpression', the role 'NQC_VariableExpression' has cardinality 0..*, and from 'NQC_AssignmentStatement', the role 'NQC_AssignmentStatement' has cardinality 0..*.
+An association connects 'NQC_Expression' and 'NQC_AssignmentStatement'. From 'NQC_Expression', the role 'NQC_Expression' has cardinality 0..*, and from 'NQC_AssignmentStatement', the role 'NQC_AssignmentStatement32' has cardinality 0..*.
+An association connects 'NQC_LocalVariable' and 'NQC_BlockStatement'. From 'NQC_LocalVariable', the role 'NQC_LocalVariable34' has cardinality 0..*, and from 'NQC_BlockStatement', the role 'NQC_BlockStatement' has cardinality 0..*.
+An association connects 'NQC_Statement' and 'NQC_BlockStatement'. From 'NQC_Statement', the role 'NQC_Statement37' has cardinality 0..*, and from 'NQC_BlockStatement', the role 'NQC_BlockStatement36' has cardinality 0..*.
+An association connects 'NQC_StartStatement' and 'NQC_Task'. From 'NQC_StartStatement', the role 'NQC_StartStatement' has cardinality 0..*, and from 'NQC_Task', the role 'NQC_Task39' has cardinality 0..*.
+An association connects 'NQC_StopStatement' and 'NQC_Task'. From 'NQC_StopStatement', the role 'NQC_StopStatement' has cardinality 0..*, and from 'NQC_Task', the role 'NQC_Task41' has cardinality 0..*.
+An association connects 'NQC_Statement' and 'NQC_DoWhileStatement'. From 'NQC_Statement', the role 'NQC_Statement43' has cardinality 0..*, and from 'NQC_DoWhileStatement', the role 'NQC_DoWhileStatement' has cardinality 0..*.
+An association connects 'NQC_Expression' and 'NQC_DoWhileStatement'. From 'NQC_Expression', the role 'NQC_Expression46' has cardinality 0..*, and from 'NQC_DoWhileStatement', the role 'NQC_DoWhileStatement45' has cardinality 0..*.
+An association connects 'NQC_ForStatement' and 'NQC_Statement'. From 'NQC_ForStatement', the role 'NQC_ForStatement' has cardinality 0..*, and from 'NQC_Statement', the role 'NQC_Statement48' has cardinality 0..*.
+An association connects 'NQC_Expression' and 'NQC_ForStatement'. From 'NQC_Expression', the role 'NQC_Expression51' has cardinality 0..*, and from 'NQC_ForStatement', the role 'NQC_ForStatement50' has cardinality 0..*.
+An association connects 'NQC_Statement' and 'NQC_ForStatement'. From 'NQC_Statement', the role 'NQC_Statement54' has cardinality 0..*, and from 'NQC_ForStatement', the role 'NQC_ForStatement53' has cardinality 0..*.
+An association connects 'NQC_GoToStatement' and 'NQC_Label'. From 'NQC_GoToStatement', the role 'NQC_GoToStatement' has cardinality 0..*, and from 'NQC_Label', the role 'NQC_Label56' has cardinality 0..*.
+An association connects 'NQC_Expression' and 'NQC_IfStatement'. From 'NQC_Expression', the role 'NQC_Expression58' has cardinality 0..*, and from 'NQC_IfStatement', the role 'NQC_IfStatement' has cardinality 0..*.
+An association connects 'NQC_IfStatement' and 'NQC_Statement'. From 'NQC_IfStatement', the role 'NQC_IfStatement60' has cardinality 0..*, and from 'NQC_Statement', the role 'NQC_Statement61' has cardinality 0..*.
+An association connects 'NQC_IfStatement' and 'NQC_Statement'. From 'NQC_IfStatement', the role 'NQC_IfStatement63' has cardinality 0..*, and from 'NQC_Statement', the role 'NQC_Statement64' has cardinality 0..*.
+An association connects 'NQC_RepeatStatement' and 'NQC_Expression'. From 'NQC_RepeatStatement', the role 'NQC_RepeatStatement' has cardinality 0..*, and from 'NQC_Expression', the role 'NQC_Expression66' has cardinality 0..*.
+An association connects 'NQC_Statement' and 'NQC_RepeatStatement'. From 'NQC_Statement', the role 'NQC_Statement69' has cardinality 0..*, and from 'NQC_RepeatStatement', the role 'NQC_RepeatStatement68' has cardinality 0..*.
+An association connects 'NQC_SwitchStatement' and 'NQC_Expression'. From 'NQC_SwitchStatement', the role 'NQC_SwitchStatement' has cardinality 0..*, and from 'NQC_Expression', the role 'NQC_Expression71' has cardinality 0..*.
+An association connects 'NQC_Case' and 'NQC_SwitchStatement'. From 'NQC_Case', the role 'NQC_Case' has cardinality 0..*, and from 'NQC_SwitchStatement', the role 'NQC_SwitchStatement73' has cardinality 0..*.
+An association connects 'NQC_Expression' and 'NQC_UntilStatement'. From 'NQC_Expression', the role 'NQC_Expression75' has cardinality 0..*, and from 'NQC_UntilStatement', the role 'NQC_UntilStatement' has cardinality 0..*.
+An association connects 'NQC_UntilStatement' and 'NQC_Statement'. From 'NQC_UntilStatement', the role 'NQC_UntilStatement77' has cardinality 0..*, and from 'NQC_Statement', the role 'NQC_Statement78' has cardinality 0..*.
+An association connects 'NQC_Expression' and 'NQC_WhileStatement'. From 'NQC_Expression', the role 'NQC_Expression80' has cardinality 0..*, and from 'NQC_WhileStatement', the role 'NQC_WhileStatement' has cardinality 0..*.
+An association connects 'NQC_WhileStatement' and 'NQC_Statement'. From 'NQC_WhileStatement', the role 'NQC_WhileStatement82' has cardinality 0..*, and from 'NQC_Statement', the role 'NQC_Statement83' has cardinality 0..*.
+An association connects 'NQC_Case' and 'NQC_ConstantExpression'. From 'NQC_Case', the role 'NQC_Case85' has cardinality 0..*, and from 'NQC_ConstantExpression', the role 'NQC_ConstantExpression86' has cardinality 0..*.
+An association connects 'NQC_Statement' and 'NQC_Case'. From 'NQC_Statement', the role 'NQC_Statement89' has cardinality 0..*, and from 'NQC_Case', the role 'NQC_Case88' has cardinality 0..*.
+An association connects 'NQC_VariableExpression' and 'NQC_Variable'. From 'NQC_VariableExpression', the role 'NQC_VariableExpression91' has cardinality 0..*, and from 'NQC_Variable', the role 'NQC_Variable92' has cardinality 0..*.
+An association connects 'NQC_Expression' and 'NQC_ArrayExpression'. From 'NQC_Expression', the role 'NQC_Expression94' has cardinality 0..*, and from 'NQC_ArrayExpression', the role 'NQC_ArrayExpression' has cardinality 0..*.
+An association connects 'NQC_Expression' and 'NQC_BinaryExpression'. From 'NQC_Expression', the role 'NQC_Expression96' has cardinality 0..*, and from 'NQC_BinaryExpression', the role 'NQC_BinaryExpression' has cardinality 0..*.
+An association connects 'NQC_BinaryExpression' and 'NQC_Expression'. From 'NQC_BinaryExpression', the role 'NQC_BinaryExpression98' has cardinality 0..*, and from 'NQC_Expression', the role 'NQC_Expression99' has cardinality 0..*.
+An association connects 'NQC_Function' and 'NQC_FunctionCall'. From 'NQC_Function', the role 'NQC_Function101' has cardinality 0..*, and from 'NQC_FunctionCall', the role 'NQC_FunctionCall' has cardinality 0..*.
+An association connects 'NQC_FunctionCall' and 'NQC_Expression'. From 'NQC_FunctionCall', the role 'NQC_FunctionCall103' has cardinality 0..*, and from 'NQC_Expression', the role 'NQC_Expression104' has cardinality 0..*.
+An association connects 'NQC_Subroutine' and 'NQC_SubroutineCall'. From 'NQC_Subroutine', the role 'NQC_Subroutine106' has cardinality 0..*, and from 'NQC_SubroutineCall', the role 'NQC_SubroutineCall' has cardinality 0..*.

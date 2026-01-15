@@ -1,0 +1,20 @@
+The domain model 'music' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'music_Artist' represents an important domain concept.
+It has the following attributes: 'notes', which is of type str; 'name', which is of type str.
+
+'music_Work' represents an important domain concept.
+It has the following attributes: 'whenMade', which is of type str; 'name', which is of type str; 'mediaTypes', which is of type str; 'notes', which is of type str.
+
+'music_MusicLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MediaType' defines the following possible values: 'MP3', 'CD', 'TAPE'.
+
+Relationships between classes are modeled using associations.
+An association connects 'music_Work' and 'music_Artist'. From 'music_Work', the role 'Work' has cardinality 0..*, and from 'music_Artist', the role 'performer' has cardinality 0..*.
+An association connects 'music_MusicLibrary' and 'music_Artist'. From 'music_MusicLibrary', the role 'music_MusicLibrary' has cardinality 0..*, and from 'music_Artist', the role 'music_Artist' has cardinality 0..*.
+An association connects 'music_Work' and 'music_Artist'. From 'music_Work', the role 'works' has cardinality 0..*, and from 'music_Artist', the role 'Artist' has cardinality 0..*.

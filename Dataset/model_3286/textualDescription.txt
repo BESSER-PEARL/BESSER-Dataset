@@ -1,0 +1,37 @@
+The domain model 'dSLPolicies' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'dSLPolicies_AlgorithmType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'dSLPolicies_PathGeneratorStopCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'dSLPolicies_GraphElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dSLPolicies_Policies' represents an important domain concept.
+It has the following attributes: 'nocheck', which is of type bool; 'sync', which is of type bool.
+
+'dSLPolicies_GraphPolicies' represents an important domain concept.
+It has one attribute: 'graphModelPolicies', which is of type str.
+
+'dSLPolicies_StopCondition' represents an important domain concept.
+It has the following attributes: 'pathtype', which is of type str; 'value', which is of type int; 'percentage', which is of type str.
+
+'dSLPolicies_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'dSLPolicies_Severity' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'dSLPolicies_GraphPolicies' and 'dSLPolicies_Model'. From 'dSLPolicies_GraphPolicies', the role 'dSLPolicies_GraphPolicies' has cardinality 0..*, and from 'dSLPolicies_Model', the role 'dSLPolicies_Model' has cardinality 0..*.
+An association connects 'dSLPolicies_Policies' and 'dSLPolicies_GraphPolicies'. From 'dSLPolicies_Policies', the role 'dSLPolicies_Policies' has cardinality 0..*, and from 'dSLPolicies_GraphPolicies', the role 'dSLPolicies_GraphPolicies2' has cardinality 0..*.
+An association connects 'dSLPolicies_Policies' and 'dSLPolicies_PathGeneratorStopCondition'. From 'dSLPolicies_Policies', the role 'dSLPolicies_Policies4' has cardinality 0..*, and from 'dSLPolicies_PathGeneratorStopCondition', the role 'dSLPolicies_PathGeneratorStopCondition' has cardinality 0..*.
+An association connects 'dSLPolicies_Severity' and 'dSLPolicies_Policies'. From 'dSLPolicies_Severity', the role 'dSLPolicies_Severity' has cardinality 0..*, and from 'dSLPolicies_Policies', the role 'dSLPolicies_Policies6' has cardinality 0..*.
+An association connects 'dSLPolicies_AlgorithmType' and 'dSLPolicies_PathGeneratorStopCondition'. From 'dSLPolicies_AlgorithmType', the role 'dSLPolicies_AlgorithmType' has cardinality 0..*, and from 'dSLPolicies_PathGeneratorStopCondition', the role 'dSLPolicies_PathGeneratorStopCondition8' has cardinality 0..*.
+An association connects 'dSLPolicies_PathGeneratorStopCondition' and 'dSLPolicies_StopCondition'. From 'dSLPolicies_PathGeneratorStopCondition', the role 'dSLPolicies_PathGeneratorStopCondition10' has cardinality 0..*, and from 'dSLPolicies_StopCondition', the role 'dSLPolicies_StopCondition' has cardinality 0..*.
+An association connects 'dSLPolicies_StopCondition' and 'dSLPolicies_PathGeneratorStopCondition'. From 'dSLPolicies_StopCondition', the role 'dSLPolicies_StopCondition13' has cardinality 0..*, and from 'dSLPolicies_PathGeneratorStopCondition', the role 'dSLPolicies_PathGeneratorStopCondition12' has cardinality 0..*.
+An association connects 'dSLPolicies_StopCondition' and 'dSLPolicies_GraphElement'. From 'dSLPolicies_StopCondition', the role 'dSLPolicies_StopCondition15' has cardinality 0..*, and from 'dSLPolicies_GraphElement', the role 'dSLPolicies_GraphElement' has cardinality 0..*.

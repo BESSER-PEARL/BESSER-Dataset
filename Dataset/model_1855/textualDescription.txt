@@ -1,0 +1,38 @@
+The domain model 'addressbook' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Contact' represents an important domain concept.
+It does not declare any attributes.
+
+'addressbook_AddressBook' represents an important domain concept.
+It does not declare any attributes.
+
+'addressbook_Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'addressbook_Contact' represents an important domain concept.
+It does not declare any attributes.
+
+'addressbook_Office' represents an important domain concept.
+It has one attribute: 'company', which is of type str.
+
+'addressbook_People' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'addressbook_Electronic' represents an important domain concept.
+It has the following attributes: 'website', which is of type str; 'email', which is of type str.
+
+'addressbook_BookVersion' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'addressbook_Electronic' is a specialization of 'Contact'.
+The class 'addressbook_Office' is a specialization of 'Contact'.
+
+Relationships between classes are modeled using associations.
+An association connects 'addressbook_People' and 'addressbook_Contact'. From 'addressbook_People', the role 'addressbook_People' has cardinality 0..*, and from 'addressbook_Contact', the role 'addressbook_Contact' has cardinality 0..*.
+An association connects 'addressbook_People' and 'addressbook_AddressBook'. From 'addressbook_People', the role 'addressbook_People2' has cardinality 0..*, and from 'addressbook_AddressBook', the role 'addressbook_AddressBook' has cardinality 0..*.
+An association connects 'addressbook_AddressBook' and 'addressbook_Repository'. From 'addressbook_AddressBook', the role 'addressbook_AddressBook4' has cardinality 0..*, and from 'addressbook_Repository', the role 'addressbook_Repository' has cardinality 0..*.
+An association connects 'addressbook_Repository' and 'addressbook_BookVersion'. From 'addressbook_Repository', the role 'addressbook_Repository6' has cardinality 0..*, and from 'addressbook_BookVersion', the role 'addressbook_BookVersion' has cardinality 0..*.
+An association connects 'addressbook_BookVersion' and 'addressbook_AddressBook'. From 'addressbook_BookVersion', the role 'addressbook_BookVersion8' has cardinality 0..*, and from 'addressbook_AddressBook', the role 'addressbook_AddressBook9' has cardinality 0..*.

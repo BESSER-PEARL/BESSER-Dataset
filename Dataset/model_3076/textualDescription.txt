@@ -1,0 +1,75 @@
+The domain model 'entities' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'FieldType' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_AssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entities_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'entities_FieldType' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'entities_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'entities_FieldRef' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entities_EntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_PrintStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_BasicType' represents an important domain concept.
+It has one attribute: 'typeName', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'entities_AssignmentStatement' is a specialization of 'Statement'.
+The class 'entities_PrintStatement' is a specialization of 'Statement'.
+The class 'entities_BasicType' is a specialization of 'FieldType'.
+The class 'entities_EntityType' is a specialization of 'FieldType'.
+The class 'entities_IntConstant' is a specialization of 'Expression'.
+The class 'entities_StringConstant' is a specialization of 'Expression'.
+The class 'entities_BoolConstant' is a specialization of 'Expression'.
+The class 'entities_FieldRef' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'entities_Entity' and 'entities_Model'. From 'entities_Entity', the role 'entities_Entity' has cardinality 0..*, and from 'entities_Model', the role 'entities_Model' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_Entity'. From 'entities_Entity', the role 'entities_Entity3' has cardinality 0..*, and from 'entities_Entity', the role 'entities_Entity1' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_Field'. From 'entities_Entity', the role 'entities_Entity5' has cardinality 0..*, and from 'entities_Field', the role 'entities_Field' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_Statement'. From 'entities_Entity', the role 'entities_Entity7' has cardinality 0..*, and from 'entities_Statement', the role 'entities_Statement' has cardinality 0..*.
+An association connects 'entities_Expression' and 'entities_Statement'. From 'entities_Expression', the role 'entities_Expression' has cardinality 0..*, and from 'entities_Statement', the role 'entities_Statement9' has cardinality 0..*.
+An association connects 'entities_Field' and 'entities_AssignmentStatement'. From 'entities_Field', the role 'entities_Field11' has cardinality 0..*, and from 'entities_AssignmentStatement', the role 'entities_AssignmentStatement' has cardinality 0..*.
+An association connects 'entities_FieldType' and 'entities_Field'. From 'entities_FieldType', the role 'entities_FieldType' has cardinality 0..*, and from 'entities_Field', the role 'entities_Field13' has cardinality 0..*.
+An association connects 'entities_EntityType' and 'entities_Entity'. From 'entities_EntityType', the role 'entities_EntityType' has cardinality 0..*, and from 'entities_Entity', the role 'entities_Entity15' has cardinality 0..*.
+An association connects 'entities_Field' and 'entities_FieldRef'. From 'entities_Field', the role 'entities_Field17' has cardinality 0..*, and from 'entities_FieldRef', the role 'entities_FieldRef' has cardinality 0..*.

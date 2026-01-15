@@ -1,0 +1,153 @@
+The domain model 'Classes' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'Bill' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdAccount_AccountController' represents an important domain concept.
+It does not declare any attributes.
+
+'mdsdAdmin_Staff' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdAccount_Account' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'password', which is of type str; 'name', which is of type str; 'isLoggedIn', which is of type bool; 'accountID', which is of type str.
+
+'Booking' represents an important domain concept.
+It does not declare any attributes.
+
+'Room' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdBilling_CustomerBilling' represents an important domain concept.
+It does not declare any attributes.
+
+'Meal' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelStaff' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdAccount_BookingToAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'Account' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdBooking_Meal' represents an important domain concept.
+It has the following attributes: 'foodType', which is of type str; 'amountOfFood', which is of type float; 'price', which is of type float; 'schedule', which is of type str.
+
+'Classes_mdsdAdmin_Staff' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdAccount_Pet' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'Classes_mdsdAdmin_Admin' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdBooking_Booking' represents an important domain concept.
+It has the following attributes: 'roomNumber', which is of type int; 'dateFrom', which is of type date; 'dateTo', which is of type date; 'bookingId', which is of type str; 'bill_Id', which is of type str; 'isCheckedOut', which is of type bool; 'customerName', which is of type str; 'isCheckedIn', which is of type bool; 'customerEmail', which is of type str; 'petName', which is of type str.
+
+'Classes_mdsdBilling_StaffBilling' represents an important domain concept.
+It does not declare any attributes.
+
+'mdsdBooking_StaffBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdBooking_StaffBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'Pet' represents an important domain concept.
+It does not declare any attributes.
+
+'mdsdBilling_StaffBilling' represents an important domain concept.
+It does not declare any attributes.
+
+'mdsdAccount_BookingToAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdAdmin_AdminController' represents an important domain concept.
+It does not declare any attributes.
+
+'mdsdBilling_BookingToBill' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdBooking_Service' represents an important domain concept.
+It has the following attributes: 'price', which is of type float; 'description', which is of type str.
+
+'mdsdAdmin_Admin' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdBilling_Bill' represents an important domain concept.
+It has the following attributes: 'isPaid', which is of type bool; 'ID', which is of type str.
+
+'mdsdAdmin_BookingToAdmin' represents an important domain concept.
+It does not declare any attributes.
+
+'mdsdBilling_CustomerBilling' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdAdmin_Room' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'status', which is of type str; 'number', which is of type int.
+
+'mdsdAccount_CustomerAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdAccount_CustomerAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdBilling_Transaction' represents an important domain concept.
+It has the following attributes: 'price', which is of type float; 'description', which is of type str.
+
+'Classes_mdsdBooking_BookingController' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdBooking_UserBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdAdmin_BookingToAdmin' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdBilling_BillingController' represents an important domain concept.
+It does not declare any attributes.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdBilling_BookingToBill' represents an important domain concept.
+It does not declare any attributes.
+
+'Transaction' represents an important domain concept.
+It does not declare any attributes.
+
+'mdsdBooking_UserBooking' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_mdsdAdmin_HotelStaff' represents an important domain concept.
+It has the following attributes: 'isLoggedIn', which is of type bool; 'password', which is of type str; 'SSN', which is of type str; 'rank', which is of type int; 'Name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'Classes_mdsdBilling_BillingController' is a specialization of 'mdsdBilling_StaffBilling'.
+The class 'Classes_mdsdBilling_BillingController' is a specialization of 'mdsdBilling_BookingToBill'.
+The class 'Classes_mdsdBilling_BillingController' is a specialization of 'mdsdBilling_CustomerBilling'.
+The class 'Classes_mdsdBooking_BookingController' is a specialization of 'mdsdBooking_UserBooking'.
+The class 'Classes_mdsdBooking_BookingController' is a specialization of 'mdsdBooking_StaffBooking'.
+The class 'Classes_mdsdAdmin_AdminController' is a specialization of 'mdsdAdmin_Admin'.
+The class 'Classes_mdsdAdmin_AdminController' is a specialization of 'mdsdAdmin_BookingToAdmin'.
+The class 'Classes_mdsdAdmin_AdminController' is a specialization of 'mdsdAdmin_Staff'.
+The class 'Classes_mdsdAccount_AccountController' is a specialization of 'mdsdAccount_BookingToAccount'.
+The class 'Classes_mdsdAccount_AccountController' is a specialization of 'mdsdAccount_CustomerAccount'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Bill' and 'Classes_mdsdBilling_BillingController'. From 'Bill', the role 'Bill' has cardinality 0..*, and from 'Classes_mdsdBilling_BillingController', the role 'Classes_mdsdBilling_BillingController' has cardinality 0..*.
+An association connects 'Transaction' and 'Classes_mdsdBilling_Bill'. From 'Transaction', the role 'Transaction' has cardinality 0..*, and from 'Classes_mdsdBilling_Bill', the role 'Classes_mdsdBilling_Bill' has cardinality 0..*.
+An association connects 'Classes_mdsdBooking_BookingController' and 'Booking'. From 'Classes_mdsdBooking_BookingController', the role 'Classes_mdsdBooking_BookingController' has cardinality 0..*, and from 'Booking', the role 'Booking' has cardinality 0..*.
+An association connects 'Classes_mdsdBooking_BookingController' and 'Service'. From 'Classes_mdsdBooking_BookingController', the role 'Classes_mdsdBooking_BookingController4' has cardinality 0..*, and from 'Service', the role 'Service' has cardinality 0..*.
+An association connects 'Service' and 'Classes_mdsdBooking_Booking'. From 'Service', the role 'Service6' has cardinality 0..*, and from 'Classes_mdsdBooking_Booking', the role 'Classes_mdsdBooking_Booking' has cardinality 0..*.
+An association connects 'Meal' and 'Classes_mdsdBooking_Booking'. From 'Meal', the role 'Meal' has cardinality 0..*, and from 'Classes_mdsdBooking_Booking', the role 'Classes_mdsdBooking_Booking8' has cardinality 0..*.
+An association connects 'Room' and 'Classes_mdsdAdmin_AdminController'. From 'Room', the role 'Room' has cardinality 0..*, and from 'Classes_mdsdAdmin_AdminController', the role 'Classes_mdsdAdmin_AdminController' has cardinality 0..*.
+An association connects 'Classes_mdsdAdmin_AdminController' and 'HotelStaff'. From 'Classes_mdsdAdmin_AdminController', the role 'Classes_mdsdAdmin_AdminController11' has cardinality 0..*, and from 'HotelStaff', the role 'HotelStaff' has cardinality 0..*.
+An association connects 'Classes_mdsdAccount_Account' and 'Pet'. From 'Classes_mdsdAccount_Account', the role 'Classes_mdsdAccount_Account' has cardinality 0..*, and from 'Pet', the role 'Pet' has cardinality 0..*.
+An association connects 'Classes_mdsdAccount_AccountController' and 'Account'. From 'Classes_mdsdAccount_AccountController', the role 'Classes_mdsdAccount_AccountController' has cardinality 0..*, and from 'Account', the role 'Account' has cardinality 0..*.

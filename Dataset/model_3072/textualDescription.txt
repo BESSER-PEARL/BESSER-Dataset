@@ -1,0 +1,107 @@
+The domain model 'OO' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'OO_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OO_Annotation' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_AnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_Feature' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'OO_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_StructuralFeature' represents an important domain concept.
+It has one attribute: 'isMany', which is of type str.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_ExternalClass' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityEnum' defines the following possible values: 'private', 'public'.
+
+The model also captures inheritance relationships between classes.
+The class 'OO_Model' is a specialization of 'Package'.
+The class 'OO_PackageableElement' is a specialization of 'NamedElement'.
+The class 'OO_NamedElement' is a specialization of 'AnnotatedElement'.
+The class 'OO_Package' is a specialization of 'PackageableElement'.
+The class 'OO_Classifier' is a specialization of 'PackageableElement'.
+The class 'OO_ExternalClass' is a specialization of 'Class'.
+The class 'OO_Class' is a specialization of 'Classifier'.
+The class 'OO_Datatype' is a specialization of 'Classifier'.
+The class 'OO_Feature' is a specialization of 'NamedElement'.
+The class 'OO_StructuralFeature' is a specialization of 'Feature'.
+The class 'OO_Operation' is a specialization of 'Feature'.
+The class 'OO_Parameter' is a specialization of 'NamedElement'.
+The class 'OO_Reference' is a specialization of 'StructuralFeature'.
+The class 'OO_Attribute' is a specialization of 'StructuralFeature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'OO_PackageableElement' and 'OO_Package'. From 'OO_PackageableElement', the role 'contents' has cardinality 0..*, and from 'OO_Package', the role 'Package' has cardinality 0..*.
+An association connects 'OO_AnnotatedElement' and 'OO_Annotation'. From 'OO_AnnotatedElement', the role 'OO_AnnotatedElement' has cardinality 0..*, and from 'OO_Annotation', the role 'OO_Annotation' has cardinality 0..*.
+An association connects 'OO_PackageableElement' and 'OO_Package'. From 'OO_PackageableElement', the role 'PackageableElement' has cardinality 0..*, and from 'OO_Package', the role 'package' has cardinality 0..*.
+An association connects 'OO_Class' and 'OO_Class'. From 'OO_Class', the role 'Class' has cardinality 0..*, and from 'OO_Class', the role 'extendedBy' has cardinality 0..*.
+An association connects 'OO_Class' and 'OO_Class'. From 'OO_Class', the role 'extends' has cardinality 0..*, and from 'OO_Class', the role 'Class7' has cardinality 0..*.
+An association connects 'OO_Class' and 'OO_Feature'. From 'OO_Class', the role 'owner' has cardinality 0..*, and from 'OO_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'OO_Class' and 'OO_Feature'. From 'OO_Class', the role 'Class10' has cardinality 0..*, and from 'OO_Feature', the role 'features' has cardinality 0..*.
+An association connects 'OO_Classifier' and 'OO_Feature'. From 'OO_Classifier', the role 'OO_Classifier' has cardinality 0..*, and from 'OO_Feature', the role 'OO_Feature' has cardinality 0..*.
+An association connects 'OO_Operation' and 'OO_Parameter'. From 'OO_Operation', the role 'owner13' has cardinality 0..*, and from 'OO_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'OO_Parameter' and 'OO_Classifier'. From 'OO_Parameter', the role 'OO_Parameter' has cardinality 0..*, and from 'OO_Classifier', the role 'OO_Classifier15' has cardinality 0..*.
+An association connects 'OO_Parameter' and 'OO_Operation'. From 'OO_Parameter', the role 'parameters' has cardinality 0..*, and from 'OO_Operation', the role 'Operation' has cardinality 0..*.

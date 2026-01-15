@@ -1,0 +1,643 @@
+The domain model 'aS3' describes the core structural elements and their relationships within the system.
+
+The model defines 142 main class(es).
+
+'ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_bitwiseXorExpression' represents an important domain concept.
+It has one attribute: 'o', which is of type str.
+
+'aS3_fieldName' represents an important domain concept.
+It has the following attributes: 'number', which is of type str; 'name', which is of type str.
+
+'aS3_functionExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'aS3_namespaceName' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+'aS3_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_shiftExpression' represents an important domain concept.
+It has one attribute: 'o', which is of type str.
+
+'aS3_AccessorRole' represents an important domain concept.
+It has one attribute: 'accessor', which is of type str.
+
+'aS3_relationalExpression' represents an important domain concept.
+It has one attribute: 'o', which is of type str.
+
+'aS3_switchStatementList' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_element' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_catchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'encapsulatedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DefaultXMLNamespaceStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_parameterDeclarationList' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_unaryExpressionNotPlusMinus' represents an important domain concept.
+It has the following attributes: 'in', which is of type str; 'de', which is of type str.
+
+'aS3_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'aS3_equalityExpression' represents an important domain concept.
+It has one attribute: 'o', which is of type str.
+
+'aS3_Null' represents an important domain concept.
+It does not declare any attributes.
+
+'assignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_qualifiedIdent' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_DefaultXMLNamespaceStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_directive' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_assignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_logicalOrExpression' represents an important domain concept.
+It has one attribute: 'o', which is of type str.
+
+'aS3_expressionQualifiedIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'aS3_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_conditionalExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'parameterDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_bitwiseAndExpression' represents an important domain concept.
+It has one attribute: 'o', which is of type str.
+
+'aS3_forCond' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_DefaultStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'forInClauseTail' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'CaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_forIter' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_fieldList' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_nonAttributeQualifiedIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_ForEachStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_simpleQualifiedIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'qualifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_switchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_forInClauseTail' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_fullNewSubexpression' represents an important domain concept.
+It has one attribute: 'fnsd', which is of type str.
+
+'aS3_CaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Parameter' represents an important domain concept.
+It has the following attributes: 'anytype', which is of type str; 'name', which is of type str.
+
+'aS3_encapsulatedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'exprOrObjectLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_logicalAndExpression' represents an important domain concept.
+It has one attribute: 'o', which is of type str.
+
+'aS3_propertyIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_basicParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_functionSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'unaryExpressionNotPlusMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_annotationFields' represents an important domain concept.
+It does not declare any attributes.
+
+'forInClauseDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_newExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_This' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_postfixExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_DoWhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_elementList' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_expressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_parameterDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Class' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'brackets' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_brackets' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_TryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'conditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_forInClause' represents an important domain concept.
+It does not declare any attributes.
+
+'parameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_additiveExpression' represents an important domain concept.
+It has one attribute: 'o', which is of type str.
+
+'aS3_Interface' represents an important domain concept.
+It has the following attributes: 'access', which is of type str; 'name', which is of type str.
+
+'aS3_arrayLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_traditionalForClause' represents an important domain concept.
+It does not declare any attributes.
+
+'finallyBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'elementList' represents an important domain concept.
+It does not declare any attributes.
+
+'qualifiedIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_literalField' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_RegexpConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Imports' represents an important domain concept.
+It does not declare any attributes.
+
+'propertyIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_parameterRestDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_XmlConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'catchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Annotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'aS3_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'anytype', which is of type str.
+
+'aS3_qualifiedIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'element' represents an important domain concept.
+It does not declare any attributes.
+
+'nonemptyElementList' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'qualifiedIdent' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_WithStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_e4xAttributeIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_MethodBody' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_propOrIdent' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'aS3_typeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_primaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Uses' represents an important domain concept.
+It has the following attributes: 'anytype', which is of type str; 'type', which is of type str.
+
+'aS3_identi' represents an important domain concept.
+It has one attribute: 'i', which is of type str.
+
+'aS3_finallyBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_SymbolRef' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_MemberVariableDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'anytype', which is of type str.
+
+'aS3_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'aS3_bitwiseOrExpression' represents an important domain concept.
+It has one attribute: 'o', which is of type str.
+
+'aS3_qualifier' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+'aS3_forInit' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_arguments' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_InterfaceMethod' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'anytype', which is of type str.
+
+'aS3_Undefined' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_annotationField' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'aS3_parameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_NumberConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'aS3_Modifier' represents an important domain concept.
+It has the following attributes: 'access', which is of type str; 'native', which is of type bool; 'dynamic', which is of type bool; 'static', which is of type bool; 'final', which is of type bool.
+
+'aS3_objectLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_unaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_multiplicativeExpression' represents an important domain concept.
+It has one attribute: 'o', which is of type str.
+
+'aS3_regexpLiteral' represents an important domain concept.
+It has one attribute: 's', which is of type str.
+
+'aS3_functionCommon' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_conditionalSubExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'expressionQualifiedIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_exprOrObjectLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_Method' represents an important domain concept.
+It has the following attributes: 'anytype', which is of type str; 'name', which is of type str.
+
+'aS3_nonemptyElementList' represents an important domain concept.
+It does not declare any attributes.
+
+'aS3_forInClauseDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'nonAttributeQualifiedIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AccessLevel' defines the following possible values: 'PRIVATE', 'PUBLIC', 'INTERNAL', 'PROTECTED'.
+
+The model also captures inheritance relationships between classes.
+The class 'aS3_VariableDeclaration' is a specialization of 'Statement'.
+The class 'aS3_VariableDeclaration' is a specialization of 'forInClauseDecl'.
+The class 'aS3_objectLiteral' is a specialization of 'exprOrObjectLiteral'.
+The class 'aS3_identi' is a specialization of 'propertyIdentifier'.
+The class 'aS3_identi' is a specialization of 'catchBlock'.
+The class 'aS3_identi' is a specialization of 'forInClauseDecl'.
+The class 'aS3_propertyIdentifier' is a specialization of 'qualifier'.
+The class 'aS3_simpleQualifiedIdentifier' is a specialization of 'nonAttributeQualifiedIdentifier'.
+The class 'aS3_expressionQualifiedIdentifier' is a specialization of 'nonAttributeQualifiedIdentifier'.
+The class 'aS3_nonAttributeQualifiedIdentifier' is a specialization of 'qualifiedIdentifier'.
+The class 'aS3_namespaceName' is a specialization of 'qualifiedIdent'.
+The class 'aS3_nonemptyElementList' is a specialization of 'elementList'.
+The class 'aS3_Expression' is a specialization of 'exprOrObjectLiteral'.
+The class 'aS3_Expression' is a specialization of 'Condition'.
+The class 'aS3_Expression' is a specialization of 'DefaultXMLNamespaceStatement'.
+The class 'aS3_Expression' is a specialization of 'ThrowStatement'.
+The class 'aS3_Expression' is a specialization of 'CaseStatement'.
+The class 'aS3_expressionList' is a specialization of 'brackets'.
+The class 'aS3_expressionList' is a specialization of 'ExpressionStatement'.
+The class 'aS3_expressionList' is a specialization of 'forInClauseTail'.
+The class 'aS3_assignmentExpression' is a specialization of 'element'.
+The class 'aS3_assignmentExpression' is a specialization of 'nonemptyElementList'.
+The class 'aS3_assignmentExpression' is a specialization of 'Expression'.
+The class 'aS3_assignmentExpression' is a specialization of 'encapsulatedExpression'.
+The class 'aS3_assignmentExpression' is a specialization of 'parameterDefault'.
+The class 'aS3_conditionalExpression' is a specialization of 'assignmentExpression'.
+The class 'aS3_logicalOrExpression' is a specialization of 'conditionalExpression'.
+The class 'aS3_unaryExpression' is a specialization of 'unaryExpressionNotPlusMinus'.
+The class 'aS3_postfixExpression' is a specialization of 'unaryExpressionNotPlusMinus'.
+The class 'aS3_e4xAttributeIdentifier' is a specialization of 'qualifiedIdentifier'.
+The class 'aS3_encapsulatedExpression' is a specialization of 'expressionQualifiedIdentifier'.
+The class 'aS3_basicParameterDeclaration' is a specialization of 'parameterDeclaration'.
+The class 'aS3_parameterRestDeclaration' is a specialization of 'parameterDeclaration'.
+The class 'aS3_Block' is a specialization of 'Statement'.
+The class 'aS3_Block' is a specialization of 'finallyBlock'.
+The class 'aS3_Condition' is a specialization of 'SwitchStatement'.
+The class 'aS3_DefaultXMLNamespaceStatement' is a specialization of 'Statement'.
+The class 'aS3_ExpressionStatement' is a specialization of 'Statement'.
+The class 'aS3_IfStatement' is a specialization of 'Statement'.
+The class 'aS3_ThrowStatement' is a specialization of 'Statement'.
+The class 'aS3_TryStatement' is a specialization of 'Statement'.
+The class 'aS3_ReturnStatement' is a specialization of 'Statement'.
+The class 'aS3_SwitchStatement' is a specialization of 'Statement'.
+The class 'aS3_ForEachStatement' is a specialization of 'Statement'.
+The class 'aS3_ForStatement' is a specialization of 'Statement'.
+The class 'aS3_WhileStatement' is a specialization of 'Statement'.
+The class 'aS3_DoWhileStatement' is a specialization of 'Statement'.
+The class 'aS3_WithStatement' is a specialization of 'Statement'.
+The class 'aS3_XmlConstant' is a specialization of 'Expression'.
+The class 'aS3_RegexpConstant' is a specialization of 'Expression'.
+The class 'aS3_NumberConstant' is a specialization of 'Expression'.
+The class 'aS3_StringConstant' is a specialization of 'Expression'.
+The class 'aS3_BoolConstant' is a specialization of 'Expression'.
+The class 'aS3_Undefined' is a specialization of 'Expression'.
+The class 'aS3_This' is a specialization of 'Expression'.
+The class 'aS3_Null' is a specialization of 'Expression'.
+The class 'aS3_SymbolRef' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'aS3_Model' and 'aS3_Package'. From 'aS3_Model', the role 'aS3_Model' has cardinality 0..*, and from 'aS3_Package', the role 'aS3_Package' has cardinality 0..*.
+An association connects 'aS3_Model' and 'aS3_Imports'. From 'aS3_Model', the role 'aS3_Model2' has cardinality 0..*, and from 'aS3_Imports', the role 'aS3_Imports' has cardinality 0..*.
+An association connects 'aS3_EObject' and 'aS3_Model'. From 'aS3_EObject', the role 'aS3_EObject' has cardinality 0..*, and from 'aS3_Model', the role 'aS3_Model4' has cardinality 0..*.
+An association connects 'aS3_Model' and 'aS3_EObject'. From 'aS3_Model', the role 'aS3_Model6' has cardinality 0..*, and from 'aS3_EObject', the role 'aS3_EObject7' has cardinality 0..*.
+An association connects 'aS3_Imports' and 'aS3_Package'. From 'aS3_Imports', the role 'aS3_Imports10' has cardinality 0..*, and from 'aS3_Package', the role 'aS3_Package9' has cardinality 0..*.
+An association connects 'aS3_directive' and 'aS3_Package'. From 'aS3_directive', the role 'aS3_directive' has cardinality 0..*, and from 'aS3_Package', the role 'aS3_Package12' has cardinality 0..*.
+An association connects 'aS3_EObject' and 'aS3_Package'. From 'aS3_EObject', the role 'aS3_EObject15' has cardinality 0..*, and from 'aS3_Package', the role 'aS3_Package14' has cardinality 0..*.
+An association connects 'aS3_EObject' and 'aS3_Package'. From 'aS3_EObject', the role 'aS3_EObject18' has cardinality 0..*, and from 'aS3_Package', the role 'aS3_Package17' has cardinality 0..*.
+An association connects 'aS3_Imports' and 'aS3_Import'. From 'aS3_Imports', the role 'aS3_Imports20' has cardinality 0..*, and from 'aS3_Import', the role 'aS3_Import' has cardinality 0..*.
+An association connects 'aS3_directive' and 'aS3_Uses'. From 'aS3_directive', the role 'aS3_directive22' has cardinality 0..*, and from 'aS3_Uses', the role 'aS3_Uses' has cardinality 0..*.
+An association connects 'aS3_annotationFields' and 'aS3_Annotation'. From 'aS3_annotationFields', the role 'aS3_annotationFields' has cardinality 0..*, and from 'aS3_Annotation', the role 'aS3_Annotation' has cardinality 0..*.
+An association connects 'aS3_annotationFields' and 'aS3_annotationField'. From 'aS3_annotationFields', the role 'aS3_annotationFields25' has cardinality 0..*, and from 'aS3_annotationField', the role 'aS3_annotationField' has cardinality 0..*.
+An association connects 'aS3_Expression' and 'aS3_annotationField'. From 'aS3_Expression', the role 'aS3_Expression' has cardinality 0..*, and from 'aS3_annotationField', the role 'aS3_annotationField27' has cardinality 0..*.
+An association connects 'aS3_Interface' and 'aS3_Annotation'. From 'aS3_Interface', the role 'aS3_Interface' has cardinality 0..*, and from 'aS3_Annotation', the role 'aS3_Annotation29' has cardinality 0..*.
+An association connects 'aS3_Interface' and 'aS3_Interface'. From 'aS3_Interface', the role 'aS3_Interface32' has cardinality 0..*, and from 'aS3_Interface', the role 'aS3_Interface30' has cardinality 0..*.
+An association connects 'aS3_Interface' and 'aS3_InterfaceMethod'. From 'aS3_Interface', the role 'aS3_Interface34' has cardinality 0..*, and from 'aS3_InterfaceMethod', the role 'aS3_InterfaceMethod' has cardinality 0..*.
+An association connects 'aS3_Annotation' and 'aS3_InterfaceMethod'. From 'aS3_Annotation', the role 'aS3_Annotation37' has cardinality 0..*, and from 'aS3_InterfaceMethod', the role 'aS3_InterfaceMethod36' has cardinality 0..*.
+An association connects 'aS3_Modifier' and 'aS3_InterfaceMethod'. From 'aS3_Modifier', the role 'aS3_Modifier' has cardinality 0..*, and from 'aS3_InterfaceMethod', the role 'aS3_InterfaceMethod39' has cardinality 0..*.
+An association connects 'aS3_InterfaceMethod' and 'aS3_AccessorRole'. From 'aS3_InterfaceMethod', the role 'aS3_InterfaceMethod41' has cardinality 0..*, and from 'aS3_AccessorRole', the role 'aS3_AccessorRole' has cardinality 0..*.
+An association connects 'aS3_Parameter' and 'aS3_InterfaceMethod'. From 'aS3_Parameter', the role 'aS3_Parameter' has cardinality 0..*, and from 'aS3_InterfaceMethod', the role 'aS3_InterfaceMethod43' has cardinality 0..*.
+An association connects 'aS3_EObject' and 'aS3_InterfaceMethod'. From 'aS3_EObject', the role 'aS3_EObject46' has cardinality 0..*, and from 'aS3_InterfaceMethod', the role 'aS3_InterfaceMethod45' has cardinality 0..*.
+An association connects 'aS3_functionCommon' and 'aS3_functionExpression'. From 'aS3_functionCommon', the role 'aS3_functionCommon' has cardinality 0..*, and from 'aS3_functionExpression', the role 'aS3_functionExpression' has cardinality 0..*.
+An association connects 'aS3_functionSignature' and 'aS3_functionCommon'. From 'aS3_functionSignature', the role 'aS3_functionSignature' has cardinality 0..*, and from 'aS3_functionCommon', the role 'aS3_functionCommon49' has cardinality 0..*.
+An association connects 'aS3_functionCommon' and 'aS3_Block'. From 'aS3_functionCommon', the role 'aS3_functionCommon51' has cardinality 0..*, and from 'aS3_Block', the role 'aS3_Block' has cardinality 0..*.
+An association connects 'aS3_Annotation' and 'aS3_Class'. From 'aS3_Annotation', the role 'aS3_Annotation53' has cardinality 0..*, and from 'aS3_Class', the role 'aS3_Class' has cardinality 0..*.
+An association connects 'aS3_Modifier' and 'aS3_Class'. From 'aS3_Modifier', the role 'aS3_Modifier56' has cardinality 0..*, and from 'aS3_Class', the role 'aS3_Class55' has cardinality 0..*.
+An association connects 'aS3_Class' and 'aS3_Class'. From 'aS3_Class', the role 'aS3_Class57' has cardinality 0..*, and from 'aS3_Class', the role 'aS3_Class59' has cardinality 0..*.
+An association connects 'aS3_Interface' and 'aS3_Class'. From 'aS3_Interface', the role 'aS3_Interface62' has cardinality 0..*, and from 'aS3_Class', the role 'aS3_Class61' has cardinality 0..*.
+An association connects 'aS3_Class' and 'aS3_Member'. From 'aS3_Class', the role 'aS3_Class64' has cardinality 0..*, and from 'aS3_Member', the role 'aS3_Member' has cardinality 0..*.
+An association connects 'aS3_Member' and 'aS3_MemberVariableDeclaration'. From 'aS3_Member', the role 'aS3_Member66' has cardinality 0..*, and from 'aS3_MemberVariableDeclaration', the role 'aS3_MemberVariableDeclaration' has cardinality 0..*.
+An association connects 'aS3_Member' and 'aS3_Method'. From 'aS3_Member', the role 'aS3_Member68' has cardinality 0..*, and from 'aS3_Method', the role 'aS3_Method' has cardinality 0..*.
+An association connects 'aS3_Method' and 'aS3_Annotation'. From 'aS3_Method', the role 'aS3_Method70' has cardinality 0..*, and from 'aS3_Annotation', the role 'aS3_Annotation71' has cardinality 0..*.
+An association connects 'aS3_Modifier' and 'aS3_Method'. From 'aS3_Modifier', the role 'aS3_Modifier74' has cardinality 0..*, and from 'aS3_Method', the role 'aS3_Method73' has cardinality 0..*.
+An association connects 'aS3_AccessorRole' and 'aS3_Method'. From 'aS3_AccessorRole', the role 'aS3_AccessorRole77' has cardinality 0..*, and from 'aS3_Method', the role 'aS3_Method76' has cardinality 0..*.
+An association connects 'aS3_Method' and 'aS3_Parameter'. From 'aS3_Method', the role 'aS3_Method79' has cardinality 0..*, and from 'aS3_Parameter', the role 'aS3_Parameter80' has cardinality 0..*.
+An association connects 'aS3_EObject' and 'aS3_Method'. From 'aS3_EObject', the role 'aS3_EObject83' has cardinality 0..*, and from 'aS3_Method', the role 'aS3_Method82' has cardinality 0..*.
+An association connects 'aS3_Method' and 'aS3_Block'. From 'aS3_Method', the role 'aS3_Method85' has cardinality 0..*, and from 'aS3_Block', the role 'aS3_Block86' has cardinality 0..*.
+An association connects 'aS3_MethodBody' and 'aS3_Statement'. From 'aS3_MethodBody', the role 'aS3_MethodBody' has cardinality 0..*, and from 'aS3_Statement', the role 'aS3_Statement' has cardinality 0..*.
+An association connects 'aS3_MemberVariableDeclaration' and 'aS3_Annotation'. From 'aS3_MemberVariableDeclaration', the role 'aS3_MemberVariableDeclaration89' has cardinality 0..*, and from 'aS3_Annotation', the role 'aS3_Annotation90' has cardinality 0..*.
+An association connects 'aS3_MemberVariableDeclaration' and 'aS3_Modifier'. From 'aS3_MemberVariableDeclaration', the role 'aS3_MemberVariableDeclaration92' has cardinality 0..*, and from 'aS3_Modifier', the role 'aS3_Modifier93' has cardinality 0..*.
+An association connects 'aS3_EObject' and 'aS3_MemberVariableDeclaration'. From 'aS3_EObject', the role 'aS3_EObject96' has cardinality 0..*, and from 'aS3_MemberVariableDeclaration', the role 'aS3_MemberVariableDeclaration95' has cardinality 0..*.
+An association connects 'aS3_assignmentExpression' and 'aS3_MemberVariableDeclaration'. From 'aS3_assignmentExpression', the role 'aS3_assignmentExpression' has cardinality 0..*, and from 'aS3_MemberVariableDeclaration', the role 'aS3_MemberVariableDeclaration98' has cardinality 0..*.
+An association connects 'aS3_EObject' and 'aS3_VariableDeclaration'. From 'aS3_EObject', the role 'aS3_EObject100' has cardinality 0..*, and from 'aS3_VariableDeclaration', the role 'aS3_VariableDeclaration' has cardinality 0..*.
+An association connects 'aS3_assignmentExpression' and 'aS3_VariableDeclaration'. From 'aS3_assignmentExpression', the role 'aS3_assignmentExpression103' has cardinality 0..*, and from 'aS3_VariableDeclaration', the role 'aS3_VariableDeclaration102' has cardinality 0..*.
+An association connects 'aS3_EObject' and 'aS3_Parameter'. From 'aS3_EObject', the role 'aS3_EObject106' has cardinality 0..*, and from 'aS3_Parameter', the role 'aS3_Parameter105' has cardinality 0..*.
+An association connects 'aS3_exprOrObjectLiteral' and 'aS3_Parameter'. From 'aS3_exprOrObjectLiteral', the role 'aS3_exprOrObjectLiteral' has cardinality 0..*, and from 'aS3_Parameter', the role 'aS3_Parameter108' has cardinality 0..*.
+An association connects 'aS3_objectLiteral' and 'aS3_fieldList'. From 'aS3_objectLiteral', the role 'aS3_objectLiteral' has cardinality 0..*, and from 'aS3_fieldList', the role 'aS3_fieldList' has cardinality 0..*.
+An association connects 'aS3_literalField' and 'aS3_fieldList'. From 'aS3_literalField', the role 'aS3_literalField' has cardinality 0..*, and from 'aS3_fieldList', the role 'aS3_fieldList111' has cardinality 0..*.
+An association connects 'aS3_literalField' and 'aS3_fieldList'. From 'aS3_literalField', the role 'aS3_literalField114' has cardinality 0..*, and from 'aS3_fieldList', the role 'aS3_fieldList113' has cardinality 0..*.
+An association connects 'aS3_literalField' and 'aS3_fieldName'. From 'aS3_literalField', the role 'aS3_literalField116' has cardinality 0..*, and from 'aS3_fieldName', the role 'aS3_fieldName' has cardinality 0..*.
+An association connects 'aS3_literalField' and 'aS3_element'. From 'aS3_literalField', the role 'aS3_literalField118' has cardinality 0..*, and from 'aS3_element', the role 'aS3_element' has cardinality 0..*.
+An association connects 'aS3_identi' and 'aS3_fieldName'. From 'aS3_identi', the role 'aS3_identi' has cardinality 0..*, and from 'aS3_fieldName', the role 'aS3_fieldName120' has cardinality 0..*.
+An association connects 'aS3_identi' and 'aS3_qualifiedIdent'. From 'aS3_identi', the role 'aS3_identi122' has cardinality 0..*, and from 'aS3_qualifiedIdent', the role 'aS3_qualifiedIdent' has cardinality 0..*.
+An association connects 'aS3_identi' and 'aS3_typeExpression'. From 'aS3_identi', the role 'aS3_identi124' has cardinality 0..*, and from 'aS3_typeExpression', the role 'aS3_typeExpression' has cardinality 0..*.
+An association connects 'aS3_identi' and 'aS3_Block'. From 'aS3_identi', the role 'aS3_identi126' has cardinality 0..*, and from 'aS3_Block', the role 'aS3_Block127' has cardinality 0..*.
+An association connects 'aS3_identifier' and 'aS3_qualifiedIdent'. From 'aS3_identifier', the role 'aS3_identifier' has cardinality 0..*, and from 'aS3_qualifiedIdent', the role 'aS3_qualifiedIdent129' has cardinality 0..*.
+An association connects 'aS3_identifier' and 'aS3_propOrIdent'. From 'aS3_identifier', the role 'aS3_identifier131' has cardinality 0..*, and from 'aS3_propOrIdent', the role 'aS3_propOrIdent' has cardinality 0..*.
+An association connects 'aS3_simpleQualifiedIdentifier' and 'aS3_propertyIdentifier'. From 'aS3_simpleQualifiedIdentifier', the role 'aS3_simpleQualifiedIdentifier' has cardinality 0..*, and from 'aS3_propertyIdentifier', the role 'aS3_propertyIdentifier' has cardinality 0..*.
+An association connects 'aS3_simpleQualifiedIdentifier' and 'aS3_qualifier'. From 'aS3_simpleQualifiedIdentifier', the role 'aS3_simpleQualifiedIdentifier134' has cardinality 0..*, and from 'aS3_qualifier', the role 'aS3_qualifier' has cardinality 0..*.
+An association connects 'aS3_simpleQualifiedIdentifier' and 'aS3_propertyIdentifier'. From 'aS3_simpleQualifiedIdentifier', the role 'aS3_simpleQualifiedIdentifier136' has cardinality 0..*, and from 'aS3_propertyIdentifier', the role 'aS3_propertyIdentifier137' has cardinality 0..*.
+An association connects 'aS3_brackets' and 'aS3_simpleQualifiedIdentifier'. From 'aS3_brackets', the role 'aS3_brackets' has cardinality 0..*, and from 'aS3_simpleQualifiedIdentifier', the role 'aS3_simpleQualifiedIdentifier139' has cardinality 0..*.
+An association connects 'aS3_elementList' and 'aS3_arrayLiteral'. From 'aS3_elementList', the role 'aS3_elementList' has cardinality 0..*, and from 'aS3_arrayLiteral', the role 'aS3_arrayLiteral' has cardinality 0..*.
+An association connects 'aS3_switchStatementList' and 'aS3_Expression'. From 'aS3_switchStatementList', the role 'aS3_switchStatementList' has cardinality 0..*, and from 'aS3_Expression', the role 'aS3_Expression142' has cardinality 0..*.
+An association connects 'aS3_assignmentExpression' and 'aS3_expressionList'. From 'aS3_assignmentExpression', the role 'aS3_assignmentExpression144' has cardinality 0..*, and from 'aS3_expressionList', the role 'aS3_expressionList' has cardinality 0..*.
+An association connects 'aS3_EObject' and 'aS3_assignmentExpression'. From 'aS3_EObject', the role 'aS3_EObject147' has cardinality 0..*, and from 'aS3_assignmentExpression', the role 'aS3_assignmentExpression146' has cardinality 0..*.
+An association connects 'aS3_Expression' and 'aS3_conditionalExpression'. From 'aS3_Expression', the role 'aS3_Expression149' has cardinality 0..*, and from 'aS3_conditionalExpression', the role 'aS3_conditionalExpression' has cardinality 0..*.
+An association connects 'aS3_assignmentExpression' and 'aS3_conditionalSubExpression'. From 'aS3_assignmentExpression', the role 'aS3_assignmentExpression151' has cardinality 0..*, and from 'aS3_conditionalSubExpression', the role 'aS3_conditionalSubExpression' has cardinality 0..*.
+An association connects 'aS3_conditionalSubExpression' and 'aS3_assignmentExpression'. From 'aS3_conditionalSubExpression', the role 'aS3_conditionalSubExpression153' has cardinality 0..*, and from 'aS3_assignmentExpression', the role 'aS3_assignmentExpression154' has cardinality 0..*.
+An association connects 'aS3_conditionalSubExpression' and 'aS3_logicalOrExpression'. From 'aS3_conditionalSubExpression', the role 'aS3_conditionalSubExpression156' has cardinality 0..*, and from 'aS3_logicalOrExpression', the role 'aS3_logicalOrExpression' has cardinality 0..*.
+An association connects 'aS3_bitwiseOrExpression' and 'aS3_logicalAndExpression'. From 'aS3_bitwiseOrExpression', the role 'aS3_bitwiseOrExpression' has cardinality 0..*, and from 'aS3_logicalAndExpression', the role 'aS3_logicalAndExpression' has cardinality 0..*.
+An association connects 'aS3_bitwiseXorExpression' and 'aS3_bitwiseOrExpression'. From 'aS3_bitwiseXorExpression', the role 'aS3_bitwiseXorExpression' has cardinality 0..*, and from 'aS3_bitwiseOrExpression', the role 'aS3_bitwiseOrExpression159' has cardinality 0..*.
+An association connects 'aS3_bitwiseXorExpression' and 'aS3_bitwiseAndExpression'. From 'aS3_bitwiseXorExpression', the role 'aS3_bitwiseXorExpression161' has cardinality 0..*, and from 'aS3_bitwiseAndExpression', the role 'aS3_bitwiseAndExpression' has cardinality 0..*.
+An association connects 'aS3_bitwiseAndExpression' and 'aS3_equalityExpression'. From 'aS3_bitwiseAndExpression', the role 'aS3_bitwiseAndExpression163' has cardinality 0..*, and from 'aS3_equalityExpression', the role 'aS3_equalityExpression' has cardinality 0..*.
+An association connects 'aS3_relationalExpression' and 'aS3_equalityExpression'. From 'aS3_relationalExpression', the role 'aS3_relationalExpression' has cardinality 0..*, and from 'aS3_equalityExpression', the role 'aS3_equalityExpression165' has cardinality 0..*.
+An association connects 'aS3_shiftExpression' and 'aS3_relationalExpression'. From 'aS3_shiftExpression', the role 'aS3_shiftExpression' has cardinality 0..*, and from 'aS3_relationalExpression', the role 'aS3_relationalExpression167' has cardinality 0..*.
+An association connects 'aS3_shiftExpression' and 'aS3_additiveExpression'. From 'aS3_shiftExpression', the role 'aS3_shiftExpression169' has cardinality 0..*, and from 'aS3_additiveExpression', the role 'aS3_additiveExpression' has cardinality 0..*.
+An association connects 'aS3_multiplicativeExpression' and 'aS3_additiveExpression'. From 'aS3_multiplicativeExpression', the role 'aS3_multiplicativeExpression' has cardinality 0..*, and from 'aS3_additiveExpression', the role 'aS3_additiveExpression171' has cardinality 0..*.
+An association connects 'aS3_unaryExpression' and 'aS3_multiplicativeExpression'. From 'aS3_unaryExpression', the role 'aS3_unaryExpression' has cardinality 0..*, and from 'aS3_multiplicativeExpression', the role 'aS3_multiplicativeExpression173' has cardinality 0..*.
+An association connects 'aS3_unaryExpression' and 'aS3_unaryExpression'. From 'aS3_unaryExpression', the role 'aS3_unaryExpression176' has cardinality 0..*, and from 'aS3_unaryExpression', the role 'aS3_unaryExpression174' has cardinality 0..*.
+An association connects 'aS3_unaryExpression' and 'aS3_unaryExpression'. From 'aS3_unaryExpression', the role 'aS3_unaryExpression179' has cardinality 0..*, and from 'aS3_unaryExpression', the role 'aS3_unaryExpression177' has cardinality 0..*.
+An association connects 'aS3_unaryExpression' and 'aS3_unaryExpression'. From 'aS3_unaryExpression', the role 'aS3_unaryExpression180' has cardinality 0..*, and from 'aS3_unaryExpression', the role 'aS3_unaryExpression182' has cardinality 0..*.
+An association connects 'aS3_unaryExpressionNotPlusMinus' and 'aS3_unaryExpression'. From 'aS3_unaryExpressionNotPlusMinus', the role 'aS3_unaryExpressionNotPlusMinus' has cardinality 0..*, and from 'aS3_unaryExpression', the role 'aS3_unaryExpression184' has cardinality 0..*.
+An association connects 'aS3_postfixExpression' and 'aS3_primaryExpression'. From 'aS3_postfixExpression', the role 'aS3_postfixExpression' has cardinality 0..*, and from 'aS3_primaryExpression', the role 'aS3_primaryExpression' has cardinality 0..*.
+An association connects 'aS3_propOrIdent' and 'aS3_postfixExpression'. From 'aS3_propOrIdent', the role 'aS3_propOrIdent188' has cardinality 0..*, and from 'aS3_postfixExpression', the role 'aS3_postfixExpression187' has cardinality 0..*.
+An association connects 'aS3_Expression' and 'aS3_postfixExpression'. From 'aS3_Expression', the role 'aS3_Expression191' has cardinality 0..*, and from 'aS3_postfixExpression', the role 'aS3_postfixExpression190' has cardinality 0..*.
+An association connects 'aS3_qualifiedIdentifier' and 'aS3_postfixExpression'. From 'aS3_qualifiedIdentifier', the role 'aS3_qualifiedIdentifier' has cardinality 0..*, and from 'aS3_postfixExpression', the role 'aS3_postfixExpression193' has cardinality 0..*.
+An association connects 'aS3_postfixExpression' and 'aS3_e4xAttributeIdentifier'. From 'aS3_postfixExpression', the role 'aS3_postfixExpression195' has cardinality 0..*, and from 'aS3_e4xAttributeIdentifier', the role 'aS3_e4xAttributeIdentifier' has cardinality 0..*.
+An association connects 'aS3_arguments' and 'aS3_postfixExpression'. From 'aS3_arguments', the role 'aS3_arguments' has cardinality 0..*, and from 'aS3_postfixExpression', the role 'aS3_postfixExpression197' has cardinality 0..*.
+An association connects 'aS3_arguments' and 'aS3_expressionList'. From 'aS3_arguments', the role 'aS3_arguments199' has cardinality 0..*, and from 'aS3_expressionList', the role 'aS3_expressionList200' has cardinality 0..*.
+An association connects 'aS3_e4xAttributeIdentifier' and 'aS3_qualifiedIdent'. From 'aS3_e4xAttributeIdentifier', the role 'aS3_e4xAttributeIdentifier202' has cardinality 0..*, and from 'aS3_qualifiedIdent', the role 'aS3_qualifiedIdent203' has cardinality 0..*.
+An association connects 'aS3_e4xAttributeIdentifier' and 'aS3_Expression'. From 'aS3_e4xAttributeIdentifier', the role 'aS3_e4xAttributeIdentifier205' has cardinality 0..*, and from 'aS3_Expression', the role 'aS3_Expression206' has cardinality 0..*.
+An association connects 'aS3_Expression' and 'aS3_primaryExpression'. From 'aS3_Expression', the role 'aS3_Expression209' has cardinality 0..*, and from 'aS3_primaryExpression', the role 'aS3_primaryExpression208' has cardinality 0..*.
+An association connects 'aS3_Expression' and 'aS3_primaryExpression'. From 'aS3_Expression', the role 'aS3_Expression212' has cardinality 0..*, and from 'aS3_primaryExpression', the role 'aS3_primaryExpression211' has cardinality 0..*.
+An association connects 'aS3_primaryExpression' and 'aS3_EObject'. From 'aS3_primaryExpression', the role 'aS3_primaryExpression214' has cardinality 0..*, and from 'aS3_EObject', the role 'aS3_EObject215' has cardinality 0..*.
+An association connects 'aS3_functionExpression' and 'aS3_primaryExpression'. From 'aS3_functionExpression', the role 'aS3_functionExpression218' has cardinality 0..*, and from 'aS3_primaryExpression', the role 'aS3_primaryExpression217' has cardinality 0..*.
+An association connects 'aS3_primaryExpression' and 'aS3_newExpression'. From 'aS3_primaryExpression', the role 'aS3_primaryExpression220' has cardinality 0..*, and from 'aS3_newExpression', the role 'aS3_newExpression' has cardinality 0..*.
+An association connects 'aS3_primaryExpression' and 'aS3_encapsulatedExpression'. From 'aS3_primaryExpression', the role 'aS3_primaryExpression222' has cardinality 0..*, and from 'aS3_encapsulatedExpression', the role 'aS3_encapsulatedExpression' has cardinality 0..*.
+An association connects 'aS3_primaryExpression' and 'aS3_e4xAttributeIdentifier'. From 'aS3_primaryExpression', the role 'aS3_primaryExpression224' has cardinality 0..*, and from 'aS3_e4xAttributeIdentifier', the role 'aS3_e4xAttributeIdentifier225' has cardinality 0..*.
+An association connects 'aS3_primaryExpression' and 'aS3_qualifiedIdent'. From 'aS3_primaryExpression', the role 'aS3_primaryExpression227' has cardinality 0..*, and from 'aS3_qualifiedIdent', the role 'aS3_qualifiedIdent228' has cardinality 0..*.
+An association connects 'aS3_qualifiedIdent' and 'aS3_propOrIdent'. From 'aS3_qualifiedIdent', the role 'aS3_qualifiedIdent231' has cardinality 0..*, and from 'aS3_propOrIdent', the role 'aS3_propOrIdent230' has cardinality 0..*.
+An association connects 'aS3_newExpression' and 'aS3_EObject'. From 'aS3_newExpression', the role 'aS3_newExpression233' has cardinality 0..*, and from 'aS3_EObject', the role 'aS3_EObject234' has cardinality 0..*.
+An association connects 'aS3_arguments' and 'aS3_newExpression'. From 'aS3_arguments', the role 'aS3_arguments237' has cardinality 0..*, and from 'aS3_newExpression', the role 'aS3_newExpression236' has cardinality 0..*.
+An association connects 'aS3_primaryExpression' and 'aS3_fullNewSubexpression'. From 'aS3_primaryExpression', the role 'aS3_primaryExpression239' has cardinality 0..*, and from 'aS3_fullNewSubexpression', the role 'aS3_fullNewSubexpression' has cardinality 0..*.
+An association connects 'aS3_fullNewSubexpression' and 'aS3_qualifiedIdent'. From 'aS3_fullNewSubexpression', the role 'aS3_fullNewSubexpression241' has cardinality 0..*, and from 'aS3_qualifiedIdent', the role 'aS3_qualifiedIdent242' has cardinality 0..*.
+An association connects 'aS3_fullNewSubexpression' and 'aS3_brackets'. From 'aS3_fullNewSubexpression', the role 'aS3_fullNewSubexpression244' has cardinality 0..*, and from 'aS3_brackets', the role 'aS3_brackets245' has cardinality 0..*.
+An association connects 'aS3_propertyIdentifier' and 'aS3_encapsulatedExpression'. From 'aS3_propertyIdentifier', the role 'aS3_propertyIdentifier248' has cardinality 0..*, and from 'aS3_encapsulatedExpression', the role 'aS3_encapsulatedExpression247' has cardinality 0..*.
+An association connects 'aS3_encapsulatedExpression' and 'aS3_brackets'. From 'aS3_encapsulatedExpression', the role 'aS3_encapsulatedExpression250' has cardinality 0..*, and from 'aS3_brackets', the role 'aS3_brackets251' has cardinality 0..*.
+An association connects 'aS3_parameterDeclarationList' and 'aS3_functionSignature'. From 'aS3_parameterDeclarationList', the role 'aS3_parameterDeclarationList' has cardinality 0..*, and from 'aS3_functionSignature', the role 'aS3_functionSignature253' has cardinality 0..*.
+An association connects 'aS3_typeExpression' and 'aS3_functionSignature'. From 'aS3_typeExpression', the role 'aS3_typeExpression256' has cardinality 0..*, and from 'aS3_functionSignature', the role 'aS3_functionSignature255' has cardinality 0..*.
+An association connects 'aS3_typeExpression' and 'aS3_EObject'. From 'aS3_typeExpression', the role 'aS3_typeExpression258' has cardinality 0..*, and from 'aS3_EObject', the role 'aS3_EObject259' has cardinality 0..*.
+An association connects 'aS3_Parameter' and 'aS3_parameterDeclarationList'. From 'aS3_Parameter', the role 'aS3_Parameter262' has cardinality 0..*, and from 'aS3_parameterDeclarationList', the role 'aS3_parameterDeclarationList261' has cardinality 0..*.
+An association connects 'aS3_parameterDeclaration' and 'aS3_identi'. From 'aS3_parameterDeclaration', the role 'aS3_parameterDeclaration' has cardinality 0..*, and from 'aS3_identi', the role 'aS3_identi264' has cardinality 0..*.
+An association connects 'aS3_basicParameterDeclaration' and 'aS3_typeExpression'. From 'aS3_basicParameterDeclaration', the role 'aS3_basicParameterDeclaration' has cardinality 0..*, and from 'aS3_typeExpression', the role 'aS3_typeExpression266' has cardinality 0..*.
+An association connects 'aS3_basicParameterDeclaration' and 'aS3_parameterDefault'. From 'aS3_basicParameterDeclaration', the role 'aS3_basicParameterDeclaration268' has cardinality 0..*, and from 'aS3_parameterDefault', the role 'aS3_parameterDefault' has cardinality 0..*.
+An association connects 'aS3_Block' and 'aS3_Statement'. From 'aS3_Block', the role 'aS3_Block270' has cardinality 0..*, and from 'aS3_Statement', the role 'aS3_Statement271' has cardinality 0..*.
+An association connects 'aS3_Condition' and 'aS3_switchBlock'. From 'aS3_Condition', the role 'aS3_Condition' has cardinality 0..*, and from 'aS3_switchBlock', the role 'aS3_switchBlock' has cardinality 0..*.
+An association connects 'aS3_Statement' and 'aS3_Condition'. From 'aS3_Statement', the role 'aS3_Statement274' has cardinality 0..*, and from 'aS3_Condition', the role 'aS3_Condition275' has cardinality 0..*.
+An association connects 'aS3_Condition' and 'aS3_IfStatement'. From 'aS3_Condition', the role 'aS3_Condition277' has cardinality 0..*, and from 'aS3_IfStatement', the role 'aS3_IfStatement' has cardinality 0..*.
+An association connects 'aS3_IfStatement' and 'aS3_Statement'. From 'aS3_IfStatement', the role 'aS3_IfStatement279' has cardinality 0..*, and from 'aS3_Statement', the role 'aS3_Statement280' has cardinality 0..*.
+An association connects 'aS3_Statement' and 'aS3_IfStatement'. From 'aS3_Statement', the role 'aS3_Statement283' has cardinality 0..*, and from 'aS3_IfStatement', the role 'aS3_IfStatement282' has cardinality 0..*.
+An association connects 'aS3_Block' and 'aS3_TryStatement'. From 'aS3_Block', the role 'aS3_Block285' has cardinality 0..*, and from 'aS3_TryStatement', the role 'aS3_TryStatement' has cardinality 0..*.
+An association connects 'aS3_TryStatement' and 'aS3_finallyBlock'. From 'aS3_TryStatement', the role 'aS3_TryStatement287' has cardinality 0..*, and from 'aS3_finallyBlock', the role 'aS3_finallyBlock' has cardinality 0..*.
+An association connects 'aS3_TryStatement' and 'aS3_catchBlock'. From 'aS3_TryStatement', the role 'aS3_TryStatement289' has cardinality 0..*, and from 'aS3_catchBlock', the role 'aS3_catchBlock' has cardinality 0..*.
+An association connects 'aS3_ReturnStatement' and 'aS3_Expression'. From 'aS3_ReturnStatement', the role 'aS3_ReturnStatement' has cardinality 0..*, and from 'aS3_Expression', the role 'aS3_Expression291' has cardinality 0..*.
+An association connects 'aS3_switchBlock' and 'aS3_CaseStatement'. From 'aS3_switchBlock', the role 'aS3_switchBlock293' has cardinality 0..*, and from 'aS3_CaseStatement', the role 'aS3_CaseStatement' has cardinality 0..*.
+An association connects 'aS3_switchBlock' and 'aS3_DefaultStatement'. From 'aS3_switchBlock', the role 'aS3_switchBlock295' has cardinality 0..*, and from 'aS3_DefaultStatement', the role 'aS3_DefaultStatement' has cardinality 0..*.
+An association connects 'aS3_DefaultStatement' and 'aS3_switchStatementList'. From 'aS3_DefaultStatement', the role 'aS3_DefaultStatement297' has cardinality 0..*, and from 'aS3_switchStatementList', the role 'aS3_switchStatementList298' has cardinality 0..*.
+An association connects 'aS3_switchStatementList' and 'aS3_Statement'. From 'aS3_switchStatementList', the role 'aS3_switchStatementList300' has cardinality 0..*, and from 'aS3_Statement', the role 'aS3_Statement301' has cardinality 0..*.
+An association connects 'aS3_forInClause' and 'aS3_ForEachStatement'. From 'aS3_forInClause', the role 'aS3_forInClause' has cardinality 0..*, and from 'aS3_ForEachStatement', the role 'aS3_ForEachStatement' has cardinality 0..*.
+An association connects 'aS3_ForEachStatement' and 'aS3_Statement'. From 'aS3_ForEachStatement', the role 'aS3_ForEachStatement304' has cardinality 0..*, and from 'aS3_Statement', the role 'aS3_Statement305' has cardinality 0..*.
+An association connects 'aS3_forInClause' and 'aS3_ForStatement'. From 'aS3_forInClause', the role 'aS3_forInClause307' has cardinality 0..*, and from 'aS3_ForStatement', the role 'aS3_ForStatement' has cardinality 0..*.
+An association connects 'aS3_Statement' and 'aS3_ForStatement'. From 'aS3_Statement', the role 'aS3_Statement310' has cardinality 0..*, and from 'aS3_ForStatement', the role 'aS3_ForStatement309' has cardinality 0..*.
+An association connects 'aS3_traditionalForClause' and 'aS3_ForStatement'. From 'aS3_traditionalForClause', the role 'aS3_traditionalForClause' has cardinality 0..*, and from 'aS3_ForStatement', the role 'aS3_ForStatement312' has cardinality 0..*.
+An association connects 'aS3_forInit' and 'aS3_traditionalForClause'. From 'aS3_forInit', the role 'aS3_forInit' has cardinality 0..*, and from 'aS3_traditionalForClause', the role 'aS3_traditionalForClause314' has cardinality 0..*.
+An association connects 'aS3_traditionalForClause' and 'aS3_forCond'. From 'aS3_traditionalForClause', the role 'aS3_traditionalForClause316' has cardinality 0..*, and from 'aS3_forCond', the role 'aS3_forCond' has cardinality 0..*.
+An association connects 'aS3_traditionalForClause' and 'aS3_forIter'. From 'aS3_traditionalForClause', the role 'aS3_traditionalForClause318' has cardinality 0..*, and from 'aS3_forIter', the role 'aS3_forIter' has cardinality 0..*.
+An association connects 'aS3_forInClauseDecl' and 'aS3_forInClause'. From 'aS3_forInClauseDecl', the role 'aS3_forInClauseDecl' has cardinality 0..*, and from 'aS3_forInClause', the role 'aS3_forInClause320' has cardinality 0..*.
+An association connects 'aS3_forInClause' and 'aS3_forInClauseTail'. From 'aS3_forInClause', the role 'aS3_forInClause322' has cardinality 0..*, and from 'aS3_forInClauseTail', the role 'aS3_forInClauseTail' has cardinality 0..*.
+An association connects 'aS3_forInit' and 'aS3_VariableDeclaration'. From 'aS3_forInit', the role 'aS3_forInit324' has cardinality 0..*, and from 'aS3_VariableDeclaration', the role 'aS3_VariableDeclaration325' has cardinality 0..*.
+An association connects 'aS3_forInit' and 'aS3_expressionList'. From 'aS3_forInit', the role 'aS3_forInit327' has cardinality 0..*, and from 'aS3_expressionList', the role 'aS3_expressionList328' has cardinality 0..*.
+An association connects 'aS3_expressionList' and 'aS3_forCond'. From 'aS3_expressionList', the role 'aS3_expressionList331' has cardinality 0..*, and from 'aS3_forCond', the role 'aS3_forCond330' has cardinality 0..*.
+An association connects 'aS3_expressionList' and 'aS3_forIter'. From 'aS3_expressionList', the role 'aS3_expressionList334' has cardinality 0..*, and from 'aS3_forIter', the role 'aS3_forIter333' has cardinality 0..*.
+An association connects 'aS3_WhileStatement' and 'aS3_Condition'. From 'aS3_WhileStatement', the role 'aS3_WhileStatement' has cardinality 0..*, and from 'aS3_Condition', the role 'aS3_Condition336' has cardinality 0..*.
+An association connects 'aS3_WhileStatement' and 'aS3_Statement'. From 'aS3_WhileStatement', the role 'aS3_WhileStatement338' has cardinality 0..*, and from 'aS3_Statement', the role 'aS3_Statement339' has cardinality 0..*.
+An association connects 'aS3_Statement' and 'aS3_DoWhileStatement'. From 'aS3_Statement', the role 'aS3_Statement341' has cardinality 0..*, and from 'aS3_DoWhileStatement', the role 'aS3_DoWhileStatement' has cardinality 0..*.
+An association connects 'aS3_Condition' and 'aS3_DoWhileStatement'. From 'aS3_Condition', the role 'aS3_Condition344' has cardinality 0..*, and from 'aS3_DoWhileStatement', the role 'aS3_DoWhileStatement343' has cardinality 0..*.
+An association connects 'aS3_Condition' and 'aS3_WithStatement'. From 'aS3_Condition', the role 'aS3_Condition346' has cardinality 0..*, and from 'aS3_WithStatement', the role 'aS3_WithStatement' has cardinality 0..*.
+An association connects 'aS3_Statement' and 'aS3_WithStatement'. From 'aS3_Statement', the role 'aS3_Statement349' has cardinality 0..*, and from 'aS3_WithStatement', the role 'aS3_WithStatement348' has cardinality 0..*.
+An association connects 'aS3_regexpLiteral' and 'aS3_RegexpConstant'. From 'aS3_regexpLiteral', the role 'aS3_regexpLiteral' has cardinality 0..*, and from 'aS3_RegexpConstant', the role 'aS3_RegexpConstant' has cardinality 0..*.
+An association connects 'aS3_SymbolRef' and 'aS3_EObject'. From 'aS3_SymbolRef', the role 'aS3_SymbolRef' has cardinality 0..*, and from 'aS3_EObject', the role 'aS3_EObject352' has cardinality 0..*.

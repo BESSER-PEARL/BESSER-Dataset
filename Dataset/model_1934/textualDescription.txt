@@ -1,0 +1,219 @@
+The domain model 'easyflow' describes the core structural elements and their relationships within the system.
+
+The model defines 46 main class(es).
+
+'GroupingCriterion' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_CommandArgument' represents an important domain concept.
+It has the following attributes: 'sep', which is of type str; 'name', which is of type str; 'arg', which is of type str; 'required', which is of type bool; 'named', which is of type bool.
+
+'ITraversal' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_Contig' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_GroupingEvent' represents an important domain concept.
+It has the following attributes: 'dagOut', which is of type str; 'dagIn', which is of type str.
+
+'easyflow_EasyFlowMetadata' represents an important domain concept.
+It has the following attributes: 'contrast', which is of type bool; 'name', which is of type str; 'refData', which is of type str.
+
+'easyflow_GenericTraversalCriterion' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_Group' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'easyflow_DataFormatToTaskList' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'easyflow_StringToTaskMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'easyflow_Library' represents an important domain concept.
+It has the following attributes: 'readLength', which is of type int; 'insertSize', which is of type int; 'name', which is of type str.
+
+'easyflow_Argument' represents an important domain concept.
+It has the following attributes: 'sep', which is of type str; 'name', which is of type str; 'arg', which is of type str.
+
+'easyflow_StringToLibraryMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'EasyFlowMetadata' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_EasyFlowTemplate' represents an important domain concept.
+It has one attribute: 'fileName', which is of type str.
+
+'easyflow_Interpreter' represents an important domain concept.
+It has the following attributes: 'options', which is of type str; 'name', which is of type str; 'subCmd', which is of type str; 'exe', which is of type str.
+
+'easyflow_ReadEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_Readgroup' represents an important domain concept.
+It has the following attributes: 'platform', which is of type str; 'description', which is of type str; 'platformUnit', which is of type str; 'name', which is of type str.
+
+'easyflow_EasyFlowImplementationTemplate' represents an important domain concept.
+It has the following attributes: 'fileName', which is of type str; 'globalOptions', which is of type str; 'jsonRootNode', which is of type str; 'parameterConfigMap', which is of type str; 'parameterConfigFileName', which is of type str.
+
+'easyflow_Job' represents an important domain concept.
+It has the following attributes: 'staticArgs', which is of type str; 'targets', which is of type str; 'outputArgs', which is of type str; 'genericArgs', which is of type str; 'subCmd', which is of type str; 'inputArgs', which is of type str; 'targetPlatform', which is of type str; 'source', which is of type str; 'targetPlatformOptions', which is of type str; 'interpreterOption', which is of type str; 'exe', which is of type str; 'dependencies', which is of type str; 'name', which is of type str.
+
+'easyflow_Record' represents an important domain concept.
+It has the following attributes: 'fileNames', which is of type str; 'refData', which is of type str.
+
+'easyflow_TaskToDataProcessingType' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_DataProcessingTypeToTask' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_StringToReadgroupMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'easyflow_StringToGroupMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'easyflow_Sample' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Traversal' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_IWorkflowUtil' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_EasyFlowConfiguration' represents an important domain concept.
+It has the following attributes: 'fileName', which is of type str; 'configMap', which is of type str.
+
+'easyflow_EasyFlowMetadataReader' represents an important domain concept.
+It has one attribute: 'fileName', which is of type str.
+
+'easyflow_Locus' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_Workflow' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'dag', which is of type str; 'graph', which is of type str; 'jobDag', which is of type str.
+
+'easyflow_StringToRecordMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'easyflow_SplittingEvent' represents an important domain concept.
+It has the following attributes: 'processedTask', which is of type str; 'traversalCriterion', which is of type str; 'traversalImplDir', which is of type str; 'dag', which is of type str; 'traversalChunks', which is of type str.
+
+'easyflow_Task' represents an important domain concept.
+It has the following attributes: 'splitCriterion', which is of type str; 'name', which is of type str; 'dataFormatOut', which is of type str; 'util', which is of type bool; 'static', which is of type bool; 'cardinalityOut', which is of type str; 'dataCriterion', which is of type str; 'isMultipleInstancesOfDataCriterion', which is of type str; 'jexlString', which is of type str; 'contrast', which is of type bool; 'mergeCriterion', which is of type str; 'depricated', which is of type bool; 'skipGroupingCriterion', which is of type str; 'traversalCriterion', which is of type str; 'cardinalityIn', which is of type str; 'dataFormatIn', which is of type str.
+
+'easyflow_StringToGroupingCriterionMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'easyflow_StringToTraversalCriterionMap' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'easyflow_StringToSampleMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'easyflow_Chunk' represents an important domain concept.
+It has the following attributes: 'argument', which is of type str; 'name', which is of type str; 'tool', which is of type str.
+
+'easyflow_GroupingCriterion' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'easyflow_DataProcessingType' represents an important domain concept.
+It has the following attributes: 'dataFormatOut', which is of type str; 'dataFormatIn', which is of type str.
+
+'easyflow_StringToToolMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'easyflow_Tool' represents an important domain concept.
+It has the following attributes: 'subCmdPrefix', which is of type str; 'category', which is of type str; 'pattern', which is of type str; 'toolName', which is of type str; 'refData', which is of type str; 'subCmd', which is of type str; 'type', which is of type str; 'source', which is of type str.
+
+'easyflow_ITraversal' represents an important domain concept.
+It does not declare any attributes.
+
+'easyflow_Traversal' represents an important domain concept.
+It has one attribute: 'tarversalCriterion', which is of type str.
+
+'easyflow_StringToChunkMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TraversalCriterion' defines the following possible values: 'ReadMappingFlag', 'Readpair', 'SplitRead', 'Locus', 'None', 'Contig', 'Sample', 'Readgroup', 'ReadEnd', 'IntervalList', 'Read', 'Library'.
+The enumeration 'DataFormat' defines the following possible values: 'BAM', 'FAI', 'BAI', 'SAI', 'CSV', 'VCF', 'BWT', 'DICT', 'FASTQ', 'None', 'BCF', 'TXT', 'FASTA', 'IntervalList', 'SAM', 'VCF_IDX'.
+The enumeration 'DataCriterion' defines the following possible values: 'Readgroup', 'Library', 'Sample', 'None'.
+
+The model also captures inheritance relationships between classes.
+The class 'easyflow_Group' is a specialization of 'GroupingCriterion'.
+The class 'easyflow_Sample' is a specialization of 'GroupingCriterion'.
+The class 'easyflow_Readgroup' is a specialization of 'GroupingCriterion'.
+The class 'easyflow_Library' is a specialization of 'GroupingCriterion'.
+The class 'easyflow_Record' is a specialization of 'GroupingCriterion'.
+The class 'easyflow_EasyFlowMetadataReader' is a specialization of 'EasyFlowMetadata'.
+The class 'easyflow_Traversal' is a specialization of 'ITraversal'.
+The class 'easyflow_GenericTraversalCriterion' is a specialization of 'Traversal'.
+The class 'easyflow_ReadEnd' is a specialization of 'Traversal'.
+The class 'easyflow_Contig' is a specialization of 'Traversal'.
+The class 'easyflow_Locus' is a specialization of 'Traversal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'easyflow_EasyFlowTemplate' and 'easyflow_Workflow'. From 'easyflow_EasyFlowTemplate', the role 'easyflow_EasyFlowTemplate' has cardinality 0..*, and from 'easyflow_Workflow', the role 'easyflow_Workflow' has cardinality 0..*.
+An association connects 'easyflow_EasyFlowConfiguration' and 'easyflow_Workflow'. From 'easyflow_EasyFlowConfiguration', the role 'easyflow_EasyFlowConfiguration' has cardinality 0..*, and from 'easyflow_Workflow', the role 'easyflow_Workflow2' has cardinality 0..*.
+An association connects 'easyflow_EasyFlowMetadata' and 'easyflow_Workflow'. From 'easyflow_EasyFlowMetadata', the role 'easyflow_EasyFlowMetadata' has cardinality 0..*, and from 'easyflow_Workflow', the role 'easyflow_Workflow4' has cardinality 0..*.
+An association connects 'easyflow_Workflow' and 'easyflow_EasyFlowImplementationTemplate'. From 'easyflow_Workflow', the role 'easyflow_Workflow6' has cardinality 0..*, and from 'easyflow_EasyFlowImplementationTemplate', the role 'easyflow_EasyFlowImplementationTemplate' has cardinality 0..*.
+An association connects 'easyflow_Workflow' and 'easyflow_DataProcessingType'. From 'easyflow_Workflow', the role 'easyflow_Workflow8' has cardinality 0..*, and from 'easyflow_DataProcessingType', the role 'easyflow_DataProcessingType' has cardinality 0..*.
+An association connects 'easyflow_Workflow' and 'easyflow_DataProcessingTypeToTask'. From 'easyflow_Workflow', the role 'easyflow_Workflow10' has cardinality 0..*, and from 'easyflow_DataProcessingTypeToTask', the role 'easyflow_DataProcessingTypeToTask' has cardinality 0..*.
+An association connects 'easyflow_Workflow' and 'easyflow_TaskToDataProcessingType'. From 'easyflow_Workflow', the role 'easyflow_Workflow12' has cardinality 0..*, and from 'easyflow_TaskToDataProcessingType', the role 'easyflow_TaskToDataProcessingType' has cardinality 0..*.
+An association connects 'easyflow_DataFormatToTaskList' and 'easyflow_Workflow'. From 'easyflow_DataFormatToTaskList', the role 'easyflow_DataFormatToTaskList' has cardinality 0..*, and from 'easyflow_Workflow', the role 'easyflow_Workflow14' has cardinality 0..*.
+An association connects 'easyflow_Task' and 'easyflow_StringToToolMap'. From 'easyflow_Task', the role 'easyflow_Task' has cardinality 0..*, and from 'easyflow_StringToToolMap', the role 'easyflow_StringToToolMap' has cardinality 0..*.
+An association connects 'easyflow_Task' and 'easyflow_StringToTaskMap'. From 'easyflow_Task', the role 'easyflow_Task17' has cardinality 0..*, and from 'easyflow_StringToTaskMap', the role 'easyflow_StringToTaskMap' has cardinality 0..*.
+An association connects 'easyflow_StringToGroupingCriterionMap' and 'easyflow_Task'. From 'easyflow_StringToGroupingCriterionMap', the role 'easyflow_StringToGroupingCriterionMap' has cardinality 0..*, and from 'easyflow_Task', the role 'easyflow_Task19' has cardinality 0..*.
+An association connects 'easyflow_Task' and 'easyflow_StringToTraversalCriterionMap'. From 'easyflow_Task', the role 'easyflow_Task21' has cardinality 0..*, and from 'easyflow_StringToTraversalCriterionMap', the role 'easyflow_StringToTraversalCriterionMap' has cardinality 0..*.
+An association connects 'easyflow_Task' and 'easyflow_StringToTraversalCriterionMap'. From 'easyflow_Task', the role 'easyflow_Task23' has cardinality 0..*, and from 'easyflow_StringToTraversalCriterionMap', the role 'easyflow_StringToTraversalCriterionMap24' has cardinality 0..*.
+An association connects 'easyflow_Task' and 'easyflow_TaskToDataProcessingType'. From 'easyflow_Task', the role 'easyflow_Task26' has cardinality 0..*, and from 'easyflow_TaskToDataProcessingType', the role 'easyflow_TaskToDataProcessingType27' has cardinality 0..*.
+An association connects 'easyflow_EasyFlowTemplate' and 'easyflow_Workflow'. From 'easyflow_EasyFlowTemplate', the role 'easyflow_EasyFlowTemplate29' has cardinality 0..*, and from 'easyflow_Workflow', the role 'easyflow_Workflow30' has cardinality 0..*.
+An association connects 'easyflow_EasyFlowMetadata' and 'easyflow_StringToGroupMap'. From 'easyflow_EasyFlowMetadata', the role 'easyflow_EasyFlowMetadata32' has cardinality 0..*, and from 'easyflow_StringToGroupMap', the role 'easyflow_StringToGroupMap' has cardinality 0..*.
+An association connects 'easyflow_DataProcessingType' and 'easyflow_DataProcessingTypeToTask'. From 'easyflow_DataProcessingType', the role 'easyflow_DataProcessingType35' has cardinality 0..*, and from 'easyflow_DataProcessingTypeToTask', the role 'easyflow_DataProcessingTypeToTask34' has cardinality 0..*.
+An association connects 'easyflow_Task' and 'easyflow_DataProcessingTypeToTask'. From 'easyflow_Task', the role 'easyflow_Task38' has cardinality 0..*, and from 'easyflow_DataProcessingTypeToTask', the role 'easyflow_DataProcessingTypeToTask37' has cardinality 0..*.
+An association connects 'easyflow_Tool' and 'easyflow_CommandArgument'. From 'easyflow_Tool', the role 'easyflow_Tool' has cardinality 0..*, and from 'easyflow_CommandArgument', the role 'easyflow_CommandArgument' has cardinality 0..*.
+An association connects 'easyflow_CommandArgument' and 'easyflow_Tool'. From 'easyflow_CommandArgument', the role 'easyflow_CommandArgument42' has cardinality 0..*, and from 'easyflow_Tool', the role 'easyflow_Tool41' has cardinality 0..*.
+An association connects 'easyflow_CommandArgument' and 'easyflow_Tool'. From 'easyflow_CommandArgument', the role 'easyflow_CommandArgument45' has cardinality 0..*, and from 'easyflow_Tool', the role 'easyflow_Tool44' has cardinality 0..*.
+An association connects 'easyflow_CommandArgument' and 'easyflow_Tool'. From 'easyflow_CommandArgument', the role 'easyflow_CommandArgument48' has cardinality 0..*, and from 'easyflow_Tool', the role 'easyflow_Tool47' has cardinality 0..*.
+An association connects 'easyflow_Tool' and 'easyflow_Interpreter'. From 'easyflow_Tool', the role 'easyflow_Tool50' has cardinality 0..*, and from 'easyflow_Interpreter', the role 'easyflow_Interpreter' has cardinality 0..*.
+An association connects 'easyflow_Task' and 'easyflow_Tool'. From 'easyflow_Task', the role 'easyflow_Task53' has cardinality 0..*, and from 'easyflow_Tool', the role 'easyflow_Tool52' has cardinality 0..*.
+An association connects 'easyflow_EasyFlowMetadata' and 'easyflow_GroupingCriterion'. From 'easyflow_EasyFlowMetadata', the role 'easyflow_EasyFlowMetadata55' has cardinality 0..*, and from 'easyflow_GroupingCriterion', the role 'easyflow_GroupingCriterion' has cardinality 0..*.
+An association connects 'easyflow_Group' and 'easyflow_StringToSampleMap'. From 'easyflow_Group', the role 'easyflow_Group' has cardinality 0..*, and from 'easyflow_StringToSampleMap', the role 'easyflow_StringToSampleMap' has cardinality 0..*.
+An association connects 'easyflow_StringToReadgroupMap' and 'easyflow_Group'. From 'easyflow_StringToReadgroupMap', the role 'easyflow_StringToReadgroupMap' has cardinality 0..*, and from 'easyflow_Group', the role 'easyflow_Group58' has cardinality 0..*.
+An association connects 'easyflow_StringToLibraryMap' and 'easyflow_Group'. From 'easyflow_StringToLibraryMap', the role 'easyflow_StringToLibraryMap' has cardinality 0..*, and from 'easyflow_Group', the role 'easyflow_Group60' has cardinality 0..*.
+An association connects 'easyflow_Group' and 'easyflow_StringToRecordMap'. From 'easyflow_Group', the role 'easyflow_Group62' has cardinality 0..*, and from 'easyflow_StringToRecordMap', the role 'easyflow_StringToRecordMap' has cardinality 0..*.
+An association connects 'easyflow_Sample' and 'easyflow_StringToLibraryMap'. From 'easyflow_Sample', the role 'easyflow_Sample' has cardinality 0..*, and from 'easyflow_StringToLibraryMap', the role 'easyflow_StringToLibraryMap64' has cardinality 0..*.
+An association connects 'easyflow_StringToRecordMap' and 'easyflow_Sample'. From 'easyflow_StringToRecordMap', the role 'easyflow_StringToRecordMap67' has cardinality 0..*, and from 'easyflow_Sample', the role 'easyflow_Sample66' has cardinality 0..*.
+An association connects 'easyflow_Sample' and 'easyflow_StringToReadgroupMap'. From 'easyflow_Sample', the role 'easyflow_Sample69' has cardinality 0..*, and from 'easyflow_StringToReadgroupMap', the role 'easyflow_StringToReadgroupMap70' has cardinality 0..*.
+An association connects 'easyflow_StringToSampleMap' and 'easyflow_Readgroup'. From 'easyflow_StringToSampleMap', the role 'easyflow_StringToSampleMap72' has cardinality 0..*, and from 'easyflow_Readgroup', the role 'easyflow_Readgroup' has cardinality 0..*.
+An association connects 'easyflow_Readgroup' and 'easyflow_StringToLibraryMap'. From 'easyflow_Readgroup', the role 'easyflow_Readgroup74' has cardinality 0..*, and from 'easyflow_StringToLibraryMap', the role 'easyflow_StringToLibraryMap75' has cardinality 0..*.
+An association connects 'easyflow_StringToSampleMap' and 'easyflow_Library'. From 'easyflow_StringToSampleMap', the role 'easyflow_StringToSampleMap77' has cardinality 0..*, and from 'easyflow_Library', the role 'easyflow_Library' has cardinality 0..*.
+An association connects 'easyflow_Library' and 'easyflow_StringToRecordMap'. From 'easyflow_Library', the role 'easyflow_Library79' has cardinality 0..*, and from 'easyflow_StringToRecordMap', the role 'easyflow_StringToRecordMap80' has cardinality 0..*.
+An association connects 'easyflow_StringToReadgroupMap' and 'easyflow_Library'. From 'easyflow_StringToReadgroupMap', the role 'easyflow_StringToReadgroupMap83' has cardinality 0..*, and from 'easyflow_Library', the role 'easyflow_Library82' has cardinality 0..*.
+An association connects 'easyflow_Sample' and 'easyflow_Record'. From 'easyflow_Sample', the role 'easyflow_Sample85' has cardinality 0..*, and from 'easyflow_Record', the role 'easyflow_Record' has cardinality 0..*.
+An association connects 'easyflow_Readgroup' and 'easyflow_Record'. From 'easyflow_Readgroup', the role 'easyflow_Readgroup88' has cardinality 0..*, and from 'easyflow_Record', the role 'easyflow_Record87' has cardinality 0..*.
+An association connects 'easyflow_Record' and 'easyflow_Library'. From 'easyflow_Record', the role 'easyflow_Record90' has cardinality 0..*, and from 'easyflow_Library', the role 'easyflow_Library91' has cardinality 0..*.
+An association connects 'easyflow_Group' and 'easyflow_StringToGroupMap'. From 'easyflow_Group', the role 'easyflow_Group94' has cardinality 0..*, and from 'easyflow_StringToGroupMap', the role 'easyflow_StringToGroupMap93' has cardinality 0..*.
+An association connects 'easyflow_StringToSampleMap' and 'easyflow_Sample'. From 'easyflow_StringToSampleMap', the role 'easyflow_StringToSampleMap96' has cardinality 0..*, and from 'easyflow_Sample', the role 'easyflow_Sample97' has cardinality 0..*.
+An association connects 'easyflow_Readgroup' and 'easyflow_StringToReadgroupMap'. From 'easyflow_Readgroup', the role 'easyflow_Readgroup100' has cardinality 0..*, and from 'easyflow_StringToReadgroupMap', the role 'easyflow_StringToReadgroupMap99' has cardinality 0..*.
+An association connects 'easyflow_StringToLibraryMap' and 'easyflow_Library'. From 'easyflow_StringToLibraryMap', the role 'easyflow_StringToLibraryMap102' has cardinality 0..*, and from 'easyflow_Library', the role 'easyflow_Library103' has cardinality 0..*.
+An association connects 'easyflow_StringToToolMap' and 'easyflow_Tool'. From 'easyflow_StringToToolMap', the role 'easyflow_StringToToolMap105' has cardinality 0..*, and from 'easyflow_Tool', the role 'easyflow_Tool106' has cardinality 0..*.
+An association connects 'easyflow_StringToTaskMap' and 'easyflow_Task'. From 'easyflow_StringToTaskMap', the role 'easyflow_StringToTaskMap108' has cardinality 0..*, and from 'easyflow_Task', the role 'easyflow_Task109' has cardinality 0..*.
+An association connects 'easyflow_Record' and 'easyflow_StringToRecordMap'. From 'easyflow_Record', the role 'easyflow_Record112' has cardinality 0..*, and from 'easyflow_StringToRecordMap', the role 'easyflow_StringToRecordMap111' has cardinality 0..*.
+An association connects 'easyflow_StringToGroupingCriterionMap' and 'easyflow_GroupingCriterion'. From 'easyflow_StringToGroupingCriterionMap', the role 'easyflow_StringToGroupingCriterionMap114' has cardinality 0..*, and from 'easyflow_GroupingCriterion', the role 'easyflow_GroupingCriterion115' has cardinality 0..*.
+An association connects 'easyflow_Job' and 'easyflow_EasyFlowMetadata'. From 'easyflow_Job', the role 'easyflow_Job' has cardinality 0..*, and from 'easyflow_EasyFlowMetadata', the role 'easyflow_EasyFlowMetadata117' has cardinality 0..*.
+An association connects 'easyflow_ITraversal' and 'easyflow_Task'. From 'easyflow_ITraversal', the role 'easyflow_ITraversal' has cardinality 0..*, and from 'easyflow_Task', the role 'easyflow_Task119' has cardinality 0..*.
+An association connects 'easyflow_Traversal' and 'easyflow_StringToChunkMap'. From 'easyflow_Traversal', the role 'easyflow_Traversal' has cardinality 0..*, and from 'easyflow_StringToChunkMap', the role 'easyflow_StringToChunkMap' has cardinality 0..*.
+An association connects 'easyflow_SplittingEvent' and 'easyflow_Task'. From 'easyflow_SplittingEvent', the role 'easyflow_SplittingEvent' has cardinality 0..*, and from 'easyflow_Task', the role 'easyflow_Task122' has cardinality 0..*.
+An association connects 'easyflow_Task' and 'easyflow_SplittingEvent'. From 'easyflow_Task', the role 'easyflow_Task125' has cardinality 0..*, and from 'easyflow_SplittingEvent', the role 'easyflow_SplittingEvent124' has cardinality 0..*.
+An association connects 'easyflow_SplittingEvent' and 'easyflow_Task'. From 'easyflow_SplittingEvent', the role 'easyflow_SplittingEvent127' has cardinality 0..*, and from 'easyflow_Task', the role 'easyflow_Task128' has cardinality 0..*.
+An association connects 'easyflow_DataProcessingType' and 'easyflow_TaskToDataProcessingType'. From 'easyflow_DataProcessingType', the role 'easyflow_DataProcessingType131' has cardinality 0..*, and from 'easyflow_TaskToDataProcessingType', the role 'easyflow_TaskToDataProcessingType130' has cardinality 0..*.
+An association connects 'easyflow_Task' and 'easyflow_TaskToDataProcessingType'. From 'easyflow_Task', the role 'easyflow_Task134' has cardinality 0..*, and from 'easyflow_TaskToDataProcessingType', the role 'easyflow_TaskToDataProcessingType133' has cardinality 0..*.
+An association connects 'easyflow_Task' and 'easyflow_DataFormatToTaskList'. From 'easyflow_Task', the role 'easyflow_Task137' has cardinality 0..*, and from 'easyflow_DataFormatToTaskList', the role 'easyflow_DataFormatToTaskList136' has cardinality 0..*.
+An association connects 'easyflow_Chunk' and 'easyflow_StringToChunkMap'. From 'easyflow_Chunk', the role 'easyflow_Chunk' has cardinality 0..*, and from 'easyflow_StringToChunkMap', the role 'easyflow_StringToChunkMap139' has cardinality 0..*.

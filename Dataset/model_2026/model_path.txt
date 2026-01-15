@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/iFadi/MBSE/miniProject2/plugins/de.luh.se.mbse.network.textualeditor/model/generated/Amf.ecore

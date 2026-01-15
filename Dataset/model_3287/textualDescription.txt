@@ -1,0 +1,52 @@
+The domain model 'Etunit' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'Etunit_FailureType' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'type', which is of type str; 'mixed', which is of type str.
+
+'Etunit_SkippedType' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'mixed', which is of type str.
+
+'Etunit_PropertyType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'Etunit_PropertiesType' represents an important domain concept.
+It does not declare any attributes.
+
+'Etunit_TestsuitesType' represents an important domain concept.
+It has the following attributes: 'failures', which is of type str; 'name', which is of type str; 'time', which is of type str; 'errors', which is of type str; 'disabled', which is of type str; 'tests', which is of type str.
+
+'Etunit_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Etunit_ErrorType' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'mixed', which is of type str; 'type', which is of type str.
+
+'Etunit_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'systemErr', which is of type str; 'mixed', which is of type str; 'systemOut', which is of type str.
+
+'Etunit_TestcaseType' represents an important domain concept.
+It has the following attributes: 'time', which is of type str; 'assertions', which is of type str; 'systemErr', which is of type str; 'name', which is of type str; 'status', which is of type str; 'systemOut', which is of type str; 'classname', which is of type str.
+
+'Etunit_TestsuiteType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'hostname', which is of type str; 'skipped', which is of type str; 'errors', which is of type str; 'id', which is of type str; 'failures', which is of type str; 'time', which is of type str; 'timestamp', which is of type str; 'systemErr', which is of type str; 'disabled', which is of type str; 'tests', which is of type str; 'systemOut', which is of type str; 'package', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Etunit_DocumentRoot' and 'Etunit_EStringToStringMapEntry'. From 'Etunit_DocumentRoot', the role 'Etunit_DocumentRoot' has cardinality 0..*, and from 'Etunit_EStringToStringMapEntry', the role 'Etunit_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'Etunit_DocumentRoot' and 'Etunit_EStringToStringMapEntry'. From 'Etunit_DocumentRoot', the role 'Etunit_DocumentRoot2' has cardinality 0..*, and from 'Etunit_EStringToStringMapEntry', the role 'Etunit_EStringToStringMapEntry3' has cardinality 0..*.
+An association connects 'Etunit_ErrorType' and 'Etunit_DocumentRoot'. From 'Etunit_ErrorType', the role 'Etunit_ErrorType' has cardinality 0..*, and from 'Etunit_DocumentRoot', the role 'Etunit_DocumentRoot5' has cardinality 0..*.
+An association connects 'Etunit_FailureType' and 'Etunit_DocumentRoot'. From 'Etunit_FailureType', the role 'Etunit_FailureType' has cardinality 0..*, and from 'Etunit_DocumentRoot', the role 'Etunit_DocumentRoot7' has cardinality 0..*.
+An association connects 'Etunit_PropertiesType' and 'Etunit_DocumentRoot'. From 'Etunit_PropertiesType', the role 'Etunit_PropertiesType' has cardinality 0..*, and from 'Etunit_DocumentRoot', the role 'Etunit_DocumentRoot9' has cardinality 0..*.
+An association connects 'Etunit_PropertyType' and 'Etunit_DocumentRoot'. From 'Etunit_PropertyType', the role 'Etunit_PropertyType' has cardinality 0..*, and from 'Etunit_DocumentRoot', the role 'Etunit_DocumentRoot11' has cardinality 0..*.
+An association connects 'Etunit_SkippedType' and 'Etunit_DocumentRoot'. From 'Etunit_SkippedType', the role 'Etunit_SkippedType' has cardinality 0..*, and from 'Etunit_DocumentRoot', the role 'Etunit_DocumentRoot13' has cardinality 0..*.
+An association connects 'Etunit_TestcaseType' and 'Etunit_DocumentRoot'. From 'Etunit_TestcaseType', the role 'Etunit_TestcaseType' has cardinality 0..*, and from 'Etunit_DocumentRoot', the role 'Etunit_DocumentRoot15' has cardinality 0..*.
+An association connects 'Etunit_TestsuiteType' and 'Etunit_DocumentRoot'. From 'Etunit_TestsuiteType', the role 'Etunit_TestsuiteType' has cardinality 0..*, and from 'Etunit_DocumentRoot', the role 'Etunit_DocumentRoot17' has cardinality 0..*.
+An association connects 'Etunit_TestsuitesType' and 'Etunit_DocumentRoot'. From 'Etunit_TestsuitesType', the role 'Etunit_TestsuitesType' has cardinality 0..*, and from 'Etunit_DocumentRoot', the role 'Etunit_DocumentRoot19' has cardinality 0..*.
+An association connects 'Etunit_PropertyType' and 'Etunit_PropertiesType'. From 'Etunit_PropertyType', the role 'Etunit_PropertyType22' has cardinality 0..*, and from 'Etunit_PropertiesType', the role 'Etunit_PropertiesType21' has cardinality 0..*.
+An association connects 'Etunit_SkippedType' and 'Etunit_TestcaseType'. From 'Etunit_SkippedType', the role 'Etunit_SkippedType25' has cardinality 0..*, and from 'Etunit_TestcaseType', the role 'Etunit_TestcaseType24' has cardinality 0..*.
+An association connects 'Etunit_ErrorType' and 'Etunit_TestcaseType'. From 'Etunit_ErrorType', the role 'Etunit_ErrorType28' has cardinality 0..*, and from 'Etunit_TestcaseType', the role 'Etunit_TestcaseType27' has cardinality 0..*.
+An association connects 'Etunit_TestcaseType' and 'Etunit_FailureType'. From 'Etunit_TestcaseType', the role 'Etunit_TestcaseType30' has cardinality 0..*, and from 'Etunit_FailureType', the role 'Etunit_FailureType31' has cardinality 0..*.
+An association connects 'Etunit_TestsuitesType' and 'Etunit_TestsuiteType'. From 'Etunit_TestsuitesType', the role 'Etunit_TestsuitesType33' has cardinality 0..*, and from 'Etunit_TestsuiteType', the role 'Etunit_TestsuiteType34' has cardinality 0..*.
+An association connects 'Etunit_TestsuiteType' and 'Etunit_PropertiesType'. From 'Etunit_TestsuiteType', the role 'Etunit_TestsuiteType36' has cardinality 0..*, and from 'Etunit_PropertiesType', the role 'Etunit_PropertiesType37' has cardinality 0..*.
+An association connects 'Etunit_TestsuiteType' and 'Etunit_TestcaseType'. From 'Etunit_TestsuiteType', the role 'Etunit_TestsuiteType39' has cardinality 0..*, and from 'Etunit_TestcaseType', the role 'Etunit_TestcaseType40' has cardinality 0..*.

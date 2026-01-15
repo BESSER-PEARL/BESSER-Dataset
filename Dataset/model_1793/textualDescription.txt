@@ -1,0 +1,12 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'library_OclLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_OclExpression' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'query', which is of type str; 'context', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_OclExpression' and 'library_OclLibrary'. From 'library_OclExpression', the role 'library_OclExpression' has cardinality 0..*, and from 'library_OclLibrary', the role 'library_OclLibrary' has cardinality 0..*.

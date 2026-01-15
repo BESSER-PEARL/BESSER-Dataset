@@ -1,0 +1,549 @@
+The domain model 'timedAutomata' describes the core structural elements and their relationships within the system.
+
+The model defines 121 main class(es).
+
+'timedAutomata_core_TAElement' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_bnf_SendSynchronisation' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Commentable' represents an important domain concept.
+It does not declare any attributes.
+
+'base_Identifyable' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_CallByValueParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_core_Guards' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_GroupingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_ArrayDeclarationType' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_core_TemplateInstantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_types_IntegerRange' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_FunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Selections' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_CallByReferenceParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayDeclarationType' represents an important domain concept.
+It does not declare any attributes.
+
+'Guards' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_IterationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_IdentifierChannelExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_TAParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_AssignmentExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'timedAutomata_declarations_BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_FixedExpression' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'timedAutomata_declarations_WhileLoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_PointExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_core_SimpleSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_ArrayVariableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_types_Scalar' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_DoWhileLoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_types_Type' represents an important domain concept.
+It has one attribute: 'prefix', which is of type str.
+
+'timedAutomata_declarations_ArrayExpressionType' represents an important domain concept.
+It does not declare any attributes.
+
+'base_Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_core_Location' represents an important domain concept.
+It has the following attributes: 'committed', which is of type str; 'urgent', which is of type str.
+
+'timedAutomata_expressions_Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'ChannelExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_IncDecExpression' represents an important domain concept.
+It has the following attributes: 'beforeExpression', which is of type bool; 'increment', which is of type bool.
+
+'timedAutomata_base_Commentable' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'timedAutomata_declarations_ExpressionChannelExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_ExistsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_ForLoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_core_Template' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_bnf_ReceiveSynchronisation' represents an important domain concept.
+It does not declare any attributes.
+
+'Location' represents an important domain concept.
+It does not declare any attributes.
+
+'core_TAElement' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_SimpleIfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_types_SimpleType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'timedAutomata_declarations_ArrayDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'core_timedAutomata_Nail' represents an important domain concept.
+It does not declare any attributes.
+
+'Synchronisation' represents an important domain concept.
+It does not declare any attributes.
+
+'System' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_timedAutomata_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_ArrayTypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_core_System' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_VariableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Initialiser' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_ForallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_IdentifierExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_core_SystemDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_WithArgumentsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_ArrayDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_types_IdentifierType' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_VariableIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Updates' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_base_Identifyable' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'timedAutomata_core_Selections' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_ComplexChannelPriority' represents an important domain concept.
+It has one attribute: 'channelOperator', which is of type str.
+
+'timedAutomata_declarations_DefaultChannelPriority' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_types_Struct' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_ChannelExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Position' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TAElement' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_Initialiser' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_VariableIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_UnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'timedAutomata_declarations_SimpleChannelPriority' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_Initialiser' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateInstantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_TAParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_ChannelPriority' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_ExpressionInitialiser' represents an important domain concept.
+It does not declare any attributes.
+
+'core_timedAutomata_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_core_Updates' represents an important domain concept.
+It does not declare any attributes.
+
+'ChannelPriority' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_core_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'base_Commentable' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_base_Nameable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'declarations_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_core_Project' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'expressions_Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'TAParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_ArrayInitialiser' represents an important domain concept.
+It does not declare any attributes.
+
+'SystemDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_bnf_Synchronisation' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_core_ComplexSystem' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'timedAutomata_bnf_Identifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'timedAutomata_expressions_ConstantExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'timedAutomata_declarations_ChannelPriorityDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_ChannelPriority' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_declarations_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_ArrayDeclarationType' represents an important domain concept.
+It does not declare any attributes.
+
+'Template' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_ChannelExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'timedAutomata_expressions_BinaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UnaryOperator' defines the following possible values: 'MINUS', 'NOT', 'PLUS'.
+The enumeration 'FixedExpressionType' defines the following possible values: 'Deadlock', 'False', 'True'.
+The enumeration 'AssignOperator' defines the following possible values: 'DIV_ASSIGN', 'SUB_ASSIGN', 'MULT_ASSIGN', 'MOD_ASSIGN', 'ASSIGN', 'ADD_ASIGN'.
+The enumeration 'TypePrefix' defines the following possible values: 'BROADCAST', 'NONE', 'CONSTANT', 'META', 'URGENT'.
+The enumeration 'PriorityOperator' defines the following possible values: 'Seperator', 'LessThan'.
+The enumeration 'TypeId' defines the following possible values: 'Boolean', 'Integer', 'Clock', 'Channel', 'Void'.
+The enumeration 'BinaryOperator' defines the following possible values: 'ADDITION', 'IMPLY', 'LOGICAL_OR', 'GREATER_THAN_OR_EQUAL', 'LOGICAL_AND', 'BITWISE_XOR', 'MULTIPLICATION', 'INCREMENT', 'BITWISE_XOR_ASIGN', 'LESS_THAN_OR_EQUAL', 'SUBSTRACTION', 'BITWISE_OR', 'NONE', 'LEFT_BITSHIFT_ASSIGN', 'LOGICAL_NEGATION', 'BITWISE_AND_ASSIGN', 'LEFT_BITSHIFT', 'RIGHT_BITSHIFT_ASSIGN', 'LESS_THAN', 'NOT_EQUALS', 'BITWISE_AND', 'BITWISE_OR_ASSIGN', 'RIGHT_BITSHIFT', 'MAXIMUM', 'GREATER_THAN', 'DIVISION', 'MINIMUM', 'EQUALS', 'MODULO', 'DECREMENT'.
+
+The model also captures inheritance relationships between classes.
+The class 'timedAutomata_bnf_Synchronisation' is a specialization of 'Position'.
+The class 'timedAutomata_bnf_SendSynchronisation' is a specialization of 'Synchronisation'.
+The class 'timedAutomata_bnf_ReceiveSynchronisation' is a specialization of 'Synchronisation'.
+The class 'timedAutomata_expressions_Expression' is a specialization of 'Commentable'.
+The class 'timedAutomata_expressions_ConstantExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_VariableExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_ArrayVariableExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_IncDecExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_GroupingExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_BinaryExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_AssignmentExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_UnaryExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_SimpleIfExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_IdentifierExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_WithArgumentsExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_PointExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_ForallExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_ExistsExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_expressions_FixedExpression' is a specialization of 'Expression'.
+The class 'timedAutomata_declarations_Declaration' is a specialization of 'Commentable'.
+The class 'timedAutomata_declarations_VariableDeclaration' is a specialization of 'Declaration'.
+The class 'timedAutomata_declarations_TypeDeclaration' is a specialization of 'Declaration'.
+The class 'timedAutomata_declarations_FunctionDeclaration' is a specialization of 'Declaration'.
+The class 'timedAutomata_declarations_ChannelPriorityDeclaration' is a specialization of 'Declaration'.
+The class 'timedAutomata_declarations_ArrayExpressionType' is a specialization of 'ArrayDeclarationType'.
+The class 'timedAutomata_declarations_ArrayTypeType' is a specialization of 'ArrayDeclarationType'.
+The class 'timedAutomata_declarations_ExpressionInitialiser' is a specialization of 'Initialiser'.
+The class 'timedAutomata_declarations_ArrayInitialiser' is a specialization of 'Initialiser'.
+The class 'timedAutomata_declarations_CallByValueParameter' is a specialization of 'TAParameter'.
+The class 'timedAutomata_declarations_CallByReferenceParameter' is a specialization of 'TAParameter'.
+The class 'timedAutomata_declarations_BlockStatement' is a specialization of 'declarations_Statement'.
+The class 'timedAutomata_declarations_BlockStatement' is a specialization of 'declarations_Block'.
+The class 'timedAutomata_declarations_ExpressionStatement' is a specialization of 'Statement'.
+The class 'timedAutomata_declarations_ForLoopStatement' is a specialization of 'Statement'.
+The class 'timedAutomata_declarations_IterationStatement' is a specialization of 'Statement'.
+The class 'timedAutomata_declarations_WhileLoopStatement' is a specialization of 'Statement'.
+The class 'timedAutomata_declarations_DoWhileLoopStatement' is a specialization of 'Statement'.
+The class 'timedAutomata_declarations_IfStatement' is a specialization of 'Statement'.
+The class 'timedAutomata_declarations_ReturnStatement' is a specialization of 'Statement'.
+The class 'timedAutomata_declarations_DefaultChannelPriority' is a specialization of 'ChannelPriority'.
+The class 'timedAutomata_declarations_SimpleChannelPriority' is a specialization of 'ChannelPriority'.
+The class 'timedAutomata_declarations_ComplexChannelPriority' is a specialization of 'ChannelPriority'.
+The class 'timedAutomata_declarations_IdentifierChannelExpression' is a specialization of 'ChannelExpression'.
+The class 'timedAutomata_declarations_ExpressionChannelExpression' is a specialization of 'ChannelExpression'.
+The class 'timedAutomata_types_IdentifierType' is a specialization of 'Type'.
+The class 'timedAutomata_types_SimpleType' is a specialization of 'Type'.
+The class 'timedAutomata_types_IntegerRange' is a specialization of 'Type'.
+The class 'timedAutomata_types_Scalar' is a specialization of 'Type'.
+The class 'timedAutomata_types_Struct' is a specialization of 'Type'.
+The class 'timedAutomata_core_Project' is a specialization of 'TAElement'.
+The class 'timedAutomata_core_Template' is a specialization of 'core_TAElement'.
+The class 'timedAutomata_core_Template' is a specialization of 'base_Nameable'.
+The class 'timedAutomata_core_Template' is a specialization of 'base_Identifyable'.
+The class 'timedAutomata_core_Edge' is a specialization of 'core_TAElement'.
+The class 'timedAutomata_core_Edge' is a specialization of 'Position'.
+The class 'timedAutomata_core_TAElement' is a specialization of 'base_Commentable'.
+The class 'timedAutomata_core_TAElement' is a specialization of 'base_Nameable'.
+The class 'timedAutomata_core_Location' is a specialization of 'core_TAElement'.
+The class 'timedAutomata_core_Location' is a specialization of 'Position'.
+The class 'timedAutomata_core_SimpleSystem' is a specialization of 'System'.
+The class 'timedAutomata_core_ComplexSystem' is a specialization of 'System'.
+The class 'timedAutomata_core_Selections' is a specialization of 'Position'.
+The class 'timedAutomata_core_Updates' is a specialization of 'Position'.
+The class 'timedAutomata_core_Guards' is a specialization of 'Position'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expressions_Expression' and 'timedAutomata_bnf_Synchronisation'. From 'expressions_Expression', the role 'expressions_Expression' has cardinality 0..*, and from 'timedAutomata_bnf_Synchronisation', the role 'timedAutomata_bnf_Synchronisation' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_VariableExpression' and 'Identifier'. From 'timedAutomata_expressions_VariableExpression', the role 'timedAutomata_expressions_VariableExpression' has cardinality 0..*, and from 'Identifier', the role 'Identifier' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_expressions_ArrayVariableExpression'. From 'expressions_Expression', the role 'expressions_Expression3' has cardinality 0..*, and from 'timedAutomata_expressions_ArrayVariableExpression', the role 'timedAutomata_expressions_ArrayVariableExpression' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_ArrayVariableExpression' and 'expressions_Expression'. From 'timedAutomata_expressions_ArrayVariableExpression', the role 'timedAutomata_expressions_ArrayVariableExpression5' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression6' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_expressions_IncDecExpression'. From 'expressions_Expression', the role 'expressions_Expression8' has cardinality 0..*, and from 'timedAutomata_expressions_IncDecExpression', the role 'timedAutomata_expressions_IncDecExpression' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_expressions_GroupingExpression'. From 'expressions_Expression', the role 'expressions_Expression10' has cardinality 0..*, and from 'timedAutomata_expressions_GroupingExpression', the role 'timedAutomata_expressions_GroupingExpression' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_BinaryExpression' and 'expressions_Expression'. From 'timedAutomata_expressions_BinaryExpression', the role 'timedAutomata_expressions_BinaryExpression' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression12' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_expressions_BinaryExpression'. From 'expressions_Expression', the role 'expressions_Expression15' has cardinality 0..*, and from 'timedAutomata_expressions_BinaryExpression', the role 'timedAutomata_expressions_BinaryExpression14' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_expressions_AssignmentExpression'. From 'expressions_Expression', the role 'expressions_Expression17' has cardinality 0..*, and from 'timedAutomata_expressions_AssignmentExpression', the role 'timedAutomata_expressions_AssignmentExpression' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_AssignmentExpression' and 'expressions_Expression'. From 'timedAutomata_expressions_AssignmentExpression', the role 'timedAutomata_expressions_AssignmentExpression19' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression20' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_UnaryExpression' and 'expressions_Expression'. From 'timedAutomata_expressions_UnaryExpression', the role 'timedAutomata_expressions_UnaryExpression' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression22' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_expressions_SimpleIfExpression'. From 'expressions_Expression', the role 'expressions_Expression24' has cardinality 0..*, and from 'timedAutomata_expressions_SimpleIfExpression', the role 'timedAutomata_expressions_SimpleIfExpression' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_SimpleIfExpression' and 'expressions_Expression'. From 'timedAutomata_expressions_SimpleIfExpression', the role 'timedAutomata_expressions_SimpleIfExpression26' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression27' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_expressions_SimpleIfExpression'. From 'expressions_Expression', the role 'expressions_Expression30' has cardinality 0..*, and from 'timedAutomata_expressions_SimpleIfExpression', the role 'timedAutomata_expressions_SimpleIfExpression29' has cardinality 0..*.
+An association connects 'Identifier' and 'timedAutomata_expressions_IdentifierExpression'. From 'Identifier', the role 'Identifier32' has cardinality 0..*, and from 'timedAutomata_expressions_IdentifierExpression', the role 'timedAutomata_expressions_IdentifierExpression' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_WithArgumentsExpression' and 'expressions_Expression'. From 'timedAutomata_expressions_WithArgumentsExpression', the role 'timedAutomata_expressions_WithArgumentsExpression' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression34' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_expressions_WithArgumentsExpression'. From 'expressions_Expression', the role 'expressions_Expression37' has cardinality 0..*, and from 'timedAutomata_expressions_WithArgumentsExpression', the role 'timedAutomata_expressions_WithArgumentsExpression36' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_PointExpression' and 'expressions_Expression'. From 'timedAutomata_expressions_PointExpression', the role 'timedAutomata_expressions_PointExpression' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression39' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_PointExpression' and 'Identifier'. From 'timedAutomata_expressions_PointExpression', the role 'timedAutomata_expressions_PointExpression41' has cardinality 0..*, and from 'Identifier', the role 'Identifier42' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_ForallExpression' and 'Identifier'. From 'timedAutomata_expressions_ForallExpression', the role 'timedAutomata_expressions_ForallExpression' has cardinality 0..*, and from 'Identifier', the role 'Identifier44' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_ForallExpression' and 'types_Type'. From 'timedAutomata_expressions_ForallExpression', the role 'timedAutomata_expressions_ForallExpression46' has cardinality 0..*, and from 'types_Type', the role 'types_Type' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_expressions_ForallExpression'. From 'expressions_Expression', the role 'expressions_Expression49' has cardinality 0..*, and from 'timedAutomata_expressions_ForallExpression', the role 'timedAutomata_expressions_ForallExpression48' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_expressions_ExistsExpression'. From 'expressions_Expression', the role 'expressions_Expression51' has cardinality 0..*, and from 'timedAutomata_expressions_ExistsExpression', the role 'timedAutomata_expressions_ExistsExpression' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_ExistsExpression' and 'types_Type'. From 'timedAutomata_expressions_ExistsExpression', the role 'timedAutomata_expressions_ExistsExpression53' has cardinality 0..*, and from 'types_Type', the role 'types_Type54' has cardinality 0..*.
+An association connects 'timedAutomata_expressions_ExistsExpression' and 'expressions_Expression'. From 'timedAutomata_expressions_ExistsExpression', the role 'timedAutomata_expressions_ExistsExpression56' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression57' has cardinality 0..*.
+An association connects 'Identifier' and 'timedAutomata_expressions_Selection'. From 'Identifier', the role 'Identifier59' has cardinality 0..*, and from 'timedAutomata_expressions_Selection', the role 'timedAutomata_expressions_Selection' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_VariableDeclaration' and 'types_Type'. From 'timedAutomata_declarations_VariableDeclaration', the role 'timedAutomata_declarations_VariableDeclaration' has cardinality 0..*, and from 'types_Type', the role 'types_Type61' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_VariableDeclaration' and 'declarations_VariableIdentifier'. From 'timedAutomata_declarations_VariableDeclaration', the role 'timedAutomata_declarations_VariableDeclaration63' has cardinality 0..*, and from 'declarations_VariableIdentifier', the role 'declarations_VariableIdentifier' has cardinality 0..*.
+An association connects 'Identifier' and 'timedAutomata_declarations_VariableIdentifier'. From 'Identifier', the role 'Identifier65' has cardinality 0..*, and from 'timedAutomata_declarations_VariableIdentifier', the role 'timedAutomata_declarations_VariableIdentifier' has cardinality 0..*.
+An association connects 'declarations_ArrayDeclarationType' and 'timedAutomata_declarations_VariableIdentifier'. From 'declarations_ArrayDeclarationType', the role 'declarations_ArrayDeclarationType' has cardinality 0..*, and from 'timedAutomata_declarations_VariableIdentifier', the role 'timedAutomata_declarations_VariableIdentifier67' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_VariableIdentifier' and 'declarations_Initialiser'. From 'timedAutomata_declarations_VariableIdentifier', the role 'timedAutomata_declarations_VariableIdentifier69' has cardinality 0..*, and from 'declarations_Initialiser', the role 'declarations_Initialiser' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_TypeDeclaration' and 'types_Type'. From 'timedAutomata_declarations_TypeDeclaration', the role 'timedAutomata_declarations_TypeDeclaration' has cardinality 0..*, and from 'types_Type', the role 'types_Type71' has cardinality 0..*.
+An association connects 'declarations_ArrayDeclaration' and 'timedAutomata_declarations_TypeDeclaration'. From 'declarations_ArrayDeclaration', the role 'declarations_ArrayDeclaration' has cardinality 0..*, and from 'timedAutomata_declarations_TypeDeclaration', the role 'timedAutomata_declarations_TypeDeclaration73' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_FunctionDeclaration' and 'types_Type'. From 'timedAutomata_declarations_FunctionDeclaration', the role 'timedAutomata_declarations_FunctionDeclaration' has cardinality 0..*, and from 'types_Type', the role 'types_Type75' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_FunctionDeclaration' and 'Identifier'. From 'timedAutomata_declarations_FunctionDeclaration', the role 'timedAutomata_declarations_FunctionDeclaration77' has cardinality 0..*, and from 'Identifier', the role 'Identifier78' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_FunctionDeclaration' and 'declarations_TAParameter'. From 'timedAutomata_declarations_FunctionDeclaration', the role 'timedAutomata_declarations_FunctionDeclaration80' has cardinality 0..*, and from 'declarations_TAParameter', the role 'declarations_TAParameter' has cardinality 0..*.
+An association connects 'declarations_Block' and 'timedAutomata_declarations_FunctionDeclaration'. From 'declarations_Block', the role 'declarations_Block' has cardinality 0..*, and from 'timedAutomata_declarations_FunctionDeclaration', the role 'timedAutomata_declarations_FunctionDeclaration82' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_ChannelPriorityDeclaration' and 'declarations_ChannelPriority'. From 'timedAutomata_declarations_ChannelPriorityDeclaration', the role 'timedAutomata_declarations_ChannelPriorityDeclaration' has cardinality 0..*, and from 'declarations_ChannelPriority', the role 'declarations_ChannelPriority' has cardinality 0..*.
+An association connects 'types_Type' and 'timedAutomata_declarations_FieldDeclaration'. From 'types_Type', the role 'types_Type85' has cardinality 0..*, and from 'timedAutomata_declarations_FieldDeclaration', the role 'timedAutomata_declarations_FieldDeclaration' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_FieldDeclaration' and 'declarations_ArrayDeclaration'. From 'timedAutomata_declarations_FieldDeclaration', the role 'timedAutomata_declarations_FieldDeclaration87' has cardinality 0..*, and from 'declarations_ArrayDeclaration', the role 'declarations_ArrayDeclaration88' has cardinality 0..*.
+An association connects 'Identifier' and 'timedAutomata_declarations_ArrayDeclaration'. From 'Identifier', the role 'Identifier90' has cardinality 0..*, and from 'timedAutomata_declarations_ArrayDeclaration', the role 'timedAutomata_declarations_ArrayDeclaration' has cardinality 0..*.
+An association connects 'declarations_ArrayDeclarationType' and 'timedAutomata_declarations_ArrayDeclaration'. From 'declarations_ArrayDeclarationType', the role 'declarations_ArrayDeclarationType93' has cardinality 0..*, and from 'timedAutomata_declarations_ArrayDeclaration', the role 'timedAutomata_declarations_ArrayDeclaration92' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_ArrayExpressionType' and 'expressions_Expression'. From 'timedAutomata_declarations_ArrayExpressionType', the role 'timedAutomata_declarations_ArrayExpressionType' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression95' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_ArrayTypeType' and 'types_Type'. From 'timedAutomata_declarations_ArrayTypeType', the role 'timedAutomata_declarations_ArrayTypeType' has cardinality 0..*, and from 'types_Type', the role 'types_Type97' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_declarations_ExpressionInitialiser'. From 'expressions_Expression', the role 'expressions_Expression99' has cardinality 0..*, and from 'timedAutomata_declarations_ExpressionInitialiser', the role 'timedAutomata_declarations_ExpressionInitialiser' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_ArrayInitialiser' and 'declarations_Initialiser'. From 'timedAutomata_declarations_ArrayInitialiser', the role 'timedAutomata_declarations_ArrayInitialiser' has cardinality 0..*, and from 'declarations_Initialiser', the role 'declarations_Initialiser101' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_TAParameter' and 'types_Type'. From 'timedAutomata_declarations_TAParameter', the role 'timedAutomata_declarations_TAParameter' has cardinality 0..*, and from 'types_Type', the role 'types_Type103' has cardinality 0..*.
+An association connects 'declarations_ArrayDeclaration' and 'timedAutomata_declarations_TAParameter'. From 'declarations_ArrayDeclaration', the role 'declarations_ArrayDeclaration106' has cardinality 0..*, and from 'timedAutomata_declarations_TAParameter', the role 'timedAutomata_declarations_TAParameter105' has cardinality 0..*.
+An association connects 'declarations_Declaration' and 'timedAutomata_declarations_Block'. From 'declarations_Declaration', the role 'declarations_Declaration' has cardinality 0..*, and from 'timedAutomata_declarations_Block', the role 'timedAutomata_declarations_Block' has cardinality 0..*.
+An association connects 'declarations_Statement' and 'timedAutomata_declarations_Block'. From 'declarations_Statement', the role 'declarations_Statement' has cardinality 0..*, and from 'timedAutomata_declarations_Block', the role 'timedAutomata_declarations_Block109' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_ExpressionStatement' and 'expressions_Expression'. From 'timedAutomata_declarations_ExpressionStatement', the role 'timedAutomata_declarations_ExpressionStatement' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression111' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_ForLoopStatement' and 'expressions_Expression'. From 'timedAutomata_declarations_ForLoopStatement', the role 'timedAutomata_declarations_ForLoopStatement' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression113' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_ForLoopStatement' and 'expressions_Expression'. From 'timedAutomata_declarations_ForLoopStatement', the role 'timedAutomata_declarations_ForLoopStatement115' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression116' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_declarations_ForLoopStatement'. From 'expressions_Expression', the role 'expressions_Expression119' has cardinality 0..*, and from 'timedAutomata_declarations_ForLoopStatement', the role 'timedAutomata_declarations_ForLoopStatement118' has cardinality 0..*.
+An association connects 'declarations_Statement' and 'timedAutomata_declarations_ForLoopStatement'. From 'declarations_Statement', the role 'declarations_Statement122' has cardinality 0..*, and from 'timedAutomata_declarations_ForLoopStatement', the role 'timedAutomata_declarations_ForLoopStatement121' has cardinality 0..*.
+An association connects 'Identifier' and 'timedAutomata_declarations_IterationStatement'. From 'Identifier', the role 'Identifier124' has cardinality 0..*, and from 'timedAutomata_declarations_IterationStatement', the role 'timedAutomata_declarations_IterationStatement' has cardinality 0..*.
+An association connects 'types_Type' and 'timedAutomata_declarations_IterationStatement'. From 'types_Type', the role 'types_Type127' has cardinality 0..*, and from 'timedAutomata_declarations_IterationStatement', the role 'timedAutomata_declarations_IterationStatement126' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_IterationStatement' and 'declarations_Statement'. From 'timedAutomata_declarations_IterationStatement', the role 'timedAutomata_declarations_IterationStatement129' has cardinality 0..*, and from 'declarations_Statement', the role 'declarations_Statement130' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_WhileLoopStatement' and 'expressions_Expression'. From 'timedAutomata_declarations_WhileLoopStatement', the role 'timedAutomata_declarations_WhileLoopStatement' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression132' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_WhileLoopStatement' and 'declarations_Statement'. From 'timedAutomata_declarations_WhileLoopStatement', the role 'timedAutomata_declarations_WhileLoopStatement134' has cardinality 0..*, and from 'declarations_Statement', the role 'declarations_Statement135' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_DoWhileLoopStatement' and 'declarations_Statement'. From 'timedAutomata_declarations_DoWhileLoopStatement', the role 'timedAutomata_declarations_DoWhileLoopStatement' has cardinality 0..*, and from 'declarations_Statement', the role 'declarations_Statement137' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_DoWhileLoopStatement' and 'expressions_Expression'. From 'timedAutomata_declarations_DoWhileLoopStatement', the role 'timedAutomata_declarations_DoWhileLoopStatement139' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression140' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_IfStatement' and 'expressions_Expression'. From 'timedAutomata_declarations_IfStatement', the role 'timedAutomata_declarations_IfStatement' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression142' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_IfStatement' and 'declarations_Statement'. From 'timedAutomata_declarations_IfStatement', the role 'timedAutomata_declarations_IfStatement144' has cardinality 0..*, and from 'declarations_Statement', the role 'declarations_Statement145' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_IfStatement' and 'declarations_Statement'. From 'timedAutomata_declarations_IfStatement', the role 'timedAutomata_declarations_IfStatement147' has cardinality 0..*, and from 'declarations_Statement', the role 'declarations_Statement148' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_ReturnStatement' and 'expressions_Expression'. From 'timedAutomata_declarations_ReturnStatement', the role 'timedAutomata_declarations_ReturnStatement' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression150' has cardinality 0..*.
+An association connects 'declarations_ChannelExpression' and 'timedAutomata_declarations_SimpleChannelPriority'. From 'declarations_ChannelExpression', the role 'declarations_ChannelExpression' has cardinality 0..*, and from 'timedAutomata_declarations_SimpleChannelPriority', the role 'timedAutomata_declarations_SimpleChannelPriority' has cardinality 0..*.
+An association connects 'declarations_ChannelExpression' and 'timedAutomata_declarations_ComplexChannelPriority'. From 'declarations_ChannelExpression', the role 'declarations_ChannelExpression153' has cardinality 0..*, and from 'timedAutomata_declarations_ComplexChannelPriority', the role 'timedAutomata_declarations_ComplexChannelPriority' has cardinality 0..*.
+An association connects 'declarations_ChannelPriority' and 'timedAutomata_declarations_ComplexChannelPriority'. From 'declarations_ChannelPriority', the role 'declarations_ChannelPriority156' has cardinality 0..*, and from 'timedAutomata_declarations_ComplexChannelPriority', the role 'timedAutomata_declarations_ComplexChannelPriority155' has cardinality 0..*.
+An association connects 'Identifier' and 'timedAutomata_declarations_IdentifierChannelExpression'. From 'Identifier', the role 'Identifier158' has cardinality 0..*, and from 'timedAutomata_declarations_IdentifierChannelExpression', the role 'timedAutomata_declarations_IdentifierChannelExpression' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_ExpressionChannelExpression' and 'declarations_ChannelExpression'. From 'timedAutomata_declarations_ExpressionChannelExpression', the role 'timedAutomata_declarations_ExpressionChannelExpression' has cardinality 0..*, and from 'declarations_ChannelExpression', the role 'declarations_ChannelExpression160' has cardinality 0..*.
+An association connects 'timedAutomata_declarations_ExpressionChannelExpression' and 'expressions_Expression'. From 'timedAutomata_declarations_ExpressionChannelExpression', the role 'timedAutomata_declarations_ExpressionChannelExpression162' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression163' has cardinality 0..*.
+An association connects 'Identifier' and 'timedAutomata_types_IdentifierType'. From 'Identifier', the role 'Identifier165' has cardinality 0..*, and from 'timedAutomata_types_IdentifierType', the role 'timedAutomata_types_IdentifierType' has cardinality 0..*.
+An association connects 'timedAutomata_types_IntegerRange' and 'expressions_Expression'. From 'timedAutomata_types_IntegerRange', the role 'timedAutomata_types_IntegerRange' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression167' has cardinality 0..*.
+An association connects 'timedAutomata_types_IntegerRange' and 'expressions_Expression'. From 'timedAutomata_types_IntegerRange', the role 'timedAutomata_types_IntegerRange169' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression170' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_types_Scalar'. From 'expressions_Expression', the role 'expressions_Expression172' has cardinality 0..*, and from 'timedAutomata_types_Scalar', the role 'timedAutomata_types_Scalar' has cardinality 0..*.
+An association connects 'timedAutomata_types_Struct' and 'declarations_FieldDeclaration'. From 'timedAutomata_types_Struct', the role 'timedAutomata_types_Struct' has cardinality 0..*, and from 'declarations_FieldDeclaration', the role 'declarations_FieldDeclaration' has cardinality 0..*.
+An association connects 'timedAutomata_core_Project' and 'declarations_Declaration'. From 'timedAutomata_core_Project', the role 'timedAutomata_core_Project' has cardinality 0..*, and from 'declarations_Declaration', the role 'declarations_Declaration175' has cardinality 0..*.
+An association connects 'Template' and 'timedAutomata_core_Project'. From 'Template', the role 'Template' has cardinality 0..*, and from 'timedAutomata_core_Project', the role 'timedAutomata_core_Project177' has cardinality 0..*.
+An association connects 'SystemDefinition' and 'timedAutomata_core_Project'. From 'SystemDefinition', the role 'SystemDefinition' has cardinality 0..*, and from 'timedAutomata_core_Project', the role 'timedAutomata_core_Project179' has cardinality 0..*.
+An association connects 'timedAutomata_core_Template' and 'declarations_Declaration'. From 'timedAutomata_core_Template', the role 'timedAutomata_core_Template' has cardinality 0..*, and from 'declarations_Declaration', the role 'declarations_Declaration181' has cardinality 0..*.
+An association connects 'timedAutomata_core_Template' and 'Location'. From 'timedAutomata_core_Template', the role 'timedAutomata_core_Template183' has cardinality 0..*, and from 'Location', the role 'Location' has cardinality 0..*.
+An association connects 'core_timedAutomata_Parameter' and 'timedAutomata_core_Template'. From 'core_timedAutomata_Parameter', the role 'core_timedAutomata_Parameter' has cardinality 0..*, and from 'timedAutomata_core_Template', the role 'timedAutomata_core_Template185' has cardinality 0..*.
+An association connects 'Location' and 'timedAutomata_core_Template'. From 'Location', the role 'Location188' has cardinality 0..*, and from 'timedAutomata_core_Template', the role 'timedAutomata_core_Template187' has cardinality 0..*.
+An association connects 'Edge' and 'timedAutomata_core_Template'. From 'Edge', the role 'Edge' has cardinality 0..*, and from 'timedAutomata_core_Template', the role 'timedAutomata_core_Template190' has cardinality 0..*.
+An association connects 'timedAutomata_core_Edge' and 'Location'. From 'timedAutomata_core_Edge', the role 'timedAutomata_core_Edge' has cardinality 0..*, and from 'Location', the role 'Location192' has cardinality 0..*.
+An association connects 'timedAutomata_core_Edge' and 'Location'. From 'timedAutomata_core_Edge', the role 'timedAutomata_core_Edge194' has cardinality 0..*, and from 'Location', the role 'Location195' has cardinality 0..*.
+An association connects 'timedAutomata_core_Edge' and 'Guards'. From 'timedAutomata_core_Edge', the role 'timedAutomata_core_Edge197' has cardinality 0..*, and from 'Guards', the role 'Guards' has cardinality 0..*.
+An association connects 'Synchronisation' and 'timedAutomata_core_Edge'. From 'Synchronisation', the role 'Synchronisation' has cardinality 0..*, and from 'timedAutomata_core_Edge', the role 'timedAutomata_core_Edge199' has cardinality 0..*.
+An association connects 'timedAutomata_core_Edge' and 'Selections'. From 'timedAutomata_core_Edge', the role 'timedAutomata_core_Edge201' has cardinality 0..*, and from 'Selections', the role 'Selections' has cardinality 0..*.
+An association connects 'Updates' and 'timedAutomata_core_Edge'. From 'Updates', the role 'Updates' has cardinality 0..*, and from 'timedAutomata_core_Edge', the role 'timedAutomata_core_Edge203' has cardinality 0..*.
+An association connects 'core_timedAutomata_Nail' and 'timedAutomata_core_Edge'. From 'core_timedAutomata_Nail', the role 'core_timedAutomata_Nail' has cardinality 0..*, and from 'timedAutomata_core_Edge', the role 'timedAutomata_core_Edge205' has cardinality 0..*.
+An association connects 'timedAutomata_core_Location' and 'expressions_Expression'. From 'timedAutomata_core_Location', the role 'timedAutomata_core_Location' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression207' has cardinality 0..*.
+An association connects 'core_timedAutomata_Label' and 'timedAutomata_core_Location'. From 'core_timedAutomata_Label', the role 'core_timedAutomata_Label' has cardinality 0..*, and from 'timedAutomata_core_Location', the role 'timedAutomata_core_Location209' has cardinality 0..*.
+An association connects 'TemplateInstantiation' and 'timedAutomata_core_SystemDefinition'. From 'TemplateInstantiation', the role 'TemplateInstantiation' has cardinality 0..*, and from 'timedAutomata_core_SystemDefinition', the role 'timedAutomata_core_SystemDefinition' has cardinality 0..*.
+An association connects 'System' and 'timedAutomata_core_SystemDefinition'. From 'System', the role 'System' has cardinality 0..*, and from 'timedAutomata_core_SystemDefinition', the role 'timedAutomata_core_SystemDefinition212' has cardinality 0..*.
+An association connects 'Identifier' and 'timedAutomata_core_SimpleSystem'. From 'Identifier', the role 'Identifier214' has cardinality 0..*, and from 'timedAutomata_core_SimpleSystem', the role 'timedAutomata_core_SimpleSystem' has cardinality 0..*.
+An association connects 'System' and 'timedAutomata_core_ComplexSystem'. From 'System', the role 'System216' has cardinality 0..*, and from 'timedAutomata_core_ComplexSystem', the role 'timedAutomata_core_ComplexSystem' has cardinality 0..*.
+An association connects 'System' and 'timedAutomata_core_ComplexSystem'. From 'System', the role 'System219' has cardinality 0..*, and from 'timedAutomata_core_ComplexSystem', the role 'timedAutomata_core_ComplexSystem218' has cardinality 0..*.
+An association connects 'Identifier' and 'timedAutomata_core_TemplateInstantiation'. From 'Identifier', the role 'Identifier221' has cardinality 0..*, and from 'timedAutomata_core_TemplateInstantiation', the role 'timedAutomata_core_TemplateInstantiation' has cardinality 0..*.
+An association connects 'declarations_TAParameter' and 'timedAutomata_core_TemplateInstantiation'. From 'declarations_TAParameter', the role 'declarations_TAParameter224' has cardinality 0..*, and from 'timedAutomata_core_TemplateInstantiation', the role 'timedAutomata_core_TemplateInstantiation223' has cardinality 0..*.
+An association connects 'Identifier' and 'timedAutomata_core_TemplateInstantiation'. From 'Identifier', the role 'Identifier227' has cardinality 0..*, and from 'timedAutomata_core_TemplateInstantiation', the role 'timedAutomata_core_TemplateInstantiation226' has cardinality 0..*.
+An association connects 'timedAutomata_core_TemplateInstantiation' and 'expressions_Expression'. From 'timedAutomata_core_TemplateInstantiation', the role 'timedAutomata_core_TemplateInstantiation229' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression230' has cardinality 0..*.
+An association connects 'timedAutomata_core_Selections' and 'expressions_Selection'. From 'timedAutomata_core_Selections', the role 'timedAutomata_core_Selections' has cardinality 0..*, and from 'expressions_Selection', the role 'expressions_Selection' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_core_Updates'. From 'expressions_Expression', the role 'expressions_Expression233' has cardinality 0..*, and from 'timedAutomata_core_Updates', the role 'timedAutomata_core_Updates' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'timedAutomata_core_Guards'. From 'expressions_Expression', the role 'expressions_Expression235' has cardinality 0..*, and from 'timedAutomata_core_Guards', the role 'timedAutomata_core_Guards' has cardinality 0..*.

@@ -1,0 +1,392 @@
+The domain model 'mancoosimm' describes the core structural elements and their relationships within the system.
+
+The model defines 65 main class(es).
+
+'mancoosimm_HalfConfiguredReinstRequiredPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_Configuration' represents an important domain concept.
+It has the following attributes: 'creationTime', which is of type str; 'systemType', which is of type str.
+
+'mancoosimm_XFont' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_NotInv' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_SharedLibrary' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'name', which is of type str.
+
+'mancoosimm_Boot' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_User' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_Dependence' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_Invariant' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_InstalledPackage' represents an important domain concept.
+It has the following attributes: 'maintainer', which is of type str; 'priority', which is of type str; 'fileSize', which is of type int; 'checkSum', which is of type str; 'section', which is of type str; 'tag', which is of type str; 'description', which is of type str; 'installedSize', which is of type int; 'uploaders', which is of type str.
+
+'mancoosimm_ModuleCache' represents an important domain concept.
+It has one attribute: 'version', which is of type str.
+
+'mancoosimm_DesktopDB' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_EmacsPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mancoosimm_GConf' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_BinPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_Environment' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_IconCache' represents an important domain concept.
+It has one attribute: 'mtime', which is of type str.
+
+'mancoosimm_SrcPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_HalfInstalledReinstRequiredPackage' represents an important domain concept.
+It has the following attributes: 'section', which is of type str; 'tag', which is of type str; 'maintainer', which is of type str; 'description', which is of type str; 'uploaders', which is of type str; 'checkSum', which is of type str; 'priority', which is of type str.
+
+'mancoosimm_Conflict' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_XFontCache' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'mancoosimm_MenuEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_SkeeperCatalog' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_OrConflict' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_ApplicationMenuCatalog' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_Atom' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_UnpackedPackage' represents an important domain concept.
+It has the following attributes: 'uploaders', which is of type str; 'maintainer', which is of type str; 'checkSum', which is of type str; 'description', which is of type str; 'section', which is of type str; 'tag', which is of type str; 'priority', which is of type str.
+
+'mancoosimm_File' represents an important domain concept.
+It has the following attributes: 'checkSum', which is of type str; 'permission', which is of type str; 'isMissing', which is of type bool; 'extension', which is of type str; 'size', which is of type int; 'description', which is of type str; 'guid', which is of type bool; 'suid', which is of type bool; 'location', which is of type str; 'isDirectory', which is of type bool.
+
+'mancoosimm_MimeType' represents an important domain concept.
+It has the following attributes: 'extension', which is of type str; 'name', which is of type str.
+
+'mancoosimm_AndConflict' represents an important domain concept.
+It does not declare any attributes.
+
+'InstalledPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_HalfInstalledPackage' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'checkSum', which is of type str; 'tag', which is of type str; 'priority', which is of type str; 'uploaders', which is of type str; 'maintainer', which is of type str; 'section', which is of type str.
+
+'mancoosimm_AndDep' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_FileSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_VirtualPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_MimeTypeHandlerCache' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_LibraryCache' represents an important domain concept.
+It does not declare any attributes.
+
+'File' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_HalfConfiguredPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_NotInstalledPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_SGMLDocument' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependence' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_InformationFile' represents an important domain concept.
+It does not declare any attributes.
+
+'UnpackedPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_MimeTypeHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_SingleConflict' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'value', which is of type str.
+
+'mancoosimm_SGMLCatalog' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_SingleDep' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'value', which is of type str.
+
+'mancoosimm_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_PackageSetting' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_OrDep' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_SkeeperDocument' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_ConfigFilesPackage' represents an important domain concept.
+It has the following attributes: 'uploaders', which is of type str; 'description', which is of type str; 'checkSum', which is of type str; 'section', which is of type str; 'maintainer', which is of type str; 'priority', which is of type str; 'tag', which is of type str.
+
+'Conflict' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_Menu' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_AndInv' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_Package' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'architecture', which is of type str.
+
+'mancoosimm_OrInv' represents an important domain concept.
+It does not declare any attributes.
+
+'mancoosimm_DocumentationFile' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PriorityType' defines the following possible values: 'extra', 'important', 'optional', 'standard', 'required'.
+The enumeration 'VersionType' defines the following possible values: 'ggt', 'gt', 'llt', 'eq', 'lt', 'le', 'ge'.
+The enumeration 'StatusType' defines the following possible values: 'installed', 'half_configured', 'config_files', 'not_installed', 'unpacked', 'half_installed'.
+
+The model also captures inheritance relationships between classes.
+The class 'mancoosimm_Configuration' is a specialization of 'NamedElement'.
+The class 'mancoosimm_Package' is a specialization of 'NamedElement'.
+The class 'mancoosimm_InstalledPackage' is a specialization of 'Package'.
+The class 'mancoosimm_NotInstalledPackage' is a specialization of 'Package'.
+The class 'mancoosimm_ConfigFilesPackage' is a specialization of 'Package'.
+The class 'mancoosimm_UnpackedPackage' is a specialization of 'Package'.
+The class 'mancoosimm_HalfConfiguredPackage' is a specialization of 'UnpackedPackage'.
+The class 'mancoosimm_HalfConfiguredReinstRequiredPackage' is a specialization of 'UnpackedPackage'.
+The class 'mancoosimm_HalfInstalledPackage' is a specialization of 'Package'.
+The class 'mancoosimm_HalfInstalledReinstRequiredPackage' is a specialization of 'Package'.
+The class 'mancoosimm_SrcPackage' is a specialization of 'InstalledPackage'.
+The class 'mancoosimm_BinPackage' is a specialization of 'InstalledPackage'.
+The class 'mancoosimm_VirtualPackage' is a specialization of 'InstalledPackage'.
+The class 'mancoosimm_AndDep' is a specialization of 'Dependence'.
+The class 'mancoosimm_OrDep' is a specialization of 'Dependence'.
+The class 'mancoosimm_SingleDep' is a specialization of 'Dependence'.
+The class 'mancoosimm_Invariant' is a specialization of 'NamedElement'.
+The class 'mancoosimm_Atom' is a specialization of 'NamedElement'.
+The class 'mancoosimm_Environment' is a specialization of 'NamedElement'.
+The class 'mancoosimm_FileSystem' is a specialization of 'NamedElement'.
+The class 'mancoosimm_ApplicationMenuCatalog' is a specialization of 'NamedElement'.
+The class 'mancoosimm_MenuEntry' is a specialization of 'NamedElement'.
+The class 'mancoosimm_Service' is a specialization of 'NamedElement'.
+The class 'mancoosimm_File' is a specialization of 'NamedElement'.
+The class 'mancoosimm_DocumentationFile' is a specialization of 'File'.
+The class 'mancoosimm_InformationFile' is a specialization of 'File'.
+The class 'mancoosimm_Alternative' is a specialization of 'NamedElement'.
+The class 'mancoosimm_PackageSetting' is a specialization of 'NamedElement'.
+The class 'mancoosimm_XFont' is a specialization of 'NamedElement'.
+The class 'mancoosimm_Module' is a specialization of 'NamedElement'.
+The class 'mancoosimm_SGMLCatalog' is a specialization of 'NamedElement'.
+The class 'mancoosimm_SGMLDocument' is a specialization of 'NamedElement'.
+The class 'mancoosimm_SkeeperCatalog' is a specialization of 'NamedElement'.
+The class 'mancoosimm_SkeeperDocument' is a specialization of 'NamedElement'.
+The class 'mancoosimm_EmacsPackage' is a specialization of 'NamedElement'.
+The class 'mancoosimm_User' is a specialization of 'NamedElement'.
+The class 'mancoosimm_Group' is a specialization of 'NamedElement'.
+The class 'mancoosimm_SingleConflict' is a specialization of 'Conflict'.
+The class 'mancoosimm_AndConflict' is a specialization of 'Conflict'.
+The class 'mancoosimm_OrConflict' is a specialization of 'Conflict'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mancoosimm_FileSystem' and 'mancoosimm_Configuration'. From 'mancoosimm_FileSystem', the role 'FileSystem' has cardinality 0..*, and from 'mancoosimm_Configuration', the role 'configuration' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_Configuration'. From 'mancoosimm_Environment', the role 'Environment' has cardinality 0..*, and from 'mancoosimm_Configuration', the role 'configuration2' has cardinality 0..*.
+An association connects 'mancoosimm_Configuration' and 'mancoosimm_InstalledPackage'. From 'mancoosimm_Configuration', the role 'mancoosimm_Configuration' has cardinality 0..*, and from 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage' has cardinality 0..*.
+An association connects 'mancoosimm_NotInstalledPackage' and 'mancoosimm_Configuration'. From 'mancoosimm_NotInstalledPackage', the role 'mancoosimm_NotInstalledPackage' has cardinality 0..*, and from 'mancoosimm_Configuration', the role 'mancoosimm_Configuration5' has cardinality 0..*.
+An association connects 'mancoosimm_Configuration' and 'mancoosimm_ConfigFilesPackage'. From 'mancoosimm_Configuration', the role 'mancoosimm_Configuration7' has cardinality 0..*, and from 'mancoosimm_ConfigFilesPackage', the role 'mancoosimm_ConfigFilesPackage' has cardinality 0..*.
+An association connects 'mancoosimm_Configuration' and 'mancoosimm_UnpackedPackage'. From 'mancoosimm_Configuration', the role 'mancoosimm_Configuration9' has cardinality 0..*, and from 'mancoosimm_UnpackedPackage', the role 'mancoosimm_UnpackedPackage' has cardinality 0..*.
+An association connects 'mancoosimm_Configuration' and 'mancoosimm_HalfConfiguredPackage'. From 'mancoosimm_Configuration', the role 'mancoosimm_Configuration11' has cardinality 0..*, and from 'mancoosimm_HalfConfiguredPackage', the role 'mancoosimm_HalfConfiguredPackage' has cardinality 0..*.
+An association connects 'mancoosimm_HalfInstalledPackage' and 'mancoosimm_Configuration'. From 'mancoosimm_HalfInstalledPackage', the role 'mancoosimm_HalfInstalledPackage' has cardinality 0..*, and from 'mancoosimm_Configuration', the role 'mancoosimm_Configuration13' has cardinality 0..*.
+An association connects 'mancoosimm_Configuration' and 'mancoosimm_HalfConfiguredReinstRequiredPackage'. From 'mancoosimm_Configuration', the role 'mancoosimm_Configuration15' has cardinality 0..*, and from 'mancoosimm_HalfConfiguredReinstRequiredPackage', the role 'mancoosimm_HalfConfiguredReinstRequiredPackage' has cardinality 0..*.
+An association connects 'mancoosimm_HalfInstalledReinstRequiredPackage' and 'mancoosimm_Configuration'. From 'mancoosimm_HalfInstalledReinstRequiredPackage', the role 'mancoosimm_HalfInstalledReinstRequiredPackage' has cardinality 0..*, and from 'mancoosimm_Configuration', the role 'mancoosimm_Configuration17' has cardinality 0..*.
+An association connects 'mancoosimm_Package' and 'mancoosimm_Configuration'. From 'mancoosimm_Package', the role 'mancoosimm_Package' has cardinality 0..*, and from 'mancoosimm_Configuration', the role 'mancoosimm_Configuration19' has cardinality 0..*.
+An association connects 'mancoosimm_PackageSetting' and 'mancoosimm_Package'. From 'mancoosimm_PackageSetting', the role 'PackageSetting' has cardinality 0..*, and from 'mancoosimm_Package', the role 'pkg' has cardinality 0..*.
+An association connects 'mancoosimm_InstalledPackage' and 'mancoosimm_SrcPackage'. From 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage22' has cardinality 0..*, and from 'mancoosimm_SrcPackage', the role 'mancoosimm_SrcPackage' has cardinality 0..*.
+An association connects 'mancoosimm_InstalledPackage' and 'mancoosimm_Dependence'. From 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage24' has cardinality 0..*, and from 'mancoosimm_Dependence', the role 'mancoosimm_Dependence' has cardinality 0..*.
+An association connects 'mancoosimm_InstalledPackage' and 'mancoosimm_InstalledPackage'. From 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage25' has cardinality 0..*, and from 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage27' has cardinality 0..*.
+An association connects 'mancoosimm_InstalledPackage' and 'mancoosimm_InstalledPackage'. From 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage28' has cardinality 0..*, and from 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage30' has cardinality 0..*.
+An association connects 'mancoosimm_InstalledPackage' and 'mancoosimm_InstalledPackage'. From 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage31' has cardinality 0..*, and from 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage33' has cardinality 0..*.
+An association connects 'mancoosimm_InstalledPackage' and 'mancoosimm_InstalledPackage'. From 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage36' has cardinality 0..*, and from 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage34' has cardinality 0..*.
+An association connects 'mancoosimm_VirtualPackage' and 'mancoosimm_InstalledPackage'. From 'mancoosimm_VirtualPackage', the role 'mancoosimm_VirtualPackage' has cardinality 0..*, and from 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage38' has cardinality 0..*.
+An association connects 'mancoosimm_InstalledPackage' and 'mancoosimm_InstalledPackage'. From 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage41' has cardinality 0..*, and from 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage39' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_InstalledPackage'. From 'mancoosimm_File', the role 'mancoosimm_File' has cardinality 0..*, and from 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage43' has cardinality 0..*.
+An association connects 'mancoosimm_InstalledPackage' and 'mancoosimm_DocumentationFile'. From 'mancoosimm_InstalledPackage', the role 'pkg45' has cardinality 0..*, and from 'mancoosimm_DocumentationFile', the role 'DocumentationFile' has cardinality 0..*.
+An association connects 'mancoosimm_InstalledPackage' and 'mancoosimm_Conflict'. From 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage47' has cardinality 0..*, and from 'mancoosimm_Conflict', the role 'mancoosimm_Conflict' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_UnpackedPackage'. From 'mancoosimm_File', the role 'mancoosimm_File50' has cardinality 0..*, and from 'mancoosimm_UnpackedPackage', the role 'mancoosimm_UnpackedPackage49' has cardinality 0..*.
+An association connects 'mancoosimm_BinPackage' and 'mancoosimm_SrcPackage'. From 'mancoosimm_BinPackage', the role 'mancoosimm_BinPackage' has cardinality 0..*, and from 'mancoosimm_SrcPackage', the role 'mancoosimm_SrcPackage52' has cardinality 0..*.
+An association connects 'mancoosimm_BinPackage' and 'mancoosimm_SrcPackage'. From 'mancoosimm_BinPackage', the role 'mancoosimm_BinPackage55' has cardinality 0..*, and from 'mancoosimm_SrcPackage', the role 'mancoosimm_SrcPackage54' has cardinality 0..*.
+An association connects 'mancoosimm_BinPackage' and 'mancoosimm_SrcPackage'. From 'mancoosimm_BinPackage', the role 'mancoosimm_BinPackage57' has cardinality 0..*, and from 'mancoosimm_SrcPackage', the role 'mancoosimm_SrcPackage58' has cardinality 0..*.
+An association connects 'mancoosimm_VirtualPackage' and 'mancoosimm_InstalledPackage'. From 'mancoosimm_VirtualPackage', the role 'mancoosimm_VirtualPackage60' has cardinality 0..*, and from 'mancoosimm_InstalledPackage', the role 'mancoosimm_InstalledPackage61' has cardinality 0..*.
+An association connects 'mancoosimm_Dependence' and 'mancoosimm_AndDep'. From 'mancoosimm_Dependence', the role 'dependence' has cardinality 0..*, and from 'mancoosimm_AndDep', the role 'AndDep' has cardinality 0..*.
+An association connects 'mancoosimm_OrDep' and 'mancoosimm_Dependence'. From 'mancoosimm_OrDep', the role 'OrDep' has cardinality 0..*, and from 'mancoosimm_Dependence', the role 'dependence64' has cardinality 0..*.
+An association connects 'mancoosimm_SingleDep' and 'mancoosimm_Dependence'. From 'mancoosimm_SingleDep', the role 'SingleDep' has cardinality 0..*, and from 'mancoosimm_Dependence', the role 'dependence66' has cardinality 0..*.
+An association connects 'mancoosimm_Dependence' and 'mancoosimm_Package'. From 'mancoosimm_Dependence', the role 'mancoosimm_Dependence68' has cardinality 0..*, and from 'mancoosimm_Package', the role 'mancoosimm_Package69' has cardinality 0..*.
+An association connects 'mancoosimm_Dependence' and 'mancoosimm_Dependence'. From 'mancoosimm_Dependence', the role 'mancoosimm_Dependence70' has cardinality 0..*, and from 'mancoosimm_Dependence', the role 'mancoosimm_Dependence72' has cardinality 0..*.
+An association connects 'mancoosimm_Dependence' and 'mancoosimm_Package'. From 'mancoosimm_Dependence', the role 'mancoosimm_Dependence74' has cardinality 0..*, and from 'mancoosimm_Package', the role 'mancoosimm_Package75' has cardinality 0..*.
+An association connects 'mancoosimm_AndDep' and 'mancoosimm_Dependence'. From 'mancoosimm_AndDep', the role 'mancoosimm_AndDep' has cardinality 0..*, and from 'mancoosimm_Dependence', the role 'mancoosimm_Dependence77' has cardinality 0..*.
+An association connects 'mancoosimm_Dependence' and 'mancoosimm_AndDep'. From 'mancoosimm_Dependence', the role 'Dependence' has cardinality 0..*, and from 'mancoosimm_AndDep', the role 'andDep' has cardinality 0..*.
+An association connects 'mancoosimm_OrDep' and 'mancoosimm_Dependence'. From 'mancoosimm_OrDep', the role 'mancoosimm_OrDep' has cardinality 0..*, and from 'mancoosimm_Dependence', the role 'mancoosimm_Dependence80' has cardinality 0..*.
+An association connects 'mancoosimm_OrDep' and 'mancoosimm_Dependence'. From 'mancoosimm_OrDep', the role 'orDep' has cardinality 0..*, and from 'mancoosimm_Dependence', the role 'Dependence82' has cardinality 0..*.
+An association connects 'mancoosimm_Dependence' and 'mancoosimm_SingleDep'. From 'mancoosimm_Dependence', the role 'Dependence84' has cardinality 0..*, and from 'mancoosimm_SingleDep', the role 'singleDep' has cardinality 0..*.
+An association connects 'mancoosimm_Atom' and 'mancoosimm_Invariant'. From 'mancoosimm_Atom', the role 'mancoosimm_Atom' has cardinality 0..*, and from 'mancoosimm_Invariant', the role 'mancoosimm_Invariant' has cardinality 0..*.
+An association connects 'mancoosimm_Invariant' and 'mancoosimm_AndInv'. From 'mancoosimm_Invariant', the role 'mancoosimm_Invariant87' has cardinality 0..*, and from 'mancoosimm_AndInv', the role 'mancoosimm_AndInv' has cardinality 0..*.
+An association connects 'mancoosimm_Invariant' and 'mancoosimm_OrInv'. From 'mancoosimm_Invariant', the role 'mancoosimm_Invariant89' has cardinality 0..*, and from 'mancoosimm_OrInv', the role 'mancoosimm_OrInv' has cardinality 0..*.
+An association connects 'mancoosimm_NotInv' and 'mancoosimm_Invariant'. From 'mancoosimm_NotInv', the role 'mancoosimm_NotInv' has cardinality 0..*, and from 'mancoosimm_Invariant', the role 'mancoosimm_Invariant91' has cardinality 0..*.
+An association connects 'mancoosimm_AndInv' and 'mancoosimm_Invariant'. From 'mancoosimm_AndInv', the role 'mancoosimm_AndInv93' has cardinality 0..*, and from 'mancoosimm_Invariant', the role 'mancoosimm_Invariant94' has cardinality 0..*.
+An association connects 'mancoosimm_Invariant' and 'mancoosimm_AndInv'. From 'mancoosimm_Invariant', the role 'mancoosimm_Invariant97' has cardinality 0..*, and from 'mancoosimm_AndInv', the role 'mancoosimm_AndInv96' has cardinality 0..*.
+An association connects 'mancoosimm_OrInv' and 'mancoosimm_Invariant'. From 'mancoosimm_OrInv', the role 'mancoosimm_OrInv99' has cardinality 0..*, and from 'mancoosimm_Invariant', the role 'mancoosimm_Invariant100' has cardinality 0..*.
+An association connects 'mancoosimm_Invariant' and 'mancoosimm_OrInv'. From 'mancoosimm_Invariant', the role 'mancoosimm_Invariant103' has cardinality 0..*, and from 'mancoosimm_OrInv', the role 'mancoosimm_OrInv102' has cardinality 0..*.
+An association connects 'mancoosimm_Invariant' and 'mancoosimm_NotInv'. From 'mancoosimm_Invariant', the role 'mancoosimm_Invariant106' has cardinality 0..*, and from 'mancoosimm_NotInv', the role 'mancoosimm_NotInv105' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_Service'. From 'mancoosimm_Environment', the role 'env' has cardinality 0..*, and from 'mancoosimm_Service', the role 'Service' has cardinality 0..*.
+An association connects 'mancoosimm_Alternative' and 'mancoosimm_Environment'. From 'mancoosimm_Alternative', the role 'Alternative' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'env109' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_User'. From 'mancoosimm_Environment', the role 'env111' has cardinality 0..*, and from 'mancoosimm_User', the role 'User' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_Group'. From 'mancoosimm_Environment', the role 'env113' has cardinality 0..*, and from 'mancoosimm_Group', the role 'Group' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_EmacsPackage'. From 'mancoosimm_Environment', the role 'env115' has cardinality 0..*, and from 'mancoosimm_EmacsPackage', the role 'EmacsPackage' has cardinality 0..*.
+An association connects 'mancoosimm_IconCache' and 'mancoosimm_Environment'. From 'mancoosimm_IconCache', the role 'IconCache' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'env117' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_DesktopDB'. From 'mancoosimm_Environment', the role 'env119' has cardinality 0..*, and from 'mancoosimm_DesktopDB', the role 'DesktopDB' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_MimeTypeHandlerCache'. From 'mancoosimm_Environment', the role 'env121' has cardinality 0..*, and from 'mancoosimm_MimeTypeHandlerCache', the role 'MimeTypeHandlerCache' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_LibraryCache'. From 'mancoosimm_Environment', the role 'env123' has cardinality 0..*, and from 'mancoosimm_LibraryCache', the role 'LibraryCache' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_SkeeperCatalog'. From 'mancoosimm_Environment', the role 'env125' has cardinality 0..*, and from 'mancoosimm_SkeeperCatalog', the role 'SkeeperCatalog' has cardinality 0..*.
+An association connects 'mancoosimm_SGMLCatalog' and 'mancoosimm_Environment'. From 'mancoosimm_SGMLCatalog', the role 'SGMLCatalog' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'env127' has cardinality 0..*.
+An association connects 'mancoosimm_Configuration' and 'mancoosimm_Environment'. From 'mancoosimm_Configuration', the role 'Configuration' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'environment' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_ModuleCache'. From 'mancoosimm_Environment', the role 'env130' has cardinality 0..*, and from 'mancoosimm_ModuleCache', the role 'ModuleCache' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_XFontCache'. From 'mancoosimm_Environment', the role 'env132' has cardinality 0..*, and from 'mancoosimm_XFontCache', the role 'XFontCache' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_GConf'. From 'mancoosimm_Environment', the role 'env134' has cardinality 0..*, and from 'mancoosimm_GConf', the role 'GConf' has cardinality 0..*.
+An association connects 'mancoosimm_Menu' and 'mancoosimm_Environment'. From 'mancoosimm_Menu', the role 'Menu' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'env136' has cardinality 0..*.
+An association connects 'mancoosimm_FileSystem' and 'mancoosimm_File'. From 'mancoosimm_FileSystem', the role 'fs' has cardinality 0..*, and from 'mancoosimm_File', the role 'File' has cardinality 0..*.
+An association connects 'mancoosimm_FileSystem' and 'mancoosimm_Configuration'. From 'mancoosimm_FileSystem', the role 'fileSystem' has cardinality 0..*, and from 'mancoosimm_Configuration', the role 'Configuration139' has cardinality 0..*.
+An association connects 'mancoosimm_FileSystem' and 'mancoosimm_File'. From 'mancoosimm_FileSystem', the role 'mancoosimm_FileSystem' has cardinality 0..*, and from 'mancoosimm_File', the role 'mancoosimm_File141' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_GConf'. From 'mancoosimm_File', the role 'mancoosimm_File143' has cardinality 0..*, and from 'mancoosimm_GConf', the role 'mancoosimm_GConf' has cardinality 0..*.
+An association connects 'mancoosimm_GConf' and 'mancoosimm_File'. From 'mancoosimm_GConf', the role 'mancoosimm_GConf145' has cardinality 0..*, and from 'mancoosimm_File', the role 'mancoosimm_File146' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_GConf'. From 'mancoosimm_Environment', the role 'Environment148' has cardinality 0..*, and from 'mancoosimm_GConf', the role 'gconf' has cardinality 0..*.
+An association connects 'mancoosimm_Menu' and 'mancoosimm_ApplicationMenuCatalog'. From 'mancoosimm_Menu', the role 'Menu150' has cardinality 0..*, and from 'mancoosimm_ApplicationMenuCatalog', the role 'catalog' has cardinality 0..*.
+An association connects 'mancoosimm_MenuEntry' and 'mancoosimm_Menu'. From 'mancoosimm_MenuEntry', the role 'MenuEntry' has cardinality 0..*, and from 'mancoosimm_Menu', the role 'menu' has cardinality 0..*.
+An association connects 'mancoosimm_ApplicationMenuCatalog' and 'mancoosimm_Menu'. From 'mancoosimm_ApplicationMenuCatalog', the role 'ApplicationMenuCatalog' has cardinality 0..*, and from 'mancoosimm_Menu', the role 'menu153' has cardinality 0..*.
+An association connects 'mancoosimm_Menu' and 'mancoosimm_Environment'. From 'mancoosimm_Menu', the role 'menu155' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'Environment156' has cardinality 0..*.
+An association connects 'mancoosimm_MenuEntry' and 'mancoosimm_Menu'. From 'mancoosimm_MenuEntry', the role 'entries' has cardinality 0..*, and from 'mancoosimm_Menu', the role 'Menu158' has cardinality 0..*.
+An association connects 'mancoosimm_MenuEntry' and 'mancoosimm_File'. From 'mancoosimm_MenuEntry', the role 'mancoosimm_MenuEntry' has cardinality 0..*, and from 'mancoosimm_File', the role 'mancoosimm_File160' has cardinality 0..*.
+An association connects 'mancoosimm_MenuEntry' and 'mancoosimm_MenuEntry'. From 'mancoosimm_MenuEntry', the role 'mancoosimm_MenuEntry163' has cardinality 0..*, and from 'mancoosimm_MenuEntry', the role 'mancoosimm_MenuEntry161' has cardinality 0..*.
+An association connects 'mancoosimm_Boot' and 'mancoosimm_Service'. From 'mancoosimm_Boot', the role 'mancoosimm_Boot' has cardinality 0..*, and from 'mancoosimm_Service', the role 'mancoosimm_Service' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_Service'. From 'mancoosimm_File', the role 'mancoosimm_File167' has cardinality 0..*, and from 'mancoosimm_Service', the role 'mancoosimm_Service166' has cardinality 0..*.
+An association connects 'mancoosimm_Service' and 'mancoosimm_Environment'. From 'mancoosimm_Service', the role 'runningServices' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'Environment169' has cardinality 0..*.
+An association connects 'mancoosimm_FileSystem' and 'mancoosimm_File'. From 'mancoosimm_FileSystem', the role 'FileSystem171' has cardinality 0..*, and from 'mancoosimm_File', the role 'root' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_File'. From 'mancoosimm_File', the role 'parent' has cardinality 0..*, and from 'mancoosimm_File', the role 'File174' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_File'. From 'mancoosimm_File', the role 'File177' has cardinality 0..*, and from 'mancoosimm_File', the role 'childs' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_User'. From 'mancoosimm_File', the role 'mancoosimm_File179' has cardinality 0..*, and from 'mancoosimm_User', the role 'mancoosimm_User' has cardinality 0..*.
+An association connects 'mancoosimm_Group' and 'mancoosimm_File'. From 'mancoosimm_Group', the role 'mancoosimm_Group' has cardinality 0..*, and from 'mancoosimm_File', the role 'mancoosimm_File181' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_PackageSetting'. From 'mancoosimm_File', the role 'files' has cardinality 0..*, and from 'mancoosimm_PackageSetting', the role 'PackageSetting183' has cardinality 0..*.
+An association connects 'mancoosimm_DocumentationFile' and 'mancoosimm_InstalledPackage'. From 'mancoosimm_DocumentationFile', the role 'documentationFiles' has cardinality 0..*, and from 'mancoosimm_InstalledPackage', the role 'InstalledPackage' has cardinality 0..*.
+An association connects 'mancoosimm_Alternative' and 'mancoosimm_File'. From 'mancoosimm_Alternative', the role 'mancoosimm_Alternative' has cardinality 0..*, and from 'mancoosimm_File', the role 'mancoosimm_File186' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_Alternative'. From 'mancoosimm_File', the role 'mancoosimm_File189' has cardinality 0..*, and from 'mancoosimm_Alternative', the role 'mancoosimm_Alternative188' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_Alternative'. From 'mancoosimm_Environment', the role 'Environment191' has cardinality 0..*, and from 'mancoosimm_Alternative', the role 'alternatives' has cardinality 0..*.
+An association connects 'mancoosimm_PackageSetting' and 'mancoosimm_Service'. From 'mancoosimm_PackageSetting', the role 'mancoosimm_PackageSetting' has cardinality 0..*, and from 'mancoosimm_Service', the role 'mancoosimm_Service193' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_PackageSetting'. From 'mancoosimm_File', the role 'File195' has cardinality 0..*, and from 'mancoosimm_PackageSetting', the role 'pkgSettings' has cardinality 0..*.
+An association connects 'mancoosimm_PackageSetting' and 'mancoosimm_Package'. From 'mancoosimm_PackageSetting', the role 'packageSettings' has cardinality 0..*, and from 'mancoosimm_Package', the role 'Package' has cardinality 0..*.
+An association connects 'mancoosimm_PackageSetting' and 'mancoosimm_PackageSetting'. From 'mancoosimm_PackageSetting', the role 'mancoosimm_PackageSetting199' has cardinality 0..*, and from 'mancoosimm_PackageSetting', the role 'mancoosimm_PackageSetting197' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_IconCache'. From 'mancoosimm_Environment', the role 'Environment201' has cardinality 0..*, and from 'mancoosimm_IconCache', the role 'iconCache' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_IconCache'. From 'mancoosimm_File', the role 'mancoosimm_File203' has cardinality 0..*, and from 'mancoosimm_IconCache', the role 'mancoosimm_IconCache' has cardinality 0..*.
+An association connects 'mancoosimm_DesktopDB' and 'mancoosimm_Environment'. From 'mancoosimm_DesktopDB', the role 'desktopDb' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'Environment205' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_DesktopDB'. From 'mancoosimm_File', the role 'mancoosimm_File207' has cardinality 0..*, and from 'mancoosimm_DesktopDB', the role 'mancoosimm_DesktopDB' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_MimeTypeHandlerCache'. From 'mancoosimm_Environment', the role 'Environment209' has cardinality 0..*, and from 'mancoosimm_MimeTypeHandlerCache', the role 'mimeTypeHandlerCache' has cardinality 0..*.
+An association connects 'mancoosimm_MimeTypeHandlerCache' and 'mancoosimm_MimeTypeHandler'. From 'mancoosimm_MimeTypeHandlerCache', the role 'cache' has cardinality 0..*, and from 'mancoosimm_MimeTypeHandler', the role 'MimeTypeHandler' has cardinality 0..*.
+An association connects 'mancoosimm_MimeTypeHandlerCache' and 'mancoosimm_MimeType'. From 'mancoosimm_MimeTypeHandlerCache', the role 'cache212' has cardinality 0..*, and from 'mancoosimm_MimeType', the role 'MimeType' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_MimeTypeHandler'. From 'mancoosimm_File', the role 'mancoosimm_File214' has cardinality 0..*, and from 'mancoosimm_MimeTypeHandler', the role 'mancoosimm_MimeTypeHandler' has cardinality 0..*.
+An association connects 'mancoosimm_MimeType' and 'mancoosimm_MimeTypeHandler'. From 'mancoosimm_MimeType', the role 'MimeType216' has cardinality 0..*, and from 'mancoosimm_MimeTypeHandler', the role 'mimeTypeHandlers' has cardinality 0..*.
+An association connects 'mancoosimm_MimeTypeHandlerCache' and 'mancoosimm_MimeTypeHandler'. From 'mancoosimm_MimeTypeHandlerCache', the role 'MimeTypeHandlerCache218' has cardinality 0..*, and from 'mancoosimm_MimeTypeHandler', the role 'handlers' has cardinality 0..*.
+An association connects 'mancoosimm_MimeTypeHandler' and 'mancoosimm_MimeType'. From 'mancoosimm_MimeTypeHandler', the role 'MimeTypeHandler220' has cardinality 0..*, and from 'mancoosimm_MimeType', the role 'type' has cardinality 0..*.
+An association connects 'mancoosimm_MimeType' and 'mancoosimm_MimeTypeHandlerCache'. From 'mancoosimm_MimeType', the role 'mimeTypes' has cardinality 0..*, and from 'mancoosimm_MimeTypeHandlerCache', the role 'MimeTypeHandlerCache222' has cardinality 0..*.
+An association connects 'mancoosimm_XFont' and 'mancoosimm_XFontCache'. From 'mancoosimm_XFont', the role 'XFont' has cardinality 0..*, and from 'mancoosimm_XFontCache', the role 'xfontCache' has cardinality 0..*.
+An association connects 'mancoosimm_XFontCache' and 'mancoosimm_Environment'. From 'mancoosimm_XFontCache', the role 'xfontCaches' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'Environment225' has cardinality 0..*.
+An association connects 'mancoosimm_XFontCache' and 'mancoosimm_XFont'. From 'mancoosimm_XFontCache', the role 'XFontCache227' has cardinality 0..*, and from 'mancoosimm_XFont', the role 'xfonts' has cardinality 0..*.
+An association connects 'mancoosimm_XFont' and 'mancoosimm_File'. From 'mancoosimm_XFont', the role 'mancoosimm_XFont' has cardinality 0..*, and from 'mancoosimm_File', the role 'mancoosimm_File229' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_LibraryCache'. From 'mancoosimm_File', the role 'mancoosimm_File231' has cardinality 0..*, and from 'mancoosimm_LibraryCache', the role 'mancoosimm_LibraryCache' has cardinality 0..*.
+An association connects 'mancoosimm_SharedLibrary' and 'mancoosimm_LibraryCache'. From 'mancoosimm_SharedLibrary', the role 'SharedLibrary' has cardinality 0..*, and from 'mancoosimm_LibraryCache', the role 'libraryCache' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_LibraryCache'. From 'mancoosimm_Environment', the role 'Environment235' has cardinality 0..*, and from 'mancoosimm_LibraryCache', the role 'libraryCache234' has cardinality 0..*.
+An association connects 'mancoosimm_SharedLibrary' and 'mancoosimm_File'. From 'mancoosimm_SharedLibrary', the role 'mancoosimm_SharedLibrary' has cardinality 0..*, and from 'mancoosimm_File', the role 'mancoosimm_File237' has cardinality 0..*.
+An association connects 'mancoosimm_SharedLibrary' and 'mancoosimm_LibraryCache'. From 'mancoosimm_SharedLibrary', the role 'sharedLibraries' has cardinality 0..*, and from 'mancoosimm_LibraryCache', the role 'LibraryCache239' has cardinality 0..*.
+An association connects 'mancoosimm_ModuleCache' and 'mancoosimm_Module'. From 'mancoosimm_ModuleCache', the role 'moduleCache' has cardinality 0..*, and from 'mancoosimm_Module', the role 'Module' has cardinality 0..*.
+An association connects 'mancoosimm_ModuleCache' and 'mancoosimm_Environment'. From 'mancoosimm_ModuleCache', the role 'moduleCache242' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'Environment243' has cardinality 0..*.
+An association connects 'mancoosimm_Module' and 'mancoosimm_File'. From 'mancoosimm_Module', the role 'mancoosimm_Module' has cardinality 0..*, and from 'mancoosimm_File', the role 'mancoosimm_File245' has cardinality 0..*.
+An association connects 'mancoosimm_ModuleCache' and 'mancoosimm_Module'. From 'mancoosimm_ModuleCache', the role 'ModuleCache247' has cardinality 0..*, and from 'mancoosimm_Module', the role 'modules' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_SGMLCatalog'. From 'mancoosimm_Environment', the role 'Environment249' has cardinality 0..*, and from 'mancoosimm_SGMLCatalog', the role 'sgmlCatalog' has cardinality 0..*.
+An association connects 'mancoosimm_SGMLCatalog' and 'mancoosimm_SGMLDocument'. From 'mancoosimm_SGMLCatalog', the role 'mancoosimm_SGMLCatalog' has cardinality 0..*, and from 'mancoosimm_SGMLDocument', the role 'mancoosimm_SGMLDocument' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_SGMLDocument'. From 'mancoosimm_File', the role 'mancoosimm_File253' has cardinality 0..*, and from 'mancoosimm_SGMLDocument', the role 'mancoosimm_SGMLDocument252' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_SGMLDocument'. From 'mancoosimm_File', the role 'mancoosimm_File256' has cardinality 0..*, and from 'mancoosimm_SGMLDocument', the role 'mancoosimm_SGMLDocument255' has cardinality 0..*.
+An association connects 'mancoosimm_SkeeperCatalog' and 'mancoosimm_Environment'. From 'mancoosimm_SkeeperCatalog', the role 'skeeperCatalog' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'Environment258' has cardinality 0..*.
+An association connects 'mancoosimm_SkeeperDocument' and 'mancoosimm_SkeeperCatalog'. From 'mancoosimm_SkeeperDocument', the role 'mancoosimm_SkeeperDocument' has cardinality 0..*, and from 'mancoosimm_SkeeperCatalog', the role 'mancoosimm_SkeeperCatalog' has cardinality 0..*.
+An association connects 'mancoosimm_SkeeperDocument' and 'mancoosimm_File'. From 'mancoosimm_SkeeperDocument', the role 'mancoosimm_SkeeperDocument261' has cardinality 0..*, and from 'mancoosimm_File', the role 'mancoosimm_File262' has cardinality 0..*.
+An association connects 'mancoosimm_SkeeperDocument' and 'mancoosimm_File'. From 'mancoosimm_SkeeperDocument', the role 'mancoosimm_SkeeperDocument264' has cardinality 0..*, and from 'mancoosimm_File', the role 'mancoosimm_File265' has cardinality 0..*.
+An association connects 'mancoosimm_EmacsPackage' and 'mancoosimm_File'. From 'mancoosimm_EmacsPackage', the role 'mancoosimm_EmacsPackage' has cardinality 0..*, and from 'mancoosimm_File', the role 'mancoosimm_File267' has cardinality 0..*.
+An association connects 'mancoosimm_EmacsPackage' and 'mancoosimm_Environment'. From 'mancoosimm_EmacsPackage', the role 'emacspkg' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'Environment269' has cardinality 0..*.
+An association connects 'mancoosimm_Environment' and 'mancoosimm_User'. From 'mancoosimm_Environment', the role 'Environment271' has cardinality 0..*, and from 'mancoosimm_User', the role 'users' has cardinality 0..*.
+An association connects 'mancoosimm_User' and 'mancoosimm_Group'. From 'mancoosimm_User', the role 'users273' has cardinality 0..*, and from 'mancoosimm_Group', the role 'Group274' has cardinality 0..*.
+An association connects 'mancoosimm_File' and 'mancoosimm_User'. From 'mancoosimm_File', the role 'mancoosimm_File277' has cardinality 0..*, and from 'mancoosimm_User', the role 'mancoosimm_User276' has cardinality 0..*.
+An association connects 'mancoosimm_Group' and 'mancoosimm_Environment'. From 'mancoosimm_Group', the role 'groups' has cardinality 0..*, and from 'mancoosimm_Environment', the role 'Environment279' has cardinality 0..*.
+An association connects 'mancoosimm_Group' and 'mancoosimm_User'. From 'mancoosimm_Group', the role 'groups281' has cardinality 0..*, and from 'mancoosimm_User', the role 'User282' has cardinality 0..*.
+An association connects 'mancoosimm_SingleConflict' and 'mancoosimm_Conflict'. From 'mancoosimm_SingleConflict', the role 'singleConflict' has cardinality 0..*, and from 'mancoosimm_Conflict', the role 'Conflict' has cardinality 0..*.
+An association connects 'mancoosimm_Conflict' and 'mancoosimm_AndConflict'. From 'mancoosimm_Conflict', the role 'conflict' has cardinality 0..*, and from 'mancoosimm_AndConflict', the role 'AndConflict' has cardinality 0..*.
+An association connects 'mancoosimm_OrConflict' and 'mancoosimm_Conflict'. From 'mancoosimm_OrConflict', the role 'OrConflict' has cardinality 0..*, and from 'mancoosimm_Conflict', the role 'conflict286' has cardinality 0..*.
+An association connects 'mancoosimm_Conflict' and 'mancoosimm_SingleConflict'. From 'mancoosimm_Conflict', the role 'conflict288' has cardinality 0..*, and from 'mancoosimm_SingleConflict', the role 'SingleConflict' has cardinality 0..*.
+An association connects 'mancoosimm_Package' and 'mancoosimm_Conflict'. From 'mancoosimm_Package', the role 'mancoosimm_Package291' has cardinality 0..*, and from 'mancoosimm_Conflict', the role 'mancoosimm_Conflict290' has cardinality 0..*.
+An association connects 'mancoosimm_Conflict' and 'mancoosimm_Conflict'. From 'mancoosimm_Conflict', the role 'mancoosimm_Conflict294' has cardinality 0..*, and from 'mancoosimm_Conflict', the role 'mancoosimm_Conflict292' has cardinality 0..*.
+An association connects 'mancoosimm_Package' and 'mancoosimm_Conflict'. From 'mancoosimm_Package', the role 'mancoosimm_Package297' has cardinality 0..*, and from 'mancoosimm_Conflict', the role 'mancoosimm_Conflict296' has cardinality 0..*.
+An association connects 'mancoosimm_Conflict' and 'mancoosimm_AndConflict'. From 'mancoosimm_Conflict', the role 'mancoosimm_Conflict299' has cardinality 0..*, and from 'mancoosimm_AndConflict', the role 'mancoosimm_AndConflict' has cardinality 0..*.
+An association connects 'mancoosimm_Conflict' and 'mancoosimm_AndConflict'. From 'mancoosimm_Conflict', the role 'Conflict301' has cardinality 0..*, and from 'mancoosimm_AndConflict', the role 'andConflict' has cardinality 0..*.
+An association connects 'mancoosimm_OrConflict' and 'mancoosimm_Conflict'. From 'mancoosimm_OrConflict', the role 'mancoosimm_OrConflict' has cardinality 0..*, and from 'mancoosimm_Conflict', the role 'mancoosimm_Conflict303' has cardinality 0..*.
+An association connects 'mancoosimm_OrConflict' and 'mancoosimm_Conflict'. From 'mancoosimm_OrConflict', the role 'orConflict' has cardinality 0..*, and from 'mancoosimm_Conflict', the role 'Conflict305' has cardinality 0..*.

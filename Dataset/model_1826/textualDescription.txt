@@ -1,0 +1,28 @@
+The domain model 'DictionaryLanguage' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'DictionaryLanguage_Entry' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'level', which is of type str.
+
+'DictionaryLanguage_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DictionaryLanguage_Shelf' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'DictionaryLanguage_Author' represents an important domain concept.
+It has one attribute: 'email', which is of type str.
+
+'DictionaryLanguage_Dictionary' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'DictionaryLanguage_Author' and 'DictionaryLanguage_Library'. From 'DictionaryLanguage_Author', the role 'author' has cardinality 0..*, and from 'DictionaryLanguage_Library', the role 'Library' has cardinality 0..*.
+An association connects 'DictionaryLanguage_Dictionary' and 'DictionaryLanguage_Author'. From 'DictionaryLanguage_Dictionary', the role 'Dictionary' has cardinality 0..*, and from 'DictionaryLanguage_Author', the role 'author2' has cardinality 0..*.
+An association connects 'DictionaryLanguage_Dictionary' and 'DictionaryLanguage_Shelf'. From 'DictionaryLanguage_Dictionary', the role 'dictionary' has cardinality 0..*, and from 'DictionaryLanguage_Shelf', the role 'Shelf' has cardinality 0..*.
+An association connects 'DictionaryLanguage_Dictionary' and 'DictionaryLanguage_Author'. From 'DictionaryLanguage_Dictionary', the role 'dictionary5' has cardinality 0..*, and from 'DictionaryLanguage_Author', the role 'Author' has cardinality 0..*.
+An association connects 'DictionaryLanguage_Entry' and 'DictionaryLanguage_Dictionary'. From 'DictionaryLanguage_Entry', the role 'DictionaryLanguage_Entry' has cardinality 0..*, and from 'DictionaryLanguage_Dictionary', the role 'DictionaryLanguage_Dictionary' has cardinality 0..*.
+An association connects 'DictionaryLanguage_Shelf' and 'DictionaryLanguage_Library'. From 'DictionaryLanguage_Shelf', the role 'DictionaryLanguage_Shelf' has cardinality 0..*, and from 'DictionaryLanguage_Library', the role 'DictionaryLanguage_Library' has cardinality 0..*.
+An association connects 'DictionaryLanguage_Library' and 'DictionaryLanguage_Author'. From 'DictionaryLanguage_Library', the role 'library' has cardinality 0..*, and from 'DictionaryLanguage_Author', the role 'Author9' has cardinality 0..*.
+An association connects 'DictionaryLanguage_Shelf' and 'DictionaryLanguage_Dictionary'. From 'DictionaryLanguage_Shelf', the role 'shelf' has cardinality 0..*, and from 'DictionaryLanguage_Dictionary', the role 'Dictionary11' has cardinality 0..*.

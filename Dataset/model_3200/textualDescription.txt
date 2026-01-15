@@ -1,0 +1,634 @@
+The domain model 'iot2' describes the core structural elements and their relationships within the system.
+
+The model defines 134 main class(es).
+
+'iot2_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_LastStatement_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Smaller_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_ForkedToken' represents an important domain concept.
+It has one attribute: 'remainingOffersCount', which is of type str.
+
+'iot2_Typed' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement_FunctioncallOrAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'LastStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_CallFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_BooleanVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement_While' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_LastStatement_ReturnWithValue' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Field' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'iot2_Expression_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_LastStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Actuator' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_IntegerComparisonExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Field_AddEntryToTable' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'iot2_System' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iot2_Statement_If_Then_Else_ElseIfPart' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement_Repeat' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_IntegerVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'identifier', which is of type str.
+
+'iot2_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement_Local_Variable_Declaration' represents an important domain concept.
+It has one attribute: 'variableNames', which is of type str.
+
+'iot2_Statement_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_True' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Exponentiation' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement_CallFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Length' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'Contained' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_ActivityNode' represents an important domain concept.
+It has one attribute: 'running', which is of type str.
+
+'iot2_InputValue' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Sketch' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Field_AddEntryToTable_Brackets' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Nil' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Modulo' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_BooleanValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_VarArgs' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement_If_Then_Else' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_PrimitiveDef' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'iot2_IntegerCalculationExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'iot2_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_IntegerValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'iot2_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iot2_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_TypedefDef' represents an important domain concept.
+It does not declare any attributes.
+
+'Chunk' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Chunk' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement_For_Numeric' represents an important domain concept.
+It has one attribute: 'iteratorName', which is of type str.
+
+'iot2_Expression_Invert' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_AccessMember' represents an important domain concept.
+It has one attribute: 'memberName', which is of type str.
+
+'iot2_Statement_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement_CallMemberFunction' represents an important domain concept.
+It has one attribute: 'memberFunctionName', which is of type str.
+
+'Typed' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_HWComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type bool.
+
+'iot2_ExceptionDef' represents an important domain concept.
+It has one attribute: 'typeCode', which is of type str.
+
+'iot2_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Offer' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_ControlToken' represents an important domain concept.
+It does not declare any attributes.
+
+'Field' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Field_AppendEntryToTable' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_LastStatement_Break' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_TableConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_BooleanBinaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type bool.
+
+'iot2_Expression_AccessArray' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement_For_Generic' represents an important domain concept.
+It has one attribute: 'names', which is of type str.
+
+'iot2_Expression_Larger' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'HWComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_OpaqueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Smaller' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_VariableName' represents an important domain concept.
+It has one attribute: 'variable', which is of type bool.
+
+'iot2_BooleanUnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'iot2_IDLType' represents an important domain concept.
+It has one attribute: 'typeCode', which is of type str.
+
+'iot2_Function' represents an important domain concept.
+It has the following attributes: 'parameters', which is of type str; 'varArgs', which is of type bool.
+
+'iot2_Expression_String' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'iot2_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement_FunctioncallOrAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Not_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_ParameterDef' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'identifier', which is of type str.
+
+'iot2_Expression_Larger_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Environment' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_False' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Functioncall_Arguments' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement_LocalFunction_Declaration' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'LastStatement_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Statement_GlobalFunction_Declaration' represents an important domain concept.
+It has the following attributes: 'functionName', which is of type str; 'prefix', which is of type str.
+
+'iot2_Expression_And' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'iot2_Expression_Concatenation' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_OperationDef' represents an important domain concept.
+It has the following attributes: 'isOneway', which is of type bool; 'contexts', which is of type str.
+
+'IDLType' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'Token' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Board' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'iot2_Contained' represents an important domain concept.
+It has the following attributes: 'repositoryId', which is of type str; 'absoluteName', which is of type str; 'version', which is of type str.
+
+'iot2_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'iot2_Expression_CallMemberFunction' represents an important domain concept.
+It has one attribute: 'memberFunctionName', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BooleanBinaryOperator' defines the following possible values: 'AND', 'OR'.
+The enumeration 'ParameterMode' defines the following possible values: 'PARAM_INOUT', 'PARAM_IN', 'PARAM_OUT'.
+The enumeration 'IntegerComparisonOperator' defines the following possible values: 'EQUALS', 'SMALLER', 'GREATER_EQUALS', 'GREATER', 'SMALLER_EQUALS'.
+The enumeration 'BoardType' defines the following possible values: 'Arduino', 'BeagleBoard', 'RaspberryPi'.
+The enumeration 'IntegerCalculationOperator' defines the following possible values: 'SUBRACT', 'ADD'.
+The enumeration 'PrimitiveKind' defines the following possible values: 'PK_LONG', 'PK_DOUBLE', 'PK_VOID', 'PK_STRING', 'PK_ANY', 'PK_OBJREF', 'PK_CHAR', 'PK_LONGDOUBLE', 'PK_LONGLONG', 'PK_ULONGLONG', 'PK_SHORT', 'PK_USHORT', 'PK_BOOLEAN', 'PK_PRINCIPAL', 'PK_TYPECODE', 'PK_FLOAT', 'PK_NULL', 'PK_WCHAR', 'PK_WSTRING', 'PK_OCTET', 'PK_ULONG'.
+The enumeration 'BooleanUnaryOperator' defines a single possible value: 'NOT'.
+
+The model also captures inheritance relationships between classes.
+The class 'iot2_Sensor' is a specialization of 'HWComponent'.
+The class 'iot2_Actuator' is a specialization of 'HWComponent'.
+The class 'iot2_Activity' is a specialization of 'NamedElement'.
+The class 'iot2_OperationDef' is a specialization of 'Contained'.
+The class 'iot2_OperationDef' is a specialization of 'Typed'.
+The class 'iot2_Contained' is a specialization of 'NamedElement'.
+The class 'iot2_Container' is a specialization of 'Contained'.
+The class 'iot2_TypedefDef' is a specialization of 'IDLType'.
+The class 'iot2_TypedefDef' is a specialization of 'Contained'.
+The class 'iot2_ParameterDef' is a specialization of 'Typed'.
+The class 'iot2_ExceptionDef' is a specialization of 'Contained'.
+The class 'iot2_Field' is a specialization of 'Typed'.
+The class 'iot2_PrimitiveDef' is a specialization of 'IDLType'.
+The class 'iot2_Block' is a specialization of 'Chunk'.
+The class 'iot2_LastStatement_Return' is a specialization of 'LastStatement'.
+The class 'iot2_LastStatement_Break' is a specialization of 'LastStatement'.
+The class 'iot2_Statement_Block' is a specialization of 'Statement'.
+The class 'iot2_Statement_While' is a specialization of 'Statement'.
+The class 'iot2_Statement_Repeat' is a specialization of 'Statement'.
+The class 'iot2_Statement_If_Then_Else' is a specialization of 'Statement'.
+The class 'iot2_Statement_For_Numeric' is a specialization of 'Statement'.
+The class 'iot2_Statement_For_Generic' is a specialization of 'Statement'.
+The class 'iot2_Statement_GlobalFunction_Declaration' is a specialization of 'Statement'.
+The class 'iot2_Statement_LocalFunction_Declaration' is a specialization of 'Statement'.
+The class 'iot2_Statement_Local_Variable_Declaration' is a specialization of 'Statement'.
+The class 'iot2_Statement_FunctioncallOrAssignment' is a specialization of 'Statement'.
+The class 'iot2_Expression' is a specialization of 'Statement_FunctioncallOrAssignment'.
+The class 'iot2_Expression_Nil' is a specialization of 'Expression'.
+The class 'iot2_Expression_True' is a specialization of 'Expression'.
+The class 'iot2_Expression_False' is a specialization of 'Expression'.
+The class 'iot2_Expression_Number' is a specialization of 'Expression'.
+The class 'iot2_Expression_VarArgs' is a specialization of 'Expression'.
+The class 'iot2_Expression_String' is a specialization of 'Expression'.
+The class 'iot2_Expression_Function' is a specialization of 'Expression'.
+The class 'iot2_Expression_TableConstructor' is a specialization of 'Expression'.
+The class 'iot2_Field_AddEntryToTable_Brackets' is a specialization of 'Field'.
+The class 'iot2_Field_AddEntryToTable' is a specialization of 'Field'.
+The class 'iot2_Field_AppendEntryToTable' is a specialization of 'Field'.
+The class 'iot2_LastStatement_ReturnWithValue' is a specialization of 'LastStatement_Return'.
+The class 'iot2_Statement_Assignment' is a specialization of 'Statement_FunctioncallOrAssignment'.
+The class 'iot2_Statement_CallMemberFunction' is a specialization of 'Statement_FunctioncallOrAssignment'.
+The class 'iot2_Statement_CallFunction' is a specialization of 'Statement_FunctioncallOrAssignment'.
+The class 'iot2_Expression_Or' is a specialization of 'Expression'.
+The class 'iot2_Expression_And' is a specialization of 'Expression'.
+The class 'iot2_Expression_Larger' is a specialization of 'Expression'.
+The class 'iot2_Expression_Larger_Equal' is a specialization of 'Expression'.
+The class 'iot2_Expression_Smaller' is a specialization of 'Expression'.
+The class 'iot2_Expression_Smaller_Equal' is a specialization of 'Expression'.
+The class 'iot2_Expression_Equal' is a specialization of 'Expression'.
+The class 'iot2_Expression_Not_Equal' is a specialization of 'Expression'.
+The class 'iot2_Expression_Concatenation' is a specialization of 'Expression'.
+The class 'iot2_Expression_Plus' is a specialization of 'Expression'.
+The class 'iot2_Expression_Minus' is a specialization of 'Expression'.
+The class 'iot2_Expression_Multiplication' is a specialization of 'Expression'.
+The class 'iot2_Expression_Division' is a specialization of 'Expression'.
+The class 'iot2_Expression_Modulo' is a specialization of 'Expression'.
+The class 'iot2_Expression_Negate' is a specialization of 'Expression'.
+The class 'iot2_Expression_Length' is a specialization of 'Expression'.
+The class 'iot2_Expression_Invert' is a specialization of 'Expression'.
+The class 'iot2_Expression_Exponentiation' is a specialization of 'Expression'.
+The class 'iot2_Expression_CallMemberFunction' is a specialization of 'Expression'.
+The class 'iot2_Expression_CallFunction' is a specialization of 'Expression'.
+The class 'iot2_Expression_AccessArray' is a specialization of 'Expression'.
+The class 'iot2_Expression_AccessMember' is a specialization of 'Expression'.
+The class 'iot2_Expression_VariableName' is a specialization of 'Expression'.
+The class 'iot2_ActivityNode' is a specialization of 'NamedElement'.
+The class 'iot2_ActivityEdge' is a specialization of 'NamedElement'.
+The class 'iot2_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'iot2_ControlNode' is a specialization of 'ActivityNode'.
+The class 'iot2_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'iot2_Action' is a specialization of 'ExecutableNode'.
+The class 'iot2_OpaqueAction' is a specialization of 'Action'.
+The class 'iot2_InitialNode' is a specialization of 'ControlNode'.
+The class 'iot2_FinalNode' is a specialization of 'ControlNode'.
+The class 'iot2_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'iot2_ForkNode' is a specialization of 'ControlNode'.
+The class 'iot2_JoinNode' is a specialization of 'ControlNode'.
+The class 'iot2_MergeNode' is a specialization of 'ControlNode'.
+The class 'iot2_DecisionNode' is a specialization of 'ControlNode'.
+The class 'iot2_IntegerVariable' is a specialization of 'Variable'.
+The class 'iot2_BooleanVariable' is a specialization of 'Variable'.
+The class 'iot2_BooleanValue' is a specialization of 'Value'.
+The class 'iot2_IntegerValue' is a specialization of 'Value'.
+The class 'iot2_IntegerExpression' is a specialization of 'Expression'.
+The class 'iot2_BooleanExpression' is a specialization of 'Expression'.
+The class 'iot2_IntegerCalculationExpression' is a specialization of 'IntegerExpression'.
+The class 'iot2_IntegerComparisonExpression' is a specialization of 'IntegerExpression'.
+The class 'iot2_BooleanUnaryExpression' is a specialization of 'BooleanExpression'.
+The class 'iot2_BooleanBinaryExpression' is a specialization of 'BooleanExpression'.
+The class 'iot2_ForkedToken' is a specialization of 'Token'.
+The class 'iot2_ControlToken' is a specialization of 'Token'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iot2_System' and 'iot2_HWComponent'. From 'iot2_System', the role 'iot2_System' has cardinality 0..*, and from 'iot2_HWComponent', the role 'iot2_HWComponent' has cardinality 0..*.
+An association connects 'iot2_Board' and 'iot2_System'. From 'iot2_Board', the role 'iot2_Board' has cardinality 0..*, and from 'iot2_System', the role 'iot2_System2' has cardinality 0..*.
+An association connects 'iot2_System' and 'iot2_Sketch'. From 'iot2_System', the role 'iot2_System4' has cardinality 0..*, and from 'iot2_Sketch', the role 'iot2_Sketch' has cardinality 0..*.
+An association connects 'iot2_HWComponent' and 'iot2_Board'. From 'iot2_HWComponent', the role 'iot2_HWComponent7' has cardinality 0..*, and from 'iot2_Board', the role 'iot2_Board6' has cardinality 0..*.
+An association connects 'iot2_Activity' and 'iot2_Sketch'. From 'iot2_Activity', the role 'iot2_Activity' has cardinality 0..*, and from 'iot2_Sketch', the role 'iot2_Sketch9' has cardinality 0..*.
+An association connects 'iot2_HWComponent' and 'iot2_OperationDef'. From 'iot2_HWComponent', the role 'iot2_HWComponent11' has cardinality 0..*, and from 'iot2_OperationDef', the role 'iot2_OperationDef' has cardinality 0..*.
+An association connects 'iot2_Activity' and 'iot2_ActivityNode'. From 'iot2_Activity', the role 'unnamed role' has cardinality 0..*, and from 'iot2_ActivityNode', the role '13' has cardinality 0..*.
+An association connects 'iot2_ActivityEdge' and 'iot2_Activity'. From 'iot2_ActivityEdge', the role 'iot2_ActivityEdge' has cardinality 0..*, and from 'iot2_Activity', the role 'iot2_Activity15' has cardinality 0..*.
+An association connects 'iot2_Variable' and 'iot2_Activity'. From 'iot2_Variable', the role 'iot2_Variable' has cardinality 0..*, and from 'iot2_Activity', the role 'iot2_Activity17' has cardinality 0..*.
+An association connects 'iot2_Variable' and 'iot2_Activity'. From 'iot2_Variable', the role 'iot2_Variable20' has cardinality 0..*, and from 'iot2_Activity', the role 'iot2_Activity19' has cardinality 0..*.
+An association connects 'iot2_ParameterDef' and 'iot2_OperationDef'. From 'iot2_ParameterDef', the role 'iot2_ParameterDef' has cardinality 0..*, and from 'iot2_OperationDef', the role 'iot2_OperationDef22' has cardinality 0..*.
+An association connects 'iot2_ExceptionDef' and 'iot2_OperationDef'. From 'iot2_ExceptionDef', the role 'iot2_ExceptionDef' has cardinality 0..*, and from 'iot2_OperationDef', the role 'iot2_OperationDef24' has cardinality 0..*.
+An association connects 'iot2_OperationDef' and 'iot2_Block'. From 'iot2_OperationDef', the role 'iot2_OperationDef26' has cardinality 0..*, and from 'iot2_Block', the role 'iot2_Block' has cardinality 0..*.
+An association connects 'iot2_Contained' and 'iot2_Container'. From 'iot2_Contained', the role '28' has cardinality 0..*, and from 'iot2_Container', the role '29' has cardinality 0..*.
+An association connects 'iot2_Contained' and 'iot2_Container'. From 'iot2_Contained', the role '32' has cardinality 0..*, and from 'iot2_Container', the role '31' has cardinality 0..*.
+An association connects 'iot2_IDLType' and 'iot2_Typed'. From 'iot2_IDLType', the role 'iot2_IDLType' has cardinality 0..*, and from 'iot2_Typed', the role 'iot2_Typed' has cardinality 0..*.
+An association connects 'iot2_Typed' and 'iot2_TypedefDef'. From 'iot2_Typed', the role 'iot2_Typed35' has cardinality 0..*, and from 'iot2_TypedefDef', the role 'iot2_TypedefDef' has cardinality 0..*.
+An association connects 'iot2_ExceptionDef' and 'iot2_Field'. From 'iot2_ExceptionDef', the role 'iot2_ExceptionDef37' has cardinality 0..*, and from 'iot2_Field', the role 'iot2_Field' has cardinality 0..*.
+An association connects 'iot2_Field' and 'iot2_Expression'. From 'iot2_Field', the role 'iot2_Field39' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression' has cardinality 0..*.
+An association connects 'iot2_Statement' and 'iot2_Block'. From 'iot2_Statement', the role 'iot2_Statement' has cardinality 0..*, and from 'iot2_Block', the role 'iot2_Block41' has cardinality 0..*.
+An association connects 'iot2_Block' and 'iot2_LastStatement'. From 'iot2_Block', the role 'iot2_Block43' has cardinality 0..*, and from 'iot2_LastStatement', the role 'iot2_LastStatement' has cardinality 0..*.
+An association connects 'iot2_Block' and 'iot2_Statement_Block'. From 'iot2_Block', the role 'iot2_Block45' has cardinality 0..*, and from 'iot2_Statement_Block', the role 'iot2_Statement_Block' has cardinality 0..*.
+An association connects 'iot2_Statement_While' and 'iot2_Expression'. From 'iot2_Statement_While', the role 'iot2_Statement_While' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression47' has cardinality 0..*.
+An association connects 'iot2_Statement_While' and 'iot2_Block'. From 'iot2_Statement_While', the role 'iot2_Statement_While49' has cardinality 0..*, and from 'iot2_Block', the role 'iot2_Block50' has cardinality 0..*.
+An association connects 'iot2_Statement_Repeat' and 'iot2_Block'. From 'iot2_Statement_Repeat', the role 'iot2_Statement_Repeat' has cardinality 0..*, and from 'iot2_Block', the role 'iot2_Block52' has cardinality 0..*.
+An association connects 'iot2_Statement_Repeat' and 'iot2_Expression'. From 'iot2_Statement_Repeat', the role 'iot2_Statement_Repeat54' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression55' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Statement_If_Then_Else'. From 'iot2_Expression', the role 'iot2_Expression57' has cardinality 0..*, and from 'iot2_Statement_If_Then_Else', the role 'iot2_Statement_If_Then_Else' has cardinality 0..*.
+An association connects 'iot2_Block' and 'iot2_Statement_If_Then_Else'. From 'iot2_Block', the role 'iot2_Block60' has cardinality 0..*, and from 'iot2_Statement_If_Then_Else', the role 'iot2_Statement_If_Then_Else59' has cardinality 0..*.
+An association connects 'iot2_Statement_If_Then_Else_ElseIfPart' and 'iot2_Statement_If_Then_Else'. From 'iot2_Statement_If_Then_Else_ElseIfPart', the role 'iot2_Statement_If_Then_Else_ElseIfPart' has cardinality 0..*, and from 'iot2_Statement_If_Then_Else', the role 'iot2_Statement_If_Then_Else62' has cardinality 0..*.
+An association connects 'iot2_Statement_If_Then_Else' and 'iot2_Block'. From 'iot2_Statement_If_Then_Else', the role 'iot2_Statement_If_Then_Else64' has cardinality 0..*, and from 'iot2_Block', the role 'iot2_Block65' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Statement_If_Then_Else_ElseIfPart'. From 'iot2_Expression', the role 'iot2_Expression68' has cardinality 0..*, and from 'iot2_Statement_If_Then_Else_ElseIfPart', the role 'iot2_Statement_If_Then_Else_ElseIfPart67' has cardinality 0..*.
+An association connects 'iot2_Block' and 'iot2_Statement_If_Then_Else_ElseIfPart'. From 'iot2_Block', the role 'iot2_Block71' has cardinality 0..*, and from 'iot2_Statement_If_Then_Else_ElseIfPart', the role 'iot2_Statement_If_Then_Else_ElseIfPart70' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Statement_For_Numeric'. From 'iot2_Expression', the role 'iot2_Expression73' has cardinality 0..*, and from 'iot2_Statement_For_Numeric', the role 'iot2_Statement_For_Numeric' has cardinality 0..*.
+An association connects 'iot2_Statement_For_Numeric' and 'iot2_Expression'. From 'iot2_Statement_For_Numeric', the role 'iot2_Statement_For_Numeric75' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression76' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Statement_For_Numeric'. From 'iot2_Expression', the role 'iot2_Expression79' has cardinality 0..*, and from 'iot2_Statement_For_Numeric', the role 'iot2_Statement_For_Numeric78' has cardinality 0..*.
+An association connects 'iot2_Block' and 'iot2_Statement_For_Numeric'. From 'iot2_Block', the role 'iot2_Block82' has cardinality 0..*, and from 'iot2_Statement_For_Numeric', the role 'iot2_Statement_For_Numeric81' has cardinality 0..*.
+An association connects 'iot2_Statement_For_Generic' and 'iot2_Expression'. From 'iot2_Statement_For_Generic', the role 'iot2_Statement_For_Generic' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression84' has cardinality 0..*.
+An association connects 'iot2_Statement_For_Generic' and 'iot2_Block'. From 'iot2_Statement_For_Generic', the role 'iot2_Statement_For_Generic86' has cardinality 0..*, and from 'iot2_Block', the role 'iot2_Block87' has cardinality 0..*.
+An association connects 'iot2_Statement_GlobalFunction_Declaration' and 'iot2_Function'. From 'iot2_Statement_GlobalFunction_Declaration', the role 'iot2_Statement_GlobalFunction_Declaration' has cardinality 0..*, and from 'iot2_Function', the role 'iot2_Function' has cardinality 0..*.
+An association connects 'iot2_Function' and 'iot2_Statement_LocalFunction_Declaration'. From 'iot2_Function', the role 'iot2_Function90' has cardinality 0..*, and from 'iot2_Statement_LocalFunction_Declaration', the role 'iot2_Statement_LocalFunction_Declaration' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Statement_Local_Variable_Declaration'. From 'iot2_Expression', the role 'iot2_Expression92' has cardinality 0..*, and from 'iot2_Statement_Local_Variable_Declaration', the role 'iot2_Statement_Local_Variable_Declaration' has cardinality 0..*.
+An association connects 'iot2_Expression_Function' and 'iot2_Function'. From 'iot2_Expression_Function', the role 'iot2_Expression_Function' has cardinality 0..*, and from 'iot2_Function', the role 'iot2_Function94' has cardinality 0..*.
+An association connects 'iot2_Field' and 'iot2_Expression_TableConstructor'. From 'iot2_Field', the role 'iot2_Field96' has cardinality 0..*, and from 'iot2_Expression_TableConstructor', the role 'iot2_Expression_TableConstructor' has cardinality 0..*.
+An association connects 'iot2_Block' and 'iot2_Function'. From 'iot2_Block', the role 'iot2_Block99' has cardinality 0..*, and from 'iot2_Function', the role 'iot2_Function98' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Functioncall_Arguments'. From 'iot2_Expression', the role 'iot2_Expression101' has cardinality 0..*, and from 'iot2_Functioncall_Arguments', the role 'iot2_Functioncall_Arguments' has cardinality 0..*.
+An association connects 'iot2_Field_AddEntryToTable_Brackets' and 'iot2_Expression'. From 'iot2_Field_AddEntryToTable_Brackets', the role 'iot2_Field_AddEntryToTable_Brackets' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression103' has cardinality 0..*.
+An association connects 'iot2_LastStatement_ReturnWithValue' and 'iot2_Expression'. From 'iot2_LastStatement_ReturnWithValue', the role 'iot2_LastStatement_ReturnWithValue' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression105' has cardinality 0..*.
+An association connects 'iot2_Statement_Assignment' and 'iot2_Expression'. From 'iot2_Statement_Assignment', the role 'iot2_Statement_Assignment' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression107' has cardinality 0..*.
+An association connects 'iot2_Statement_Assignment' and 'iot2_Expression'. From 'iot2_Statement_Assignment', the role 'iot2_Statement_Assignment109' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression110' has cardinality 0..*.
+An association connects 'iot2_Statement_CallMemberFunction' and 'iot2_Expression'. From 'iot2_Statement_CallMemberFunction', the role 'iot2_Statement_CallMemberFunction' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression112' has cardinality 0..*.
+An association connects 'iot2_Statement_CallMemberFunction' and 'iot2_Functioncall_Arguments'. From 'iot2_Statement_CallMemberFunction', the role 'iot2_Statement_CallMemberFunction114' has cardinality 0..*, and from 'iot2_Functioncall_Arguments', the role 'iot2_Functioncall_Arguments115' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Statement_CallFunction'. From 'iot2_Expression', the role 'iot2_Expression117' has cardinality 0..*, and from 'iot2_Statement_CallFunction', the role 'iot2_Statement_CallFunction' has cardinality 0..*.
+An association connects 'iot2_Statement_CallFunction' and 'iot2_Functioncall_Arguments'. From 'iot2_Statement_CallFunction', the role 'iot2_Statement_CallFunction119' has cardinality 0..*, and from 'iot2_Functioncall_Arguments', the role 'iot2_Functioncall_Arguments120' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_Or'. From 'iot2_Expression', the role 'iot2_Expression122' has cardinality 0..*, and from 'iot2_Expression_Or', the role 'iot2_Expression_Or' has cardinality 0..*.
+An association connects 'iot2_Expression_Or' and 'iot2_Expression'. From 'iot2_Expression_Or', the role 'iot2_Expression_Or124' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression125' has cardinality 0..*.
+An association connects 'iot2_Expression_And' and 'iot2_Expression'. From 'iot2_Expression_And', the role 'iot2_Expression_And' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression127' has cardinality 0..*.
+An association connects 'iot2_Expression_And' and 'iot2_Expression'. From 'iot2_Expression_And', the role 'iot2_Expression_And129' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression130' has cardinality 0..*.
+An association connects 'iot2_Expression_Larger' and 'iot2_Expression'. From 'iot2_Expression_Larger', the role 'iot2_Expression_Larger' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression132' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_Larger'. From 'iot2_Expression', the role 'iot2_Expression135' has cardinality 0..*, and from 'iot2_Expression_Larger', the role 'iot2_Expression_Larger134' has cardinality 0..*.
+An association connects 'iot2_Expression_Larger_Equal' and 'iot2_Expression'. From 'iot2_Expression_Larger_Equal', the role 'iot2_Expression_Larger_Equal' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression137' has cardinality 0..*.
+An association connects 'iot2_Expression_Larger_Equal' and 'iot2_Expression'. From 'iot2_Expression_Larger_Equal', the role 'iot2_Expression_Larger_Equal139' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression140' has cardinality 0..*.
+An association connects 'iot2_Expression_Smaller' and 'iot2_Expression'. From 'iot2_Expression_Smaller', the role 'iot2_Expression_Smaller' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression142' has cardinality 0..*.
+An association connects 'iot2_Expression_Smaller' and 'iot2_Expression'. From 'iot2_Expression_Smaller', the role 'iot2_Expression_Smaller144' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression145' has cardinality 0..*.
+An association connects 'iot2_Expression_Smaller_Equal' and 'iot2_Expression'. From 'iot2_Expression_Smaller_Equal', the role 'iot2_Expression_Smaller_Equal' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression147' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_Smaller_Equal'. From 'iot2_Expression', the role 'iot2_Expression150' has cardinality 0..*, and from 'iot2_Expression_Smaller_Equal', the role 'iot2_Expression_Smaller_Equal149' has cardinality 0..*.
+An association connects 'iot2_Expression_Equal' and 'iot2_Expression'. From 'iot2_Expression_Equal', the role 'iot2_Expression_Equal' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression152' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_Equal'. From 'iot2_Expression', the role 'iot2_Expression155' has cardinality 0..*, and from 'iot2_Expression_Equal', the role 'iot2_Expression_Equal154' has cardinality 0..*.
+An association connects 'iot2_Expression_Not_Equal' and 'iot2_Expression'. From 'iot2_Expression_Not_Equal', the role 'iot2_Expression_Not_Equal' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression157' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_Not_Equal'. From 'iot2_Expression', the role 'iot2_Expression160' has cardinality 0..*, and from 'iot2_Expression_Not_Equal', the role 'iot2_Expression_Not_Equal159' has cardinality 0..*.
+An association connects 'iot2_Expression_Concatenation' and 'iot2_Expression'. From 'iot2_Expression_Concatenation', the role 'iot2_Expression_Concatenation' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression162' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_Concatenation'. From 'iot2_Expression', the role 'iot2_Expression165' has cardinality 0..*, and from 'iot2_Expression_Concatenation', the role 'iot2_Expression_Concatenation164' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_Plus'. From 'iot2_Expression', the role 'iot2_Expression167' has cardinality 0..*, and from 'iot2_Expression_Plus', the role 'iot2_Expression_Plus' has cardinality 0..*.
+An association connects 'iot2_Expression_Plus' and 'iot2_Expression'. From 'iot2_Expression_Plus', the role 'iot2_Expression_Plus169' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression170' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_Minus'. From 'iot2_Expression', the role 'iot2_Expression172' has cardinality 0..*, and from 'iot2_Expression_Minus', the role 'iot2_Expression_Minus' has cardinality 0..*.
+An association connects 'iot2_Expression_Minus' and 'iot2_Expression'. From 'iot2_Expression_Minus', the role 'iot2_Expression_Minus174' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression175' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_Multiplication'. From 'iot2_Expression', the role 'iot2_Expression177' has cardinality 0..*, and from 'iot2_Expression_Multiplication', the role 'iot2_Expression_Multiplication' has cardinality 0..*.
+An association connects 'iot2_Expression_Multiplication' and 'iot2_Expression'. From 'iot2_Expression_Multiplication', the role 'iot2_Expression_Multiplication179' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression180' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_Division'. From 'iot2_Expression', the role 'iot2_Expression182' has cardinality 0..*, and from 'iot2_Expression_Division', the role 'iot2_Expression_Division' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_Division'. From 'iot2_Expression', the role 'iot2_Expression185' has cardinality 0..*, and from 'iot2_Expression_Division', the role 'iot2_Expression_Division184' has cardinality 0..*.
+An association connects 'iot2_Expression_Modulo' and 'iot2_Expression'. From 'iot2_Expression_Modulo', the role 'iot2_Expression_Modulo' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression187' has cardinality 0..*.
+An association connects 'iot2_Expression_Modulo' and 'iot2_Expression'. From 'iot2_Expression_Modulo', the role 'iot2_Expression_Modulo189' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression190' has cardinality 0..*.
+An association connects 'iot2_Expression_Negate' and 'iot2_Expression'. From 'iot2_Expression_Negate', the role 'iot2_Expression_Negate' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression192' has cardinality 0..*.
+An association connects 'iot2_Expression_Length' and 'iot2_Expression'. From 'iot2_Expression_Length', the role 'iot2_Expression_Length' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression194' has cardinality 0..*.
+An association connects 'iot2_Expression_Invert' and 'iot2_Expression'. From 'iot2_Expression_Invert', the role 'iot2_Expression_Invert' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression196' has cardinality 0..*.
+An association connects 'iot2_Expression_Exponentiation' and 'iot2_Expression'. From 'iot2_Expression_Exponentiation', the role 'iot2_Expression_Exponentiation' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression198' has cardinality 0..*.
+An association connects 'iot2_Expression_Exponentiation' and 'iot2_Expression'. From 'iot2_Expression_Exponentiation', the role 'iot2_Expression_Exponentiation200' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression201' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_CallMemberFunction'. From 'iot2_Expression', the role 'iot2_Expression203' has cardinality 0..*, and from 'iot2_Expression_CallMemberFunction', the role 'iot2_Expression_CallMemberFunction' has cardinality 0..*.
+An association connects 'iot2_Functioncall_Arguments' and 'iot2_Expression_CallMemberFunction'. From 'iot2_Functioncall_Arguments', the role 'iot2_Functioncall_Arguments206' has cardinality 0..*, and from 'iot2_Expression_CallMemberFunction', the role 'iot2_Expression_CallMemberFunction205' has cardinality 0..*.
+An association connects 'iot2_Expression_CallFunction' and 'iot2_Expression'. From 'iot2_Expression_CallFunction', the role 'iot2_Expression_CallFunction' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression208' has cardinality 0..*.
+An association connects 'iot2_Expression_CallFunction' and 'iot2_Functioncall_Arguments'. From 'iot2_Expression_CallFunction', the role 'iot2_Expression_CallFunction210' has cardinality 0..*, and from 'iot2_Functioncall_Arguments', the role 'iot2_Functioncall_Arguments211' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_AccessArray'. From 'iot2_Expression', the role 'iot2_Expression213' has cardinality 0..*, and from 'iot2_Expression_AccessArray', the role 'iot2_Expression_AccessArray' has cardinality 0..*.
+An association connects 'iot2_Expression_AccessArray' and 'iot2_Expression'. From 'iot2_Expression_AccessArray', the role 'iot2_Expression_AccessArray215' has cardinality 0..*, and from 'iot2_Expression', the role 'iot2_Expression216' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_Expression_AccessMember'. From 'iot2_Expression', the role 'iot2_Expression218' has cardinality 0..*, and from 'iot2_Expression_AccessMember', the role 'iot2_Expression_AccessMember' has cardinality 0..*.
+An association connects 'iot2_Environment' and 'iot2_Environment'. From 'iot2_Environment', the role 'iot2_Environment' has cardinality 0..*, and from 'iot2_Environment', the role 'iot2_Environment219' has cardinality 0..*.
+An association connects 'iot2_ActivityEdge' and 'iot2_ActivityNode'. From 'iot2_ActivityEdge', the role '223' has cardinality 0..*, and from 'iot2_ActivityNode', the role '222' has cardinality 0..*.
+An association connects 'iot2_ActivityEdge' and 'iot2_ActivityNode'. From 'iot2_ActivityEdge', the role '226' has cardinality 0..*, and from 'iot2_ActivityNode', the role '225' has cardinality 0..*.
+An association connects 'iot2_ActivityNode' and 'iot2_Activity'. From 'iot2_ActivityNode', the role '228' has cardinality 0..*, and from 'iot2_Activity', the role '229' has cardinality 0..*.
+An association connects 'iot2_ActivityEdge' and 'iot2_ActivityNode'. From 'iot2_ActivityEdge', the role '231' has cardinality 0..*, and from 'iot2_ActivityNode', the role '232' has cardinality 0..*.
+An association connects 'iot2_ActivityEdge' and 'iot2_ActivityNode'. From 'iot2_ActivityEdge', the role '234' has cardinality 0..*, and from 'iot2_ActivityNode', the role '235' has cardinality 0..*.
+An association connects 'iot2_Offer' and 'iot2_ActivityEdge'. From 'iot2_Offer', the role 'iot2_Offer' has cardinality 0..*, and from 'iot2_ActivityEdge', the role 'iot2_ActivityEdge237' has cardinality 0..*.
+An association connects 'iot2_BooleanVariable' and 'iot2_ControlFlow'. From 'iot2_BooleanVariable', the role 'iot2_BooleanVariable' has cardinality 0..*, and from 'iot2_ControlFlow', the role 'iot2_ControlFlow' has cardinality 0..*.
+An association connects 'iot2_Expression' and 'iot2_OpaqueAction'. From 'iot2_Expression', the role 'iot2_Expression240' has cardinality 0..*, and from 'iot2_OpaqueAction', the role 'iot2_OpaqueAction' has cardinality 0..*.
+An association connects 'iot2_OperationDef' and 'iot2_OpaqueAction'. From 'iot2_OperationDef', the role 'iot2_OperationDef243' has cardinality 0..*, and from 'iot2_OpaqueAction', the role 'iot2_OpaqueAction242' has cardinality 0..*.
+An association connects 'iot2_Variable' and 'iot2_Value'. From 'iot2_Variable', the role 'iot2_Variable245' has cardinality 0..*, and from 'iot2_Value', the role 'iot2_Value' has cardinality 0..*.
+An association connects 'iot2_Variable' and 'iot2_Value'. From 'iot2_Variable', the role 'iot2_Variable247' has cardinality 0..*, and from 'iot2_Value', the role 'iot2_Value248' has cardinality 0..*.
+An association connects 'iot2_IntegerExpression' and 'iot2_IntegerVariable'. From 'iot2_IntegerExpression', the role 'iot2_IntegerExpression' has cardinality 0..*, and from 'iot2_IntegerVariable', the role 'iot2_IntegerVariable' has cardinality 0..*.
+An association connects 'iot2_IntegerVariable' and 'iot2_IntegerExpression'. From 'iot2_IntegerVariable', the role 'iot2_IntegerVariable252' has cardinality 0..*, and from 'iot2_IntegerExpression', the role 'iot2_IntegerExpression251' has cardinality 0..*.
+An association connects 'iot2_BooleanVariable' and 'iot2_BooleanExpression'. From 'iot2_BooleanVariable', the role 'iot2_BooleanVariable254' has cardinality 0..*, and from 'iot2_BooleanExpression', the role 'iot2_BooleanExpression' has cardinality 0..*.
+An association connects 'iot2_IntegerCalculationExpression' and 'iot2_IntegerVariable'. From 'iot2_IntegerCalculationExpression', the role 'iot2_IntegerCalculationExpression' has cardinality 0..*, and from 'iot2_IntegerVariable', the role 'iot2_IntegerVariable256' has cardinality 0..*.
+An association connects 'iot2_IntegerComparisonExpression' and 'iot2_BooleanVariable'. From 'iot2_IntegerComparisonExpression', the role 'iot2_IntegerComparisonExpression' has cardinality 0..*, and from 'iot2_BooleanVariable', the role 'iot2_BooleanVariable258' has cardinality 0..*.
+An association connects 'iot2_BooleanUnaryExpression' and 'iot2_BooleanVariable'. From 'iot2_BooleanUnaryExpression', the role 'iot2_BooleanUnaryExpression' has cardinality 0..*, and from 'iot2_BooleanVariable', the role 'iot2_BooleanVariable260' has cardinality 0..*.
+An association connects 'iot2_BooleanVariable' and 'iot2_BooleanBinaryExpression'. From 'iot2_BooleanVariable', the role 'iot2_BooleanVariable262' has cardinality 0..*, and from 'iot2_BooleanBinaryExpression', the role 'iot2_BooleanBinaryExpression' has cardinality 0..*.
+An association connects 'iot2_BooleanBinaryExpression' and 'iot2_BooleanVariable'. From 'iot2_BooleanBinaryExpression', the role 'iot2_BooleanBinaryExpression264' has cardinality 0..*, and from 'iot2_BooleanVariable', the role 'iot2_BooleanVariable265' has cardinality 0..*.
+An association connects 'iot2_InputValue' and 'iot2_Value'. From 'iot2_InputValue', the role 'iot2_InputValue' has cardinality 0..*, and from 'iot2_Value', the role 'iot2_Value267' has cardinality 0..*.
+An association connects 'iot2_InputValue' and 'iot2_Variable'. From 'iot2_InputValue', the role 'iot2_InputValue269' has cardinality 0..*, and from 'iot2_Variable', the role 'iot2_Variable270' has cardinality 0..*.
+An association connects 'iot2_Input' and 'iot2_InputValue'. From 'iot2_Input', the role 'iot2_Input' has cardinality 0..*, and from 'iot2_InputValue', the role 'iot2_InputValue272' has cardinality 0..*.
+An association connects 'iot2_Offer' and 'iot2_Token'. From 'iot2_Offer', the role 'iot2_Offer274' has cardinality 0..*, and from 'iot2_Token', the role 'iot2_Token' has cardinality 0..*.
+An association connects 'iot2_Token' and 'iot2_ActivityNode'. From 'iot2_Token', the role 'iot2_Token276' has cardinality 0..*, and from 'iot2_ActivityNode', the role 'iot2_ActivityNode' has cardinality 0..*.
+An association connects 'iot2_Trace' and 'iot2_Context'. From 'iot2_Trace', the role 'iot2_Trace' has cardinality 0..*, and from 'iot2_Context', the role 'iot2_Context' has cardinality 0..*.
+An association connects 'iot2_Context' and 'iot2_Activity'. From 'iot2_Context', the role 'iot2_Context279' has cardinality 0..*, and from 'iot2_Activity', the role 'iot2_Activity280' has cardinality 0..*.
+An association connects 'iot2_Context' and 'iot2_Context'. From 'iot2_Context', the role 'iot2_Context283' has cardinality 0..*, and from 'iot2_Context', the role 'iot2_Context281' has cardinality 0..*.
+An association connects 'iot2_InputValue' and 'iot2_Context'. From 'iot2_InputValue', the role 'iot2_InputValue286' has cardinality 0..*, and from 'iot2_Context', the role 'iot2_Context285' has cardinality 0..*.
+An association connects 'iot2_Context' and 'iot2_JoinNode'. From 'iot2_Context', the role 'iot2_Context288' has cardinality 0..*, and from 'iot2_JoinNode', the role 'iot2_JoinNode' has cardinality 0..*.
+An association connects 'iot2_Trace' and 'iot2_ActivityNode'. From 'iot2_Trace', the role 'iot2_Trace290' has cardinality 0..*, and from 'iot2_ActivityNode', the role 'iot2_ActivityNode291' has cardinality 0..*.
+An association connects 'iot2_ForkedToken' and 'iot2_Token'. From 'iot2_ForkedToken', the role 'iot2_ForkedToken' has cardinality 0..*, and from 'iot2_Token', the role 'iot2_Token293' has cardinality 0..*.

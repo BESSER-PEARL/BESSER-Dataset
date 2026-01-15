@@ -1,0 +1,130 @@
+The domain model 'BibTeX' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'BibTeX_InCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_PhDThesis' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeXEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_BookTitledEntry' represents an important domain concept.
+It has one attribute: 'booktitle', which is of type str.
+
+'BibTeX_InProceedings' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_ThesisEntry' represents an important domain concept.
+It has one attribute: 'school', which is of type str.
+
+'DatedEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_DatedEntry' represents an important domain concept.
+It has one attribute: 'year', which is of type str.
+
+'BookTitledEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_InBook' represents an important domain concept.
+It has one attribute: 'chapter', which is of type int.
+
+'BibTeX_Article' represents an important domain concept.
+It has one attribute: 'journal', which is of type str.
+
+'BibTeX_Unpublished' represents an important domain concept.
+It has one attribute: 'note', which is of type str.
+
+'BibTeX_BibTeXEntry' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'BibTeX_Author' represents an important domain concept.
+It has one attribute: 'author', which is of type str.
+
+'BibTeX_MasterThesis' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_TitledEntry' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'Author' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_BibTeXFile' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_Booklet' represents an important domain concept.
+It does not declare any attributes.
+
+'AuthoredEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_Manual' represents an important domain concept.
+It does not declare any attributes.
+
+'Book' represents an important domain concept.
+It does not declare any attributes.
+
+'TitledEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Proceedings' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_Misc' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_Book' represents an important domain concept.
+It has one attribute: 'publisher', which is of type str.
+
+'BibTeX_TechReport' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_AuthoredEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'ThesisEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'BibTeX_Proceedings' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'BibTeX_AuthoredEntry' is a specialization of 'BibTeXEntry'.
+The class 'BibTeX_DatedEntry' is a specialization of 'BibTeXEntry'.
+The class 'BibTeX_TitledEntry' is a specialization of 'BibTeXEntry'.
+The class 'BibTeX_BookTitledEntry' is a specialization of 'BibTeXEntry'.
+The class 'BibTeX_Article' is a specialization of 'AuthoredEntry'.
+The class 'BibTeX_Article' is a specialization of 'DatedEntry'.
+The class 'BibTeX_Article' is a specialization of 'TitledEntry'.
+The class 'BibTeX_TechReport' is a specialization of 'AuthoredEntry'.
+The class 'BibTeX_TechReport' is a specialization of 'DatedEntry'.
+The class 'BibTeX_TechReport' is a specialization of 'TitledEntry'.
+The class 'BibTeX_Unpublished' is a specialization of 'AuthoredEntry'.
+The class 'BibTeX_Unpublished' is a specialization of 'TitledEntry'.
+The class 'BibTeX_Manual' is a specialization of 'TitledEntry'.
+The class 'BibTeX_Proceedings' is a specialization of 'DatedEntry'.
+The class 'BibTeX_Proceedings' is a specialization of 'TitledEntry'.
+The class 'BibTeX_InProceedings' is a specialization of 'Proceedings'.
+The class 'BibTeX_InProceedings' is a specialization of 'AuthoredEntry'.
+The class 'BibTeX_InProceedings' is a specialization of 'BookTitledEntry'.
+The class 'BibTeX_Booklet' is a specialization of 'DatedEntry'.
+The class 'BibTeX_Book' is a specialization of 'AuthoredEntry'.
+The class 'BibTeX_Book' is a specialization of 'DatedEntry'.
+The class 'BibTeX_Book' is a specialization of 'TitledEntry'.
+The class 'BibTeX_InCollection' is a specialization of 'Book'.
+The class 'BibTeX_InCollection' is a specialization of 'BookTitledEntry'.
+The class 'BibTeX_InBook' is a specialization of 'Book'.
+The class 'BibTeX_Misc' is a specialization of 'BibTeXEntry'.
+The class 'BibTeX_ThesisEntry' is a specialization of 'AuthoredEntry'.
+The class 'BibTeX_ThesisEntry' is a specialization of 'DatedEntry'.
+The class 'BibTeX_ThesisEntry' is a specialization of 'TitledEntry'.
+The class 'BibTeX_PhDThesis' is a specialization of 'ThesisEntry'.
+The class 'BibTeX_MasterThesis' is a specialization of 'ThesisEntry'.
+
+Relationships between classes are modeled using associations.
+An association connects 'BibTeX_BibTeXFile' and 'BibTeXEntry'. From 'BibTeX_BibTeXFile', the role 'BibTeX_BibTeXFile' has cardinality 0..*, and from 'BibTeXEntry', the role 'BibTeXEntry' has cardinality 0..*.
+An association connects 'Author' and 'BibTeX_AuthoredEntry'. From 'Author', the role 'Author' has cardinality 0..*, and from 'BibTeX_AuthoredEntry', the role 'BibTeX_AuthoredEntry' has cardinality 0..*.

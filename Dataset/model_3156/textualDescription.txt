@@ -1,0 +1,542 @@
+The domain model 'TTMCConstraint' describes the core structural elements and their relationships within the system.
+
+The model defines 123 main class(es).
+
+'TTMCConstraint_SubtractExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_MultiplyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_IntegerLiteralExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'TTMCConstraint_GloballyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_LetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_InequalityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_GreaterEqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_FieldAssignment' represents an important domain concept.
+It has one attribute: 'reference', which is of type str.
+
+'TTMCConstraint_LetDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ArrayTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_RealTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ModExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_RecordAccessExpression' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'DefinableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_RationalLiteralExpression' represents an important domain concept.
+It has the following attributes: 'numerator', which is of type str; 'denominator', which is of type str.
+
+'LiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'PredicateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TupleTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_BooleanLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_DivExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_BasicConstraintDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'NullaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_LessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantifierExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_FunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_RecordTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ExistsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TemporalForallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TemporalPathExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TrueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_LessEqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ArrayAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_FunctionTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TTMCConstraint_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_AddExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ConstraintSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_FieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ConstraintDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ParametrizedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TemporalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TemporalStateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ParametrizedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_FalseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_UnaryPlusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_AccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_FunctionLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_SubTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_BasicTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_GreaterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_PrimedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_MultiaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_IfThenElseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_DefinableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstraintDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_BooleanTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_NaturalTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ParametricElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_EnumerationTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_NextExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_FunctionAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_IntegerTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ParametricElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TemporalExistsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ReferenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_FinallyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_DivideExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_LiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TemporalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_EquivalenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_QuantifierExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparisionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TupleLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ImplyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ReleaseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_DecimalLiteralExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'EquivalenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ComparisionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_InExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_UnaryMinusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TemporalStateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_EnumerationLiteralDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ArrayLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_RecordLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ArithmeticLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_ForallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TemporalPathExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_EqualExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_UntilExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_SubrangeTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_NullaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_EnumerationLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_PredicateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TTMCConstraint_TupleAccessExpression' represents an important domain concept.
+It has one attribute: 'index', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'TTMCConstraint_ConstraintSpecification' is a specialization of 'NamedElement'.
+The class 'TTMCConstraint_ConstraintSpecification' is a specialization of 'ParametricElement'.
+The class 'TTMCConstraint_Declaration' is a specialization of 'NamedElement'.
+The class 'TTMCConstraint_DefinableDeclaration' is a specialization of 'Declaration'.
+The class 'TTMCConstraint_ParameterDeclaration' is a specialization of 'Declaration'.
+The class 'TTMCConstraint_FieldDeclaration' is a specialization of 'Declaration'.
+The class 'TTMCConstraint_LetDeclaration' is a specialization of 'DefinableDeclaration'.
+The class 'TTMCConstraint_ConstantDeclaration' is a specialization of 'DefinableDeclaration'.
+The class 'TTMCConstraint_FunctionDeclaration' is a specialization of 'DefinableDeclaration'.
+The class 'TTMCConstraint_FunctionDeclaration' is a specialization of 'ParametricElement'.
+The class 'TTMCConstraint_TypeDeclaration' is a specialization of 'NamedElement'.
+The class 'TTMCConstraint_TypeReference' is a specialization of 'Type'.
+The class 'TTMCConstraint_TypeDefinition' is a specialization of 'Type'.
+The class 'TTMCConstraint_BasicTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'TTMCConstraint_IntegerTypeDefinition' is a specialization of 'BasicTypeDefinition'.
+The class 'TTMCConstraint_NaturalTypeDefinition' is a specialization of 'BasicTypeDefinition'.
+The class 'TTMCConstraint_BooleanTypeDefinition' is a specialization of 'BasicTypeDefinition'.
+The class 'TTMCConstraint_RealTypeDefinition' is a specialization of 'BasicTypeDefinition'.
+The class 'TTMCConstraint_SubrangeTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'TTMCConstraint_SubTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'TTMCConstraint_SubTypeDefinition' is a specialization of 'ParametricElement'.
+The class 'TTMCConstraint_EnumerationTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'TTMCConstraint_EnumerationLiteralDefinition' is a specialization of 'NamedElement'.
+The class 'TTMCConstraint_FunctionTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'TTMCConstraint_ArrayTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'TTMCConstraint_TupleTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'TTMCConstraint_RecordTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'TTMCConstraint_BasicConstraintDefinition' is a specialization of 'ConstraintDefinition'.
+The class 'TTMCConstraint_NullaryExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_UnaryExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_BinaryExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_MultiaryExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_PredicateExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_ArithmeticExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_AccessExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_BooleanExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_QuantifierExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_QuantifierExpression' is a specialization of 'ParametricElement'.
+The class 'TTMCConstraint_TemporalExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_TemporalPathExpression' is a specialization of 'TemporalExpression'.
+The class 'TTMCConstraint_TemporalStateExpression' is a specialization of 'TemporalExpression'.
+The class 'TTMCConstraint_LiteralExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_ArithmeticLiteralExpression' is a specialization of 'NullaryExpression'.
+The class 'TTMCConstraint_ArithmeticLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'TTMCConstraint_ArithmeticLiteralExpression' is a specialization of 'ArithmeticExpression'.
+The class 'TTMCConstraint_IntegerLiteralExpression' is a specialization of 'ArithmeticLiteralExpression'.
+The class 'TTMCConstraint_DecimalLiteralExpression' is a specialization of 'ArithmeticLiteralExpression'.
+The class 'TTMCConstraint_RationalLiteralExpression' is a specialization of 'ArithmeticLiteralExpression'.
+The class 'TTMCConstraint_BooleanLiteralExpression' is a specialization of 'NullaryExpression'.
+The class 'TTMCConstraint_BooleanLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'TTMCConstraint_BooleanLiteralExpression' is a specialization of 'BooleanExpression'.
+The class 'TTMCConstraint_TrueExpression' is a specialization of 'BooleanLiteralExpression'.
+The class 'TTMCConstraint_FalseExpression' is a specialization of 'BooleanLiteralExpression'.
+The class 'TTMCConstraint_ArrayLiteralExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_ArrayLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'TTMCConstraint_ArrayLiteralExpression' is a specialization of 'ParametricElement'.
+The class 'TTMCConstraint_FunctionLiteralExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_FunctionLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'TTMCConstraint_FunctionLiteralExpression' is a specialization of 'ParametricElement'.
+The class 'TTMCConstraint_RecordLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'TTMCConstraint_EnumerationLiteralExpression' is a specialization of 'NullaryExpression'.
+The class 'TTMCConstraint_EnumerationLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'TTMCConstraint_TupleLiteralExpression' is a specialization of 'LiteralExpression'.
+The class 'TTMCConstraint_ReferenceExpression' is a specialization of 'NullaryExpression'.
+The class 'TTMCConstraint_IfThenElseExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_LetExpression' is a specialization of 'Expression'.
+The class 'TTMCConstraint_EqualExpression' is a specialization of 'BooleanExpression'.
+The class 'TTMCConstraint_EqualExpression' is a specialization of 'BinaryExpression'.
+The class 'TTMCConstraint_ImplyExpression' is a specialization of 'BooleanExpression'.
+The class 'TTMCConstraint_ImplyExpression' is a specialization of 'BinaryExpression'.
+The class 'TTMCConstraint_OrExpression' is a specialization of 'BooleanExpression'.
+The class 'TTMCConstraint_OrExpression' is a specialization of 'MultiaryExpression'.
+The class 'TTMCConstraint_AndExpression' is a specialization of 'BooleanExpression'.
+The class 'TTMCConstraint_AndExpression' is a specialization of 'MultiaryExpression'.
+The class 'TTMCConstraint_ReleaseExpression' is a specialization of 'TemporalPathExpression'.
+The class 'TTMCConstraint_ReleaseExpression' is a specialization of 'BinaryExpression'.
+The class 'TTMCConstraint_UntilExpression' is a specialization of 'TemporalPathExpression'.
+The class 'TTMCConstraint_UntilExpression' is a specialization of 'BinaryExpression'.
+The class 'TTMCConstraint_NotExpression' is a specialization of 'BooleanExpression'.
+The class 'TTMCConstraint_NotExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_ForallExpression' is a specialization of 'QuantifierExpression'.
+The class 'TTMCConstraint_ExistsExpression' is a specialization of 'QuantifierExpression'.
+The class 'TTMCConstraint_GloballyExpression' is a specialization of 'TemporalPathExpression'.
+The class 'TTMCConstraint_GloballyExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_FinallyExpression' is a specialization of 'TemporalPathExpression'.
+The class 'TTMCConstraint_FinallyExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_NextExpression' is a specialization of 'TemporalPathExpression'.
+The class 'TTMCConstraint_NextExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_TemporalForallExpression' is a specialization of 'TemporalStateExpression'.
+The class 'TTMCConstraint_TemporalForallExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_TemporalExistsExpression' is a specialization of 'TemporalStateExpression'.
+The class 'TTMCConstraint_TemporalExistsExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_InExpression' is a specialization of 'PredicateExpression'.
+The class 'TTMCConstraint_InExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_PrimedExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_EquivalenceExpression' is a specialization of 'PredicateExpression'.
+The class 'TTMCConstraint_EquivalenceExpression' is a specialization of 'BinaryExpression'.
+The class 'TTMCConstraint_EqualityExpression' is a specialization of 'EquivalenceExpression'.
+The class 'TTMCConstraint_InequalityExpression' is a specialization of 'EquivalenceExpression'.
+The class 'TTMCConstraint_ComparisionExpression' is a specialization of 'PredicateExpression'.
+The class 'TTMCConstraint_ComparisionExpression' is a specialization of 'BinaryExpression'.
+The class 'TTMCConstraint_GreaterExpression' is a specialization of 'ComparisionExpression'.
+The class 'TTMCConstraint_GreaterEqualExpression' is a specialization of 'ComparisionExpression'.
+The class 'TTMCConstraint_LessExpression' is a specialization of 'ComparisionExpression'.
+The class 'TTMCConstraint_LessEqualExpression' is a specialization of 'ComparisionExpression'.
+The class 'TTMCConstraint_AddExpression' is a specialization of 'ArithmeticExpression'.
+The class 'TTMCConstraint_AddExpression' is a specialization of 'MultiaryExpression'.
+The class 'TTMCConstraint_SubtractExpression' is a specialization of 'ArithmeticExpression'.
+The class 'TTMCConstraint_SubtractExpression' is a specialization of 'BinaryExpression'.
+The class 'TTMCConstraint_MultiplyExpression' is a specialization of 'ArithmeticExpression'.
+The class 'TTMCConstraint_MultiplyExpression' is a specialization of 'MultiaryExpression'.
+The class 'TTMCConstraint_DivideExpression' is a specialization of 'ArithmeticExpression'.
+The class 'TTMCConstraint_DivideExpression' is a specialization of 'BinaryExpression'.
+The class 'TTMCConstraint_DivExpression' is a specialization of 'ArithmeticExpression'.
+The class 'TTMCConstraint_DivExpression' is a specialization of 'BinaryExpression'.
+The class 'TTMCConstraint_ModExpression' is a specialization of 'ArithmeticExpression'.
+The class 'TTMCConstraint_ModExpression' is a specialization of 'BinaryExpression'.
+The class 'TTMCConstraint_UnaryMinusExpression' is a specialization of 'ArithmeticExpression'.
+The class 'TTMCConstraint_UnaryMinusExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_UnaryPlusExpression' is a specialization of 'ArithmeticExpression'.
+The class 'TTMCConstraint_UnaryPlusExpression' is a specialization of 'UnaryExpression'.
+The class 'TTMCConstraint_FunctionAccessExpression' is a specialization of 'AccessExpression'.
+The class 'TTMCConstraint_FunctionAccessExpression' is a specialization of 'ParametrizedElement'.
+The class 'TTMCConstraint_ArrayAccessExpression' is a specialization of 'AccessExpression'.
+The class 'TTMCConstraint_ArrayAccessExpression' is a specialization of 'ParametrizedElement'.
+The class 'TTMCConstraint_TupleAccessExpression' is a specialization of 'AccessExpression'.
+The class 'TTMCConstraint_RecordAccessExpression' is a specialization of 'AccessExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'TTMCConstraint_ParameterDeclaration' and 'TTMCConstraint_ParametricElement'. From 'TTMCConstraint_ParameterDeclaration', the role 'TTMCConstraint_ParameterDeclaration' has cardinality 0..*, and from 'TTMCConstraint_ParametricElement', the role 'TTMCConstraint_ParametricElement' has cardinality 0..*.
+An association connects 'TTMCConstraint_ParametrizedElement' and 'TTMCConstraint_Expression'. From 'TTMCConstraint_ParametrizedElement', the role 'TTMCConstraint_ParametrizedElement' has cardinality 0..*, and from 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression' has cardinality 0..*.
+An association connects 'TTMCConstraint_TypeDeclaration' and 'TTMCConstraint_ConstraintSpecification'. From 'TTMCConstraint_TypeDeclaration', the role 'TTMCConstraint_TypeDeclaration' has cardinality 0..*, and from 'TTMCConstraint_ConstraintSpecification', the role 'TTMCConstraint_ConstraintSpecification' has cardinality 0..*.
+An association connects 'TTMCConstraint_ConstraintSpecification' and 'TTMCConstraint_ConstantDeclaration'. From 'TTMCConstraint_ConstraintSpecification', the role 'TTMCConstraint_ConstraintSpecification4' has cardinality 0..*, and from 'TTMCConstraint_ConstantDeclaration', the role 'TTMCConstraint_ConstantDeclaration' has cardinality 0..*.
+An association connects 'TTMCConstraint_FunctionDeclaration' and 'TTMCConstraint_ConstraintSpecification'. From 'TTMCConstraint_FunctionDeclaration', the role 'TTMCConstraint_FunctionDeclaration' has cardinality 0..*, and from 'TTMCConstraint_ConstraintSpecification', the role 'TTMCConstraint_ConstraintSpecification6' has cardinality 0..*.
+An association connects 'TTMCConstraint_ConstraintSpecification' and 'TTMCConstraint_BasicConstraintDefinition'. From 'TTMCConstraint_ConstraintSpecification', the role 'TTMCConstraint_ConstraintSpecification8' has cardinality 0..*, and from 'TTMCConstraint_BasicConstraintDefinition', the role 'TTMCConstraint_BasicConstraintDefinition' has cardinality 0..*.
+An association connects 'TTMCConstraint_Declaration' and 'TTMCConstraint_Type'. From 'TTMCConstraint_Declaration', the role 'TTMCConstraint_Declaration' has cardinality 0..*, and from 'TTMCConstraint_Type', the role 'TTMCConstraint_Type' has cardinality 0..*.
+An association connects 'TTMCConstraint_DefinableDeclaration' and 'TTMCConstraint_Expression'. From 'TTMCConstraint_DefinableDeclaration', the role 'TTMCConstraint_DefinableDeclaration' has cardinality 0..*, and from 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression11' has cardinality 0..*.
+An association connects 'TTMCConstraint_TypeDeclaration' and 'TTMCConstraint_Type'. From 'TTMCConstraint_TypeDeclaration', the role 'TTMCConstraint_TypeDeclaration13' has cardinality 0..*, and from 'TTMCConstraint_Type', the role 'TTMCConstraint_Type14' has cardinality 0..*.
+An association connects 'TTMCConstraint_TypeDeclaration' and 'TTMCConstraint_TypeReference'. From 'TTMCConstraint_TypeDeclaration', the role 'TTMCConstraint_TypeDeclaration16' has cardinality 0..*, and from 'TTMCConstraint_TypeReference', the role 'TTMCConstraint_TypeReference' has cardinality 0..*.
+An association connects 'TTMCConstraint_Expression' and 'TTMCConstraint_SubrangeTypeDefinition'. From 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression18' has cardinality 0..*, and from 'TTMCConstraint_SubrangeTypeDefinition', the role 'TTMCConstraint_SubrangeTypeDefinition' has cardinality 0..*.
+An association connects 'TTMCConstraint_Expression' and 'TTMCConstraint_SubrangeTypeDefinition'. From 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression21' has cardinality 0..*, and from 'TTMCConstraint_SubrangeTypeDefinition', the role 'TTMCConstraint_SubrangeTypeDefinition20' has cardinality 0..*.
+An association connects 'TTMCConstraint_ParameterDeclaration' and 'TTMCConstraint_SubTypeDefinition'. From 'TTMCConstraint_ParameterDeclaration', the role 'TTMCConstraint_ParameterDeclaration23' has cardinality 0..*, and from 'TTMCConstraint_SubTypeDefinition', the role 'TTMCConstraint_SubTypeDefinition' has cardinality 0..*.
+An association connects 'TTMCConstraint_Expression' and 'TTMCConstraint_SubTypeDefinition'. From 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression26' has cardinality 0..*, and from 'TTMCConstraint_SubTypeDefinition', the role 'TTMCConstraint_SubTypeDefinition25' has cardinality 0..*.
+An association connects 'TTMCConstraint_EnumerationTypeDefinition' and 'TTMCConstraint_EnumerationLiteralDefinition'. From 'TTMCConstraint_EnumerationTypeDefinition', the role 'TTMCConstraint_EnumerationTypeDefinition' has cardinality 0..*, and from 'TTMCConstraint_EnumerationLiteralDefinition', the role 'TTMCConstraint_EnumerationLiteralDefinition' has cardinality 0..*.
+An association connects 'TTMCConstraint_Type' and 'TTMCConstraint_FunctionTypeDefinition'. From 'TTMCConstraint_Type', the role 'TTMCConstraint_Type29' has cardinality 0..*, and from 'TTMCConstraint_FunctionTypeDefinition', the role 'TTMCConstraint_FunctionTypeDefinition' has cardinality 0..*.
+An association connects 'TTMCConstraint_Type' and 'TTMCConstraint_FunctionTypeDefinition'. From 'TTMCConstraint_Type', the role 'TTMCConstraint_Type32' has cardinality 0..*, and from 'TTMCConstraint_FunctionTypeDefinition', the role 'TTMCConstraint_FunctionTypeDefinition31' has cardinality 0..*.
+An association connects 'TTMCConstraint_ArrayTypeDefinition' and 'TTMCConstraint_Type'. From 'TTMCConstraint_ArrayTypeDefinition', the role 'TTMCConstraint_ArrayTypeDefinition' has cardinality 0..*, and from 'TTMCConstraint_Type', the role 'TTMCConstraint_Type34' has cardinality 0..*.
+An association connects 'TTMCConstraint_ArrayTypeDefinition' and 'TTMCConstraint_Type'. From 'TTMCConstraint_ArrayTypeDefinition', the role 'TTMCConstraint_ArrayTypeDefinition36' has cardinality 0..*, and from 'TTMCConstraint_Type', the role 'TTMCConstraint_Type37' has cardinality 0..*.
+An association connects 'TTMCConstraint_TupleTypeDefinition' and 'TTMCConstraint_Type'. From 'TTMCConstraint_TupleTypeDefinition', the role 'TTMCConstraint_TupleTypeDefinition' has cardinality 0..*, and from 'TTMCConstraint_Type', the role 'TTMCConstraint_Type39' has cardinality 0..*.
+An association connects 'TTMCConstraint_RecordTypeDefinition' and 'TTMCConstraint_FieldDeclaration'. From 'TTMCConstraint_RecordTypeDefinition', the role 'TTMCConstraint_RecordTypeDefinition' has cardinality 0..*, and from 'TTMCConstraint_FieldDeclaration', the role 'TTMCConstraint_FieldDeclaration' has cardinality 0..*.
+An association connects 'TTMCConstraint_Expression' and 'TTMCConstraint_ConstraintDefinition'. From 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression42' has cardinality 0..*, and from 'TTMCConstraint_ConstraintDefinition', the role 'TTMCConstraint_ConstraintDefinition' has cardinality 0..*.
+An association connects 'TTMCConstraint_UnaryExpression' and 'TTMCConstraint_Expression'. From 'TTMCConstraint_UnaryExpression', the role 'TTMCConstraint_UnaryExpression' has cardinality 0..*, and from 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression44' has cardinality 0..*.
+An association connects 'TTMCConstraint_Expression' and 'TTMCConstraint_BinaryExpression'. From 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression46' has cardinality 0..*, and from 'TTMCConstraint_BinaryExpression', the role 'TTMCConstraint_BinaryExpression' has cardinality 0..*.
+An association connects 'TTMCConstraint_Expression' and 'TTMCConstraint_BinaryExpression'. From 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression49' has cardinality 0..*, and from 'TTMCConstraint_BinaryExpression', the role 'TTMCConstraint_BinaryExpression48' has cardinality 0..*.
+An association connects 'TTMCConstraint_MultiaryExpression' and 'TTMCConstraint_Expression'. From 'TTMCConstraint_MultiaryExpression', the role 'TTMCConstraint_MultiaryExpression' has cardinality 0..*, and from 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression51' has cardinality 0..*.
+An association connects 'TTMCConstraint_Expression' and 'TTMCConstraint_AccessExpression'. From 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression53' has cardinality 0..*, and from 'TTMCConstraint_AccessExpression', the role 'TTMCConstraint_AccessExpression' has cardinality 0..*.
+An association connects 'TTMCConstraint_FunctionLiteralExpression' and 'TTMCConstraint_Type'. From 'TTMCConstraint_FunctionLiteralExpression', the role 'TTMCConstraint_FunctionLiteralExpression' has cardinality 0..*, and from 'TTMCConstraint_Type', the role 'TTMCConstraint_Type55' has cardinality 0..*.
+An association connects 'TTMCConstraint_RecordLiteralExpression' and 'TTMCConstraint_FieldAssignment'. From 'TTMCConstraint_RecordLiteralExpression', the role 'TTMCConstraint_RecordLiteralExpression' has cardinality 0..*, and from 'TTMCConstraint_FieldAssignment', the role 'TTMCConstraint_FieldAssignment' has cardinality 0..*.
+An association connects 'TTMCConstraint_FieldAssignment' and 'TTMCConstraint_Expression'. From 'TTMCConstraint_FieldAssignment', the role 'TTMCConstraint_FieldAssignment58' has cardinality 0..*, and from 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression59' has cardinality 0..*.
+An association connects 'TTMCConstraint_EnumerationLiteralDefinition' and 'TTMCConstraint_EnumerationLiteralExpression'. From 'TTMCConstraint_EnumerationLiteralDefinition', the role 'TTMCConstraint_EnumerationLiteralDefinition61' has cardinality 0..*, and from 'TTMCConstraint_EnumerationLiteralExpression', the role 'TTMCConstraint_EnumerationLiteralExpression' has cardinality 0..*.
+An association connects 'TTMCConstraint_Expression' and 'TTMCConstraint_TupleLiteralExpression'. From 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression63' has cardinality 0..*, and from 'TTMCConstraint_TupleLiteralExpression', the role 'TTMCConstraint_TupleLiteralExpression' has cardinality 0..*.
+An association connects 'TTMCConstraint_ReferenceExpression' and 'TTMCConstraint_Declaration'. From 'TTMCConstraint_ReferenceExpression', the role 'TTMCConstraint_ReferenceExpression' has cardinality 0..*, and from 'TTMCConstraint_Declaration', the role 'TTMCConstraint_Declaration65' has cardinality 0..*.
+An association connects 'TTMCConstraint_IfThenElseExpression' and 'TTMCConstraint_Expression'. From 'TTMCConstraint_IfThenElseExpression', the role 'TTMCConstraint_IfThenElseExpression' has cardinality 0..*, and from 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression67' has cardinality 0..*.
+An association connects 'TTMCConstraint_Expression' and 'TTMCConstraint_IfThenElseExpression'. From 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression70' has cardinality 0..*, and from 'TTMCConstraint_IfThenElseExpression', the role 'TTMCConstraint_IfThenElseExpression69' has cardinality 0..*.
+An association connects 'TTMCConstraint_IfThenElseExpression' and 'TTMCConstraint_Expression'. From 'TTMCConstraint_IfThenElseExpression', the role 'TTMCConstraint_IfThenElseExpression72' has cardinality 0..*, and from 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression73' has cardinality 0..*.
+An association connects 'TTMCConstraint_LetExpression' and 'TTMCConstraint_LetDeclaration'. From 'TTMCConstraint_LetExpression', the role 'TTMCConstraint_LetExpression' has cardinality 0..*, and from 'TTMCConstraint_LetDeclaration', the role 'TTMCConstraint_LetDeclaration' has cardinality 0..*.
+An association connects 'TTMCConstraint_Expression' and 'TTMCConstraint_LetExpression'. From 'TTMCConstraint_Expression', the role 'TTMCConstraint_Expression77' has cardinality 0..*, and from 'TTMCConstraint_LetExpression', the role 'TTMCConstraint_LetExpression76' has cardinality 0..*.
+An association connects 'TTMCConstraint_InExpression' and 'TTMCConstraint_Type'. From 'TTMCConstraint_InExpression', the role 'TTMCConstraint_InExpression' has cardinality 0..*, and from 'TTMCConstraint_Type', the role 'TTMCConstraint_Type79' has cardinality 0..*.

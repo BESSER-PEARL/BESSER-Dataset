@@ -1,0 +1,29 @@
+The domain model 'source' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'source_PrimitiveDataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'source_Association' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'source_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'is_primary', which is of type bool.
+
+'source_ClassDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'source_Class' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'source_Class' and 'source_Class'. From 'source_Class', the role 'source_Class0' has cardinality 0..*, and from 'source_Class', the role 'source_Class' has cardinality 0..*.
+An association connects 'source_Class' and 'source_Attribute'. From 'source_Class', the role 'source_Class3' has cardinality 0..*, and from 'source_Attribute', the role 'source_Attribute' has cardinality 0..*.
+An association connects 'source_Association' and 'source_Class'. From 'source_Association', the role 'source_Association' has cardinality 0..*, and from 'source_Class', the role 'source_Class5' has cardinality 0..*.
+An association connects 'source_Class' and 'source_Association'. From 'source_Class', the role 'source_Class8' has cardinality 0..*, and from 'source_Association', the role 'source_Association7' has cardinality 0..*.
+An association connects 'source_Attribute' and 'source_Class'. From 'source_Attribute', the role 'source_Attribute10' has cardinality 0..*, and from 'source_Class', the role 'source_Class11' has cardinality 0..*.
+An association connects 'source_Attribute' and 'source_PrimitiveDataType'. From 'source_Attribute', the role 'source_Attribute13' has cardinality 0..*, and from 'source_PrimitiveDataType', the role 'source_PrimitiveDataType' has cardinality 0..*.
+An association connects 'source_ClassDiagram' and 'source_Class'. From 'source_ClassDiagram', the role 'source_ClassDiagram' has cardinality 0..*, and from 'source_Class', the role 'source_Class15' has cardinality 0..*.
+An association connects 'source_ClassDiagram' and 'source_Association'. From 'source_ClassDiagram', the role 'source_ClassDiagram17' has cardinality 0..*, and from 'source_Association', the role 'source_Association18' has cardinality 0..*.
+An association connects 'source_PrimitiveDataType' and 'source_ClassDiagram'. From 'source_PrimitiveDataType', the role 'source_PrimitiveDataType21' has cardinality 0..*, and from 'source_ClassDiagram', the role 'source_ClassDiagram20' has cardinality 0..*.

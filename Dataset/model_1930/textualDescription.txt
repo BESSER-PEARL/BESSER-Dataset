@@ -1,0 +1,190 @@
+The domain model 'newClasses' describes the core structural elements and their relationships within the system.
+
+The model defines 48 main class(es).
+
+'Validator' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_ServiceHandlerInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'AdministratorProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomHandlerInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_Manager' represents an important domain concept.
+It has the following attributes: 'password', which is of type str; 'userName', which is of type str.
+
+'Biller' represents an important domain concept.
+It does not declare any attributes.
+
+'Receipt' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceType' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_GuestBiller' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_Service' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'id', which is of type str.
+
+'newClasses_ServiceType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'price', which is of type str.
+
+'newClasses_RoomType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'price', which is of type str.
+
+'newClasses_RoomHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Customer' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_AdministratorProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_InformationValidator' represents an important domain concept.
+It does not declare any attributes.
+
+'CustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomType' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_LoginChecker' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_GuestInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_Booker' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_CustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_DB_interface' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_BankComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ManagerInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_Customer' represents an important domain concept.
+It has the following attributes: 'address', which is of type str; 'city', which is of type str; 'phoneNum', which is of type str; 'bookingCost', which is of type str; 'lastName', which is of type str; 'email', which is of type str; 'personalNum', which is of type str; 'bookingNum', which is of type str; 'country', which is of type str; 'zipCode', which is of type str; 'firstName', which is of type str.
+
+'newClasses_CreditCard' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'lastName', which is of type str; 'cvc', which is of type str; 'month', which is of type str; 'year', which is of type str; 'creditCardNumber', which is of type str.
+
+'newClasses_Biller' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_RoomHandlerInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'GuestBiller' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_ServiceHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_Billing' represents an important domain concept.
+It has the following attributes: 'totalCost', which is of type str; 'isPaid', which is of type str.
+
+'newClasses_ReceiptCreator' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_ServiceProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_Validator' represents an important domain concept.
+It does not declare any attributes.
+
+'Booker' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_Receipt' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_Room' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'roomNum', which is of type str.
+
+'newClasses_ManagerInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceHandlerInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_RoomProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'DB_interface' represents an important domain concept.
+It does not declare any attributes.
+
+'GuestInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_Booking' represents an important domain concept.
+It has the following attributes: 'isPaid', which is of type str; 'checkInDate', which is of type str; 'roomType', which is of type str; 'cost', which is of type str; 'checkOutDate', which is of type str; 'services', which is of type str; 'conformationNum', which is of type str.
+
+'RoomProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'newClasses_Guest' represents an important domain concept.
+It has the following attributes: 'extraDays', which is of type str; 'addedServices', which is of type str; 'checkedOut', which is of type str; 'cost', which is of type str; 'checkInDate', which is of type str; 'roomNum', which is of type str; 'checkedIn', which is of type str; 'checkOutDate', which is of type str; 'bookingPaid', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'newClasses_Customer' is a specialization of 'Booker'.
+The class 'newClasses_Booking' is a specialization of 'RoomProvider'.
+The class 'newClasses_Booking' is a specialization of 'Biller'.
+The class 'newClasses_Booking' is a specialization of 'Booker'.
+The class 'newClasses_Booking' is a specialization of 'ServiceProvider'.
+The class 'newClasses_Booking' is a specialization of 'Validator'.
+The class 'newClasses_Booking' is a specialization of 'CustomerProvides'.
+The class 'newClasses_ReceiptCreator' is a specialization of 'Receipt'.
+The class 'newClasses_Database' is a specialization of 'DB_interface'.
+The class 'newClasses_Guest' is a specialization of 'Customer'.
+The class 'newClasses_Guest' is a specialization of 'GuestBiller'.
+The class 'newClasses_Guest' is a specialization of 'GuestInterface'.
+The class 'newClasses_Room' is a specialization of 'RoomType'.
+The class 'newClasses_InformationValidator' is a specialization of 'Validator'.
+The class 'newClasses_ServiceHandler' is a specialization of 'ServiceProvider'.
+The class 'newClasses_ServiceHandler' is a specialization of 'ServiceHandlerInterface'.
+The class 'newClasses_Service' is a specialization of 'ServiceType'.
+The class 'newClasses_Manager' is a specialization of 'ManagerInterface'.
+The class 'newClasses_Manager' is a specialization of 'RoomHandlerInterface'.
+The class 'newClasses_Manager' is a specialization of 'ServiceHandlerInterface'.
+The class 'newClasses_RoomHandler' is a specialization of 'RoomProvider'.
+The class 'newClasses_RoomHandler' is a specialization of 'RoomHandlerInterface'.
+The class 'newClasses_RoomHandler' is a specialization of 'GuestInterface'.
+The class 'newClasses_Billing' is a specialization of 'Biller'.
+The class 'newClasses_Billing' is a specialization of 'CustomerProvides'.
+The class 'newClasses_Billing' is a specialization of 'GuestBiller'.
+The class 'newClasses_BankComponent' is a specialization of 'CustomerProvides'.
+The class 'newClasses_BankComponent' is a specialization of 'AdministratorProvides'.
+The class 'newClasses_LoginChecker' is a specialization of 'ManagerInterface'.
+
+Relationships between classes are modeled using associations.
+An association connects 'newClasses_Customer' and 'newClasses_Booking'. From 'newClasses_Customer', the role 'newClasses_Customer' has cardinality 0..*, and from 'newClasses_Booking', the role 'newClasses_Booking' has cardinality 0..*.
+An association connects 'newClasses_Customer' and 'newClasses_CreditCard'. From 'newClasses_Customer', the role 'newClasses_Customer2' has cardinality 0..*, and from 'newClasses_CreditCard', the role 'newClasses_CreditCard' has cardinality 0..*.
+An association connects 'newClasses_ReceiptCreator' and 'newClasses_Booking'. From 'newClasses_ReceiptCreator', the role 'newClasses_ReceiptCreator' has cardinality 0..*, and from 'newClasses_Booking', the role 'newClasses_Booking4' has cardinality 0..*.
+An association connects 'newClasses_Database' and 'newClasses_Booking'. From 'newClasses_Database', the role 'newClasses_Database' has cardinality 0..*, and from 'newClasses_Booking', the role 'newClasses_Booking6' has cardinality 0..*.
+An association connects 'newClasses_Service' and 'newClasses_ServiceHandler'. From 'newClasses_Service', the role 'newClasses_Service' has cardinality 0..*, and from 'newClasses_ServiceHandler', the role 'newClasses_ServiceHandler' has cardinality 0..*.
+An association connects 'newClasses_Manager' and 'newClasses_RoomHandler'. From 'newClasses_Manager', the role 'newClasses_Manager' has cardinality 0..*, and from 'newClasses_RoomHandler', the role 'newClasses_RoomHandler' has cardinality 0..*.
+An association connects 'newClasses_ServiceHandler' and 'newClasses_Manager'. From 'newClasses_ServiceHandler', the role 'newClasses_ServiceHandler11' has cardinality 0..*, and from 'newClasses_Manager', the role 'newClasses_Manager10' has cardinality 0..*.
+An association connects 'newClasses_RoomHandler' and 'newClasses_Room'. From 'newClasses_RoomHandler', the role 'newClasses_RoomHandler13' has cardinality 0..*, and from 'newClasses_Room', the role 'newClasses_Room' has cardinality 0..*.
+An association connects 'newClasses_Database' and 'newClasses_RoomHandler'. From 'newClasses_Database', the role 'newClasses_Database16' has cardinality 0..*, and from 'newClasses_RoomHandler', the role 'newClasses_RoomHandler15' has cardinality 0..*.
+An association connects 'newClasses_Manager' and 'newClasses_LoginChecker'. From 'newClasses_Manager', the role 'newClasses_Manager18' has cardinality 0..*, and from 'newClasses_LoginChecker', the role 'newClasses_LoginChecker' has cardinality 0..*.

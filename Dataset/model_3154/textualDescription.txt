@@ -1,0 +1,557 @@
+The domain model 'sadl' describes the core structural elements and their relationships within the system.
+
+The model defines 107 main class(es).
+
+'sadl_EnumeratedAllValuesFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_SubjProp' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_EnumeratedInstances' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_UserDefinedDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_EnumeratedAllAndSomeValuesFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_OfPatternReturningValues' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_InstAttrPSV' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ResourceBySetOp' represents an important domain concept.
+It has the following attributes: 'annType', which is of type str; 'op', which is of type str.
+
+'sadl_ResourceByName' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_IsInverseOf' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_HasValue' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_TypedBNode' represents an important domain concept.
+It has one attribute: 'article', which is of type str.
+
+'sadl_InstanceDifferentFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_AdditionalPropertyInfo' represents an important domain concept.
+It has the following attributes: 'isTrans', which is of type str; 'isfunc', which is of type str; 'isinvfunc', which is of type str; 'isSym', which is of type str.
+
+'sadl_MaxCardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_DataTypeRestriction' represents an important domain concept.
+It has the following attributes: 'basetype', which is of type str; 'basetypes', which is of type str.
+
+'sadl_AddlClassInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ComplementOfClass' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ElementSet' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_Rule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sadl_CardCondition' represents an important domain concept.
+It has one attribute: 'card', which is of type str.
+
+'sadl_PropValPartialTriple' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_SymmetricalProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_InstancesAllDifferent' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_NecessaryAndSufficient' represents an important domain concept.
+It has one attribute: 'article', which is of type str.
+
+'sadl_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_LiteralValue' represents an important domain concept.
+It has the following attributes: 'literalBoolean', which is of type str; 'literalString', which is of type str; 'literalNumber', which is of type str.
+
+'sadl_UnionResource' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ExplicitValue' represents an important domain concept.
+It has the following attributes: 'valueList', which is of type str; 'term', which is of type str.
+
+'sadl_ResourceList' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ContentList' represents an important domain concept.
+It has one attribute: 'annContent', which is of type str.
+
+'sadl_IntervalValue' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sadl_SubTypeOf' represents an important domain concept.
+It does not declare any attributes.
+
+'EmbeddedInstanceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ValueRow' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_InstanceDeclaration' represents an important domain concept.
+It has one attribute: 'article', which is of type str.
+
+'sadl_ConstructExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_Explanation' represents an important domain concept.
+It has one attribute: 'rulename', which is of type str.
+
+'sadl_EquivalentConcepts' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_SomeValuesFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_RangeType' represents an important domain concept.
+It has one attribute: 'dataType', which is of type str.
+
+'sadl_MinCardCondition' represents an important domain concept.
+It has one attribute: 'card', which is of type str.
+
+'sadl_ExistingInstanceAttribution' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ResourceIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_SomeValuesCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_Cardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_TransitiveProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_MergedTriples' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_UnaryOpExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sadl_MaxCardCondition' represents an important domain concept.
+It has one attribute: 'card', which is of type str.
+
+'sadl_LiteralList' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceBySetOp' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_AskQueryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_PropOfSubj' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ExistingResourceList' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_DisjointClasses' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_MinCardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_IntersectionResource' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_FunctionalProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_OrderList' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_BinaryOpExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sadl_EmbeddedInstanceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_Display' represents an important domain concept.
+It has the following attributes: 'displayString', which is of type str; 'model', which is of type str.
+
+'sadl_SelectExpression' represents an important domain concept.
+It has the following attributes: 'allVars', which is of type str; 'distinct', which is of type str; 'orderby', which is of type str.
+
+'sadl_ExistentialNegation' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_Facets' represents an important domain concept.
+It has the following attributes: 'len', which is of type str; 'maxexin', which is of type str; 'values', which is of type str; 'maxlen', which is of type str; 'max', which is of type str; 'regex', which is of type str; 'min', which is of type str; 'minexin', which is of type str; 'minlen', which is of type str.
+
+'sadl_AllValuesCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_PropertyDeclaration' represents an important domain concept.
+It has one attribute: 'article', which is of type str.
+
+'sadl_InstanceDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_VariableList' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ResourceName' represents an important domain concept.
+It has the following attributes: 'annType', which is of type str; 'name', which is of type str.
+
+'sadl_InverseProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_JunctionExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sadl_Import' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'importURI', which is of type str.
+
+'sadl_WithPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ValueTable' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_InstAttrSPV' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_HasValueCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_ModelName' represents an important domain concept.
+It has the following attributes: 'baseUri', which is of type str; 'alias', which is of type str; 'version', which is of type str; 'annType', which is of type str.
+
+'sadl_Test' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_OrderElement' represents an important domain concept.
+It has one attribute: 'order', which is of type str.
+
+'sadl_Range' represents an important domain concept.
+It has the following attributes: 'single', which is of type str; 'lists', which is of type str; 'list', which is of type str.
+
+'sadl_GraphPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_OfPhrase' represents an important domain concept.
+It has one attribute: 'article', which is of type str.
+
+'sadl_ResourceByRestriction' represents an important domain concept.
+It has one attribute: 'annType', which is of type str.
+
+'sadl_InverseFunctionalProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_PropertyOfClass' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_DefaultValue' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+'sadl_Expression' represents an important domain concept.
+It has one attribute: 'func', which is of type str.
+
+'sadl_WithChain' represents an important domain concept.
+It does not declare any attributes.
+
+'sadl_AllValuesFrom' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'gYear', 'decimal', 'float', 'long', 'data', 'dateTime', 'boolean', 'hexBinary', 'gMonthDay', 'gMonth', 'gYearMonth', 'base64Binary', 'string', 'double', 'int', 'date', 'time', 'anyURI', 'gDay', 'duration'.
+
+The model also captures inheritance relationships between classes.
+The class 'sadl_Statement' is a specialization of 'ModelElement'.
+The class 'sadl_ResourceByName' is a specialization of 'ResourceIdentifier'.
+The class 'sadl_ResourceBySetOp' is a specialization of 'ResourceIdentifier'.
+The class 'sadl_ResourceByRestriction' is a specialization of 'ResourceIdentifier'.
+The class 'sadl_UnionResource' is a specialization of 'ResourceBySetOp'.
+The class 'sadl_IntersectionResource' is a specialization of 'ResourceBySetOp'.
+The class 'sadl_ClassDeclaration' is a specialization of 'Statement'.
+The class 'sadl_UserDefinedDataType' is a specialization of 'Statement'.
+The class 'sadl_EquivalentConcepts' is a specialization of 'Statement'.
+The class 'sadl_DisjointClasses' is a specialization of 'Statement'.
+The class 'sadl_ComplementOfClass' is a specialization of 'Statement'.
+The class 'sadl_AllValuesFrom' is a specialization of 'Statement'.
+The class 'sadl_SomeValuesFrom' is a specialization of 'Statement'.
+The class 'sadl_HasValue' is a specialization of 'Statement'.
+The class 'sadl_Cardinality' is a specialization of 'Statement'.
+The class 'sadl_MinCardinality' is a specialization of 'Statement'.
+The class 'sadl_MaxCardinality' is a specialization of 'Statement'.
+The class 'sadl_AllValuesCondition' is a specialization of 'Condition'.
+The class 'sadl_EnumeratedAllValuesFrom' is a specialization of 'Statement'.
+The class 'sadl_EnumeratedAllAndSomeValuesFrom' is a specialization of 'Statement'.
+The class 'sadl_DefaultValue' is a specialization of 'Statement'.
+The class 'sadl_SomeValuesCondition' is a specialization of 'Condition'.
+The class 'sadl_HasValueCondition' is a specialization of 'Condition'.
+The class 'sadl_MinCardCondition' is a specialization of 'Condition'.
+The class 'sadl_MaxCardCondition' is a specialization of 'Condition'.
+The class 'sadl_CardCondition' is a specialization of 'Condition'.
+The class 'sadl_NecessaryAndSufficient' is a specialization of 'Statement'.
+The class 'sadl_PropertyDeclaration' is a specialization of 'Statement'.
+The class 'sadl_FunctionalProperty' is a specialization of 'Statement'.
+The class 'sadl_InverseFunctionalProperty' is a specialization of 'Statement'.
+The class 'sadl_SymmetricalProperty' is a specialization of 'Statement'.
+The class 'sadl_TransitiveProperty' is a specialization of 'Statement'.
+The class 'sadl_InverseProperty' is a specialization of 'Statement'.
+The class 'sadl_InstanceDeclarationStatement' is a specialization of 'Statement'.
+The class 'sadl_InstanceDeclaration' is a specialization of 'InstanceDeclarationStatement'.
+The class 'sadl_InstanceDeclaration' is a specialization of 'EmbeddedInstanceDeclaration'.
+The class 'sadl_InstanceDifferentFrom' is a specialization of 'Statement'.
+The class 'sadl_InstancesAllDifferent' is a specialization of 'Statement'.
+The class 'sadl_ExistingInstanceAttribution' is a specialization of 'Statement'.
+The class 'sadl_MergedTriples' is a specialization of 'GraphPattern'.
+The class 'sadl_Rule' is a specialization of 'ModelElement'.
+The class 'sadl_Query' is a specialization of 'ModelElement'.
+The class 'sadl_Test' is a specialization of 'ModelElement'.
+The class 'sadl_Expr' is a specialization of 'ModelElement'.
+The class 'sadl_Display' is a specialization of 'ModelElement'.
+The class 'sadl_Explanation' is a specialization of 'ModelElement'.
+The class 'sadl_SelectExpression' is a specialization of 'Expression'.
+The class 'sadl_ConstructExpression' is a specialization of 'Expression'.
+The class 'sadl_AskQueryExpression' is a specialization of 'Expression'.
+The class 'sadl_PropOfSubj' is a specialization of 'GraphPattern'.
+The class 'sadl_SubjProp' is a specialization of 'GraphPattern'.
+The class 'sadl_InstAttrSPV' is a specialization of 'GraphPattern'.
+The class 'sadl_InstAttrPSV' is a specialization of 'GraphPattern'.
+The class 'sadl_SubTypeOf' is a specialization of 'GraphPattern'.
+The class 'sadl_ExistentialNegation' is a specialization of 'GraphPattern'.
+The class 'sadl_JunctionExpression' is a specialization of 'Expression'.
+The class 'sadl_BinaryOpExpression' is a specialization of 'Expression'.
+The class 'sadl_UnaryOpExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sadl_ModelName' and 'sadl_Model'. From 'sadl_ModelName', the role 'sadl_ModelName' has cardinality 0..*, and from 'sadl_Model', the role 'sadl_Model' has cardinality 0..*.
+An association connects 'sadl_Import' and 'sadl_Model'. From 'sadl_Import', the role 'sadl_Import' has cardinality 0..*, and from 'sadl_Model', the role 'sadl_Model2' has cardinality 0..*.
+An association connects 'sadl_ModelElement' and 'sadl_Model'. From 'sadl_ModelElement', the role 'sadl_ModelElement' has cardinality 0..*, and from 'sadl_Model', the role 'sadl_Model4' has cardinality 0..*.
+An association connects 'sadl_ContentList' and 'sadl_ModelName'. From 'sadl_ContentList', the role 'sadl_ContentList' has cardinality 0..*, and from 'sadl_ModelName', the role 'sadl_ModelName6' has cardinality 0..*.
+An association connects 'sadl_ResourceName' and 'sadl_ContentList'. From 'sadl_ResourceName', the role 'sadl_ResourceName' has cardinality 0..*, and from 'sadl_ContentList', the role 'sadl_ContentList8' has cardinality 0..*.
+An association connects 'sadl_ResourceName' and 'sadl_ResourceList'. From 'sadl_ResourceName', the role 'sadl_ResourceName10' has cardinality 0..*, and from 'sadl_ResourceList', the role 'sadl_ResourceList' has cardinality 0..*.
+An association connects 'sadl_LiteralList' and 'sadl_LiteralValue'. From 'sadl_LiteralList', the role 'sadl_LiteralList' has cardinality 0..*, and from 'sadl_LiteralValue', the role 'sadl_LiteralValue' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_ResourceName'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName' has cardinality 0..*, and from 'sadl_ResourceName', the role 'sadl_ResourceName13' has cardinality 0..*.
+An association connects 'sadl_ResourceIdentifier' and 'sadl_ExistingResourceList'. From 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier' has cardinality 0..*, and from 'sadl_ExistingResourceList', the role 'sadl_ExistingResourceList' has cardinality 0..*.
+An association connects 'sadl_ResourceBySetOp' and 'sadl_ContentList'. From 'sadl_ResourceBySetOp', the role 'sadl_ResourceBySetOp' has cardinality 0..*, and from 'sadl_ContentList', the role 'sadl_ContentList16' has cardinality 0..*.
+An association connects 'sadl_ResourceBySetOp' and 'sadl_ResourceIdentifier'. From 'sadl_ResourceBySetOp', the role 'sadl_ResourceBySetOp18' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier19' has cardinality 0..*.
+An association connects 'sadl_ContentList' and 'sadl_ResourceByRestriction'. From 'sadl_ContentList', the role 'sadl_ContentList21' has cardinality 0..*, and from 'sadl_ResourceByRestriction', the role 'sadl_ResourceByRestriction' has cardinality 0..*.
+An association connects 'sadl_ResourceByRestriction' and 'sadl_ResourceByName'. From 'sadl_ResourceByRestriction', the role 'sadl_ResourceByRestriction23' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName24' has cardinality 0..*.
+An association connects 'sadl_ResourceByRestriction' and 'sadl_Condition'. From 'sadl_ResourceByRestriction', the role 'sadl_ResourceByRestriction26' has cardinality 0..*, and from 'sadl_Condition', the role 'sadl_Condition' has cardinality 0..*.
+An association connects 'sadl_ResourceName' and 'sadl_ClassDeclaration'. From 'sadl_ResourceName', the role 'sadl_ResourceName28' has cardinality 0..*, and from 'sadl_ClassDeclaration', the role 'sadl_ClassDeclaration' has cardinality 0..*.
+An association connects 'sadl_EnumeratedInstances' and 'sadl_ClassDeclaration'. From 'sadl_EnumeratedInstances', the role 'sadl_EnumeratedInstances' has cardinality 0..*, and from 'sadl_ClassDeclaration', the role 'sadl_ClassDeclaration30' has cardinality 0..*.
+An association connects 'sadl_ClassDeclaration' and 'sadl_AddlClassInfo'. From 'sadl_ClassDeclaration', the role 'sadl_ClassDeclaration32' has cardinality 0..*, and from 'sadl_AddlClassInfo', the role 'sadl_AddlClassInfo' has cardinality 0..*.
+An association connects 'sadl_ResourceList' and 'sadl_ClassDeclaration'. From 'sadl_ResourceList', the role 'sadl_ResourceList35' has cardinality 0..*, and from 'sadl_ClassDeclaration', the role 'sadl_ClassDeclaration34' has cardinality 0..*.
+An association connects 'sadl_ClassDeclaration' and 'sadl_ResourceIdentifier'. From 'sadl_ClassDeclaration', the role 'sadl_ClassDeclaration37' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier38' has cardinality 0..*.
+An association connects 'sadl_EnumeratedInstances' and 'sadl_ResourceList'. From 'sadl_EnumeratedInstances', the role 'sadl_EnumeratedInstances40' has cardinality 0..*, and from 'sadl_ResourceList', the role 'sadl_ResourceList41' has cardinality 0..*.
+An association connects 'sadl_AddlClassInfo' and 'sadl_ResourceByName'. From 'sadl_AddlClassInfo', the role 'sadl_AddlClassInfo43' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName44' has cardinality 0..*.
+An association connects 'sadl_ResourceName' and 'sadl_AddlClassInfo'. From 'sadl_ResourceName', the role 'sadl_ResourceName47' has cardinality 0..*, and from 'sadl_AddlClassInfo', the role 'sadl_AddlClassInfo46' has cardinality 0..*.
+An association connects 'sadl_Range' and 'sadl_AddlClassInfo'. From 'sadl_Range', the role 'sadl_Range' has cardinality 0..*, and from 'sadl_AddlClassInfo', the role 'sadl_AddlClassInfo49' has cardinality 0..*.
+An association connects 'sadl_AddlClassInfo' and 'sadl_Condition'. From 'sadl_AddlClassInfo', the role 'sadl_AddlClassInfo51' has cardinality 0..*, and from 'sadl_Condition', the role 'sadl_Condition52' has cardinality 0..*.
+An association connects 'sadl_RangeType' and 'sadl_Range'. From 'sadl_RangeType', the role 'sadl_RangeType' has cardinality 0..*, and from 'sadl_Range', the role 'sadl_Range54' has cardinality 0..*.
+An association connects 'sadl_RangeType' and 'sadl_ResourceIdentifier'. From 'sadl_RangeType', the role 'sadl_RangeType56' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier57' has cardinality 0..*.
+An association connects 'sadl_ResourceName' and 'sadl_UserDefinedDataType'. From 'sadl_ResourceName', the role 'sadl_ResourceName59' has cardinality 0..*, and from 'sadl_UserDefinedDataType', the role 'sadl_UserDefinedDataType' has cardinality 0..*.
+An association connects 'sadl_DataTypeRestriction' and 'sadl_UserDefinedDataType'. From 'sadl_DataTypeRestriction', the role 'sadl_DataTypeRestriction' has cardinality 0..*, and from 'sadl_UserDefinedDataType', the role 'sadl_UserDefinedDataType61' has cardinality 0..*.
+An association connects 'sadl_DataTypeRestriction' and 'sadl_Facets'. From 'sadl_DataTypeRestriction', the role 'sadl_DataTypeRestriction63' has cardinality 0..*, and from 'sadl_Facets', the role 'sadl_Facets' has cardinality 0..*.
+An association connects 'sadl_EquivalentConcepts' and 'sadl_ResourceByName'. From 'sadl_EquivalentConcepts', the role 'sadl_EquivalentConcepts' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName65' has cardinality 0..*.
+An association connects 'sadl_EquivalentConcepts' and 'sadl_ResourceIdentifier'. From 'sadl_EquivalentConcepts', the role 'sadl_EquivalentConcepts67' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier68' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_DisjointClasses'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName70' has cardinality 0..*, and from 'sadl_DisjointClasses', the role 'sadl_DisjointClasses' has cardinality 0..*.
+An association connects 'sadl_DisjointClasses' and 'sadl_ResourceIdentifier'. From 'sadl_DisjointClasses', the role 'sadl_DisjointClasses72' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier73' has cardinality 0..*.
+An association connects 'sadl_DisjointClasses' and 'sadl_ExistingResourceList'. From 'sadl_DisjointClasses', the role 'sadl_DisjointClasses75' has cardinality 0..*, and from 'sadl_ExistingResourceList', the role 'sadl_ExistingResourceList76' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_ComplementOfClass'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName78' has cardinality 0..*, and from 'sadl_ComplementOfClass', the role 'sadl_ComplementOfClass' has cardinality 0..*.
+An association connects 'sadl_ResourceIdentifier' and 'sadl_ComplementOfClass'. From 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier81' has cardinality 0..*, and from 'sadl_ComplementOfClass', the role 'sadl_ComplementOfClass80' has cardinality 0..*.
+An association connects 'sadl_PropertyOfClass' and 'sadl_AllValuesFrom'. From 'sadl_PropertyOfClass', the role 'sadl_PropertyOfClass' has cardinality 0..*, and from 'sadl_AllValuesFrom', the role 'sadl_AllValuesFrom' has cardinality 0..*.
+An association connects 'sadl_AllValuesFrom' and 'sadl_AllValuesCondition'. From 'sadl_AllValuesFrom', the role 'sadl_AllValuesFrom84' has cardinality 0..*, and from 'sadl_AllValuesCondition', the role 'sadl_AllValuesCondition' has cardinality 0..*.
+An association connects 'sadl_ResourceIdentifier' and 'sadl_AllValuesFrom'. From 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier87' has cardinality 0..*, and from 'sadl_AllValuesFrom', the role 'sadl_AllValuesFrom86' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_AllValuesFrom'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName90' has cardinality 0..*, and from 'sadl_AllValuesFrom', the role 'sadl_AllValuesFrom89' has cardinality 0..*.
+An association connects 'sadl_SomeValuesFrom' and 'sadl_PropertyOfClass'. From 'sadl_SomeValuesFrom', the role 'sadl_SomeValuesFrom' has cardinality 0..*, and from 'sadl_PropertyOfClass', the role 'sadl_PropertyOfClass92' has cardinality 0..*.
+An association connects 'sadl_SomeValuesCondition' and 'sadl_SomeValuesFrom'. From 'sadl_SomeValuesCondition', the role 'sadl_SomeValuesCondition' has cardinality 0..*, and from 'sadl_SomeValuesFrom', the role 'sadl_SomeValuesFrom94' has cardinality 0..*.
+An association connects 'sadl_SomeValuesFrom' and 'sadl_ResourceIdentifier'. From 'sadl_SomeValuesFrom', the role 'sadl_SomeValuesFrom96' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier97' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_SomeValuesFrom'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName100' has cardinality 0..*, and from 'sadl_SomeValuesFrom', the role 'sadl_SomeValuesFrom99' has cardinality 0..*.
+An association connects 'sadl_HasValue' and 'sadl_PropertyOfClass'. From 'sadl_HasValue', the role 'sadl_HasValue' has cardinality 0..*, and from 'sadl_PropertyOfClass', the role 'sadl_PropertyOfClass102' has cardinality 0..*.
+An association connects 'sadl_HasValueCondition' and 'sadl_HasValue'. From 'sadl_HasValueCondition', the role 'sadl_HasValueCondition' has cardinality 0..*, and from 'sadl_HasValue', the role 'sadl_HasValue104' has cardinality 0..*.
+An association connects 'sadl_ResourceIdentifier' and 'sadl_HasValue'. From 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier107' has cardinality 0..*, and from 'sadl_HasValue', the role 'sadl_HasValue106' has cardinality 0..*.
+An association connects 'sadl_HasValue' and 'sadl_ResourceByName'. From 'sadl_HasValue', the role 'sadl_HasValue109' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName110' has cardinality 0..*.
+An association connects 'sadl_PropertyOfClass' and 'sadl_Cardinality'. From 'sadl_PropertyOfClass', the role 'sadl_PropertyOfClass112' has cardinality 0..*, and from 'sadl_Cardinality', the role 'sadl_Cardinality' has cardinality 0..*.
+An association connects 'sadl_Cardinality' and 'sadl_CardCondition'. From 'sadl_Cardinality', the role 'sadl_Cardinality114' has cardinality 0..*, and from 'sadl_CardCondition', the role 'sadl_CardCondition' has cardinality 0..*.
+An association connects 'sadl_Cardinality' and 'sadl_ResourceIdentifier'. From 'sadl_Cardinality', the role 'sadl_Cardinality116' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier117' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_Cardinality'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName120' has cardinality 0..*, and from 'sadl_Cardinality', the role 'sadl_Cardinality119' has cardinality 0..*.
+An association connects 'sadl_MinCardinality' and 'sadl_PropertyOfClass'. From 'sadl_MinCardinality', the role 'sadl_MinCardinality' has cardinality 0..*, and from 'sadl_PropertyOfClass', the role 'sadl_PropertyOfClass122' has cardinality 0..*.
+An association connects 'sadl_MinCardinality' and 'sadl_MinCardCondition'. From 'sadl_MinCardinality', the role 'sadl_MinCardinality124' has cardinality 0..*, and from 'sadl_MinCardCondition', the role 'sadl_MinCardCondition' has cardinality 0..*.
+An association connects 'sadl_MinCardinality' and 'sadl_ResourceIdentifier'. From 'sadl_MinCardinality', the role 'sadl_MinCardinality126' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier127' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_MinCardinality'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName130' has cardinality 0..*, and from 'sadl_MinCardinality', the role 'sadl_MinCardinality129' has cardinality 0..*.
+An association connects 'sadl_PropertyOfClass' and 'sadl_MaxCardinality'. From 'sadl_PropertyOfClass', the role 'sadl_PropertyOfClass132' has cardinality 0..*, and from 'sadl_MaxCardinality', the role 'sadl_MaxCardinality' has cardinality 0..*.
+An association connects 'sadl_MaxCardCondition' and 'sadl_MaxCardinality'. From 'sadl_MaxCardCondition', the role 'sadl_MaxCardCondition' has cardinality 0..*, and from 'sadl_MaxCardinality', the role 'sadl_MaxCardinality134' has cardinality 0..*.
+An association connects 'sadl_MaxCardinality' and 'sadl_ResourceIdentifier'. From 'sadl_MaxCardinality', the role 'sadl_MaxCardinality136' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier137' has cardinality 0..*.
+An association connects 'sadl_MaxCardinality' and 'sadl_ResourceByName'. From 'sadl_MaxCardinality', the role 'sadl_MaxCardinality139' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName140' has cardinality 0..*.
+An association connects 'sadl_PropertyOfClass' and 'sadl_ResourceByName'. From 'sadl_PropertyOfClass', the role 'sadl_PropertyOfClass142' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName143' has cardinality 0..*.
+An association connects 'sadl_ResourceIdentifier' and 'sadl_PropertyOfClass'. From 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier146' has cardinality 0..*, and from 'sadl_PropertyOfClass', the role 'sadl_PropertyOfClass145' has cardinality 0..*.
+An association connects 'sadl_ResourceIdentifier' and 'sadl_AllValuesCondition'. From 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier149' has cardinality 0..*, and from 'sadl_AllValuesCondition', the role 'sadl_AllValuesCondition148' has cardinality 0..*.
+An association connects 'sadl_PropertyOfClass' and 'sadl_EnumeratedAllValuesFrom'. From 'sadl_PropertyOfClass', the role 'sadl_PropertyOfClass151' has cardinality 0..*, and from 'sadl_EnumeratedAllValuesFrom', the role 'sadl_EnumeratedAllValuesFrom' has cardinality 0..*.
+An association connects 'sadl_EObject' and 'sadl_EnumeratedAllValuesFrom'. From 'sadl_EObject', the role 'sadl_EObject' has cardinality 0..*, and from 'sadl_EnumeratedAllValuesFrom', the role 'sadl_EnumeratedAllValuesFrom153' has cardinality 0..*.
+An association connects 'sadl_PropertyOfClass' and 'sadl_EnumeratedAllAndSomeValuesFrom'. From 'sadl_PropertyOfClass', the role 'sadl_PropertyOfClass155' has cardinality 0..*, and from 'sadl_EnumeratedAllAndSomeValuesFrom', the role 'sadl_EnumeratedAllAndSomeValuesFrom' has cardinality 0..*.
+An association connects 'sadl_EObject' and 'sadl_EnumeratedAllAndSomeValuesFrom'. From 'sadl_EObject', the role 'sadl_EObject158' has cardinality 0..*, and from 'sadl_EnumeratedAllAndSomeValuesFrom', the role 'sadl_EnumeratedAllAndSomeValuesFrom157' has cardinality 0..*.
+An association connects 'sadl_PropertyOfClass' and 'sadl_DefaultValue'. From 'sadl_PropertyOfClass', the role 'sadl_PropertyOfClass160' has cardinality 0..*, and from 'sadl_DefaultValue', the role 'sadl_DefaultValue' has cardinality 0..*.
+An association connects 'sadl_ExplicitValue' and 'sadl_DefaultValue'. From 'sadl_ExplicitValue', the role 'sadl_ExplicitValue' has cardinality 0..*, and from 'sadl_DefaultValue', the role 'sadl_DefaultValue162' has cardinality 0..*.
+An association connects 'sadl_EObject' and 'sadl_SomeValuesCondition'. From 'sadl_EObject', the role 'sadl_EObject165' has cardinality 0..*, and from 'sadl_SomeValuesCondition', the role 'sadl_SomeValuesCondition164' has cardinality 0..*.
+An association connects 'sadl_ExplicitValue' and 'sadl_HasValueCondition'. From 'sadl_ExplicitValue', the role 'sadl_ExplicitValue168' has cardinality 0..*, and from 'sadl_HasValueCondition', the role 'sadl_HasValueCondition167' has cardinality 0..*.
+An association connects 'sadl_MinCardCondition' and 'sadl_ResourceIdentifier'. From 'sadl_MinCardCondition', the role 'sadl_MinCardCondition170' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier171' has cardinality 0..*.
+An association connects 'sadl_ResourceIdentifier' and 'sadl_MaxCardCondition'. From 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier174' has cardinality 0..*, and from 'sadl_MaxCardCondition', the role 'sadl_MaxCardCondition173' has cardinality 0..*.
+An association connects 'sadl_CardCondition' and 'sadl_ResourceIdentifier'. From 'sadl_CardCondition', the role 'sadl_CardCondition176' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier177' has cardinality 0..*.
+An association connects 'sadl_NecessaryAndSufficient' and 'sadl_TypedBNode'. From 'sadl_NecessaryAndSufficient', the role 'sadl_NecessaryAndSufficient' has cardinality 0..*, and from 'sadl_TypedBNode', the role 'sadl_TypedBNode' has cardinality 0..*.
+An association connects 'sadl_NecessaryAndSufficient' and 'sadl_ResourceName'. From 'sadl_NecessaryAndSufficient', the role 'sadl_NecessaryAndSufficient180' has cardinality 0..*, and from 'sadl_ResourceName', the role 'sadl_ResourceName181' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_NecessaryAndSufficient'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName184' has cardinality 0..*, and from 'sadl_NecessaryAndSufficient', the role 'sadl_NecessaryAndSufficient183' has cardinality 0..*.
+An association connects 'sadl_Condition' and 'sadl_NecessaryAndSufficient'. From 'sadl_Condition', the role 'sadl_Condition187' has cardinality 0..*, and from 'sadl_NecessaryAndSufficient', the role 'sadl_NecessaryAndSufficient186' has cardinality 0..*.
+An association connects 'sadl_PropertyDeclaration' and 'sadl_ResourceName'. From 'sadl_PropertyDeclaration', the role 'sadl_PropertyDeclaration' has cardinality 0..*, and from 'sadl_ResourceName', the role 'sadl_ResourceName189' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_PropertyDeclaration'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName192' has cardinality 0..*, and from 'sadl_PropertyDeclaration', the role 'sadl_PropertyDeclaration191' has cardinality 0..*.
+An association connects 'sadl_PropertyDeclaration' and 'sadl_AdditionalPropertyInfo'. From 'sadl_PropertyDeclaration', the role 'sadl_PropertyDeclaration194' has cardinality 0..*, and from 'sadl_AdditionalPropertyInfo', the role 'sadl_AdditionalPropertyInfo' has cardinality 0..*.
+An association connects 'sadl_ResourceIdentifier' and 'sadl_PropertyDeclaration'. From 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier197' has cardinality 0..*, and from 'sadl_PropertyDeclaration', the role 'sadl_PropertyDeclaration196' has cardinality 0..*.
+An association connects 'sadl_PropertyDeclaration' and 'sadl_ResourceIdentifier'. From 'sadl_PropertyDeclaration', the role 'sadl_PropertyDeclaration199' has cardinality 0..*, and from 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier200' has cardinality 0..*.
+An association connects 'sadl_PropertyDeclaration' and 'sadl_ResourceName'. From 'sadl_PropertyDeclaration', the role 'sadl_PropertyDeclaration202' has cardinality 0..*, and from 'sadl_ResourceName', the role 'sadl_ResourceName203' has cardinality 0..*.
+An association connects 'sadl_ResourceIdentifier' and 'sadl_AdditionalPropertyInfo'. From 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier206' has cardinality 0..*, and from 'sadl_AdditionalPropertyInfo', the role 'sadl_AdditionalPropertyInfo205' has cardinality 0..*.
+An association connects 'sadl_Condition' and 'sadl_AdditionalPropertyInfo'. From 'sadl_Condition', the role 'sadl_Condition209' has cardinality 0..*, and from 'sadl_AdditionalPropertyInfo', the role 'sadl_AdditionalPropertyInfo208' has cardinality 0..*.
+An association connects 'sadl_Range' and 'sadl_AdditionalPropertyInfo'. From 'sadl_Range', the role 'sadl_Range212' has cardinality 0..*, and from 'sadl_AdditionalPropertyInfo', the role 'sadl_AdditionalPropertyInfo211' has cardinality 0..*.
+An association connects 'sadl_AdditionalPropertyInfo' and 'sadl_IsInverseOf'. From 'sadl_AdditionalPropertyInfo', the role 'sadl_AdditionalPropertyInfo214' has cardinality 0..*, and from 'sadl_IsInverseOf', the role 'sadl_IsInverseOf' has cardinality 0..*.
+An association connects 'sadl_FunctionalProperty' and 'sadl_ResourceByName'. From 'sadl_FunctionalProperty', the role 'sadl_FunctionalProperty' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName216' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_InverseFunctionalProperty'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName218' has cardinality 0..*, and from 'sadl_InverseFunctionalProperty', the role 'sadl_InverseFunctionalProperty' has cardinality 0..*.
+An association connects 'sadl_SymmetricalProperty' and 'sadl_ResourceByName'. From 'sadl_SymmetricalProperty', the role 'sadl_SymmetricalProperty' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName220' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_TransitiveProperty'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName222' has cardinality 0..*, and from 'sadl_TransitiveProperty', the role 'sadl_TransitiveProperty' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_InverseProperty'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName224' has cardinality 0..*, and from 'sadl_InverseProperty', the role 'sadl_InverseProperty' has cardinality 0..*.
+An association connects 'sadl_IsInverseOf' and 'sadl_InverseProperty'. From 'sadl_IsInverseOf', the role 'sadl_IsInverseOf227' has cardinality 0..*, and from 'sadl_InverseProperty', the role 'sadl_InverseProperty226' has cardinality 0..*.
+An association connects 'sadl_IsInverseOf' and 'sadl_ResourceByName'. From 'sadl_IsInverseOf', the role 'sadl_IsInverseOf229' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName230' has cardinality 0..*.
+An association connects 'sadl_ResourceIdentifier' and 'sadl_TypedBNode'. From 'sadl_ResourceIdentifier', the role 'sadl_ResourceIdentifier233' has cardinality 0..*, and from 'sadl_TypedBNode', the role 'sadl_TypedBNode232' has cardinality 0..*.
+An association connects 'sadl_TypeDeclaration' and 'sadl_InstanceDeclaration'. From 'sadl_TypeDeclaration', the role 'sadl_TypeDeclaration' has cardinality 0..*, and from 'sadl_InstanceDeclaration', the role 'sadl_InstanceDeclaration' has cardinality 0..*.
+An association connects 'sadl_PropValPartialTriple' and 'sadl_InstanceDeclaration'. From 'sadl_PropValPartialTriple', the role 'sadl_PropValPartialTriple' has cardinality 0..*, and from 'sadl_InstanceDeclaration', the role 'sadl_InstanceDeclaration236' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_InstanceDeclaration'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName239' has cardinality 0..*, and from 'sadl_InstanceDeclaration', the role 'sadl_InstanceDeclaration238' has cardinality 0..*.
+An association connects 'sadl_InstanceDeclaration' and 'sadl_ResourceName'. From 'sadl_InstanceDeclaration', the role 'sadl_InstanceDeclaration241' has cardinality 0..*, and from 'sadl_ResourceName', the role 'sadl_ResourceName242' has cardinality 0..*.
+An association connects 'sadl_ResourceName' and 'sadl_TypeDeclaration'. From 'sadl_ResourceName', the role 'sadl_ResourceName245' has cardinality 0..*, and from 'sadl_TypeDeclaration', the role 'sadl_TypeDeclaration244' has cardinality 0..*.
+An association connects 'sadl_TypeDeclaration' and 'sadl_TypedBNode'. From 'sadl_TypeDeclaration', the role 'sadl_TypeDeclaration247' has cardinality 0..*, and from 'sadl_TypedBNode', the role 'sadl_TypedBNode248' has cardinality 0..*.
+An association connects 'sadl_InstanceDifferentFrom' and 'sadl_ResourceByName'. From 'sadl_InstanceDifferentFrom', the role 'sadl_InstanceDifferentFrom' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName250' has cardinality 0..*.
+An association connects 'sadl_InstanceDifferentFrom' and 'sadl_ResourceByName'. From 'sadl_InstanceDifferentFrom', the role 'sadl_InstanceDifferentFrom252' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName253' has cardinality 0..*.
+An association connects 'sadl_InstancesAllDifferent' and 'sadl_ExistingResourceList'. From 'sadl_InstancesAllDifferent', the role 'sadl_InstancesAllDifferent' has cardinality 0..*, and from 'sadl_ExistingResourceList', the role 'sadl_ExistingResourceList255' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_ExistingInstanceAttribution'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName257' has cardinality 0..*, and from 'sadl_ExistingInstanceAttribution', the role 'sadl_ExistingInstanceAttribution' has cardinality 0..*.
+An association connects 'sadl_PropValPartialTriple' and 'sadl_ExistingInstanceAttribution'. From 'sadl_PropValPartialTriple', the role 'sadl_PropValPartialTriple260' has cardinality 0..*, and from 'sadl_ExistingInstanceAttribution', the role 'sadl_ExistingInstanceAttribution259' has cardinality 0..*.
+An association connects 'sadl_ExistingInstanceAttribution' and 'sadl_OfPatternReturningValues'. From 'sadl_ExistingInstanceAttribution', the role 'sadl_ExistingInstanceAttribution262' has cardinality 0..*, and from 'sadl_OfPatternReturningValues', the role 'sadl_OfPatternReturningValues' has cardinality 0..*.
+An association connects 'sadl_ExistingInstanceAttribution' and 'sadl_EObject'. From 'sadl_ExistingInstanceAttribution', the role 'sadl_ExistingInstanceAttribution264' has cardinality 0..*, and from 'sadl_EObject', the role 'sadl_EObject265' has cardinality 0..*.
+An association connects 'sadl_Object' and 'sadl_EObject'. From 'sadl_Object', the role 'sadl_Object' has cardinality 0..*, and from 'sadl_EObject', the role 'sadl_EObject267' has cardinality 0..*.
+An association connects 'sadl_PropValPartialTriple' and 'sadl_ResourceByName'. From 'sadl_PropValPartialTriple', the role 'sadl_PropValPartialTriple269' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName270' has cardinality 0..*.
+An association connects 'sadl_ExplicitValue' and 'sadl_PropValPartialTriple'. From 'sadl_ExplicitValue', the role 'sadl_ExplicitValue273' has cardinality 0..*, and from 'sadl_PropValPartialTriple', the role 'sadl_PropValPartialTriple272' has cardinality 0..*.
+An association connects 'sadl_PropValPartialTriple' and 'sadl_InstanceDeclaration'. From 'sadl_PropValPartialTriple', the role 'sadl_PropValPartialTriple275' has cardinality 0..*, and from 'sadl_InstanceDeclaration', the role 'sadl_InstanceDeclaration276' has cardinality 0..*.
+An association connects 'sadl_OfPhrase' and 'sadl_OfPatternReturningValues'. From 'sadl_OfPhrase', the role 'sadl_OfPhrase' has cardinality 0..*, and from 'sadl_OfPatternReturningValues', the role 'sadl_OfPatternReturningValues278' has cardinality 0..*.
+An association connects 'sadl_OfPatternReturningValues' and 'sadl_ResourceByName'. From 'sadl_OfPatternReturningValues', the role 'sadl_OfPatternReturningValues280' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName281' has cardinality 0..*.
+An association connects 'sadl_TypedBNode' and 'sadl_OfPatternReturningValues'. From 'sadl_TypedBNode', the role 'sadl_TypedBNode284' has cardinality 0..*, and from 'sadl_OfPatternReturningValues', the role 'sadl_OfPatternReturningValues283' has cardinality 0..*.
+An association connects 'sadl_WithChain' and 'sadl_WithPhrase'. From 'sadl_WithChain', the role 'sadl_WithChain' has cardinality 0..*, and from 'sadl_WithPhrase', the role 'sadl_WithPhrase' has cardinality 0..*.
+An association connects 'sadl_WithPhrase' and 'sadl_ResourceByName'. From 'sadl_WithPhrase', the role 'sadl_WithPhrase287' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName288' has cardinality 0..*.
+An association connects 'sadl_WithPhrase' and 'sadl_EObject'. From 'sadl_WithPhrase', the role 'sadl_WithPhrase290' has cardinality 0..*, and from 'sadl_EObject', the role 'sadl_EObject291' has cardinality 0..*.
+An association connects 'sadl_OfPhrase' and 'sadl_MergedTriples'. From 'sadl_OfPhrase', the role 'sadl_OfPhrase293' has cardinality 0..*, and from 'sadl_MergedTriples', the role 'sadl_MergedTriples' has cardinality 0..*.
+An association connects 'sadl_MergedTriples' and 'sadl_TypedBNode'. From 'sadl_MergedTriples', the role 'sadl_MergedTriples295' has cardinality 0..*, and from 'sadl_TypedBNode', the role 'sadl_TypedBNode296' has cardinality 0..*.
+An association connects 'sadl_WithChain' and 'sadl_MergedTriples'. From 'sadl_WithChain', the role 'sadl_WithChain299' has cardinality 0..*, and from 'sadl_MergedTriples', the role 'sadl_MergedTriples298' has cardinality 0..*.
+An association connects 'sadl_OfPhrase' and 'sadl_ResourceByName'. From 'sadl_OfPhrase', the role 'sadl_OfPhrase301' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName302' has cardinality 0..*.
+An association connects 'sadl_ResourceName' and 'sadl_VariableList'. From 'sadl_ResourceName', the role 'sadl_ResourceName304' has cardinality 0..*, and from 'sadl_VariableList', the role 'sadl_VariableList' has cardinality 0..*.
+An association connects 'sadl_Rule' and 'sadl_ElementSet'. From 'sadl_Rule', the role 'sadl_Rule' has cardinality 0..*, and from 'sadl_ElementSet', the role 'sadl_ElementSet' has cardinality 0..*.
+An association connects 'sadl_ElementSet' and 'sadl_Rule'. From 'sadl_ElementSet', the role 'sadl_ElementSet308' has cardinality 0..*, and from 'sadl_Rule', the role 'sadl_Rule307' has cardinality 0..*.
+An association connects 'sadl_ElementSet' and 'sadl_Rule'. From 'sadl_ElementSet', the role 'sadl_ElementSet311' has cardinality 0..*, and from 'sadl_Rule', the role 'sadl_Rule310' has cardinality 0..*.
+An association connects 'sadl_Query' and 'sadl_Expression'. From 'sadl_Query', the role 'sadl_Query' has cardinality 0..*, and from 'sadl_Expression', the role 'sadl_Expression' has cardinality 0..*.
+An association connects 'sadl_Expression' and 'sadl_Test'. From 'sadl_Expression', the role 'sadl_Expression314' has cardinality 0..*, and from 'sadl_Test', the role 'sadl_Test' has cardinality 0..*.
+An association connects 'sadl_Expression' and 'sadl_Expr'. From 'sadl_Expression', the role 'sadl_Expression316' has cardinality 0..*, and from 'sadl_Expr', the role 'sadl_Expr' has cardinality 0..*.
+An association connects 'sadl_EObject' and 'sadl_Explanation'. From 'sadl_EObject', the role 'sadl_EObject318' has cardinality 0..*, and from 'sadl_Explanation', the role 'sadl_Explanation' has cardinality 0..*.
+An association connects 'sadl_ElementSet' and 'sadl_Expression'. From 'sadl_ElementSet', the role 'sadl_ElementSet320' has cardinality 0..*, and from 'sadl_Expression', the role 'sadl_Expression321' has cardinality 0..*.
+An association connects 'sadl_SelectExpression' and 'sadl_VariableList'. From 'sadl_SelectExpression', the role 'sadl_SelectExpression' has cardinality 0..*, and from 'sadl_VariableList', the role 'sadl_VariableList323' has cardinality 0..*.
+An association connects 'sadl_SelectExpression' and 'sadl_OrderList'. From 'sadl_SelectExpression', the role 'sadl_SelectExpression325' has cardinality 0..*, and from 'sadl_OrderList', the role 'sadl_OrderList' has cardinality 0..*.
+An association connects 'sadl_ResourceName' and 'sadl_ConstructExpression'. From 'sadl_ResourceName', the role 'sadl_ResourceName327' has cardinality 0..*, and from 'sadl_ConstructExpression', the role 'sadl_ConstructExpression' has cardinality 0..*.
+An association connects 'sadl_ConstructExpression' and 'sadl_ResourceName'. From 'sadl_ConstructExpression', the role 'sadl_ConstructExpression329' has cardinality 0..*, and from 'sadl_ResourceName', the role 'sadl_ResourceName330' has cardinality 0..*.
+An association connects 'sadl_ResourceName' and 'sadl_ConstructExpression'. From 'sadl_ResourceName', the role 'sadl_ResourceName333' has cardinality 0..*, and from 'sadl_ConstructExpression', the role 'sadl_ConstructExpression332' has cardinality 0..*.
+An association connects 'sadl_OrderList' and 'sadl_OrderElement'. From 'sadl_OrderList', the role 'sadl_OrderList335' has cardinality 0..*, and from 'sadl_OrderElement', the role 'sadl_OrderElement' has cardinality 0..*.
+An association connects 'sadl_OrderElement' and 'sadl_ResourceName'. From 'sadl_OrderElement', the role 'sadl_OrderElement337' has cardinality 0..*, and from 'sadl_ResourceName', the role 'sadl_ResourceName338' has cardinality 0..*.
+An association connects 'sadl_Expression' and 'sadl_Expression'. From 'sadl_Expression', the role 'sadl_Expression341' has cardinality 0..*, and from 'sadl_Expression', the role 'sadl_Expression339' has cardinality 0..*.
+An association connects 'sadl_Expression' and 'sadl_Expression'. From 'sadl_Expression', the role 'sadl_Expression344' has cardinality 0..*, and from 'sadl_Expression', the role 'sadl_Expression342' has cardinality 0..*.
+An association connects 'sadl_Expression' and 'sadl_GraphPattern'. From 'sadl_Expression', the role 'sadl_Expression346' has cardinality 0..*, and from 'sadl_GraphPattern', the role 'sadl_GraphPattern' has cardinality 0..*.
+An association connects 'sadl_IntervalValue' and 'sadl_Expression'. From 'sadl_IntervalValue', the role 'sadl_IntervalValue' has cardinality 0..*, and from 'sadl_Expression', the role 'sadl_Expression348' has cardinality 0..*.
+An association connects 'sadl_Expression' and 'sadl_ExplicitValue'. From 'sadl_Expression', the role 'sadl_Expression350' has cardinality 0..*, and from 'sadl_ExplicitValue', the role 'sadl_ExplicitValue351' has cardinality 0..*.
+An association connects 'sadl_ValueTable' and 'sadl_Expression'. From 'sadl_ValueTable', the role 'sadl_ValueTable' has cardinality 0..*, and from 'sadl_Expression', the role 'sadl_Expression353' has cardinality 0..*.
+An association connects 'sadl_PropOfSubj' and 'sadl_OfPhrase'. From 'sadl_PropOfSubj', the role 'sadl_PropOfSubj' has cardinality 0..*, and from 'sadl_OfPhrase', the role 'sadl_OfPhrase355' has cardinality 0..*.
+An association connects 'sadl_PropOfSubj' and 'sadl_ResourceByName'. From 'sadl_PropOfSubj', the role 'sadl_PropOfSubj357' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName358' has cardinality 0..*.
+An association connects 'sadl_SubjProp' and 'sadl_ResourceByName'. From 'sadl_SubjProp', the role 'sadl_SubjProp' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName360' has cardinality 0..*.
+An association connects 'sadl_SubjProp' and 'sadl_WithPhrase'. From 'sadl_SubjProp', the role 'sadl_SubjProp362' has cardinality 0..*, and from 'sadl_WithPhrase', the role 'sadl_WithPhrase363' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_InstAttrSPV'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName365' has cardinality 0..*, and from 'sadl_InstAttrSPV', the role 'sadl_InstAttrSPV' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_InstAttrSPV'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName368' has cardinality 0..*, and from 'sadl_InstAttrSPV', the role 'sadl_InstAttrSPV367' has cardinality 0..*.
+An association connects 'sadl_InstAttrSPV' and 'sadl_Expression'. From 'sadl_InstAttrSPV', the role 'sadl_InstAttrSPV370' has cardinality 0..*, and from 'sadl_Expression', the role 'sadl_Expression371' has cardinality 0..*.
+An association connects 'sadl_PropOfSubj' and 'sadl_InstAttrPSV'. From 'sadl_PropOfSubj', the role 'sadl_PropOfSubj373' has cardinality 0..*, and from 'sadl_InstAttrPSV', the role 'sadl_InstAttrPSV' has cardinality 0..*.
+An association connects 'sadl_ExplicitValue' and 'sadl_InstAttrPSV'. From 'sadl_ExplicitValue', the role 'sadl_ExplicitValue376' has cardinality 0..*, and from 'sadl_InstAttrPSV', the role 'sadl_InstAttrPSV375' has cardinality 0..*.
+An association connects 'sadl_SubTypeOf' and 'sadl_ResourceByName'. From 'sadl_SubTypeOf', the role 'sadl_SubTypeOf' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName378' has cardinality 0..*.
+An association connects 'sadl_SubTypeOf' and 'sadl_ResourceByName'. From 'sadl_SubTypeOf', the role 'sadl_SubTypeOf380' has cardinality 0..*, and from 'sadl_ResourceByName', the role 'sadl_ResourceByName381' has cardinality 0..*.
+An association connects 'sadl_VariableList' and 'sadl_ExistentialNegation'. From 'sadl_VariableList', the role 'sadl_VariableList383' has cardinality 0..*, and from 'sadl_ExistentialNegation', the role 'sadl_ExistentialNegation' has cardinality 0..*.
+An association connects 'sadl_Expression' and 'sadl_ExistentialNegation'. From 'sadl_Expression', the role 'sadl_Expression386' has cardinality 0..*, and from 'sadl_ExistentialNegation', the role 'sadl_ExistentialNegation385' has cardinality 0..*.
+An association connects 'sadl_Expression' and 'sadl_IntervalValue'. From 'sadl_Expression', the role 'sadl_Expression389' has cardinality 0..*, and from 'sadl_IntervalValue', the role 'sadl_IntervalValue388' has cardinality 0..*.
+An association connects 'sadl_ResourceByName' and 'sadl_ExplicitValue'. From 'sadl_ResourceByName', the role 'sadl_ResourceByName392' has cardinality 0..*, and from 'sadl_ExplicitValue', the role 'sadl_ExplicitValue391' has cardinality 0..*.
+An association connects 'sadl_LiteralValue' and 'sadl_ExplicitValue'. From 'sadl_LiteralValue', the role 'sadl_LiteralValue395' has cardinality 0..*, and from 'sadl_ExplicitValue', the role 'sadl_ExplicitValue394' has cardinality 0..*.
+An association connects 'sadl_ValueRow' and 'sadl_ExplicitValue'. From 'sadl_ValueRow', the role 'sadl_ValueRow' has cardinality 0..*, and from 'sadl_ExplicitValue', the role 'sadl_ExplicitValue397' has cardinality 0..*.
+An association connects 'sadl_ValueRow' and 'sadl_ValueTable'. From 'sadl_ValueRow', the role 'sadl_ValueRow400' has cardinality 0..*, and from 'sadl_ValueTable', the role 'sadl_ValueTable399' has cardinality 0..*.
+An association connects 'sadl_ExplicitValue' and 'sadl_ValueRow'. From 'sadl_ExplicitValue', the role 'sadl_ExplicitValue403' has cardinality 0..*, and from 'sadl_ValueRow', the role 'sadl_ValueRow402' has cardinality 0..*.
+An association connects 'sadl_JunctionExpression' and 'sadl_Expression'. From 'sadl_JunctionExpression', the role 'sadl_JunctionExpression' has cardinality 0..*, and from 'sadl_Expression', the role 'sadl_Expression405' has cardinality 0..*.
+An association connects 'sadl_Expression' and 'sadl_JunctionExpression'. From 'sadl_Expression', the role 'sadl_Expression408' has cardinality 0..*, and from 'sadl_JunctionExpression', the role 'sadl_JunctionExpression407' has cardinality 0..*.
+An association connects 'sadl_BinaryOpExpression' and 'sadl_Expression'. From 'sadl_BinaryOpExpression', the role 'sadl_BinaryOpExpression' has cardinality 0..*, and from 'sadl_Expression', the role 'sadl_Expression410' has cardinality 0..*.
+An association connects 'sadl_Expression' and 'sadl_BinaryOpExpression'. From 'sadl_Expression', the role 'sadl_Expression413' has cardinality 0..*, and from 'sadl_BinaryOpExpression', the role 'sadl_BinaryOpExpression412' has cardinality 0..*.

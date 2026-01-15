@@ -1,0 +1,32 @@
+The domain model 'emap' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'emap_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'emap_StringToStringMapEntry' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'emap_WriterToStringMapEntry' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'emap_DateToCategoryMapEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'emap_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'emap_StringToWriterMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Category' defines the following possible values: 'Simple', 'Complex'.
+
+Relationships between classes are modeled using associations.
+An association connects 'emap_Book' and 'emap_StringToWriterMapEntry'. From 'emap_Book', the role 'emap_Book' has cardinality 0..*, and from 'emap_StringToWriterMapEntry', the role 'emap_StringToWriterMapEntry' has cardinality 0..*.
+An association connects 'emap_StringToStringMapEntry' and 'emap_Book'. From 'emap_StringToStringMapEntry', the role 'emap_StringToStringMapEntry' has cardinality 0..*, and from 'emap_Book', the role 'emap_Book2' has cardinality 0..*.
+An association connects 'emap_Book' and 'emap_WriterToStringMapEntry'. From 'emap_Book', the role 'emap_Book4' has cardinality 0..*, and from 'emap_WriterToStringMapEntry', the role 'emap_WriterToStringMapEntry' has cardinality 0..*.
+An association connects 'emap_Book' and 'emap_DateToCategoryMapEntry'. From 'emap_Book', the role 'emap_Book6' has cardinality 0..*, and from 'emap_DateToCategoryMapEntry', the role 'emap_DateToCategoryMapEntry' has cardinality 0..*.
+An association connects 'emap_StringToWriterMapEntry' and 'emap_Writer'. From 'emap_StringToWriterMapEntry', the role 'emap_StringToWriterMapEntry8' has cardinality 0..*, and from 'emap_Writer', the role 'emap_Writer' has cardinality 0..*.
+An association connects 'emap_Writer' and 'emap_WriterToStringMapEntry'. From 'emap_Writer', the role 'emap_Writer11' has cardinality 0..*, and from 'emap_WriterToStringMapEntry', the role 'emap_WriterToStringMapEntry10' has cardinality 0..*.

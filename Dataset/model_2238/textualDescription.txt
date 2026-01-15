@@ -1,0 +1,98 @@
+The domain model 'course' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'course_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'course_Lecturer' represents an important domain concept.
+It does not declare any attributes.
+
+'course_University' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'course_CourseCoordinator' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'course_Evaluation' represents an important domain concept.
+It has the following attributes: 'project', which is of type int; 'exam', which is of type int; 'assigments', which is of type int.
+
+'course_TimetableEntry' represents an important domain concept.
+It has the following attributes: 'time', which is of type str; 'type', which is of type str; 'day', which is of type str; 'room', which is of type str.
+
+'course_TA' represents an important domain concept.
+It does not declare any attributes.
+
+'course_Faculty' represents an important domain concept.
+It has the following attributes: 'shortName', which is of type str; 'name', which is of type str.
+
+'course_Department' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'shortName', which is of type str.
+
+'course_Timetable' represents an important domain concept.
+It does not declare any attributes.
+
+'course_StudyProgram' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'course_Course' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'name', which is of type str; 'code', which is of type str; 'credits', which is of type float.
+
+'course_CourseInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'course_Organisation' represents an important domain concept.
+It does not declare any attributes.
+
+'course_CourseWork' represents an important domain concept.
+It has the following attributes: 'labHours', which is of type int; 'lectureHours', which is of type int.
+
+'course_Student' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DayOfWeek' defines the following possible values: 'Wednesday', 'Tuesday', 'Thursday', 'Monday', 'Friday'.
+The enumeration 'TypeOfInstruction' defines the following possible values: 'Lecture', 'Lab'.
+
+The model also captures inheritance relationships between classes.
+The class 'course_Student' is a specialization of 'Person'.
+The class 'course_CourseCoordinator' is a specialization of 'Person'.
+The class 'course_Lecturer' is a specialization of 'Person'.
+The class 'course_TA' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'course_Faculty' and 'course_University'. From 'course_Faculty', the role 'Faculty' has cardinality 0..*, and from 'course_University', the role 'university' has cardinality 0..*.
+An association connects 'course_Faculty' and 'course_University'. From 'course_Faculty', the role 'faculties' has cardinality 0..*, and from 'course_University', the role 'University' has cardinality 0..*.
+An association connects 'course_Department' and 'course_Faculty'. From 'course_Department', the role 'Department' has cardinality 0..*, and from 'course_Faculty', the role 'faculty' has cardinality 0..*.
+An association connects 'course_Course' and 'course_Course'. From 'course_Course', the role 'course_Course3' has cardinality 0..*, and from 'course_Course', the role 'course_Course' has cardinality 0..*.
+An association connects 'course_Course' and 'course_Course'. From 'course_Course', the role 'course_Course5' has cardinality 0..*, and from 'course_Course', the role 'course_Course7' has cardinality 0..*.
+An association connects 'course_Course' and 'course_StudyProgram'. From 'course_Course', the role 'course_Course9' has cardinality 0..*, and from 'course_StudyProgram', the role 'course_StudyProgram' has cardinality 0..*.
+An association connects 'course_CourseInstance' and 'course_Course'. From 'course_CourseInstance', the role 'CourseInstance' has cardinality 0..*, and from 'course_Course', the role 'course' has cardinality 0..*.
+An association connects 'course_Department' and 'course_Course'. From 'course_Department', the role 'Department12' has cardinality 0..*, and from 'course_Course', the role 'courses' has cardinality 0..*.
+An association connects 'course_Course' and 'course_CourseInstance'. From 'course_Course', the role 'Course' has cardinality 0..*, and from 'course_CourseInstance', the role 'courseInstances' has cardinality 0..*.
+An association connects 'course_CourseInstance' and 'course_Organisation'. From 'course_CourseInstance', the role 'courseInstance' has cardinality 0..*, and from 'course_Organisation', the role 'Organisation' has cardinality 0..*.
+An association connects 'course_CourseInstance' and 'course_Evaluation'. From 'course_CourseInstance', the role 'courseInstance16' has cardinality 0..*, and from 'course_Evaluation', the role 'Evaluation' has cardinality 0..*.
+An association connects 'course_CourseWork' and 'course_CourseInstance'. From 'course_CourseWork', the role 'CourseWork' has cardinality 0..*, and from 'course_CourseInstance', the role 'courseInstance18' has cardinality 0..*.
+An association connects 'course_Timetable' and 'course_CourseInstance'. From 'course_Timetable', the role 'Timetable' has cardinality 0..*, and from 'course_CourseInstance', the role 'courseInstance20' has cardinality 0..*.
+An association connects 'course_Course' and 'course_Department'. From 'course_Course', the role 'Course22' has cardinality 0..*, and from 'course_Department', the role 'department' has cardinality 0..*.
+An association connects 'course_Department' and 'course_StudyProgram'. From 'course_Department', the role 'course_Department' has cardinality 0..*, and from 'course_StudyProgram', the role 'course_StudyProgram24' has cardinality 0..*.
+An association connects 'course_Faculty' and 'course_Department'. From 'course_Faculty', the role 'Faculty26' has cardinality 0..*, and from 'course_Department', the role 'departments' has cardinality 0..*.
+An association connects 'course_CourseInstance' and 'course_Evaluation'. From 'course_CourseInstance', the role 'CourseInstance28' has cardinality 0..*, and from 'course_Evaluation', the role 'evaluation' has cardinality 0..*.
+An association connects 'course_Student' and 'course_Evaluation'. From 'course_Student', the role 'Student' has cardinality 0..*, and from 'course_Evaluation', the role 'evaluation30' has cardinality 0..*.
+An association connects 'course_Organisation' and 'course_CourseCoordinator'. From 'course_Organisation', the role 'organisation' has cardinality 0..*, and from 'course_CourseCoordinator', the role 'CourseCoordinator' has cardinality 0..*.
+An association connects 'course_Organisation' and 'course_Lecturer'. From 'course_Organisation', the role 'organisation33' has cardinality 0..*, and from 'course_Lecturer', the role 'Lecturer' has cardinality 0..*.
+An association connects 'course_TA' and 'course_Organisation'. From 'course_TA', the role 'TA' has cardinality 0..*, and from 'course_Organisation', the role 'organisation35' has cardinality 0..*.
+An association connects 'course_Organisation' and 'course_CourseInstance'. From 'course_Organisation', the role 'organisation37' has cardinality 0..*, and from 'course_CourseInstance', the role 'CourseInstance38' has cardinality 0..*.
+An association connects 'course_Student' and 'course_StudyProgram'. From 'course_Student', the role 'Student40' has cardinality 0..*, and from 'course_StudyProgram', the role 'studyProgram' has cardinality 0..*.
+An association connects 'course_CourseInstance' and 'course_CourseWork'. From 'course_CourseInstance', the role 'CourseInstance42' has cardinality 0..*, and from 'course_CourseWork', the role 'courseWork' has cardinality 0..*.
+An association connects 'course_Timetable' and 'course_CourseInstance'. From 'course_Timetable', the role 'timeTable' has cardinality 0..*, and from 'course_CourseInstance', the role 'CourseInstance44' has cardinality 0..*.
+An association connects 'course_Timetable' and 'course_TimetableEntry'. From 'course_Timetable', the role 'course_Timetable' has cardinality 0..*, and from 'course_TimetableEntry', the role 'course_TimetableEntry' has cardinality 0..*.
+An association connects 'course_StudyProgram' and 'course_TimetableEntry'. From 'course_StudyProgram', the role 'course_StudyProgram48' has cardinality 0..*, and from 'course_TimetableEntry', the role 'course_TimetableEntry47' has cardinality 0..*.
+An association connects 'course_StudyProgram' and 'course_Student'. From 'course_StudyProgram', the role 'StudyProgram' has cardinality 0..*, and from 'course_Student', the role 'students' has cardinality 0..*.
+An association connects 'course_Evaluation' and 'course_Student'. From 'course_Evaluation', the role 'Evaluation51' has cardinality 0..*, and from 'course_Student', the role 'registeredStudents' has cardinality 0..*.
+An association connects 'course_CourseCoordinator' and 'course_Organisation'. From 'course_CourseCoordinator', the role 'courseCoordinator' has cardinality 0..*, and from 'course_Organisation', the role 'Organisation53' has cardinality 0..*.
+An association connects 'course_Organisation' and 'course_Lecturer'. From 'course_Organisation', the role 'Organisation55' has cardinality 0..*, and from 'course_Lecturer', the role 'lecturer' has cardinality 0..*.
+An association connects 'course_TA' and 'course_Organisation'. From 'course_TA', the role 'ta' has cardinality 0..*, and from 'course_Organisation', the role 'Organisation57' has cardinality 0..*.

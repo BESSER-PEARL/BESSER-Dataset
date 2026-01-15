@@ -1,0 +1,149 @@
+The domain model 'ecorer' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'ecorer_EPackage' represents an important domain concept.
+It has the following attributes: 'nsURI', which is of type str; 'nsPrefix', which is of type str.
+
+'ecorer_EClass' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'interface', which is of type bool.
+
+'ecorer_EStringToStringMapEntry' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'ecorer_ETypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ecorer_EDataType' represents an important domain concept.
+It has one attribute: 'serializable', which is of type bool.
+
+'ecorer_ENamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ecorer_ETypedElement' represents an important domain concept.
+It has the following attributes: 'unique', which is of type bool; 'many', which is of type bool; 'upperBound', which is of type int; 'required', which is of type bool; 'lowerBound', which is of type int; 'ordered', which is of type bool.
+
+'ecorer_EAnnotation' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecorer_EAttribute' represents an important domain concept.
+It has one attribute: 'iD', which is of type bool.
+
+'ecorer_EParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ecorer_EFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecorer_EEnumLiteral' represents an important domain concept.
+It has the following attributes: 'instance', which is of type str; 'value', which is of type int; 'literal', which is of type str.
+
+'ecorer_EStructuralFeature' represents an important domain concept.
+It has the following attributes: 'transient', which is of type bool; 'unsettable', which is of type bool; 'volatile', which is of type bool; 'derived', which is of type bool; 'defaultValue', which is of type str; 'defaultValueLiteral', which is of type str; 'changeable', which is of type bool.
+
+'ecorer_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecorer_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ecorer_EReference' represents an important domain concept.
+It has the following attributes: 'containment', which is of type bool; 'container', which is of type bool; 'resolveProxies', which is of type bool.
+
+'ecorer_EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecorer_EClassifier' represents an important domain concept.
+It has the following attributes: 'instanceTypeName', which is of type str; 'defaultValue', which is of type str; 'instanceClass', which is of type str; 'instanceClassName', which is of type str.
+
+'EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecorer_EGenericType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecorer_EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ecorer_EAttribute' is a specialization of 'EStructuralFeature'.
+The class 'ecorer_EAnnotation' is a specialization of 'EModelElement'.
+The class 'ecorer_EClass' is a specialization of 'EClassifier'.
+The class 'ecorer_EClassifier' is a specialization of 'ENamedElement'.
+The class 'ecorer_EDataType' is a specialization of 'EClassifier'.
+The class 'ecorer_EEnum' is a specialization of 'EDataType'.
+The class 'ecorer_EEnumLiteral' is a specialization of 'ENamedElement'.
+The class 'ecorer_EFactory' is a specialization of 'EModelElement'.
+The class 'ecorer_ENamedElement' is a specialization of 'EModelElement'.
+The class 'ecorer_EOperation' is a specialization of 'ETypedElement'.
+The class 'ecorer_EPackage' is a specialization of 'ENamedElement'.
+The class 'ecorer_EParameter' is a specialization of 'ETypedElement'.
+The class 'ecorer_EReference' is a specialization of 'EStructuralFeature'.
+The class 'ecorer_EStructuralFeature' is a specialization of 'ETypedElement'.
+The class 'ecorer_ETypedElement' is a specialization of 'ENamedElement'.
+The class 'ecorer_ETypeParameter' is a specialization of 'ENamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ecorer_EDataType' and 'ecorer_EAttribute'. From 'ecorer_EDataType', the role 'ecorer_EDataType' has cardinality 0..*, and from 'ecorer_EAttribute', the role 'ecorer_EAttribute' has cardinality 0..*.
+An association connects 'ecorer_EStringToStringMapEntry' and 'ecorer_EAnnotation'. From 'ecorer_EStringToStringMapEntry', the role 'ecorer_EStringToStringMapEntry' has cardinality 0..*, and from 'ecorer_EAnnotation', the role 'ecorer_EAnnotation' has cardinality 0..*.
+An association connects 'ecorer_EAnnotation' and 'ecorer_EModelElement'. From 'ecorer_EAnnotation', the role 'eAnnotations' has cardinality 0..*, and from 'ecorer_EModelElement', the role 'EModelElement' has cardinality 0..*.
+An association connects 'ecorer_EObject' and 'ecorer_EAnnotation'. From 'ecorer_EObject', the role 'ecorer_EObject' has cardinality 0..*, and from 'ecorer_EAnnotation', the role 'ecorer_EAnnotation4' has cardinality 0..*.
+An association connects 'ecorer_EObject' and 'ecorer_EAnnotation'. From 'ecorer_EObject', the role 'ecorer_EObject7' has cardinality 0..*, and from 'ecorer_EAnnotation', the role 'ecorer_EAnnotation6' has cardinality 0..*.
+An association connects 'ecorer_EClass' and 'ecorer_EClass'. From 'ecorer_EClass', the role 'ecorer_EClass8' has cardinality 0..*, and from 'ecorer_EClass', the role 'ecorer_EClass' has cardinality 0..*.
+An association connects 'ecorer_EOperation' and 'ecorer_EClass'. From 'ecorer_EOperation', the role 'EOperation' has cardinality 0..*, and from 'ecorer_EClass', the role 'eContainingClass' has cardinality 0..*.
+An association connects 'ecorer_EClass' and 'ecorer_EAttribute'. From 'ecorer_EClass', the role 'ecorer_EClass12' has cardinality 0..*, and from 'ecorer_EAttribute', the role 'ecorer_EAttribute13' has cardinality 0..*.
+An association connects 'ecorer_EReference' and 'ecorer_EClass'. From 'ecorer_EReference', the role 'ecorer_EReference' has cardinality 0..*, and from 'ecorer_EClass', the role 'ecorer_EClass15' has cardinality 0..*.
+An association connects 'ecorer_EReference' and 'ecorer_EClass'. From 'ecorer_EReference', the role 'ecorer_EReference18' has cardinality 0..*, and from 'ecorer_EClass', the role 'ecorer_EClass17' has cardinality 0..*.
+An association connects 'ecorer_EClass' and 'ecorer_EAttribute'. From 'ecorer_EClass', the role 'ecorer_EClass20' has cardinality 0..*, and from 'ecorer_EAttribute', the role 'ecorer_EAttribute21' has cardinality 0..*.
+An association connects 'ecorer_EClass' and 'ecorer_EReference'. From 'ecorer_EClass', the role 'ecorer_EClass23' has cardinality 0..*, and from 'ecorer_EReference', the role 'ecorer_EReference24' has cardinality 0..*.
+An association connects 'ecorer_EOperation' and 'ecorer_EClass'. From 'ecorer_EOperation', the role 'ecorer_EOperation' has cardinality 0..*, and from 'ecorer_EClass', the role 'ecorer_EClass26' has cardinality 0..*.
+An association connects 'ecorer_EClass' and 'ecorer_EStructuralFeature'. From 'ecorer_EClass', the role 'ecorer_EClass28' has cardinality 0..*, and from 'ecorer_EStructuralFeature', the role 'ecorer_EStructuralFeature' has cardinality 0..*.
+An association connects 'ecorer_EClass' and 'ecorer_EClass'. From 'ecorer_EClass', the role 'ecorer_EClass31' has cardinality 0..*, and from 'ecorer_EClass', the role 'ecorer_EClass29' has cardinality 0..*.
+An association connects 'ecorer_EAttribute' and 'ecorer_EClass'. From 'ecorer_EAttribute', the role 'ecorer_EAttribute34' has cardinality 0..*, and from 'ecorer_EClass', the role 'ecorer_EClass33' has cardinality 0..*.
+An association connects 'ecorer_EClass' and 'ecorer_EStructuralFeature'. From 'ecorer_EClass', the role 'eContainingClass36' has cardinality 0..*, and from 'ecorer_EStructuralFeature', the role 'EStructuralFeature' has cardinality 0..*.
+An association connects 'ecorer_EClass' and 'ecorer_EGenericType'. From 'ecorer_EClass', the role 'ecorer_EClass38' has cardinality 0..*, and from 'ecorer_EGenericType', the role 'ecorer_EGenericType' has cardinality 0..*.
+An association connects 'ecorer_EClass' and 'ecorer_EGenericType'. From 'ecorer_EClass', the role 'ecorer_EClass40' has cardinality 0..*, and from 'ecorer_EGenericType', the role 'ecorer_EGenericType41' has cardinality 0..*.
+An association connects 'ecorer_EClassifier' and 'ecorer_EPackage'. From 'ecorer_EClassifier', the role 'eClassifiers' has cardinality 0..*, and from 'ecorer_EPackage', the role 'EPackage' has cardinality 0..*.
+An association connects 'ecorer_EClassifier' and 'ecorer_ETypeParameter'. From 'ecorer_EClassifier', the role 'ecorer_EClassifier' has cardinality 0..*, and from 'ecorer_ETypeParameter', the role 'ecorer_ETypeParameter' has cardinality 0..*.
+An association connects 'ecorer_EEnumLiteral' and 'ecorer_EEnum'. From 'ecorer_EEnumLiteral', the role 'EEnumLiteral' has cardinality 0..*, and from 'ecorer_EEnum', the role 'eEnum' has cardinality 0..*.
+An association connects 'ecorer_EEnum' and 'ecorer_EEnumLiteral'. From 'ecorer_EEnum', the role 'EEnum' has cardinality 0..*, and from 'ecorer_EEnumLiteral', the role 'eLiterals' has cardinality 0..*.
+An association connects 'ecorer_EPackage' and 'ecorer_EFactory'. From 'ecorer_EPackage', the role 'EPackage47' has cardinality 0..*, and from 'ecorer_EFactory', the role 'eFactoryInstance' has cardinality 0..*.
+An association connects 'ecorer_EAnnotation' and 'ecorer_EModelElement'. From 'ecorer_EAnnotation', the role 'EAnnotation' has cardinality 0..*, and from 'ecorer_EModelElement', the role 'eModelElement' has cardinality 0..*.
+An association connects 'ecorer_EClass' and 'ecorer_EOperation'. From 'ecorer_EClass', the role 'EClass' has cardinality 0..*, and from 'ecorer_EOperation', the role 'eOperations' has cardinality 0..*.
+An association connects 'ecorer_ETypeParameter' and 'ecorer_EOperation'. From 'ecorer_ETypeParameter', the role 'ecorer_ETypeParameter52' has cardinality 0..*, and from 'ecorer_EOperation', the role 'ecorer_EOperation51' has cardinality 0..*.
+An association connects 'ecorer_EOperation' and 'ecorer_EParameter'. From 'ecorer_EOperation', the role 'eOperation' has cardinality 0..*, and from 'ecorer_EParameter', the role 'EParameter' has cardinality 0..*.
+An association connects 'ecorer_EOperation' and 'ecorer_EClassifier'. From 'ecorer_EOperation', the role 'ecorer_EOperation55' has cardinality 0..*, and from 'ecorer_EClassifier', the role 'ecorer_EClassifier56' has cardinality 0..*.
+An association connects 'ecorer_EOperation' and 'ecorer_EGenericType'. From 'ecorer_EOperation', the role 'ecorer_EOperation58' has cardinality 0..*, and from 'ecorer_EGenericType', the role 'ecorer_EGenericType59' has cardinality 0..*.
+An association connects 'ecorer_EPackage' and 'ecorer_EFactory'. From 'ecorer_EPackage', the role 'ePackage' has cardinality 0..*, and from 'ecorer_EFactory', the role 'EFactory' has cardinality 0..*.
+An association connects 'ecorer_EPackage' and 'ecorer_EClassifier'. From 'ecorer_EPackage', the role 'ePackage62' has cardinality 0..*, and from 'ecorer_EClassifier', the role 'EClassifier' has cardinality 0..*.
+An association connects 'ecorer_EPackage' and 'ecorer_EPackage'. From 'ecorer_EPackage', the role 'eSuperPackage' has cardinality 0..*, and from 'ecorer_EPackage', the role 'EPackage65' has cardinality 0..*.
+An association connects 'ecorer_EPackage' and 'ecorer_EPackage'. From 'ecorer_EPackage', the role 'eSubpackages' has cardinality 0..*, and from 'ecorer_EPackage', the role 'EPackage68' has cardinality 0..*.
+An association connects 'ecorer_EOperation' and 'ecorer_EParameter'. From 'ecorer_EOperation', the role 'EOperation70' has cardinality 0..*, and from 'ecorer_EParameter', the role 'eParameters' has cardinality 0..*.
+An association connects 'ecorer_EReference' and 'ecorer_EReference'. From 'ecorer_EReference', the role 'ecorer_EReference71' has cardinality 0..*, and from 'ecorer_EReference', the role 'ecorer_EReference73' has cardinality 0..*.
+An association connects 'ecorer_EReference' and 'ecorer_EClass'. From 'ecorer_EReference', the role 'ecorer_EReference75' has cardinality 0..*, and from 'ecorer_EClass', the role 'ecorer_EClass76' has cardinality 0..*.
+An association connects 'ecorer_EAttribute' and 'ecorer_EReference'. From 'ecorer_EAttribute', the role 'ecorer_EAttribute79' has cardinality 0..*, and from 'ecorer_EReference', the role 'ecorer_EReference78' has cardinality 0..*.
+An association connects 'ecorer_EClass' and 'ecorer_EStructuralFeature'. From 'ecorer_EClass', the role 'EClass81' has cardinality 0..*, and from 'ecorer_EStructuralFeature', the role 'eStructuralFeatures' has cardinality 0..*.
+An association connects 'ecorer_ETypedElement' and 'ecorer_EClassifier'. From 'ecorer_ETypedElement', the role 'ecorer_ETypedElement' has cardinality 0..*, and from 'ecorer_EClassifier', the role 'ecorer_EClassifier83' has cardinality 0..*.
+An association connects 'ecorer_EGenericType' and 'ecorer_ETypedElement'. From 'ecorer_EGenericType', the role 'ecorer_EGenericType86' has cardinality 0..*, and from 'ecorer_ETypedElement', the role 'ecorer_ETypedElement85' has cardinality 0..*.
+An association connects 'ecorer_EGenericType' and 'ecorer_EGenericType'. From 'ecorer_EGenericType', the role 'ecorer_EGenericType89' has cardinality 0..*, and from 'ecorer_EGenericType', the role 'ecorer_EGenericType87' has cardinality 0..*.
+An association connects 'ecorer_EGenericType' and 'ecorer_EGenericType'. From 'ecorer_EGenericType', the role 'ecorer_EGenericType90' has cardinality 0..*, and from 'ecorer_EGenericType', the role 'ecorer_EGenericType92' has cardinality 0..*.
+An association connects 'ecorer_EClassifier' and 'ecorer_EGenericType'. From 'ecorer_EClassifier', the role 'ecorer_EClassifier95' has cardinality 0..*, and from 'ecorer_EGenericType', the role 'ecorer_EGenericType94' has cardinality 0..*.
+An association connects 'ecorer_EGenericType' and 'ecorer_EGenericType'. From 'ecorer_EGenericType', the role 'ecorer_EGenericType96' has cardinality 0..*, and from 'ecorer_EGenericType', the role 'ecorer_EGenericType98' has cardinality 0..*.
+An association connects 'ecorer_ETypeParameter' and 'ecorer_EGenericType'. From 'ecorer_ETypeParameter', the role 'ecorer_ETypeParameter101' has cardinality 0..*, and from 'ecorer_EGenericType', the role 'ecorer_EGenericType100' has cardinality 0..*.
+An association connects 'ecorer_EGenericType' and 'ecorer_EClassifier'. From 'ecorer_EGenericType', the role 'ecorer_EGenericType103' has cardinality 0..*, and from 'ecorer_EClassifier', the role 'ecorer_EClassifier104' has cardinality 0..*.
+An association connects 'ecorer_EGenericType' and 'ecorer_ETypeParameter'. From 'ecorer_EGenericType', the role 'ecorer_EGenericType107' has cardinality 0..*, and from 'ecorer_ETypeParameter', the role 'ecorer_ETypeParameter106' has cardinality 0..*.

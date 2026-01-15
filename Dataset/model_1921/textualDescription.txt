@@ -1,0 +1,436 @@
+The domain model 'libraryElement' describes the core structural elements and their relationships within the system.
+
+The model defines 94 main class(es).
+
+'libraryElement_IVarElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeFBType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_OtherAlgorithm' represents an important domain concept.
+It has one attribute: 'language', which is of type str.
+
+'PositionableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ColorizableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_EventConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_Application' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_VersionInfo' represents an important domain concept.
+It has the following attributes: 'date', which is of type str; 'remarks', which is of type str; 'author', which is of type str; 'organization', which is of type str; 'version', which is of type str.
+
+'INamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'I4DIACElement' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_ResourceTypeName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'libraryElement_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_ConfigurableObject' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_Color' represents an important domain concept.
+It has the following attributes: 'blue', which is of type str; 'red', which is of type str; 'green', which is of type str.
+
+'Algorithm' represents an important domain concept.
+It does not declare any attributes.
+
+'FBType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_FB' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_AdapterConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_SubAppType' represents an important domain concept.
+It does not declare any attributes.
+
+'FB' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_DataConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_CompilerInfo' represents an important domain concept.
+It has the following attributes: 'classdef', which is of type str; 'header', which is of type str.
+
+'IVarElement' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_PositionableElement' represents an important domain concept.
+It has the following attributes: 'y', which is of type str; 'x', which is of type str.
+
+'libraryElement_Segment' represents an important domain concept.
+It has one attribute: 'width', which is of type str.
+
+'libraryElement_Device' represents an important domain concept.
+It has one attribute: 'profile', which is of type str.
+
+'libraryElement_Palette' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_Algorithm' represents an important domain concept.
+It does not declare any attributes.
+
+'ConfigurableObject' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedConfigureableObject' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_OutputPrimitive' represents an important domain concept.
+It has one attribute: 'TestResult', which is of type str.
+
+'libraryElement_AdapterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_CompositeFBType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_ECTransition' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'conditionExpression', which is of type str.
+
+'libraryElement_Annotation' represents an important domain concept.
+It has the following attributes: 'servity', which is of type str; 'name', which is of type str.
+
+'libraryElement_Connection' represents an important domain concept.
+It has the following attributes: 'brokenConnection', which is of type str; 'dx1', which is of type str; 'resTypeConnection', which is of type str; 'dx2', which is of type str; 'dy', which is of type str.
+
+'libraryElement_AdapterFB' represents an important domain concept.
+It does not declare any attributes.
+
+'LibraryElement' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_AdapterType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_IInterfaceElement' represents an important domain concept.
+It has the following attributes: 'typeName', which is of type str; 'isInput', which is of type str.
+
+'libraryElement_Identification' represents an important domain concept.
+It has the following attributes: 'function', which is of type str; 'type', which is of type str; 'description', which is of type str; 'applicationDomain', which is of type str; 'standard', which is of type str; 'classification', which is of type str.
+
+'VarDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_BasicFBType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_INamedElement' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'name', which is of type str.
+
+'libraryElement_Value' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'TextAlgorithm' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_AdapterEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_ServiceTransaction' represents an important domain concept.
+It has one attribute: 'TestResult', which is of type str.
+
+'libraryElement_ECC' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_Resource' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'y', which is of type str; 'deviceTypeResource', which is of type str.
+
+'libraryElement_ServiceInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_ResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_InterfaceList' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_SubApp' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_FBNetworkElement' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_With' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_AdapterFBType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_FBType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_SegmentType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_ECAction' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_Compiler' represents an important domain concept.
+It has the following attributes: 'vendor', which is of type str; 'version', which is of type str; 'language', which is of type str; 'product', which is of type str.
+
+'libraryElement_ServiceSequence' represents an important domain concept.
+It has one attribute: 'TestResult', which is of type str.
+
+'libraryElement_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_InputPrimitive' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'CompilableType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_SystemConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_STAlgorithm' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_CompilableType' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_ColorizableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_VarDeclaration' represents an important domain concept.
+It has one attribute: 'arraySize', which is of type str.
+
+'libraryElement_I4DIACElement' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_ECState' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_TextAlgorithm' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'libraryElement_LibraryElement' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_PaletteEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_Primitive' represents an important domain concept.
+It has the following attributes: 'parameters', which is of type str; 'event', which is of type str.
+
+'libraryElement_ServiceInterfaceFBType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_AdapterTypePaletteEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_FBNetwork' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_DeviceType' represents an important domain concept.
+It has one attribute: 'profile', which is of type str.
+
+'Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'IInterfaceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_TypedConfigureableObject' represents an important domain concept.
+It does not declare any attributes.
+
+'FBNetworkElement' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_AutomationSystem' represents an important domain concept.
+It has one attribute: 'project', which is of type str.
+
+'libraryElement_VarInitialization' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_ResourceTypeFB' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryElement_Parameter' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str; 'comment', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Language' defines the following possible values: 'Other', 'Cpp', 'C', 'Java'.
+
+The model also captures inheritance relationships between classes.
+The class 'libraryElement_AdapterDeclaration' is a specialization of 'VarDeclaration'.
+The class 'libraryElement_AdapterType' is a specialization of 'DataType'.
+The class 'libraryElement_Algorithm' is a specialization of 'INamedElement'.
+The class 'libraryElement_Application' is a specialization of 'INamedElement'.
+The class 'libraryElement_BasicFBType' is a specialization of 'FBType'.
+The class 'libraryElement_Connection' is a specialization of 'ConfigurableObject'.
+The class 'libraryElement_Device' is a specialization of 'TypedConfigureableObject'.
+The class 'libraryElement_Device' is a specialization of 'PositionableElement'.
+The class 'libraryElement_Device' is a specialization of 'ColorizableElement'.
+The class 'libraryElement_Device' is a specialization of 'IVarElement'.
+The class 'libraryElement_DeviceType' is a specialization of 'CompilableType'.
+The class 'libraryElement_ECState' is a specialization of 'INamedElement'.
+The class 'libraryElement_ECState' is a specialization of 'PositionableElement'.
+The class 'libraryElement_ECTransition' is a specialization of 'PositionableElement'.
+The class 'libraryElement_Event' is a specialization of 'IInterfaceElement'.
+The class 'libraryElement_FB' is a specialization of 'FBNetworkElement'.
+The class 'libraryElement_FBNetworkElement' is a specialization of 'TypedConfigureableObject'.
+The class 'libraryElement_FBNetworkElement' is a specialization of 'PositionableElement'.
+The class 'libraryElement_SubApp' is a specialization of 'FBNetworkElement'.
+The class 'libraryElement_FBType' is a specialization of 'CompilableType'.
+The class 'libraryElement_InputPrimitive' is a specialization of 'Primitive'.
+The class 'libraryElement_Link' is a specialization of 'ConfigurableObject'.
+The class 'libraryElement_OtherAlgorithm' is a specialization of 'TextAlgorithm'.
+The class 'libraryElement_OutputPrimitive' is a specialization of 'Primitive'.
+The class 'libraryElement_Resource' is a specialization of 'TypedConfigureableObject'.
+The class 'libraryElement_Resource' is a specialization of 'IVarElement'.
+The class 'libraryElement_ResourceType' is a specialization of 'CompilableType'.
+The class 'libraryElement_Segment' is a specialization of 'TypedConfigureableObject'.
+The class 'libraryElement_Segment' is a specialization of 'PositionableElement'.
+The class 'libraryElement_Segment' is a specialization of 'ColorizableElement'.
+The class 'libraryElement_ServiceSequence' is a specialization of 'INamedElement'.
+The class 'libraryElement_ServiceInterfaceFBType' is a specialization of 'FBType'.
+The class 'libraryElement_STAlgorithm' is a specialization of 'TextAlgorithm'.
+The class 'libraryElement_SubAppType' is a specialization of 'CompositeFBType'.
+The class 'libraryElement_AutomationSystem' is a specialization of 'LibraryElement'.
+The class 'libraryElement_VarDeclaration' is a specialization of 'IInterfaceElement'.
+The class 'libraryElement_LibraryElement' is a specialization of 'INamedElement'.
+The class 'libraryElement_CompilableType' is a specialization of 'LibraryElement'.
+The class 'libraryElement_ConfigurableObject' is a specialization of 'INamedElement'.
+The class 'libraryElement_CompositeFBType' is a specialization of 'FBType'.
+The class 'libraryElement_TextAlgorithm' is a specialization of 'Algorithm'.
+The class 'libraryElement_DataConnection' is a specialization of 'Connection'.
+The class 'libraryElement_EventConnection' is a specialization of 'Connection'.
+The class 'libraryElement_AdapterConnection' is a specialization of 'Connection'.
+The class 'libraryElement_ServiceInterface' is a specialization of 'INamedElement'.
+The class 'libraryElement_IInterfaceElement' is a specialization of 'INamedElement'.
+The class 'libraryElement_SystemConfiguration' is a specialization of 'I4DIACElement'.
+The class 'libraryElement_INamedElement' is a specialization of 'I4DIACElement'.
+The class 'libraryElement_ResourceTypeFB' is a specialization of 'FB'.
+The class 'libraryElement_SegmentType' is a specialization of 'CompilableType'.
+The class 'libraryElement_AdapterFBType' is a specialization of 'FBType'.
+The class 'libraryElement_AdapterEvent' is a specialization of 'Event'.
+The class 'libraryElement_Service' is a specialization of 'I4DIACElement'.
+The class 'libraryElement_TypedConfigureableObject' is a specialization of 'ConfigurableObject'.
+The class 'libraryElement_AdapterFB' is a specialization of 'FB'.
+
+Relationships between classes are modeled using associations.
+An association connects 'libraryElement_AdapterFB' and 'libraryElement_AdapterDeclaration'. From 'libraryElement_AdapterFB', the role 'AdapterFB' has cardinality 0..*, and from 'libraryElement_AdapterDeclaration', the role 'adapterDecl' has cardinality 0..*.
+An association connects 'libraryElement_AdapterDeclaration' and 'libraryElement_AdapterTypePaletteEntry'. From 'libraryElement_AdapterDeclaration', the role 'libraryElement_AdapterDeclaration' has cardinality 0..*, and from 'libraryElement_AdapterTypePaletteEntry', the role 'libraryElement_AdapterTypePaletteEntry' has cardinality 0..*.
+An association connects 'libraryElement_AdapterFBType' and 'libraryElement_AdapterType'. From 'libraryElement_AdapterFBType', the role 'libraryElement_AdapterFBType' has cardinality 0..*, and from 'libraryElement_AdapterType', the role 'libraryElement_AdapterType' has cardinality 0..*.
+An association connects 'libraryElement_FBNetwork' and 'libraryElement_Application'. From 'libraryElement_FBNetwork', the role 'libraryElement_FBNetwork' has cardinality 0..*, and from 'libraryElement_Application', the role 'libraryElement_Application' has cardinality 0..*.
+An association connects 'libraryElement_ECC' and 'libraryElement_BasicFBType'. From 'libraryElement_ECC', the role 'libraryElement_ECC' has cardinality 0..*, and from 'libraryElement_BasicFBType', the role 'libraryElement_BasicFBType' has cardinality 0..*.
+An association connects 'libraryElement_Algorithm' and 'libraryElement_BasicFBType'. From 'libraryElement_Algorithm', the role 'libraryElement_Algorithm' has cardinality 0..*, and from 'libraryElement_BasicFBType', the role 'libraryElement_BasicFBType6' has cardinality 0..*.
+An association connects 'libraryElement_VarDeclaration' and 'libraryElement_BasicFBType'. From 'libraryElement_VarDeclaration', the role 'libraryElement_VarDeclaration' has cardinality 0..*, and from 'libraryElement_BasicFBType', the role 'libraryElement_BasicFBType8' has cardinality 0..*.
+An association connects 'libraryElement_CompilerInfo' and 'libraryElement_Compiler'. From 'libraryElement_CompilerInfo', the role 'libraryElement_CompilerInfo' has cardinality 0..*, and from 'libraryElement_Compiler', the role 'libraryElement_Compiler' has cardinality 0..*.
+An association connects 'libraryElement_IInterfaceElement' and 'libraryElement_Connection'. From 'libraryElement_IInterfaceElement', the role 'IInterfaceElement' has cardinality 0..*, and from 'libraryElement_Connection', the role 'outputConnections' has cardinality 0..*.
+An association connects 'libraryElement_Connection' and 'libraryElement_IInterfaceElement'. From 'libraryElement_Connection', the role 'inputConnections' has cardinality 0..*, and from 'libraryElement_IInterfaceElement', the role 'IInterfaceElement12' has cardinality 0..*.
+An association connects 'libraryElement_Resource' and 'libraryElement_Device'. From 'libraryElement_Resource', the role 'Resource' has cardinality 0..*, and from 'libraryElement_Device', the role 'device' has cardinality 0..*.
+An association connects 'libraryElement_Link' and 'libraryElement_Device'. From 'libraryElement_Link', the role 'Link' has cardinality 0..*, and from 'libraryElement_Device', the role 'device15' has cardinality 0..*.
+An association connects 'libraryElement_VarDeclaration' and 'libraryElement_DeviceType'. From 'libraryElement_VarDeclaration', the role 'libraryElement_VarDeclaration17' has cardinality 0..*, and from 'libraryElement_DeviceType', the role 'libraryElement_DeviceType' has cardinality 0..*.
+An association connects 'libraryElement_ResourceTypeName' and 'libraryElement_DeviceType'. From 'libraryElement_ResourceTypeName', the role 'libraryElement_ResourceTypeName' has cardinality 0..*, and from 'libraryElement_DeviceType', the role 'libraryElement_DeviceType19' has cardinality 0..*.
+An association connects 'libraryElement_DeviceType' and 'libraryElement_Resource'. From 'libraryElement_DeviceType', the role 'libraryElement_DeviceType21' has cardinality 0..*, and from 'libraryElement_Resource', the role 'libraryElement_Resource' has cardinality 0..*.
+An association connects 'libraryElement_DeviceType' and 'libraryElement_FBNetwork'. From 'libraryElement_DeviceType', the role 'libraryElement_DeviceType23' has cardinality 0..*, and from 'libraryElement_FBNetwork', the role 'libraryElement_FBNetwork24' has cardinality 0..*.
+An association connects 'libraryElement_Algorithm' and 'libraryElement_ECAction'. From 'libraryElement_Algorithm', the role 'libraryElement_Algorithm26' has cardinality 0..*, and from 'libraryElement_ECAction', the role 'libraryElement_ECAction' has cardinality 0..*.
+An association connects 'libraryElement_ECAction' and 'libraryElement_Event'. From 'libraryElement_ECAction', the role 'libraryElement_ECAction28' has cardinality 0..*, and from 'libraryElement_Event', the role 'libraryElement_Event' has cardinality 0..*.
+An association connects 'libraryElement_ECState' and 'libraryElement_ECC'. From 'libraryElement_ECState', the role 'libraryElement_ECState' has cardinality 0..*, and from 'libraryElement_ECC', the role 'libraryElement_ECC30' has cardinality 0..*.
+An association connects 'libraryElement_ECC' and 'libraryElement_ECTransition'. From 'libraryElement_ECC', the role 'libraryElement_ECC32' has cardinality 0..*, and from 'libraryElement_ECTransition', the role 'libraryElement_ECTransition' has cardinality 0..*.
+An association connects 'libraryElement_ECState' and 'libraryElement_ECC'. From 'libraryElement_ECState', the role 'libraryElement_ECState35' has cardinality 0..*, and from 'libraryElement_ECC', the role 'libraryElement_ECC34' has cardinality 0..*.
+An association connects 'libraryElement_ECAction' and 'libraryElement_ECState'. From 'libraryElement_ECAction', the role 'libraryElement_ECAction38' has cardinality 0..*, and from 'libraryElement_ECState', the role 'libraryElement_ECState37' has cardinality 0..*.
+An association connects 'libraryElement_ECState' and 'libraryElement_ECTransition'. From 'libraryElement_ECState', the role 'source' has cardinality 0..*, and from 'libraryElement_ECTransition', the role 'ECTransition' has cardinality 0..*.
+An association connects 'libraryElement_ECState' and 'libraryElement_ECTransition'. From 'libraryElement_ECState', the role 'destination' has cardinality 0..*, and from 'libraryElement_ECTransition', the role 'ECTransition41' has cardinality 0..*.
+An association connects 'libraryElement_ECTransition' and 'libraryElement_ECState'. From 'libraryElement_ECTransition', the role 'outTransitions' has cardinality 0..*, and from 'libraryElement_ECState', the role 'ECState' has cardinality 0..*.
+An association connects 'libraryElement_ECState' and 'libraryElement_ECTransition'. From 'libraryElement_ECState', the role 'ECState44' has cardinality 0..*, and from 'libraryElement_ECTransition', the role 'inTransitions' has cardinality 0..*.
+An association connects 'libraryElement_Event' and 'libraryElement_ECTransition'. From 'libraryElement_Event', the role 'libraryElement_Event47' has cardinality 0..*, and from 'libraryElement_ECTransition', the role 'libraryElement_ECTransition46' has cardinality 0..*.
+An association connects 'libraryElement_With' and 'libraryElement_Event'. From 'libraryElement_With', the role 'libraryElement_With' has cardinality 0..*, and from 'libraryElement_Event', the role 'libraryElement_Event49' has cardinality 0..*.
+An association connects 'libraryElement_InterfaceList' and 'libraryElement_FBNetworkElement'. From 'libraryElement_InterfaceList', the role 'libraryElement_InterfaceList' has cardinality 0..*, and from 'libraryElement_FBNetworkElement', the role 'libraryElement_FBNetworkElement' has cardinality 0..*.
+An association connects 'libraryElement_FBNetworkElement' and 'libraryElement_Mapping'. From 'libraryElement_FBNetworkElement', the role 'libraryElement_FBNetworkElement52' has cardinality 0..*, and from 'libraryElement_Mapping', the role 'libraryElement_Mapping' has cardinality 0..*.
+An association connects 'libraryElement_FBNetwork' and 'libraryElement_SubApp'. From 'libraryElement_FBNetwork', the role 'libraryElement_FBNetwork54' has cardinality 0..*, and from 'libraryElement_SubApp', the role 'libraryElement_SubApp' has cardinality 0..*.
+An association connects 'libraryElement_FBType' and 'libraryElement_InterfaceList'. From 'libraryElement_FBType', the role 'libraryElement_FBType' has cardinality 0..*, and from 'libraryElement_InterfaceList', the role 'libraryElement_InterfaceList56' has cardinality 0..*.
+An association connects 'libraryElement_Service' and 'libraryElement_FBType'. From 'libraryElement_Service', the role 'libraryElement_Service' has cardinality 0..*, and from 'libraryElement_FBType', the role 'libraryElement_FBType58' has cardinality 0..*.
+An association connects 'libraryElement_AdapterDeclaration' and 'libraryElement_InterfaceList'. From 'libraryElement_AdapterDeclaration', the role 'libraryElement_AdapterDeclaration61' has cardinality 0..*, and from 'libraryElement_InterfaceList', the role 'libraryElement_InterfaceList60' has cardinality 0..*.
+An association connects 'libraryElement_InterfaceList' and 'libraryElement_AdapterDeclaration'. From 'libraryElement_InterfaceList', the role 'libraryElement_InterfaceList63' has cardinality 0..*, and from 'libraryElement_AdapterDeclaration', the role 'libraryElement_AdapterDeclaration64' has cardinality 0..*.
+An association connects 'libraryElement_InterfaceList' and 'libraryElement_Event'. From 'libraryElement_InterfaceList', the role 'libraryElement_InterfaceList66' has cardinality 0..*, and from 'libraryElement_Event', the role 'libraryElement_Event67' has cardinality 0..*.
+An association connects 'libraryElement_InterfaceList' and 'libraryElement_Event'. From 'libraryElement_InterfaceList', the role 'libraryElement_InterfaceList69' has cardinality 0..*, and from 'libraryElement_Event', the role 'libraryElement_Event70' has cardinality 0..*.
+An association connects 'libraryElement_InterfaceList' and 'libraryElement_VarDeclaration'. From 'libraryElement_InterfaceList', the role 'libraryElement_InterfaceList72' has cardinality 0..*, and from 'libraryElement_VarDeclaration', the role 'libraryElement_VarDeclaration73' has cardinality 0..*.
+An association connects 'libraryElement_VarDeclaration' and 'libraryElement_InterfaceList'. From 'libraryElement_VarDeclaration', the role 'libraryElement_VarDeclaration76' has cardinality 0..*, and from 'libraryElement_InterfaceList', the role 'libraryElement_InterfaceList75' has cardinality 0..*.
+An association connects 'libraryElement_Link' and 'libraryElement_Segment'. From 'libraryElement_Link', the role 'outConnections' has cardinality 0..*, and from 'libraryElement_Segment', the role 'Segment' has cardinality 0..*.
+An association connects 'libraryElement_Device' and 'libraryElement_Link'. From 'libraryElement_Device', the role 'Device' has cardinality 0..*, and from 'libraryElement_Link', the role 'inConnections' has cardinality 0..*.
+An association connects 'libraryElement_Mapping' and 'libraryElement_FBNetworkElement'. From 'libraryElement_Mapping', the role 'libraryElement_Mapping80' has cardinality 0..*, and from 'libraryElement_FBNetworkElement', the role 'libraryElement_FBNetworkElement81' has cardinality 0..*.
+An association connects 'libraryElement_FBNetworkElement' and 'libraryElement_Mapping'. From 'libraryElement_FBNetworkElement', the role 'libraryElement_FBNetworkElement84' has cardinality 0..*, and from 'libraryElement_Mapping', the role 'libraryElement_Mapping83' has cardinality 0..*.
+An association connects 'libraryElement_FBNetwork' and 'libraryElement_Resource'. From 'libraryElement_FBNetwork', the role 'libraryElement_FBNetwork87' has cardinality 0..*, and from 'libraryElement_Resource', the role 'libraryElement_Resource86' has cardinality 0..*.
+An association connects 'libraryElement_Resource' and 'libraryElement_Device'. From 'libraryElement_Resource', the role 'resource' has cardinality 0..*, and from 'libraryElement_Device', the role 'Device89' has cardinality 0..*.
+An association connects 'libraryElement_ResourceType' and 'libraryElement_VarDeclaration'. From 'libraryElement_ResourceType', the role 'libraryElement_ResourceType' has cardinality 0..*, and from 'libraryElement_VarDeclaration', the role 'libraryElement_VarDeclaration91' has cardinality 0..*.
+An association connects 'libraryElement_ResourceType' and 'libraryElement_FBNetwork'. From 'libraryElement_ResourceType', the role 'libraryElement_ResourceType93' has cardinality 0..*, and from 'libraryElement_FBNetwork', the role 'libraryElement_FBNetwork94' has cardinality 0..*.
+An association connects 'libraryElement_FBType' and 'libraryElement_ResourceType'. From 'libraryElement_FBType', the role 'libraryElement_FBType97' has cardinality 0..*, and from 'libraryElement_ResourceType', the role 'libraryElement_ResourceType96' has cardinality 0..*.
+An association connects 'libraryElement_Segment' and 'libraryElement_VarDeclaration'. From 'libraryElement_Segment', the role 'libraryElement_Segment' has cardinality 0..*, and from 'libraryElement_VarDeclaration', the role 'libraryElement_VarDeclaration99' has cardinality 0..*.
+An association connects 'libraryElement_Link' and 'libraryElement_Segment'. From 'libraryElement_Link', the role 'Link101' has cardinality 0..*, and from 'libraryElement_Segment', the role 'segment' has cardinality 0..*.
+An association connects 'libraryElement_ServiceSequence' and 'libraryElement_ServiceTransaction'. From 'libraryElement_ServiceSequence', the role 'libraryElement_ServiceSequence' has cardinality 0..*, and from 'libraryElement_ServiceTransaction', the role 'libraryElement_ServiceTransaction' has cardinality 0..*.
+An association connects 'libraryElement_InputPrimitive' and 'libraryElement_ServiceTransaction'. From 'libraryElement_InputPrimitive', the role 'libraryElement_InputPrimitive' has cardinality 0..*, and from 'libraryElement_ServiceTransaction', the role 'libraryElement_ServiceTransaction104' has cardinality 0..*.
+An association connects 'libraryElement_ServiceTransaction' and 'libraryElement_OutputPrimitive'. From 'libraryElement_ServiceTransaction', the role 'libraryElement_ServiceTransaction106' has cardinality 0..*, and from 'libraryElement_OutputPrimitive', the role 'libraryElement_OutputPrimitive' has cardinality 0..*.
+An association connects 'libraryElement_FBNetwork' and 'libraryElement_FBNetworkElement'. From 'libraryElement_FBNetwork', the role 'libraryElement_FBNetwork108' has cardinality 0..*, and from 'libraryElement_FBNetworkElement', the role 'libraryElement_FBNetworkElement109' has cardinality 0..*.
+An association connects 'libraryElement_FBNetwork' and 'libraryElement_DataConnection'. From 'libraryElement_FBNetwork', the role 'libraryElement_FBNetwork111' has cardinality 0..*, and from 'libraryElement_DataConnection', the role 'libraryElement_DataConnection' has cardinality 0..*.
+An association connects 'libraryElement_FBNetwork' and 'libraryElement_EventConnection'. From 'libraryElement_FBNetwork', the role 'libraryElement_FBNetwork113' has cardinality 0..*, and from 'libraryElement_EventConnection', the role 'libraryElement_EventConnection' has cardinality 0..*.
+An association connects 'libraryElement_FBNetwork' and 'libraryElement_AdapterConnection'. From 'libraryElement_FBNetwork', the role 'libraryElement_FBNetwork115' has cardinality 0..*, and from 'libraryElement_AdapterConnection', the role 'libraryElement_AdapterConnection' has cardinality 0..*.
+An association connects 'libraryElement_Application' and 'libraryElement_AutomationSystem'. From 'libraryElement_Application', the role 'libraryElement_Application117' has cardinality 0..*, and from 'libraryElement_AutomationSystem', the role 'libraryElement_AutomationSystem' has cardinality 0..*.
+An association connects 'libraryElement_Mapping' and 'libraryElement_AutomationSystem'. From 'libraryElement_Mapping', the role 'libraryElement_Mapping120' has cardinality 0..*, and from 'libraryElement_AutomationSystem', the role 'libraryElement_AutomationSystem119' has cardinality 0..*.
+An association connects 'libraryElement_AutomationSystem' and 'libraryElement_Palette'. From 'libraryElement_AutomationSystem', the role 'automationSystem' has cardinality 0..*, and from 'libraryElement_Palette', the role 'palette.ecorePalette' has cardinality 0..*.
+An association connects 'libraryElement_SystemConfiguration' and 'libraryElement_AutomationSystem'. From 'libraryElement_SystemConfiguration', the role 'libraryElement_SystemConfiguration' has cardinality 0..*, and from 'libraryElement_AutomationSystem', the role 'libraryElement_AutomationSystem123' has cardinality 0..*.
+An association connects 'libraryElement_VarDeclaration' and 'libraryElement_VarInitialization'. From 'libraryElement_VarDeclaration', the role 'libraryElement_VarDeclaration125' has cardinality 0..*, and from 'libraryElement_VarInitialization', the role 'libraryElement_VarInitialization' has cardinality 0..*.
+An association connects 'libraryElement_With' and 'libraryElement_VarDeclaration'. From 'libraryElement_With', the role 'With' has cardinality 0..*, and from 'libraryElement_VarDeclaration', the role 'variables' has cardinality 0..*.
+An association connects 'libraryElement_With' and 'libraryElement_VarDeclaration'. From 'libraryElement_With', the role 'withs' has cardinality 0..*, and from 'libraryElement_VarDeclaration', the role 'VarDeclaration' has cardinality 0..*.
+An association connects 'libraryElement_VersionInfo' and 'libraryElement_LibraryElement'. From 'libraryElement_VersionInfo', the role 'libraryElement_VersionInfo' has cardinality 0..*, and from 'libraryElement_LibraryElement', the role 'libraryElement_LibraryElement' has cardinality 0..*.
+An association connects 'libraryElement_Identification' and 'libraryElement_LibraryElement'. From 'libraryElement_Identification', the role 'libraryElement_Identification' has cardinality 0..*, and from 'libraryElement_LibraryElement', the role 'libraryElement_LibraryElement130' has cardinality 0..*.
+An association connects 'libraryElement_PaletteEntry' and 'libraryElement_LibraryElement'. From 'libraryElement_PaletteEntry', the role 'palette.ecorePaletteEntry' has cardinality 0..*, and from 'libraryElement_LibraryElement', the role 'type' has cardinality 0..*.
+An association connects 'libraryElement_CompilableType' and 'libraryElement_CompilerInfo'. From 'libraryElement_CompilableType', the role 'libraryElement_CompilableType' has cardinality 0..*, and from 'libraryElement_CompilerInfo', the role 'libraryElement_CompilerInfo133' has cardinality 0..*.
+An association connects 'libraryElement_Parameter' and 'libraryElement_ConfigurableObject'. From 'libraryElement_Parameter', the role 'libraryElement_Parameter' has cardinality 0..*, and from 'libraryElement_ConfigurableObject', the role 'libraryElement_ConfigurableObject' has cardinality 0..*.
+An association connects 'libraryElement_FBNetwork' and 'libraryElement_CompositeFBType'. From 'libraryElement_FBNetwork', the role 'libraryElement_FBNetwork136' has cardinality 0..*, and from 'libraryElement_CompositeFBType', the role 'libraryElement_CompositeFBType' has cardinality 0..*.
+An association connects 'libraryElement_IInterfaceElement' and 'libraryElement_Connection'. From 'libraryElement_IInterfaceElement', the role 'destination138' has cardinality 0..*, and from 'libraryElement_Connection', the role 'Connection' has cardinality 0..*.
+An association connects 'libraryElement_Connection' and 'libraryElement_IInterfaceElement'. From 'libraryElement_Connection', the role 'Connection141' has cardinality 0..*, and from 'libraryElement_IInterfaceElement', the role 'source140' has cardinality 0..*.
+An association connects 'libraryElement_IInterfaceElement' and 'libraryElement_DataType'. From 'libraryElement_IInterfaceElement', the role 'libraryElement_IInterfaceElement' has cardinality 0..*, and from 'libraryElement_DataType', the role 'libraryElement_DataType' has cardinality 0..*.
+An association connects 'libraryElement_IInterfaceElement' and 'libraryElement_Value'. From 'libraryElement_IInterfaceElement', the role 'libraryElement_IInterfaceElement144' has cardinality 0..*, and from 'libraryElement_Value', the role 'libraryElement_Value' has cardinality 0..*.
+An association connects 'libraryElement_SystemConfiguration' and 'libraryElement_Device'. From 'libraryElement_SystemConfiguration', the role 'libraryElement_SystemConfiguration146' has cardinality 0..*, and from 'libraryElement_Device', the role 'libraryElement_Device' has cardinality 0..*.
+An association connects 'libraryElement_Segment' and 'libraryElement_SystemConfiguration'. From 'libraryElement_Segment', the role 'libraryElement_Segment149' has cardinality 0..*, and from 'libraryElement_SystemConfiguration', the role 'libraryElement_SystemConfiguration148' has cardinality 0..*.
+An association connects 'libraryElement_SystemConfiguration' and 'libraryElement_Link'. From 'libraryElement_SystemConfiguration', the role 'libraryElement_SystemConfiguration151' has cardinality 0..*, and from 'libraryElement_Link', the role 'libraryElement_Link' has cardinality 0..*.
+An association connects 'libraryElement_Annotation' and 'libraryElement_I4DIACElement'. From 'libraryElement_Annotation', the role 'libraryElement_Annotation' has cardinality 0..*, and from 'libraryElement_I4DIACElement', the role 'libraryElement_I4DIACElement' has cardinality 0..*.
+An association connects 'libraryElement_SegmentType' and 'libraryElement_VarDeclaration'. From 'libraryElement_SegmentType', the role 'libraryElement_SegmentType' has cardinality 0..*, and from 'libraryElement_VarDeclaration', the role 'libraryElement_VarDeclaration154' has cardinality 0..*.
+An association connects 'libraryElement_AdapterType' and 'libraryElement_AdapterFBType'. From 'libraryElement_AdapterType', the role 'libraryElement_AdapterType157' has cardinality 0..*, and from 'libraryElement_AdapterFBType', the role 'libraryElement_AdapterFBType156' has cardinality 0..*.
+An association connects 'libraryElement_AdapterEvent' and 'libraryElement_AdapterDeclaration'. From 'libraryElement_AdapterEvent', the role 'libraryElement_AdapterEvent' has cardinality 0..*, and from 'libraryElement_AdapterDeclaration', the role 'libraryElement_AdapterDeclaration159' has cardinality 0..*.
+An association connects 'libraryElement_ServiceInterface' and 'libraryElement_Service'. From 'libraryElement_ServiceInterface', the role 'libraryElement_ServiceInterface' has cardinality 0..*, and from 'libraryElement_Service', the role 'libraryElement_Service161' has cardinality 0..*.
+An association connects 'libraryElement_Service' and 'libraryElement_ServiceInterface'. From 'libraryElement_Service', the role 'libraryElement_Service163' has cardinality 0..*, and from 'libraryElement_ServiceInterface', the role 'libraryElement_ServiceInterface164' has cardinality 0..*.
+An association connects 'libraryElement_Service' and 'libraryElement_ServiceSequence'. From 'libraryElement_Service', the role 'libraryElement_Service166' has cardinality 0..*, and from 'libraryElement_ServiceSequence', the role 'libraryElement_ServiceSequence167' has cardinality 0..*.
+An association connects 'libraryElement_TypedConfigureableObject' and 'libraryElement_PaletteEntry'. From 'libraryElement_TypedConfigureableObject', the role 'libraryElement_TypedConfigureableObject' has cardinality 0..*, and from 'libraryElement_PaletteEntry', the role 'libraryElement_PaletteEntry' has cardinality 0..*.
+An association connects 'libraryElement_AdapterDeclaration' and 'libraryElement_AdapterFB'. From 'libraryElement_AdapterDeclaration', the role 'AdapterDeclaration' has cardinality 0..*, and from 'libraryElement_AdapterFB', the role 'adapterFB' has cardinality 0..*.
+An association connects 'libraryElement_ServiceInterface' and 'libraryElement_Primitive'. From 'libraryElement_ServiceInterface', the role 'libraryElement_ServiceInterface171' has cardinality 0..*, and from 'libraryElement_Primitive', the role 'libraryElement_Primitive' has cardinality 0..*.
+An association connects 'libraryElement_Color' and 'libraryElement_ColorizableElement'. From 'libraryElement_Color', the role 'libraryElement_Color' has cardinality 0..*, and from 'libraryElement_ColorizableElement', the role 'libraryElement_ColorizableElement' has cardinality 0..*.
+An association connects 'libraryElement_IVarElement' and 'libraryElement_VarDeclaration'. From 'libraryElement_IVarElement', the role 'libraryElement_IVarElement' has cardinality 0..*, and from 'libraryElement_VarDeclaration', the role 'libraryElement_VarDeclaration174' has cardinality 0..*.

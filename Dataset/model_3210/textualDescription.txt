@@ -1,0 +1,257 @@
+The domain model 'game' describes the core structural elements and their relationships within the system.
+
+The model defines 54 main class(es).
+
+'Addable' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Multipliable' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Collection' represents an important domain concept.
+It does not declare any attributes.
+
+'game_LogicalNot' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'game_Atom' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Orable' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Join' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Comparable' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Cardinal' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Type' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'valueType', which is of type bool; 'namespace', which is of type str.
+
+'game_Brackets' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Comparison' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'game_Subprocess' represents an important domain concept.
+It does not declare any attributes.
+
+'Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Call' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'game_Equality' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Index' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'game_ImplicitSet' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Cell' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Query' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Equatable' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Forall' represents an important domain concept.
+It does not declare any attributes.
+
+'game_SetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'game_System' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Multipliable' represents an important domain concept.
+It does not declare any attributes.
+
+'Orable' represents an important domain concept.
+It does not declare any attributes.
+
+'Atom' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Setable' represents an important domain concept.
+It does not declare any attributes.
+
+'Andable' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'Comparable' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Andable' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Multiplication' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'game_Access' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'kind', which is of type str.
+
+'game_Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Addable' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'Equatable' represents an important domain concept.
+It does not declare any attributes.
+
+'game_And' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Addition' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'game_End' represents an important domain concept.
+It does not declare any attributes.
+
+'game_Game' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'version', which is of type str.
+
+'game_ComponentData' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Setable' represents an important domain concept.
+It does not declare any attributes.
+
+'Collection' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MultiplicativeKind' defines the following possible values: 'multiply', 'remainder', 'divide'.
+The enumeration 'EqualityKind' defines the following possible values: 'equal', 'notEqual'.
+The enumeration 'AccessKind' defines the following possible values: 'write', 'exist', 'read'.
+The enumeration 'ComparisonKind' defines the following possible values: 'lower', 'greaterOrEqual', 'greater', 'lowerOrEqual'.
+The enumeration 'AdditiveKind' defines the following possible values: 'add', 'subtract'.
+
+The model also captures inheritance relationships between classes.
+The class 'game_Selection' is a specialization of 'Statement'.
+The class 'game_Iteration' is a specialization of 'Statement'.
+The class 'game_Forall' is a specialization of 'Statement'.
+The class 'game_Assignment' is a specialization of 'Statement'.
+The class 'game_Subprocess' is a specialization of 'Statement'.
+The class 'game_Orable' is a specialization of 'Expression'.
+The class 'game_Andable' is a specialization of 'Orable'.
+The class 'game_Equatable' is a specialization of 'Andable'.
+The class 'game_Comparable' is a specialization of 'Equatable'.
+The class 'game_Addable' is a specialization of 'Comparable'.
+The class 'game_Multipliable' is a specialization of 'Addable'.
+The class 'game_Setable' is a specialization of 'Multipliable'.
+The class 'game_Or' is a specialization of 'Orable'.
+The class 'game_And' is a specialization of 'Andable'.
+The class 'game_Equality' is a specialization of 'Equatable'.
+The class 'game_Comparison' is a specialization of 'Comparable'.
+The class 'game_Addition' is a specialization of 'Addable'.
+The class 'game_Multiplication' is a specialization of 'Multipliable'.
+The class 'game_SetExpression' is a specialization of 'Setable'.
+The class 'game_Primary' is a specialization of 'Setable'.
+The class 'game_Call' is a specialization of 'Primary'.
+The class 'game_LogicalNot' is a specialization of 'Primary'.
+The class 'game_Cardinal' is a specialization of 'Primary'.
+The class 'game_Collection' is a specialization of 'Primary'.
+The class 'game_Brackets' is a specialization of 'Collection'.
+The class 'game_Join' is a specialization of 'Collection'.
+The class 'game_ImplicitSet' is a specialization of 'Collection'.
+The class 'game_Atom' is a specialization of 'Index'.
+The class 'game_Index' is a specialization of 'Primary'.
+The class 'game_Variable' is a specialization of 'Atom'.
+The class 'game_Cell' is a specialization of 'Atom'.
+
+Relationships between classes are modeled using associations.
+An association connects 'game_Game' and 'game_Type'. From 'game_Game', the role 'game_Game' has cardinality 0..*, and from 'game_Type', the role 'game_Type' has cardinality 0..*.
+An association connects 'game_Game' and 'game_System'. From 'game_Game', the role 'game_Game2' has cardinality 0..*, and from 'game_System', the role 'game_System' has cardinality 0..*.
+An association connects 'game_Game' and 'game_ComponentData'. From 'game_Game', the role 'game_Game4' has cardinality 0..*, and from 'game_ComponentData', the role 'game_ComponentData' has cardinality 0..*.
+An association connects 'game_End' and 'game_Game'. From 'game_End', the role 'game_End' has cardinality 0..*, and from 'game_Game', the role 'game_Game6' has cardinality 0..*.
+An association connects 'game_Function' and 'game_Game'. From 'game_Function', the role 'game_Function' has cardinality 0..*, and from 'game_Game', the role 'game_Game8' has cardinality 0..*.
+An association connects 'game_Function' and 'game_Type'. From 'game_Function', the role 'game_Function10' has cardinality 0..*, and from 'game_Type', the role 'game_Type11' has cardinality 0..*.
+An association connects 'game_Function' and 'game_Statement'. From 'game_Function', the role 'game_Function13' has cardinality 0..*, and from 'game_Statement', the role 'game_Statement' has cardinality 0..*.
+An association connects 'game_Type' and 'game_ComponentData'. From 'game_Type', the role 'game_Type16' has cardinality 0..*, and from 'game_ComponentData', the role 'game_ComponentData15' has cardinality 0..*.
+An association connects 'game_Statement' and 'game_System'. From 'game_Statement', the role 'game_Statement19' has cardinality 0..*, and from 'game_System', the role 'game_System18' has cardinality 0..*.
+An association connects 'game_System' and 'game_Query'. From 'game_System', the role 'game_System21' has cardinality 0..*, and from 'game_Query', the role 'game_Query' has cardinality 0..*.
+An association connects 'game_Access' and 'game_Query'. From 'game_Access', the role 'game_Access' has cardinality 0..*, and from 'game_Query', the role 'game_Query23' has cardinality 0..*.
+An association connects 'game_Expression' and 'game_Selection'. From 'game_Expression', the role 'game_Expression' has cardinality 0..*, and from 'game_Selection', the role 'game_Selection' has cardinality 0..*.
+An association connects 'game_Selection' and 'game_Statement'. From 'game_Selection', the role 'game_Selection26' has cardinality 0..*, and from 'game_Statement', the role 'game_Statement27' has cardinality 0..*.
+An association connects 'game_Selection' and 'game_Statement'. From 'game_Selection', the role 'game_Selection29' has cardinality 0..*, and from 'game_Statement', the role 'game_Statement30' has cardinality 0..*.
+An association connects 'game_Iteration' and 'game_Expression'. From 'game_Iteration', the role 'game_Iteration' has cardinality 0..*, and from 'game_Expression', the role 'game_Expression32' has cardinality 0..*.
+An association connects 'game_Iteration' and 'game_Statement'. From 'game_Iteration', the role 'game_Iteration34' has cardinality 0..*, and from 'game_Statement', the role 'game_Statement35' has cardinality 0..*.
+An association connects 'game_Expression' and 'game_Forall'. From 'game_Expression', the role 'game_Expression37' has cardinality 0..*, and from 'game_Forall', the role 'game_Forall' has cardinality 0..*.
+An association connects 'game_Statement' and 'game_Forall'. From 'game_Statement', the role 'game_Statement40' has cardinality 0..*, and from 'game_Forall', the role 'game_Forall39' has cardinality 0..*.
+An association connects 'game_Forall' and 'game_Variable'. From 'game_Forall', the role 'game_Forall42' has cardinality 0..*, and from 'game_Variable', the role 'game_Variable' has cardinality 0..*.
+An association connects 'game_Expression' and 'game_Assignment'. From 'game_Expression', the role 'game_Expression44' has cardinality 0..*, and from 'game_Assignment', the role 'game_Assignment' has cardinality 0..*.
+An association connects 'game_Assignment' and 'game_Expression'. From 'game_Assignment', the role 'game_Assignment46' has cardinality 0..*, and from 'game_Expression', the role 'game_Expression47' has cardinality 0..*.
+An association connects 'game_Subprocess' and 'game_Call'. From 'game_Subprocess', the role 'game_Subprocess' has cardinality 0..*, and from 'game_Call', the role 'game_Call' has cardinality 0..*.
+An association connects 'game_Expression' and 'game_Type'. From 'game_Expression', the role 'game_Expression50' has cardinality 0..*, and from 'game_Type', the role 'game_Type51' has cardinality 0..*.
+An association connects 'game_Or' and 'game_Orable'. From 'game_Or', the role 'game_Or' has cardinality 0..*, and from 'game_Orable', the role 'game_Orable' has cardinality 0..*.
+An association connects 'game_Or' and 'game_Andable'. From 'game_Or', the role 'game_Or54' has cardinality 0..*, and from 'game_Andable', the role 'game_Andable' has cardinality 0..*.
+An association connects 'game_And' and 'game_Andable'. From 'game_And', the role 'game_And' has cardinality 0..*, and from 'game_Andable', the role 'game_Andable56' has cardinality 0..*.
+An association connects 'game_And' and 'game_Equatable'. From 'game_And', the role 'game_And58' has cardinality 0..*, and from 'game_Equatable', the role 'game_Equatable' has cardinality 0..*.
+An association connects 'game_Equality' and 'game_Equatable'. From 'game_Equality', the role 'game_Equality' has cardinality 0..*, and from 'game_Equatable', the role 'game_Equatable60' has cardinality 0..*.
+An association connects 'game_Equality' and 'game_Comparable'. From 'game_Equality', the role 'game_Equality62' has cardinality 0..*, and from 'game_Comparable', the role 'game_Comparable' has cardinality 0..*.
+An association connects 'game_Comparison' and 'game_Comparable'. From 'game_Comparison', the role 'game_Comparison' has cardinality 0..*, and from 'game_Comparable', the role 'game_Comparable64' has cardinality 0..*.
+An association connects 'game_Addable' and 'game_Comparison'. From 'game_Addable', the role 'game_Addable' has cardinality 0..*, and from 'game_Comparison', the role 'game_Comparison66' has cardinality 0..*.
+An association connects 'game_Addition' and 'game_Addable'. From 'game_Addition', the role 'game_Addition' has cardinality 0..*, and from 'game_Addable', the role 'game_Addable68' has cardinality 0..*.
+An association connects 'game_Multipliable' and 'game_Addition'. From 'game_Multipliable', the role 'game_Multipliable' has cardinality 0..*, and from 'game_Addition', the role 'game_Addition70' has cardinality 0..*.
+An association connects 'game_Multiplication' and 'game_Multipliable'. From 'game_Multiplication', the role 'game_Multiplication' has cardinality 0..*, and from 'game_Multipliable', the role 'game_Multipliable72' has cardinality 0..*.
+An association connects 'game_Setable' and 'game_Multiplication'. From 'game_Setable', the role 'game_Setable' has cardinality 0..*, and from 'game_Multiplication', the role 'game_Multiplication74' has cardinality 0..*.
+An association connects 'game_Setable' and 'game_SetExpression'. From 'game_Setable', the role 'game_Setable76' has cardinality 0..*, and from 'game_SetExpression', the role 'game_SetExpression' has cardinality 0..*.
+An association connects 'game_SetExpression' and 'game_Primary'. From 'game_SetExpression', the role 'game_SetExpression78' has cardinality 0..*, and from 'game_Primary', the role 'game_Primary' has cardinality 0..*.
+An association connects 'game_Call' and 'game_Expression'. From 'game_Call', the role 'game_Call80' has cardinality 0..*, and from 'game_Expression', the role 'game_Expression81' has cardinality 0..*.
+An association connects 'game_LogicalNot' and 'game_Primary'. From 'game_LogicalNot', the role 'game_LogicalNot' has cardinality 0..*, and from 'game_Primary', the role 'game_Primary83' has cardinality 0..*.
+An association connects 'game_Primary' and 'game_Cardinal'. From 'game_Primary', the role 'game_Primary85' has cardinality 0..*, and from 'game_Cardinal', the role 'game_Cardinal' has cardinality 0..*.
+An association connects 'game_Brackets' and 'game_Expression'. From 'game_Brackets', the role 'game_Brackets' has cardinality 0..*, and from 'game_Expression', the role 'game_Expression87' has cardinality 0..*.
+An association connects 'game_Join' and 'game_Expression'. From 'game_Join', the role 'game_Join' has cardinality 0..*, and from 'game_Expression', the role 'game_Expression89' has cardinality 0..*.
+An association connects 'game_Expression' and 'game_ImplicitSet'. From 'game_Expression', the role 'game_Expression91' has cardinality 0..*, and from 'game_ImplicitSet', the role 'game_ImplicitSet' has cardinality 0..*.
+An association connects 'game_Variable' and 'game_ImplicitSet'. From 'game_Variable', the role 'game_Variable94' has cardinality 0..*, and from 'game_ImplicitSet', the role 'game_ImplicitSet93' has cardinality 0..*.
+An association connects 'game_Expression' and 'game_Atom'. From 'game_Expression', the role 'game_Expression96' has cardinality 0..*, and from 'game_Atom', the role 'game_Atom' has cardinality 0..*.
+An association connects 'game_Index' and 'game_Atom'. From 'game_Index', the role 'game_Index' has cardinality 0..*, and from 'game_Atom', the role 'game_Atom98' has cardinality 0..*.
+An association connects 'game_Expression' and 'game_Index'. From 'game_Expression', the role 'game_Expression101' has cardinality 0..*, and from 'game_Index', the role 'game_Index100' has cardinality 0..*.
+An association connects 'game_Cell' and 'game_Variable'. From 'game_Cell', the role 'game_Cell' has cardinality 0..*, and from 'game_Variable', the role 'game_Variable103' has cardinality 0..*.
+An association connects 'game_Cell' and 'game_Variable'. From 'game_Cell', the role 'game_Cell105' has cardinality 0..*, and from 'game_Variable', the role 'game_Variable106' has cardinality 0..*.
+An association connects 'game_Type' and 'game_Type'. From 'game_Type', the role 'game_Type107' has cardinality 0..*, and from 'game_Type', the role 'game_Type109' has cardinality 0..*.

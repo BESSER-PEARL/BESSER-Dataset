@@ -1,0 +1,266 @@
+The domain model 'simpleJava' describes the core structural elements and their relationships within the system.
+
+The model defines 51 main class(es).
+
+'simpleJava_aux' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_method_declaration' represents an important domain concept.
+It has one attribute: 'nomeMetodo', which is of type str.
+
+'simpleJava_type' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_creating_aux' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_MODIFIER' represents an important domain concept.
+It has one attribute: 'modificador', which is of type str.
+
+'simpleJava_exp_aux' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_for_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_parameter' represents an important domain concept.
+It has one attribute: 'nomeParametro', which is of type str.
+
+'simpleJava_newBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'expression' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_logical_expression' represents an important domain concept.
+It has one attribute: 'operador', which is of type str.
+
+'exp_aux' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_variable_declarator' represents an important domain concept.
+It has the following attributes: 'op', which is of type str; 'nomeVariavel', which is of type str.
+
+'simpleJava_if_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_expression' represents an important domain concept.
+It has one attribute: 'identificador', which is of type str.
+
+'simpleJava_statement' represents an important domain concept.
+It has the following attributes: 'break', which is of type str; 'continue', which is of type str.
+
+'type_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_try_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_expression_aux' represents an important domain concept.
+It has one attribute: 'operador', which is of type str.
+
+'simpleJava_numeric_expression' represents an important domain concept.
+It has one attribute: 'operador', which is of type str.
+
+'simpleJava_bit_expression' represents an important domain concept.
+It has one attribute: 'operador', which is of type str.
+
+'simpleJava_package_name_aux' represents an important domain concept.
+It has one attribute: 'nomePacote', which is of type str.
+
+'simpleJava_while_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_type_specifier' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'simpleJava_variable_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_import_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_statement_block' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_class_declaration' represents an important domain concept.
+It has one attribute: 'nomeClasse', which is of type str.
+
+'simpleJava_arglist' represents an important domain concept.
+It has one attribute: 'nomeParametro', which is of type str.
+
+'simpleJava_do_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'newBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_doc_comment' represents an important domain concept.
+It has one attribute: 'comentario', which is of type str.
+
+'creating_aux' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_creating_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_literal_expression' represents an important domain concept.
+It has the following attributes: 'l_float', which is of type str; 'inteiro', which is of type str; 'decimal', which is of type str; 'string', which is of type str.
+
+'simpleJava_constructor_declaration' represents an important domain concept.
+It has one attribute: 'nomeContrutor', which is of type str.
+
+'simpleJava_parameter_list' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_compilation_unit' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_switch_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_aux' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_mais_aux' represents an important domain concept.
+It has one attribute: 'operador', which is of type str.
+
+'simpleJava_static_initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_package_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_variable_initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'variable_declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_type_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleJava_interface_declaration' represents an important domain concept.
+It has one attribute: 'nomeInterface', which is of type str.
+
+'simpleJava_name' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'simpleJava_field_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleJava_compilation_unit' is a specialization of 'Model'.
+The class 'simpleJava_doc_comment' is a specialization of 'type_declaration'.
+The class 'simpleJava_constructor_declaration' is a specialization of 'newBlock'.
+The class 'simpleJava_exp_aux' is a specialization of 'expression'.
+The class 'simpleJava_expression' is a specialization of 'expression_aux'.
+The class 'simpleJava_aux' is a specialization of 'expression_aux'.
+The class 'simpleJava_aux' is a specialization of 'creating_aux'.
+The class 'simpleJava_arglist' is a specialization of 'variable_declarator'.
+The class 'simpleJava_name' is a specialization of 'expression_aux'.
+The class 'simpleJava_type' is a specialization of 'exp_aux'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleJava_compilation_unit' and 'simpleJava_package_statement'. From 'simpleJava_compilation_unit', the role 'simpleJava_compilation_unit' has cardinality 0..*, and from 'simpleJava_package_statement', the role 'simpleJava_package_statement' has cardinality 0..*.
+An association connects 'simpleJava_compilation_unit' and 'simpleJava_import_statement'. From 'simpleJava_compilation_unit', the role 'simpleJava_compilation_unit2' has cardinality 0..*, and from 'simpleJava_import_statement', the role 'simpleJava_import_statement' has cardinality 0..*.
+An association connects 'simpleJava_compilation_unit' and 'simpleJava_type_declaration'. From 'simpleJava_compilation_unit', the role 'simpleJava_compilation_unit4' has cardinality 0..*, and from 'simpleJava_type_declaration', the role 'simpleJava_type_declaration' has cardinality 0..*.
+An association connects 'simpleJava_name' and 'simpleJava_package_statement'. From 'simpleJava_name', the role 'simpleJava_name' has cardinality 0..*, and from 'simpleJava_package_statement', the role 'simpleJava_package_statement6' has cardinality 0..*.
+An association connects 'simpleJava_import_statement' and 'simpleJava_name'. From 'simpleJava_import_statement', the role 'simpleJava_import_statement8' has cardinality 0..*, and from 'simpleJava_name', the role 'simpleJava_name9' has cardinality 0..*.
+An association connects 'simpleJava_type_declaration' and 'simpleJava_class_declaration'. From 'simpleJava_type_declaration', the role 'simpleJava_type_declaration11' has cardinality 0..*, and from 'simpleJava_class_declaration', the role 'simpleJava_class_declaration' has cardinality 0..*.
+An association connects 'simpleJava_interface_declaration' and 'simpleJava_type_declaration'. From 'simpleJava_interface_declaration', the role 'simpleJava_interface_declaration' has cardinality 0..*, and from 'simpleJava_type_declaration', the role 'simpleJava_type_declaration13' has cardinality 0..*.
+An association connects 'simpleJava_MODIFIER' and 'simpleJava_class_declaration'. From 'simpleJava_MODIFIER', the role 'simpleJava_MODIFIER' has cardinality 0..*, and from 'simpleJava_class_declaration', the role 'simpleJava_class_declaration15' has cardinality 0..*.
+An association connects 'simpleJava_class_declaration' and 'simpleJava_name'. From 'simpleJava_class_declaration', the role 'simpleJava_class_declaration17' has cardinality 0..*, and from 'simpleJava_name', the role 'simpleJava_name18' has cardinality 0..*.
+An association connects 'simpleJava_name' and 'simpleJava_class_declaration'. From 'simpleJava_name', the role 'simpleJava_name21' has cardinality 0..*, and from 'simpleJava_class_declaration', the role 'simpleJava_class_declaration20' has cardinality 0..*.
+An association connects 'simpleJava_field_declaration' and 'simpleJava_class_declaration'. From 'simpleJava_field_declaration', the role 'simpleJava_field_declaration' has cardinality 0..*, and from 'simpleJava_class_declaration', the role 'simpleJava_class_declaration23' has cardinality 0..*.
+An association connects 'simpleJava_class_declaration' and 'simpleJava_class_declaration'. From 'simpleJava_class_declaration', the role 'simpleJava_class_declaration26' has cardinality 0..*, and from 'simpleJava_class_declaration', the role 'simpleJava_class_declaration24' has cardinality 0..*.
+An association connects 'simpleJava_interface_declaration' and 'simpleJava_MODIFIER'. From 'simpleJava_interface_declaration', the role 'simpleJava_interface_declaration28' has cardinality 0..*, and from 'simpleJava_MODIFIER', the role 'simpleJava_MODIFIER29' has cardinality 0..*.
+An association connects 'simpleJava_name' and 'simpleJava_interface_declaration'. From 'simpleJava_name', the role 'simpleJava_name32' has cardinality 0..*, and from 'simpleJava_interface_declaration', the role 'simpleJava_interface_declaration31' has cardinality 0..*.
+An association connects 'simpleJava_interface_declaration' and 'simpleJava_field_declaration'. From 'simpleJava_interface_declaration', the role 'simpleJava_interface_declaration34' has cardinality 0..*, and from 'simpleJava_field_declaration', the role 'simpleJava_field_declaration35' has cardinality 0..*.
+An association connects 'simpleJava_field_declaration' and 'simpleJava_doc_comment'. From 'simpleJava_field_declaration', the role 'simpleJava_field_declaration37' has cardinality 0..*, and from 'simpleJava_doc_comment', the role 'simpleJava_doc_comment' has cardinality 0..*.
+An association connects 'simpleJava_method_declaration' and 'simpleJava_field_declaration'. From 'simpleJava_method_declaration', the role 'simpleJava_method_declaration' has cardinality 0..*, and from 'simpleJava_field_declaration', the role 'simpleJava_field_declaration39' has cardinality 0..*.
+An association connects 'simpleJava_constructor_declaration' and 'simpleJava_field_declaration'. From 'simpleJava_constructor_declaration', the role 'simpleJava_constructor_declaration' has cardinality 0..*, and from 'simpleJava_field_declaration', the role 'simpleJava_field_declaration41' has cardinality 0..*.
+An association connects 'simpleJava_field_declaration' and 'simpleJava_variable_declaration'. From 'simpleJava_field_declaration', the role 'simpleJava_field_declaration43' has cardinality 0..*, and from 'simpleJava_variable_declaration', the role 'simpleJava_variable_declaration' has cardinality 0..*.
+An association connects 'simpleJava_static_initializer' and 'simpleJava_field_declaration'. From 'simpleJava_static_initializer', the role 'simpleJava_static_initializer' has cardinality 0..*, and from 'simpleJava_field_declaration', the role 'simpleJava_field_declaration45' has cardinality 0..*.
+An association connects 'simpleJava_method_declaration' and 'simpleJava_MODIFIER'. From 'simpleJava_method_declaration', the role 'simpleJava_method_declaration47' has cardinality 0..*, and from 'simpleJava_MODIFIER', the role 'simpleJava_MODIFIER48' has cardinality 0..*.
+An association connects 'simpleJava_type' and 'simpleJava_method_declaration'. From 'simpleJava_type', the role 'simpleJava_type' has cardinality 0..*, and from 'simpleJava_method_declaration', the role 'simpleJava_method_declaration50' has cardinality 0..*.
+An association connects 'simpleJava_method_declaration' and 'simpleJava_parameter_list'. From 'simpleJava_method_declaration', the role 'simpleJava_method_declaration52' has cardinality 0..*, and from 'simpleJava_parameter_list', the role 'simpleJava_parameter_list' has cardinality 0..*.
+An association connects 'simpleJava_method_declaration' and 'simpleJava_statement_block'. From 'simpleJava_method_declaration', the role 'simpleJava_method_declaration54' has cardinality 0..*, and from 'simpleJava_statement_block', the role 'simpleJava_statement_block' has cardinality 0..*.
+An association connects 'simpleJava_parameter' and 'simpleJava_type'. From 'simpleJava_parameter', the role 'simpleJava_parameter' has cardinality 0..*, and from 'simpleJava_type', the role 'simpleJava_type56' has cardinality 0..*.
+An association connects 'simpleJava_parameter' and 'simpleJava_parameter_list'. From 'simpleJava_parameter', the role 'simpleJava_parameter59' has cardinality 0..*, and from 'simpleJava_parameter_list', the role 'simpleJava_parameter_list58' has cardinality 0..*.
+An association connects 'simpleJava_statement_block' and 'simpleJava_statement'. From 'simpleJava_statement_block', the role 'simpleJava_statement_block61' has cardinality 0..*, and from 'simpleJava_statement', the role 'simpleJava_statement' has cardinality 0..*.
+An association connects 'simpleJava_variable_declaration' and 'simpleJava_statement'. From 'simpleJava_variable_declaration', the role 'simpleJava_variable_declaration64' has cardinality 0..*, and from 'simpleJava_statement', the role 'simpleJava_statement63' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_expression'. From 'simpleJava_statement', the role 'simpleJava_statement66' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression' has cardinality 0..*.
+An association connects 'simpleJava_statement_block' and 'simpleJava_statement'. From 'simpleJava_statement_block', the role 'simpleJava_statement_block69' has cardinality 0..*, and from 'simpleJava_statement', the role 'simpleJava_statement68' has cardinality 0..*.
+An association connects 'simpleJava_if_statement' and 'simpleJava_statement'. From 'simpleJava_if_statement', the role 'simpleJava_if_statement' has cardinality 0..*, and from 'simpleJava_statement', the role 'simpleJava_statement71' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_do_statement'. From 'simpleJava_statement', the role 'simpleJava_statement73' has cardinality 0..*, and from 'simpleJava_do_statement', the role 'simpleJava_do_statement' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_while_statement'. From 'simpleJava_statement', the role 'simpleJava_statement75' has cardinality 0..*, and from 'simpleJava_while_statement', the role 'simpleJava_while_statement' has cardinality 0..*.
+An association connects 'simpleJava_for_statement' and 'simpleJava_statement'. From 'simpleJava_for_statement', the role 'simpleJava_for_statement' has cardinality 0..*, and from 'simpleJava_statement', the role 'simpleJava_statement77' has cardinality 0..*.
+An association connects 'simpleJava_try_statement' and 'simpleJava_statement'. From 'simpleJava_try_statement', the role 'simpleJava_try_statement' has cardinality 0..*, and from 'simpleJava_statement', the role 'simpleJava_statement79' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_switch_statement'. From 'simpleJava_statement', the role 'simpleJava_statement81' has cardinality 0..*, and from 'simpleJava_switch_statement', the role 'simpleJava_switch_statement' has cardinality 0..*.
+An association connects 'simpleJava_expression' and 'simpleJava_statement'. From 'simpleJava_expression', the role 'simpleJava_expression84' has cardinality 0..*, and from 'simpleJava_statement', the role 'simpleJava_statement83' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_statement'. From 'simpleJava_statement', the role 'simpleJava_statement85' has cardinality 0..*, and from 'simpleJava_statement', the role 'simpleJava_statement87' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_expression'. From 'simpleJava_statement', the role 'simpleJava_statement89' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression90' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_expression'. From 'simpleJava_statement', the role 'simpleJava_statement92' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression93' has cardinality 0..*.
+An association connects 'simpleJava_variable_declaration' and 'simpleJava_MODIFIER'. From 'simpleJava_variable_declaration', the role 'simpleJava_variable_declaration95' has cardinality 0..*, and from 'simpleJava_MODIFIER', the role 'simpleJava_MODIFIER96' has cardinality 0..*.
+An association connects 'simpleJava_type' and 'simpleJava_variable_declaration'. From 'simpleJava_type', the role 'simpleJava_type99' has cardinality 0..*, and from 'simpleJava_variable_declaration', the role 'simpleJava_variable_declaration98' has cardinality 0..*.
+An association connects 'simpleJava_variable_declaration' and 'simpleJava_variable_declarator'. From 'simpleJava_variable_declaration', the role 'simpleJava_variable_declaration101' has cardinality 0..*, and from 'simpleJava_variable_declarator', the role 'simpleJava_variable_declarator' has cardinality 0..*.
+An association connects 'simpleJava_statement_block' and 'simpleJava_variable_declaration'. From 'simpleJava_statement_block', the role 'simpleJava_statement_block104' has cardinality 0..*, and from 'simpleJava_variable_declaration', the role 'simpleJava_variable_declaration103' has cardinality 0..*.
+An association connects 'simpleJava_variable_initializer' and 'simpleJava_variable_declarator'. From 'simpleJava_variable_initializer', the role 'simpleJava_variable_initializer' has cardinality 0..*, and from 'simpleJava_variable_declarator', the role 'simpleJava_variable_declarator106' has cardinality 0..*.
+An association connects 'simpleJava_variable_initializer' and 'simpleJava_expression'. From 'simpleJava_variable_initializer', the role 'simpleJava_variable_initializer108' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression109' has cardinality 0..*.
+An association connects 'simpleJava_variable_initializer' and 'simpleJava_variable_initializer'. From 'simpleJava_variable_initializer', the role 'simpleJava_variable_initializer112' has cardinality 0..*, and from 'simpleJava_variable_initializer', the role 'simpleJava_variable_initializer110' has cardinality 0..*.
+An association connects 'simpleJava_if_statement' and 'simpleJava_expression'. From 'simpleJava_if_statement', the role 'simpleJava_if_statement114' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression115' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_if_statement'. From 'simpleJava_statement', the role 'simpleJava_statement118' has cardinality 0..*, and from 'simpleJava_if_statement', the role 'simpleJava_if_statement117' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_if_statement'. From 'simpleJava_statement', the role 'simpleJava_statement121' has cardinality 0..*, and from 'simpleJava_if_statement', the role 'simpleJava_if_statement120' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_do_statement'. From 'simpleJava_statement', the role 'simpleJava_statement124' has cardinality 0..*, and from 'simpleJava_do_statement', the role 'simpleJava_do_statement123' has cardinality 0..*.
+An association connects 'simpleJava_expression' and 'simpleJava_do_statement'. From 'simpleJava_expression', the role 'simpleJava_expression127' has cardinality 0..*, and from 'simpleJava_do_statement', the role 'simpleJava_do_statement126' has cardinality 0..*.
+An association connects 'simpleJava_while_statement' and 'simpleJava_expression'. From 'simpleJava_while_statement', the role 'simpleJava_while_statement129' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression130' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_while_statement'. From 'simpleJava_statement', the role 'simpleJava_statement133' has cardinality 0..*, and from 'simpleJava_while_statement', the role 'simpleJava_while_statement132' has cardinality 0..*.
+An association connects 'simpleJava_variable_declaration' and 'simpleJava_for_statement'. From 'simpleJava_variable_declaration', the role 'simpleJava_variable_declaration136' has cardinality 0..*, and from 'simpleJava_for_statement', the role 'simpleJava_for_statement135' has cardinality 0..*.
+An association connects 'simpleJava_for_statement' and 'simpleJava_expression'. From 'simpleJava_for_statement', the role 'simpleJava_for_statement138' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression139' has cardinality 0..*.
+An association connects 'simpleJava_expression' and 'simpleJava_for_statement'. From 'simpleJava_expression', the role 'simpleJava_expression142' has cardinality 0..*, and from 'simpleJava_for_statement', the role 'simpleJava_for_statement141' has cardinality 0..*.
+An association connects 'simpleJava_expression' and 'simpleJava_for_statement'. From 'simpleJava_expression', the role 'simpleJava_expression145' has cardinality 0..*, and from 'simpleJava_for_statement', the role 'simpleJava_for_statement144' has cardinality 0..*.
+An association connects 'simpleJava_statement' and 'simpleJava_for_statement'. From 'simpleJava_statement', the role 'simpleJava_statement148' has cardinality 0..*, and from 'simpleJava_for_statement', the role 'simpleJava_for_statement147' has cardinality 0..*.
+An association connects 'simpleJava_statement_block' and 'simpleJava_try_statement'. From 'simpleJava_statement_block', the role 'simpleJava_statement_block151' has cardinality 0..*, and from 'simpleJava_try_statement', the role 'simpleJava_try_statement150' has cardinality 0..*.
+An association connects 'simpleJava_try_statement' and 'simpleJava_parameter'. From 'simpleJava_try_statement', the role 'simpleJava_try_statement153' has cardinality 0..*, and from 'simpleJava_parameter', the role 'simpleJava_parameter154' has cardinality 0..*.
+An association connects 'simpleJava_statement_block' and 'simpleJava_try_statement'. From 'simpleJava_statement_block', the role 'simpleJava_statement_block157' has cardinality 0..*, and from 'simpleJava_try_statement', the role 'simpleJava_try_statement156' has cardinality 0..*.
+An association connects 'simpleJava_try_statement' and 'simpleJava_statement_block'. From 'simpleJava_try_statement', the role 'simpleJava_try_statement159' has cardinality 0..*, and from 'simpleJava_statement_block', the role 'simpleJava_statement_block160' has cardinality 0..*.
+An association connects 'simpleJava_switch_statement' and 'simpleJava_expression'. From 'simpleJava_switch_statement', the role 'simpleJava_switch_statement162' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression163' has cardinality 0..*.
+An association connects 'simpleJava_switch_statement' and 'simpleJava_expression'. From 'simpleJava_switch_statement', the role 'simpleJava_switch_statement165' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression166' has cardinality 0..*.
+An association connects 'simpleJava_switch_statement' and 'simpleJava_statement'. From 'simpleJava_switch_statement', the role 'simpleJava_switch_statement168' has cardinality 0..*, and from 'simpleJava_statement', the role 'simpleJava_statement169' has cardinality 0..*.
+An association connects 'simpleJava_MODIFIER' and 'simpleJava_constructor_declaration'. From 'simpleJava_MODIFIER', the role 'simpleJava_MODIFIER172' has cardinality 0..*, and from 'simpleJava_constructor_declaration', the role 'simpleJava_constructor_declaration171' has cardinality 0..*.
+An association connects 'simpleJava_constructor_declaration' and 'simpleJava_parameter_list'. From 'simpleJava_constructor_declaration', the role 'simpleJava_constructor_declaration174' has cardinality 0..*, and from 'simpleJava_parameter_list', the role 'simpleJava_parameter_list175' has cardinality 0..*.
+An association connects 'simpleJava_statement_block' and 'simpleJava_constructor_declaration'. From 'simpleJava_statement_block', the role 'simpleJava_statement_block178' has cardinality 0..*, and from 'simpleJava_constructor_declaration', the role 'simpleJava_constructor_declaration177' has cardinality 0..*.
+An association connects 'simpleJava_static_initializer' and 'simpleJava_statement_block'. From 'simpleJava_static_initializer', the role 'simpleJava_static_initializer180' has cardinality 0..*, and from 'simpleJava_statement_block', the role 'simpleJava_statement_block181' has cardinality 0..*.
+An association connects 'simpleJava_creating_expression' and 'simpleJava_name'. From 'simpleJava_creating_expression', the role 'simpleJava_creating_expression' has cardinality 0..*, and from 'simpleJava_name', the role 'simpleJava_name183' has cardinality 0..*.
+An association connects 'simpleJava_creating_aux' and 'simpleJava_creating_expression'. From 'simpleJava_creating_aux', the role 'simpleJava_creating_aux' has cardinality 0..*, and from 'simpleJava_creating_expression', the role 'simpleJava_creating_expression185' has cardinality 0..*.
+An association connects 'simpleJava_type_specifier' and 'simpleJava_creating_expression'. From 'simpleJava_type_specifier', the role 'simpleJava_type_specifier' has cardinality 0..*, and from 'simpleJava_creating_expression', the role 'simpleJava_creating_expression187' has cardinality 0..*.
+An association connects 'simpleJava_expression' and 'simpleJava_creating_expression'. From 'simpleJava_expression', the role 'simpleJava_expression190' has cardinality 0..*, and from 'simpleJava_creating_expression', the role 'simpleJava_creating_expression189' has cardinality 0..*.
+An association connects 'simpleJava_creating_expression' and 'simpleJava_newBlock'. From 'simpleJava_creating_expression', the role 'simpleJava_creating_expression192' has cardinality 0..*, and from 'simpleJava_newBlock', the role 'simpleJava_newBlock' has cardinality 0..*.
+An association connects 'simpleJava_exp_aux' and 'simpleJava_expression'. From 'simpleJava_exp_aux', the role 'simpleJava_exp_aux' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression194' has cardinality 0..*.
+An association connects 'simpleJava_expression' and 'simpleJava_logical_expression'. From 'simpleJava_expression', the role 'simpleJava_expression196' has cardinality 0..*, and from 'simpleJava_logical_expression', the role 'simpleJava_logical_expression' has cardinality 0..*.
+An association connects 'simpleJava_expression' and 'simpleJava_numeric_expression'. From 'simpleJava_expression', the role 'simpleJava_expression198' has cardinality 0..*, and from 'simpleJava_numeric_expression', the role 'simpleJava_numeric_expression' has cardinality 0..*.
+An association connects 'simpleJava_bit_expression' and 'simpleJava_expression'. From 'simpleJava_bit_expression', the role 'simpleJava_bit_expression' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression200' has cardinality 0..*.
+An association connects 'simpleJava_expression' and 'simpleJava_creating_expression'. From 'simpleJava_expression', the role 'simpleJava_expression202' has cardinality 0..*, and from 'simpleJava_creating_expression', the role 'simpleJava_creating_expression203' has cardinality 0..*.
+An association connects 'simpleJava_literal_expression' and 'simpleJava_expression'. From 'simpleJava_literal_expression', the role 'simpleJava_literal_expression' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression205' has cardinality 0..*.
+An association connects 'simpleJava_arglist' and 'simpleJava_expression_aux'. From 'simpleJava_arglist', the role 'simpleJava_arglist' has cardinality 0..*, and from 'simpleJava_expression_aux', the role 'simpleJava_expression_aux' has cardinality 0..*.
+An association connects 'simpleJava_expression_aux' and 'simpleJava_expression'. From 'simpleJava_expression_aux', the role 'simpleJava_expression_aux208' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression209' has cardinality 0..*.
+An association connects 'simpleJava_expression_aux' and 'simpleJava_mais_aux'. From 'simpleJava_expression_aux', the role 'simpleJava_expression_aux211' has cardinality 0..*, and from 'simpleJava_mais_aux', the role 'simpleJava_mais_aux' has cardinality 0..*.
+An association connects 'simpleJava_expression_aux' and 'simpleJava_expression_aux'. From 'simpleJava_expression_aux', the role 'simpleJava_expression_aux214' has cardinality 0..*, and from 'simpleJava_expression_aux', the role 'simpleJava_expression_aux212' has cardinality 0..*.
+An association connects 'simpleJava_arglist' and 'simpleJava_creating_aux'. From 'simpleJava_arglist', the role 'simpleJava_arglist217' has cardinality 0..*, and from 'simpleJava_creating_aux', the role 'simpleJava_creating_aux216' has cardinality 0..*.
+An association connects 'simpleJava_aux' and 'simpleJava_expression'. From 'simpleJava_aux', the role 'simpleJava_aux' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression219' has cardinality 0..*.
+An association connects 'simpleJava_expression' and 'simpleJava_logical_expression'. From 'simpleJava_expression', the role 'simpleJava_expression222' has cardinality 0..*, and from 'simpleJava_logical_expression', the role 'simpleJava_logical_expression221' has cardinality 0..*.
+An association connects 'simpleJava_expression' and 'simpleJava_bit_expression'. From 'simpleJava_expression', the role 'simpleJava_expression225' has cardinality 0..*, and from 'simpleJava_bit_expression', the role 'simpleJava_bit_expression224' has cardinality 0..*.
+An association connects 'simpleJava_numeric_expression' and 'simpleJava_expression'. From 'simpleJava_numeric_expression', the role 'simpleJava_numeric_expression227' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression228' has cardinality 0..*.
+An association connects 'simpleJava_arglist' and 'simpleJava_expression'. From 'simpleJava_arglist', the role 'simpleJava_arglist230' has cardinality 0..*, and from 'simpleJava_expression', the role 'simpleJava_expression231' has cardinality 0..*.
+An association connects 'simpleJava_type' and 'simpleJava_arglist'. From 'simpleJava_type', the role 'simpleJava_type234' has cardinality 0..*, and from 'simpleJava_arglist', the role 'simpleJava_arglist233' has cardinality 0..*.
+An association connects 'simpleJava_name' and 'simpleJava_package_name_aux'. From 'simpleJava_name', the role 'simpleJava_name236' has cardinality 0..*, and from 'simpleJava_package_name_aux', the role 'simpleJava_package_name_aux' has cardinality 0..*.
+An association connects 'simpleJava_package_name_aux' and 'simpleJava_package_name_aux'. From 'simpleJava_package_name_aux', the role 'simpleJava_package_name_aux239' has cardinality 0..*, and from 'simpleJava_package_name_aux', the role 'simpleJava_package_name_aux237' has cardinality 0..*.
+An association connects 'simpleJava_type' and 'simpleJava_type_specifier'. From 'simpleJava_type', the role 'simpleJava_type241' has cardinality 0..*, and from 'simpleJava_type_specifier', the role 'simpleJava_type_specifier242' has cardinality 0..*.
+An association connects 'simpleJava_name' and 'simpleJava_type'. From 'simpleJava_name', the role 'simpleJava_name245' has cardinality 0..*, and from 'simpleJava_type', the role 'simpleJava_type244' has cardinality 0..*.

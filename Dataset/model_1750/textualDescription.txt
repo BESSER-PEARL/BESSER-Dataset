@@ -1,0 +1,54 @@
+The domain model 'libraryinteractionmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'libraryinteractionmodel_Client' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'name', which is of type str.
+
+'libraryinteractionmodel_Books' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryinteractionmodel_Reservation' represents an important domain concept.
+It has the following attributes: 'to', which is of type date; 'from', which is of type date.
+
+'libraryinteractionmodel_Book' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'isbn', which is of type str.
+
+'libraryinteractionmodel_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryinteractionmodel_Author' represents an important domain concept.
+It has the following attributes: 'nationality', which is of type str; 'fullBio', which is of type str; 'name', which is of type str.
+
+'libraryinteractionmodel_AuthorShort' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'nationality', which is of type str.
+
+'libraryinteractionmodel_Reservations' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryinteractionmodel_Authors' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryinteractionmodel_Clients' represents an important domain concept.
+It does not declare any attributes.
+
+'libraryinteractionmodel_BookShort' represents an important domain concept.
+It has the following attributes: 'isbn', which is of type str; 'title', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'libraryinteractionmodel_Library' and 'libraryinteractionmodel_Books'. From 'libraryinteractionmodel_Library', the role 'libraryinteractionmodel_Library' has cardinality 0..*, and from 'libraryinteractionmodel_Books', the role 'libraryinteractionmodel_Books' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Library' and 'libraryinteractionmodel_Authors'. From 'libraryinteractionmodel_Library', the role 'libraryinteractionmodel_Library2' has cardinality 0..*, and from 'libraryinteractionmodel_Authors', the role 'libraryinteractionmodel_Authors' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Clients' and 'libraryinteractionmodel_Library'. From 'libraryinteractionmodel_Clients', the role 'libraryinteractionmodel_Clients' has cardinality 0..*, and from 'libraryinteractionmodel_Library', the role 'libraryinteractionmodel_Library4' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Book' and 'libraryinteractionmodel_AuthorShort'. From 'libraryinteractionmodel_Book', the role 'libraryinteractionmodel_Book' has cardinality 0..*, and from 'libraryinteractionmodel_AuthorShort', the role 'libraryinteractionmodel_AuthorShort' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Book' and 'libraryinteractionmodel_Reservation'. From 'libraryinteractionmodel_Book', the role 'libraryinteractionmodel_Book7' has cardinality 0..*, and from 'libraryinteractionmodel_Reservation', the role 'libraryinteractionmodel_Reservation' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Book' and 'libraryinteractionmodel_Reservations'. From 'libraryinteractionmodel_Book', the role 'libraryinteractionmodel_Book9' has cardinality 0..*, and from 'libraryinteractionmodel_Reservations', the role 'libraryinteractionmodel_Reservations' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Books' and 'libraryinteractionmodel_BookShort'. From 'libraryinteractionmodel_Books', the role 'libraryinteractionmodel_Books11' has cardinality 0..*, and from 'libraryinteractionmodel_BookShort', the role 'libraryinteractionmodel_BookShort' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Authors' and 'libraryinteractionmodel_AuthorShort'. From 'libraryinteractionmodel_Authors', the role 'libraryinteractionmodel_Authors13' has cardinality 0..*, and from 'libraryinteractionmodel_AuthorShort', the role 'libraryinteractionmodel_AuthorShort14' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_AuthorShort' and 'libraryinteractionmodel_Author'. From 'libraryinteractionmodel_AuthorShort', the role 'libraryinteractionmodel_AuthorShort16' has cardinality 0..*, and from 'libraryinteractionmodel_Author', the role 'libraryinteractionmodel_Author' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Client' and 'libraryinteractionmodel_Client'. From 'libraryinteractionmodel_Client', the role 'libraryinteractionmodel_Client17' has cardinality 0..*, and from 'libraryinteractionmodel_Client', the role 'libraryinteractionmodel_Client' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Clients' and 'libraryinteractionmodel_Client'. From 'libraryinteractionmodel_Clients', the role 'libraryinteractionmodel_Clients20' has cardinality 0..*, and from 'libraryinteractionmodel_Client', the role 'libraryinteractionmodel_Client21' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Reservation' and 'libraryinteractionmodel_Client'. From 'libraryinteractionmodel_Reservation', the role 'libraryinteractionmodel_Reservation23' has cardinality 0..*, and from 'libraryinteractionmodel_Client', the role 'libraryinteractionmodel_Client24' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Book' and 'libraryinteractionmodel_Reservation'. From 'libraryinteractionmodel_Book', the role 'libraryinteractionmodel_Book27' has cardinality 0..*, and from 'libraryinteractionmodel_Reservation', the role 'libraryinteractionmodel_Reservation26' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Author' and 'libraryinteractionmodel_BookShort'. From 'libraryinteractionmodel_Author', the role 'libraryinteractionmodel_Author29' has cardinality 0..*, and from 'libraryinteractionmodel_BookShort', the role 'libraryinteractionmodel_BookShort30' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Book' and 'libraryinteractionmodel_BookShort'. From 'libraryinteractionmodel_Book', the role 'libraryinteractionmodel_Book33' has cardinality 0..*, and from 'libraryinteractionmodel_BookShort', the role 'libraryinteractionmodel_BookShort32' has cardinality 0..*.
+An association connects 'libraryinteractionmodel_Reservations' and 'libraryinteractionmodel_Reservation'. From 'libraryinteractionmodel_Reservations', the role 'libraryinteractionmodel_Reservations35' has cardinality 0..*, and from 'libraryinteractionmodel_Reservation', the role 'libraryinteractionmodel_Reservation36' has cardinality 0..*.

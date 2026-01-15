@@ -1,0 +1,21 @@
+The domain model 'imports' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'imports_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'imports_BookType' represents an important domain concept.
+It has the following attributes: 'author', which is of type str; 'isbn', which is of type str; 'title', which is of type str.
+
+'imports_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'imports_RootElementType' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'imports_DocumentRoot' and 'imports_EStringToStringMapEntry'. From 'imports_DocumentRoot', the role 'imports_DocumentRoot' has cardinality 0..*, and from 'imports_EStringToStringMapEntry', the role 'imports_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'imports_EStringToStringMapEntry' and 'imports_DocumentRoot'. From 'imports_EStringToStringMapEntry', the role 'imports_EStringToStringMapEntry3' has cardinality 0..*, and from 'imports_DocumentRoot', the role 'imports_DocumentRoot2' has cardinality 0..*.
+An association connects 'imports_RootElementType' and 'imports_DocumentRoot'. From 'imports_RootElementType', the role 'imports_RootElementType' has cardinality 0..*, and from 'imports_DocumentRoot', the role 'imports_DocumentRoot5' has cardinality 0..*.
+An association connects 'imports_BookType' and 'imports_RootElementType'. From 'imports_BookType', the role 'imports_BookType' has cardinality 0..*, and from 'imports_RootElementType', the role 'imports_RootElementType7' has cardinality 0..*.

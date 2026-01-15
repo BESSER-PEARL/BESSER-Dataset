@@ -1,0 +1,105 @@
+The domain model 'bookingmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'bookingmodel_Guest' represents an important domain concept.
+It has the following attributes: 'guestTypes', which is of type str; 'roomNr', which is of type str.
+
+'bookingmodel_ExtraToIsPayedEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'bookingmodel_Booking' represents an important domain concept.
+It has the following attributes: 'startDate', which is of type str; 'serviceNotes', which is of type str; 'isPayed', which is of type str; 'nrOfGuests', which is of type str; 'endDate', which is of type str; 'paymentMethod', which is of type str; 'bookingRef', which is of type str.
+
+'bookingmodel_BookingRefToBookingEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'bookingmodel_Person' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'telephoneNr', which is of type str; 'firstName', which is of type str; 'lastName', which is of type str; 'Address', which is of type str; 'age', which is of type str.
+
+'bookingmodel_CustomerEmailToBookingRefEntry' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'IBookingProvidesForCustomer' represents an important domain concept.
+It does not declare any attributes.
+
+'BookingInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingmodel_IBookingProvidesForCustomer' represents an important domain concept.
+It does not declare any attributes.
+
+'IBookingProvidesForHost' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingmodel_BookingProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingmodel_Customer' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingmodel_PaymentDetails' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'expMonth', which is of type str; 'expYear', which is of type str; 'firstName', which is of type str; 'ccV', which is of type str; 'ccNr', which is of type str.
+
+'bookingmodel_BookingInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingmodel_CustomerInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingmodel_IBookingProvidesForHost' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingmodel_BookingHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'CustomerInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingmodel_IBookingProvidesForGuest' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingmodel_RoomIDToRoomTypeEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'bookingmodel_GuestEmailToRoomIDEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'key', which is of type str.
+
+'IBookingProvidesForGuest' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'bookingmodel_RoomToGuestIDEntry' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'bookingmodel_RoomIDToBookingRefEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GuestTypes' defines the following possible values: 'Regular', 'VIP', 'BlackListed'.
+The enumeration 'PaymentMethod' defines the following possible values: 'voucher', 'bankcard', 'cash'.
+
+The model also captures inheritance relationships between classes.
+The class 'bookingmodel_Customer' is a specialization of 'Person'.
+The class 'bookingmodel_Guest' is a specialization of 'Person'.
+The class 'bookingmodel_IBookingProvidesForCustomer' is a specialization of 'BookingInfo'.
+The class 'bookingmodel_IBookingProvidesForCustomer' is a specialization of 'CustomerInfo'.
+The class 'bookingmodel_BookingProvides' is a specialization of 'IBookingProvidesForCustomer'.
+The class 'bookingmodel_BookingProvides' is a specialization of 'IBookingProvidesForGuest'.
+The class 'bookingmodel_BookingProvides' is a specialization of 'IBookingProvidesForHost'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bookingmodel_Booking' and 'bookingmodel_BookingRefToBookingEntry'. From 'bookingmodel_Booking', the role 'bookingmodel_Booking' has cardinality 0..*, and from 'bookingmodel_BookingRefToBookingEntry', the role 'bookingmodel_BookingRefToBookingEntry' has cardinality 0..*.
+An association connects 'bookingmodel_Customer' and 'bookingmodel_Booking'. From 'bookingmodel_Customer', the role 'bookingmodel_Customer' has cardinality 0..*, and from 'bookingmodel_Booking', the role 'bookingmodel_Booking2' has cardinality 0..*.
+An association connects 'bookingmodel_Booking' and 'bookingmodel_Guest'. From 'bookingmodel_Booking', the role 'bookingmodel_Booking4' has cardinality 0..*, and from 'bookingmodel_Guest', the role 'bookingmodel_Guest' has cardinality 0..*.
+An association connects 'bookingmodel_Booking' and 'bookingmodel_RoomToGuestIDEntry'. From 'bookingmodel_Booking', the role 'bookingmodel_Booking6' has cardinality 0..*, and from 'bookingmodel_RoomToGuestIDEntry', the role 'bookingmodel_RoomToGuestIDEntry' has cardinality 0..*.
+An association connects 'bookingmodel_Booking' and 'bookingmodel_RoomIDToRoomTypeEntry'. From 'bookingmodel_Booking', the role 'bookingmodel_Booking8' has cardinality 0..*, and from 'bookingmodel_RoomIDToRoomTypeEntry', the role 'bookingmodel_RoomIDToRoomTypeEntry' has cardinality 0..*.
+An association connects 'bookingmodel_Booking' and 'bookingmodel_ExtraToIsPayedEntry'. From 'bookingmodel_Booking', the role 'bookingmodel_Booking10' has cardinality 0..*, and from 'bookingmodel_ExtraToIsPayedEntry', the role 'bookingmodel_ExtraToIsPayedEntry' has cardinality 0..*.
+An association connects 'bookingmodel_PaymentDetails' and 'bookingmodel_Customer'. From 'bookingmodel_PaymentDetails', the role 'bookingmodel_PaymentDetails' has cardinality 0..*, and from 'bookingmodel_Customer', the role 'bookingmodel_Customer12' has cardinality 0..*.
+An association connects 'bookingmodel_BookingHandler' and 'bookingmodel_BookingRefToBookingEntry'. From 'bookingmodel_BookingHandler', the role 'bookingmodel_BookingHandler' has cardinality 0..*, and from 'bookingmodel_BookingRefToBookingEntry', the role 'bookingmodel_BookingRefToBookingEntry14' has cardinality 0..*.
+An association connects 'bookingmodel_BookingHandler' and 'bookingmodel_RoomIDToBookingRefEntry'. From 'bookingmodel_BookingHandler', the role 'bookingmodel_BookingHandler16' has cardinality 0..*, and from 'bookingmodel_RoomIDToBookingRefEntry', the role 'bookingmodel_RoomIDToBookingRefEntry' has cardinality 0..*.
+An association connects 'bookingmodel_CustomerEmailToBookingRefEntry' and 'bookingmodel_BookingHandler'. From 'bookingmodel_CustomerEmailToBookingRefEntry', the role 'bookingmodel_CustomerEmailToBookingRefEntry' has cardinality 0..*, and from 'bookingmodel_BookingHandler', the role 'bookingmodel_BookingHandler18' has cardinality 0..*.
+An association connects 'bookingmodel_GuestEmailToRoomIDEntry' and 'bookingmodel_BookingHandler'. From 'bookingmodel_GuestEmailToRoomIDEntry', the role 'bookingmodel_GuestEmailToRoomIDEntry' has cardinality 0..*, and from 'bookingmodel_BookingHandler', the role 'bookingmodel_BookingHandler20' has cardinality 0..*.
+An association connects 'bookingmodel_BookingProvides' and 'bookingmodel_BookingHandler'. From 'bookingmodel_BookingProvides', the role 'bookingmodel_BookingProvides' has cardinality 0..*, and from 'bookingmodel_BookingHandler', the role 'bookingmodel_BookingHandler22' has cardinality 0..*.

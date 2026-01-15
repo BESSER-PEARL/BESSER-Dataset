@@ -1,0 +1,123 @@
+The domain model 'smallJava' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'smallJava_SJProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'smallJava_SJSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJThis' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJNamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smallJava_SJAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'SJMember' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'SJExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJMemberSelection' represents an important domain concept.
+It has one attribute: 'methodinvocation', which is of type bool.
+
+'SJNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SJSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJNew' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'SJStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJField' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJSymbolRef' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJClass' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJReturn' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJIfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJNull' represents an important domain concept.
+It does not declare any attributes.
+
+'smallJava_SJMember' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'smallJava_SJClass' is a specialization of 'SJNamedElement'.
+The class 'smallJava_SJMember' is a specialization of 'SJNamedElement'.
+The class 'smallJava_SJField' is a specialization of 'SJMember'.
+The class 'smallJava_SJMethod' is a specialization of 'SJMember'.
+The class 'smallJava_SJParameter' is a specialization of 'SJSymbol'.
+The class 'smallJava_SJReturn' is a specialization of 'SJStatement'.
+The class 'smallJava_SJVariableDeclaration' is a specialization of 'SJStatement'.
+The class 'smallJava_SJVariableDeclaration' is a specialization of 'SJSymbol'.
+The class 'smallJava_SJIfStatement' is a specialization of 'SJStatement'.
+The class 'smallJava_SJSymbol' is a specialization of 'SJNamedElement'.
+The class 'smallJava_SJExpression' is a specialization of 'SJStatement'.
+The class 'smallJava_SJAssignment' is a specialization of 'SJExpression'.
+The class 'smallJava_SJMemberSelection' is a specialization of 'SJExpression'.
+The class 'smallJava_SJThis' is a specialization of 'SJExpression'.
+The class 'smallJava_SJNull' is a specialization of 'SJExpression'.
+The class 'smallJava_BoolConstant' is a specialization of 'SJExpression'.
+The class 'smallJava_SJSymbolRef' is a specialization of 'SJExpression'.
+The class 'smallJava_SJNew' is a specialization of 'SJExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'smallJava_SJClass' and 'smallJava_SJProgram'. From 'smallJava_SJClass', the role 'smallJava_SJClass' has cardinality 0..*, and from 'smallJava_SJProgram', the role 'smallJava_SJProgram' has cardinality 0..*.
+An association connects 'smallJava_SJClass' and 'smallJava_SJClass'. From 'smallJava_SJClass', the role 'smallJava_SJClass3' has cardinality 0..*, and from 'smallJava_SJClass', the role 'smallJava_SJClass1' has cardinality 0..*.
+An association connects 'smallJava_SJClass' and 'smallJava_SJMember'. From 'smallJava_SJClass', the role 'smallJava_SJClass5' has cardinality 0..*, and from 'smallJava_SJMember', the role 'smallJava_SJMember' has cardinality 0..*.
+An association connects 'smallJava_SJClass' and 'smallJava_SJMember'. From 'smallJava_SJClass', the role 'smallJava_SJClass8' has cardinality 0..*, and from 'smallJava_SJMember', the role 'smallJava_SJMember7' has cardinality 0..*.
+An association connects 'smallJava_SJMethod' and 'smallJava_SJParameter'. From 'smallJava_SJMethod', the role 'smallJava_SJMethod' has cardinality 0..*, and from 'smallJava_SJParameter', the role 'smallJava_SJParameter' has cardinality 0..*.
+An association connects 'smallJava_SJMethod' and 'smallJava_SJBlock'. From 'smallJava_SJMethod', the role 'smallJava_SJMethod11' has cardinality 0..*, and from 'smallJava_SJBlock', the role 'smallJava_SJBlock' has cardinality 0..*.
+An association connects 'smallJava_SJBlock' and 'smallJava_SJStatement'. From 'smallJava_SJBlock', the role 'smallJava_SJBlock13' has cardinality 0..*, and from 'smallJava_SJStatement', the role 'smallJava_SJStatement' has cardinality 0..*.
+An association connects 'smallJava_SJReturn' and 'smallJava_SJExpression'. From 'smallJava_SJReturn', the role 'smallJava_SJReturn' has cardinality 0..*, and from 'smallJava_SJExpression', the role 'smallJava_SJExpression' has cardinality 0..*.
+An association connects 'smallJava_SJVariableDeclaration' and 'smallJava_SJExpression'. From 'smallJava_SJVariableDeclaration', the role 'smallJava_SJVariableDeclaration' has cardinality 0..*, and from 'smallJava_SJExpression', the role 'smallJava_SJExpression16' has cardinality 0..*.
+An association connects 'smallJava_SJExpression' and 'smallJava_SJIfStatement'. From 'smallJava_SJExpression', the role 'smallJava_SJExpression18' has cardinality 0..*, and from 'smallJava_SJIfStatement', the role 'smallJava_SJIfStatement' has cardinality 0..*.
+An association connects 'smallJava_SJIfStatement' and 'smallJava_SJBlock'. From 'smallJava_SJIfStatement', the role 'smallJava_SJIfStatement20' has cardinality 0..*, and from 'smallJava_SJBlock', the role 'smallJava_SJBlock21' has cardinality 0..*.
+An association connects 'smallJava_SJBlock' and 'smallJava_SJIfStatement'. From 'smallJava_SJBlock', the role 'smallJava_SJBlock24' has cardinality 0..*, and from 'smallJava_SJIfStatement', the role 'smallJava_SJIfStatement23' has cardinality 0..*.
+An association connects 'smallJava_SJSymbol' and 'smallJava_SJClass'. From 'smallJava_SJSymbol', the role 'smallJava_SJSymbol' has cardinality 0..*, and from 'smallJava_SJClass', the role 'smallJava_SJClass26' has cardinality 0..*.
+An association connects 'smallJava_SJAssignment' and 'smallJava_SJExpression'. From 'smallJava_SJAssignment', the role 'smallJava_SJAssignment' has cardinality 0..*, and from 'smallJava_SJExpression', the role 'smallJava_SJExpression28' has cardinality 0..*.
+An association connects 'smallJava_SJExpression' and 'smallJava_SJAssignment'. From 'smallJava_SJExpression', the role 'smallJava_SJExpression31' has cardinality 0..*, and from 'smallJava_SJAssignment', the role 'smallJava_SJAssignment30' has cardinality 0..*.
+An association connects 'smallJava_SJMemberSelection' and 'smallJava_SJExpression'. From 'smallJava_SJMemberSelection', the role 'smallJava_SJMemberSelection' has cardinality 0..*, and from 'smallJava_SJExpression', the role 'smallJava_SJExpression33' has cardinality 0..*.
+An association connects 'smallJava_SJMember' and 'smallJava_SJMemberSelection'. From 'smallJava_SJMember', the role 'smallJava_SJMember36' has cardinality 0..*, and from 'smallJava_SJMemberSelection', the role 'smallJava_SJMemberSelection35' has cardinality 0..*.
+An association connects 'smallJava_SJMemberSelection' and 'smallJava_SJExpression'. From 'smallJava_SJMemberSelection', the role 'smallJava_SJMemberSelection38' has cardinality 0..*, and from 'smallJava_SJExpression', the role 'smallJava_SJExpression39' has cardinality 0..*.
+An association connects 'smallJava_SJSymbolRef' and 'smallJava_SJSymbol'. From 'smallJava_SJSymbolRef', the role 'smallJava_SJSymbolRef' has cardinality 0..*, and from 'smallJava_SJSymbol', the role 'smallJava_SJSymbol41' has cardinality 0..*.
+An association connects 'smallJava_SJClass' and 'smallJava_SJNew'. From 'smallJava_SJClass', the role 'smallJava_SJClass43' has cardinality 0..*, and from 'smallJava_SJNew', the role 'smallJava_SJNew' has cardinality 0..*.

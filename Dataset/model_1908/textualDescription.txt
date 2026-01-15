@@ -1,0 +1,437 @@
+The domain model 'preprocess' describes the core structural elements and their relationships within the system.
+
+The model defines 111 main class(es).
+
+'preprocess_literals_ConstantLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_layouts_CobolLine' represents an important domain concept.
+It has the following attributes: 'contentAreaB', which is of type str; 'sequenceArea', which is of type str; 'indicatorArea', which is of type str; 'contentAreaA', which is of type str; 'comment', which is of type str.
+
+'preprocess_literals_QuoteConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'containers_CobolRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_Water' represents an important domain concept.
+It does not declare any attributes.
+
+'Segment' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_LowValues' represents an important domain concept.
+It does not declare any attributes.
+
+'water_IncompleteElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SpaceConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_HighValueConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_Space' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_LibraryElement' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_NumericLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'preprocess_commons_LibraryElement' represents an important domain concept.
+It has one attribute: 'libraryName', which is of type str.
+
+'preprocess_sentences_ReplaceSentence' represents an important domain concept.
+It has one attribute: 'switch', which is of type bool.
+
+'preprocess_containers_DataCopyUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'CobolWord' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_Zeroes' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcedureSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_containers_ProcedureSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_AllLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'DataSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_FigurativeConstantLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_Dummy' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_statements_Execute' represents an important domain concept.
+It has one attribute: 'water', which is of type str.
+
+'preprocess_commons_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'preprocess_water_Suppress' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_containers_PreprocessingUnit' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ZeroConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_DataSegmentToken' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_commons_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_containers_CobolRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'PreprocessingUnitWater' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_containers_ProcedureCopyUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_Quote' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_Zeros' represents an important domain concept.
+It does not declare any attributes.
+
+'PreprocessingUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_Null' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CobolRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_containers_CopyUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'QuoteConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_By' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_PreprocessingUnitWater' represents an important domain concept.
+It does not declare any attributes.
+
+'DataSegmentToken' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_containers_Copybook' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_layouts_ANSI85CobolSourceFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_All' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'CobolSourceFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_IncompleteElement' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_sentences_Replacing' represents an important domain concept.
+It does not declare any attributes.
+
+'water_PreprocessingUnitWater' represents an important domain concept.
+It does not declare any attributes.
+
+'operands_Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_Nulls' represents an important domain concept.
+It does not declare any attributes.
+
+'water_ProcedureSegmentWater' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_Replace' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_Off' represents an important domain concept.
+It does not declare any attributes.
+
+'FigurativeConstantLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'DataSegmentWater' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_Dot' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_layouts_CobolSourceFormat' represents an important domain concept.
+It has the following attributes: 'regex', which is of type str; 'commentEntryMultiLine', which is of type bool; 'type', which is of type str; 'pattern', which is of type str.
+
+'Replacing' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_operands_CobolWord' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'preprocess_containers_DataSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_operands_Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_AlphanumericLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'preprocess_literals_ZeroConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_containers_Segment' represents an important domain concept.
+It does not declare any attributes.
+
+'IncompleteElement' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'sentences_PreprocessingSentence' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'HighValueConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_On' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_DataSegmentWater' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_HighValue' represents an important domain concept.
+It does not declare any attributes.
+
+'water_Water' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_In' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_PseudoLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'CobolLine' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_Of' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_ProcedureSegmentWater' represents an important domain concept.
+It does not declare any attributes.
+
+'NullConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_containers_PreprocessingGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_LowValue' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_HighValues' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_sentences_CopySentence' represents an important domain concept.
+It has one attribute: 'suppress', which is of type bool.
+
+'preprocess_water_End' represents an important domain concept.
+It does not declare any attributes.
+
+'Water' represents an important domain concept.
+It does not declare any attributes.
+
+'PreprocessingSentence' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstantLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'LowValueConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_water_Replacing' represents an important domain concept.
+It does not declare any attributes.
+
+'AlphanumericLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_NullConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_Quotes' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_AlphanumericHexaDecimalLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_Zero' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_LowValueConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_Spaces' represents an important domain concept.
+It does not declare any attributes.
+
+'CopyUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcedureSegmentWater' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_literals_SpaceConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'preprocess_sentences_PreprocessingSentence' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SpaceConstants' defines the following possible values: 'spaces', 'space'.
+The enumeration 'HighValueConstants' defines the following possible values: 'highValues', 'highValue'.
+The enumeration 'ZeroConstants' defines the following possible values: 'zeroes', 'zero', 'zeros'.
+The enumeration 'LowValueConstants' defines the following possible values: 'lowValue', 'lowValues'.
+The enumeration 'CobolSourceFormatTypeEnum' defines a single possible value: 'ANSI85'.
+The enumeration 'QuoteConstants' defines the following possible values: 'quotes', 'quote'.
+The enumeration 'identifications' defines the following possible values: 'identification', 'id'.
+The enumeration 'NullConstants' defines the following possible values: 'nulls', 'null'.
+The enumeration 'PreprocessingUnitTokens' defines the following possible values: 'all', 'of', 'replace', 'program', 'by', 'replacing', 'suppress', 'in', 'off', 'division', 'procedure', 'end', 'on'.
+
+The model also captures inheritance relationships between classes.
+The class 'preprocess_containers_PreprocessingUnit' is a specialization of 'commons_NamedElement'.
+The class 'preprocess_containers_PreprocessingUnit' is a specialization of 'water_IncompleteElement'.
+The class 'preprocess_containers_PreprocessingGroup' is a specialization of 'CobolRoot'.
+The class 'preprocess_containers_CopyUnit' is a specialization of 'IncompleteElement'.
+The class 'preprocess_containers_Copybook' is a specialization of 'containers_CobolRoot'.
+The class 'preprocess_containers_Copybook' is a specialization of 'water_IncompleteElement'.
+The class 'preprocess_containers_Copybook' is a specialization of 'commons_NamedElement'.
+The class 'preprocess_containers_DataSegment' is a specialization of 'Segment'.
+The class 'preprocess_containers_ProcedureSegment' is a specialization of 'Segment'.
+The class 'preprocess_containers_Segment' is a specialization of 'IncompleteElement'.
+The class 'preprocess_containers_DataCopyUnit' is a specialization of 'CopyUnit'.
+The class 'preprocess_containers_ProcedureCopyUnit' is a specialization of 'CopyUnit'.
+The class 'preprocess_water_PreprocessingUnitWater' is a specialization of 'DataSegmentWater'.
+The class 'preprocess_water_Dot' is a specialization of 'PreprocessingUnitWater'.
+The class 'preprocess_water_DataSegmentWater' is a specialization of 'water_Water'.
+The class 'preprocess_water_DataSegmentWater' is a specialization of 'water_ProcedureSegmentWater'.
+The class 'preprocess_water_ProcedureSegmentWater' is a specialization of 'Water'.
+The class 'preprocess_water_By' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_In' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_Of' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_Replacing' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_Suppress' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_Replace' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_Program' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_Division' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_All' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_End' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_Off' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_On' is a specialization of 'DataSegmentToken'.
+The class 'preprocess_water_Procedure' is a specialization of 'ProcedureSegmentWater'.
+The class 'preprocess_water_DataSegmentToken' is a specialization of 'DataSegmentWater'.
+The class 'preprocess_sentences_CopySentence' is a specialization of 'commons_LibraryElement'.
+The class 'preprocess_sentences_CopySentence' is a specialization of 'sentences_PreprocessingSentence'.
+The class 'preprocess_sentences_CopySentence' is a specialization of 'commons_NamedElement'.
+The class 'preprocess_sentences_ReplaceSentence' is a specialization of 'PreprocessingSentence'.
+The class 'preprocess_commons_LibraryElement' is a specialization of 'Element'.
+The class 'preprocess_commons_NamedElement' is a specialization of 'Element'.
+The class 'preprocess_literals_Literal' is a specialization of 'operands_Operand'.
+The class 'preprocess_literals_Literal' is a specialization of 'water_PreprocessingUnitWater'.
+The class 'preprocess_literals_AlphanumericLiteral' is a specialization of 'Literal'.
+The class 'preprocess_literals_AlphanumericHexaDecimalLiteral' is a specialization of 'AlphanumericLiteral'.
+The class 'preprocess_literals_PseudoLiteral' is a specialization of 'Literal'.
+The class 'preprocess_literals_NumericLiteral' is a specialization of 'Literal'.
+The class 'preprocess_literals_FigurativeConstantLiteral' is a specialization of 'Literal'.
+The class 'preprocess_literals_AllLiteral' is a specialization of 'FigurativeConstantLiteral'.
+The class 'preprocess_literals_ConstantLiteral' is a specialization of 'FigurativeConstantLiteral'.
+The class 'preprocess_literals_SpaceConstant' is a specialization of 'ConstantLiteral'.
+The class 'preprocess_literals_HighValueConstant' is a specialization of 'ConstantLiteral'.
+The class 'preprocess_literals_LowValueConstant' is a specialization of 'ConstantLiteral'.
+The class 'preprocess_literals_ZeroConstant' is a specialization of 'ConstantLiteral'.
+The class 'preprocess_literals_QuoteConstant' is a specialization of 'ConstantLiteral'.
+The class 'preprocess_literals_NullConstant' is a specialization of 'ConstantLiteral'.
+The class 'preprocess_literals_Space' is a specialization of 'SpaceConstant'.
+The class 'preprocess_literals_Spaces' is a specialization of 'SpaceConstant'.
+The class 'preprocess_literals_HighValue' is a specialization of 'HighValueConstant'.
+The class 'preprocess_literals_HighValues' is a specialization of 'HighValueConstant'.
+The class 'preprocess_literals_LowValue' is a specialization of 'LowValueConstant'.
+The class 'preprocess_literals_LowValues' is a specialization of 'LowValueConstant'.
+The class 'preprocess_literals_Zero' is a specialization of 'ZeroConstant'.
+The class 'preprocess_literals_Zeroes' is a specialization of 'ZeroConstant'.
+The class 'preprocess_literals_Zeros' is a specialization of 'ZeroConstant'.
+The class 'preprocess_literals_Quote' is a specialization of 'QuoteConstant'.
+The class 'preprocess_literals_Quotes' is a specialization of 'QuoteConstant'.
+The class 'preprocess_literals_Null' is a specialization of 'NullConstant'.
+The class 'preprocess_literals_Nulls' is a specialization of 'NullConstant'.
+The class 'preprocess_operands_CobolWord' is a specialization of 'operands_Operand'.
+The class 'preprocess_operands_CobolWord' is a specialization of 'water_PreprocessingUnitWater'.
+The class 'preprocess_statements_Execute' is a specialization of 'statements_Statement'.
+The class 'preprocess_statements_Execute' is a specialization of 'water_PreprocessingUnitWater'.
+The class 'preprocess_layouts_ANSI85CobolSourceFormat' is a specialization of 'CobolSourceFormat'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PreprocessingUnit' and 'preprocess_containers_PreprocessingUnit'. From 'PreprocessingUnit', the role 'PreprocessingUnit' has cardinality 0..*, and from 'preprocess_containers_PreprocessingUnit', the role 'preprocess_containers_PreprocessingUnit' has cardinality 0..*.
+An association connects 'preprocess_containers_PreprocessingUnit' and 'CobolWord'. From 'preprocess_containers_PreprocessingUnit', the role 'preprocess_containers_PreprocessingUnit2' has cardinality 0..*, and from 'CobolWord', the role 'CobolWord' has cardinality 0..*.
+An association connects 'DataSegment' and 'preprocess_containers_PreprocessingUnit'. From 'DataSegment', the role 'DataSegment' has cardinality 0..*, and from 'preprocess_containers_PreprocessingUnit', the role 'preprocess_containers_PreprocessingUnit4' has cardinality 0..*.
+An association connects 'preprocess_containers_PreprocessingUnit' and 'ProcedureSegment'. From 'preprocess_containers_PreprocessingUnit', the role 'preprocess_containers_PreprocessingUnit6' has cardinality 0..*, and from 'ProcedureSegment', the role 'ProcedureSegment' has cardinality 0..*.
+An association connects 'PreprocessingUnit' and 'preprocess_containers_PreprocessingGroup'. From 'PreprocessingUnit', the role 'PreprocessingUnit8' has cardinality 0..*, and from 'preprocess_containers_PreprocessingGroup', the role 'preprocess_containers_PreprocessingGroup' has cardinality 0..*.
+An association connects 'preprocess_containers_CobolRoot' and 'CobolLine'. From 'preprocess_containers_CobolRoot', the role 'preprocess_containers_CobolRoot' has cardinality 0..*, and from 'CobolLine', the role 'CobolLine' has cardinality 0..*.
+An association connects 'preprocess_containers_CopyUnit' and 'PreprocessingSentence'. From 'preprocess_containers_CopyUnit', the role 'preprocess_containers_CopyUnit' has cardinality 0..*, and from 'PreprocessingSentence', the role 'PreprocessingSentence' has cardinality 0..*.
+An association connects 'preprocess_containers_Copybook' and 'CopyUnit'. From 'preprocess_containers_Copybook', the role 'preprocess_containers_Copybook' has cardinality 0..*, and from 'CopyUnit', the role 'CopyUnit' has cardinality 0..*.
+An association connects 'preprocess_containers_Segment' and 'CopyUnit'. From 'preprocess_containers_Segment', the role 'preprocess_containers_Segment' has cardinality 0..*, and from 'CopyUnit', the role 'CopyUnit13' has cardinality 0..*.
+An association connects 'Water' and 'preprocess_water_IncompleteElement'. From 'Water', the role 'Water' has cardinality 0..*, and from 'preprocess_water_IncompleteElement', the role 'preprocess_water_IncompleteElement' has cardinality 0..*.
+An association connects 'preprocess_sentences_Replacing' and 'Operand'. From 'preprocess_sentences_Replacing', the role 'preprocess_sentences_Replacing' has cardinality 0..*, and from 'Operand', the role 'Operand' has cardinality 0..*.
+An association connects 'Operand' and 'preprocess_sentences_Replacing'. From 'Operand', the role 'Operand18' has cardinality 0..*, and from 'preprocess_sentences_Replacing', the role 'preprocess_sentences_Replacing17' has cardinality 0..*.
+An association connects 'preprocess_sentences_PreprocessingSentence' and 'Replacing'. From 'preprocess_sentences_PreprocessingSentence', the role 'preprocess_sentences_PreprocessingSentence' has cardinality 0..*, and from 'Replacing', the role 'Replacing' has cardinality 0..*.
+An association connects 'CobolLine' and 'preprocess_commons_Element'. From 'CobolLine', the role 'CobolLine21' has cardinality 0..*, and from 'preprocess_commons_Element', the role 'preprocess_commons_Element' has cardinality 0..*.
+An association connects 'Literal' and 'preprocess_literals_AllLiteral'. From 'Literal', the role 'Literal' has cardinality 0..*, and from 'preprocess_literals_AllLiteral', the role 'preprocess_literals_AllLiteral' has cardinality 0..*.
+An association connects 'preprocess_layouts_CobolLine' and 'CobolSourceFormat'. From 'preprocess_layouts_CobolLine', the role 'preprocess_layouts_CobolLine' has cardinality 0..*, and from 'CobolSourceFormat', the role 'CobolSourceFormat' has cardinality 0..*.

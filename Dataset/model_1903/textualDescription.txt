@@ -1,0 +1,288 @@
+The domain model 'drn' describes the core structural elements and their relationships within the system.
+
+The model defines 68 main class(es).
+
+'DepY_Impl' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_DepX_Impl' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'distanceCST', which is of type int; 'tempsCST', which is of type int.
+
+'drn_UP' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_MaxHeight' represents an important domain concept.
+It does not declare any attributes.
+
+'DepXYZ_IMPL' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_FORWARD' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Element' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_RIGHT' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Movement' represents an important domain concept.
+It does not declare any attributes.
+
+'Surface' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Context' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'where', which is of type str.
+
+'drn_DepXYZ_IMPL' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_With' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_CARREXZ' represents an important domain concept.
+It has one attribute: 'coteCST', which is of type int.
+
+'drn_Bluetooth' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Wifi' represents an important domain concept.
+It does not declare any attributes.
+
+'Movement' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_CERCLEXY' represents an important domain concept.
+It has one attribute: 'rayonCST', which is of type int.
+
+'drn_MaxLength' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_BACKWARD' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_TypeGeneric' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_DepZ_Impl' represents an important domain concept.
+It has the following attributes: 'distanceCST', which is of type int; 'tempsCST', which is of type int; 'name', which is of type str.
+
+'drn_CERCLEXZ' represents an important domain concept.
+It has one attribute: 'rayonCST', which is of type int.
+
+'drn_InitialPositionY' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'drn_Surface' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'DepX_Impl' represents an important domain concept.
+It does not declare any attributes.
+
+'Root' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Definition' represents an important domain concept.
+It has the following attributes: 'bool', which is of type str; 'int', which is of type str; 'real', which is of type str; 'text', which is of type str.
+
+'drn_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_LEFT' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_MaxSpeed' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'drn_MaxWidth' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Declaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'typePrimitif', which is of type str.
+
+'drn_RefDevice' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'drn_Configuration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_Flip' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_ConnectionType' represents an important domain concept.
+It has the following attributes: 'adress', which is of type str; 'name', which is of type str.
+
+'InitialPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'DepXY_IMPL' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Rotate' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'angleCST', which is of type str; 'tempsCST', which is of type int.
+
+'drn_InitialPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Device' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_RefPartLib' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_TakeOff' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_DepXZ_IMPL' represents an important domain concept.
+It has the following attributes: 'tempsCST', which is of type int; 'name', which is of type str.
+
+'drn_DepYZ_IMPL' represents an important domain concept.
+It has the following attributes: 'tempsCST', which is of type int; 'name', which is of type str.
+
+'drn_DepY_Impl' represents an important domain concept.
+It has the following attributes: 'distanceCST', which is of type int; 'name', which is of type str; 'tempsCST', which is of type int.
+
+'ConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_DOWN' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_InitialDirection' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'drn_CARREXY' represents an important domain concept.
+It has one attribute: 'coteCST', which is of type int.
+
+'drn_CARREYZ' represents an important domain concept.
+It has one attribute: 'coteCST', which is of type int.
+
+'drn_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Wait' represents an important domain concept.
+It has the following attributes: 'tempsCST', which is of type int; 'name', which is of type str.
+
+'drn_InitialPositionX' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'drn_Expression' represents an important domain concept.
+It has one attribute: 'repeatCST', which is of type int.
+
+'drn_And' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_CERCLEYZ' represents an important domain concept.
+It has one attribute: 'rayonCST', which is of type int.
+
+'DepZ_Impl' represents an important domain concept.
+It does not declare any attributes.
+
+'DepYZ_IMPL' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Limit' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_DepXY_IMPL' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tempsCST', which is of type int.
+
+'drn_RefPart' represents an important domain concept.
+It does not declare any attributes.
+
+'Limit' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Assignement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DepXZ_IMPL' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Land' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Mode' defines the following possible values: 'OFF', 'ON'.
+The enumeration 'Where' defines the following possible values: 'INDOOR', 'OUTDOOR'.
+The enumeration 'EBool' defines the following possible values: 'TRUE', 'FALSE'.
+The enumeration 'DirectionType' defines the following possible values: 'BEHIND', 'LEFT', 'FRONT', 'RIGHT'.
+The enumeration 'TypePrimitif' defines the following possible values: 'stringType', 'boolType', 'intType', 'realType'.
+
+The model also captures inheritance relationships between classes.
+The class 'drn_Model' is a specialization of 'Root'.
+The class 'drn_Configuration' is a specialization of 'Root'.
+The class 'drn_Library' is a specialization of 'Root'.
+The class 'drn_Surface' is a specialization of 'Limit'.
+The class 'drn_InitialPosition' is a specialization of 'Limit'.
+The class 'drn_InitialDirection' is a specialization of 'InitialPosition'.
+The class 'drn_InitialPositionX' is a specialization of 'InitialPosition'.
+The class 'drn_InitialPositionY' is a specialization of 'InitialPosition'.
+The class 'drn_MaxLength' is a specialization of 'Surface'.
+The class 'drn_MaxWidth' is a specialization of 'Surface'.
+The class 'drn_MaxSpeed' is a specialization of 'Limit'.
+The class 'drn_MaxHeight' is a specialization of 'Surface'.
+The class 'drn_RefPart' is a specialization of 'Movement'.
+The class 'drn_RefPartLib' is a specialization of 'Movement'.
+The class 'drn_And' is a specialization of 'Movement'.
+The class 'drn_DepY_Impl' is a specialization of 'Movement'.
+The class 'drn_FORWARD' is a specialization of 'DepY_Impl'.
+The class 'drn_BACKWARD' is a specialization of 'DepY_Impl'.
+The class 'drn_DepX_Impl' is a specialization of 'Movement'.
+The class 'drn_LEFT' is a specialization of 'DepX_Impl'.
+The class 'drn_RIGHT' is a specialization of 'DepX_Impl'.
+The class 'drn_DepZ_Impl' is a specialization of 'Movement'.
+The class 'drn_UP' is a specialization of 'DepZ_Impl'.
+The class 'drn_DOWN' is a specialization of 'DepZ_Impl'.
+The class 'drn_DepXY_IMPL' is a specialization of 'Movement'.
+The class 'drn_CERCLEXY' is a specialization of 'DepXY_IMPL'.
+The class 'drn_CARREXY' is a specialization of 'DepXY_IMPL'.
+The class 'drn_DepYZ_IMPL' is a specialization of 'Movement'.
+The class 'drn_CERCLEYZ' is a specialization of 'DepYZ_IMPL'.
+The class 'drn_CARREYZ' is a specialization of 'DepYZ_IMPL'.
+The class 'drn_DepXZ_IMPL' is a specialization of 'Movement'.
+The class 'drn_CERCLEXZ' is a specialization of 'DepXZ_IMPL'.
+The class 'drn_CARREXZ' is a specialization of 'DepXZ_IMPL'.
+The class 'drn_DepXYZ_IMPL' is a specialization of 'Movement'.
+The class 'drn_Flip' is a specialization of 'DepXYZ_IMPL'.
+The class 'drn_Rotate' is a specialization of 'Movement'.
+The class 'drn_Wait' is a specialization of 'Movement'.
+The class 'drn_TakeOff' is a specialization of 'Movement'.
+The class 'drn_Land' is a specialization of 'Movement'.
+The class 'drn_Bluetooth' is a specialization of 'ConnectionType'.
+The class 'drn_Wifi' is a specialization of 'ConnectionType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'drn_Configuration' and 'drn_Model'. From 'drn_Configuration', the role 'drn_Configuration' has cardinality 0..*, and from 'drn_Model', the role 'drn_Model' has cardinality 0..*.
+An association connects 'drn_Model' and 'drn_Library'. From 'drn_Model', the role 'drn_Model2' has cardinality 0..*, and from 'drn_Library', the role 'drn_Library' has cardinality 0..*.
+An association connects 'drn_Context' and 'drn_Model'. From 'drn_Context', the role 'drn_Context' has cardinality 0..*, and from 'drn_Model', the role 'drn_Model4' has cardinality 0..*.
+An association connects 'drn_Assignement' and 'drn_Model'. From 'drn_Assignement', the role 'drn_Assignement' has cardinality 0..*, and from 'drn_Model', the role 'drn_Model6' has cardinality 0..*.
+An association connects 'drn_RefPart' and 'drn_Model'. From 'drn_RefPart', the role 'drn_RefPart' has cardinality 0..*, and from 'drn_Model', the role 'drn_Model8' has cardinality 0..*.
+An association connects 'drn_TypeGeneric' and 'drn_Configuration'. From 'drn_TypeGeneric', the role 'drn_TypeGeneric' has cardinality 0..*, and from 'drn_Configuration', the role 'drn_Configuration10' has cardinality 0..*.
+An association connects 'drn_Device' and 'drn_Configuration'. From 'drn_Device', the role 'drn_Device' has cardinality 0..*, and from 'drn_Configuration', the role 'drn_Configuration12' has cardinality 0..*.
+An association connects 'drn_ConnectionType' and 'drn_Configuration'. From 'drn_ConnectionType', the role 'drn_ConnectionType' has cardinality 0..*, and from 'drn_Configuration', the role 'drn_Configuration14' has cardinality 0..*.
+An association connects 'drn_Library' and 'drn_Assignement'. From 'drn_Library', the role 'drn_Library16' has cardinality 0..*, and from 'drn_Assignement', the role 'drn_Assignement17' has cardinality 0..*.
+An association connects 'drn_Limit' and 'drn_Context'. From 'drn_Limit', the role 'drn_Limit' has cardinality 0..*, and from 'drn_Context', the role 'drn_Context19' has cardinality 0..*.
+An association connects 'drn_Expression' and 'drn_Assignement'. From 'drn_Expression', the role 'drn_Expression' has cardinality 0..*, and from 'drn_Assignement', the role 'drn_Assignement21' has cardinality 0..*.
+An association connects 'drn_Movement' and 'drn_Expression'. From 'drn_Movement', the role 'drn_Movement' has cardinality 0..*, and from 'drn_Expression', the role 'drn_Expression23' has cardinality 0..*.
+An association connects 'drn_Expression' and 'drn_With'. From 'drn_Expression', the role 'drn_Expression25' has cardinality 0..*, and from 'drn_With', the role 'drn_With' has cardinality 0..*.
+An association connects 'drn_Expression' and 'drn_Expression'. From 'drn_Expression', the role 'drn_Expression28' has cardinality 0..*, and from 'drn_Expression', the role 'drn_Expression26' has cardinality 0..*.
+An association connects 'drn_RefPart' and 'drn_Assignement'. From 'drn_RefPart', the role 'drn_RefPart30' has cardinality 0..*, and from 'drn_Assignement', the role 'drn_Assignement31' has cardinality 0..*.
+An association connects 'drn_RefPartLib' and 'drn_Library'. From 'drn_RefPartLib', the role 'drn_RefPartLib' has cardinality 0..*, and from 'drn_Library', the role 'drn_Library33' has cardinality 0..*.
+An association connects 'drn_RefPartLib' and 'drn_Assignement'. From 'drn_RefPartLib', the role 'drn_RefPartLib35' has cardinality 0..*, and from 'drn_Assignement', the role 'drn_Assignement36' has cardinality 0..*.
+An association connects 'drn_And' and 'drn_Rotate'. From 'drn_And', the role 'drn_And' has cardinality 0..*, and from 'drn_Rotate', the role 'drn_Rotate' has cardinality 0..*.
+An association connects 'drn_And' and 'drn_DepX_Impl'. From 'drn_And', the role 'drn_And39' has cardinality 0..*, and from 'drn_DepX_Impl', the role 'drn_DepX_Impl' has cardinality 0..*.
+An association connects 'drn_DepY_Impl' and 'drn_And'. From 'drn_DepY_Impl', the role 'drn_DepY_Impl' has cardinality 0..*, and from 'drn_And', the role 'drn_And41' has cardinality 0..*.
+An association connects 'drn_DepZ_Impl' and 'drn_And'. From 'drn_DepZ_Impl', the role 'drn_DepZ_Impl' has cardinality 0..*, and from 'drn_And', the role 'drn_And43' has cardinality 0..*.
+An association connects 'drn_Declaration' and 'drn_Device'. From 'drn_Declaration', the role 'drn_Declaration' has cardinality 0..*, and from 'drn_Device', the role 'drn_Device45' has cardinality 0..*.
+An association connects 'drn_Declaration' and 'drn_TypeGeneric'. From 'drn_Declaration', the role 'drn_Declaration47' has cardinality 0..*, and from 'drn_TypeGeneric', the role 'drn_TypeGeneric48' has cardinality 0..*.
+An association connects 'drn_Declaration' and 'drn_Definition'. From 'drn_Declaration', the role 'drn_Declaration50' has cardinality 0..*, and from 'drn_Definition', the role 'drn_Definition' has cardinality 0..*.
+An association connects 'drn_Definition' and 'drn_Element'. From 'drn_Definition', the role 'drn_Definition52' has cardinality 0..*, and from 'drn_Element', the role 'drn_Element' has cardinality 0..*.
+An association connects 'drn_RefDevice' and 'drn_With'. From 'drn_RefDevice', the role 'drn_RefDevice' has cardinality 0..*, and from 'drn_With', the role 'drn_With54' has cardinality 0..*.
+An association connects 'drn_RefDevice' and 'drn_Device'. From 'drn_RefDevice', the role 'drn_RefDevice56' has cardinality 0..*, and from 'drn_Device', the role 'drn_Device57' has cardinality 0..*.
+An association connects 'drn_RefDevice' and 'drn_Definition'. From 'drn_RefDevice', the role 'drn_RefDevice59' has cardinality 0..*, and from 'drn_Definition', the role 'drn_Definition60' has cardinality 0..*.
+An association connects 'drn_Element' and 'drn_TypeGeneric'. From 'drn_Element', the role 'drn_Element63' has cardinality 0..*, and from 'drn_TypeGeneric', the role 'drn_TypeGeneric62' has cardinality 0..*.

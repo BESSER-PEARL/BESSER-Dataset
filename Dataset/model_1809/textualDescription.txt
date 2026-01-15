@@ -1,0 +1,59 @@
+The domain model 'sistedesMM' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'sistedesMM_SistedesMember' represents an important domain concept.
+It does not declare any attributes.
+
+'sistedesMM_Book' represents an important domain concept.
+It has the following attributes: 'isbn', which is of type str; 'year', which is of type int; 'edition', which is of type int; 'month', which is of type str; 'volume', which is of type str; 'series', which is of type str; 'title', which is of type str.
+
+'sistedesMM_Edition' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'year', which is of type int.
+
+'sistedesMM_Editor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sistedesMM_InProceedings' represents an important domain concept.
+It has the following attributes: 'toPage', which is of type str; 'bookTitle', which is of type str; 'fromPage', which is of type str; 'month', which is of type str; 'year', which is of type int; 'title', which is of type str.
+
+'sistedesMM_Article' represents an important domain concept.
+It has the following attributes: 'month', which is of type str; 'toPage', which is of type int; 'year', which is of type int; 'number', which is of type int; 'fromPage', which is of type int; 'volume', which is of type str; 'title', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'sistedesMM_Publication' represents an important domain concept.
+It does not declare any attributes.
+
+'sistedesMM_University' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'country', which is of type str; 'city', which is of type str; 'provinceOrState', which is of type str.
+
+'sistedesMM_Person' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'surname', which is of type str; 'name', which is of type str; 'nationality', which is of type str.
+
+'sistedesMM_Publisher' represents an important domain concept.
+It has the following attributes: 'address', which is of type str; 'name', which is of type str.
+
+'Publication' represents an important domain concept.
+It does not declare any attributes.
+
+'sistedesMM_Journal' represents an important domain concept.
+It has the following attributes: 'jcrIndexed', which is of type bool; 'name', which is of type str; 'acronym', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'sistedesMM_Article' is a specialization of 'Publication'.
+The class 'sistedesMM_InProceedings' is a specialization of 'Publication'.
+The class 'sistedesMM_Book' is a specialization of 'Publication'.
+The class 'sistedesMM_SistedesMember' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sistedesMM_University' and 'sistedesMM_Person'. From 'sistedesMM_University', the role 'sistedesMM_University' has cardinality 0..*, and from 'sistedesMM_Person', the role 'sistedesMM_Person' has cardinality 0..*.
+An association connects 'sistedesMM_Publication' and 'sistedesMM_Person'. From 'sistedesMM_Publication', the role 'Publication' has cardinality 0..*, and from 'sistedesMM_Person', the role 'authors' has cardinality 0..*.
+An association connects 'sistedesMM_Publication' and 'sistedesMM_Person'. From 'sistedesMM_Publication', the role 'publications' has cardinality 0..*, and from 'sistedesMM_Person', the role 'Person' has cardinality 0..*.
+An association connects 'sistedesMM_Article' and 'sistedesMM_Journal'. From 'sistedesMM_Article', the role 'articles' has cardinality 0..*, and from 'sistedesMM_Journal', the role 'Journal' has cardinality 0..*.
+An association connects 'sistedesMM_InProceedings' and 'sistedesMM_Publisher'. From 'sistedesMM_InProceedings', the role 'sistedesMM_InProceedings' has cardinality 0..*, and from 'sistedesMM_Publisher', the role 'sistedesMM_Publisher' has cardinality 0..*.
+An association connects 'sistedesMM_Editor' and 'sistedesMM_InProceedings'. From 'sistedesMM_Editor', the role 'sistedesMM_Editor' has cardinality 0..*, and from 'sistedesMM_InProceedings', the role 'sistedesMM_InProceedings6' has cardinality 0..*.
+An association connects 'sistedesMM_Journal' and 'sistedesMM_Article'. From 'sistedesMM_Journal', the role 'journal' has cardinality 0..*, and from 'sistedesMM_Article', the role 'Article' has cardinality 0..*.
+An association connects 'sistedesMM_Book' and 'sistedesMM_Publisher'. From 'sistedesMM_Book', the role 'sistedesMM_Book' has cardinality 0..*, and from 'sistedesMM_Publisher', the role 'sistedesMM_Publisher9' has cardinality 0..*.
+An association connects 'sistedesMM_Edition' and 'sistedesMM_SistedesMember'. From 'sistedesMM_Edition', the role 'sistedesMM_Edition' has cardinality 0..*, and from 'sistedesMM_SistedesMember', the role 'sistedesMM_SistedesMember' has cardinality 0..*.

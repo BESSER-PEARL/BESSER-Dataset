@@ -1,0 +1,57 @@
+The domain model 'e2' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'e2_AssignmentSubmission' represents an important domain concept.
+It has the following attributes: 'Comments', which is of type str; 'assessment', which is of type int.
+
+'e2_EClass0' represents an important domain concept.
+It does not declare any attributes.
+
+'e2_Goal' represents an important domain concept.
+It has the following attributes: 'GoalText', which is of type str; 'GoalID', which is of type str.
+
+'e2_LectureContent' represents an important domain concept.
+It has the following attributes: 'Type', which is of type str; 'Material', which is of type str.
+
+'e2_Group' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'e2_University' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'e2_Lecture' represents an important domain concept.
+It has the following attributes: 'length', which is of type int; 'Date', which is of type date.
+
+'e2_Assingnment' represents an important domain concept.
+It has the following attributes: 'Deadline', which is of type date; 'StartDate', which is of type date; 'Type', which is of type str; 'Content', which is of type str; 'Title', which is of type str; 'isMandatory', which is of type bool.
+
+'e2_Person' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'e2_SubGoal' represents an important domain concept.
+It has the following attributes: 'GoalID', which is of type str; 'GoalText', which is of type str.
+
+'e2_Course' represents an important domain concept.
+It has the following attributes: 'credit', which is of type float; 'ID', which is of type str; 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'e2_Lecture' and 'e2_LectureContent'. From 'e2_Lecture', the role 'e2_Lecture' has cardinality 0..*, and from 'e2_LectureContent', the role 'e2_LectureContent' has cardinality 0..*.
+An association connects 'e2_Lecture' and 'e2_SubGoal'. From 'e2_Lecture', the role 'e2_Lecture2' has cardinality 0..*, and from 'e2_SubGoal', the role 'e2_SubGoal' has cardinality 0..*.
+An association connects 'e2_Person' and 'e2_AssignmentSubmission'. From 'e2_Person', the role 'e2_Person' has cardinality 0..*, and from 'e2_AssignmentSubmission', the role 'e2_AssignmentSubmission' has cardinality 0..*.
+An association connects 'e2_SubGoal' and 'e2_Assingnment'. From 'e2_SubGoal', the role 'e2_SubGoal5' has cardinality 0..*, and from 'e2_Assingnment', the role 'e2_Assingnment' has cardinality 0..*.
+An association connects 'e2_Person' and 'e2_Course'. From 'e2_Person', the role 'e2_Person7' has cardinality 0..*, and from 'e2_Course', the role 'e2_Course' has cardinality 0..*.
+An association connects 'e2_Course' and 'e2_Person'. From 'e2_Course', the role 'e2_Course9' has cardinality 0..*, and from 'e2_Person', the role 'e2_Person10' has cardinality 0..*.
+An association connects 'e2_Assingnment' and 'e2_Course'. From 'e2_Assingnment', the role 'e2_Assingnment13' has cardinality 0..*, and from 'e2_Course', the role 'e2_Course12' has cardinality 0..*.
+An association connects 'e2_Lecture' and 'e2_Course'. From 'e2_Lecture', the role 'e2_Lecture16' has cardinality 0..*, and from 'e2_Course', the role 'e2_Course15' has cardinality 0..*.
+An association connects 'e2_Group' and 'e2_Course'. From 'e2_Group', the role 'e2_Group' has cardinality 0..*, and from 'e2_Course', the role 'e2_Course18' has cardinality 0..*.
+An association connects 'e2_Course' and 'e2_Person'. From 'e2_Course', the role 'e2_Course20' has cardinality 0..*, and from 'e2_Person', the role 'e2_Person21' has cardinality 0..*.
+An association connects 'e2_Course' and 'e2_Goal'. From 'e2_Course', the role 'e2_Course23' has cardinality 0..*, and from 'e2_Goal', the role 'e2_Goal' has cardinality 0..*.
+An association connects 'e2_Group' and 'e2_Person'. From 'e2_Group', the role 'e2_Group25' has cardinality 0..*, and from 'e2_Person', the role 'e2_Person26' has cardinality 0..*.
+An association connects 'e2_Group' and 'e2_AssignmentSubmission'. From 'e2_Group', the role 'e2_Group28' has cardinality 0..*, and from 'e2_AssignmentSubmission', the role 'e2_AssignmentSubmission29' has cardinality 0..*.
+An association connects 'e2_AssignmentSubmission' and 'e2_Assingnment'. From 'e2_AssignmentSubmission', the role 'e2_AssignmentSubmission31' has cardinality 0..*, and from 'e2_Assingnment', the role 'e2_Assingnment32' has cardinality 0..*.
+An association connects 'e2_Person' and 'e2_AssignmentSubmission'. From 'e2_Person', the role 'e2_Person35' has cardinality 0..*, and from 'e2_AssignmentSubmission', the role 'e2_AssignmentSubmission34' has cardinality 0..*.
+An association connects 'e2_Person' and 'e2_University'. From 'e2_Person', the role 'e2_Person37' has cardinality 0..*, and from 'e2_University', the role 'e2_University' has cardinality 0..*.
+An association connects 'e2_University' and 'e2_Course'. From 'e2_University', the role 'e2_University39' has cardinality 0..*, and from 'e2_Course', the role 'e2_Course40' has cardinality 0..*.
+An association connects 'e2_LectureContent' and 'e2_Assingnment'. From 'e2_LectureContent', the role 'e2_LectureContent42' has cardinality 0..*, and from 'e2_Assingnment', the role 'e2_Assingnment43' has cardinality 0..*.
+An association connects 'e2_Goal' and 'e2_SubGoal'. From 'e2_Goal', the role 'e2_Goal45' has cardinality 0..*, and from 'e2_SubGoal', the role 'e2_SubGoal46' has cardinality 0..*.

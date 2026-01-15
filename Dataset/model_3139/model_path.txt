@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/altran-mde/xtext-sirius-integration/demo/com.example.classes/model/generated/Classes.ecore

@@ -1,0 +1,547 @@
+The domain model 'bpmn2' describes the core structural elements and their relationships within the system.
+
+The model defines 135 main class(es).
+
+'CallConversation' represents an important domain concept.
+It does not declare any attributes.
+
+'events_CompensateEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Escalation' represents an important domain concept.
+It does not declare any attributes.
+
+'flows_FlowNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'events_ImplicitThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'HumanPerformer' represents an important domain concept.
+It does not declare any attributes.
+
+'SendTask' represents an important domain concept.
+It does not declare any attributes.
+
+'events_EndEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopCharacteristics' represents an important domain concept.
+It does not declare any attributes.
+
+'Performer' represents an important domain concept.
+It does not declare any attributes.
+
+'DataOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'events_TimerEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'choreographyactivities_ChoreographyActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalManualTask' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceRole' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'events_ErrorEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'choreographyactivities_CallChoreography' represents an important domain concept.
+It does not declare any attributes.
+
+'Task' represents an important domain concept.
+It does not declare any attributes.
+
+'Definitions' represents an important domain concept.
+It does not declare any attributes.
+
+'artifacts_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'DataAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalScriptTask' represents an important domain concept.
+It does not declare any attributes.
+
+'ParticipantAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'events_LinkEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'DataState' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceTask' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalUserTask' represents an important domain concept.
+It does not declare any attributes.
+
+'Participant' represents an important domain concept.
+It does not declare any attributes.
+
+'gateways_ExclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'events_TerminateEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gateways_ParallelGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'extension_Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'DataInput' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gateways_InclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'events_ThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'UserTask' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageFlowAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'Auditing' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardLoopCharacteristics' represents an important domain concept.
+It does not declare any attributes.
+
+'AdHocSubProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'events_EventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'artifacts_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'ConversationAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'events_SignalEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'events_EscalationEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Import' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ComplexBehaviorDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'SubProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessRuleTask' represents an important domain concept.
+It does not declare any attributes.
+
+'events_CatchEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'flows_SequenceFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'Conversation' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'correlations_CorrelationSubscription' represents an important domain concept.
+It does not declare any attributes.
+
+'artifacts_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'events_BoundaryEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'InputOutputBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'Error' represents an important domain concept.
+It does not declare any attributes.
+
+'InputOutputSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'events_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiInstanceLoopCharacteristics' represents an important domain concept.
+It does not declare any attributes.
+
+'Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'CallableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'correlations_CorrelationPropertyRetrievalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DataObjectReference' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Message' represents an important domain concept.
+It does not declare any attributes.
+
+'DataObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ParticipantMultiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'Lane' represents an important domain concept.
+It does not declare any attributes.
+
+'ScriptTask' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmn2_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Documentation' represents an important domain concept.
+It does not declare any attributes.
+
+'InputSet' represents an important domain concept.
+It does not declare any attributes.
+
+'flows_FlowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'events_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'OutputSet' represents an important domain concept.
+It does not declare any attributes.
+
+'DataStore' represents an important domain concept.
+It does not declare any attributes.
+
+'EndPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'Rendering' represents an important domain concept.
+It does not declare any attributes.
+
+'CallActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'ManualTask' represents an important domain concept.
+It does not declare any attributes.
+
+'events_ConditionalEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'choreographyactivities_SubChoreography' represents an important domain concept.
+It does not declare any attributes.
+
+'events_IntermediateThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'artifacts_TextAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'extension_ExtensionAttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ConversationNode' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'PotentialOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'Transaction' represents an important domain concept.
+It does not declare any attributes.
+
+'correlations_CorrelationProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalBusinessRuleTask' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalChoreographyTask' represents an important domain concept.
+It does not declare any attributes.
+
+'DataInputAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceParameterBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalTask' represents an important domain concept.
+It does not declare any attributes.
+
+'DataOutputAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'artifacts_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'correlations_CorrelationPropertyBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'ConversationLink' represents an important domain concept.
+It does not declare any attributes.
+
+'events_CancelEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ReceiveTask' represents an important domain concept.
+It does not declare any attributes.
+
+'artifacts_CategoryValue' represents an important domain concept.
+It does not declare any attributes.
+
+'gateways_EventBasedGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'PartnerRole' represents an important domain concept.
+It does not declare any attributes.
+
+'gateways_Gateway' represents an important domain concept.
+It does not declare any attributes.
+
+'gateways_ComplexGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'PartnerEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'DataStoreReference' represents an important domain concept.
+It does not declare any attributes.
+
+'events_IntermediateCatchEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Choreography' represents an important domain concept.
+It does not declare any attributes.
+
+'choreographyactivities_ChoreographyTask' represents an important domain concept.
+It does not declare any attributes.
+
+'events_StartEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Monitoring' represents an important domain concept.
+It does not declare any attributes.
+
+'correlations_CorrelationKey' represents an important domain concept.
+It does not declare any attributes.
+
+'FormalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalConversation' represents an important domain concept.
+It does not declare any attributes.
+
+'LaneSet' represents an important domain concept.
+It does not declare any attributes.
+
+'SubConversation' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'bpmn2_DocumentRoot' and 'bpmn2_EStringToStringMapEntry'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot' has cardinality 0..*, and from 'bpmn2_EStringToStringMapEntry', the role 'bpmn2_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'bpmn2_EStringToStringMapEntry'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot2' has cardinality 0..*, and from 'bpmn2_EStringToStringMapEntry', the role 'bpmn2_EStringToStringMapEntry3' has cardinality 0..*.
+An association connects 'Activity' and 'bpmn2_DocumentRoot'. From 'Activity', the role 'Activity' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot5' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'AdHocSubProcess'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot7' has cardinality 0..*, and from 'AdHocSubProcess', the role 'AdHocSubProcess' has cardinality 0..*.
+An association connects 'flows_FlowElement' and 'bpmn2_DocumentRoot'. From 'flows_FlowElement', the role 'flows_FlowElement' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot9' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'artifacts_Artifact'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot11' has cardinality 0..*, and from 'artifacts_Artifact', the role 'artifacts_Artifact' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'Assignment'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot13' has cardinality 0..*, and from 'Assignment', the role 'Assignment' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'artifacts_Association'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot15' has cardinality 0..*, and from 'artifacts_Association', the role 'artifacts_Association' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'Auditing'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot17' has cardinality 0..*, and from 'Auditing', the role 'Auditing' has cardinality 0..*.
+An association connects 'BaseElement' and 'bpmn2_DocumentRoot'. From 'BaseElement', the role 'BaseElement' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot19' has cardinality 0..*.
+An association connects 'BaseElement' and 'bpmn2_DocumentRoot'. From 'BaseElement', the role 'BaseElement22' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot21' has cardinality 0..*.
+An association connects 'events_BoundaryEvent' and 'bpmn2_DocumentRoot'. From 'events_BoundaryEvent', the role 'events_BoundaryEvent' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot24' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'BusinessRuleTask'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot26' has cardinality 0..*, and from 'BusinessRuleTask', the role 'BusinessRuleTask' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'CallableElement'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot28' has cardinality 0..*, and from 'CallableElement', the role 'CallableElement' has cardinality 0..*.
+An association connects 'CallActivity' and 'bpmn2_DocumentRoot'. From 'CallActivity', the role 'CallActivity' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot30' has cardinality 0..*.
+An association connects 'choreographyactivities_CallChoreography' and 'bpmn2_DocumentRoot'. From 'choreographyactivities_CallChoreography', the role 'choreographyactivities_CallChoreography' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot32' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'CallConversation'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot34' has cardinality 0..*, and from 'CallConversation', the role 'CallConversation' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'ConversationNode'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot36' has cardinality 0..*, and from 'ConversationNode', the role 'ConversationNode' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'events_CancelEventDefinition'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot38' has cardinality 0..*, and from 'events_CancelEventDefinition', the role 'events_CancelEventDefinition' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'events_EventDefinition'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot40' has cardinality 0..*, and from 'events_EventDefinition', the role 'events_EventDefinition' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'RootElement'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot42' has cardinality 0..*, and from 'RootElement', the role 'RootElement' has cardinality 0..*.
+An association connects 'events_CatchEvent' and 'bpmn2_DocumentRoot'. From 'events_CatchEvent', the role 'events_CatchEvent' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot44' has cardinality 0..*.
+An association connects 'artifacts_Category' and 'bpmn2_DocumentRoot'. From 'artifacts_Category', the role 'artifacts_Category' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot46' has cardinality 0..*.
+An association connects 'artifacts_CategoryValue' and 'bpmn2_DocumentRoot'. From 'artifacts_CategoryValue', the role 'artifacts_CategoryValue' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot48' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'Choreography'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot50' has cardinality 0..*, and from 'Choreography', the role 'Choreography' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'Collaboration'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot52' has cardinality 0..*, and from 'Collaboration', the role 'Collaboration' has cardinality 0..*.
+An association connects 'choreographyactivities_ChoreographyActivity' and 'bpmn2_DocumentRoot'. From 'choreographyactivities_ChoreographyActivity', the role 'choreographyactivities_ChoreographyActivity' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot54' has cardinality 0..*.
+An association connects 'choreographyactivities_ChoreographyTask' and 'bpmn2_DocumentRoot'. From 'choreographyactivities_ChoreographyTask', the role 'choreographyactivities_ChoreographyTask' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot56' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'events_CompensateEventDefinition'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot58' has cardinality 0..*, and from 'events_CompensateEventDefinition', the role 'events_CompensateEventDefinition' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'ComplexBehaviorDefinition'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot60' has cardinality 0..*, and from 'ComplexBehaviorDefinition', the role 'ComplexBehaviorDefinition' has cardinality 0..*.
+An association connects 'gateways_ComplexGateway' and 'bpmn2_DocumentRoot'. From 'gateways_ComplexGateway', the role 'gateways_ComplexGateway' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot62' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'events_ConditionalEventDefinition'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot64' has cardinality 0..*, and from 'events_ConditionalEventDefinition', the role 'events_ConditionalEventDefinition' has cardinality 0..*.
+An association connects 'Conversation' and 'bpmn2_DocumentRoot'. From 'Conversation', the role 'Conversation' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot66' has cardinality 0..*.
+An association connects 'ConversationAssociation' and 'bpmn2_DocumentRoot'. From 'ConversationAssociation', the role 'ConversationAssociation' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot68' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'ConversationLink'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot70' has cardinality 0..*, and from 'ConversationLink', the role 'ConversationLink' has cardinality 0..*.
+An association connects 'correlations_CorrelationKey' and 'bpmn2_DocumentRoot'. From 'correlations_CorrelationKey', the role 'correlations_CorrelationKey' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot72' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'correlations_CorrelationProperty'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot74' has cardinality 0..*, and from 'correlations_CorrelationProperty', the role 'correlations_CorrelationProperty' has cardinality 0..*.
+An association connects 'correlations_CorrelationPropertyBinding' and 'bpmn2_DocumentRoot'. From 'correlations_CorrelationPropertyBinding', the role 'correlations_CorrelationPropertyBinding' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot76' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'correlations_CorrelationPropertyRetrievalExpression'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot78' has cardinality 0..*, and from 'correlations_CorrelationPropertyRetrievalExpression', the role 'correlations_CorrelationPropertyRetrievalExpression' has cardinality 0..*.
+An association connects 'correlations_CorrelationSubscription' and 'bpmn2_DocumentRoot'. From 'correlations_CorrelationSubscription', the role 'correlations_CorrelationSubscription' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot80' has cardinality 0..*.
+An association connects 'DataAssociation' and 'bpmn2_DocumentRoot'. From 'DataAssociation', the role 'DataAssociation' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot82' has cardinality 0..*.
+An association connects 'DataInput' and 'bpmn2_DocumentRoot'. From 'DataInput', the role 'DataInput' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot84' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'DataInputAssociation'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot86' has cardinality 0..*, and from 'DataInputAssociation', the role 'DataInputAssociation' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'DataObject'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot88' has cardinality 0..*, and from 'DataObject', the role 'DataObject' has cardinality 0..*.
+An association connects 'DataObjectReference' and 'bpmn2_DocumentRoot'. From 'DataObjectReference', the role 'DataObjectReference' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot90' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'DataOutput'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot92' has cardinality 0..*, and from 'DataOutput', the role 'DataOutput' has cardinality 0..*.
+An association connects 'DataOutputAssociation' and 'bpmn2_DocumentRoot'. From 'DataOutputAssociation', the role 'DataOutputAssociation' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot94' has cardinality 0..*.
+An association connects 'DataState' and 'bpmn2_DocumentRoot'. From 'DataState', the role 'DataState' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot96' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'DataStore'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot98' has cardinality 0..*, and from 'DataStore', the role 'DataStore' has cardinality 0..*.
+An association connects 'DataStoreReference' and 'bpmn2_DocumentRoot'. From 'DataStoreReference', the role 'DataStoreReference' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot100' has cardinality 0..*.
+An association connects 'Definitions' and 'bpmn2_DocumentRoot'. From 'Definitions', the role 'Definitions' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot102' has cardinality 0..*.
+An association connects 'Documentation' and 'bpmn2_DocumentRoot'. From 'Documentation', the role 'Documentation' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot104' has cardinality 0..*.
+An association connects 'events_EndEvent' and 'bpmn2_DocumentRoot'. From 'events_EndEvent', the role 'events_EndEvent' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot106' has cardinality 0..*.
+An association connects 'EndPoint' and 'bpmn2_DocumentRoot'. From 'EndPoint', the role 'EndPoint' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot108' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'Error'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot110' has cardinality 0..*, and from 'Error', the role 'Error' has cardinality 0..*.
+An association connects 'events_ErrorEventDefinition' and 'bpmn2_DocumentRoot'. From 'events_ErrorEventDefinition', the role 'events_ErrorEventDefinition' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot112' has cardinality 0..*.
+An association connects 'Escalation' and 'bpmn2_DocumentRoot'. From 'Escalation', the role 'Escalation' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot114' has cardinality 0..*.
+An association connects 'events_EscalationEventDefinition' and 'bpmn2_DocumentRoot'. From 'events_EscalationEventDefinition', the role 'events_EscalationEventDefinition' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot116' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'events_Event'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot118' has cardinality 0..*, and from 'events_Event', the role 'events_Event' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'gateways_EventBasedGateway'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot120' has cardinality 0..*, and from 'gateways_EventBasedGateway', the role 'gateways_EventBasedGateway' has cardinality 0..*.
+An association connects 'gateways_ExclusiveGateway' and 'bpmn2_DocumentRoot'. From 'gateways_ExclusiveGateway', the role 'gateways_ExclusiveGateway' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot122' has cardinality 0..*.
+An association connects 'Expression' and 'bpmn2_DocumentRoot'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot124' has cardinality 0..*.
+An association connects 'extension_Extension' and 'bpmn2_DocumentRoot'. From 'extension_Extension', the role 'extension_Extension' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot126' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'extension_ExtensionAttributeValue'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot128' has cardinality 0..*, and from 'extension_ExtensionAttributeValue', the role 'extension_ExtensionAttributeValue' has cardinality 0..*.
+An association connects 'flows_FlowNode' and 'bpmn2_DocumentRoot'. From 'flows_FlowNode', the role 'flows_FlowNode' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot130' has cardinality 0..*.
+An association connects 'FormalExpression' and 'bpmn2_DocumentRoot'. From 'FormalExpression', the role 'FormalExpression' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot132' has cardinality 0..*.
+An association connects 'gateways_Gateway' and 'bpmn2_DocumentRoot'. From 'gateways_Gateway', the role 'gateways_Gateway' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot134' has cardinality 0..*.
+An association connects 'GlobalBusinessRuleTask' and 'bpmn2_DocumentRoot'. From 'GlobalBusinessRuleTask', the role 'GlobalBusinessRuleTask' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot136' has cardinality 0..*.
+An association connects 'GlobalChoreographyTask' and 'bpmn2_DocumentRoot'. From 'GlobalChoreographyTask', the role 'GlobalChoreographyTask' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot138' has cardinality 0..*.
+An association connects 'GlobalConversation' and 'bpmn2_DocumentRoot'. From 'GlobalConversation', the role 'GlobalConversation' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot140' has cardinality 0..*.
+An association connects 'GlobalManualTask' and 'bpmn2_DocumentRoot'. From 'GlobalManualTask', the role 'GlobalManualTask' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot142' has cardinality 0..*.
+An association connects 'GlobalScriptTask' and 'bpmn2_DocumentRoot'. From 'GlobalScriptTask', the role 'GlobalScriptTask' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot144' has cardinality 0..*.
+An association connects 'GlobalTask' and 'bpmn2_DocumentRoot'. From 'GlobalTask', the role 'GlobalTask' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot146' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'GlobalUserTask'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot148' has cardinality 0..*, and from 'GlobalUserTask', the role 'GlobalUserTask' has cardinality 0..*.
+An association connects 'artifacts_Group' and 'bpmn2_DocumentRoot'. From 'artifacts_Group', the role 'artifacts_Group' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot150' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'HumanPerformer'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot152' has cardinality 0..*, and from 'HumanPerformer', the role 'HumanPerformer' has cardinality 0..*.
+An association connects 'Performer' and 'bpmn2_DocumentRoot'. From 'Performer', the role 'Performer' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot154' has cardinality 0..*.
+An association connects 'ResourceRole' and 'bpmn2_DocumentRoot'. From 'ResourceRole', the role 'ResourceRole' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot156' has cardinality 0..*.
+An association connects 'events_ImplicitThrowEvent' and 'bpmn2_DocumentRoot'. From 'events_ImplicitThrowEvent', the role 'events_ImplicitThrowEvent' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot158' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'Import'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot160' has cardinality 0..*, and from 'Import', the role 'Import' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'gateways_InclusiveGateway'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot162' has cardinality 0..*, and from 'gateways_InclusiveGateway', the role 'gateways_InclusiveGateway' has cardinality 0..*.
+An association connects 'InputSet' and 'bpmn2_DocumentRoot'. From 'InputSet', the role 'InputSet' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot164' has cardinality 0..*.
+An association connects 'Interface' and 'bpmn2_DocumentRoot'. From 'Interface', the role 'Interface' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot166' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'events_IntermediateCatchEvent'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot168' has cardinality 0..*, and from 'events_IntermediateCatchEvent', the role 'events_IntermediateCatchEvent' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'events_IntermediateThrowEvent'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot170' has cardinality 0..*, and from 'events_IntermediateThrowEvent', the role 'events_IntermediateThrowEvent' has cardinality 0..*.
+An association connects 'InputOutputBinding' and 'bpmn2_DocumentRoot'. From 'InputOutputBinding', the role 'InputOutputBinding' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot172' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'InputOutputSpecification'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot174' has cardinality 0..*, and from 'InputOutputSpecification', the role 'InputOutputSpecification' has cardinality 0..*.
+An association connects 'ItemDefinition' and 'bpmn2_DocumentRoot'. From 'ItemDefinition', the role 'ItemDefinition' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot176' has cardinality 0..*.
+An association connects 'Lane' and 'bpmn2_DocumentRoot'. From 'Lane', the role 'Lane' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot178' has cardinality 0..*.
+An association connects 'LaneSet' and 'bpmn2_DocumentRoot'. From 'LaneSet', the role 'LaneSet' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot180' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'events_LinkEventDefinition'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot182' has cardinality 0..*, and from 'events_LinkEventDefinition', the role 'events_LinkEventDefinition' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'LoopCharacteristics'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot184' has cardinality 0..*, and from 'LoopCharacteristics', the role 'LoopCharacteristics' has cardinality 0..*.
+An association connects 'ManualTask' and 'bpmn2_DocumentRoot'. From 'ManualTask', the role 'ManualTask' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot186' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'Message'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot188' has cardinality 0..*, and from 'Message', the role 'Message' has cardinality 0..*.
+An association connects 'MessageEventDefinition' and 'bpmn2_DocumentRoot'. From 'MessageEventDefinition', the role 'MessageEventDefinition' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot190' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'MessageFlow'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot192' has cardinality 0..*, and from 'MessageFlow', the role 'MessageFlow' has cardinality 0..*.
+An association connects 'MessageFlowAssociation' and 'bpmn2_DocumentRoot'. From 'MessageFlowAssociation', the role 'MessageFlowAssociation' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot194' has cardinality 0..*.
+An association connects 'Monitoring' and 'bpmn2_DocumentRoot'. From 'Monitoring', the role 'Monitoring' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot196' has cardinality 0..*.
+An association connects 'MultiInstanceLoopCharacteristics' and 'bpmn2_DocumentRoot'. From 'MultiInstanceLoopCharacteristics', the role 'MultiInstanceLoopCharacteristics' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot198' has cardinality 0..*.
+An association connects 'Operation' and 'bpmn2_DocumentRoot'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot200' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'OutputSet'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot202' has cardinality 0..*, and from 'OutputSet', the role 'OutputSet' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'gateways_ParallelGateway'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot204' has cardinality 0..*, and from 'gateways_ParallelGateway', the role 'gateways_ParallelGateway' has cardinality 0..*.
+An association connects 'Participant' and 'bpmn2_DocumentRoot'. From 'Participant', the role 'Participant' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot206' has cardinality 0..*.
+An association connects 'ParticipantAssociation' and 'bpmn2_DocumentRoot'. From 'ParticipantAssociation', the role 'ParticipantAssociation' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot208' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'ParticipantMultiplicity'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot210' has cardinality 0..*, and from 'ParticipantMultiplicity', the role 'ParticipantMultiplicity' has cardinality 0..*.
+An association connects 'PartnerEntity' and 'bpmn2_DocumentRoot'. From 'PartnerEntity', the role 'PartnerEntity' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot212' has cardinality 0..*.
+An association connects 'PartnerRole' and 'bpmn2_DocumentRoot'. From 'PartnerRole', the role 'PartnerRole' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot214' has cardinality 0..*.
+An association connects 'PotentialOwner' and 'bpmn2_DocumentRoot'. From 'PotentialOwner', the role 'PotentialOwner' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot216' has cardinality 0..*.
+An association connects 'Process' and 'bpmn2_DocumentRoot'. From 'Process', the role 'Process' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot218' has cardinality 0..*.
+An association connects 'Property' and 'bpmn2_DocumentRoot'. From 'Property', the role 'Property' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot220' has cardinality 0..*.
+An association connects 'ReceiveTask' and 'bpmn2_DocumentRoot'. From 'ReceiveTask', the role 'ReceiveTask' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot222' has cardinality 0..*.
+An association connects 'Relationship' and 'bpmn2_DocumentRoot'. From 'Relationship', the role 'Relationship' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot224' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'Rendering'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot226' has cardinality 0..*, and from 'Rendering', the role 'Rendering' has cardinality 0..*.
+An association connects 'Resource' and 'bpmn2_DocumentRoot'. From 'Resource', the role 'Resource' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot228' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'ResourceAssignmentExpression'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot230' has cardinality 0..*, and from 'ResourceAssignmentExpression', the role 'ResourceAssignmentExpression' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'ResourceParameter'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot232' has cardinality 0..*, and from 'ResourceParameter', the role 'ResourceParameter' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'ResourceParameterBinding'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot234' has cardinality 0..*, and from 'ResourceParameterBinding', the role 'ResourceParameterBinding' has cardinality 0..*.
+An association connects 'bpmn2_EObject' and 'bpmn2_DocumentRoot'. From 'bpmn2_EObject', the role 'bpmn2_EObject' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot236' has cardinality 0..*.
+An association connects 'ScriptTask' and 'bpmn2_DocumentRoot'. From 'ScriptTask', the role 'ScriptTask' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot238' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'SendTask'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot240' has cardinality 0..*, and from 'SendTask', the role 'SendTask' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'flows_SequenceFlow'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot242' has cardinality 0..*, and from 'flows_SequenceFlow', the role 'flows_SequenceFlow' has cardinality 0..*.
+An association connects 'ServiceTask' and 'bpmn2_DocumentRoot'. From 'ServiceTask', the role 'ServiceTask' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot244' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'events_Signal'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot246' has cardinality 0..*, and from 'events_Signal', the role 'events_Signal' has cardinality 0..*.
+An association connects 'events_SignalEventDefinition' and 'bpmn2_DocumentRoot'. From 'events_SignalEventDefinition', the role 'events_SignalEventDefinition' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot248' has cardinality 0..*.
+An association connects 'StandardLoopCharacteristics' and 'bpmn2_DocumentRoot'. From 'StandardLoopCharacteristics', the role 'StandardLoopCharacteristics' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot250' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'events_StartEvent'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot252' has cardinality 0..*, and from 'events_StartEvent', the role 'events_StartEvent' has cardinality 0..*.
+An association connects 'choreographyactivities_SubChoreography' and 'bpmn2_DocumentRoot'. From 'choreographyactivities_SubChoreography', the role 'choreographyactivities_SubChoreography' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot254' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'SubConversation'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot256' has cardinality 0..*, and from 'SubConversation', the role 'SubConversation' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'SubProcess'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot258' has cardinality 0..*, and from 'SubProcess', the role 'SubProcess' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'Task'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot260' has cardinality 0..*, and from 'Task', the role 'Task' has cardinality 0..*.
+An association connects 'events_TerminateEventDefinition' and 'bpmn2_DocumentRoot'. From 'events_TerminateEventDefinition', the role 'events_TerminateEventDefinition' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot262' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'bpmn2_EObject'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot264' has cardinality 0..*, and from 'bpmn2_EObject', the role 'bpmn2_EObject265' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'artifacts_TextAnnotation'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot267' has cardinality 0..*, and from 'artifacts_TextAnnotation', the role 'artifacts_TextAnnotation' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'events_ThrowEvent'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot269' has cardinality 0..*, and from 'events_ThrowEvent', the role 'events_ThrowEvent' has cardinality 0..*.
+An association connects 'events_TimerEventDefinition' and 'bpmn2_DocumentRoot'. From 'events_TimerEventDefinition', the role 'events_TimerEventDefinition' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot271' has cardinality 0..*.
+An association connects 'bpmn2_DocumentRoot' and 'Transaction'. From 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot273' has cardinality 0..*, and from 'Transaction', the role 'Transaction' has cardinality 0..*.
+An association connects 'UserTask' and 'bpmn2_DocumentRoot'. From 'UserTask', the role 'UserTask' has cardinality 0..*, and from 'bpmn2_DocumentRoot', the role 'bpmn2_DocumentRoot275' has cardinality 0..*.

@@ -1,0 +1,157 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'myDsl_Equality' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'myDsl_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_BasicType' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_ElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_StringType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'myDsl_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_IntType' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'myDsl_MulOrDiv' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'myDsl_EntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_IsServer' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'myDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'myDsl_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicType' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_BoolType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'myDsl_Verb' represents an important domain concept.
+It has the following attributes: 'verb', which is of type str; 'qa', which is of type str.
+
+'myDsl_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'myDsl_And' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'myDsl_VariableConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'myDsl_ValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_ArrayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_Entity' is a specialization of 'Member'.
+The class 'myDsl_EntityType' is a specialization of 'ElementType'.
+The class 'myDsl_BasicType' is a specialization of 'ElementType'.
+The class 'myDsl_ArrayType' is a specialization of 'ElementType'.
+The class 'myDsl_Verb' is a specialization of 'Member'.
+The class 'myDsl_IntType' is a specialization of 'BasicType'.
+The class 'myDsl_StringType' is a specialization of 'BasicType'.
+The class 'myDsl_BoolType' is a specialization of 'BasicType'.
+The class 'myDsl_Or' is a specialization of 'Expression'.
+The class 'myDsl_And' is a specialization of 'Expression'.
+The class 'myDsl_Equality' is a specialization of 'Expression'.
+The class 'myDsl_Comparison' is a specialization of 'Expression'.
+The class 'myDsl_Plus' is a specialization of 'Expression'.
+The class 'myDsl_Minus' is a specialization of 'Expression'.
+The class 'myDsl_MulOrDiv' is a specialization of 'Expression'.
+The class 'myDsl_Not' is a specialization of 'Expression'.
+The class 'myDsl_IntConstant' is a specialization of 'Expression'.
+The class 'myDsl_StringConstant' is a specialization of 'Expression'.
+The class 'myDsl_BoolConstant' is a specialization of 'Expression'.
+The class 'myDsl_VariableConstant' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Member' and 'myDsl_Model'. From 'myDsl_Member', the role 'myDsl_Member' has cardinality 0..*, and from 'myDsl_Model', the role 'myDsl_Model' has cardinality 0..*.
+An association connects 'myDsl_Entity' and 'myDsl_IsServer'. From 'myDsl_Entity', the role 'myDsl_Entity' has cardinality 0..*, and from 'myDsl_IsServer', the role 'myDsl_IsServer' has cardinality 0..*.
+An association connects 'myDsl_Entity' and 'myDsl_Attribute'. From 'myDsl_Entity', the role 'myDsl_Entity3' has cardinality 0..*, and from 'myDsl_Attribute', the role 'myDsl_Attribute' has cardinality 0..*.
+An association connects 'myDsl_ValueType' and 'myDsl_Attribute'. From 'myDsl_ValueType', the role 'myDsl_ValueType' has cardinality 0..*, and from 'myDsl_Attribute', the role 'myDsl_Attribute5' has cardinality 0..*.
+An association connects 'myDsl_ValueType' and 'myDsl_ElementType'. From 'myDsl_ValueType', the role 'myDsl_ValueType7' has cardinality 0..*, and from 'myDsl_ElementType', the role 'myDsl_ElementType' has cardinality 0..*.
+An association connects 'myDsl_EntityType' and 'myDsl_Entity'. From 'myDsl_EntityType', the role 'myDsl_EntityType' has cardinality 0..*, and from 'myDsl_Entity', the role 'myDsl_Entity9' has cardinality 0..*.
+An association connects 'myDsl_ArrayElement' and 'myDsl_ArrayType'. From 'myDsl_ArrayElement', the role 'myDsl_ArrayElement' has cardinality 0..*, and from 'myDsl_ArrayType', the role 'myDsl_ArrayType' has cardinality 0..*.
+An association connects 'myDsl_BasicType' and 'myDsl_ArrayElement'. From 'myDsl_BasicType', the role 'myDsl_BasicType' has cardinality 0..*, and from 'myDsl_ArrayElement', the role 'myDsl_ArrayElement12' has cardinality 0..*.
+An association connects 'myDsl_Verb' and 'myDsl_Rule'. From 'myDsl_Verb', the role 'myDsl_Verb' has cardinality 0..*, and from 'myDsl_Rule', the role 'myDsl_Rule' has cardinality 0..*.
+An association connects 'myDsl_Condition' and 'myDsl_Rule'. From 'myDsl_Condition', the role 'myDsl_Condition' has cardinality 0..*, and from 'myDsl_Rule', the role 'myDsl_Rule15' has cardinality 0..*.
+An association connects 'myDsl_Rule' and 'myDsl_ArrayType'. From 'myDsl_Rule', the role 'myDsl_Rule17' has cardinality 0..*, and from 'myDsl_ArrayType', the role 'myDsl_ArrayType18' has cardinality 0..*.
+An association connects 'myDsl_Expression' and 'myDsl_Condition'. From 'myDsl_Expression', the role 'myDsl_Expression' has cardinality 0..*, and from 'myDsl_Condition', the role 'myDsl_Condition20' has cardinality 0..*.
+An association connects 'myDsl_Expression' and 'myDsl_Or'. From 'myDsl_Expression', the role 'myDsl_Expression22' has cardinality 0..*, and from 'myDsl_Or', the role 'myDsl_Or' has cardinality 0..*.
+An association connects 'myDsl_Expression' and 'myDsl_Or'. From 'myDsl_Expression', the role 'myDsl_Expression25' has cardinality 0..*, and from 'myDsl_Or', the role 'myDsl_Or24' has cardinality 0..*.
+An association connects 'myDsl_Expression' and 'myDsl_And'. From 'myDsl_Expression', the role 'myDsl_Expression27' has cardinality 0..*, and from 'myDsl_And', the role 'myDsl_And' has cardinality 0..*.
+An association connects 'myDsl_And' and 'myDsl_Expression'. From 'myDsl_And', the role 'myDsl_And29' has cardinality 0..*, and from 'myDsl_Expression', the role 'myDsl_Expression30' has cardinality 0..*.
+An association connects 'myDsl_Expression' and 'myDsl_Equality'. From 'myDsl_Expression', the role 'myDsl_Expression32' has cardinality 0..*, and from 'myDsl_Equality', the role 'myDsl_Equality' has cardinality 0..*.
+An association connects 'myDsl_Equality' and 'myDsl_Expression'. From 'myDsl_Equality', the role 'myDsl_Equality34' has cardinality 0..*, and from 'myDsl_Expression', the role 'myDsl_Expression35' has cardinality 0..*.
+An association connects 'myDsl_Expression' and 'myDsl_Comparison'. From 'myDsl_Expression', the role 'myDsl_Expression37' has cardinality 0..*, and from 'myDsl_Comparison', the role 'myDsl_Comparison' has cardinality 0..*.
+An association connects 'myDsl_Expression' and 'myDsl_Comparison'. From 'myDsl_Expression', the role 'myDsl_Expression40' has cardinality 0..*, and from 'myDsl_Comparison', the role 'myDsl_Comparison39' has cardinality 0..*.
+An association connects 'myDsl_Plus' and 'myDsl_Expression'. From 'myDsl_Plus', the role 'myDsl_Plus' has cardinality 0..*, and from 'myDsl_Expression', the role 'myDsl_Expression42' has cardinality 0..*.
+An association connects 'myDsl_Plus' and 'myDsl_Expression'. From 'myDsl_Plus', the role 'myDsl_Plus44' has cardinality 0..*, and from 'myDsl_Expression', the role 'myDsl_Expression45' has cardinality 0..*.
+An association connects 'myDsl_Minus' and 'myDsl_Expression'. From 'myDsl_Minus', the role 'myDsl_Minus' has cardinality 0..*, and from 'myDsl_Expression', the role 'myDsl_Expression47' has cardinality 0..*.
+An association connects 'myDsl_Minus' and 'myDsl_Expression'. From 'myDsl_Minus', the role 'myDsl_Minus49' has cardinality 0..*, and from 'myDsl_Expression', the role 'myDsl_Expression50' has cardinality 0..*.
+An association connects 'myDsl_Expression' and 'myDsl_MulOrDiv'. From 'myDsl_Expression', the role 'myDsl_Expression52' has cardinality 0..*, and from 'myDsl_MulOrDiv', the role 'myDsl_MulOrDiv' has cardinality 0..*.
+An association connects 'myDsl_Expression' and 'myDsl_MulOrDiv'. From 'myDsl_Expression', the role 'myDsl_Expression55' has cardinality 0..*, and from 'myDsl_MulOrDiv', the role 'myDsl_MulOrDiv54' has cardinality 0..*.
+An association connects 'myDsl_Not' and 'myDsl_Expression'. From 'myDsl_Not', the role 'myDsl_Not' has cardinality 0..*, and from 'myDsl_Expression', the role 'myDsl_Expression57' has cardinality 0..*.
+An association connects 'myDsl_Attribute' and 'myDsl_VariableConstant'. From 'myDsl_Attribute', the role 'myDsl_Attribute59' has cardinality 0..*, and from 'myDsl_VariableConstant', the role 'myDsl_VariableConstant' has cardinality 0..*.

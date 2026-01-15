@@ -1,0 +1,19 @@
+The domain model 'Persons' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'Persons_Person' represents an important domain concept.
+It has one attribute: 'fullName', which is of type str.
+
+'Persons_Female' represents an important domain concept.
+It does not declare any attributes.
+
+'Persons_Male' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Persons_Male' is a specialization of 'Person'.
+The class 'Persons_Female' is a specialization of 'Person'.

@@ -1,0 +1,30 @@
+The domain model 'jsflibraryregistry' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'jsflibraryregistry_JSFLibraryRegistry' represents an important domain concept.
+It has one attribute: 'DefaultImplementationID', which is of type str.
+
+'JSFLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'jsflibraryregistry_JSFLibrary' represents an important domain concept.
+It has the following attributes: 'Implementation', which is of type bool; 'Name', which is of type str; 'Deployed', which is of type bool; 'ID', which is of type str; 'JSFVersion', which is of type str.
+
+'jsflibraryregistry_PluginProvidedJSFLibrary' represents an important domain concept.
+It has the following attributes: 'Label', which is of type str; 'pluginID', which is of type str.
+
+'jsflibraryregistry_ArchiveFile' represents an important domain concept.
+It has the following attributes: 'RelativeDestLocation', which is of type str; 'RelativeToWorkspace', which is of type bool; 'SourceLocation', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'JSFVersion' defines the following possible values: 'v1_1', 'v1_2', 'UNKNOWN'.
+
+The model also captures inheritance relationships between classes.
+The class 'jsflibraryregistry_PluginProvidedJSFLibrary' is a specialization of 'JSFLibrary'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jsflibraryregistry_JSFLibrary' and 'jsflibraryregistry_JSFLibraryRegistry'. From 'jsflibraryregistry_JSFLibrary', the role 'jsflibraryregistry_JSFLibrary' has cardinality 0..*, and from 'jsflibraryregistry_JSFLibraryRegistry', the role 'jsflibraryregistry_JSFLibraryRegistry' has cardinality 0..*.
+An association connects 'jsflibraryregistry_PluginProvidedJSFLibrary' and 'jsflibraryregistry_JSFLibraryRegistry'. From 'jsflibraryregistry_PluginProvidedJSFLibrary', the role 'jsflibraryregistry_PluginProvidedJSFLibrary' has cardinality 0..*, and from 'jsflibraryregistry_JSFLibraryRegistry', the role 'jsflibraryregistry_JSFLibraryRegistry2' has cardinality 0..*.
+An association connects 'jsflibraryregistry_JSFLibrary' and 'jsflibraryregistry_ArchiveFile'. From 'jsflibraryregistry_JSFLibrary', the role 'JSFLibrary' has cardinality 0..*, and from 'jsflibraryregistry_ArchiveFile', the role 'ArchiveFile' has cardinality 0..*.
+An association connects 'jsflibraryregistry_ArchiveFile' and 'jsflibraryregistry_JSFLibrary'. From 'jsflibraryregistry_ArchiveFile', the role 'ArchiveFiles' has cardinality 0..*, and from 'jsflibraryregistry_JSFLibrary', the role 'JSFLibrary5' has cardinality 0..*.

@@ -1,0 +1,68 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_BigStep' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_RefValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Step' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_ModelState' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_ObjectState' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_ParameterValue' represents an important domain concept.
+It has one attribute: 'DirectionKind', which is of type str.
+
+'trace_TracedObject' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Step' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_SmallStep' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_LiteralValue' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParamterKindEnum' defines the following possible values: 'RETURN', 'OUT', 'IN', 'INOUT'.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_RefValue' is a specialization of 'Value'.
+The class 'trace_LiteralValue' is a specialization of 'Value'.
+The class 'trace_SmallStep' is a specialization of 'Step'.
+The class 'trace_BigStep' is a specialization of 'Step'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_Step' and 'trace_Trace'. From 'trace_Step', the role 'trace_Step' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_ModelState'. From 'trace_Trace', the role 'trace_Trace2' has cardinality 0..*, and from 'trace_ModelState', the role 'trace_ModelState' has cardinality 0..*.
+An association connects 'trace_ObjectState' and 'trace_Trace'. From 'trace_ObjectState', the role 'trace_ObjectState' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace4' has cardinality 0..*.
+An association connects 'trace_TracedObject' and 'trace_Trace'. From 'trace_TracedObject', the role 'trace_TracedObject' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace6' has cardinality 0..*.
+An association connects 'trace_Value' and 'trace_Trace'. From 'trace_Value', the role 'trace_Value' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace8' has cardinality 0..*.
+An association connects 'trace_Step' and 'trace_ModelState'. From 'trace_Step', the role 'trace_Step10' has cardinality 0..*, and from 'trace_ModelState', the role 'trace_ModelState11' has cardinality 0..*.
+An association connects 'trace_Step' and 'trace_ParameterValue'. From 'trace_Step', the role 'trace_Step13' has cardinality 0..*, and from 'trace_ParameterValue', the role 'trace_ParameterValue' has cardinality 0..*.
+An association connects 'trace_BigStep' and 'trace_Step'. From 'trace_BigStep', the role 'BigStep' has cardinality 0..*, and from 'trace_Step', the role 'children' has cardinality 0..*.
+An association connects 'trace_ObjectState' and 'trace_Value'. From 'trace_ObjectState', the role 'trace_ObjectState16' has cardinality 0..*, and from 'trace_Value', the role 'trace_Value17' has cardinality 0..*.
+An association connects 'trace_TracedObject' and 'trace_ObjectState'. From 'trace_TracedObject', the role 'TracedObject' has cardinality 0..*, and from 'trace_ObjectState', the role 'objectstates' has cardinality 0..*.
+An association connects 'trace_TracedObject' and 'trace_RefValue'. From 'trace_TracedObject', the role 'trace_TracedObject20' has cardinality 0..*, and from 'trace_RefValue', the role 'trace_RefValue' has cardinality 0..*.
+An association connects 'trace_ObjectState' and 'trace_ModelState'. From 'trace_ObjectState', the role 'trace_ObjectState23' has cardinality 0..*, and from 'trace_ModelState', the role 'trace_ModelState22' has cardinality 0..*.
+An association connects 'trace_Step' and 'trace_BigStep'. From 'trace_Step', the role 'Step' has cardinality 0..*, and from 'trace_BigStep', the role 'parent' has cardinality 0..*.
+An association connects 'trace_TracedObject' and 'trace_ObjectState'. From 'trace_TracedObject', the role 'tracedobject' has cardinality 0..*, and from 'trace_ObjectState', the role 'ObjectState' has cardinality 0..*.
+An association connects 'trace_ParameterValue' and 'trace_Value'. From 'trace_ParameterValue', the role 'trace_ParameterValue27' has cardinality 0..*, and from 'trace_Value', the role 'trace_Value28' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/cdietrich/lmrc/org.xtext.example.lmrc.uispec/src-gen/org/xtext/example/lmrc/uispec/UispecDsl.ecore

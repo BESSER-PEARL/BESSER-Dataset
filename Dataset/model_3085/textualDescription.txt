@@ -1,0 +1,108 @@
+The domain model 'activity' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'activity_ObjectNode' represents an important domain concept.
+It has the following attributes: 'isControlType', which is of type bool; 'kindOfNode', which is of type str; 'ordering', which is of type str.
+
+'AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_IState' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_AcceptEventAction' represents an important domain concept.
+It has one attribute: 'isUnmarshall', which is of type bool.
+
+'activity_ActivityPartition' represents an important domain concept.
+It has the following attributes: 'isExternal', which is of type bool; 'isDimension', which is of type bool.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ActivityEdge' represents an important domain concept.
+It has one attribute: 'kindOfRate', which is of type str.
+
+'activity_ObjectFlow' represents an important domain concept.
+It has the following attributes: 'isMulticast', which is of type bool; 'isMultireceive', which is of type bool.
+
+'TraceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_AbstractActivity' represents an important domain concept.
+It has the following attributes: 'isSingleExecution', which is of type bool; 'isReadOnly', which is of type bool.
+
+'activity_AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_Pin' represents an important domain concept.
+It has one attribute: 'isControl', which is of type bool.
+
+'AbstractNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_AbstractBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ObjectNodeKind' defines the following possible values: 'Unspecified', 'NoBuffer', 'Overwrite'.
+The enumeration 'ObjectNodeOrderingKind' defines the following possible values: 'LIFO', 'FIFO', 'unordered', 'ordered'.
+
+The model also captures inheritance relationships between classes.
+The class 'activity_AbstractActivity' is a specialization of 'AbstractBehavior'.
+The class 'activity_AbstractActivity' is a specialization of 'TraceableElement'.
+The class 'activity_ActivityEdge' is a specialization of 'ModelElement'.
+The class 'activity_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'activity_ActivityPartition' is a specialization of 'AbstractNamedElement'.
+The class 'activity_ActivityPartition' is a specialization of 'ModelElement'.
+The class 'activity_ActivityNode' is a specialization of 'AbstractNamedElement'.
+The class 'activity_AbstractAction' is a specialization of 'AbstractNamedElement'.
+The class 'activity_AbstractAction' is a specialization of 'ActivityNode'.
+The class 'activity_AcceptEventAction' is a specialization of 'AbstractAction'.
+The class 'activity_ObjectNode' is a specialization of 'ActivityNode'.
+The class 'activity_ObjectNode' is a specialization of 'AbstractNamedElement'.
+The class 'activity_Pin' is a specialization of 'ObjectNode'.
+The class 'activity_InputPin' is a specialization of 'Pin'.
+The class 'activity_OutputPin' is a specialization of 'Pin'.
+
+Relationships between classes are modeled using associations.
+An association connects 'activity_ValueSpecification' and 'activity_ActivityEdge'. From 'activity_ValueSpecification', the role 'activity_ValueSpecification' has cardinality 0..*, and from 'activity_ActivityEdge', the role 'activity_ActivityEdge' has cardinality 0..*.
+An association connects 'activity_ActivityEdge' and 'activity_ValueSpecification'. From 'activity_ActivityEdge', the role 'activity_ActivityEdge2' has cardinality 0..*, and from 'activity_ValueSpecification', the role 'activity_ValueSpecification3' has cardinality 0..*.
+An association connects 'activity_ActivityNode' and 'activity_ActivityEdge'. From 'activity_ActivityNode', the role 'activity_ActivityNode' has cardinality 0..*, and from 'activity_ActivityEdge', the role 'activity_ActivityEdge5' has cardinality 0..*.
+An association connects 'activity_ActivityNode' and 'activity_ActivityEdge'. From 'activity_ActivityNode', the role 'activity_ActivityNode8' has cardinality 0..*, and from 'activity_ActivityEdge', the role 'activity_ActivityEdge7' has cardinality 0..*.
+An association connects 'activity_ActivityEdge' and 'activity_ValueSpecification'. From 'activity_ActivityEdge', the role 'activity_ActivityEdge10' has cardinality 0..*, and from 'activity_ValueSpecification', the role 'activity_ValueSpecification11' has cardinality 0..*.
+An association connects 'activity_ValueSpecification' and 'activity_ActivityEdge'. From 'activity_ValueSpecification', the role 'activity_ValueSpecification14' has cardinality 0..*, and from 'activity_ActivityEdge', the role 'activity_ActivityEdge13' has cardinality 0..*.
+An association connects 'activity_ActivityNode' and 'activity_ActivityEdge'. From 'activity_ActivityNode', the role 'activity_ActivityNode16' has cardinality 0..*, and from 'activity_ActivityEdge', the role 'activity_ActivityEdge17' has cardinality 0..*.
+An association connects 'activity_ActivityEdge' and 'activity_ActivityNode'. From 'activity_ActivityEdge', the role 'activity_ActivityEdge20' has cardinality 0..*, and from 'activity_ActivityNode', the role 'activity_ActivityNode19' has cardinality 0..*.
+An association connects 'activity_InputPin' and 'activity_AbstractAction'. From 'activity_InputPin', the role 'activity_InputPin' has cardinality 0..*, and from 'activity_AbstractAction', the role 'activity_AbstractAction' has cardinality 0..*.
+An association connects 'activity_OutputPin' and 'activity_AbstractAction'. From 'activity_OutputPin', the role 'activity_OutputPin' has cardinality 0..*, and from 'activity_AbstractAction', the role 'activity_AbstractAction23' has cardinality 0..*.
+An association connects 'activity_ObjectNode' and 'activity_ValueSpecification'. From 'activity_ObjectNode', the role 'activity_ObjectNode' has cardinality 0..*, and from 'activity_ValueSpecification', the role 'activity_ValueSpecification25' has cardinality 0..*.
+An association connects 'activity_IState' and 'activity_ObjectNode'. From 'activity_IState', the role 'activity_IState' has cardinality 0..*, and from 'activity_ObjectNode', the role 'activity_ObjectNode27' has cardinality 0..*.
+An association connects 'activity_ObjectNode' and 'activity_AbstractBehavior'. From 'activity_ObjectNode', the role 'activity_ObjectNode29' has cardinality 0..*, and from 'activity_AbstractBehavior', the role 'activity_AbstractBehavior' has cardinality 0..*.

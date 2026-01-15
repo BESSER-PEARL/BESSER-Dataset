@@ -1,0 +1,46 @@
+The domain model 'rdbms' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'rdbms_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RModelElement' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'name', which is of type str.
+
+'rdbms_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'RModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_Column' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'rdbms_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rdbms_Column' is a specialization of 'RModelElement'.
+The class 'rdbms_ForeignKey' is a specialization of 'RModelElement'.
+The class 'rdbms_Key' is a specialization of 'RModelElement'.
+The class 'rdbms_Schema' is a specialization of 'RModelElement'.
+The class 'rdbms_Table' is a specialization of 'RModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rdbms_Column' and 'rdbms_Table'. From 'rdbms_Column', the role 'columns' has cardinality 0..*, and from 'rdbms_Table', the role 'Table' has cardinality 0..*.
+An association connects 'rdbms_Column' and 'rdbms_ForeignKey'. From 'rdbms_Column', the role 'columns2' has cardinality 0..*, and from 'rdbms_ForeignKey', the role 'ForeignKey' has cardinality 0..*.
+An association connects 'rdbms_Column' and 'rdbms_Key'. From 'rdbms_Column', the role 'column' has cardinality 0..*, and from 'rdbms_Key', the role 'Key' has cardinality 0..*.
+An association connects 'rdbms_Key' and 'rdbms_ForeignKey'. From 'rdbms_Key', the role 'rdbms_Key' has cardinality 0..*, and from 'rdbms_ForeignKey', the role 'rdbms_ForeignKey' has cardinality 0..*.
+An association connects 'rdbms_Column' and 'rdbms_ForeignKey'. From 'rdbms_Column', the role 'Column' has cardinality 0..*, and from 'rdbms_ForeignKey', the role 'foreignKeys' has cardinality 0..*.
+An association connects 'rdbms_Table' and 'rdbms_ForeignKey'. From 'rdbms_Table', the role 'Table8' has cardinality 0..*, and from 'rdbms_ForeignKey', the role 'foreignKeys7' has cardinality 0..*.
+An association connects 'rdbms_Key' and 'rdbms_Table'. From 'rdbms_Key', the role 'keys' has cardinality 0..*, and from 'rdbms_Table', the role 'Table10' has cardinality 0..*.
+An association connects 'rdbms_Key' and 'rdbms_Column'. From 'rdbms_Key', the role 'keys12' has cardinality 0..*, and from 'rdbms_Column', the role 'Column13' has cardinality 0..*.
+An association connects 'rdbms_Table' and 'rdbms_Schema'. From 'rdbms_Table', the role 'Table15' has cardinality 0..*, and from 'rdbms_Schema', the role 'schema' has cardinality 0..*.
+An association connects 'rdbms_Column' and 'rdbms_Table'. From 'rdbms_Column', the role 'Column17' has cardinality 0..*, and from 'rdbms_Table', the role 'owner' has cardinality 0..*.
+An association connects 'rdbms_Schema' and 'rdbms_Table'. From 'rdbms_Schema', the role 'Schema' has cardinality 0..*, and from 'rdbms_Table', the role 'tables' has cardinality 0..*.
+An association connects 'rdbms_Table' and 'rdbms_Key'. From 'rdbms_Table', the role 'owner20' has cardinality 0..*, and from 'rdbms_Key', the role 'Key21' has cardinality 0..*.
+An association connects 'rdbms_ForeignKey' and 'rdbms_Table'. From 'rdbms_ForeignKey', the role 'ForeignKey24' has cardinality 0..*, and from 'rdbms_Table', the role 'owner23' has cardinality 0..*.

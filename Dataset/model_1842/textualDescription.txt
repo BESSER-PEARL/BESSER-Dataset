@@ -1,0 +1,114 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'library_OCLPackageParent' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLType' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLTypeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLTypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLType' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLTypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLTypeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLBoundType' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLNamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_OCLTypeBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLPackageParent' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLLibraryIteration' represents an important domain concept.
+It has the following attributes: 'iterator', which is of type str; 'class', which is of type str; 'iterators', which is of type bool.
+
+'OCLTypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'OCLNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLLibraryOperation' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'isStatic', which is of type bool.
+
+'library_OCLPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'library_OCLLibraryProperty' represents an important domain concept.
+It has the following attributes: 'isStatic', which is of type bool; 'class', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'library_OCLBoundType' is a specialization of 'OCLTypeValue'.
+The class 'library_OCLLibraryIteration' is a specialization of 'OCLTypedElement'.
+The class 'library_OCLLibrary' is a specialization of 'OCLRoot'.
+The class 'library_OCLLibrary' is a specialization of 'OCLPackageParent'.
+The class 'library_OCLNamedElement' is a specialization of 'OCLElement'.
+The class 'library_OCLLibraryOperation' is a specialization of 'OCLTypedElement'.
+The class 'library_OCLPackage' is a specialization of 'OCLPackageParent'.
+The class 'library_OCLPackageParent' is a specialization of 'OCLNamedElement'.
+The class 'library_OCLParameter' is a specialization of 'OCLTypedElement'.
+The class 'library_OCLLibraryProperty' is a specialization of 'OCLTypedElement'.
+The class 'library_OCLType' is a specialization of 'OCLNamedElement'.
+The class 'library_OCLTypeBinding' is a specialization of 'OCLElement'.
+The class 'library_OCLTypeDefinition' is a specialization of 'OCLType'.
+The class 'library_OCLTypedElement' is a specialization of 'OCLNamedElement'.
+The class 'library_OCLTypeParameter' is a specialization of 'OCLType'.
+The class 'library_OCLTypeReference' is a specialization of 'OCLTypeValue'.
+The class 'library_OCLTypeValue' is a specialization of 'OCLElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_OCLTypeDefinition' and 'library_OCLBoundType'. From 'library_OCLTypeDefinition', the role 'library_OCLTypeDefinition' has cardinality 0..*, and from 'library_OCLBoundType', the role 'library_OCLBoundType' has cardinality 0..*.
+An association connects 'library_OCLBoundType' and 'library_OCLTypeBinding'. From 'library_OCLBoundType', the role 'library_OCLBoundType2' has cardinality 0..*, and from 'library_OCLTypeBinding', the role 'library_OCLTypeBinding' has cardinality 0..*.
+An association connects 'library_OCLLibrary' and 'library_OCLLibrary'. From 'library_OCLLibrary', the role 'library_OCLLibrary' has cardinality 0..*, and from 'library_OCLLibrary', the role 'library_OCLLibrary3' has cardinality 0..*.
+An association connects 'library_OCLTypeParameter' and 'library_OCLLibraryOperation'. From 'library_OCLTypeParameter', the role 'library_OCLTypeParameter' has cardinality 0..*, and from 'library_OCLLibraryOperation', the role 'library_OCLLibraryOperation' has cardinality 0..*.
+An association connects 'library_OCLParameter' and 'library_OCLLibraryOperation'. From 'library_OCLParameter', the role 'library_OCLParameter' has cardinality 0..*, and from 'library_OCLLibraryOperation', the role 'library_OCLLibraryOperation7' has cardinality 0..*.
+An association connects 'library_OCLTypeDefinition' and 'library_OCLPackage'. From 'library_OCLTypeDefinition', the role 'library_OCLTypeDefinition9' has cardinality 0..*, and from 'library_OCLPackage', the role 'library_OCLPackage' has cardinality 0..*.
+An association connects 'library_OCLPackage' and 'library_OCLPackageParent'. From 'library_OCLPackage', the role 'library_OCLPackage11' has cardinality 0..*, and from 'library_OCLPackageParent', the role 'library_OCLPackageParent' has cardinality 0..*.
+An association connects 'library_OCLTypeValue' and 'library_OCLTypeBinding'. From 'library_OCLTypeValue', the role 'library_OCLTypeValue' has cardinality 0..*, and from 'library_OCLTypeBinding', the role 'library_OCLTypeBinding13' has cardinality 0..*.
+An association connects 'library_OCLTypeDefinition' and 'library_OCLTypeParameter'. From 'library_OCLTypeDefinition', the role 'library_OCLTypeDefinition15' has cardinality 0..*, and from 'library_OCLTypeParameter', the role 'library_OCLTypeParameter16' has cardinality 0..*.
+An association connects 'library_OCLTypeDefinition' and 'library_OCLTypeValue'. From 'library_OCLTypeDefinition', the role 'library_OCLTypeDefinition18' has cardinality 0..*, and from 'library_OCLTypeValue', the role 'library_OCLTypeValue19' has cardinality 0..*.
+An association connects 'library_OCLTypeDefinition' and 'library_OCLLibraryIteration'. From 'library_OCLTypeDefinition', the role 'library_OCLTypeDefinition21' has cardinality 0..*, and from 'library_OCLLibraryIteration', the role 'library_OCLLibraryIteration' has cardinality 0..*.
+An association connects 'library_OCLLibraryOperation' and 'library_OCLTypeDefinition'. From 'library_OCLLibraryOperation', the role 'library_OCLLibraryOperation24' has cardinality 0..*, and from 'library_OCLTypeDefinition', the role 'library_OCLTypeDefinition23' has cardinality 0..*.
+An association connects 'library_OCLLibraryProperty' and 'library_OCLTypeDefinition'. From 'library_OCLLibraryProperty', the role 'library_OCLLibraryProperty' has cardinality 0..*, and from 'library_OCLTypeDefinition', the role 'library_OCLTypeDefinition26' has cardinality 0..*.
+An association connects 'library_OCLTypeValue' and 'library_OCLTypedElement'. From 'library_OCLTypeValue', the role 'library_OCLTypeValue28' has cardinality 0..*, and from 'library_OCLTypedElement', the role 'library_OCLTypedElement' has cardinality 0..*.
+An association connects 'library_OCLType' and 'library_OCLTypeReference'. From 'library_OCLType', the role 'library_OCLType' has cardinality 0..*, and from 'library_OCLTypeReference', the role 'library_OCLTypeReference' has cardinality 0..*.

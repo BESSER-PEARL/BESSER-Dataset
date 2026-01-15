@@ -1,0 +1,27 @@
+The domain model 'forcing' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'forcing_GaussianForcingDiseaseModel' represents an important domain concept.
+It has the following attributes: 'sigma2', which is of type float; 'modulationFloor', which is of type float; 'modulationPhaseShift', which is of type float; 'modulationPeriod', which is of type float.
+
+'Gaussian2ForcingDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'forcing_Gaussian3ForcingDiseaseModel' represents an important domain concept.
+It has the following attributes: 'transmissionRate3', which is of type float; 'transmissionRate2', which is of type float; 'sigma2_3', which is of type float; 'modulationFloor_2', which is of type float.
+
+'StochasticSIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'forcing_Gaussian2ForcingDiseaseModel' represents an important domain concept.
+It has the following attributes: 'att4', which is of type float; 'modulationPhaseShift', which is of type float; 'att1', which is of type float; 'sigma2', which is of type float; 'att3', which is of type float; 'sigma2_2', which is of type float; 'modulationPeriod', which is of type float; 'att2', which is of type float; 'modulationFloor', which is of type float.
+
+'forcing_ForcingDiseaseModel' represents an important domain concept.
+It has the following attributes: 'modulationPeriod', which is of type float; 'seasonalModulationExponent', which is of type float; 'seasonalModulationFloor', which is of type float; 'modulationPhaseShift', which is of type float.
+
+The model also captures inheritance relationships between classes.
+The class 'forcing_ForcingDiseaseModel' is a specialization of 'StochasticSIRDiseaseModel'.
+The class 'forcing_GaussianForcingDiseaseModel' is a specialization of 'StochasticSIRDiseaseModel'.
+The class 'forcing_Gaussian2ForcingDiseaseModel' is a specialization of 'StochasticSIRDiseaseModel'.
+The class 'forcing_Gaussian3ForcingDiseaseModel' is a specialization of 'Gaussian2ForcingDiseaseModel'.

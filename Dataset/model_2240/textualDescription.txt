@@ -1,0 +1,82 @@
+The domain model 'coursePages' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'coursePages_EvaluationObject' represents an important domain concept.
+It has the following attributes: 'evaluationsForm', which is of type str; 'term', which is of type str; 'date', which is of type date; 'credits', which is of type int.
+
+'coursePages_CourseWork' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'coursePages_CourseWorker' represents an important domain concept.
+It has one attribute: 'courseRole', which is of type str.
+
+'coursePages_Person' represents an important domain concept.
+It has the following attributes: 'phoneNummber', which is of type str; 'firstName', which is of type str; 'email', which is of type str; 'surName', which is of type str.
+
+'coursePages_CourseInstance' represents an important domain concept.
+It has the following attributes: 'courseYear', which is of type str; 'term', which is of type str.
+
+'coursePages_Department' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'departmentName', which is of type str; 'phoneNummber', which is of type str.
+
+'coursePages_StudyPrograms' represents an important domain concept.
+It has the following attributes: 'studyProgramCode', which is of type str; 'studyProgramName', which is of type str.
+
+'coursePages_Employee' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'coursePages_CourseWorkObject' represents an important domain concept.
+It has the following attributes: 'start', which is of type date; 'end', which is of type date; 'room', which is of type str; 'courseWorkType', which is of type str; 'day', which is of type str.
+
+'coursePages_Precondition' represents an important domain concept.
+It has one attribute: 'preconditionStatus', which is of type str.
+
+'coursePages_Evaluations' represents an important domain concept.
+It does not declare any attributes.
+
+'coursePages_Reduction' represents an important domain concept.
+It has one attribute: 'creditReduction', which is of type float.
+
+'coursePages_Course' represents an important domain concept.
+It has the following attributes: 'courseName', which is of type str; 'courseContent', which is of type str; 'courseCode', which is of type str; 'courseCredits', which is of type float.
+
+'coursePages_Student' represents an important domain concept.
+It has one attribute: 'studentID', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CourseWorkType' defines the following possible values: 'Lecture', 'Lab', 'Exercise'.
+The enumeration 'EvaluationType' defines the following possible values: 'WrittenExam', 'Assignments', 'PracticalExam', 'OralExam', 'Participated'.
+The enumeration 'personRoleType' defines the following possible values: 'Lecture', 'CourseCordinator'.
+The enumeration 'TermType' defines the following possible values: 'Summer', 'Fall', 'Spring'.
+The enumeration 'PrecondistionType' defines the following possible values: 'Recommended', 'Required'.
+
+The model also captures inheritance relationships between classes.
+The class 'coursePages_Student' is a specialization of 'Person'.
+The class 'coursePages_Employee' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'coursePages_StudyPrograms' and 'coursePages_Student'. From 'coursePages_StudyPrograms', the role 'StudyPrograms' has cardinality 0..*, and from 'coursePages_Student', the role 'student' has cardinality 0..*.
+An association connects 'coursePages_Student' and 'coursePages_Course'. From 'coursePages_Student', the role 'coursePages_Student' has cardinality 0..*, and from 'coursePages_Course', the role 'coursePages_Course' has cardinality 0..*.
+An association connects 'coursePages_Employee' and 'coursePages_Department'. From 'coursePages_Employee', the role 'employee' has cardinality 0..*, and from 'coursePages_Department', the role 'Department' has cardinality 0..*.
+An association connects 'coursePages_Department' and 'coursePages_Employee'. From 'coursePages_Department', the role 'department' has cardinality 0..*, and from 'coursePages_Employee', the role 'Employee' has cardinality 0..*.
+An association connects 'coursePages_Department' and 'coursePages_StudyPrograms'. From 'coursePages_Department', the role 'belongsToDepartment' has cardinality 0..*, and from 'coursePages_StudyPrograms', the role 'StudyPrograms5' has cardinality 0..*.
+An association connects 'coursePages_Department' and 'coursePages_Course'. From 'coursePages_Department', the role 'coursePages_Department' has cardinality 0..*, and from 'coursePages_Course', the role 'coursePages_Course7' has cardinality 0..*.
+An association connects 'coursePages_Department' and 'coursePages_StudyPrograms'. From 'coursePages_Department', the role 'Department9' has cardinality 0..*, and from 'coursePages_StudyPrograms', the role 'studyprograms' has cardinality 0..*.
+An association connects 'coursePages_StudyPrograms' and 'coursePages_Student'. From 'coursePages_StudyPrograms', the role 'studyprograms11' has cardinality 0..*, and from 'coursePages_Student', the role 'Student' has cardinality 0..*.
+An association connects 'coursePages_StudyPrograms' and 'coursePages_Course'. From 'coursePages_StudyPrograms', the role 'studyprograms13' has cardinality 0..*, and from 'coursePages_Course', the role 'Course' has cardinality 0..*.
+An association connects 'coursePages_EvaluationObject' and 'coursePages_Evaluations'. From 'coursePages_EvaluationObject', the role 'coursePages_EvaluationObject' has cardinality 0..*, and from 'coursePages_Evaluations', the role 'coursePages_Evaluations' has cardinality 0..*.
+An association connects 'coursePages_CourseWorkObject' and 'coursePages_CourseWork'. From 'coursePages_CourseWorkObject', the role 'coursePages_CourseWorkObject' has cardinality 0..*, and from 'coursePages_CourseWork', the role 'coursePages_CourseWork' has cardinality 0..*.
+An association connects 'coursePages_CourseInstance' and 'coursePages_Course'. From 'coursePages_CourseInstance', the role 'coursePages_CourseInstance' has cardinality 0..*, and from 'coursePages_Course', the role 'coursePages_Course17' has cardinality 0..*.
+An association connects 'coursePages_StudyPrograms' and 'coursePages_Course'. From 'coursePages_StudyPrograms', the role 'StudyPrograms19' has cardinality 0..*, and from 'coursePages_Course', the role 'course' has cardinality 0..*.
+An association connects 'coursePages_Course' and 'coursePages_CourseWorker'. From 'coursePages_Course', the role 'coursePages_Course21' has cardinality 0..*, and from 'coursePages_CourseWorker', the role 'coursePages_CourseWorker' has cardinality 0..*.
+An association connects 'coursePages_Course' and 'coursePages_Precondition'. From 'coursePages_Course', the role 'coursePages_Course23' has cardinality 0..*, and from 'coursePages_Precondition', the role 'coursePages_Precondition' has cardinality 0..*.
+An association connects 'coursePages_Reduction' and 'coursePages_Course'. From 'coursePages_Reduction', the role 'coursePages_Reduction' has cardinality 0..*, and from 'coursePages_Course', the role 'coursePages_Course25' has cardinality 0..*.
+An association connects 'coursePages_CourseInstance' and 'coursePages_CourseWork'. From 'coursePages_CourseInstance', the role 'coursePages_CourseInstance27' has cardinality 0..*, and from 'coursePages_CourseWork', the role 'coursePages_CourseWork28' has cardinality 0..*.
+An association connects 'coursePages_CourseInstance' and 'coursePages_Evaluations'. From 'coursePages_CourseInstance', the role 'coursePages_CourseInstance30' has cardinality 0..*, and from 'coursePages_Evaluations', the role 'coursePages_Evaluations31' has cardinality 0..*.
+An association connects 'coursePages_CourseWorker' and 'coursePages_Employee'. From 'coursePages_CourseWorker', the role 'coursePages_CourseWorker33' has cardinality 0..*, and from 'coursePages_Employee', the role 'coursePages_Employee' has cardinality 0..*.
+An association connects 'coursePages_Precondition' and 'coursePages_Course'. From 'coursePages_Precondition', the role 'coursePages_Precondition35' has cardinality 0..*, and from 'coursePages_Course', the role 'coursePages_Course36' has cardinality 0..*.
+An association connects 'coursePages_Course' and 'coursePages_Reduction'. From 'coursePages_Course', the role 'coursePages_Course39' has cardinality 0..*, and from 'coursePages_Reduction', the role 'coursePages_Reduction38' has cardinality 0..*.

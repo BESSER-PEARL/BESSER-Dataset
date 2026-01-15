@@ -1,0 +1,380 @@
+The domain model 'umm' describes the core structural elements and their relationships within the system.
+
+The model defines 85 main class(es).
+
+'OclBooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_ASCC' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_InfEnvelope' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umm_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'multiplicity', which is of type str.
+
+'umm_OclLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_CDT' represents an important domain concept.
+It has the following attributes: 'versionIdentifier', which is of type str; 'dictionary', which is of type str; 'name', which is of type str; 'businessTerm', which is of type str; 'definition', which is of type str; 'uniqueIdentifier', which is of type str.
+
+'AssembledBase' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclNotEmpty' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclSize' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclLessOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclValue' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_PrimitiveLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_TC_Constraint' represents an important domain concept.
+It has the following attributes: 'listIdentifier', which is of type str; 'kind', which is of type str; 'responsibleAgency', which is of type str.
+
+'umm_OclEnumerationLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'umm_MAProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_MA' represents an important domain concept.
+It does not declare any attributes.
+
+'Library' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclIntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'umm_OclXor' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclFunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_CDTLibrary' represents an important domain concept.
+It has the following attributes: 'namespacePrefix', which is of type str; 'baseURN', which is of type str; 'reference', which is of type str; 'uniqueIdentifier', which is of type str; 'copyright', which is of type str; 'versionIdentifier', which is of type str; 'businessTerm', which is of type str; 'owner', which is of type str.
+
+'OclFunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_CDT_Supplement' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'restriction', which is of type str; 'fixedValue', which is of type str.
+
+'BDTProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_ASMA' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclArrow' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_ASNONE' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclPathFeatureHead' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclImplies' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_CodelistEntry' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'umm_ACCProperty' represents an important domain concept.
+It has the following attributes: 'uniqueIdentifier', which is of type str; 'multiplicity', which is of type str; 'businessTerm', which is of type str; 'definition', which is of type str; 'versionIdentifier', which is of type str; 'dictionary', which is of type str; 'sequencingKey', which is of type str; 'name', which is of type str.
+
+'umm_OclIsEmpty' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclOr' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_ACC' represents an important domain concept.
+It has the following attributes: 'businessTerm', which is of type str; 'name', which is of type str; 'uniqueIdentifier', which is of type str; 'dictionary', which is of type str; 'definition', which is of type str; 'versionIdentifier', which is of type str.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_Assembled' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_ENUM' represents an important domain concept.
+It has the following attributes: 'businessTerm', which is of type str; 'dictionary', which is of type str; 'versionIdentifier', which is of type str; 'codeListIdentifier', which is of type str; 'name', which is of type str; 'codeListName', which is of type str; 'uniqueIdentifier', which is of type str; 'codeListAgencyIdentifier', which is of type str; 'definition', which is of type str.
+
+'umm_BDTProperty' represents an important domain concept.
+It has the following attributes: 'pattern', which is of type str; 'uniqueIdentifier', which is of type str; 'businessTerm', which is of type str; 'maxLength', which is of type int; 'definition', which is of type str; 'length', which is of type int; 'minLength', which is of type int; 'dictionary', which is of type str; 'versionIdentifier', which is of type str.
+
+'umm_DocLibrary' represents an important domain concept.
+It has the following attributes: 'copyright', which is of type str; 'owner', which is of type str; 'baseURN', which is of type str; 'reference', which is of type str; 'versionIdentifier', which is of type str; 'businessTerm', which is of type str; 'uniqueIdentifier', which is of type str; 'namespacePrefix', which is of type str.
+
+'umm_ASBIE' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_Content' represents an important domain concept.
+It has the following attributes: 'maxExclusive', which is of type int; 'minInclusive', which is of type int; 'fractionalDigits', which is of type int; 'maxInclusive', which is of type int; 'minExclusive', which is of type int; 'totalDigits', which is of type int.
+
+'CDTProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_ABIEProperty' represents an important domain concept.
+It has the following attributes: 'versionIdentifier', which is of type str; 'businessTerm', which is of type str; 'sequencingKey', which is of type str; 'uniqueIdentifier', which is of type str; 'dictionary', which is of type str; 'definition', which is of type str.
+
+'umm_OclBooleanTrue' represents an important domain concept.
+It does not declare any attributes.
+
+'ACCProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclBooleanFalse' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_Subset' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_ENUMLibrary' represents an important domain concept.
+It has the following attributes: 'uniqueIdentifier', which is of type str; 'copyright', which is of type str; 'businessTerm', which is of type str; 'owner', which is of type str; 'namespacePrefix', which is of type str; 'versionIdentifier', which is of type str; 'baseURN', which is of type str; 'reference', which is of type str.
+
+'umm_OclLess' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_CDTProperty' represents an important domain concept.
+It has the following attributes: 'dictionary', which is of type str; 'multiplicity', which is of type str; 'name', which is of type str; 'versionIdentifier', which is of type str; 'uniqueIdentifier', which is of type str; 'businessTerm', which is of type str; 'definition', which is of type str.
+
+'umm_BBIE' represents an important domain concept.
+It has the following attributes: 'restriction', which is of type str; 'fixedValue', which is of type str.
+
+'umm_OclReference' represents an important domain concept.
+It does not declare any attributes.
+
+'OclReference' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_ABIE' represents an important domain concept.
+It has the following attributes: 'businessTerm', which is of type str; 'definition', which is of type str; 'versionIdentifier', which is of type str; 'uniqueIdentifier', which is of type str; 'dictionary', which is of type str.
+
+'umm_BDT' represents an important domain concept.
+It has the following attributes: 'businessTerm', which is of type str; 'dictionary', which is of type str; 'uniqueIdentifier', which is of type str; 'versionIdentifier', which is of type str; 'definition', which is of type str.
+
+'umm_CDT_Content' represents an important domain concept.
+It does not declare any attributes.
+
+'OclValue' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclInvariant' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextRef' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_Original' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_Supplement' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'restriction', which is of type str; 'fixedValue', which is of type str.
+
+'umm_ContextRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umm_OclBooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_BDTLibrary' represents an important domain concept.
+It has the following attributes: 'reference', which is of type str; 'businessTerm', which is of type str; 'baseURN', which is of type str; 'copyright', which is of type str; 'uniqueIdentifier', which is of type str; 'namespacePrefix', which is of type str; 'versionIdentifier', which is of type str; 'owner', which is of type str.
+
+'umm_OclForAll' represents an important domain concept.
+It does not declare any attributes.
+
+'ABIEProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclMoreOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_AssembledBase' represents an important domain concept.
+It does not declare any attributes.
+
+'ENUM' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclStringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'umm_BIELibrary' represents an important domain concept.
+It has the following attributes: 'namespacePrefix', which is of type str; 'copyright', which is of type str; 'uniqueIdentifier', which is of type str; 'reference', which is of type str; 'businessTerm', which is of type str; 'versionIdentifier', which is of type str; 'owner', which is of type str; 'baseURN', which is of type str.
+
+'umm_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclPathTail' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OclLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'OclRef' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclPathSelfHead' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_BCC' represents an important domain concept.
+It has the following attributes: 'fixedValue', which is of type str; 'restriction', which is of type str.
+
+'umm_OclEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'MAProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_OclMore' represents an important domain concept.
+It does not declare any attributes.
+
+'umm_CCLibrary' represents an important domain concept.
+It has the following attributes: 'versionIdentifier', which is of type str; 'uniqueIdentifier', which is of type str; 'baseURN', which is of type str; 'namespacePrefix', which is of type str; 'owner', which is of type str; 'businessTerm', which is of type str; 'reference', which is of type str; 'copyright', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MultiplicityKind' defines the following possible values: 'One', 'OneOrMore', 'ZeroOrMore', 'Optional'.
+The enumeration 'ConstraintKind' defines the following possible values: 'dependency', 'invariant', 'document', 'facet', 'bdt', 'payload', 'abie'.
+
+The model also captures inheritance relationships between classes.
+The class 'umm_DocLibrary' is a specialization of 'Library'.
+The class 'umm_MA' is a specialization of 'ContextRef'.
+The class 'umm_MAProperty' is a specialization of 'OclRef'.
+The class 'umm_ASMA' is a specialization of 'MAProperty'.
+The class 'umm_ASNONE' is a specialization of 'MAProperty'.
+The class 'umm_BIELibrary' is a specialization of 'Library'.
+The class 'umm_ABIE' is a specialization of 'ContextRef'.
+The class 'umm_ABIEProperty' is a specialization of 'OclRef'.
+The class 'umm_ASBIE' is a specialization of 'ABIEProperty'.
+The class 'umm_BBIE' is a specialization of 'ABIEProperty'.
+The class 'umm_BDTLibrary' is a specialization of 'Library'.
+The class 'umm_BDT' is a specialization of 'ContextRef'.
+The class 'umm_BDTProperty' is a specialization of 'OclRef'.
+The class 'umm_Content' is a specialization of 'BDTProperty'.
+The class 'umm_Supplement' is a specialization of 'BDTProperty'.
+The class 'umm_ENUMLibrary' is a specialization of 'Library'.
+The class 'umm_AssembledBase' is a specialization of 'ENUM'.
+The class 'umm_Primitive' is a specialization of 'AssembledBase'.
+The class 'umm_Assembled' is a specialization of 'AssembledBase'.
+The class 'umm_Original' is a specialization of 'ENUM'.
+The class 'umm_Subset' is a specialization of 'ENUM'.
+The class 'umm_CCLibrary' is a specialization of 'Library'.
+The class 'umm_ASCC' is a specialization of 'ACCProperty'.
+The class 'umm_BCC' is a specialization of 'ACCProperty'.
+The class 'umm_CDTLibrary' is a specialization of 'Library'.
+The class 'umm_CDT_Content' is a specialization of 'CDTProperty'.
+The class 'umm_CDT_Supplement' is a specialization of 'CDTProperty'.
+The class 'umm_PrimitiveLibrary' is a specialization of 'Library'.
+The class 'umm_OclValue' is a specialization of 'OclExpression'.
+The class 'umm_OclReference' is a specialization of 'OclValue'.
+The class 'umm_OclPathSelfHead' is a specialization of 'OclReference'.
+The class 'umm_OclPathFeatureHead' is a specialization of 'OclReference'.
+The class 'umm_OclForAll' is a specialization of 'OclFunctionCall'.
+The class 'umm_OclIsEmpty' is a specialization of 'OclFunctionCall'.
+The class 'umm_OclNotEmpty' is a specialization of 'OclFunctionCall'.
+The class 'umm_OclSize' is a specialization of 'OclFunctionCall'.
+The class 'umm_OclLiteral' is a specialization of 'OclValue'.
+The class 'umm_OclEnumerationLiteral' is a specialization of 'OclLiteral'.
+The class 'umm_OclIntegerLiteral' is a specialization of 'OclLiteral'.
+The class 'umm_OclStringLiteral' is a specialization of 'OclLiteral'.
+The class 'umm_OclBooleanLiteral' is a specialization of 'OclLiteral'.
+The class 'umm_OclBooleanFalse' is a specialization of 'OclBooleanLiteral'.
+The class 'umm_OclImplies' is a specialization of 'OclExpression'.
+The class 'umm_OclAnd' is a specialization of 'OclExpression'.
+The class 'umm_OclOr' is a specialization of 'OclExpression'.
+The class 'umm_OclXor' is a specialization of 'OclExpression'.
+The class 'umm_OclEqual' is a specialization of 'OclExpression'.
+The class 'umm_OclLess' is a specialization of 'OclExpression'.
+The class 'umm_OclLessOrEqual' is a specialization of 'OclExpression'.
+The class 'umm_OclMore' is a specialization of 'OclExpression'.
+The class 'umm_OclMoreOrEqual' is a specialization of 'OclExpression'.
+The class 'umm_OclArrow' is a specialization of 'OclExpression'.
+The class 'umm_OclBooleanTrue' is a specialization of 'OclBooleanLiteral'.
+
+Relationships between classes are modeled using associations.
+An association connects 'umm_BIELibrary' and 'umm_DocLibrary'. From 'umm_BIELibrary', the role 'umm_BIELibrary' has cardinality 0..*, and from 'umm_DocLibrary', the role 'umm_DocLibrary' has cardinality 0..*.
+An association connects 'umm_BDTLibrary' and 'umm_DocLibrary'. From 'umm_BDTLibrary', the role 'umm_BDTLibrary' has cardinality 0..*, and from 'umm_DocLibrary', the role 'umm_DocLibrary2' has cardinality 0..*.
+An association connects 'umm_InfEnvelope' and 'umm_DocLibrary'. From 'umm_InfEnvelope', the role 'umm_InfEnvelope' has cardinality 0..*, and from 'umm_DocLibrary', the role 'umm_DocLibrary4' has cardinality 0..*.
+An association connects 'umm_MA' and 'umm_InfEnvelope'. From 'umm_MA', the role 'umm_MA' has cardinality 0..*, and from 'umm_InfEnvelope', the role 'umm_InfEnvelope6' has cardinality 0..*.
+An association connects 'umm_MA' and 'umm_MAProperty'. From 'umm_MA', the role 'umm_MA8' has cardinality 0..*, and from 'umm_MAProperty', the role 'umm_MAProperty' has cardinality 0..*.
+An association connects 'umm_Constraint' and 'umm_MA'. From 'umm_Constraint', the role 'umm_Constraint' has cardinality 0..*, and from 'umm_MA', the role 'umm_MA10' has cardinality 0..*.
+An association connects 'umm_MAProperty' and 'umm_ABIE'. From 'umm_MAProperty', the role 'umm_MAProperty12' has cardinality 0..*, and from 'umm_ABIE', the role 'umm_ABIE' has cardinality 0..*.
+An association connects 'umm_Constraint' and 'umm_ContextRef'. From 'umm_Constraint', the role 'umm_Constraint14' has cardinality 0..*, and from 'umm_ContextRef', the role 'umm_ContextRef' has cardinality 0..*.
+An association connects 'umm_Constraint' and 'umm_TC_Constraint'. From 'umm_Constraint', the role 'umm_Constraint16' has cardinality 0..*, and from 'umm_TC_Constraint', the role 'umm_TC_Constraint' has cardinality 0..*.
+An association connects 'umm_Constraint' and 'umm_OclInvariant'. From 'umm_Constraint', the role 'umm_Constraint18' has cardinality 0..*, and from 'umm_OclInvariant', the role 'umm_OclInvariant' has cardinality 0..*.
+An association connects 'umm_BIELibrary' and 'umm_BDTLibrary'. From 'umm_BIELibrary', the role 'umm_BIELibrary20' has cardinality 0..*, and from 'umm_BDTLibrary', the role 'umm_BDTLibrary21' has cardinality 0..*.
+An association connects 'umm_BIELibrary' and 'umm_ABIE'. From 'umm_BIELibrary', the role 'umm_BIELibrary23' has cardinality 0..*, and from 'umm_ABIE', the role 'umm_ABIE24' has cardinality 0..*.
+An association connects 'umm_ABIEProperty' and 'umm_ABIE'. From 'umm_ABIEProperty', the role 'umm_ABIEProperty' has cardinality 0..*, and from 'umm_ABIE', the role 'umm_ABIE26' has cardinality 0..*.
+An association connects 'umm_Constraint' and 'umm_ABIE'. From 'umm_Constraint', the role 'umm_Constraint29' has cardinality 0..*, and from 'umm_ABIE', the role 'umm_ABIE28' has cardinality 0..*.
+An association connects 'umm_ABIEProperty' and 'umm_ABIEProperty'. From 'umm_ABIEProperty', the role 'umm_ABIEProperty32' has cardinality 0..*, and from 'umm_ABIEProperty', the role 'umm_ABIEProperty30' has cardinality 0..*.
+An association connects 'umm_ASBIE' and 'umm_ABIE'. From 'umm_ASBIE', the role 'umm_ASBIE' has cardinality 0..*, and from 'umm_ABIE', the role 'umm_ABIE34' has cardinality 0..*.
+An association connects 'umm_BDT' and 'umm_BBIE'. From 'umm_BDT', the role 'umm_BDT' has cardinality 0..*, and from 'umm_BBIE', the role 'umm_BBIE' has cardinality 0..*.
+An association connects 'umm_BDT' and 'umm_BDTLibrary'. From 'umm_BDT', the role 'umm_BDT38' has cardinality 0..*, and from 'umm_BDTLibrary', the role 'umm_BDTLibrary37' has cardinality 0..*.
+An association connects 'umm_BDTProperty' and 'umm_BDT'. From 'umm_BDTProperty', the role 'umm_BDTProperty' has cardinality 0..*, and from 'umm_BDT', the role 'umm_BDT40' has cardinality 0..*.
+An association connects 'umm_AssembledBase' and 'umm_BDTProperty'. From 'umm_AssembledBase', the role 'umm_AssembledBase' has cardinality 0..*, and from 'umm_BDTProperty', the role 'umm_BDTProperty42' has cardinality 0..*.
+An association connects 'umm_ENUM' and 'umm_ENUMLibrary'. From 'umm_ENUM', the role 'umm_ENUM' has cardinality 0..*, and from 'umm_ENUMLibrary', the role 'umm_ENUMLibrary' has cardinality 0..*.
+An association connects 'umm_Original' and 'umm_Assembled'. From 'umm_Original', the role 'umm_Original' has cardinality 0..*, and from 'umm_Assembled', the role 'umm_Assembled' has cardinality 0..*.
+An association connects 'umm_Assembled' and 'umm_Subset'. From 'umm_Assembled', the role 'umm_Assembled46' has cardinality 0..*, and from 'umm_Subset', the role 'umm_Subset' has cardinality 0..*.
+An association connects 'umm_CodelistEntry' and 'umm_Original'. From 'umm_CodelistEntry', the role 'umm_CodelistEntry' has cardinality 0..*, and from 'umm_Original', the role 'umm_Original48' has cardinality 0..*.
+An association connects 'umm_CodelistEntry' and 'umm_Subset'. From 'umm_CodelistEntry', the role 'umm_CodelistEntry51' has cardinality 0..*, and from 'umm_Subset', the role 'umm_Subset50' has cardinality 0..*.
+An association connects 'umm_ACC' and 'umm_CCLibrary'. From 'umm_ACC', the role 'umm_ACC' has cardinality 0..*, and from 'umm_CCLibrary', the role 'umm_CCLibrary' has cardinality 0..*.
+An association connects 'umm_ACC' and 'umm_ACCProperty'. From 'umm_ACC', the role 'umm_ACC54' has cardinality 0..*, and from 'umm_ACCProperty', the role 'umm_ACCProperty' has cardinality 0..*.
+An association connects 'umm_Constraint' and 'umm_ACC'. From 'umm_Constraint', the role 'umm_Constraint57' has cardinality 0..*, and from 'umm_ACC', the role 'umm_ACC56' has cardinality 0..*.
+An association connects 'umm_ASCC' and 'umm_ACC'. From 'umm_ASCC', the role 'umm_ASCC' has cardinality 0..*, and from 'umm_ACC', the role 'umm_ACC59' has cardinality 0..*.
+An association connects 'umm_BCC' and 'umm_CDT'. From 'umm_BCC', the role 'umm_BCC' has cardinality 0..*, and from 'umm_CDT', the role 'umm_CDT' has cardinality 0..*.
+An association connects 'umm_CDT' and 'umm_CDTLibrary'. From 'umm_CDT', the role 'umm_CDT62' has cardinality 0..*, and from 'umm_CDTLibrary', the role 'umm_CDTLibrary' has cardinality 0..*.
+An association connects 'umm_CDTProperty' and 'umm_CDT'. From 'umm_CDTProperty', the role 'umm_CDTProperty' has cardinality 0..*, and from 'umm_CDT', the role 'umm_CDT64' has cardinality 0..*.
+An association connects 'umm_Primitive' and 'umm_CDTProperty'. From 'umm_Primitive', the role 'umm_Primitive' has cardinality 0..*, and from 'umm_CDTProperty', the role 'umm_CDTProperty66' has cardinality 0..*.
+An association connects 'umm_Primitive' and 'umm_PrimitiveLibrary'. From 'umm_Primitive', the role 'umm_Primitive68' has cardinality 0..*, and from 'umm_PrimitiveLibrary', the role 'umm_PrimitiveLibrary' has cardinality 0..*.
+An association connects 'umm_OclInvariant' and 'umm_OclExpression'. From 'umm_OclInvariant', the role 'umm_OclInvariant70' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression' has cardinality 0..*.
+An association connects 'umm_OclPathTail' and 'umm_OclPathSelfHead'. From 'umm_OclPathTail', the role 'umm_OclPathTail' has cardinality 0..*, and from 'umm_OclPathSelfHead', the role 'umm_OclPathSelfHead' has cardinality 0..*.
+An association connects 'umm_OclRef' and 'umm_OclPathFeatureHead'. From 'umm_OclRef', the role 'umm_OclRef' has cardinality 0..*, and from 'umm_OclPathFeatureHead', the role 'umm_OclPathFeatureHead' has cardinality 0..*.
+An association connects 'umm_OclPathTail' and 'umm_OclPathFeatureHead'. From 'umm_OclPathTail', the role 'umm_OclPathTail75' has cardinality 0..*, and from 'umm_OclPathFeatureHead', the role 'umm_OclPathFeatureHead74' has cardinality 0..*.
+An association connects 'umm_OclPathTail' and 'umm_OclRef'. From 'umm_OclPathTail', the role 'umm_OclPathTail77' has cardinality 0..*, and from 'umm_OclRef', the role 'umm_OclRef78' has cardinality 0..*.
+An association connects 'umm_OclPathTail' and 'umm_OclPathTail'. From 'umm_OclPathTail', the role 'umm_OclPathTail79' has cardinality 0..*, and from 'umm_OclPathTail', the role 'umm_OclPathTail81' has cardinality 0..*.
+An association connects 'umm_OclExpression' and 'umm_OclForAll'. From 'umm_OclExpression', the role 'umm_OclExpression83' has cardinality 0..*, and from 'umm_OclForAll', the role 'umm_OclForAll' has cardinality 0..*.
+An association connects 'umm_OclImplies' and 'umm_OclExpression'. From 'umm_OclImplies', the role 'umm_OclImplies' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression85' has cardinality 0..*.
+An association connects 'umm_OclImplies' and 'umm_OclExpression'. From 'umm_OclImplies', the role 'umm_OclImplies87' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression88' has cardinality 0..*.
+An association connects 'umm_OclExpression' and 'umm_OclAnd'. From 'umm_OclExpression', the role 'umm_OclExpression90' has cardinality 0..*, and from 'umm_OclAnd', the role 'umm_OclAnd' has cardinality 0..*.
+An association connects 'umm_OclAnd' and 'umm_OclExpression'. From 'umm_OclAnd', the role 'umm_OclAnd92' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression93' has cardinality 0..*.
+An association connects 'umm_OclOr' and 'umm_OclExpression'. From 'umm_OclOr', the role 'umm_OclOr' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression95' has cardinality 0..*.
+An association connects 'umm_OclOr' and 'umm_OclExpression'. From 'umm_OclOr', the role 'umm_OclOr97' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression98' has cardinality 0..*.
+An association connects 'umm_OclXor' and 'umm_OclExpression'. From 'umm_OclXor', the role 'umm_OclXor' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression100' has cardinality 0..*.
+An association connects 'umm_OclExpression' and 'umm_OclXor'. From 'umm_OclExpression', the role 'umm_OclExpression103' has cardinality 0..*, and from 'umm_OclXor', the role 'umm_OclXor102' has cardinality 0..*.
+An association connects 'umm_OclEqual' and 'umm_OclExpression'. From 'umm_OclEqual', the role 'umm_OclEqual' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression105' has cardinality 0..*.
+An association connects 'umm_OclEqual' and 'umm_OclExpression'. From 'umm_OclEqual', the role 'umm_OclEqual107' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression108' has cardinality 0..*.
+An association connects 'umm_OclLess' and 'umm_OclExpression'. From 'umm_OclLess', the role 'umm_OclLess' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression110' has cardinality 0..*.
+An association connects 'umm_OclLess' and 'umm_OclExpression'. From 'umm_OclLess', the role 'umm_OclLess112' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression113' has cardinality 0..*.
+An association connects 'umm_OclLessOrEqual' and 'umm_OclExpression'. From 'umm_OclLessOrEqual', the role 'umm_OclLessOrEqual' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression115' has cardinality 0..*.
+An association connects 'umm_OclLessOrEqual' and 'umm_OclExpression'. From 'umm_OclLessOrEqual', the role 'umm_OclLessOrEqual117' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression118' has cardinality 0..*.
+An association connects 'umm_OclMore' and 'umm_OclExpression'. From 'umm_OclMore', the role 'umm_OclMore' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression120' has cardinality 0..*.
+An association connects 'umm_OclExpression' and 'umm_OclMore'. From 'umm_OclExpression', the role 'umm_OclExpression123' has cardinality 0..*, and from 'umm_OclMore', the role 'umm_OclMore122' has cardinality 0..*.
+An association connects 'umm_OclMoreOrEqual' and 'umm_OclExpression'. From 'umm_OclMoreOrEqual', the role 'umm_OclMoreOrEqual' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression125' has cardinality 0..*.
+An association connects 'umm_OclMoreOrEqual' and 'umm_OclExpression'. From 'umm_OclMoreOrEqual', the role 'umm_OclMoreOrEqual127' has cardinality 0..*, and from 'umm_OclExpression', the role 'umm_OclExpression128' has cardinality 0..*.
+An association connects 'umm_OclValue' and 'umm_OclArrow'. From 'umm_OclValue', the role 'umm_OclValue' has cardinality 0..*, and from 'umm_OclArrow', the role 'umm_OclArrow' has cardinality 0..*.
+An association connects 'umm_OclFunctionCall' and 'umm_OclArrow'. From 'umm_OclFunctionCall', the role 'umm_OclFunctionCall' has cardinality 0..*, and from 'umm_OclArrow', the role 'umm_OclArrow131' has cardinality 0..*.

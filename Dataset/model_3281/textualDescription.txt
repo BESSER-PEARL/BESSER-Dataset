@@ -1,0 +1,17 @@
+The domain model 'statediagram' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'statediagram_StateDiagram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statediagram_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isInitial', which is of type bool.
+
+'statediagram_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'statediagram_StateDiagram' and 'statediagram_State'. From 'statediagram_StateDiagram', the role 'statediagram_StateDiagram' has cardinality 0..*, and from 'statediagram_State', the role 'statediagram_State' has cardinality 0..*.
+An association connects 'statediagram_Transition' and 'statediagram_State'. From 'statediagram_Transition', the role 'statediagram_Transition' has cardinality 0..*, and from 'statediagram_State', the role 'statediagram_State2' has cardinality 0..*.
+An association connects 'statediagram_Transition' and 'statediagram_State'. From 'statediagram_Transition', the role 'statediagram_Transition4' has cardinality 0..*, and from 'statediagram_State', the role 'statediagram_State5' has cardinality 0..*.

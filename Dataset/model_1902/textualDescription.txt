@@ -1,0 +1,307 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 64 main class(es).
+
+'myDsl_File' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'myDsl_Css' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Operation' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'myDsl_ActionCreator' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'myDsl_ActionDispatcher' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Transaction' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'myDsl_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_SublayerSegment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Container' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_ServiceFront' represents an important domain concept.
+It has the following attributes: 'method', which is of type str; 'name', which is of type str.
+
+'myDsl_Architecture' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_EntityName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Submodule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Json' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Functionality' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Descriptor' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'path', which is of type str.
+
+'myDsl_GenericClass' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Layer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_MethodBack' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_LayerSegment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Eclass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Visualizer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_JsMethod' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'myDsl_Subproject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_UIComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_RelationArch' represents an important domain concept.
+It has the following attributes: 'target', which is of type str; 'source', which is of type str; 'name', which is of type str.
+
+'myDsl_ReactApp' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Directory' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'purpose', which is of type str.
+
+'myDsl_JsMethodArgs' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_JeeProject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_AbstractFrontElement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_LayerSegmentRelation' represents an important domain concept.
+It has one attribute: 'layerSegment', which is of type str.
+
+'myDsl_Reducer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_JsModule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_JavaApp' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Md' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractFrontElement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Property' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_SpecialEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_NativeClass' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Epackage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Technology' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_System' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Library' represents an important domain concept.
+It has the following attributes: 'isNative', which is of type str; 'name', which is of type str.
+
+'myDsl_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Js' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_RelationDom' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_AxiosRequest' represents an important domain concept.
+It has the following attributes: 'axiosRestMethod', which is of type str; 'name', which is of type str; 'url', which is of type str.
+
+'myDsl_GeneralEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'UIComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Einterface' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_AbstractMethod' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Eclass' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_AbstractClass' represents an important domain concept.
+It does not declare any attributes.
+
+'File' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Annotation' represents an important domain concept.
+It has one attribute: 'propertie', which is of type str.
+
+'myDsl_RouterComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Operateson' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_Type' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_AbstractClass' is a specialization of 'Eclass'.
+The class 'myDsl_GenericClass' is a specialization of 'Eclass'.
+The class 'myDsl_NativeClass' is a specialization of 'Eclass'.
+The class 'myDsl_Annotation' is a specialization of 'Eclass'.
+The class 'myDsl_ReactApp' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_Functionality' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_RouterComponent' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_RouterComponent' is a specialization of 'UIComponent'.
+The class 'myDsl_Container' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_Visualizer' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_Visualizer' is a specialization of 'UIComponent'.
+The class 'myDsl_ServiceFront' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_Directory' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_File' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_Md' is a specialization of 'File'.
+The class 'myDsl_Js' is a specialization of 'File'.
+The class 'myDsl_Json' is a specialization of 'File'.
+The class 'myDsl_Css' is a specialization of 'File'.
+The class 'myDsl_State' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_Action' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_ActionCreator' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_ActionDispatcher' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_Reducer' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_JsModule' is a specialization of 'AbstractFrontElement'.
+The class 'myDsl_AxiosRequest' is a specialization of 'AbstractFrontElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Domain' and 'myDsl_System'. From 'myDsl_Domain', the role 'myDsl_Domain' has cardinality 0..*, and from 'myDsl_System', the role 'myDsl_System' has cardinality 0..*.
+An association connects 'myDsl_System' and 'myDsl_Architecture'. From 'myDsl_System', the role 'myDsl_System2' has cardinality 0..*, and from 'myDsl_Architecture', the role 'myDsl_Architecture' has cardinality 0..*.
+An association connects 'myDsl_Technology' and 'myDsl_System'. From 'myDsl_Technology', the role 'myDsl_Technology' has cardinality 0..*, and from 'myDsl_System', the role 'myDsl_System4' has cardinality 0..*.
+An association connects 'myDsl_Type' and 'myDsl_Domain'. From 'myDsl_Type', the role 'myDsl_Type' has cardinality 0..*, and from 'myDsl_Domain', the role 'myDsl_Domain6' has cardinality 0..*.
+An association connects 'myDsl_Module' and 'myDsl_Domain'. From 'myDsl_Module', the role 'myDsl_Module' has cardinality 0..*, and from 'myDsl_Domain', the role 'myDsl_Domain8' has cardinality 0..*.
+An association connects 'myDsl_RelationDom' and 'myDsl_Domain'. From 'myDsl_RelationDom', the role 'myDsl_RelationDom' has cardinality 0..*, and from 'myDsl_Domain', the role 'myDsl_Domain10' has cardinality 0..*.
+An association connects 'myDsl_Submodule' and 'myDsl_Module'. From 'myDsl_Submodule', the role 'myDsl_Submodule' has cardinality 0..*, and from 'myDsl_Module', the role 'myDsl_Module12' has cardinality 0..*.
+An association connects 'myDsl_Operation' and 'myDsl_Submodule'. From 'myDsl_Operation', the role 'myDsl_Operation' has cardinality 0..*, and from 'myDsl_Submodule', the role 'myDsl_Submodule14' has cardinality 0..*.
+An association connects 'myDsl_EObject' and 'myDsl_Submodule'. From 'myDsl_EObject', the role 'myDsl_EObject' has cardinality 0..*, and from 'myDsl_Submodule', the role 'myDsl_Submodule16' has cardinality 0..*.
+An association connects 'myDsl_Operation' and 'myDsl_EntityName'. From 'myDsl_Operation', the role 'myDsl_Operation18' has cardinality 0..*, and from 'myDsl_EntityName', the role 'myDsl_EntityName' has cardinality 0..*.
+An association connects 'myDsl_GeneralEntity' and 'myDsl_EntityName'. From 'myDsl_GeneralEntity', the role 'myDsl_GeneralEntity' has cardinality 0..*, and from 'myDsl_EntityName', the role 'myDsl_EntityName20' has cardinality 0..*.
+An association connects 'myDsl_GeneralEntity' and 'myDsl_Property'. From 'myDsl_GeneralEntity', the role 'myDsl_GeneralEntity22' has cardinality 0..*, and from 'myDsl_Property', the role 'myDsl_Property' has cardinality 0..*.
+An association connects 'myDsl_Property' and 'myDsl_Type'. From 'myDsl_Property', the role 'myDsl_Property24' has cardinality 0..*, and from 'myDsl_Type', the role 'myDsl_Type25' has cardinality 0..*.
+An association connects 'myDsl_SpecialEntity' and 'myDsl_EntityName'. From 'myDsl_SpecialEntity', the role 'myDsl_SpecialEntity' has cardinality 0..*, and from 'myDsl_EntityName', the role 'myDsl_EntityName27' has cardinality 0..*.
+An association connects 'myDsl_Property' and 'myDsl_SpecialEntity'. From 'myDsl_Property', the role 'myDsl_Property30' has cardinality 0..*, and from 'myDsl_SpecialEntity', the role 'myDsl_SpecialEntity29' has cardinality 0..*.
+An association connects 'myDsl_SpecialEntity' and 'myDsl_Transaction'. From 'myDsl_SpecialEntity', the role 'myDsl_SpecialEntity32' has cardinality 0..*, and from 'myDsl_Transaction', the role 'myDsl_Transaction' has cardinality 0..*.
+An association connects 'myDsl_Operateson' and 'myDsl_Transaction'. From 'myDsl_Operateson', the role 'myDsl_Operateson' has cardinality 0..*, and from 'myDsl_Transaction', the role 'myDsl_Transaction34' has cardinality 0..*.
+An association connects 'myDsl_Operateson' and 'myDsl_EntityName'. From 'myDsl_Operateson', the role 'myDsl_Operateson36' has cardinality 0..*, and from 'myDsl_EntityName', the role 'myDsl_EntityName37' has cardinality 0..*.
+An association connects 'myDsl_RelationDom' and 'myDsl_EntityName'. From 'myDsl_RelationDom', the role 'myDsl_RelationDom39' has cardinality 0..*, and from 'myDsl_EntityName', the role 'myDsl_EntityName40' has cardinality 0..*.
+An association connects 'myDsl_RelationDom' and 'myDsl_EntityName'. From 'myDsl_RelationDom', the role 'myDsl_RelationDom42' has cardinality 0..*, and from 'myDsl_EntityName', the role 'myDsl_EntityName43' has cardinality 0..*.
+An association connects 'myDsl_Architecture' and 'myDsl_Component'. From 'myDsl_Architecture', the role 'myDsl_Architecture45' has cardinality 0..*, and from 'myDsl_Component', the role 'myDsl_Component' has cardinality 0..*.
+An association connects 'myDsl_Architecture' and 'myDsl_RelationArch'. From 'myDsl_Architecture', the role 'myDsl_Architecture47' has cardinality 0..*, and from 'myDsl_RelationArch', the role 'myDsl_RelationArch' has cardinality 0..*.
+An association connects 'myDsl_Layer' and 'myDsl_Component'. From 'myDsl_Layer', the role 'myDsl_Layer' has cardinality 0..*, and from 'myDsl_Component', the role 'myDsl_Component49' has cardinality 0..*.
+An association connects 'myDsl_LayerSegment' and 'myDsl_Layer'. From 'myDsl_LayerSegment', the role 'myDsl_LayerSegment' has cardinality 0..*, and from 'myDsl_Layer', the role 'myDsl_Layer51' has cardinality 0..*.
+An association connects 'myDsl_LayerSegmentRelation' and 'myDsl_LayerSegment'. From 'myDsl_LayerSegmentRelation', the role 'myDsl_LayerSegmentRelation' has cardinality 0..*, and from 'myDsl_LayerSegment', the role 'myDsl_LayerSegment53' has cardinality 0..*.
+An association connects 'myDsl_LayerSegment' and 'myDsl_SublayerSegment'. From 'myDsl_LayerSegment', the role 'myDsl_LayerSegment55' has cardinality 0..*, and from 'myDsl_SublayerSegment', the role 'myDsl_SublayerSegment' has cardinality 0..*.
+An association connects 'myDsl_JavaApp' and 'myDsl_Technology'. From 'myDsl_JavaApp', the role 'myDsl_JavaApp' has cardinality 0..*, and from 'myDsl_Technology', the role 'myDsl_Technology57' has cardinality 0..*.
+An association connects 'myDsl_Technology' and 'myDsl_ReactApp'. From 'myDsl_Technology', the role 'myDsl_Technology59' has cardinality 0..*, and from 'myDsl_ReactApp', the role 'myDsl_ReactApp' has cardinality 0..*.
+An association connects 'myDsl_JavaApp' and 'myDsl_JeeProject'. From 'myDsl_JavaApp', the role 'myDsl_JavaApp61' has cardinality 0..*, and from 'myDsl_JeeProject', the role 'myDsl_JeeProject' has cardinality 0..*.
+An association connects 'myDsl_JeeProject' and 'myDsl_Subproject'. From 'myDsl_JeeProject', the role 'myDsl_JeeProject63' has cardinality 0..*, and from 'myDsl_Subproject', the role 'myDsl_Subproject' has cardinality 0..*.
+An association connects 'myDsl_Epackage' and 'myDsl_Subproject'. From 'myDsl_Epackage', the role 'myDsl_Epackage' has cardinality 0..*, and from 'myDsl_Subproject', the role 'myDsl_Subproject65' has cardinality 0..*.
+An association connects 'myDsl_Library' and 'myDsl_Subproject'. From 'myDsl_Library', the role 'myDsl_Library' has cardinality 0..*, and from 'myDsl_Subproject', the role 'myDsl_Subproject67' has cardinality 0..*.
+An association connects 'myDsl_Subproject' and 'myDsl_Descriptor'. From 'myDsl_Subproject', the role 'myDsl_Subproject69' has cardinality 0..*, and from 'myDsl_Descriptor', the role 'myDsl_Descriptor' has cardinality 0..*.
+An association connects 'myDsl_Attribute' and 'myDsl_AbstractClass'. From 'myDsl_Attribute', the role 'myDsl_Attribute' has cardinality 0..*, and from 'myDsl_AbstractClass', the role 'myDsl_AbstractClass' has cardinality 0..*.
+An association connects 'myDsl_AbstractClass' and 'myDsl_MethodBack'. From 'myDsl_AbstractClass', the role 'myDsl_AbstractClass72' has cardinality 0..*, and from 'myDsl_MethodBack', the role 'myDsl_MethodBack' has cardinality 0..*.
+An association connects 'myDsl_Annotation' and 'myDsl_AbstractClass'. From 'myDsl_Annotation', the role 'myDsl_Annotation' has cardinality 0..*, and from 'myDsl_AbstractClass', the role 'myDsl_AbstractClass74' has cardinality 0..*.
+An association connects 'myDsl_AbstractMethod' and 'myDsl_AbstractClass'. From 'myDsl_AbstractMethod', the role 'myDsl_AbstractMethod' has cardinality 0..*, and from 'myDsl_AbstractClass', the role 'myDsl_AbstractClass76' has cardinality 0..*.
+An association connects 'myDsl_GenericClass' and 'myDsl_Attribute'. From 'myDsl_GenericClass', the role 'myDsl_GenericClass' has cardinality 0..*, and from 'myDsl_Attribute', the role 'myDsl_Attribute78' has cardinality 0..*.
+An association connects 'myDsl_MethodBack' and 'myDsl_GenericClass'. From 'myDsl_MethodBack', the role 'myDsl_MethodBack81' has cardinality 0..*, and from 'myDsl_GenericClass', the role 'myDsl_GenericClass80' has cardinality 0..*.
+An association connects 'myDsl_GenericClass' and 'myDsl_Annotation'. From 'myDsl_GenericClass', the role 'myDsl_GenericClass83' has cardinality 0..*, and from 'myDsl_Annotation', the role 'myDsl_Annotation84' has cardinality 0..*.
+An association connects 'myDsl_GenericClass' and 'myDsl_AbstractClass'. From 'myDsl_GenericClass', the role 'myDsl_GenericClass86' has cardinality 0..*, and from 'myDsl_AbstractClass', the role 'myDsl_AbstractClass87' has cardinality 0..*.
+An association connects 'myDsl_GenericClass' and 'myDsl_Einterface'. From 'myDsl_GenericClass', the role 'myDsl_GenericClass89' has cardinality 0..*, and from 'myDsl_Einterface', the role 'myDsl_Einterface' has cardinality 0..*.
+An association connects 'myDsl_Einterface' and 'myDsl_Attribute'. From 'myDsl_Einterface', the role 'myDsl_Einterface91' has cardinality 0..*, and from 'myDsl_Attribute', the role 'myDsl_Attribute92' has cardinality 0..*.
+An association connects 'myDsl_Einterface' and 'myDsl_AbstractMethod'. From 'myDsl_Einterface', the role 'myDsl_Einterface94' has cardinality 0..*, and from 'myDsl_AbstractMethod', the role 'myDsl_AbstractMethod95' has cardinality 0..*.
+An association connects 'myDsl_NativeClass' and 'myDsl_Attribute'. From 'myDsl_NativeClass', the role 'myDsl_NativeClass' has cardinality 0..*, and from 'myDsl_Attribute', the role 'myDsl_Attribute97' has cardinality 0..*.
+An association connects 'myDsl_NativeClass' and 'myDsl_MethodBack'. From 'myDsl_NativeClass', the role 'myDsl_NativeClass99' has cardinality 0..*, and from 'myDsl_MethodBack', the role 'myDsl_MethodBack100' has cardinality 0..*.
+An association connects 'myDsl_Attribute' and 'myDsl_Eclass'. From 'myDsl_Attribute', the role 'myDsl_Attribute102' has cardinality 0..*, and from 'myDsl_Eclass', the role 'myDsl_Eclass' has cardinality 0..*.
+An association connects 'myDsl_Epackage' and 'myDsl_Eclass'. From 'myDsl_Epackage', the role 'myDsl_Epackage104' has cardinality 0..*, and from 'myDsl_Eclass', the role 'myDsl_Eclass105' has cardinality 0..*.
+An association connects 'myDsl_MethodBack' and 'myDsl_Eclass'. From 'myDsl_MethodBack', the role 'myDsl_MethodBack107' has cardinality 0..*, and from 'myDsl_Eclass', the role 'myDsl_Eclass108' has cardinality 0..*.
+An association connects 'myDsl_MethodBack' and 'myDsl_Eclass'. From 'myDsl_MethodBack', the role 'myDsl_MethodBack110' has cardinality 0..*, and from 'myDsl_Eclass', the role 'myDsl_Eclass111' has cardinality 0..*.
+An association connects 'myDsl_Eclass' and 'myDsl_AbstractMethod'. From 'myDsl_Eclass', the role 'myDsl_Eclass114' has cardinality 0..*, and from 'myDsl_AbstractMethod', the role 'myDsl_AbstractMethod113' has cardinality 0..*.
+An association connects 'myDsl_Eclass' and 'myDsl_AbstractMethod'. From 'myDsl_Eclass', the role 'myDsl_Eclass117' has cardinality 0..*, and from 'myDsl_AbstractMethod', the role 'myDsl_AbstractMethod116' has cardinality 0..*.
+An association connects 'myDsl_Library' and 'myDsl_Annotation'. From 'myDsl_Library', the role 'myDsl_Library119' has cardinality 0..*, and from 'myDsl_Annotation', the role 'myDsl_Annotation120' has cardinality 0..*.
+An association connects 'myDsl_AbstractFrontElement' and 'myDsl_ReactApp'. From 'myDsl_AbstractFrontElement', the role 'myDsl_AbstractFrontElement' has cardinality 0..*, and from 'myDsl_ReactApp', the role 'myDsl_ReactApp122' has cardinality 0..*.
+An association connects 'myDsl_ReactApp' and 'myDsl_Functionality'. From 'myDsl_ReactApp', the role 'myDsl_ReactApp124' has cardinality 0..*, and from 'myDsl_Functionality', the role 'myDsl_Functionality' has cardinality 0..*.
+An association connects 'myDsl_ReactApp' and 'myDsl_Directory'. From 'myDsl_ReactApp', the role 'myDsl_ReactApp126' has cardinality 0..*, and from 'myDsl_Directory', the role 'myDsl_Directory' has cardinality 0..*.
+An association connects 'myDsl_ReactApp' and 'myDsl_JsModule'. From 'myDsl_ReactApp', the role 'myDsl_ReactApp128' has cardinality 0..*, and from 'myDsl_JsModule', the role 'myDsl_JsModule' has cardinality 0..*.
+An association connects 'myDsl_Functionality' and 'myDsl_RouterComponent'. From 'myDsl_Functionality', the role 'myDsl_Functionality130' has cardinality 0..*, and from 'myDsl_RouterComponent', the role 'myDsl_RouterComponent' has cardinality 0..*.
+An association connects 'myDsl_Container' and 'myDsl_Functionality'. From 'myDsl_Container', the role 'myDsl_Container' has cardinality 0..*, and from 'myDsl_Functionality', the role 'myDsl_Functionality132' has cardinality 0..*.
+An association connects 'myDsl_Functionality' and 'myDsl_Visualizer'. From 'myDsl_Functionality', the role 'myDsl_Functionality134' has cardinality 0..*, and from 'myDsl_Visualizer', the role 'myDsl_Visualizer' has cardinality 0..*.
+An association connects 'myDsl_State' and 'myDsl_Functionality'. From 'myDsl_State', the role 'myDsl_State' has cardinality 0..*, and from 'myDsl_Functionality', the role 'myDsl_Functionality136' has cardinality 0..*.
+An association connects 'myDsl_ServiceFront' and 'myDsl_Functionality'. From 'myDsl_ServiceFront', the role 'myDsl_ServiceFront' has cardinality 0..*, and from 'myDsl_Functionality', the role 'myDsl_Functionality138' has cardinality 0..*.
+An association connects 'myDsl_Functionality' and 'myDsl_Directory'. From 'myDsl_Functionality', the role 'myDsl_Functionality140' has cardinality 0..*, and from 'myDsl_Directory', the role 'myDsl_Directory141' has cardinality 0..*.
+An association connects 'myDsl_RouterComponent' and 'myDsl_AbstractFrontElement'. From 'myDsl_RouterComponent', the role 'myDsl_RouterComponent143' has cardinality 0..*, and from 'myDsl_AbstractFrontElement', the role 'myDsl_AbstractFrontElement144' has cardinality 0..*.
+An association connects 'myDsl_RouterComponent' and 'myDsl_UIComponent'. From 'myDsl_RouterComponent', the role 'myDsl_RouterComponent146' has cardinality 0..*, and from 'myDsl_UIComponent', the role 'myDsl_UIComponent' has cardinality 0..*.
+An association connects 'myDsl_AbstractFrontElement' and 'myDsl_Container'. From 'myDsl_AbstractFrontElement', the role 'myDsl_AbstractFrontElement149' has cardinality 0..*, and from 'myDsl_Container', the role 'myDsl_Container148' has cardinality 0..*.
+An association connects 'myDsl_Visualizer' and 'myDsl_AbstractFrontElement'. From 'myDsl_Visualizer', the role 'myDsl_Visualizer151' has cardinality 0..*, and from 'myDsl_AbstractFrontElement', the role 'myDsl_AbstractFrontElement152' has cardinality 0..*.
+An association connects 'myDsl_JsMethod' and 'myDsl_Visualizer'. From 'myDsl_JsMethod', the role 'myDsl_JsMethod' has cardinality 0..*, and from 'myDsl_Visualizer', the role 'myDsl_Visualizer154' has cardinality 0..*.
+An association connects 'myDsl_ServiceFront' and 'myDsl_JsModule'. From 'myDsl_ServiceFront', the role 'myDsl_ServiceFront156' has cardinality 0..*, and from 'myDsl_JsModule', the role 'myDsl_JsModule157' has cardinality 0..*.
+An association connects 'myDsl_AxiosRequest' and 'myDsl_ServiceFront'. From 'myDsl_AxiosRequest', the role 'myDsl_AxiosRequest' has cardinality 0..*, and from 'myDsl_ServiceFront', the role 'myDsl_ServiceFront159' has cardinality 0..*.
+An association connects 'myDsl_File' and 'myDsl_Directory'. From 'myDsl_File', the role 'myDsl_File' has cardinality 0..*, and from 'myDsl_Directory', the role 'myDsl_Directory161' has cardinality 0..*.
+An association connects 'myDsl_Directory' and 'myDsl_Directory'. From 'myDsl_Directory', the role 'myDsl_Directory162' has cardinality 0..*, and from 'myDsl_Directory', the role 'myDsl_Directory164' has cardinality 0..*.
+An association connects 'myDsl_Action' and 'myDsl_State'. From 'myDsl_Action', the role 'myDsl_Action' has cardinality 0..*, and from 'myDsl_State', the role 'myDsl_State166' has cardinality 0..*.
+An association connects 'myDsl_Reducer' and 'myDsl_State'. From 'myDsl_Reducer', the role 'myDsl_Reducer' has cardinality 0..*, and from 'myDsl_State', the role 'myDsl_State168' has cardinality 0..*.
+An association connects 'myDsl_ActionCreator' and 'myDsl_Action'. From 'myDsl_ActionCreator', the role 'myDsl_ActionCreator' has cardinality 0..*, and from 'myDsl_Action', the role 'myDsl_Action170' has cardinality 0..*.
+An association connects 'myDsl_Action' and 'myDsl_ActionDispatcher'. From 'myDsl_Action', the role 'myDsl_Action172' has cardinality 0..*, and from 'myDsl_ActionDispatcher', the role 'myDsl_ActionDispatcher' has cardinality 0..*.
+An association connects 'myDsl_Directory' and 'myDsl_Action'. From 'myDsl_Directory', the role 'myDsl_Directory175' has cardinality 0..*, and from 'myDsl_Action', the role 'myDsl_Action174' has cardinality 0..*.
+An association connects 'myDsl_ActionCreator' and 'myDsl_ActionDispatcher'. From 'myDsl_ActionCreator', the role 'myDsl_ActionCreator178' has cardinality 0..*, and from 'myDsl_ActionDispatcher', the role 'myDsl_ActionDispatcher177' has cardinality 0..*.
+An association connects 'myDsl_Reducer' and 'myDsl_AbstractFrontElement'. From 'myDsl_Reducer', the role 'myDsl_Reducer180' has cardinality 0..*, and from 'myDsl_AbstractFrontElement', the role 'myDsl_AbstractFrontElement181' has cardinality 0..*.
+An association connects 'myDsl_JsModule' and 'myDsl_Directory'. From 'myDsl_JsModule', the role 'myDsl_JsModule183' has cardinality 0..*, and from 'myDsl_Directory', the role 'myDsl_Directory184' has cardinality 0..*.
+An association connects 'myDsl_JsMethodArgs' and 'myDsl_JsMethod'. From 'myDsl_JsMethodArgs', the role 'myDsl_JsMethodArgs' has cardinality 0..*, and from 'myDsl_JsMethod', the role 'myDsl_JsMethod186' has cardinality 0..*.
+An association connects 'myDsl_JsMethodArgs' and 'myDsl_AxiosRequest'. From 'myDsl_JsMethodArgs', the role 'myDsl_JsMethodArgs189' has cardinality 0..*, and from 'myDsl_AxiosRequest', the role 'myDsl_AxiosRequest188' has cardinality 0..*.

@@ -1,0 +1,227 @@
+The domain model 'dmx' describes the core structural elements and their relationships within the system.
+
+The model defines 48 main class(es).
+
+'dmx_DmxInstanceOfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxArchetype' represents an important domain concept.
+It has one attribute: 'baseType', which is of type str.
+
+'dmx_DComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxStringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dmx_DmxTest' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dmx_DmxNaturalLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ITypeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'DmxComplexObject' represents an important domain concept.
+It does not declare any attributes.
+
+'DModel' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxField' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxFunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'INavigableMemberContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DNavigableMember' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxMemberNavigation' represents an important domain concept.
+It has the following attributes: 'before', which is of type bool; 'explicitOperationCall', which is of type bool.
+
+'dmx_DmxCallArguments' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxCastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxDateLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type date.
+
+'dmx_DmxFilterTypeDescriptor' represents an important domain concept.
+It has the following attributes: 'multiTyped', which is of type bool; 'single', which is of type str; 'collection', which is of type bool.
+
+'dmx_DFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxBaseTypeSet' represents an important domain concept.
+It has the following attributes: 'members', which is of type str; 'name', which is of type str.
+
+'dmx_DmxBinaryOperation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'dmx_DmxFilterParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dmx_DmxAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxUndefinedLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DType' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxUrlLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'display', which is of type str.
+
+'dmx_DmxModel' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxUnaryOperation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'dmx_DmxListExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxPredicateWithCorrelationVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'DPrimitive' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxBooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'dmx_DmxIfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxCorrelationVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxContextReference' represents an important domain concept.
+It has the following attributes: 'all', which is of type bool; 'before', which is of type bool.
+
+'dmx_DmxComplexObject' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxTestContext' represents an important domain concept.
+It does not declare any attributes.
+
+'DExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_IStaticReferenceTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxDetail' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxDecimalLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dmx_DmxStaticReference' represents an important domain concept.
+It has the following attributes: 'displayName', which is of type str; 'plural', which is of type bool.
+
+'DContext' represents an important domain concept.
+It does not declare any attributes.
+
+'dmx_DmxEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'DNavigableMember' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DmxUnaryOperator' defines the following possible values: 'NOT', 'MINUS', 'PLUS'.
+The enumeration 'DmxBaseType' defines the following possible values: 'TEXT', 'AMBIGUOUS', 'STATE_EVENT', 'SERVICE', 'COMPLEX', 'VOID', 'ENUM', 'TIMEPOINT', 'BOOLEAN', 'NOTIFICATION', 'STATE', 'NUMBER', 'UNDEFINED', 'AGGREGATE', 'IDENTIFIER'.
+The enumeration 'DmxBinaryOperator' defines the following possible values: 'XOR', 'UNTIL', 'DOUBLE_ARROW', 'MULTIPLY', 'OR', 'GREATER_OR_EQUAL', 'EQUAL', 'AND', 'SUBTRACT', 'SINGLE_ARROW', 'GREATER', 'LESS_OR_EQUAL', 'POWER', 'DIVIDE', 'LESS', 'ADD', 'MODULO', 'IN', 'NOT_EQUAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'dmx_DmxModel' is a specialization of 'DModel'.
+The class 'dmx_DmxModel' is a specialization of 'ITypeContainer'.
+The class 'dmx_DmxTest' is a specialization of 'INavigableMemberContainer'.
+The class 'dmx_DmxTestContext' is a specialization of 'DContext'.
+The class 'dmx_DmxArchetype' is a specialization of 'DPrimitive'.
+The class 'dmx_DmxFilter' is a specialization of 'DNavigableMember'.
+The class 'dmx_DmxAssignment' is a specialization of 'DExpression'.
+The class 'dmx_DmxPredicateWithCorrelationVariable' is a specialization of 'DExpression'.
+The class 'dmx_DmxPredicateWithCorrelationVariable' is a specialization of 'INavigableMemberContainer'.
+The class 'dmx_DmxCorrelationVariable' is a specialization of 'DNavigableMember'.
+The class 'dmx_DmxMemberNavigation' is a specialization of 'DExpression'.
+The class 'dmx_DmxFunctionCall' is a specialization of 'DExpression'.
+The class 'dmx_DmxBinaryOperation' is a specialization of 'DExpression'.
+The class 'dmx_DmxInstanceOfExpression' is a specialization of 'DExpression'.
+The class 'dmx_DmxUnaryOperation' is a specialization of 'DExpression'.
+The class 'dmx_DmxCastExpression' is a specialization of 'DExpression'.
+The class 'dmx_DmxListExpression' is a specialization of 'DExpression'.
+The class 'dmx_DmxStaticReference' is a specialization of 'DExpression'.
+The class 'dmx_DmxContextReference' is a specialization of 'DExpression'.
+The class 'dmx_DmxIfExpression' is a specialization of 'DExpression'.
+The class 'dmx_DmxBooleanLiteral' is a specialization of 'DExpression'.
+The class 'dmx_DmxStringLiteral' is a specialization of 'DExpression'.
+The class 'dmx_DmxNaturalLiteral' is a specialization of 'DExpression'.
+The class 'dmx_DmxDecimalLiteral' is a specialization of 'DExpression'.
+The class 'dmx_DmxDateLiteral' is a specialization of 'DExpression'.
+The class 'dmx_DmxUrlLiteral' is a specialization of 'DExpression'.
+The class 'dmx_DmxUndefinedLiteral' is a specialization of 'DExpression'.
+The class 'dmx_DmxComplexObject' is a specialization of 'INavigableMemberContainer'.
+The class 'dmx_DmxComplexObject' is a specialization of 'DExpression'.
+The class 'dmx_DmxField' is a specialization of 'DNavigableMember'.
+The class 'dmx_DmxEntity' is a specialization of 'DmxComplexObject'.
+The class 'dmx_DmxDetail' is a specialization of 'DmxComplexObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dmx_DmxFilter' and 'dmx_DmxModel'. From 'dmx_DmxFilter', the role 'dmx_DmxFilter' has cardinality 0..*, and from 'dmx_DmxModel', the role 'dmx_DmxModel' has cardinality 0..*.
+An association connects 'dmx_DmxModel' and 'dmx_DmxTest'. From 'dmx_DmxModel', the role 'dmx_DmxModel2' has cardinality 0..*, and from 'dmx_DmxTest', the role 'dmx_DmxTest' has cardinality 0..*.
+An association connects 'dmx_DmxTest' and 'dmx_DmxTestContext'. From 'dmx_DmxTest', the role 'dmx_DmxTest4' has cardinality 0..*, and from 'dmx_DmxTestContext', the role 'dmx_DmxTestContext' has cardinality 0..*.
+An association connects 'dmx_DExpression' and 'dmx_DmxTest'. From 'dmx_DExpression', the role 'dmx_DExpression' has cardinality 0..*, and from 'dmx_DmxTest', the role 'dmx_DmxTest6' has cardinality 0..*.
+An association connects 'dmx_DExpression' and 'dmx_DmxTestContext'. From 'dmx_DExpression', the role 'dmx_DExpression9' has cardinality 0..*, and from 'dmx_DmxTestContext', the role 'dmx_DmxTestContext8' has cardinality 0..*.
+An association connects 'dmx_DmxFilter' and 'dmx_DmxFilterParameter'. From 'dmx_DmxFilter', the role 'dmx_DmxFilter11' has cardinality 0..*, and from 'dmx_DmxFilterParameter', the role 'dmx_DmxFilterParameter' has cardinality 0..*.
+An association connects 'dmx_DmxFilter' and 'dmx_DmxFilterTypeDescriptor'. From 'dmx_DmxFilter', the role 'dmx_DmxFilter13' has cardinality 0..*, and from 'dmx_DmxFilterTypeDescriptor', the role 'dmx_DmxFilterTypeDescriptor' has cardinality 0..*.
+An association connects 'dmx_DmxBaseTypeSet' and 'dmx_DmxFilter'. From 'dmx_DmxBaseTypeSet', the role 'dmx_DmxBaseTypeSet' has cardinality 0..*, and from 'dmx_DmxFilter', the role 'dmx_DmxFilter15' has cardinality 0..*.
+An association connects 'dmx_DmxBaseTypeSet' and 'dmx_DmxFilterTypeDescriptor'. From 'dmx_DmxBaseTypeSet', the role 'dmx_DmxBaseTypeSet18' has cardinality 0..*, and from 'dmx_DmxFilterTypeDescriptor', the role 'dmx_DmxFilterTypeDescriptor17' has cardinality 0..*.
+An association connects 'dmx_DmxFilterTypeDescriptor' and 'dmx_DmxFilterParameter'. From 'dmx_DmxFilterTypeDescriptor', the role 'dmx_DmxFilterTypeDescriptor21' has cardinality 0..*, and from 'dmx_DmxFilterParameter', the role 'dmx_DmxFilterParameter20' has cardinality 0..*.
+An association connects 'dmx_DExpression' and 'dmx_DmxAssignment'. From 'dmx_DExpression', the role 'dmx_DExpression23' has cardinality 0..*, and from 'dmx_DmxAssignment', the role 'dmx_DmxAssignment' has cardinality 0..*.
+An association connects 'dmx_DNavigableMember' and 'dmx_DmxAssignment'. From 'dmx_DNavigableMember', the role 'dmx_DNavigableMember' has cardinality 0..*, and from 'dmx_DmxAssignment', the role 'dmx_DmxAssignment25' has cardinality 0..*.
+An association connects 'dmx_DmxAssignment' and 'dmx_DExpression'. From 'dmx_DmxAssignment', the role 'dmx_DmxAssignment27' has cardinality 0..*, and from 'dmx_DExpression', the role 'dmx_DExpression28' has cardinality 0..*.
+An association connects 'dmx_DmxCorrelationVariable' and 'dmx_DmxPredicateWithCorrelationVariable'. From 'dmx_DmxCorrelationVariable', the role 'dmx_DmxCorrelationVariable' has cardinality 0..*, and from 'dmx_DmxPredicateWithCorrelationVariable', the role 'dmx_DmxPredicateWithCorrelationVariable' has cardinality 0..*.
+An association connects 'dmx_DExpression' and 'dmx_DmxPredicateWithCorrelationVariable'. From 'dmx_DExpression', the role 'dmx_DExpression32' has cardinality 0..*, and from 'dmx_DmxPredicateWithCorrelationVariable', the role 'dmx_DmxPredicateWithCorrelationVariable31' has cardinality 0..*.
+An association connects 'dmx_DNavigableMember' and 'dmx_DmxMemberNavigation'. From 'dmx_DNavigableMember', the role 'dmx_DNavigableMember34' has cardinality 0..*, and from 'dmx_DmxMemberNavigation', the role 'dmx_DmxMemberNavigation' has cardinality 0..*.
+An association connects 'dmx_DExpression' and 'dmx_DmxMemberNavigation'. From 'dmx_DExpression', the role 'dmx_DExpression37' has cardinality 0..*, and from 'dmx_DmxMemberNavigation', the role 'dmx_DmxMemberNavigation36' has cardinality 0..*.
+An association connects 'dmx_DmxCallArguments' and 'dmx_DmxMemberNavigation'. From 'dmx_DmxCallArguments', the role 'dmx_DmxCallArguments' has cardinality 0..*, and from 'dmx_DmxMemberNavigation', the role 'dmx_DmxMemberNavigation39' has cardinality 0..*.
+An association connects 'dmx_DExpression' and 'dmx_DmxCallArguments'. From 'dmx_DExpression', the role 'dmx_DExpression42' has cardinality 0..*, and from 'dmx_DmxCallArguments', the role 'dmx_DmxCallArguments41' has cardinality 0..*.
+An association connects 'dmx_DmxFunctionCall' and 'dmx_DmxFilter'. From 'dmx_DmxFunctionCall', the role 'dmx_DmxFunctionCall' has cardinality 0..*, and from 'dmx_DmxFilter', the role 'dmx_DmxFilter44' has cardinality 0..*.
+An association connects 'dmx_DmxCallArguments' and 'dmx_DmxFunctionCall'. From 'dmx_DmxCallArguments', the role 'dmx_DmxCallArguments47' has cardinality 0..*, and from 'dmx_DmxFunctionCall', the role 'dmx_DmxFunctionCall46' has cardinality 0..*.
+An association connects 'dmx_DmxBinaryOperation' and 'dmx_DExpression'. From 'dmx_DmxBinaryOperation', the role 'dmx_DmxBinaryOperation' has cardinality 0..*, and from 'dmx_DExpression', the role 'dmx_DExpression49' has cardinality 0..*.
+An association connects 'dmx_DmxBinaryOperation' and 'dmx_DExpression'. From 'dmx_DmxBinaryOperation', the role 'dmx_DmxBinaryOperation51' has cardinality 0..*, and from 'dmx_DExpression', the role 'dmx_DExpression52' has cardinality 0..*.
+An association connects 'dmx_DExpression' and 'dmx_DmxInstanceOfExpression'. From 'dmx_DExpression', the role 'dmx_DExpression54' has cardinality 0..*, and from 'dmx_DmxInstanceOfExpression', the role 'dmx_DmxInstanceOfExpression' has cardinality 0..*.
+An association connects 'dmx_DType' and 'dmx_DmxInstanceOfExpression'. From 'dmx_DType', the role 'dmx_DType' has cardinality 0..*, and from 'dmx_DmxInstanceOfExpression', the role 'dmx_DmxInstanceOfExpression56' has cardinality 0..*.
+An association connects 'dmx_DmxUnaryOperation' and 'dmx_DExpression'. From 'dmx_DmxUnaryOperation', the role 'dmx_DmxUnaryOperation' has cardinality 0..*, and from 'dmx_DExpression', the role 'dmx_DExpression58' has cardinality 0..*.
+An association connects 'dmx_DExpression' and 'dmx_DmxCastExpression'. From 'dmx_DExpression', the role 'dmx_DExpression60' has cardinality 0..*, and from 'dmx_DmxCastExpression', the role 'dmx_DmxCastExpression' has cardinality 0..*.
+An association connects 'dmx_DType' and 'dmx_DmxCastExpression'. From 'dmx_DType', the role 'dmx_DType63' has cardinality 0..*, and from 'dmx_DmxCastExpression', the role 'dmx_DmxCastExpression62' has cardinality 0..*.
+An association connects 'dmx_DExpression' and 'dmx_DmxListExpression'. From 'dmx_DExpression', the role 'dmx_DExpression65' has cardinality 0..*, and from 'dmx_DmxListExpression', the role 'dmx_DmxListExpression' has cardinality 0..*.
+An association connects 'dmx_DmxStaticReference' and 'dmx_IStaticReferenceTarget'. From 'dmx_DmxStaticReference', the role 'dmx_DmxStaticReference' has cardinality 0..*, and from 'dmx_IStaticReferenceTarget', the role 'dmx_IStaticReferenceTarget' has cardinality 0..*.
+An association connects 'dmx_DmxStaticReference' and 'dmx_DNavigableMember'. From 'dmx_DmxStaticReference', the role 'dmx_DmxStaticReference68' has cardinality 0..*, and from 'dmx_DNavigableMember', the role 'dmx_DNavigableMember69' has cardinality 0..*.
+An association connects 'dmx_DNamedElement' and 'dmx_DmxContextReference'. From 'dmx_DNamedElement', the role 'dmx_DNamedElement' has cardinality 0..*, and from 'dmx_DmxContextReference', the role 'dmx_DmxContextReference' has cardinality 0..*.
+An association connects 'dmx_DmxIfExpression' and 'dmx_DExpression'. From 'dmx_DmxIfExpression', the role 'dmx_DmxIfExpression' has cardinality 0..*, and from 'dmx_DExpression', the role 'dmx_DExpression72' has cardinality 0..*.
+An association connects 'dmx_DmxIfExpression' and 'dmx_DExpression'. From 'dmx_DmxIfExpression', the role 'dmx_DmxIfExpression74' has cardinality 0..*, and from 'dmx_DExpression', the role 'dmx_DExpression75' has cardinality 0..*.
+An association connects 'dmx_DExpression' and 'dmx_DmxIfExpression'. From 'dmx_DExpression', the role 'dmx_DExpression78' has cardinality 0..*, and from 'dmx_DmxIfExpression', the role 'dmx_DmxIfExpression77' has cardinality 0..*.
+An association connects 'dmx_DmxComplexObject' and 'dmx_DComplexType'. From 'dmx_DmxComplexObject', the role 'dmx_DmxComplexObject' has cardinality 0..*, and from 'dmx_DComplexType', the role 'dmx_DComplexType' has cardinality 0..*.
+An association connects 'dmx_DmxComplexObject' and 'dmx_DmxField'. From 'dmx_DmxComplexObject', the role 'dmx_DmxComplexObject81' has cardinality 0..*, and from 'dmx_DmxField', the role 'dmx_DmxField' has cardinality 0..*.
+An association connects 'dmx_DmxField' and 'dmx_DFeature'. From 'dmx_DmxField', the role 'dmx_DmxField83' has cardinality 0..*, and from 'dmx_DFeature', the role 'dmx_DFeature' has cardinality 0..*.
+An association connects 'dmx_DExpression' and 'dmx_DmxField'. From 'dmx_DExpression', the role 'dmx_DExpression86' has cardinality 0..*, and from 'dmx_DmxField', the role 'dmx_DmxField85' has cardinality 0..*.

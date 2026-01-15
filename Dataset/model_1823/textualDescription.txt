@@ -1,0 +1,100 @@
+The domain model 'book' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'book_Fade' represents an important domain concept.
+It has the following attributes: 'fromValue', which is of type float; 'toValue', which is of type float.
+
+'Page' represents an important domain concept.
+It does not declare any attributes.
+
+'book_Label' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'font', which is of type str.
+
+'book_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'Animation' represents an important domain concept.
+It does not declare any attributes.
+
+'Control' represents an important domain concept.
+It does not declare any attributes.
+
+'book_JSAction' represents an important domain concept.
+It has one attribute: 'javaScript', which is of type str.
+
+'book_Control' represents an important domain concept.
+It has the following attributes: 'sound', which is of type str; 'image', which is of type str.
+
+'book_Animation' represents an important domain concept.
+It has the following attributes: 'autoReverse', which is of type bool; 'delay', which is of type float; 'duration', which is of type float; 'repeat', which is of type int.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'book_Node' represents an important domain concept.
+It has the following attributes: 'enable', which is of type bool; 'background', which is of type str; 'foreground', which is of type str; 'opacity', which is of type float; 'bounds', which is of type str.
+
+'book_Move' represents an important domain concept.
+It has the following attributes: 'fromLocation', which is of type str; 'toLocation', which is of type str.
+
+'book_Book' represents an important domain concept.
+It has the following attributes: 'bookId', which is of type str; 'author', which is of type str; 'description', which is of type str; 'version', which is of type str; 'resolution', which is of type str; 'title', which is of type str.
+
+'book_ImageFlash' represents an important domain concept.
+It has the following attributes: 'images', which is of type str; 'duration', which is of type int.
+
+'book_Media' represents an important domain concept.
+It has the following attributes: 'duration', which is of type int; 'autoPlay', which is of type bool; 'repeat', which is of type int; 'url', which is of type str.
+
+'book_Rotation' represents an important domain concept.
+It has the following attributes: 'fromAngle', which is of type float; 'toAngle', which is of type float.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'book_OpenPage' represents an important domain concept.
+It does not declare any attributes.
+
+'book_Shape' represents an important domain concept.
+It has the following attributes: 'lineWidth', which is of type int; 'points', which is of type str.
+
+'book_Layer' represents an important domain concept.
+It has one attribute: 'visible', which is of type bool.
+
+'book_Splash' represents an important domain concept.
+It has one attribute: 'duration', which is of type int.
+
+'book_Page' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'book_Action' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'book_Splash' is a specialization of 'Page'.
+The class 'book_Shape' is a specialization of 'Node'.
+The class 'book_Control' is a specialization of 'Node'.
+The class 'book_Group' is a specialization of 'Control'.
+The class 'book_ImageFlash' is a specialization of 'Control'.
+The class 'book_Media' is a specialization of 'Control'.
+The class 'book_Label' is a specialization of 'Control'.
+The class 'book_OpenPage' is a specialization of 'Action'.
+The class 'book_JSAction' is a specialization of 'Action'.
+The class 'book_Animation' is a specialization of 'Action'.
+The class 'book_Fade' is a specialization of 'Animation'.
+The class 'book_Move' is a specialization of 'Animation'.
+The class 'book_Rotation' is a specialization of 'Animation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'book_Page' and 'book_Book'. From 'book_Page', the role 'book_Page' has cardinality 0..*, and from 'book_Book', the role 'book_Book' has cardinality 0..*.
+An association connects 'book_Book' and 'book_Splash'. From 'book_Book', the role 'book_Book2' has cardinality 0..*, and from 'book_Splash', the role 'book_Splash' has cardinality 0..*.
+An association connects 'book_Book' and 'book_Page'. From 'book_Book', the role 'book_Book4' has cardinality 0..*, and from 'book_Page', the role 'book_Page5' has cardinality 0..*.
+An association connects 'book_Layer' and 'book_Page'. From 'book_Layer', the role 'book_Layer' has cardinality 0..*, and from 'book_Page', the role 'book_Page7' has cardinality 0..*.
+An association connects 'book_Layer' and 'book_Control'. From 'book_Layer', the role 'book_Layer9' has cardinality 0..*, and from 'book_Control', the role 'book_Control' has cardinality 0..*.
+An association connects 'book_Action' and 'book_Control'. From 'book_Action', the role 'book_Action' has cardinality 0..*, and from 'book_Control', the role 'book_Control11' has cardinality 0..*.
+An association connects 'book_Action' and 'book_Control'. From 'book_Action', the role 'book_Action14' has cardinality 0..*, and from 'book_Control', the role 'book_Control13' has cardinality 0..*.
+An association connects 'book_Node' and 'book_Group'. From 'book_Node', the role 'book_Node' has cardinality 0..*, and from 'book_Group', the role 'book_Group' has cardinality 0..*.
+An association connects 'book_ImageFlash' and 'book_Animation'. From 'book_ImageFlash', the role 'book_ImageFlash' has cardinality 0..*, and from 'book_Animation', the role 'book_Animation' has cardinality 0..*.
+An association connects 'book_Animation' and 'book_ImageFlash'. From 'book_Animation', the role 'book_Animation19' has cardinality 0..*, and from 'book_ImageFlash', the role 'book_ImageFlash18' has cardinality 0..*.
+An association connects 'book_OpenPage' and 'book_Page'. From 'book_OpenPage', the role 'book_OpenPage' has cardinality 0..*, and from 'book_Page', the role 'book_Page21' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jonaslochsen/tdt4250-EcoreModeling/assignment1/model/course.ecore

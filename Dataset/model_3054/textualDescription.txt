@@ -1,0 +1,68 @@
+The domain model 'entityDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'entityDsl_RadioButtonGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_ComboBoxItem' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'WinFormControlType' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_Label' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'entityDsl_Attribute' represents an important domain concept.
+It has the following attributes: 'required', which is of type str; 'name', which is of type str.
+
+'entityDsl_TrackBar' represents an important domain concept.
+It has the following attributes: 'increment', which is of type int; 'denominator', which is of type int; 'maximumValue', which is of type int; 'defaultTick', which is of type int; 'stringValues', which is of type str; 'minimumValue', which is of type int.
+
+'entityDsl_Domainmodel' represents an important domain concept.
+It has one attribute: 'applicationName', which is of type str.
+
+'entityDsl_ComboBox' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_Spinner' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type int; 'minimumValue', which is of type int; 'maximumValue', which is of type int.
+
+'entityDsl_RadioButton' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'entityDsl_CheckBox' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_WinFormControlType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entityDsl_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entityDsl_DataType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'entityDsl_TextBox' represents an important domain concept.
+It has the following attributes: 'maxTextLength', which is of type int; 'name', which is of type str; 'minTextLength', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'entityDsl_TrackBar' is a specialization of 'WinFormControlType'.
+The class 'entityDsl_Spinner' is a specialization of 'WinFormControlType'.
+The class 'entityDsl_RadioButtonGroup' is a specialization of 'WinFormControlType'.
+The class 'entityDsl_CheckBox' is a specialization of 'WinFormControlType'.
+The class 'entityDsl_ComboBox' is a specialization of 'WinFormControlType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'entityDsl_Domainmodel' and 'entityDsl_Entity'. From 'entityDsl_Domainmodel', the role 'entityDsl_Domainmodel' has cardinality 0..*, and from 'entityDsl_Entity', the role 'entityDsl_Entity' has cardinality 0..*.
+An association connects 'entityDsl_Attribute' and 'entityDsl_Entity'. From 'entityDsl_Attribute', the role 'entityDsl_Attribute' has cardinality 0..*, and from 'entityDsl_Entity', the role 'entityDsl_Entity2' has cardinality 0..*.
+An association connects 'entityDsl_Attribute' and 'entityDsl_WinFormControlType'. From 'entityDsl_Attribute', the role 'entityDsl_Attribute4' has cardinality 0..*, and from 'entityDsl_WinFormControlType', the role 'entityDsl_WinFormControlType' has cardinality 0..*.
+An association connects 'entityDsl_Label' and 'entityDsl_Attribute'. From 'entityDsl_Label', the role 'entityDsl_Label' has cardinality 0..*, and from 'entityDsl_Attribute', the role 'entityDsl_Attribute6' has cardinality 0..*.
+An association connects 'entityDsl_TextBox' and 'entityDsl_WinFormControlType'. From 'entityDsl_TextBox', the role 'entityDsl_TextBox' has cardinality 0..*, and from 'entityDsl_WinFormControlType', the role 'entityDsl_WinFormControlType8' has cardinality 0..*.
+An association connects 'entityDsl_TrackBar' and 'entityDsl_DataType'. From 'entityDsl_TrackBar', the role 'entityDsl_TrackBar' has cardinality 0..*, and from 'entityDsl_DataType', the role 'entityDsl_DataType' has cardinality 0..*.
+An association connects 'entityDsl_RadioButton' and 'entityDsl_RadioButtonGroup'. From 'entityDsl_RadioButton', the role 'entityDsl_RadioButton' has cardinality 0..*, and from 'entityDsl_RadioButtonGroup', the role 'entityDsl_RadioButtonGroup' has cardinality 0..*.
+An association connects 'entityDsl_RadioButtonGroup' and 'entityDsl_DataType'. From 'entityDsl_RadioButtonGroup', the role 'entityDsl_RadioButtonGroup12' has cardinality 0..*, and from 'entityDsl_DataType', the role 'entityDsl_DataType13' has cardinality 0..*.
+An association connects 'entityDsl_TextBox' and 'entityDsl_DataType'. From 'entityDsl_TextBox', the role 'entityDsl_TextBox15' has cardinality 0..*, and from 'entityDsl_DataType', the role 'entityDsl_DataType16' has cardinality 0..*.
+An association connects 'entityDsl_ComboBox' and 'entityDsl_ComboBoxItem'. From 'entityDsl_ComboBox', the role 'entityDsl_ComboBox' has cardinality 0..*, and from 'entityDsl_ComboBoxItem', the role 'entityDsl_ComboBoxItem' has cardinality 0..*.
+An association connects 'entityDsl_ComboBox' and 'entityDsl_DataType'. From 'entityDsl_ComboBox', the role 'entityDsl_ComboBox19' has cardinality 0..*, and from 'entityDsl_DataType', the role 'entityDsl_DataType20' has cardinality 0..*.

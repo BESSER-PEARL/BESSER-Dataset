@@ -1,0 +1,27 @@
+The domain model 'book' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'book_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'book_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'book_DocBook' represents an important domain concept.
+It does not declare any attributes.
+
+'book_Article' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'book_DocBook' and 'book_Book'. From 'book_DocBook', the role 'docBook' has cardinality 0..*, and from 'book_Book', the role 'Book' has cardinality 0..*.
+An association connects 'book_Book' and 'book_DocBook'. From 'book_Book', the role 'book' has cardinality 0..*, and from 'book_DocBook', the role 'DocBook' has cardinality 0..*.
+An association connects 'book_Person' and 'book_Book'. From 'book_Person', the role 'Person' has cardinality 0..*, and from 'book_Book', the role 'edited' has cardinality 0..*.
+An association connects 'book_Person' and 'book_Book'. From 'book_Person', the role 'Person4' has cardinality 0..*, and from 'book_Book', the role 'authored' has cardinality 0..*.
+An association connects 'book_Article' and 'book_Book'. From 'book_Article', the role 'Article' has cardinality 0..*, and from 'book_Book', the role 'book6' has cardinality 0..*.
+An association connects 'book_Article' and 'book_Book'. From 'book_Article', the role 'articles' has cardinality 0..*, and from 'book_Book', the role 'Book8' has cardinality 0..*.
+An association connects 'book_Article' and 'book_Person'. From 'book_Article', the role 'articles10' has cardinality 0..*, and from 'book_Person', the role 'Person11' has cardinality 0..*.
+An association connects 'book_Person' and 'book_Book'. From 'book_Person', the role 'editor' has cardinality 0..*, and from 'book_Book', the role 'Book13' has cardinality 0..*.
+An association connects 'book_Person' and 'book_Book'. From 'book_Person', the role 'author' has cardinality 0..*, and from 'book_Book', the role 'Book15' has cardinality 0..*.
+An association connects 'book_Person' and 'book_Article'. From 'book_Person', the role 'author17' has cardinality 0..*, and from 'book_Article', the role 'Article18' has cardinality 0..*.

@@ -1,0 +1,426 @@
+The domain model 'Docbook' describes the core structural elements and their relationships within the system.
+
+The model defines 81 main class(es).
+
+'Docbook_SectionType' represents an important domain concept.
+It has the following attributes: 'annotations', which is of type str; 'caution', which is of type str; 'group', which is of type str; 'warning', which is of type str.
+
+'Docbook_ImportantType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'mixed', which is of type str.
+
+'Docbook_EntryType' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'align', which is of type str; 'nameend', which is of type str; 'namest', which is of type str; 'valign', which is of type str; 'morerows', which is of type str.
+
+'Docbook_ItemizedlistType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_RevnumberType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_FuncsynopsisType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_ReplaceableType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_FileNameType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_FootnoteType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Docbook_OrderedlistType' represents an important domain concept.
+It has the following attributes: 'continuation', which is of type str; 'inheritnum', which is of type str.
+
+'Docbook_FirstnameType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_VarListEntryType' represents an important domain concept.
+It has the following attributes: 'termlength', which is of type str; 'spacing', which is of type str.
+
+'Docbook_BookType' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'label', which is of type str; 'version', which is of type str.
+
+'Docbook_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'firstname', which is of type str; 'publishername', which is of type str; 'caution', which is of type str; 'subtitle', which is of type str; 'keyword', which is of type str; 'superscript', which is of type str; 'confsponsor', which is of type str; 'pubdate', which is of type str; 'confnum', which is of type str; 'date', which is of type str; 'warning', which is of type str; 'bibliomisc', which is of type str; 'conftitle', which is of type str; 'state', which is of type str.
+
+'Docbook_TermType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_VariableListType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_SurnameType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_SegmentedListType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'segtitle', which is of type str.
+
+'Docbook_ParamdefType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_RevhistoryType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_InformaltableType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_ChapterType' represents an important domain concept.
+It has one attribute: 'annotations', which is of type str.
+
+'Docbook_LiteralType' represents an important domain concept.
+It has the following attributes: 'moreinfo', which is of type str; 'value', which is of type str.
+
+'Docbook_TipType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_PrefaceType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_RefEntryType' represents an important domain concept.
+It has one attribute: 'version', which is of type str.
+
+'Docbook_PhraseType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Docbook_FuncdefType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_ProgramlistingType' represents an important domain concept.
+It has the following attributes: 'linenumbering', which is of type str; 'format', which is of type str; 'superscript', which is of type str; 'mixed', which is of type str; 'language', which is of type str; 'group', which is of type str.
+
+'Docbook_EmphasisType' represents an important domain concept.
+It has the following attributes: 'role', which is of type str; 'mixed', which is of type str.
+
+'Docbook_ListitemType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_FigureType' represents an important domain concept.
+It has the following attributes: 'float', which is of type str; 'id', which is of type str.
+
+'ItemizedlistType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_FuncprototypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_RefEntryTitleType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_RefMetaType' represents an important domain concept.
+It has one attribute: 'manvolnum', which is of type str.
+
+'Docbook_ExampleType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Docbook_SegType' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'group', which is of type str; 'errorcode', which is of type str; 'errortext', which is of type str.
+
+'Docbook_KeywordsetType' represents an important domain concept.
+It has one attribute: 'keyword', which is of type str.
+
+'Docbook_ReferenceType' represents an important domain concept.
+It has one attribute: 'version', which is of type str.
+
+'Docbook_EnvarType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_ImageobjectType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_UlinkType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'url', which is of type str; 'mixed', which is of type str.
+
+'Docbook_RevisionType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_InfoType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'releaseinfo', which is of type str; 'productname', which is of type str; 'pubdate', which is of type str; 'date', which is of type str; 'bibliomisc', which is of type str.
+
+'Docbook_RefNameDivType' represents an important domain concept.
+It has the following attributes: 'refname', which is of type str; 'refpurpose', which is of type str; 'refclass', which is of type str.
+
+'Docbook_RowType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_RefSect1Type' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'group', which is of type str.
+
+'Docbook_ConfgroupType' represents an important domain concept.
+It has the following attributes: 'conftitle', which is of type str; 'confsponsor', which is of type str; 'confnum', which is of type str.
+
+'Docbook_PublisherType' represents an important domain concept.
+It has one attribute: 'publishername', which is of type str.
+
+'Docbook_DateType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_SegListItemType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_AuthorinitialsType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_TableType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Docbook_CmdsynopsisType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_FunctionType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_RefSynopsisDivType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_OtheraddrType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_MediaobjectType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_OptionType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_ImagedataType' represents an important domain concept.
+It has the following attributes: 'depth', which is of type str; 'align', which is of type str; 'scale', which is of type str; 'width', which is of type str; 'fileref', which is of type str.
+
+'Docbook_ParaType' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'role', which is of type str; 'group', which is of type str; 'mixed', which is of type str.
+
+'Docbook_ParameterType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_TheadType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_LegalNoticeType' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'Docbook_RevdescriptionType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_LinkType' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'linkend', which is of type str; 'value', which is of type str.
+
+'Docbook_AddressType' represents an important domain concept.
+It has the following attributes: 'state', which is of type str; 'email', which is of type str; 'format', which is of type str.
+
+'Docbook_AuthorType' represents an important domain concept.
+It has one attribute: 'contrib', which is of type str.
+
+'Docbook_NoteType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'mixed', which is of type str.
+
+'Docbook_TgroupType' represents an important domain concept.
+It has the following attributes: 'cols', which is of type str; 'rowseq', which is of type str; 'colseq', which is of type str; 'align', which is of type str.
+
+'Docbook_CommandType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Docbook_TbodyType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_ArgType' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'choice', which is of type str; 'rep', which is of type str.
+
+'Docbook_PersonnameType' represents an important domain concept.
+It does not declare any attributes.
+
+'Docbook_TitleType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'mixed', which is of type str.
+
+'Docbook_ColspecType' represents an important domain concept.
+It has the following attributes: 'colname', which is of type str; 'colwidth', which is of type str.
+
+'Docbook_SubtitleType' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'group', which is of type str.
+
+'Docbook_CopyrightType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'holder', which is of type str; 'year', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'Docbook_OrderedlistType' is a specialization of 'ItemizedlistType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Docbook_ParaType' and 'Docbook_AbstractType'. From 'Docbook_ParaType', the role 'Docbook_ParaType' has cardinality 0..*, and from 'Docbook_AbstractType', the role 'Docbook_AbstractType' has cardinality 0..*.
+An association connects 'Docbook_AddressType' and 'Docbook_OtheraddrType'. From 'Docbook_AddressType', the role 'Docbook_AddressType' has cardinality 0..*, and from 'Docbook_OtheraddrType', the role 'Docbook_OtheraddrType' has cardinality 0..*.
+An association connects 'Docbook_ArgType' and 'Docbook_OptionType'. From 'Docbook_ArgType', the role 'Docbook_ArgType' has cardinality 0..*, and from 'Docbook_OptionType', the role 'Docbook_OptionType' has cardinality 0..*.
+An association connects 'Docbook_ArgType' and 'Docbook_ReplaceableType'. From 'Docbook_ArgType', the role 'Docbook_ArgType4' has cardinality 0..*, and from 'Docbook_ReplaceableType', the role 'Docbook_ReplaceableType' has cardinality 0..*.
+An association connects 'Docbook_AuthorType' and 'Docbook_PersonnameType'. From 'Docbook_AuthorType', the role 'Docbook_AuthorType' has cardinality 0..*, and from 'Docbook_PersonnameType', the role 'Docbook_PersonnameType' has cardinality 0..*.
+An association connects 'Docbook_AddressType' and 'Docbook_AuthorType'. From 'Docbook_AddressType', the role 'Docbook_AddressType8' has cardinality 0..*, and from 'Docbook_AuthorType', the role 'Docbook_AuthorType7' has cardinality 0..*.
+An association connects 'Docbook_BookType' and 'Docbook_InfoType'. From 'Docbook_BookType', the role 'Docbook_BookType' has cardinality 0..*, and from 'Docbook_InfoType', the role 'Docbook_InfoType' has cardinality 0..*.
+An association connects 'Docbook_PrefaceType' and 'Docbook_BookType'. From 'Docbook_PrefaceType', the role 'Docbook_PrefaceType' has cardinality 0..*, and from 'Docbook_BookType', the role 'Docbook_BookType11' has cardinality 0..*.
+An association connects 'Docbook_BookType' and 'Docbook_ChapterType'. From 'Docbook_BookType', the role 'Docbook_BookType13' has cardinality 0..*, and from 'Docbook_ChapterType', the role 'Docbook_ChapterType' has cardinality 0..*.
+An association connects 'Docbook_ReferenceType' and 'Docbook_BookType'. From 'Docbook_ReferenceType', the role 'Docbook_ReferenceType' has cardinality 0..*, and from 'Docbook_BookType', the role 'Docbook_BookType15' has cardinality 0..*.
+An association connects 'Docbook_TitleType' and 'Docbook_ChapterType'. From 'Docbook_TitleType', the role 'Docbook_TitleType' has cardinality 0..*, and from 'Docbook_ChapterType', the role 'Docbook_ChapterType17' has cardinality 0..*.
+An association connects 'Docbook_ChapterType' and 'Docbook_ParaType'. From 'Docbook_ChapterType', the role 'Docbook_ChapterType19' has cardinality 0..*, and from 'Docbook_ParaType', the role 'Docbook_ParaType20' has cardinality 0..*.
+An association connects 'Docbook_NoteType' and 'Docbook_ChapterType'. From 'Docbook_NoteType', the role 'Docbook_NoteType' has cardinality 0..*, and from 'Docbook_ChapterType', the role 'Docbook_ChapterType22' has cardinality 0..*.
+An association connects 'Docbook_ChapterType' and 'Docbook_SectionType'. From 'Docbook_ChapterType', the role 'Docbook_ChapterType24' has cardinality 0..*, and from 'Docbook_SectionType', the role 'Docbook_SectionType' has cardinality 0..*.
+An association connects 'Docbook_CmdsynopsisType' and 'Docbook_CommandType'. From 'Docbook_CmdsynopsisType', the role 'Docbook_CmdsynopsisType' has cardinality 0..*, and from 'Docbook_CommandType', the role 'Docbook_CommandType' has cardinality 0..*.
+An association connects 'Docbook_CmdsynopsisType' and 'Docbook_ArgType'. From 'Docbook_CmdsynopsisType', the role 'Docbook_CmdsynopsisType27' has cardinality 0..*, and from 'Docbook_ArgType', the role 'Docbook_ArgType28' has cardinality 0..*.
+An association connects 'Docbook_EStringToStringMapEntry' and 'Docbook_DocumentRoot'. From 'Docbook_EStringToStringMapEntry', the role 'Docbook_EStringToStringMapEntry' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot' has cardinality 0..*.
+An association connects 'Docbook_EStringToStringMapEntry' and 'Docbook_DocumentRoot'. From 'Docbook_EStringToStringMapEntry', the role 'Docbook_EStringToStringMapEntry32' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot31' has cardinality 0..*.
+An association connects 'Docbook_AbstractType' and 'Docbook_DocumentRoot'. From 'Docbook_AbstractType', the role 'Docbook_AbstractType35' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot34' has cardinality 0..*.
+An association connects 'Docbook_AddressType' and 'Docbook_DocumentRoot'. From 'Docbook_AddressType', the role 'Docbook_AddressType38' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot37' has cardinality 0..*.
+An association connects 'Docbook_AuthorType' and 'Docbook_DocumentRoot'. From 'Docbook_AuthorType', the role 'Docbook_AuthorType41' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot40' has cardinality 0..*.
+An association connects 'Docbook_BookType' and 'Docbook_DocumentRoot'. From 'Docbook_BookType', the role 'Docbook_BookType44' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot43' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_InfoType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot46' has cardinality 0..*, and from 'Docbook_InfoType', the role 'Docbook_InfoType47' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_ChapterType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot49' has cardinality 0..*, and from 'Docbook_ChapterType', the role 'Docbook_ChapterType50' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_ColspecType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot52' has cardinality 0..*, and from 'Docbook_ColspecType', the role 'Docbook_ColspecType' has cardinality 0..*.
+An association connects 'Docbook_ConfgroupType' and 'Docbook_DocumentRoot'. From 'Docbook_ConfgroupType', the role 'Docbook_ConfgroupType' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot54' has cardinality 0..*.
+An association connects 'Docbook_EmphasisType' and 'Docbook_DocumentRoot'. From 'Docbook_EmphasisType', the role 'Docbook_EmphasisType' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot56' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_EntryType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot58' has cardinality 0..*, and from 'Docbook_EntryType', the role 'Docbook_EntryType' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_FigureType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot60' has cardinality 0..*, and from 'Docbook_FigureType', the role 'Docbook_FigureType' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_FootnoteType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot62' has cardinality 0..*, and from 'Docbook_FootnoteType', the role 'Docbook_FootnoteType' has cardinality 0..*.
+An association connects 'Docbook_ImagedataType' and 'Docbook_DocumentRoot'. From 'Docbook_ImagedataType', the role 'Docbook_ImagedataType' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot64' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_ImageobjectType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot66' has cardinality 0..*, and from 'Docbook_ImageobjectType', the role 'Docbook_ImageobjectType' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_ImportantType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot68' has cardinality 0..*, and from 'Docbook_ImportantType', the role 'Docbook_ImportantType' has cardinality 0..*.
+An association connects 'Docbook_InformaltableType' and 'Docbook_DocumentRoot'. From 'Docbook_InformaltableType', the role 'Docbook_InformaltableType' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot70' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_ItemizedlistType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot72' has cardinality 0..*, and from 'Docbook_ItemizedlistType', the role 'Docbook_ItemizedlistType' has cardinality 0..*.
+An association connects 'Docbook_KeywordsetType' and 'Docbook_DocumentRoot'. From 'Docbook_KeywordsetType', the role 'Docbook_KeywordsetType' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot74' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_LinkType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot76' has cardinality 0..*, and from 'Docbook_LinkType', the role 'Docbook_LinkType' has cardinality 0..*.
+An association connects 'Docbook_ListitemType' and 'Docbook_DocumentRoot'. From 'Docbook_ListitemType', the role 'Docbook_ListitemType' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot78' has cardinality 0..*.
+An association connects 'Docbook_LiteralType' and 'Docbook_DocumentRoot'. From 'Docbook_LiteralType', the role 'Docbook_LiteralType' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot80' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_MediaobjectType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot82' has cardinality 0..*, and from 'Docbook_MediaobjectType', the role 'Docbook_MediaobjectType' has cardinality 0..*.
+An association connects 'Docbook_NoteType' and 'Docbook_DocumentRoot'. From 'Docbook_NoteType', the role 'Docbook_NoteType85' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot84' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_OrderedlistType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot87' has cardinality 0..*, and from 'Docbook_OrderedlistType', the role 'Docbook_OrderedlistType' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_OtheraddrType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot89' has cardinality 0..*, and from 'Docbook_OtheraddrType', the role 'Docbook_OtheraddrType90' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_ParaType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot92' has cardinality 0..*, and from 'Docbook_ParaType', the role 'Docbook_ParaType93' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_PhraseType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot95' has cardinality 0..*, and from 'Docbook_PhraseType', the role 'Docbook_PhraseType' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_PrefaceType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot97' has cardinality 0..*, and from 'Docbook_PrefaceType', the role 'Docbook_PrefaceType98' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_ProgramlistingType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot100' has cardinality 0..*, and from 'Docbook_ProgramlistingType', the role 'Docbook_ProgramlistingType' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_PublisherType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot102' has cardinality 0..*, and from 'Docbook_PublisherType', the role 'Docbook_PublisherType' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_RowType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot104' has cardinality 0..*, and from 'Docbook_RowType', the role 'Docbook_RowType' has cardinality 0..*.
+An association connects 'Docbook_SectionType' and 'Docbook_DocumentRoot'. From 'Docbook_SectionType', the role 'Docbook_SectionType107' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot106' has cardinality 0..*.
+An association connects 'Docbook_TableType' and 'Docbook_DocumentRoot'. From 'Docbook_TableType', the role 'Docbook_TableType' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot109' has cardinality 0..*.
+An association connects 'Docbook_TbodyType' and 'Docbook_DocumentRoot'. From 'Docbook_TbodyType', the role 'Docbook_TbodyType' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot111' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_TgroupType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot113' has cardinality 0..*, and from 'Docbook_TgroupType', the role 'Docbook_TgroupType' has cardinality 0..*.
+An association connects 'Docbook_TheadType' and 'Docbook_DocumentRoot'. From 'Docbook_TheadType', the role 'Docbook_TheadType' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot115' has cardinality 0..*.
+An association connects 'Docbook_DocumentRoot' and 'Docbook_TipType'. From 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot117' has cardinality 0..*, and from 'Docbook_TipType', the role 'Docbook_TipType' has cardinality 0..*.
+An association connects 'Docbook_TitleType' and 'Docbook_DocumentRoot'. From 'Docbook_TitleType', the role 'Docbook_TitleType120' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot119' has cardinality 0..*.
+An association connects 'Docbook_UlinkType' and 'Docbook_DocumentRoot'. From 'Docbook_UlinkType', the role 'Docbook_UlinkType' has cardinality 0..*, and from 'Docbook_DocumentRoot', the role 'Docbook_DocumentRoot122' has cardinality 0..*.
+An association connects 'Docbook_EmphasisType' and 'Docbook_EmphasisType'. From 'Docbook_EmphasisType', the role 'Docbook_EmphasisType125' has cardinality 0..*, and from 'Docbook_EmphasisType', the role 'Docbook_EmphasisType123' has cardinality 0..*.
+An association connects 'Docbook_EntryType' and 'Docbook_ProgramlistingType'. From 'Docbook_EntryType', the role 'Docbook_EntryType127' has cardinality 0..*, and from 'Docbook_ProgramlistingType', the role 'Docbook_ProgramlistingType128' has cardinality 0..*.
+An association connects 'Docbook_EntryType' and 'Docbook_MediaobjectType'. From 'Docbook_EntryType', the role 'Docbook_EntryType130' has cardinality 0..*, and from 'Docbook_MediaobjectType', the role 'Docbook_MediaobjectType131' has cardinality 0..*.
+An association connects 'Docbook_EntryType' and 'Docbook_ParaType'. From 'Docbook_EntryType', the role 'Docbook_EntryType133' has cardinality 0..*, and from 'Docbook_ParaType', the role 'Docbook_ParaType134' has cardinality 0..*.
+An association connects 'Docbook_ReplaceableType' and 'Docbook_EnvarType'. From 'Docbook_ReplaceableType', the role 'Docbook_ReplaceableType136' has cardinality 0..*, and from 'Docbook_EnvarType', the role 'Docbook_EnvarType' has cardinality 0..*.
+An association connects 'Docbook_TitleType' and 'Docbook_ExampleType'. From 'Docbook_TitleType', the role 'Docbook_TitleType138' has cardinality 0..*, and from 'Docbook_ExampleType', the role 'Docbook_ExampleType' has cardinality 0..*.
+An association connects 'Docbook_ExampleType' and 'Docbook_ProgramlistingType'. From 'Docbook_ExampleType', the role 'Docbook_ExampleType140' has cardinality 0..*, and from 'Docbook_ProgramlistingType', the role 'Docbook_ProgramlistingType141' has cardinality 0..*.
+An association connects 'Docbook_TitleType' and 'Docbook_FigureType'. From 'Docbook_TitleType', the role 'Docbook_TitleType144' has cardinality 0..*, and from 'Docbook_FigureType', the role 'Docbook_FigureType143' has cardinality 0..*.
+An association connects 'Docbook_FigureType' and 'Docbook_MediaobjectType'. From 'Docbook_FigureType', the role 'Docbook_FigureType146' has cardinality 0..*, and from 'Docbook_MediaobjectType', the role 'Docbook_MediaobjectType147' has cardinality 0..*.
+An association connects 'Docbook_FileNameType' and 'Docbook_ReplaceableType'. From 'Docbook_FileNameType', the role 'Docbook_FileNameType' has cardinality 0..*, and from 'Docbook_ReplaceableType', the role 'Docbook_ReplaceableType149' has cardinality 0..*.
+An association connects 'Docbook_ParaType' and 'Docbook_FootnoteType'. From 'Docbook_ParaType', the role 'Docbook_ParaType152' has cardinality 0..*, and from 'Docbook_FootnoteType', the role 'Docbook_FootnoteType151' has cardinality 0..*.
+An association connects 'Docbook_FuncdefType' and 'Docbook_FunctionType'. From 'Docbook_FuncdefType', the role 'Docbook_FuncdefType' has cardinality 0..*, and from 'Docbook_FunctionType', the role 'Docbook_FunctionType' has cardinality 0..*.
+An association connects 'Docbook_FuncdefType' and 'Docbook_FuncprototypeType'. From 'Docbook_FuncdefType', the role 'Docbook_FuncdefType155' has cardinality 0..*, and from 'Docbook_FuncprototypeType', the role 'Docbook_FuncprototypeType' has cardinality 0..*.
+An association connects 'Docbook_FuncprototypeType' and 'Docbook_ParamdefType'. From 'Docbook_FuncprototypeType', the role 'Docbook_FuncprototypeType157' has cardinality 0..*, and from 'Docbook_ParamdefType', the role 'Docbook_ParamdefType' has cardinality 0..*.
+An association connects 'Docbook_FuncsynopsisType' and 'Docbook_FuncprototypeType'. From 'Docbook_FuncsynopsisType', the role 'Docbook_FuncsynopsisType' has cardinality 0..*, and from 'Docbook_FuncprototypeType', the role 'Docbook_FuncprototypeType159' has cardinality 0..*.
+An association connects 'Docbook_ImagedataType' and 'Docbook_ImageobjectType'. From 'Docbook_ImagedataType', the role 'Docbook_ImagedataType162' has cardinality 0..*, and from 'Docbook_ImageobjectType', the role 'Docbook_ImageobjectType161' has cardinality 0..*.
+An association connects 'Docbook_ImportantType' and 'Docbook_EmphasisType'. From 'Docbook_ImportantType', the role 'Docbook_ImportantType164' has cardinality 0..*, and from 'Docbook_EmphasisType', the role 'Docbook_EmphasisType165' has cardinality 0..*.
+An association connects 'Docbook_UlinkType' and 'Docbook_ImportantType'. From 'Docbook_UlinkType', the role 'Docbook_UlinkType168' has cardinality 0..*, and from 'Docbook_ImportantType', the role 'Docbook_ImportantType167' has cardinality 0..*.
+An association connects 'Docbook_TgroupType' and 'Docbook_InformaltableType'. From 'Docbook_TgroupType', the role 'Docbook_TgroupType171' has cardinality 0..*, and from 'Docbook_InformaltableType', the role 'Docbook_InformaltableType170' has cardinality 0..*.
+An association connects 'Docbook_InfoType' and 'Docbook_AuthorType'. From 'Docbook_InfoType', the role 'Docbook_InfoType173' has cardinality 0..*, and from 'Docbook_AuthorType', the role 'Docbook_AuthorType174' has cardinality 0..*.
+An association connects 'Docbook_TitleType' and 'Docbook_InfoType'. From 'Docbook_TitleType', the role 'Docbook_TitleType177' has cardinality 0..*, and from 'Docbook_InfoType', the role 'Docbook_InfoType176' has cardinality 0..*.
+An association connects 'Docbook_SubtitleType' and 'Docbook_InfoType'. From 'Docbook_SubtitleType', the role 'Docbook_SubtitleType' has cardinality 0..*, and from 'Docbook_InfoType', the role 'Docbook_InfoType179' has cardinality 0..*.
+An association connects 'Docbook_InfoType' and 'Docbook_KeywordsetType'. From 'Docbook_InfoType', the role 'Docbook_InfoType181' has cardinality 0..*, and from 'Docbook_KeywordsetType', the role 'Docbook_KeywordsetType182' has cardinality 0..*.
+An association connects 'Docbook_AbstractType' and 'Docbook_InfoType'. From 'Docbook_AbstractType', the role 'Docbook_AbstractType185' has cardinality 0..*, and from 'Docbook_InfoType', the role 'Docbook_InfoType184' has cardinality 0..*.
+An association connects 'Docbook_InfoType' and 'Docbook_PublisherType'. From 'Docbook_InfoType', the role 'Docbook_InfoType187' has cardinality 0..*, and from 'Docbook_PublisherType', the role 'Docbook_PublisherType188' has cardinality 0..*.
+An association connects 'Docbook_ConfgroupType' and 'Docbook_InfoType'. From 'Docbook_ConfgroupType', the role 'Docbook_ConfgroupType191' has cardinality 0..*, and from 'Docbook_InfoType', the role 'Docbook_InfoType190' has cardinality 0..*.
+An association connects 'Docbook_RevhistoryType' and 'Docbook_InfoType'. From 'Docbook_RevhistoryType', the role 'Docbook_RevhistoryType' has cardinality 0..*, and from 'Docbook_InfoType', the role 'Docbook_InfoType193' has cardinality 0..*.
+An association connects 'Docbook_CopyrightType' and 'Docbook_InfoType'. From 'Docbook_CopyrightType', the role 'Docbook_CopyrightType' has cardinality 0..*, and from 'Docbook_InfoType', the role 'Docbook_InfoType195' has cardinality 0..*.
+An association connects 'Docbook_LegalNoticeType' and 'Docbook_InfoType'. From 'Docbook_LegalNoticeType', the role 'Docbook_LegalNoticeType' has cardinality 0..*, and from 'Docbook_InfoType', the role 'Docbook_InfoType197' has cardinality 0..*.
+An association connects 'Docbook_ItemizedlistType' and 'Docbook_ListitemType'. From 'Docbook_ItemizedlistType', the role 'Docbook_ItemizedlistType199' has cardinality 0..*, and from 'Docbook_ListitemType', the role 'Docbook_ListitemType200' has cardinality 0..*.
+An association connects 'Docbook_TitleType' and 'Docbook_LegalNoticeType'. From 'Docbook_TitleType', the role 'Docbook_TitleType203' has cardinality 0..*, and from 'Docbook_LegalNoticeType', the role 'Docbook_LegalNoticeType202' has cardinality 0..*.
+An association connects 'Docbook_LegalNoticeType' and 'Docbook_RevhistoryType'. From 'Docbook_LegalNoticeType', the role 'Docbook_LegalNoticeType205' has cardinality 0..*, and from 'Docbook_RevhistoryType', the role 'Docbook_RevhistoryType206' has cardinality 0..*.
+An association connects 'Docbook_LegalNoticeType' and 'Docbook_ParaType'. From 'Docbook_LegalNoticeType', the role 'Docbook_LegalNoticeType208' has cardinality 0..*, and from 'Docbook_ParaType', the role 'Docbook_ParaType209' has cardinality 0..*.
+An association connects 'Docbook_LegalNoticeType' and 'Docbook_OrderedlistType'. From 'Docbook_LegalNoticeType', the role 'Docbook_LegalNoticeType211' has cardinality 0..*, and from 'Docbook_OrderedlistType', the role 'Docbook_OrderedlistType212' has cardinality 0..*.
+An association connects 'Docbook_ListitemType' and 'Docbook_ParaType'. From 'Docbook_ListitemType', the role 'Docbook_ListitemType214' has cardinality 0..*, and from 'Docbook_ParaType', the role 'Docbook_ParaType215' has cardinality 0..*.
+An association connects 'Docbook_ItemizedlistType' and 'Docbook_ListitemType'. From 'Docbook_ItemizedlistType', the role 'Docbook_ItemizedlistType218' has cardinality 0..*, and from 'Docbook_ListitemType', the role 'Docbook_ListitemType217' has cardinality 0..*.
+An association connects 'Docbook_MediaobjectType' and 'Docbook_ImageobjectType'. From 'Docbook_MediaobjectType', the role 'Docbook_MediaobjectType220' has cardinality 0..*, and from 'Docbook_ImageobjectType', the role 'Docbook_ImageobjectType221' has cardinality 0..*.
+An association connects 'Docbook_NoteType' and 'Docbook_LiteralType'. From 'Docbook_NoteType', the role 'Docbook_NoteType223' has cardinality 0..*, and from 'Docbook_LiteralType', the role 'Docbook_LiteralType224' has cardinality 0..*.
+An association connects 'Docbook_UlinkType' and 'Docbook_NoteType'. From 'Docbook_UlinkType', the role 'Docbook_UlinkType227' has cardinality 0..*, and from 'Docbook_NoteType', the role 'Docbook_NoteType226' has cardinality 0..*.
+An association connects 'Docbook_OptionType' and 'Docbook_ReplaceableType'. From 'Docbook_OptionType', the role 'Docbook_OptionType229' has cardinality 0..*, and from 'Docbook_ReplaceableType', the role 'Docbook_ReplaceableType230' has cardinality 0..*.
+An association connects 'Docbook_OtheraddrType' and 'Docbook_UlinkType'. From 'Docbook_OtheraddrType', the role 'Docbook_OtheraddrType232' has cardinality 0..*, and from 'Docbook_UlinkType', the role 'Docbook_UlinkType233' has cardinality 0..*.
+An association connects 'Docbook_ParamdefType' and 'Docbook_ParameterType'. From 'Docbook_ParamdefType', the role 'Docbook_ParamdefType235' has cardinality 0..*, and from 'Docbook_ParameterType', the role 'Docbook_ParameterType' has cardinality 0..*.
+An association connects 'Docbook_ParaType' and 'Docbook_EmphasisType'. From 'Docbook_ParaType', the role 'Docbook_ParaType237' has cardinality 0..*, and from 'Docbook_EmphasisType', the role 'Docbook_EmphasisType238' has cardinality 0..*.
+An association connects 'Docbook_LiteralType' and 'Docbook_ParaType'. From 'Docbook_LiteralType', the role 'Docbook_LiteralType241' has cardinality 0..*, and from 'Docbook_ParaType', the role 'Docbook_ParaType240' has cardinality 0..*.
+An association connects 'Docbook_ParaType' and 'Docbook_UlinkType'. From 'Docbook_ParaType', the role 'Docbook_ParaType243' has cardinality 0..*, and from 'Docbook_UlinkType', the role 'Docbook_UlinkType244' has cardinality 0..*.
+An association connects 'Docbook_FootnoteType' and 'Docbook_ParaType'. From 'Docbook_FootnoteType', the role 'Docbook_FootnoteType247' has cardinality 0..*, and from 'Docbook_ParaType', the role 'Docbook_ParaType246' has cardinality 0..*.
+An association connects 'Docbook_ParaType' and 'Docbook_LinkType'. From 'Docbook_ParaType', the role 'Docbook_ParaType249' has cardinality 0..*, and from 'Docbook_LinkType', the role 'Docbook_LinkType250' has cardinality 0..*.
+An association connects 'Docbook_ParaType' and 'Docbook_ItemizedlistType'. From 'Docbook_ParaType', the role 'Docbook_ParaType252' has cardinality 0..*, and from 'Docbook_ItemizedlistType', the role 'Docbook_ItemizedlistType253' has cardinality 0..*.
+An association connects 'Docbook_ParaType' and 'Docbook_VariableListType'. From 'Docbook_ParaType', the role 'Docbook_ParaType255' has cardinality 0..*, and from 'Docbook_VariableListType', the role 'Docbook_VariableListType' has cardinality 0..*.
+An association connects 'Docbook_PersonnameType' and 'Docbook_FirstnameType'. From 'Docbook_PersonnameType', the role 'Docbook_PersonnameType257' has cardinality 0..*, and from 'Docbook_FirstnameType', the role 'Docbook_FirstnameType' has cardinality 0..*.
+An association connects 'Docbook_PersonnameType' and 'Docbook_SurnameType'. From 'Docbook_PersonnameType', the role 'Docbook_PersonnameType259' has cardinality 0..*, and from 'Docbook_SurnameType', the role 'Docbook_SurnameType' has cardinality 0..*.
+An association connects 'Docbook_TitleType' and 'Docbook_PrefaceType'. From 'Docbook_TitleType', the role 'Docbook_TitleType262' has cardinality 0..*, and from 'Docbook_PrefaceType', the role 'Docbook_PrefaceType261' has cardinality 0..*.
+An association connects 'Docbook_PrefaceType' and 'Docbook_ParaType'. From 'Docbook_PrefaceType', the role 'Docbook_PrefaceType264' has cardinality 0..*, and from 'Docbook_ParaType', the role 'Docbook_ParaType265' has cardinality 0..*.
+An association connects 'Docbook_PrefaceType' and 'Docbook_ImportantType'. From 'Docbook_PrefaceType', the role 'Docbook_PrefaceType267' has cardinality 0..*, and from 'Docbook_ImportantType', the role 'Docbook_ImportantType268' has cardinality 0..*.
+An association connects 'Docbook_TipType' and 'Docbook_PrefaceType'. From 'Docbook_TipType', the role 'Docbook_TipType271' has cardinality 0..*, and from 'Docbook_PrefaceType', the role 'Docbook_PrefaceType270' has cardinality 0..*.
+An association connects 'Docbook_ProgramlistingType' and 'Docbook_EmphasisType'. From 'Docbook_ProgramlistingType', the role 'Docbook_ProgramlistingType273' has cardinality 0..*, and from 'Docbook_EmphasisType', the role 'Docbook_EmphasisType274' has cardinality 0..*.
+An association connects 'Docbook_ProgramlistingType' and 'Docbook_PhraseType'. From 'Docbook_ProgramlistingType', the role 'Docbook_ProgramlistingType276' has cardinality 0..*, and from 'Docbook_PhraseType', the role 'Docbook_PhraseType277' has cardinality 0..*.
+An association connects 'Docbook_AddressType' and 'Docbook_PublisherType'. From 'Docbook_AddressType', the role 'Docbook_AddressType280' has cardinality 0..*, and from 'Docbook_PublisherType', the role 'Docbook_PublisherType279' has cardinality 0..*.
+An association connects 'Docbook_InfoType' and 'Docbook_RefEntryType'. From 'Docbook_InfoType', the role 'Docbook_InfoType282' has cardinality 0..*, and from 'Docbook_RefEntryType', the role 'Docbook_RefEntryType' has cardinality 0..*.
+An association connects 'Docbook_RefMetaType' and 'Docbook_RefEntryType'. From 'Docbook_RefMetaType', the role 'Docbook_RefMetaType' has cardinality 0..*, and from 'Docbook_RefEntryType', the role 'Docbook_RefEntryType284' has cardinality 0..*.
+An association connects 'Docbook_RefEntryType' and 'Docbook_RefNameDivType'. From 'Docbook_RefEntryType', the role 'Docbook_RefEntryType286' has cardinality 0..*, and from 'Docbook_RefNameDivType', the role 'Docbook_RefNameDivType' has cardinality 0..*.
+An association connects 'Docbook_RefSynopsisDivType' and 'Docbook_RefEntryType'. From 'Docbook_RefSynopsisDivType', the role 'Docbook_RefSynopsisDivType' has cardinality 0..*, and from 'Docbook_RefEntryType', the role 'Docbook_RefEntryType288' has cardinality 0..*.
+An association connects 'Docbook_RefSect1Type' and 'Docbook_RefEntryType'. From 'Docbook_RefSect1Type', the role 'Docbook_RefSect1Type' has cardinality 0..*, and from 'Docbook_RefEntryType', the role 'Docbook_RefEntryType290' has cardinality 0..*.
+An association connects 'Docbook_ReferenceType' and 'Docbook_InfoType'. From 'Docbook_ReferenceType', the role 'Docbook_ReferenceType292' has cardinality 0..*, and from 'Docbook_InfoType', the role 'Docbook_InfoType293' has cardinality 0..*.
+An association connects 'Docbook_TitleType' and 'Docbook_ReferenceType'. From 'Docbook_TitleType', the role 'Docbook_TitleType296' has cardinality 0..*, and from 'Docbook_ReferenceType', the role 'Docbook_ReferenceType295' has cardinality 0..*.
+An association connects 'Docbook_ReferenceType' and 'Docbook_RefEntryType'. From 'Docbook_ReferenceType', the role 'Docbook_ReferenceType298' has cardinality 0..*, and from 'Docbook_RefEntryType', the role 'Docbook_RefEntryType299' has cardinality 0..*.
+An association connects 'Docbook_RefMetaType' and 'Docbook_RefEntryTitleType'. From 'Docbook_RefMetaType', the role 'Docbook_RefMetaType301' has cardinality 0..*, and from 'Docbook_RefEntryTitleType', the role 'Docbook_RefEntryTitleType' has cardinality 0..*.
+An association connects 'Docbook_RefSect1Type' and 'Docbook_TitleType'. From 'Docbook_RefSect1Type', the role 'Docbook_RefSect1Type303' has cardinality 0..*, and from 'Docbook_TitleType', the role 'Docbook_TitleType304' has cardinality 0..*.
+An association connects 'Docbook_RefSect1Type' and 'Docbook_ParaType'. From 'Docbook_RefSect1Type', the role 'Docbook_RefSect1Type306' has cardinality 0..*, and from 'Docbook_ParaType', the role 'Docbook_ParaType307' has cardinality 0..*.
+An association connects 'Docbook_VariableListType' and 'Docbook_RefSect1Type'. From 'Docbook_VariableListType', the role 'Docbook_VariableListType310' has cardinality 0..*, and from 'Docbook_RefSect1Type', the role 'Docbook_RefSect1Type309' has cardinality 0..*.
+An association connects 'Docbook_SegmentedListType' and 'Docbook_RefSect1Type'. From 'Docbook_SegmentedListType', the role 'Docbook_SegmentedListType' has cardinality 0..*, and from 'Docbook_RefSect1Type', the role 'Docbook_RefSect1Type312' has cardinality 0..*.
+An association connects 'Docbook_RefSynopsisDivType' and 'Docbook_CmdsynopsisType'. From 'Docbook_RefSynopsisDivType', the role 'Docbook_RefSynopsisDivType314' has cardinality 0..*, and from 'Docbook_CmdsynopsisType', the role 'Docbook_CmdsynopsisType315' has cardinality 0..*.
+An association connects 'Docbook_RefSynopsisDivType' and 'Docbook_FuncsynopsisType'. From 'Docbook_RefSynopsisDivType', the role 'Docbook_RefSynopsisDivType317' has cardinality 0..*, and from 'Docbook_FuncsynopsisType', the role 'Docbook_FuncsynopsisType318' has cardinality 0..*.
+An association connects 'Docbook_RevdescriptionType' and 'Docbook_ParaType'. From 'Docbook_RevdescriptionType', the role 'Docbook_RevdescriptionType' has cardinality 0..*, and from 'Docbook_ParaType', the role 'Docbook_ParaType320' has cardinality 0..*.
+An association connects 'Docbook_RevisionType' and 'Docbook_RevhistoryType'. From 'Docbook_RevisionType', the role 'Docbook_RevisionType' has cardinality 0..*, and from 'Docbook_RevhistoryType', the role 'Docbook_RevhistoryType322' has cardinality 0..*.
+An association connects 'Docbook_RevisionType' and 'Docbook_RevnumberType'. From 'Docbook_RevisionType', the role 'Docbook_RevisionType324' has cardinality 0..*, and from 'Docbook_RevnumberType', the role 'Docbook_RevnumberType' has cardinality 0..*.
+An association connects 'Docbook_RevisionType' and 'Docbook_DateType'. From 'Docbook_RevisionType', the role 'Docbook_RevisionType326' has cardinality 0..*, and from 'Docbook_DateType', the role 'Docbook_DateType' has cardinality 0..*.
+An association connects 'Docbook_RevisionType' and 'Docbook_AuthorinitialsType'. From 'Docbook_RevisionType', the role 'Docbook_RevisionType328' has cardinality 0..*, and from 'Docbook_AuthorinitialsType', the role 'Docbook_AuthorinitialsType' has cardinality 0..*.
+An association connects 'Docbook_RevdescriptionType' and 'Docbook_RevisionType'. From 'Docbook_RevdescriptionType', the role 'Docbook_RevdescriptionType331' has cardinality 0..*, and from 'Docbook_RevisionType', the role 'Docbook_RevisionType330' has cardinality 0..*.
+An association connects 'Docbook_RevnumberType' and 'Docbook_UlinkType'. From 'Docbook_RevnumberType', the role 'Docbook_RevnumberType333' has cardinality 0..*, and from 'Docbook_UlinkType', the role 'Docbook_UlinkType334' has cardinality 0..*.
+An association connects 'Docbook_EntryType' and 'Docbook_RowType'. From 'Docbook_EntryType', the role 'Docbook_EntryType337' has cardinality 0..*, and from 'Docbook_RowType', the role 'Docbook_RowType336' has cardinality 0..*.
+An association connects 'Docbook_SectionType' and 'Docbook_ItemizedlistType'. From 'Docbook_SectionType', the role 'Docbook_SectionType339' has cardinality 0..*, and from 'Docbook_ItemizedlistType', the role 'Docbook_ItemizedlistType340' has cardinality 0..*.
+An association connects 'Docbook_SectionType' and 'Docbook_MediaobjectType'. From 'Docbook_SectionType', the role 'Docbook_SectionType342' has cardinality 0..*, and from 'Docbook_MediaobjectType', the role 'Docbook_MediaobjectType343' has cardinality 0..*.
+An association connects 'Docbook_NoteType' and 'Docbook_SectionType'. From 'Docbook_NoteType', the role 'Docbook_NoteType346' has cardinality 0..*, and from 'Docbook_SectionType', the role 'Docbook_SectionType345' has cardinality 0..*.
+An association connects 'Docbook_ParaType' and 'Docbook_SectionType'. From 'Docbook_ParaType', the role 'Docbook_ParaType349' has cardinality 0..*, and from 'Docbook_SectionType', the role 'Docbook_SectionType348' has cardinality 0..*.
+An association connects 'Docbook_SectionType' and 'Docbook_ProgramlistingType'. From 'Docbook_SectionType', the role 'Docbook_SectionType351' has cardinality 0..*, and from 'Docbook_ProgramlistingType', the role 'Docbook_ProgramlistingType352' has cardinality 0..*.
+An association connects 'Docbook_SectionType' and 'Docbook_SectionType'. From 'Docbook_SectionType', the role 'Docbook_SectionType355' has cardinality 0..*, and from 'Docbook_SectionType', the role 'Docbook_SectionType353' has cardinality 0..*.
+An association connects 'Docbook_TitleType' and 'Docbook_SectionType'. From 'Docbook_TitleType', the role 'Docbook_TitleType358' has cardinality 0..*, and from 'Docbook_SectionType', the role 'Docbook_SectionType357' has cardinality 0..*.
+An association connects 'Docbook_FigureType' and 'Docbook_SectionType'. From 'Docbook_FigureType', the role 'Docbook_FigureType361' has cardinality 0..*, and from 'Docbook_SectionType', the role 'Docbook_SectionType360' has cardinality 0..*.
+An association connects 'Docbook_InformaltableType' and 'Docbook_SectionType'. From 'Docbook_InformaltableType', the role 'Docbook_InformaltableType364' has cardinality 0..*, and from 'Docbook_SectionType', the role 'Docbook_SectionType363' has cardinality 0..*.
+An association connects 'Docbook_SectionType' and 'Docbook_OrderedlistType'. From 'Docbook_SectionType', the role 'Docbook_SectionType366' has cardinality 0..*, and from 'Docbook_OrderedlistType', the role 'Docbook_OrderedlistType367' has cardinality 0..*.
+An association connects 'Docbook_SectionType' and 'Docbook_TableType'. From 'Docbook_SectionType', the role 'Docbook_SectionType369' has cardinality 0..*, and from 'Docbook_TableType', the role 'Docbook_TableType370' has cardinality 0..*.
+An association connects 'Docbook_TipType' and 'Docbook_SectionType'. From 'Docbook_TipType', the role 'Docbook_TipType373' has cardinality 0..*, and from 'Docbook_SectionType', the role 'Docbook_SectionType372' has cardinality 0..*.
+An association connects 'Docbook_SectionType' and 'Docbook_FuncsynopsisType'. From 'Docbook_SectionType', the role 'Docbook_SectionType375' has cardinality 0..*, and from 'Docbook_FuncsynopsisType', the role 'Docbook_FuncsynopsisType376' has cardinality 0..*.
+An association connects 'Docbook_SectionType' and 'Docbook_ExampleType'. From 'Docbook_SectionType', the role 'Docbook_SectionType378' has cardinality 0..*, and from 'Docbook_ExampleType', the role 'Docbook_ExampleType379' has cardinality 0..*.
+An association connects 'Docbook_SectionType' and 'Docbook_CmdsynopsisType'. From 'Docbook_SectionType', the role 'Docbook_SectionType381' has cardinality 0..*, and from 'Docbook_CmdsynopsisType', the role 'Docbook_CmdsynopsisType382' has cardinality 0..*.
+An association connects 'Docbook_SegListItemType' and 'Docbook_SegType'. From 'Docbook_SegListItemType', the role 'Docbook_SegListItemType' has cardinality 0..*, and from 'Docbook_SegType', the role 'Docbook_SegType' has cardinality 0..*.
+An association connects 'Docbook_SegListItemType' and 'Docbook_SegmentedListType'. From 'Docbook_SegListItemType', the role 'Docbook_SegListItemType386' has cardinality 0..*, and from 'Docbook_SegmentedListType', the role 'Docbook_SegmentedListType385' has cardinality 0..*.
+An association connects 'Docbook_SubtitleType' and 'Docbook_EmphasisType'. From 'Docbook_SubtitleType', the role 'Docbook_SubtitleType388' has cardinality 0..*, and from 'Docbook_EmphasisType', the role 'Docbook_EmphasisType389' has cardinality 0..*.
+An association connects 'Docbook_PhraseType' and 'Docbook_SubtitleType'. From 'Docbook_PhraseType', the role 'Docbook_PhraseType392' has cardinality 0..*, and from 'Docbook_SubtitleType', the role 'Docbook_SubtitleType391' has cardinality 0..*.
+An association connects 'Docbook_TableType' and 'Docbook_TitleType'. From 'Docbook_TableType', the role 'Docbook_TableType394' has cardinality 0..*, and from 'Docbook_TitleType', the role 'Docbook_TitleType395' has cardinality 0..*.
+An association connects 'Docbook_TableType' and 'Docbook_TgroupType'. From 'Docbook_TableType', the role 'Docbook_TableType397' has cardinality 0..*, and from 'Docbook_TgroupType', the role 'Docbook_TgroupType398' has cardinality 0..*.
+An association connects 'Docbook_EmphasisType' and 'Docbook_TermType'. From 'Docbook_EmphasisType', the role 'Docbook_EmphasisType400' has cardinality 0..*, and from 'Docbook_TermType', the role 'Docbook_TermType' has cardinality 0..*.
+An association connects 'Docbook_OptionType' and 'Docbook_TermType'. From 'Docbook_OptionType', the role 'Docbook_OptionType403' has cardinality 0..*, and from 'Docbook_TermType', the role 'Docbook_TermType402' has cardinality 0..*.
+An association connects 'Docbook_TermType' and 'Docbook_FileNameType'. From 'Docbook_TermType', the role 'Docbook_TermType405' has cardinality 0..*, and from 'Docbook_FileNameType', the role 'Docbook_FileNameType406' has cardinality 0..*.
+An association connects 'Docbook_EnvarType' and 'Docbook_TermType'. From 'Docbook_EnvarType', the role 'Docbook_EnvarType409' has cardinality 0..*, and from 'Docbook_TermType', the role 'Docbook_TermType408' has cardinality 0..*.
+An association connects 'Docbook_TbodyType' and 'Docbook_RowType'. From 'Docbook_TbodyType', the role 'Docbook_TbodyType411' has cardinality 0..*, and from 'Docbook_RowType', the role 'Docbook_RowType412' has cardinality 0..*.
+An association connects 'Docbook_ColspecType' and 'Docbook_TgroupType'. From 'Docbook_ColspecType', the role 'Docbook_ColspecType415' has cardinality 0..*, and from 'Docbook_TgroupType', the role 'Docbook_TgroupType414' has cardinality 0..*.
+An association connects 'Docbook_TheadType' and 'Docbook_TgroupType'. From 'Docbook_TheadType', the role 'Docbook_TheadType418' has cardinality 0..*, and from 'Docbook_TgroupType', the role 'Docbook_TgroupType417' has cardinality 0..*.
+An association connects 'Docbook_TbodyType' and 'Docbook_TgroupType'. From 'Docbook_TbodyType', the role 'Docbook_TbodyType421' has cardinality 0..*, and from 'Docbook_TgroupType', the role 'Docbook_TgroupType420' has cardinality 0..*.
+An association connects 'Docbook_TheadType' and 'Docbook_RowType'. From 'Docbook_TheadType', the role 'Docbook_TheadType423' has cardinality 0..*, and from 'Docbook_RowType', the role 'Docbook_RowType424' has cardinality 0..*.
+An association connects 'Docbook_TipType' and 'Docbook_UlinkType'. From 'Docbook_TipType', the role 'Docbook_TipType426' has cardinality 0..*, and from 'Docbook_UlinkType', the role 'Docbook_UlinkType427' has cardinality 0..*.
+An association connects 'Docbook_TitleType' and 'Docbook_EmphasisType'. From 'Docbook_TitleType', the role 'Docbook_TitleType429' has cardinality 0..*, and from 'Docbook_EmphasisType', the role 'Docbook_EmphasisType430' has cardinality 0..*.
+An association connects 'Docbook_PhraseType' and 'Docbook_TitleType'. From 'Docbook_PhraseType', the role 'Docbook_PhraseType433' has cardinality 0..*, and from 'Docbook_TitleType', the role 'Docbook_TitleType432' has cardinality 0..*.
+An association connects 'Docbook_UlinkType' and 'Docbook_EmphasisType'. From 'Docbook_UlinkType', the role 'Docbook_UlinkType435' has cardinality 0..*, and from 'Docbook_EmphasisType', the role 'Docbook_EmphasisType436' has cardinality 0..*.
+An association connects 'Docbook_VariableListType' and 'Docbook_VarListEntryType'. From 'Docbook_VariableListType', the role 'Docbook_VariableListType438' has cardinality 0..*, and from 'Docbook_VarListEntryType', the role 'Docbook_VarListEntryType' has cardinality 0..*.
+An association connects 'Docbook_VarListEntryType' and 'Docbook_TermType'. From 'Docbook_VarListEntryType', the role 'Docbook_VarListEntryType440' has cardinality 0..*, and from 'Docbook_TermType', the role 'Docbook_TermType441' has cardinality 0..*.
+An association connects 'Docbook_ListitemType' and 'Docbook_VarListEntryType'. From 'Docbook_ListitemType', the role 'Docbook_ListitemType444' has cardinality 0..*, and from 'Docbook_VarListEntryType', the role 'Docbook_VarListEntryType443' has cardinality 0..*.

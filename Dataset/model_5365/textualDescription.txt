@@ -1,0 +1,20 @@
+The domain model 'attributes' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'attributes_R' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'attributes_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'comment', which is of type str.
+
+'attributes_A' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str; 'b', which is of type str; 'c', which is of type str; 'comment', which is of type str; 'd', which is of type str.
+
+'attributes_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'attributes_R' and 'attributes_A'. From 'attributes_R', the role 'attributes_R' has cardinality 0..*, and from 'attributes_A', the role 'attributes_A' has cardinality 0..*.
+An association connects 'attributes_EStringToStringMapEntry' and 'attributes_DocumentRoot'. From 'attributes_EStringToStringMapEntry', the role 'attributes_EStringToStringMapEntry' has cardinality 0..*, and from 'attributes_DocumentRoot', the role 'attributes_DocumentRoot' has cardinality 0..*.
+An association connects 'attributes_EStringToStringMapEntry' and 'attributes_DocumentRoot'. From 'attributes_EStringToStringMapEntry', the role 'attributes_EStringToStringMapEntry4' has cardinality 0..*, and from 'attributes_DocumentRoot', the role 'attributes_DocumentRoot3' has cardinality 0..*.

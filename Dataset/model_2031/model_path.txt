@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/blackmahub/de.hs-fulda.informatik.mdd/mdd_task_5/model/exercise_3.ecore

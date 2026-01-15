@@ -1,0 +1,298 @@
+The domain model 'lobj' describes the core structural elements and their relationships within the system.
+
+The model defines 58 main class(es).
+
+'lobj_Sharednotes' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'lobj_Userauthorization' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'lobj_Language' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'code', which is of type str.
+
+'lobj_HypertextContent' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'lobj_ResrcFolder' represents an important domain concept.
+It has one attribute: 'deleteScheduled', which is of type bool.
+
+'lobj_TitleMeta' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'id', which is of type str.
+
+'lobj_Theme' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_SimpleDidacMeta' represents an important domain concept.
+It has the following attributes: 'keywords', which is of type str; 'description', which is of type str; 'title', which is of type str; 'id', which is of type str.
+
+'lobj_Module' represents an important domain concept.
+It has the following attributes: 'moduleFile', which is of type str; 'treeAsXml', which is of type str.
+
+'lobj_Node' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'visible', which is of type bool.
+
+'lobj_Affiliation' represents an important domain concept.
+It has the following attributes: 'orgname', which is of type str; 'id', which is of type str; 'jobtitle', which is of type str; 'orgdiv', which is of type str; 'shortaffil', which is of type str.
+
+'lobj_ModuleMeta' represents an important domain concept.
+It has one attribute: 'creationDate', which is of type date.
+
+'lobj_Publisher' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'publishername', which is of type str.
+
+'lobj_LearningUnit' represents an important domain concept.
+It has the following attributes: 'luFile', which is of type str; 'treeAsXml', which is of type str.
+
+'lobj_ExternalMetadata' represents an important domain concept.
+It has the following attributes: 'ref', which is of type str; 'id', which is of type str; 'file', which is of type str.
+
+'lobj_AccessControl' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'lastModified', which is of type date; 'globalAccess', which is of type bool; 'lastStatusChange', which is of type date; 'id', which is of type str.
+
+'lobj_AuthorizationTypes' represents an important domain concept.
+It has the following attributes: 'authTypeDesc', which is of type str; 'authType', which is of type str; 'id', which is of type str; 'readOnly', which is of type bool.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_Coursetype' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'title', which is of type str; 'id', which is of type str.
+
+'SimpleDidacMeta' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_Edition' represents an important domain concept.
+It has the following attributes: 'editionCreationDate', which is of type date; 'version', which is of type str; 'editedBy', which is of type str; 'lastVersionNumber', which is of type str; 'status', which is of type str; 'id', which is of type str; 'editionNr', which is of type str.
+
+'lobj_FolderMeta' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'creationDate', which is of type date; 'title', which is of type str.
+
+'lobj_ThemeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_PresentationBlock' represents an important domain concept.
+It has the following attributes: 'rendering', which is of type str; 'id', which is of type str; 'lod', which is of type int.
+
+'lobj_Person' represents an important domain concept.
+It has the following attributes: 'firstname', which is of type str; 'id', which is of type str; 'contrib', which is of type str; 'surname', which is of type str; 'honorific', which is of type str; 'personblurb', which is of type str.
+
+'AbstractContent' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_LuNode' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_ResrcFiletype' represents an important domain concept.
+It has the following attributes: 'filetypeDesc', which is of type str; 'filetypeImageBif', which is of type str; 'id', which is of type str; 'applet', which is of type bool; 'filetypeExtension', which is of type str; 'filetypeImageSmall', which is of type str; 'image', which is of type bool.
+
+'lobj_Item' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'luRef', which is of type str.
+
+'lobj_Blocktype' represents an important domain concept.
+It has the following attributes: 'styleRef', which is of type str; 'creationDate', which is of type date; 'id', which is of type str; 'name', which is of type str; 'description', which is of type str.
+
+'lobj_Note' represents an important domain concept.
+It has the following attributes: 'noteAuthor', which is of type str; 'id', which is of type str; 'content', which is of type str; 'date', which is of type date.
+
+'lobj_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_DidacMeta' represents an important domain concept.
+It has one attribute: 'goal', which is of type str.
+
+'lobj_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_Domain' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'creationDate', which is of type date; 'id', which is of type str; 'name', which is of type str; 'serverURL', which is of type str.
+
+'lobj_Precognition' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'precog', which is of type str.
+
+'lobj_CorrBlock' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'lobj_InternalRef' represents an important domain concept.
+It has the following attributes: 'file', which is of type str; 'reftype', which is of type str; 'id', which is of type str; 'ref', which is of type str.
+
+'lobj_ResrcFile' represents an important domain concept.
+It has the following attributes: 'resrcHref', which is of type str; 'originalextension', which is of type str; 'file', which is of type str; 'filesize', which is of type int; 'file_tn', which is of type str.
+
+'lobj_BlockFolder' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_HypertextBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_Course' represents an important domain concept.
+It has one attribute: 'outlineAsXml', which is of type str.
+
+'lobj_AbstractContent' represents an important domain concept.
+It has one attribute: 'heading', which is of type str.
+
+'lobj_LuMeta' represents an important domain concept.
+It has one attribute: 'creationDate', which is of type date.
+
+'lobj_Address' represents an important domain concept.
+It has the following attributes: 'fax', which is of type str; 'street', which is of type str; 'city', which is of type str; 'email', which is of type str; 'postcode', which is of type str; 'otheraddr', which is of type str; 'id', which is of type str; 'country', which is of type str; 'state', which is of type str; 'phone', which is of type str.
+
+'lobj_LearningObject' represents an important domain concept.
+It has the following attributes: 'synchronized', which is of type bool; 'timestamp', which is of type date; 'id', which is of type str.
+
+'lobj_BlockMeta' represents an important domain concept.
+It has the following attributes: 'lod', which is of type str; 'creationDate', which is of type date; 'rendering', which is of type str; 'lastModified', which is of type date.
+
+'lobj_ResrcMeta' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'parameters', which is of type str; 'creationDate', which is of type date; 'lastModified', which is of type date; 'title', which is of type str; 'filename', which is of type str; 'keywords', which is of type str; 'height', which is of type int; 'width', which is of type int.
+
+'lobj_ModuleFolder' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_CourseMeta' represents an important domain concept.
+It has the following attributes: 'columnfilterasxml', which is of type str; 'hours', which is of type int; 'lvanr', which is of type str; 'creationDate', which is of type date; 'fromext', which is of type str.
+
+'LearningObject' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_LuFolder' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_User' represents an important domain concept.
+It has the following attributes: 'languagenr', which is of type str; 'currlogindate', which is of type date; 'photochanged', which is of type str; 'lastname', which is of type str; 'fromext', which is of type str; 'scn', which is of type str; 'datafilter', which is of type str; 'firstname', which is of type str; 'icqnumber', which is of type str; 'onlinestatus', which is of type str; 'lastcoursematerialviewnr', which is of type str; 'dossierasxml', which is of type str; 'notificationprofileasxml', which is of type str; 'authenticateldap', which is of type str; 'loginname', which is of type str; 'matriculationnr', which is of type str; 'photo', which is of type str; 'icqpassword', which is of type str; 'id', which is of type str; 'onlinedate', which is of type date; 'lastcoursematerialnr', which is of type str; 'entryasxml', which is of type str; 'contchatdate', which is of type date; 'inchatsince', which is of type date; 'password', which is of type str; 'lastlogindate', which is of type date; 'chatroomnr', which is of type str.
+
+'lobj_Author' represents an important domain concept.
+It has the following attributes: 'credittype', which is of type str; 'email', which is of type str; 'id', which is of type str.
+
+'lobj_BlockAudiofile' represents an important domain concept.
+It has the following attributes: 'originalextension', which is of type str; 'filesize', which is of type int; 'resrcHref', which is of type str; 'file', which is of type str.
+
+'lobj_Source' represents an important domain concept.
+It has the following attributes: 'publishedBy', which is of type str; 'id', which is of type str; 'publishedIn', which is of type str; 'publishDate', which is of type str; 'pp', which is of type str; 'subtitle', which is of type str; 'title', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'lobj_PublishInfo' represents an important domain concept.
+It has the following attributes: 'releaseinfo', which is of type str; 'id', which is of type str; 'pubsnumber', which is of type str; 'pubdate', which is of type date; 'edition', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'lobj_Block' is a specialization of 'LearningObject'.
+The class 'lobj_HypertextBlock' is a specialization of 'Block'.
+The class 'lobj_AbstractContent' is a specialization of 'LearningObject'.
+The class 'lobj_HypertextContent' is a specialization of 'AbstractContent'.
+The class 'lobj_BlockFolder' is a specialization of 'LearningObject'.
+The class 'lobj_Category' is a specialization of 'LearningObject'.
+The class 'lobj_Course' is a specialization of 'LearningObject'.
+The class 'lobj_LearningUnit' is a specialization of 'LearningObject'.
+The class 'lobj_LuFolder' is a specialization of 'LearningObject'.
+The class 'lobj_Module' is a specialization of 'LearningObject'.
+The class 'lobj_ModuleFolder' is a specialization of 'LearningObject'.
+The class 'lobj_ResrcFolder' is a specialization of 'LearningObject'.
+The class 'lobj_Theme' is a specialization of 'LearningObject'.
+The class 'lobj_ThemeNode' is a specialization of 'Node'.
+The class 'lobj_LuNode' is a specialization of 'Node'.
+The class 'lobj_ResrcFile' is a specialization of 'LearningObject'.
+The class 'lobj_BlockAudiofile' is a specialization of 'LearningObject'.
+The class 'lobj_BlockMeta' is a specialization of 'LearningObject'.
+The class 'lobj_CourseMeta' is a specialization of 'LearningObject'.
+The class 'lobj_DidacMeta' is a specialization of 'SimpleDidacMeta'.
+The class 'lobj_FolderMeta' is a specialization of 'LearningObject'.
+The class 'lobj_LuMeta' is a specialization of 'LearningObject'.
+The class 'lobj_ResrcMeta' is a specialization of 'LearningObject'.
+The class 'lobj_ModuleMeta' is a specialization of 'LearningObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'lobj_BlockMeta' and 'lobj_Block'. From 'lobj_BlockMeta', the role 'lobj_BlockMeta' has cardinality 0..*, and from 'lobj_Block', the role 'lobj_Block' has cardinality 0..*.
+An association connects 'lobj_ExternalMetadata' and 'lobj_Block'. From 'lobj_ExternalMetadata', the role 'lobj_ExternalMetadata' has cardinality 0..*, and from 'lobj_Block', the role 'lobj_Block2' has cardinality 0..*.
+An association connects 'lobj_Block' and 'lobj_AccessControl'. From 'lobj_Block', the role 'lobj_Block4' has cardinality 0..*, and from 'lobj_AccessControl', the role 'lobj_AccessControl' has cardinality 0..*.
+An association connects 'lobj_HypertextBlock' and 'lobj_HypertextContent'. From 'lobj_HypertextBlock', the role 'lobj_HypertextBlock' has cardinality 0..*, and from 'lobj_HypertextContent', the role 'lobj_HypertextContent' has cardinality 0..*.
+An association connects 'lobj_Language' and 'lobj_AbstractContent'. From 'lobj_Language', the role 'lobj_Language' has cardinality 0..*, and from 'lobj_AbstractContent', the role 'lobj_AbstractContent' has cardinality 0..*.
+An association connects 'lobj_AbstractContent' and 'lobj_Source'. From 'lobj_AbstractContent', the role 'lobj_AbstractContent8' has cardinality 0..*, and from 'lobj_Source', the role 'lobj_Source' has cardinality 0..*.
+An association connects 'lobj_BlockAudiofile' and 'lobj_HypertextContent'. From 'lobj_BlockAudiofile', the role 'lobj_BlockAudiofile' has cardinality 0..*, and from 'lobj_HypertextContent', the role 'lobj_HypertextContent10' has cardinality 0..*.
+An association connects 'lobj_ResrcFile' and 'lobj_HypertextContent'. From 'lobj_ResrcFile', the role 'ResrcFile' has cardinality 0..*, and from 'lobj_HypertextContent', the role 'hypertextContent' has cardinality 0..*.
+An association connects 'lobj_FolderMeta' and 'lobj_BlockFolder'. From 'lobj_FolderMeta', the role 'lobj_FolderMeta' has cardinality 0..*, and from 'lobj_BlockFolder', the role 'lobj_BlockFolder' has cardinality 0..*.
+An association connects 'lobj_BlockFolder' and 'lobj_BlockFolder'. From 'lobj_BlockFolder', the role 'lobj_BlockFolder13' has cardinality 0..*, and from 'lobj_BlockFolder', the role 'lobj_BlockFolder15' has cardinality 0..*.
+An association connects 'lobj_BlockFolder' and 'lobj_Block'. From 'lobj_BlockFolder', the role 'lobj_BlockFolder17' has cardinality 0..*, and from 'lobj_Block', the role 'lobj_Block18' has cardinality 0..*.
+An association connects 'lobj_BlockFolder' and 'lobj_AccessControl'. From 'lobj_BlockFolder', the role 'lobj_BlockFolder20' has cardinality 0..*, and from 'lobj_AccessControl', the role 'lobj_AccessControl21' has cardinality 0..*.
+An association connects 'lobj_TitleMeta' and 'lobj_Category'. From 'lobj_TitleMeta', the role 'lobj_TitleMeta' has cardinality 0..*, and from 'lobj_Category', the role 'lobj_Category' has cardinality 0..*.
+An association connects 'lobj_Category' and 'lobj_Course'. From 'lobj_Category', the role 'lobj_Category24' has cardinality 0..*, and from 'lobj_Course', the role 'lobj_Course' has cardinality 0..*.
+An association connects 'lobj_PresentationBlock' and 'lobj_CorrBlock'. From 'lobj_PresentationBlock', the role 'lobj_PresentationBlock' has cardinality 0..*, and from 'lobj_CorrBlock', the role 'lobj_CorrBlock' has cardinality 0..*.
+An association connects 'lobj_CorrBlock' and 'lobj_TitleMeta'. From 'lobj_CorrBlock', the role 'lobj_CorrBlock27' has cardinality 0..*, and from 'lobj_TitleMeta', the role 'lobj_TitleMeta28' has cardinality 0..*.
+An association connects 'lobj_Course' and 'lobj_CourseMeta'. From 'lobj_Course', the role 'lobj_Course30' has cardinality 0..*, and from 'lobj_CourseMeta', the role 'lobj_CourseMeta' has cardinality 0..*.
+An association connects 'lobj_Course' and 'lobj_ExternalMetadata'. From 'lobj_Course', the role 'lobj_Course32' has cardinality 0..*, and from 'lobj_ExternalMetadata', the role 'lobj_ExternalMetadata33' has cardinality 0..*.
+An association connects 'lobj_Course' and 'lobj_Coursetype'. From 'lobj_Course', the role 'lobj_Course35' has cardinality 0..*, and from 'lobj_Coursetype', the role 'lobj_Coursetype' has cardinality 0..*.
+An association connects 'lobj_Module' and 'lobj_Course'. From 'lobj_Module', the role 'lobj_Module' has cardinality 0..*, and from 'lobj_Course', the role 'lobj_Course37' has cardinality 0..*.
+An association connects 'lobj_Item' and 'lobj_CorrBlock'. From 'lobj_Item', the role 'lobj_Item' has cardinality 0..*, and from 'lobj_CorrBlock', the role 'lobj_CorrBlock39' has cardinality 0..*.
+An association connects 'lobj_Item' and 'lobj_Item'. From 'lobj_Item', the role 'lobj_Item40' has cardinality 0..*, and from 'lobj_Item', the role 'lobj_Item42' has cardinality 0..*.
+An association connects 'lobj_LearningUnit' and 'lobj_LuMeta'. From 'lobj_LearningUnit', the role 'lobj_LearningUnit' has cardinality 0..*, and from 'lobj_LuMeta', the role 'lobj_LuMeta' has cardinality 0..*.
+An association connects 'lobj_LearningUnit' and 'lobj_ExternalMetadata'. From 'lobj_LearningUnit', the role 'lobj_LearningUnit45' has cardinality 0..*, and from 'lobj_ExternalMetadata', the role 'lobj_ExternalMetadata46' has cardinality 0..*.
+An association connects 'lobj_LearningUnit' and 'lobj_AccessControl'. From 'lobj_LearningUnit', the role 'lobj_LearningUnit48' has cardinality 0..*, and from 'lobj_AccessControl', the role 'lobj_AccessControl49' has cardinality 0..*.
+An association connects 'lobj_Item' and 'lobj_LearningUnit'. From 'lobj_Item', the role 'lobj_Item52' has cardinality 0..*, and from 'lobj_LearningUnit', the role 'lobj_LearningUnit51' has cardinality 0..*.
+An association connects 'lobj_LuFolder' and 'lobj_FolderMeta'. From 'lobj_LuFolder', the role 'lobj_LuFolder' has cardinality 0..*, and from 'lobj_FolderMeta', the role 'lobj_FolderMeta54' has cardinality 0..*.
+An association connects 'lobj_LuFolder' and 'lobj_LuFolder'. From 'lobj_LuFolder', the role 'lobj_LuFolder57' has cardinality 0..*, and from 'lobj_LuFolder', the role 'lobj_LuFolder55' has cardinality 0..*.
+An association connects 'lobj_LuFolder' and 'lobj_LearningUnit'. From 'lobj_LuFolder', the role 'lobj_LuFolder59' has cardinality 0..*, and from 'lobj_LearningUnit', the role 'lobj_LearningUnit60' has cardinality 0..*.
+An association connects 'lobj_LuFolder' and 'lobj_AccessControl'. From 'lobj_LuFolder', the role 'lobj_LuFolder62' has cardinality 0..*, and from 'lobj_AccessControl', the role 'lobj_AccessControl63' has cardinality 0..*.
+An association connects 'lobj_Module' and 'lobj_ModuleMeta'. From 'lobj_Module', the role 'lobj_Module65' has cardinality 0..*, and from 'lobj_ModuleMeta', the role 'lobj_ModuleMeta' has cardinality 0..*.
+An association connects 'lobj_Module' and 'lobj_ExternalMetadata'. From 'lobj_Module', the role 'lobj_Module67' has cardinality 0..*, and from 'lobj_ExternalMetadata', the role 'lobj_ExternalMetadata68' has cardinality 0..*.
+An association connects 'lobj_Node' and 'lobj_Module'. From 'lobj_Node', the role 'lobj_Node' has cardinality 0..*, and from 'lobj_Module', the role 'lobj_Module70' has cardinality 0..*.
+An association connects 'lobj_AccessControl' and 'lobj_Module'. From 'lobj_AccessControl', the role 'lobj_AccessControl73' has cardinality 0..*, and from 'lobj_Module', the role 'lobj_Module72' has cardinality 0..*.
+An association connects 'lobj_FolderMeta' and 'lobj_ModuleFolder'. From 'lobj_FolderMeta', the role 'lobj_FolderMeta75' has cardinality 0..*, and from 'lobj_ModuleFolder', the role 'lobj_ModuleFolder' has cardinality 0..*.
+An association connects 'lobj_ModuleFolder' and 'lobj_ModuleFolder'. From 'lobj_ModuleFolder', the role 'lobj_ModuleFolder78' has cardinality 0..*, and from 'lobj_ModuleFolder', the role 'lobj_ModuleFolder76' has cardinality 0..*.
+An association connects 'lobj_ModuleFolder' and 'lobj_Module'. From 'lobj_ModuleFolder', the role 'lobj_ModuleFolder80' has cardinality 0..*, and from 'lobj_Module', the role 'lobj_Module81' has cardinality 0..*.
+An association connects 'lobj_ModuleFolder' and 'lobj_AccessControl'. From 'lobj_ModuleFolder', the role 'lobj_ModuleFolder83' has cardinality 0..*, and from 'lobj_AccessControl', the role 'lobj_AccessControl84' has cardinality 0..*.
+An association connects 'lobj_FolderMeta' and 'lobj_ResrcFolder'. From 'lobj_FolderMeta', the role 'lobj_FolderMeta86' has cardinality 0..*, and from 'lobj_ResrcFolder', the role 'lobj_ResrcFolder' has cardinality 0..*.
+An association connects 'lobj_ResrcFolder' and 'lobj_ResrcFolder'. From 'lobj_ResrcFolder', the role 'lobj_ResrcFolder89' has cardinality 0..*, and from 'lobj_ResrcFolder', the role 'lobj_ResrcFolder87' has cardinality 0..*.
+An association connects 'lobj_ResrcFolder' and 'lobj_AccessControl'. From 'lobj_ResrcFolder', the role 'lobj_ResrcFolder91' has cardinality 0..*, and from 'lobj_AccessControl', the role 'lobj_AccessControl92' has cardinality 0..*.
+An association connects 'lobj_ResrcFile' and 'lobj_ResrcFolder'. From 'lobj_ResrcFile', the role 'lobj_ResrcFile' has cardinality 0..*, and from 'lobj_ResrcFolder', the role 'lobj_ResrcFolder94' has cardinality 0..*.
+An association connects 'lobj_SimpleDidacMeta' and 'lobj_Theme'. From 'lobj_SimpleDidacMeta', the role 'lobj_SimpleDidacMeta' has cardinality 0..*, and from 'lobj_Theme', the role 'lobj_Theme' has cardinality 0..*.
+An association connects 'lobj_Block' and 'lobj_PresentationBlock'. From 'lobj_Block', the role 'lobj_Block98' has cardinality 0..*, and from 'lobj_PresentationBlock', the role 'lobj_PresentationBlock97' has cardinality 0..*.
+An association connects 'lobj_Theme' and 'lobj_ThemeNode'. From 'lobj_Theme', the role 'lobj_Theme100' has cardinality 0..*, and from 'lobj_ThemeNode', the role 'lobj_ThemeNode' has cardinality 0..*.
+An association connects 'lobj_ThemeNode' and 'lobj_Node'. From 'lobj_ThemeNode', the role 'lobj_ThemeNode102' has cardinality 0..*, and from 'lobj_Node', the role 'lobj_Node103' has cardinality 0..*.
+An association connects 'lobj_LearningUnit' and 'lobj_LuNode'. From 'lobj_LearningUnit', the role 'lobj_LearningUnit105' has cardinality 0..*, and from 'lobj_LuNode', the role 'lobj_LuNode' has cardinality 0..*.
+An association connects 'lobj_ResrcFile' and 'lobj_AccessControl'. From 'lobj_ResrcFile', the role 'lobj_ResrcFile107' has cardinality 0..*, and from 'lobj_AccessControl', the role 'lobj_AccessControl108' has cardinality 0..*.
+An association connects 'lobj_ResrcFile' and 'lobj_ResrcFiletype'. From 'lobj_ResrcFile', the role 'lobj_ResrcFile110' has cardinality 0..*, and from 'lobj_ResrcFiletype', the role 'lobj_ResrcFiletype' has cardinality 0..*.
+An association connects 'lobj_Source' and 'lobj_ResrcFile'. From 'lobj_Source', the role 'lobj_Source113' has cardinality 0..*, and from 'lobj_ResrcFile', the role 'lobj_ResrcFile112' has cardinality 0..*.
+An association connects 'lobj_ResrcFile' and 'lobj_HypertextContent'. From 'lobj_ResrcFile', the role 'resrcFile' has cardinality 0..*, and from 'lobj_HypertextContent', the role 'HypertextContent' has cardinality 0..*.
+An association connects 'lobj_ResrcMeta' and 'lobj_ResrcFile'. From 'lobj_ResrcMeta', the role 'lobj_ResrcMeta' has cardinality 0..*, and from 'lobj_ResrcFile', the role 'lobj_ResrcFile116' has cardinality 0..*.
+An association connects 'lobj_BlockAudiofile' and 'lobj_ResrcFiletype'. From 'lobj_BlockAudiofile', the role 'lobj_BlockAudiofile118' has cardinality 0..*, and from 'lobj_ResrcFiletype', the role 'lobj_ResrcFiletype119' has cardinality 0..*.
+An association connects 'lobj_User' and 'lobj_AccessControl'. From 'lobj_User', the role 'lobj_User' has cardinality 0..*, and from 'lobj_AccessControl', the role 'lobj_AccessControl121' has cardinality 0..*.
+An association connects 'lobj_User' and 'lobj_AccessControl'. From 'lobj_User', the role 'lobj_User124' has cardinality 0..*, and from 'lobj_AccessControl', the role 'lobj_AccessControl123' has cardinality 0..*.
+An association connects 'lobj_User' and 'lobj_AccessControl'. From 'lobj_User', the role 'lobj_User127' has cardinality 0..*, and from 'lobj_AccessControl', the role 'lobj_AccessControl126' has cardinality 0..*.
+An association connects 'lobj_AccessControl' and 'lobj_Sharednotes'. From 'lobj_AccessControl', the role 'lobj_AccessControl129' has cardinality 0..*, and from 'lobj_Sharednotes', the role 'lobj_Sharednotes' has cardinality 0..*.
+An association connects 'lobj_Userauthorization' and 'lobj_AccessControl'. From 'lobj_Userauthorization', the role 'lobj_Userauthorization' has cardinality 0..*, and from 'lobj_AccessControl', the role 'lobj_AccessControl131' has cardinality 0..*.
+An association connects 'lobj_AccessControl' and 'lobj_Edition'. From 'lobj_AccessControl', the role 'lobj_AccessControl133' has cardinality 0..*, and from 'lobj_Edition', the role 'lobj_Edition' has cardinality 0..*.
+An association connects 'lobj_Affiliation' and 'lobj_Address'. From 'lobj_Affiliation', the role 'lobj_Affiliation' has cardinality 0..*, and from 'lobj_Address', the role 'lobj_Address' has cardinality 0..*.
+An association connects 'lobj_Person' and 'lobj_Author'. From 'lobj_Person', the role 'lobj_Person' has cardinality 0..*, and from 'lobj_Author', the role 'lobj_Author' has cardinality 0..*.
+An association connects 'lobj_Address' and 'lobj_Author'. From 'lobj_Address', the role 'lobj_Address138' has cardinality 0..*, and from 'lobj_Author', the role 'lobj_Author137' has cardinality 0..*.
+An association connects 'lobj_BlockMeta' and 'lobj_Blocktype'. From 'lobj_BlockMeta', the role 'lobj_BlockMeta140' has cardinality 0..*, and from 'lobj_Blocktype', the role 'lobj_Blocktype' has cardinality 0..*.
+An association connects 'lobj_SimpleDidacMeta' and 'lobj_BlockMeta'. From 'lobj_SimpleDidacMeta', the role 'lobj_SimpleDidacMeta143' has cardinality 0..*, and from 'lobj_BlockMeta', the role 'lobj_BlockMeta142' has cardinality 0..*.
+An association connects 'lobj_Language' and 'lobj_BlockMeta'. From 'lobj_Language', the role 'lobj_Language146' has cardinality 0..*, and from 'lobj_BlockMeta', the role 'lobj_BlockMeta145' has cardinality 0..*.
+An association connects 'lobj_Blocktype' and 'lobj_Domain'. From 'lobj_Blocktype', the role 'blocktypes' has cardinality 0..*, and from 'lobj_Domain', the role 'Domain' has cardinality 0..*.
+An association connects 'lobj_TitleMeta' and 'lobj_Language'. From 'lobj_TitleMeta', the role 'lobj_TitleMeta149' has cardinality 0..*, and from 'lobj_Language', the role 'lobj_Language150' has cardinality 0..*.
+An association connects 'lobj_CourseMeta' and 'lobj_DidacMeta'. From 'lobj_CourseMeta', the role 'lobj_CourseMeta152' has cardinality 0..*, and from 'lobj_DidacMeta', the role 'lobj_DidacMeta' has cardinality 0..*.
+An association connects 'lobj_User' and 'lobj_CourseMeta'. From 'lobj_User', the role 'lobj_User155' has cardinality 0..*, and from 'lobj_CourseMeta', the role 'lobj_CourseMeta154' has cardinality 0..*.
+An association connects 'lobj_Language' and 'lobj_CourseMeta'. From 'lobj_Language', the role 'lobj_Language158' has cardinality 0..*, and from 'lobj_CourseMeta', the role 'lobj_CourseMeta157' has cardinality 0..*.
+An association connects 'lobj_SimpleDidacMeta' and 'lobj_Language'. From 'lobj_SimpleDidacMeta', the role 'lobj_SimpleDidacMeta160' has cardinality 0..*, and from 'lobj_Language', the role 'lobj_Language161' has cardinality 0..*.
+An association connects 'lobj_DidacMeta' and 'lobj_Precognition'. From 'lobj_DidacMeta', the role 'lobj_DidacMeta163' has cardinality 0..*, and from 'lobj_Precognition', the role 'lobj_Precognition' has cardinality 0..*.
+An association connects 'lobj_Domain' and 'lobj_Blocktype'. From 'lobj_Domain', the role 'domains' has cardinality 0..*, and from 'lobj_Blocktype', the role 'Blocktype' has cardinality 0..*.
+An association connects 'lobj_LuMeta' and 'lobj_DidacMeta'. From 'lobj_LuMeta', the role 'lobj_LuMeta166' has cardinality 0..*, and from 'lobj_DidacMeta', the role 'lobj_DidacMeta167' has cardinality 0..*.
+An association connects 'lobj_Domain' and 'lobj_LuMeta'. From 'lobj_Domain', the role 'lobj_Domain' has cardinality 0..*, and from 'lobj_LuMeta', the role 'lobj_LuMeta169' has cardinality 0..*.
+An association connects 'lobj_LuMeta' and 'lobj_Author'. From 'lobj_LuMeta', the role 'lobj_LuMeta171' has cardinality 0..*, and from 'lobj_Author', the role 'lobj_Author172' has cardinality 0..*.
+An association connects 'lobj_PublishInfo' and 'lobj_LuMeta'. From 'lobj_PublishInfo', the role 'lobj_PublishInfo' has cardinality 0..*, and from 'lobj_LuMeta', the role 'lobj_LuMeta174' has cardinality 0..*.
+An association connects 'lobj_Language' and 'lobj_LuMeta'. From 'lobj_Language', the role 'lobj_Language177' has cardinality 0..*, and from 'lobj_LuMeta', the role 'lobj_LuMeta176' has cardinality 0..*.
+An association connects 'lobj_Userauthorization' and 'lobj_User'. From 'lobj_Userauthorization', the role 'lobj_Userauthorization179' has cardinality 0..*, and from 'lobj_User', the role 'lobj_User180' has cardinality 0..*.
+An association connects 'lobj_Userauthorization' and 'lobj_AuthorizationTypes'. From 'lobj_Userauthorization', the role 'lobj_Userauthorization182' has cardinality 0..*, and from 'lobj_AuthorizationTypes', the role 'lobj_AuthorizationTypes' has cardinality 0..*.
+An association connects 'lobj_Person' and 'lobj_Affiliation'. From 'lobj_Person', the role 'lobj_Person184' has cardinality 0..*, and from 'lobj_Affiliation', the role 'lobj_Affiliation185' has cardinality 0..*.
+An association connects 'lobj_Address' and 'lobj_Publisher'. From 'lobj_Address', the role 'lobj_Address187' has cardinality 0..*, and from 'lobj_Publisher', the role 'lobj_Publisher' has cardinality 0..*.
+An association connects 'lobj_PublishInfo' and 'lobj_Publisher'. From 'lobj_PublishInfo', the role 'lobj_PublishInfo189' has cardinality 0..*, and from 'lobj_Publisher', the role 'lobj_Publisher190' has cardinality 0..*.
+An association connects 'lobj_Note' and 'lobj_Sharednotes'. From 'lobj_Note', the role 'lobj_Note' has cardinality 0..*, and from 'lobj_Sharednotes', the role 'lobj_Sharednotes192' has cardinality 0..*.
+An association connects 'lobj_Language' and 'lobj_Coursetype'. From 'lobj_Language', the role 'lobj_Language195' has cardinality 0..*, and from 'lobj_Coursetype', the role 'lobj_Coursetype194' has cardinality 0..*.
+An association connects 'lobj_InternalRef' and 'lobj_Precognition'. From 'lobj_InternalRef', the role 'lobj_InternalRef' has cardinality 0..*, and from 'lobj_Precognition', the role 'lobj_Precognition197' has cardinality 0..*.
+An association connects 'lobj_InternalRef' and 'lobj_Language'. From 'lobj_InternalRef', the role 'lobj_InternalRef199' has cardinality 0..*, and from 'lobj_Language', the role 'lobj_Language200' has cardinality 0..*.
+An association connects 'lobj_ModuleMeta' and 'lobj_DidacMeta'. From 'lobj_ModuleMeta', the role 'lobj_ModuleMeta202' has cardinality 0..*, and from 'lobj_DidacMeta', the role 'lobj_DidacMeta203' has cardinality 0..*.
+An association connects 'lobj_ModuleMeta' and 'lobj_Author'. From 'lobj_ModuleMeta', the role 'lobj_ModuleMeta205' has cardinality 0..*, and from 'lobj_Author', the role 'lobj_Author206' has cardinality 0..*.
+An association connects 'lobj_PublishInfo' and 'lobj_ModuleMeta'. From 'lobj_PublishInfo', the role 'lobj_PublishInfo209' has cardinality 0..*, and from 'lobj_ModuleMeta', the role 'lobj_ModuleMeta208' has cardinality 0..*.
+An association connects 'lobj_Language' and 'lobj_ModuleMeta'. From 'lobj_Language', the role 'lobj_Language212' has cardinality 0..*, and from 'lobj_ModuleMeta', the role 'lobj_ModuleMeta211' has cardinality 0..*.
+An association connects 'lobj_Author' and 'lobj_Source'. From 'lobj_Author', the role 'lobj_Author215' has cardinality 0..*, and from 'lobj_Source', the role 'lobj_Source214' has cardinality 0..*.
+An association connects 'lobj_AuthorizationTypes' and 'lobj_User'. From 'lobj_AuthorizationTypes', the role 'lobj_AuthorizationTypes218' has cardinality 0..*, and from 'lobj_User', the role 'lobj_User217' has cardinality 0..*.

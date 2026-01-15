@@ -1,0 +1,135 @@
+The domain model 'executionTrace' describes the core structural elements and their relationships within the system.
+
+The model defines 38 main class(es).
+
+'executionTrace_Execution' represents an important domain concept.
+It has the following attributes: 'executionFinishedTimeStamp', which is of type str; 'executionTime', which is of type str; 'executionStartedTimeStamp', which is of type str; 'executionTimeMsec', which is of type str.
+
+'executionTrace_StoryPatternObjectConstraintEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_StoryPatternObjectConstraintViolated' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_StoryPatternObjectConstraintHolds' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_MapEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'executionTrace_InstanceObjectDeletion' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_VariableChanged' represents an important domain concept.
+It has one attribute: 'oldValue', which is of type str.
+
+'executionTrace_ActivityNodeExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_StoryPatternInitialization' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_TraversingLink' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_VariableCreated' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_ExpressionEvaluation' represents an important domain concept.
+It has one attribute: 'result', which is of type str.
+
+'executionTrace_VariableDeleted' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_StoryPatternApplication' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_StoryPatternLinkExecution' represents an important domain concept.
+It has one attribute: 'sourceObject', which is of type str.
+
+'executionTrace_ExecutionTrace' represents an important domain concept.
+It has the following attributes: 'totalExecutionTime', which is of type str; 'description', which is of type str; 'totalExecutionTimeMsec', which is of type str.
+
+'executionTrace_StoryPatternConstraintViolated' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_ActivityExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_VariableModification' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'variableName', which is of type str.
+
+'executionTrace_StoryPatternConstraintEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_LinkCheck' represents an important domain concept.
+It has one attribute: 'targetObject', which is of type str.
+
+'executionTrace_LinkCheckFailed' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_InstanceObjectCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_StoryPatternObjectBindingRevoked' represents an important domain concept.
+It has one attribute: 'previousValue', which is of type str.
+
+'executionTrace_AttributeValueSet' represents an important domain concept.
+It has the following attributes: 'instanceObject', which is of type str; 'newValue', which is of type str.
+
+'executionTrace_LinkCheckSuccessful' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_InstanceObjectModification' represents an important domain concept.
+It has one attribute: 'instanceObject', which is of type str.
+
+'executionTrace_InstanceLinkCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_StoryPatternExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_StoryPatternObjectBound' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'executionTrace_StoryPatternMatching' represents an important domain concept.
+It has one attribute: 'successful', which is of type bool.
+
+'executionTrace_StoryPatternObjectExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_ActivityEdgeTraversal' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_InstanceLinkDeletion' represents an important domain concept.
+It does not declare any attributes.
+
+'Execution' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_InstanceLinkModification' represents an important domain concept.
+It has the following attributes: 'sourceInstanceObject', which is of type str; 'targetInstanceObject', which is of type str.
+
+'executionTrace_StoryPatternObjectNotBound' represents an important domain concept.
+It does not declare any attributes.
+
+'executionTrace_StoryPatternConstraintHolds' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'executionTrace_ActivityExecution' is a specialization of 'Execution'.
+The class 'executionTrace_ActivityNodeExecution' is a specialization of 'Execution'.
+The class 'executionTrace_ActivityEdgeTraversal' is a specialization of 'Execution'.
+The class 'executionTrace_StoryPatternExecution' is a specialization of 'Execution'.
+The class 'executionTrace_StoryPatternObjectExecution' is a specialization of 'Execution'.
+The class 'executionTrace_StoryPatternLinkExecution' is a specialization of 'Execution'.
+The class 'executionTrace_ExpressionEvaluation' is a specialization of 'Execution'.
+The class 'executionTrace_InstanceObjectModification' is a specialization of 'Execution'.
+The class 'executionTrace_InstanceLinkModification' is a specialization of 'Execution'.
+The class 'executionTrace_AttributeValueSet' is a specialization of 'Execution'.
+The class 'executionTrace_VariableModification' is a specialization of 'Execution'.
+
+Relationships between classes are modeled using associations.
+An association connects 'executionTrace_ExecutionTrace' and 'executionTrace_Execution'. From 'executionTrace_ExecutionTrace', the role 'executionTrace_ExecutionTrace' has cardinality 0..*, and from 'executionTrace_Execution', the role 'executionTrace_Execution' has cardinality 0..*.
+An association connects 'executionTrace_Execution' and 'executionTrace_Execution'. From 'executionTrace_Execution', the role 'container' has cardinality 0..*, and from 'executionTrace_Execution', the role 'Execution' has cardinality 0..*.
+An association connects 'executionTrace_Execution' and 'executionTrace_Execution'. From 'executionTrace_Execution', the role 'Execution5' has cardinality 0..*, and from 'executionTrace_Execution', the role 'elements' has cardinality 0..*.

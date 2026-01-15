@@ -1,0 +1,28 @@
+The domain model 'traceability' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'traceability_CPS2DeploymentTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_Deployment' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_DeploymentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_CPSToDeployment' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_CyberPhysicalSystem' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'traceability_CyberPhysicalSystem' and 'traceability_CPSToDeployment'. From 'traceability_CyberPhysicalSystem', the role 'traceability_CyberPhysicalSystem' has cardinality 0..*, and from 'traceability_CPSToDeployment', the role 'traceability_CPSToDeployment' has cardinality 0..*.
+An association connects 'traceability_CPSToDeployment' and 'traceability_Deployment'. From 'traceability_CPSToDeployment', the role 'traceability_CPSToDeployment2' has cardinality 0..*, and from 'traceability_Deployment', the role 'traceability_Deployment' has cardinality 0..*.
+An association connects 'traceability_CPSToDeployment' and 'traceability_CPS2DeploymentTrace'. From 'traceability_CPSToDeployment', the role 'traceability_CPSToDeployment4' has cardinality 0..*, and from 'traceability_CPS2DeploymentTrace', the role 'traceability_CPS2DeploymentTrace' has cardinality 0..*.
+An association connects 'traceability_CPS2DeploymentTrace' and 'traceability_Identifiable'. From 'traceability_CPS2DeploymentTrace', the role 'traceability_CPS2DeploymentTrace6' has cardinality 0..*, and from 'traceability_Identifiable', the role 'traceability_Identifiable' has cardinality 0..*.
+An association connects 'traceability_DeploymentElement' and 'traceability_CPS2DeploymentTrace'. From 'traceability_DeploymentElement', the role 'traceability_DeploymentElement' has cardinality 0..*, and from 'traceability_CPS2DeploymentTrace', the role 'traceability_CPS2DeploymentTrace8' has cardinality 0..*.

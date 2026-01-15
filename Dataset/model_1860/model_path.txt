@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/arneson/tda593/ClassDiagram/HotelManagementClassDiagram.ecore

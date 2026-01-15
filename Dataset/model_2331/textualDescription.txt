@@ -1,0 +1,267 @@
+The domain model 'CommonBehavior' describes the core structural elements and their relationships within the system.
+
+The model defines 65 main class(es).
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_Communications_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_SimpleTime_Duration' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_Communications_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_BasicBehavior_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicBehavior_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'TimeInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_SimpleTime_TimeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_SimpleTime_TimeInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_SimpleTime_DurationObservation' represents an important domain concept.
+It has one attribute: 'firstEvent', which is of type bool.
+
+'CommonBehavior_SimpleTime_DurationInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_SimpleTime_TimeObservation' represents an important domain concept.
+It has one attribute: 'firstEvent', which is of type bool.
+
+'CommonBehavior_Communications_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_SimpleTime_TimeEvent' represents an important domain concept.
+It has one attribute: 'isRelative', which is of type bool.
+
+'CommonBehavior_Communications_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_BasicBehavior_OpaqueBehavior' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'CommonBehavior_Communications_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_BasicBehavior_FunctionBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_BasicBehavior_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_BasicBehavior_BehavioralFeature' represents an important domain concept.
+It has one attribute: 'concurrency', which is of type str.
+
+'OpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_SimpleTime_Observation' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_Communications_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_BasicBehavior_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_Communications_ChangeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_Communications_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_Communications_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_Communications_AnyReceiveEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_Communications_SignalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'DurationInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_BasicBehavior_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'IntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_SimpleTime_TimeConstraint' represents an important domain concept.
+It has one attribute: 'firstEvent', which is of type bool.
+
+'CommonBehavior_BasicBehavior_Behavior' represents an important domain concept.
+It has one attribute: 'isReentrant', which is of type bool.
+
+'CommonBehavior_Communications_CallEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicBehavior_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_SimpleTime_DurationConstraint' represents an important domain concept.
+It has one attribute: 'firstEvent', which is of type bool.
+
+'CommonBehavior_BasicBehavior_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_SimpleTime_IntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'TimeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_Communications_MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_BasicBehavior_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_SimpleTime_Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'Observation' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_BasicBehavior_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_Communications_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'Duration' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'CommonBehavior_Communications_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CallConcurrencyFeature' defines the following possible values: 'sequential', 'concurrent', 'guarded'.
+
+The model also captures inheritance relationships between classes.
+The class 'CommonBehavior_BasicBehavior_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'CommonBehavior_BasicBehavior_Classifier' is a specialization of 'RedefinableElement'.
+The class 'CommonBehavior_BasicBehavior_Class' is a specialization of 'BasicBehavior_Classifier'.
+The class 'CommonBehavior_BasicBehavior_Class' is a specialization of 'BasicBehavior_BehavioredClassifier'.
+The class 'CommonBehavior_BasicBehavior_Behavior' is a specialization of 'Class'.
+The class 'CommonBehavior_BasicBehavior_OpaqueBehavior' is a specialization of 'Behavior'.
+The class 'CommonBehavior_BasicBehavior_FunctionBehavior' is a specialization of 'OpaqueBehavior'.
+The class 'CommonBehavior_Communications_Signal' is a specialization of 'Classifier'.
+The class 'CommonBehavior_Communications_Reception' is a specialization of 'BehavioralFeature'.
+The class 'CommonBehavior_Communications_Interface' is a specialization of 'Classifier'.
+The class 'CommonBehavior_Communications_Trigger' is a specialization of 'NamedElement'.
+The class 'CommonBehavior_Communications_Event' is a specialization of 'PackageableElement'.
+The class 'CommonBehavior_Communications_MessageEvent' is a specialization of 'Event'.
+The class 'CommonBehavior_Communications_AnyReceiveEvent' is a specialization of 'MessageEvent'.
+The class 'CommonBehavior_Communications_SignalEvent' is a specialization of 'MessageEvent'.
+The class 'CommonBehavior_Communications_CallEvent' is a specialization of 'MessageEvent'.
+The class 'CommonBehavior_Communications_ChangeEvent' is a specialization of 'Event'.
+The class 'CommonBehavior_SimpleTime_TimeExpression' is a specialization of 'ValueSpecification'.
+The class 'CommonBehavior_SimpleTime_Observation' is a specialization of 'PackageableElement'.
+The class 'CommonBehavior_SimpleTime_TimeObservation' is a specialization of 'Observation'.
+The class 'CommonBehavior_SimpleTime_DurationObservation' is a specialization of 'Observation'.
+The class 'CommonBehavior_SimpleTime_Duration' is a specialization of 'ValueSpecification'.
+The class 'CommonBehavior_SimpleTime_Interval' is a specialization of 'ValueSpecification'.
+The class 'CommonBehavior_SimpleTime_TimeInterval' is a specialization of 'Interval'.
+The class 'CommonBehavior_SimpleTime_DurationInterval' is a specialization of 'Interval'.
+The class 'CommonBehavior_SimpleTime_IntervalConstraint' is a specialization of 'Constraint'.
+The class 'CommonBehavior_SimpleTime_TimeConstraint' is a specialization of 'IntervalConstraint'.
+The class 'CommonBehavior_SimpleTime_DurationConstraint' is a specialization of 'IntervalConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'CommonBehavior_BasicBehavior_BehavioredClassifier' and 'Behavior'. From 'CommonBehavior_BasicBehavior_BehavioredClassifier', the role 'CommonBehavior_BasicBehavior_BehavioredClassifier' has cardinality 0..*, and from 'Behavior', the role 'Behavior' has cardinality 0..*.
+An association connects 'CommonBehavior_BasicBehavior_BehavioredClassifier' and 'Behavior'. From 'CommonBehavior_BasicBehavior_BehavioredClassifier', the role 'CommonBehavior_BasicBehavior_BehavioredClassifier2' has cardinality 0..*, and from 'Behavior', the role 'Behavior3' has cardinality 0..*.
+An association connects 'CommonBehavior_BasicBehavior_Class' and 'Reception'. From 'CommonBehavior_BasicBehavior_Class', the role 'CommonBehavior_BasicBehavior_Class' has cardinality 0..*, and from 'Reception', the role 'Reception' has cardinality 0..*.
+An association connects 'BehavioredClassifier' and 'CommonBehavior_BasicBehavior_Behavior'. From 'BehavioredClassifier', the role 'BehavioredClassifier' has cardinality 0..*, and from 'CommonBehavior_BasicBehavior_Behavior', the role 'CommonBehavior_BasicBehavior_Behavior' has cardinality 0..*.
+An association connects 'CommonBehavior_BasicBehavior_Behavior' and 'Behavior'. From 'CommonBehavior_BasicBehavior_Behavior', the role 'CommonBehavior_BasicBehavior_Behavior7' has cardinality 0..*, and from 'Behavior', the role 'Behavior8' has cardinality 0..*.
+An association connects 'BehavioralFeature' and 'CommonBehavior_BasicBehavior_Behavior'. From 'BehavioralFeature', the role '10' has cardinality 0..*, and from 'CommonBehavior_BasicBehavior_Behavior', the role 'unnamed role' has cardinality 0..*.
+An association connects 'CommonBehavior_BasicBehavior_Behavior' and 'Parameter'. From 'CommonBehavior_BasicBehavior_Behavior', the role 'CommonBehavior_BasicBehavior_Behavior12' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'CommonBehavior_BasicBehavior_Behavior' and 'Constraint'. From 'CommonBehavior_BasicBehavior_Behavior', the role 'CommonBehavior_BasicBehavior_Behavior14' has cardinality 0..*, and from 'Constraint', the role 'Constraint' has cardinality 0..*.
+An association connects 'CommonBehavior_BasicBehavior_Behavior' and 'Constraint'. From 'CommonBehavior_BasicBehavior_Behavior', the role 'CommonBehavior_BasicBehavior_Behavior16' has cardinality 0..*, and from 'Constraint', the role 'Constraint17' has cardinality 0..*.
+An association connects 'Behavior' and 'CommonBehavior_BasicBehavior_BehavioralFeature'. From 'Behavior', the role '20' has cardinality 0..*, and from 'CommonBehavior_BasicBehavior_BehavioralFeature', the role '19' has cardinality 0..*.
+An association connects 'CommonBehavior_BasicBehavior_OpaqueExpression' and 'Parameter'. From 'CommonBehavior_BasicBehavior_OpaqueExpression', the role 'CommonBehavior_BasicBehavior_OpaqueExpression' has cardinality 0..*, and from 'Parameter', the role 'Parameter22' has cardinality 0..*.
+An association connects 'CommonBehavior_BasicBehavior_OpaqueExpression' and 'Behavior'. From 'CommonBehavior_BasicBehavior_OpaqueExpression', the role 'CommonBehavior_BasicBehavior_OpaqueExpression24' has cardinality 0..*, and from 'Behavior', the role 'Behavior25' has cardinality 0..*.
+An association connects 'CommonBehavior_Communications_Signal' and 'Property'. From 'CommonBehavior_Communications_Signal', the role 'CommonBehavior_Communications_Signal' has cardinality 0..*, and from 'Property', the role 'Property' has cardinality 0..*.
+An association connects 'CommonBehavior_Communications_Reception' and 'Signal'. From 'CommonBehavior_Communications_Reception', the role 'CommonBehavior_Communications_Reception' has cardinality 0..*, and from 'Signal', the role 'Signal' has cardinality 0..*.
+An association connects 'CommonBehavior_Communications_Interface' and 'Reception'. From 'CommonBehavior_Communications_Interface', the role 'CommonBehavior_Communications_Interface' has cardinality 0..*, and from 'Reception', the role 'Reception29' has cardinality 0..*.
+An association connects 'CommonBehavior_Communications_Trigger' and 'Event'. From 'CommonBehavior_Communications_Trigger', the role 'CommonBehavior_Communications_Trigger' has cardinality 0..*, and from 'Event', the role 'Event' has cardinality 0..*.
+An association connects 'CommonBehavior_Communications_SignalEvent' and 'Signal'. From 'CommonBehavior_Communications_SignalEvent', the role 'CommonBehavior_Communications_SignalEvent' has cardinality 0..*, and from 'Signal', the role 'Signal32' has cardinality 0..*.
+An association connects 'Operation' and 'CommonBehavior_Communications_CallEvent'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'CommonBehavior_Communications_CallEvent', the role 'CommonBehavior_Communications_CallEvent' has cardinality 0..*.
+An association connects 'ValueSpecification' and 'CommonBehavior_Communications_ChangeEvent'. From 'ValueSpecification', the role 'ValueSpecification' has cardinality 0..*, and from 'CommonBehavior_Communications_ChangeEvent', the role 'CommonBehavior_Communications_ChangeEvent' has cardinality 0..*.
+An association connects 'TimeExpression' and 'CommonBehavior_SimpleTime_TimeEvent'. From 'TimeExpression', the role 'TimeExpression' has cardinality 0..*, and from 'CommonBehavior_SimpleTime_TimeEvent', the role 'CommonBehavior_SimpleTime_TimeEvent' has cardinality 0..*.
+An association connects 'ValueSpecification' and 'CommonBehavior_SimpleTime_TimeExpression'. From 'ValueSpecification', the role 'ValueSpecification37' has cardinality 0..*, and from 'CommonBehavior_SimpleTime_TimeExpression', the role 'CommonBehavior_SimpleTime_TimeExpression' has cardinality 0..*.
+An association connects 'Observation' and 'CommonBehavior_SimpleTime_TimeExpression'. From 'Observation', the role 'Observation' has cardinality 0..*, and from 'CommonBehavior_SimpleTime_TimeExpression', the role 'CommonBehavior_SimpleTime_TimeExpression39' has cardinality 0..*.
+An association connects 'CommonBehavior_SimpleTime_TimeObservation' and 'NamedElement'. From 'CommonBehavior_SimpleTime_TimeObservation', the role 'CommonBehavior_SimpleTime_TimeObservation' has cardinality 0..*, and from 'NamedElement', the role 'NamedElement' has cardinality 0..*.
+An association connects 'CommonBehavior_SimpleTime_DurationObservation' and 'NamedElement'. From 'CommonBehavior_SimpleTime_DurationObservation', the role 'CommonBehavior_SimpleTime_DurationObservation' has cardinality 0..*, and from 'NamedElement', the role 'NamedElement42' has cardinality 0..*.
+An association connects 'CommonBehavior_SimpleTime_Duration' and 'ValueSpecification'. From 'CommonBehavior_SimpleTime_Duration', the role 'CommonBehavior_SimpleTime_Duration' has cardinality 0..*, and from 'ValueSpecification', the role 'ValueSpecification44' has cardinality 0..*.
+An association connects 'CommonBehavior_SimpleTime_Duration' and 'Observation'. From 'CommonBehavior_SimpleTime_Duration', the role 'CommonBehavior_SimpleTime_Duration46' has cardinality 0..*, and from 'Observation', the role 'Observation47' has cardinality 0..*.
+An association connects 'ValueSpecification' and 'CommonBehavior_SimpleTime_Interval'. From 'ValueSpecification', the role 'ValueSpecification49' has cardinality 0..*, and from 'CommonBehavior_SimpleTime_Interval', the role 'CommonBehavior_SimpleTime_Interval' has cardinality 0..*.
+An association connects 'ValueSpecification' and 'CommonBehavior_SimpleTime_Interval'. From 'ValueSpecification', the role 'ValueSpecification52' has cardinality 0..*, and from 'CommonBehavior_SimpleTime_Interval', the role 'CommonBehavior_SimpleTime_Interval51' has cardinality 0..*.
+An association connects 'CommonBehavior_SimpleTime_TimeInterval' and 'TimeExpression'. From 'CommonBehavior_SimpleTime_TimeInterval', the role 'CommonBehavior_SimpleTime_TimeInterval' has cardinality 0..*, and from 'TimeExpression', the role 'TimeExpression54' has cardinality 0..*.
+An association connects 'CommonBehavior_SimpleTime_TimeInterval' and 'TimeExpression'. From 'CommonBehavior_SimpleTime_TimeInterval', the role 'CommonBehavior_SimpleTime_TimeInterval56' has cardinality 0..*, and from 'TimeExpression', the role 'TimeExpression57' has cardinality 0..*.
+An association connects 'Duration' and 'CommonBehavior_SimpleTime_DurationInterval'. From 'Duration', the role 'Duration' has cardinality 0..*, and from 'CommonBehavior_SimpleTime_DurationInterval', the role 'CommonBehavior_SimpleTime_DurationInterval' has cardinality 0..*.
+An association connects 'Duration' and 'CommonBehavior_SimpleTime_DurationInterval'. From 'Duration', the role 'Duration61' has cardinality 0..*, and from 'CommonBehavior_SimpleTime_DurationInterval', the role 'CommonBehavior_SimpleTime_DurationInterval60' has cardinality 0..*.
+An association connects 'TimeInterval' and 'CommonBehavior_SimpleTime_TimeConstraint'. From 'TimeInterval', the role 'TimeInterval' has cardinality 0..*, and from 'CommonBehavior_SimpleTime_TimeConstraint', the role 'CommonBehavior_SimpleTime_TimeConstraint' has cardinality 0..*.
+An association connects 'DurationInterval' and 'CommonBehavior_SimpleTime_DurationConstraint'. From 'DurationInterval', the role 'DurationInterval' has cardinality 0..*, and from 'CommonBehavior_SimpleTime_DurationConstraint', the role 'CommonBehavior_SimpleTime_DurationConstraint' has cardinality 0..*.

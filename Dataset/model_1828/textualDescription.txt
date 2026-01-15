@@ -1,0 +1,41 @@
+The domain model 'bz288963' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'bz288963_Book' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'selfdef', which is of type str; 'type', which is of type str.
+
+'bz288963_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'bz288963_Indentedpara' represents an important domain concept.
+It has one attribute: 'indentSpace', which is of type str.
+
+'bz288963_Paragraph' represents an important domain concept.
+It has the following attributes: 'number', which is of type str; 'title', which is of type str.
+
+'Paragraph' represents an important domain concept.
+It does not declare any attributes.
+
+'bz288963_Footnote' represents an important domain concept.
+It does not declare any attributes.
+
+'bz288963_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Booktype' defines the following possible values: 'science', 'novel'.
+
+The model also captures inheritance relationships between classes.
+The class 'bz288963_Footnote' is a specialization of 'Paragraph'.
+The class 'bz288963_Indentedpara' is a specialization of 'Paragraph'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bz288963_Book' and 'bz288963_Book'. From 'bz288963_Book', the role 'bz288963_Book0' has cardinality 0..*, and from 'bz288963_Book', the role 'bz288963_Book' has cardinality 0..*.
+An association connects 'bz288963_Book' and 'bz288963_Paragraph'. From 'bz288963_Book', the role 'bz288963_Book3' has cardinality 0..*, and from 'bz288963_Paragraph', the role 'bz288963_Paragraph' has cardinality 0..*.
+An association connects 'bz288963_EStringToStringMapEntry' and 'bz288963_DocumentRoot'. From 'bz288963_EStringToStringMapEntry', the role 'bz288963_EStringToStringMapEntry' has cardinality 0..*, and from 'bz288963_DocumentRoot', the role 'bz288963_DocumentRoot' has cardinality 0..*.
+An association connects 'bz288963_EStringToStringMapEntry' and 'bz288963_DocumentRoot'. From 'bz288963_EStringToStringMapEntry', the role 'bz288963_EStringToStringMapEntry7' has cardinality 0..*, and from 'bz288963_DocumentRoot', the role 'bz288963_DocumentRoot6' has cardinality 0..*.
+An association connects 'bz288963_DocumentRoot' and 'bz288963_Book'. From 'bz288963_DocumentRoot', the role 'bz288963_DocumentRoot9' has cardinality 0..*, and from 'bz288963_Book', the role 'bz288963_Book10' has cardinality 0..*.
+An association connects 'bz288963_DocumentRoot' and 'bz288963_Footnote'. From 'bz288963_DocumentRoot', the role 'bz288963_DocumentRoot12' has cardinality 0..*, and from 'bz288963_Footnote', the role 'bz288963_Footnote' has cardinality 0..*.
+An association connects 'bz288963_DocumentRoot' and 'bz288963_Indentedpara'. From 'bz288963_DocumentRoot', the role 'bz288963_DocumentRoot14' has cardinality 0..*, and from 'bz288963_Indentedpara', the role 'bz288963_Indentedpara' has cardinality 0..*.
+An association connects 'bz288963_DocumentRoot' and 'bz288963_Paragraph'. From 'bz288963_DocumentRoot', the role 'bz288963_DocumentRoot16' has cardinality 0..*, and from 'bz288963_Paragraph', the role 'bz288963_Paragraph17' has cardinality 0..*.

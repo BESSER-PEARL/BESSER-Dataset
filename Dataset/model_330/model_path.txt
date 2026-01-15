@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/PSI-Polska/teneo/hibernate/org.eclipse.emf.teneo.hibernate.examples/model/extlibrary.ecore

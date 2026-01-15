@@ -1,0 +1,382 @@
+The domain model 'tda593' describes the core structural elements and their relationships within the system.
+
+The model defines 104 main class(es).
+
+'tda593_booking_BookingDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_facilities_AdminKeyCardManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'booking_BookingManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_booking_Person' represents an important domain concept.
+It has the following attributes: 'socialSecurityNumber', which is of type str; 'firstname', which is of type str; 'lastname', which is of type str.
+
+'tda593_billing_DiscountManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_booking_TravelInformation' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'trackingId', which is of type str; 'comment', which is of type str.
+
+'facilities_RoomManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_booking_StayRequest' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'text', which is of type str; 'timeStamp', which is of type date.
+
+'RoomManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_ServiceManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_Discount' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str.
+
+'tda593_facilities_RoomType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'roomApprovals', which is of type str; 'price', which is of type float.
+
+'booking_LegalEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_facilities_AdminRoomManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_DiscountLimit' represents an important domain concept.
+It has the following attributes: 'timesLeftToUse', which is of type int; 'endDate', which is of type date; 'id', which is of type int; 'startDate', which is of type date.
+
+'tda593_facilities_AdminRoomManager' represents an important domain concept.
+It does not declare any attributes.
+
+'billing_ServiceDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_ServiceManager' represents an important domain concept.
+It does not declare any attributes.
+
+'billing_DiscountDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_booking_LegalEntityDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'booking_LegalEntityDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_AdminServiceManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_booking_LegalEntityManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'facilities_RoomType' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_Purchase' represents an important domain concept.
+It has the following attributes: 'quantity', which is of type int; 'price', which is of type float; 'id', which is of type int.
+
+'tda593_california_DataService' represents an important domain concept.
+It does not declare any attributes.
+
+'facilities_KeyCardManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_BankingManager' represents an important domain concept.
+It does not declare any attributes.
+
+'booking_Booking' represents an important domain concept.
+It does not declare any attributes.
+
+'Bill' represents an important domain concept.
+It does not declare any attributes.
+
+'BillManager' represents an important domain concept.
+It does not declare any attributes.
+
+'CreditCardManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_facilities_RoomDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_DiscountManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_booking_BookingManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_booking_BookingManager' represents an important domain concept.
+It does not declare any attributes.
+
+'DiscountManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_Bill' represents an important domain concept.
+It has the following attributes: 'date', which is of type date; 'id', which is of type int; 'isPublished', which is of type bool; 'isPaid', which is of type bool.
+
+'tda593_booking_Organization' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'organizationNumber', which is of type str.
+
+'tda593_facilities_RoomManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'billing_AdminServiceManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_BillManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'BookingManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_AdminDiscountManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'BankingManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Room' represents an important domain concept.
+It does not declare any attributes.
+
+'billing_BillDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'facilities_AdminKeyCardManager' represents an important domain concept.
+It does not declare any attributes.
+
+'billing_DiscountLimit' represents an important domain concept.
+It does not declare any attributes.
+
+'facilities_Room' represents an important domain concept.
+It does not declare any attributes.
+
+'billing_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_booking_RoomStay' represents an important domain concept.
+It has the following attributes: 'active', which is of type bool; 'id', which is of type int.
+
+'billing_DiscountManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_booking_LegalEntity' represents an important domain concept.
+It has the following attributes: 'phone', which is of type str; 'id', which is of type int; 'email', which is of type str.
+
+'facilities_RoomManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_SumDiscount' represents an important domain concept.
+It has one attribute: 'discountSum', which is of type float.
+
+'tda593_billing_AdminServiceManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'LegalEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'facilities_KeyCard' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_facilities_ConferenceRoom' represents an important domain concept.
+It has the following attributes: 'equipment', which is of type str; 'numberOfSeats', which is of type int.
+
+'billing_Discount' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_booking_Booking' represents an important domain concept.
+It has the following attributes: 'startDate', which is of type date; 'specialRequest', which is of type str; 'id', which is of type int; 'price', which is of type float; 'endDate', which is of type date; 'isCanceled', which is of type bool.
+
+'billing_Purchase' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_facilities_AdminKeyCardManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_facilities_KeyCardDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_DiscountDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'booking_TravelInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_CreditCardInformation' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'ccv', which is of type str; 'expirationDate', which is of type date; 'cardNumber', which is of type str; 'lastName', which is of type str.
+
+'booking_BookingDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_AdminDiscountManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_CreditCardInformationDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_facilities_GuestRoom' represents an important domain concept.
+It has the following attributes: 'numberOfExtrabeds', which is of type int; 'numberOfBeds', which is of type int.
+
+'tda593_facilities_KeyCardManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_Service' represents an important domain concept.
+It has the following attributes: 'price', which is of type float; 'id', which is of type int; 'name', which is of type str.
+
+'tda593_facilities_Room' represents an important domain concept.
+It has the following attributes: 'floor', which is of type int; 'description', which is of type str; 'isBeingCleaned', which is of type bool; 'disabilityApprovals', which is of type str; 'isOperational', which is of type bool; 'roomNumber', which is of type str; 'photos', which is of type str.
+
+'KeyCardManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_booking_LegalEntityManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_facilities_RoomManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_ServiceDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'facilities_RoomTypeDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_PercentageDiscount' represents an important domain concept.
+It has one attribute: 'percentage', which is of type float.
+
+'billing_CreditCardInformationDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'Discount' represents an important domain concept.
+It does not declare any attributes.
+
+'billing_ServiceManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_facilities_KeyCardManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'booking_RoomStay' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_facilities_KeyCard' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'facilities_RoomDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_facilities_RoomTypeDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_CreditCardManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_BankingManagerImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'facilities_KeyCardDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_BillDataService' represents an important domain concept.
+It does not declare any attributes.
+
+'LegalEntityManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_BookingBill' represents an important domain concept.
+It does not declare any attributes.
+
+'facilities_AdminRoomManager' represents an important domain concept.
+It does not declare any attributes.
+
+'booking_StayRequest' represents an important domain concept.
+It does not declare any attributes.
+
+'billing_AdminDiscountManager' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_CreditCardManager' represents an important domain concept.
+It does not declare any attributes.
+
+'booking_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'tda593_billing_BillManager' represents an important domain concept.
+It does not declare any attributes.
+
+'facilities_KeyCardManager' represents an important domain concept.
+It does not declare any attributes.
+
+'billing_Bill' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DisabilityApproval' is defined but does not specify any literals.
+The enumeration 'RoomApproval' is defined but does not specify any literals.
+
+The model also captures inheritance relationships between classes.
+The class 'tda593_facilities_AdminKeyCardManager' is a specialization of 'KeyCardManager'.
+The class 'tda593_facilities_AdminRoomManager' is a specialization of 'RoomManager'.
+The class 'tda593_facilities_GuestRoom' is a specialization of 'Room'.
+The class 'tda593_facilities_ConferenceRoom' is a specialization of 'Room'.
+The class 'tda593_facilities_RoomManagerImpl' is a specialization of 'RoomManager'.
+The class 'tda593_facilities_KeyCardManagerImpl' is a specialization of 'KeyCardManager'.
+The class 'tda593_facilities_AdminRoomManagerImpl' is a specialization of 'facilities_RoomManagerImpl'.
+The class 'tda593_facilities_AdminRoomManagerImpl' is a specialization of 'facilities_AdminRoomManager'.
+The class 'tda593_facilities_AdminKeyCardManagerImpl' is a specialization of 'facilities_KeyCardManagerImpl'.
+The class 'tda593_facilities_AdminKeyCardManagerImpl' is a specialization of 'facilities_AdminKeyCardManager'.
+The class 'tda593_billing_SumDiscount' is a specialization of 'Discount'.
+The class 'tda593_billing_PercentageDiscount' is a specialization of 'Discount'.
+The class 'tda593_billing_DiscountManagerImpl' is a specialization of 'DiscountManager'.
+The class 'tda593_billing_BookingBill' is a specialization of 'Bill'.
+The class 'tda593_billing_BillManagerImpl' is a specialization of 'BillManager'.
+The class 'tda593_billing_BankingManagerImpl' is a specialization of 'BankingManager'.
+The class 'tda593_billing_CreditCardManagerImpl' is a specialization of 'CreditCardManager'.
+The class 'tda593_billing_ServiceManagerImpl' is a specialization of 'ServiceManager'.
+The class 'tda593_billing_AdminServiceManager' is a specialization of 'ServiceManager'.
+The class 'tda593_billing_AdminServiceManagerImpl' is a specialization of 'billing_ServiceManagerImpl'.
+The class 'tda593_billing_AdminServiceManagerImpl' is a specialization of 'billing_AdminServiceManager'.
+The class 'tda593_billing_AdminDiscountManager' is a specialization of 'DiscountManager'.
+The class 'tda593_billing_AdminDiscountManagerImpl' is a specialization of 'billing_DiscountManagerImpl'.
+The class 'tda593_billing_AdminDiscountManagerImpl' is a specialization of 'billing_AdminDiscountManager'.
+The class 'tda593_booking_Organization' is a specialization of 'LegalEntity'.
+The class 'tda593_booking_Person' is a specialization of 'LegalEntity'.
+The class 'tda593_booking_BookingManagerImpl' is a specialization of 'BookingManager'.
+The class 'tda593_booking_LegalEntityManagerImpl' is a specialization of 'LegalEntityManager'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tda593_facilities_Room' and 'facilities_KeyCard'. From 'tda593_facilities_Room', the role 'tda593_facilities_Room' has cardinality 0..*, and from 'facilities_KeyCard', the role 'facilities_KeyCard' has cardinality 0..*.
+An association connects 'facilities_RoomType' and 'tda593_facilities_Room'. From 'facilities_RoomType', the role 'facilities_RoomType' has cardinality 0..*, and from 'tda593_facilities_Room', the role 'tda593_facilities_Room2' has cardinality 0..*.
+An association connects 'tda593_facilities_RoomManagerImpl' and 'facilities_RoomDataService'. From 'tda593_facilities_RoomManagerImpl', the role 'tda593_facilities_RoomManagerImpl' has cardinality 0..*, and from 'facilities_RoomDataService', the role 'facilities_RoomDataService' has cardinality 0..*.
+An association connects 'facilities_RoomTypeDataService' and 'tda593_facilities_RoomManagerImpl'. From 'facilities_RoomTypeDataService', the role 'facilities_RoomTypeDataService' has cardinality 0..*, and from 'tda593_facilities_RoomManagerImpl', the role 'tda593_facilities_RoomManagerImpl5' has cardinality 0..*.
+An association connects 'facilities_KeyCardManager' and 'tda593_facilities_RoomManagerImpl'. From 'facilities_KeyCardManager', the role 'facilities_KeyCardManager' has cardinality 0..*, and from 'tda593_facilities_RoomManagerImpl', the role 'tda593_facilities_RoomManagerImpl7' has cardinality 0..*.
+An association connects 'facilities_KeyCardDataService' and 'tda593_facilities_KeyCardManagerImpl'. From 'facilities_KeyCardDataService', the role 'facilities_KeyCardDataService' has cardinality 0..*, and from 'tda593_facilities_KeyCardManagerImpl', the role 'tda593_facilities_KeyCardManagerImpl' has cardinality 0..*.
+An association connects 'billing_DiscountLimit' and 'tda593_billing_Discount'. From 'billing_DiscountLimit', the role 'billing_DiscountLimit' has cardinality 0..*, and from 'tda593_billing_Discount', the role 'tda593_billing_Discount' has cardinality 0..*.
+An association connects 'tda593_billing_DiscountLimit' and 'booking_LegalEntity'. From 'tda593_billing_DiscountLimit', the role 'tda593_billing_DiscountLimit' has cardinality 0..*, and from 'booking_LegalEntity', the role 'booking_LegalEntity' has cardinality 0..*.
+An association connects 'tda593_billing_DiscountManagerImpl' and 'billing_DiscountDataService'. From 'tda593_billing_DiscountManagerImpl', the role 'tda593_billing_DiscountManagerImpl' has cardinality 0..*, and from 'billing_DiscountDataService', the role 'billing_DiscountDataService' has cardinality 0..*.
+An association connects 'tda593_billing_Bill' and 'billing_Purchase'. From 'tda593_billing_Bill', the role 'tda593_billing_Bill' has cardinality 0..*, and from 'billing_Purchase', the role 'billing_Purchase' has cardinality 0..*.
+An association connects 'billing_Discount' and 'tda593_billing_Bill'. From 'billing_Discount', the role 'billing_Discount' has cardinality 0..*, and from 'tda593_billing_Bill', the role 'tda593_billing_Bill14' has cardinality 0..*.
+An association connects 'booking_LegalEntity' and 'tda593_billing_Bill'. From 'booking_LegalEntity', the role 'booking_LegalEntity17' has cardinality 0..*, and from 'tda593_billing_Bill', the role 'tda593_billing_Bill16' has cardinality 0..*.
+An association connects 'billing_Bill' and 'tda593_billing_Bill'. From 'billing_Bill', the role 'billing_Bill' has cardinality 0..*, and from 'tda593_billing_Bill', the role 'tda593_billing_Bill19' has cardinality 0..*.
+An association connects 'tda593_billing_Purchase' and 'billing_Service'. From 'tda593_billing_Purchase', the role 'tda593_billing_Purchase' has cardinality 0..*, and from 'billing_Service', the role 'billing_Service' has cardinality 0..*.
+An association connects 'booking_Booking' and 'tda593_billing_BookingBill'. From 'booking_Booking', the role 'booking_Booking' has cardinality 0..*, and from 'tda593_billing_BookingBill', the role 'tda593_billing_BookingBill' has cardinality 0..*.
+An association connects 'booking_LegalEntity' and 'tda593_billing_CreditCardInformation'. From 'booking_LegalEntity', the role 'booking_LegalEntity23' has cardinality 0..*, and from 'tda593_billing_CreditCardInformation', the role 'tda593_billing_CreditCardInformation' has cardinality 0..*.
+An association connects 'tda593_billing_BillManagerImpl' and 'billing_BillDataService'. From 'tda593_billing_BillManagerImpl', the role 'tda593_billing_BillManagerImpl' has cardinality 0..*, and from 'billing_BillDataService', the role 'billing_BillDataService' has cardinality 0..*.
+An association connects 'tda593_billing_BillManagerImpl' and 'booking_BookingManager'. From 'tda593_billing_BillManagerImpl', the role 'tda593_billing_BillManagerImpl26' has cardinality 0..*, and from 'booking_BookingManager', the role 'booking_BookingManager' has cardinality 0..*.
+An association connects 'tda593_billing_CreditCardManagerImpl' and 'billing_CreditCardInformationDataService'. From 'tda593_billing_CreditCardManagerImpl', the role 'tda593_billing_CreditCardManagerImpl' has cardinality 0..*, and from 'billing_CreditCardInformationDataService', the role 'billing_CreditCardInformationDataService' has cardinality 0..*.
+An association connects 'billing_ServiceDataService' and 'tda593_billing_ServiceManagerImpl'. From 'billing_ServiceDataService', the role 'billing_ServiceDataService' has cardinality 0..*, and from 'tda593_billing_ServiceManagerImpl', the role 'tda593_billing_ServiceManagerImpl' has cardinality 0..*.
+An association connects 'facilities_RoomType' and 'tda593_booking_Booking'. From 'facilities_RoomType', the role 'facilities_RoomType30' has cardinality 0..*, and from 'tda593_booking_Booking', the role 'tda593_booking_Booking' has cardinality 0..*.
+An association connects 'booking_TravelInformation' and 'tda593_booking_Booking'. From 'booking_TravelInformation', the role 'booking_TravelInformation' has cardinality 0..*, and from 'tda593_booking_Booking', the role 'tda593_booking_Booking32' has cardinality 0..*.
+An association connects 'tda593_booking_Booking' and 'booking_LegalEntity'. From 'tda593_booking_Booking', the role 'tda593_booking_Booking34' has cardinality 0..*, and from 'booking_LegalEntity', the role 'booking_LegalEntity35' has cardinality 0..*.
+An association connects 'booking_RoomStay' and 'tda593_booking_Booking'. From 'booking_RoomStay', the role 'booking_RoomStay' has cardinality 0..*, and from 'tda593_booking_Booking', the role 'tda593_booking_Booking37' has cardinality 0..*.
+An association connects 'tda593_booking_TravelInformation' and 'booking_TravelInformation'. From 'tda593_booking_TravelInformation', the role 'tda593_booking_TravelInformation' has cardinality 0..*, and from 'booking_TravelInformation', the role 'booking_TravelInformation39' has cardinality 0..*.
+An association connects 'booking_StayRequest' and 'tda593_booking_RoomStay'. From 'booking_StayRequest', the role 'booking_StayRequest' has cardinality 0..*, and from 'tda593_booking_RoomStay', the role 'tda593_booking_RoomStay' has cardinality 0..*.
+An association connects 'booking_Person' and 'tda593_booking_RoomStay'. From 'booking_Person', the role 'booking_Person' has cardinality 0..*, and from 'tda593_booking_RoomStay', the role 'tda593_booking_RoomStay42' has cardinality 0..*.
+An association connects 'tda593_booking_RoomStay' and 'facilities_Room'. From 'tda593_booking_RoomStay', the role 'tda593_booking_RoomStay44' has cardinality 0..*, and from 'facilities_Room', the role 'facilities_Room' has cardinality 0..*.
+An association connects 'booking_BookingDataService' and 'tda593_booking_BookingManagerImpl'. From 'booking_BookingDataService', the role 'booking_BookingDataService' has cardinality 0..*, and from 'tda593_booking_BookingManagerImpl', the role 'tda593_booking_BookingManagerImpl' has cardinality 0..*.
+An association connects 'facilities_RoomManager' and 'tda593_booking_BookingManagerImpl'. From 'facilities_RoomManager', the role 'facilities_RoomManager' has cardinality 0..*, and from 'tda593_booking_BookingManagerImpl', the role 'tda593_booking_BookingManagerImpl47' has cardinality 0..*.
+An association connects 'booking_LegalEntityDataService' and 'tda593_booking_LegalEntityManagerImpl'. From 'booking_LegalEntityDataService', the role 'booking_LegalEntityDataService' has cardinality 0..*, and from 'tda593_booking_LegalEntityManagerImpl', the role 'tda593_booking_LegalEntityManagerImpl' has cardinality 0..*.

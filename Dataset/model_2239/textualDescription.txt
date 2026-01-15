@@ -1,0 +1,42 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'model_Semester' represents an important domain concept.
+It has the following attributes: 'year', which is of type str; 'kind', which is of type str.
+
+'model_Course' represents an important domain concept.
+It has the following attributes: 'fullName', which is of type str; 'name', which is of type str.
+
+'model_CourseInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Department' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Role' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'factor', which is of type str.
+
+'model_CourseAllocation' represents an important domain concept.
+It has the following attributes: 'explicitFactor', which is of type str; 'factor', which is of type str.
+
+'model_Person' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'faceUrl', which is of type str; 'name', which is of type str; 'userName', which is of type str; 'employmentFactor', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SemesterKind' defines the following possible values: 'AUTUMN', 'SPRING'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Department' and 'model_Person'. From 'model_Department', the role 'model_Department' has cardinality 0..*, and from 'model_Person', the role 'model_Person' has cardinality 0..*.
+An association connects 'model_Department' and 'model_Course'. From 'model_Department', the role 'model_Department2' has cardinality 0..*, and from 'model_Course', the role 'model_Course' has cardinality 0..*.
+An association connects 'model_Role' and 'model_Department'. From 'model_Role', the role 'model_Role' has cardinality 0..*, and from 'model_Department', the role 'model_Department4' has cardinality 0..*.
+An association connects 'model_Department' and 'model_Semester'. From 'model_Department', the role 'model_Department6' has cardinality 0..*, and from 'model_Semester', the role 'model_Semester' has cardinality 0..*.
+An association connects 'model_Person' and 'model_CourseAllocation'. From 'model_Person', the role 'person' has cardinality 0..*, and from 'model_CourseAllocation', the role 'CourseAllocation' has cardinality 0..*.
+An association connects 'model_Course' and 'model_Role'. From 'model_Course', the role 'model_Course9' has cardinality 0..*, and from 'model_Role', the role 'model_Role10' has cardinality 0..*.
+An association connects 'model_Semester' and 'model_CourseInstance'. From 'model_Semester', the role 'semester' has cardinality 0..*, and from 'model_CourseInstance', the role 'CourseInstance' has cardinality 0..*.
+An association connects 'model_Course' and 'model_CourseInstance'. From 'model_Course', the role 'model_Course13' has cardinality 0..*, and from 'model_CourseInstance', the role 'model_CourseInstance' has cardinality 0..*.
+An association connects 'model_Semester' and 'model_CourseInstance'. From 'model_Semester', the role 'Semester' has cardinality 0..*, and from 'model_CourseInstance', the role 'courses' has cardinality 0..*.
+An association connects 'model_CourseAllocation' and 'model_CourseInstance'. From 'model_CourseAllocation', the role 'CourseAllocation16' has cardinality 0..*, and from 'model_CourseInstance', the role 'course' has cardinality 0..*.
+An association connects 'model_CourseAllocation' and 'model_Person'. From 'model_CourseAllocation', the role 'allocations' has cardinality 0..*, and from 'model_Person', the role 'Person' has cardinality 0..*.
+An association connects 'model_CourseAllocation' and 'model_Role'. From 'model_CourseAllocation', the role 'model_CourseAllocation' has cardinality 0..*, and from 'model_Role', the role 'model_Role19' has cardinality 0..*.
+An association connects 'model_CourseInstance' and 'model_CourseAllocation'. From 'model_CourseInstance', the role 'CourseInstance22' has cardinality 0..*, and from 'model_CourseAllocation', the role 'allocations21' has cardinality 0..*.

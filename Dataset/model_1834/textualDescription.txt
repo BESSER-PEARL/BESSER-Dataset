@@ -1,0 +1,150 @@
+The domain model 'dcps' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'dcps_DataWriter' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_LifespanQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_LatencyBudgetQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'PublisherSubscriber' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_Topic' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_HistoryQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_Publisher' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_WriterDataLifecycleQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_OwnershipQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_TransportPriorityQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_LivelinessQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_DomainParticipant' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_OwnershipStrengthQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_UserDataQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_DeadlineQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_TimeBasedFilterQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_TopicDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_Subscriber' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_PublisherSubscriber' represents an important domain concept.
+It has one attribute: 'transportId', which is of type int.
+
+'dcps_DataReader' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_Domain' represents an important domain concept.
+It has one attribute: 'domainId', which is of type str.
+
+'dcps_DataReaderWriter' represents an important domain concept.
+It has one attribute: 'copyFromTopicQos', which is of type bool.
+
+'dcps_GroupDataQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_ReaderDataLifecycleQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_DurabilityServiceQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_PresentationQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_DurabilityQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_ReliabilityQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_DestinationOrderQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_PartitionQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_ResourceLimitsQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'DataReaderWriter' represents an important domain concept.
+It does not declare any attributes.
+
+'dcps_EntityFactoryQosPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dcps_Domain' is a specialization of 'Entity'.
+The class 'dcps_DomainParticipant' is a specialization of 'DomainEntity'.
+The class 'dcps_PublisherSubscriber' is a specialization of 'DomainEntity'.
+The class 'dcps_Subscriber' is a specialization of 'PublisherSubscriber'.
+The class 'dcps_Publisher' is a specialization of 'PublisherSubscriber'.
+The class 'dcps_DataReaderWriter' is a specialization of 'DomainEntity'.
+The class 'dcps_DataReader' is a specialization of 'DataReaderWriter'.
+The class 'dcps_DataWriter' is a specialization of 'DataReaderWriter'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dcps_DomainParticipant' and 'dcps_Domain'. From 'dcps_DomainParticipant', the role 'dcps_DomainParticipant' has cardinality 0..*, and from 'dcps_Domain', the role 'dcps_Domain' has cardinality 0..*.
+An association connects 'dcps_Publisher' and 'dcps_DomainParticipant'. From 'dcps_Publisher', the role 'dcps_Publisher' has cardinality 0..*, and from 'dcps_DomainParticipant', the role 'dcps_DomainParticipant2' has cardinality 0..*.
+An association connects 'dcps_Subscriber' and 'dcps_DomainParticipant'. From 'dcps_Subscriber', the role 'dcps_Subscriber' has cardinality 0..*, and from 'dcps_DomainParticipant', the role 'dcps_DomainParticipant4' has cardinality 0..*.
+An association connects 'dcps_EntityFactoryQosPolicy' and 'dcps_DomainParticipant'. From 'dcps_EntityFactoryQosPolicy', the role 'dcps_EntityFactoryQosPolicy' has cardinality 0..*, and from 'dcps_DomainParticipant', the role 'dcps_DomainParticipant6' has cardinality 0..*.
+An association connects 'dcps_DomainParticipant' and 'dcps_UserDataQosPolicy'. From 'dcps_DomainParticipant', the role 'dcps_DomainParticipant8' has cardinality 0..*, and from 'dcps_UserDataQosPolicy', the role 'dcps_UserDataQosPolicy' has cardinality 0..*.
+An association connects 'dcps_PublisherSubscriber' and 'dcps_EntityFactoryQosPolicy'. From 'dcps_PublisherSubscriber', the role 'dcps_PublisherSubscriber' has cardinality 0..*, and from 'dcps_EntityFactoryQosPolicy', the role 'dcps_EntityFactoryQosPolicy10' has cardinality 0..*.
+An association connects 'dcps_GroupDataQosPolicy' and 'dcps_PublisherSubscriber'. From 'dcps_GroupDataQosPolicy', the role 'dcps_GroupDataQosPolicy' has cardinality 0..*, and from 'dcps_PublisherSubscriber', the role 'dcps_PublisherSubscriber12' has cardinality 0..*.
+An association connects 'dcps_PublisherSubscriber' and 'dcps_PresentationQosPolicy'. From 'dcps_PublisherSubscriber', the role 'dcps_PublisherSubscriber14' has cardinality 0..*, and from 'dcps_PresentationQosPolicy', the role 'dcps_PresentationQosPolicy' has cardinality 0..*.
+An association connects 'dcps_PublisherSubscriber' and 'dcps_PartitionQosPolicy'. From 'dcps_PublisherSubscriber', the role 'dcps_PublisherSubscriber16' has cardinality 0..*, and from 'dcps_PartitionQosPolicy', the role 'dcps_PartitionQosPolicy' has cardinality 0..*.
+An association connects 'dcps_DataReader' and 'dcps_Subscriber'. From 'dcps_DataReader', the role 'dcps_DataReader' has cardinality 0..*, and from 'dcps_Subscriber', the role 'dcps_Subscriber18' has cardinality 0..*.
+An association connects 'dcps_DataWriter' and 'dcps_Publisher'. From 'dcps_DataWriter', the role 'dcps_DataWriter' has cardinality 0..*, and from 'dcps_Publisher', the role 'dcps_Publisher20' has cardinality 0..*.
+An association connects 'dcps_DataReaderWriter' and 'dcps_DeadlineQosPolicy'. From 'dcps_DataReaderWriter', the role 'dcps_DataReaderWriter' has cardinality 0..*, and from 'dcps_DeadlineQosPolicy', the role 'dcps_DeadlineQosPolicy' has cardinality 0..*.
+An association connects 'dcps_DestinationOrderQosPolicy' and 'dcps_DataReaderWriter'. From 'dcps_DestinationOrderQosPolicy', the role 'dcps_DestinationOrderQosPolicy' has cardinality 0..*, and from 'dcps_DataReaderWriter', the role 'dcps_DataReaderWriter23' has cardinality 0..*.
+An association connects 'dcps_DataReaderWriter' and 'dcps_DurabilityQosPolicy'. From 'dcps_DataReaderWriter', the role 'dcps_DataReaderWriter25' has cardinality 0..*, and from 'dcps_DurabilityQosPolicy', the role 'dcps_DurabilityQosPolicy' has cardinality 0..*.
+An association connects 'dcps_HistoryQosPolicy' and 'dcps_DataReaderWriter'. From 'dcps_HistoryQosPolicy', the role 'dcps_HistoryQosPolicy' has cardinality 0..*, and from 'dcps_DataReaderWriter', the role 'dcps_DataReaderWriter27' has cardinality 0..*.
+An association connects 'dcps_DataReaderWriter' and 'dcps_LatencyBudgetQosPolicy'. From 'dcps_DataReaderWriter', the role 'dcps_DataReaderWriter29' has cardinality 0..*, and from 'dcps_LatencyBudgetQosPolicy', the role 'dcps_LatencyBudgetQosPolicy' has cardinality 0..*.
+An association connects 'dcps_DataReaderWriter' and 'dcps_LivelinessQosPolicy'. From 'dcps_DataReaderWriter', the role 'dcps_DataReaderWriter31' has cardinality 0..*, and from 'dcps_LivelinessQosPolicy', the role 'dcps_LivelinessQosPolicy' has cardinality 0..*.
+An association connects 'dcps_OwnershipQosPolicy' and 'dcps_DataReaderWriter'. From 'dcps_OwnershipQosPolicy', the role 'dcps_OwnershipQosPolicy' has cardinality 0..*, and from 'dcps_DataReaderWriter', the role 'dcps_DataReaderWriter33' has cardinality 0..*.
+An association connects 'dcps_DataReaderWriter' and 'dcps_ReliabilityQosPolicy'. From 'dcps_DataReaderWriter', the role 'dcps_DataReaderWriter35' has cardinality 0..*, and from 'dcps_ReliabilityQosPolicy', the role 'dcps_ReliabilityQosPolicy' has cardinality 0..*.
+An association connects 'dcps_ResourceLimitsQosPolicy' and 'dcps_DataReaderWriter'. From 'dcps_ResourceLimitsQosPolicy', the role 'dcps_ResourceLimitsQosPolicy' has cardinality 0..*, and from 'dcps_DataReaderWriter', the role 'dcps_DataReaderWriter37' has cardinality 0..*.
+An association connects 'dcps_DataReaderWriter' and 'dcps_UserDataQosPolicy'. From 'dcps_DataReaderWriter', the role 'dcps_DataReaderWriter39' has cardinality 0..*, and from 'dcps_UserDataQosPolicy', the role 'dcps_UserDataQosPolicy40' has cardinality 0..*.
+An association connects 'dcps_DataReader' and 'dcps_ReaderDataLifecycleQosPolicy'. From 'dcps_DataReader', the role 'dcps_DataReader42' has cardinality 0..*, and from 'dcps_ReaderDataLifecycleQosPolicy', the role 'dcps_ReaderDataLifecycleQosPolicy' has cardinality 0..*.
+An association connects 'dcps_DataReader' and 'dcps_TimeBasedFilterQosPolicy'. From 'dcps_DataReader', the role 'dcps_DataReader44' has cardinality 0..*, and from 'dcps_TimeBasedFilterQosPolicy', the role 'dcps_TimeBasedFilterQosPolicy' has cardinality 0..*.
+An association connects 'dcps_DataReader' and 'dcps_TopicDescription'. From 'dcps_DataReader', the role 'dcps_DataReader46' has cardinality 0..*, and from 'dcps_TopicDescription', the role 'dcps_TopicDescription' has cardinality 0..*.
+An association connects 'dcps_DurabilityServiceQosPolicy' and 'dcps_DataWriter'. From 'dcps_DurabilityServiceQosPolicy', the role 'dcps_DurabilityServiceQosPolicy' has cardinality 0..*, and from 'dcps_DataWriter', the role 'dcps_DataWriter48' has cardinality 0..*.
+An association connects 'dcps_DataWriter' and 'dcps_OwnershipStrengthQosPolicy'. From 'dcps_DataWriter', the role 'dcps_DataWriter50' has cardinality 0..*, and from 'dcps_OwnershipStrengthQosPolicy', the role 'dcps_OwnershipStrengthQosPolicy' has cardinality 0..*.
+An association connects 'dcps_TransportPriorityQosPolicy' and 'dcps_DataWriter'. From 'dcps_TransportPriorityQosPolicy', the role 'dcps_TransportPriorityQosPolicy' has cardinality 0..*, and from 'dcps_DataWriter', the role 'dcps_DataWriter52' has cardinality 0..*.
+An association connects 'dcps_WriterDataLifecycleQosPolicy' and 'dcps_DataWriter'. From 'dcps_WriterDataLifecycleQosPolicy', the role 'dcps_WriterDataLifecycleQosPolicy' has cardinality 0..*, and from 'dcps_DataWriter', the role 'dcps_DataWriter54' has cardinality 0..*.
+An association connects 'dcps_LifespanQosPolicy' and 'dcps_DataWriter'. From 'dcps_LifespanQosPolicy', the role 'dcps_LifespanQosPolicy' has cardinality 0..*, and from 'dcps_DataWriter', the role 'dcps_DataWriter56' has cardinality 0..*.
+An association connects 'dcps_Topic' and 'dcps_DataWriter'. From 'dcps_Topic', the role 'dcps_Topic' has cardinality 0..*, and from 'dcps_DataWriter', the role 'dcps_DataWriter58' has cardinality 0..*.

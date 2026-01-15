@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/louismrose/PhD/Analyis/Co-Evo Examples/Literature/PetriNets/cope/Before.ecore

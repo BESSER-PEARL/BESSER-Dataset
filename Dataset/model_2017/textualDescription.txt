@@ -1,0 +1,49 @@
+The domain model 'execTraces' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'execTraces_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'execTraces_RealLiteral' represents an important domain concept.
+It has the following attributes: 'intPart', which is of type int; 'decimalPart', which is of type int.
+
+'execTraces_Node' represents an important domain concept.
+It has the following attributes: 'level', which is of type int; 'status', which is of type str; 'constraints', which is of type str; 'id', which is of type int; 'name', which is of type str.
+
+'execTraces_BoolLiteral' represents an important domain concept.
+It has one attribute: 'bool', which is of type str.
+
+'execTraces_IntLiteral' represents an important domain concept.
+It has one attribute: 'int', which is of type int.
+
+'execTraces_ExecTraces' represents an important domain concept.
+It has one attribute: 'ComponentName', which is of type str.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'execTraces_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'execTraces_Edge' represents an important domain concept.
+It has the following attributes: 'guard', which is of type str; 'trigger', which is of type str; 'actions', which is of type str; 'status', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateStatus' defines the following possible values: 'unSafeState', 'new', 'Repeated'.
+The enumeration 'TransStatus' defines the following possible values: 'unsafeTrans', 'normal', 'redundantTrans', 'error'.
+
+The model also captures inheritance relationships between classes.
+The class 'execTraces_RealLiteral' is a specialization of 'Literal'.
+The class 'execTraces_IntLiteral' is a specialization of 'Literal'.
+The class 'execTraces_BoolLiteral' is a specialization of 'Literal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'execTraces_Node' and 'execTraces_ExecTraces'. From 'execTraces_Node', the role 'execTraces_Node' has cardinality 0..*, and from 'execTraces_ExecTraces', the role 'execTraces_ExecTraces' has cardinality 0..*.
+An association connects 'execTraces_Edge' and 'execTraces_ExecTraces'. From 'execTraces_Edge', the role 'execTraces_Edge' has cardinality 0..*, and from 'execTraces_ExecTraces', the role 'execTraces_ExecTraces2' has cardinality 0..*.
+An association connects 'execTraces_Node' and 'execTraces_Edge'. From 'execTraces_Node', the role 'execTraces_Node5' has cardinality 0..*, and from 'execTraces_Edge', the role 'execTraces_Edge4' has cardinality 0..*.
+An association connects 'execTraces_Node' and 'execTraces_Edge'. From 'execTraces_Node', the role 'execTraces_Node8' has cardinality 0..*, and from 'execTraces_Edge', the role 'execTraces_Edge7' has cardinality 0..*.
+An association connects 'execTraces_Variable' and 'execTraces_Node'. From 'execTraces_Variable', the role 'execTraces_Variable' has cardinality 0..*, and from 'execTraces_Node', the role 'execTraces_Node10' has cardinality 0..*.
+An association connects 'execTraces_Node' and 'execTraces_Edge'. From 'execTraces_Node', the role 'execTraces_Node12' has cardinality 0..*, and from 'execTraces_Edge', the role 'execTraces_Edge13' has cardinality 0..*.
+An association connects 'execTraces_Node' and 'execTraces_Edge'. From 'execTraces_Node', the role 'execTraces_Node15' has cardinality 0..*, and from 'execTraces_Edge', the role 'execTraces_Edge16' has cardinality 0..*.
+An association connects 'execTraces_Literal' and 'execTraces_Variable'. From 'execTraces_Literal', the role 'execTraces_Literal' has cardinality 0..*, and from 'execTraces_Variable', the role 'execTraces_Variable18' has cardinality 0..*.

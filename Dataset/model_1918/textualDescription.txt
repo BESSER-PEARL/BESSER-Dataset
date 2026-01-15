@@ -1,0 +1,305 @@
+The domain model 'eaglemodel' describes the core structural elements and their relationships within the system.
+
+The model defines 64 main class(es).
+
+'eaglemodel_Segment' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Approved' represents an important domain concept.
+It has one attribute: 'hash', which is of type str.
+
+'eaglemodel_Label' represents an important domain concept.
+It has the following attributes: 'size', which is of type float; 'rot', which is of type int; 'x', which is of type float; 'layer', which is of type int; 'xref', which is of type bool; 'ratio', which is of type int; 'font', which is of type str; 'y', which is of type float.
+
+'eaglemodel_Net' represents an important domain concept.
+It has the following attributes: 'class', which is of type int; 'name', which is of type str.
+
+'eaglemodel_Instances' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Sheets' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Attributes' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Variant' represents an important domain concept.
+It has the following attributes: 'technology', which is of type str; 'name', which is of type str; 'value', which is of type str; 'populate', which is of type bool.
+
+'eaglemodel_Wire' represents an important domain concept.
+It has the following attributes: 'y1', which is of type float; 'y2', which is of type float; 'x2', which is of type float; 'width', which is of type float; 'style', which is of type str; 'cap', which is of type str; 'x1', which is of type float; 'extent', which is of type str; 'curve', which is of type float; 'layer', which is of type int.
+
+'eaglemodel_Pad' represents an important domain concept.
+It has the following attributes: 'y', which is of type float; 'thermals', which is of type bool; 'diameter', which is of type float; 'x', which is of type float; 'drill', which is of type float; 'name', which is of type str; 'shape', which is of type str; 'rot', which is of type int; 'first', which is of type bool; 'stop', which is of type bool.
+
+'eaglemodel_Layer' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'color', which is of type int; 'fill', which is of type int; 'visible', which is of type bool; 'active', which is of type bool; 'number', which is of type int.
+
+'eaglemodel_Gate' represents an important domain concept.
+It has the following attributes: 'swaplevel', which is of type int; 'addlevel', which is of type str; 'name', which is of type str; 'x', which is of type float; 'symbol', which is of type str; 'y', which is of type float.
+
+'eaglemodel_Note' represents an important domain concept.
+It has the following attributes: 'severity', which is of type str; 'value', which is of type str; 'version', which is of type str.
+
+'eaglemodel_Variantdef' represents an important domain concept.
+It has the following attributes: 'current', which is of type bool; 'name', which is of type str.
+
+'eaglemodel_Plain' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Vertex' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'curve', which is of type float; 'y', which is of type float.
+
+'eaglemodel_Errors' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Symbol' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eaglemodel_Drawing' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Device' represents an important domain concept.
+It has the following attributes: 'package', which is of type str; 'name', which is of type str.
+
+'eaglemodel_Parts' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Deviceset' represents an important domain concept.
+It has the following attributes: 'prefix', which is of type str; 'uservalue', which is of type bool; 'name', which is of type str.
+
+'eaglemodel_Clearance' represents an important domain concept.
+It has the following attributes: 'value', which is of type float; 'class', which is of type int.
+
+'eaglemodel_Polygon' represents an important domain concept.
+It has the following attributes: 'width', which is of type float; 'layer', which is of type int; 'pour', which is of type str; 'thermals', which is of type bool; 'rank', which is of type int; 'spacing', which is of type float; 'isolate', which is of type float; 'orphans', which is of type bool.
+
+'eaglemodel_Classes' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Sheet' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Junction' represents an important domain concept.
+It has the following attributes: 'y', which is of type float; 'x', which is of type float.
+
+'eaglemodel_Class' represents an important domain concept.
+It has the following attributes: 'width', which is of type float; 'number', which is of type int; 'drill', which is of type float; 'name', which is of type str.
+
+'eaglemodel_Technologies' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Circle' represents an important domain concept.
+It has the following attributes: 'width', which is of type float; 'y', which is of type float; 'x', which is of type float; 'layer', which is of type int; 'radius', which is of type float.
+
+'eaglemodel_Connects' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Compatibility' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Layers' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Setting' represents an important domain concept.
+It has the following attributes: 'alwaysvectorfont', which is of type bool; 'verticaltext', which is of type str.
+
+'eaglemodel_Grid' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'altdistance', which is of type float; 'multiple', which is of type int; 'altunitdist', which is of type str; 'altunit', which is of type str; 'distance', which is of type float; 'unitdist', which is of type str; 'unit', which is of type str; 'display', which is of type bool.
+
+'eaglemodel_Frame' represents an important domain concept.
+It has the following attributes: 'layer', which is of type int; 'borderleft', which is of type bool; 'borderright', which is of type bool; 'y1', which is of type float; 'columns', which is of type int; 'x2', which is of type float; 'borderbottom', which is of type bool; 'x1', which is of type float; 'bordertop', which is of type bool; 'rows', which is of type int; 'y2', which is of type float.
+
+'eaglemodel_Devicesets' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_SMD' represents an important domain concept.
+It has the following attributes: 'y', which is of type float; 'cream', which is of type bool; 'name', which is of type str; 'dx', which is of type float; 'dy', which is of type float; 'stop', which is of type bool; 'roundness', which is of type int; 'x', which is of type float; 'thermals', which is of type bool; 'layer', which is of type int; 'rot', which is of type int.
+
+'eaglemodel_Bus' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eaglemodel_Description' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'value', which is of type str.
+
+'eaglemodel_Schematic' represents an important domain concept.
+It has the following attributes: 'xreflabel', which is of type str; 'xrefpart', which is of type str.
+
+'eaglemodel_Eagle' represents an important domain concept.
+It has one attribute: 'version', which is of type str.
+
+'eaglemodel_Settings' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Rectangle' represents an important domain concept.
+It has the following attributes: 'y2', which is of type float; 'rot', which is of type int; 'x2', which is of type float; 'layer', which is of type int; 'y1', which is of type float; 'x1', which is of type float.
+
+'eaglemodel_Devices' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Hole' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'drill', which is of type float; 'y', which is of type float.
+
+'eaglemodel_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eaglemodel_Technology' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eaglemodel_Connect' represents an important domain concept.
+It has the following attributes: 'pad', which is of type str; 'pin', which is of type str; 'route', which is of type str; 'gate', which is of type str.
+
+'eaglemodel_Attribute' represents an important domain concept.
+It has the following attributes: 'display', which is of type str; 'y', which is of type float; 'value', which is of type str; 'font', which is of type str; 'rot', which is of type int; 'ratio', which is of type int; 'name', which is of type str; 'layer', which is of type int; 'constant', which is of type bool; 'x', which is of type float; 'size', which is of type float.
+
+'eaglemodel_Text' represents an important domain concept.
+It has the following attributes: 'size', which is of type float; 'value', which is of type str; 'font', which is of type str; 'distance', which is of type int; 'rot', which is of type int; 'align', which is of type str; 'x', which is of type float; 'y', which is of type float; 'layer', which is of type int; 'ratio', which is of type int.
+
+'eaglemodel_Part' represents an important domain concept.
+It has the following attributes: 'device', which is of type str; 'gate', which is of type str; 'y', which is of type float; 'rot', which is of type int; 'uid', which is of type int; 'value', which is of type str; 'deviceset', which is of type str; 'name', which is of type str; 'smashed', which is of type bool; 'library', which is of type str; 'technology', which is of type str; 'x', which is of type float.
+
+'eaglemodel_Pin' represents an important domain concept.
+It has the following attributes: 'swaplevel', which is of type int; 'visible', which is of type str; 'y', which is of type float; 'function', which is of type str; 'name', which is of type str; 'x', which is of type float; 'direction', which is of type str; 'rot', which is of type int; 'length', which is of type str.
+
+'eaglemodel_Variantdefs' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Busses' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eaglemodel_Packages' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Symbols' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Pinref' represents an important domain concept.
+It has the following attributes: 'pin', which is of type str; 'gate', which is of type str; 'part', which is of type str.
+
+'eaglemodel_Instance' represents an important domain concept.
+It has the following attributes: 'rot', which is of type int; 'y', which is of type float; 'gate', which is of type str; 'part', which is of type str; 'smashed', which is of type bool; 'x', which is of type float.
+
+'eaglemodel_Libraries' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Gates' represents an important domain concept.
+It does not declare any attributes.
+
+'eaglemodel_Dimension' represents an important domain concept.
+It has the following attributes: 'x3', which is of type float; 'layer', which is of type int; 'y1', which is of type float; 'dtype', which is of type str; 'textsize', which is of type float; 'y2', which is of type float; 'y3', which is of type float; 'visible', which is of type bool; 'x2', which is of type float; 'width', which is of type float; 'extoffset', which is of type float; 'textratio', which is of type int; 'extlength', which is of type float; 'unit', which is of type str; 'extwidth', which is of type float; 'x1', which is of type float; 'precision', which is of type int.
+
+'eaglemodel_Nets' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PinVisible' defines the following possible values: 'pad', 'both', 'off', 'pin'.
+The enumeration 'DimensionType' defines the following possible values: 'radius', 'diameter', 'leader', 'horizontal', 'parallel', 'vertical'.
+The enumeration 'PinFunction' defines the following possible values: 'none', 'dotclk', 'clk', 'dot'.
+The enumeration 'GridStyle' defines the following possible values: 'dots', 'lines'.
+The enumeration 'ContactRoute' defines the following possible values: 'any', 'all'.
+The enumeration 'PinLength' defines the following possible values: 'long', 'middle', 'short', 'point'.
+The enumeration 'AttributeDisplay' defines the following possible values: 'off', 'value', 'both', 'name'.
+The enumeration 'WireCap' defines the following possible values: 'flat', 'round'.
+The enumeration 'GridUnit' defines the following possible values: 'mic', 'mm', 'inch', 'mil'.
+The enumeration 'WireStyle' defines the following possible values: 'longdash', 'shortdash', 'dashdot', 'continuous'.
+The enumeration 'PolygonPour' defines the following possible values: 'solid', 'hatch', 'cutout'.
+The enumeration 'Align' defines the following possible values: 'topright', 'bottomright', 'bottomcenter', 'center', 'centerleft', 'bottomleft', 'topleft', 'topcenter', 'centerright'.
+The enumeration 'PadShape' defines the following possible values: 'offset', 'round', 'long', 'octagon', 'square'.
+The enumeration 'PinDirection' defines the following possible values: 'pwr', 'nc', 'io', 'oc', 'pas', 'hiz', 'out', 'sup', 'in'.
+The enumeration 'VerticalText' defines the following possible values: 'up', 'down'.
+The enumeration 'GateAddLevel' defines the following possible values: 'always', 'can', 'request', 'must', 'next'.
+The enumeration 'Severity' defines the following possible values: 'warning', 'info', 'error'.
+The enumeration 'TextFont' defines the following possible values: 'fixed', 'vector', 'proportional'.
+
+Relationships between classes are modeled using associations.
+An association connects 'eaglemodel_Compatibility' and 'eaglemodel_Eagle'. From 'eaglemodel_Compatibility', the role 'eaglemodel_Compatibility' has cardinality 0..*, and from 'eaglemodel_Eagle', the role 'eaglemodel_Eagle' has cardinality 0..*.
+An association connects 'eaglemodel_Eagle' and 'eaglemodel_Drawing'. From 'eaglemodel_Eagle', the role 'eaglemodel_Eagle2' has cardinality 0..*, and from 'eaglemodel_Drawing', the role 'eaglemodel_Drawing' has cardinality 0..*.
+An association connects 'eaglemodel_Note' and 'eaglemodel_Compatibility'. From 'eaglemodel_Note', the role 'eaglemodel_Note' has cardinality 0..*, and from 'eaglemodel_Compatibility', the role 'eaglemodel_Compatibility4' has cardinality 0..*.
+An association connects 'eaglemodel_Drawing' and 'eaglemodel_Settings'. From 'eaglemodel_Drawing', the role 'eaglemodel_Drawing6' has cardinality 0..*, and from 'eaglemodel_Settings', the role 'eaglemodel_Settings' has cardinality 0..*.
+An association connects 'eaglemodel_Drawing' and 'eaglemodel_Grid'. From 'eaglemodel_Drawing', the role 'eaglemodel_Drawing8' has cardinality 0..*, and from 'eaglemodel_Grid', the role 'eaglemodel_Grid' has cardinality 0..*.
+An association connects 'eaglemodel_Layers' and 'eaglemodel_Drawing'. From 'eaglemodel_Layers', the role 'eaglemodel_Layers' has cardinality 0..*, and from 'eaglemodel_Drawing', the role 'eaglemodel_Drawing10' has cardinality 0..*.
+An association connects 'eaglemodel_Drawing' and 'eaglemodel_Schematic'. From 'eaglemodel_Drawing', the role 'eaglemodel_Drawing12' has cardinality 0..*, and from 'eaglemodel_Schematic', the role 'eaglemodel_Schematic' has cardinality 0..*.
+An association connects 'eaglemodel_Settings' and 'eaglemodel_Setting'. From 'eaglemodel_Settings', the role 'eaglemodel_Settings14' has cardinality 0..*, and from 'eaglemodel_Setting', the role 'eaglemodel_Setting' has cardinality 0..*.
+An association connects 'eaglemodel_Layers' and 'eaglemodel_Layer'. From 'eaglemodel_Layers', the role 'eaglemodel_Layers16' has cardinality 0..*, and from 'eaglemodel_Layer', the role 'eaglemodel_Layer' has cardinality 0..*.
+An association connects 'eaglemodel_Description' and 'eaglemodel_Schematic'. From 'eaglemodel_Description', the role 'eaglemodel_Description' has cardinality 0..*, and from 'eaglemodel_Schematic', the role 'eaglemodel_Schematic18' has cardinality 0..*.
+An association connects 'eaglemodel_Libraries' and 'eaglemodel_Schematic'. From 'eaglemodel_Libraries', the role 'eaglemodel_Libraries' has cardinality 0..*, and from 'eaglemodel_Schematic', the role 'eaglemodel_Schematic20' has cardinality 0..*.
+An association connects 'eaglemodel_Schematic' and 'eaglemodel_Attributes'. From 'eaglemodel_Schematic', the role 'eaglemodel_Schematic22' has cardinality 0..*, and from 'eaglemodel_Attributes', the role 'eaglemodel_Attributes' has cardinality 0..*.
+An association connects 'eaglemodel_Variantdefs' and 'eaglemodel_Schematic'. From 'eaglemodel_Variantdefs', the role 'eaglemodel_Variantdefs' has cardinality 0..*, and from 'eaglemodel_Schematic', the role 'eaglemodel_Schematic24' has cardinality 0..*.
+An association connects 'eaglemodel_Schematic' and 'eaglemodel_Classes'. From 'eaglemodel_Schematic', the role 'eaglemodel_Schematic26' has cardinality 0..*, and from 'eaglemodel_Classes', the role 'eaglemodel_Classes' has cardinality 0..*.
+An association connects 'eaglemodel_Schematic' and 'eaglemodel_Parts'. From 'eaglemodel_Schematic', the role 'eaglemodel_Schematic28' has cardinality 0..*, and from 'eaglemodel_Parts', the role 'eaglemodel_Parts' has cardinality 0..*.
+An association connects 'eaglemodel_Sheets' and 'eaglemodel_Schematic'. From 'eaglemodel_Sheets', the role 'eaglemodel_Sheets' has cardinality 0..*, and from 'eaglemodel_Schematic', the role 'eaglemodel_Schematic30' has cardinality 0..*.
+An association connects 'eaglemodel_Errors' and 'eaglemodel_Schematic'. From 'eaglemodel_Errors', the role 'eaglemodel_Errors' has cardinality 0..*, and from 'eaglemodel_Schematic', the role 'eaglemodel_Schematic32' has cardinality 0..*.
+An association connects 'eaglemodel_Libraries' and 'eaglemodel_Library'. From 'eaglemodel_Libraries', the role 'eaglemodel_Libraries34' has cardinality 0..*, and from 'eaglemodel_Library', the role 'eaglemodel_Library' has cardinality 0..*.
+An association connects 'eaglemodel_Library' and 'eaglemodel_Description'. From 'eaglemodel_Library', the role 'eaglemodel_Library36' has cardinality 0..*, and from 'eaglemodel_Description', the role 'eaglemodel_Description37' has cardinality 0..*.
+An association connects 'eaglemodel_Packages' and 'eaglemodel_Library'. From 'eaglemodel_Packages', the role 'eaglemodel_Packages' has cardinality 0..*, and from 'eaglemodel_Library', the role 'eaglemodel_Library39' has cardinality 0..*.
+An association connects 'eaglemodel_Library' and 'eaglemodel_Symbols'. From 'eaglemodel_Library', the role 'eaglemodel_Library41' has cardinality 0..*, and from 'eaglemodel_Symbols', the role 'eaglemodel_Symbols' has cardinality 0..*.
+An association connects 'eaglemodel_Library' and 'eaglemodel_Devicesets'. From 'eaglemodel_Library', the role 'eaglemodel_Library43' has cardinality 0..*, and from 'eaglemodel_Devicesets', the role 'eaglemodel_Devicesets' has cardinality 0..*.
+An association connects 'eaglemodel_Attribute' and 'eaglemodel_Attributes'. From 'eaglemodel_Attribute', the role 'eaglemodel_Attribute' has cardinality 0..*, and from 'eaglemodel_Attributes', the role 'eaglemodel_Attributes45' has cardinality 0..*.
+An association connects 'eaglemodel_Variantdefs' and 'eaglemodel_Variantdef'. From 'eaglemodel_Variantdefs', the role 'eaglemodel_Variantdefs47' has cardinality 0..*, and from 'eaglemodel_Variantdef', the role 'eaglemodel_Variantdef' has cardinality 0..*.
+An association connects 'eaglemodel_Classes' and 'eaglemodel_Class'. From 'eaglemodel_Classes', the role 'eaglemodel_Classes49' has cardinality 0..*, and from 'eaglemodel_Class', the role 'eaglemodel_Class' has cardinality 0..*.
+An association connects 'eaglemodel_Class' and 'eaglemodel_Clearance'. From 'eaglemodel_Class', the role 'eaglemodel_Class51' has cardinality 0..*, and from 'eaglemodel_Clearance', the role 'eaglemodel_Clearance' has cardinality 0..*.
+An association connects 'eaglemodel_Parts' and 'eaglemodel_Part'. From 'eaglemodel_Parts', the role 'eaglemodel_Parts53' has cardinality 0..*, and from 'eaglemodel_Part', the role 'eaglemodel_Part' has cardinality 0..*.
+An association connects 'eaglemodel_Attribute' and 'eaglemodel_Part'. From 'eaglemodel_Attribute', the role 'eaglemodel_Attribute56' has cardinality 0..*, and from 'eaglemodel_Part', the role 'eaglemodel_Part55' has cardinality 0..*.
+An association connects 'eaglemodel_Part' and 'eaglemodel_Variant'. From 'eaglemodel_Part', the role 'eaglemodel_Part58' has cardinality 0..*, and from 'eaglemodel_Variant', the role 'eaglemodel_Variant' has cardinality 0..*.
+An association connects 'eaglemodel_Sheets' and 'eaglemodel_Sheet'. From 'eaglemodel_Sheets', the role 'eaglemodel_Sheets60' has cardinality 0..*, and from 'eaglemodel_Sheet', the role 'eaglemodel_Sheet' has cardinality 0..*.
+An association connects 'eaglemodel_Sheet' and 'eaglemodel_Description'. From 'eaglemodel_Sheet', the role 'eaglemodel_Sheet62' has cardinality 0..*, and from 'eaglemodel_Description', the role 'eaglemodel_Description63' has cardinality 0..*.
+An association connects 'eaglemodel_Plain' and 'eaglemodel_Sheet'. From 'eaglemodel_Plain', the role 'eaglemodel_Plain' has cardinality 0..*, and from 'eaglemodel_Sheet', the role 'eaglemodel_Sheet65' has cardinality 0..*.
+An association connects 'eaglemodel_Instances' and 'eaglemodel_Sheet'. From 'eaglemodel_Instances', the role 'eaglemodel_Instances' has cardinality 0..*, and from 'eaglemodel_Sheet', the role 'eaglemodel_Sheet67' has cardinality 0..*.
+An association connects 'eaglemodel_Busses' and 'eaglemodel_Sheet'. From 'eaglemodel_Busses', the role 'eaglemodel_Busses' has cardinality 0..*, and from 'eaglemodel_Sheet', the role 'eaglemodel_Sheet69' has cardinality 0..*.
+An association connects 'eaglemodel_Sheet' and 'eaglemodel_Nets'. From 'eaglemodel_Sheet', the role 'eaglemodel_Sheet71' has cardinality 0..*, and from 'eaglemodel_Nets', the role 'eaglemodel_Nets' has cardinality 0..*.
+An association connects 'eaglemodel_Errors' and 'eaglemodel_Approved'. From 'eaglemodel_Errors', the role 'eaglemodel_Errors73' has cardinality 0..*, and from 'eaglemodel_Approved', the role 'eaglemodel_Approved' has cardinality 0..*.
+An association connects 'eaglemodel_Packages' and 'eaglemodel_Package'. From 'eaglemodel_Packages', the role 'eaglemodel_Packages75' has cardinality 0..*, and from 'eaglemodel_Package', the role 'eaglemodel_Package' has cardinality 0..*.
+An association connects 'eaglemodel_Package' and 'eaglemodel_Description'. From 'eaglemodel_Package', the role 'eaglemodel_Package77' has cardinality 0..*, and from 'eaglemodel_Description', the role 'eaglemodel_Description78' has cardinality 0..*.
+An association connects 'eaglemodel_Package' and 'eaglemodel_Polygon'. From 'eaglemodel_Package', the role 'eaglemodel_Package80' has cardinality 0..*, and from 'eaglemodel_Polygon', the role 'eaglemodel_Polygon' has cardinality 0..*.
+An association connects 'eaglemodel_Wire' and 'eaglemodel_Package'. From 'eaglemodel_Wire', the role 'eaglemodel_Wire' has cardinality 0..*, and from 'eaglemodel_Package', the role 'eaglemodel_Package82' has cardinality 0..*.
+An association connects 'eaglemodel_Text' and 'eaglemodel_Package'. From 'eaglemodel_Text', the role 'eaglemodel_Text' has cardinality 0..*, and from 'eaglemodel_Package', the role 'eaglemodel_Package84' has cardinality 0..*.
+An association connects 'eaglemodel_Package' and 'eaglemodel_Dimension'. From 'eaglemodel_Package', the role 'eaglemodel_Package86' has cardinality 0..*, and from 'eaglemodel_Dimension', the role 'eaglemodel_Dimension' has cardinality 0..*.
+An association connects 'eaglemodel_Package' and 'eaglemodel_Circle'. From 'eaglemodel_Package', the role 'eaglemodel_Package88' has cardinality 0..*, and from 'eaglemodel_Circle', the role 'eaglemodel_Circle' has cardinality 0..*.
+An association connects 'eaglemodel_Rectangle' and 'eaglemodel_Package'. From 'eaglemodel_Rectangle', the role 'eaglemodel_Rectangle' has cardinality 0..*, and from 'eaglemodel_Package', the role 'eaglemodel_Package90' has cardinality 0..*.
+An association connects 'eaglemodel_Package' and 'eaglemodel_Frame'. From 'eaglemodel_Package', the role 'eaglemodel_Package92' has cardinality 0..*, and from 'eaglemodel_Frame', the role 'eaglemodel_Frame' has cardinality 0..*.
+An association connects 'eaglemodel_Hole' and 'eaglemodel_Package'. From 'eaglemodel_Hole', the role 'eaglemodel_Hole' has cardinality 0..*, and from 'eaglemodel_Package', the role 'eaglemodel_Package94' has cardinality 0..*.
+An association connects 'eaglemodel_Package' and 'eaglemodel_Pad'. From 'eaglemodel_Package', the role 'eaglemodel_Package96' has cardinality 0..*, and from 'eaglemodel_Pad', the role 'eaglemodel_Pad' has cardinality 0..*.
+An association connects 'eaglemodel_Package' and 'eaglemodel_SMD'. From 'eaglemodel_Package', the role 'eaglemodel_Package98' has cardinality 0..*, and from 'eaglemodel_SMD', the role 'eaglemodel_SMD' has cardinality 0..*.
+An association connects 'eaglemodel_Symbols' and 'eaglemodel_Symbol'. From 'eaglemodel_Symbols', the role 'eaglemodel_Symbols100' has cardinality 0..*, and from 'eaglemodel_Symbol', the role 'eaglemodel_Symbol' has cardinality 0..*.
+An association connects 'eaglemodel_Symbol' and 'eaglemodel_Description'. From 'eaglemodel_Symbol', the role 'eaglemodel_Symbol102' has cardinality 0..*, and from 'eaglemodel_Description', the role 'eaglemodel_Description103' has cardinality 0..*.
+An association connects 'eaglemodel_Polygon' and 'eaglemodel_Symbol'. From 'eaglemodel_Polygon', the role 'eaglemodel_Polygon106' has cardinality 0..*, and from 'eaglemodel_Symbol', the role 'eaglemodel_Symbol105' has cardinality 0..*.
+An association connects 'eaglemodel_Wire' and 'eaglemodel_Symbol'. From 'eaglemodel_Wire', the role 'eaglemodel_Wire109' has cardinality 0..*, and from 'eaglemodel_Symbol', the role 'eaglemodel_Symbol108' has cardinality 0..*.
+An association connects 'eaglemodel_Symbol' and 'eaglemodel_Text'. From 'eaglemodel_Symbol', the role 'eaglemodel_Symbol111' has cardinality 0..*, and from 'eaglemodel_Text', the role 'eaglemodel_Text112' has cardinality 0..*.
+An association connects 'eaglemodel_Symbol' and 'eaglemodel_Dimension'. From 'eaglemodel_Symbol', the role 'eaglemodel_Symbol114' has cardinality 0..*, and from 'eaglemodel_Dimension', the role 'eaglemodel_Dimension115' has cardinality 0..*.
+An association connects 'eaglemodel_Symbol' and 'eaglemodel_Pin'. From 'eaglemodel_Symbol', the role 'eaglemodel_Symbol117' has cardinality 0..*, and from 'eaglemodel_Pin', the role 'eaglemodel_Pin' has cardinality 0..*.
+An association connects 'eaglemodel_Symbol' and 'eaglemodel_Circle'. From 'eaglemodel_Symbol', the role 'eaglemodel_Symbol119' has cardinality 0..*, and from 'eaglemodel_Circle', the role 'eaglemodel_Circle120' has cardinality 0..*.
+An association connects 'eaglemodel_Rectangle' and 'eaglemodel_Symbol'. From 'eaglemodel_Rectangle', the role 'eaglemodel_Rectangle123' has cardinality 0..*, and from 'eaglemodel_Symbol', the role 'eaglemodel_Symbol122' has cardinality 0..*.
+An association connects 'eaglemodel_Symbol' and 'eaglemodel_Frame'. From 'eaglemodel_Symbol', the role 'eaglemodel_Symbol125' has cardinality 0..*, and from 'eaglemodel_Frame', the role 'eaglemodel_Frame126' has cardinality 0..*.
+An association connects 'eaglemodel_Devicesets' and 'eaglemodel_Deviceset'. From 'eaglemodel_Devicesets', the role 'eaglemodel_Devicesets128' has cardinality 0..*, and from 'eaglemodel_Deviceset', the role 'eaglemodel_Deviceset' has cardinality 0..*.
+An association connects 'eaglemodel_Description' and 'eaglemodel_Deviceset'. From 'eaglemodel_Description', the role 'eaglemodel_Description131' has cardinality 0..*, and from 'eaglemodel_Deviceset', the role 'eaglemodel_Deviceset130' has cardinality 0..*.
+An association connects 'eaglemodel_Deviceset' and 'eaglemodel_Gates'. From 'eaglemodel_Deviceset', the role 'eaglemodel_Deviceset133' has cardinality 0..*, and from 'eaglemodel_Gates', the role 'eaglemodel_Gates' has cardinality 0..*.
+An association connects 'eaglemodel_Devices' and 'eaglemodel_Deviceset'. From 'eaglemodel_Devices', the role 'eaglemodel_Devices' has cardinality 0..*, and from 'eaglemodel_Deviceset', the role 'eaglemodel_Deviceset135' has cardinality 0..*.
+An association connects 'eaglemodel_Polygon' and 'eaglemodel_Vertex'. From 'eaglemodel_Polygon', the role 'eaglemodel_Polygon137' has cardinality 0..*, and from 'eaglemodel_Vertex', the role 'eaglemodel_Vertex' has cardinality 0..*.
+An association connects 'eaglemodel_Gates' and 'eaglemodel_Gate'. From 'eaglemodel_Gates', the role 'eaglemodel_Gates139' has cardinality 0..*, and from 'eaglemodel_Gate', the role 'eaglemodel_Gate' has cardinality 0..*.
+An association connects 'eaglemodel_Device' and 'eaglemodel_Devices'. From 'eaglemodel_Device', the role 'eaglemodel_Device' has cardinality 0..*, and from 'eaglemodel_Devices', the role 'eaglemodel_Devices141' has cardinality 0..*.
+An association connects 'eaglemodel_Device' and 'eaglemodel_Connects'. From 'eaglemodel_Device', the role 'eaglemodel_Device143' has cardinality 0..*, and from 'eaglemodel_Connects', the role 'eaglemodel_Connects' has cardinality 0..*.
+An association connects 'eaglemodel_Technologies' and 'eaglemodel_Device'. From 'eaglemodel_Technologies', the role 'eaglemodel_Technologies' has cardinality 0..*, and from 'eaglemodel_Device', the role 'eaglemodel_Device145' has cardinality 0..*.
+An association connects 'eaglemodel_Connects' and 'eaglemodel_Connect'. From 'eaglemodel_Connects', the role 'eaglemodel_Connects147' has cardinality 0..*, and from 'eaglemodel_Connect', the role 'eaglemodel_Connect' has cardinality 0..*.
+An association connects 'eaglemodel_Technology' and 'eaglemodel_Technologies'. From 'eaglemodel_Technology', the role 'eaglemodel_Technology' has cardinality 0..*, and from 'eaglemodel_Technologies', the role 'eaglemodel_Technologies149' has cardinality 0..*.
+An association connects 'eaglemodel_Attribute' and 'eaglemodel_Technology'. From 'eaglemodel_Attribute', the role 'eaglemodel_Attribute152' has cardinality 0..*, and from 'eaglemodel_Technology', the role 'eaglemodel_Technology151' has cardinality 0..*.
+An association connects 'eaglemodel_Plain' and 'eaglemodel_Polygon'. From 'eaglemodel_Plain', the role 'eaglemodel_Plain154' has cardinality 0..*, and from 'eaglemodel_Polygon', the role 'eaglemodel_Polygon155' has cardinality 0..*.
+An association connects 'eaglemodel_Wire' and 'eaglemodel_Plain'. From 'eaglemodel_Wire', the role 'eaglemodel_Wire158' has cardinality 0..*, and from 'eaglemodel_Plain', the role 'eaglemodel_Plain157' has cardinality 0..*.
+An association connects 'eaglemodel_Text' and 'eaglemodel_Plain'. From 'eaglemodel_Text', the role 'eaglemodel_Text161' has cardinality 0..*, and from 'eaglemodel_Plain', the role 'eaglemodel_Plain160' has cardinality 0..*.
+An association connects 'eaglemodel_Dimension' and 'eaglemodel_Plain'. From 'eaglemodel_Dimension', the role 'eaglemodel_Dimension164' has cardinality 0..*, and from 'eaglemodel_Plain', the role 'eaglemodel_Plain163' has cardinality 0..*.
+An association connects 'eaglemodel_Plain' and 'eaglemodel_Circle'. From 'eaglemodel_Plain', the role 'eaglemodel_Plain166' has cardinality 0..*, and from 'eaglemodel_Circle', the role 'eaglemodel_Circle167' has cardinality 0..*.
+An association connects 'eaglemodel_Rectangle' and 'eaglemodel_Plain'. From 'eaglemodel_Rectangle', the role 'eaglemodel_Rectangle170' has cardinality 0..*, and from 'eaglemodel_Plain', the role 'eaglemodel_Plain169' has cardinality 0..*.
+An association connects 'eaglemodel_Frame' and 'eaglemodel_Plain'. From 'eaglemodel_Frame', the role 'eaglemodel_Frame173' has cardinality 0..*, and from 'eaglemodel_Plain', the role 'eaglemodel_Plain172' has cardinality 0..*.
+An association connects 'eaglemodel_Hole' and 'eaglemodel_Plain'. From 'eaglemodel_Hole', the role 'eaglemodel_Hole176' has cardinality 0..*, and from 'eaglemodel_Plain', the role 'eaglemodel_Plain175' has cardinality 0..*.
+An association connects 'eaglemodel_Instance' and 'eaglemodel_Instances'. From 'eaglemodel_Instance', the role 'eaglemodel_Instance' has cardinality 0..*, and from 'eaglemodel_Instances', the role 'eaglemodel_Instances178' has cardinality 0..*.
+An association connects 'eaglemodel_Instance' and 'eaglemodel_Attribute'. From 'eaglemodel_Instance', the role 'eaglemodel_Instance180' has cardinality 0..*, and from 'eaglemodel_Attribute', the role 'eaglemodel_Attribute181' has cardinality 0..*.
+An association connects 'eaglemodel_Busses' and 'eaglemodel_Bus'. From 'eaglemodel_Busses', the role 'eaglemodel_Busses183' has cardinality 0..*, and from 'eaglemodel_Bus', the role 'eaglemodel_Bus' has cardinality 0..*.
+An association connects 'eaglemodel_Bus' and 'eaglemodel_Segment'. From 'eaglemodel_Bus', the role 'eaglemodel_Bus185' has cardinality 0..*, and from 'eaglemodel_Segment', the role 'eaglemodel_Segment' has cardinality 0..*.
+An association connects 'eaglemodel_Net' and 'eaglemodel_Nets'. From 'eaglemodel_Net', the role 'eaglemodel_Net' has cardinality 0..*, and from 'eaglemodel_Nets', the role 'eaglemodel_Nets187' has cardinality 0..*.
+An association connects 'eaglemodel_Segment' and 'eaglemodel_Net'. From 'eaglemodel_Segment', the role 'eaglemodel_Segment190' has cardinality 0..*, and from 'eaglemodel_Net', the role 'eaglemodel_Net189' has cardinality 0..*.
+An association connects 'eaglemodel_Segment' and 'eaglemodel_Pinref'. From 'eaglemodel_Segment', the role 'eaglemodel_Segment192' has cardinality 0..*, and from 'eaglemodel_Pinref', the role 'eaglemodel_Pinref' has cardinality 0..*.
+An association connects 'eaglemodel_Wire' and 'eaglemodel_Segment'. From 'eaglemodel_Wire', the role 'eaglemodel_Wire195' has cardinality 0..*, and from 'eaglemodel_Segment', the role 'eaglemodel_Segment194' has cardinality 0..*.
+An association connects 'eaglemodel_Segment' and 'eaglemodel_Junction'. From 'eaglemodel_Segment', the role 'eaglemodel_Segment197' has cardinality 0..*, and from 'eaglemodel_Junction', the role 'eaglemodel_Junction' has cardinality 0..*.
+An association connects 'eaglemodel_Label' and 'eaglemodel_Segment'. From 'eaglemodel_Label', the role 'eaglemodel_Label' has cardinality 0..*, and from 'eaglemodel_Segment', the role 'eaglemodel_Segment199' has cardinality 0..*.

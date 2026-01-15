@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eMoflon/emoflon-examples/part4/DictionaryLanguage/model/DictionaryLanguage.ecore

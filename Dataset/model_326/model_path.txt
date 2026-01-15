@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/HansvdLaan/Viatra-Petrinet-Example/query/minilibrary/org.eclipse.viatra.examples.library/model/library.ecore

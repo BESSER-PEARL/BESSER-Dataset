@@ -1,0 +1,55 @@
+The domain model 'javaz' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'javaz_Block' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'javaz_JavaParameter' represents an important domain concept.
+It has the following attributes: 'parameterKind', which is of type str; 'kind', which is of type str; 'type', which is of type str; 'final', which is of type bool.
+
+'javaz_Method' represents an important domain concept.
+It has the following attributes: 'synchronized', which is of type bool; 'native', which is of type bool; 'abstract', which is of type bool; 'static', which is of type bool; 'constructor', which is of type bool; 'final', which is of type bool; 'visibility', which is of type str.
+
+'JavaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaz_JavaPackageX' represents an important domain concept.
+It has one attribute: 'needToGenerate', which is of type bool.
+
+'javaz_JavaClass' represents an important domain concept.
+It has the following attributes: 'final', which is of type bool; 'needToGenerate', which is of type bool; 'public', which is of type bool; 'rewritable', which is of type bool; 'kind', which is of type str.
+
+'javaz_JavaElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'javaz_Field' represents an important domain concept.
+It has the following attributes: 'transient', which is of type bool; 'type', which is of type str; 'volatile', which is of type bool; 'final', which is of type bool; 'static', which is of type bool; 'visibility', which is of type str.
+
+'javaz_Javaz' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'JavaParameterKind' defines the following possible values: 'RETURN', 'OUT', 'IN', 'INOUT'.
+The enumeration 'JavaVisibilityKind' defines the following possible values: 'PUBLIC', 'PACKAGE', 'PRIVATE', 'PROTECTED'.
+The enumeration 'JavaKind' defines the following possible values: 'EXCEPTION', 'CLASS', 'INTERFACE'.
+
+The model also captures inheritance relationships between classes.
+The class 'javaz_Javaz' is a specialization of 'JavaElement'.
+The class 'javaz_JavaClass' is a specialization of 'JavaElement'.
+The class 'javaz_JavaPackageX' is a specialization of 'JavaElement'.
+The class 'javaz_JavaParameter' is a specialization of 'JavaElement'.
+The class 'javaz_Method' is a specialization of 'JavaElement'.
+The class 'javaz_Field' is a specialization of 'JavaElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'javaz_Javaz' and 'javaz_JavaPackageX'. From 'javaz_Javaz', the role 'javaz_Javaz' has cardinality 0..*, and from 'javaz_JavaPackageX', the role 'javaz_JavaPackageX' has cardinality 0..*.
+An association connects 'javaz_Javaz' and 'javaz_JavaClass'. From 'javaz_Javaz', the role 'javaz_Javaz2' has cardinality 0..*, and from 'javaz_JavaClass', the role 'javaz_JavaClass' has cardinality 0..*.
+An association connects 'javaz_Method' and 'javaz_JavaClass'. From 'javaz_Method', the role 'javaz_Method' has cardinality 0..*, and from 'javaz_JavaClass', the role 'javaz_JavaClass4' has cardinality 0..*.
+An association connects 'javaz_Field' and 'javaz_JavaClass'. From 'javaz_Field', the role 'javaz_Field' has cardinality 0..*, and from 'javaz_JavaClass', the role 'javaz_JavaClass6' has cardinality 0..*.
+An association connects 'javaz_JavaClass' and 'javaz_JavaClass'. From 'javaz_JavaClass', the role 'javaz_JavaClass9' has cardinality 0..*, and from 'javaz_JavaClass', the role 'javaz_JavaClass7' has cardinality 0..*.
+An association connects 'javaz_JavaClass' and 'javaz_JavaPackageX'. From 'javaz_JavaClass', the role 'javaz_JavaClass11' has cardinality 0..*, and from 'javaz_JavaPackageX', the role 'javaz_JavaPackageX12' has cardinality 0..*.
+An association connects 'javaz_JavaClass' and 'javaz_JavaClass'. From 'javaz_JavaClass', the role 'javaz_JavaClass15' has cardinality 0..*, and from 'javaz_JavaClass', the role 'javaz_JavaClass13' has cardinality 0..*.
+An association connects 'javaz_JavaClass' and 'javaz_JavaClass'. From 'javaz_JavaClass', the role 'javaz_JavaClass18' has cardinality 0..*, and from 'javaz_JavaClass', the role 'javaz_JavaClass16' has cardinality 0..*.
+An association connects 'javaz_Method' and 'javaz_JavaParameter'. From 'javaz_Method', the role 'javaz_Method20' has cardinality 0..*, and from 'javaz_JavaParameter', the role 'javaz_JavaParameter' has cardinality 0..*.
+An association connects 'javaz_Method' and 'javaz_Block'. From 'javaz_Method', the role 'javaz_Method22' has cardinality 0..*, and from 'javaz_Block', the role 'javaz_Block' has cardinality 0..*.

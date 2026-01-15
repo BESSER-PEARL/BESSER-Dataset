@@ -1,0 +1,418 @@
+The domain model 'Classes' describes the core structural elements and their relationships within the system.
+
+The model defines 111 main class(es).
+
+'Classes_Bookables_Room' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Stays_CreditCard' represents an important domain concept.
+It has the following attributes: 'ccv', which is of type str; 'lastName', which is of type str; 'expiryYear', which is of type str; 'ccNumber', which is of type str; 'expiryMonth', which is of type str; 'firstName', which is of type str.
+
+'IManageInventory' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Guests_GuestsManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Services_IServicesAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Stays_Stay' represents an important domain concept.
+It has the following attributes: 'bookable', which is of type str; 'checkedInGuests', which is of type str; 'bills', which is of type str; 'toDate', which is of type date; 'booking', which is of type str; 'checkedOutGuests', which is of type str; 'fromDate', which is of type date; 'ID', which is of type str.
+
+'ICustomers' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Guests_Guest' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'title', which is of type str; 'ssid', which is of type str; 'requests', which is of type str; 'firstname', which is of type str; 'phone', which is of type str; 'lastname', which is of type str; 'stays', which is of type str; 'account', which is of type str.
+
+'Classes_Bookings_IBookings' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Requests_IRequests' represents an important domain concept.
+It does not declare any attributes.
+
+'HotelRoom' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Guests_IGuests' represents an important domain concept.
+It does not declare any attributes.
+
+'Bill' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Inventory_IManageInventory' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Accounts_Account' represents an important domain concept.
+It has the following attributes: 'password', which is of type str; 'username', which is of type str; 'accountType', which is of type str.
+
+'Classes_Staff_StaffManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Bills_BillsManager' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomServiceMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'SalaryContract' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Restaurants_RestaurantsManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Bookables_BookablesManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Services_IServicesManage' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Staff_Staff' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'ssid', which is of type str; 'job', which is of type str; 'firstName', which is of type str; 'lastName', which is of type str; 'phone', which is of type str.
+
+'Classes_Banking_AdministratorProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'Restaurant' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Feedback_IFeedback' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Bookables_HostelBed' represents an important domain concept.
+It does not declare any attributes.
+
+'IBookablesManage' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Bookables_IBookablesAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'IRequests' represents an important domain concept.
+It does not declare any attributes.
+
+'IBookablesAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Statistics_Date' represents an important domain concept.
+It does not declare any attributes.
+
+'Stay' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Feedback_Feedback' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'isResolved', which is of type str; 'id', which is of type str; 'isNoted', which is of type str.
+
+'Classes_Services_RoomServiceOrder' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'isDelivered', which is of type str; 'bill', which is of type str; 'deliveryDate', which is of type date; 'items', which is of type str; 'bookable', which is of type str.
+
+'Guest' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Staff_HourlySalaryContract' represents an important domain concept.
+It has one attribute: 'salary', which is of type float.
+
+'IServicesManage' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Accounts_AccountsManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Staff_MonthlySalaryContract' represents an important domain concept.
+It has one attribute: 'salary', which is of type float.
+
+'Classes_Accounts_IAccountsAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Statistics_IStatisticsGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Inventory_Item' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'price', which is of type float; 'name', which is of type str; 'expense', which is of type float; 'stock', which is of type str.
+
+'IInventoryAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Banking_CustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Restaurants_Restaurant' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Classes_Requests_Request' represents an important domain concept.
+It has the following attributes: 'isResolved', which is of type str; 'description', which is of type str; 'id', which is of type str.
+
+'Accounts_IAccountsAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Date' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Customers_Customer' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'requests', which is of type str; 'firstname', which is of type str; 'bookings', which is of type str; 'email', which is of type str; 'phone', which is of type str; 'ssid', which is of type str; 'lastname', which is of type str.
+
+'Classes_Bookables_Bookable' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'description', which is of type str; 'baseprice', which is of type float.
+
+'Classes_Bookings_Booking' represents an important domain concept.
+It has the following attributes: 'bookedStays', which is of type str; 'issueDate', which is of type date; 'bookingNbr', which is of type str; 'customer', which is of type str; 'requests', which is of type str; 'nbrGuests', which is of type str.
+
+'IStatisticsGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'CustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'Request' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Services_ServiceManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Staff_IStaff' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Bills_Bill' represents an important domain concept.
+It has the following attributes: 'paymentType', which is of type str; 'services', which is of type str; 'id', which is of type str; 'items', which is of type str; 'paymentDate', which is of type date; 'issueDate', which is of type date; 'totalAmount', which is of type float; 'isPaid', which is of type str; 'bookable', which is of type str.
+
+'Classes_Bookables_IBookablesManage' represents an important domain concept.
+It does not declare any attributes.
+
+'IStaff' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Restaurants_Reservation' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'to', which is of type date; 'from', which is of type date; 'reservedBy', which is of type str.
+
+'Service' represents an important domain concept.
+It does not declare any attributes.
+
+'Staff' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Bills_IBills' represents an important domain concept.
+It does not declare any attributes.
+
+'IRestaurantsManage' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Bookables_RoomLocation' represents an important domain concept.
+It has the following attributes: 'floor', which is of type str; 'addtionalInfo', which is of type str.
+
+'IManageAccounts' represents an important domain concept.
+It does not declare any attributes.
+
+'RestaurantMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'Bookable' represents an important domain concept.
+It does not declare any attributes.
+
+'Account' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Inventory_InventoryManager' represents an important domain concept.
+It does not declare any attributes.
+
+'IGuests' represents an important domain concept.
+It does not declare any attributes.
+
+'Accounts_IManageAccounts' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Bookables_HotelRoom' represents an important domain concept.
+It has the following attributes: 'category', which is of type str; 'nbrBeds', which is of type str.
+
+'IServicesAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Services_Service' represents an important domain concept.
+It has the following attributes: 'expense', which is of type float; 'price', which is of type float; 'id', which is of type str; 'name', which is of type str.
+
+'Room' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Accounts_IManageAccounts' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Services_RoomServiceMenu' represents an important domain concept.
+It has the following attributes: 'items', which is of type str; 'name', which is of type str.
+
+'RestaurantTable' represents an important domain concept.
+It does not declare any attributes.
+
+'IFeedback' represents an important domain concept.
+It does not declare any attributes.
+
+'IRestaurantsAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'StatisticEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Restaurants_IRestaurantsManage' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Statistics_StatisticsGenerator' represents an important domain concept.
+It has one attribute: 'staticExpenses', which is of type float.
+
+'Customer' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'Reservation' represents an important domain concept.
+It does not declare any attributes.
+
+'IBookings' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Staff_SalaryContract' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Requests_RequestsManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Statistics_StatisticEntry' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Classes_Inventory_IInventoryAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomServiceOrder' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Customers_ICustomers' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Customers_CustomersManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Restaurants_RestaurantMenu' represents an important domain concept.
+It has the following attributes: 'items', which is of type str; 'name', which is of type str.
+
+'Classes_Bookings_BookingsManager' represents an important domain concept.
+It does not declare any attributes.
+
+'IStays' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Stays_IStays' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Statistics_Statistic' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Classes_Restaurants_RestaurantTable' represents an important domain concept.
+It has the following attributes: 'numberOfSeats', which is of type str; 'tableNumber', which is of type str.
+
+'Classes_Stays_StaysManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Booking' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Bookables_ConferenceRoom' represents an important domain concept.
+It has the following attributes: 'category', which is of type str; 'capacity', which is of type str.
+
+'Classes_Feedback_FeedbackManager' represents an important domain concept.
+It does not declare any attributes.
+
+'CreditCard' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Restaurants_IRestaurantsAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'IBills' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomLocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Feedback' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'HotelRoomCategory' defines the following possible values: 'StandardRoom', 'Suite', 'FamilyRoom'.
+The enumeration 'AccountType' defines the following possible values: 'Guest', 'CustomerService', 'Manager', 'Staff'.
+The enumeration 'ConferenceRoomCategory' defines the following possible values: 'DiningRoom', 'Other', 'MeetingRoom', 'LectureRoom'.
+
+The model also captures inheritance relationships between classes.
+The class 'Classes_Bookables_Room' is a specialization of 'Bookable'.
+The class 'Classes_Bookables_HostelBed' is a specialization of 'Bookable'.
+The class 'Classes_Bookables_HotelRoom' is a specialization of 'Room'.
+The class 'Classes_Bookables_ConferenceRoom' is a specialization of 'Room'.
+The class 'Classes_Bookables_IBookablesManage' is a specialization of 'IBookablesAccess'.
+The class 'Classes_Bookables_BookablesManager' is a specialization of 'IBookablesManage'.
+The class 'Classes_Stays_StaysManager' is a specialization of 'IStays'.
+The class 'Classes_Bills_BillsManager' is a specialization of 'IBills'.
+The class 'Classes_Inventory_IManageInventory' is a specialization of 'IInventoryAccess'.
+The class 'Classes_Inventory_InventoryManager' is a specialization of 'IManageInventory'.
+The class 'Classes_Services_ServiceManager' is a specialization of 'IServicesManage'.
+The class 'Classes_Services_IServicesManage' is a specialization of 'IServicesAccess'.
+The class 'Classes_Guests_GuestsManager' is a specialization of 'IGuests'.
+The class 'Classes_Accounts_AccountsManager' is a specialization of 'Accounts_IManageAccounts'.
+The class 'Classes_Accounts_AccountsManager' is a specialization of 'Accounts_IAccountsAccess'.
+The class 'Classes_Bookings_BookingsManager' is a specialization of 'IBookings'.
+The class 'Classes_Customers_CustomersManager' is a specialization of 'ICustomers'.
+The class 'Classes_Statistics_StatisticsGenerator' is a specialization of 'IStatisticsGenerator'.
+The class 'Classes_Staff_StaffManager' is a specialization of 'IStaff'.
+The class 'Classes_Staff_MonthlySalaryContract' is a specialization of 'SalaryContract'.
+The class 'Classes_Staff_HourlySalaryContract' is a specialization of 'SalaryContract'.
+The class 'Classes_Restaurants_IRestaurantsManage' is a specialization of 'IRestaurantsAccess'.
+The class 'Classes_Restaurants_RestaurantsManager' is a specialization of 'IRestaurantsManage'.
+The class 'Classes_Feedback_FeedbackManager' is a specialization of 'IFeedback'.
+The class 'Classes_Requests_RequestsManager' is a specialization of 'IRequests'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Classes_Bookables_Room' and 'RoomLocation'. From 'Classes_Bookables_Room', the role 'Classes_Bookables_Room' has cardinality 0..*, and from 'RoomLocation', the role 'RoomLocation' has cardinality 0..*.
+An association connects 'HotelRoom' and 'Classes_Bookables_HostelBed'. From 'HotelRoom', the role 'HotelRoom' has cardinality 0..*, and from 'Classes_Bookables_HostelBed', the role 'Classes_Bookables_HostelBed' has cardinality 0..*.
+An association connects 'Classes_Bookables_BookablesManager' and 'Bookable'. From 'Classes_Bookables_BookablesManager', the role 'Classes_Bookables_BookablesManager' has cardinality 0..*, and from 'Bookable', the role 'Bookable' has cardinality 0..*.
+An association connects 'IStays' and 'Classes_Bookables_BookablesManager'. From 'IStays', the role 'IStays' has cardinality 0..*, and from 'Classes_Bookables_BookablesManager', the role 'Classes_Bookables_BookablesManager4' has cardinality 0..*.
+An association connects 'CreditCard' and 'Classes_Stays_Stay'. From 'CreditCard', the role 'CreditCard' has cardinality 0..*, and from 'Classes_Stays_Stay', the role 'Classes_Stays_Stay' has cardinality 0..*.
+An association connects 'Stay' and 'Classes_Stays_StaysManager'. From 'Stay', the role 'Stay' has cardinality 0..*, and from 'Classes_Stays_StaysManager', the role 'Classes_Stays_StaysManager' has cardinality 0..*.
+An association connects 'CustomerProvides' and 'Classes_Stays_StaysManager'. From 'CustomerProvides', the role 'CustomerProvides' has cardinality 0..*, and from 'Classes_Stays_StaysManager', the role 'Classes_Stays_StaysManager8' has cardinality 0..*.
+An association connects 'Classes_Stays_StaysManager' and 'IBills'. From 'Classes_Stays_StaysManager', the role 'Classes_Stays_StaysManager10' has cardinality 0..*, and from 'IBills', the role 'IBills' has cardinality 0..*.
+An association connects 'Classes_Stays_StaysManager' and 'IGuests'. From 'Classes_Stays_StaysManager', the role 'Classes_Stays_StaysManager12' has cardinality 0..*, and from 'IGuests', the role 'IGuests' has cardinality 0..*.
+An association connects 'Bill' and 'Classes_Bills_BillsManager'. From 'Bill', the role 'Bill' has cardinality 0..*, and from 'Classes_Bills_BillsManager', the role 'Classes_Bills_BillsManager' has cardinality 0..*.
+An association connects 'Classes_Bills_BillsManager' and 'CustomerProvides'. From 'Classes_Bills_BillsManager', the role 'Classes_Bills_BillsManager15' has cardinality 0..*, and from 'CustomerProvides', the role 'CustomerProvides16' has cardinality 0..*.
+An association connects 'Classes_Bills_BillsManager' and 'IBookablesAccess'. From 'Classes_Bills_BillsManager', the role 'Classes_Bills_BillsManager18' has cardinality 0..*, and from 'IBookablesAccess', the role 'IBookablesAccess' has cardinality 0..*.
+An association connects 'IInventoryAccess' and 'Classes_Bills_BillsManager'. From 'IInventoryAccess', the role 'IInventoryAccess' has cardinality 0..*, and from 'Classes_Bills_BillsManager', the role 'Classes_Bills_BillsManager20' has cardinality 0..*.
+An association connects 'Classes_Bills_BillsManager' and 'IServicesAccess'. From 'Classes_Bills_BillsManager', the role 'Classes_Bills_BillsManager22' has cardinality 0..*, and from 'IServicesAccess', the role 'IServicesAccess' has cardinality 0..*.
+An association connects 'Item' and 'Classes_Inventory_InventoryManager'. From 'Item', the role 'Item' has cardinality 0..*, and from 'Classes_Inventory_InventoryManager', the role 'Classes_Inventory_InventoryManager' has cardinality 0..*.
+An association connects 'Service' and 'Classes_Services_ServiceManager'. From 'Service', the role 'Service' has cardinality 0..*, and from 'Classes_Services_ServiceManager', the role 'Classes_Services_ServiceManager' has cardinality 0..*.
+An association connects 'Classes_Services_ServiceManager' and 'RoomServiceOrder'. From 'Classes_Services_ServiceManager', the role 'Classes_Services_ServiceManager26' has cardinality 0..*, and from 'RoomServiceOrder', the role 'RoomServiceOrder' has cardinality 0..*.
+An association connects 'RoomServiceMenu' and 'Classes_Services_ServiceManager'. From 'RoomServiceMenu', the role 'RoomServiceMenu' has cardinality 0..*, and from 'Classes_Services_ServiceManager', the role 'Classes_Services_ServiceManager28' has cardinality 0..*.
+An association connects 'Service' and 'Classes_Services_RoomServiceOrder'. From 'Service', the role 'Service30' has cardinality 0..*, and from 'Classes_Services_RoomServiceOrder', the role 'Classes_Services_RoomServiceOrder' has cardinality 0..*.
+An association connects 'Guest' and 'Classes_Guests_GuestsManager'. From 'Guest', the role 'Guest' has cardinality 0..*, and from 'Classes_Guests_GuestsManager', the role 'Classes_Guests_GuestsManager' has cardinality 0..*.
+An association connects 'IManageAccounts' and 'Classes_Guests_GuestsManager'. From 'IManageAccounts', the role 'IManageAccounts' has cardinality 0..*, and from 'Classes_Guests_GuestsManager', the role 'Classes_Guests_GuestsManager33' has cardinality 0..*.
+An association connects 'Account' and 'Classes_Accounts_AccountsManager'. From 'Account', the role 'Account' has cardinality 0..*, and from 'Classes_Accounts_AccountsManager', the role 'Classes_Accounts_AccountsManager' has cardinality 0..*.
+An association connects 'Classes_Bookings_Booking' and 'CreditCard'. From 'Classes_Bookings_Booking', the role 'Classes_Bookings_Booking' has cardinality 0..*, and from 'CreditCard', the role 'CreditCard36' has cardinality 0..*.
+An association connects 'Classes_Bookings_BookingsManager' and 'Booking'. From 'Classes_Bookings_BookingsManager', the role 'Classes_Bookings_BookingsManager' has cardinality 0..*, and from 'Booking', the role 'Booking' has cardinality 0..*.
+An association connects 'IBookablesAccess' and 'Classes_Bookings_BookingsManager'. From 'IBookablesAccess', the role 'IBookablesAccess40' has cardinality 0..*, and from 'Classes_Bookings_BookingsManager', the role 'Classes_Bookings_BookingsManager39' has cardinality 0..*.
+An association connects 'Classes_Bookings_BookingsManager' and 'IStays'. From 'Classes_Bookings_BookingsManager', the role 'Classes_Bookings_BookingsManager42' has cardinality 0..*, and from 'IStays', the role 'IStays43' has cardinality 0..*.
+An association connects 'CustomerProvides' and 'Classes_Bookings_BookingsManager'. From 'CustomerProvides', the role 'CustomerProvides46' has cardinality 0..*, and from 'Classes_Bookings_BookingsManager', the role 'Classes_Bookings_BookingsManager45' has cardinality 0..*.
+An association connects 'IGuests' and 'Classes_Bookings_BookingsManager'. From 'IGuests', the role 'IGuests49' has cardinality 0..*, and from 'Classes_Bookings_BookingsManager', the role 'Classes_Bookings_BookingsManager48' has cardinality 0..*.
+An association connects 'ICustomers' and 'Classes_Bookings_BookingsManager'. From 'ICustomers', the role 'ICustomers' has cardinality 0..*, and from 'Classes_Bookings_BookingsManager', the role 'Classes_Bookings_BookingsManager51' has cardinality 0..*.
+An association connects 'IBills' and 'Classes_Bookings_BookingsManager'. From 'IBills', the role 'IBills54' has cardinality 0..*, and from 'Classes_Bookings_BookingsManager', the role 'Classes_Bookings_BookingsManager53' has cardinality 0..*.
+An association connects 'Classes_Customers_CustomersManager' and 'Customer'. From 'Classes_Customers_CustomersManager', the role 'Classes_Customers_CustomersManager' has cardinality 0..*, and from 'Customer', the role 'Customer' has cardinality 0..*.
+An association connects 'StatisticEntry' and 'Classes_Statistics_Statistic'. From 'StatisticEntry', the role 'StatisticEntry' has cardinality 0..*, and from 'Classes_Statistics_Statistic', the role 'Classes_Statistics_Statistic' has cardinality 0..*.
+An association connects 'Date' and 'Classes_Statistics_Statistic'. From 'Date', the role 'Date' has cardinality 0..*, and from 'Classes_Statistics_Statistic', the role 'Classes_Statistics_Statistic58' has cardinality 0..*.
+An association connects 'Date' and 'Classes_Statistics_Statistic'. From 'Date', the role 'Date61' has cardinality 0..*, and from 'Classes_Statistics_Statistic', the role 'Classes_Statistics_Statistic60' has cardinality 0..*.
+An association connects 'Date' and 'Classes_Statistics_StatisticEntry'. From 'Date', the role 'Date63' has cardinality 0..*, and from 'Classes_Statistics_StatisticEntry', the role 'Classes_Statistics_StatisticEntry' has cardinality 0..*.
+An association connects 'Classes_Statistics_StatisticsGenerator' and 'IBills'. From 'Classes_Statistics_StatisticsGenerator', the role 'Classes_Statistics_StatisticsGenerator' has cardinality 0..*, and from 'IBills', the role 'IBills65' has cardinality 0..*.
+An association connects 'Classes_Statistics_StatisticsGenerator' and 'IBookings'. From 'Classes_Statistics_StatisticsGenerator', the role 'Classes_Statistics_StatisticsGenerator67' has cardinality 0..*, and from 'IBookings', the role 'IBookings' has cardinality 0..*.
+An association connects 'IStaff' and 'Classes_Statistics_StatisticsGenerator'. From 'IStaff', the role 'IStaff' has cardinality 0..*, and from 'Classes_Statistics_StatisticsGenerator', the role 'Classes_Statistics_StatisticsGenerator69' has cardinality 0..*.
+An association connects 'Classes_Staff_StaffManager' and 'Staff'. From 'Classes_Staff_StaffManager', the role 'Classes_Staff_StaffManager' has cardinality 0..*, and from 'Staff', the role 'Staff' has cardinality 0..*.
+An association connects 'Classes_Staff_StaffManager' and 'IStatisticsGenerator'. From 'Classes_Staff_StaffManager', the role 'Classes_Staff_StaffManager72' has cardinality 0..*, and from 'IStatisticsGenerator', the role 'IStatisticsGenerator' has cardinality 0..*.
+An association connects 'SalaryContract' and 'Classes_Staff_Staff'. From 'SalaryContract', the role 'SalaryContract' has cardinality 0..*, and from 'Classes_Staff_Staff', the role 'Classes_Staff_Staff' has cardinality 0..*.
+An association connects 'Classes_Restaurants_RestaurantsManager' and 'Restaurant'. From 'Classes_Restaurants_RestaurantsManager', the role 'Classes_Restaurants_RestaurantsManager' has cardinality 0..*, and from 'Restaurant', the role 'Restaurant' has cardinality 0..*.
+An association connects 'Reservation' and 'Classes_Restaurants_Restaurant'. From 'Reservation', the role 'Reservation' has cardinality 0..*, and from 'Classes_Restaurants_Restaurant', the role 'Classes_Restaurants_Restaurant' has cardinality 0..*.
+An association connects 'Classes_Restaurants_Restaurant' and 'RestaurantTable'. From 'Classes_Restaurants_Restaurant', the role 'Classes_Restaurants_Restaurant77' has cardinality 0..*, and from 'RestaurantTable', the role 'RestaurantTable' has cardinality 0..*.
+An association connects 'RestaurantMenu' and 'Classes_Restaurants_Restaurant'. From 'RestaurantMenu', the role 'RestaurantMenu' has cardinality 0..*, and from 'Classes_Restaurants_Restaurant', the role 'Classes_Restaurants_Restaurant79' has cardinality 0..*.
+An association connects 'RestaurantTable' and 'Classes_Restaurants_Reservation'. From 'RestaurantTable', the role 'RestaurantTable81' has cardinality 0..*, and from 'Classes_Restaurants_Reservation', the role 'Classes_Restaurants_Reservation' has cardinality 0..*.
+An association connects 'Feedback' and 'Classes_Feedback_FeedbackManager'. From 'Feedback', the role 'Feedback' has cardinality 0..*, and from 'Classes_Feedback_FeedbackManager', the role 'Classes_Feedback_FeedbackManager' has cardinality 0..*.
+An association connects 'Request' and 'Classes_Requests_RequestsManager'. From 'Request', the role 'Request' has cardinality 0..*, and from 'Classes_Requests_RequestsManager', the role 'Classes_Requests_RequestsManager' has cardinality 0..*.

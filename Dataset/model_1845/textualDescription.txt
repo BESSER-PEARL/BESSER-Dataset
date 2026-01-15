@@ -1,0 +1,26 @@
+The domain model 'contacts' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'contacts_Address' represents an important domain concept.
+It has the following attributes: 'country', which is of type str; 'street', which is of type str; 'zipCode', which is of type str; 'city', which is of type str; 'state', which is of type str.
+
+'contacts_UoD' represents an important domain concept.
+It does not declare any attributes.
+
+'contacts_Contact' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'company', which is of type str; 'image', which is of type str; 'webPage', which is of type str; 'title', which is of type str; 'email', which is of type str; 'jobTitle', which is of type str; 'note', which is of type str; 'firstName', which is of type str; 'middleName', which is of type str.
+
+'contacts_PhoneNumber' represents an important domain concept.
+It has the following attributes: 'country', which is of type str; 'number', which is of type str.
+
+'contacts_AddressBook' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'contacts_Address' and 'contacts_Contact'. From 'contacts_Address', the role 'contacts_Address' has cardinality 0..*, and from 'contacts_Contact', the role 'contacts_Contact' has cardinality 0..*.
+An association connects 'contacts_Contact' and 'contacts_PhoneNumber'. From 'contacts_Contact', the role 'contacts_Contact2' has cardinality 0..*, and from 'contacts_PhoneNumber', the role 'contacts_PhoneNumber' has cardinality 0..*.
+An association connects 'contacts_PhoneNumber' and 'contacts_Contact'. From 'contacts_PhoneNumber', the role 'contacts_PhoneNumber5' has cardinality 0..*, and from 'contacts_Contact', the role 'contacts_Contact4' has cardinality 0..*.
+An association connects 'contacts_Address' and 'contacts_Contact'. From 'contacts_Address', the role 'contacts_Address8' has cardinality 0..*, and from 'contacts_Contact', the role 'contacts_Contact7' has cardinality 0..*.
+An association connects 'contacts_AddressBook' and 'contacts_Contact'. From 'contacts_AddressBook', the role 'contacts_AddressBook' has cardinality 0..*, and from 'contacts_Contact', the role 'contacts_Contact10' has cardinality 0..*.
+An association connects 'contacts_UoD' and 'contacts_AddressBook'. From 'contacts_UoD', the role 'contacts_UoD' has cardinality 0..*, and from 'contacts_AddressBook', the role 'contacts_AddressBook12' has cardinality 0..*.

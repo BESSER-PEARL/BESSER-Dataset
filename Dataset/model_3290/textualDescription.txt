@@ -1,0 +1,207 @@
+The domain model 'etricegen' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'etricegen_OptionalActorInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_ActorClass' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_SubSystemClass' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_LogicalSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'WiredStructureClass' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_ServiceImplInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_OpenServiceConnection' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'etricegen_DataClass' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_ProtocolClass' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_LayerConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_SPP' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_WiredSubSystemClass' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_ActorInstance' represents an important domain concept.
+It has the following attributes: 'replIdx', which is of type int; 'unindexedName', which is of type str.
+
+'etricegen_GraphContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'StructureInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_InterfaceItemInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_SAP' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_SystemInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_SAPInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_InstanceBase' represents an important domain concept.
+It has the following attributes: 'nObjIDs', which is of type int; 'threadId', which is of type int; 'objId', which is of type int; 'name', which is of type str; 'path', which is of type str.
+
+'etricegen_SPPInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_WiredActorClass' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_BindingInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_AbstractInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceItemInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceBase' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_Wire' represents an important domain concept.
+It has the following attributes: 'dataDriven', which is of type bool; 'path2', which is of type str; 'path1', which is of type str.
+
+'etricegen_RoomModel' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_ConnectionInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_Root' represents an important domain concept.
+It has one attribute: 'library', which is of type bool.
+
+'etricegen_ServiceImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_SubSystemInstance' represents an important domain concept.
+It has one attribute: 'maxObjId', which is of type int.
+
+'etricegen_ExpandedActorClass' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_ActorInterfaceInstance' represents an important domain concept.
+It has one attribute: 'array', which is of type bool.
+
+'etricegen_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_OpenBinding' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'etricegen_WiredStructureClass' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_EnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'etricegen_PortInstance' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'etricegen_StructureInstance' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PortKind' defines the following possible values: 'external', 'internal', 'interface', 'relay'.
+
+The model also captures inheritance relationships between classes.
+The class 'etricegen_AbstractInstance' is a specialization of 'InstanceBase'.
+The class 'etricegen_ActorInterfaceInstance' is a specialization of 'AbstractInstance'.
+The class 'etricegen_StructureInstance' is a specialization of 'AbstractInstance'.
+The class 'etricegen_SystemInstance' is a specialization of 'InstanceBase'.
+The class 'etricegen_SubSystemInstance' is a specialization of 'StructureInstance'.
+The class 'etricegen_ActorInstance' is a specialization of 'StructureInstance'.
+The class 'etricegen_OptionalActorInstance' is a specialization of 'StructureInstance'.
+The class 'etricegen_InterfaceItemInstance' is a specialization of 'InstanceBase'.
+The class 'etricegen_PortInstance' is a specialization of 'InterfaceItemInstance'.
+The class 'etricegen_SAPInstance' is a specialization of 'InterfaceItemInstance'.
+The class 'etricegen_SPPInstance' is a specialization of 'InstanceBase'.
+The class 'etricegen_ServiceImplInstance' is a specialization of 'InterfaceItemInstance'.
+The class 'etricegen_WiredActorClass' is a specialization of 'WiredStructureClass'.
+The class 'etricegen_WiredSubSystemClass' is a specialization of 'WiredStructureClass'.
+
+Relationships between classes are modeled using associations.
+An association connects 'etricegen_SystemInstance' and 'etricegen_Root'. From 'etricegen_SystemInstance', the role 'etricegen_SystemInstance' has cardinality 0..*, and from 'etricegen_Root', the role 'etricegen_Root' has cardinality 0..*.
+An association connects 'etricegen_Root' and 'etricegen_SubSystemInstance'. From 'etricegen_Root', the role 'etricegen_Root2' has cardinality 0..*, and from 'etricegen_SubSystemInstance', the role 'etricegen_SubSystemInstance' has cardinality 0..*.
+An association connects 'etricegen_Root' and 'etricegen_SubSystemInstance'. From 'etricegen_Root', the role 'etricegen_Root4' has cardinality 0..*, and from 'etricegen_SubSystemInstance', the role 'etricegen_SubSystemInstance5' has cardinality 0..*.
+An association connects 'etricegen_Root' and 'etricegen_RoomModel'. From 'etricegen_Root', the role 'etricegen_Root7' has cardinality 0..*, and from 'etricegen_RoomModel', the role 'etricegen_RoomModel' has cardinality 0..*.
+An association connects 'etricegen_Root' and 'etricegen_RoomModel'. From 'etricegen_Root', the role 'etricegen_Root9' has cardinality 0..*, and from 'etricegen_RoomModel', the role 'etricegen_RoomModel10' has cardinality 0..*.
+An association connects 'etricegen_ExpandedActorClass' and 'etricegen_Root'. From 'etricegen_ExpandedActorClass', the role 'etricegen_ExpandedActorClass' has cardinality 0..*, and from 'etricegen_Root', the role 'etricegen_Root12' has cardinality 0..*.
+An association connects 'etricegen_Root' and 'etricegen_DataClass'. From 'etricegen_Root', the role 'etricegen_Root14' has cardinality 0..*, and from 'etricegen_DataClass', the role 'etricegen_DataClass' has cardinality 0..*.
+An association connects 'etricegen_Root' and 'etricegen_ProtocolClass'. From 'etricegen_Root', the role 'etricegen_Root16' has cardinality 0..*, and from 'etricegen_ProtocolClass', the role 'etricegen_ProtocolClass' has cardinality 0..*.
+An association connects 'etricegen_ActorClass' and 'etricegen_Root'. From 'etricegen_ActorClass', the role 'etricegen_ActorClass' has cardinality 0..*, and from 'etricegen_Root', the role 'etricegen_Root18' has cardinality 0..*.
+An association connects 'etricegen_EnumerationType' and 'etricegen_Root'. From 'etricegen_EnumerationType', the role 'etricegen_EnumerationType' has cardinality 0..*, and from 'etricegen_Root', the role 'etricegen_Root20' has cardinality 0..*.
+An association connects 'etricegen_Root' and 'etricegen_SubSystemClass'. From 'etricegen_Root', the role 'etricegen_Root22' has cardinality 0..*, and from 'etricegen_SubSystemClass', the role 'etricegen_SubSystemClass' has cardinality 0..*.
+An association connects 'etricegen_OptionalActorInstance' and 'etricegen_Root'. From 'etricegen_OptionalActorInstance', the role 'etricegen_OptionalActorInstance' has cardinality 0..*, and from 'etricegen_Root', the role 'etricegen_Root24' has cardinality 0..*.
+An association connects 'etricegen_Root' and 'etricegen_ActorClass'. From 'etricegen_Root', the role 'etricegen_Root26' has cardinality 0..*, and from 'etricegen_ActorClass', the role 'etricegen_ActorClass27' has cardinality 0..*.
+An association connects 'etricegen_Root' and 'etricegen_WiredStructureClass'. From 'etricegen_Root', the role 'etricegen_Root29' has cardinality 0..*, and from 'etricegen_WiredStructureClass', the role 'etricegen_WiredStructureClass' has cardinality 0..*.
+An association connects 'etricegen_AbstractInstance' and 'etricegen_PortInstance'. From 'etricegen_AbstractInstance', the role 'etricegen_AbstractInstance' has cardinality 0..*, and from 'etricegen_PortInstance', the role 'etricegen_PortInstance' has cardinality 0..*.
+An association connects 'etricegen_ActorClass' and 'etricegen_ActorInterfaceInstance'. From 'etricegen_ActorClass', the role 'etricegen_ActorClass32' has cardinality 0..*, and from 'etricegen_ActorInterfaceInstance', the role 'etricegen_ActorInterfaceInstance' has cardinality 0..*.
+An association connects 'etricegen_ActorInterfaceInstance' and 'etricegen_ServiceImplInstance'. From 'etricegen_ActorInterfaceInstance', the role 'etricegen_ActorInterfaceInstance34' has cardinality 0..*, and from 'etricegen_ServiceImplInstance', the role 'etricegen_ServiceImplInstance' has cardinality 0..*.
+An association connects 'etricegen_OptionalActorInstance' and 'etricegen_ActorInterfaceInstance'. From 'etricegen_OptionalActorInstance', the role 'etricegen_OptionalActorInstance37' has cardinality 0..*, and from 'etricegen_ActorInterfaceInstance', the role 'etricegen_ActorInterfaceInstance36' has cardinality 0..*.
+An association connects 'etricegen_StructureInstance' and 'etricegen_AbstractInstance'. From 'etricegen_StructureInstance', the role 'etricegen_StructureInstance' has cardinality 0..*, and from 'etricegen_AbstractInstance', the role 'etricegen_AbstractInstance39' has cardinality 0..*.
+An association connects 'etricegen_SAPInstance' and 'etricegen_StructureInstance'. From 'etricegen_SAPInstance', the role 'etricegen_SAPInstance' has cardinality 0..*, and from 'etricegen_StructureInstance', the role 'etricegen_StructureInstance41' has cardinality 0..*.
+An association connects 'etricegen_StructureInstance' and 'etricegen_SPPInstance'. From 'etricegen_StructureInstance', the role 'etricegen_StructureInstance43' has cardinality 0..*, and from 'etricegen_SPPInstance', the role 'etricegen_SPPInstance' has cardinality 0..*.
+An association connects 'etricegen_ServiceImplInstance' and 'etricegen_StructureInstance'. From 'etricegen_ServiceImplInstance', the role 'etricegen_ServiceImplInstance46' has cardinality 0..*, and from 'etricegen_StructureInstance', the role 'etricegen_StructureInstance45' has cardinality 0..*.
+An association connects 'etricegen_StructureInstance' and 'etricegen_BindingInstance'. From 'etricegen_StructureInstance', the role 'etricegen_StructureInstance48' has cardinality 0..*, and from 'etricegen_BindingInstance', the role 'etricegen_BindingInstance' has cardinality 0..*.
+An association connects 'etricegen_ConnectionInstance' and 'etricegen_StructureInstance'. From 'etricegen_ConnectionInstance', the role 'etricegen_ConnectionInstance' has cardinality 0..*, and from 'etricegen_StructureInstance', the role 'etricegen_StructureInstance50' has cardinality 0..*.
+An association connects 'etricegen_StructureInstance' and 'etricegen_ActorInstance'. From 'etricegen_StructureInstance', the role 'etricegen_StructureInstance52' has cardinality 0..*, and from 'etricegen_ActorInstance', the role 'etricegen_ActorInstance' has cardinality 0..*.
+An association connects 'etricegen_InterfaceItemInstance' and 'etricegen_StructureInstance'. From 'etricegen_InterfaceItemInstance', the role 'etricegen_InterfaceItemInstance' has cardinality 0..*, and from 'etricegen_StructureInstance', the role 'etricegen_StructureInstance54' has cardinality 0..*.
+An association connects 'etricegen_SubSystemInstance' and 'etricegen_SystemInstance'. From 'etricegen_SubSystemInstance', the role 'etricegen_SubSystemInstance57' has cardinality 0..*, and from 'etricegen_SystemInstance', the role 'etricegen_SystemInstance56' has cardinality 0..*.
+An association connects 'etricegen_LogicalSystem' and 'etricegen_SystemInstance'. From 'etricegen_LogicalSystem', the role 'etricegen_LogicalSystem' has cardinality 0..*, and from 'etricegen_SystemInstance', the role 'etricegen_SystemInstance59' has cardinality 0..*.
+An association connects 'etricegen_SubSystemInstance' and 'etricegen_SubSystemClass'. From 'etricegen_SubSystemInstance', the role 'etricegen_SubSystemInstance61' has cardinality 0..*, and from 'etricegen_SubSystemClass', the role 'etricegen_SubSystemClass62' has cardinality 0..*.
+An association connects 'etricegen_ActorClass' and 'etricegen_ActorInstance'. From 'etricegen_ActorClass', the role 'etricegen_ActorClass65' has cardinality 0..*, and from 'etricegen_ActorInstance', the role 'etricegen_ActorInstance64' has cardinality 0..*.
+An association connects 'etricegen_OptionalActorInstance' and 'etricegen_ActorClass'. From 'etricegen_OptionalActorInstance', the role 'etricegen_OptionalActorInstance67' has cardinality 0..*, and from 'etricegen_ActorClass', the role 'etricegen_ActorClass68' has cardinality 0..*.
+An association connects 'etricegen_SAPInstance' and 'etricegen_OptionalActorInstance'. From 'etricegen_SAPInstance', the role 'etricegen_SAPInstance71' has cardinality 0..*, and from 'etricegen_OptionalActorInstance', the role 'etricegen_OptionalActorInstance70' has cardinality 0..*.
+An association connects 'etricegen_InterfaceItemInstance' and 'etricegen_ProtocolClass'. From 'etricegen_InterfaceItemInstance', the role 'etricegen_InterfaceItemInstance73' has cardinality 0..*, and from 'etricegen_ProtocolClass', the role 'etricegen_ProtocolClass74' has cardinality 0..*.
+An association connects 'etricegen_InterfaceItemInstance' and 'etricegen_InterfaceItemInstance'. From 'etricegen_InterfaceItemInstance', the role 'etricegen_InterfaceItemInstance77' has cardinality 0..*, and from 'etricegen_InterfaceItemInstance', the role 'etricegen_InterfaceItemInstance75' has cardinality 0..*.
+An association connects 'etricegen_PortInstance' and 'etricegen_Port'. From 'etricegen_PortInstance', the role 'etricegen_PortInstance79' has cardinality 0..*, and from 'etricegen_Port', the role 'etricegen_Port' has cardinality 0..*.
+An association connects 'etricegen_PortInstance' and 'etricegen_BindingInstance'. From 'etricegen_PortInstance', the role 'ports' has cardinality 0..*, and from 'etricegen_BindingInstance', the role 'BindingInstance' has cardinality 0..*.
+An association connects 'etricegen_PortInstance' and 'etricegen_BindingInstance'. From 'etricegen_PortInstance', the role 'PortInstance' has cardinality 0..*, and from 'etricegen_BindingInstance', the role 'bindings' has cardinality 0..*.
+An association connects 'etricegen_Binding' and 'etricegen_BindingInstance'. From 'etricegen_Binding', the role 'etricegen_Binding' has cardinality 0..*, and from 'etricegen_BindingInstance', the role 'etricegen_BindingInstance83' has cardinality 0..*.
+An association connects 'etricegen_SAPInstance' and 'etricegen_SAP'. From 'etricegen_SAPInstance', the role 'etricegen_SAPInstance85' has cardinality 0..*, and from 'etricegen_SAP', the role 'etricegen_SAP' has cardinality 0..*.
+An association connects 'etricegen_SPP' and 'etricegen_SPPInstance'. From 'etricegen_SPP', the role 'etricegen_SPP' has cardinality 0..*, and from 'etricegen_SPPInstance', the role 'etricegen_SPPInstance87' has cardinality 0..*.
+An association connects 'etricegen_ConnectionInstance' and 'etricegen_SPPInstance'. From 'etricegen_ConnectionInstance', the role 'ConnectionInstance' has cardinality 0..*, and from 'etricegen_SPPInstance', the role 'toSPP' has cardinality 0..*.
+An association connects 'etricegen_SPPInstance' and 'etricegen_ConnectionInstance'. From 'etricegen_SPPInstance', the role 'fromSPP' has cardinality 0..*, and from 'etricegen_ConnectionInstance', the role 'ConnectionInstance90' has cardinality 0..*.
+An association connects 'etricegen_ServiceImplInstance' and 'etricegen_ServiceImplementation'. From 'etricegen_ServiceImplInstance', the role 'etricegen_ServiceImplInstance92' has cardinality 0..*, and from 'etricegen_ServiceImplementation', the role 'etricegen_ServiceImplementation' has cardinality 0..*.
+An association connects 'etricegen_AbstractInstance' and 'etricegen_ConnectionInstance'. From 'etricegen_AbstractInstance', the role 'etricegen_AbstractInstance95' has cardinality 0..*, and from 'etricegen_ConnectionInstance', the role 'etricegen_ConnectionInstance94' has cardinality 0..*.
+An association connects 'etricegen_SPPInstance' and 'etricegen_ConnectionInstance'. From 'etricegen_SPPInstance', the role 'SPPInstance' has cardinality 0..*, and from 'etricegen_ConnectionInstance', the role 'outgoing' has cardinality 0..*.
+An association connects 'etricegen_SPPInstance' and 'etricegen_ConnectionInstance'. From 'etricegen_SPPInstance', the role 'SPPInstance98' has cardinality 0..*, and from 'etricegen_ConnectionInstance', the role 'incoming' has cardinality 0..*.
+An association connects 'etricegen_LayerConnection' and 'etricegen_ConnectionInstance'. From 'etricegen_LayerConnection', the role 'etricegen_LayerConnection' has cardinality 0..*, and from 'etricegen_ConnectionInstance', the role 'etricegen_ConnectionInstance100' has cardinality 0..*.
+An association connects 'etricegen_Wire' and 'etricegen_WiredStructureClass'. From 'etricegen_Wire', the role 'etricegen_Wire' has cardinality 0..*, and from 'etricegen_WiredStructureClass', the role 'etricegen_WiredStructureClass102' has cardinality 0..*.
+An association connects 'etricegen_WiredStructureClass' and 'etricegen_OpenBinding'. From 'etricegen_WiredStructureClass', the role 'etricegen_WiredStructureClass104' has cardinality 0..*, and from 'etricegen_OpenBinding', the role 'etricegen_OpenBinding' has cardinality 0..*.
+An association connects 'etricegen_WiredStructureClass' and 'etricegen_OpenServiceConnection'. From 'etricegen_WiredStructureClass', the role 'etricegen_WiredStructureClass106' has cardinality 0..*, and from 'etricegen_OpenServiceConnection', the role 'etricegen_OpenServiceConnection' has cardinality 0..*.
+An association connects 'etricegen_OpenServiceConnection' and 'etricegen_WiredStructureClass'. From 'etricegen_OpenServiceConnection', the role 'etricegen_OpenServiceConnection109' has cardinality 0..*, and from 'etricegen_WiredStructureClass', the role 'etricegen_WiredStructureClass108' has cardinality 0..*.
+An association connects 'etricegen_OpenBinding' and 'etricegen_Port'. From 'etricegen_OpenBinding', the role 'etricegen_OpenBinding111' has cardinality 0..*, and from 'etricegen_Port', the role 'etricegen_Port112' has cardinality 0..*.
+An association connects 'etricegen_OpenServiceConnection' and 'etricegen_ProtocolClass'. From 'etricegen_OpenServiceConnection', the role 'etricegen_OpenServiceConnection114' has cardinality 0..*, and from 'etricegen_ProtocolClass', the role 'etricegen_ProtocolClass115' has cardinality 0..*.
+An association connects 'etricegen_ActorClass' and 'etricegen_WiredActorClass'. From 'etricegen_ActorClass', the role 'etricegen_ActorClass117' has cardinality 0..*, and from 'etricegen_WiredActorClass', the role 'etricegen_WiredActorClass' has cardinality 0..*.
+An association connects 'etricegen_WiredSubSystemClass' and 'etricegen_SubSystemClass'. From 'etricegen_WiredSubSystemClass', the role 'etricegen_WiredSubSystemClass' has cardinality 0..*, and from 'etricegen_SubSystemClass', the role 'etricegen_SubSystemClass119' has cardinality 0..*.
+An association connects 'etricegen_ActorClass' and 'etricegen_ExpandedActorClass'. From 'etricegen_ActorClass', the role 'etricegen_ActorClass122' has cardinality 0..*, and from 'etricegen_ExpandedActorClass', the role 'etricegen_ExpandedActorClass121' has cardinality 0..*.
+An association connects 'etricegen_ExpandedActorClass' and 'etricegen_GraphContainer'. From 'etricegen_ExpandedActorClass', the role 'etricegen_ExpandedActorClass124' has cardinality 0..*, and from 'etricegen_GraphContainer', the role 'etricegen_GraphContainer' has cardinality 0..*.

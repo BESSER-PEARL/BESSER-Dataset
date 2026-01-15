@@ -1,0 +1,593 @@
+The domain model 'uppaal' describes the core structural elements and their relationships within the system.
+
+The model defines 133 main class(es).
+
+'uppaal_statements_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_templates_AbstractTemplate' represents an important domain concept.
+It does not declare any attributes.
+
+'Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_BitShiftExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'uppaal_global_ChannelPriorityItem' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_MinusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'system_ProgressMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_VariableContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Location' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_CompareExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'uppaal_global_DefaultChannelPriority' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'visuals_PlanarElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_VariableContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_FunctionCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_types_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_NTA' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_TypeIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'SystemDeclarations' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_GlobalDeclarations' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_Parameter' represents an important domain concept.
+It has one attribute: 'callType', which is of type str.
+
+'system_InstantiationList' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_visuals_ColoredElement' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'colorCode', which is of type str.
+
+'uppaal_expressions_IdentifierExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_types_RangeTypeSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinedTemplate' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_ConditionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'global_ChannelPriorityItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'system_System' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_visuals_LinearElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_AssignmentExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'uppaal_declarations_SystemDeclarations' represents an important domain concept.
+It does not declare any attributes.
+
+'core_CommentableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_types_TypeDefinition' represents an important domain concept.
+It has one attribute: 'baseType', which is of type str.
+
+'uppaal_templates_Synchronization' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'IntegerBounds' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_templates_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_ArithmeticExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'uppaal_statements_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_core_CommentableElement' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'Index' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_FunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_MinMaxExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Synchronization' represents an important domain concept.
+It does not declare any attributes.
+
+'Point' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_types_DeclaredType' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_Initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_templates_Location' represents an important domain concept.
+It has one attribute: 'locationTimeKind', which is of type str.
+
+'visuals_LinearElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Declarations' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_Declarations' represents an important domain concept.
+It does not declare any attributes.
+
+'system_TemplateDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_statements_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_LogicalExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'uppaal_types_StructTypeSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_templates_Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalDeclarations' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_core_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DeclaredType' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_visuals_Point' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+'uppaal_expressions_QuantificationExpression' represents an important domain concept.
+It has one attribute: 'quantifier', which is of type str.
+
+'uppaal_expressions_IncrementDecrementExpression' represents an important domain concept.
+It has the following attributes: 'position', which is of type str; 'operator', which is of type str.
+
+'global_ChannelPriority' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_statements_WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalDeclarations' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_LocalDeclarations' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_templates_Template' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_statements_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_types_PredefinedType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'uppaal_declarations_ArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_ValueIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_global_ChannelPriority' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifierExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_LiteralExpression' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_statements_ForLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'ChannelPriorityItem' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_DataVariableDeclaration' represents an important domain concept.
+It has one attribute: 'prefix', which is of type str.
+
+'uppaal_types_ScalarTypeSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_types_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'Template' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_ChannelVariableDeclaration' represents an important domain concept.
+It has the following attributes: 'broadcast', which is of type bool; 'urgent', which is of type bool.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'PredefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_templates_RedefinedTemplate' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_BitwiseExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'uppaal_system_TemplateDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_statements_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_types_TypeSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_types_Type' represents an important domain concept.
+It has one attribute: 'baseType', which is of type str.
+
+'DataVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_ClockVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_NegationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_ExpressionInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_declarations_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'visuals_ColoredElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_statements_DoWhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_visuals_PlanarElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_statements_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_system_InstantiationList' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTemplate' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_ScopedIdentifierExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_system_ProgressMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_system_System' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'declarations_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_global_ChannelList' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_expressions_PlusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_types_IntegerBounds' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AssignmentOperator' defines the following possible values: 'TIMES_EQUAL', 'BIT_OR_EQUAL', 'EQUAL', 'BIT_AND_EQUAL', 'MINUS_EQUAL', 'DIVIDE_EQUAL', 'BIT_XOR_EQUAL', 'BIT_RIGHT_EQUAL', 'MODULO_EQUAL', 'BIT_LEFT_EQUAL', 'PLUS_EQUAL'.
+The enumeration 'IncrementDecrementOperator' defines the following possible values: 'DECREMENT', 'INCREMENT'.
+The enumeration 'SynchronizationKind' defines the following possible values: 'RECEIVE', 'SEND'.
+The enumeration 'LocationKind' defines the following possible values: 'URGENT', 'COMMITED', 'NORMAL'.
+The enumeration 'ColorKind' defines the following possible values: 'DARKGREY', 'CYAN', 'LIGHTGREY', 'BLACK', 'WHITE', 'YELLOW', 'PINK', 'BLUE', 'GREEN', 'DEFAULT', 'RED', 'MAGENTA', 'SELF_DEFINED', 'ORANGE'.
+The enumeration 'DataVariablePrefix' defines the following possible values: 'META', 'NONE', 'CONST'.
+The enumeration 'Quantifier' defines the following possible values: 'UNIVERSAL', 'EXISTENTIAL'.
+The enumeration 'IncrementDecrementPosition' defines the following possible values: 'PRE', 'POST'.
+The enumeration 'CompareOperator' defines the following possible values: 'UNEQUAL', 'GREATER_OR_EQUAL', 'LESS', 'EQUAL', 'LESS_OR_EQUAL', 'GREATER'.
+The enumeration 'MinMaxOperator' defines the following possible values: 'MAX', 'MIN'.
+The enumeration 'CallType' defines the following possible values: 'CALL_BY_REFERENCE', 'CALL_BY_VALUE'.
+The enumeration 'BuiltInType' defines the following possible values: 'CLOCK', 'CHAN', 'INT', 'BOOL', 'VOID'.
+The enumeration 'ArithmeticOperator' defines the following possible values: 'SUBTRACT', 'MODULO', 'DIVIDE', 'ADD', 'MULTIPLICATE'.
+The enumeration 'BitShiftOperator' defines the following possible values: 'RIGHT', 'LEFT'.
+The enumeration 'BitwiseOperator' defines the following possible values: 'XOR', 'AND', 'OR'.
+The enumeration 'LogicalOperator' defines the following possible values: 'OR', 'IMPLY', 'AND'.
+
+The model also captures inheritance relationships between classes.
+The class 'uppaal_NTA' is a specialization of 'core_NamedElement'.
+The class 'uppaal_NTA' is a specialization of 'core_CommentableElement'.
+The class 'uppaal_types_Type' is a specialization of 'NamedElement'.
+The class 'uppaal_types_PredefinedType' is a specialization of 'Type'.
+The class 'uppaal_types_DeclaredType' is a specialization of 'Type'.
+The class 'uppaal_types_TypeReference' is a specialization of 'TypeDefinition'.
+The class 'uppaal_types_TypeSpecification' is a specialization of 'TypeDefinition'.
+The class 'uppaal_types_ScalarTypeSpecification' is a specialization of 'TypeSpecification'.
+The class 'uppaal_types_StructTypeSpecification' is a specialization of 'TypeSpecification'.
+The class 'uppaal_types_RangeTypeSpecification' is a specialization of 'TypeSpecification'.
+The class 'uppaal_declarations_GlobalDeclarations' is a specialization of 'Declarations'.
+The class 'uppaal_declarations_LocalDeclarations' is a specialization of 'Declarations'.
+The class 'uppaal_declarations_SystemDeclarations' is a specialization of 'Declarations'.
+The class 'uppaal_declarations_VariableDeclaration' is a specialization of 'declarations_Declaration'.
+The class 'uppaal_declarations_VariableDeclaration' is a specialization of 'declarations_VariableContainer'.
+The class 'uppaal_declarations_ChannelVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'uppaal_declarations_ClockVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'uppaal_declarations_DataVariableDeclaration' is a specialization of 'VariableDeclaration'.
+The class 'uppaal_declarations_FunctionDeclaration' is a specialization of 'Declaration'.
+The class 'uppaal_declarations_Function' is a specialization of 'NamedElement'.
+The class 'uppaal_declarations_TypeDeclaration' is a specialization of 'Declaration'.
+The class 'uppaal_declarations_Variable' is a specialization of 'NamedElement'.
+The class 'uppaal_declarations_ValueIndex' is a specialization of 'Index'.
+The class 'uppaal_declarations_TypeIndex' is a specialization of 'Index'.
+The class 'uppaal_declarations_ExpressionInitializer' is a specialization of 'Initializer'.
+The class 'uppaal_declarations_ArrayInitializer' is a specialization of 'Initializer'.
+The class 'uppaal_global_ChannelList' is a specialization of 'ChannelPriorityItem'.
+The class 'uppaal_global_DefaultChannelPriority' is a specialization of 'ChannelPriorityItem'.
+The class 'uppaal_system_TemplateDeclaration' is a specialization of 'Declaration'.
+The class 'uppaal_templates_AbstractTemplate' is a specialization of 'core_NamedElement'.
+The class 'uppaal_templates_AbstractTemplate' is a specialization of 'core_CommentableElement'.
+The class 'uppaal_templates_Template' is a specialization of 'AbstractTemplate'.
+The class 'uppaal_templates_RedefinedTemplate' is a specialization of 'AbstractTemplate'.
+The class 'uppaal_templates_Location' is a specialization of 'core_NamedElement'.
+The class 'uppaal_templates_Location' is a specialization of 'core_CommentableElement'.
+The class 'uppaal_templates_Location' is a specialization of 'visuals_PlanarElement'.
+The class 'uppaal_templates_Location' is a specialization of 'visuals_ColoredElement'.
+The class 'uppaal_templates_Edge' is a specialization of 'visuals_LinearElement'.
+The class 'uppaal_templates_Edge' is a specialization of 'core_CommentableElement'.
+The class 'uppaal_templates_Edge' is a specialization of 'visuals_ColoredElement'.
+The class 'uppaal_templates_Selection' is a specialization of 'VariableContainer'.
+The class 'uppaal_statements_Block' is a specialization of 'Statement'.
+The class 'uppaal_statements_EmptyStatement' is a specialization of 'Statement'.
+The class 'uppaal_statements_ForLoop' is a specialization of 'Statement'.
+The class 'uppaal_statements_Iteration' is a specialization of 'statements_Statement'.
+The class 'uppaal_statements_Iteration' is a specialization of 'declarations_VariableContainer'.
+The class 'uppaal_statements_WhileLoop' is a specialization of 'Statement'.
+The class 'uppaal_statements_DoWhileLoop' is a specialization of 'Statement'.
+The class 'uppaal_statements_IfStatement' is a specialization of 'Statement'.
+The class 'uppaal_statements_ReturnStatement' is a specialization of 'Statement'.
+The class 'uppaal_statements_ExpressionStatement' is a specialization of 'Statement'.
+The class 'uppaal_expressions_NegationExpression' is a specialization of 'Expression'.
+The class 'uppaal_expressions_PlusExpression' is a specialization of 'Expression'.
+The class 'uppaal_expressions_MinusExpression' is a specialization of 'Expression'.
+The class 'uppaal_expressions_BinaryExpression' is a specialization of 'Expression'.
+The class 'uppaal_expressions_AssignmentExpression' is a specialization of 'BinaryExpression'.
+The class 'uppaal_expressions_IdentifierExpression' is a specialization of 'Expression'.
+The class 'uppaal_expressions_LiteralExpression' is a specialization of 'Expression'.
+The class 'uppaal_expressions_ArithmeticExpression' is a specialization of 'BinaryExpression'.
+The class 'uppaal_expressions_LogicalExpression' is a specialization of 'BinaryExpression'.
+The class 'uppaal_expressions_FunctionCallExpression' is a specialization of 'Expression'.
+The class 'uppaal_expressions_CompareExpression' is a specialization of 'BinaryExpression'.
+The class 'uppaal_expressions_ConditionExpression' is a specialization of 'Expression'.
+The class 'uppaal_expressions_ScopedIdentifierExpression' is a specialization of 'Expression'.
+The class 'uppaal_expressions_QuantificationExpression' is a specialization of 'expressions_Expression'.
+The class 'uppaal_expressions_QuantificationExpression' is a specialization of 'declarations_VariableContainer'.
+The class 'uppaal_expressions_IncrementDecrementExpression' is a specialization of 'Expression'.
+The class 'uppaal_expressions_BitShiftExpression' is a specialization of 'BinaryExpression'.
+The class 'uppaal_expressions_MinMaxExpression' is a specialization of 'BinaryExpression'.
+The class 'uppaal_expressions_BitwiseExpression' is a specialization of 'BinaryExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uppaal_NTA' and 'GlobalDeclarations'. From 'uppaal_NTA', the role 'uppaal_NTA' has cardinality 0..*, and from 'GlobalDeclarations', the role 'GlobalDeclarations' has cardinality 0..*.
+An association connects 'uppaal_NTA' and 'Template'. From 'uppaal_NTA', the role 'uppaal_NTA2' has cardinality 0..*, and from 'Template', the role 'Template' has cardinality 0..*.
+An association connects 'SystemDeclarations' and 'uppaal_NTA'. From 'SystemDeclarations', the role 'SystemDeclarations' has cardinality 0..*, and from 'uppaal_NTA', the role 'uppaal_NTA4' has cardinality 0..*.
+An association connects 'PredefinedType' and 'uppaal_NTA'. From 'PredefinedType', the role 'PredefinedType' has cardinality 0..*, and from 'uppaal_NTA', the role 'uppaal_NTA6' has cardinality 0..*.
+An association connects 'PredefinedType' and 'uppaal_NTA'. From 'PredefinedType', the role 'PredefinedType9' has cardinality 0..*, and from 'uppaal_NTA', the role 'uppaal_NTA8' has cardinality 0..*.
+An association connects 'PredefinedType' and 'uppaal_NTA'. From 'PredefinedType', the role 'PredefinedType12' has cardinality 0..*, and from 'uppaal_NTA', the role 'uppaal_NTA11' has cardinality 0..*.
+An association connects 'uppaal_NTA' and 'PredefinedType'. From 'uppaal_NTA', the role 'uppaal_NTA14' has cardinality 0..*, and from 'PredefinedType', the role 'PredefinedType15' has cardinality 0..*.
+An association connects 'PredefinedType' and 'uppaal_NTA'. From 'PredefinedType', the role 'PredefinedType18' has cardinality 0..*, and from 'uppaal_NTA', the role 'uppaal_NTA17' has cardinality 0..*.
+An association connects 'Index' and 'uppaal_types_Type'. From 'Index', the role 'Index' has cardinality 0..*, and from 'uppaal_types_Type', the role 'uppaal_types_Type' has cardinality 0..*.
+An association connects 'TypeSpecification' and 'uppaal_types_Type'. From 'TypeSpecification', the role 'TypeSpecification' has cardinality 0..*, and from 'uppaal_types_Type', the role 'uppaal_types_Type21' has cardinality 0..*.
+An association connects 'uppaal_types_DeclaredType' and 'TypeDeclaration'. From 'uppaal_types_DeclaredType', the role 'TypeDeclaration' has cardinality 0..*, and from 'TypeDeclaration', the role 'declarations' has cardinality 0..*.
+An association connects 'uppaal_types_DeclaredType' and 'TypeDefinition'. From 'uppaal_types_DeclaredType', the role 'uppaal_types_DeclaredType' has cardinality 0..*, and from 'TypeDefinition', the role 'TypeDefinition' has cardinality 0..*.
+An association connects 'TypeSpecification' and 'uppaal_types_TypeDefinition'. From 'TypeSpecification', the role 'TypeSpecification25' has cardinality 0..*, and from 'uppaal_types_TypeDefinition', the role 'uppaal_types_TypeDefinition' has cardinality 0..*.
+An association connects 'Type' and 'uppaal_types_TypeReference'. From 'Type', the role 'Type' has cardinality 0..*, and from 'uppaal_types_TypeReference', the role 'uppaal_types_TypeReference' has cardinality 0..*.
+An association connects 'uppaal_types_ScalarTypeSpecification' and 'Expression'. From 'uppaal_types_ScalarTypeSpecification', the role 'uppaal_types_ScalarTypeSpecification' has cardinality 0..*, and from 'Expression', the role 'Expression' has cardinality 0..*.
+An association connects 'uppaal_types_StructTypeSpecification' and 'DataVariableDeclaration'. From 'uppaal_types_StructTypeSpecification', the role 'uppaal_types_StructTypeSpecification' has cardinality 0..*, and from 'DataVariableDeclaration', the role 'DataVariableDeclaration' has cardinality 0..*.
+An association connects 'IntegerBounds' and 'uppaal_types_RangeTypeSpecification'. From 'IntegerBounds', the role 'IntegerBounds' has cardinality 0..*, and from 'uppaal_types_RangeTypeSpecification', the role 'uppaal_types_RangeTypeSpecification' has cardinality 0..*.
+An association connects 'uppaal_types_IntegerBounds' and 'Expression'. From 'uppaal_types_IntegerBounds', the role 'uppaal_types_IntegerBounds' has cardinality 0..*, and from 'Expression', the role 'Expression31' has cardinality 0..*.
+An association connects 'uppaal_types_IntegerBounds' and 'Expression'. From 'uppaal_types_IntegerBounds', the role 'uppaal_types_IntegerBounds33' has cardinality 0..*, and from 'Expression', the role 'Expression34' has cardinality 0..*.
+An association connects 'uppaal_types_Library' and 'PredefinedType'. From 'uppaal_types_Library', the role 'uppaal_types_Library' has cardinality 0..*, and from 'PredefinedType', the role 'PredefinedType36' has cardinality 0..*.
+An association connects 'Declaration' and 'uppaal_declarations_Declarations'. From 'Declaration', the role 'Declaration' has cardinality 0..*, and from 'uppaal_declarations_Declarations', the role 'uppaal_declarations_Declarations' has cardinality 0..*.
+An association connects 'global_ChannelPriority' and 'uppaal_declarations_GlobalDeclarations'. From 'global_ChannelPriority', the role 'global_ChannelPriority' has cardinality 0..*, and from 'uppaal_declarations_GlobalDeclarations', the role 'uppaal_declarations_GlobalDeclarations' has cardinality 0..*.
+An association connects 'uppaal_declarations_SystemDeclarations' and 'system_System'. From 'uppaal_declarations_SystemDeclarations', the role 'uppaal_declarations_SystemDeclarations' has cardinality 0..*, and from 'system_System', the role 'system_System' has cardinality 0..*.
+An association connects 'system_ProgressMeasure' and 'uppaal_declarations_SystemDeclarations'. From 'system_ProgressMeasure', the role 'system_ProgressMeasure' has cardinality 0..*, and from 'uppaal_declarations_SystemDeclarations', the role 'uppaal_declarations_SystemDeclarations41' has cardinality 0..*.
+An association connects 'Function' and 'uppaal_declarations_FunctionDeclaration'. From 'Function', the role 'Function' has cardinality 0..*, and from 'uppaal_declarations_FunctionDeclaration', the role 'uppaal_declarations_FunctionDeclaration' has cardinality 0..*.
+An association connects 'TypeDefinition' and 'uppaal_declarations_Function'. From 'TypeDefinition', the role 'TypeDefinition44' has cardinality 0..*, and from 'uppaal_declarations_Function', the role 'uppaal_declarations_Function' has cardinality 0..*.
+An association connects 'Block' and 'uppaal_declarations_Function'. From 'Block', the role 'Block' has cardinality 0..*, and from 'uppaal_declarations_Function', the role 'uppaal_declarations_Function46' has cardinality 0..*.
+An association connects 'Parameter' and 'uppaal_declarations_Function'. From 'Parameter', the role 'Parameter' has cardinality 0..*, and from 'uppaal_declarations_Function', the role 'uppaal_declarations_Function48' has cardinality 0..*.
+An association connects 'DeclaredType' and 'uppaal_declarations_TypeDeclaration'. From 'DeclaredType', the role 'types' has cardinality 0..*, and from 'uppaal_declarations_TypeDeclaration', the role 'DeclaredType' has cardinality 0..*.
+An association connects 'uppaal_declarations_TypeDeclaration' and 'TypeDefinition'. From 'uppaal_declarations_TypeDeclaration', the role 'uppaal_declarations_TypeDeclaration' has cardinality 0..*, and from 'TypeDefinition', the role 'TypeDefinition51' has cardinality 0..*.
+An association connects 'Index' and 'uppaal_declarations_Variable'. From 'Index', the role 'Index53' has cardinality 0..*, and from 'uppaal_declarations_Variable', the role 'uppaal_declarations_Variable' has cardinality 0..*.
+An association connects 'VariableContainer' and 'uppaal_declarations_Variable'. From 'VariableContainer', the role 'declarations55' has cardinality 0..*, and from 'uppaal_declarations_Variable', the role 'VariableContainer' has cardinality 0..*.
+An association connects 'TypeDefinition' and 'uppaal_declarations_Variable'. From 'TypeDefinition', the role 'TypeDefinition58' has cardinality 0..*, and from 'uppaal_declarations_Variable', the role 'uppaal_declarations_Variable57' has cardinality 0..*.
+An association connects 'uppaal_declarations_Variable' and 'Initializer'. From 'uppaal_declarations_Variable', the role 'uppaal_declarations_Variable60' has cardinality 0..*, and from 'Initializer', the role 'Initializer' has cardinality 0..*.
+An association connects 'uppaal_declarations_ValueIndex' and 'Expression'. From 'uppaal_declarations_ValueIndex', the role 'uppaal_declarations_ValueIndex' has cardinality 0..*, and from 'Expression', the role 'Expression62' has cardinality 0..*.
+An association connects 'uppaal_declarations_TypeIndex' and 'TypeDefinition'. From 'uppaal_declarations_TypeIndex', the role 'uppaal_declarations_TypeIndex' has cardinality 0..*, and from 'TypeDefinition', the role 'TypeDefinition64' has cardinality 0..*.
+An association connects 'TypeDefinition' and 'uppaal_declarations_VariableContainer'. From 'TypeDefinition', the role 'TypeDefinition66' has cardinality 0..*, and from 'uppaal_declarations_VariableContainer', the role 'uppaal_declarations_VariableContainer' has cardinality 0..*.
+An association connects 'Variable' and 'uppaal_declarations_VariableContainer'. From 'Variable', the role 'declarations68' has cardinality 0..*, and from 'uppaal_declarations_VariableContainer', the role 'Variable' has cardinality 0..*.
+An association connects 'uppaal_declarations_Parameter' and 'VariableDeclaration'. From 'uppaal_declarations_Parameter', the role 'uppaal_declarations_Parameter' has cardinality 0..*, and from 'VariableDeclaration', the role 'VariableDeclaration' has cardinality 0..*.
+An association connects 'uppaal_declarations_ExpressionInitializer' and 'Expression'. From 'uppaal_declarations_ExpressionInitializer', the role 'uppaal_declarations_ExpressionInitializer' has cardinality 0..*, and from 'Expression', the role 'Expression71' has cardinality 0..*.
+An association connects 'Initializer' and 'uppaal_declarations_ArrayInitializer'. From 'Initializer', the role 'Initializer73' has cardinality 0..*, and from 'uppaal_declarations_ArrayInitializer', the role 'uppaal_declarations_ArrayInitializer' has cardinality 0..*.
+An association connects 'uppaal_global_ChannelPriority' and 'global_ChannelPriorityItem'. From 'uppaal_global_ChannelPriority', the role 'uppaal_global_ChannelPriority' has cardinality 0..*, and from 'global_ChannelPriorityItem', the role 'global_ChannelPriorityItem' has cardinality 0..*.
+An association connects 'uppaal_global_ChannelList' and 'IdentifierExpression'. From 'uppaal_global_ChannelList', the role 'uppaal_global_ChannelList' has cardinality 0..*, and from 'IdentifierExpression', the role 'IdentifierExpression' has cardinality 0..*.
+An association connects 'uppaal_system_TemplateDeclaration' and 'RedefinedTemplate'. From 'uppaal_system_TemplateDeclaration', the role 'RedefinedTemplate' has cardinality 0..*, and from 'RedefinedTemplate', the role 'templates' has cardinality 0..*.
+An association connects 'uppaal_system_TemplateDeclaration' and 'Expression'. From 'uppaal_system_TemplateDeclaration', the role 'uppaal_system_TemplateDeclaration' has cardinality 0..*, and from 'Expression', the role 'Expression78' has cardinality 0..*.
+An association connects 'system_InstantiationList' and 'uppaal_system_System'. From 'system_InstantiationList', the role 'system_InstantiationList' has cardinality 0..*, and from 'uppaal_system_System', the role 'uppaal_system_System' has cardinality 0..*.
+An association connects 'AbstractTemplate' and 'uppaal_system_InstantiationList'. From 'AbstractTemplate', the role 'AbstractTemplate' has cardinality 0..*, and from 'uppaal_system_InstantiationList', the role 'uppaal_system_InstantiationList' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_system_ProgressMeasure'. From 'Expression', the role 'Expression82' has cardinality 0..*, and from 'uppaal_system_ProgressMeasure', the role 'uppaal_system_ProgressMeasure' has cardinality 0..*.
+An association connects 'uppaal_templates_AbstractTemplate' and 'Parameter'. From 'uppaal_templates_AbstractTemplate', the role 'uppaal_templates_AbstractTemplate' has cardinality 0..*, and from 'Parameter', the role 'Parameter84' has cardinality 0..*.
+An association connects 'LocalDeclarations' and 'uppaal_templates_Template'. From 'LocalDeclarations', the role 'LocalDeclarations' has cardinality 0..*, and from 'uppaal_templates_Template', the role 'uppaal_templates_Template' has cardinality 0..*.
+An association connects 'Location' and 'uppaal_templates_Template'. From 'Location', the role 'templates87' has cardinality 0..*, and from 'uppaal_templates_Template', the role 'Location' has cardinality 0..*.
+An association connects 'Edge' and 'uppaal_templates_Template'. From 'Edge', the role 'templates89' has cardinality 0..*, and from 'uppaal_templates_Template', the role 'Edge' has cardinality 0..*.
+An association connects 'uppaal_templates_Template' and 'Location'. From 'uppaal_templates_Template', the role 'uppaal_templates_Template91' has cardinality 0..*, and from 'Location', the role 'Location92' has cardinality 0..*.
+An association connects 'AbstractTemplate' and 'uppaal_templates_RedefinedTemplate'. From 'AbstractTemplate', the role 'AbstractTemplate94' has cardinality 0..*, and from 'uppaal_templates_RedefinedTemplate', the role 'uppaal_templates_RedefinedTemplate' has cardinality 0..*.
+An association connects 'uppaal_templates_RedefinedTemplate' and 'system_TemplateDeclaration'. From 'uppaal_templates_RedefinedTemplate', the role 'system' has cardinality 0..*, and from 'system_TemplateDeclaration', the role 'declarations96' has cardinality 0..*.
+An association connects 'uppaal_templates_Location' and 'Template'. From 'uppaal_templates_Location', the role 'Template98' has cardinality 0..*, and from 'Template', the role 'templates99' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_templates_Location'. From 'Expression', the role 'Expression101' has cardinality 0..*, and from 'uppaal_templates_Location', the role 'uppaal_templates_Location' has cardinality 0..*.
+An association connects 'Location' and 'uppaal_templates_Edge'. From 'Location', the role 'Location103' has cardinality 0..*, and from 'uppaal_templates_Edge', the role 'uppaal_templates_Edge' has cardinality 0..*.
+An association connects 'Location' and 'uppaal_templates_Edge'. From 'Location', the role 'Location106' has cardinality 0..*, and from 'uppaal_templates_Edge', the role 'uppaal_templates_Edge105' has cardinality 0..*.
+An association connects 'uppaal_templates_Edge' and 'Template'. From 'uppaal_templates_Edge', the role 'Template108' has cardinality 0..*, and from 'Template', the role 'templates109' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_templates_Edge'. From 'Expression', the role 'Expression112' has cardinality 0..*, and from 'uppaal_templates_Edge', the role 'uppaal_templates_Edge111' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_templates_Edge'. From 'Expression', the role 'Expression115' has cardinality 0..*, and from 'uppaal_templates_Edge', the role 'uppaal_templates_Edge114' has cardinality 0..*.
+An association connects 'uppaal_templates_Edge' and 'Synchronization'. From 'uppaal_templates_Edge', the role 'uppaal_templates_Edge117' has cardinality 0..*, and from 'Synchronization', the role 'Synchronization' has cardinality 0..*.
+An association connects 'Selection' and 'uppaal_templates_Edge'. From 'Selection', the role 'Selection' has cardinality 0..*, and from 'uppaal_templates_Edge', the role 'uppaal_templates_Edge119' has cardinality 0..*.
+An association connects 'uppaal_templates_Synchronization' and 'IdentifierExpression'. From 'uppaal_templates_Synchronization', the role 'uppaal_templates_Synchronization' has cardinality 0..*, and from 'IdentifierExpression', the role 'IdentifierExpression121' has cardinality 0..*.
+An association connects 'LocalDeclarations' and 'uppaal_statements_Block'. From 'LocalDeclarations', the role 'LocalDeclarations123' has cardinality 0..*, and from 'uppaal_statements_Block', the role 'uppaal_statements_Block' has cardinality 0..*.
+An association connects 'uppaal_statements_Block' and 'Statement'. From 'uppaal_statements_Block', the role 'uppaal_statements_Block125' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_statements_ForLoop'. From 'Expression', the role 'Expression127' has cardinality 0..*, and from 'uppaal_statements_ForLoop', the role 'uppaal_statements_ForLoop' has cardinality 0..*.
+An association connects 'uppaal_statements_ForLoop' and 'Expression'. From 'uppaal_statements_ForLoop', the role 'uppaal_statements_ForLoop129' has cardinality 0..*, and from 'Expression', the role 'Expression130' has cardinality 0..*.
+An association connects 'uppaal_statements_ForLoop' and 'Expression'. From 'uppaal_statements_ForLoop', the role 'uppaal_statements_ForLoop132' has cardinality 0..*, and from 'Expression', the role 'Expression133' has cardinality 0..*.
+An association connects 'Statement' and 'uppaal_statements_ForLoop'. From 'Statement', the role 'Statement136' has cardinality 0..*, and from 'uppaal_statements_ForLoop', the role 'uppaal_statements_ForLoop135' has cardinality 0..*.
+An association connects 'uppaal_statements_Iteration' and 'Statement'. From 'uppaal_statements_Iteration', the role 'uppaal_statements_Iteration' has cardinality 0..*, and from 'Statement', the role 'Statement138' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_statements_WhileLoop'. From 'Expression', the role 'Expression140' has cardinality 0..*, and from 'uppaal_statements_WhileLoop', the role 'uppaal_statements_WhileLoop' has cardinality 0..*.
+An association connects 'Statement' and 'uppaal_statements_WhileLoop'. From 'Statement', the role 'Statement143' has cardinality 0..*, and from 'uppaal_statements_WhileLoop', the role 'uppaal_statements_WhileLoop142' has cardinality 0..*.
+An association connects 'uppaal_statements_DoWhileLoop' and 'Statement'. From 'uppaal_statements_DoWhileLoop', the role 'uppaal_statements_DoWhileLoop' has cardinality 0..*, and from 'Statement', the role 'Statement145' has cardinality 0..*.
+An association connects 'uppaal_statements_DoWhileLoop' and 'Expression'. From 'uppaal_statements_DoWhileLoop', the role 'uppaal_statements_DoWhileLoop147' has cardinality 0..*, and from 'Expression', the role 'Expression148' has cardinality 0..*.
+An association connects 'uppaal_statements_IfStatement' and 'Expression'. From 'uppaal_statements_IfStatement', the role 'uppaal_statements_IfStatement' has cardinality 0..*, and from 'Expression', the role 'Expression150' has cardinality 0..*.
+An association connects 'uppaal_statements_IfStatement' and 'Statement'. From 'uppaal_statements_IfStatement', the role 'uppaal_statements_IfStatement152' has cardinality 0..*, and from 'Statement', the role 'Statement153' has cardinality 0..*.
+An association connects 'Statement' and 'uppaal_statements_IfStatement'. From 'Statement', the role 'Statement156' has cardinality 0..*, and from 'uppaal_statements_IfStatement', the role 'uppaal_statements_IfStatement155' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_statements_ReturnStatement'. From 'Expression', the role 'Expression158' has cardinality 0..*, and from 'uppaal_statements_ReturnStatement', the role 'uppaal_statements_ReturnStatement' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_statements_ExpressionStatement'. From 'Expression', the role 'Expression160' has cardinality 0..*, and from 'uppaal_statements_ExpressionStatement', the role 'uppaal_statements_ExpressionStatement' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_expressions_NegationExpression'. From 'Expression', the role 'Expression162' has cardinality 0..*, and from 'uppaal_expressions_NegationExpression', the role 'uppaal_expressions_NegationExpression' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_expressions_PlusExpression'. From 'Expression', the role 'Expression164' has cardinality 0..*, and from 'uppaal_expressions_PlusExpression', the role 'uppaal_expressions_PlusExpression' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_expressions_MinusExpression'. From 'Expression', the role 'Expression166' has cardinality 0..*, and from 'uppaal_expressions_MinusExpression', the role 'uppaal_expressions_MinusExpression' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_expressions_BinaryExpression'. From 'Expression', the role 'Expression168' has cardinality 0..*, and from 'uppaal_expressions_BinaryExpression', the role 'uppaal_expressions_BinaryExpression' has cardinality 0..*.
+An association connects 'uppaal_expressions_BinaryExpression' and 'Expression'. From 'uppaal_expressions_BinaryExpression', the role 'uppaal_expressions_BinaryExpression170' has cardinality 0..*, and from 'Expression', the role 'Expression171' has cardinality 0..*.
+An association connects 'uppaal_expressions_IdentifierExpression' and 'NamedElement'. From 'uppaal_expressions_IdentifierExpression', the role 'uppaal_expressions_IdentifierExpression' has cardinality 0..*, and from 'NamedElement', the role 'NamedElement' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_expressions_IdentifierExpression'. From 'Expression', the role 'Expression175' has cardinality 0..*, and from 'uppaal_expressions_IdentifierExpression', the role 'uppaal_expressions_IdentifierExpression174' has cardinality 0..*.
+An association connects 'Function' and 'uppaal_expressions_FunctionCallExpression'. From 'Function', the role 'Function177' has cardinality 0..*, and from 'uppaal_expressions_FunctionCallExpression', the role 'uppaal_expressions_FunctionCallExpression' has cardinality 0..*.
+An association connects 'uppaal_expressions_FunctionCallExpression' and 'Expression'. From 'uppaal_expressions_FunctionCallExpression', the role 'uppaal_expressions_FunctionCallExpression179' has cardinality 0..*, and from 'Expression', the role 'Expression180' has cardinality 0..*.
+An association connects 'uppaal_expressions_ConditionExpression' and 'Expression'. From 'uppaal_expressions_ConditionExpression', the role 'uppaal_expressions_ConditionExpression' has cardinality 0..*, and from 'Expression', the role 'Expression182' has cardinality 0..*.
+An association connects 'uppaal_expressions_ConditionExpression' and 'Expression'. From 'uppaal_expressions_ConditionExpression', the role 'uppaal_expressions_ConditionExpression184' has cardinality 0..*, and from 'Expression', the role 'Expression185' has cardinality 0..*.
+An association connects 'Expression' and 'uppaal_expressions_ConditionExpression'. From 'Expression', the role 'Expression188' has cardinality 0..*, and from 'uppaal_expressions_ConditionExpression', the role 'uppaal_expressions_ConditionExpression187' has cardinality 0..*.
+An association connects 'uppaal_expressions_ScopedIdentifierExpression' and 'Expression'. From 'uppaal_expressions_ScopedIdentifierExpression', the role 'uppaal_expressions_ScopedIdentifierExpression' has cardinality 0..*, and from 'Expression', the role 'Expression190' has cardinality 0..*.
+An association connects 'uppaal_expressions_ScopedIdentifierExpression' and 'IdentifierExpression'. From 'uppaal_expressions_ScopedIdentifierExpression', the role 'uppaal_expressions_ScopedIdentifierExpression192' has cardinality 0..*, and from 'IdentifierExpression', the role 'IdentifierExpression193' has cardinality 0..*.
+An association connects 'uppaal_expressions_QuantificationExpression' and 'Expression'. From 'uppaal_expressions_QuantificationExpression', the role 'uppaal_expressions_QuantificationExpression' has cardinality 0..*, and from 'Expression', the role 'Expression195' has cardinality 0..*.
+An association connects 'uppaal_expressions_IncrementDecrementExpression' and 'Expression'. From 'uppaal_expressions_IncrementDecrementExpression', the role 'uppaal_expressions_IncrementDecrementExpression' has cardinality 0..*, and from 'Expression', the role 'Expression197' has cardinality 0..*.
+An association connects 'Point' and 'uppaal_visuals_PlanarElement'. From 'Point', the role 'Point' has cardinality 0..*, and from 'uppaal_visuals_PlanarElement', the role 'uppaal_visuals_PlanarElement' has cardinality 0..*.
+An association connects 'Point' and 'uppaal_visuals_LinearElement'. From 'Point', the role 'Point200' has cardinality 0..*, and from 'uppaal_visuals_LinearElement', the role 'uppaal_visuals_LinearElement' has cardinality 0..*.

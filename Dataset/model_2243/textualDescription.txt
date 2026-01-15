@@ -1,0 +1,61 @@
+The domain model 'tdt4250case' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'tdt4250case_Course' represents an important domain concept.
+It has the following attributes: 'credits', which is of type float; 'content', which is of type str; 'code', which is of type str; 'name', which is of type str.
+
+'tdt4250case_Examination' represents an important domain concept.
+It does not declare any attributes.
+
+'tdt4250case_Person' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'username', which is of type str.
+
+'tdt4250case_CourseRole' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tdt4250case_Studyprogram' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'tdt4250case_ExaminationActivity' represents an important domain concept.
+It has the following attributes: 'weighting', which is of type str; 'evaluationForm', which is of type str.
+
+'tdt4250case_ScheduledActivity' represents an important domain concept.
+It has the following attributes: 'timeslot', which is of type str; 'room', which is of type str; 'activity', which is of type str.
+
+'tdt4250case_CreditReductionCourse' represents an important domain concept.
+It has the following attributes: 'reduction', which is of type float; 'from', which is of type date; 'to', which is of type date.
+
+'tdt4250case_Department' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'name', which is of type str.
+
+'tdt4250case_Timetable' represents an important domain concept.
+It does not declare any attributes.
+
+'tdt4250case_CourseInstance' represents an important domain concept.
+It has one attribute: 'semester', which is of type str.
+
+'tdt4250case_CourseWork' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'hours', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'tdt4250case_Course' and 'tdt4250case_Studyprogram'. From 'tdt4250case_Course', the role 'course' has cardinality 0..*, and from 'tdt4250case_Studyprogram', the role 'Studyprogram' has cardinality 0..*.
+An association connects 'tdt4250case_Course' and 'tdt4250case_Course'. From 'tdt4250case_Course', the role 'tdt4250case_Course' has cardinality 0..*, and from 'tdt4250case_Course', the role 'tdt4250case_Course1' has cardinality 0..*.
+An association connects 'tdt4250case_Course' and 'tdt4250case_Course'. From 'tdt4250case_Course', the role 'tdt4250case_Course3' has cardinality 0..*, and from 'tdt4250case_Course', the role 'tdt4250case_Course5' has cardinality 0..*.
+An association connects 'tdt4250case_CreditReductionCourse' and 'tdt4250case_Course'. From 'tdt4250case_CreditReductionCourse', the role 'tdt4250case_CreditReductionCourse' has cardinality 0..*, and from 'tdt4250case_Course', the role 'tdt4250case_Course7' has cardinality 0..*.
+An association connects 'tdt4250case_CourseInstance' and 'tdt4250case_Course'. From 'tdt4250case_CourseInstance', the role 'CourseInstance' has cardinality 0..*, and from 'tdt4250case_Course', the role 'course9' has cardinality 0..*.
+An association connects 'tdt4250case_Course' and 'tdt4250case_CourseWork'. From 'tdt4250case_Course', the role 'tdt4250case_Course11' has cardinality 0..*, and from 'tdt4250case_CourseWork', the role 'tdt4250case_CourseWork' has cardinality 0..*.
+An association connects 'tdt4250case_Course' and 'tdt4250case_CreditReductionCourse'. From 'tdt4250case_Course', the role 'tdt4250case_Course14' has cardinality 0..*, and from 'tdt4250case_CreditReductionCourse', the role 'tdt4250case_CreditReductionCourse13' has cardinality 0..*.
+An association connects 'tdt4250case_Studyprogram' and 'tdt4250case_Course'. From 'tdt4250case_Studyprogram', the role 'studyprogram' has cardinality 0..*, and from 'tdt4250case_Course', the role 'Course' has cardinality 0..*.
+An association connects 'tdt4250case_CourseInstance' and 'tdt4250case_Examination'. From 'tdt4250case_CourseInstance', the role 'tdt4250case_CourseInstance' has cardinality 0..*, and from 'tdt4250case_Examination', the role 'tdt4250case_Examination' has cardinality 0..*.
+An association connects 'tdt4250case_CourseInstance' and 'tdt4250case_Timetable'. From 'tdt4250case_CourseInstance', the role 'tdt4250case_CourseInstance18' has cardinality 0..*, and from 'tdt4250case_Timetable', the role 'tdt4250case_Timetable' has cardinality 0..*.
+An association connects 'tdt4250case_CourseInstance' and 'tdt4250case_Department'. From 'tdt4250case_CourseInstance', the role 'tdt4250case_CourseInstance20' has cardinality 0..*, and from 'tdt4250case_Department', the role 'tdt4250case_Department' has cardinality 0..*.
+An association connects 'tdt4250case_CourseInstance' and 'tdt4250case_CourseRole'. From 'tdt4250case_CourseInstance', the role 'tdt4250case_CourseInstance22' has cardinality 0..*, and from 'tdt4250case_CourseRole', the role 'tdt4250case_CourseRole' has cardinality 0..*.
+An association connects 'tdt4250case_CourseInstance' and 'tdt4250case_Person'. From 'tdt4250case_CourseInstance', the role 'tdt4250case_CourseInstance24' has cardinality 0..*, and from 'tdt4250case_Person', the role 'tdt4250case_Person' has cardinality 0..*.
+An association connects 'tdt4250case_CourseInstance' and 'tdt4250case_Course'. From 'tdt4250case_CourseInstance', the role 'instance' has cardinality 0..*, and from 'tdt4250case_Course', the role 'Course26' has cardinality 0..*.
+An association connects 'tdt4250case_ExaminationActivity' and 'tdt4250case_Examination'. From 'tdt4250case_ExaminationActivity', the role 'tdt4250case_ExaminationActivity' has cardinality 0..*, and from 'tdt4250case_Examination', the role 'tdt4250case_Examination28' has cardinality 0..*.
+An association connects 'tdt4250case_ScheduledActivity' and 'tdt4250case_Timetable'. From 'tdt4250case_ScheduledActivity', the role 'tdt4250case_ScheduledActivity' has cardinality 0..*, and from 'tdt4250case_Timetable', the role 'tdt4250case_Timetable30' has cardinality 0..*.
+An association connects 'tdt4250case_ScheduledActivity' and 'tdt4250case_Studyprogram'. From 'tdt4250case_ScheduledActivity', the role 'tdt4250case_ScheduledActivity32' has cardinality 0..*, and from 'tdt4250case_Studyprogram', the role 'tdt4250case_Studyprogram' has cardinality 0..*.
+An association connects 'tdt4250case_Person' and 'tdt4250case_Department'. From 'tdt4250case_Person', the role 'tdt4250case_Person35' has cardinality 0..*, and from 'tdt4250case_Department', the role 'tdt4250case_Department34' has cardinality 0..*.
+An association connects 'tdt4250case_CourseRole' and 'tdt4250case_Person'. From 'tdt4250case_CourseRole', the role 'CourseRole' has cardinality 0..*, and from 'tdt4250case_Person', the role 'person' has cardinality 0..*.
+An association connects 'tdt4250case_Person' and 'tdt4250case_CourseRole'. From 'tdt4250case_Person', the role 'Person' has cardinality 0..*, and from 'tdt4250case_CourseRole', the role 'role' has cardinality 0..*.

@@ -1,0 +1,16 @@
+The domain model 'e' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'e_E' represents an important domain concept.
+It does not declare any attributes.
+
+'e_D' represents an important domain concept.
+It does not declare any attributes.
+
+'e_F' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'e_E' and 'e_D'. From 'e_E', the role 'e_E' has cardinality 0..*, and from 'e_D', the role 'e_D' has cardinality 0..*.
+An association connects 'e_F' and 'e_E'. From 'e_F', the role 'e_F' has cardinality 0..*, and from 'e_E', the role 'e_E2' has cardinality 0..*.

@@ -1,0 +1,154 @@
+The domain model 'ecore' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'ecore_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_ENamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ecore_EStructuralFeature' represents an important domain concept.
+It has the following attributes: 'transient', which is of type bool; 'derived', which is of type bool; 'unsettable', which is of type bool; 'changeable', which is of type bool; 'defaultValueLiteral', which is of type str; 'defaultValue', which is of type str; 'volatile', which is of type bool.
+
+'ecore_EFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_EAttribute' represents an important domain concept.
+It has one attribute: 'iD', which is of type bool.
+
+'EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_EParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_ETypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_EClassifier' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'instanceClassName', which is of type str; 'instanceClass', which is of type str; 'instanceTypeName', which is of type str.
+
+'ecore_EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_EClass' represents an important domain concept.
+It has the following attributes: 'interface', which is of type bool; 'abstract', which is of type bool.
+
+'ecore_EDataType' represents an important domain concept.
+It has one attribute: 'serializable', which is of type bool.
+
+'ecore_EEnumLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'literal', which is of type str; 'instance', which is of type str.
+
+'ecore_EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_ETypedElement' represents an important domain concept.
+It has the following attributes: 'ordered', which is of type bool; 'required', which is of type bool; 'many', which is of type bool; 'lowerBound', which is of type int; 'upperBound', which is of type int; 'unique', which is of type bool.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_EGenericType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_EPackage' represents an important domain concept.
+It has the following attributes: 'nsURI', which is of type str; 'nsPrefix', which is of type str.
+
+'ecore_EAnnotation' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'ecore_EStringToStringMapEntry' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_EReference' represents an important domain concept.
+It has the following attributes: 'container', which is of type bool; 'containment', which is of type bool; 'resolveProxies', which is of type bool.
+
+'ecore_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ecore_EAttribute' is a specialization of 'EStructuralFeature'.
+The class 'ecore_EAnnotation' is a specialization of 'EModelElement'.
+The class 'ecore_EClass' is a specialization of 'EClassifier'.
+The class 'ecore_EClassifier' is a specialization of 'ENamedElement'.
+The class 'ecore_EDataType' is a specialization of 'EClassifier'.
+The class 'ecore_EEnum' is a specialization of 'EDataType'.
+The class 'ecore_EEnumLiteral' is a specialization of 'ENamedElement'.
+The class 'ecore_EFactory' is a specialization of 'EModelElement'.
+The class 'ecore_EModelElement' is a specialization of 'EObject'.
+The class 'ecore_ENamedElement' is a specialization of 'EModelElement'.
+The class 'ecore_EOperation' is a specialization of 'ETypedElement'.
+The class 'ecore_EPackage' is a specialization of 'ENamedElement'.
+The class 'ecore_EParameter' is a specialization of 'ETypedElement'.
+The class 'ecore_EReference' is a specialization of 'EStructuralFeature'.
+The class 'ecore_EStructuralFeature' is a specialization of 'ETypedElement'.
+The class 'ecore_ETypedElement' is a specialization of 'ENamedElement'.
+The class 'ecore_EGenericType' is a specialization of 'EObject'.
+The class 'ecore_ETypeParameter' is a specialization of 'ENamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ecore_EAttribute' and 'ecore_EDataType'. From 'ecore_EAttribute', the role 'ecore_EAttribute' has cardinality 0..*, and from 'ecore_EDataType', the role 'ecore_EDataType' has cardinality 0..*.
+An association connects 'ecore_EStringToStringMapEntry' and 'ecore_EAnnotation'. From 'ecore_EStringToStringMapEntry', the role 'ecore_EStringToStringMapEntry' has cardinality 0..*, and from 'ecore_EAnnotation', the role 'ecore_EAnnotation' has cardinality 0..*.
+An association connects 'ecore_EAnnotation' and 'ecore_EModelElement'. From 'ecore_EAnnotation', the role 'eAnnotations' has cardinality 0..*, and from 'ecore_EModelElement', the role 'EModelElement' has cardinality 0..*.
+An association connects 'ecore_EObject' and 'ecore_EAnnotation'. From 'ecore_EObject', the role 'ecore_EObject' has cardinality 0..*, and from 'ecore_EAnnotation', the role 'ecore_EAnnotation4' has cardinality 0..*.
+An association connects 'ecore_EAnnotation' and 'ecore_EObject'. From 'ecore_EAnnotation', the role 'ecore_EAnnotation6' has cardinality 0..*, and from 'ecore_EObject', the role 'ecore_EObject7' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EClass'. From 'ecore_EClass', the role 'ecore_EClass8' has cardinality 0..*, and from 'ecore_EClass', the role 'ecore_EClass' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EOperation'. From 'ecore_EClass', the role 'eContainingClass' has cardinality 0..*, and from 'ecore_EOperation', the role 'EOperation' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EAttribute'. From 'ecore_EClass', the role 'ecore_EClass12' has cardinality 0..*, and from 'ecore_EAttribute', the role 'ecore_EAttribute13' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EReference'. From 'ecore_EClass', the role 'ecore_EClass15' has cardinality 0..*, and from 'ecore_EReference', the role 'ecore_EReference' has cardinality 0..*.
+An association connects 'ecore_EReference' and 'ecore_EClass'. From 'ecore_EReference', the role 'ecore_EReference18' has cardinality 0..*, and from 'ecore_EClass', the role 'ecore_EClass17' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EAttribute'. From 'ecore_EClass', the role 'ecore_EClass20' has cardinality 0..*, and from 'ecore_EAttribute', the role 'ecore_EAttribute21' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EReference'. From 'ecore_EClass', the role 'ecore_EClass23' has cardinality 0..*, and from 'ecore_EReference', the role 'ecore_EReference24' has cardinality 0..*.
+An association connects 'ecore_EOperation' and 'ecore_EClass'. From 'ecore_EOperation', the role 'ecore_EOperation' has cardinality 0..*, and from 'ecore_EClass', the role 'ecore_EClass26' has cardinality 0..*.
+An association connects 'ecore_EStructuralFeature' and 'ecore_EClass'. From 'ecore_EStructuralFeature', the role 'ecore_EStructuralFeature' has cardinality 0..*, and from 'ecore_EClass', the role 'ecore_EClass28' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EClass'. From 'ecore_EClass', the role 'ecore_EClass31' has cardinality 0..*, and from 'ecore_EClass', the role 'ecore_EClass29' has cardinality 0..*.
+An association connects 'ecore_EAttribute' and 'ecore_EClass'. From 'ecore_EAttribute', the role 'ecore_EAttribute34' has cardinality 0..*, and from 'ecore_EClass', the role 'ecore_EClass33' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EStructuralFeature'. From 'ecore_EClass', the role 'eContainingClass36' has cardinality 0..*, and from 'ecore_EStructuralFeature', the role 'EStructuralFeature' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EGenericType'. From 'ecore_EClass', the role 'ecore_EClass38' has cardinality 0..*, and from 'ecore_EGenericType', the role 'ecore_EGenericType' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EGenericType'. From 'ecore_EClass', the role 'ecore_EClass40' has cardinality 0..*, and from 'ecore_EGenericType', the role 'ecore_EGenericType41' has cardinality 0..*.
+An association connects 'ecore_EClassifier' and 'ecore_EPackage'. From 'ecore_EClassifier', the role 'eClassifiers' has cardinality 0..*, and from 'ecore_EPackage', the role 'EPackage' has cardinality 0..*.
+An association connects 'ecore_ETypeParameter' and 'ecore_EClassifier'. From 'ecore_ETypeParameter', the role 'ecore_ETypeParameter' has cardinality 0..*, and from 'ecore_EClassifier', the role 'ecore_EClassifier' has cardinality 0..*.
+An association connects 'ecore_EEnumLiteral' and 'ecore_EEnum'. From 'ecore_EEnumLiteral', the role 'EEnumLiteral' has cardinality 0..*, and from 'ecore_EEnum', the role 'eEnum' has cardinality 0..*.
+An association connects 'ecore_EEnum' and 'ecore_EEnumLiteral'. From 'ecore_EEnum', the role 'EEnum' has cardinality 0..*, and from 'ecore_EEnumLiteral', the role 'eLiterals' has cardinality 0..*.
+An association connects 'ecore_EFactory' and 'ecore_EPackage'. From 'ecore_EFactory', the role 'eFactoryInstance' has cardinality 0..*, and from 'ecore_EPackage', the role 'EPackage47' has cardinality 0..*.
+An association connects 'ecore_EModelElement' and 'ecore_EAnnotation'. From 'ecore_EModelElement', the role 'eModelElement' has cardinality 0..*, and from 'ecore_EAnnotation', the role 'EAnnotation' has cardinality 0..*.
+An association connects 'ecore_EOperation' and 'ecore_EClass'. From 'ecore_EOperation', the role 'eOperations' has cardinality 0..*, and from 'ecore_EClass', the role 'EClass' has cardinality 0..*.
+An association connects 'ecore_EOperation' and 'ecore_ETypeParameter'. From 'ecore_EOperation', the role 'ecore_EOperation51' has cardinality 0..*, and from 'ecore_ETypeParameter', the role 'ecore_ETypeParameter52' has cardinality 0..*.
+An association connects 'ecore_EOperation' and 'ecore_EParameter'. From 'ecore_EOperation', the role 'eOperation' has cardinality 0..*, and from 'ecore_EParameter', the role 'EParameter' has cardinality 0..*.
+An association connects 'ecore_EOperation' and 'ecore_EClassifier'. From 'ecore_EOperation', the role 'ecore_EOperation55' has cardinality 0..*, and from 'ecore_EClassifier', the role 'ecore_EClassifier56' has cardinality 0..*.
+An association connects 'ecore_EOperation' and 'ecore_EGenericType'. From 'ecore_EOperation', the role 'ecore_EOperation58' has cardinality 0..*, and from 'ecore_EGenericType', the role 'ecore_EGenericType59' has cardinality 0..*.
+An association connects 'ecore_EFactory' and 'ecore_EPackage'. From 'ecore_EFactory', the role 'EFactory' has cardinality 0..*, and from 'ecore_EPackage', the role 'ePackage' has cardinality 0..*.
+An association connects 'ecore_EClassifier' and 'ecore_EPackage'. From 'ecore_EClassifier', the role 'EClassifier' has cardinality 0..*, and from 'ecore_EPackage', the role 'ePackage62' has cardinality 0..*.
+An association connects 'ecore_EPackage' and 'ecore_EPackage'. From 'ecore_EPackage', the role 'EPackage65' has cardinality 0..*, and from 'ecore_EPackage', the role 'eSuperPackage' has cardinality 0..*.
+An association connects 'ecore_EPackage' and 'ecore_EPackage'. From 'ecore_EPackage', the role 'eSubpackages' has cardinality 0..*, and from 'ecore_EPackage', the role 'EPackage68' has cardinality 0..*.
+An association connects 'ecore_EParameter' and 'ecore_EOperation'. From 'ecore_EParameter', the role 'eParameters' has cardinality 0..*, and from 'ecore_EOperation', the role 'EOperation70' has cardinality 0..*.
+An association connects 'ecore_EReference' and 'ecore_EReference'. From 'ecore_EReference', the role 'ecore_EReference73' has cardinality 0..*, and from 'ecore_EReference', the role 'ecore_EReference71' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EReference'. From 'ecore_EClass', the role 'ecore_EClass76' has cardinality 0..*, and from 'ecore_EReference', the role 'ecore_EReference75' has cardinality 0..*.
+An association connects 'ecore_EReference' and 'ecore_EAttribute'. From 'ecore_EReference', the role 'ecore_EReference78' has cardinality 0..*, and from 'ecore_EAttribute', the role 'ecore_EAttribute79' has cardinality 0..*.
+An association connects 'ecore_EStructuralFeature' and 'ecore_EClass'. From 'ecore_EStructuralFeature', the role 'eStructuralFeatures' has cardinality 0..*, and from 'ecore_EClass', the role 'EClass81' has cardinality 0..*.
+An association connects 'ecore_ETypedElement' and 'ecore_EClassifier'. From 'ecore_ETypedElement', the role 'ecore_ETypedElement' has cardinality 0..*, and from 'ecore_EClassifier', the role 'ecore_EClassifier83' has cardinality 0..*.
+An association connects 'ecore_EGenericType' and 'ecore_ETypedElement'. From 'ecore_EGenericType', the role 'ecore_EGenericType86' has cardinality 0..*, and from 'ecore_ETypedElement', the role 'ecore_ETypedElement85' has cardinality 0..*.
+An association connects 'ecore_EGenericType' and 'ecore_EGenericType'. From 'ecore_EGenericType', the role 'ecore_EGenericType89' has cardinality 0..*, and from 'ecore_EGenericType', the role 'ecore_EGenericType87' has cardinality 0..*.
+An association connects 'ecore_EGenericType' and 'ecore_EGenericType'. From 'ecore_EGenericType', the role 'ecore_EGenericType92' has cardinality 0..*, and from 'ecore_EGenericType', the role 'ecore_EGenericType90' has cardinality 0..*.
+An association connects 'ecore_EGenericType' and 'ecore_EClassifier'. From 'ecore_EGenericType', the role 'ecore_EGenericType94' has cardinality 0..*, and from 'ecore_EClassifier', the role 'ecore_EClassifier95' has cardinality 0..*.
+An association connects 'ecore_EGenericType' and 'ecore_EGenericType'. From 'ecore_EGenericType', the role 'ecore_EGenericType96' has cardinality 0..*, and from 'ecore_EGenericType', the role 'ecore_EGenericType98' has cardinality 0..*.
+An association connects 'ecore_EGenericType' and 'ecore_ETypeParameter'. From 'ecore_EGenericType', the role 'ecore_EGenericType100' has cardinality 0..*, and from 'ecore_ETypeParameter', the role 'ecore_ETypeParameter101' has cardinality 0..*.
+An association connects 'ecore_EGenericType' and 'ecore_EClassifier'. From 'ecore_EGenericType', the role 'ecore_EGenericType103' has cardinality 0..*, and from 'ecore_EClassifier', the role 'ecore_EClassifier104' has cardinality 0..*.
+An association connects 'ecore_EGenericType' and 'ecore_ETypeParameter'. From 'ecore_EGenericType', the role 'ecore_EGenericType107' has cardinality 0..*, and from 'ecore_ETypeParameter', the role 'ecore_ETypeParameter106' has cardinality 0..*.

@@ -1,0 +1,29 @@
+The domain model 'emf' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'emf_Action' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'emf_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'emf_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'emf_Transition' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+'emf_TransitionToStateMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateType' defines the following possible values: 'FINAL', 'NONE', 'INITIAL'.
+
+Relationships between classes are modeled using associations.
+An association connects 'emf_State' and 'emf_StateMachine'. From 'emf_State', the role 'emf_State' has cardinality 0..*, and from 'emf_StateMachine', the role 'emf_StateMachine' has cardinality 0..*.
+An association connects 'emf_State' and 'emf_StateMachine'. From 'emf_State', the role 'emf_State3' has cardinality 0..*, and from 'emf_StateMachine', the role 'emf_StateMachine2' has cardinality 0..*.
+An association connects 'emf_TransitionToStateMapEntry' and 'emf_StateMachine'. From 'emf_TransitionToStateMapEntry', the role 'emf_TransitionToStateMapEntry' has cardinality 0..*, and from 'emf_StateMachine', the role 'emf_StateMachine5' has cardinality 0..*.
+An association connects 'emf_Transition' and 'emf_State'. From 'emf_Transition', the role 'emf_Transition' has cardinality 0..*, and from 'emf_State', the role 'emf_State7' has cardinality 0..*.
+An association connects 'emf_TransitionToStateMapEntry' and 'emf_Transition'. From 'emf_TransitionToStateMapEntry', the role 'emf_TransitionToStateMapEntry9' has cardinality 0..*, and from 'emf_Transition', the role 'emf_Transition10' has cardinality 0..*.
+An association connects 'emf_State' and 'emf_TransitionToStateMapEntry'. From 'emf_State', the role 'emf_State13' has cardinality 0..*, and from 'emf_TransitionToStateMapEntry', the role 'emf_TransitionToStateMapEntry12' has cardinality 0..*.

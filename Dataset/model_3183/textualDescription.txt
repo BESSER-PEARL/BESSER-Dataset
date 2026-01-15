@@ -1,0 +1,288 @@
+The domain model 'smc' describes the core structural elements and their relationships within the system.
+
+The model defines 58 main class(es).
+
+'smc_DateLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'smc_Count' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Smc' represents an important domain concept.
+It does not declare any attributes.
+
+'Functions' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_VariableAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_VariableDecl' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'visibility', which is of type str; 'array', which is of type bool; 'length', which is of type int; 'type', which is of type str.
+
+'smc_MainSMC' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'smc_MulOrDiv' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Equality' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'smc_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Computation' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Print' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Covered' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_BlockSMC' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'smc_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'AbstractAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Client' represents an important domain concept.
+It has one attribute: 'arg', which is of type str.
+
+'smc_WeightedAvg' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_PlusOrMinus' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'smc_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'smc_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'smc_BloomFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_AddValues' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Search' represents an important domain concept.
+It has one attribute: 'column', which is of type str.
+
+'smc_AbstractAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Download' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Dict' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_CheckTable' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_While' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_IfThenElse' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_CreateTable' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_List' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Functions' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Database' represents an important domain concept.
+It has one attribute: 'clm', which is of type str.
+
+'smc_InvocationVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'Computation' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Invocation' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_AccessControl' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Tuple' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_And' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'Download' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_Average' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_BellLapadula' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'smc_ParamDecl' represents an important domain concept.
+It has the following attributes: 'btype', which is of type str; 'stype', which is of type str; 'name', which is of type str; 'parName', which is of type str.
+
+'smc_Median' represents an important domain concept.
+It does not declare any attributes.
+
+'AccessControl' represents an important domain concept.
+It does not declare any attributes.
+
+'smc_TimeLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'smc_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SecType' defines the following possible values: 'PRIVATE', 'PUBLIC'.
+The enumeration 'BasicType' defines the following possible values: 'INT', 'STRING', 'ENCRYPTED', 'BOOLEAN', 'DOUBLE'.
+The enumeration 'BlockType' defines the following possible values: 'ACCESS', 'SEARCH', 'COMP', 'INSERT', 'ANONYMIZATION', 'PERMISSION'.
+
+The model also captures inheritance relationships between classes.
+The class 'smc_ParamDecl' is a specialization of 'Command'.
+The class 'smc_InvocationVoid' is a specialization of 'Command'.
+The class 'smc_Print' is a specialization of 'Command'.
+The class 'smc_While' is a specialization of 'Command'.
+The class 'smc_IfThenElse' is a specialization of 'Command'.
+The class 'smc_VariableDecl' is a specialization of 'Command'.
+The class 'smc_VariableAssignment' is a specialization of 'Command'.
+The class 'smc_Download' is a specialization of 'AbstractAssignment'.
+The class 'smc_Database' is a specialization of 'Download'.
+The class 'smc_Client' is a specialization of 'Download'.
+The class 'smc_Expression' is a specialization of 'AbstractAssignment'.
+The class 'smc_Tuple' is a specialization of 'Expression'.
+The class 'smc_List' is a specialization of 'Expression'.
+The class 'smc_Dict' is a specialization of 'Expression'.
+The class 'smc_Invocation' is a specialization of 'Expression'.
+The class 'smc_Computation' is a specialization of 'Functions'.
+The class 'smc_Multiplication' is a specialization of 'Computation'.
+The class 'smc_Median' is a specialization of 'Computation'.
+The class 'smc_WeightedAvg' is a specialization of 'Computation'.
+The class 'smc_Average' is a specialization of 'Computation'.
+The class 'smc_Count' is a specialization of 'Computation'.
+The class 'smc_AccessControl' is a specialization of 'Functions'.
+The class 'smc_BellLapadula' is a specialization of 'AccessControl'.
+The class 'smc_Covered' is a specialization of 'AccessControl'.
+The class 'smc_Search' is a specialization of 'Functions'.
+The class 'smc_BloomFilter' is a specialization of 'Functions'.
+The class 'smc_CheckTable' is a specialization of 'Functions'.
+The class 'smc_AddValues' is a specialization of 'Functions'.
+The class 'smc_CreateTable' is a specialization of 'Functions'.
+The class 'smc_Return' is a specialization of 'Command'.
+The class 'smc_Block' is a specialization of 'Command'.
+The class 'smc_Or' is a specialization of 'Expression'.
+The class 'smc_And' is a specialization of 'Expression'.
+The class 'smc_Equality' is a specialization of 'Expression'.
+The class 'smc_Comparison' is a specialization of 'Expression'.
+The class 'smc_PlusOrMinus' is a specialization of 'Expression'.
+The class 'smc_MulOrDiv' is a specialization of 'Expression'.
+The class 'smc_Not' is a specialization of 'Expression'.
+The class 'smc_IntLiteral' is a specialization of 'Expression'.
+The class 'smc_DoubleLiteral' is a specialization of 'Expression'.
+The class 'smc_BooleanLiteral' is a specialization of 'Expression'.
+The class 'smc_StringLiteral' is a specialization of 'Expression'.
+The class 'smc_DateLiteral' is a specialization of 'Expression'.
+The class 'smc_TimeLiteral' is a specialization of 'Expression'.
+The class 'smc_VariableRef' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'smc_BlockSMC' and 'smc_Smc'. From 'smc_BlockSMC', the role 'smc_BlockSMC' has cardinality 0..*, and from 'smc_Smc', the role 'smc_Smc' has cardinality 0..*.
+An association connects 'smc_Smc' and 'smc_MainSMC'. From 'smc_Smc', the role 'smc_Smc2' has cardinality 0..*, and from 'smc_MainSMC', the role 'smc_MainSMC' has cardinality 0..*.
+An association connects 'smc_Command' and 'smc_MainSMC'. From 'smc_Command', the role 'smc_Command' has cardinality 0..*, and from 'smc_MainSMC', the role 'smc_MainSMC4' has cardinality 0..*.
+An association connects 'smc_InvocationVoid' and 'smc_Invocation'. From 'smc_InvocationVoid', the role 'smc_InvocationVoid' has cardinality 0..*, and from 'smc_Invocation', the role 'smc_Invocation' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_Print'. From 'smc_Expression', the role 'smc_Expression' has cardinality 0..*, and from 'smc_Print', the role 'smc_Print' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_While'. From 'smc_Expression', the role 'smc_Expression8' has cardinality 0..*, and from 'smc_While', the role 'smc_While' has cardinality 0..*.
+An association connects 'smc_While' and 'smc_Command'. From 'smc_While', the role 'smc_While10' has cardinality 0..*, and from 'smc_Command', the role 'smc_Command11' has cardinality 0..*.
+An association connects 'smc_IfThenElse' and 'smc_Expression'. From 'smc_IfThenElse', the role 'smc_IfThenElse' has cardinality 0..*, and from 'smc_Expression', the role 'smc_Expression13' has cardinality 0..*.
+An association connects 'smc_IfThenElse' and 'smc_Command'. From 'smc_IfThenElse', the role 'smc_IfThenElse15' has cardinality 0..*, and from 'smc_Command', the role 'smc_Command16' has cardinality 0..*.
+An association connects 'smc_IfThenElse' and 'smc_Command'. From 'smc_IfThenElse', the role 'smc_IfThenElse18' has cardinality 0..*, and from 'smc_Command', the role 'smc_Command19' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_AbstractAssignment'. From 'smc_VariableDecl', the role 'smc_VariableDecl' has cardinality 0..*, and from 'smc_AbstractAssignment', the role 'smc_AbstractAssignment' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_VariableAssignment'. From 'smc_VariableDecl', the role 'smc_VariableDecl22' has cardinality 0..*, and from 'smc_VariableAssignment', the role 'smc_VariableAssignment' has cardinality 0..*.
+An association connects 'smc_VariableAssignment' and 'smc_AbstractAssignment'. From 'smc_VariableAssignment', the role 'smc_VariableAssignment24' has cardinality 0..*, and from 'smc_AbstractAssignment', the role 'smc_AbstractAssignment25' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_Database'. From 'smc_Expression', the role 'smc_Expression27' has cardinality 0..*, and from 'smc_Database', the role 'smc_Database' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_Tuple'. From 'smc_Expression', the role 'smc_Expression29' has cardinality 0..*, and from 'smc_Tuple', the role 'smc_Tuple' has cardinality 0..*.
+An association connects 'smc_Tuple' and 'smc_Expression'. From 'smc_Tuple', the role 'smc_Tuple31' has cardinality 0..*, and from 'smc_Expression', the role 'smc_Expression32' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_List'. From 'smc_Expression', the role 'smc_Expression34' has cardinality 0..*, and from 'smc_List', the role 'smc_List' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_Dict'. From 'smc_Expression', the role 'smc_Expression36' has cardinality 0..*, and from 'smc_Dict', the role 'smc_Dict' has cardinality 0..*.
+An association connects 'smc_Dict' and 'smc_List'. From 'smc_Dict', the role 'smc_Dict38' has cardinality 0..*, and from 'smc_List', the role 'smc_List39' has cardinality 0..*.
+An association connects 'smc_Invocation' and 'smc_BlockSMC'. From 'smc_Invocation', the role 'smc_Invocation41' has cardinality 0..*, and from 'smc_BlockSMC', the role 'smc_BlockSMC42' has cardinality 0..*.
+An association connects 'smc_Invocation' and 'smc_Functions'. From 'smc_Invocation', the role 'smc_Invocation44' has cardinality 0..*, and from 'smc_Functions', the role 'smc_Functions' has cardinality 0..*.
+An association connects 'smc_Multiplication' and 'smc_VariableDecl'. From 'smc_Multiplication', the role 'smc_Multiplication' has cardinality 0..*, and from 'smc_VariableDecl', the role 'smc_VariableDecl46' has cardinality 0..*.
+An association connects 'smc_Multiplication' and 'smc_VariableDecl'. From 'smc_Multiplication', the role 'smc_Multiplication48' has cardinality 0..*, and from 'smc_VariableDecl', the role 'smc_VariableDecl49' has cardinality 0..*.
+An association connects 'smc_Median' and 'smc_VariableDecl'. From 'smc_Median', the role 'smc_Median' has cardinality 0..*, and from 'smc_VariableDecl', the role 'smc_VariableDecl51' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_WeightedAvg'. From 'smc_VariableDecl', the role 'smc_VariableDecl53' has cardinality 0..*, and from 'smc_WeightedAvg', the role 'smc_WeightedAvg' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_WeightedAvg'. From 'smc_VariableDecl', the role 'smc_VariableDecl56' has cardinality 0..*, and from 'smc_WeightedAvg', the role 'smc_WeightedAvg55' has cardinality 0..*.
+An association connects 'smc_Average' and 'smc_VariableDecl'. From 'smc_Average', the role 'smc_Average' has cardinality 0..*, and from 'smc_VariableDecl', the role 'smc_VariableDecl58' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_Count'. From 'smc_VariableDecl', the role 'smc_VariableDecl60' has cardinality 0..*, and from 'smc_Count', the role 'smc_Count' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_AccessControl'. From 'smc_VariableDecl', the role 'smc_VariableDecl62' has cardinality 0..*, and from 'smc_AccessControl', the role 'smc_AccessControl' has cardinality 0..*.
+An association connects 'smc_AccessControl' and 'smc_VariableDecl'. From 'smc_AccessControl', the role 'smc_AccessControl64' has cardinality 0..*, and from 'smc_VariableDecl', the role 'smc_VariableDecl65' has cardinality 0..*.
+An association connects 'smc_BellLapadula' and 'smc_VariableDecl'. From 'smc_BellLapadula', the role 'smc_BellLapadula' has cardinality 0..*, and from 'smc_VariableDecl', the role 'smc_VariableDecl67' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_Covered'. From 'smc_VariableDecl', the role 'smc_VariableDecl69' has cardinality 0..*, and from 'smc_Covered', the role 'smc_Covered' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_Covered'. From 'smc_VariableDecl', the role 'smc_VariableDecl72' has cardinality 0..*, and from 'smc_Covered', the role 'smc_Covered71' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_Search'. From 'smc_VariableDecl', the role 'smc_VariableDecl74' has cardinality 0..*, and from 'smc_Search', the role 'smc_Search' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_Search'. From 'smc_VariableDecl', the role 'smc_VariableDecl77' has cardinality 0..*, and from 'smc_Search', the role 'smc_Search76' has cardinality 0..*.
+An association connects 'smc_BloomFilter' and 'smc_VariableDecl'. From 'smc_BloomFilter', the role 'smc_BloomFilter' has cardinality 0..*, and from 'smc_VariableDecl', the role 'smc_VariableDecl79' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_BloomFilter'. From 'smc_VariableDecl', the role 'smc_VariableDecl82' has cardinality 0..*, and from 'smc_BloomFilter', the role 'smc_BloomFilter81' has cardinality 0..*.
+An association connects 'smc_CheckTable' and 'smc_VariableDecl'. From 'smc_CheckTable', the role 'smc_CheckTable' has cardinality 0..*, and from 'smc_VariableDecl', the role 'smc_VariableDecl84' has cardinality 0..*.
+An association connects 'smc_AddValues' and 'smc_VariableDecl'. From 'smc_AddValues', the role 'smc_AddValues' has cardinality 0..*, and from 'smc_VariableDecl', the role 'smc_VariableDecl86' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_AddValues'. From 'smc_VariableDecl', the role 'smc_VariableDecl89' has cardinality 0..*, and from 'smc_AddValues', the role 'smc_AddValues88' has cardinality 0..*.
+An association connects 'smc_CreateTable' and 'smc_VariableDecl'. From 'smc_CreateTable', the role 'smc_CreateTable' has cardinality 0..*, and from 'smc_VariableDecl', the role 'smc_VariableDecl91' has cardinality 0..*.
+An association connects 'smc_CreateTable' and 'smc_ParamDecl'. From 'smc_CreateTable', the role 'smc_CreateTable93' has cardinality 0..*, and from 'smc_ParamDecl', the role 'smc_ParamDecl' has cardinality 0..*.
+An association connects 'smc_Command' and 'smc_Block'. From 'smc_Command', the role 'smc_Command95' has cardinality 0..*, and from 'smc_Block', the role 'smc_Block' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_Or'. From 'smc_Expression', the role 'smc_Expression97' has cardinality 0..*, and from 'smc_Or', the role 'smc_Or' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_Or'. From 'smc_Expression', the role 'smc_Expression100' has cardinality 0..*, and from 'smc_Or', the role 'smc_Or99' has cardinality 0..*.
+An association connects 'smc_And' and 'smc_Expression'. From 'smc_And', the role 'smc_And' has cardinality 0..*, and from 'smc_Expression', the role 'smc_Expression102' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_And'. From 'smc_Expression', the role 'smc_Expression105' has cardinality 0..*, and from 'smc_And', the role 'smc_And104' has cardinality 0..*.
+An association connects 'smc_Equality' and 'smc_Expression'. From 'smc_Equality', the role 'smc_Equality' has cardinality 0..*, and from 'smc_Expression', the role 'smc_Expression107' has cardinality 0..*.
+An association connects 'smc_Equality' and 'smc_Expression'. From 'smc_Equality', the role 'smc_Equality109' has cardinality 0..*, and from 'smc_Expression', the role 'smc_Expression110' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_Comparison'. From 'smc_Expression', the role 'smc_Expression112' has cardinality 0..*, and from 'smc_Comparison', the role 'smc_Comparison' has cardinality 0..*.
+An association connects 'smc_Comparison' and 'smc_Expression'. From 'smc_Comparison', the role 'smc_Comparison114' has cardinality 0..*, and from 'smc_Expression', the role 'smc_Expression115' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_PlusOrMinus'. From 'smc_Expression', the role 'smc_Expression117' has cardinality 0..*, and from 'smc_PlusOrMinus', the role 'smc_PlusOrMinus' has cardinality 0..*.
+An association connects 'smc_PlusOrMinus' and 'smc_Expression'. From 'smc_PlusOrMinus', the role 'smc_PlusOrMinus119' has cardinality 0..*, and from 'smc_Expression', the role 'smc_Expression120' has cardinality 0..*.
+An association connects 'smc_Expression' and 'smc_MulOrDiv'. From 'smc_Expression', the role 'smc_Expression122' has cardinality 0..*, and from 'smc_MulOrDiv', the role 'smc_MulOrDiv' has cardinality 0..*.
+An association connects 'smc_MulOrDiv' and 'smc_Expression'. From 'smc_MulOrDiv', the role 'smc_MulOrDiv124' has cardinality 0..*, and from 'smc_Expression', the role 'smc_Expression125' has cardinality 0..*.
+An association connects 'smc_Not' and 'smc_Expression'. From 'smc_Not', the role 'smc_Not' has cardinality 0..*, and from 'smc_Expression', the role 'smc_Expression127' has cardinality 0..*.
+An association connects 'smc_VariableDecl' and 'smc_VariableRef'. From 'smc_VariableDecl', the role 'smc_VariableDecl129' has cardinality 0..*, and from 'smc_VariableRef', the role 'smc_VariableRef' has cardinality 0..*.

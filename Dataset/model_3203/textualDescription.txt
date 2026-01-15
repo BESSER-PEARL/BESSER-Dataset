@@ -1,0 +1,877 @@
+The domain model 'idl' describes the core structural elements and their relationships within the system.
+
+The model defines 189 main class(es).
+
+'idl_ContextExpr' represents an important domain concept.
+It has one attribute: 'literal', which is of type str.
+
+'idl_EnumType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'literal', which is of type str.
+
+'idl_SimpleDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentExport' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Pragma' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ScopedName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_InterfaceBody' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_PrimaryKeySpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_FinderDcl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_Preproc_Pragma_Misc' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_UnsignedLongLongInt' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstExp' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Ifdef' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'FloatingPtType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Endif' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface_or_Forward_Decl' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_UsesDcl' represents an important domain concept.
+It has the following attributes: 'isMultiple', which is of type bool; 'name', which is of type str.
+
+'idl_TypeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_File_Marker' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'idl_TypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'FormalParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_TemplateModuleInst' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_SwitchBody' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_InterfaceParamType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_If_Compare' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'idl_FormalParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Pragma_Ciao_Ami4ccm_Interface' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'idl_AttrRaisesExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_FloatType' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_TemplateTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Undef' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'idl_OctetType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ParamTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_OrExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'idl_ConstType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Event' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isAbstract', which is of type bool.
+
+'idl_ConstrTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_StateMember' represents an important domain concept.
+It has the following attributes: 'isPublic', which is of type bool; 'names', which is of type str.
+
+'idl_ExceptionParamType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_FixedModule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Pragma_Ndds' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'idl_StructType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_Preproc_Ifndef' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'idl_Excluded_File_Marker' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'idl_Preproc_Else' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ReadOnlyAttrSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'HomeExport' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_UnionForwardDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'FixedDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_PublishesDcl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_StructForwardDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_UnsignedShortInt' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_EventParamType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_FactoryDcl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_ComponentDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_Interface_decl' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_FileName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_Case' represents an important domain concept.
+It does not declare any attributes.
+
+'OpTypeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Pragma_Prefix' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'idl_ProvidesDcl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Preproc' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_TemplateModuleRef' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'idl_PositiveIntConst' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'ComplexDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_AttrSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_MultExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'idl_Preproc_Pragma_Ciao_Ami4ccm_Idl' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'idl_ValueBaseType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_FixedPtType' represents an important domain concept.
+It does not declare any attributes.
+
+'SignedInt' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Interface_or_Forward_Decl' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ParameterDecls' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_WideCharType' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstrTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ShiftExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'idl_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_SequenceParamType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ElementSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_BaseTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_If' represents an important domain concept.
+It has one attribute: 'negation', which is of type bool.
+
+'idl_TemplateDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_FloatingPtType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_SignedLongLongInt' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_EventDcl' represents an important domain concept.
+It has the following attributes: 'isCustom', which is of type bool; 'isTruncatable', which is of type bool.
+
+'idl_SignedShortInt' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_EnumParamType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ConstParamType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_HomeExport' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ConstExp' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_PortTypeDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TemplateTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'Export' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_PrimaryExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ObjectType' represents an important domain concept.
+It does not declare any attributes.
+
+'ActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_AddExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'UnsignedInt' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_PortExport' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Define' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'AttrDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_SequenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_OpDecl' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isOneway', which is of type bool.
+
+'idl_FixedPtConstType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ValuetypeParamType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Pragma_Component' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Preproc_Pragma' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_CaseLabel' represents an important domain concept.
+It has the following attributes: 'isCase', which is of type bool; 'isDefault', which is of type bool.
+
+'idl_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Declarator' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ConstType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_AttrDecl' represents an important domain concept.
+It has one attribute: 'names', which is of type str.
+
+'idl_ConnectorExport' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_LongDoubleType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ComponentForwardDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_SimpleTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_CharType' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ParamDcl' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'direction', which is of type str.
+
+'idl_UnsignedLongInt' represents an important domain concept.
+It does not declare any attributes.
+
+'PortExport' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_TemplateModule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'idl_EventForwardDcl' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_FixedDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_SwitchTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Interface_header' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type bool; 'isLocal', which is of type bool; 'name', which is of type str.
+
+'idl_NativeType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_Preproc_If_Val' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ConstDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_ComponentExport' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_TypenameParamType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_UnionParamType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Import_decl' represents an important domain concept.
+It has one attribute: 'imported_scope', which is of type str.
+
+'idl_ConnectorHeader' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_HomeDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BaseTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_SignedLongInt' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_TypeDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_OpTypeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ComplexDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_DoubleType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_ArrayDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_EmitDcl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_Preproc_Pragma_DDS4CCM_Impl' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ParamTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_PortDecl' represents an important domain concept.
+It has the following attributes: 'isMirror', which is of type bool; 'name', which is of type str.
+
+'idl_IDLComment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'idl_SignedInt' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Pragma_Home' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'idl_ConsumesDcl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_FormalParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_Specification' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Export' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_StructParamType' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstrForwardDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Pragma_Ciao_Lem' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'idl_UnsignedInt' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_AndExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'idl_Preproc_Include' represents an important domain concept.
+It has one attribute: 'strValue', which is of type str.
+
+'idl_XOrExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'idl_ConstrForwardDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_Preproc_Error' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'idl_ExceptDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_Forward_decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SwitchTypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_UnionType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idl_WideStringType' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstParamType' represents an important domain concept.
+It does not declare any attributes.
+
+'idl_UnaryExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'idl_ExceptionList' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectorExport' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParamDirection' defines the following possible values: 'Out', 'InOut', 'In'.
+
+The model also captures inheritance relationships between classes.
+The class 'idl_Preproc' is a specialization of 'Definition'.
+The class 'idl_Preproc' is a specialization of 'Export'.
+The class 'idl_Preproc' is a specialization of 'ComponentExport'.
+The class 'idl_Preproc_Include' is a specialization of 'Preproc'.
+The class 'idl_Preproc_Ifdef' is a specialization of 'Preproc'.
+The class 'idl_Preproc_Ifndef' is a specialization of 'Preproc'.
+The class 'idl_Preproc_Undef' is a specialization of 'Preproc'.
+The class 'idl_Preproc_If' is a specialization of 'Preproc'.
+The class 'idl_Preproc_Else' is a specialization of 'Preproc'.
+The class 'idl_Preproc_Error' is a specialization of 'Preproc'.
+The class 'idl_Preproc_Define' is a specialization of 'Preproc'.
+The class 'idl_Preproc_Endif' is a specialization of 'Preproc'.
+The class 'idl_Preproc_Pragma' is a specialization of 'Preproc'.
+The class 'idl_Preproc_Pragma_Prefix' is a specialization of 'Preproc_Pragma'.
+The class 'idl_Preproc_Pragma_Ciao_Lem' is a specialization of 'Preproc_Pragma'.
+The class 'idl_Preproc_Pragma_Ciao_Ami4ccm_Interface' is a specialization of 'Preproc_Pragma'.
+The class 'idl_Preproc_Pragma_Ciao_Ami4ccm_Receptacle' is a specialization of 'Preproc_Pragma'.
+The class 'idl_Preproc_Pragma_Ciao_Ami4ccm_Idl' is a specialization of 'Preproc_Pragma'.
+The class 'idl_Preproc_Pragma_Ndds' is a specialization of 'Preproc_Pragma'.
+The class 'idl_Preproc_Pragma_Component' is a specialization of 'Preproc_Pragma'.
+The class 'idl_Preproc_Pragma_Home' is a specialization of 'Preproc_Pragma'.
+The class 'idl_Preproc_Pragma_DDS4CCM_Impl' is a specialization of 'Preproc_Pragma'.
+The class 'idl_Preproc_Pragma_Misc' is a specialization of 'Preproc_Pragma'.
+The class 'idl_File_Marker' is a specialization of 'Preproc'.
+The class 'idl_Excluded_File_Marker' is a specialization of 'Preproc'.
+The class 'idl_Module' is a specialization of 'Definition'.
+The class 'idl_Interface_or_Forward_Decl' is a specialization of 'Definition'.
+The class 'idl_Interface_decl' is a specialization of 'Interface_or_Forward_Decl'.
+The class 'idl_Interface_decl' is a specialization of 'TemplateDefinition'.
+The class 'idl_Interface_decl' is a specialization of 'FixedDefinition'.
+The class 'idl_Forward_decl' is a specialization of 'Interface_or_Forward_Decl'.
+The class 'idl_Export' is a specialization of 'HomeExport'.
+The class 'idl_AttrDecl' is a specialization of 'Export'.
+The class 'idl_AttrDecl' is a specialization of 'ComponentExport'.
+The class 'idl_AttrDecl' is a specialization of 'PortExport'.
+The class 'idl_AttrDecl' is a specialization of 'ConnectorExport'.
+The class 'idl_AttrSpec' is a specialization of 'AttrDecl'.
+The class 'idl_ReadOnlyAttrSpec' is a specialization of 'AttrDecl'.
+The class 'idl_OpDecl' is a specialization of 'Export'.
+The class 'idl_ParamTypeSpec' is a specialization of 'OpTypeDecl'.
+The class 'idl_ScopedName' is a specialization of 'ParamTypeSpec'.
+The class 'idl_ScopedName' is a specialization of 'SimpleTypeSpec'.
+The class 'idl_ScopedName' is a specialization of 'SwitchTypeSpec'.
+The class 'idl_ScopedName' is a specialization of 'ConstType'.
+The class 'idl_ScopedName' is a specialization of 'PrimaryExpr'.
+The class 'idl_BaseTypeSpec' is a specialization of 'ParamTypeSpec'.
+The class 'idl_BaseTypeSpec' is a specialization of 'SimpleTypeSpec'.
+The class 'idl_FloatingPtType' is a specialization of 'BaseTypeSpec'.
+The class 'idl_FloatingPtType' is a specialization of 'ConstType'.
+The class 'idl_FloatType' is a specialization of 'FloatingPtType'.
+The class 'idl_DoubleType' is a specialization of 'FloatingPtType'.
+The class 'idl_LongDoubleType' is a specialization of 'FloatingPtType'.
+The class 'idl_IntegerType' is a specialization of 'BaseTypeSpec'.
+The class 'idl_IntegerType' is a specialization of 'SwitchTypeSpec'.
+The class 'idl_IntegerType' is a specialization of 'ConstType'.
+The class 'idl_SignedInt' is a specialization of 'IntegerType'.
+The class 'idl_SignedShortInt' is a specialization of 'SignedInt'.
+The class 'idl_SignedLongInt' is a specialization of 'SignedInt'.
+The class 'idl_SignedLongLongInt' is a specialization of 'SignedInt'.
+The class 'idl_UnsignedInt' is a specialization of 'IntegerType'.
+The class 'idl_UnsignedShortInt' is a specialization of 'UnsignedInt'.
+The class 'idl_UnsignedLongInt' is a specialization of 'UnsignedInt'.
+The class 'idl_UnsignedLongLongInt' is a specialization of 'UnsignedInt'.
+The class 'idl_CharType' is a specialization of 'BaseTypeSpec'.
+The class 'idl_CharType' is a specialization of 'SwitchTypeSpec'.
+The class 'idl_CharType' is a specialization of 'ConstType'.
+The class 'idl_WideCharType' is a specialization of 'BaseTypeSpec'.
+The class 'idl_WideCharType' is a specialization of 'ConstType'.
+The class 'idl_BooleanType' is a specialization of 'BaseTypeSpec'.
+The class 'idl_BooleanType' is a specialization of 'SwitchTypeSpec'.
+The class 'idl_BooleanType' is a specialization of 'ConstType'.
+The class 'idl_OctetType' is a specialization of 'BaseTypeSpec'.
+The class 'idl_OctetType' is a specialization of 'ConstType'.
+The class 'idl_AnyType' is a specialization of 'BaseTypeSpec'.
+The class 'idl_ObjectType' is a specialization of 'BaseTypeSpec'.
+The class 'idl_ValueBaseType' is a specialization of 'BaseTypeSpec'.
+The class 'idl_StringType' is a specialization of 'ParamTypeSpec'.
+The class 'idl_StringType' is a specialization of 'TemplateTypeSpec'.
+The class 'idl_StringType' is a specialization of 'ConstType'.
+The class 'idl_WideStringType' is a specialization of 'ParamTypeSpec'.
+The class 'idl_WideStringType' is a specialization of 'TemplateTypeSpec'.
+The class 'idl_WideStringType' is a specialization of 'ConstType'.
+The class 'idl_ExceptDecl' is a specialization of 'Definition'.
+The class 'idl_ExceptDecl' is a specialization of 'Export'.
+The class 'idl_ExceptDecl' is a specialization of 'TemplateDefinition'.
+The class 'idl_ExceptDecl' is a specialization of 'FixedDefinition'.
+The class 'idl_SimpleDeclarator' is a specialization of 'Declarator'.
+The class 'idl_ArrayDeclarator' is a specialization of 'Declarator'.
+The class 'idl_ArrayDeclarator' is a specialization of 'ComplexDeclarator'.
+The class 'idl_StructType' is a specialization of 'Definition'.
+The class 'idl_StructType' is a specialization of 'TypeDecl'.
+The class 'idl_StructType' is a specialization of 'ConstrTypeSpec'.
+The class 'idl_TypeDecl' is a specialization of 'Definition'.
+The class 'idl_TypeDecl' is a specialization of 'Export'.
+The class 'idl_TypeDecl' is a specialization of 'TemplateDefinition'.
+The class 'idl_TypeDecl' is a specialization of 'FixedDefinition'.
+The class 'idl_TypeDeclarator' is a specialization of 'TypeDecl'.
+The class 'idl_TypeSpec' is a specialization of 'ActualParameter'.
+The class 'idl_SimpleTypeSpec' is a specialization of 'TypeSpec'.
+The class 'idl_TemplateTypeSpec' is a specialization of 'SimpleTypeSpec'.
+The class 'idl_ConstrTypeSpec' is a specialization of 'TypeSpec'.
+The class 'idl_UnionType' is a specialization of 'TypeDecl'.
+The class 'idl_UnionType' is a specialization of 'ConstrTypeSpec'.
+The class 'idl_EnumType' is a specialization of 'TypeDecl'.
+The class 'idl_EnumType' is a specialization of 'ConstrTypeSpec'.
+The class 'idl_EnumType' is a specialization of 'SwitchTypeSpec'.
+The class 'idl_SequenceType' is a specialization of 'TemplateTypeSpec'.
+The class 'idl_SequenceType' is a specialization of 'FormalParameterType'.
+The class 'idl_NativeType' is a specialization of 'Definition'.
+The class 'idl_NativeType' is a specialization of 'TemplateDefinition'.
+The class 'idl_NativeType' is a specialization of 'FixedDefinition'.
+The class 'idl_FixedPtType' is a specialization of 'TemplateTypeSpec'.
+The class 'idl_ConstrForwardDecl' is a specialization of 'TypeDecl'.
+The class 'idl_StructForwardDecl' is a specialization of 'ConstrForwardDecl'.
+The class 'idl_UnionForwardDecl' is a specialization of 'ConstrForwardDecl'.
+The class 'idl_ConstDecl' is a specialization of 'Definition'.
+The class 'idl_ConstDecl' is a specialization of 'Export'.
+The class 'idl_ConstDecl' is a specialization of 'TemplateDefinition'.
+The class 'idl_ConstDecl' is a specialization of 'FixedDefinition'.
+The class 'idl_ConstType' is a specialization of 'ConstParamType'.
+The class 'idl_FixedPtConstType' is a specialization of 'ConstType'.
+The class 'idl_ConstExp' is a specialization of 'PrimaryExpr'.
+The class 'idl_ConstExp' is a specialization of 'ActualParameter'.
+The class 'idl_OrExpr' is a specialization of 'ConstExp'.
+The class 'idl_Literal' is a specialization of 'PrimaryExpr'.
+The class 'idl_ComponentDecl' is a specialization of 'Definition'.
+The class 'idl_ComponentDecl' is a specialization of 'TemplateDefinition'.
+The class 'idl_ComponentDecl' is a specialization of 'FixedDefinition'.
+The class 'idl_ProvidesDcl' is a specialization of 'ComponentExport'.
+The class 'idl_ProvidesDcl' is a specialization of 'PortExport'.
+The class 'idl_ProvidesDcl' is a specialization of 'ConnectorExport'.
+The class 'idl_UsesDcl' is a specialization of 'ComponentExport'.
+The class 'idl_UsesDcl' is a specialization of 'PortExport'.
+The class 'idl_UsesDcl' is a specialization of 'ConnectorExport'.
+The class 'idl_PublishesDcl' is a specialization of 'ComponentExport'.
+The class 'idl_EmitDcl' is a specialization of 'ComponentExport'.
+The class 'idl_ConsumesDcl' is a specialization of 'ComponentExport'.
+The class 'idl_ComponentForwardDecl' is a specialization of 'Definition'.
+The class 'idl_HomeDecl' is a specialization of 'Definition'.
+The class 'idl_HomeDecl' is a specialization of 'TemplateDefinition'.
+The class 'idl_HomeDecl' is a specialization of 'FixedDefinition'.
+The class 'idl_FactoryDcl' is a specialization of 'HomeExport'.
+The class 'idl_FinderDcl' is a specialization of 'HomeExport'.
+The class 'idl_Event' is a specialization of 'Definition'.
+The class 'idl_Event' is a specialization of 'TemplateDefinition'.
+The class 'idl_Event' is a specialization of 'FixedDefinition'.
+The class 'idl_EventDcl' is a specialization of 'Event'.
+The class 'idl_EventForwardDcl' is a specialization of 'Event'.
+The class 'idl_PortTypeDecl' is a specialization of 'Definition'.
+The class 'idl_PortTypeDecl' is a specialization of 'TemplateDefinition'.
+The class 'idl_PortTypeDecl' is a specialization of 'FixedDefinition'.
+The class 'idl_PortDecl' is a specialization of 'ComponentExport'.
+The class 'idl_PortDecl' is a specialization of 'ConnectorExport'.
+The class 'idl_Connector' is a specialization of 'Definition'.
+The class 'idl_Connector' is a specialization of 'TemplateDefinition'.
+The class 'idl_Connector' is a specialization of 'FixedDefinition'.
+The class 'idl_TemplateModule' is a specialization of 'Definition'.
+The class 'idl_TypenameParamType' is a specialization of 'FormalParameterType'.
+The class 'idl_InterfaceParamType' is a specialization of 'FormalParameterType'.
+The class 'idl_ValuetypeParamType' is a specialization of 'FormalParameterType'.
+The class 'idl_EventParamType' is a specialization of 'FormalParameterType'.
+The class 'idl_StructParamType' is a specialization of 'FormalParameterType'.
+The class 'idl_UnionParamType' is a specialization of 'FormalParameterType'.
+The class 'idl_ExceptionParamType' is a specialization of 'FormalParameterType'.
+The class 'idl_EnumParamType' is a specialization of 'FormalParameterType'.
+The class 'idl_SequenceParamType' is a specialization of 'FormalParameterType'.
+The class 'idl_ConstParamType' is a specialization of 'FormalParameterType'.
+The class 'idl_FixedModule' is a specialization of 'TemplateDefinition'.
+The class 'idl_FixedModule' is a specialization of 'FixedDefinition'.
+The class 'idl_TemplateModuleInst' is a specialization of 'Definition'.
+The class 'idl_TemplateModuleRef' is a specialization of 'TemplateDefinition'.
+The class 'idl_IDLComment' is a specialization of 'Definition'.
+The class 'idl_IDLComment' is a specialization of 'Export'.
+The class 'idl_IDLComment' is a specialization of 'ComponentExport'.
+The class 'idl_IDLComment' is a specialization of 'PortExport'.
+The class 'idl_IDLComment' is a specialization of 'ConnectorExport'.
+The class 'idl_IDLComment' is a specialization of 'TemplateDefinition'.
+The class 'idl_IDLComment' is a specialization of 'FixedDefinition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'idl_Specification' and 'idl_Import_decl'. From 'idl_Specification', the role 'idl_Specification' has cardinality 0..*, and from 'idl_Import_decl', the role 'idl_Import_decl' has cardinality 0..*.
+An association connects 'idl_Definition' and 'idl_Specification'. From 'idl_Definition', the role 'idl_Definition' has cardinality 0..*, and from 'idl_Specification', the role 'idl_Specification2' has cardinality 0..*.
+An association connects 'idl_Preproc_Include' and 'idl_FileName'. From 'idl_Preproc_Include', the role 'idl_Preproc_Include' has cardinality 0..*, and from 'idl_FileName', the role 'idl_FileName' has cardinality 0..*.
+An association connects 'idl_Preproc_If_Compare' and 'idl_Preproc_If'. From 'idl_Preproc_If_Compare', the role 'idl_Preproc_If_Compare' has cardinality 0..*, and from 'idl_Preproc_If', the role 'idl_Preproc_If' has cardinality 0..*.
+An association connects 'idl_Preproc_If_Compare' and 'idl_Preproc_If_Val'. From 'idl_Preproc_If_Compare', the role 'idl_Preproc_If_Compare6' has cardinality 0..*, and from 'idl_Preproc_If_Val', the role 'idl_Preproc_If_Val' has cardinality 0..*.
+An association connects 'idl_Preproc_If_Compare' and 'idl_Preproc_If_Val'. From 'idl_Preproc_If_Compare', the role 'idl_Preproc_If_Compare8' has cardinality 0..*, and from 'idl_Preproc_If_Val', the role 'idl_Preproc_If_Val9' has cardinality 0..*.
+An association connects 'idl_ConstExp' and 'idl_Preproc_If_Val'. From 'idl_ConstExp', the role 'idl_ConstExp' has cardinality 0..*, and from 'idl_Preproc_If_Val', the role 'idl_Preproc_If_Val11' has cardinality 0..*.
+An association connects 'idl_ConstExp' and 'idl_Preproc_Define'. From 'idl_ConstExp', the role 'idl_ConstExp13' has cardinality 0..*, and from 'idl_Preproc_Define', the role 'idl_Preproc_Define' has cardinality 0..*.
+An association connects 'idl_Module' and 'idl_IDLComment'. From 'idl_Module', the role 'idl_Module' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment' has cardinality 0..*.
+An association connects 'idl_Definition' and 'idl_Module'. From 'idl_Definition', the role 'idl_Definition17' has cardinality 0..*, and from 'idl_Module', the role 'idl_Module16' has cardinality 0..*.
+An association connects 'idl_Interface_header' and 'idl_Interface_decl'. From 'idl_Interface_header', the role 'idl_Interface_header' has cardinality 0..*, and from 'idl_Interface_decl', the role 'idl_Interface_decl' has cardinality 0..*.
+An association connects 'idl_Interface_decl' and 'idl_InterfaceBody'. From 'idl_Interface_decl', the role 'idl_Interface_decl20' has cardinality 0..*, and from 'idl_InterfaceBody', the role 'idl_InterfaceBody' has cardinality 0..*.
+An association connects 'idl_ScopedName' and 'idl_Interface_header'. From 'idl_ScopedName', the role 'idl_ScopedName' has cardinality 0..*, and from 'idl_Interface_header', the role 'idl_Interface_header22' has cardinality 0..*.
+An association connects 'idl_IDLComment' and 'idl_Interface_header'. From 'idl_IDLComment', the role 'idl_IDLComment25' has cardinality 0..*, and from 'idl_Interface_header', the role 'idl_Interface_header24' has cardinality 0..*.
+An association connects 'idl_Export' and 'idl_InterfaceBody'. From 'idl_Export', the role 'idl_Export' has cardinality 0..*, and from 'idl_InterfaceBody', the role 'idl_InterfaceBody27' has cardinality 0..*.
+An association connects 'idl_IDLComment' and 'idl_AttrDecl'. From 'idl_IDLComment', the role 'idl_IDLComment29' has cardinality 0..*, and from 'idl_AttrDecl', the role 'idl_AttrDecl' has cardinality 0..*.
+An association connects 'idl_ParamTypeSpec' and 'idl_AttrDecl'. From 'idl_ParamTypeSpec', the role 'idl_ParamTypeSpec' has cardinality 0..*, and from 'idl_AttrDecl', the role 'idl_AttrDecl31' has cardinality 0..*.
+An association connects 'idl_AttrRaisesExpr' and 'idl_AttrSpec'. From 'idl_AttrRaisesExpr', the role 'idl_AttrRaisesExpr' has cardinality 0..*, and from 'idl_AttrSpec', the role 'idl_AttrSpec' has cardinality 0..*.
+An association connects 'idl_AttrRaisesExpr' and 'idl_AttrSpec'. From 'idl_AttrRaisesExpr', the role 'idl_AttrRaisesExpr35' has cardinality 0..*, and from 'idl_AttrSpec', the role 'idl_AttrSpec34' has cardinality 0..*.
+An association connects 'idl_AttrRaisesExpr' and 'idl_ReadOnlyAttrSpec'. From 'idl_AttrRaisesExpr', the role 'idl_AttrRaisesExpr37' has cardinality 0..*, and from 'idl_ReadOnlyAttrSpec', the role 'idl_ReadOnlyAttrSpec' has cardinality 0..*.
+An association connects 'idl_ExceptionList' and 'idl_AttrRaisesExpr'. From 'idl_ExceptionList', the role 'idl_ExceptionList' has cardinality 0..*, and from 'idl_AttrRaisesExpr', the role 'idl_AttrRaisesExpr39' has cardinality 0..*.
+An association connects 'idl_ExceptionList' and 'idl_ScopedName'. From 'idl_ExceptionList', the role 'idl_ExceptionList41' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName42' has cardinality 0..*.
+An association connects 'idl_OpDecl' and 'idl_IDLComment'. From 'idl_OpDecl', the role 'idl_OpDecl' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment44' has cardinality 0..*.
+An association connects 'idl_OpTypeDecl' and 'idl_OpDecl'. From 'idl_OpTypeDecl', the role 'idl_OpTypeDecl' has cardinality 0..*, and from 'idl_OpDecl', the role 'idl_OpDecl46' has cardinality 0..*.
+An association connects 'idl_OpDecl' and 'idl_ParameterDecls'. From 'idl_OpDecl', the role 'idl_OpDecl48' has cardinality 0..*, and from 'idl_ParameterDecls', the role 'idl_ParameterDecls' has cardinality 0..*.
+An association connects 'idl_OpDecl' and 'idl_ExceptionList'. From 'idl_OpDecl', the role 'idl_OpDecl50' has cardinality 0..*, and from 'idl_ExceptionList', the role 'idl_ExceptionList51' has cardinality 0..*.
+An association connects 'idl_ContextExpr' and 'idl_OpDecl'. From 'idl_ContextExpr', the role 'idl_ContextExpr' has cardinality 0..*, and from 'idl_OpDecl', the role 'idl_OpDecl53' has cardinality 0..*.
+An association connects 'idl_IDLComment' and 'idl_ParameterDecls'. From 'idl_IDLComment', the role 'idl_IDLComment56' has cardinality 0..*, and from 'idl_ParameterDecls', the role 'idl_ParameterDecls55' has cardinality 0..*.
+An association connects 'idl_ParameterDecls' and 'idl_ParamDcl'. From 'idl_ParameterDecls', the role 'idl_ParameterDecls58' has cardinality 0..*, and from 'idl_ParamDcl', the role 'idl_ParamDcl' has cardinality 0..*.
+An association connects 'idl_ParamDcl' and 'idl_ParamTypeSpec'. From 'idl_ParamDcl', the role 'idl_ParamDcl60' has cardinality 0..*, and from 'idl_ParamTypeSpec', the role 'idl_ParamTypeSpec61' has cardinality 0..*.
+An association connects 'idl_PositiveIntConst' and 'idl_StringType'. From 'idl_PositiveIntConst', the role 'idl_PositiveIntConst' has cardinality 0..*, and from 'idl_StringType', the role 'idl_StringType' has cardinality 0..*.
+An association connects 'idl_WideStringType' and 'idl_PositiveIntConst'. From 'idl_WideStringType', the role 'idl_WideStringType' has cardinality 0..*, and from 'idl_PositiveIntConst', the role 'idl_PositiveIntConst64' has cardinality 0..*.
+An association connects 'idl_IDLComment' and 'idl_ExceptDecl'. From 'idl_IDLComment', the role 'idl_IDLComment66' has cardinality 0..*, and from 'idl_ExceptDecl', the role 'idl_ExceptDecl' has cardinality 0..*.
+An association connects 'idl_ExceptDecl' and 'idl_Member'. From 'idl_ExceptDecl', the role 'idl_ExceptDecl68' has cardinality 0..*, and from 'idl_Member', the role 'idl_Member' has cardinality 0..*.
+An association connects 'idl_TypeSpec' and 'idl_Member'. From 'idl_TypeSpec', the role 'idl_TypeSpec' has cardinality 0..*, and from 'idl_Member', the role 'idl_Member70' has cardinality 0..*.
+An association connects 'idl_Member' and 'idl_Declarator'. From 'idl_Member', the role 'idl_Member72' has cardinality 0..*, and from 'idl_Declarator', the role 'idl_Declarator' has cardinality 0..*.
+An association connects 'idl_Member' and 'idl_IDLComment'. From 'idl_Member', the role 'idl_Member74' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment75' has cardinality 0..*.
+An association connects 'idl_ConstExp' and 'idl_ArrayDeclarator'. From 'idl_ConstExp', the role 'idl_ConstExp77' has cardinality 0..*, and from 'idl_ArrayDeclarator', the role 'idl_ArrayDeclarator' has cardinality 0..*.
+An association connects 'idl_StructType' and 'idl_IDLComment'. From 'idl_StructType', the role 'idl_StructType' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment79' has cardinality 0..*.
+An association connects 'idl_StructType' and 'idl_Member'. From 'idl_StructType', the role 'idl_StructType81' has cardinality 0..*, and from 'idl_Member', the role 'idl_Member82' has cardinality 0..*.
+An association connects 'idl_TypeDeclarator' and 'idl_IDLComment'. From 'idl_TypeDeclarator', the role 'idl_TypeDeclarator' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment84' has cardinality 0..*.
+An association connects 'idl_TypeDeclarator' and 'idl_TypeSpec'. From 'idl_TypeDeclarator', the role 'idl_TypeDeclarator86' has cardinality 0..*, and from 'idl_TypeSpec', the role 'idl_TypeSpec87' has cardinality 0..*.
+An association connects 'idl_Declarator' and 'idl_TypeDeclarator'. From 'idl_Declarator', the role 'idl_Declarator90' has cardinality 0..*, and from 'idl_TypeDeclarator', the role 'idl_TypeDeclarator89' has cardinality 0..*.
+An association connects 'idl_UnionType' and 'idl_IDLComment'. From 'idl_UnionType', the role 'idl_UnionType' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment92' has cardinality 0..*.
+An association connects 'idl_SwitchTypeSpec' and 'idl_UnionType'. From 'idl_SwitchTypeSpec', the role 'idl_SwitchTypeSpec' has cardinality 0..*, and from 'idl_UnionType', the role 'idl_UnionType94' has cardinality 0..*.
+An association connects 'idl_UnionType' and 'idl_SwitchBody'. From 'idl_UnionType', the role 'idl_UnionType96' has cardinality 0..*, and from 'idl_SwitchBody', the role 'idl_SwitchBody' has cardinality 0..*.
+An association connects 'idl_SwitchBody' and 'idl_Case'. From 'idl_SwitchBody', the role 'idl_SwitchBody98' has cardinality 0..*, and from 'idl_Case', the role 'idl_Case' has cardinality 0..*.
+An association connects 'idl_Case' and 'idl_IDLComment'. From 'idl_Case', the role 'idl_Case100' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment101' has cardinality 0..*.
+An association connects 'idl_CaseLabel' and 'idl_Case'. From 'idl_CaseLabel', the role 'idl_CaseLabel' has cardinality 0..*, and from 'idl_Case', the role 'idl_Case103' has cardinality 0..*.
+An association connects 'idl_Case' and 'idl_ElementSpec'. From 'idl_Case', the role 'idl_Case105' has cardinality 0..*, and from 'idl_ElementSpec', the role 'idl_ElementSpec' has cardinality 0..*.
+An association connects 'idl_CaseLabel' and 'idl_ConstExp'. From 'idl_CaseLabel', the role 'idl_CaseLabel107' has cardinality 0..*, and from 'idl_ConstExp', the role 'idl_ConstExp108' has cardinality 0..*.
+An association connects 'idl_ElementSpec' and 'idl_TypeSpec'. From 'idl_ElementSpec', the role 'idl_ElementSpec110' has cardinality 0..*, and from 'idl_TypeSpec', the role 'idl_TypeSpec111' has cardinality 0..*.
+An association connects 'idl_ElementSpec' and 'idl_Declarator'. From 'idl_ElementSpec', the role 'idl_ElementSpec113' has cardinality 0..*, and from 'idl_Declarator', the role 'idl_Declarator114' has cardinality 0..*.
+An association connects 'idl_EnumType' and 'idl_IDLComment'. From 'idl_EnumType', the role 'idl_EnumType' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment116' has cardinality 0..*.
+An association connects 'idl_SimpleTypeSpec' and 'idl_SequenceType'. From 'idl_SimpleTypeSpec', the role 'idl_SimpleTypeSpec' has cardinality 0..*, and from 'idl_SequenceType', the role 'idl_SequenceType' has cardinality 0..*.
+An association connects 'idl_PositiveIntConst' and 'idl_SequenceType'. From 'idl_PositiveIntConst', the role 'idl_PositiveIntConst120' has cardinality 0..*, and from 'idl_SequenceType', the role 'idl_SequenceType119' has cardinality 0..*.
+An association connects 'idl_FixedPtType' and 'idl_PositiveIntConst'. From 'idl_FixedPtType', the role 'idl_FixedPtType' has cardinality 0..*, and from 'idl_PositiveIntConst', the role 'idl_PositiveIntConst122' has cardinality 0..*.
+An association connects 'idl_PositiveIntConst' and 'idl_FixedPtType'. From 'idl_PositiveIntConst', the role 'idl_PositiveIntConst125' has cardinality 0..*, and from 'idl_FixedPtType', the role 'idl_FixedPtType124' has cardinality 0..*.
+An association connects 'idl_PositiveIntConst' and 'idl_ConstExp'. From 'idl_PositiveIntConst', the role 'idl_PositiveIntConst127' has cardinality 0..*, and from 'idl_ConstExp', the role 'idl_ConstExp128' has cardinality 0..*.
+An association connects 'idl_ConstDecl' and 'idl_ConstType'. From 'idl_ConstDecl', the role 'idl_ConstDecl' has cardinality 0..*, and from 'idl_ConstType', the role 'idl_ConstType' has cardinality 0..*.
+An association connects 'idl_ConstDecl' and 'idl_ConstExp'. From 'idl_ConstDecl', the role 'idl_ConstDecl131' has cardinality 0..*, and from 'idl_ConstExp', the role 'idl_ConstExp132' has cardinality 0..*.
+An association connects 'idl_ConstDecl' and 'idl_IDLComment'. From 'idl_ConstDecl', the role 'idl_ConstDecl134' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment135' has cardinality 0..*.
+An association connects 'idl_XOrExpr' and 'idl_OrExpr'. From 'idl_XOrExpr', the role 'idl_XOrExpr' has cardinality 0..*, and from 'idl_OrExpr', the role 'idl_OrExpr' has cardinality 0..*.
+An association connects 'idl_OrExpr' and 'idl_OrExpr'. From 'idl_OrExpr', the role 'idl_OrExpr137' has cardinality 0..*, and from 'idl_OrExpr', the role 'idl_OrExpr139' has cardinality 0..*.
+An association connects 'idl_XOrExpr' and 'idl_AndExpr'. From 'idl_XOrExpr', the role 'idl_XOrExpr141' has cardinality 0..*, and from 'idl_AndExpr', the role 'idl_AndExpr' has cardinality 0..*.
+An association connects 'idl_XOrExpr' and 'idl_XOrExpr'. From 'idl_XOrExpr', the role 'idl_XOrExpr144' has cardinality 0..*, and from 'idl_XOrExpr', the role 'idl_XOrExpr142' has cardinality 0..*.
+An association connects 'idl_ShiftExpr' and 'idl_AndExpr'. From 'idl_ShiftExpr', the role 'idl_ShiftExpr' has cardinality 0..*, and from 'idl_AndExpr', the role 'idl_AndExpr146' has cardinality 0..*.
+An association connects 'idl_AndExpr' and 'idl_AndExpr'. From 'idl_AndExpr', the role 'idl_AndExpr147' has cardinality 0..*, and from 'idl_AndExpr', the role 'idl_AndExpr149' has cardinality 0..*.
+An association connects 'idl_AddExpr' and 'idl_ShiftExpr'. From 'idl_AddExpr', the role 'idl_AddExpr' has cardinality 0..*, and from 'idl_ShiftExpr', the role 'idl_ShiftExpr151' has cardinality 0..*.
+An association connects 'idl_ShiftExpr' and 'idl_ShiftExpr'. From 'idl_ShiftExpr', the role 'idl_ShiftExpr152' has cardinality 0..*, and from 'idl_ShiftExpr', the role 'idl_ShiftExpr154' has cardinality 0..*.
+An association connects 'idl_MultExpr' and 'idl_AddExpr'. From 'idl_MultExpr', the role 'idl_MultExpr' has cardinality 0..*, and from 'idl_AddExpr', the role 'idl_AddExpr156' has cardinality 0..*.
+An association connects 'idl_AddExpr' and 'idl_AddExpr'. From 'idl_AddExpr', the role 'idl_AddExpr157' has cardinality 0..*, and from 'idl_AddExpr', the role 'idl_AddExpr159' has cardinality 0..*.
+An association connects 'idl_UnaryExpr' and 'idl_MultExpr'. From 'idl_UnaryExpr', the role 'idl_UnaryExpr' has cardinality 0..*, and from 'idl_MultExpr', the role 'idl_MultExpr161' has cardinality 0..*.
+An association connects 'idl_MultExpr' and 'idl_MultExpr'. From 'idl_MultExpr', the role 'idl_MultExpr164' has cardinality 0..*, and from 'idl_MultExpr', the role 'idl_MultExpr162' has cardinality 0..*.
+An association connects 'idl_UnaryExpr' and 'idl_PrimaryExpr'. From 'idl_UnaryExpr', the role 'idl_UnaryExpr166' has cardinality 0..*, and from 'idl_PrimaryExpr', the role 'idl_PrimaryExpr' has cardinality 0..*.
+An association connects 'idl_ComponentDecl' and 'idl_IDLComment'. From 'idl_ComponentDecl', the role 'idl_ComponentDecl' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment168' has cardinality 0..*.
+An association connects 'idl_ComponentDecl' and 'idl_ScopedName'. From 'idl_ComponentDecl', the role 'idl_ComponentDecl170' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName171' has cardinality 0..*.
+An association connects 'idl_ComponentDecl' and 'idl_ScopedName'. From 'idl_ComponentDecl', the role 'idl_ComponentDecl173' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName174' has cardinality 0..*.
+An association connects 'idl_ComponentExport' and 'idl_ComponentDecl'. From 'idl_ComponentExport', the role 'idl_ComponentExport' has cardinality 0..*, and from 'idl_ComponentDecl', the role 'idl_ComponentDecl176' has cardinality 0..*.
+An association connects 'idl_ProvidesDcl' and 'idl_ScopedName'. From 'idl_ProvidesDcl', the role 'idl_ProvidesDcl' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName178' has cardinality 0..*.
+An association connects 'idl_ProvidesDcl' and 'idl_IDLComment'. From 'idl_ProvidesDcl', the role 'idl_ProvidesDcl180' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment181' has cardinality 0..*.
+An association connects 'idl_UsesDcl' and 'idl_ScopedName'. From 'idl_UsesDcl', the role 'idl_UsesDcl' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName183' has cardinality 0..*.
+An association connects 'idl_IDLComment' and 'idl_UsesDcl'. From 'idl_IDLComment', the role 'idl_IDLComment186' has cardinality 0..*, and from 'idl_UsesDcl', the role 'idl_UsesDcl185' has cardinality 0..*.
+An association connects 'idl_ScopedName' and 'idl_PublishesDcl'. From 'idl_ScopedName', the role 'idl_ScopedName188' has cardinality 0..*, and from 'idl_PublishesDcl', the role 'idl_PublishesDcl' has cardinality 0..*.
+An association connects 'idl_PublishesDcl' and 'idl_IDLComment'. From 'idl_PublishesDcl', the role 'idl_PublishesDcl190' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment191' has cardinality 0..*.
+An association connects 'idl_EmitDcl' and 'idl_ScopedName'. From 'idl_EmitDcl', the role 'idl_EmitDcl' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName193' has cardinality 0..*.
+An association connects 'idl_EmitDcl' and 'idl_IDLComment'. From 'idl_EmitDcl', the role 'idl_EmitDcl195' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment196' has cardinality 0..*.
+An association connects 'idl_ConsumesDcl' and 'idl_ScopedName'. From 'idl_ConsumesDcl', the role 'idl_ConsumesDcl' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName198' has cardinality 0..*.
+An association connects 'idl_ConsumesDcl' and 'idl_IDLComment'. From 'idl_ConsumesDcl', the role 'idl_ConsumesDcl200' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment201' has cardinality 0..*.
+An association connects 'idl_HomeDecl' and 'idl_IDLComment'. From 'idl_HomeDecl', the role 'idl_HomeDecl' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment203' has cardinality 0..*.
+An association connects 'idl_HomeDecl' and 'idl_ScopedName'. From 'idl_HomeDecl', the role 'idl_HomeDecl205' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName206' has cardinality 0..*.
+An association connects 'idl_HomeDecl' and 'idl_ScopedName'. From 'idl_HomeDecl', the role 'idl_HomeDecl208' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName209' has cardinality 0..*.
+An association connects 'idl_HomeDecl' and 'idl_ScopedName'. From 'idl_HomeDecl', the role 'idl_HomeDecl211' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName212' has cardinality 0..*.
+An association connects 'idl_PrimaryKeySpec' and 'idl_HomeDecl'. From 'idl_PrimaryKeySpec', the role 'idl_PrimaryKeySpec' has cardinality 0..*, and from 'idl_HomeDecl', the role 'idl_HomeDecl214' has cardinality 0..*.
+An association connects 'idl_HomeDecl' and 'idl_HomeExport'. From 'idl_HomeDecl', the role 'idl_HomeDecl216' has cardinality 0..*, and from 'idl_HomeExport', the role 'idl_HomeExport' has cardinality 0..*.
+An association connects 'idl_PrimaryKeySpec' and 'idl_ScopedName'. From 'idl_PrimaryKeySpec', the role 'idl_PrimaryKeySpec218' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName219' has cardinality 0..*.
+An association connects 'idl_IDLComment' and 'idl_FactoryDcl'. From 'idl_IDLComment', the role 'idl_IDLComment221' has cardinality 0..*, and from 'idl_FactoryDcl', the role 'idl_FactoryDcl' has cardinality 0..*.
+An association connects 'idl_ParameterDecls' and 'idl_FactoryDcl'. From 'idl_ParameterDecls', the role 'idl_ParameterDecls224' has cardinality 0..*, and from 'idl_FactoryDcl', the role 'idl_FactoryDcl223' has cardinality 0..*.
+An association connects 'idl_ExceptionList' and 'idl_FactoryDcl'. From 'idl_ExceptionList', the role 'idl_ExceptionList227' has cardinality 0..*, and from 'idl_FactoryDcl', the role 'idl_FactoryDcl226' has cardinality 0..*.
+An association connects 'idl_FinderDcl' and 'idl_IDLComment'. From 'idl_FinderDcl', the role 'idl_FinderDcl' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment229' has cardinality 0..*.
+An association connects 'idl_ParameterDecls' and 'idl_FinderDcl'. From 'idl_ParameterDecls', the role 'idl_ParameterDecls232' has cardinality 0..*, and from 'idl_FinderDcl', the role 'idl_FinderDcl231' has cardinality 0..*.
+An association connects 'idl_FinderDcl' and 'idl_ExceptionList'. From 'idl_FinderDcl', the role 'idl_FinderDcl234' has cardinality 0..*, and from 'idl_ExceptionList', the role 'idl_ExceptionList235' has cardinality 0..*.
+An association connects 'idl_ScopedName' and 'idl_EventDcl'. From 'idl_ScopedName', the role 'idl_ScopedName237' has cardinality 0..*, and from 'idl_EventDcl', the role 'idl_EventDcl' has cardinality 0..*.
+An association connects 'idl_ScopedName' and 'idl_EventDcl'. From 'idl_ScopedName', the role 'idl_ScopedName240' has cardinality 0..*, and from 'idl_EventDcl', the role 'idl_EventDcl239' has cardinality 0..*.
+An association connects 'idl_Export' and 'idl_EventDcl'. From 'idl_Export', the role 'idl_Export243' has cardinality 0..*, and from 'idl_EventDcl', the role 'idl_EventDcl242' has cardinality 0..*.
+An association connects 'idl_StateMember' and 'idl_EventDcl'. From 'idl_StateMember', the role 'idl_StateMember' has cardinality 0..*, and from 'idl_EventDcl', the role 'idl_EventDcl245' has cardinality 0..*.
+An association connects 'idl_ParamTypeSpec' and 'idl_StateMember'. From 'idl_ParamTypeSpec', the role 'idl_ParamTypeSpec248' has cardinality 0..*, and from 'idl_StateMember', the role 'idl_StateMember247' has cardinality 0..*.
+An association connects 'idl_PortTypeDecl' and 'idl_IDLComment'. From 'idl_PortTypeDecl', the role 'idl_PortTypeDecl' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment250' has cardinality 0..*.
+An association connects 'idl_PortTypeDecl' and 'idl_PortExport'. From 'idl_PortTypeDecl', the role 'idl_PortTypeDecl252' has cardinality 0..*, and from 'idl_PortExport', the role 'idl_PortExport' has cardinality 0..*.
+An association connects 'idl_PortDecl' and 'idl_ScopedName'. From 'idl_PortDecl', the role 'idl_PortDecl' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName254' has cardinality 0..*.
+An association connects 'idl_IDLComment' and 'idl_PortDecl'. From 'idl_IDLComment', the role 'idl_IDLComment257' has cardinality 0..*, and from 'idl_PortDecl', the role 'idl_PortDecl256' has cardinality 0..*.
+An association connects 'idl_Connector' and 'idl_ConnectorHeader'. From 'idl_Connector', the role 'idl_Connector' has cardinality 0..*, and from 'idl_ConnectorHeader', the role 'idl_ConnectorHeader' has cardinality 0..*.
+An association connects 'idl_Connector' and 'idl_ConnectorExport'. From 'idl_Connector', the role 'idl_Connector260' has cardinality 0..*, and from 'idl_ConnectorExport', the role 'idl_ConnectorExport' has cardinality 0..*.
+An association connects 'idl_ConnectorHeader' and 'idl_ScopedName'. From 'idl_ConnectorHeader', the role 'idl_ConnectorHeader262' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName263' has cardinality 0..*.
+An association connects 'idl_FormalParameter' and 'idl_TemplateModule'. From 'idl_FormalParameter', the role 'idl_FormalParameter' has cardinality 0..*, and from 'idl_TemplateModule', the role 'idl_TemplateModule' has cardinality 0..*.
+An association connects 'idl_TemplateDefinition' and 'idl_TemplateModule'. From 'idl_TemplateDefinition', the role 'idl_TemplateDefinition' has cardinality 0..*, and from 'idl_TemplateModule', the role 'idl_TemplateModule266' has cardinality 0..*.
+An association connects 'idl_FormalParameterType' and 'idl_FormalParameter'. From 'idl_FormalParameterType', the role 'idl_FormalParameterType' has cardinality 0..*, and from 'idl_FormalParameter', the role 'idl_FormalParameter268' has cardinality 0..*.
+An association connects 'idl_FixedModule' and 'idl_FixedDefinition'. From 'idl_FixedModule', the role 'idl_FixedModule' has cardinality 0..*, and from 'idl_FixedDefinition', the role 'idl_FixedDefinition' has cardinality 0..*.
+An association connects 'idl_ScopedName' and 'idl_TemplateModuleInst'. From 'idl_ScopedName', the role 'idl_ScopedName271' has cardinality 0..*, and from 'idl_TemplateModuleInst', the role 'idl_TemplateModuleInst' has cardinality 0..*.
+An association connects 'idl_ActualParameter' and 'idl_TemplateModuleInst'. From 'idl_ActualParameter', the role 'idl_ActualParameter' has cardinality 0..*, and from 'idl_TemplateModuleInst', the role 'idl_TemplateModuleInst273' has cardinality 0..*.
+An association connects 'idl_TemplateModuleInst' and 'idl_IDLComment'. From 'idl_TemplateModuleInst', the role 'idl_TemplateModuleInst275' has cardinality 0..*, and from 'idl_IDLComment', the role 'idl_IDLComment276' has cardinality 0..*.
+An association connects 'idl_TemplateModuleRef' and 'idl_ScopedName'. From 'idl_TemplateModuleRef', the role 'idl_TemplateModuleRef' has cardinality 0..*, and from 'idl_ScopedName', the role 'idl_ScopedName278' has cardinality 0..*.

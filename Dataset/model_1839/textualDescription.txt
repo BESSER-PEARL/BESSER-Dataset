@@ -1,0 +1,12 @@
+The domain model 'BookStorePackage' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'BookStorePackage_BookStore' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'owner', which is of type str.
+
+'BookStorePackage_Book' represents an important domain concept.
+It has the following attributes: 'isbn', which is of type int; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'BookStorePackage_Book' and 'BookStorePackage_BookStore'. From 'BookStorePackage_Book', the role 'BookStorePackage_Book' has cardinality 0..*, and from 'BookStorePackage_BookStore', the role 'BookStorePackage_BookStore' has cardinality 0..*.

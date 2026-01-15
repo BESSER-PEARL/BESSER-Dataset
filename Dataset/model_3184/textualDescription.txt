@@ -1,0 +1,307 @@
+The domain model 'debugSeq' describes the core structural elements and their relationships within the system.
+
+The model defines 58 main class(es).
+
+'debugSeq_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'debugSeq_LoadDebugInfo' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'debugSeq_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'debugSeq_BitOr' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_SequenceCall' represents an important domain concept.
+It has one attribute: 'seqname', which is of type str.
+
+'debugSeq_Write64' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Block' represents an important domain concept.
+It has one attribute: 'atomic', which is of type str.
+
+'debugSeq_WriteAP' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_BitNot' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Read64' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'debugSeq_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Sequence' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'pname', which is of type str; 'disable', which is of type str; 'info', which is of type str.
+
+'debugSeq_Write32' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_ReadAP' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Read8' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_CodeBlock' represents an important domain concept.
+It has one attribute: 'info', which is of type str.
+
+'debugSeq_And' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Message' represents an important domain concept.
+It has one attribute: 'format', which is of type str.
+
+'debugSeq_BitAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Sequences' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Equality' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Ternary' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Control' represents an important domain concept.
+It has one attribute: 'timeout', which is of type str.
+
+'debugSeq_WriteDP' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Write8' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_DapDelay' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_QueryValue' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'debugSeq_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'debugSeq_Mul' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_DapSwjClock' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Read16' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_ReadDP' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Write16' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_DapSwjSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Shift' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'debugSeq_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_DapJtagSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_DebugSeqModel' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_DapWriteABORT' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_BitXor' represents an important domain concept.
+It does not declare any attributes.
+
+'CodeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_DapSwjPins' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Rem' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_Query' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'debugSeq_Read32' represents an important domain concept.
+It does not declare any attributes.
+
+'debugSeq_DebugVars' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'pname', which is of type str; 'configfile', which is of type str.
+
+'debugSeq_Assignment' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'debugSeq_VariableDeclaration' is a specialization of 'Statement'.
+The class 'debugSeq_Block' is a specialization of 'CodeBlock'.
+The class 'debugSeq_Control' is a specialization of 'CodeBlock'.
+The class 'debugSeq_Expression' is a specialization of 'Statement'.
+The class 'debugSeq_Expression' is a specialization of 'Parameter'.
+The class 'debugSeq_Assignment' is a specialization of 'Expression'.
+The class 'debugSeq_Ternary' is a specialization of 'Expression'.
+The class 'debugSeq_Or' is a specialization of 'Expression'.
+The class 'debugSeq_And' is a specialization of 'Expression'.
+The class 'debugSeq_BitOr' is a specialization of 'Expression'.
+The class 'debugSeq_BitXor' is a specialization of 'Expression'.
+The class 'debugSeq_BitAnd' is a specialization of 'Expression'.
+The class 'debugSeq_Equality' is a specialization of 'Expression'.
+The class 'debugSeq_Comparison' is a specialization of 'Expression'.
+The class 'debugSeq_Shift' is a specialization of 'Expression'.
+The class 'debugSeq_Plus' is a specialization of 'Expression'.
+The class 'debugSeq_Minus' is a specialization of 'Expression'.
+The class 'debugSeq_Mul' is a specialization of 'Expression'.
+The class 'debugSeq_Div' is a specialization of 'Expression'.
+The class 'debugSeq_Rem' is a specialization of 'Expression'.
+The class 'debugSeq_Not' is a specialization of 'Expression'.
+The class 'debugSeq_BitNot' is a specialization of 'Expression'.
+The class 'debugSeq_SequenceCall' is a specialization of 'Expression'.
+The class 'debugSeq_Query' is a specialization of 'Expression'.
+The class 'debugSeq_QueryValue' is a specialization of 'Expression'.
+The class 'debugSeq_Message' is a specialization of 'Expression'.
+The class 'debugSeq_LoadDebugInfo' is a specialization of 'Expression'.
+The class 'debugSeq_Read8' is a specialization of 'Expression'.
+The class 'debugSeq_Read16' is a specialization of 'Expression'.
+The class 'debugSeq_Read32' is a specialization of 'Expression'.
+The class 'debugSeq_Read64' is a specialization of 'Expression'.
+The class 'debugSeq_ReadAP' is a specialization of 'Expression'.
+The class 'debugSeq_ReadDP' is a specialization of 'Expression'.
+The class 'debugSeq_Write8' is a specialization of 'Expression'.
+The class 'debugSeq_Write16' is a specialization of 'Expression'.
+The class 'debugSeq_Write32' is a specialization of 'Expression'.
+The class 'debugSeq_Write64' is a specialization of 'Expression'.
+The class 'debugSeq_WriteAP' is a specialization of 'Expression'.
+The class 'debugSeq_WriteDP' is a specialization of 'Expression'.
+The class 'debugSeq_DapDelay' is a specialization of 'Expression'.
+The class 'debugSeq_DapWriteABORT' is a specialization of 'Expression'.
+The class 'debugSeq_DapSwjPins' is a specialization of 'Expression'.
+The class 'debugSeq_DapSwjClock' is a specialization of 'Expression'.
+The class 'debugSeq_DapSwjSequence' is a specialization of 'Expression'.
+The class 'debugSeq_DapJtagSequence' is a specialization of 'Expression'.
+The class 'debugSeq_IntConstant' is a specialization of 'Expression'.
+The class 'debugSeq_StringConstant' is a specialization of 'Expression'.
+The class 'debugSeq_VariableRef' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'debugSeq_DebugVars' and 'debugSeq_DebugSeqModel'. From 'debugSeq_DebugVars', the role 'debugSeq_DebugVars' has cardinality 0..*, and from 'debugSeq_DebugSeqModel', the role 'debugSeq_DebugSeqModel' has cardinality 0..*.
+An association connects 'debugSeq_Sequences' and 'debugSeq_DebugSeqModel'. From 'debugSeq_Sequences', the role 'debugSeq_Sequences' has cardinality 0..*, and from 'debugSeq_DebugSeqModel', the role 'debugSeq_DebugSeqModel2' has cardinality 0..*.
+An association connects 'debugSeq_Statement' and 'debugSeq_DebugVars'. From 'debugSeq_Statement', the role 'debugSeq_Statement' has cardinality 0..*, and from 'debugSeq_DebugVars', the role 'debugSeq_DebugVars4' has cardinality 0..*.
+An association connects 'debugSeq_VariableDeclaration' and 'debugSeq_Expression'. From 'debugSeq_VariableDeclaration', the role 'debugSeq_VariableDeclaration' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression' has cardinality 0..*.
+An association connects 'debugSeq_Sequence' and 'debugSeq_Sequences'. From 'debugSeq_Sequence', the role 'debugSeq_Sequence' has cardinality 0..*, and from 'debugSeq_Sequences', the role 'debugSeq_Sequences7' has cardinality 0..*.
+An association connects 'debugSeq_CodeBlock' and 'debugSeq_Sequence'. From 'debugSeq_CodeBlock', the role 'debugSeq_CodeBlock' has cardinality 0..*, and from 'debugSeq_Sequence', the role 'debugSeq_Sequence9' has cardinality 0..*.
+An association connects 'debugSeq_Statement' and 'debugSeq_Block'. From 'debugSeq_Statement', the role 'debugSeq_Statement11' has cardinality 0..*, and from 'debugSeq_Block', the role 'debugSeq_Block' has cardinality 0..*.
+An association connects 'debugSeq_Control' and 'debugSeq_Expression'. From 'debugSeq_Control', the role 'debugSeq_Control' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression13' has cardinality 0..*.
+An association connects 'debugSeq_Control' and 'debugSeq_Expression'. From 'debugSeq_Control', the role 'debugSeq_Control15' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression16' has cardinality 0..*.
+An association connects 'debugSeq_CodeBlock' and 'debugSeq_Control'. From 'debugSeq_CodeBlock', the role 'debugSeq_CodeBlock19' has cardinality 0..*, and from 'debugSeq_Control', the role 'debugSeq_Control18' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Assignment'. From 'debugSeq_Expression', the role 'debugSeq_Expression21' has cardinality 0..*, and from 'debugSeq_Assignment', the role 'debugSeq_Assignment' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Assignment'. From 'debugSeq_Expression', the role 'debugSeq_Expression24' has cardinality 0..*, and from 'debugSeq_Assignment', the role 'debugSeq_Assignment23' has cardinality 0..*.
+An association connects 'debugSeq_Ternary' and 'debugSeq_Expression'. From 'debugSeq_Ternary', the role 'debugSeq_Ternary' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression26' has cardinality 0..*.
+An association connects 'debugSeq_Ternary' and 'debugSeq_Expression'. From 'debugSeq_Ternary', the role 'debugSeq_Ternary28' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression29' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Ternary'. From 'debugSeq_Expression', the role 'debugSeq_Expression32' has cardinality 0..*, and from 'debugSeq_Ternary', the role 'debugSeq_Ternary31' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Or'. From 'debugSeq_Expression', the role 'debugSeq_Expression34' has cardinality 0..*, and from 'debugSeq_Or', the role 'debugSeq_Or' has cardinality 0..*.
+An association connects 'debugSeq_Or' and 'debugSeq_Expression'. From 'debugSeq_Or', the role 'debugSeq_Or36' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression37' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_And'. From 'debugSeq_Expression', the role 'debugSeq_Expression39' has cardinality 0..*, and from 'debugSeq_And', the role 'debugSeq_And' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_And'. From 'debugSeq_Expression', the role 'debugSeq_Expression42' has cardinality 0..*, and from 'debugSeq_And', the role 'debugSeq_And41' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_BitOr'. From 'debugSeq_Expression', the role 'debugSeq_Expression44' has cardinality 0..*, and from 'debugSeq_BitOr', the role 'debugSeq_BitOr' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_BitOr'. From 'debugSeq_Expression', the role 'debugSeq_Expression47' has cardinality 0..*, and from 'debugSeq_BitOr', the role 'debugSeq_BitOr46' has cardinality 0..*.
+An association connects 'debugSeq_BitXor' and 'debugSeq_Expression'. From 'debugSeq_BitXor', the role 'debugSeq_BitXor' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression49' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_BitXor'. From 'debugSeq_Expression', the role 'debugSeq_Expression52' has cardinality 0..*, and from 'debugSeq_BitXor', the role 'debugSeq_BitXor51' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_BitAnd'. From 'debugSeq_Expression', the role 'debugSeq_Expression54' has cardinality 0..*, and from 'debugSeq_BitAnd', the role 'debugSeq_BitAnd' has cardinality 0..*.
+An association connects 'debugSeq_BitAnd' and 'debugSeq_Expression'. From 'debugSeq_BitAnd', the role 'debugSeq_BitAnd56' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression57' has cardinality 0..*.
+An association connects 'debugSeq_Equality' and 'debugSeq_Expression'. From 'debugSeq_Equality', the role 'debugSeq_Equality' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression59' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Equality'. From 'debugSeq_Expression', the role 'debugSeq_Expression62' has cardinality 0..*, and from 'debugSeq_Equality', the role 'debugSeq_Equality61' has cardinality 0..*.
+An association connects 'debugSeq_Comparison' and 'debugSeq_Expression'. From 'debugSeq_Comparison', the role 'debugSeq_Comparison' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression64' has cardinality 0..*.
+An association connects 'debugSeq_Comparison' and 'debugSeq_Expression'. From 'debugSeq_Comparison', the role 'debugSeq_Comparison66' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression67' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Shift'. From 'debugSeq_Expression', the role 'debugSeq_Expression69' has cardinality 0..*, and from 'debugSeq_Shift', the role 'debugSeq_Shift' has cardinality 0..*.
+An association connects 'debugSeq_Shift' and 'debugSeq_Expression'. From 'debugSeq_Shift', the role 'debugSeq_Shift71' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression72' has cardinality 0..*.
+An association connects 'debugSeq_Plus' and 'debugSeq_Expression'. From 'debugSeq_Plus', the role 'debugSeq_Plus' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression74' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Plus'. From 'debugSeq_Expression', the role 'debugSeq_Expression77' has cardinality 0..*, and from 'debugSeq_Plus', the role 'debugSeq_Plus76' has cardinality 0..*.
+An association connects 'debugSeq_Minus' and 'debugSeq_Expression'. From 'debugSeq_Minus', the role 'debugSeq_Minus' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression79' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Minus'. From 'debugSeq_Expression', the role 'debugSeq_Expression82' has cardinality 0..*, and from 'debugSeq_Minus', the role 'debugSeq_Minus81' has cardinality 0..*.
+An association connects 'debugSeq_Mul' and 'debugSeq_Expression'. From 'debugSeq_Mul', the role 'debugSeq_Mul' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression84' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Mul'. From 'debugSeq_Expression', the role 'debugSeq_Expression87' has cardinality 0..*, and from 'debugSeq_Mul', the role 'debugSeq_Mul86' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Div'. From 'debugSeq_Expression', the role 'debugSeq_Expression89' has cardinality 0..*, and from 'debugSeq_Div', the role 'debugSeq_Div' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Div'. From 'debugSeq_Expression', the role 'debugSeq_Expression92' has cardinality 0..*, and from 'debugSeq_Div', the role 'debugSeq_Div91' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Rem'. From 'debugSeq_Expression', the role 'debugSeq_Expression94' has cardinality 0..*, and from 'debugSeq_Rem', the role 'debugSeq_Rem' has cardinality 0..*.
+An association connects 'debugSeq_Rem' and 'debugSeq_Expression'. From 'debugSeq_Rem', the role 'debugSeq_Rem96' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression97' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Not'. From 'debugSeq_Expression', the role 'debugSeq_Expression99' has cardinality 0..*, and from 'debugSeq_Not', the role 'debugSeq_Not' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_BitNot'. From 'debugSeq_Expression', the role 'debugSeq_Expression101' has cardinality 0..*, and from 'debugSeq_BitNot', the role 'debugSeq_BitNot' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Query'. From 'debugSeq_Expression', the role 'debugSeq_Expression103' has cardinality 0..*, and from 'debugSeq_Query', the role 'debugSeq_Query' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Query'. From 'debugSeq_Expression', the role 'debugSeq_Expression106' has cardinality 0..*, and from 'debugSeq_Query', the role 'debugSeq_Query105' has cardinality 0..*.
+An association connects 'debugSeq_QueryValue' and 'debugSeq_Expression'. From 'debugSeq_QueryValue', the role 'debugSeq_QueryValue' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression108' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Message'. From 'debugSeq_Expression', the role 'debugSeq_Expression110' has cardinality 0..*, and from 'debugSeq_Message', the role 'debugSeq_Message' has cardinality 0..*.
+An association connects 'debugSeq_Message' and 'debugSeq_Parameter'. From 'debugSeq_Message', the role 'debugSeq_Message112' has cardinality 0..*, and from 'debugSeq_Parameter', the role 'debugSeq_Parameter' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Read8'. From 'debugSeq_Expression', the role 'debugSeq_Expression114' has cardinality 0..*, and from 'debugSeq_Read8', the role 'debugSeq_Read8' has cardinality 0..*.
+An association connects 'debugSeq_Read16' and 'debugSeq_Expression'. From 'debugSeq_Read16', the role 'debugSeq_Read16' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression116' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Read32'. From 'debugSeq_Expression', the role 'debugSeq_Expression118' has cardinality 0..*, and from 'debugSeq_Read32', the role 'debugSeq_Read32' has cardinality 0..*.
+An association connects 'debugSeq_Read64' and 'debugSeq_Expression'. From 'debugSeq_Read64', the role 'debugSeq_Read64' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression120' has cardinality 0..*.
+An association connects 'debugSeq_ReadAP' and 'debugSeq_Expression'. From 'debugSeq_ReadAP', the role 'debugSeq_ReadAP' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression122' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_ReadDP'. From 'debugSeq_Expression', the role 'debugSeq_Expression124' has cardinality 0..*, and from 'debugSeq_ReadDP', the role 'debugSeq_ReadDP' has cardinality 0..*.
+An association connects 'debugSeq_Write8' and 'debugSeq_Expression'. From 'debugSeq_Write8', the role 'debugSeq_Write8' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression126' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Write8'. From 'debugSeq_Expression', the role 'debugSeq_Expression129' has cardinality 0..*, and from 'debugSeq_Write8', the role 'debugSeq_Write8128' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Write16'. From 'debugSeq_Expression', the role 'debugSeq_Expression131' has cardinality 0..*, and from 'debugSeq_Write16', the role 'debugSeq_Write16' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Write16'. From 'debugSeq_Expression', the role 'debugSeq_Expression134' has cardinality 0..*, and from 'debugSeq_Write16', the role 'debugSeq_Write16133' has cardinality 0..*.
+An association connects 'debugSeq_Write32' and 'debugSeq_Expression'. From 'debugSeq_Write32', the role 'debugSeq_Write32' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression136' has cardinality 0..*.
+An association connects 'debugSeq_Write32' and 'debugSeq_Expression'. From 'debugSeq_Write32', the role 'debugSeq_Write32138' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression139' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_Write64'. From 'debugSeq_Expression', the role 'debugSeq_Expression141' has cardinality 0..*, and from 'debugSeq_Write64', the role 'debugSeq_Write64' has cardinality 0..*.
+An association connects 'debugSeq_Write64' and 'debugSeq_Expression'. From 'debugSeq_Write64', the role 'debugSeq_Write64143' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression144' has cardinality 0..*.
+An association connects 'debugSeq_WriteAP' and 'debugSeq_Expression'. From 'debugSeq_WriteAP', the role 'debugSeq_WriteAP' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression146' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_WriteAP'. From 'debugSeq_Expression', the role 'debugSeq_Expression149' has cardinality 0..*, and from 'debugSeq_WriteAP', the role 'debugSeq_WriteAP148' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_WriteDP'. From 'debugSeq_Expression', the role 'debugSeq_Expression151' has cardinality 0..*, and from 'debugSeq_WriteDP', the role 'debugSeq_WriteDP' has cardinality 0..*.
+An association connects 'debugSeq_WriteDP' and 'debugSeq_Expression'. From 'debugSeq_WriteDP', the role 'debugSeq_WriteDP153' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression154' has cardinality 0..*.
+An association connects 'debugSeq_DapDelay' and 'debugSeq_Expression'. From 'debugSeq_DapDelay', the role 'debugSeq_DapDelay' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression156' has cardinality 0..*.
+An association connects 'debugSeq_DapWriteABORT' and 'debugSeq_Expression'. From 'debugSeq_DapWriteABORT', the role 'debugSeq_DapWriteABORT' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression158' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_DapSwjPins'. From 'debugSeq_Expression', the role 'debugSeq_Expression160' has cardinality 0..*, and from 'debugSeq_DapSwjPins', the role 'debugSeq_DapSwjPins' has cardinality 0..*.
+An association connects 'debugSeq_DapSwjPins' and 'debugSeq_Expression'. From 'debugSeq_DapSwjPins', the role 'debugSeq_DapSwjPins162' has cardinality 0..*, and from 'debugSeq_Expression', the role 'debugSeq_Expression163' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_DapSwjPins'. From 'debugSeq_Expression', the role 'debugSeq_Expression166' has cardinality 0..*, and from 'debugSeq_DapSwjPins', the role 'debugSeq_DapSwjPins165' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_DapSwjClock'. From 'debugSeq_Expression', the role 'debugSeq_Expression168' has cardinality 0..*, and from 'debugSeq_DapSwjClock', the role 'debugSeq_DapSwjClock' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_DapSwjSequence'. From 'debugSeq_Expression', the role 'debugSeq_Expression170' has cardinality 0..*, and from 'debugSeq_DapSwjSequence', the role 'debugSeq_DapSwjSequence' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_DapSwjSequence'. From 'debugSeq_Expression', the role 'debugSeq_Expression173' has cardinality 0..*, and from 'debugSeq_DapSwjSequence', the role 'debugSeq_DapSwjSequence172' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_DapJtagSequence'. From 'debugSeq_Expression', the role 'debugSeq_Expression175' has cardinality 0..*, and from 'debugSeq_DapJtagSequence', the role 'debugSeq_DapJtagSequence' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_DapJtagSequence'. From 'debugSeq_Expression', the role 'debugSeq_Expression178' has cardinality 0..*, and from 'debugSeq_DapJtagSequence', the role 'debugSeq_DapJtagSequence177' has cardinality 0..*.
+An association connects 'debugSeq_Expression' and 'debugSeq_DapJtagSequence'. From 'debugSeq_Expression', the role 'debugSeq_Expression181' has cardinality 0..*, and from 'debugSeq_DapJtagSequence', the role 'debugSeq_DapJtagSequence180' has cardinality 0..*.
+An association connects 'debugSeq_VariableDeclaration' and 'debugSeq_VariableRef'. From 'debugSeq_VariableDeclaration', the role 'debugSeq_VariableDeclaration183' has cardinality 0..*, and from 'debugSeq_VariableRef', the role 'debugSeq_VariableRef' has cardinality 0..*.

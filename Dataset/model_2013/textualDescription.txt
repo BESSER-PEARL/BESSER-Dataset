@@ -1,0 +1,178 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 38 main class(es).
+
+'trace_TransientObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectState' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_CompositeObjectState' represents an important domain concept.
+It has one attribute: 'objectstatesOrder', which is of type int.
+
+'trace_NormalStep' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_LiteralInteger' represents an important domain concept.
+It has one attribute: 'intvalue', which is of type int.
+
+'LiteralValue' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_DynamicTransientObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Step' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_PatternOcurrence' represents an important domain concept.
+It has one attribute: 'repet', which is of type int.
+
+'trace_Step' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_ParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_RepeatingStep' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_LeafObjectState' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_CompositParameterList' represents an important domain concept.
+It has one attribute: 'paramtervaluesOrder', which is of type int.
+
+'trace_StaticTransientObject' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_LiteralFloat' represents an important domain concept.
+It has one attribute: 'floatvalue', which is of type float.
+
+'trace_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_TransientObjectState' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_RefValue' represents an important domain concept.
+It does not declare any attributes.
+
+'StepSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_LeafParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_StepType' represents an important domain concept.
+It has one attribute: 'stepName', which is of type str.
+
+'TransientObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'boolvalue', which is of type bool.
+
+'trace_ParameterValue' represents an important domain concept.
+It has one attribute: 'DirectionKind', which is of type str.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_ObjectState' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_LiteralString' represents an important domain concept.
+It has one attribute: 'stringvalue', which is of type str.
+
+'trace_StepSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_State' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_LiteralValue' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_StepPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_PatternOccurrenceStepData' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParamterKindEnum' defines the following possible values: 'RETURN', 'IN', 'INOUT', 'OUT'.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_LiteralValue' is a specialization of 'Value'.
+The class 'trace_RefValue' is a specialization of 'Value'.
+The class 'trace_NormalStep' is a specialization of 'Step'.
+The class 'trace_NormalStep' is a specialization of 'StepSpec'.
+The class 'trace_PatternOcurrence' is a specialization of 'Step'.
+The class 'trace_LiteralString' is a specialization of 'LiteralValue'.
+The class 'trace_LiteralBoolean' is a specialization of 'LiteralValue'.
+The class 'trace_LiteralInteger' is a specialization of 'LiteralValue'.
+The class 'trace_LiteralFloat' is a specialization of 'LiteralValue'.
+The class 'trace_RepeatingStep' is a specialization of 'StepSpec'.
+The class 'trace_LeafObjectState' is a specialization of 'ObjectState'.
+The class 'trace_CompositeObjectState' is a specialization of 'ObjectState'.
+The class 'trace_StaticTransientObject' is a specialization of 'TransientObject'.
+The class 'trace_DynamicTransientObject' is a specialization of 'TransientObject'.
+The class 'trace_CompositParameterList' is a specialization of 'ParameterList'.
+The class 'trace_LeafParameterList' is a specialization of 'ParameterList'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_State' and 'trace_Trace'. From 'trace_State', the role 'trace_State' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_TransientObject'. From 'trace_Trace', the role 'trace_Trace2' has cardinality 0..*, and from 'trace_TransientObject', the role 'trace_TransientObject' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_StepType'. From 'trace_Trace', the role 'trace_Trace4' has cardinality 0..*, and from 'trace_StepType', the role 'trace_StepType' has cardinality 0..*.
+An association connects 'trace_StepPattern' and 'trace_Trace'. From 'trace_StepPattern', the role 'trace_StepPattern' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace6' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_Value'. From 'trace_Trace', the role 'trace_Trace8' has cardinality 0..*, and from 'trace_Value', the role 'trace_Value' has cardinality 0..*.
+An association connects 'trace_ObjectState' and 'trace_Trace'. From 'trace_ObjectState', the role 'trace_ObjectState' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace10' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_RepeatingStep'. From 'trace_Trace', the role 'trace_Trace12' has cardinality 0..*, and from 'trace_RepeatingStep', the role 'trace_RepeatingStep' has cardinality 0..*.
+An association connects 'trace_Step' and 'trace_Trace'. From 'trace_Step', the role 'trace_Step' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace14' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_ParameterValue'. From 'trace_Trace', the role 'trace_Trace16' has cardinality 0..*, and from 'trace_ParameterValue', the role 'trace_ParameterValue' has cardinality 0..*.
+An association connects 'trace_ParameterList' and 'trace_Trace'. From 'trace_ParameterList', the role 'trace_ParameterList' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace18' has cardinality 0..*.
+An association connects 'trace_ObjectState' and 'trace_Value'. From 'trace_ObjectState', the role 'trace_ObjectState20' has cardinality 0..*, and from 'trace_Value', the role 'trace_Value21' has cardinality 0..*.
+An association connects 'trace_RefValue' and 'trace_EObject'. From 'trace_RefValue', the role 'trace_RefValue' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject' has cardinality 0..*.
+An association connects 'trace_State' and 'trace_TransientObject'. From 'trace_State', the role 'trace_State24' has cardinality 0..*, and from 'trace_TransientObject', the role 'trace_TransientObject25' has cardinality 0..*.
+An association connects 'trace_TransientObject' and 'trace_State'. From 'trace_TransientObject', the role 'trace_TransientObject28' has cardinality 0..*, and from 'trace_State', the role 'trace_State27' has cardinality 0..*.
+An association connects 'trace_State' and 'trace_State'. From 'trace_State', the role 'trace_State31' has cardinality 0..*, and from 'trace_State', the role 'trace_State29' has cardinality 0..*.
+An association connects 'trace_State' and 'trace_TransientObjectState'. From 'trace_State', the role 'trace_State33' has cardinality 0..*, and from 'trace_TransientObjectState', the role 'trace_TransientObjectState' has cardinality 0..*.
+An association connects 'trace_Step' and 'trace_NormalStep'. From 'trace_Step', the role 'Step' has cardinality 0..*, and from 'trace_NormalStep', the role 'parent' has cardinality 0..*.
+An association connects 'trace_Step' and 'trace_State'. From 'trace_Step', the role 'trace_Step36' has cardinality 0..*, and from 'trace_State', the role 'trace_State37' has cardinality 0..*.
+An association connects 'trace_Step' and 'trace_NormalStep'. From 'trace_Step', the role 'children' has cardinality 0..*, and from 'trace_NormalStep', the role 'NormalStep' has cardinality 0..*.
+An association connects 'trace_Step' and 'trace_ParameterList'. From 'trace_Step', the role 'trace_Step40' has cardinality 0..*, and from 'trace_ParameterList', the role 'trace_ParameterList41' has cardinality 0..*.
+An association connects 'trace_StepPattern' and 'trace_PatternOcurrence'. From 'trace_StepPattern', the role 'trace_StepPattern43' has cardinality 0..*, and from 'trace_PatternOcurrence', the role 'trace_PatternOcurrence' has cardinality 0..*.
+An association connects 'trace_PatternOccurrenceStepData' and 'trace_PatternOcurrence'. From 'trace_PatternOccurrenceStepData', the role 'trace_PatternOccurrenceStepData' has cardinality 0..*, and from 'trace_PatternOcurrence', the role 'trace_PatternOcurrence45' has cardinality 0..*.
+An association connects 'trace_RepeatingStep' and 'trace_StepPattern'. From 'trace_RepeatingStep', the role 'trace_RepeatingStep48' has cardinality 0..*, and from 'trace_StepPattern', the role 'trace_StepPattern47' has cardinality 0..*.
+An association connects 'trace_State' and 'trace_PatternOccurrenceStepData'. From 'trace_State', the role 'trace_State51' has cardinality 0..*, and from 'trace_PatternOccurrenceStepData', the role 'trace_PatternOccurrenceStepData50' has cardinality 0..*.
+An association connects 'trace_PatternOccurrenceStepData' and 'trace_RepeatingStep'. From 'trace_PatternOccurrenceStepData', the role 'trace_PatternOccurrenceStepData53' has cardinality 0..*, and from 'trace_RepeatingStep', the role 'trace_RepeatingStep54' has cardinality 0..*.
+An association connects 'trace_ParameterList' and 'trace_PatternOccurrenceStepData'. From 'trace_ParameterList', the role 'trace_ParameterList57' has cardinality 0..*, and from 'trace_PatternOccurrenceStepData', the role 'trace_PatternOccurrenceStepData56' has cardinality 0..*.
+An association connects 'trace_StepType' and 'trace_StepSpec'. From 'trace_StepType', the role 'trace_StepType59' has cardinality 0..*, and from 'trace_StepSpec', the role 'trace_StepSpec' has cardinality 0..*.
+An association connects 'trace_RepeatingStep' and 'trace_RepeatingStep'. From 'trace_RepeatingStep', the role 'parent62' has cardinality 0..*, and from 'trace_RepeatingStep', the role 'RepeatingStep' has cardinality 0..*.
+An association connects 'trace_RepeatingStep' and 'trace_RepeatingStep'. From 'trace_RepeatingStep', the role 'RepeatingStep66' has cardinality 0..*, and from 'trace_RepeatingStep', the role 'children65' has cardinality 0..*.
+An association connects 'trace_ParameterValue' and 'trace_Value'. From 'trace_ParameterValue', the role 'trace_ParameterValue68' has cardinality 0..*, and from 'trace_Value', the role 'trace_Value69' has cardinality 0..*.
+An association connects 'trace_TransientObject' and 'trace_TransientObjectState'. From 'trace_TransientObject', the role 'trace_TransientObject72' has cardinality 0..*, and from 'trace_TransientObjectState', the role 'trace_TransientObjectState71' has cardinality 0..*.
+An association connects 'trace_ObjectState' and 'trace_TransientObjectState'. From 'trace_ObjectState', the role 'trace_ObjectState75' has cardinality 0..*, and from 'trace_TransientObjectState', the role 'trace_TransientObjectState74' has cardinality 0..*.
+An association connects 'trace_EStructuralFeature' and 'trace_TransientObjectState'. From 'trace_EStructuralFeature', the role 'trace_EStructuralFeature' has cardinality 0..*, and from 'trace_TransientObjectState', the role 'trace_TransientObjectState77' has cardinality 0..*.
+An association connects 'trace_CompositeObjectState' and 'trace_ObjectState'. From 'trace_CompositeObjectState', the role 'trace_CompositeObjectState' has cardinality 0..*, and from 'trace_ObjectState', the role 'trace_ObjectState79' has cardinality 0..*.
+An association connects 'trace_StaticTransientObject' and 'trace_EObject'. From 'trace_StaticTransientObject', the role 'trace_StaticTransientObject' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject81' has cardinality 0..*.
+An association connects 'trace_DynamicTransientObject' and 'trace_EClass'. From 'trace_DynamicTransientObject', the role 'trace_DynamicTransientObject' has cardinality 0..*, and from 'trace_EClass', the role 'trace_EClass' has cardinality 0..*.
+An association connects 'trace_ParameterList' and 'trace_CompositParameterList'. From 'trace_ParameterList', the role 'trace_ParameterList84' has cardinality 0..*, and from 'trace_CompositParameterList', the role 'trace_CompositParameterList' has cardinality 0..*.
+An association connects 'trace_ParameterValue' and 'trace_ParameterList'. From 'trace_ParameterValue', the role 'trace_ParameterValue87' has cardinality 0..*, and from 'trace_ParameterList', the role 'trace_ParameterList86' has cardinality 0..*.

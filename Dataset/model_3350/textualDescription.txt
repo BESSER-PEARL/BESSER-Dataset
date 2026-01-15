@@ -1,0 +1,357 @@
+The domain model 'plSql' describes the core structural elements and their relationships within the system.
+
+The model defines 80 main class(es).
+
+'plSql_FetchStatementSingleIntoClause' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_Package' represents an important domain concept.
+It has the following attributes: 'endName', which is of type str; 'schemaName', which is of type str.
+
+'plSql_Function' represents an important domain concept.
+It has the following attributes: 'schemaName', which is of type str; 'returnType', which is of type str.
+
+'plSql_WhileLoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_ParameterSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_GotoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'NameDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_ParameterValue' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_ForLoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionClause' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_Label' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'plSql_DeterministicClause' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_FunctionImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_NullLiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Pragma' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_CaseStatement' represents an important domain concept.
+It has one attribute: 'endLabel', which is of type str.
+
+'plSql_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_NullStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'FetchStatementIntoClause' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_FunctionClause' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_DeclareSection' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionContent' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_ParameterDeclaration' represents an important domain concept.
+It has the following attributes: 'dataType', which is of type str; 'behavior', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_VariableRef' represents an important domain concept.
+It has one attribute: 'isHostRef', which is of type bool.
+
+'plSql_StringLiteralExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'plSql_PipelinedClause' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_IntLiteralExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'plSql_ProcedureContent' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcedureContent' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_ExitStatement' represents an important domain concept.
+It has one attribute: 'labelName', which is of type str.
+
+'plSql_ProcedureInvokerRightsClause' represents an important domain concept.
+It has one attribute: 'right', which is of type str.
+
+'plSql_ItemDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_ExternalProcedureDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_CaseStatementWhenBranch' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_IfStatementElseBranch' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_LoopVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_StatementBody' represents an important domain concept.
+It has one attribute: 'endName', which is of type str.
+
+'plSql_BasicLoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_FetchStatementBulkIntoClause' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_BooleanLiteralExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'plSql_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_NameDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'plSql_VariableAssignmentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_FetchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_ProcedureDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'plSql_AssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_FunctionInvokerRightsClause' represents an important domain concept.
+It has one attribute: 'right', which is of type str.
+
+'plSql_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'isConstant', which is of type bool; 'isNotNull', which is of type bool; 'dataType', which is of type str.
+
+'plSql_ProcedureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_PragmaRestrictReferences' represents an important domain concept.
+It has one attribute: 'restrictions', which is of type str.
+
+'plSql_LoopStatement' represents an important domain concept.
+It has one attribute: 'endLabel', which is of type str.
+
+'plSql_Procedure' represents an important domain concept.
+It has one attribute: 'schemaName', which is of type str.
+
+'plSql_FunctionContent' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_Pragma' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_IfStatementElsifBranch' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_ProcedureImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_QualifiedName' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_FetchStatementIntoClause' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_ResultCacheClause' represents an important domain concept.
+It has one attribute: 'dataSources', which is of type str.
+
+'plSql_AssignmentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_VariableValue' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_ContinueStatement' represents an important domain concept.
+It has one attribute: 'labelName', which is of type str.
+
+'plSql_Item' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_CaseStatementElseBranch' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_RaiseStatement' represents an important domain concept.
+It has one attribute: 'exceptionName', which is of type str.
+
+'plSql_PragmaTimestamp' represents an important domain concept.
+It has one attribute: 'timestamp', which is of type str.
+
+'plSql_CloseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'plSql_VariableRefExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'InvokerRight' defines the following possible values: 'DEFINER', 'CURRENT_USER'.
+
+The model also captures inheritance relationships between classes.
+The class 'plSql_Procedure' is a specialization of 'CompilationUnit'.
+The class 'plSql_Procedure' is a specialization of 'NameDeclaration'.
+The class 'plSql_Package' is a specialization of 'CompilationUnit'.
+The class 'plSql_Package' is a specialization of 'NameDeclaration'.
+The class 'plSql_ProcedureDeclaration' is a specialization of 'Item'.
+The class 'plSql_ProcedureDefinition' is a specialization of 'Item'.
+The class 'plSql_ProcedureDefinition' is a specialization of 'NameDeclaration'.
+The class 'plSql_Function' is a specialization of 'CompilationUnit'.
+The class 'plSql_Function' is a specialization of 'NameDeclaration'.
+The class 'plSql_ParameterDeclaration' is a specialization of 'NameDeclaration'.
+The class 'plSql_FunctionInvokerRightsClause' is a specialization of 'FunctionClause'.
+The class 'plSql_Pragma' is a specialization of 'Item'.
+The class 'plSql_PragmaRestrictReferences' is a specialization of 'Pragma'.
+The class 'plSql_PragmaTimestamp' is a specialization of 'Pragma'.
+The class 'plSql_ProcedureImplementation' is a specialization of 'ProcedureContent'.
+The class 'plSql_FunctionImplementation' is a specialization of 'FunctionContent'.
+The class 'plSql_DeterministicClause' is a specialization of 'FunctionClause'.
+The class 'plSql_ResultCacheClause' is a specialization of 'FunctionClause'.
+The class 'plSql_PipelinedClause' is a specialization of 'FunctionClause'.
+The class 'plSql_ItemDeclaration' is a specialization of 'Item'.
+The class 'plSql_ExternalProcedureDeclaration' is a specialization of 'ProcedureContent'.
+The class 'plSql_VariableDeclaration' is a specialization of 'ItemDeclaration'.
+The class 'plSql_VariableDeclaration' is a specialization of 'NameDeclaration'.
+The class 'plSql_IntLiteralExpression' is a specialization of 'Expression'.
+The class 'plSql_StringLiteralExpression' is a specialization of 'Expression'.
+The class 'plSql_BooleanLiteralExpression' is a specialization of 'Expression'.
+The class 'plSql_NullLiteralExpression' is a specialization of 'Expression'.
+The class 'plSql_VariableRefExpression' is a specialization of 'Expression'.
+The class 'plSql_AssignmentStatement' is a specialization of 'Statement'.
+The class 'plSql_VariableAssignmentTarget' is a specialization of 'AssignmentTarget'.
+The class 'plSql_BlockStatement' is a specialization of 'Statement'.
+The class 'plSql_CaseStatement' is a specialization of 'Statement'.
+The class 'plSql_CloseStatement' is a specialization of 'Statement'.
+The class 'plSql_ContinueStatement' is a specialization of 'Statement'.
+The class 'plSql_ExitStatement' is a specialization of 'Statement'.
+The class 'plSql_FetchStatement' is a specialization of 'Statement'.
+The class 'plSql_FetchStatementSingleIntoClause' is a specialization of 'FetchStatementIntoClause'.
+The class 'plSql_FetchStatementBulkIntoClause' is a specialization of 'FetchStatementIntoClause'.
+The class 'plSql_GotoStatement' is a specialization of 'Statement'.
+The class 'plSql_IfStatement' is a specialization of 'Statement'.
+The class 'plSql_LoopStatement' is a specialization of 'Statement'.
+The class 'plSql_BasicLoopStatement' is a specialization of 'LoopStatement'.
+The class 'plSql_WhileLoopStatement' is a specialization of 'LoopStatement'.
+The class 'plSql_ForLoopStatement' is a specialization of 'LoopStatement'.
+The class 'plSql_ReturnStatement' is a specialization of 'Statement'.
+The class 'plSql_NullStatement' is a specialization of 'Statement'.
+The class 'plSql_RaiseStatement' is a specialization of 'Statement'.
+The class 'plSql_LoopVariableDeclaration' is a specialization of 'NameDeclaration'.
+
+Relationships between classes are modeled using associations.
+An association connects 'plSql_ParameterSequence' and 'plSql_Procedure'. From 'plSql_ParameterSequence', the role 'plSql_ParameterSequence' has cardinality 0..*, and from 'plSql_Procedure', the role 'plSql_Procedure' has cardinality 0..*.
+An association connects 'plSql_Procedure' and 'plSql_ProcedureInvokerRightsClause'. From 'plSql_Procedure', the role 'plSql_Procedure2' has cardinality 0..*, and from 'plSql_ProcedureInvokerRightsClause', the role 'plSql_ProcedureInvokerRightsClause' has cardinality 0..*.
+An association connects 'plSql_Procedure' and 'plSql_ProcedureContent'. From 'plSql_Procedure', the role 'plSql_Procedure4' has cardinality 0..*, and from 'plSql_ProcedureContent', the role 'plSql_ProcedureContent' has cardinality 0..*.
+An association connects 'plSql_Package' and 'plSql_ProcedureInvokerRightsClause'. From 'plSql_Package', the role 'plSql_Package' has cardinality 0..*, and from 'plSql_ProcedureInvokerRightsClause', the role 'plSql_ProcedureInvokerRightsClause6' has cardinality 0..*.
+An association connects 'plSql_Item' and 'plSql_Package'. From 'plSql_Item', the role 'plSql_Item' has cardinality 0..*, and from 'plSql_Package', the role 'plSql_Package8' has cardinality 0..*.
+An association connects 'plSql_ProcedureDeclaration' and 'plSql_ParameterSequence'. From 'plSql_ProcedureDeclaration', the role 'plSql_ProcedureDeclaration' has cardinality 0..*, and from 'plSql_ParameterSequence', the role 'plSql_ParameterSequence10' has cardinality 0..*.
+An association connects 'plSql_ParameterSequence' and 'plSql_ProcedureDefinition'. From 'plSql_ParameterSequence', the role 'plSql_ParameterSequence12' has cardinality 0..*, and from 'plSql_ProcedureDefinition', the role 'plSql_ProcedureDefinition' has cardinality 0..*.
+An association connects 'plSql_ProcedureDefinition' and 'plSql_ProcedureImplementation'. From 'plSql_ProcedureDefinition', the role 'plSql_ProcedureDefinition14' has cardinality 0..*, and from 'plSql_ProcedureImplementation', the role 'plSql_ProcedureImplementation' has cardinality 0..*.
+An association connects 'plSql_ParameterSequence' and 'plSql_Function'. From 'plSql_ParameterSequence', the role 'plSql_ParameterSequence16' has cardinality 0..*, and from 'plSql_Function', the role 'plSql_Function' has cardinality 0..*.
+An association connects 'plSql_FunctionClause' and 'plSql_Function'. From 'plSql_FunctionClause', the role 'plSql_FunctionClause' has cardinality 0..*, and from 'plSql_Function', the role 'plSql_Function18' has cardinality 0..*.
+An association connects 'plSql_FunctionContent' and 'plSql_Function'. From 'plSql_FunctionContent', the role 'plSql_FunctionContent' has cardinality 0..*, and from 'plSql_Function', the role 'plSql_Function20' has cardinality 0..*.
+An association connects 'plSql_ParameterDeclaration' and 'plSql_ParameterSequence'. From 'plSql_ParameterDeclaration', the role 'plSql_ParameterDeclaration' has cardinality 0..*, and from 'plSql_ParameterSequence', the role 'plSql_ParameterSequence22' has cardinality 0..*.
+An association connects 'plSql_ParameterDeclaration' and 'plSql_ParameterValue'. From 'plSql_ParameterDeclaration', the role 'plSql_ParameterDeclaration24' has cardinality 0..*, and from 'plSql_ParameterValue', the role 'plSql_ParameterValue' has cardinality 0..*.
+An association connects 'plSql_ParameterValue' and 'plSql_Expression'. From 'plSql_ParameterValue', the role 'plSql_ParameterValue26' has cardinality 0..*, and from 'plSql_Expression', the role 'plSql_Expression' has cardinality 0..*.
+An association connects 'plSql_DeclareSection' and 'plSql_ProcedureImplementation'. From 'plSql_DeclareSection', the role 'plSql_DeclareSection' has cardinality 0..*, and from 'plSql_ProcedureImplementation', the role 'plSql_ProcedureImplementation28' has cardinality 0..*.
+An association connects 'plSql_ProcedureImplementation' and 'plSql_StatementBody'. From 'plSql_ProcedureImplementation', the role 'plSql_ProcedureImplementation30' has cardinality 0..*, and from 'plSql_StatementBody', the role 'plSql_StatementBody' has cardinality 0..*.
+An association connects 'plSql_FunctionImplementation' and 'plSql_DeclareSection'. From 'plSql_FunctionImplementation', the role 'plSql_FunctionImplementation' has cardinality 0..*, and from 'plSql_DeclareSection', the role 'plSql_DeclareSection32' has cardinality 0..*.
+An association connects 'plSql_FunctionImplementation' and 'plSql_StatementBody'. From 'plSql_FunctionImplementation', the role 'plSql_FunctionImplementation34' has cardinality 0..*, and from 'plSql_StatementBody', the role 'plSql_StatementBody35' has cardinality 0..*.
+An association connects 'plSql_StatementBody' and 'plSql_Statement'. From 'plSql_StatementBody', the role 'plSql_StatementBody37' has cardinality 0..*, and from 'plSql_Statement', the role 'plSql_Statement' has cardinality 0..*.
+An association connects 'plSql_DeclareSection' and 'plSql_Item'. From 'plSql_DeclareSection', the role 'plSql_DeclareSection39' has cardinality 0..*, and from 'plSql_Item', the role 'plSql_Item40' has cardinality 0..*.
+An association connects 'plSql_VariableDeclaration' and 'plSql_VariableValue'. From 'plSql_VariableDeclaration', the role 'plSql_VariableDeclaration' has cardinality 0..*, and from 'plSql_VariableValue', the role 'plSql_VariableValue' has cardinality 0..*.
+An association connects 'plSql_Expression' and 'plSql_VariableValue'. From 'plSql_Expression', the role 'plSql_Expression44' has cardinality 0..*, and from 'plSql_VariableValue', the role 'plSql_VariableValue43' has cardinality 0..*.
+An association connects 'plSql_VariableRefExpression' and 'plSql_VariableRef'. From 'plSql_VariableRefExpression', the role 'plSql_VariableRefExpression' has cardinality 0..*, and from 'plSql_VariableRef', the role 'plSql_VariableRef' has cardinality 0..*.
+An association connects 'plSql_Label' and 'plSql_Statement'. From 'plSql_Label', the role 'plSql_Label' has cardinality 0..*, and from 'plSql_Statement', the role 'plSql_Statement47' has cardinality 0..*.
+An association connects 'plSql_AssignmentTarget' and 'plSql_AssignmentStatement'. From 'plSql_AssignmentTarget', the role 'plSql_AssignmentTarget' has cardinality 0..*, and from 'plSql_AssignmentStatement', the role 'plSql_AssignmentStatement' has cardinality 0..*.
+An association connects 'plSql_Expression' and 'plSql_AssignmentStatement'. From 'plSql_Expression', the role 'plSql_Expression51' has cardinality 0..*, and from 'plSql_AssignmentStatement', the role 'plSql_AssignmentStatement50' has cardinality 0..*.
+An association connects 'plSql_VariableRef' and 'plSql_VariableAssignmentTarget'. From 'plSql_VariableRef', the role 'plSql_VariableRef53' has cardinality 0..*, and from 'plSql_VariableAssignmentTarget', the role 'plSql_VariableAssignmentTarget' has cardinality 0..*.
+An association connects 'plSql_DeclareSection' and 'plSql_BlockStatement'. From 'plSql_DeclareSection', the role 'plSql_DeclareSection55' has cardinality 0..*, and from 'plSql_BlockStatement', the role 'plSql_BlockStatement' has cardinality 0..*.
+An association connects 'plSql_BlockStatement' and 'plSql_StatementBody'. From 'plSql_BlockStatement', the role 'plSql_BlockStatement57' has cardinality 0..*, and from 'plSql_StatementBody', the role 'plSql_StatementBody58' has cardinality 0..*.
+An association connects 'plSql_Expression' and 'plSql_CaseStatement'. From 'plSql_Expression', the role 'plSql_Expression60' has cardinality 0..*, and from 'plSql_CaseStatement', the role 'plSql_CaseStatement' has cardinality 0..*.
+An association connects 'plSql_CaseStatement' and 'plSql_CaseStatementWhenBranch'. From 'plSql_CaseStatement', the role 'plSql_CaseStatement62' has cardinality 0..*, and from 'plSql_CaseStatementWhenBranch', the role 'plSql_CaseStatementWhenBranch' has cardinality 0..*.
+An association connects 'plSql_CaseStatementElseBranch' and 'plSql_CaseStatement'. From 'plSql_CaseStatementElseBranch', the role 'plSql_CaseStatementElseBranch' has cardinality 0..*, and from 'plSql_CaseStatement', the role 'plSql_CaseStatement64' has cardinality 0..*.
+An association connects 'plSql_Expression' and 'plSql_CaseStatementWhenBranch'. From 'plSql_Expression', the role 'plSql_Expression67' has cardinality 0..*, and from 'plSql_CaseStatementWhenBranch', the role 'plSql_CaseStatementWhenBranch66' has cardinality 0..*.
+An association connects 'plSql_Statement' and 'plSql_CaseStatementWhenBranch'. From 'plSql_Statement', the role 'plSql_Statement70' has cardinality 0..*, and from 'plSql_CaseStatementWhenBranch', the role 'plSql_CaseStatementWhenBranch69' has cardinality 0..*.
+An association connects 'plSql_Statement' and 'plSql_CaseStatementElseBranch'. From 'plSql_Statement', the role 'plSql_Statement73' has cardinality 0..*, and from 'plSql_CaseStatementElseBranch', the role 'plSql_CaseStatementElseBranch72' has cardinality 0..*.
+An association connects 'plSql_VariableRef' and 'plSql_CloseStatement'. From 'plSql_VariableRef', the role 'plSql_VariableRef75' has cardinality 0..*, and from 'plSql_CloseStatement', the role 'plSql_CloseStatement' has cardinality 0..*.
+An association connects 'plSql_ContinueStatement' and 'plSql_Expression'. From 'plSql_ContinueStatement', the role 'plSql_ContinueStatement' has cardinality 0..*, and from 'plSql_Expression', the role 'plSql_Expression77' has cardinality 0..*.
+An association connects 'plSql_ExitStatement' and 'plSql_Expression'. From 'plSql_ExitStatement', the role 'plSql_ExitStatement' has cardinality 0..*, and from 'plSql_Expression', the role 'plSql_Expression79' has cardinality 0..*.
+An association connects 'plSql_VariableRef' and 'plSql_FetchStatement'. From 'plSql_VariableRef', the role 'plSql_VariableRef81' has cardinality 0..*, and from 'plSql_FetchStatement', the role 'plSql_FetchStatement' has cardinality 0..*.
+An association connects 'plSql_FetchStatement' and 'plSql_FetchStatementIntoClause'. From 'plSql_FetchStatement', the role 'plSql_FetchStatement83' has cardinality 0..*, and from 'plSql_FetchStatementIntoClause', the role 'plSql_FetchStatementIntoClause' has cardinality 0..*.
+An association connects 'plSql_FetchStatementIntoClause' and 'plSql_VariableRef'. From 'plSql_FetchStatementIntoClause', the role 'plSql_FetchStatementIntoClause85' has cardinality 0..*, and from 'plSql_VariableRef', the role 'plSql_VariableRef86' has cardinality 0..*.
+An association connects 'plSql_FetchStatementBulkIntoClause' and 'plSql_Expression'. From 'plSql_FetchStatementBulkIntoClause', the role 'plSql_FetchStatementBulkIntoClause' has cardinality 0..*, and from 'plSql_Expression', the role 'plSql_Expression88' has cardinality 0..*.
+An association connects 'plSql_Label' and 'plSql_GotoStatement'. From 'plSql_Label', the role 'plSql_Label90' has cardinality 0..*, and from 'plSql_GotoStatement', the role 'plSql_GotoStatement' has cardinality 0..*.
+An association connects 'plSql_Expression' and 'plSql_IfStatement'. From 'plSql_Expression', the role 'plSql_Expression92' has cardinality 0..*, and from 'plSql_IfStatement', the role 'plSql_IfStatement' has cardinality 0..*.
+An association connects 'plSql_IfStatement' and 'plSql_Statement'. From 'plSql_IfStatement', the role 'plSql_IfStatement94' has cardinality 0..*, and from 'plSql_Statement', the role 'plSql_Statement95' has cardinality 0..*.
+An association connects 'plSql_IfStatementElsifBranch' and 'plSql_IfStatement'. From 'plSql_IfStatementElsifBranch', the role 'plSql_IfStatementElsifBranch' has cardinality 0..*, and from 'plSql_IfStatement', the role 'plSql_IfStatement97' has cardinality 0..*.
+An association connects 'plSql_IfStatement' and 'plSql_IfStatementElseBranch'. From 'plSql_IfStatement', the role 'plSql_IfStatement99' has cardinality 0..*, and from 'plSql_IfStatementElseBranch', the role 'plSql_IfStatementElseBranch' has cardinality 0..*.
+An association connects 'plSql_IfStatementElsifBranch' and 'plSql_Expression'. From 'plSql_IfStatementElsifBranch', the role 'plSql_IfStatementElsifBranch101' has cardinality 0..*, and from 'plSql_Expression', the role 'plSql_Expression102' has cardinality 0..*.
+An association connects 'plSql_Statement' and 'plSql_IfStatementElsifBranch'. From 'plSql_Statement', the role 'plSql_Statement105' has cardinality 0..*, and from 'plSql_IfStatementElsifBranch', the role 'plSql_IfStatementElsifBranch104' has cardinality 0..*.
+An association connects 'plSql_Statement' and 'plSql_IfStatementElseBranch'. From 'plSql_Statement', the role 'plSql_Statement108' has cardinality 0..*, and from 'plSql_IfStatementElseBranch', the role 'plSql_IfStatementElseBranch107' has cardinality 0..*.
+An association connects 'plSql_Statement' and 'plSql_LoopStatement'. From 'plSql_Statement', the role 'plSql_Statement110' has cardinality 0..*, and from 'plSql_LoopStatement', the role 'plSql_LoopStatement' has cardinality 0..*.
+An association connects 'plSql_WhileLoopStatement' and 'plSql_Expression'. From 'plSql_WhileLoopStatement', the role 'plSql_WhileLoopStatement' has cardinality 0..*, and from 'plSql_Expression', the role 'plSql_Expression112' has cardinality 0..*.
+An association connects 'plSql_LoopVariableDeclaration' and 'plSql_ForLoopStatement'. From 'plSql_LoopVariableDeclaration', the role 'plSql_LoopVariableDeclaration' has cardinality 0..*, and from 'plSql_ForLoopStatement', the role 'plSql_ForLoopStatement' has cardinality 0..*.
+An association connects 'plSql_ForLoopStatement' and 'plSql_Expression'. From 'plSql_ForLoopStatement', the role 'plSql_ForLoopStatement115' has cardinality 0..*, and from 'plSql_Expression', the role 'plSql_Expression116' has cardinality 0..*.
+An association connects 'plSql_ForLoopStatement' and 'plSql_Expression'. From 'plSql_ForLoopStatement', the role 'plSql_ForLoopStatement118' has cardinality 0..*, and from 'plSql_Expression', the role 'plSql_Expression119' has cardinality 0..*.
+An association connects 'plSql_Expression' and 'plSql_ReturnStatement'. From 'plSql_Expression', the role 'plSql_Expression121' has cardinality 0..*, and from 'plSql_ReturnStatement', the role 'plSql_ReturnStatement' has cardinality 0..*.
+An association connects 'plSql_VariableRef' and 'plSql_QualifiedName'. From 'plSql_VariableRef', the role 'plSql_VariableRef123' has cardinality 0..*, and from 'plSql_QualifiedName', the role 'plSql_QualifiedName' has cardinality 0..*.
+An association connects 'plSql_QualifiedName' and 'plSql_Name'. From 'plSql_QualifiedName', the role 'plSql_QualifiedName125' has cardinality 0..*, and from 'plSql_Name', the role 'plSql_Name' has cardinality 0..*.
+An association connects 'plSql_NameDeclaration' and 'plSql_Name'. From 'plSql_NameDeclaration', the role 'plSql_NameDeclaration' has cardinality 0..*, and from 'plSql_Name', the role 'plSql_Name127' has cardinality 0..*.

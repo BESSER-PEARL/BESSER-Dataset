@@ -1,0 +1,127 @@
+The domain model 'simpleumltordbms' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'ToColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_PackageToSchema' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_ToColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_BooleanToBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'FromAttributeOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_ClassToTable' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_NonLeafAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_UmlToRdbmsModelElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleumltordbms_PrimitiveToName' represents an important domain concept.
+It has one attribute: 'typeName', which is of type str.
+
+'simpleumltordbms_IntegerToNumber' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_FromAttribute' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'simpleumltordbms_FromAttributeOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveToName' represents an important domain concept.
+It does not declare any attributes.
+
+'FromAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_AssociationToForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_StringToVarchar' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'UmlToRdbmsModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleumltordbms_AttributeToColumn' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleumltordbms_AttributeToColumn' is a specialization of 'FromAttribute'.
+The class 'simpleumltordbms_AttributeToColumn' is a specialization of 'ToColumn'.
+The class 'simpleumltordbms_AssociationToForeignKey' is a specialization of 'ToColumn'.
+The class 'simpleumltordbms_AssociationToForeignKey' is a specialization of 'UmlToRdbmsModelElement'.
+The class 'simpleumltordbms_BooleanToBoolean' is a specialization of 'PrimitiveToName'.
+The class 'simpleumltordbms_ClassToTable' is a specialization of 'FromAttributeOwner'.
+The class 'simpleumltordbms_ClassToTable' is a specialization of 'ToColumn'.
+The class 'simpleumltordbms_ClassToTable' is a specialization of 'UmlToRdbmsModelElement'.
+The class 'simpleumltordbms_FromAttribute' is a specialization of 'UmlToRdbmsModelElement'.
+The class 'simpleumltordbms_IntegerToNumber' is a specialization of 'PrimitiveToName'.
+The class 'simpleumltordbms_NonLeafAttribute' is a specialization of 'FromAttributeOwner'.
+The class 'simpleumltordbms_NonLeafAttribute' is a specialization of 'FromAttribute'.
+The class 'simpleumltordbms_PackageToSchema' is a specialization of 'UmlToRdbmsModelElement'.
+The class 'simpleumltordbms_PrimitiveToName' is a specialization of 'UmlToRdbmsModelElement'.
+The class 'simpleumltordbms_StringToVarchar' is a specialization of 'PrimitiveToName'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleumltordbms_AttributeToColumn' and 'simpleumltordbms_PrimitiveToName'. From 'simpleumltordbms_AttributeToColumn', the role 'simpleumltordbms_AttributeToColumn' has cardinality 0..*, and from 'simpleumltordbms_PrimitiveToName', the role 'simpleumltordbms_PrimitiveToName' has cardinality 0..*.
+An association connects 'simpleumltordbms_AssociationToForeignKey' and 'simpleumltordbms_Association'. From 'simpleumltordbms_AssociationToForeignKey', the role 'simpleumltordbms_AssociationToForeignKey' has cardinality 0..*, and from 'simpleumltordbms_Association', the role 'simpleumltordbms_Association' has cardinality 0..*.
+An association connects 'simpleumltordbms_AssociationToForeignKey' and 'simpleumltordbms_ForeignKey'. From 'simpleumltordbms_AssociationToForeignKey', the role 'simpleumltordbms_AssociationToForeignKey3' has cardinality 0..*, and from 'simpleumltordbms_ForeignKey', the role 'simpleumltordbms_ForeignKey' has cardinality 0..*.
+An association connects 'simpleumltordbms_AssociationToForeignKey' and 'simpleumltordbms_ClassToTable'. From 'simpleumltordbms_AssociationToForeignKey', the role 'associationsToForeignKeys' has cardinality 0..*, and from 'simpleumltordbms_ClassToTable', the role 'ClassToTable' has cardinality 0..*.
+An association connects 'simpleumltordbms_AssociationToForeignKey' and 'simpleumltordbms_ClassToTable'. From 'simpleumltordbms_AssociationToForeignKey', the role 'simpleumltordbms_AssociationToForeignKey6' has cardinality 0..*, and from 'simpleumltordbms_ClassToTable', the role 'simpleumltordbms_ClassToTable' has cardinality 0..*.
+An association connects 'simpleumltordbms_ClassToTable' and 'simpleumltordbms_AssociationToForeignKey'. From 'simpleumltordbms_ClassToTable', the role 'owner' has cardinality 0..*, and from 'simpleumltordbms_AssociationToForeignKey', the role 'AssociationToForeignKey' has cardinality 0..*.
+An association connects 'simpleumltordbms_PackageToSchema' and 'simpleumltordbms_ClassToTable'. From 'simpleumltordbms_PackageToSchema', the role 'PackageToSchema' has cardinality 0..*, and from 'simpleumltordbms_ClassToTable', the role 'classesToTables' has cardinality 0..*.
+An association connects 'simpleumltordbms_ClassToTable' and 'simpleumltordbms_Key'. From 'simpleumltordbms_ClassToTable', the role 'simpleumltordbms_ClassToTable10' has cardinality 0..*, and from 'simpleumltordbms_Key', the role 'simpleumltordbms_Key' has cardinality 0..*.
+An association connects 'simpleumltordbms_Table' and 'simpleumltordbms_ClassToTable'. From 'simpleumltordbms_Table', the role 'simpleumltordbms_Table' has cardinality 0..*, and from 'simpleumltordbms_ClassToTable', the role 'simpleumltordbms_ClassToTable12' has cardinality 0..*.
+An association connects 'simpleumltordbms_ClassToTable' and 'simpleumltordbms_Class'. From 'simpleumltordbms_ClassToTable', the role 'simpleumltordbms_ClassToTable14' has cardinality 0..*, and from 'simpleumltordbms_Class', the role 'simpleumltordbms_Class' has cardinality 0..*.
+An association connects 'simpleumltordbms_Attribute' and 'simpleumltordbms_FromAttribute'. From 'simpleumltordbms_Attribute', the role 'simpleumltordbms_Attribute' has cardinality 0..*, and from 'simpleumltordbms_FromAttribute', the role 'simpleumltordbms_FromAttribute' has cardinality 0..*.
+An association connects 'simpleumltordbms_FromAttribute' and 'simpleumltordbms_AttributeToColumn'. From 'simpleumltordbms_FromAttribute', the role 'simpleumltordbms_FromAttribute17' has cardinality 0..*, and from 'simpleumltordbms_AttributeToColumn', the role 'simpleumltordbms_AttributeToColumn18' has cardinality 0..*.
+An association connects 'simpleumltordbms_FromAttributeOwner' and 'simpleumltordbms_FromAttribute'. From 'simpleumltordbms_FromAttributeOwner', the role 'FromAttributeOwner' has cardinality 0..*, and from 'simpleumltordbms_FromAttribute', the role 'fromAttributes' has cardinality 0..*.
+An association connects 'simpleumltordbms_FromAttributeOwner' and 'simpleumltordbms_FromAttribute'. From 'simpleumltordbms_FromAttributeOwner', the role 'owner21' has cardinality 0..*, and from 'simpleumltordbms_FromAttribute', the role 'FromAttribute' has cardinality 0..*.
+An association connects 'simpleumltordbms_ClassToTable' and 'simpleumltordbms_PackageToSchema'. From 'simpleumltordbms_ClassToTable', the role 'ClassToTable24' has cardinality 0..*, and from 'simpleumltordbms_PackageToSchema', the role 'owner23' has cardinality 0..*.
+An association connects 'simpleumltordbms_PackageToSchema' and 'simpleumltordbms_PrimitiveToName'. From 'simpleumltordbms_PackageToSchema', the role 'owner26' has cardinality 0..*, and from 'simpleumltordbms_PrimitiveToName', the role 'PrimitiveToName' has cardinality 0..*.
+An association connects 'simpleumltordbms_Schema' and 'simpleumltordbms_PackageToSchema'. From 'simpleumltordbms_Schema', the role 'simpleumltordbms_Schema' has cardinality 0..*, and from 'simpleumltordbms_PackageToSchema', the role 'simpleumltordbms_PackageToSchema' has cardinality 0..*.
+An association connects 'simpleumltordbms_Package' and 'simpleumltordbms_PackageToSchema'. From 'simpleumltordbms_Package', the role 'simpleumltordbms_Package' has cardinality 0..*, and from 'simpleumltordbms_PackageToSchema', the role 'simpleumltordbms_PackageToSchema29' has cardinality 0..*.
+An association connects 'simpleumltordbms_PackageToSchema' and 'simpleumltordbms_PrimitiveToName'. From 'simpleumltordbms_PackageToSchema', the role 'PackageToSchema31' has cardinality 0..*, and from 'simpleumltordbms_PrimitiveToName', the role 'primitivesToNames' has cardinality 0..*.
+An association connects 'simpleumltordbms_PrimitiveToName' and 'simpleumltordbms_PrimitiveDataType'. From 'simpleumltordbms_PrimitiveToName', the role 'simpleumltordbms_PrimitiveToName33' has cardinality 0..*, and from 'simpleumltordbms_PrimitiveDataType', the role 'simpleumltordbms_PrimitiveDataType' has cardinality 0..*.
+An association connects 'simpleumltordbms_Column' and 'simpleumltordbms_ToColumn'. From 'simpleumltordbms_Column', the role 'simpleumltordbms_Column' has cardinality 0..*, and from 'simpleumltordbms_ToColumn', the role 'simpleumltordbms_ToColumn' has cardinality 0..*.

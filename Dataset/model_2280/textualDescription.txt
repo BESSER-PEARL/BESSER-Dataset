@@ -1,0 +1,32 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'model_Response' represents an important domain concept.
+It has the following attributes: 'ok', which is of type bool; 'comment', which is of type str; 'ID', which is of type int.
+
+'model_Course' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ID', which is of type int.
+
+'model_Exercise' represents an important domain concept.
+It has the following attributes: 'deadline_date', which is of type date; 'ID', which is of type int.
+
+'model_root' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Student' represents an important domain concept.
+It has the following attributes: 'ID', which is of type int; 'name', which is of type str.
+
+'model_Delivery' represents an important domain concept.
+It has the following attributes: 'submission_date', which is of type date; 'ID', which is of type int; 'group_number', which is of type int; 'answer', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Student' and 'model_root'. From 'model_Student', the role 'model_Student' has cardinality 0..*, and from 'model_root', the role 'model_root' has cardinality 0..*.
+An association connects 'model_Course' and 'model_root'. From 'model_Course', the role 'model_Course' has cardinality 0..*, and from 'model_root', the role 'model_root2' has cardinality 0..*.
+An association connects 'model_root' and 'model_Delivery'. From 'model_root', the role 'model_root4' has cardinality 0..*, and from 'model_Delivery', the role 'model_Delivery' has cardinality 0..*.
+An association connects 'model_Course' and 'model_Student'. From 'model_Course', the role 'model_Course7' has cardinality 0..*, and from 'model_Student', the role 'model_Student6' has cardinality 0..*.
+An association connects 'model_Student' and 'model_Delivery'. From 'model_Student', the role 'model_Student9' has cardinality 0..*, and from 'model_Delivery', the role 'model_Delivery10' has cardinality 0..*.
+An association connects 'model_Exercise' and 'model_Delivery'. From 'model_Exercise', the role 'model_Exercise' has cardinality 0..*, and from 'model_Delivery', the role 'model_Delivery12' has cardinality 0..*.
+An association connects 'model_Student' and 'model_Exercise'. From 'model_Student', the role 'model_Student15' has cardinality 0..*, and from 'model_Exercise', the role 'model_Exercise14' has cardinality 0..*.
+An association connects 'model_Course' and 'model_Exercise'. From 'model_Course', the role 'model_Course17' has cardinality 0..*, and from 'model_Exercise', the role 'model_Exercise18' has cardinality 0..*.
+An association connects 'model_Response' and 'model_Delivery'. From 'model_Response', the role 'model_Response' has cardinality 0..*, and from 'model_Delivery', the role 'model_Delivery20' has cardinality 0..*.

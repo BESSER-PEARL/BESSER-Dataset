@@ -1,0 +1,92 @@
+The domain model 'budgeting' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'budgeting_ActualTransactionEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'budgeting_CashTransaction' represents an important domain concept.
+It has one attribute: 'day', which is of type str.
+
+'budgeting_ActualEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'budgeting_BudgetAmountEntry' represents an important domain concept.
+It has one attribute: 'amount', which is of type str.
+
+'ActualEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'budgeting_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Category' represents an important domain concept.
+It does not declare any attributes.
+
+'budgeting_ActualAmountEntry' represents an important domain concept.
+It has one attribute: 'amount', which is of type str.
+
+'budgeting_BudgetEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'budgeting_Year' represents an important domain concept.
+It has one attribute: 'name', which is of type int.
+
+'budgeting_BudgetingFile' represents an important domain concept.
+It does not declare any attributes.
+
+'budgeting_Transaction' represents an important domain concept.
+It has one attribute: 'amount', which is of type str.
+
+'budgeting_BudgetFactorEntry' represents an important domain concept.
+It has one attribute: 'factor', which is of type float.
+
+'budgeting_CardTransaction' represents an important domain concept.
+It has the following attributes: 'from', which is of type str; 'day', which is of type int.
+
+'Transaction' represents an important domain concept.
+It does not declare any attributes.
+
+'BudgetEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'budgeting_ExpenseCategory' represents an important domain concept.
+It has one attribute: 'patterns', which is of type str.
+
+'budgeting_IncomeCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'budgeting_Month' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'budgeting_Category' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BudgetingFile' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MonthEnum' defines the following possible values: 'MAY', 'NOVEMBER', 'FEBRUARY', 'AUGUST', 'APRIL', 'JUNE', 'JULY', 'DECEMBER', 'MARCH', 'SEPTEMBER', 'JANUARY', 'OCTOBER'.
+
+The model also captures inheritance relationships between classes.
+The class 'budgeting_Library' is a specialization of 'BudgetingFile'.
+The class 'budgeting_Year' is a specialization of 'BudgetingFile'.
+The class 'budgeting_IncomeCategory' is a specialization of 'Category'.
+The class 'budgeting_ExpenseCategory' is a specialization of 'Category'.
+The class 'budgeting_BudgetAmountEntry' is a specialization of 'BudgetEntry'.
+The class 'budgeting_BudgetFactorEntry' is a specialization of 'BudgetEntry'.
+The class 'budgeting_ActualAmountEntry' is a specialization of 'ActualEntry'.
+The class 'budgeting_ActualTransactionEntry' is a specialization of 'ActualEntry'.
+The class 'budgeting_CashTransaction' is a specialization of 'Transaction'.
+The class 'budgeting_CardTransaction' is a specialization of 'Transaction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'budgeting_Category' and 'budgeting_Library'. From 'budgeting_Category', the role 'budgeting_Category' has cardinality 0..*, and from 'budgeting_Library', the role 'budgeting_Library' has cardinality 0..*.
+An association connects 'budgeting_Library' and 'budgeting_Year'. From 'budgeting_Library', the role 'budgeting_Library2' has cardinality 0..*, and from 'budgeting_Year', the role 'budgeting_Year' has cardinality 0..*.
+An association connects 'budgeting_Month' and 'budgeting_Year'. From 'budgeting_Month', the role 'budgeting_Month' has cardinality 0..*, and from 'budgeting_Year', the role 'budgeting_Year4' has cardinality 0..*.
+An association connects 'budgeting_BudgetEntry' and 'budgeting_Month'. From 'budgeting_BudgetEntry', the role 'budgeting_BudgetEntry' has cardinality 0..*, and from 'budgeting_Month', the role 'budgeting_Month6' has cardinality 0..*.
+An association connects 'budgeting_Month' and 'budgeting_ActualEntry'. From 'budgeting_Month', the role 'budgeting_Month8' has cardinality 0..*, and from 'budgeting_ActualEntry', the role 'budgeting_ActualEntry' has cardinality 0..*.
+An association connects 'budgeting_BudgetEntry' and 'budgeting_Category'. From 'budgeting_BudgetEntry', the role 'budgeting_BudgetEntry10' has cardinality 0..*, and from 'budgeting_Category', the role 'budgeting_Category11' has cardinality 0..*.
+An association connects 'budgeting_Category' and 'budgeting_ActualEntry'. From 'budgeting_Category', the role 'budgeting_Category14' has cardinality 0..*, and from 'budgeting_ActualEntry', the role 'budgeting_ActualEntry13' has cardinality 0..*.
+An association connects 'budgeting_BudgetEntry' and 'budgeting_BudgetFactorEntry'. From 'budgeting_BudgetEntry', the role 'budgeting_BudgetEntry16' has cardinality 0..*, and from 'budgeting_BudgetFactorEntry', the role 'budgeting_BudgetFactorEntry' has cardinality 0..*.
+An association connects 'budgeting_ActualTransactionEntry' and 'budgeting_Transaction'. From 'budgeting_ActualTransactionEntry', the role 'budgeting_ActualTransactionEntry' has cardinality 0..*, and from 'budgeting_Transaction', the role 'budgeting_Transaction' has cardinality 0..*.

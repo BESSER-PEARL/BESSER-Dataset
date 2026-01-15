@@ -1,0 +1,26 @@
+The domain model 'message' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'Categorized' represents an important domain concept.
+It does not declare any attributes.
+
+'message_MessageLibrary' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'message_Message' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'message_Translation' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'translation', which is of type str.
+
+'message_Language' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'defaultLang', which is of type bool; 'code', which is of type str; 'lang', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'message_MessageLibrary' is a specialization of 'Categorized'.
+
+Relationships between classes are modeled using associations.
+An association connects 'message_MessageLibrary' and 'message_Message'. From 'message_MessageLibrary', the role 'message_MessageLibrary' has cardinality 0..*, and from 'message_Message', the role 'message_Message' has cardinality 0..*.
+An association connects 'message_Translation' and 'message_Message'. From 'message_Translation', the role 'message_Translation' has cardinality 0..*, and from 'message_Message', the role 'message_Message2' has cardinality 0..*.
+An association connects 'message_Language' and 'message_Translation'. From 'message_Language', the role 'message_Language' has cardinality 0..*, and from 'message_Translation', the role 'message_Translation4' has cardinality 0..*.

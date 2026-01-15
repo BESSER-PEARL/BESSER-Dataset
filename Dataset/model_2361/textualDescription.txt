@@ -1,0 +1,121 @@
+The domain model 'database' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'AbstractTable' represents an important domain concept.
+It does not declare any attributes.
+
+'database_UserDefinedTypesLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'database_IndexElement' represents an important domain concept.
+It has one attribute: 'asc', which is of type bool.
+
+'database_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'database_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'database_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'database_View' represents an important domain concept.
+It has one attribute: 'query', which is of type str.
+
+'database_TableContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'database_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'database_Index' represents an important domain concept.
+It has the following attributes: 'indexType', which is of type str; 'qualifier', which is of type str; 'cardinality', which is of type int; 'unique', which is of type bool.
+
+'database_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'TableContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DatabaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'database_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'database_ForeignKeyElement' represents an important domain concept.
+It does not declare any attributes.
+
+'database_DatabaseElement' represents an important domain concept.
+It has the following attributes: 'comments', which is of type str; 'ID', which is of type str.
+
+'database_Sequence' represents an important domain concept.
+It has the following attributes: 'increment', which is of type int; 'minValue', which is of type int; 'maxValue', which is of type int; 'start', which is of type int.
+
+'database_DataBase' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'database_Column' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'nullable', which is of type bool; 'autoincrement', which is of type bool; 'inForeignKey', which is of type bool; 'unique', which is of type bool; 'inPrimaryKey', which is of type bool.
+
+'TypesLibraryUser' represents an important domain concept.
+It does not declare any attributes.
+
+'database_AbstractTable' represents an important domain concept.
+It does not declare any attributes.
+
+'database_Constraint' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'database_NamedElement' is a specialization of 'DatabaseElement'.
+The class 'database_DataBase' is a specialization of 'TableContainer'.
+The class 'database_DataBase' is a specialization of 'TypesLibraryUser'.
+The class 'database_AbstractTable' is a specialization of 'NamedElement'.
+The class 'database_Column' is a specialization of 'NamedElement'.
+The class 'database_Index' is a specialization of 'NamedElement'.
+The class 'database_View' is a specialization of 'AbstractTable'.
+The class 'database_Table' is a specialization of 'AbstractTable'.
+The class 'database_PrimaryKey' is a specialization of 'NamedElement'.
+The class 'database_ForeignKey' is a specialization of 'NamedElement'.
+The class 'database_ForeignKeyElement' is a specialization of 'DatabaseElement'.
+The class 'database_IndexElement' is a specialization of 'DatabaseElement'.
+The class 'database_Constraint' is a specialization of 'NamedElement'.
+The class 'database_Schema' is a specialization of 'TableContainer'.
+The class 'database_Sequence' is a specialization of 'NamedElement'.
+The class 'database_TableContainer' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'database_DataBase' and 'database_Schema'. From 'database_DataBase', the role 'database_DataBase' has cardinality 0..*, and from 'database_Schema', the role 'database_Schema' has cardinality 0..*.
+An association connects 'database_DataBase' and 'database_UserDefinedTypesLibrary'. From 'database_DataBase', the role 'database_DataBase2' has cardinality 0..*, and from 'database_UserDefinedTypesLibrary', the role 'database_UserDefinedTypesLibrary' has cardinality 0..*.
+An association connects 'database_AbstractTable' and 'database_Column'. From 'database_AbstractTable', the role 'owner' has cardinality 0..*, and from 'database_Column', the role 'Column' has cardinality 0..*.
+An association connects 'database_AbstractTable' and 'database_TableContainer'. From 'database_AbstractTable', the role 'tables' has cardinality 0..*, and from 'database_TableContainer', the role 'TableContainer' has cardinality 0..*.
+An association connects 'database_Index' and 'database_Column'. From 'database_Index', the role 'database_Index' has cardinality 0..*, and from 'database_Column', the role 'database_Column' has cardinality 0..*.
+An association connects 'database_Column' and 'database_IndexElement'. From 'database_Column', the role 'column' has cardinality 0..*, and from 'database_IndexElement', the role 'IndexElement' has cardinality 0..*.
+An association connects 'database_PrimaryKey' and 'database_Column'. From 'database_PrimaryKey', the role 'PrimaryKey' has cardinality 0..*, and from 'database_Column', the role 'columns' has cardinality 0..*.
+An association connects 'database_ForeignKey' and 'database_Column'. From 'database_ForeignKey', the role 'database_ForeignKey' has cardinality 0..*, and from 'database_Column', the role 'database_Column9' has cardinality 0..*.
+An association connects 'database_ForeignKeyElement' and 'database_Column'. From 'database_ForeignKeyElement', the role 'ForeignKeyElement' has cardinality 0..*, and from 'database_Column', the role 'fkColumn' has cardinality 0..*.
+An association connects 'database_Type' and 'database_Column'. From 'database_Type', the role 'database_Type' has cardinality 0..*, and from 'database_Column', the role 'database_Column12' has cardinality 0..*.
+An association connects 'database_Column' and 'database_Sequence'. From 'database_Column', the role 'database_Column14' has cardinality 0..*, and from 'database_Sequence', the role 'database_Sequence' has cardinality 0..*.
+An association connects 'database_AbstractTable' and 'database_Column'. From 'database_AbstractTable', the role 'AbstractTable' has cardinality 0..*, and from 'database_Column', the role 'columns16' has cardinality 0..*.
+An association connects 'database_IndexElement' and 'database_Index'. From 'database_IndexElement', the role 'database_IndexElement' has cardinality 0..*, and from 'database_Index', the role 'database_Index18' has cardinality 0..*.
+An association connects 'database_Table' and 'database_Index'. From 'database_Table', the role 'Table' has cardinality 0..*, and from 'database_Index', the role 'indexes' has cardinality 0..*.
+An association connects 'database_PrimaryKey' and 'database_Table'. From 'database_PrimaryKey', the role 'PrimaryKey22' has cardinality 0..*, and from 'database_Table', the role 'owner21' has cardinality 0..*.
+An association connects 'database_Table' and 'database_ForeignKey'. From 'database_Table', the role 'owner24' has cardinality 0..*, and from 'database_ForeignKey', the role 'ForeignKey' has cardinality 0..*.
+An association connects 'database_Constraint' and 'database_Table'. From 'database_Constraint', the role 'Constraint' has cardinality 0..*, and from 'database_Table', the role 'owner26' has cardinality 0..*.
+An association connects 'database_Table' and 'database_Index'. From 'database_Table', the role 'owner28' has cardinality 0..*, and from 'database_Index', the role 'Index' has cardinality 0..*.
+An association connects 'database_PrimaryKey' and 'database_Column'. From 'database_PrimaryKey', the role 'primaryKey' has cardinality 0..*, and from 'database_Column', the role 'Column30' has cardinality 0..*.
+An association connects 'database_Table' and 'database_PrimaryKey'. From 'database_Table', the role 'Table33' has cardinality 0..*, and from 'database_PrimaryKey', the role 'primaryKey32' has cardinality 0..*.
+An association connects 'database_ForeignKeyElement' and 'database_ForeignKey'. From 'database_ForeignKeyElement', the role 'database_ForeignKeyElement' has cardinality 0..*, and from 'database_ForeignKey', the role 'database_ForeignKey35' has cardinality 0..*.
+An association connects 'database_ForeignKey' and 'database_Table'. From 'database_ForeignKey', the role 'foreignKeys' has cardinality 0..*, and from 'database_Table', the role 'Table37' has cardinality 0..*.
+An association connects 'database_ForeignKey' and 'database_Table'. From 'database_ForeignKey', the role 'database_ForeignKey39' has cardinality 0..*, and from 'database_Table', the role 'database_Table' has cardinality 0..*.
+An association connects 'database_ForeignKeyElement' and 'database_Column'. From 'database_ForeignKeyElement', the role 'foreignKeyElements' has cardinality 0..*, and from 'database_Column', the role 'Column41' has cardinality 0..*.
+An association connects 'database_ForeignKeyElement' and 'database_Column'. From 'database_ForeignKeyElement', the role 'database_ForeignKeyElement43' has cardinality 0..*, and from 'database_Column', the role 'database_Column44' has cardinality 0..*.
+An association connects 'database_IndexElement' and 'database_Column'. From 'database_IndexElement', the role 'indexElements' has cardinality 0..*, and from 'database_Column', the role 'Column46' has cardinality 0..*.
+An association connects 'database_Constraint' and 'database_Table'. From 'database_Constraint', the role 'constraints' has cardinality 0..*, and from 'database_Table', the role 'Table48' has cardinality 0..*.
+An association connects 'database_AbstractTable' and 'database_TableContainer'. From 'database_AbstractTable', the role 'AbstractTable51' has cardinality 0..*, and from 'database_TableContainer', the role 'owner50' has cardinality 0..*.
+An association connects 'database_TableContainer' and 'database_Sequence'. From 'database_TableContainer', the role 'database_TableContainer' has cardinality 0..*, and from 'database_Sequence', the role 'database_Sequence53' has cardinality 0..*.

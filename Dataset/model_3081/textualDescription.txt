@@ -1,0 +1,170 @@
+The domain model 'caltrop' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'caltrop_JvmTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_KeywordChannelSelector' represents an important domain concept.
+It has one attribute: 'keyword', which is of type str.
+
+'caltrop_FunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedObj' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_EventPattern' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'variables', which is of type str; 'property', which is of type bool; 'qualifier', which is of type str.
+
+'caltrop_ActorParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ReAction' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_ConversionRelation' represents an important domain concept.
+It has one attribute: 'valueVar', which is of type str.
+
+'AbstractTypedIOPort' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_PortPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_ReAction' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_InputPattern' represents an important domain concept.
+It has one attribute: 'variables', which is of type str.
+
+'caltrop_XExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ChannelSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_FireAction' represents an important domain concept.
+It does not declare any attributes.
+
+'OutputAction' represents an important domain concept.
+It does not declare any attributes.
+
+'PortPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_ChannelSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_JvmTypedObj' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_CaltropActorImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmTypedObj' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_ExpressionChannelSelector' represents an important domain concept.
+It has one attribute: 'many', which is of type bool.
+
+'caltrop_OutputAction' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_TypedOutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_EventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_Transition' represents an important domain concept.
+It has one attribute: 'tags', which is of type str.
+
+'caltrop_TypedInputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_StateVariable' represents an important domain concept.
+It has one attribute: 'constant', which is of type bool.
+
+'caltrop_State' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_Schedule' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_ActionPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'caltrop_OutputPattern' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ChannelSelectorKeyword' defines the following possible values: 'ALL', 'ANY'.
+
+The model also captures inheritance relationships between classes.
+The class 'caltrop_ActorParameter' is a specialization of 'Parameter'.
+The class 'caltrop_TypedInputPort' is a specialization of 'AbstractTypedIOPort'.
+The class 'caltrop_TypedOutputPort' is a specialization of 'AbstractTypedIOPort'.
+The class 'caltrop_StateVariable' is a specialization of 'Variable'.
+The class 'caltrop_FireAction' is a specialization of 'ReAction'.
+The class 'caltrop_ReAction' is a specialization of 'OutputAction'.
+The class 'caltrop_OutputAction' is a specialization of 'NamedObj'.
+The class 'caltrop_InputPattern' is a specialization of 'PortPattern'.
+The class 'caltrop_InputPattern' is a specialization of 'ActionPattern'.
+The class 'caltrop_OutputPattern' is a specialization of 'PortPattern'.
+The class 'caltrop_ExpressionChannelSelector' is a specialization of 'ChannelSelector'.
+The class 'caltrop_KeywordChannelSelector' is a specialization of 'ChannelSelector'.
+The class 'caltrop_FunctionDeclaration' is a specialization of 'JvmTypedObj'.
+The class 'caltrop_State' is a specialization of 'NamedObj'.
+The class 'caltrop_EventAction' is a specialization of 'ReAction'.
+The class 'caltrop_EventPattern' is a specialization of 'ActionPattern'.
+The class 'caltrop_ConversionRelation' is a specialization of 'Relation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'caltrop_CaltropActorImpl' and 'caltrop_StateVariable'. From 'caltrop_CaltropActorImpl', the role 'caltrop_CaltropActorImpl' has cardinality 0..*, and from 'caltrop_StateVariable', the role 'caltrop_StateVariable' has cardinality 0..*.
+An association connects 'caltrop_CaltropActorImpl' and 'caltrop_ReAction'. From 'caltrop_CaltropActorImpl', the role 'caltrop_CaltropActorImpl2' has cardinality 0..*, and from 'caltrop_ReAction', the role 'caltrop_ReAction' has cardinality 0..*.
+An association connects 'caltrop_OutputAction' and 'caltrop_CaltropActorImpl'. From 'caltrop_OutputAction', the role 'caltrop_OutputAction' has cardinality 0..*, and from 'caltrop_CaltropActorImpl', the role 'caltrop_CaltropActorImpl4' has cardinality 0..*.
+An association connects 'caltrop_FunctionDeclaration' and 'caltrop_CaltropActorImpl'. From 'caltrop_FunctionDeclaration', the role 'caltrop_FunctionDeclaration' has cardinality 0..*, and from 'caltrop_CaltropActorImpl', the role 'caltrop_CaltropActorImpl6' has cardinality 0..*.
+An association connects 'caltrop_Schedule' and 'caltrop_CaltropActorImpl'. From 'caltrop_Schedule', the role 'caltrop_Schedule' has cardinality 0..*, and from 'caltrop_CaltropActorImpl', the role 'caltrop_CaltropActorImpl8' has cardinality 0..*.
+An association connects 'caltrop_FireAction' and 'caltrop_InputPattern'. From 'caltrop_FireAction', the role 'caltrop_FireAction' has cardinality 0..*, and from 'caltrop_InputPattern', the role 'caltrop_InputPattern' has cardinality 0..*.
+An association connects 'caltrop_OutputAction' and 'caltrop_XExpression'. From 'caltrop_OutputAction', the role 'caltrop_OutputAction11' has cardinality 0..*, and from 'caltrop_XExpression', the role 'caltrop_XExpression' has cardinality 0..*.
+An association connects 'caltrop_OutputPattern' and 'caltrop_OutputAction'. From 'caltrop_OutputPattern', the role 'caltrop_OutputPattern' has cardinality 0..*, and from 'caltrop_OutputAction', the role 'caltrop_OutputAction13' has cardinality 0..*.
+An association connects 'caltrop_XExpression' and 'caltrop_OutputAction'. From 'caltrop_XExpression', the role 'caltrop_XExpression16' has cardinality 0..*, and from 'caltrop_OutputAction', the role 'caltrop_OutputAction15' has cardinality 0..*.
+An association connects 'caltrop_OutputAction' and 'caltrop_XExpression'. From 'caltrop_OutputAction', the role 'caltrop_OutputAction18' has cardinality 0..*, and from 'caltrop_XExpression', the role 'caltrop_XExpression19' has cardinality 0..*.
+An association connects 'caltrop_OutputAction' and 'caltrop_XExpression'. From 'caltrop_OutputAction', the role 'caltrop_OutputAction21' has cardinality 0..*, and from 'caltrop_XExpression', the role 'caltrop_XExpression22' has cardinality 0..*.
+An association connects 'caltrop_XExpression' and 'caltrop_PortPattern'. From 'caltrop_XExpression', the role 'caltrop_XExpression24' has cardinality 0..*, and from 'caltrop_PortPattern', the role 'caltrop_PortPattern' has cardinality 0..*.
+An association connects 'caltrop_PortPattern' and 'caltrop_ChannelSelector'. From 'caltrop_PortPattern', the role 'caltrop_PortPattern26' has cardinality 0..*, and from 'caltrop_ChannelSelector', the role 'caltrop_ChannelSelector' has cardinality 0..*.
+An association connects 'caltrop_PortPattern' and 'caltrop_Port'. From 'caltrop_PortPattern', the role 'caltrop_PortPattern28' has cardinality 0..*, and from 'caltrop_Port', the role 'caltrop_Port' has cardinality 0..*.
+An association connects 'caltrop_XExpression' and 'caltrop_PortPattern'. From 'caltrop_XExpression', the role 'caltrop_XExpression31' has cardinality 0..*, and from 'caltrop_PortPattern', the role 'caltrop_PortPattern30' has cardinality 0..*.
+An association connects 'caltrop_XExpression' and 'caltrop_OutputPattern'. From 'caltrop_XExpression', the role 'caltrop_XExpression34' has cardinality 0..*, and from 'caltrop_OutputPattern', the role 'caltrop_OutputPattern33' has cardinality 0..*.
+An association connects 'caltrop_ExpressionChannelSelector' and 'caltrop_XExpression'. From 'caltrop_ExpressionChannelSelector', the role 'caltrop_ExpressionChannelSelector' has cardinality 0..*, and from 'caltrop_XExpression', the role 'caltrop_XExpression36' has cardinality 0..*.
+An association connects 'caltrop_JvmTypedObj' and 'caltrop_FunctionDeclaration'. From 'caltrop_JvmTypedObj', the role 'caltrop_JvmTypedObj' has cardinality 0..*, and from 'caltrop_FunctionDeclaration', the role 'caltrop_FunctionDeclaration38' has cardinality 0..*.
+An association connects 'caltrop_XExpression' and 'caltrop_FunctionDeclaration'. From 'caltrop_XExpression', the role 'caltrop_XExpression41' has cardinality 0..*, and from 'caltrop_FunctionDeclaration', the role 'caltrop_FunctionDeclaration40' has cardinality 0..*.
+An association connects 'caltrop_JvmTypeReference' and 'caltrop_FunctionDeclaration'. From 'caltrop_JvmTypeReference', the role 'caltrop_JvmTypeReference' has cardinality 0..*, and from 'caltrop_FunctionDeclaration', the role 'caltrop_FunctionDeclaration43' has cardinality 0..*.
+An association connects 'caltrop_State' and 'caltrop_Schedule'. From 'caltrop_State', the role 'caltrop_State' has cardinality 0..*, and from 'caltrop_Schedule', the role 'caltrop_Schedule45' has cardinality 0..*.
+An association connects 'caltrop_State' and 'caltrop_Schedule'. From 'caltrop_State', the role 'State' has cardinality 0..*, and from 'caltrop_Schedule', the role 'schedule' has cardinality 0..*.
+An association connects 'caltrop_Transition' and 'caltrop_State'. From 'caltrop_Transition', the role 'Transition' has cardinality 0..*, and from 'caltrop_State', the role 'source' has cardinality 0..*.
+An association connects 'caltrop_State' and 'caltrop_Schedule'. From 'caltrop_State', the role 'states' has cardinality 0..*, and from 'caltrop_Schedule', the role 'Schedule' has cardinality 0..*.
+An association connects 'caltrop_Transition' and 'caltrop_State'. From 'caltrop_Transition', the role 'transitions' has cardinality 0..*, and from 'caltrop_State', the role 'State50' has cardinality 0..*.
+An association connects 'caltrop_Transition' and 'caltrop_State'. From 'caltrop_Transition', the role 'caltrop_Transition' has cardinality 0..*, and from 'caltrop_State', the role 'caltrop_State52' has cardinality 0..*.
+An association connects 'caltrop_EventAction' and 'caltrop_EventPattern'. From 'caltrop_EventAction', the role 'caltrop_EventAction' has cardinality 0..*, and from 'caltrop_EventPattern', the role 'caltrop_EventPattern' has cardinality 0..*.
+An association connects 'caltrop_StateVariable' and 'caltrop_EventPattern'. From 'caltrop_StateVariable', the role 'caltrop_StateVariable56' has cardinality 0..*, and from 'caltrop_EventPattern', the role 'caltrop_EventPattern55' has cardinality 0..*.
+An association connects 'caltrop_EventPattern' and 'caltrop_XExpression'. From 'caltrop_EventPattern', the role 'caltrop_EventPattern58' has cardinality 0..*, and from 'caltrop_XExpression', the role 'caltrop_XExpression59' has cardinality 0..*.
+An association connects 'caltrop_XExpression' and 'caltrop_EventPattern'. From 'caltrop_XExpression', the role 'caltrop_XExpression62' has cardinality 0..*, and from 'caltrop_EventPattern', the role 'caltrop_EventPattern61' has cardinality 0..*.
+An association connects 'caltrop_XExpression' and 'caltrop_ConversionRelation'. From 'caltrop_XExpression', the role 'caltrop_XExpression64' has cardinality 0..*, and from 'caltrop_ConversionRelation', the role 'caltrop_ConversionRelation' has cardinality 0..*.
+An association connects 'caltrop_ConversionRelation' and 'caltrop_XExpression'. From 'caltrop_ConversionRelation', the role 'caltrop_ConversionRelation66' has cardinality 0..*, and from 'caltrop_XExpression', the role 'caltrop_XExpression67' has cardinality 0..*.

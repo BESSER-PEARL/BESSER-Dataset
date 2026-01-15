@@ -1,0 +1,189 @@
+The domain model 'Wires' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'Wires_ModelType' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'Wires_WiresSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'TransformationType' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_Model' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'Wires_GenericQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'WiresElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_OutputFormalParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_OutputActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Query' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_LibraryRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_Type' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'Wires_CompositeTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'FormalParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_QueryType' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_FormalParameter' represents an important domain concept.
+It has one attribute: 'typeName', which is of type str.
+
+'ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_ActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_DecisionNode' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'ActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_ConnectableElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Wires_WiresElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AtomicModelTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_AtomicModelTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_CompositeTransformationType' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_BasicData' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'WiresSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_InputActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_AtomicModelTransfomationType' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_TransformationType' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_GenericTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_IdentityTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_Library' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'path', which is of type str.
+
+'Wires_InputFormalParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_BasicDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Wires_DataFlow' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Wires_Transformation' is a specialization of 'TypedElement'.
+The class 'Wires_Query' is a specialization of 'Transformation'.
+The class 'Wires_AtomicModelTransformation' is a specialization of 'Transformation'.
+The class 'Wires_TypedElement' is a specialization of 'ConnectableElement'.
+The class 'Wires_Type' is a specialization of 'ConnectableElement'.
+The class 'Wires_ModelType' is a specialization of 'DataType'.
+The class 'Wires_DataType' is a specialization of 'Type'.
+The class 'Wires_ActualParameter' is a specialization of 'TypedElement'.
+The class 'Wires_DecisionNode' is a specialization of 'WiresElement'.
+The class 'Wires_DataFlow' is a specialization of 'WiresElement'.
+The class 'Wires_TransformationType' is a specialization of 'Type'.
+The class 'Wires_FormalParameter' is a specialization of 'Type'.
+The class 'Wires_QueryType' is a specialization of 'TransformationType'.
+The class 'Wires_ConnectableElement' is a specialization of 'WiresElement'.
+The class 'Wires_Model' is a specialization of 'TypedElement'.
+The class 'Wires_BasicData' is a specialization of 'TypedElement'.
+The class 'Wires_CompositeTransformationType' is a specialization of 'TransformationType'.
+The class 'Wires_CompositeTransformationType' is a specialization of 'WiresSpecification'.
+The class 'Wires_CompositeTransformation' is a specialization of 'Transformation'.
+The class 'Wires_BasicDataType' is a specialization of 'DataType'.
+The class 'Wires_Library' is a specialization of 'WiresElement'.
+The class 'Wires_InputFormalParameter' is a specialization of 'FormalParameter'.
+The class 'Wires_OutputFormalParameter' is a specialization of 'FormalParameter'.
+The class 'Wires_InputActualParameter' is a specialization of 'ActualParameter'.
+The class 'Wires_OutputActualParameter' is a specialization of 'ActualParameter'.
+The class 'Wires_AtomicModelTransfomationType' is a specialization of 'TransformationType'.
+The class 'Wires_IdentityTransformation' is a specialization of 'AtomicModelTransformation'.
+The class 'Wires_GenericTransformation' is a specialization of 'AtomicModelTransformation'.
+The class 'Wires_TypeParameter' is a specialization of 'ActualParameter'.
+The class 'Wires_GenericQuery' is a specialization of 'Query'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Wires_InputActualParameter' and 'Wires_Transformation'. From 'Wires_InputActualParameter', the role 'Wires_InputActualParameter' has cardinality 0..*, and from 'Wires_Transformation', the role 'Wires_Transformation' has cardinality 0..*.
+An association connects 'Wires_OutputActualParameter' and 'Wires_Transformation'. From 'Wires_OutputActualParameter', the role 'Wires_OutputActualParameter' has cardinality 0..*, and from 'Wires_Transformation', the role 'Wires_Transformation2' has cardinality 0..*.
+An association connects 'Wires_Transformation' and 'Wires_DecisionNode'. From 'Wires_Transformation', the role 'Wires_Transformation4' has cardinality 0..*, and from 'Wires_DecisionNode', the role 'Wires_DecisionNode' has cardinality 0..*.
+An association connects 'Wires_TypedElement' and 'Wires_Type'. From 'Wires_TypedElement', the role 'Wires_TypedElement' has cardinality 0..*, and from 'Wires_Type', the role 'Wires_Type' has cardinality 0..*.
+An association connects 'Wires_Transformation' and 'Wires_DecisionNode'. From 'Wires_Transformation', the role 'Wires_Transformation8' has cardinality 0..*, and from 'Wires_DecisionNode', the role 'Wires_DecisionNode7' has cardinality 0..*.
+An association connects 'Wires_Transformation' and 'Wires_DecisionNode'. From 'Wires_Transformation', the role 'Wires_Transformation11' has cardinality 0..*, and from 'Wires_DecisionNode', the role 'Wires_DecisionNode10' has cardinality 0..*.
+An association connects 'Wires_DecisionNode' and 'Wires_InputActualParameter'. From 'Wires_DecisionNode', the role 'Wires_DecisionNode13' has cardinality 0..*, and from 'Wires_InputActualParameter', the role 'Wires_InputActualParameter14' has cardinality 0..*.
+An association connects 'Wires_DataFlow' and 'Wires_ConnectableElement'. From 'Wires_DataFlow', the role 'incoming' has cardinality 0..*, and from 'Wires_ConnectableElement', the role 'ConnectableElement' has cardinality 0..*.
+An association connects 'Wires_ConnectableElement' and 'Wires_DataFlow'. From 'Wires_ConnectableElement', the role 'ConnectableElement17' has cardinality 0..*, and from 'Wires_DataFlow', the role 'outgoing' has cardinality 0..*.
+An association connects 'Wires_TransformationType' and 'Wires_OutputFormalParameter'. From 'Wires_TransformationType', the role 'Wires_TransformationType' has cardinality 0..*, and from 'Wires_OutputFormalParameter', the role 'Wires_OutputFormalParameter' has cardinality 0..*.
+An association connects 'Wires_TransformationType' and 'Wires_LibraryRef'. From 'Wires_TransformationType', the role 'Wires_TransformationType20' has cardinality 0..*, and from 'Wires_LibraryRef', the role 'Wires_LibraryRef' has cardinality 0..*.
+An association connects 'Wires_InputFormalParameter' and 'Wires_TransformationType'. From 'Wires_InputFormalParameter', the role 'Wires_InputFormalParameter' has cardinality 0..*, and from 'Wires_TransformationType', the role 'Wires_TransformationType22' has cardinality 0..*.
+An association connects 'Wires_DataType' and 'Wires_FormalParameter'. From 'Wires_DataType', the role 'Wires_DataType' has cardinality 0..*, and from 'Wires_FormalParameter', the role 'Wires_FormalParameter' has cardinality 0..*.
+An association connects 'Wires_ConnectableElement' and 'Wires_DataFlow'. From 'Wires_ConnectableElement', the role 'target' has cardinality 0..*, and from 'Wires_DataFlow', the role 'DataFlow' has cardinality 0..*.
+An association connects 'Wires_DataFlow' and 'Wires_ConnectableElement'. From 'Wires_DataFlow', the role 'DataFlow26' has cardinality 0..*, and from 'Wires_ConnectableElement', the role 'src' has cardinality 0..*.
+An association connects 'Wires_WiresSpecification' and 'Wires_WiresElement'. From 'Wires_WiresSpecification', the role 'Wires_WiresSpecification' has cardinality 0..*, and from 'Wires_WiresElement', the role 'Wires_WiresElement' has cardinality 0..*.
+An association connects 'Wires_Library' and 'Wires_LibraryRef'. From 'Wires_Library', the role 'Wires_Library' has cardinality 0..*, and from 'Wires_LibraryRef', the role 'Wires_LibraryRef29' has cardinality 0..*.
+An association connects 'Wires_LibraryRef' and 'Wires_Library'. From 'Wires_LibraryRef', the role 'Wires_LibraryRef32' has cardinality 0..*, and from 'Wires_Library', the role 'Wires_Library31' has cardinality 0..*.
+An association connects 'Wires_GenericTransformation' and 'Wires_TypeParameter'. From 'Wires_GenericTransformation', the role 'Wires_GenericTransformation' has cardinality 0..*, and from 'Wires_TypeParameter', the role 'Wires_TypeParameter' has cardinality 0..*.
+An association connects 'Wires_GenericQuery' and 'Wires_TypeParameter'. From 'Wires_GenericQuery', the role 'Wires_GenericQuery' has cardinality 0..*, and from 'Wires_TypeParameter', the role 'Wires_TypeParameter35' has cardinality 0..*.

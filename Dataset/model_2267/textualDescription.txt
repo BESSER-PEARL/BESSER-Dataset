@@ -1,0 +1,65 @@
+The domain model 'school' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'school_CourseOfStudy' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'school_SchoolDatabase' represents an important domain concept.
+It does not declare any attributes.
+
+'school_Course' represents an important domain concept.
+It has the following attributes: 'courseNumber', which is of type str; 'name', which is of type str.
+
+'school_Faculty' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'school_CourseResult' represents an important domain concept.
+It has one attribute: 'grade', which is of type str.
+
+'school_Teacher' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'school_Where' represents an important domain concept.
+It does not declare any attributes.
+
+'school_Student' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'studentNumber', which is of type str.
+
+'school_Query' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'school_School' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'school_BooleanExpr' represents an important domain concept.
+It has the following attributes: 'rhs', which is of type str; 'lhs', which is of type str; 'operator', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SchoolElement' defines the following possible values: 'Student', 'School', 'CourseOfStudy', 'Faculty', 'Teacher', 'Course'.
+
+Relationships between classes are modeled using associations.
+An association connects 'school_School' and 'school_Faculty'. From 'school_School', the role 'school_School' has cardinality 0..*, and from 'school_Faculty', the role 'school_Faculty' has cardinality 0..*.
+An association connects 'school_CourseOfStudy' and 'school_School'. From 'school_CourseOfStudy', the role 'school_CourseOfStudy' has cardinality 0..*, and from 'school_School', the role 'school_School2' has cardinality 0..*.
+An association connects 'school_School' and 'school_Course'. From 'school_School', the role 'school_School4' has cardinality 0..*, and from 'school_Course', the role 'school_Course' has cardinality 0..*.
+An association connects 'school_Student' and 'school_School'. From 'school_Student', the role 'school_Student' has cardinality 0..*, and from 'school_School', the role 'school_School6' has cardinality 0..*.
+An association connects 'school_Teacher' and 'school_School'. From 'school_Teacher', the role 'school_Teacher' has cardinality 0..*, and from 'school_School', the role 'school_School8' has cardinality 0..*.
+An association connects 'school_Faculty' and 'school_CourseOfStudy'. From 'school_Faculty', the role 'faculty' has cardinality 0..*, and from 'school_CourseOfStudy', the role 'CourseOfStudy' has cardinality 0..*.
+An association connects 'school_CourseOfStudy' and 'school_Course'. From 'school_CourseOfStudy', the role 'school_CourseOfStudy11' has cardinality 0..*, and from 'school_Course', the role 'school_Course12' has cardinality 0..*.
+An association connects 'school_CourseOfStudy' and 'school_Faculty'. From 'school_CourseOfStudy', the role 'courseofstudy' has cardinality 0..*, and from 'school_Faculty', the role 'Faculty' has cardinality 0..*.
+An association connects 'school_Student' and 'school_CourseOfStudy'. From 'school_Student', the role 'Student' has cardinality 0..*, and from 'school_CourseOfStudy', the role 'courseofstudy15' has cardinality 0..*.
+An association connects 'school_Student' and 'school_Course'. From 'school_Student', the role 'Student17' has cardinality 0..*, and from 'school_Course', the role 'enrolledIn' has cardinality 0..*.
+An association connects 'school_Course' and 'school_Teacher'. From 'school_Course', the role 'teaches' has cardinality 0..*, and from 'school_Teacher', the role 'Teacher' has cardinality 0..*.
+An association connects 'school_Course' and 'school_CourseResult'. From 'school_Course', the role 'course' has cardinality 0..*, and from 'school_CourseResult', the role 'CourseResult' has cardinality 0..*.
+An association connects 'school_Course' and 'school_Student'. From 'school_Course', the role 'Course' has cardinality 0..*, and from 'school_Student', the role 'enrolledStudent' has cardinality 0..*.
+An association connects 'school_CourseOfStudy' and 'school_Student'. From 'school_CourseOfStudy', the role 'CourseOfStudy22' has cardinality 0..*, and from 'school_Student', the role 'student' has cardinality 0..*.
+An association connects 'school_Teacher' and 'school_Course'. From 'school_Teacher', the role 'taughtBy' has cardinality 0..*, and from 'school_Course', the role 'Course24' has cardinality 0..*.
+An association connects 'school_Student' and 'school_CourseResult'. From 'school_Student', the role 'school_Student26' has cardinality 0..*, and from 'school_CourseResult', the role 'school_CourseResult' has cardinality 0..*.
+An association connects 'school_CourseResult' and 'school_Course'. From 'school_CourseResult', the role 'courseresult' has cardinality 0..*, and from 'school_Course', the role 'Course28' has cardinality 0..*.
+An association connects 'school_Query' and 'school_Student'. From 'school_Query', the role 'school_Query' has cardinality 0..*, and from 'school_Student', the role 'school_Student30' has cardinality 0..*.
+An association connects 'school_Query' and 'school_Where'. From 'school_Query', the role 'school_Query32' has cardinality 0..*, and from 'school_Where', the role 'school_Where' has cardinality 0..*.
+An association connects 'school_BooleanExpr' and 'school_Where'. From 'school_BooleanExpr', the role 'school_BooleanExpr' has cardinality 0..*, and from 'school_Where', the role 'school_Where34' has cardinality 0..*.
+An association connects 'school_BooleanExpr' and 'school_BooleanExpr'. From 'school_BooleanExpr', the role 'school_BooleanExpr37' has cardinality 0..*, and from 'school_BooleanExpr', the role 'school_BooleanExpr35' has cardinality 0..*.
+An association connects 'school_BooleanExpr' and 'school_BooleanExpr'. From 'school_BooleanExpr', the role 'school_BooleanExpr40' has cardinality 0..*, and from 'school_BooleanExpr', the role 'school_BooleanExpr38' has cardinality 0..*.
+An association connects 'school_SchoolDatabase' and 'school_School'. From 'school_SchoolDatabase', the role 'school_SchoolDatabase' has cardinality 0..*, and from 'school_School', the role 'school_School42' has cardinality 0..*.
+An association connects 'school_Query' and 'school_SchoolDatabase'. From 'school_Query', the role 'school_Query45' has cardinality 0..*, and from 'school_SchoolDatabase', the role 'school_SchoolDatabase44' has cardinality 0..*.

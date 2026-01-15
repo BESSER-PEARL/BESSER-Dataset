@@ -1,0 +1,32 @@
+The domain model 'fenix' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'fenix_Capacity' represents an important domain concept.
+It has the following attributes: 'exam', which is of type int; 'normal', which is of type int.
+
+'fenix_LessonPeriod' represents an important domain concept.
+It has the following attributes: 'start', which is of type str; 'end', which is of type str.
+
+'fenix_scheduleOfCourse' represents an important domain concept.
+It does not declare any attributes.
+
+'fenix_Shift' represents an important domain concept.
+It has the following attributes: 'types', which is of type str; 'name', which is of type str.
+
+'fenix_CourseLoad' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'unitQuantity', which is of type int; 'type', which is of type str; 'name', which is of type str; 'id', which is of type str; 'totalQuantity', which is of type int.
+
+'fenix_Occupation' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'current', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'fenix_Shift' and 'fenix_Occupation'. From 'fenix_Shift', the role 'fenix_Shift' has cardinality 0..*, and from 'fenix_Occupation', the role 'fenix_Occupation' has cardinality 0..*.
+An association connects 'fenix_Shift' and 'fenix_LessonPeriod'. From 'fenix_Shift', the role 'fenix_Shift2' has cardinality 0..*, and from 'fenix_LessonPeriod', the role 'fenix_LessonPeriod' has cardinality 0..*.
+An association connects 'fenix_CourseLoad' and 'fenix_Shift'. From 'fenix_CourseLoad', the role 'fenix_CourseLoad' has cardinality 0..*, and from 'fenix_Shift', the role 'fenix_Shift4' has cardinality 0..*.
+An association connects 'fenix_CourseLoad' and 'fenix_LessonPeriod'. From 'fenix_CourseLoad', the role 'fenix_CourseLoad7' has cardinality 0..*, and from 'fenix_LessonPeriod', the role 'fenix_LessonPeriod6' has cardinality 0..*.
+An association connects 'fenix_CourseLoad' and 'fenix_CourseLoad'. From 'fenix_CourseLoad', the role 'fenix_CourseLoad10' has cardinality 0..*, and from 'fenix_CourseLoad', the role 'fenix_CourseLoad8' has cardinality 0..*.
+An association connects 'fenix_CourseLoad' and 'fenix_Capacity'. From 'fenix_CourseLoad', the role 'fenix_CourseLoad12' has cardinality 0..*, and from 'fenix_Capacity', the role 'fenix_Capacity' has cardinality 0..*.
+An association connects 'fenix_LessonPeriod' and 'fenix_scheduleOfCourse'. From 'fenix_LessonPeriod', the role 'fenix_LessonPeriod14' has cardinality 0..*, and from 'fenix_scheduleOfCourse', the role 'fenix_scheduleOfCourse' has cardinality 0..*.
+An association connects 'fenix_CourseLoad' and 'fenix_scheduleOfCourse'. From 'fenix_CourseLoad', the role 'fenix_CourseLoad17' has cardinality 0..*, and from 'fenix_scheduleOfCourse', the role 'fenix_scheduleOfCourse16' has cardinality 0..*.
+An association connects 'fenix_Shift' and 'fenix_scheduleOfCourse'. From 'fenix_Shift', the role 'fenix_Shift20' has cardinality 0..*, and from 'fenix_scheduleOfCourse', the role 'fenix_scheduleOfCourse19' has cardinality 0..*.

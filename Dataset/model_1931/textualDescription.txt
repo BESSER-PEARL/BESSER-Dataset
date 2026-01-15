@@ -1,0 +1,157 @@
+The domain model 'se' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'se_actor_Receptionist' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_IHotelReceptionistProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_RoomHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_HotelInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bankcomponents_ICustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_IHotelReceptionistProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_IRoomHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'se_bankcomponents_IAdministratorProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'User' represents an important domain concept.
+It does not declare any attributes.
+
+'IAdministratorProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_RoomType' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'pricePerNight', which is of type float; 'name', which is of type str; 'numBeds', which is of type int.
+
+'se_bankcomponents_BankAdministrator' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_RoomHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'IHotelStartupProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_Customer' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_RoomType' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_Room' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_RoomExtra' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_Booking' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_BookingHandler' represents an important domain concept.
+It has the following attributes: 'nextBookingId', which is of type int; 'bookingCurrentlyCheckingOut', which is of type int.
+
+'hotelsystem_IRoomHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_IHotelAdministratorProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_Customer' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'lastName', which is of type str.
+
+'se_hotelsystem_IHotelAdministratorProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_PaymentHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_IHotelStartupProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_Bill' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_IHotelCustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'se_actor_Administrator' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_RoomExtra' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'price', which is of type float.
+
+'bankcomponents_ICustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_IHotelCustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_RoomReservation' represents an important domain concept.
+It has the following attributes: 'startDate', which is of type str; 'checkInDate', which is of type str; 'checkOuDate', which is of type str; 'endDate', which is of type str.
+
+'se_hotelsystem_Room' represents an important domain concept.
+It has the following attributes: 'occupied', which is of type bool; 'roomNumber', which is of type int; 'blocked', which is of type bool.
+
+'se_actor_User' represents an important domain concept.
+It does not declare any attributes.
+
+'hotelsystem_RoomReservation' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_FreeRoomTypesDTO' represents an important domain concept.
+It has the following attributes: 'roomTypeDescription', which is of type str; 'pricePerNight', which is of type float; 'numFreeRooms', which is of type int; 'numBeds', which is of type int.
+
+'se_hotelsystem_IHotelStartupProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_Booking' represents an important domain concept.
+It has the following attributes: 'canceled', which is of type bool; 'bookingId', which is of type int; 'confirmed', which is of type bool; 'startDate', which is of type str; 'endDate', which is of type str.
+
+'hotelsystem_PaymentHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'se_hotelsystem_Bill' represents an important domain concept.
+It has the following attributes: 'price', which is of type float; 'billID', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'se_hotelsystem_BookingHandler' is a specialization of 'hotelsystem_IHotelReceptionistProvides'.
+The class 'se_hotelsystem_BookingHandler' is a specialization of 'hotelsystem_IHotelCustomerProvides'.
+The class 'se_hotelsystem_RoomHandler' is a specialization of 'hotelsystem_IRoomHandler'.
+The class 'se_hotelsystem_RoomHandler' is a specialization of 'hotelsystem_IHotelAdministratorProvides'.
+The class 'se_hotelsystem_HotelInitializer' is a specialization of 'IHotelStartupProvides'.
+The class 'se_bankcomponents_BankAdministrator' is a specialization of 'IAdministratorProvides'.
+The class 'se_actor_Receptionist' is a specialization of 'User'.
+The class 'se_actor_Administrator' is a specialization of 'User'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hotelsystem_Booking' and 'se_hotelsystem_BookingHandler'. From 'hotelsystem_Booking', the role 'hotelsystem_Booking' has cardinality 0..*, and from 'se_hotelsystem_BookingHandler', the role 'se_hotelsystem_BookingHandler' has cardinality 0..*.
+An association connects 'se_hotelsystem_BookingHandler' and 'hotelsystem_PaymentHandler'. From 'se_hotelsystem_BookingHandler', the role 'se_hotelsystem_BookingHandler2' has cardinality 0..*, and from 'hotelsystem_PaymentHandler', the role 'hotelsystem_PaymentHandler' has cardinality 0..*.
+An association connects 'hotelsystem_IRoomHandler' and 'se_hotelsystem_BookingHandler'. From 'hotelsystem_IRoomHandler', the role 'hotelsystem_IRoomHandler' has cardinality 0..*, and from 'se_hotelsystem_BookingHandler', the role 'se_hotelsystem_BookingHandler4' has cardinality 0..*.
+An association connects 'hotelsystem_Customer' and 'se_hotelsystem_Booking'. From 'hotelsystem_Customer', the role 'hotelsystem_Customer' has cardinality 0..*, and from 'se_hotelsystem_Booking', the role 'se_hotelsystem_Booking' has cardinality 0..*.
+An association connects 'hotelsystem_RoomReservation' and 'se_hotelsystem_Booking'. From 'hotelsystem_RoomReservation', the role 'hotelsystem_RoomReservation' has cardinality 0..*, and from 'se_hotelsystem_Booking', the role 'se_hotelsystem_Booking7' has cardinality 0..*.
+An association connects 'se_hotelsystem_Booking' and 'hotelsystem_Bill'. From 'se_hotelsystem_Booking', the role 'se_hotelsystem_Booking9' has cardinality 0..*, and from 'hotelsystem_Bill', the role 'hotelsystem_Bill' has cardinality 0..*.
+An association connects 'se_hotelsystem_RoomReservation' and 'hotelsystem_RoomType'. From 'se_hotelsystem_RoomReservation', the role 'se_hotelsystem_RoomReservation' has cardinality 0..*, and from 'hotelsystem_RoomType', the role 'hotelsystem_RoomType' has cardinality 0..*.
+An association connects 'hotelsystem_RoomExtra' and 'se_hotelsystem_RoomReservation'. From 'hotelsystem_RoomExtra', the role 'hotelsystem_RoomExtra' has cardinality 0..*, and from 'se_hotelsystem_RoomReservation', the role 'se_hotelsystem_RoomReservation12' has cardinality 0..*.
+An association connects 'se_hotelsystem_RoomReservation' and 'hotelsystem_Room'. From 'se_hotelsystem_RoomReservation', the role 'se_hotelsystem_RoomReservation14' has cardinality 0..*, and from 'hotelsystem_Room', the role 'hotelsystem_Room' has cardinality 0..*.
+An association connects 'hotelsystem_RoomType' and 'se_hotelsystem_Room'. From 'hotelsystem_RoomType', the role 'hotelsystem_RoomType16' has cardinality 0..*, and from 'se_hotelsystem_Room', the role 'se_hotelsystem_Room' has cardinality 0..*.
+An association connects 'hotelsystem_RoomReservation' and 'se_hotelsystem_Bill'. From 'hotelsystem_RoomReservation', the role 'hotelsystem_RoomReservation18' has cardinality 0..*, and from 'se_hotelsystem_Bill', the role 'se_hotelsystem_Bill' has cardinality 0..*.
+An association connects 'bankcomponents_ICustomerProvides' and 'se_hotelsystem_PaymentHandler'. From 'bankcomponents_ICustomerProvides', the role 'bankcomponents_ICustomerProvides' has cardinality 0..*, and from 'se_hotelsystem_PaymentHandler', the role 'se_hotelsystem_PaymentHandler' has cardinality 0..*.
+An association connects 'hotelsystem_RoomType' and 'se_hotelsystem_RoomHandler'. From 'hotelsystem_RoomType', the role 'hotelsystem_RoomType21' has cardinality 0..*, and from 'se_hotelsystem_RoomHandler', the role 'se_hotelsystem_RoomHandler' has cardinality 0..*.
+An association connects 'hotelsystem_Room' and 'se_hotelsystem_RoomHandler'. From 'hotelsystem_Room', the role 'hotelsystem_Room24' has cardinality 0..*, and from 'se_hotelsystem_RoomHandler', the role 'se_hotelsystem_RoomHandler23' has cardinality 0..*.
+An association connects 'se_hotelsystem_HotelInitializer' and 'hotelsystem_RoomHandler'. From 'se_hotelsystem_HotelInitializer', the role 'se_hotelsystem_HotelInitializer' has cardinality 0..*, and from 'hotelsystem_RoomHandler', the role 'hotelsystem_RoomHandler' has cardinality 0..*.
+An association connects 'se_actor_Receptionist' and 'hotelsystem_IHotelReceptionistProvides'. From 'se_actor_Receptionist', the role 'se_actor_Receptionist' has cardinality 0..*, and from 'hotelsystem_IHotelReceptionistProvides', the role 'hotelsystem_IHotelReceptionistProvides' has cardinality 0..*.
+An association connects 'se_actor_Receptionist' and 'hotelsystem_IHotelCustomerProvides'. From 'se_actor_Receptionist', the role 'se_actor_Receptionist28' has cardinality 0..*, and from 'hotelsystem_IHotelCustomerProvides', the role 'hotelsystem_IHotelCustomerProvides' has cardinality 0..*.
+An association connects 'hotelsystem_IHotelAdministratorProvides' and 'se_actor_Administrator'. From 'hotelsystem_IHotelAdministratorProvides', the role 'hotelsystem_IHotelAdministratorProvides' has cardinality 0..*, and from 'se_actor_Administrator', the role 'se_actor_Administrator' has cardinality 0..*.
+An association connects 'hotelsystem_IHotelStartupProvides' and 'se_actor_Administrator'. From 'hotelsystem_IHotelStartupProvides', the role 'hotelsystem_IHotelStartupProvides' has cardinality 0..*, and from 'se_actor_Administrator', the role 'se_actor_Administrator31' has cardinality 0..*.

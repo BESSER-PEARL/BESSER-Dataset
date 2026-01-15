@@ -1,0 +1,392 @@
+The domain model 'langc' describes the core structural elements and their relationships within the system.
+
+The model defines 84 main class(es).
+
+'langc_FloatingLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'CodeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Literal' represents an important domain concept.
+It has one attribute: 'primitiveType', which is of type str.
+
+'langc_SubSystem' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'langc_UserElement' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'langc_BindableValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_ElementAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_CodeBlock' represents an important domain concept.
+It has one attribute: 'forceBraces', which is of type bool.
+
+'FileName' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_System' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Macro' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_FunctionAddress' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Typedef' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_FunctionPointer' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_SizeofType' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_SizeofExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'BindableValue' represents an important domain concept.
+It does not declare any attributes.
+
+'FileDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Function' represents an important domain concept.
+It has one attribute: 'linkage', which is of type str.
+
+'langc_Name' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'langc_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_CodeBlob' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'markerComment', which is of type str.
+
+'langc_UserInclude' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_DereferenceExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Union' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_IndexExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_SystemInclude' represents an important domain concept.
+It does not declare any attributes.
+
+'UserElement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_FunctionImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Struct' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Enumerator' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'linkage', which is of type str.
+
+'langc_CastExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_SystemFileName' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_FileName' represents an important domain concept.
+It has one attribute: 'hasObjectCode', which is of type bool.
+
+'langc_ConditionalStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_ElementList' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_NamedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_LinkableArtifact' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'langc_CharacterLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'langc_BuiltInType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Structure' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Directive' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Sizeof' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_DependencyBlob' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'markerComment', which is of type str.
+
+'langc_LabeledClause' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_SwitchClause' represents an important domain concept.
+It has one attribute: 'fallthrough', which is of type bool.
+
+'langc_DependencyList' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Sizeof' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_ElementReference' represents an important domain concept.
+It has the following attributes: 'cvQualifier', which is of type str; 'pointerSpec', which is of type str.
+
+'langc_FolderName' represents an important domain concept.
+It has one attribute: 'api', which is of type bool.
+
+'langc_Structure' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_MemberAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Enum' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_AddressOfExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_Expression' represents an important domain concept.
+It has one attribute: 'precendence', which is of type int.
+
+'langc_LogicalComparison' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'SwitchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_ExpressionBlob' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Name' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'Directive' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_BlockInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_VariableDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_IntegralLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'signed', which is of type bool; 'bytes', which is of type str.
+
+'langc_FileDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'langc_BinaryOperation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimitiveType' defines the following possible values: 'int8', 'void', 'int32', 'long', 'int16', 'uint8', 'float', 'char', 'uint32', 'double', 'uint16'.
+The enumeration 'ElementKind' defines the following possible values: 'headerOnly', 'default', 'implOnly'.
+The enumeration 'CVQualifier' defines the following possible values: 'const', 'volatile', 'unqualified'.
+The enumeration 'Pointer' defines the following possible values: 'volatile_pointer', 'const_volatile_pointer', 'pointer', 'invalid', 'const_pointer'.
+The enumeration 'Operator' defines the following possible values: 'add', 'bitwise_or', 'bitwise_and', 'assign', 'subtract', 'assign_add'.
+The enumeration 'LinkageSpec' defines the following possible values: 'static', 'unspecified', 'extern'.
+The enumeration 'BooleanOperator' defines the following possible values: 'or', 'less_than_equal', 'greater_than_equal', 'not_equivalent', 'less_than', 'equivalent', 'and', 'greater_than'.
+
+The model also captures inheritance relationships between classes.
+The class 'langc_NamedElement' is a specialization of 'UserElement'.
+The class 'langc_NamedElement' is a specialization of 'BindableValue'.
+The class 'langc_BuiltInType' is a specialization of 'Element'.
+The class 'langc_Struct' is a specialization of 'Structure'.
+The class 'langc_Union' is a specialization of 'Structure'.
+The class 'langc_Function' is a specialization of 'NamedElement'.
+The class 'langc_ElementReference' is a specialization of 'BindableValue'.
+The class 'langc_FunctionCall' is a specialization of 'Expression'.
+The class 'langc_ElementAccess' is a specialization of 'Expression'.
+The class 'langc_Literal' is a specialization of 'Expression'.
+The class 'langc_IntegralLiteral' is a specialization of 'Literal'.
+The class 'langc_CharacterLiteral' is a specialization of 'Literal'.
+The class 'langc_FloatingLiteral' is a specialization of 'Literal'.
+The class 'langc_ExpressionStatement' is a specialization of 'Statement'.
+The class 'langc_ReturnStatement' is a specialization of 'ExpressionStatement'.
+The class 'langc_CodeBlock' is a specialization of 'Statement'.
+The class 'langc_BinaryOperation' is a specialization of 'Expression'.
+The class 'langc_Structure' is a specialization of 'NamedElement'.
+The class 'langc_FunctionPointer' is a specialization of 'UserElement'.
+The class 'langc_FunctionAddress' is a specialization of 'Expression'.
+The class 'langc_VariableDeclaration' is a specialization of 'NamedElement'.
+The class 'langc_Typedef' is a specialization of 'NamedElement'.
+The class 'langc_MemberAccess' is a specialization of 'ElementAccess'.
+The class 'langc_ExpressionBlob' is a specialization of 'Expression'.
+The class 'langc_Enum' is a specialization of 'NamedElement'.
+The class 'langc_Enumerator' is a specialization of 'BindableValue'.
+The class 'langc_FileDependency' is a specialization of 'Dependency'.
+The class 'langc_SystemInclude' is a specialization of 'FileDependency'.
+The class 'langc_UserInclude' is a specialization of 'FileDependency'.
+The class 'langc_FileName' is a specialization of 'Name'.
+The class 'langc_FolderName' is a specialization of 'Name'.
+The class 'langc_CastExpr' is a specialization of 'Expression'.
+The class 'langc_UserElement' is a specialization of 'Element'.
+The class 'langc_SizeofType' is a specialization of 'Sizeof'.
+The class 'langc_SystemFileName' is a specialization of 'FileName'.
+The class 'langc_SwitchClause' is a specialization of 'CodeBlock'.
+The class 'langc_LabeledClause' is a specialization of 'SwitchClause'.
+The class 'langc_SwitchStatement' is a specialization of 'Statement'.
+The class 'langc_BreakStatement' is a specialization of 'Statement'.
+The class 'langc_AddressOfExpr' is a specialization of 'Expression'.
+The class 'langc_DereferenceExpr' is a specialization of 'Expression'.
+The class 'langc_WhileStatement' is a specialization of 'CodeBlock'.
+The class 'langc_Macro' is a specialization of 'Directive'.
+The class 'langc_Macro' is a specialization of 'BindableValue'.
+The class 'langc_StringLiteral' is a specialization of 'Expression'.
+The class 'langc_VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'langc_BlockInitializer' is a specialization of 'Expression'.
+The class 'langc_IndexExpr' is a specialization of 'Expression'.
+The class 'langc_LogicalComparison' is a specialization of 'Expression'.
+The class 'langc_SizeofExpr' is a specialization of 'Sizeof'.
+The class 'langc_Sizeof' is a specialization of 'Expression'.
+The class 'langc_FunctionImplementation' is a specialization of 'UserElement'.
+The class 'langc_CodeBlob' is a specialization of 'CodeBlock'.
+The class 'langc_DependencyBlob' is a specialization of 'Dependency'.
+The class 'langc_ConditionalStatement' is a specialization of 'CodeBlock'.
+
+Relationships between classes are modeled using associations.
+An association connects 'langc_Name' and 'langc_NamedElement'. From 'langc_Name', the role 'langc_Name' has cardinality 0..*, and from 'langc_NamedElement', the role 'langc_NamedElement' has cardinality 0..*.
+An association connects 'langc_Name' and 'langc_Name'. From 'langc_Name', the role 'langc_Name3' has cardinality 0..*, and from 'langc_Name', the role 'langc_Name1' has cardinality 0..*.
+An association connects 'langc_Function' and 'langc_ElementReference'. From 'langc_Function', the role 'langc_Function' has cardinality 0..*, and from 'langc_ElementReference', the role 'langc_ElementReference' has cardinality 0..*.
+An association connects 'langc_Function' and 'langc_NamedReference'. From 'langc_Function', the role 'langc_Function6' has cardinality 0..*, and from 'langc_NamedReference', the role 'langc_NamedReference' has cardinality 0..*.
+An association connects 'langc_Function' and 'langc_FunctionImplementation'. From 'langc_Function', the role 'langc_Function8' has cardinality 0..*, and from 'langc_FunctionImplementation', the role 'langc_FunctionImplementation' has cardinality 0..*.
+An association connects 'langc_Name' and 'langc_NamedReference'. From 'langc_Name', the role 'langc_Name11' has cardinality 0..*, and from 'langc_NamedReference', the role 'langc_NamedReference10' has cardinality 0..*.
+An association connects 'langc_NamedReference' and 'langc_ElementReference'. From 'langc_NamedReference', the role 'langc_NamedReference13' has cardinality 0..*, and from 'langc_ElementReference', the role 'langc_ElementReference14' has cardinality 0..*.
+An association connects 'langc_ElementReference' and 'langc_Element'. From 'langc_ElementReference', the role 'langc_ElementReference16' has cardinality 0..*, and from 'langc_Element', the role 'langc_Element' has cardinality 0..*.
+An association connects 'langc_ElementReference' and 'langc_Expression'. From 'langc_ElementReference', the role 'langc_ElementReference18' has cardinality 0..*, and from 'langc_Expression', the role 'langc_Expression' has cardinality 0..*.
+An association connects 'langc_Expression' and 'langc_ElementReference'. From 'langc_Expression', the role 'langc_Expression20' has cardinality 0..*, and from 'langc_ElementReference', the role 'langc_ElementReference21' has cardinality 0..*.
+An association connects 'langc_FunctionCall' and 'langc_Function'. From 'langc_FunctionCall', the role 'langc_FunctionCall' has cardinality 0..*, and from 'langc_Function', the role 'langc_Function23' has cardinality 0..*.
+An association connects 'langc_Expression' and 'langc_FunctionCall'. From 'langc_Expression', the role 'langc_Expression26' has cardinality 0..*, and from 'langc_FunctionCall', the role 'langc_FunctionCall25' has cardinality 0..*.
+An association connects 'langc_Name' and 'langc_ElementAccess'. From 'langc_Name', the role 'langc_Name28' has cardinality 0..*, and from 'langc_ElementAccess', the role 'langc_ElementAccess' has cardinality 0..*.
+An association connects 'langc_UserElement' and 'langc_ElementList'. From 'langc_UserElement', the role 'langc_UserElement' has cardinality 0..*, and from 'langc_ElementList', the role 'langc_ElementList' has cardinality 0..*.
+An association connects 'langc_ElementList' and 'langc_FileName'. From 'langc_ElementList', the role 'langc_ElementList31' has cardinality 0..*, and from 'langc_FileName', the role 'langc_FileName' has cardinality 0..*.
+An association connects 'langc_Element' and 'langc_ElementList'. From 'langc_Element', the role 'langc_Element34' has cardinality 0..*, and from 'langc_ElementList', the role 'langc_ElementList33' has cardinality 0..*.
+An association connects 'langc_DependencyList' and 'langc_ElementList'. From 'langc_DependencyList', the role 'langc_DependencyList' has cardinality 0..*, and from 'langc_ElementList', the role 'langc_ElementList36' has cardinality 0..*.
+An association connects 'langc_DependencyList' and 'langc_ElementList'. From 'langc_DependencyList', the role 'langc_DependencyList39' has cardinality 0..*, and from 'langc_ElementList', the role 'langc_ElementList38' has cardinality 0..*.
+An association connects 'langc_ElementList' and 'langc_Directive'. From 'langc_ElementList', the role 'langc_ElementList41' has cardinality 0..*, and from 'langc_Directive', the role 'langc_Directive' has cardinality 0..*.
+An association connects 'langc_Directive' and 'langc_ElementList'. From 'langc_Directive', the role 'langc_Directive44' has cardinality 0..*, and from 'langc_ElementList', the role 'langc_ElementList43' has cardinality 0..*.
+An association connects 'langc_Expression' and 'langc_ExpressionStatement'. From 'langc_Expression', the role 'langc_Expression46' has cardinality 0..*, and from 'langc_ExpressionStatement', the role 'langc_ExpressionStatement' has cardinality 0..*.
+An association connects 'langc_CodeBlock' and 'langc_Statement'. From 'langc_CodeBlock', the role 'langc_CodeBlock' has cardinality 0..*, and from 'langc_Statement', the role 'langc_Statement' has cardinality 0..*.
+An association connects 'langc_BinaryOperation' and 'langc_Expression'. From 'langc_BinaryOperation', the role 'langc_BinaryOperation' has cardinality 0..*, and from 'langc_Expression', the role 'langc_Expression49' has cardinality 0..*.
+An association connects 'langc_BinaryOperation' and 'langc_Expression'. From 'langc_BinaryOperation', the role 'langc_BinaryOperation51' has cardinality 0..*, and from 'langc_Expression', the role 'langc_Expression52' has cardinality 0..*.
+An association connects 'langc_NamedReference' and 'langc_Structure'. From 'langc_NamedReference', the role 'langc_NamedReference54' has cardinality 0..*, and from 'langc_Structure', the role 'langc_Structure' has cardinality 0..*.
+An association connects 'langc_ElementReference' and 'langc_FunctionPointer'. From 'langc_ElementReference', the role 'langc_ElementReference56' has cardinality 0..*, and from 'langc_FunctionPointer', the role 'langc_FunctionPointer' has cardinality 0..*.
+An association connects 'langc_ElementReference' and 'langc_FunctionPointer'. From 'langc_ElementReference', the role 'langc_ElementReference59' has cardinality 0..*, and from 'langc_FunctionPointer', the role 'langc_FunctionPointer58' has cardinality 0..*.
+An association connects 'langc_Function' and 'langc_FunctionAddress'. From 'langc_Function', the role 'langc_Function61' has cardinality 0..*, and from 'langc_FunctionAddress', the role 'langc_FunctionAddress' has cardinality 0..*.
+An association connects 'langc_ElementReference' and 'langc_VariableDeclaration'. From 'langc_ElementReference', the role 'langc_ElementReference63' has cardinality 0..*, and from 'langc_VariableDeclaration', the role 'langc_VariableDeclaration' has cardinality 0..*.
+An association connects 'langc_Expression' and 'langc_VariableDeclaration'. From 'langc_Expression', the role 'langc_Expression66' has cardinality 0..*, and from 'langc_VariableDeclaration', the role 'langc_VariableDeclaration65' has cardinality 0..*.
+An association connects 'langc_ElementReference' and 'langc_Typedef'. From 'langc_ElementReference', the role 'langc_ElementReference68' has cardinality 0..*, and from 'langc_Typedef', the role 'langc_Typedef' has cardinality 0..*.
+An association connects 'langc_Expression' and 'langc_MemberAccess'. From 'langc_Expression', the role 'langc_Expression70' has cardinality 0..*, and from 'langc_MemberAccess', the role 'langc_MemberAccess' has cardinality 0..*.
+An association connects 'langc_SubSystem' and 'langc_ElementList'. From 'langc_SubSystem', the role 'langc_SubSystem' has cardinality 0..*, and from 'langc_ElementList', the role 'langc_ElementList72' has cardinality 0..*.
+An association connects 'langc_FolderName' and 'langc_SubSystem'. From 'langc_FolderName', the role 'langc_FolderName' has cardinality 0..*, and from 'langc_SubSystem', the role 'langc_SubSystem74' has cardinality 0..*.
+An association connects 'langc_FolderName' and 'langc_SubSystem'. From 'langc_FolderName', the role 'langc_FolderName77' has cardinality 0..*, and from 'langc_SubSystem', the role 'langc_SubSystem76' has cardinality 0..*.
+An association connects 'langc_Enumerator' and 'langc_Enum'. From 'langc_Enumerator', the role 'langc_Enumerator' has cardinality 0..*, and from 'langc_Enum', the role 'langc_Enum' has cardinality 0..*.
+An association connects 'langc_IntegralLiteral' and 'langc_Enumerator'. From 'langc_IntegralLiteral', the role 'langc_IntegralLiteral' has cardinality 0..*, and from 'langc_Enumerator', the role 'langc_Enumerator80' has cardinality 0..*.
+An association connects 'langc_Name' and 'langc_Enumerator'. From 'langc_Name', the role 'langc_Name83' has cardinality 0..*, and from 'langc_Enumerator', the role 'langc_Enumerator82' has cardinality 0..*.
+An association connects 'langc_FileName' and 'langc_FileDependency'. From 'langc_FileName', the role 'langc_FileName85' has cardinality 0..*, and from 'langc_FileDependency', the role 'langc_FileDependency' has cardinality 0..*.
+An association connects 'langc_CastExpr' and 'langc_ElementReference'. From 'langc_CastExpr', the role 'langc_CastExpr' has cardinality 0..*, and from 'langc_ElementReference', the role 'langc_ElementReference87' has cardinality 0..*.
+An association connects 'langc_CastExpr' and 'langc_Expression'. From 'langc_CastExpr', the role 'langc_CastExpr89' has cardinality 0..*, and from 'langc_Expression', the role 'langc_Expression90' has cardinality 0..*.
+An association connects 'langc_UserElement' and 'langc_FileName'. From 'langc_UserElement', the role 'langc_UserElement92' has cardinality 0..*, and from 'langc_FileName', the role 'langc_FileName93' has cardinality 0..*.
+An association connects 'langc_DependencyList' and 'langc_Dependency'. From 'langc_DependencyList', the role 'langc_DependencyList95' has cardinality 0..*, and from 'langc_Dependency', the role 'langc_Dependency' has cardinality 0..*.
+An association connects 'langc_ElementReference' and 'langc_SizeofType'. From 'langc_ElementReference', the role 'langc_ElementReference97' has cardinality 0..*, and from 'langc_SizeofType', the role 'langc_SizeofType' has cardinality 0..*.
+An association connects 'langc_Expression' and 'langc_LabeledClause'. From 'langc_Expression', the role 'langc_Expression99' has cardinality 0..*, and from 'langc_LabeledClause', the role 'langc_LabeledClause' has cardinality 0..*.
+An association connects 'langc_SwitchClause' and 'langc_SwitchStatement'. From 'langc_SwitchClause', the role 'langc_SwitchClause' has cardinality 0..*, and from 'langc_SwitchStatement', the role 'langc_SwitchStatement' has cardinality 0..*.
+An association connects 'langc_Expression' and 'langc_SwitchStatement'. From 'langc_Expression', the role 'langc_Expression103' has cardinality 0..*, and from 'langc_SwitchStatement', the role 'langc_SwitchStatement102' has cardinality 0..*.
+An association connects 'langc_Expression' and 'langc_AddressOfExpr'. From 'langc_Expression', the role 'langc_Expression105' has cardinality 0..*, and from 'langc_AddressOfExpr', the role 'langc_AddressOfExpr' has cardinality 0..*.
+An association connects 'langc_Expression' and 'langc_DereferenceExpr'. From 'langc_Expression', the role 'langc_Expression107' has cardinality 0..*, and from 'langc_DereferenceExpr', the role 'langc_DereferenceExpr' has cardinality 0..*.
+An association connects 'langc_WhileStatement' and 'langc_Expression'. From 'langc_WhileStatement', the role 'langc_WhileStatement' has cardinality 0..*, and from 'langc_Expression', the role 'langc_Expression109' has cardinality 0..*.
+An association connects 'langc_Macro' and 'langc_Name'. From 'langc_Macro', the role 'langc_Macro' has cardinality 0..*, and from 'langc_Name', the role 'langc_Name111' has cardinality 0..*.
+An association connects 'langc_Macro' and 'langc_Expression'. From 'langc_Macro', the role 'langc_Macro113' has cardinality 0..*, and from 'langc_Expression', the role 'langc_Expression114' has cardinality 0..*.
+An association connects 'langc_Name' and 'langc_Macro'. From 'langc_Name', the role 'langc_Name117' has cardinality 0..*, and from 'langc_Macro', the role 'langc_Macro116' has cardinality 0..*.
+An association connects 'langc_VariableDeclaration' and 'langc_VariableDeclarationStatement'. From 'langc_VariableDeclaration', the role 'langc_VariableDeclaration119' has cardinality 0..*, and from 'langc_VariableDeclarationStatement', the role 'langc_VariableDeclarationStatement' has cardinality 0..*.
+An association connects 'langc_BlockInitializer' and 'langc_Expression'. From 'langc_BlockInitializer', the role 'langc_BlockInitializer' has cardinality 0..*, and from 'langc_Expression', the role 'langc_Expression121' has cardinality 0..*.
+An association connects 'langc_IndexExpr' and 'langc_Expression'. From 'langc_IndexExpr', the role 'langc_IndexExpr' has cardinality 0..*, and from 'langc_Expression', the role 'langc_Expression123' has cardinality 0..*.
+An association connects 'langc_Expression' and 'langc_IndexExpr'. From 'langc_Expression', the role 'langc_Expression126' has cardinality 0..*, and from 'langc_IndexExpr', the role 'langc_IndexExpr125' has cardinality 0..*.
+An association connects 'langc_LogicalComparison' and 'langc_Expression'. From 'langc_LogicalComparison', the role 'langc_LogicalComparison' has cardinality 0..*, and from 'langc_Expression', the role 'langc_Expression128' has cardinality 0..*.
+An association connects 'langc_LogicalComparison' and 'langc_Expression'. From 'langc_LogicalComparison', the role 'langc_LogicalComparison130' has cardinality 0..*, and from 'langc_Expression', the role 'langc_Expression131' has cardinality 0..*.
+An association connects 'langc_Expression' and 'langc_SizeofExpr'. From 'langc_Expression', the role 'langc_Expression133' has cardinality 0..*, and from 'langc_SizeofExpr', the role 'langc_SizeofExpr' has cardinality 0..*.
+An association connects 'langc_FunctionImplementation' and 'langc_CodeBlock'. From 'langc_FunctionImplementation', the role 'langc_FunctionImplementation135' has cardinality 0..*, and from 'langc_CodeBlock', the role 'langc_CodeBlock136' has cardinality 0..*.
+An association connects 'langc_Function' and 'langc_FunctionImplementation'. From 'langc_Function', the role 'langc_Function139' has cardinality 0..*, and from 'langc_FunctionImplementation', the role 'langc_FunctionImplementation138' has cardinality 0..*.
+An association connects 'langc_System' and 'langc_SubSystem'. From 'langc_System', the role 'langc_System' has cardinality 0..*, and from 'langc_SubSystem', the role 'langc_SubSystem141' has cardinality 0..*.
+An association connects 'langc_FolderName' and 'langc_System'. From 'langc_FolderName', the role 'langc_FolderName144' has cardinality 0..*, and from 'langc_System', the role 'langc_System143' has cardinality 0..*.
+An association connects 'langc_System' and 'langc_LinkableArtifact'. From 'langc_System', the role 'langc_System146' has cardinality 0..*, and from 'langc_LinkableArtifact', the role 'langc_LinkableArtifact' has cardinality 0..*.
+An association connects 'langc_DependencyBlob' and 'langc_CodeBlob'. From 'langc_DependencyBlob', the role 'langc_DependencyBlob' has cardinality 0..*, and from 'langc_CodeBlob', the role 'langc_CodeBlob' has cardinality 0..*.
+An association connects 'langc_FunctionImplementation' and 'langc_LinkableArtifact'. From 'langc_FunctionImplementation', the role 'langc_FunctionImplementation150' has cardinality 0..*, and from 'langc_LinkableArtifact', the role 'langc_LinkableArtifact149' has cardinality 0..*.
+An association connects 'langc_UserElement' and 'langc_LinkableArtifact'. From 'langc_UserElement', the role 'langc_UserElement153' has cardinality 0..*, and from 'langc_LinkableArtifact', the role 'langc_LinkableArtifact152' has cardinality 0..*.
+An association connects 'langc_ConditionalStatement' and 'langc_Expression'. From 'langc_ConditionalStatement', the role 'langc_ConditionalStatement' has cardinality 0..*, and from 'langc_Expression', the role 'langc_Expression155' has cardinality 0..*.

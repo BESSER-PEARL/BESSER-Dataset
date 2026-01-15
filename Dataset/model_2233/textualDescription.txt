@@ -1,0 +1,66 @@
+The domain model 'studyprogram' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'studyprogram_Course' represents an important domain concept.
+It has the following attributes: 'credits', which is of type str; 'name', which is of type str; 'semester', which is of type str.
+
+'studyprogram_SemesterCourse' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'studyprogram_Specialisation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'studyprogram_ObligatoryCourses' represents an important domain concept.
+It does not declare any attributes.
+
+'studyprogram_ElectiveCourses' represents an important domain concept.
+It does not declare any attributes.
+
+'studyprogram_Semester' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'studyprogram_University' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'studyprogram_Department' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'studyprogram_Program' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'studyprogram_Year' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'studyprogram_StudyPlan' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SemesterType' defines the following possible values: 'Fall', 'Spring'.
+The enumeration 'CourseType' defines the following possible values: 'Elective', 'Obligatory'.
+
+Relationships between classes are modeled using associations.
+An association connects 'studyprogram_University' and 'studyprogram_Department'. From 'studyprogram_University', the role 'school' has cardinality 0..*, and from 'studyprogram_Department', the role 'Department' has cardinality 0..*.
+An association connects 'studyprogram_Department' and 'studyprogram_University'. From 'studyprogram_Department', the role 'departments' has cardinality 0..*, and from 'studyprogram_University', the role 'University' has cardinality 0..*.
+An association connects 'studyprogram_Course' and 'studyprogram_Department'. From 'studyprogram_Course', the role 'Course' has cardinality 0..*, and from 'studyprogram_Department', the role 'department' has cardinality 0..*.
+An association connects 'studyprogram_Department' and 'studyprogram_Program'. From 'studyprogram_Department', the role 'department4' has cardinality 0..*, and from 'studyprogram_Program', the role 'Program' has cardinality 0..*.
+An association connects 'studyprogram_Department' and 'studyprogram_Program'. From 'studyprogram_Department', the role 'Department6' has cardinality 0..*, and from 'studyprogram_Program', the role 'programs' has cardinality 0..*.
+An association connects 'studyprogram_StudyPlan' and 'studyprogram_Program'. From 'studyprogram_StudyPlan', the role 'StudyPlan' has cardinality 0..*, and from 'studyprogram_Program', the role 'program' has cardinality 0..*.
+An association connects 'studyprogram_Program' and 'studyprogram_ElectiveCourses'. From 'studyprogram_Program', the role 'program9' has cardinality 0..*, and from 'studyprogram_ElectiveCourses', the role 'ElectiveCourses' has cardinality 0..*.
+An association connects 'studyprogram_ObligatoryCourses' and 'studyprogram_Program'. From 'studyprogram_ObligatoryCourses', the role 'ObligatoryCourses' has cardinality 0..*, and from 'studyprogram_Program', the role 'program11' has cardinality 0..*.
+An association connects 'studyprogram_StudyPlan' and 'studyprogram_Year'. From 'studyprogram_StudyPlan', the role 'studyPlan' has cardinality 0..*, and from 'studyprogram_Year', the role 'Year' has cardinality 0..*.
+An association connects 'studyprogram_Program' and 'studyprogram_StudyPlan'. From 'studyprogram_Program', the role 'Program14' has cardinality 0..*, and from 'studyprogram_StudyPlan', the role 'studyPlans' has cardinality 0..*.
+An association connects 'studyprogram_StudyPlan' and 'studyprogram_Specialisation'. From 'studyprogram_StudyPlan', the role 'studyPlan16' has cardinality 0..*, and from 'studyprogram_Specialisation', the role 'Specialisation' has cardinality 0..*.
+An association connects 'studyprogram_Semester' and 'studyprogram_Year'. From 'studyprogram_Semester', the role 'Semester' has cardinality 0..*, and from 'studyprogram_Year', the role 'year' has cardinality 0..*.
+An association connects 'studyprogram_Year' and 'studyprogram_StudyPlan'. From 'studyprogram_Year', the role 'years' has cardinality 0..*, and from 'studyprogram_StudyPlan', the role 'StudyPlan19' has cardinality 0..*.
+An association connects 'studyprogram_Semester' and 'studyprogram_Year'. From 'studyprogram_Semester', the role 'semesters' has cardinality 0..*, and from 'studyprogram_Year', the role 'Year21' has cardinality 0..*.
+An association connects 'studyprogram_SemesterCourse' and 'studyprogram_Semester'. From 'studyprogram_SemesterCourse', the role 'SemesterCourse' has cardinality 0..*, and from 'studyprogram_Semester', the role 'semester' has cardinality 0..*.
+An association connects 'studyprogram_Semester' and 'studyprogram_SemesterCourse'. From 'studyprogram_Semester', the role 'Semester24' has cardinality 0..*, and from 'studyprogram_SemesterCourse', the role 'semesterCourses' has cardinality 0..*.
+An association connects 'studyprogram_SemesterCourse' and 'studyprogram_Course'. From 'studyprogram_SemesterCourse', the role 'studyprogram_SemesterCourse' has cardinality 0..*, and from 'studyprogram_Course', the role 'studyprogram_Course' has cardinality 0..*.
+An association connects 'studyprogram_Year' and 'studyprogram_Specialisation'. From 'studyprogram_Year', the role 'studyprogram_Year' has cardinality 0..*, and from 'studyprogram_Specialisation', the role 'studyprogram_Specialisation' has cardinality 0..*.
+An association connects 'studyprogram_StudyPlan' and 'studyprogram_Specialisation'. From 'studyprogram_StudyPlan', the role 'StudyPlan28' has cardinality 0..*, and from 'studyprogram_Specialisation', the role 'spesialisations' has cardinality 0..*.
+An association connects 'studyprogram_Course' and 'studyprogram_Department'. From 'studyprogram_Course', the role 'courses' has cardinality 0..*, and from 'studyprogram_Department', the role 'Department30' has cardinality 0..*.
+An association connects 'studyprogram_Program' and 'studyprogram_ElectiveCourses'. From 'studyprogram_Program', the role 'Program32' has cardinality 0..*, and from 'studyprogram_ElectiveCourses', the role 'electiveCourses' has cardinality 0..*.
+An association connects 'studyprogram_Course' and 'studyprogram_ElectiveCourses'. From 'studyprogram_Course', the role 'studyprogram_Course34' has cardinality 0..*, and from 'studyprogram_ElectiveCourses', the role 'studyprogram_ElectiveCourses' has cardinality 0..*.
+An association connects 'studyprogram_Program' and 'studyprogram_ObligatoryCourses'. From 'studyprogram_Program', the role 'Program36' has cardinality 0..*, and from 'studyprogram_ObligatoryCourses', the role 'obligatoryCourses' has cardinality 0..*.
+An association connects 'studyprogram_Course' and 'studyprogram_ObligatoryCourses'. From 'studyprogram_Course', the role 'studyprogram_Course38' has cardinality 0..*, and from 'studyprogram_ObligatoryCourses', the role 'studyprogram_ObligatoryCourses' has cardinality 0..*.

@@ -1,0 +1,38 @@
+The domain model 'graphgenerators' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'graphgenerators_LatticeGraphGenerator' represents an important domain concept.
+It has the following attributes: 'useNextNearestNeighbors', which is of type bool; 'periodicBoundaries', which is of type bool; 'useNearestNeighbors', which is of type bool.
+
+'LatticeGraphGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgenerators_GraphGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'graphgenerators_PlateCarreeGlobeGraphGenerator' represents an important domain concept.
+It has the following attributes: 'angularStep', which is of type int; 'radius', which is of type float.
+
+'graphgenerators_PajekNetGraphGenerator' represents an important domain concept.
+It has the following attributes: 'dataFile_net', which is of type str; 'colArea', which is of type int; 'zoomFactor', which is of type int; 'area', which is of type float.
+
+'graphgenerators_MigrationEdgeGraphGenerator' represents an important domain concept.
+It has the following attributes: 'migrationRate', which is of type float; 'population', which is of type str; 'location', which is of type str.
+
+'graphgenerators_SquareLatticeGraphGenerator' represents an important domain concept.
+It has the following attributes: 'area', which is of type float; 'xSize', which is of type int; 'ySize', which is of type int.
+
+'GraphGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'graphgenerators_GraphGenerator' is a specialization of 'Identifiable'.
+The class 'graphgenerators_LatticeGraphGenerator' is a specialization of 'GraphGenerator'.
+The class 'graphgenerators_SquareLatticeGraphGenerator' is a specialization of 'LatticeGraphGenerator'.
+The class 'graphgenerators_MigrationEdgeGraphGenerator' is a specialization of 'GraphGenerator'.
+The class 'graphgenerators_PlateCarreeGlobeGraphGenerator' is a specialization of 'LatticeGraphGenerator'.
+The class 'graphgenerators_PajekNetGraphGenerator' is a specialization of 'GraphGenerator'.

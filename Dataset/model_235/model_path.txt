@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/hogoww/Master-S3/metaprog/emf2/org.eclipse.emf.ecore/model/Ecore.ecore

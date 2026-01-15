@@ -1,0 +1,248 @@
+The domain model 'Implementation' describes the core structural elements and their relationships within the system.
+
+The model defines 61 main class(es).
+
+'Implementation_BookingComponent_Booking' represents an important domain concept.
+It has the following attributes: 'isPaid', which is of type str; 'currentCost', which is of type str; 'isActive', which is of type str; 'bookingReference', which is of type str; 'departureDate', which is of type date; 'arrivalDate', which is of type date.
+
+'Implementation_RoomComponent_ConferenceRoom' represents an important domain concept.
+It has the following attributes: 'conferencePhone', which is of type bool; 'projector', which is of type bool; 'numberOfSeats', which is of type int.
+
+'Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_OccupancyComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_PaymentComponent_Payment' represents an important domain concept.
+It has the following attributes: 'expiryYear', which is of type str; 'firstName', which is of type str; 'amount', which is of type float; 'ccNumber', which is of type str; 'expiryMonth', which is of type str; 'lastName', which is of type str; 'ccv', which is of type str.
+
+'RoomComponent_IRoomInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'BookingComponent_IBookingInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_OccupancyComponent_OccupancyHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_DecisionSupportComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_PaymentComponent_IPayment' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_RoomComponent_Bedroom' represents an important domain concept.
+It has one attribute: 'bedCount', which is of type str.
+
+'Implementation_RoomComponent_IRoomInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_PaymentComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'DecisionSupportComponent_IDecisionSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_RoomComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_AdditionalServiceComponent_AdditionalServiceHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_BookingComponent_BookingGuest' represents an important domain concept.
+It has the following attributes: 'address', which is of type str; 'phoneNumber', which is of type str; 'lastName', which is of type str; 'firstName', which is of type str.
+
+'Implementation_AdditionalServiceComponent_AdditionalServiceEvent' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'dateTime', which is of type date; 'maxAttendant', which is of type str; 'currentAttendants', which is of type str.
+
+'Implementation_AdditionalServiceComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'OccupancyComponent_IOccupancy' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditionalServiceComponent_IEventManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_BookingComponent_IBookingInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomComponent_IRoomAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_OccupancyComponent_IOccupancy' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_BookingComponent_BookingHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_OccupancyComponent_Guest' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'lastName', which is of type str.
+
+'Implementation_StaffComponent_IAccountAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_StaffComponent_Employee' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'email', which is of type str; 'password', which is of type str; 'name', which is of type str; 'phone', which is of type str; 'ssn', which is of type str.
+
+'Implementation_BookingComponent_PaymentDetails' represents an important domain concept.
+It has the following attributes: 'address', which is of type str; 'expiryMonth', which is of type str; 'lastName', which is of type str; 'ccv', which is of type str; 'expiryYear', which is of type str; 'firstName', which is of type str; 'ccNumber', which is of type str.
+
+'Implementation_AdditionalServiceComponent_AdditionalService' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'price', which is of type str; 'usable', which is of type str; 'description', which is of type str.
+
+'Implementation_Bank' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_AdditionalServiceComponent_IEventManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_BookingComponent_RoomType' represents an important domain concept.
+It has the following attributes: 'roomType', which is of type str; 'cost', which is of type str.
+
+'PaymentComponent_IPayment' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomComponent_Room' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_BookingComponent_IBookingDecision' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_BookingComponent_AdditionalService' represents an important domain concept.
+It has the following attributes: 'guestCount', which is of type str; 'name', which is of type str; 'location', which is of type str; 'price', which is of type int; 'dateTime', which is of type date.
+
+'Implementation_StaffComponent_IAuthentication' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_RoomComponent_RoomHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo' represents an important domain concept.
+It has the following attributes: 'additionalServiceName', which is of type str; 'additionalServicePrice', which is of type str.
+
+'Implementation_Bank_CustomerProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_StaffComponent_AccountManager' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_OccupancyComponent_Occupancy' represents an important domain concept.
+It has the following attributes: 'roomNumber', which is of type str; 'checkOutDateTime', which is of type str; 'bookingReference', which is of type str; 'checkInDateTime', which is of type str.
+
+'StaffComponent_IAccountAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_OccupancyComponent_IOccupancyDecision' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_RoomComponent_IRoomAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_RoomComponent_Room' represents an important domain concept.
+It has the following attributes: 'roomTypeName', which is of type str; 'description', which is of type str; 'roomNumber', which is of type str; 'usable', which is of type str; 'price', which is of type str.
+
+'BookingComponent_IBookingAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditionalServiceComponent_IAdditionalServiceAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'StaffComponent_IAuthentication' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_PaymentComponent_PaymentHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_DecisionSupportComponent_DSSController' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_BookingComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'OccupancyComponent_IOccupancyDecision' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_DecisionSupportComponent_IDecisionSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_DecisionSupportComponent_OccupancyDSSInfo' represents an important domain concept.
+It has the following attributes: 'numberOfGuests', which is of type str; 'roomNumber', which is of type str; 'checkOutDateTime', which is of type str; 'checkInDateTime', which is of type str.
+
+'BookingComponent_IBookingDecision' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_BookingComponent_IBookingAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_Bank_AdministratorProvides' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_StaffComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Implementation_DecisionSupportComponent_BookingDSSInfo' represents an important domain concept.
+It has the following attributes: 'numberOfGuests', which is of type str; 'address', which is of type str; 'customerLastName', which is of type str; 'arrivalDate', which is of type str; 'customerFirstName', which is of type str; 'departureDate', which is of type str; 'roomType', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'Implementation_DecisionSupportComponent' is a specialization of 'DecisionSupportComponent_IDecisionSupport'.
+The class 'Implementation_DecisionSupportComponent_DSSController' is a specialization of 'DecisionSupportComponent_IDecisionSupport'.
+The class 'Implementation_OccupancyComponent_OccupancyHandler' is a specialization of 'OccupancyComponent_IOccupancyDecision'.
+The class 'Implementation_OccupancyComponent_OccupancyHandler' is a specialization of 'OccupancyComponent_IOccupancy'.
+The class 'Implementation_PaymentComponent' is a specialization of 'PaymentComponent_IPayment'.
+The class 'Implementation_PaymentComponent_PaymentHandler' is a specialization of 'PaymentComponent_IPayment'.
+The class 'Implementation_AdditionalServiceComponent' is a specialization of 'AdditionalServiceComponent_IAdditionalServiceAdministration'.
+The class 'Implementation_AdditionalServiceComponent' is a specialization of 'AdditionalServiceComponent_IEventManagement'.
+The class 'Implementation_AdditionalServiceComponent_AdditionalServiceHandler' is a specialization of 'AdditionalServiceComponent_IEventManagement'.
+The class 'Implementation_AdditionalServiceComponent_AdditionalServiceHandler' is a specialization of 'AdditionalServiceComponent_IAdditionalServiceAdministration'.
+The class 'Implementation_BookingComponent_BookingHandler' is a specialization of 'BookingComponent_IBookingInformation'.
+The class 'Implementation_BookingComponent_BookingHandler' is a specialization of 'BookingComponent_IBookingDecision'.
+The class 'Implementation_BookingComponent_BookingHandler' is a specialization of 'BookingComponent_IBookingAdministration'.
+The class 'Implementation_StaffComponent' is a specialization of 'StaffComponent_IAccountAdministration'.
+The class 'Implementation_StaffComponent' is a specialization of 'StaffComponent_IAuthentication'.
+The class 'Implementation_StaffComponent_AccountManager' is a specialization of 'StaffComponent_IAuthentication'.
+The class 'Implementation_StaffComponent_AccountManager' is a specialization of 'StaffComponent_IAccountAdministration'.
+The class 'Implementation_RoomComponent' is a specialization of 'RoomComponent_IRoomInformation'.
+The class 'Implementation_RoomComponent' is a specialization of 'RoomComponent_IRoomAdministration'.
+The class 'Implementation_RoomComponent_Bedroom' is a specialization of 'RoomComponent_Room'.
+The class 'Implementation_RoomComponent_ConferenceRoom' is a specialization of 'RoomComponent_Room'.
+The class 'Implementation_RoomComponent_RoomHandler' is a specialization of 'RoomComponent_IRoomInformation'.
+The class 'Implementation_RoomComponent_RoomHandler' is a specialization of 'RoomComponent_IRoomAdministration'.
+The class 'Implementation_Bank' is a specialization of 'BookingComponent_IBookingDecision'.
+The class 'Implementation_Bank' is a specialization of 'BookingComponent_IBookingAdministration'.
+The class 'Implementation_Bank' is a specialization of 'BookingComponent_IBookingInformation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo' and 'Implementation_DecisionSupportComponent_BookingDSSInfo'. From 'Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo', the role 'Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo' has cardinality 0..*, and from 'Implementation_DecisionSupportComponent_BookingDSSInfo', the role 'Implementation_DecisionSupportComponent_BookingDSSInfo' has cardinality 0..*.
+An association connects 'Implementation_OccupancyComponent_IOccupancyDecision' and 'Implementation_DecisionSupportComponent_DSSController'. From 'Implementation_OccupancyComponent_IOccupancyDecision', the role 'Implementation_OccupancyComponent_IOccupancyDecision' has cardinality 0..*, and from 'Implementation_DecisionSupportComponent_DSSController', the role 'Implementation_DecisionSupportComponent_DSSController' has cardinality 0..*.
+An association connects 'Implementation_BookingComponent_IBookingDecision' and 'Implementation_DecisionSupportComponent_DSSController'. From 'Implementation_BookingComponent_IBookingDecision', the role 'Implementation_BookingComponent_IBookingDecision' has cardinality 0..*, and from 'Implementation_DecisionSupportComponent_DSSController', the role 'Implementation_DecisionSupportComponent_DSSController3' has cardinality 0..*.
+An association connects 'Implementation_DecisionSupportComponent_DSSController' and 'Implementation_DecisionSupportComponent_OccupancyDSSInfo'. From 'Implementation_DecisionSupportComponent_DSSController', the role 'Implementation_DecisionSupportComponent_DSSController5' has cardinality 0..*, and from 'Implementation_DecisionSupportComponent_OccupancyDSSInfo', the role 'Implementation_DecisionSupportComponent_OccupancyDSSInfo' has cardinality 0..*.
+An association connects 'Implementation_DecisionSupportComponent_DSSController' and 'Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo'. From 'Implementation_DecisionSupportComponent_DSSController', the role 'Implementation_DecisionSupportComponent_DSSController7' has cardinality 0..*, and from 'Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo', the role 'Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo8' has cardinality 0..*.
+An association connects 'Implementation_DecisionSupportComponent_DSSController' and 'Implementation_DecisionSupportComponent_BookingDSSInfo'. From 'Implementation_DecisionSupportComponent_DSSController', the role 'Implementation_DecisionSupportComponent_DSSController10' has cardinality 0..*, and from 'Implementation_DecisionSupportComponent_BookingDSSInfo', the role 'Implementation_DecisionSupportComponent_BookingDSSInfo11' has cardinality 0..*.
+An association connects 'Implementation_OccupancyComponent_Occupancy' and 'Implementation_OccupancyComponent_Guest'. From 'Implementation_OccupancyComponent_Occupancy', the role 'Implementation_OccupancyComponent_Occupancy' has cardinality 0..*, and from 'Implementation_OccupancyComponent_Guest', the role 'Implementation_OccupancyComponent_Guest' has cardinality 0..*.
+An association connects 'Implementation_OccupancyComponent_OccupancyHandler' and 'Implementation_RoomComponent_IRoomInformation'. From 'Implementation_OccupancyComponent_OccupancyHandler', the role 'Implementation_OccupancyComponent_OccupancyHandler' has cardinality 0..*, and from 'Implementation_RoomComponent_IRoomInformation', the role 'Implementation_RoomComponent_IRoomInformation' has cardinality 0..*.
+An association connects 'Implementation_BookingComponent_IBookingInformation' and 'Implementation_OccupancyComponent_OccupancyHandler'. From 'Implementation_BookingComponent_IBookingInformation', the role 'Implementation_BookingComponent_IBookingInformation' has cardinality 0..*, and from 'Implementation_OccupancyComponent_OccupancyHandler', the role 'Implementation_OccupancyComponent_OccupancyHandler15' has cardinality 0..*.
+An association connects 'Implementation_OccupancyComponent_OccupancyHandler' and 'Implementation_OccupancyComponent_Occupancy'. From 'Implementation_OccupancyComponent_OccupancyHandler', the role 'Implementation_OccupancyComponent_OccupancyHandler17' has cardinality 0..*, and from 'Implementation_OccupancyComponent_Occupancy', the role 'Implementation_OccupancyComponent_Occupancy18' has cardinality 0..*.
+An association connects 'Implementation_PaymentComponent_Payment' and 'Implementation_PaymentComponent_PaymentHandler'. From 'Implementation_PaymentComponent_Payment', the role 'Implementation_PaymentComponent_Payment' has cardinality 0..*, and from 'Implementation_PaymentComponent_PaymentHandler', the role 'Implementation_PaymentComponent_PaymentHandler' has cardinality 0..*.
+An association connects 'Implementation_Bank_CustomerProvides' and 'Implementation_PaymentComponent_PaymentHandler'. From 'Implementation_Bank_CustomerProvides', the role 'Implementation_Bank_CustomerProvides' has cardinality 0..*, and from 'Implementation_PaymentComponent_PaymentHandler', the role 'Implementation_PaymentComponent_PaymentHandler21' has cardinality 0..*.
+An association connects 'Implementation_PaymentComponent_PaymentHandler' and 'Implementation_Bank_AdministratorProvides'. From 'Implementation_PaymentComponent_PaymentHandler', the role 'Implementation_PaymentComponent_PaymentHandler23' has cardinality 0..*, and from 'Implementation_Bank_AdministratorProvides', the role 'Implementation_Bank_AdministratorProvides' has cardinality 0..*.
+An association connects 'Implementation_AdditionalServiceComponent_AdditionalService' and 'Implementation_AdditionalServiceComponent_AdditionalServiceEvent'. From 'Implementation_AdditionalServiceComponent_AdditionalService', the role 'Implementation_AdditionalServiceComponent_AdditionalService' has cardinality 0..*, and from 'Implementation_AdditionalServiceComponent_AdditionalServiceEvent', the role 'Implementation_AdditionalServiceComponent_AdditionalServiceEvent' has cardinality 0..*.
+An association connects 'Implementation_AdditionalServiceComponent_AdditionalService' and 'Implementation_AdditionalServiceComponent_AdditionalServiceEvent'. From 'Implementation_AdditionalServiceComponent_AdditionalService', the role 'Implementation_AdditionalServiceComponent_AdditionalService26' has cardinality 0..*, and from 'Implementation_AdditionalServiceComponent_AdditionalServiceEvent', the role 'Implementation_AdditionalServiceComponent_AdditionalServiceEvent27' has cardinality 0..*.
+An association connects 'Implementation_AdditionalServiceComponent_AdditionalServiceHandler' and 'Implementation_AdditionalServiceComponent_AdditionalService'. From 'Implementation_AdditionalServiceComponent_AdditionalServiceHandler', the role 'Implementation_AdditionalServiceComponent_AdditionalServiceHandler' has cardinality 0..*, and from 'Implementation_AdditionalServiceComponent_AdditionalService', the role 'Implementation_AdditionalServiceComponent_AdditionalService29' has cardinality 0..*.
+An association connects 'Implementation_StaffComponent_IAuthentication' and 'Implementation_AdditionalServiceComponent_AdditionalServiceHandler'. From 'Implementation_StaffComponent_IAuthentication', the role 'Implementation_StaffComponent_IAuthentication' has cardinality 0..*, and from 'Implementation_AdditionalServiceComponent_AdditionalServiceHandler', the role 'Implementation_AdditionalServiceComponent_AdditionalServiceHandler31' has cardinality 0..*.
+An association connects 'Implementation_BookingComponent_Booking' and 'Implementation_BookingComponent_AdditionalService'. From 'Implementation_BookingComponent_Booking', the role 'Implementation_BookingComponent_Booking' has cardinality 0..*, and from 'Implementation_BookingComponent_AdditionalService', the role 'Implementation_BookingComponent_AdditionalService' has cardinality 0..*.
+An association connects 'Implementation_BookingComponent_BookingGuest' and 'Implementation_BookingComponent_Booking'. From 'Implementation_BookingComponent_BookingGuest', the role 'Implementation_BookingComponent_BookingGuest' has cardinality 0..*, and from 'Implementation_BookingComponent_Booking', the role 'Implementation_BookingComponent_Booking34' has cardinality 0..*.
+An association connects 'Implementation_BookingComponent_PaymentDetails' and 'Implementation_BookingComponent_Booking'. From 'Implementation_BookingComponent_PaymentDetails', the role 'Implementation_BookingComponent_PaymentDetails' has cardinality 0..*, and from 'Implementation_BookingComponent_Booking', the role 'Implementation_BookingComponent_Booking36' has cardinality 0..*.
+An association connects 'Implementation_BookingComponent_Booking' and 'Implementation_BookingComponent_RoomType'. From 'Implementation_BookingComponent_Booking', the role 'Implementation_BookingComponent_Booking38' has cardinality 0..*, and from 'Implementation_BookingComponent_RoomType', the role 'Implementation_BookingComponent_RoomType' has cardinality 0..*.
+An association connects 'Implementation_BookingComponent_Booking' and 'Implementation_BookingComponent_BookingHandler'. From 'Implementation_BookingComponent_Booking', the role 'Implementation_BookingComponent_Booking40' has cardinality 0..*, and from 'Implementation_BookingComponent_BookingHandler', the role 'Implementation_BookingComponent_BookingHandler' has cardinality 0..*.
+An association connects 'Implementation_BookingComponent_BookingHandler' and 'Implementation_StaffComponent_IAuthentication'. From 'Implementation_BookingComponent_BookingHandler', the role 'Implementation_BookingComponent_BookingHandler42' has cardinality 0..*, and from 'Implementation_StaffComponent_IAuthentication', the role 'Implementation_StaffComponent_IAuthentication43' has cardinality 0..*.
+An association connects 'Implementation_BookingComponent_BookingHandler' and 'Implementation_RoomComponent_IRoomInformation'. From 'Implementation_BookingComponent_BookingHandler', the role 'Implementation_BookingComponent_BookingHandler45' has cardinality 0..*, and from 'Implementation_RoomComponent_IRoomInformation', the role 'Implementation_RoomComponent_IRoomInformation46' has cardinality 0..*.
+An association connects 'Implementation_BookingComponent_BookingHandler' and 'Implementation_AdditionalServiceComponent_IEventManagement'. From 'Implementation_BookingComponent_BookingHandler', the role 'Implementation_BookingComponent_BookingHandler48' has cardinality 0..*, and from 'Implementation_AdditionalServiceComponent_IEventManagement', the role 'Implementation_AdditionalServiceComponent_IEventManagement' has cardinality 0..*.
+An association connects 'Implementation_BookingComponent_BookingHandler' and 'Implementation_PaymentComponent_IPayment'. From 'Implementation_BookingComponent_BookingHandler', the role 'Implementation_BookingComponent_BookingHandler50' has cardinality 0..*, and from 'Implementation_PaymentComponent_IPayment', the role 'Implementation_PaymentComponent_IPayment' has cardinality 0..*.
+An association connects 'Implementation_StaffComponent_AccountManager' and 'Implementation_StaffComponent_Employee'. From 'Implementation_StaffComponent_AccountManager', the role 'Implementation_StaffComponent_AccountManager' has cardinality 0..*, and from 'Implementation_StaffComponent_Employee', the role 'Implementation_StaffComponent_Employee' has cardinality 0..*.
+An association connects 'Implementation_StaffComponent_AccountManager' and 'Implementation_StaffComponent_Employee'. From 'Implementation_StaffComponent_AccountManager', the role 'Implementation_StaffComponent_AccountManager53' has cardinality 0..*, and from 'Implementation_StaffComponent_Employee', the role 'Implementation_StaffComponent_Employee54' has cardinality 0..*.
+An association connects 'Implementation_StaffComponent_IAuthentication' and 'Implementation_StaffComponent_AccountManager'. From 'Implementation_StaffComponent_IAuthentication', the role 'Implementation_StaffComponent_IAuthentication57' has cardinality 0..*, and from 'Implementation_StaffComponent_AccountManager', the role 'Implementation_StaffComponent_AccountManager56' has cardinality 0..*.
+An association connects 'Implementation_RoomComponent_RoomHandler' and 'Implementation_StaffComponent_IAuthentication'. From 'Implementation_RoomComponent_RoomHandler', the role 'Implementation_RoomComponent_RoomHandler' has cardinality 0..*, and from 'Implementation_StaffComponent_IAuthentication', the role 'Implementation_StaffComponent_IAuthentication59' has cardinality 0..*.
+An association connects 'Implementation_RoomComponent_RoomHandler' and 'Implementation_RoomComponent_Bedroom'. From 'Implementation_RoomComponent_RoomHandler', the role 'Implementation_RoomComponent_RoomHandler61' has cardinality 0..*, and from 'Implementation_RoomComponent_Bedroom', the role 'Implementation_RoomComponent_Bedroom' has cardinality 0..*.
+An association connects 'Implementation_RoomComponent_RoomHandler' and 'Implementation_RoomComponent_ConferenceRoom'. From 'Implementation_RoomComponent_RoomHandler', the role 'Implementation_RoomComponent_RoomHandler63' has cardinality 0..*, and from 'Implementation_RoomComponent_ConferenceRoom', the role 'Implementation_RoomComponent_ConferenceRoom' has cardinality 0..*.

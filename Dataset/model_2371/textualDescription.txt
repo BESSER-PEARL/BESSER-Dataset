@@ -1,0 +1,35 @@
+The domain model 'DB' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'DB_Key' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DB_Column' represents an important domain concept.
+It has the following attributes: 'notNull', which is of type bool; 'type', which is of type str; 'name', which is of type str.
+
+'DB_Database' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DB_ForeignKey' represents an important domain concept.
+It has one attribute: 'isMany', which is of type str.
+
+'DB_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'int', 'bool', 'text', 'varchar', 'decimal', 'unknown'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DB_Database' and 'DB_Table'. From 'DB_Database', the role 'DB_Database' has cardinality 0..*, and from 'DB_Table', the role 'DB_Table' has cardinality 0..*.
+An association connects 'DB_ForeignKey' and 'DB_Table'. From 'DB_ForeignKey', the role 'DB_ForeignKey' has cardinality 0..*, and from 'DB_Table', the role 'DB_Table2' has cardinality 0..*.
+An association connects 'DB_Key' and 'DB_Table'. From 'DB_Key', the role 'DB_Key' has cardinality 0..*, and from 'DB_Table', the role 'DB_Table4' has cardinality 0..*.
+An association connects 'DB_Table' and 'DB_Column'. From 'DB_Table', the role 'DB_Table6' has cardinality 0..*, and from 'DB_Column', the role 'DB_Column' has cardinality 0..*.
+An association connects 'DB_Table' and 'DB_Database'. From 'DB_Table', the role 'DB_Table8' has cardinality 0..*, and from 'DB_Database', the role 'DB_Database9' has cardinality 0..*.
+An association connects 'DB_Column' and 'DB_Table'. From 'DB_Column', the role 'DB_Column11' has cardinality 0..*, and from 'DB_Table', the role 'DB_Table12' has cardinality 0..*.
+An association connects 'DB_Key' and 'DB_Column'. From 'DB_Key', the role 'DB_Key15' has cardinality 0..*, and from 'DB_Column', the role 'DB_Column14' has cardinality 0..*.
+An association connects 'DB_Column' and 'DB_ForeignKey'. From 'DB_Column', the role 'DB_Column17' has cardinality 0..*, and from 'DB_ForeignKey', the role 'DB_ForeignKey18' has cardinality 0..*.
+An association connects 'DB_ForeignKey' and 'DB_Key'. From 'DB_ForeignKey', the role 'DB_ForeignKey20' has cardinality 0..*, and from 'DB_Key', the role 'DB_Key21' has cardinality 0..*.
+An association connects 'DB_Column' and 'DB_ForeignKey'. From 'DB_Column', the role 'DB_Column24' has cardinality 0..*, and from 'DB_ForeignKey', the role 'DB_ForeignKey23' has cardinality 0..*.
+An association connects 'DB_Key' and 'DB_Column'. From 'DB_Key', the role 'DB_Key26' has cardinality 0..*, and from 'DB_Column', the role 'DB_Column27' has cardinality 0..*.
+An association connects 'DB_Key' and 'DB_ForeignKey'. From 'DB_Key', the role 'DB_Key29' has cardinality 0..*, and from 'DB_ForeignKey', the role 'DB_ForeignKey30' has cardinality 0..*.

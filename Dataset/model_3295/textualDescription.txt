@@ -1,0 +1,43 @@
+The domain model 'common' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'common_DoubleValueMatrix' represents an important domain concept.
+It does not declare any attributes.
+
+'common_Comparable' represents an important domain concept.
+It does not declare any attributes.
+
+'common_DublinCore' represents an important domain concept.
+It has the following attributes: 'valid', which is of type str; 'spatial', which is of type str; 'format', which is of type str; 'bibliographicCitation', which is of type str; 'created', which is of type str; 'contributor', which is of type str; 'required', which is of type str; 'rights', which is of type str; 'language', which is of type str; 'coverage', which is of type str; 'description', which is of type str; 'publisher', which is of type str; 'identifier', which is of type str; 'relation', which is of type str; 'source', which is of type str; 'type', which is of type str; 'license', which is of type str; 'title', which is of type str; 'creator', which is of type str; 'subject', which is of type str; 'date', which is of type str.
+
+'Modifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'common_IdentifiableFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'common_Identifiable' represents an important domain concept.
+It has the following attributes: 'typeURI', which is of type str; 'uRI', which is of type str.
+
+'common_DoubleValue' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'value', which is of type float.
+
+'common_DoubleValueList' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'common_StringValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'common_StringValueList' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'common_DoubleValue' is a specialization of 'Modifiable'.
+The class 'common_StringValue' is a specialization of 'Modifiable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'common_Identifiable' and 'common_DublinCore'. From 'common_Identifiable', the role 'common_Identifiable' has cardinality 0..*, and from 'common_DublinCore', the role 'common_DublinCore' has cardinality 0..*.
+An association connects 'common_DoubleValue' and 'common_DoubleValueList'. From 'common_DoubleValue', the role 'common_DoubleValue' has cardinality 0..*, and from 'common_DoubleValueList', the role 'common_DoubleValueList' has cardinality 0..*.
+An association connects 'common_DoubleValueMatrix' and 'common_DoubleValueList'. From 'common_DoubleValueMatrix', the role 'common_DoubleValueMatrix' has cardinality 0..*, and from 'common_DoubleValueList', the role 'common_DoubleValueList3' has cardinality 0..*.
+An association connects 'common_StringValue' and 'common_StringValueList'. From 'common_StringValue', the role 'common_StringValue' has cardinality 0..*, and from 'common_StringValueList', the role 'common_StringValueList' has cardinality 0..*.

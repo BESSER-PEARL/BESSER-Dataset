@@ -1,0 +1,70 @@
+The domain model 'persons' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'persons_Community' represents an important domain concept.
+It does not declare any attributes.
+
+'persons_Woman' represents an important domain concept.
+It does not declare any attributes.
+
+'persons_District' represents an important domain concept.
+It does not declare any attributes.
+
+'persons_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'persons_Man' represents an important domain concept.
+It does not declare any attributes.
+
+'persons_Facility' represents an important domain concept.
+It does not declare any attributes.
+
+'persons_TownHall' represents an important domain concept.
+It does not declare any attributes.
+
+'persons_SpecialFacility' represents an important domain concept.
+It does not declare any attributes.
+
+'persons_Person' represents an important domain concept.
+It has one attribute: 'fullName', which is of type str.
+
+'persons_OrdinaryFacility' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Facility' represents an important domain concept.
+It does not declare any attributes.
+
+'persons_Committee' represents an important domain concept.
+It does not declare any attributes.
+
+'persons_Association' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'persons_Man' is a specialization of 'Person'.
+The class 'persons_Woman' is a specialization of 'Person'.
+The class 'persons_TownHall' is a specialization of 'NamedElement'.
+The class 'persons_Association' is a specialization of 'NamedElement'.
+The class 'persons_Committee' is a specialization of 'NamedElement'.
+The class 'persons_District' is a specialization of 'NamedElement'.
+The class 'persons_Facility' is a specialization of 'NamedElement'.
+The class 'persons_SpecialFacility' is a specialization of 'Facility'.
+The class 'persons_OrdinaryFacility' is a specialization of 'Facility'.
+
+Relationships between classes are modeled using associations.
+An association connects 'persons_Person' and 'persons_Community'. From 'persons_Person', the role 'persons_Person' has cardinality 0..*, and from 'persons_Community', the role 'persons_Community' has cardinality 0..*.
+An association connects 'persons_Community' and 'persons_TownHall'. From 'persons_Community', the role 'persons_Community2' has cardinality 0..*, and from 'persons_TownHall', the role 'persons_TownHall' has cardinality 0..*.
+An association connects 'persons_Association' and 'persons_Community'. From 'persons_Association', the role 'persons_Association' has cardinality 0..*, and from 'persons_Community', the role 'persons_Community4' has cardinality 0..*.
+An association connects 'persons_TownHall' and 'persons_Person'. From 'persons_TownHall', the role 'persons_TownHall6' has cardinality 0..*, and from 'persons_Person', the role 'persons_Person7' has cardinality 0..*.
+An association connects 'persons_Committee' and 'persons_TownHall'. From 'persons_Committee', the role 'persons_Committee' has cardinality 0..*, and from 'persons_TownHall', the role 'persons_TownHall9' has cardinality 0..*.
+An association connects 'persons_TownHall' and 'persons_District'. From 'persons_TownHall', the role 'persons_TownHall11' has cardinality 0..*, and from 'persons_District', the role 'persons_District' has cardinality 0..*.
+An association connects 'persons_Association' and 'persons_Committee'. From 'persons_Association', the role 'persons_Association13' has cardinality 0..*, and from 'persons_Committee', the role 'persons_Committee14' has cardinality 0..*.
+An association connects 'persons_District' and 'persons_Facility'. From 'persons_District', the role 'persons_District16' has cardinality 0..*, and from 'persons_Facility', the role 'persons_Facility' has cardinality 0..*.
+An association connects 'persons_Facility' and 'persons_Person'. From 'persons_Facility', the role 'persons_Facility18' has cardinality 0..*, and from 'persons_Person', the role 'persons_Person19' has cardinality 0..*.

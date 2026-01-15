@@ -1,0 +1,113 @@
+The domain model 'Univerity' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'Univerity_Person' represents an important domain concept.
+It has the following attributes: 'Email', which is of type str; 'Name', which is of type str.
+
+'Univerity_University' represents an important domain concept.
+It does not declare any attributes.
+
+'uPerson' represents an important domain concept.
+It does not declare any attributes.
+
+'Univerity_uncertainty_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Univerity_uncertainty_aCourses' represents an important domain concept.
+It does not declare any attributes.
+
+'Univerity_uncertainty_uCourses' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_Univerity_University' represents an important domain concept.
+It does not declare any attributes.
+
+'Univerity_uncertainty_UData' represents an important domain concept.
+It has the following attributes: 'utype', which is of type str; 'name', which is of type str.
+
+'uncertainty_aCourses' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_aUniversity' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_UData' represents an important domain concept.
+It does not declare any attributes.
+
+'Univerity_uncertainty_uUniversity' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uCourses' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_aPerson' represents an important domain concept.
+It does not declare any attributes.
+
+'aPerson' represents an important domain concept.
+It does not declare any attributes.
+
+'aCourses' represents an important domain concept.
+It does not declare any attributes.
+
+'Univerity_uncertainty_uPerson' represents an important domain concept.
+It does not declare any attributes.
+
+'Univerity_uncertainty_aUniversity' represents an important domain concept.
+It does not declare any attributes.
+
+'uncertainty_Univerity_Courses' represents an important domain concept.
+It does not declare any attributes.
+
+'Univerity_Courses' represents an important domain concept.
+It has the following attributes: 'Semester', which is of type str; 'Name', which is of type str; 'CFU', which is of type int.
+
+'uncertainty_Univerity_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'uUniversity' represents an important domain concept.
+It does not declare any attributes.
+
+'Univerity_uncertainty_aPerson' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OperatorType' defines the following possible values: 'OR', 'XOR', 'AND'.
+
+The model also captures inheritance relationships between classes.
+The class 'Univerity_Courses' is a specialization of 'uncertainty_ModelElement'.
+The class 'Univerity_Courses' is a specialization of 'uncertainty_aCourses'.
+The class 'Univerity_Person' is a specialization of 'uncertainty_ModelElement'.
+The class 'Univerity_Person' is a specialization of 'uncertainty_aPerson'.
+The class 'Univerity_University' is a specialization of 'uncertainty_ModelElement'.
+The class 'Univerity_University' is a specialization of 'uncertainty_aUniversity'.
+The class 'Univerity_uncertainty_uCourses' is a specialization of 'uncertainty_aCourses'.
+The class 'Univerity_uncertainty_uCourses' is a specialization of 'uncertainty_UData'.
+The class 'Univerity_uncertainty_uPerson' is a specialization of 'uncertainty_aPerson'.
+The class 'Univerity_uncertainty_uPerson' is a specialization of 'uncertainty_UData'.
+The class 'Univerity_uncertainty_uUniversity' is a specialization of 'uncertainty_aUniversity'.
+The class 'Univerity_uncertainty_uUniversity' is a specialization of 'uncertainty_UData'.
+
+Relationships between classes are modeled using associations.
+An association connects 'aCourses' and 'Univerity_Courses'. From 'aCourses', the role 'aCourses' has cardinality 0..*, and from 'Univerity_Courses', the role 'Univerity_Courses' has cardinality 0..*.
+An association connects 'Univerity_Courses' and 'aPerson'. From 'Univerity_Courses', the role 'Univerity_Courses2' has cardinality 0..*, and from 'aPerson', the role 'aPerson' has cardinality 0..*.
+An association connects 'Univerity_Courses' and 'aPerson'. From 'Univerity_Courses', the role 'Univerity_Courses4' has cardinality 0..*, and from 'aPerson', the role 'aPerson5' has cardinality 0..*.
+An association connects 'aPerson' and 'Univerity_Person'. From 'aPerson', the role 'aPerson7' has cardinality 0..*, and from 'Univerity_Person', the role 'Univerity_Person' has cardinality 0..*.
+An association connects 'aCourses' and 'Univerity_University'. From 'aCourses', the role 'aCourses9' has cardinality 0..*, and from 'Univerity_University', the role 'Univerity_University' has cardinality 0..*.
+An association connects 'Univerity_uncertainty_ModelElement' and 'ModelElement'. From 'Univerity_uncertainty_ModelElement', the role 'Univerity_uncertainty_ModelElement' has cardinality 0..*, and from 'ModelElement', the role 'ModelElement' has cardinality 0..*.
+An association connects 'ModelElement' and 'Univerity_uncertainty_ModelElement'. From 'ModelElement', the role 'ModelElement13' has cardinality 0..*, and from 'Univerity_uncertainty_ModelElement', the role 'Univerity_uncertainty_ModelElement12' has cardinality 0..*.
+An association connects 'uncertainty_Univerity_Courses' and 'Univerity_uncertainty_uCourses'. From 'uncertainty_Univerity_Courses', the role 'uncertainty_Univerity_Courses' has cardinality 0..*, and from 'Univerity_uncertainty_uCourses', the role 'Univerity_uncertainty_uCourses' has cardinality 0..*.
+An association connects 'uncertainty_Univerity_Courses' and 'Univerity_uncertainty_uCourses'. From 'uncertainty_Univerity_Courses', the role 'uncertainty_Univerity_Courses17' has cardinality 0..*, and from 'Univerity_uncertainty_uCourses', the role 'Univerity_uncertainty_uCourses16' has cardinality 0..*.
+An association connects 'Univerity_uncertainty_uCourses' and 'uCourses'. From 'Univerity_uncertainty_uCourses', the role 'Univerity_uncertainty_uCourses19' has cardinality 0..*, and from 'uCourses', the role 'uCourses' has cardinality 0..*.
+An association connects 'Univerity_uncertainty_uPerson' and 'uncertainty_Univerity_Person'. From 'Univerity_uncertainty_uPerson', the role 'Univerity_uncertainty_uPerson' has cardinality 0..*, and from 'uncertainty_Univerity_Person', the role 'uncertainty_Univerity_Person' has cardinality 0..*.
+An association connects 'Univerity_uncertainty_uPerson' and 'uncertainty_Univerity_Person'. From 'Univerity_uncertainty_uPerson', the role 'Univerity_uncertainty_uPerson22' has cardinality 0..*, and from 'uncertainty_Univerity_Person', the role 'uncertainty_Univerity_Person23' has cardinality 0..*.
+An association connects 'Univerity_uncertainty_uPerson' and 'uPerson'. From 'Univerity_uncertainty_uPerson', the role 'Univerity_uncertainty_uPerson25' has cardinality 0..*, and from 'uPerson', the role 'uPerson' has cardinality 0..*.
+An association connects 'uncertainty_Univerity_University' and 'Univerity_uncertainty_uUniversity'. From 'uncertainty_Univerity_University', the role 'uncertainty_Univerity_University' has cardinality 0..*, and from 'Univerity_uncertainty_uUniversity', the role 'Univerity_uncertainty_uUniversity' has cardinality 0..*.
+An association connects 'uncertainty_Univerity_University' and 'Univerity_uncertainty_uUniversity'. From 'uncertainty_Univerity_University', the role 'uncertainty_Univerity_University29' has cardinality 0..*, and from 'Univerity_uncertainty_uUniversity', the role 'Univerity_uncertainty_uUniversity28' has cardinality 0..*.
+An association connects 'Univerity_uncertainty_uUniversity' and 'uUniversity'. From 'Univerity_uncertainty_uUniversity', the role 'Univerity_uncertainty_uUniversity31' has cardinality 0..*, and from 'uUniversity', the role 'uUniversity' has cardinality 0..*.

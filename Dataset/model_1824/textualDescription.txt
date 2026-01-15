@@ -1,0 +1,76 @@
+The domain model 'Documentation' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'Documentation_InformalTableValueRow' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentation_EmphasisValue' represents an important domain concept.
+It has the following attributes: 'role', which is of type str; 'value', which is of type str.
+
+'ParagraphValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentation_Section' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'Documentation_InformalTableValueHead' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentation_InformalTableValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentation_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'Paragraph' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentation_ItemizedListValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentation_XRefValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentation_TextualValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Documentation_InformalTableValueBody' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentation_InformalTableValueEntry' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Documentation_InformalTableValueGroup' represents an important domain concept.
+It has one attribute: 'cols', which is of type int.
+
+'Documentation_ItemizedListValueItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentation_ParagraphValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Documentation_Paragraph' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Documentation_TextualValue' is a specialization of 'ParagraphValue'.
+The class 'Documentation_ItemizedListValue' is a specialization of 'ParagraphValue'.
+The class 'Documentation_ItemizedListValueItem' is a specialization of 'Paragraph'.
+The class 'Documentation_EmphasisValue' is a specialization of 'ParagraphValue'.
+The class 'Documentation_XRefValue' is a specialization of 'ParagraphValue'.
+The class 'Documentation_InformalTableValue' is a specialization of 'ParagraphValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Documentation_Section' and 'Documentation_Book'. From 'Documentation_Section', the role 'Documentation_Section' has cardinality 0..*, and from 'Documentation_Book', the role 'Documentation_Book' has cardinality 0..*.
+An association connects 'Documentation_ParagraphValue' and 'Documentation_Paragraph'. From 'Documentation_ParagraphValue', the role 'Documentation_ParagraphValue' has cardinality 0..*, and from 'Documentation_Paragraph', the role 'Documentation_Paragraph' has cardinality 0..*.
+An association connects 'Documentation_Section' and 'Documentation_Section'. From 'Documentation_Section', the role 'Documentation_Section4' has cardinality 0..*, and from 'Documentation_Section', the role 'Documentation_Section2' has cardinality 0..*.
+An association connects 'Documentation_Section' and 'Documentation_Paragraph'. From 'Documentation_Section', the role 'Documentation_Section6' has cardinality 0..*, and from 'Documentation_Paragraph', the role 'Documentation_Paragraph7' has cardinality 0..*.
+An association connects 'Documentation_ItemizedListValueItem' and 'Documentation_ItemizedListValue'. From 'Documentation_ItemizedListValueItem', the role 'Documentation_ItemizedListValueItem' has cardinality 0..*, and from 'Documentation_ItemizedListValue', the role 'Documentation_ItemizedListValue' has cardinality 0..*.
+An association connects 'Documentation_Section' and 'Documentation_XRefValue'. From 'Documentation_Section', the role 'Documentation_Section10' has cardinality 0..*, and from 'Documentation_XRefValue', the role 'Documentation_XRefValue' has cardinality 0..*.
+An association connects 'Documentation_InformalTableValue' and 'Documentation_InformalTableValueGroup'. From 'Documentation_InformalTableValue', the role 'Documentation_InformalTableValue' has cardinality 0..*, and from 'Documentation_InformalTableValueGroup', the role 'Documentation_InformalTableValueGroup' has cardinality 0..*.
+An association connects 'Documentation_InformalTableValueGroup' and 'Documentation_InformalTableValueHead'. From 'Documentation_InformalTableValueGroup', the role 'Documentation_InformalTableValueGroup13' has cardinality 0..*, and from 'Documentation_InformalTableValueHead', the role 'Documentation_InformalTableValueHead' has cardinality 0..*.
+An association connects 'Documentation_InformalTableValueBody' and 'Documentation_InformalTableValueGroup'. From 'Documentation_InformalTableValueBody', the role 'Documentation_InformalTableValueBody' has cardinality 0..*, and from 'Documentation_InformalTableValueGroup', the role 'Documentation_InformalTableValueGroup15' has cardinality 0..*.
+An association connects 'Documentation_InformalTableValueHead' and 'Documentation_InformalTableValueRow'. From 'Documentation_InformalTableValueHead', the role 'Documentation_InformalTableValueHead17' has cardinality 0..*, and from 'Documentation_InformalTableValueRow', the role 'Documentation_InformalTableValueRow' has cardinality 0..*.
+An association connects 'Documentation_InformalTableValueBody' and 'Documentation_InformalTableValueRow'. From 'Documentation_InformalTableValueBody', the role 'Documentation_InformalTableValueBody19' has cardinality 0..*, and from 'Documentation_InformalTableValueRow', the role 'Documentation_InformalTableValueRow20' has cardinality 0..*.
+An association connects 'Documentation_InformalTableValueEntry' and 'Documentation_InformalTableValueRow'. From 'Documentation_InformalTableValueEntry', the role 'Documentation_InformalTableValueEntry' has cardinality 0..*, and from 'Documentation_InformalTableValueRow', the role 'Documentation_InformalTableValueRow22' has cardinality 0..*.

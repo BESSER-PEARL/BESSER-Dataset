@@ -1,0 +1,13 @@
+The domain model 'pdb2' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'pdb2_Database' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pdb2_Person' represents an important domain concept.
+It has the following attributes: 'placeOfBirth', which is of type str; 'incrementalID', which is of type str; 'name', which is of type str; 'birthday', which is of type str; 'id', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'pdb2_Person' and 'pdb2_Database'. From 'pdb2_Person', the role 'Person' has cardinality 0..*, and from 'pdb2_Database', the role 'database' has cardinality 0..*.
+An association connects 'pdb2_Person' and 'pdb2_Database'. From 'pdb2_Person', the role 'persons' has cardinality 0..*, and from 'pdb2_Database', the role 'Database' has cardinality 0..*.

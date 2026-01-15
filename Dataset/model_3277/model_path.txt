@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/MaxJu/emfGmfExp/plugins/de.maxju.sm/model/data.ecore

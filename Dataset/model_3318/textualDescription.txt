@@ -1,0 +1,219 @@
+The domain model 'java' describes the core structural elements and their relationships within the system.
+
+The model defines 43 main class(es).
+
+'java_Parameter_list' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Variable_declarator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_Bit_Expression_NR' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Compilation_unit' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Return_value' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_Parameter_list_method_call' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'parameters', which is of type str.
+
+'java_Do_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Literal_Expression' represents an important domain concept.
+It has the following attributes: 'exp1', which is of type int; 'string', which is of type str; 'exp', which is of type str; 'char', which is of type str.
+
+'java_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_For_Statement' represents an important domain concept.
+It has one attribute: 'pv', which is of type str.
+
+'java_Static_initializer' represents an important domain concept.
+It has one attribute: 'static', which is of type str.
+
+'Return_value' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Interface_declaration' represents an important domain concept.
+It has the following attributes: 'interfaceName', which is of type str; 'extend', which is of type str; 'extends', which is of type str; 'modifiers', which is of type str.
+
+'java_Creating_Expression' represents an important domain concept.
+It has the following attributes: 'className', which is of type str; 'typeSpecifier', which is of type str.
+
+'java_Variable_declaration' represents an important domain concept.
+It has one attribute: 'modifiers', which is of type str.
+
+'java_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_Statement_block' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Import_statement' represents an important domain concept.
+It has the following attributes: 'packagename', which is of type str; 'classname', which is of type str.
+
+'java_Class_declaration' represents an important domain concept.
+It has the following attributes: 'implement', which is of type str; 'className', which is of type str; 'extend', which is of type str; 'implements', which is of type str; 'modifiers', which is of type str.
+
+'java_Constructor_declaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'modifiers', which is of type str.
+
+'java_Cast_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Arg_List' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Statement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_Variable_initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Expression' represents an important domain concept.
+It has the following attributes: 'super', which is of type str; 'name', which is of type str; 'null', which is of type str; 'this', which is of type str.
+
+'java_Method_call' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Type_declaration' represents an important domain concept.
+It has one attribute: 'doc', which is of type str.
+
+'java_While_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Field_declaration' represents an important domain concept.
+It has the following attributes: 'doc', which is of type str; 'debug', which is of type str.
+
+'java_Return_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Method_declaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'modifiers', which is of type str; 'debug', which is of type str.
+
+'java_Try_statement' represents an important domain concept.
+It has the following attributes: 'catchs', which is of type str; 'finally', which is of type str; 'try', which is of type str.
+
+'java_Logical_Expression_NR' represents an important domain concept.
+It has the following attributes: 'true', which is of type str; 'false', which is of type str.
+
+'java_Switch_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Numeric_Expression_NR' represents an important domain concept.
+It has one attribute: 'sinal_numeric', which is of type str.
+
+'java_Package_statement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'java_Expression_aux' represents an important domain concept.
+It has the following attributes: 'testingSign', which is of type str; 'stringSign', which is of type str; 'numericSign', which is of type str; 'bitSign', which is of type str; 'sgin', which is of type str; 'logicalSign', which is of type str; 'name', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Ampersand_Rule' represents an important domain concept.
+It has the following attributes: 'a2', which is of type str; 'a1', which is of type str.
+
+'java_Head' represents an important domain concept.
+It does not declare any attributes.
+
+'java_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'java_Float_Literal' represents an important domain concept.
+It has the following attributes: 'decimalDigits1', which is of type int; 'floatTypeSufix', which is of type str; 'decimalDigits2', which is of type int; 'exp', which is of type str.
+
+'java_If_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'java_Method_call' is a specialization of 'Return_value'.
+The class 'java_Literal_Expression' is a specialization of 'Return_value'.
+The class 'java_Statement_block' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'java_Head' and 'java_Compilation_unit'. From 'java_Head', the role 'java_Head' has cardinality 0..*, and from 'java_Compilation_unit', the role 'java_Compilation_unit' has cardinality 0..*.
+An association connects 'java_Compilation_unit' and 'java_Package_statement'. From 'java_Compilation_unit', the role 'java_Compilation_unit2' has cardinality 0..*, and from 'java_Package_statement', the role 'java_Package_statement' has cardinality 0..*.
+An association connects 'java_Import_statement' and 'java_Compilation_unit'. From 'java_Import_statement', the role 'java_Import_statement' has cardinality 0..*, and from 'java_Compilation_unit', the role 'java_Compilation_unit4' has cardinality 0..*.
+An association connects 'java_Type_declaration' and 'java_Compilation_unit'. From 'java_Type_declaration', the role 'java_Type_declaration' has cardinality 0..*, and from 'java_Compilation_unit', the role 'java_Compilation_unit6' has cardinality 0..*.
+An association connects 'java_EObject' and 'java_Type_declaration'. From 'java_EObject', the role 'java_EObject' has cardinality 0..*, and from 'java_Type_declaration', the role 'java_Type_declaration8' has cardinality 0..*.
+An association connects 'java_Interface_declaration' and 'java_Field_declaration'. From 'java_Interface_declaration', the role 'java_Interface_declaration' has cardinality 0..*, and from 'java_Field_declaration', the role 'java_Field_declaration' has cardinality 0..*.
+An association connects 'java_Class_declaration' and 'java_Field_declaration'. From 'java_Class_declaration', the role 'java_Class_declaration' has cardinality 0..*, and from 'java_Field_declaration', the role 'java_Field_declaration11' has cardinality 0..*.
+An association connects 'java_Field_declaration' and 'java_EObject'. From 'java_Field_declaration', the role 'java_Field_declaration13' has cardinality 0..*, and from 'java_EObject', the role 'java_EObject14' has cardinality 0..*.
+An association connects 'java_Method_declaration' and 'java_Type'. From 'java_Method_declaration', the role 'java_Method_declaration' has cardinality 0..*, and from 'java_Type', the role 'java_Type' has cardinality 0..*.
+An association connects 'java_Method_declaration' and 'java_Parameter_list'. From 'java_Method_declaration', the role 'java_Method_declaration17' has cardinality 0..*, and from 'java_Parameter_list', the role 'java_Parameter_list' has cardinality 0..*.
+An association connects 'java_Method_declaration' and 'java_Statement_block'. From 'java_Method_declaration', the role 'java_Method_declaration19' has cardinality 0..*, and from 'java_Statement_block', the role 'java_Statement_block' has cardinality 0..*.
+An association connects 'java_Parameter_list_method_call' and 'java_Method_call'. From 'java_Parameter_list_method_call', the role 'java_Parameter_list_method_call' has cardinality 0..*, and from 'java_Method_call', the role 'java_Method_call' has cardinality 0..*.
+An association connects 'java_Constructor_declaration' and 'java_Parameter_list'. From 'java_Constructor_declaration', the role 'java_Constructor_declaration' has cardinality 0..*, and from 'java_Parameter_list', the role 'java_Parameter_list22' has cardinality 0..*.
+An association connects 'java_Constructor_declaration' and 'java_Statement_block'. From 'java_Constructor_declaration', the role 'java_Constructor_declaration24' has cardinality 0..*, and from 'java_Statement_block', the role 'java_Statement_block25' has cardinality 0..*.
+An association connects 'java_Parameter_list' and 'java_Parameter'. From 'java_Parameter_list', the role 'java_Parameter_list27' has cardinality 0..*, and from 'java_Parameter', the role 'java_Parameter' has cardinality 0..*.
+An association connects 'java_Parameter' and 'java_Parameter_list'. From 'java_Parameter', the role 'java_Parameter30' has cardinality 0..*, and from 'java_Parameter_list', the role 'java_Parameter_list29' has cardinality 0..*.
+An association connects 'java_Type' and 'java_Parameter'. From 'java_Type', the role 'java_Type33' has cardinality 0..*, and from 'java_Parameter', the role 'java_Parameter32' has cardinality 0..*.
+An association connects 'java_Type' and 'java_Variable_declaration'. From 'java_Type', the role 'java_Type35' has cardinality 0..*, and from 'java_Variable_declaration', the role 'java_Variable_declaration' has cardinality 0..*.
+An association connects 'java_Variable_declaration' and 'java_Variable_declarator'. From 'java_Variable_declaration', the role 'java_Variable_declaration37' has cardinality 0..*, and from 'java_Variable_declarator', the role 'java_Variable_declarator' has cardinality 0..*.
+An association connects 'java_Variable_declarator' and 'java_Variable_declaration'. From 'java_Variable_declarator', the role 'java_Variable_declarator40' has cardinality 0..*, and from 'java_Variable_declaration', the role 'java_Variable_declaration39' has cardinality 0..*.
+An association connects 'java_Variable_declarator' and 'java_Variable_initializer'. From 'java_Variable_declarator', the role 'java_Variable_declarator42' has cardinality 0..*, and from 'java_Variable_initializer', the role 'java_Variable_initializer' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Variable_initializer'. From 'java_Expression', the role 'java_Expression' has cardinality 0..*, and from 'java_Variable_initializer', the role 'java_Variable_initializer44' has cardinality 0..*.
+An association connects 'java_Variable_initializer' and 'java_Variable_initializer'. From 'java_Variable_initializer', the role 'java_Variable_initializer45' has cardinality 0..*, and from 'java_Variable_initializer', the role 'java_Variable_initializer47' has cardinality 0..*.
+An association connects 'java_Variable_initializer' and 'java_Variable_initializer'. From 'java_Variable_initializer', the role 'java_Variable_initializer48' has cardinality 0..*, and from 'java_Variable_initializer', the role 'java_Variable_initializer50' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Numeric_Expression_NR'. From 'java_Expression', the role 'java_Expression52' has cardinality 0..*, and from 'java_Numeric_Expression_NR', the role 'java_Numeric_Expression_NR' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Expression_aux'. From 'java_Expression', the role 'java_Expression54' has cardinality 0..*, and from 'java_Expression_aux', the role 'java_Expression_aux' has cardinality 0..*.
+An association connects 'java_Logical_Expression_NR' and 'java_Expression'. From 'java_Logical_Expression_NR', the role 'java_Logical_Expression_NR' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression56' has cardinality 0..*.
+An association connects 'java_Bit_Expression_NR' and 'java_Expression'. From 'java_Bit_Expression_NR', the role 'java_Bit_Expression_NR' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression58' has cardinality 0..*.
+An association connects 'java_Cast_Expression' and 'java_Expression'. From 'java_Cast_Expression', the role 'java_Cast_Expression' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression60' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Creating_Expression'. From 'java_Expression', the role 'java_Expression62' has cardinality 0..*, and from 'java_Creating_Expression', the role 'java_Creating_Expression' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Literal_Expression'. From 'java_Expression', the role 'java_Expression64' has cardinality 0..*, and from 'java_Literal_Expression', the role 'java_Literal_Expression' has cardinality 0..*.
+An association connects 'java_Expression_aux' and 'java_Arg_List'. From 'java_Expression_aux', the role 'java_Expression_aux66' has cardinality 0..*, and from 'java_Arg_List', the role 'java_Arg_List' has cardinality 0..*.
+An association connects 'java_Expression_aux' and 'java_Expression_aux'. From 'java_Expression_aux', the role 'java_Expression_aux69' has cardinality 0..*, and from 'java_Expression_aux', the role 'java_Expression_aux67' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Expression_aux'. From 'java_Expression', the role 'java_Expression72' has cardinality 0..*, and from 'java_Expression_aux', the role 'java_Expression_aux71' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Expression_aux'. From 'java_Expression', the role 'java_Expression75' has cardinality 0..*, and from 'java_Expression_aux', the role 'java_Expression_aux74' has cardinality 0..*.
+An association connects 'java_Expression_aux' and 'java_Expression'. From 'java_Expression_aux', the role 'java_Expression_aux77' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression78' has cardinality 0..*.
+An association connects 'java_Expression_aux' and 'java_Ampersand_Rule'. From 'java_Expression_aux', the role 'java_Expression_aux80' has cardinality 0..*, and from 'java_Ampersand_Rule', the role 'java_Ampersand_Rule' has cardinality 0..*.
+An association connects 'java_Expression_aux' and 'java_Expression'. From 'java_Expression_aux', the role 'java_Expression_aux82' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression83' has cardinality 0..*.
+An association connects 'java_Float_Literal' and 'java_Literal_Expression'. From 'java_Float_Literal', the role 'java_Float_Literal' has cardinality 0..*, and from 'java_Literal_Expression', the role 'java_Literal_Expression85' has cardinality 0..*.
+An association connects 'java_Arg_List' and 'java_Creating_Expression'. From 'java_Arg_List', the role 'java_Arg_List88' has cardinality 0..*, and from 'java_Creating_Expression', the role 'java_Creating_Expression87' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Creating_Expression'. From 'java_Expression', the role 'java_Expression91' has cardinality 0..*, and from 'java_Creating_Expression', the role 'java_Creating_Expression90' has cardinality 0..*.
+An association connects 'java_Cast_Expression' and 'java_Type'. From 'java_Cast_Expression', the role 'java_Cast_Expression93' has cardinality 0..*, and from 'java_Type', the role 'java_Type94' has cardinality 0..*.
+An association connects 'java_Cast_Expression' and 'java_Expression'. From 'java_Cast_Expression', the role 'java_Cast_Expression96' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression97' has cardinality 0..*.
+An association connects 'java_Bit_Expression_NR' and 'java_Expression'. From 'java_Bit_Expression_NR', the role 'java_Bit_Expression_NR99' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression100' has cardinality 0..*.
+An association connects 'java_Logical_Expression_NR' and 'java_Expression'. From 'java_Logical_Expression_NR', the role 'java_Logical_Expression_NR102' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression103' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Arg_List'. From 'java_Expression', the role 'java_Expression106' has cardinality 0..*, and from 'java_Arg_List', the role 'java_Arg_List105' has cardinality 0..*.
+An association connects 'java_Arg_List' and 'java_Expression'. From 'java_Arg_List', the role 'java_Arg_List108' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression109' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Numeric_Expression_NR'. From 'java_Expression', the role 'java_Expression112' has cardinality 0..*, and from 'java_Numeric_Expression_NR', the role 'java_Numeric_Expression_NR111' has cardinality 0..*.
+An association connects 'java_Static_initializer' and 'java_Statement_block'. From 'java_Static_initializer', the role 'java_Static_initializer' has cardinality 0..*, and from 'java_Statement_block', the role 'java_Statement_block114' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_Statement_block'. From 'java_Statement', the role 'java_Statement' has cardinality 0..*, and from 'java_Statement_block', the role 'java_Statement_block116' has cardinality 0..*.
+An association connects 'java_Return_Statement' and 'java_Statement'. From 'java_Return_Statement', the role 'java_Return_Statement' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement118' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_Variable_declaration'. From 'java_Statement', the role 'java_Statement120' has cardinality 0..*, and from 'java_Variable_declaration', the role 'java_Variable_declaration121' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_Expression'. From 'java_Statement', the role 'java_Statement123' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression124' has cardinality 0..*.
+An association connects 'java_If_Statement' and 'java_Statement'. From 'java_If_Statement', the role 'java_If_Statement' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement126' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_Do_Statement'. From 'java_Statement', the role 'java_Statement128' has cardinality 0..*, and from 'java_Do_Statement', the role 'java_Do_Statement' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_While_Statement'. From 'java_Statement', the role 'java_Statement130' has cardinality 0..*, and from 'java_While_Statement', the role 'java_While_Statement' has cardinality 0..*.
+An association connects 'java_For_Statement' and 'java_Statement'. From 'java_For_Statement', the role 'java_For_Statement' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement132' has cardinality 0..*.
+An association connects 'java_Switch_Statement' and 'java_Statement'. From 'java_Switch_Statement', the role 'java_Switch_Statement' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement134' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_Try_statement'. From 'java_Statement', the role 'java_Statement136' has cardinality 0..*, and from 'java_Try_statement', the role 'java_Try_statement' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_Statement'. From 'java_Statement', the role 'java_Statement139' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement137' has cardinality 0..*.
+An association connects 'java_Switch_Statement' and 'java_Expression'. From 'java_Switch_Statement', the role 'java_Switch_Statement141' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression142' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_Switch_Statement'. From 'java_Expression', the role 'java_Expression145' has cardinality 0..*, and from 'java_Switch_Statement', the role 'java_Switch_Statement144' has cardinality 0..*.
+An association connects 'java_Switch_Statement' and 'java_Statement'. From 'java_Switch_Statement', the role 'java_Switch_Statement147' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement148' has cardinality 0..*.
+An association connects 'java_Variable_declaration' and 'java_For_Statement'. From 'java_Variable_declaration', the role 'java_Variable_declaration151' has cardinality 0..*, and from 'java_For_Statement', the role 'java_For_Statement150' has cardinality 0..*.
+An association connects 'java_For_Statement' and 'java_Expression'. From 'java_For_Statement', the role 'java_For_Statement153' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression154' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_For_Statement'. From 'java_Expression', the role 'java_Expression157' has cardinality 0..*, and from 'java_For_Statement', the role 'java_For_Statement156' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_For_Statement'. From 'java_Expression', the role 'java_Expression160' has cardinality 0..*, and from 'java_For_Statement', the role 'java_For_Statement159' has cardinality 0..*.
+An association connects 'java_For_Statement' and 'java_Statement'. From 'java_For_Statement', the role 'java_For_Statement162' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement163' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_While_Statement'. From 'java_Expression', the role 'java_Expression166' has cardinality 0..*, and from 'java_While_Statement', the role 'java_While_Statement165' has cardinality 0..*.
+An association connects 'java_While_Statement' and 'java_Statement'. From 'java_While_Statement', the role 'java_While_Statement168' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement169' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_Do_Statement'. From 'java_Statement', the role 'java_Statement172' has cardinality 0..*, and from 'java_Do_Statement', the role 'java_Do_Statement171' has cardinality 0..*.
+An association connects 'java_Do_Statement' and 'java_Expression'. From 'java_Do_Statement', the role 'java_Do_Statement174' has cardinality 0..*, and from 'java_Expression', the role 'java_Expression175' has cardinality 0..*.
+An association connects 'java_Expression' and 'java_If_Statement'. From 'java_Expression', the role 'java_Expression178' has cardinality 0..*, and from 'java_If_Statement', the role 'java_If_Statement177' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_If_Statement'. From 'java_Statement', the role 'java_Statement181' has cardinality 0..*, and from 'java_If_Statement', the role 'java_If_Statement180' has cardinality 0..*.
+An association connects 'java_If_Statement' and 'java_Statement'. From 'java_If_Statement', the role 'java_If_Statement183' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement184' has cardinality 0..*.
+An association connects 'java_Return_Statement' and 'java_Return_value'. From 'java_Return_Statement', the role 'java_Return_Statement186' has cardinality 0..*, and from 'java_Return_value', the role 'java_Return_value' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_Try_statement'. From 'java_Statement', the role 'java_Statement189' has cardinality 0..*, and from 'java_Try_statement', the role 'java_Try_statement188' has cardinality 0..*.
+An association connects 'java_Try_statement' and 'java_Parameter'. From 'java_Try_statement', the role 'java_Try_statement191' has cardinality 0..*, and from 'java_Parameter', the role 'java_Parameter192' has cardinality 0..*.
+An association connects 'java_Statement' and 'java_Try_statement'. From 'java_Statement', the role 'java_Statement195' has cardinality 0..*, and from 'java_Try_statement', the role 'java_Try_statement194' has cardinality 0..*.
+An association connects 'java_Try_statement' and 'java_Statement'. From 'java_Try_statement', the role 'java_Try_statement197' has cardinality 0..*, and from 'java_Statement', the role 'java_Statement198' has cardinality 0..*.

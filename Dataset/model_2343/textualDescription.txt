@@ -1,0 +1,24 @@
+The domain model 'grudi' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'grudi_PersonInfo' represents an important domain concept.
+It has the following attributes: 'gender', which is of type str; 'id', which is of type str; 'userName', which is of type str; 'phoneNumber', which is of type str; 'name', which is of type str.
+
+'grudi_Person' represents an important domain concept.
+It has the following attributes: 'gender', which is of type str; 'versionNumber', which is of type str; 'password', which is of type str; 'phoneNumber', which is of type str; 'name', which is of type str; 'email', which is of type str; 'username', which is of type str; 'address', which is of type str; 'id', which is of type str.
+
+'grudi_Team' represents an important domain concept.
+It has the following attributes: 'versionNumber', which is of type str; 'name', which is of type str; 'id', which is of type str.
+
+'grudi_TeamLine' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'id', which is of type str; 'versionNumber', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TeamPersonKind' defines the following possible values: 'member', 'captain'.
+The enumeration 'Gender' defines the following possible values: 'unknown', 'female', 'male'.
+
+Relationships between classes are modeled using associations.
+An association connects 'grudi_TeamLine' and 'grudi_Team'. From 'grudi_TeamLine', the role 'TeamLine' has cardinality 0..*, and from 'grudi_Team', the role 'team' has cardinality 0..*.
+An association connects 'grudi_Team' and 'grudi_TeamLine'. From 'grudi_Team', the role 'Team' has cardinality 0..*, and from 'grudi_TeamLine', the role 'lines' has cardinality 0..*.
+An association connects 'grudi_TeamLine' and 'grudi_PersonInfo'. From 'grudi_TeamLine', the role 'grudi_TeamLine' has cardinality 0..*, and from 'grudi_PersonInfo', the role 'grudi_PersonInfo' has cardinality 0..*.

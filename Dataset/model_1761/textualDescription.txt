@@ -1,0 +1,34 @@
+The domain model 'Book' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'Book_Paragraph' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'Book_Author' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Book_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'Book_Section' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'Book_Book' represents an important domain concept.
+It has the following attributes: 'isbn', which is of type str; 'name', which is of type str; 'nbpages', which is of type int.
+
+'Chapter' represents an important domain concept.
+It does not declare any attributes.
+
+'Book_Chapter' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Book_Section' is a specialization of 'Chapter'.
+The class 'Book_Paragraph' is a specialization of 'Chapter'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Book_Library' and 'Book_Book'. From 'Book_Library', the role 'Book_Library' has cardinality 0..*, and from 'Book_Book', the role 'Book_Book' has cardinality 0..*.
+An association connects 'Book_Author' and 'Book_Library'. From 'Book_Author', the role 'Book_Author' has cardinality 0..*, and from 'Book_Library', the role 'Book_Library2' has cardinality 0..*.
+An association connects 'Book_Book' and 'Book_Author'. From 'Book_Book', the role 'Book_Book4' has cardinality 0..*, and from 'Book_Author', the role 'Book_Author5' has cardinality 0..*.
+An association connects 'Book_Book' and 'Book_Chapter'. From 'Book_Book', the role 'Book_Book7' has cardinality 0..*, and from 'Book_Chapter', the role 'Book_Chapter' has cardinality 0..*.

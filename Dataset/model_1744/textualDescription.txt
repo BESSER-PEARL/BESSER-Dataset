@@ -1,0 +1,35 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'library_Library' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'library_CD' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Customer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Magazine' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Borrowable' represents an important domain concept.
+It has the following attributes: 'copiesAvailable', which is of type int; 'title', which is of type str.
+
+'library_Book' represents an important domain concept.
+It has one attribute: 'author', which is of type str.
+
+'Borrowable' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'library_Book' is a specialization of 'Borrowable'.
+The class 'library_Magazine' is a specialization of 'Borrowable'.
+The class 'library_CD' is a specialization of 'Borrowable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Borrowable' and 'library_Library'. From 'library_Borrowable', the role 'Borrowable' has cardinality 0..*, and from 'library_Library', the role 'library' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Customer'. From 'library_Library', the role 'library_Library' has cardinality 0..*, and from 'library_Customer', the role 'library_Customer' has cardinality 0..*.
+An association connects 'library_Borrowable' and 'library_Customer'. From 'library_Borrowable', the role 'library_Borrowable' has cardinality 0..*, and from 'library_Customer', the role 'library_Customer3' has cardinality 0..*.
+An association connects 'library_Borrowable' and 'library_Library'. From 'library_Borrowable', the role 'borrowables' has cardinality 0..*, and from 'library_Library', the role 'Library' has cardinality 0..*.

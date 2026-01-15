@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ferdjoukh/ATL-UTF/ATLMetrics/Experiment/BibTexML2DocBook/metamodels/output/DocBook.ecore

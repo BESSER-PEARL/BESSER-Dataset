@@ -1,0 +1,44 @@
+The domain model 'e2' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'e2_University' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'e2_Course' represents an important domain concept.
+It has the following attributes: 'Credit', which is of type float; 'ID', which is of type str; 'Name', which is of type str.
+
+'e2_AssignmentSubmission' represents an important domain concept.
+It has the following attributes: 'Comments', which is of type str; 'Assessment', which is of type int.
+
+'e2_Lecture' represents an important domain concept.
+It has the following attributes: 'Date', which is of type date; 'Length', which is of type int.
+
+'e2_LectureContent' represents an important domain concept.
+It has the following attributes: 'Type', which is of type str; 'Material', which is of type str.
+
+'e2_Assingnment' represents an important domain concept.
+It has the following attributes: 'isMandatory', which is of type bool; 'Content', which is of type str; 'Title', which is of type str; 'Deadline', which is of type date; 'Type', which is of type str; 'StartDate', which is of type date.
+
+'e2_Person' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'e2_Group' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'e2_Lecture' and 'e2_LectureContent'. From 'e2_Lecture', the role 'e2_Lecture' has cardinality 0..*, and from 'e2_LectureContent', the role 'e2_LectureContent' has cardinality 0..*.
+An association connects 'e2_Person' and 'e2_AssignmentSubmission'. From 'e2_Person', the role 'e2_Person' has cardinality 0..*, and from 'e2_AssignmentSubmission', the role 'e2_AssignmentSubmission' has cardinality 0..*.
+An association connects 'e2_Course' and 'e2_Person'. From 'e2_Course', the role 'e2_Course' has cardinality 0..*, and from 'e2_Person', the role 'e2_Person3' has cardinality 0..*.
+An association connects 'e2_Course' and 'e2_Person'. From 'e2_Course', the role 'e2_Course5' has cardinality 0..*, and from 'e2_Person', the role 'e2_Person6' has cardinality 0..*.
+An association connects 'e2_Course' and 'e2_Assingnment'. From 'e2_Course', the role 'e2_Course8' has cardinality 0..*, and from 'e2_Assingnment', the role 'e2_Assingnment' has cardinality 0..*.
+An association connects 'e2_Course' and 'e2_Lecture'. From 'e2_Course', the role 'e2_Course10' has cardinality 0..*, and from 'e2_Lecture', the role 'e2_Lecture11' has cardinality 0..*.
+An association connects 'e2_Course' and 'e2_Group'. From 'e2_Course', the role 'e2_Course13' has cardinality 0..*, and from 'e2_Group', the role 'e2_Group' has cardinality 0..*.
+An association connects 'e2_Course' and 'e2_Person'. From 'e2_Course', the role 'e2_Course15' has cardinality 0..*, and from 'e2_Person', the role 'e2_Person16' has cardinality 0..*.
+An association connects 'e2_Group' and 'e2_Person'. From 'e2_Group', the role 'e2_Group18' has cardinality 0..*, and from 'e2_Person', the role 'e2_Person19' has cardinality 0..*.
+An association connects 'e2_AssignmentSubmission' and 'e2_Group'. From 'e2_AssignmentSubmission', the role 'e2_AssignmentSubmission22' has cardinality 0..*, and from 'e2_Group', the role 'e2_Group21' has cardinality 0..*.
+An association connects 'e2_Assingnment' and 'e2_AssignmentSubmission'. From 'e2_Assingnment', the role 'e2_Assingnment25' has cardinality 0..*, and from 'e2_AssignmentSubmission', the role 'e2_AssignmentSubmission24' has cardinality 0..*.
+An association connects 'e2_Person' and 'e2_AssignmentSubmission'. From 'e2_Person', the role 'e2_Person28' has cardinality 0..*, and from 'e2_AssignmentSubmission', the role 'e2_AssignmentSubmission27' has cardinality 0..*.
+An association connects 'e2_University' and 'e2_Person'. From 'e2_University', the role 'e2_University' has cardinality 0..*, and from 'e2_Person', the role 'e2_Person30' has cardinality 0..*.
+An association connects 'e2_Course' and 'e2_University'. From 'e2_Course', the role 'e2_Course33' has cardinality 0..*, and from 'e2_University', the role 'e2_University32' has cardinality 0..*.
+An association connects 'e2_LectureContent' and 'e2_Assingnment'. From 'e2_LectureContent', the role 'e2_LectureContent35' has cardinality 0..*, and from 'e2_Assingnment', the role 'e2_Assingnment36' has cardinality 0..*.

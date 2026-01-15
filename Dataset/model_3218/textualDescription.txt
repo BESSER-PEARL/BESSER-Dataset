@@ -1,0 +1,470 @@
+The domain model 'oogen' describes the core structural elements and their relationships within the system.
+
+The model defines 103 main class(es).
+
+'oogen_OOPackage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'oogen_OOMember' represents an important domain concept.
+It has the following attributes: 'languages', which is of type str; 'static', which is of type bool; 'visibility', which is of type str.
+
+'oogen_OOIntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'oogen_OOOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOModel' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OODefault' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOConstructor' represents an important domain concept.
+It has the following attributes: 'className', which is of type str; 'visibility', which is of type str.
+
+'oogen_OOFunctionCallExpression' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'oogen_OOComparatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOBitwiseAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OONewArray' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOIntegerDivisionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OONotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOTwoOperandAssignableExpression' represents an important domain concept.
+It has one attribute: 'assigned', which is of type bool.
+
+'OOTwoOperandArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOCompoundStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOSwitch' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOVariable' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'transient', which is of type bool.
+
+'oogen_OOMultiplicationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOEnumeration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'options', which is of type str.
+
+'oogen_OOIndexing' represents an important domain concept.
+It does not declare any attributes.
+
+'OOTwoOperandAssignableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOEmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'OOOneOperandArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOBitWiseRightShift' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOLogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOOneOperandArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OODivisionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOFor' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOAdditionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OONotEqualsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOInitializerList' represents an important domain concept.
+It does not declare any attributes.
+
+'OOCompoundStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'OOVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOEqualsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OOArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOFloatLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'oogen_OOModuloExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOWhile' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOVariableDeclarationList' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OONewClass' represents an important domain concept.
+It has one attribute: 'className', which is of type str.
+
+'oogen_OOLessEqualsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOThisLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOPostfixDecrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOBitWiseLeftShift' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOVariableReferenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOLessThanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOBreak' represents an important domain concept.
+It does not declare any attributes.
+
+'OOTwoOperandLogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOLongLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'OOOneOperandLogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOSubtractionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OOExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOContinue' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOBitwiseXorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOPostfixIncrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOBitwiseOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOEmptyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OODoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'oogen_OOStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOType' represents an important domain concept.
+It has the following attributes: 'baseType', which is of type str; 'arrayDimensions', which is of type int; 'collectionType', which is of type str; 'numberOfIndirections', which is of type int.
+
+'oogen_OOStringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'oogen_OOLanguageSpecificExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOPrefixDecrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOTwoOperandArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOPowerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OOComparatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OORootExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OOConditionalStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OODoWhile' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOForEach' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOMethod' represents an important domain concept.
+It has the following attributes: 'languages', which is of type str; 'static', which is of type bool; 'name', which is of type str; 'visibility', which is of type str.
+
+'oogen_OOMinusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOOneOperandLogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OONullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'OOCommentOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOIf' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOCase' represents an important domain concept.
+It does not declare any attributes.
+
+'OOLogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOTypeCast' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOPlusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOTernaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOPrefixIncrementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOConditionalStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOLogicalLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'oogen_OOLanguageSpecificSnippet' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'code', which is of type str.
+
+'oogen_OOBoolLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'oogen_OOComment' represents an important domain concept.
+It has the following attributes: 'isBlockComment', which is of type bool; 'text', which is of type str.
+
+'oogen_OOCommentOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOFieldReferenceExpression' represents an important domain concept.
+It has one attribute: 'fieldName', which is of type str.
+
+'oogen_OOAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOClass' represents an important domain concept.
+It has the following attributes: 'keep', which is of type bool; 'languages', which is of type str; 'name', which is of type str.
+
+'oogen_OOGreaterEqualsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOBracketedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOReturn' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOBitWiseComplement' represents an important domain concept.
+It does not declare any attributes.
+
+'OOStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOGreaterThanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOXorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'oogen_OOTwoOperandLogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OOLanguage' defines the following possible values: 'CPP', 'JAVA'.
+The enumeration 'OOBaseType' defines the following possible values: 'STRING', 'INT', 'DOUBLE', 'LONG', 'OBJECT', 'BOOLEAN', 'BYTE'.
+The enumeration 'OOVisibility' defines the following possible values: 'PACKAGE', 'PROTECTED', 'PUBLIC', 'PRIVATE'.
+The enumeration 'OOCollectionType' defines the following possible values: 'LIST', 'SET', 'NONE'.
+
+The model also captures inheritance relationships between classes.
+The class 'oogen_OOClass' is a specialization of 'OOCommentOwner'.
+The class 'oogen_OOMember' is a specialization of 'OOVariable'.
+The class 'oogen_OOVariable' is a specialization of 'OOStatement'.
+The class 'oogen_OOMethod' is a specialization of 'OOCommentOwner'.
+The class 'oogen_OOStatement' is a specialization of 'OOCommentOwner'.
+The class 'oogen_OOExpression' is a specialization of 'OOStatement'.
+The class 'oogen_OOReturn' is a specialization of 'OOStatement'.
+The class 'oogen_OOArithmeticExpression' is a specialization of 'OOExpression'.
+The class 'oogen_OOIndexing' is a specialization of 'OOExpression'.
+The class 'oogen_OOAssignmentExpression' is a specialization of 'OOExpression'.
+The class 'oogen_OOTwoOperandArithmeticExpression' is a specialization of 'OOArithmeticExpression'.
+The class 'oogen_OOAdditionExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+The class 'oogen_OOSubtractionExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+The class 'oogen_OODivisionExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+The class 'oogen_OOIntegerDivisionExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+The class 'oogen_OOMultiplicationExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+The class 'oogen_OOPowerExpression' is a specialization of 'OOTwoOperandArithmeticExpression'.
+The class 'oogen_OORootExpression' is a specialization of 'OOTwoOperandArithmeticExpression'.
+The class 'oogen_OOBitwiseOrExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+The class 'oogen_OOBitwiseXorExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+The class 'oogen_OOBitwiseAndExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+The class 'oogen_OOLogicalExpression' is a specialization of 'OOExpression'.
+The class 'oogen_OOAndExpression' is a specialization of 'OOTwoOperandLogicalExpression'.
+The class 'oogen_OOOrExpression' is a specialization of 'OOTwoOperandLogicalExpression'.
+The class 'oogen_OOXorExpression' is a specialization of 'OOTwoOperandLogicalExpression'.
+The class 'oogen_OONotExpression' is a specialization of 'OOOneOperandLogicalExpression'.
+The class 'oogen_OOTwoOperandLogicalExpression' is a specialization of 'OOLogicalExpression'.
+The class 'oogen_OOOneOperandLogicalExpression' is a specialization of 'OOLogicalExpression'.
+The class 'oogen_OODoubleLiteral' is a specialization of 'OOArithmeticExpression'.
+The class 'oogen_OOFloatLiteral' is a specialization of 'OOArithmeticExpression'.
+The class 'oogen_OOIntegerLiteral' is a specialization of 'OOArithmeticExpression'.
+The class 'oogen_OOLongLiteral' is a specialization of 'OOArithmeticExpression'.
+The class 'oogen_OOIf' is a specialization of 'OOConditionalStatement'.
+The class 'oogen_OOFor' is a specialization of 'OOConditionalStatement'.
+The class 'oogen_OOConditionalStatement' is a specialization of 'OOStatement'.
+The class 'oogen_OOConditionalStatement' is a specialization of 'OOCompoundStatement'.
+The class 'oogen_OOWhile' is a specialization of 'OOConditionalStatement'.
+The class 'oogen_OODoWhile' is a specialization of 'OOConditionalStatement'.
+The class 'oogen_OOEmptyStatement' is a specialization of 'OOStatement'.
+The class 'oogen_OOForEach' is a specialization of 'OOStatement'.
+The class 'oogen_OOBitWiseLeftShift' is a specialization of 'OOTwoOperandAssignableExpression'.
+The class 'oogen_OOBitWiseRightShift' is a specialization of 'OOTwoOperandAssignableExpression'.
+The class 'oogen_OOBitWiseComplement' is a specialization of 'OOOneOperandArithmeticExpression'.
+The class 'oogen_OOLanguageSpecificExpression' is a specialization of 'OOExpression'.
+The class 'oogen_OOLanguageSpecificExpression' is a specialization of 'OOLogicalExpression'.
+The class 'oogen_OOTypeCast' is a specialization of 'OOExpression'.
+The class 'oogen_OOBoolLiteral' is a specialization of 'OOExpression'.
+The class 'oogen_OONewClass' is a specialization of 'OOExpression'.
+The class 'oogen_OOEqualsExpression' is a specialization of 'OOComparatorExpression'.
+The class 'oogen_OOComparatorExpression' is a specialization of 'OOLogicalExpression'.
+The class 'oogen_OOLogicalLiteral' is a specialization of 'OOLogicalExpression'.
+The class 'oogen_OOGreaterThanExpression' is a specialization of 'OOComparatorExpression'.
+The class 'oogen_OOLessThanExpression' is a specialization of 'OOComparatorExpression'.
+The class 'oogen_OONotEqualsExpression' is a specialization of 'OOComparatorExpression'.
+The class 'oogen_OOGreaterEqualsExpression' is a specialization of 'OOComparatorExpression'.
+The class 'oogen_OOLessEqualsExpression' is a specialization of 'OOComparatorExpression'.
+The class 'oogen_OOCompoundStatement' is a specialization of 'OOStatement'.
+The class 'oogen_OOSwitch' is a specialization of 'OOStatement'.
+The class 'oogen_OOCase' is a specialization of 'OOCompoundStatement'.
+The class 'oogen_OOBreak' is a specialization of 'OOStatement'.
+The class 'oogen_OODefault' is a specialization of 'OOCompoundStatement'.
+The class 'oogen_OOTwoOperandAssignableExpression' is a specialization of 'OOTwoOperandArithmeticExpression'.
+The class 'oogen_OOModuloExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+The class 'oogen_OOContinue' is a specialization of 'OOStatement'.
+The class 'oogen_OOVariableDeclarationList' is a specialization of 'OOStatement'.
+The class 'oogen_OOOneOperandArithmeticExpression' is a specialization of 'OOArithmeticExpression'.
+The class 'oogen_OOBracketedExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+The class 'oogen_OOPostfixIncrementExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+The class 'oogen_OOPrefixIncrementExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+The class 'oogen_OOPostfixDecrementExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+The class 'oogen_OOPrefixDecrementExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+The class 'oogen_OOPlusExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+The class 'oogen_OOMinusExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+The class 'oogen_OOTernaryOperator' is a specialization of 'OOLogicalExpression'.
+The class 'oogen_OOFieldReferenceExpression' is a specialization of 'OOExpression'.
+The class 'oogen_OOVariableReferenceExpression' is a specialization of 'OOExpression'.
+The class 'oogen_OOInitializerList' is a specialization of 'OOExpression'.
+The class 'oogen_OOThisLiteral' is a specialization of 'OOExpression'.
+The class 'oogen_OONullLiteral' is a specialization of 'OOExpression'.
+The class 'oogen_OOFunctionCallExpression' is a specialization of 'OOExpression'.
+The class 'oogen_OOStringLiteral' is a specialization of 'OOExpression'.
+The class 'oogen_OONewArray' is a specialization of 'OOExpression'.
+The class 'oogen_OOEnumeration' is a specialization of 'OOCommentOwner'.
+The class 'oogen_OOEmptyExpression' is a specialization of 'OOExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'oogen_OOClass' and 'oogen_OOPackage'. From 'oogen_OOClass', the role 'OOClass' has cardinality 0..*, and from 'oogen_OOPackage', the role 'package' has cardinality 0..*.
+An association connects 'oogen_OOEnumeration' and 'oogen_OOPackage'. From 'oogen_OOEnumeration', the role 'oogen_OOEnumeration' has cardinality 0..*, and from 'oogen_OOPackage', the role 'oogen_OOPackage' has cardinality 0..*.
+An association connects 'oogen_OOClass' and 'oogen_OOMember'. From 'oogen_OOClass', the role 'oogen_OOClass' has cardinality 0..*, and from 'oogen_OOMember', the role 'oogen_OOMember' has cardinality 0..*.
+An association connects 'oogen_OOPackage' and 'oogen_OOClass'. From 'oogen_OOPackage', the role 'OOPackage' has cardinality 0..*, and from 'oogen_OOClass', the role 'classes' has cardinality 0..*.
+An association connects 'oogen_OOClass' and 'oogen_OOMethod'. From 'oogen_OOClass', the role 'oogen_OOClass5' has cardinality 0..*, and from 'oogen_OOMethod', the role 'oogen_OOMethod' has cardinality 0..*.
+An association connects 'oogen_OOConstructor' and 'oogen_OOClass'. From 'oogen_OOConstructor', the role 'oogen_OOConstructor' has cardinality 0..*, and from 'oogen_OOClass', the role 'oogen_OOClass7' has cardinality 0..*.
+An association connects 'oogen_OOType' and 'oogen_OOVariable'. From 'oogen_OOType', the role 'oogen_OOType' has cardinality 0..*, and from 'oogen_OOVariable', the role 'oogen_OOVariable' has cardinality 0..*.
+An association connects 'oogen_OOVariable' and 'oogen_OOExpression'. From 'oogen_OOVariable', the role 'oogen_OOVariable10' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression' has cardinality 0..*.
+An association connects 'oogen_OOType' and 'oogen_OOClass'. From 'oogen_OOType', the role 'oogen_OOType12' has cardinality 0..*, and from 'oogen_OOClass', the role 'oogen_OOClass13' has cardinality 0..*.
+An association connects 'oogen_OOType' and 'oogen_OOExpression'. From 'oogen_OOType', the role 'oogen_OOType15' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression16' has cardinality 0..*.
+An association connects 'oogen_OOEnumeration' and 'oogen_OOType'. From 'oogen_OOEnumeration', the role 'oogen_OOEnumeration19' has cardinality 0..*, and from 'oogen_OOType', the role 'oogen_OOType18' has cardinality 0..*.
+An association connects 'oogen_OOMethod' and 'oogen_OOVariable'. From 'oogen_OOMethod', the role 'oogen_OOMethod21' has cardinality 0..*, and from 'oogen_OOVariable', the role 'oogen_OOVariable22' has cardinality 0..*.
+An association connects 'oogen_OOMethod' and 'oogen_OOType'. From 'oogen_OOMethod', the role 'oogen_OOMethod24' has cardinality 0..*, and from 'oogen_OOType', the role 'oogen_OOType25' has cardinality 0..*.
+An association connects 'oogen_OOMethod' and 'oogen_OOStatement'. From 'oogen_OOMethod', the role 'oogen_OOMethod27' has cardinality 0..*, and from 'oogen_OOStatement', the role 'oogen_OOStatement' has cardinality 0..*.
+An association connects 'oogen_OOModel' and 'oogen_OOPackage'. From 'oogen_OOModel', the role 'oogen_OOModel' has cardinality 0..*, and from 'oogen_OOPackage', the role 'oogen_OOPackage29' has cardinality 0..*.
+An association connects 'oogen_OOPackage' and 'oogen_OOModel'. From 'oogen_OOPackage', the role 'oogen_OOPackage32' has cardinality 0..*, and from 'oogen_OOModel', the role 'oogen_OOModel31' has cardinality 0..*.
+An association connects 'oogen_OOModel' and 'oogen_OOVariable'. From 'oogen_OOModel', the role 'oogen_OOModel34' has cardinality 0..*, and from 'oogen_OOVariable', the role 'oogen_OOVariable35' has cardinality 0..*.
+An association connects 'oogen_OOMethod' and 'oogen_OOModel'. From 'oogen_OOMethod', the role 'oogen_OOMethod38' has cardinality 0..*, and from 'oogen_OOModel', the role 'oogen_OOModel37' has cardinality 0..*.
+An association connects 'oogen_OOExpression' and 'oogen_OOReturn'. From 'oogen_OOExpression', the role 'oogen_OOExpression40' has cardinality 0..*, and from 'oogen_OOReturn', the role 'oogen_OOReturn' has cardinality 0..*.
+An association connects 'oogen_OOIndexing' and 'oogen_OOExpression'. From 'oogen_OOIndexing', the role 'oogen_OOIndexing' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression42' has cardinality 0..*.
+An association connects 'oogen_OOIndexing' and 'oogen_OOExpression'. From 'oogen_OOIndexing', the role 'oogen_OOIndexing44' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression45' has cardinality 0..*.
+An association connects 'oogen_OOExpression' and 'oogen_OOAssignmentExpression'. From 'oogen_OOExpression', the role 'oogen_OOExpression47' has cardinality 0..*, and from 'oogen_OOAssignmentExpression', the role 'oogen_OOAssignmentExpression' has cardinality 0..*.
+An association connects 'oogen_OOAssignmentExpression' and 'oogen_OOExpression'. From 'oogen_OOAssignmentExpression', the role 'oogen_OOAssignmentExpression49' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression50' has cardinality 0..*.
+An association connects 'oogen_OOTwoOperandArithmeticExpression' and 'oogen_OOExpression'. From 'oogen_OOTwoOperandArithmeticExpression', the role 'oogen_OOTwoOperandArithmeticExpression' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression52' has cardinality 0..*.
+An association connects 'oogen_OOExpression' and 'oogen_OOTwoOperandArithmeticExpression'. From 'oogen_OOExpression', the role 'oogen_OOExpression55' has cardinality 0..*, and from 'oogen_OOTwoOperandArithmeticExpression', the role 'oogen_OOTwoOperandArithmeticExpression54' has cardinality 0..*.
+An association connects 'oogen_OOTwoOperandLogicalExpression' and 'oogen_OOExpression'. From 'oogen_OOTwoOperandLogicalExpression', the role 'oogen_OOTwoOperandLogicalExpression' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression57' has cardinality 0..*.
+An association connects 'oogen_OOTwoOperandLogicalExpression' and 'oogen_OOExpression'. From 'oogen_OOTwoOperandLogicalExpression', the role 'oogen_OOTwoOperandLogicalExpression59' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression60' has cardinality 0..*.
+An association connects 'oogen_OOOneOperandLogicalExpression' and 'oogen_OOExpression'. From 'oogen_OOOneOperandLogicalExpression', the role 'oogen_OOOneOperandLogicalExpression' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression62' has cardinality 0..*.
+An association connects 'oogen_OOIf' and 'oogen_OOStatement'. From 'oogen_OOIf', the role 'oogen_OOIf' has cardinality 0..*, and from 'oogen_OOStatement', the role 'oogen_OOStatement64' has cardinality 0..*.
+An association connects 'oogen_OOIf' and 'oogen_OOIf'. From 'oogen_OOIf', the role 'oogen_OOIf67' has cardinality 0..*, and from 'oogen_OOIf', the role 'oogen_OOIf65' has cardinality 0..*.
+An association connects 'oogen_OOStatement' and 'oogen_OOFor'. From 'oogen_OOStatement', the role 'oogen_OOStatement69' has cardinality 0..*, and from 'oogen_OOFor', the role 'oogen_OOFor' has cardinality 0..*.
+An association connects 'oogen_OOExpression' and 'oogen_OOFor'. From 'oogen_OOExpression', the role 'oogen_OOExpression72' has cardinality 0..*, and from 'oogen_OOFor', the role 'oogen_OOFor71' has cardinality 0..*.
+An association connects 'oogen_OOExpression' and 'oogen_OOConditionalStatement'. From 'oogen_OOExpression', the role 'oogen_OOExpression74' has cardinality 0..*, and from 'oogen_OOConditionalStatement', the role 'oogen_OOConditionalStatement' has cardinality 0..*.
+An association connects 'oogen_OOVariable' and 'oogen_OOForEach'. From 'oogen_OOVariable', the role 'oogen_OOVariable76' has cardinality 0..*, and from 'oogen_OOForEach', the role 'oogen_OOForEach' has cardinality 0..*.
+An association connects 'oogen_OOVariable' and 'oogen_OOForEach'. From 'oogen_OOVariable', the role 'oogen_OOVariable79' has cardinality 0..*, and from 'oogen_OOForEach', the role 'oogen_OOForEach78' has cardinality 0..*.
+An association connects 'oogen_OOForEach' and 'oogen_OOStatement'. From 'oogen_OOForEach', the role 'oogen_OOForEach81' has cardinality 0..*, and from 'oogen_OOStatement', the role 'oogen_OOStatement82' has cardinality 0..*.
+An association connects 'oogen_OOLanguageSpecificExpression' and 'oogen_OOLanguageSpecificSnippet'. From 'oogen_OOLanguageSpecificExpression', the role 'oogen_OOLanguageSpecificExpression' has cardinality 0..*, and from 'oogen_OOLanguageSpecificSnippet', the role 'oogen_OOLanguageSpecificSnippet' has cardinality 0..*.
+An association connects 'oogen_OOTypeCast' and 'oogen_OOType'. From 'oogen_OOTypeCast', the role 'oogen_OOTypeCast' has cardinality 0..*, and from 'oogen_OOType', the role 'oogen_OOType85' has cardinality 0..*.
+An association connects 'oogen_OOExpression' and 'oogen_OOTypeCast'. From 'oogen_OOExpression', the role 'oogen_OOExpression88' has cardinality 0..*, and from 'oogen_OOTypeCast', the role 'oogen_OOTypeCast87' has cardinality 0..*.
+An association connects 'oogen_OONewClass' and 'oogen_OOExpression'. From 'oogen_OONewClass', the role 'oogen_OONewClass' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression90' has cardinality 0..*.
+An association connects 'oogen_OOComparatorExpression' and 'oogen_OOExpression'. From 'oogen_OOComparatorExpression', the role 'oogen_OOComparatorExpression' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression92' has cardinality 0..*.
+An association connects 'oogen_OOComparatorExpression' and 'oogen_OOExpression'. From 'oogen_OOComparatorExpression', the role 'oogen_OOComparatorExpression94' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression95' has cardinality 0..*.
+An association connects 'oogen_OOStatement' and 'oogen_OOCompoundStatement'. From 'oogen_OOStatement', the role 'oogen_OOStatement97' has cardinality 0..*, and from 'oogen_OOCompoundStatement', the role 'oogen_OOCompoundStatement' has cardinality 0..*.
+An association connects 'oogen_OOExpression' and 'oogen_OOSwitch'. From 'oogen_OOExpression', the role 'oogen_OOExpression99' has cardinality 0..*, and from 'oogen_OOSwitch', the role 'oogen_OOSwitch' has cardinality 0..*.
+An association connects 'oogen_OOSwitch' and 'oogen_OOCase'. From 'oogen_OOSwitch', the role 'oogen_OOSwitch101' has cardinality 0..*, and from 'oogen_OOCase', the role 'oogen_OOCase' has cardinality 0..*.
+An association connects 'oogen_OODefault' and 'oogen_OOSwitch'. From 'oogen_OODefault', the role 'oogen_OODefault' has cardinality 0..*, and from 'oogen_OOSwitch', the role 'oogen_OOSwitch103' has cardinality 0..*.
+An association connects 'oogen_OOExpression' and 'oogen_OOCase'. From 'oogen_OOExpression', the role 'oogen_OOExpression106' has cardinality 0..*, and from 'oogen_OOCase', the role 'oogen_OOCase105' has cardinality 0..*.
+An association connects 'oogen_OOVariableDeclarationList' and 'oogen_OOVariable'. From 'oogen_OOVariableDeclarationList', the role 'oogen_OOVariableDeclarationList' has cardinality 0..*, and from 'oogen_OOVariable', the role 'oogen_OOVariable108' has cardinality 0..*.
+An association connects 'oogen_OOOneOperandArithmeticExpression' and 'oogen_OOExpression'. From 'oogen_OOOneOperandArithmeticExpression', the role 'oogen_OOOneOperandArithmeticExpression' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression110' has cardinality 0..*.
+An association connects 'oogen_OOTernaryOperator' and 'oogen_OOExpression'. From 'oogen_OOTernaryOperator', the role 'oogen_OOTernaryOperator' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression112' has cardinality 0..*.
+An association connects 'oogen_OOExpression' and 'oogen_OOTernaryOperator'. From 'oogen_OOExpression', the role 'oogen_OOExpression115' has cardinality 0..*, and from 'oogen_OOTernaryOperator', the role 'oogen_OOTernaryOperator114' has cardinality 0..*.
+An association connects 'oogen_OOExpression' and 'oogen_OOTernaryOperator'. From 'oogen_OOExpression', the role 'oogen_OOExpression118' has cardinality 0..*, and from 'oogen_OOTernaryOperator', the role 'oogen_OOTernaryOperator117' has cardinality 0..*.
+An association connects 'oogen_OOFieldReferenceExpression' and 'oogen_OOExpression'. From 'oogen_OOFieldReferenceExpression', the role 'oogen_OOFieldReferenceExpression' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression120' has cardinality 0..*.
+An association connects 'oogen_OOVariableReferenceExpression' and 'oogen_OOVariable'. From 'oogen_OOVariableReferenceExpression', the role 'oogen_OOVariableReferenceExpression' has cardinality 0..*, and from 'oogen_OOVariable', the role 'oogen_OOVariable122' has cardinality 0..*.
+An association connects 'oogen_OOInitializerList' and 'oogen_OOExpression'. From 'oogen_OOInitializerList', the role 'oogen_OOInitializerList' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression124' has cardinality 0..*.
+An association connects 'oogen_OOFunctionCallExpression' and 'oogen_OOExpression'. From 'oogen_OOFunctionCallExpression', the role 'oogen_OOFunctionCallExpression' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression126' has cardinality 0..*.
+An association connects 'oogen_OOFunctionCallExpression' and 'oogen_OOExpression'. From 'oogen_OOFunctionCallExpression', the role 'oogen_OOFunctionCallExpression128' has cardinality 0..*, and from 'oogen_OOExpression', the role 'oogen_OOExpression129' has cardinality 0..*.
+An association connects 'oogen_OOVariable' and 'oogen_OOConstructor'. From 'oogen_OOVariable', the role 'oogen_OOVariable132' has cardinality 0..*, and from 'oogen_OOConstructor', the role 'oogen_OOConstructor131' has cardinality 0..*.
+An association connects 'oogen_OOStatement' and 'oogen_OOConstructor'. From 'oogen_OOStatement', the role 'oogen_OOStatement135' has cardinality 0..*, and from 'oogen_OOConstructor', the role 'oogen_OOConstructor134' has cardinality 0..*.
+An association connects 'oogen_OOType' and 'oogen_OONewArray'. From 'oogen_OOType', the role 'oogen_OOType137' has cardinality 0..*, and from 'oogen_OONewArray', the role 'oogen_OONewArray' has cardinality 0..*.
+An association connects 'oogen_OONewArray' and 'oogen_OOInitializerList'. From 'oogen_OONewArray', the role 'oogen_OONewArray139' has cardinality 0..*, and from 'oogen_OOInitializerList', the role 'oogen_OOInitializerList140' has cardinality 0..*.
+An association connects 'oogen_OOCommentOwner' and 'oogen_OOComment'. From 'oogen_OOCommentOwner', the role 'oogen_OOCommentOwner' has cardinality 0..*, and from 'oogen_OOComment', the role 'oogen_OOComment' has cardinality 0..*.
+An association connects 'oogen_OOCommentOwner' and 'oogen_OOComment'. From 'oogen_OOCommentOwner', the role 'oogen_OOCommentOwner143' has cardinality 0..*, and from 'oogen_OOComment', the role 'oogen_OOComment144' has cardinality 0..*.
+An association connects 'oogen_OOPackage' and 'oogen_OOEnumeration'. From 'oogen_OOPackage', the role 'oogen_OOPackage147' has cardinality 0..*, and from 'oogen_OOEnumeration', the role 'oogen_OOEnumeration146' has cardinality 0..*.

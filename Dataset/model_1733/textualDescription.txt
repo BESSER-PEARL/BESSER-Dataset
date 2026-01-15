@@ -1,0 +1,13 @@
+The domain model 'transientotm' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'transientotm_TBook' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'transientotm_TWriter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'transientotm_TBook' and 'transientotm_TWriter'. From 'transientotm_TBook', the role 'transientotm_TBook' has cardinality 0..*, and from 'transientotm_TWriter', the role 'transientotm_TWriter' has cardinality 0..*.
+An association connects 'transientotm_TWriter' and 'transientotm_TBook'. From 'transientotm_TWriter', the role 'transientotm_TWriter2' has cardinality 0..*, and from 'transientotm_TBook', the role 'transientotm_TBook3' has cardinality 0..*.

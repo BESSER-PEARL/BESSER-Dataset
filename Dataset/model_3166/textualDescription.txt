@@ -1,0 +1,347 @@
+The domain model 'core' describes the core structural elements and their relationships within the system.
+
+The model defines 77 main class(es).
+
+'core_ModuleParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'core_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'core_TracedModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'core_PotencyAnnotation' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'core_KeywordParameter' represents an important domain concept.
+It has one attribute: 'keyword', which is of type str.
+
+'core_ModelReference' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ImplicitlyAnnotableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'core_TraceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_RequireParameter' represents an important domain concept.
+It has one attribute: 'formalParameterName', which is of type str.
+
+'core_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_BinaryExpr' represents an important domain concept.
+It has one attribute: 'binaryOp', which is of type str.
+
+'core_TypeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_IfExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'core_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'core_InlineAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'core_SingleAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ResolveLink' represents an important domain concept.
+It has the following attributes: 'featureName', which is of type str; 'linkName', which is of type str; 'isExternal', which is of type str.
+
+'ImplicitlyAnnotableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentModel' represents an important domain concept.
+It does not declare any attributes.
+
+'core_InlineModel' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassUse' represents an important domain concept.
+It does not declare any attributes.
+
+'core_InlineClass' represents an important domain concept.
+It does not declare any attributes.
+
+'core_IfBranch' represents an important domain concept.
+It does not declare any attributes.
+
+'core_AnnotableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'core_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'core_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'core_RequireDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'default', which is of type str.
+
+'core_TransformationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'core_PutTraceParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ClosureDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'core_GenericAnnotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AnnotableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ClosureParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'TransformationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'core_NumLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'core_InlineFeature' represents an important domain concept.
+It has one attribute: 'multivalued', which is of type bool.
+
+'ModuleDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ClassUse' represents an important domain concept.
+It has the following attributes: 'className', which is of type str; 'strictType', which is of type bool.
+
+'core_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_EclecticTransformationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'core_TypedWithClass' represents an important domain concept.
+It does not declare any attributes.
+
+'core_OptimizationsAnnotation' represents an important domain concept.
+It has one attribute: 'enabled', which is of type bool.
+
+'core_PutTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'InlineFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'core_TraceDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ModuleDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_TraceCompareExpression' represents an important domain concept.
+It has one attribute: 'multivaluedTag', which is of type bool.
+
+'core_MatchTrace' represents an important domain concept.
+It has one attribute: 'cardinality', which is of type str.
+
+'core_PropertyWrite' represents an important domain concept.
+It has one attribute: 'property', which is of type str.
+
+'core_TraceInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'core_DefineVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'core_MetamodelModelAnnotation' represents an important domain concept.
+It has one attribute: 'metamodel', which is of type str.
+
+'core_TraceUse' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ImportedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'core_KeywordMethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'core_MethodCall' represents an important domain concept.
+It has the following attributes: 'withParameters', which is of type bool; 'methodName', which is of type str.
+
+'core_UseDeclaration' represents an important domain concept.
+It has the following attributes: 'as', which is of type str; 'module', which is of type str.
+
+'core_RepresentModel' represents an important domain concept.
+It does not declare any attributes.
+
+'core_DefinitionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'core_TransformationDefinitionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_InlineReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_AnnotationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'core_RequireModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'core_LocatedElement' represents an important domain concept.
+It has the following attributes: 'column', which is of type int; 'file', which is of type str; 'row', which is of type int.
+
+'SingleAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'RequireParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'DefinitionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ResolveTraceCardinality' defines the following possible values: 'ONE_ONE', 'MANY', 'ZERO_OR_ONE'.
+The enumeration 'BinaryOp' defines the following possible values: 'ADD', 'MUL', 'EQUAL', 'DIV', 'SUB'.
+
+The model also captures inheritance relationships between classes.
+The class 'core_DefinitionParameter' is a specialization of 'NamedElement'.
+The class 'core_ModuleParameter' is a specialization of 'DefinitionParameter'.
+The class 'core_ModuleDefinition' is a specialization of 'LocatedElement'.
+The class 'core_ModuleDefinition' is a specialization of 'NamedElement'.
+The class 'core_ModuleDefinition' is a specialization of 'AnnotableElement'.
+The class 'core_OptimizationsAnnotation' is a specialization of 'Annotation'.
+The class 'core_MetamodelModelAnnotation' is a specialization of 'Annotation'.
+The class 'core_SingleAnnotation' is a specialization of 'Annotation'.
+The class 'core_PotencyAnnotation' is a specialization of 'SingleAnnotation'.
+The class 'core_RepresentModel' is a specialization of 'AnnotableElement'.
+The class 'core_TransformationDefinition' is a specialization of 'ModuleDefinition'.
+The class 'core_EclecticTransformationDefinition' is a specialization of 'TransformationDefinition'.
+The class 'core_TransformationDefinitionParameter' is a specialization of 'DefinitionParameter'.
+The class 'core_TransformationDefinitionParameter' is a specialization of 'RepresentModel'.
+The class 'core_ImportedModel' is a specialization of 'RepresentModel'.
+The class 'core_ImportedModel' is a specialization of 'NamedElement'.
+The class 'core_UseDeclaration' is a specialization of 'RepresentModel'.
+The class 'core_RequireDeclaration' is a specialization of 'RepresentModel'.
+The class 'core_RequireModelParameter' is a specialization of 'RequireParameter'.
+The class 'core_Statement' is a specialization of 'LocatedElement'.
+The class 'core_Expression' is a specialization of 'Statement'.
+The class 'core_DefineVariable' is a specialization of 'Statement'.
+The class 'core_DefineVariable' is a specialization of 'Variable'.
+The class 'core_PropertyWrite' is a specialization of 'Expression'.
+The class 'core_ModelReference' is a specialization of 'ClassUse'.
+The class 'core_ModelReference' is a specialization of 'Expression'.
+The class 'core_VariableReference' is a specialization of 'Expression'.
+The class 'core_MethodCall' is a specialization of 'Expression'.
+The class 'core_KeywordMethodCall' is a specialization of 'Expression'.
+The class 'core_BinaryExpr' is a specialization of 'Expression'.
+The class 'core_ClosureDeclaration' is a specialization of 'Expression'.
+The class 'core_ClosureParameter' is a specialization of 'Variable'.
+The class 'core_ResolveLink' is a specialization of 'Expression'.
+The class 'core_IfExpr' is a specialization of 'Expression'.
+The class 'core_NumLiteral' is a specialization of 'Expression'.
+The class 'core_DoubleLiteral' is a specialization of 'Expression'.
+The class 'core_StringLiteral' is a specialization of 'Expression'.
+The class 'core_BooleanLiteral' is a specialization of 'Expression'.
+The class 'core_ClassUse' is a specialization of 'TypeExpression'.
+The class 'core_ClassUse' is a specialization of 'ImplicitlyAnnotableElement'.
+The class 'core_TraceUse' is a specialization of 'TypeExpression'.
+The class 'core_TraceInterface' is a specialization of 'ModuleDefinition'.
+The class 'core_TracedModelParameter' is a specialization of 'DefinitionParameter'.
+The class 'core_TracedModelParameter' is a specialization of 'RepresentModel'.
+The class 'core_TraceDefinition' is a specialization of 'NamedElement'.
+The class 'core_TraceElement' is a specialization of 'NamedElement'.
+The class 'core_InlineModel' is a specialization of 'ModuleDefinition'.
+The class 'core_InlineModel' is a specialization of 'RepresentModel'.
+The class 'core_InlineClass' is a specialization of 'NamedElement'.
+The class 'core_InlineFeature' is a specialization of 'NamedElement'.
+The class 'core_InlineAttribute' is a specialization of 'InlineFeature'.
+The class 'core_InlineReference' is a specialization of 'InlineFeature'.
+The class 'core_MatchTrace' is a specialization of 'Expression'.
+The class 'core_PutTrace' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'core_Annotation' and 'core_AnnotableElement'. From 'core_Annotation', the role 'Annotation' has cardinality 0..*, and from 'core_AnnotableElement', the role 'annotatedElement' has cardinality 0..*.
+An association connects 'core_SingleAnnotation' and 'core_ImplicitlyAnnotableElement'. From 'core_SingleAnnotation', the role 'core_SingleAnnotation' has cardinality 0..*, and from 'core_ImplicitlyAnnotableElement', the role 'core_ImplicitlyAnnotableElement' has cardinality 0..*.
+An association connects 'core_Annotation' and 'core_AnnotableElement'. From 'core_Annotation', the role 'annotatedWith' has cardinality 0..*, and from 'core_AnnotableElement', the role 'AnnotableElement' has cardinality 0..*.
+An association connects 'core_AnnotationParameter' and 'core_GenericAnnotation'. From 'core_AnnotationParameter', the role 'core_AnnotationParameter' has cardinality 0..*, and from 'core_GenericAnnotation', the role 'core_GenericAnnotation' has cardinality 0..*.
+An association connects 'core_TransformationDefinition' and 'core_TransformationDefinitionParameter'. From 'core_TransformationDefinition', the role 'core_TransformationDefinition' has cardinality 0..*, and from 'core_TransformationDefinitionParameter', the role 'core_TransformationDefinitionParameter' has cardinality 0..*.
+An association connects 'core_TransformationDefinitionParameter' and 'core_TransformationDefinition'. From 'core_TransformationDefinitionParameter', the role 'core_TransformationDefinitionParameter7' has cardinality 0..*, and from 'core_TransformationDefinition', the role 'core_TransformationDefinition6' has cardinality 0..*.
+An association connects 'core_ImportedModel' and 'core_TransformationDefinition'. From 'core_ImportedModel', the role 'core_ImportedModel' has cardinality 0..*, and from 'core_TransformationDefinition', the role 'core_TransformationDefinition9' has cardinality 0..*.
+An association connects 'core_InlineModel' and 'core_TransformationDefinition'. From 'core_InlineModel', the role 'core_InlineModel' has cardinality 0..*, and from 'core_TransformationDefinition', the role 'core_TransformationDefinition11' has cardinality 0..*.
+An association connects 'core_TransformationDefinition' and 'core_Annotation'. From 'core_TransformationDefinition', the role 'core_TransformationDefinition13' has cardinality 0..*, and from 'core_Annotation', the role 'core_Annotation' has cardinality 0..*.
+An association connects 'core_UseDeclaration' and 'core_TransformationDefinition'. From 'core_UseDeclaration', the role 'core_UseDeclaration' has cardinality 0..*, and from 'core_TransformationDefinition', the role 'core_TransformationDefinition15' has cardinality 0..*.
+An association connects 'core_RequireDeclaration' and 'core_TransformationDefinition'. From 'core_RequireDeclaration', the role 'core_RequireDeclaration' has cardinality 0..*, and from 'core_TransformationDefinition', the role 'core_TransformationDefinition17' has cardinality 0..*.
+An association connects 'core_TransformationDefinition' and 'core_EclecticTransformationDefinition'. From 'core_TransformationDefinition', the role 'core_TransformationDefinition19' has cardinality 0..*, and from 'core_EclecticTransformationDefinition', the role 'core_EclecticTransformationDefinition' has cardinality 0..*.
+An association connects 'core_RequireDeclaration' and 'core_RequireParameter'. From 'core_RequireDeclaration', the role 'core_RequireDeclaration21' has cardinality 0..*, and from 'core_RequireParameter', the role 'core_RequireParameter' has cardinality 0..*.
+An association connects 'core_RequireModelParameter' and 'core_RepresentModel'. From 'core_RequireModelParameter', the role 'core_RequireModelParameter' has cardinality 0..*, and from 'core_RepresentModel', the role 'core_RepresentModel' has cardinality 0..*.
+An association connects 'core_Expression' and 'core_DefineVariable'. From 'core_Expression', the role 'core_Expression' has cardinality 0..*, and from 'core_DefineVariable', the role 'core_DefineVariable' has cardinality 0..*.
+An association connects 'core_Variable' and 'core_PropertyWrite'. From 'core_Variable', the role 'core_Variable' has cardinality 0..*, and from 'core_PropertyWrite', the role 'core_PropertyWrite' has cardinality 0..*.
+An association connects 'core_Expression' and 'core_PropertyWrite'. From 'core_Expression', the role 'core_Expression27' has cardinality 0..*, and from 'core_PropertyWrite', the role 'core_PropertyWrite26' has cardinality 0..*.
+An association connects 'core_Variable' and 'core_VariableReference'. From 'core_Variable', the role 'core_Variable29' has cardinality 0..*, and from 'core_VariableReference', the role 'core_VariableReference' has cardinality 0..*.
+An association connects 'core_Expression' and 'core_MethodCall'. From 'core_Expression', the role 'core_Expression31' has cardinality 0..*, and from 'core_MethodCall', the role 'core_MethodCall' has cardinality 0..*.
+An association connects 'core_MethodCall' and 'core_Expression'. From 'core_MethodCall', the role 'core_MethodCall33' has cardinality 0..*, and from 'core_Expression', the role 'core_Expression34' has cardinality 0..*.
+An association connects 'core_KeywordMethodCall' and 'core_Expression'. From 'core_KeywordMethodCall', the role 'core_KeywordMethodCall' has cardinality 0..*, and from 'core_Expression', the role 'core_Expression36' has cardinality 0..*.
+An association connects 'core_KeywordParameter' and 'core_KeywordMethodCall'. From 'core_KeywordParameter', the role 'core_KeywordParameter' has cardinality 0..*, and from 'core_KeywordMethodCall', the role 'core_KeywordMethodCall38' has cardinality 0..*.
+An association connects 'core_KeywordParameter' and 'core_Expression'. From 'core_KeywordParameter', the role 'core_KeywordParameter40' has cardinality 0..*, and from 'core_Expression', the role 'core_Expression41' has cardinality 0..*.
+An association connects 'core_BinaryExpr' and 'core_Expression'. From 'core_BinaryExpr', the role 'core_BinaryExpr' has cardinality 0..*, and from 'core_Expression', the role 'core_Expression43' has cardinality 0..*.
+An association connects 'core_BinaryExpr' and 'core_Expression'. From 'core_BinaryExpr', the role 'core_BinaryExpr45' has cardinality 0..*, and from 'core_Expression', the role 'core_Expression46' has cardinality 0..*.
+An association connects 'core_Statement' and 'core_ClosureDeclaration'. From 'core_Statement', the role 'core_Statement' has cardinality 0..*, and from 'core_ClosureDeclaration', the role 'core_ClosureDeclaration' has cardinality 0..*.
+An association connects 'core_ClosureDeclaration' and 'core_ClosureParameter'. From 'core_ClosureDeclaration', the role 'core_ClosureDeclaration49' has cardinality 0..*, and from 'core_ClosureParameter', the role 'core_ClosureParameter' has cardinality 0..*.
+An association connects 'core_Expression' and 'core_ResolveLink'. From 'core_Expression', the role 'core_Expression51' has cardinality 0..*, and from 'core_ResolveLink', the role 'core_ResolveLink' has cardinality 0..*.
+An association connects 'core_UseDeclaration' and 'core_ResolveLink'. From 'core_UseDeclaration', the role 'core_UseDeclaration54' has cardinality 0..*, and from 'core_ResolveLink', the role 'core_ResolveLink53' has cardinality 0..*.
+An association connects 'core_IfBranch' and 'core_IfExpr'. From 'core_IfBranch', the role 'core_IfBranch' has cardinality 0..*, and from 'core_IfExpr', the role 'core_IfExpr' has cardinality 0..*.
+An association connects 'core_IfExpr' and 'core_IfBranch'. From 'core_IfExpr', the role 'core_IfExpr57' has cardinality 0..*, and from 'core_IfBranch', the role 'core_IfBranch58' has cardinality 0..*.
+An association connects 'core_IfExpr' and 'core_IfBranch'. From 'core_IfExpr', the role 'core_IfExpr60' has cardinality 0..*, and from 'core_IfBranch', the role 'core_IfBranch61' has cardinality 0..*.
+An association connects 'core_IfBranch' and 'core_Expression'. From 'core_IfBranch', the role 'core_IfBranch63' has cardinality 0..*, and from 'core_Expression', the role 'core_Expression64' has cardinality 0..*.
+An association connects 'core_IfBranch' and 'core_Statement'. From 'core_IfBranch', the role 'core_IfBranch66' has cardinality 0..*, and from 'core_Statement', the role 'core_Statement67' has cardinality 0..*.
+An association connects 'core_ClassUse' and 'core_RepresentModel'. From 'core_ClassUse', the role 'core_ClassUse' has cardinality 0..*, and from 'core_RepresentModel', the role 'core_RepresentModel69' has cardinality 0..*.
+An association connects 'core_TraceUse' and 'core_TraceDefinition'. From 'core_TraceUse', the role 'core_TraceUse' has cardinality 0..*, and from 'core_TraceDefinition', the role 'core_TraceDefinition' has cardinality 0..*.
+An association connects 'core_TypedWithClass' and 'core_ClassUse'. From 'core_TypedWithClass', the role 'core_TypedWithClass' has cardinality 0..*, and from 'core_ClassUse', the role 'core_ClassUse72' has cardinality 0..*.
+An association connects 'core_TraceDefinition' and 'core_TraceInterface'. From 'core_TraceDefinition', the role 'core_TraceDefinition74' has cardinality 0..*, and from 'core_TraceInterface', the role 'core_TraceInterface' has cardinality 0..*.
+An association connects 'core_TraceDefinition' and 'core_TraceElement'. From 'core_TraceDefinition', the role 'core_TraceDefinition76' has cardinality 0..*, and from 'core_TraceElement', the role 'core_TraceElement' has cardinality 0..*.
+An association connects 'core_TraceElement' and 'core_TypeExpression'. From 'core_TraceElement', the role 'core_TraceElement78' has cardinality 0..*, and from 'core_TypeExpression', the role 'core_TypeExpression' has cardinality 0..*.
+An association connects 'core_InlineClass' and 'core_InlineModel'. From 'core_InlineClass', the role 'core_InlineClass' has cardinality 0..*, and from 'core_InlineModel', the role 'core_InlineModel80' has cardinality 0..*.
+An association connects 'core_InlineClass' and 'core_InlineFeature'. From 'core_InlineClass', the role 'core_InlineClass82' has cardinality 0..*, and from 'core_InlineFeature', the role 'core_InlineFeature' has cardinality 0..*.
+An association connects 'core_InlineFeature' and 'core_TypeExpression'. From 'core_InlineFeature', the role 'core_InlineFeature84' has cardinality 0..*, and from 'core_TypeExpression', the role 'core_TypeExpression85' has cardinality 0..*.
+An association connects 'core_TraceDefinition' and 'core_MatchTrace'. From 'core_TraceDefinition', the role 'core_TraceDefinition87' has cardinality 0..*, and from 'core_MatchTrace', the role 'core_MatchTrace' has cardinality 0..*.
+An association connects 'core_MatchTrace' and 'core_TraceCompareExpression'. From 'core_MatchTrace', the role 'core_MatchTrace89' has cardinality 0..*, and from 'core_TraceCompareExpression', the role 'core_TraceCompareExpression' has cardinality 0..*.
+An association connects 'core_TraceElement' and 'core_TraceCompareExpression'. From 'core_TraceElement', the role 'core_TraceElement92' has cardinality 0..*, and from 'core_TraceCompareExpression', the role 'core_TraceCompareExpression91' has cardinality 0..*.
+An association connects 'core_Expression' and 'core_TraceCompareExpression'. From 'core_Expression', the role 'core_Expression95' has cardinality 0..*, and from 'core_TraceCompareExpression', the role 'core_TraceCompareExpression94' has cardinality 0..*.
+An association connects 'core_PutTrace' and 'core_TraceDefinition'. From 'core_PutTrace', the role 'core_PutTrace' has cardinality 0..*, and from 'core_TraceDefinition', the role 'core_TraceDefinition97' has cardinality 0..*.
+An association connects 'core_PutTrace' and 'core_PutTraceParameter'. From 'core_PutTrace', the role 'core_PutTrace99' has cardinality 0..*, and from 'core_PutTraceParameter', the role 'core_PutTraceParameter' has cardinality 0..*.
+An association connects 'core_PutTraceParameter' and 'core_Expression'. From 'core_PutTraceParameter', the role 'core_PutTraceParameter101' has cardinality 0..*, and from 'core_Expression', the role 'core_Expression102' has cardinality 0..*.
+An association connects 'core_TraceElement' and 'core_PutTraceParameter'. From 'core_TraceElement', the role 'core_TraceElement105' has cardinality 0..*, and from 'core_PutTraceParameter', the role 'core_PutTraceParameter104' has cardinality 0..*.

@@ -1,0 +1,484 @@
+The domain model 'ISO20022' describes the core structural elements and their relationships within the system.
+
+The model defines 99 main class(es).
+
+'ISO20022_InteractionMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_TopLevelDictionaryEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_MessageSet' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_InteractionActor' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XSDDay' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTimeConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_BusinessAssociationEnd' represents an important domain concept.
+It has one attribute: 'aggregation', which is of type str.
+
+'ISO20022_BusinessAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_ExternalSchema' represents an important domain concept.
+It has the following attributes: 'namespaceList', which is of type str; 'processContent', which is of type str.
+
+'ISO20022_ApplicationHeader' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_Encoding' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XSDBinary' represents an important domain concept.
+It has the following attributes: 'minLength', which is of type str; 'maxLength', which is of type str; 'length', which is of type str; 'pattern', which is of type str.
+
+'MessageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_AbstractTimeConcept' represents an important domain concept.
+It has the following attributes: 'minInclusive', which is of type str; 'maxExclusive', which is of type str; 'minExclusive', which is of type str; 'pattern', which is of type str; 'maxInclusive', which is of type str.
+
+'ISO20022_Doclet' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'type', which is of type str.
+
+'MessageConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XSDMonth' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageSet' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_SyntaxMessageScheme' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_SWIFTSolution' represents an important domain concept.
+It has one attribute: 'serviceName', which is of type str.
+
+'TopLevelDictionaryEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_CodeSet' represents an important domain concept.
+It has one attribute: 'identificationScheme', which is of type str.
+
+'ISO20022_SemanticMarkup' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'ISO20022_XSDDecimal' represents an important domain concept.
+It has the following attributes: 'totalDigits', which is of type str; 'maxExclusive', which is of type str; 'minInclusive', which is of type str; 'pattern', which is of type str; 'fractionDigits', which is of type str; 'minExclusive', which is of type str; 'maxInclusive', which is of type str.
+
+'ISO20022_LogicalType' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_Rate' represents an important domain concept.
+It has the following attributes: 'baseUnitCode', which is of type str; 'baseValue', which is of type str.
+
+'ISO20022_RepositoryConcept' represents an important domain concept.
+It has the following attributes: 'removalDate', which is of type date; 'swiftRemovalDate', which is of type date; 'swiftRegistrationStatus', which is of type str; 'example', which is of type str; 'name', which is of type str; 'registrationStatus', which is of type str; 'definition', which is of type str.
+
+'ISO20022_ModelEntity' represents an important domain concept.
+It has one attribute: 'objectIdentifier', which is of type str.
+
+'ISO20022_TopLevelCatalogueEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'XMLMember' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XMLMember' represents an important domain concept.
+It has one attribute: 'xmlTag', which is of type str.
+
+'ISO20022_Amount' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_EndPointCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicalType' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XSDDateTime' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_BusinessProcessCatalogue' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XSDDate' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_BusinessConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_MessageDefinition' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'xmlTag', which is of type str; 'rootElement', which is of type str; 'xmlName', which is of type str; 'previousVersionDocumentation', which is of type str; 'urn', which is of type str.
+
+'ISO20022_DataDictionary' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_MessageComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_BusinessElement' represents an important domain concept.
+It has one attribute: 'isDerived', which is of type bool.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_Interaction' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'ISO20022_MessageComponentType' represents an important domain concept.
+It has the following attributes: 'tracePath', which is of type str; 'isTechnical', which is of type bool.
+
+'ISO20022_MultiplicityEntity' represents an important domain concept.
+It has the following attributes: 'minOccurs', which is of type str; 'maxOccurs', which is of type str.
+
+'ISO20022_Indicator' represents an important domain concept.
+It has the following attributes: 'meaningWhenFalse', which is of type str; 'meaningWhenTrue', which is of type str; 'pattern', which is of type str.
+
+'ISO20022_BusinessElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'TopLevelCatalogueEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_Syntax' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XSDString' represents an important domain concept.
+It has the following attributes: 'maxLength', which is of type str; 'length', which is of type str; 'pattern', which is of type str; 'minLength', which is of type str.
+
+'RepositoryConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_Facet' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'ISO20022_XSDDuration' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_UserDefined' represents an important domain concept.
+It has the following attributes: 'namespaceList', which is of type str; 'processContents', which is of type str; '_', which is of type str.
+
+'ISO20022_Code' represents an important domain concept.
+It has one attribute: 'codeName', which is of type str.
+
+'ISO20022_MessageConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_MessageChoreography' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_SemanticMarkupElement' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDDecimal' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_BusinessRole' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_BusinessArea' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'ISO20022_MessageBuildingBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XSDYear' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_BusinessComponent' represents an important domain concept.
+It has one attribute: 'previousVersionDocumentation', which is of type str.
+
+'MultiplicityEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_MessageElementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_IsAnAlternativeFor' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XSDYearMonth' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_IdentifierSet' represents an important domain concept.
+It has one attribute: 'identificationScheme', which is of type str.
+
+'ISO20022_Xor' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_MessageElement' represents an important domain concept.
+It has the following attributes: 'isTechnical', which is of type bool; 'tracePath', which is of type str; 'isDerived', which is of type bool.
+
+'ISO20022_MessageDefinitionIdentifier' represents an important domain concept.
+It has the following attributes: 'messageFunctionality', which is of type str; 'flavour', which is of type str; 'version', which is of type str; 'businessArea', which is of type str.
+
+'XSDString' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XSDBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_Text' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageElementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_MessageAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XSDTime' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_ChoiceComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_Quantity' represents an important domain concept.
+It has one attribute: 'unitCode', which is of type str.
+
+'ISO20022_XSDID' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_XSDMonthDay' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_Diagram' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'location', which is of type str.
+
+'ISO20022_Constraint' represents an important domain concept.
+It has the following attributes: 'errorCode', which is of type str; 'errorText', which is of type str; 'expressionLanguage', which is of type str; 'injected', which is of type bool; 'kind', which is of type str; 'expression', which is of type str.
+
+'ISO20022_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ISO20022_MessageAssociationEnd' represents an important domain concept.
+It has one attribute: 'isComposite', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Visibility' defines the following possible values: 'DoNotShow', 'Outdated', '_', 'Draft'.
+The enumeration 'RegistrationStatus' defines the following possible values: 'NO_STATUS', 'PROVISIONALLY_REGISTERED', 'OBSOLETE', 'REGISTERED'.
+The enumeration 'Aggregation' defines the following possible values: 'COMPOSITE', 'NONE', 'SHARED'.
+The enumeration 'Namespace' defines the following possible values: 'other', 'any', 'list'.
+The enumeration 'ProcessContent' defines the following possible values: 'LAX', 'STRICT', 'SKIP'.
+
+The model also captures inheritance relationships between classes.
+The class 'ISO20022_RepositoryConcept' is a specialization of 'ModelEntity'.
+The class 'ISO20022_SemanticMarkup' is a specialization of 'ModelEntity'.
+The class 'ISO20022_SemanticMarkupElement' is a specialization of 'ModelEntity'.
+The class 'ISO20022_Doclet' is a specialization of 'ModelEntity'.
+The class 'ISO20022_MessageAssociationEnd' is a specialization of 'MessageElement'.
+The class 'ISO20022_MessageElement' is a specialization of 'XMLMember'.
+The class 'ISO20022_MessageElement' is a specialization of 'MessageConcept'.
+The class 'ISO20022_XMLMember' is a specialization of 'Member'.
+The class 'ISO20022_Member' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_Member' is a specialization of 'MultiplicityEntity'.
+The class 'ISO20022_Type' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_LogicalType' is a specialization of 'Type'.
+The class 'ISO20022_IsAnAlternativeFor' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_MessageConcept' is a specialization of 'ModelEntity'.
+The class 'ISO20022_BusinessComponent' is a specialization of 'BusinessElementType'.
+The class 'ISO20022_BusinessComponent' is a specialization of 'TopLevelDictionaryEntry'.
+The class 'ISO20022_BusinessComponent' is a specialization of 'BusinessConcept'.
+The class 'ISO20022_BusinessElementType' is a specialization of 'Type'.
+The class 'ISO20022_BusinessConcept' is a specialization of 'ModelEntity'.
+The class 'ISO20022_TopLevelDictionaryEntry' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_DataDictionary' is a specialization of 'ModelEntity'.
+The class 'ISO20022_Repository' is a specialization of 'ModelEntity'.
+The class 'ISO20022_BusinessProcessCatalogue' is a specialization of 'ModelEntity'.
+The class 'ISO20022_TopLevelCatalogueEntry' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_Diagram' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_BusinessElement' is a specialization of 'Member'.
+The class 'ISO20022_BusinessElement' is a specialization of 'BusinessConcept'.
+The class 'ISO20022_MessageComponentType' is a specialization of 'LogicalType'.
+The class 'ISO20022_MessageComponentType' is a specialization of 'TopLevelDictionaryEntry'.
+The class 'ISO20022_MessageComponentType' is a specialization of 'MessageConcept'.
+The class 'ISO20022_MessageBuildingBlock' is a specialization of 'XMLMember'.
+The class 'ISO20022_DataType' is a specialization of 'LogicalType'.
+The class 'ISO20022_DataType' is a specialization of 'BusinessElementType'.
+The class 'ISO20022_DataType' is a specialization of 'TopLevelDictionaryEntry'.
+The class 'ISO20022_Facet' is a specialization of 'ModelEntity'.
+The class 'ISO20022_BusinessAssociationEnd' is a specialization of 'BusinessElement'.
+The class 'ISO20022_MessageElementContainer' is a specialization of 'MessageComponentType'.
+The class 'ISO20022_MessageAttribute' is a specialization of 'MessageElement'.
+The class 'ISO20022_Encoding' is a specialization of 'ModelEntity'.
+The class 'ISO20022_MessageSet' is a specialization of 'TopLevelCatalogueEntry'.
+The class 'ISO20022_MessageDefinition' is a specialization of 'Type'.
+The class 'ISO20022_BusinessArea' is a specialization of 'TopLevelCatalogueEntry'.
+The class 'ISO20022_Xor' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_MessageComponent' is a specialization of 'MessageElementContainer'.
+The class 'ISO20022_SyntaxMessageScheme' is a specialization of 'TopLevelCatalogueEntry'.
+The class 'ISO20022_MessageChoreography' is a specialization of 'TopLevelCatalogueEntry'.
+The class 'ISO20022_Interaction' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_InteractionActor' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_BusinessRole' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_InteractionMessage' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_Syntax' is a specialization of 'ModelEntity'.
+The class 'ISO20022_BusinessAttribute' is a specialization of 'BusinessElement'.
+The class 'ISO20022_Text' is a specialization of 'XSDString'.
+The class 'ISO20022_XSDString' is a specialization of 'DataType'.
+The class 'ISO20022_IdentifierSet' is a specialization of 'XSDString'.
+The class 'ISO20022_Indicator' is a specialization of 'XSDBoolean'.
+The class 'ISO20022_XSDBoolean' is a specialization of 'DataType'.
+The class 'ISO20022_Rate' is a specialization of 'XSDDecimal'.
+The class 'ISO20022_XSDDecimal' is a specialization of 'DataType'.
+The class 'ISO20022_ExternalSchema' is a specialization of 'MessageComponentType'.
+The class 'ISO20022_Quantity' is a specialization of 'XSDDecimal'.
+The class 'ISO20022_Code' is a specialization of 'RepositoryConcept'.
+The class 'ISO20022_CodeSet' is a specialization of 'XSDString'.
+The class 'ISO20022_Amount' is a specialization of 'XSDDecimal'.
+The class 'ISO20022_ChoiceComponent' is a specialization of 'MessageElementContainer'.
+The class 'ISO20022_AbstractTimeConcept' is a specialization of 'DataType'.
+The class 'ISO20022_EndPointCategory' is a specialization of 'TopLevelDictionaryEntry'.
+The class 'ISO20022_ApplicationHeader' is a specialization of 'MessageDefinition'.
+The class 'ISO20022_XSDBinary' is a specialization of 'DataType'.
+The class 'ISO20022_XSDDate' is a specialization of 'AbstractTimeConcept'.
+The class 'ISO20022_XSDDateTime' is a specialization of 'AbstractTimeConcept'.
+The class 'ISO20022_XSDDay' is a specialization of 'AbstractTimeConcept'.
+The class 'ISO20022_XSDDuration' is a specialization of 'AbstractTimeConcept'.
+The class 'ISO20022_XSDID' is a specialization of 'XSDString'.
+The class 'ISO20022_XSDMonth' is a specialization of 'AbstractTimeConcept'.
+The class 'ISO20022_XSDMonthDay' is a specialization of 'AbstractTimeConcept'.
+The class 'ISO20022_XSDTime' is a specialization of 'AbstractTimeConcept'.
+The class 'ISO20022_XSDYear' is a specialization of 'AbstractTimeConcept'.
+The class 'ISO20022_XSDYearMonth' is a specialization of 'AbstractTimeConcept'.
+The class 'ISO20022_SWIFTSolution' is a specialization of 'MessageSet'.
+The class 'ISO20022_UserDefined' is a specialization of 'MessageComponentType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ISO20022_RepositoryConcept' and 'ISO20022_Constraint'. From 'ISO20022_RepositoryConcept', the role 'RepositoryConcept' has cardinality 0..*, and from 'ISO20022_Constraint', the role 'constraint' has cardinality 0..*.
+An association connects 'ISO20022_RepositoryConcept' and 'ISO20022_SemanticMarkup'. From 'ISO20022_RepositoryConcept', the role 'ISO20022_RepositoryConcept' has cardinality 0..*, and from 'ISO20022_SemanticMarkup', the role 'ISO20022_SemanticMarkup' has cardinality 0..*.
+An association connects 'ISO20022_RepositoryConcept' and 'ISO20022_Doclet'. From 'ISO20022_RepositoryConcept', the role 'ISO20022_RepositoryConcept3' has cardinality 0..*, and from 'ISO20022_Doclet', the role 'ISO20022_Doclet' has cardinality 0..*.
+An association connects 'ISO20022_Constraint' and 'ISO20022_RepositoryConcept'. From 'ISO20022_Constraint', the role 'Constraint' has cardinality 0..*, and from 'ISO20022_RepositoryConcept', the role 'owner' has cardinality 0..*.
+An association connects 'ISO20022_ModelEntity' and 'ISO20022_ModelEntity'. From 'ISO20022_ModelEntity', the role 'ModelEntity' has cardinality 0..*, and from 'ISO20022_ModelEntity', the role 'previousVersion' has cardinality 0..*.
+An association connects 'ISO20022_ModelEntity' and 'ISO20022_ModelEntity'. From 'ISO20022_ModelEntity', the role 'nextVersions' has cardinality 0..*, and from 'ISO20022_ModelEntity', the role 'ModelEntity9' has cardinality 0..*.
+An association connects 'ISO20022_SemanticMarkup' and 'ISO20022_SemanticMarkupElement'. From 'ISO20022_SemanticMarkup', the role 'ISO20022_SemanticMarkup11' has cardinality 0..*, and from 'ISO20022_SemanticMarkupElement', the role 'ISO20022_SemanticMarkupElement' has cardinality 0..*.
+An association connects 'ISO20022_MessageAssociationEnd' and 'ISO20022_MessageComponentType'. From 'ISO20022_MessageAssociationEnd', the role 'ISO20022_MessageAssociationEnd' has cardinality 0..*, and from 'ISO20022_MessageComponentType', the role 'ISO20022_MessageComponentType' has cardinality 0..*.
+An association connects 'ISO20022_MessageAssociationEnd' and 'ISO20022_MessageAssociationEnd'. From 'ISO20022_MessageAssociationEnd', the role 'ISO20022_MessageAssociationEnd13' has cardinality 0..*, and from 'ISO20022_MessageAssociationEnd', the role 'ISO20022_MessageAssociationEnd15' has cardinality 0..*.
+An association connects 'ISO20022_MessageElement' and 'ISO20022_BusinessComponent'. From 'ISO20022_MessageElement', the role 'derivationElement' has cardinality 0..*, and from 'ISO20022_BusinessComponent', the role 'BusinessComponent' has cardinality 0..*.
+An association connects 'ISO20022_BusinessElement' and 'ISO20022_MessageElement'. From 'ISO20022_BusinessElement', the role 'BusinessElement' has cardinality 0..*, and from 'ISO20022_MessageElement', the role 'derivation' has cardinality 0..*.
+An association connects 'ISO20022_MessageElementContainer' and 'ISO20022_MessageElement'. From 'ISO20022_MessageElementContainer', the role 'MessageElementContainer' has cardinality 0..*, and from 'ISO20022_MessageElement', the role 'messageElement' has cardinality 0..*.
+An association connects 'ISO20022_LogicalType' and 'ISO20022_XMLMember'. From 'ISO20022_LogicalType', the role 'LogicalType' has cardinality 0..*, and from 'ISO20022_XMLMember', the role 'typedXMLMember' has cardinality 0..*.
+An association connects 'ISO20022_Member' and 'ISO20022_Type'. From 'ISO20022_Member', the role 'typedMember' has cardinality 0..*, and from 'ISO20022_Type', the role 'Type' has cardinality 0..*.
+An association connects 'ISO20022_Member' and 'ISO20022_Type'. From 'ISO20022_Member', the role 'Member' has cardinality 0..*, and from 'ISO20022_Type', the role 'memberType' has cardinality 0..*.
+An association connects 'ISO20022_LogicalType' and 'ISO20022_IsAnAlternativeFor'. From 'ISO20022_LogicalType', the role 'source' has cardinality 0..*, and from 'ISO20022_IsAnAlternativeFor', the role 'IsAnAlternativeFor' has cardinality 0..*.
+An association connects 'ISO20022_LogicalType' and 'ISO20022_LogicalType'. From 'ISO20022_LogicalType', the role 'derivedFroms' has cardinality 0..*, and from 'ISO20022_LogicalType', the role 'LogicalType25' has cardinality 0..*.
+An association connects 'ISO20022_LogicalType' and 'ISO20022_LogicalType'. From 'ISO20022_LogicalType', the role 'LogicalType28' has cardinality 0..*, and from 'ISO20022_LogicalType', the role 'derivations' has cardinality 0..*.
+An association connects 'ISO20022_XMLMember' and 'ISO20022_LogicalType'. From 'ISO20022_XMLMember', the role 'XMLMember' has cardinality 0..*, and from 'ISO20022_LogicalType', the role 'xmlMemberType' has cardinality 0..*.
+An association connects 'ISO20022_LogicalType' and 'ISO20022_IsAnAlternativeFor'. From 'ISO20022_LogicalType', the role 'ISO20022_LogicalType' has cardinality 0..*, and from 'ISO20022_IsAnAlternativeFor', the role 'ISO20022_IsAnAlternativeFor' has cardinality 0..*.
+An association connects 'ISO20022_IsAnAlternativeFor' and 'ISO20022_LogicalType'. From 'ISO20022_IsAnAlternativeFor', the role 'isAnAlternativeFors' has cardinality 0..*, and from 'ISO20022_LogicalType', the role 'LogicalType32' has cardinality 0..*.
+An association connects 'ISO20022_BusinessComponent' and 'ISO20022_BusinessComponent'. From 'ISO20022_BusinessComponent', the role 'BusinessComponent35' has cardinality 0..*, and from 'ISO20022_BusinessComponent', the role 'superType' has cardinality 0..*.
+An association connects 'ISO20022_BusinessComponent' and 'ISO20022_BusinessComponent'. From 'ISO20022_BusinessComponent', the role 'subType' has cardinality 0..*, and from 'ISO20022_BusinessComponent', the role 'BusinessComponent38' has cardinality 0..*.
+An association connects 'ISO20022_BusinessComponent' and 'ISO20022_BusinessElement'. From 'ISO20022_BusinessComponent', the role 'elementContext' has cardinality 0..*, and from 'ISO20022_BusinessElement', the role 'BusinessElement40' has cardinality 0..*.
+An association connects 'ISO20022_BusinessComponent' and 'ISO20022_MessageComponentType'. From 'ISO20022_BusinessComponent', the role 'trace' has cardinality 0..*, and from 'ISO20022_MessageComponentType', the role 'MessageComponentType' has cardinality 0..*.
+An association connects 'ISO20022_BusinessAssociationEnd' and 'ISO20022_BusinessComponent'. From 'ISO20022_BusinessAssociationEnd', the role 'BusinessAssociationEnd' has cardinality 0..*, and from 'ISO20022_BusinessComponent', the role 'type' has cardinality 0..*.
+An association connects 'ISO20022_BusinessComponent' and 'ISO20022_MessageElement'. From 'ISO20022_BusinessComponent', the role 'businessComponentTrace' has cardinality 0..*, and from 'ISO20022_MessageElement', the role 'MessageElement' has cardinality 0..*.
+An association connects 'ISO20022_DataDictionary' and 'ISO20022_TopLevelDictionaryEntry'. From 'ISO20022_DataDictionary', the role 'DataDictionary' has cardinality 0..*, and from 'ISO20022_TopLevelDictionaryEntry', the role 'topLevelDictionaryEntry' has cardinality 0..*.
+An association connects 'ISO20022_DataDictionary' and 'ISO20022_Repository'. From 'ISO20022_DataDictionary', the role 'dataDictionary' has cardinality 0..*, and from 'ISO20022_Repository', the role 'Repository' has cardinality 0..*.
+An association connects 'ISO20022_DataDictionary' and 'ISO20022_TopLevelDictionaryEntry'. From 'ISO20022_DataDictionary', the role 'dataDictionary47' has cardinality 0..*, and from 'ISO20022_TopLevelDictionaryEntry', the role 'TopLevelDictionaryEntry' has cardinality 0..*.
+An association connects 'ISO20022_Repository' and 'ISO20022_BusinessProcessCatalogue'. From 'ISO20022_Repository', the role 'repository' has cardinality 0..*, and from 'ISO20022_BusinessProcessCatalogue', the role 'BusinessProcessCatalogue' has cardinality 0..*.
+An association connects 'ISO20022_Diagram' and 'ISO20022_Repository'. From 'ISO20022_Diagram', the role 'Diagram' has cardinality 0..*, and from 'ISO20022_Repository', the role 'repository50' has cardinality 0..*.
+An association connects 'ISO20022_DataDictionary' and 'ISO20022_Repository'. From 'ISO20022_DataDictionary', the role 'DataDictionary53' has cardinality 0..*, and from 'ISO20022_Repository', the role 'repository52' has cardinality 0..*.
+An association connects 'ISO20022_BusinessProcessCatalogue' and 'ISO20022_TopLevelCatalogueEntry'. From 'ISO20022_BusinessProcessCatalogue', the role 'businessProcessCatalogue' has cardinality 0..*, and from 'ISO20022_TopLevelCatalogueEntry', the role 'TopLevelCatalogueEntry' has cardinality 0..*.
+An association connects 'ISO20022_Repository' and 'ISO20022_BusinessProcessCatalogue'. From 'ISO20022_Repository', the role 'Repository57' has cardinality 0..*, and from 'ISO20022_BusinessProcessCatalogue', the role 'businessProcessCatalogue56' has cardinality 0..*.
+An association connects 'ISO20022_TopLevelCatalogueEntry' and 'ISO20022_BusinessProcessCatalogue'. From 'ISO20022_TopLevelCatalogueEntry', the role 'topLevelCatalogueEntry' has cardinality 0..*, and from 'ISO20022_BusinessProcessCatalogue', the role 'BusinessProcessCatalogue59' has cardinality 0..*.
+An association connects 'ISO20022_Diagram' and 'ISO20022_Repository'. From 'ISO20022_Diagram', the role 'diagrams' has cardinality 0..*, and from 'ISO20022_Repository', the role 'Repository61' has cardinality 0..*.
+An association connects 'ISO20022_BusinessElement' and 'ISO20022_MessageElement'. From 'ISO20022_BusinessElement', the role 'businessElementTrace' has cardinality 0..*, and from 'ISO20022_MessageElement', the role 'MessageElement63' has cardinality 0..*.
+An association connects 'ISO20022_BusinessElement' and 'ISO20022_BusinessElementType'. From 'ISO20022_BusinessElement', the role 'ISO20022_BusinessElement' has cardinality 0..*, and from 'ISO20022_BusinessElementType', the role 'ISO20022_BusinessElementType' has cardinality 0..*.
+An association connects 'ISO20022_BusinessComponent' and 'ISO20022_BusinessElement'. From 'ISO20022_BusinessComponent', the role 'BusinessComponent66' has cardinality 0..*, and from 'ISO20022_BusinessElement', the role 'element' has cardinality 0..*.
+An association connects 'ISO20022_MessageBuildingBlock' and 'ISO20022_MessageComponentType'. From 'ISO20022_MessageBuildingBlock', the role 'MessageBuildingBlock' has cardinality 0..*, and from 'ISO20022_MessageComponentType', the role 'complexType' has cardinality 0..*.
+An association connects 'ISO20022_BusinessComponent' and 'ISO20022_MessageComponentType'. From 'ISO20022_BusinessComponent', the role 'BusinessComponent69' has cardinality 0..*, and from 'ISO20022_MessageComponentType', the role 'derivationComponent' has cardinality 0..*.
+An association connects 'ISO20022_DataType' and 'ISO20022_MessageBuildingBlock'. From 'ISO20022_DataType', the role 'ISO20022_DataType' has cardinality 0..*, and from 'ISO20022_MessageBuildingBlock', the role 'ISO20022_MessageBuildingBlock' has cardinality 0..*.
+An association connects 'ISO20022_MessageComponentType' and 'ISO20022_MessageBuildingBlock'. From 'ISO20022_MessageComponentType', the role 'MessageComponentType72' has cardinality 0..*, and from 'ISO20022_MessageBuildingBlock', the role 'messageBuildingBlock' has cardinality 0..*.
+An association connects 'ISO20022_Facet' and 'ISO20022_DataType'. From 'ISO20022_Facet', the role 'ISO20022_Facet' has cardinality 0..*, and from 'ISO20022_DataType', the role 'ISO20022_DataType74' has cardinality 0..*.
+An association connects 'ISO20022_BusinessAssociationEnd' and 'ISO20022_BusinessAssociationEnd'. From 'ISO20022_BusinessAssociationEnd', the role 'ISO20022_BusinessAssociationEnd' has cardinality 0..*, and from 'ISO20022_BusinessAssociationEnd', the role 'ISO20022_BusinessAssociationEnd75' has cardinality 0..*.
+An association connects 'ISO20022_BusinessAssociationEnd' and 'ISO20022_BusinessComponent'. From 'ISO20022_BusinessAssociationEnd', the role 'associationDomain' has cardinality 0..*, and from 'ISO20022_BusinessComponent', the role 'BusinessComponent78' has cardinality 0..*.
+An association connects 'ISO20022_MessageElement' and 'ISO20022_MessageElementContainer'. From 'ISO20022_MessageElement', the role 'MessageElement80' has cardinality 0..*, and from 'ISO20022_MessageElementContainer', the role 'componentContext' has cardinality 0..*.
+An association connects 'ISO20022_DataType' and 'ISO20022_MessageAttribute'. From 'ISO20022_DataType', the role 'ISO20022_DataType82' has cardinality 0..*, and from 'ISO20022_MessageAttribute', the role 'ISO20022_MessageAttribute' has cardinality 0..*.
+An association connects 'ISO20022_MessageComponentType' and 'ISO20022_MessageAttribute'. From 'ISO20022_MessageComponentType', the role 'ISO20022_MessageComponentType85' has cardinality 0..*, and from 'ISO20022_MessageAttribute', the role 'ISO20022_MessageAttribute84' has cardinality 0..*.
+An association connects 'ISO20022_MessageSet' and 'ISO20022_Encoding'. From 'ISO20022_MessageSet', the role 'MessageSet' has cardinality 0..*, and from 'ISO20022_Encoding', the role 'validEncoding' has cardinality 0..*.
+An association connects 'ISO20022_Syntax' and 'ISO20022_Encoding'. From 'ISO20022_Syntax', the role 'Syntax' has cardinality 0..*, and from 'ISO20022_Encoding', the role 'possibleEncodings' has cardinality 0..*.
+An association connects 'ISO20022_MessageDefinition' and 'ISO20022_MessageSet'. From 'ISO20022_MessageDefinition', the role 'MessageDefinition' has cardinality 0..*, and from 'ISO20022_MessageSet', the role 'messageSet' has cardinality 0..*.
+An association connects 'ISO20022_MessageSet' and 'ISO20022_Interaction'. From 'ISO20022_MessageSet', the role 'messageSet90' has cardinality 0..*, and from 'ISO20022_Interaction', the role 'Interaction' has cardinality 0..*.
+An association connects 'ISO20022_MessageSet' and 'ISO20022_Syntax'. From 'ISO20022_MessageSet', the role 'generatedFor' has cardinality 0..*, and from 'ISO20022_Syntax', the role 'Syntax92' has cardinality 0..*.
+An association connects 'ISO20022_Encoding' and 'ISO20022_MessageSet'. From 'ISO20022_Encoding', the role 'Encoding' has cardinality 0..*, and from 'ISO20022_MessageSet', the role 'messageSet94' has cardinality 0..*.
+An association connects 'ISO20022_MessageDefinition' and 'ISO20022_MessageDefinition'. From 'ISO20022_MessageDefinition', the role 'subsets' has cardinality 0..*, and from 'ISO20022_MessageDefinition', the role 'MessageDefinition97' has cardinality 0..*.
+An association connects 'ISO20022_MessageDefinition' and 'ISO20022_MessageDefinition'. From 'ISO20022_MessageDefinition', the role 'MessageDefinition100' has cardinality 0..*, and from 'ISO20022_MessageDefinition', the role 'master' has cardinality 0..*.
+An association connects 'ISO20022_BusinessArea' and 'ISO20022_MessageDefinition'. From 'ISO20022_BusinessArea', the role 'BusinessArea' has cardinality 0..*, and from 'ISO20022_MessageDefinition', the role 'messageDefinition' has cardinality 0..*.
+An association connects 'ISO20022_Xor' and 'ISO20022_MessageDefinition'. From 'ISO20022_Xor', the role 'Xor' has cardinality 0..*, and from 'ISO20022_MessageDefinition', the role 'messageDefinition103' has cardinality 0..*.
+An association connects 'ISO20022_MessageDefinition' and 'ISO20022_MessageBuildingBlock'. From 'ISO20022_MessageDefinition', the role 'ISO20022_MessageDefinition' has cardinality 0..*, and from 'ISO20022_MessageBuildingBlock', the role 'ISO20022_MessageBuildingBlock105' has cardinality 0..*.
+An association connects 'ISO20022_MessageDefinition' and 'ISO20022_SyntaxMessageScheme'. From 'ISO20022_MessageDefinition', the role 'messageDefinitionTrace' has cardinality 0..*, and from 'ISO20022_SyntaxMessageScheme', the role 'SyntaxMessageScheme' has cardinality 0..*.
+An association connects 'ISO20022_MessageDefinition' and 'ISO20022_MessageChoreography'. From 'ISO20022_MessageDefinition', the role 'messageDefinition108' has cardinality 0..*, and from 'ISO20022_MessageChoreography', the role 'MessageChoreography' has cardinality 0..*.
+An association connects 'ISO20022_MessageDefinition' and 'ISO20022_MessageDefinitionIdentifier'. From 'ISO20022_MessageDefinition', the role 'ISO20022_MessageDefinition110' has cardinality 0..*, and from 'ISO20022_MessageDefinitionIdentifier', the role 'ISO20022_MessageDefinitionIdentifier' has cardinality 0..*.
+An association connects 'ISO20022_MessageDefinition' and 'ISO20022_MessageSet'. From 'ISO20022_MessageDefinition', the role 'messageDefinition112' has cardinality 0..*, and from 'ISO20022_MessageSet', the role 'MessageSet113' has cardinality 0..*.
+An association connects 'ISO20022_MessageDefinition' and 'ISO20022_BusinessArea'. From 'ISO20022_MessageDefinition', the role 'MessageDefinition115' has cardinality 0..*, and from 'ISO20022_BusinessArea', the role 'businessArea' has cardinality 0..*.
+An association connects 'ISO20022_Xor' and 'ISO20022_MessageElement'. From 'ISO20022_Xor', the role 'ISO20022_Xor' has cardinality 0..*, and from 'ISO20022_MessageElement', the role 'ISO20022_MessageElement' has cardinality 0..*.
+An association connects 'ISO20022_Xor' and 'ISO20022_MessageComponent'. From 'ISO20022_Xor', the role 'xors' has cardinality 0..*, and from 'ISO20022_MessageComponent', the role 'MessageComponent' has cardinality 0..*.
+An association connects 'ISO20022_MessageBuildingBlock' and 'ISO20022_Xor'. From 'ISO20022_MessageBuildingBlock', the role 'ISO20022_MessageBuildingBlock120' has cardinality 0..*, and from 'ISO20022_Xor', the role 'ISO20022_Xor119' has cardinality 0..*.
+An association connects 'ISO20022_Xor' and 'ISO20022_MessageDefinition'. From 'ISO20022_Xor', the role 'xors122' has cardinality 0..*, and from 'ISO20022_MessageDefinition', the role 'MessageDefinition123' has cardinality 0..*.
+An association connects 'ISO20022_MessageComponent' and 'ISO20022_Xor'. From 'ISO20022_MessageComponent', the role 'messageComponent' has cardinality 0..*, and from 'ISO20022_Xor', the role 'Xor125' has cardinality 0..*.
+An association connects 'ISO20022_SyntaxMessageScheme' and 'ISO20022_MessageDefinition'. From 'ISO20022_SyntaxMessageScheme', the role 'derivation127' has cardinality 0..*, and from 'ISO20022_MessageDefinition', the role 'MessageDefinition128' has cardinality 0..*.
+An association connects 'ISO20022_MessageDefinition' and 'ISO20022_MessageChoreography'. From 'ISO20022_MessageDefinition', the role 'MessageDefinition130' has cardinality 0..*, and from 'ISO20022_MessageChoreography', the role 'messageChoreography' has cardinality 0..*.
+An association connects 'ISO20022_InteractionActor' and 'ISO20022_Interaction'. From 'ISO20022_InteractionActor', the role 'InteractionActor' has cardinality 0..*, and from 'ISO20022_Interaction', the role 'interaction' has cardinality 0..*.
+An association connects 'ISO20022_Interaction' and 'ISO20022_InteractionMessage'. From 'ISO20022_Interaction', the role 'interaction133' has cardinality 0..*, and from 'ISO20022_InteractionMessage', the role 'InteractionMessage' has cardinality 0..*.
+An association connects 'ISO20022_Interaction' and 'ISO20022_Diagram'. From 'ISO20022_Interaction', the role 'ISO20022_Interaction' has cardinality 0..*, and from 'ISO20022_Diagram', the role 'ISO20022_Diagram' has cardinality 0..*.
+An association connects 'ISO20022_MessageSet' and 'ISO20022_Interaction'. From 'ISO20022_MessageSet', the role 'MessageSet136' has cardinality 0..*, and from 'ISO20022_Interaction', the role 'interactions' has cardinality 0..*.
+An association connects 'ISO20022_BusinessRole' and 'ISO20022_InteractionActor'. From 'ISO20022_BusinessRole', the role 'ISO20022_BusinessRole' has cardinality 0..*, and from 'ISO20022_InteractionActor', the role 'ISO20022_InteractionActor' has cardinality 0..*.
+An association connects 'ISO20022_InteractionActor' and 'ISO20022_Interaction'. From 'ISO20022_InteractionActor', the role 'actors' has cardinality 0..*, and from 'ISO20022_Interaction', the role 'Interaction139' has cardinality 0..*.
+An association connects 'ISO20022_InteractionMessage' and 'ISO20022_InteractionActor'. From 'ISO20022_InteractionMessage', the role 'ISO20022_InteractionMessage' has cardinality 0..*, and from 'ISO20022_InteractionActor', the role 'ISO20022_InteractionActor141' has cardinality 0..*.
+An association connects 'ISO20022_InteractionActor' and 'ISO20022_InteractionMessage'. From 'ISO20022_InteractionActor', the role 'ISO20022_InteractionActor144' has cardinality 0..*, and from 'ISO20022_InteractionMessage', the role 'ISO20022_InteractionMessage143' has cardinality 0..*.
+An association connects 'ISO20022_Interaction' and 'ISO20022_InteractionMessage'. From 'ISO20022_Interaction', the role 'Interaction146' has cardinality 0..*, and from 'ISO20022_InteractionMessage', the role 'messages' has cardinality 0..*.
+An association connects 'ISO20022_Syntax' and 'ISO20022_Encoding'. From 'ISO20022_Syntax', the role 'syntax' has cardinality 0..*, and from 'ISO20022_Encoding', the role 'Encoding148' has cardinality 0..*.
+An association connects 'ISO20022_Syntax' and 'ISO20022_MessageSet'. From 'ISO20022_Syntax', the role 'generatedSyntax' has cardinality 0..*, and from 'ISO20022_MessageSet', the role 'MessageSet150' has cardinality 0..*.
+An association connects 'ISO20022_DataType' and 'ISO20022_BusinessAttribute'. From 'ISO20022_DataType', the role 'ISO20022_DataType152' has cardinality 0..*, and from 'ISO20022_BusinessAttribute', the role 'ISO20022_BusinessAttribute' has cardinality 0..*.
+An association connects 'ISO20022_BusinessComponent' and 'ISO20022_BusinessAttribute'. From 'ISO20022_BusinessComponent', the role 'ISO20022_BusinessComponent' has cardinality 0..*, and from 'ISO20022_BusinessAttribute', the role 'ISO20022_BusinessAttribute154' has cardinality 0..*.
+An association connects 'ISO20022_Code' and 'ISO20022_CodeSet'. From 'ISO20022_Code', the role 'code' has cardinality 0..*, and from 'ISO20022_CodeSet', the role 'CodeSet' has cardinality 0..*.
+An association connects 'ISO20022_CodeSet' and 'ISO20022_CodeSet'. From 'ISO20022_CodeSet', the role 'derivation158' has cardinality 0..*, and from 'ISO20022_CodeSet', the role 'CodeSet159' has cardinality 0..*.
+An association connects 'ISO20022_CodeSet' and 'ISO20022_CodeSet'. From 'ISO20022_CodeSet', the role 'trace162' has cardinality 0..*, and from 'ISO20022_CodeSet', the role 'CodeSet163' has cardinality 0..*.
+An association connects 'ISO20022_Code' and 'ISO20022_CodeSet'. From 'ISO20022_Code', the role 'Code' has cardinality 0..*, and from 'ISO20022_CodeSet', the role 'owner165' has cardinality 0..*.
+An association connects 'ISO20022_Amount' and 'ISO20022_IdentifierSet'. From 'ISO20022_Amount', the role 'ISO20022_Amount' has cardinality 0..*, and from 'ISO20022_IdentifierSet', the role 'ISO20022_IdentifierSet' has cardinality 0..*.
+An association connects 'ISO20022_EndPointCategory' and 'ISO20022_MessageElementContainer'. From 'ISO20022_EndPointCategory', the role 'ISO20022_EndPointCategory' has cardinality 0..*, and from 'ISO20022_MessageElementContainer', the role 'ISO20022_MessageElementContainer' has cardinality 0..*.

@@ -1,0 +1,12 @@
+The domain model 'fd' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'fd_FiniteDifference' represents an important domain concept.
+It does not declare any attributes.
+
+'Solver' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fd_FiniteDifference' is a specialization of 'Solver'.

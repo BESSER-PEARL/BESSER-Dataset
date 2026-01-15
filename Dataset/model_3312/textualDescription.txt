@@ -1,0 +1,28 @@
+The domain model 'viatraTraceability' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'viatraTraceability_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'viatraTraceability_DepToGSPNTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'viatraTraceability_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'viatraTraceability_DepModel' represents an important domain concept.
+It does not declare any attributes.
+
+'viatraTraceability_DepToGSPN' represents an important domain concept.
+It does not declare any attributes.
+
+'viatraTraceability_Identification' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'viatraTraceability_PetriNet' and 'viatraTraceability_DepToGSPN'. From 'viatraTraceability_PetriNet', the role 'viatraTraceability_PetriNet' has cardinality 0..*, and from 'viatraTraceability_DepToGSPN', the role 'viatraTraceability_DepToGSPN' has cardinality 0..*.
+An association connects 'viatraTraceability_DepToGSPN' and 'viatraTraceability_DepModel'. From 'viatraTraceability_DepToGSPN', the role 'viatraTraceability_DepToGSPN2' has cardinality 0..*, and from 'viatraTraceability_DepModel', the role 'viatraTraceability_DepModel' has cardinality 0..*.
+An association connects 'viatraTraceability_DepToGSPNTrace' and 'viatraTraceability_DepToGSPN'. From 'viatraTraceability_DepToGSPNTrace', the role 'viatraTraceability_DepToGSPNTrace' has cardinality 0..*, and from 'viatraTraceability_DepToGSPN', the role 'viatraTraceability_DepToGSPN4' has cardinality 0..*.
+An association connects 'viatraTraceability_AbstractElement' and 'viatraTraceability_DepToGSPNTrace'. From 'viatraTraceability_AbstractElement', the role 'viatraTraceability_AbstractElement' has cardinality 0..*, and from 'viatraTraceability_DepToGSPNTrace', the role 'viatraTraceability_DepToGSPNTrace6' has cardinality 0..*.
+An association connects 'viatraTraceability_Identification' and 'viatraTraceability_DepToGSPNTrace'. From 'viatraTraceability_Identification', the role 'viatraTraceability_Identification' has cardinality 0..*, and from 'viatraTraceability_DepToGSPNTrace', the role 'viatraTraceability_DepToGSPNTrace8' has cardinality 0..*.

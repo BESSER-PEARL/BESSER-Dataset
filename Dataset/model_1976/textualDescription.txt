@@ -1,0 +1,17 @@
+The domain model 'EtlSimpleTrace' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'EtlSimpleTrace_TraceLink' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'EtlSimpleTrace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'EtlSimpleTrace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'EtlSimpleTrace_TraceLink' and 'EtlSimpleTrace_Trace'. From 'EtlSimpleTrace_TraceLink', the role 'EtlSimpleTrace_TraceLink' has cardinality 0..*, and from 'EtlSimpleTrace_Trace', the role 'EtlSimpleTrace_Trace' has cardinality 0..*.
+An association connects 'EtlSimpleTrace_EObject' and 'EtlSimpleTrace_TraceLink'. From 'EtlSimpleTrace_EObject', the role 'EtlSimpleTrace_EObject' has cardinality 0..*, and from 'EtlSimpleTrace_TraceLink', the role 'EtlSimpleTrace_TraceLink2' has cardinality 0..*.
+An association connects 'EtlSimpleTrace_EObject' and 'EtlSimpleTrace_TraceLink'. From 'EtlSimpleTrace_EObject', the role 'EtlSimpleTrace_EObject5' has cardinality 0..*, and from 'EtlSimpleTrace_TraceLink', the role 'EtlSimpleTrace_TraceLink4' has cardinality 0..*.

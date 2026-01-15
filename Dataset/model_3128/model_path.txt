@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/anatlyzer/a2l/tests/a2l.tests.vmtesting.emf/transformations/Ecore2Class/Class.ecore

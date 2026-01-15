@@ -1,0 +1,176 @@
+The domain model 'smartadapters4MODERATES' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'adaptations_smartadapters4MODERATES_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_InstantiationStrategy' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_CreateAdaptation' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_AdviceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptations_smartadapters4MODERATES_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptations_smartadapters4MODERATES_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_adaptations_SetState' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_CloneAdaptation' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_adaptations_SetAnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_GlobalInstantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_SetAdaptation' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_Aspect' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smartadapters4MODERATES_AspectModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_PointcutModel' represents an important domain concept.
+It does not declare any attributes.
+
+'ScopedInstantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptations_smartadapters4MODERATES_State' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptations_smartadapters4MODERATES_PlatformAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'SetAdaptation' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_adaptations_SetActionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_PerElementMatch' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_adaptations_UnsetCompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_adaptations_UnsetState' represents an important domain concept.
+It does not declare any attributes.
+
+'UnsetAdaptation' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptations_smartadapters4MODERATES_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptations_smartadapters4MODERATES_ActionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_UnsetAdaptation' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_PerRoleMatch' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptations_smartadapters4MODERATES_AnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_adaptations_SetCompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptations_smartadapters4MODERATES_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_adaptations_UnsetTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_ScopedInstantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'Adaptation' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_Adaptation' represents an important domain concept.
+It does not declare any attributes.
+
+'InstantiationStrategy' represents an important domain concept.
+It does not declare any attributes.
+
+'adaptations_smartadapters4MODERATES_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'smartadapters4MODERATES_adaptations_SetTransition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'smartadapters4MODERATES_CloneAdaptation' is a specialization of 'Adaptation'.
+The class 'smartadapters4MODERATES_CreateAdaptation' is a specialization of 'Adaptation'.
+The class 'smartadapters4MODERATES_SetAdaptation' is a specialization of 'Adaptation'.
+The class 'smartadapters4MODERATES_UnsetAdaptation' is a specialization of 'Adaptation'.
+The class 'smartadapters4MODERATES_GlobalInstantiation' is a specialization of 'InstantiationStrategy'.
+The class 'smartadapters4MODERATES_ScopedInstantiation' is a specialization of 'InstantiationStrategy'.
+The class 'smartadapters4MODERATES_PerRoleMatch' is a specialization of 'ScopedInstantiation'.
+The class 'smartadapters4MODERATES_PerElementMatch' is a specialization of 'ScopedInstantiation'.
+The class 'smartadapters4MODERATES_adaptations_SetCompositeState' is a specialization of 'SetAdaptation'.
+The class 'smartadapters4MODERATES_adaptations_UnsetCompositeState' is a specialization of 'UnsetAdaptation'.
+The class 'smartadapters4MODERATES_adaptations_SetState' is a specialization of 'SetAdaptation'.
+The class 'smartadapters4MODERATES_adaptations_UnsetState' is a specialization of 'UnsetAdaptation'.
+The class 'smartadapters4MODERATES_adaptations_SetTransition' is a specialization of 'SetAdaptation'.
+The class 'smartadapters4MODERATES_adaptations_UnsetTransition' is a specialization of 'UnsetAdaptation'.
+The class 'smartadapters4MODERATES_adaptations_SetAnnotatedElement' is a specialization of 'SetAdaptation'.
+The class 'smartadapters4MODERATES_adaptations_SetActionBlock' is a specialization of 'SetAdaptation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'smartadapters4MODERATES_PointcutModel' and 'smartadapters4MODERATES_Aspect'. From 'smartadapters4MODERATES_PointcutModel', the role 'smartadapters4MODERATES_PointcutModel' has cardinality 0..*, and from 'smartadapters4MODERATES_Aspect', the role 'smartadapters4MODERATES_Aspect' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_AdviceModel' and 'smartadapters4MODERATES_Aspect'. From 'smartadapters4MODERATES_AdviceModel', the role 'smartadapters4MODERATES_AdviceModel' has cardinality 0..*, and from 'smartadapters4MODERATES_Aspect', the role 'smartadapters4MODERATES_Aspect2' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_Aspect' and 'smartadapters4MODERATES_InstantiationStrategy'. From 'smartadapters4MODERATES_Aspect', the role 'smartadapters4MODERATES_Aspect4' has cardinality 0..*, and from 'smartadapters4MODERATES_InstantiationStrategy', the role 'smartadapters4MODERATES_InstantiationStrategy' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_Adaptation' and 'smartadapters4MODERATES_Aspect'. From 'smartadapters4MODERATES_Adaptation', the role 'smartadapters4MODERATES_Adaptation' has cardinality 0..*, and from 'smartadapters4MODERATES_Aspect', the role 'smartadapters4MODERATES_Aspect6' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_AspectModelElement' and 'smartadapters4MODERATES_AdviceModel'. From 'smartadapters4MODERATES_AspectModelElement', the role 'smartadapters4MODERATES_AspectModelElement' has cardinality 0..*, and from 'smartadapters4MODERATES_AdviceModel', the role 'smartadapters4MODERATES_AdviceModel8' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_AspectModelElement' and 'smartadapters4MODERATES_PointcutModel'. From 'smartadapters4MODERATES_AspectModelElement', the role 'smartadapters4MODERATES_AspectModelElement11' has cardinality 0..*, and from 'smartadapters4MODERATES_PointcutModel', the role 'smartadapters4MODERATES_PointcutModel10' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_InstantiationStrategy' and 'smartadapters4MODERATES_AspectModelElement'. From 'smartadapters4MODERATES_InstantiationStrategy', the role 'smartadapters4MODERATES_InstantiationStrategy13' has cardinality 0..*, and from 'smartadapters4MODERATES_AspectModelElement', the role 'smartadapters4MODERATES_AspectModelElement14' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_AspectModelElement' and 'smartadapters4MODERATES_ScopedInstantiation'. From 'smartadapters4MODERATES_AspectModelElement', the role 'smartadapters4MODERATES_AspectModelElement16' has cardinality 0..*, and from 'smartadapters4MODERATES_ScopedInstantiation', the role 'smartadapters4MODERATES_ScopedInstantiation' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_SetCompositeState' and 'adaptations_smartadapters4MODERATES_CompositeState'. From 'smartadapters4MODERATES_adaptations_SetCompositeState', the role 'smartadapters4MODERATES_adaptations_SetCompositeState' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_CompositeState', the role 'adaptations_smartadapters4MODERATES_CompositeState' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_State' and 'smartadapters4MODERATES_adaptations_SetCompositeState'. From 'adaptations_smartadapters4MODERATES_State', the role 'adaptations_smartadapters4MODERATES_State' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_SetCompositeState', the role 'smartadapters4MODERATES_adaptations_SetCompositeState19' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_SetCompositeState' and 'adaptations_smartadapters4MODERATES_State'. From 'smartadapters4MODERATES_adaptations_SetCompositeState', the role 'smartadapters4MODERATES_adaptations_SetCompositeState21' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_State', the role 'adaptations_smartadapters4MODERATES_State22' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_UnsetCompositeState' and 'adaptations_smartadapters4MODERATES_CompositeState'. From 'smartadapters4MODERATES_adaptations_UnsetCompositeState', the role 'smartadapters4MODERATES_adaptations_UnsetCompositeState' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_CompositeState', the role 'adaptations_smartadapters4MODERATES_CompositeState24' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_UnsetCompositeState' and 'adaptations_smartadapters4MODERATES_State'. From 'smartadapters4MODERATES_adaptations_UnsetCompositeState', the role 'smartadapters4MODERATES_adaptations_UnsetCompositeState26' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_State', the role 'adaptations_smartadapters4MODERATES_State27' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_UnsetCompositeState' and 'adaptations_smartadapters4MODERATES_State'. From 'smartadapters4MODERATES_adaptations_UnsetCompositeState', the role 'smartadapters4MODERATES_adaptations_UnsetCompositeState29' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_State', the role 'adaptations_smartadapters4MODERATES_State30' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_SetState' and 'adaptations_smartadapters4MODERATES_State'. From 'smartadapters4MODERATES_adaptations_SetState', the role 'smartadapters4MODERATES_adaptations_SetState' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_State', the role 'adaptations_smartadapters4MODERATES_State32' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_SetState' and 'adaptations_smartadapters4MODERATES_Transition'. From 'smartadapters4MODERATES_adaptations_SetState', the role 'smartadapters4MODERATES_adaptations_SetState34' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_Transition', the role 'adaptations_smartadapters4MODERATES_Transition' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_Transition' and 'smartadapters4MODERATES_adaptations_SetState'. From 'adaptations_smartadapters4MODERATES_Transition', the role 'adaptations_smartadapters4MODERATES_Transition37' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_SetState', the role 'smartadapters4MODERATES_adaptations_SetState36' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_SetState' and 'adaptations_smartadapters4MODERATES_Action'. From 'smartadapters4MODERATES_adaptations_SetState', the role 'smartadapters4MODERATES_adaptations_SetState39' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_Action', the role 'adaptations_smartadapters4MODERATES_Action' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_Action' and 'smartadapters4MODERATES_adaptations_SetState'. From 'adaptations_smartadapters4MODERATES_Action', the role 'adaptations_smartadapters4MODERATES_Action42' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_SetState', the role 'smartadapters4MODERATES_adaptations_SetState41' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_Property' and 'smartadapters4MODERATES_adaptations_SetState'. From 'adaptations_smartadapters4MODERATES_Property', the role 'adaptations_smartadapters4MODERATES_Property' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_SetState', the role 'smartadapters4MODERATES_adaptations_SetState44' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_State' and 'smartadapters4MODERATES_adaptations_UnsetState'. From 'adaptations_smartadapters4MODERATES_State', the role 'adaptations_smartadapters4MODERATES_State46' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_UnsetState', the role 'smartadapters4MODERATES_adaptations_UnsetState' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_UnsetState' and 'adaptations_smartadapters4MODERATES_Transition'. From 'smartadapters4MODERATES_adaptations_UnsetState', the role 'smartadapters4MODERATES_adaptations_UnsetState48' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_Transition', the role 'adaptations_smartadapters4MODERATES_Transition49' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_Transition' and 'smartadapters4MODERATES_adaptations_UnsetState'. From 'adaptations_smartadapters4MODERATES_Transition', the role 'adaptations_smartadapters4MODERATES_Transition52' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_UnsetState', the role 'smartadapters4MODERATES_adaptations_UnsetState51' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_Action' and 'smartadapters4MODERATES_adaptations_UnsetState'. From 'adaptations_smartadapters4MODERATES_Action', the role 'adaptations_smartadapters4MODERATES_Action55' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_UnsetState', the role 'smartadapters4MODERATES_adaptations_UnsetState54' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_UnsetState' and 'adaptations_smartadapters4MODERATES_Action'. From 'smartadapters4MODERATES_adaptations_UnsetState', the role 'smartadapters4MODERATES_adaptations_UnsetState57' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_Action', the role 'adaptations_smartadapters4MODERATES_Action58' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_UnsetState' and 'adaptations_smartadapters4MODERATES_Property'. From 'smartadapters4MODERATES_adaptations_UnsetState', the role 'smartadapters4MODERATES_adaptations_UnsetState60' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_Property', the role 'adaptations_smartadapters4MODERATES_Property61' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_Transition' and 'smartadapters4MODERATES_adaptations_SetTransition'. From 'adaptations_smartadapters4MODERATES_Transition', the role 'adaptations_smartadapters4MODERATES_Transition63' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_SetTransition', the role 'smartadapters4MODERATES_adaptations_SetTransition' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_SetTransition' and 'adaptations_smartadapters4MODERATES_Event'. From 'smartadapters4MODERATES_adaptations_SetTransition', the role 'smartadapters4MODERATES_adaptations_SetTransition65' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_Event', the role 'adaptations_smartadapters4MODERATES_Event' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_SetTransition' and 'adaptations_smartadapters4MODERATES_Expression'. From 'smartadapters4MODERATES_adaptations_SetTransition', the role 'smartadapters4MODERATES_adaptations_SetTransition67' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_Expression', the role 'adaptations_smartadapters4MODERATES_Expression' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_Action' and 'smartadapters4MODERATES_adaptations_SetTransition'. From 'adaptations_smartadapters4MODERATES_Action', the role 'adaptations_smartadapters4MODERATES_Action70' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_SetTransition', the role 'smartadapters4MODERATES_adaptations_SetTransition69' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_SetTransition' and 'adaptations_smartadapters4MODERATES_State'. From 'smartadapters4MODERATES_adaptations_SetTransition', the role 'smartadapters4MODERATES_adaptations_SetTransition72' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_State', the role 'adaptations_smartadapters4MODERATES_State73' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_SetTransition' and 'adaptations_smartadapters4MODERATES_State'. From 'smartadapters4MODERATES_adaptations_SetTransition', the role 'smartadapters4MODERATES_adaptations_SetTransition75' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_State', the role 'adaptations_smartadapters4MODERATES_State76' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_Transition' and 'smartadapters4MODERATES_adaptations_UnsetTransition'. From 'adaptations_smartadapters4MODERATES_Transition', the role 'adaptations_smartadapters4MODERATES_Transition78' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_UnsetTransition', the role 'smartadapters4MODERATES_adaptations_UnsetTransition' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_UnsetTransition' and 'adaptations_smartadapters4MODERATES_Event'. From 'smartadapters4MODERATES_adaptations_UnsetTransition', the role 'smartadapters4MODERATES_adaptations_UnsetTransition80' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_Event', the role 'adaptations_smartadapters4MODERATES_Event81' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_UnsetTransition' and 'adaptations_smartadapters4MODERATES_Expression'. From 'smartadapters4MODERATES_adaptations_UnsetTransition', the role 'smartadapters4MODERATES_adaptations_UnsetTransition83' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_Expression', the role 'adaptations_smartadapters4MODERATES_Expression84' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_Action' and 'smartadapters4MODERATES_adaptations_UnsetTransition'. From 'adaptations_smartadapters4MODERATES_Action', the role 'adaptations_smartadapters4MODERATES_Action87' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_UnsetTransition', the role 'smartadapters4MODERATES_adaptations_UnsetTransition86' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_State' and 'smartadapters4MODERATES_adaptations_UnsetTransition'. From 'adaptations_smartadapters4MODERATES_State', the role 'adaptations_smartadapters4MODERATES_State90' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_UnsetTransition', the role 'smartadapters4MODERATES_adaptations_UnsetTransition89' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_UnsetTransition' and 'adaptations_smartadapters4MODERATES_State'. From 'smartadapters4MODERATES_adaptations_UnsetTransition', the role 'smartadapters4MODERATES_adaptations_UnsetTransition92' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_State', the role 'adaptations_smartadapters4MODERATES_State93' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_SetAnnotatedElement' and 'adaptations_smartadapters4MODERATES_AnnotatedElement'. From 'smartadapters4MODERATES_adaptations_SetAnnotatedElement', the role 'smartadapters4MODERATES_adaptations_SetAnnotatedElement' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_AnnotatedElement', the role 'adaptations_smartadapters4MODERATES_AnnotatedElement' has cardinality 0..*.
+An association connects 'smartadapters4MODERATES_adaptations_SetAnnotatedElement' and 'adaptations_smartadapters4MODERATES_PlatformAnnotation'. From 'smartadapters4MODERATES_adaptations_SetAnnotatedElement', the role 'smartadapters4MODERATES_adaptations_SetAnnotatedElement96' has cardinality 0..*, and from 'adaptations_smartadapters4MODERATES_PlatformAnnotation', the role 'adaptations_smartadapters4MODERATES_PlatformAnnotation' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_ActionBlock' and 'smartadapters4MODERATES_adaptations_SetActionBlock'. From 'adaptations_smartadapters4MODERATES_ActionBlock', the role 'adaptations_smartadapters4MODERATES_ActionBlock' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_SetActionBlock', the role 'smartadapters4MODERATES_adaptations_SetActionBlock' has cardinality 0..*.
+An association connects 'adaptations_smartadapters4MODERATES_Action' and 'smartadapters4MODERATES_adaptations_SetActionBlock'. From 'adaptations_smartadapters4MODERATES_Action', the role 'adaptations_smartadapters4MODERATES_Action100' has cardinality 0..*, and from 'smartadapters4MODERATES_adaptations_SetActionBlock', the role 'smartadapters4MODERATES_adaptations_SetActionBlock99' has cardinality 0..*.

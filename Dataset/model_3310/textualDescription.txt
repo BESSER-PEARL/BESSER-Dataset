@@ -1,0 +1,48 @@
+The domain model 'grammar' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'grammar_LHS' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_Rule' represents an important domain concept.
+It has the following attributes: 'priority', which is of type int; 'name', which is of type str.
+
+'grammar_Embedding' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_ConnexionInstruction' represents an important domain concept.
+It has one attribute: 'm', which is of type str.
+
+'grammar_Grammar' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_RHS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'grammar_Grammar' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'grammar_Rule' and 'grammar_Grammar'. From 'grammar_Rule', the role 'Rule' has cardinality 0..*, and from 'grammar_Grammar', the role 'parentGrammar' has cardinality 0..*.
+An association connects 'grammar_Grammar' and 'grammar_Rule'. From 'grammar_Grammar', the role 'Grammar' has cardinality 0..*, and from 'grammar_Rule', the role 'rules' has cardinality 0..*.
+An association connects 'grammar_LHS' and 'grammar_Rule'. From 'grammar_LHS', the role 'LHS' has cardinality 0..*, and from 'grammar_Rule', the role 'parentRule' has cardinality 0..*.
+An association connects 'grammar_RHS' and 'grammar_Rule'. From 'grammar_RHS', the role 'RHS' has cardinality 0..*, and from 'grammar_Rule', the role 'parentRule4' has cardinality 0..*.
+An association connects 'grammar_Rule' and 'grammar_Embedding'. From 'grammar_Rule', the role 'ParentRule' has cardinality 0..*, and from 'grammar_Embedding', the role 'Embedding' has cardinality 0..*.
+An association connects 'grammar_LHS' and 'grammar_Rule'. From 'grammar_LHS', the role 'lhs' has cardinality 0..*, and from 'grammar_Rule', the role 'Rule7' has cardinality 0..*.
+An association connects 'grammar_Node' and 'grammar_LHS'. From 'grammar_Node', the role 'grammar_Node' has cardinality 0..*, and from 'grammar_LHS', the role 'grammar_LHS' has cardinality 0..*.
+An association connects 'grammar_Rule' and 'grammar_RHS'. From 'grammar_Rule', the role 'Rule10' has cardinality 0..*, and from 'grammar_RHS', the role 'rhs' has cardinality 0..*.
+An association connects 'grammar_Graph' and 'grammar_RHS'. From 'grammar_Graph', the role 'grammar_Graph' has cardinality 0..*, and from 'grammar_RHS', the role 'grammar_RHS' has cardinality 0..*.
+An association connects 'grammar_Embedding' and 'grammar_Rule'. From 'grammar_Embedding', the role 'EmbeddingMechanism' has cardinality 0..*, and from 'grammar_Rule', the role 'Rule13' has cardinality 0..*.
+An association connects 'grammar_ConnexionInstruction' and 'grammar_Embedding'. From 'grammar_ConnexionInstruction', the role 'ConnexionInstruction' has cardinality 0..*, and from 'grammar_Embedding', the role 'parentEmbedding' has cardinality 0..*.
+An association connects 'grammar_ConnexionInstruction' and 'grammar_Embedding'. From 'grammar_ConnexionInstruction', the role 'instructions' has cardinality 0..*, and from 'grammar_Embedding', the role 'Embedding16' has cardinality 0..*.
+An association connects 'grammar_ConnexionInstruction' and 'grammar_Node'. From 'grammar_ConnexionInstruction', the role 'grammar_ConnexionInstruction' has cardinality 0..*, and from 'grammar_Node', the role 'grammar_Node18' has cardinality 0..*.

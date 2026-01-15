@@ -1,0 +1,74 @@
+The domain model 'courceList' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'courceList_StudyProgram' represents an important domain concept.
+It has one attribute: 'year', which is of type int.
+
+'courceList_Specialisation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'startSemester', which is of type int.
+
+'courceList_Student' represents an important domain concept.
+It has one attribute: 'nr', which is of type int.
+
+'courceList_Cource' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'location', which is of type str; 'name', which is of type str.
+
+'courceList_Work' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'courceList_Department' represents an important domain concept.
+It has the following attributes: 'abbreviation', which is of type str; 'name', which is of type str.
+
+'courceList_Exam' represents an important domain concept.
+It has the following attributes: 'weight', which is of type int; 'date', which is of type date; 'form', which is of type str; 'lenght', which is of type int.
+
+'courceList_CourceSpecification' represents an important domain concept.
+It has the following attributes: 'semester', which is of type str; 'credits', which is of type float; 'specificationYear', which is of type int; 'language', which is of type str; 'version', which is of type str; 'name', which is of type str.
+
+'courceList_EvaluationForm' represents an important domain concept.
+It has one attribute: 'evaluationType', which is of type str.
+
+'courceList_Professor' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'name', which is of type str.
+
+'courceList_StudyCourceRelation' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'year', which is of type int.
+
+'courceList_StudyGeneralization' represents an important domain concept.
+It has the following attributes: 'campus', which is of type str; 'educationLevel', which is of type str; 'abbreviation', which is of type str; 'nrOfYears', which is of type int; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EvaluationType' defines the following possible values: 'grade', 'approved'.
+The enumeration 'EducationLevel' defines the following possible values: 'phd', 'oneYear', 'bachelor', 'master'.
+The enumeration 'WorkForm' defines the following possible values: 'home', 'written', 'oral'.
+The enumeration 'Campus' defines the following possible values: 'Gjøvik', 'Web', 'Trondheim', 'Ålesund'.
+The enumeration 'Semester' defines the following possible values: 'autumn', 'spring'.
+
+Relationships between classes are modeled using associations.
+An association connects 'courceList_Department' and 'courceList_StudyGeneralization'. From 'courceList_Department', the role 'department' has cardinality 0..*, and from 'courceList_StudyGeneralization', the role 'StudyGeneralization' has cardinality 0..*.
+An association connects 'courceList_Cource' and 'courceList_Department'. From 'courceList_Cource', the role 'Cource' has cardinality 0..*, and from 'courceList_Department', the role 'department2' has cardinality 0..*.
+An association connects 'courceList_Department' and 'courceList_Professor'. From 'courceList_Department', the role 'department4' has cardinality 0..*, and from 'courceList_Professor', the role 'Professor' has cardinality 0..*.
+An association connects 'courceList_Cource' and 'courceList_Department'. From 'courceList_Cource', the role 'course' has cardinality 0..*, and from 'courceList_Department', the role 'Department' has cardinality 0..*.
+An association connects 'courceList_CourceSpecification' and 'courceList_Cource'. From 'courceList_CourceSpecification', the role 'CourceSpecification' has cardinality 0..*, and from 'courceList_Cource', the role 'cource' has cardinality 0..*.
+An association connects 'courceList_StudyProgram' and 'courceList_Student'. From 'courceList_StudyProgram', the role 'StudyProgram' has cardinality 0..*, and from 'courceList_Student', the role 'student' has cardinality 0..*.
+An association connects 'courceList_Specialisation' and 'courceList_StudyProgram'. From 'courceList_Specialisation', the role 'Specialisation' has cardinality 0..*, and from 'courceList_StudyProgram', the role 'studyProgram' has cardinality 0..*.
+An association connects 'courceList_StudyProgram' and 'courceList_StudyGeneralization'. From 'courceList_StudyProgram', the role 'studyProgram10' has cardinality 0..*, and from 'courceList_StudyGeneralization', the role 'StudyGeneralization11' has cardinality 0..*.
+An association connects 'courceList_Student' and 'courceList_StudyProgram'. From 'courceList_Student', the role 'Student' has cardinality 0..*, and from 'courceList_StudyProgram', the role 'studyProgram13' has cardinality 0..*.
+An association connects 'courceList_Exam' and 'courceList_EvaluationForm'. From 'courceList_Exam', the role 'exam' has cardinality 0..*, and from 'courceList_EvaluationForm', the role 'EvaluationForm' has cardinality 0..*.
+An association connects 'courceList_Exam' and 'courceList_EvaluationForm'. From 'courceList_Exam', the role 'Exam' has cardinality 0..*, and from 'courceList_EvaluationForm', the role 'evaluationForm' has cardinality 0..*.
+An association connects 'courceList_Work' and 'courceList_EvaluationForm'. From 'courceList_Work', the role 'Work' has cardinality 0..*, and from 'courceList_EvaluationForm', the role 'evaluationForm17' has cardinality 0..*.
+An association connects 'courceList_EvaluationForm' and 'courceList_CourceSpecification'. From 'courceList_EvaluationForm', the role 'evaluationForm19' has cardinality 0..*, and from 'courceList_CourceSpecification', the role 'CourceSpecification20' has cardinality 0..*.
+An association connects 'courceList_Work' and 'courceList_EvaluationForm'. From 'courceList_Work', the role 'work' has cardinality 0..*, and from 'courceList_EvaluationForm', the role 'EvaluationForm22' has cardinality 0..*.
+An association connects 'courceList_CourceSpecification' and 'courceList_StudyCourceRelation'. From 'courceList_CourceSpecification', the role 'courceList_CourceSpecification' has cardinality 0..*, and from 'courceList_StudyCourceRelation', the role 'courceList_StudyCourceRelation' has cardinality 0..*.
+An association connects 'courceList_StudyCourceRelation' and 'courceList_Specialisation'. From 'courceList_StudyCourceRelation', the role 'cource25' has cardinality 0..*, and from 'courceList_Specialisation', the role 'Specialisation26' has cardinality 0..*.
+An association connects 'courceList_Professor' and 'courceList_Department'. From 'courceList_Professor', the role 'professor' has cardinality 0..*, and from 'courceList_Department', the role 'Department28' has cardinality 0..*.
+An association connects 'courceList_Specialisation' and 'courceList_StudyCourceRelation'. From 'courceList_Specialisation', the role 'specialisation' has cardinality 0..*, and from 'courceList_StudyCourceRelation', the role 'StudyCourceRelation' has cardinality 0..*.
+An association connects 'courceList_Specialisation' and 'courceList_StudyProgram'. From 'courceList_Specialisation', the role 'cource31' has cardinality 0..*, and from 'courceList_StudyProgram', the role 'StudyProgram32' has cardinality 0..*.
+An association connects 'courceList_Specialisation' and 'courceList_Specialisation'. From 'courceList_Specialisation', the role 'Specialisation35' has cardinality 0..*, and from 'courceList_Specialisation', the role 'hostSpecialisation' has cardinality 0..*.
+An association connects 'courceList_Specialisation' and 'courceList_Specialisation'. From 'courceList_Specialisation', the role 'Specialisation38' has cardinality 0..*, and from 'courceList_Specialisation', the role 'furtherSpecialisation' has cardinality 0..*.
+An association connects 'courceList_Cource' and 'courceList_CourceSpecification'. From 'courceList_Cource', the role 'Cource40' has cardinality 0..*, and from 'courceList_CourceSpecification', the role 'corseSpecifications' has cardinality 0..*.
+An association connects 'courceList_Professor' and 'courceList_CourceSpecification'. From 'courceList_Professor', the role 'courceList_Professor' has cardinality 0..*, and from 'courceList_CourceSpecification', the role 'courceList_CourceSpecification42' has cardinality 0..*.
+An association connects 'courceList_CourceSpecification' and 'courceList_EvaluationForm'. From 'courceList_CourceSpecification', the role 'cource44' has cardinality 0..*, and from 'courceList_EvaluationForm', the role 'EvaluationForm45' has cardinality 0..*.
+An association connects 'courceList_StudyGeneralization' and 'courceList_StudyProgram'. From 'courceList_StudyGeneralization', the role 'generalization' has cardinality 0..*, and from 'courceList_StudyProgram', the role 'StudyProgram47' has cardinality 0..*.
+An association connects 'courceList_Department' and 'courceList_StudyGeneralization'. From 'courceList_Department', the role 'Department50' has cardinality 0..*, and from 'courceList_StudyGeneralization', the role 'studyProgram49' has cardinality 0..*.

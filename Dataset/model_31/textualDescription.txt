@@ -1,0 +1,38 @@
+The domain model 'iritptn' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'iritptn_Transition' represents an important domain concept.
+It has the following attributes: 'tMax', which is of type int; 'tMin', which is of type int.
+
+'iritptn_Arc' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'weight', which is of type int.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'iritptn_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iritptn_PetriNet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iritptn_Place' represents an important domain concept.
+It has one attribute: 'marking', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ArcKind' defines the following possible values: 'normal', 'readArc'.
+
+The model also captures inheritance relationships between classes.
+The class 'iritptn_Transition' is a specialization of 'Node'.
+The class 'iritptn_Place' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iritptn_Node' and 'iritptn_PetriNet'. From 'iritptn_Node', the role 'Node' has cardinality 0..*, and from 'iritptn_PetriNet', the role 'net' has cardinality 0..*.
+An association connects 'iritptn_PetriNet' and 'iritptn_Arc'. From 'iritptn_PetriNet', the role 'net2' has cardinality 0..*, and from 'iritptn_Arc', the role 'Arc' has cardinality 0..*.
+An association connects 'iritptn_Arc' and 'iritptn_Node'. From 'iritptn_Arc', the role 'Arc4' has cardinality 0..*, and from 'iritptn_Node', the role 'target' has cardinality 0..*.
+An association connects 'iritptn_Arc' and 'iritptn_Node'. From 'iritptn_Arc', the role 'Arc6' has cardinality 0..*, and from 'iritptn_Node', the role 'source' has cardinality 0..*.
+An association connects 'iritptn_PetriNet' and 'iritptn_Node'. From 'iritptn_PetriNet', the role 'PetriNet' has cardinality 0..*, and from 'iritptn_Node', the role 'nodes' has cardinality 0..*.
+An association connects 'iritptn_Arc' and 'iritptn_Node'. From 'iritptn_Arc', the role 'ingoings' has cardinality 0..*, and from 'iritptn_Node', the role 'Node9' has cardinality 0..*.
+An association connects 'iritptn_Arc' and 'iritptn_PetriNet'. From 'iritptn_Arc', the role 'arc' has cardinality 0..*, and from 'iritptn_PetriNet', the role 'PetriNet11' has cardinality 0..*.
+An association connects 'iritptn_Node' and 'iritptn_Arc'. From 'iritptn_Node', the role 'Node13' has cardinality 0..*, and from 'iritptn_Arc', the role 'outgoings' has cardinality 0..*.

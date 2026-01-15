@@ -1,0 +1,196 @@
+The domain model 'rdbmdl' describes the core structural elements and their relationships within the system.
+
+The model defines 47 main class(es).
+
+'rdbmdl_constraints_IndexedColumn' represents an important domain concept.
+It has one attribute: 'ascending', which is of type bool.
+
+'rdbmdl_constraints_CheckConstraint' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'datatypes_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'SchemaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_view_ViewAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_constraints_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'Index' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_constraints_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'constraints_rdbmdl_TableColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_view_ReferencedViewColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_constraints_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_SchemaElement' represents an important domain concept.
+It has one attribute: 'owner', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_datatypes_DataType' represents an important domain concept.
+It has the following attributes: 'decimalDigits', which is of type int; 'size', which is of type int; 'default', which is of type str; 'check', which is of type str; 'nullable', which is of type bool; 'var', which is of type str.
+
+'rdbmdl_view_ViewColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'view_rdbmdl_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'view_rdbmdl_NamedColumnSet' represents an important domain concept.
+It does not declare any attributes.
+
+'ColumnRefConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_TableColumn' represents an important domain concept.
+It has the following attributes: 'isPrimaryKey', which is of type str; 'isForeignKey', which is of type str.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ViewColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'IndexedColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_datatypes_PrimitiveDataType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ViewAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_Model' represents an important domain concept.
+It has one attribute: 'server_id', which is of type str.
+
+'rdbmdl_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'rdbmdl_constraints_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_constraints_ColumnRefConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_constraints_UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'CheckConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_NamedColumnSet' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_view_ViewExpressionColumn' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'rdbmdl_view_View' represents an important domain concept.
+It has one attribute: 'ddl', which is of type str.
+
+'ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbmdl_datatypes_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedColumnSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimitiveTypeCodes' defines the following possible values: 'JAVA_OBJECT', 'STRUCT', 'DISTINCT', 'TIMESTAMP', 'CLOB', 'SQLXML', 'NCLOB', 'FLOAT', 'REAL', 'LONGVARCHAR', 'SMALLINT', 'NVARCHAR', 'OTHER', 'ROWID', 'TINYINT', 'DATALINK', 'BOOLEAN', 'INTEGER', 'DECIMAL', 'VARCHAR', 'NULL', 'CHAR', 'DATE', 'NUMERIC', 'BIT', 'TIME', 'DOUBLE', 'BLOB', 'BIGINT', 'LONGVARBINARY', 'LONGNVARCHAR', 'REF', 'BINARY', 'VARBINARY', 'NCHAR', 'ARRAY'.
+
+The model also captures inheritance relationships between classes.
+The class 'rdbmdl_NamedColumnSet' is a specialization of 'SchemaElement'.
+The class 'rdbmdl_NamedElement' is a specialization of 'Element'.
+The class 'rdbmdl_Model' is a specialization of 'NamedElement'.
+The class 'rdbmdl_Schema' is a specialization of 'NamedElement'.
+The class 'rdbmdl_SchemaElement' is a specialization of 'NamedElement'.
+The class 'rdbmdl_Table' is a specialization of 'NamedColumnSet'.
+The class 'rdbmdl_Column' is a specialization of 'NamedElement'.
+The class 'rdbmdl_TableColumn' is a specialization of 'Column'.
+The class 'rdbmdl_constraints_Constraint' is a specialization of 'NamedElement'.
+The class 'rdbmdl_constraints_CheckConstraint' is a specialization of 'Constraint'.
+The class 'rdbmdl_constraints_ColumnRefConstraint' is a specialization of 'Constraint'.
+The class 'rdbmdl_constraints_UniqueConstraint' is a specialization of 'ColumnRefConstraint'.
+The class 'rdbmdl_constraints_PrimaryKey' is a specialization of 'UniqueConstraint'.
+The class 'rdbmdl_constraints_ForeignKey' is a specialization of 'ColumnRefConstraint'.
+The class 'rdbmdl_constraints_Index' is a specialization of 'Constraint'.
+The class 'rdbmdl_constraints_IndexedColumn' is a specialization of 'NamedElement'.
+The class 'rdbmdl_datatypes_Domain' is a specialization of 'SchemaElement'.
+The class 'rdbmdl_datatypes_Domain' is a specialization of 'datatypes_PrimitiveDataType'.
+The class 'rdbmdl_datatypes_DataType' is a specialization of 'NamedElement'.
+The class 'rdbmdl_datatypes_PrimitiveDataType' is a specialization of 'DataType'.
+The class 'rdbmdl_view_View' is a specialization of 'NamedColumnSet'.
+The class 'rdbmdl_view_ViewAlias' is a specialization of 'NamedElement'.
+The class 'rdbmdl_view_ViewColumn' is a specialization of 'Column'.
+The class 'rdbmdl_view_ViewExpressionColumn' is a specialization of 'ViewColumn'.
+The class 'rdbmdl_view_ReferencedViewColumn' is a specialization of 'ViewColumn'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rdbmdl_Element' and 'rdbmdl_Element'. From 'rdbmdl_Element', the role 'rdbmdl_Element0' has cardinality 0..*, and from 'rdbmdl_Element', the role 'rdbmdl_Element' has cardinality 0..*.
+An association connects 'rdbmdl_Schema' and 'rdbmdl_Model'. From 'rdbmdl_Schema', the role 'rdbmdl_Schema' has cardinality 0..*, and from 'rdbmdl_Model', the role 'rdbmdl_Model' has cardinality 0..*.
+An association connects 'rdbmdl_SchemaElement' and 'rdbmdl_Schema'. From 'rdbmdl_SchemaElement', the role 'rdbmdl_SchemaElement' has cardinality 0..*, and from 'rdbmdl_Schema', the role 'rdbmdl_Schema4' has cardinality 0..*.
+An association connects 'rdbmdl_TableColumn' and 'rdbmdl_Table'. From 'rdbmdl_TableColumn', the role 'rdbmdl_TableColumn' has cardinality 0..*, and from 'rdbmdl_Table', the role 'rdbmdl_Table' has cardinality 0..*.
+An association connects 'PrimaryKey' and 'rdbmdl_Table'. From 'PrimaryKey', the role 'PrimaryKey' has cardinality 0..*, and from 'rdbmdl_Table', the role 'rdbmdl_Table7' has cardinality 0..*.
+An association connects 'rdbmdl_Table' and 'UniqueConstraint'. From 'rdbmdl_Table', the role 'rdbmdl_Table9' has cardinality 0..*, and from 'UniqueConstraint', the role 'UniqueConstraint' has cardinality 0..*.
+An association connects 'ForeignKey' and 'rdbmdl_Table'. From 'ForeignKey', the role 'ForeignKey' has cardinality 0..*, and from 'rdbmdl_Table', the role 'rdbmdl_Table11' has cardinality 0..*.
+An association connects 'rdbmdl_Table' and 'Index'. From 'rdbmdl_Table', the role 'rdbmdl_Table13' has cardinality 0..*, and from 'Index', the role 'Index' has cardinality 0..*.
+An association connects 'CheckConstraint' and 'rdbmdl_Table'. From 'CheckConstraint', the role 'CheckConstraint' has cardinality 0..*, and from 'rdbmdl_Table', the role 'rdbmdl_Table15' has cardinality 0..*.
+An association connects 'Domain' and 'rdbmdl_TableColumn'. From 'Domain', the role 'Domain' has cardinality 0..*, and from 'rdbmdl_TableColumn', the role 'rdbmdl_TableColumn17' has cardinality 0..*.
+An association connects 'rdbmdl_TableColumn' and 'PrimitiveDataType'. From 'rdbmdl_TableColumn', the role 'rdbmdl_TableColumn19' has cardinality 0..*, and from 'PrimitiveDataType', the role 'PrimitiveDataType' has cardinality 0..*.
+An association connects 'constraints_rdbmdl_TableColumn' and 'rdbmdl_constraints_ColumnRefConstraint'. From 'constraints_rdbmdl_TableColumn', the role 'constraints_rdbmdl_TableColumn' has cardinality 0..*, and from 'rdbmdl_constraints_ColumnRefConstraint', the role 'rdbmdl_constraints_ColumnRefConstraint' has cardinality 0..*.
+An association connects 'UniqueConstraint' and 'rdbmdl_constraints_ForeignKey'. From 'UniqueConstraint', the role 'UniqueConstraint22' has cardinality 0..*, and from 'rdbmdl_constraints_ForeignKey', the role 'rdbmdl_constraints_ForeignKey' has cardinality 0..*.
+An association connects 'IndexedColumn' and 'rdbmdl_constraints_Index'. From 'IndexedColumn', the role 'IndexedColumn' has cardinality 0..*, and from 'rdbmdl_constraints_Index', the role 'rdbmdl_constraints_Index' has cardinality 0..*.
+An association connects 'constraints_rdbmdl_TableColumn' and 'rdbmdl_constraints_IndexedColumn'. From 'constraints_rdbmdl_TableColumn', the role 'constraints_rdbmdl_TableColumn25' has cardinality 0..*, and from 'rdbmdl_constraints_IndexedColumn', the role 'rdbmdl_constraints_IndexedColumn' has cardinality 0..*.
+An association connects 'Domain' and 'rdbmdl_datatypes_Domain'. From 'Domain', the role 'Domain27' has cardinality 0..*, and from 'rdbmdl_datatypes_Domain', the role 'rdbmdl_datatypes_Domain' has cardinality 0..*.
+An association connects 'ViewColumn' and 'rdbmdl_view_View'. From 'ViewColumn', the role 'ViewColumn' has cardinality 0..*, and from 'rdbmdl_view_View', the role 'rdbmdl_view_View' has cardinality 0..*.
+An association connects 'rdbmdl_view_View' and 'ViewAlias'. From 'rdbmdl_view_View', the role 'rdbmdl_view_View30' has cardinality 0..*, and from 'ViewAlias', the role 'ViewAlias' has cardinality 0..*.
+An association connects 'rdbmdl_view_ViewAlias' and 'view_rdbmdl_NamedColumnSet'. From 'rdbmdl_view_ViewAlias', the role 'rdbmdl_view_ViewAlias' has cardinality 0..*, and from 'view_rdbmdl_NamedColumnSet', the role 'view_rdbmdl_NamedColumnSet' has cardinality 0..*.
+An association connects 'rdbmdl_view_ReferencedViewColumn' and 'view_rdbmdl_Column'. From 'rdbmdl_view_ReferencedViewColumn', the role 'rdbmdl_view_ReferencedViewColumn' has cardinality 0..*, and from 'view_rdbmdl_Column', the role 'view_rdbmdl_Column' has cardinality 0..*.

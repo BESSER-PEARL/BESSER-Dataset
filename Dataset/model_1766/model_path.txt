@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mickaelistria/EMF/tests/org.eclipse.emf.test.tools/data/ant.expected/models/1.4_5.0/reload/library.xsds/emf/elements.ecore

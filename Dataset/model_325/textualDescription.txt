@@ -1,0 +1,35 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'library__cPfTDx9KEeeOINGRvT6ccg' represents an important domain concept.
+It does not declare any attributes.
+
+'library__cPfTBB9KEeeOINGRvT6ccg' represents an important domain concept.
+It does not declare any attributes.
+
+'library__cPfS4h9KEeeOINGRvT6ccg' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Employee' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'age', which is of type int.
+
+'library_Library' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ages', which is of type int; 'address', which is of type str.
+
+'library_Book' represents an important domain concept.
+It has the following attributes: 'category', which is of type str; 'pages', which is of type int; 'title', which is of type str.
+
+'library_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'Mistery', 'ScienceFiction', 'Biographie'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library__cPfS4h9KEeeOINGRvT6ccg' and 'library_Library'. From 'library__cPfS4h9KEeeOINGRvT6ccg', the role 'library__cPfS4h9KEeeOINGRvT6ccg' has cardinality 0..*, and from 'library_Library', the role 'library_Library' has cardinality 0..*.
+An association connects 'library__cPfTBB9KEeeOINGRvT6ccg' and 'library_Library'. From 'library__cPfTBB9KEeeOINGRvT6ccg', the role 'library__cPfTBB9KEeeOINGRvT6ccg' has cardinality 0..*, and from 'library_Library', the role 'library_Library2' has cardinality 0..*.
+An association connects 'library_Library' and 'library__cPfTDx9KEeeOINGRvT6ccg'. From 'library_Library', the role 'library_Library4' has cardinality 0..*, and from 'library__cPfTDx9KEeeOINGRvT6ccg', the role 'library__cPfTDx9KEeeOINGRvT6ccg' has cardinality 0..*.
+An association connects 'library__cPfS4h9KEeeOINGRvT6ccg' and 'library_Library'. From 'library__cPfS4h9KEeeOINGRvT6ccg', the role 'library__cPfS4h9KEeeOINGRvT6ccg7' has cardinality 0..*, and from 'library_Library', the role 'library_Library6' has cardinality 0..*.
+An association connects 'library_Writer' and 'library__cPfTDx9KEeeOINGRvT6ccg'. From 'library_Writer', the role 'library_Writer' has cardinality 0..*, and from 'library__cPfTDx9KEeeOINGRvT6ccg', the role 'library__cPfTDx9KEeeOINGRvT6ccg9' has cardinality 0..*.
+An association connects 'library__cPfTBB9KEeeOINGRvT6ccg' and 'library_Book'. From 'library__cPfTBB9KEeeOINGRvT6ccg', the role 'library__cPfTBB9KEeeOINGRvT6ccg11' has cardinality 0..*, and from 'library_Book', the role 'library_Book' has cardinality 0..*.

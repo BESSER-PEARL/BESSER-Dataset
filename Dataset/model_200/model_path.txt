@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/adolfosbh/cs2as/org.xtext.example.abnf/model/Ecore.ecore

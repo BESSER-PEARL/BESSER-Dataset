@@ -1,0 +1,142 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'model_Payment' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BookingExpert' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AdminInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Promotion' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'validFrom', which is of type date; 'percentage', which is of type str; 'validTo', which is of type date; 'roomType', which is of type str; 'code', which is of type str; 'expirationDate', which is of type date.
+
+'ReceptionistInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EmailSender' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Admin' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AdminController' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MSAccessDB' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BookingController' represents an important domain concept.
+It does not declare any attributes.
+
+'CustomerInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BankComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CustomerInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'BookingController' represents an important domain concept.
+It does not declare any attributes.
+
+'model_PromotionExpert' represents an important domain concept.
+It does not declare any attributes.
+
+'model_HotelComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Expense' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'name', which is of type str; 'date', which is of type date; 'receiptId', which is of type int; 'price', which is of type float; 'description', which is of type str; 'fixed', which is of type bool.
+
+'model_ReceptionistController' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ReceiptExpert' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Receptionist' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DatabaseInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BankInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ExpenseExpert' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Room' represents an important domain concept.
+It has the following attributes: 'clean', which is of type str; 'status', which is of type str; 'beds', which is of type str; 'type', which is of type str; 'number', which is of type str; 'description', which is of type str.
+
+'DatabaseInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Customers' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Customer' represents an important domain concept.
+It has the following attributes: 'ccv', which is of type str; 'surname', which is of type str; 'email', which is of type str; 'ccNumber', which is of type str; 'firstName', which is of type str; 'adress', which is of type str; 'expiringMonth', which is of type str; 'expiringYear', which is of type str.
+
+'model_User' represents an important domain concept.
+It has the following attributes: 'administrator', which is of type str; 'surname', which is of type str; 'password', which is of type str; 'id', which is of type str; 'receptionist', which is of type str; 'firstName', which is of type str.
+
+'model_Resident' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'id', which is of type str; 'surname', which is of type str.
+
+'model_ReceptionistInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'AdminInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Receipt' represents an important domain concept.
+It has the following attributes: 'totalCost', which is of type float; 'Date', which is of type date; 'id', which is of type int.
+
+'model_RoomExpert' represents an important domain concept.
+It does not declare any attributes.
+
+'model_UserExpert' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Booking' represents an important domain concept.
+It has the following attributes: 'toDate', which is of type date; 'promotion', which is of type str; 'roomTypes', which is of type str; 'id', which is of type int; 'fromDate', which is of type date; 'checkedIn', which is of type str; 'wishes', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'model_BookingController' is a specialization of 'CustomerInterface'.
+The class 'model_AdminController' is a specialization of 'AdminInterface'.
+The class 'model_ReceptionistController' is a specialization of 'BookingController'.
+The class 'model_ReceptionistController' is a specialization of 'ReceptionistInterface'.
+The class 'model_MSAccessDB' is a specialization of 'DatabaseInterface'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Expense' and 'model_Room'. From 'model_Expense', the role 'model_Expense' has cardinality 0..*, and from 'model_Room', the role 'model_Room' has cardinality 0..*.
+An association connects 'model_Room' and 'model_Receipt'. From 'model_Room', the role 'model_Room2' has cardinality 0..*, and from 'model_Receipt', the role 'model_Receipt' has cardinality 0..*.
+An association connects 'model_Resident' and 'model_Room'. From 'model_Resident', the role 'model_Resident' has cardinality 0..*, and from 'model_Room', the role 'model_Room4' has cardinality 0..*.
+An association connects 'model_Expense' and 'model_Receipt'. From 'model_Expense', the role 'model_Expense7' has cardinality 0..*, and from 'model_Receipt', the role 'model_Receipt6' has cardinality 0..*.
+An association connects 'model_Booking' and 'model_Customer'. From 'model_Booking', the role 'model_Booking' has cardinality 0..*, and from 'model_Customer', the role 'model_Customer' has cardinality 0..*.
+An association connects 'model_Receipt' and 'model_Booking'. From 'model_Receipt', the role 'model_Receipt11' has cardinality 0..*, and from 'model_Booking', the role 'model_Booking10' has cardinality 0..*.
+An association connects 'model_Booking' and 'model_Room'. From 'model_Booking', the role 'model_Booking13' has cardinality 0..*, and from 'model_Room', the role 'model_Room14' has cardinality 0..*.
+An association connects 'model_DatabaseInterface' and 'model_RoomExpert'. From 'model_DatabaseInterface', the role 'model_DatabaseInterface' has cardinality 0..*, and from 'model_RoomExpert', the role 'model_RoomExpert' has cardinality 0..*.
+An association connects 'model_DatabaseInterface' and 'model_ExpenseExpert'. From 'model_DatabaseInterface', the role 'model_DatabaseInterface17' has cardinality 0..*, and from 'model_ExpenseExpert', the role 'model_ExpenseExpert' has cardinality 0..*.
+An association connects 'model_DatabaseInterface' and 'model_UserExpert'. From 'model_DatabaseInterface', the role 'model_DatabaseInterface19' has cardinality 0..*, and from 'model_UserExpert', the role 'model_UserExpert' has cardinality 0..*.
+An association connects 'model_DatabaseInterface' and 'model_PromotionExpert'. From 'model_DatabaseInterface', the role 'model_DatabaseInterface21' has cardinality 0..*, and from 'model_PromotionExpert', the role 'model_PromotionExpert' has cardinality 0..*.
+An association connects 'model_BookingExpert' and 'model_DatabaseInterface'. From 'model_BookingExpert', the role 'model_BookingExpert' has cardinality 0..*, and from 'model_DatabaseInterface', the role 'model_DatabaseInterface23' has cardinality 0..*.
+An association connects 'model_DatabaseInterface' and 'model_ReceiptExpert'. From 'model_DatabaseInterface', the role 'model_DatabaseInterface25' has cardinality 0..*, and from 'model_ReceiptExpert', the role 'model_ReceiptExpert' has cardinality 0..*.
+An association connects 'model_BookingController' and 'model_RoomExpert'. From 'model_BookingController', the role 'model_BookingController' has cardinality 0..*, and from 'model_RoomExpert', the role 'model_RoomExpert27' has cardinality 0..*.
+An association connects 'model_BookingController' and 'model_BookingExpert'. From 'model_BookingController', the role 'model_BookingController29' has cardinality 0..*, and from 'model_BookingExpert', the role 'model_BookingExpert30' has cardinality 0..*.
+An association connects 'model_BookingController' and 'model_PromotionExpert'. From 'model_BookingController', the role 'model_BookingController32' has cardinality 0..*, and from 'model_PromotionExpert', the role 'model_PromotionExpert33' has cardinality 0..*.
+An association connects 'model_BookingController' and 'model_DatabaseInterface'. From 'model_BookingController', the role 'model_BookingController35' has cardinality 0..*, and from 'model_DatabaseInterface', the role 'model_DatabaseInterface36' has cardinality 0..*.
+An association connects 'model_BookingController' and 'model_ExpenseExpert'. From 'model_BookingController', the role 'model_BookingController38' has cardinality 0..*, and from 'model_ExpenseExpert', the role 'model_ExpenseExpert39' has cardinality 0..*.
+An association connects 'model_BookingController' and 'model_ReceiptExpert'. From 'model_BookingController', the role 'model_BookingController41' has cardinality 0..*, and from 'model_ReceiptExpert', the role 'model_ReceiptExpert42' has cardinality 0..*.
+An association connects 'model_UserExpert' and 'model_AdminController'. From 'model_UserExpert', the role 'model_UserExpert44' has cardinality 0..*, and from 'model_AdminController', the role 'model_AdminController' has cardinality 0..*.
+An association connects 'model_ExpenseExpert' and 'model_AdminController'. From 'model_ExpenseExpert', the role 'model_ExpenseExpert47' has cardinality 0..*, and from 'model_AdminController', the role 'model_AdminController46' has cardinality 0..*.
+An association connects 'model_AdminController' and 'model_PromotionExpert'. From 'model_AdminController', the role 'model_AdminController49' has cardinality 0..*, and from 'model_PromotionExpert', the role 'model_PromotionExpert50' has cardinality 0..*.
+An association connects 'model_DatabaseInterface' and 'model_AdminController'. From 'model_DatabaseInterface', the role 'model_DatabaseInterface53' has cardinality 0..*, and from 'model_AdminController', the role 'model_AdminController52' has cardinality 0..*.
+An association connects 'model_AdminController' and 'model_RoomExpert'. From 'model_AdminController', the role 'model_AdminController55' has cardinality 0..*, and from 'model_RoomExpert', the role 'model_RoomExpert56' has cardinality 0..*.
+An association connects 'model_ReceptionistController' and 'model_UserExpert'. From 'model_ReceptionistController', the role 'model_ReceptionistController' has cardinality 0..*, and from 'model_UserExpert', the role 'model_UserExpert58' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/emfviews/examples/emfviews-tutorial/metamodels/Book.ecore

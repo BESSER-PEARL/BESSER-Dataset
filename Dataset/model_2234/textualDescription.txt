@@ -1,0 +1,39 @@
+The domain model 'studyplan' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'studyplan_FieldOfStudy' represents an important domain concept.
+It has one attribute: 'fieldName', which is of type str.
+
+'studyplan_CourseGroup' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'courseStatus', which is of type str.
+
+'studyplan_Course' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'courseCode', which is of type int; 'courseName', which is of type str; 'credit', which is of type float.
+
+'studyplan_Semester' represents an important domain concept.
+It has the following attributes: 'semesterType', which is of type str; 'year', which is of type int.
+
+'studyplan_StudyPlan' represents an important domain concept.
+It has one attribute: 'planName', which is of type str.
+
+'studyplan_Specialization' represents an important domain concept.
+It has one attribute: 'specName', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SemesterType' defines the following possible values: 'FALL', 'SPRING'.
+The enumeration 'CourseStatus' defines the following possible values: 'ELECTIVE', 'MANDATORY'.
+
+Relationships between classes are modeled using associations.
+An association connects 'studyplan_FieldOfStudy' and 'studyplan_StudyPlan'. From 'studyplan_FieldOfStudy', the role 'studyplan_FieldOfStudy' has cardinality 0..*, and from 'studyplan_StudyPlan', the role 'studyplan_StudyPlan' has cardinality 0..*.
+An association connects 'studyplan_StudyPlan' and 'studyplan_Course'. From 'studyplan_StudyPlan', the role 'studyplan_StudyPlan2' has cardinality 0..*, and from 'studyplan_Course', the role 'studyplan_Course' has cardinality 0..*.
+An association connects 'studyplan_StudyPlan' and 'studyplan_Semester'. From 'studyplan_StudyPlan', the role 'studyplan_StudyPlan4' has cardinality 0..*, and from 'studyplan_Semester', the role 'studyplan_Semester' has cardinality 0..*.
+An association connects 'studyplan_Semester' and 'studyplan_Course'. From 'studyplan_Semester', the role 'studyplan_Semester6' has cardinality 0..*, and from 'studyplan_Course', the role 'studyplan_Course7' has cardinality 0..*.
+An association connects 'studyplan_CourseGroup' and 'studyplan_Course'. From 'studyplan_CourseGroup', the role 'CourseGroup' has cardinality 0..*, and from 'studyplan_Course', the role 'course' has cardinality 0..*.
+An association connects 'studyplan_Semester' and 'studyplan_Specialization'. From 'studyplan_Semester', the role 'studyplan_Semester10' has cardinality 0..*, and from 'studyplan_Specialization', the role 'studyplan_Specialization' has cardinality 0..*.
+An association connects 'studyplan_Specialization' and 'studyplan_Specialization'. From 'studyplan_Specialization', the role 'studyplan_Specialization13' has cardinality 0..*, and from 'studyplan_Specialization', the role 'studyplan_Specialization11' has cardinality 0..*.
+An association connects 'studyplan_Specialization' and 'studyplan_CourseGroup'. From 'studyplan_Specialization', the role 'studyplan_Specialization15' has cardinality 0..*, and from 'studyplan_CourseGroup', the role 'studyplan_CourseGroup' has cardinality 0..*.
+An association connects 'studyplan_FieldOfStudy' and 'studyplan_Specialization'. From 'studyplan_FieldOfStudy', the role 'studyplan_FieldOfStudy17' has cardinality 0..*, and from 'studyplan_Specialization', the role 'studyplan_Specialization18' has cardinality 0..*.
+An association connects 'studyplan_FieldOfStudy' and 'studyplan_Semester'. From 'studyplan_FieldOfStudy', the role 'studyplan_FieldOfStudy20' has cardinality 0..*, and from 'studyplan_Semester', the role 'studyplan_Semester21' has cardinality 0..*.
+An association connects 'studyplan_Semester' and 'studyplan_CourseGroup'. From 'studyplan_Semester', the role 'studyplan_Semester24' has cardinality 0..*, and from 'studyplan_CourseGroup', the role 'studyplan_CourseGroup23' has cardinality 0..*.
+An association connects 'studyplan_Course' and 'studyplan_CourseGroup'. From 'studyplan_Course', the role 'Course' has cardinality 0..*, and from 'studyplan_CourseGroup', the role 'courseGroup' has cardinality 0..*.

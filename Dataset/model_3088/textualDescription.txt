@@ -1,0 +1,111 @@
+The domain model 'interaction' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'interaction_Scenario' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'merged', which is of type bool.
+
+'interaction_State' represents an important domain concept.
+It does not declare any attributes.
+
+'CapellaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Structure' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_Part' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractFunctionalChainContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_SequenceMessageValuation' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_InteractionOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_AbstractEventOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_AbstractFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_ExchangeItem' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_AbstractCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_FunctionalChain' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_CombinedFragment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_ExchangeItemElement' represents an important domain concept.
+It does not declare any attributes.
+
+'interaction_SequenceMessage' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ScenarioKind' defines the following possible values: 'FUNCTIONAL', 'UNSET', 'INTERACTION', 'DATA_FLOW', 'INTERFACE'.
+The enumeration 'InteractionOperatorKind' defines the following possible values: 'STRICT', 'ALT', 'IGNORE', 'UNSET', 'CRITICAL', 'LOOP', 'PAR', 'OPT', 'ASSERT', 'CONSIDER', 'NEG', 'SEQ'.
+The enumeration 'MessageKind' defines the following possible values: 'REPLY', 'CREATE', 'DELETE', 'TIMER', 'SYNCHRONOUS_CALL', 'UNSET', 'ASYNCHRONOUS_CALL'.
+
+The model also captures inheritance relationships between classes.
+The class 'interaction_SequenceMessage' is a specialization of 'NamedElement'.
+The class 'interaction_Scenario' is a specialization of 'Namespace'.
+The class 'interaction_Scenario' is a specialization of 'AbstractBehavior'.
+The class 'interaction_AbstractCapability' is a specialization of 'Structure'.
+The class 'interaction_AbstractCapability' is a specialization of 'AbstractFunctionalChainContainer'.
+The class 'interaction_AbstractCapability' is a specialization of 'CapellaElement'.
+The class 'interaction_CombinedFragment' is a specialization of 'NamedElement'.
+The class 'interaction_InteractionOperand' is a specialization of 'NamedElement'.
+The class 'interaction_SequenceMessageValuation' is a specialization of 'CapellaElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'interaction_SequenceMessage' and 'interaction_Constraint'. From 'interaction_SequenceMessage', the role 'interaction_SequenceMessage' has cardinality 0..*, and from 'interaction_Constraint', the role 'interaction_Constraint' has cardinality 0..*.
+An association connects 'interaction_SequenceMessage' and 'interaction_AbstractEventOperation'. From 'interaction_SequenceMessage', the role 'interaction_SequenceMessage2' has cardinality 0..*, and from 'interaction_AbstractEventOperation', the role 'interaction_AbstractEventOperation' has cardinality 0..*.
+An association connects 'interaction_ExchangeItem' and 'interaction_SequenceMessage'. From 'interaction_ExchangeItem', the role 'interaction_ExchangeItem' has cardinality 0..*, and from 'interaction_SequenceMessage', the role 'interaction_SequenceMessage4' has cardinality 0..*.
+An association connects 'interaction_SequenceMessage' and 'interaction_Part'. From 'interaction_SequenceMessage', the role 'interaction_SequenceMessage6' has cardinality 0..*, and from 'interaction_Part', the role 'interaction_Part' has cardinality 0..*.
+An association connects 'interaction_Part' and 'interaction_SequenceMessage'. From 'interaction_Part', the role 'interaction_Part9' has cardinality 0..*, and from 'interaction_SequenceMessage', the role 'interaction_SequenceMessage8' has cardinality 0..*.
+An association connects 'interaction_SequenceMessage' and 'interaction_AbstractFunction'. From 'interaction_SequenceMessage', the role 'interaction_SequenceMessage11' has cardinality 0..*, and from 'interaction_AbstractFunction', the role 'interaction_AbstractFunction' has cardinality 0..*.
+An association connects 'interaction_AbstractFunction' and 'interaction_SequenceMessage'. From 'interaction_AbstractFunction', the role 'interaction_AbstractFunction14' has cardinality 0..*, and from 'interaction_SequenceMessage', the role 'interaction_SequenceMessage13' has cardinality 0..*.
+An association connects 'interaction_SequenceMessageValuation' and 'interaction_SequenceMessage'. From 'interaction_SequenceMessageValuation', the role 'interaction_SequenceMessageValuation' has cardinality 0..*, and from 'interaction_SequenceMessage', the role 'interaction_SequenceMessage16' has cardinality 0..*.
+An association connects 'interaction_Constraint' and 'interaction_Scenario'. From 'interaction_Constraint', the role 'interaction_Constraint18' has cardinality 0..*, and from 'interaction_Scenario', the role 'interaction_Scenario' has cardinality 0..*.
+An association connects 'interaction_Constraint' and 'interaction_Scenario'. From 'interaction_Constraint', the role 'interaction_Constraint21' has cardinality 0..*, and from 'interaction_Scenario', the role 'interaction_Scenario20' has cardinality 0..*.
+An association connects 'interaction_Scenario' and 'interaction_SequenceMessage'. From 'interaction_Scenario', the role 'interaction_Scenario23' has cardinality 0..*, and from 'interaction_SequenceMessage', the role 'interaction_SequenceMessage24' has cardinality 0..*.
+An association connects 'interaction_Scenario' and 'interaction_AbstractFunction'. From 'interaction_Scenario', the role 'interaction_Scenario26' has cardinality 0..*, and from 'interaction_AbstractFunction', the role 'interaction_AbstractFunction27' has cardinality 0..*.
+An association connects 'interaction_Part' and 'interaction_Scenario'. From 'interaction_Part', the role 'interaction_Part30' has cardinality 0..*, and from 'interaction_Scenario', the role 'interaction_Scenario29' has cardinality 0..*.
+An association connects 'interaction_Scenario' and 'interaction_Scenario'. From 'interaction_Scenario', the role 'interaction_Scenario33' has cardinality 0..*, and from 'interaction_Scenario', the role 'interaction_Scenario31' has cardinality 0..*.
+An association connects 'interaction_Scenario' and 'interaction_Scenario'. From 'interaction_Scenario', the role 'interaction_Scenario36' has cardinality 0..*, and from 'interaction_Scenario', the role 'interaction_Scenario34' has cardinality 0..*.
+An association connects 'interaction_AbstractCapability' and 'interaction_Constraint'. From 'interaction_AbstractCapability', the role 'interaction_AbstractCapability' has cardinality 0..*, and from 'interaction_Constraint', the role 'interaction_Constraint38' has cardinality 0..*.
+An association connects 'interaction_AbstractCapability' and 'interaction_Constraint'. From 'interaction_AbstractCapability', the role 'interaction_AbstractCapability40' has cardinality 0..*, and from 'interaction_Constraint', the role 'interaction_Constraint41' has cardinality 0..*.
+An association connects 'interaction_AbstractCapability' and 'interaction_Scenario'. From 'interaction_AbstractCapability', the role 'interaction_AbstractCapability43' has cardinality 0..*, and from 'interaction_Scenario', the role 'interaction_Scenario44' has cardinality 0..*.
+An association connects 'interaction_AbstractCapability' and 'interaction_AbstractCapability'. From 'interaction_AbstractCapability', the role 'interaction_AbstractCapability47' has cardinality 0..*, and from 'interaction_AbstractCapability', the role 'interaction_AbstractCapability45' has cardinality 0..*.
+An association connects 'interaction_AbstractCapability' and 'interaction_AbstractCapability'. From 'interaction_AbstractCapability', the role 'interaction_AbstractCapability48' has cardinality 0..*, and from 'interaction_AbstractCapability', the role 'interaction_AbstractCapability50' has cardinality 0..*.
+An association connects 'interaction_AbstractCapability' and 'interaction_AbstractCapability'. From 'interaction_AbstractCapability', the role 'interaction_AbstractCapability51' has cardinality 0..*, and from 'interaction_AbstractCapability', the role 'interaction_AbstractCapability53' has cardinality 0..*.
+An association connects 'interaction_AbstractCapability' and 'interaction_State'. From 'interaction_AbstractCapability', the role 'interaction_AbstractCapability55' has cardinality 0..*, and from 'interaction_State', the role 'interaction_State' has cardinality 0..*.
+An association connects 'interaction_AbstractCapability' and 'interaction_AbstractFunction'. From 'interaction_AbstractCapability', the role 'interaction_AbstractCapability57' has cardinality 0..*, and from 'interaction_AbstractFunction', the role 'interaction_AbstractFunction58' has cardinality 0..*.
+An association connects 'interaction_FunctionalChain' and 'interaction_AbstractCapability'. From 'interaction_FunctionalChain', the role 'interaction_FunctionalChain' has cardinality 0..*, and from 'interaction_AbstractCapability', the role 'interaction_AbstractCapability60' has cardinality 0..*.
+An association connects 'interaction_Constraint' and 'interaction_InteractionOperand'. From 'interaction_Constraint', the role 'interaction_Constraint62' has cardinality 0..*, and from 'interaction_InteractionOperand', the role 'interaction_InteractionOperand' has cardinality 0..*.
+An association connects 'interaction_SequenceMessageValuation' and 'interaction_ExchangeItemElement'. From 'interaction_SequenceMessageValuation', the role 'interaction_SequenceMessageValuation64' has cardinality 0..*, and from 'interaction_ExchangeItemElement', the role 'interaction_ExchangeItemElement' has cardinality 0..*.
+An association connects 'interaction_ValueSpecification' and 'interaction_SequenceMessageValuation'. From 'interaction_ValueSpecification', the role 'interaction_ValueSpecification' has cardinality 0..*, and from 'interaction_SequenceMessageValuation', the role 'interaction_SequenceMessageValuation66' has cardinality 0..*.

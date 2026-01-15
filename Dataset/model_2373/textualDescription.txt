@@ -1,0 +1,218 @@
+The domain model 'mm' describes the core structural elements and their relationships within the system.
+
+The model defines 49 main class(es).
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_DeleteColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+'TableColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'Index' represents an important domain concept.
+It does not declare any attributes.
+
+'dml_ColumnReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_Sequence' represents an important domain concept.
+It has one attribute: 'cacheSize', which is of type int.
+
+'mm_rdb_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_RenameTable' represents an important domain concept.
+It has one attribute: 'newName', which is of type str.
+
+'mm_rdb_UniqueIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'DbObject' represents an important domain concept.
+It does not declare any attributes.
+
+'TableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_CreateTable' represents an important domain concept.
+It has one attribute: 'tableName', which is of type str.
+
+'mm_rdb_TableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_TableColumn' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_RenameColumn' represents an important domain concept.
+It has one attribute: 'newColumnName', which is of type str.
+
+'rdb_DbObject' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_DbObject' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_dml_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_TypeChangeToColumn' represents an important domain concept.
+It has one attribute: 'newType', which is of type str.
+
+'mm_rdb_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_dml_ColumnReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rdb_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_ModelRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'Database' represents an important domain concept.
+It does not declare any attributes.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_AddColumn' represents an important domain concept.
+It has one attribute: 'newColumnName', which is of type str.
+
+'Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'ColumnConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_DeleteTable' represents an important domain concept.
+It does not declare any attributes.
+
+'UniqueIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_rdb_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'Schema' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mm_rdb_Database' is a specialization of 'NamedElement'.
+The class 'mm_rdb_DbObject' is a specialization of 'NamedElement'.
+The class 'mm_rdb_Schema' is a specialization of 'DbObject'.
+The class 'mm_rdb_Table' is a specialization of 'rdb_DbObject'.
+The class 'mm_rdb_Table' is a specialization of 'rdb_Relation'.
+The class 'mm_rdb_Sequence' is a specialization of 'DbObject'.
+The class 'mm_rdb_Constraint' is a specialization of 'DbObject'.
+The class 'mm_rdb_TableConstraint' is a specialization of 'rdb_Constraint'.
+The class 'mm_rdb_TableConstraint' is a specialization of 'rdb_NamedElement'.
+The class 'mm_rdb_ColumnConstraint' is a specialization of 'Constraint'.
+The class 'mm_rdb_ForeignKey' is a specialization of 'TableConstraint'.
+The class 'mm_rdb_Column' is a specialization of 'NamedElement'.
+The class 'mm_rdb_TableColumn' is a specialization of 'Column'.
+The class 'mm_rdb_Index' is a specialization of 'DbObject'.
+The class 'mm_rdb_UniqueIndex' is a specialization of 'TableConstraint'.
+The class 'mm_rdb_PrimaryKey' is a specialization of 'UniqueIndex'.
+The class 'mm_rdb_CreateTable' is a specialization of 'Operation'.
+The class 'mm_rdb_RenameTable' is a specialization of 'Operation'.
+The class 'mm_rdb_DeleteTable' is a specialization of 'Operation'.
+The class 'mm_rdb_AddColumn' is a specialization of 'Operation'.
+The class 'mm_rdb_RenameColumn' is a specialization of 'Operation'.
+The class 'mm_rdb_TypeChangeToColumn' is a specialization of 'Operation'.
+The class 'mm_rdb_DeleteColumn' is a specialization of 'Operation'.
+The class 'mm_dml_Query' is a specialization of 'Relation'.
+The class 'mm_dml_ColumnReference' is a specialization of 'Column'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Database' and 'mm_rdb_ModelRoot'. From 'Database', the role 'Database' has cardinality 0..*, and from 'mm_rdb_ModelRoot', the role 'mm_rdb_ModelRoot' has cardinality 0..*.
+An association connects 'Database' and 'mm_rdb_ModelRoot'. From 'Database', the role 'Database3' has cardinality 0..*, and from 'mm_rdb_ModelRoot', the role 'mm_rdb_ModelRoot2' has cardinality 0..*.
+An association connects 'Operation' and 'mm_rdb_ModelRoot'. From 'Operation', the role 'rdb' has cardinality 0..*, and from 'mm_rdb_ModelRoot', the role 'Operation' has cardinality 0..*.
+An association connects 'mm_rdb_Database' and 'Schema'. From 'mm_rdb_Database', the role 'mm_rdb_Database' has cardinality 0..*, and from 'Schema', the role 'Schema' has cardinality 0..*.
+An association connects 'mm_rdb_Schema' and 'Table'. From 'mm_rdb_Schema', the role 'Table' has cardinality 0..*, and from 'Table', the role 'rdb7' has cardinality 0..*.
+An association connects 'Sequence' and 'mm_rdb_Schema'. From 'Sequence', the role 'rdb9' has cardinality 0..*, and from 'mm_rdb_Schema', the role 'Sequence' has cardinality 0..*.
+An association connects 'mm_rdb_Schema' and 'Index'. From 'mm_rdb_Schema', the role 'Index' has cardinality 0..*, and from 'Index', the role 'rdb11' has cardinality 0..*.
+An association connects 'Schema' and 'mm_rdb_Table'. From 'Schema', the role 'rdb14' has cardinality 0..*, and from 'mm_rdb_Table', the role 'Schema13' has cardinality 0..*.
+An association connects 'mm_rdb_Table' and 'PrimaryKey'. From 'mm_rdb_Table', the role 'mm_rdb_Table' has cardinality 0..*, and from 'PrimaryKey', the role 'PrimaryKey' has cardinality 0..*.
+An association connects 'mm_rdb_Table' and 'TableColumn'. From 'mm_rdb_Table', the role 'TableColumn' has cardinality 0..*, and from 'TableColumn', the role 'rdb17' has cardinality 0..*.
+An association connects 'mm_rdb_Table' and 'TableConstraint'. From 'mm_rdb_Table', the role 'TableConstraint' has cardinality 0..*, and from 'TableConstraint', the role 'rdb19' has cardinality 0..*.
+An association connects 'Schema' and 'mm_rdb_Sequence'. From 'Schema', the role 'rdb22' has cardinality 0..*, and from 'mm_rdb_Sequence', the role 'Schema21' has cardinality 0..*.
+An association connects 'Table' and 'mm_rdb_TableConstraint'. From 'Table', the role 'rdb25' has cardinality 0..*, and from 'mm_rdb_TableConstraint', the role 'Table24' has cardinality 0..*.
+An association connects 'mm_rdb_ColumnConstraint' and 'TableColumn'. From 'mm_rdb_ColumnConstraint', the role 'TableColumn27' has cardinality 0..*, and from 'TableColumn', the role 'rdb28' has cardinality 0..*.
+An association connects 'Table' and 'mm_rdb_ForeignKey'. From 'Table', the role 'Table30' has cardinality 0..*, and from 'mm_rdb_ForeignKey', the role 'mm_rdb_ForeignKey' has cardinality 0..*.
+An association connects 'mm_rdb_ForeignKey' and 'TableColumn'. From 'mm_rdb_ForeignKey', the role 'mm_rdb_ForeignKey32' has cardinality 0..*, and from 'TableColumn', the role 'TableColumn33' has cardinality 0..*.
+An association connects 'Table' and 'mm_rdb_TableColumn'. From 'Table', the role 'rdb36' has cardinality 0..*, and from 'mm_rdb_TableColumn', the role 'Table35' has cardinality 0..*.
+An association connects 'ColumnConstraint' and 'mm_rdb_TableColumn'. From 'ColumnConstraint', the role 'rdb38' has cardinality 0..*, and from 'mm_rdb_TableColumn', the role 'ColumnConstraint' has cardinality 0..*.
+An association connects 'TableColumn' and 'mm_rdb_Index'. From 'TableColumn', the role 'TableColumn40' has cardinality 0..*, and from 'mm_rdb_Index', the role 'mm_rdb_Index' has cardinality 0..*.
+An association connects 'Table' and 'mm_rdb_Index'. From 'Table', the role 'Table43' has cardinality 0..*, and from 'mm_rdb_Index', the role 'mm_rdb_Index42' has cardinality 0..*.
+An association connects 'Schema' and 'mm_rdb_Index'. From 'Schema', the role 'rdb46' has cardinality 0..*, and from 'mm_rdb_Index', the role 'Schema45' has cardinality 0..*.
+An association connects 'mm_rdb_UniqueIndex' and 'Index'. From 'mm_rdb_UniqueIndex', the role 'mm_rdb_UniqueIndex' has cardinality 0..*, and from 'Index', the role 'Index48' has cardinality 0..*.
+An association connects 'mm_rdb_Operation' and 'ModelRoot'. From 'mm_rdb_Operation', the role 'ModelRoot' has cardinality 0..*, and from 'ModelRoot', the role 'rdb50' has cardinality 0..*.
+An association connects 'TableColumn' and 'mm_rdb_CreateTable'. From 'TableColumn', the role 'TableColumn52' has cardinality 0..*, and from 'mm_rdb_CreateTable', the role 'mm_rdb_CreateTable' has cardinality 0..*.
+An association connects 'TableConstraint' and 'mm_rdb_CreateTable'. From 'TableConstraint', the role 'TableConstraint55' has cardinality 0..*, and from 'mm_rdb_CreateTable', the role 'mm_rdb_CreateTable54' has cardinality 0..*.
+An association connects 'mm_rdb_CreateTable' and 'PrimaryKey'. From 'mm_rdb_CreateTable', the role 'mm_rdb_CreateTable57' has cardinality 0..*, and from 'PrimaryKey', the role 'PrimaryKey58' has cardinality 0..*.
+An association connects 'Sequence' and 'mm_rdb_CreateTable'. From 'Sequence', the role 'Sequence61' has cardinality 0..*, and from 'mm_rdb_CreateTable', the role 'mm_rdb_CreateTable60' has cardinality 0..*.
+An association connects 'Table' and 'mm_rdb_RenameTable'. From 'Table', the role 'Table63' has cardinality 0..*, and from 'mm_rdb_RenameTable', the role 'mm_rdb_RenameTable' has cardinality 0..*.
+An association connects 'mm_rdb_DeleteTable' and 'Table'. From 'mm_rdb_DeleteTable', the role 'mm_rdb_DeleteTable' has cardinality 0..*, and from 'Table', the role 'Table65' has cardinality 0..*.
+An association connects 'mm_rdb_AddColumn' and 'Table'. From 'mm_rdb_AddColumn', the role 'mm_rdb_AddColumn' has cardinality 0..*, and from 'Table', the role 'Table67' has cardinality 0..*.
+An association connects 'mm_rdb_AddColumn' and 'ColumnConstraint'. From 'mm_rdb_AddColumn', the role 'mm_rdb_AddColumn69' has cardinality 0..*, and from 'ColumnConstraint', the role 'ColumnConstraint70' has cardinality 0..*.
+An association connects 'mm_rdb_RenameColumn' and 'Table'. From 'mm_rdb_RenameColumn', the role 'mm_rdb_RenameColumn' has cardinality 0..*, and from 'Table', the role 'Table72' has cardinality 0..*.
+An association connects 'TableColumn' and 'mm_rdb_RenameColumn'. From 'TableColumn', the role 'TableColumn75' has cardinality 0..*, and from 'mm_rdb_RenameColumn', the role 'mm_rdb_RenameColumn74' has cardinality 0..*.
+An association connects 'Table' and 'mm_rdb_TypeChangeToColumn'. From 'Table', the role 'Table77' has cardinality 0..*, and from 'mm_rdb_TypeChangeToColumn', the role 'mm_rdb_TypeChangeToColumn' has cardinality 0..*.
+An association connects 'TableColumn' and 'mm_rdb_TypeChangeToColumn'. From 'TableColumn', the role 'TableColumn80' has cardinality 0..*, and from 'mm_rdb_TypeChangeToColumn', the role 'mm_rdb_TypeChangeToColumn79' has cardinality 0..*.
+An association connects 'Table' and 'mm_rdb_DeleteColumn'. From 'Table', the role 'Table82' has cardinality 0..*, and from 'mm_rdb_DeleteColumn', the role 'mm_rdb_DeleteColumn' has cardinality 0..*.
+An association connects 'mm_rdb_DeleteColumn' and 'TableColumn'. From 'mm_rdb_DeleteColumn', the role 'mm_rdb_DeleteColumn84' has cardinality 0..*, and from 'TableColumn', the role 'TableColumn85' has cardinality 0..*.
+An association connects 'dml_ColumnReference' and 'mm_dml_Query'. From 'dml_ColumnReference', the role 'dml_ColumnReference' has cardinality 0..*, and from 'mm_dml_Query', the role 'mm_dml_Query' has cardinality 0..*.
+An association connects 'mm_dml_ColumnReference' and 'Column'. From 'mm_dml_ColumnReference', the role 'mm_dml_ColumnReference' has cardinality 0..*, and from 'Column', the role 'Column' has cardinality 0..*.

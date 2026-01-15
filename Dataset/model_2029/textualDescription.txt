@@ -1,0 +1,20 @@
+The domain model 'idm' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'idm_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'idm_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'idm_StateMachine' and 'idm_State'. From 'idm_StateMachine', the role 'idm_StateMachine' has cardinality 0..*, and from 'idm_State', the role 'idm_State' has cardinality 0..*.
+An association connects 'idm_StateMachine' and 'idm_Transition'. From 'idm_StateMachine', the role 'idm_StateMachine2' has cardinality 0..*, and from 'idm_Transition', the role 'idm_Transition' has cardinality 0..*.
+An association connects 'idm_State' and 'idm_Transition'. From 'idm_State', the role 'outgoing' has cardinality 0..*, and from 'idm_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'idm_State' and 'idm_Transition'. From 'idm_State', the role 'incoming' has cardinality 0..*, and from 'idm_Transition', the role 'Transition5' has cardinality 0..*.
+An association connects 'idm_State' and 'idm_Transition'. From 'idm_State', the role 'State' has cardinality 0..*, and from 'idm_Transition', the role 'from' has cardinality 0..*.
+An association connects 'idm_State' and 'idm_Transition'. From 'idm_State', the role 'State8' has cardinality 0..*, and from 'idm_Transition', the role 'to' has cardinality 0..*.

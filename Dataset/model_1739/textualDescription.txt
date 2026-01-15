@@ -1,0 +1,29 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'model_Book' represents an important domain concept.
+It has the following attributes: 'data', which is of type str; 'title', which is of type str; 'tags', which is of type str.
+
+'model_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_MappedLibrary' represents an important domain concept.
+It has one attribute: 'books', which is of type str.
+
+'model_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Location' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'address', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Book' and 'model_Person'. From 'model_Book', the role 'Book' has cardinality 0..*, and from 'model_Person', the role 'authors' has cardinality 0..*.
+An association connects 'model_Book' and 'model_Person'. From 'model_Book', the role 'books' has cardinality 0..*, and from 'model_Person', the role 'Person' has cardinality 0..*.
+An association connects 'model_Book' and 'model_Library'. From 'model_Book', the role 'model_Book' has cardinality 0..*, and from 'model_Library', the role 'model_Library' has cardinality 0..*.
+An association connects 'model_Library' and 'model_Location'. From 'model_Library', the role 'model_Library4' has cardinality 0..*, and from 'model_Location', the role 'model_Location' has cardinality 0..*.
+An association connects 'model_Library' and 'model_Book'. From 'model_Library', the role 'model_Library6' has cardinality 0..*, and from 'model_Book', the role 'model_Book7' has cardinality 0..*.
+An association connects 'model_Location' and 'model_Book'. From 'model_Location', the role 'model_Location9' has cardinality 0..*, and from 'model_Book', the role 'model_Book10' has cardinality 0..*.
+An association connects 'model_MappedLibrary' and 'model_Location'. From 'model_MappedLibrary', the role 'model_MappedLibrary' has cardinality 0..*, and from 'model_Location', the role 'model_Location12' has cardinality 0..*.
+An association connects 'model_Book' and 'model_MappedLibrary'. From 'model_Book', the role 'model_Book15' has cardinality 0..*, and from 'model_MappedLibrary', the role 'model_MappedLibrary14' has cardinality 0..*.
+An association connects 'model_MappedLibrary' and 'model_Book'. From 'model_MappedLibrary', the role 'model_MappedLibrary17' has cardinality 0..*, and from 'model_Book', the role 'model_Book18' has cardinality 0..*.

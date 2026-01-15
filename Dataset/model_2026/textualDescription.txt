@@ -1,0 +1,32 @@
+The domain model 'amf' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'amf_Channel' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'Type', which is of type str.
+
+'amf_Transition' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'amf_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'amf_Statemachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'amf_Network' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TypeOfChannel' defines the following possible values: 'Synchronous', 'Asynchronous'.
+The enumeration 'Event' defines the following possible values: 'RECEIVE', 'SEND'.
+
+Relationships between classes are modeled using associations.
+An association connects 'amf_Network' and 'amf_Channel'. From 'amf_Network', the role 'amf_Network' has cardinality 0..*, and from 'amf_Channel', the role 'amf_Channel' has cardinality 0..*.
+An association connects 'amf_Network' and 'amf_Statemachine'. From 'amf_Network', the role 'amf_Network2' has cardinality 0..*, and from 'amf_Statemachine', the role 'amf_Statemachine' has cardinality 0..*.
+An association connects 'amf_State' and 'amf_Statemachine'. From 'amf_State', the role 'amf_State' has cardinality 0..*, and from 'amf_Statemachine', the role 'amf_Statemachine4' has cardinality 0..*.
+An association connects 'amf_Statemachine' and 'amf_State'. From 'amf_Statemachine', the role 'amf_Statemachine6' has cardinality 0..*, and from 'amf_State', the role 'amf_State7' has cardinality 0..*.
+An association connects 'amf_Statemachine' and 'amf_Transition'. From 'amf_Statemachine', the role 'amf_Statemachine9' has cardinality 0..*, and from 'amf_Transition', the role 'amf_Transition' has cardinality 0..*.
+An association connects 'amf_Transition' and 'amf_State'. From 'amf_Transition', the role 'amf_Transition11' has cardinality 0..*, and from 'amf_State', the role 'amf_State12' has cardinality 0..*.
+An association connects 'amf_Channel' and 'amf_Transition'. From 'amf_Channel', the role 'amf_Channel15' has cardinality 0..*, and from 'amf_Transition', the role 'amf_Transition14' has cardinality 0..*.
+An association connects 'amf_Transition' and 'amf_State'. From 'amf_Transition', the role 'amf_Transition17' has cardinality 0..*, and from 'amf_State', the role 'amf_State18' has cardinality 0..*.

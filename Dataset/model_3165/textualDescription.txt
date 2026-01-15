@@ -1,0 +1,63 @@
+The domain model 'gtrace' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'gtrace_TRequirementTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'TTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'gtrace_MOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'gtrace_TTraceModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gtrace_RScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'gtrace_MClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'gtrace_TScenarioStepTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'gtrace_MElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gtrace_TScenarioTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'gtrace_MState' represents an important domain concept.
+It does not declare any attributes.
+
+'gtrace_MStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'gtrace_RRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'gtrace_RScenarioStep' represents an important domain concept.
+It does not declare any attributes.
+
+'gtrace_TTrace' represents an important domain concept.
+It has one attribute: 'reviewed', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'gtrace_TRequirementTrace' is a specialization of 'TTrace'.
+The class 'gtrace_TScenarioTrace' is a specialization of 'TTrace'.
+The class 'gtrace_TScenarioStepTrace' is a specialization of 'TTrace'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gtrace_TTraceModel' and 'gtrace_TRequirementTrace'. From 'gtrace_TTraceModel', the role 'gtrace_TTraceModel' has cardinality 0..*, and from 'gtrace_TRequirementTrace', the role 'gtrace_TRequirementTrace' has cardinality 0..*.
+An association connects 'gtrace_TTraceModel' and 'gtrace_TScenarioTrace'. From 'gtrace_TTraceModel', the role 'gtrace_TTraceModel2' has cardinality 0..*, and from 'gtrace_TScenarioTrace', the role 'gtrace_TScenarioTrace' has cardinality 0..*.
+An association connects 'gtrace_TScenarioStepTrace' and 'gtrace_TTraceModel'. From 'gtrace_TScenarioStepTrace', the role 'gtrace_TScenarioStepTrace' has cardinality 0..*, and from 'gtrace_TTraceModel', the role 'gtrace_TTraceModel4' has cardinality 0..*.
+An association connects 'gtrace_TRequirementTrace' and 'gtrace_RRequirement'. From 'gtrace_TRequirementTrace', the role 'gtrace_TRequirementTrace6' has cardinality 0..*, and from 'gtrace_RRequirement', the role 'gtrace_RRequirement' has cardinality 0..*.
+An association connects 'gtrace_TRequirementTrace' and 'gtrace_MElement'. From 'gtrace_TRequirementTrace', the role 'gtrace_TRequirementTrace8' has cardinality 0..*, and from 'gtrace_MElement', the role 'gtrace_MElement' has cardinality 0..*.
+An association connects 'gtrace_TScenarioTrace' and 'gtrace_RScenario'. From 'gtrace_TScenarioTrace', the role 'gtrace_TScenarioTrace10' has cardinality 0..*, and from 'gtrace_RScenario', the role 'gtrace_RScenario' has cardinality 0..*.
+An association connects 'gtrace_TScenarioTrace' and 'gtrace_MClassifier'. From 'gtrace_TScenarioTrace', the role 'gtrace_TScenarioTrace12' has cardinality 0..*, and from 'gtrace_MClassifier', the role 'gtrace_MClassifier' has cardinality 0..*.
+An association connects 'gtrace_MStateMachine' and 'gtrace_TScenarioTrace'. From 'gtrace_MStateMachine', the role 'gtrace_MStateMachine' has cardinality 0..*, and from 'gtrace_TScenarioTrace', the role 'gtrace_TScenarioTrace14' has cardinality 0..*.
+An association connects 'gtrace_TScenarioStepTrace' and 'gtrace_RScenarioStep'. From 'gtrace_TScenarioStepTrace', the role 'gtrace_TScenarioStepTrace16' has cardinality 0..*, and from 'gtrace_RScenarioStep', the role 'gtrace_RScenarioStep' has cardinality 0..*.
+An association connects 'gtrace_MOperation' and 'gtrace_TScenarioStepTrace'. From 'gtrace_MOperation', the role 'gtrace_MOperation' has cardinality 0..*, and from 'gtrace_TScenarioStepTrace', the role 'gtrace_TScenarioStepTrace18' has cardinality 0..*.
+An association connects 'gtrace_MState' and 'gtrace_TScenarioStepTrace'. From 'gtrace_MState', the role 'gtrace_MState' has cardinality 0..*, and from 'gtrace_TScenarioStepTrace', the role 'gtrace_TScenarioStepTrace20' has cardinality 0..*.

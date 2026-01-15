@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ninaandal/prosjektTDT4250/prosjekt/prosjekt.ecore

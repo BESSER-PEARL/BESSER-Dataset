@@ -1,0 +1,12 @@
+The domain model 'PersonsRegister' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'PersonsRegister_PersonsRegister' represents an important domain concept.
+It does not declare any attributes.
+
+'PersonsRegister_Person' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'identity', which is of type str; 'firstName', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'PersonsRegister_PersonsRegister' and 'PersonsRegister_Person'. From 'PersonsRegister_PersonsRegister', the role 'PersonsRegister_PersonsRegister' has cardinality 0..*, and from 'PersonsRegister_Person', the role 'PersonsRegister_Person' has cardinality 0..*.

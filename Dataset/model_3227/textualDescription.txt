@@ -1,0 +1,356 @@
+The domain model 'pascal' describes the core structural elements and their relationships within the system.
+
+The model defines 75 main class(es).
+
+'pascal_expression_list' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_unpacked_conformant_array_schema' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_variable_declaration_part' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_declaration_part' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_formal_parameter_section' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_identifier_list' represents an important domain concept.
+It has one attribute: 'ids', which is of type str.
+
+'pascal_field_list' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_variable_parameter_section' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_term' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'pascal_formal_parameter_list' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_type' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_type_definition_part' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_statement_part' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_bound_specification' represents an important domain concept.
+It has the following attributes: 'fin', which is of type str; 'init', which is of type str; 'name', which is of type str.
+
+'pascal_record_section' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_variant' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_variable_section' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_array_type' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_for_statement' represents an important domain concept.
+It has one attribute: 'initID', which is of type str.
+
+'pascal_statement_sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_constant_definition_part' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_structured_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_enumerated_type' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_factor' represents an important domain concept.
+It has the following attributes: 'boolean', which is of type str; 'nil', which is of type bool; 'string', which is of type str.
+
+'pascal_repeat_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_program' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_type_definition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_number' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_label' represents an important domain concept.
+It has one attribute: 'number', which is of type str.
+
+'pascal_record_type' represents an important domain concept.
+It has the following attributes: 'record', which is of type str; 'end', which is of type str.
+
+'pascal_case_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_simple_type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_case_label_list' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_function_designator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_pointer_type' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_tag_field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_parameter_type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_any_number' represents an important domain concept.
+It has the following attributes: 'real', which is of type str; 'integer', which is of type str.
+
+'pascal_with_statement' represents an important domain concept.
+It has the following attributes: 'records', which is of type str; 'record', which is of type str.
+
+'pascal_abstraction_declaration' represents an important domain concept.
+It has one attribute: 'forward', which is of type bool.
+
+'pascal_program_heading' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_label_declaration_part' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_procedure_and_function_declaration_part' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_compound_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_expression' represents an important domain concept.
+It has one attribute: 'operators', which is of type str.
+
+'pascal_while_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'abstraction_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_set_type' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_assignment_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_value_parameter_section' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_simple_expression' represents an important domain concept.
+It has the following attributes: 'operators', which is of type str; 'prefixOperator', which is of type str.
+
+'pascal_constant' represents an important domain concept.
+It has the following attributes: 'string', which is of type str; 'opterator', which is of type str; 'boolLiteral', which is of type str; 'nil', which is of type str; 'name', which is of type str.
+
+'pascal_packed_conformant_array_schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_goto_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_if_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_set' represents an important domain concept.
+It has one attribute: 'brackets', which is of type str.
+
+'pascal_constant_definition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_case_limb' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_variable_identifier_list' represents an important domain concept.
+It has one attribute: 'names', which is of type str.
+
+'pascal_repetitive_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_structured_type' represents an important domain concept.
+It has one attribute: 'packed', which is of type bool.
+
+'pascal_simple_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_file_type' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_unpacked_structured_type' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_resto' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'accessor', which is of type bool.
+
+'pascal_conformant_array_schema' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_abstraction_heading' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'resultType', which is of type str.
+
+'pascal_variant_part' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_conditional_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_block' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_fixed_part' represents an important domain concept.
+It does not declare any attributes.
+
+'pascal_subrange_type' represents an important domain concept.
+It has one attribute: 'subrange', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'pascal_abstraction_heading' is a specialization of 'abstraction_declaration'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pascal_program_heading' and 'pascal_program'. From 'pascal_program_heading', the role 'pascal_program_heading' has cardinality 0..*, and from 'pascal_program', the role 'pascal_program' has cardinality 0..*.
+An association connects 'pascal_program' and 'pascal_block'. From 'pascal_program', the role 'pascal_program2' has cardinality 0..*, and from 'pascal_block', the role 'pascal_block' has cardinality 0..*.
+An association connects 'pascal_identifier_list' and 'pascal_program_heading'. From 'pascal_identifier_list', the role 'pascal_identifier_list' has cardinality 0..*, and from 'pascal_program_heading', the role 'pascal_program_heading4' has cardinality 0..*.
+An association connects 'pascal_declaration_part' and 'pascal_block'. From 'pascal_declaration_part', the role 'pascal_declaration_part' has cardinality 0..*, and from 'pascal_block', the role 'pascal_block6' has cardinality 0..*.
+An association connects 'pascal_block' and 'pascal_statement_part'. From 'pascal_block', the role 'pascal_block8' has cardinality 0..*, and from 'pascal_statement_part', the role 'pascal_statement_part' has cardinality 0..*.
+An association connects 'pascal_label_declaration_part' and 'pascal_declaration_part'. From 'pascal_label_declaration_part', the role 'pascal_label_declaration_part' has cardinality 0..*, and from 'pascal_declaration_part', the role 'pascal_declaration_part10' has cardinality 0..*.
+An association connects 'pascal_constant_definition_part' and 'pascal_declaration_part'. From 'pascal_constant_definition_part', the role 'pascal_constant_definition_part' has cardinality 0..*, and from 'pascal_declaration_part', the role 'pascal_declaration_part12' has cardinality 0..*.
+An association connects 'pascal_type_definition_part' and 'pascal_declaration_part'. From 'pascal_type_definition_part', the role 'pascal_type_definition_part' has cardinality 0..*, and from 'pascal_declaration_part', the role 'pascal_declaration_part14' has cardinality 0..*.
+An association connects 'pascal_declaration_part' and 'pascal_variable_declaration_part'. From 'pascal_declaration_part', the role 'pascal_declaration_part16' has cardinality 0..*, and from 'pascal_variable_declaration_part', the role 'pascal_variable_declaration_part' has cardinality 0..*.
+An association connects 'pascal_procedure_and_function_declaration_part' and 'pascal_declaration_part'. From 'pascal_procedure_and_function_declaration_part', the role 'pascal_procedure_and_function_declaration_part' has cardinality 0..*, and from 'pascal_declaration_part', the role 'pascal_declaration_part18' has cardinality 0..*.
+An association connects 'pascal_label_declaration_part' and 'pascal_label'. From 'pascal_label_declaration_part', the role 'pascal_label_declaration_part20' has cardinality 0..*, and from 'pascal_label', the role 'pascal_label' has cardinality 0..*.
+An association connects 'pascal_constant_definition' and 'pascal_constant_definition_part'. From 'pascal_constant_definition', the role 'pascal_constant_definition' has cardinality 0..*, and from 'pascal_constant_definition_part', the role 'pascal_constant_definition_part22' has cardinality 0..*.
+An association connects 'pascal_constant_definition' and 'pascal_constant'. From 'pascal_constant_definition', the role 'pascal_constant_definition24' has cardinality 0..*, and from 'pascal_constant', the role 'pascal_constant' has cardinality 0..*.
+An association connects 'pascal_type_definition' and 'pascal_type_definition_part'. From 'pascal_type_definition', the role 'pascal_type_definition' has cardinality 0..*, and from 'pascal_type_definition_part', the role 'pascal_type_definition_part26' has cardinality 0..*.
+An association connects 'pascal_type' and 'pascal_type_definition'. From 'pascal_type', the role 'pascal_type' has cardinality 0..*, and from 'pascal_type_definition', the role 'pascal_type_definition28' has cardinality 0..*.
+An association connects 'pascal_variable_declaration_part' and 'pascal_variable_section'. From 'pascal_variable_declaration_part', the role 'pascal_variable_declaration_part30' has cardinality 0..*, and from 'pascal_variable_section', the role 'pascal_variable_section' has cardinality 0..*.
+An association connects 'pascal_variable_section' and 'pascal_variable_identifier_list'. From 'pascal_variable_section', the role 'pascal_variable_section32' has cardinality 0..*, and from 'pascal_variable_identifier_list', the role 'pascal_variable_identifier_list' has cardinality 0..*.
+An association connects 'pascal_type' and 'pascal_variable_section'. From 'pascal_type', the role 'pascal_type35' has cardinality 0..*, and from 'pascal_variable_section', the role 'pascal_variable_section34' has cardinality 0..*.
+An association connects 'pascal_procedure_and_function_declaration_part' and 'pascal_abstraction_heading'. From 'pascal_procedure_and_function_declaration_part', the role 'pascal_procedure_and_function_declaration_part37' has cardinality 0..*, and from 'pascal_abstraction_heading', the role 'pascal_abstraction_heading' has cardinality 0..*.
+An association connects 'pascal_procedure_and_function_declaration_part' and 'pascal_abstraction_declaration'. From 'pascal_procedure_and_function_declaration_part', the role 'pascal_procedure_and_function_declaration_part39' has cardinality 0..*, and from 'pascal_abstraction_declaration', the role 'pascal_abstraction_declaration' has cardinality 0..*.
+An association connects 'pascal_formal_parameter_list' and 'pascal_abstraction_heading'. From 'pascal_formal_parameter_list', the role 'pascal_formal_parameter_list' has cardinality 0..*, and from 'pascal_abstraction_heading', the role 'pascal_abstraction_heading41' has cardinality 0..*.
+An association connects 'pascal_abstraction_declaration' and 'pascal_abstraction_heading'. From 'pascal_abstraction_declaration', the role 'pascal_abstraction_declaration43' has cardinality 0..*, and from 'pascal_abstraction_heading', the role 'pascal_abstraction_heading44' has cardinality 0..*.
+An association connects 'pascal_block' and 'pascal_abstraction_declaration'. From 'pascal_block', the role 'pascal_block47' has cardinality 0..*, and from 'pascal_abstraction_declaration', the role 'pascal_abstraction_declaration46' has cardinality 0..*.
+An association connects 'pascal_statement_part' and 'pascal_statement_sequence'. From 'pascal_statement_part', the role 'pascal_statement_part49' has cardinality 0..*, and from 'pascal_statement_sequence', the role 'pascal_statement_sequence' has cardinality 0..*.
+An association connects 'pascal_formal_parameter_list' and 'pascal_formal_parameter_section'. From 'pascal_formal_parameter_list', the role 'pascal_formal_parameter_list51' has cardinality 0..*, and from 'pascal_formal_parameter_section', the role 'pascal_formal_parameter_section' has cardinality 0..*.
+An association connects 'pascal_value_parameter_section' and 'pascal_formal_parameter_section'. From 'pascal_value_parameter_section', the role 'pascal_value_parameter_section' has cardinality 0..*, and from 'pascal_formal_parameter_section', the role 'pascal_formal_parameter_section53' has cardinality 0..*.
+An association connects 'pascal_variable_parameter_section' and 'pascal_formal_parameter_section'. From 'pascal_variable_parameter_section', the role 'pascal_variable_parameter_section' has cardinality 0..*, and from 'pascal_formal_parameter_section', the role 'pascal_formal_parameter_section55' has cardinality 0..*.
+An association connects 'pascal_formal_parameter_section' and 'pascal_abstraction_heading'. From 'pascal_formal_parameter_section', the role 'pascal_formal_parameter_section57' has cardinality 0..*, and from 'pascal_abstraction_heading', the role 'pascal_abstraction_heading58' has cardinality 0..*.
+An association connects 'pascal_abstraction_heading' and 'pascal_formal_parameter_section'. From 'pascal_abstraction_heading', the role 'pascal_abstraction_heading61' has cardinality 0..*, and from 'pascal_formal_parameter_section', the role 'pascal_formal_parameter_section60' has cardinality 0..*.
+An association connects 'pascal_value_parameter_section' and 'pascal_identifier_list'. From 'pascal_value_parameter_section', the role 'pascal_value_parameter_section63' has cardinality 0..*, and from 'pascal_identifier_list', the role 'pascal_identifier_list64' has cardinality 0..*.
+An association connects 'pascal_value_parameter_section' and 'pascal_parameter_type'. From 'pascal_value_parameter_section', the role 'pascal_value_parameter_section66' has cardinality 0..*, and from 'pascal_parameter_type', the role 'pascal_parameter_type' has cardinality 0..*.
+An association connects 'pascal_identifier_list' and 'pascal_variable_parameter_section'. From 'pascal_identifier_list', the role 'pascal_identifier_list69' has cardinality 0..*, and from 'pascal_variable_parameter_section', the role 'pascal_variable_parameter_section68' has cardinality 0..*.
+An association connects 'pascal_variable_parameter_section' and 'pascal_parameter_type'. From 'pascal_variable_parameter_section', the role 'pascal_variable_parameter_section71' has cardinality 0..*, and from 'pascal_parameter_type', the role 'pascal_parameter_type72' has cardinality 0..*.
+An association connects 'pascal_conformant_array_schema' and 'pascal_parameter_type'. From 'pascal_conformant_array_schema', the role 'pascal_conformant_array_schema' has cardinality 0..*, and from 'pascal_parameter_type', the role 'pascal_parameter_type74' has cardinality 0..*.
+An association connects 'pascal_packed_conformant_array_schema' and 'pascal_conformant_array_schema'. From 'pascal_packed_conformant_array_schema', the role 'pascal_packed_conformant_array_schema' has cardinality 0..*, and from 'pascal_conformant_array_schema', the role 'pascal_conformant_array_schema76' has cardinality 0..*.
+An association connects 'pascal_conformant_array_schema' and 'pascal_unpacked_conformant_array_schema'. From 'pascal_conformant_array_schema', the role 'pascal_conformant_array_schema78' has cardinality 0..*, and from 'pascal_unpacked_conformant_array_schema', the role 'pascal_unpacked_conformant_array_schema' has cardinality 0..*.
+An association connects 'pascal_packed_conformant_array_schema' and 'pascal_bound_specification'. From 'pascal_packed_conformant_array_schema', the role 'pascal_packed_conformant_array_schema80' has cardinality 0..*, and from 'pascal_bound_specification', the role 'pascal_bound_specification' has cardinality 0..*.
+An association connects 'pascal_unpacked_conformant_array_schema' and 'pascal_bound_specification'. From 'pascal_unpacked_conformant_array_schema', the role 'pascal_unpacked_conformant_array_schema82' has cardinality 0..*, and from 'pascal_bound_specification', the role 'pascal_bound_specification83' has cardinality 0..*.
+An association connects 'pascal_unpacked_conformant_array_schema' and 'pascal_parameter_type'. From 'pascal_unpacked_conformant_array_schema', the role 'pascal_unpacked_conformant_array_schema85' has cardinality 0..*, and from 'pascal_parameter_type', the role 'pascal_parameter_type86' has cardinality 0..*.
+An association connects 'pascal_statement_sequence' and 'pascal_statement'. From 'pascal_statement_sequence', the role 'pascal_statement_sequence88' has cardinality 0..*, and from 'pascal_statement', the role 'pascal_statement' has cardinality 0..*.
+An association connects 'pascal_label' and 'pascal_statement'. From 'pascal_label', the role 'pascal_label91' has cardinality 0..*, and from 'pascal_statement', the role 'pascal_statement90' has cardinality 0..*.
+An association connects 'pascal_statement' and 'pascal_simple_statement'. From 'pascal_statement', the role 'pascal_statement93' has cardinality 0..*, and from 'pascal_simple_statement', the role 'pascal_simple_statement' has cardinality 0..*.
+An association connects 'pascal_structured_statement' and 'pascal_statement'. From 'pascal_structured_statement', the role 'pascal_structured_statement' has cardinality 0..*, and from 'pascal_statement', the role 'pascal_statement95' has cardinality 0..*.
+An association connects 'pascal_assignment_statement' and 'pascal_simple_statement'. From 'pascal_assignment_statement', the role 'pascal_assignment_statement' has cardinality 0..*, and from 'pascal_simple_statement', the role 'pascal_simple_statement97' has cardinality 0..*.
+An association connects 'pascal_function_designator' and 'pascal_simple_statement'. From 'pascal_function_designator', the role 'pascal_function_designator' has cardinality 0..*, and from 'pascal_simple_statement', the role 'pascal_simple_statement99' has cardinality 0..*.
+An association connects 'pascal_goto_statement' and 'pascal_simple_statement'. From 'pascal_goto_statement', the role 'pascal_goto_statement' has cardinality 0..*, and from 'pascal_simple_statement', the role 'pascal_simple_statement101' has cardinality 0..*.
+An association connects 'pascal_variable' and 'pascal_assignment_statement'. From 'pascal_variable', the role 'pascal_variable' has cardinality 0..*, and from 'pascal_assignment_statement', the role 'pascal_assignment_statement103' has cardinality 0..*.
+An association connects 'pascal_assignment_statement' and 'pascal_expression'. From 'pascal_assignment_statement', the role 'pascal_assignment_statement105' has cardinality 0..*, and from 'pascal_expression', the role 'pascal_expression' has cardinality 0..*.
+An association connects 'pascal_goto_statement' and 'pascal_label'. From 'pascal_goto_statement', the role 'pascal_goto_statement107' has cardinality 0..*, and from 'pascal_label', the role 'pascal_label108' has cardinality 0..*.
+An association connects 'pascal_structured_statement' and 'pascal_compound_statement'. From 'pascal_structured_statement', the role 'pascal_structured_statement110' has cardinality 0..*, and from 'pascal_compound_statement', the role 'pascal_compound_statement' has cardinality 0..*.
+An association connects 'pascal_repetitive_statement' and 'pascal_structured_statement'. From 'pascal_repetitive_statement', the role 'pascal_repetitive_statement' has cardinality 0..*, and from 'pascal_structured_statement', the role 'pascal_structured_statement112' has cardinality 0..*.
+An association connects 'pascal_conditional_statement' and 'pascal_structured_statement'. From 'pascal_conditional_statement', the role 'pascal_conditional_statement' has cardinality 0..*, and from 'pascal_structured_statement', the role 'pascal_structured_statement114' has cardinality 0..*.
+An association connects 'pascal_with_statement' and 'pascal_structured_statement'. From 'pascal_with_statement', the role 'pascal_with_statement' has cardinality 0..*, and from 'pascal_structured_statement', the role 'pascal_structured_statement116' has cardinality 0..*.
+An association connects 'pascal_statement_sequence' and 'pascal_compound_statement'. From 'pascal_statement_sequence', the role 'pascal_statement_sequence119' has cardinality 0..*, and from 'pascal_compound_statement', the role 'pascal_compound_statement118' has cardinality 0..*.
+An association connects 'pascal_while_statement' and 'pascal_repetitive_statement'. From 'pascal_while_statement', the role 'pascal_while_statement' has cardinality 0..*, and from 'pascal_repetitive_statement', the role 'pascal_repetitive_statement121' has cardinality 0..*.
+An association connects 'pascal_repetitive_statement' and 'pascal_repeat_statement'. From 'pascal_repetitive_statement', the role 'pascal_repetitive_statement123' has cardinality 0..*, and from 'pascal_repeat_statement', the role 'pascal_repeat_statement' has cardinality 0..*.
+An association connects 'pascal_repetitive_statement' and 'pascal_for_statement'. From 'pascal_repetitive_statement', the role 'pascal_repetitive_statement125' has cardinality 0..*, and from 'pascal_for_statement', the role 'pascal_for_statement' has cardinality 0..*.
+An association connects 'pascal_while_statement' and 'pascal_expression'. From 'pascal_while_statement', the role 'pascal_while_statement127' has cardinality 0..*, and from 'pascal_expression', the role 'pascal_expression128' has cardinality 0..*.
+An association connects 'pascal_statement' and 'pascal_while_statement'. From 'pascal_statement', the role 'pascal_statement131' has cardinality 0..*, and from 'pascal_while_statement', the role 'pascal_while_statement130' has cardinality 0..*.
+An association connects 'pascal_repeat_statement' and 'pascal_statement_sequence'. From 'pascal_repeat_statement', the role 'pascal_repeat_statement133' has cardinality 0..*, and from 'pascal_statement_sequence', the role 'pascal_statement_sequence134' has cardinality 0..*.
+An association connects 'pascal_repeat_statement' and 'pascal_expression'. From 'pascal_repeat_statement', the role 'pascal_repeat_statement136' has cardinality 0..*, and from 'pascal_expression', the role 'pascal_expression137' has cardinality 0..*.
+An association connects 'pascal_for_statement' and 'pascal_expression'. From 'pascal_for_statement', the role 'pascal_for_statement139' has cardinality 0..*, and from 'pascal_expression', the role 'pascal_expression140' has cardinality 0..*.
+An association connects 'pascal_for_statement' and 'pascal_expression'. From 'pascal_for_statement', the role 'pascal_for_statement142' has cardinality 0..*, and from 'pascal_expression', the role 'pascal_expression143' has cardinality 0..*.
+An association connects 'pascal_statement' and 'pascal_for_statement'. From 'pascal_statement', the role 'pascal_statement146' has cardinality 0..*, and from 'pascal_for_statement', the role 'pascal_for_statement145' has cardinality 0..*.
+An association connects 'pascal_if_statement' and 'pascal_conditional_statement'. From 'pascal_if_statement', the role 'pascal_if_statement' has cardinality 0..*, and from 'pascal_conditional_statement', the role 'pascal_conditional_statement148' has cardinality 0..*.
+An association connects 'pascal_conditional_statement' and 'pascal_case_statement'. From 'pascal_conditional_statement', the role 'pascal_conditional_statement150' has cardinality 0..*, and from 'pascal_case_statement', the role 'pascal_case_statement' has cardinality 0..*.
+An association connects 'pascal_if_statement' and 'pascal_expression'. From 'pascal_if_statement', the role 'pascal_if_statement152' has cardinality 0..*, and from 'pascal_expression', the role 'pascal_expression153' has cardinality 0..*.
+An association connects 'pascal_if_statement' and 'pascal_statement'. From 'pascal_if_statement', the role 'pascal_if_statement155' has cardinality 0..*, and from 'pascal_statement', the role 'pascal_statement156' has cardinality 0..*.
+An association connects 'pascal_statement' and 'pascal_if_statement'. From 'pascal_statement', the role 'pascal_statement159' has cardinality 0..*, and from 'pascal_if_statement', the role 'pascal_if_statement158' has cardinality 0..*.
+An association connects 'pascal_expression' and 'pascal_case_statement'. From 'pascal_expression', the role 'pascal_expression162' has cardinality 0..*, and from 'pascal_case_statement', the role 'pascal_case_statement161' has cardinality 0..*.
+An association connects 'pascal_case_limb' and 'pascal_case_statement'. From 'pascal_case_limb', the role 'pascal_case_limb' has cardinality 0..*, and from 'pascal_case_statement', the role 'pascal_case_statement164' has cardinality 0..*.
+An association connects 'pascal_case_label_list' and 'pascal_case_limb'. From 'pascal_case_label_list', the role 'pascal_case_label_list' has cardinality 0..*, and from 'pascal_case_limb', the role 'pascal_case_limb166' has cardinality 0..*.
+An association connects 'pascal_case_limb' and 'pascal_statement'. From 'pascal_case_limb', the role 'pascal_case_limb168' has cardinality 0..*, and from 'pascal_statement', the role 'pascal_statement169' has cardinality 0..*.
+An association connects 'pascal_case_label_list' and 'pascal_constant'. From 'pascal_case_label_list', the role 'pascal_case_label_list171' has cardinality 0..*, and from 'pascal_constant', the role 'pascal_constant172' has cardinality 0..*.
+An association connects 'pascal_with_statement' and 'pascal_statement'. From 'pascal_with_statement', the role 'pascal_with_statement174' has cardinality 0..*, and from 'pascal_statement', the role 'pascal_statement175' has cardinality 0..*.
+An association connects 'pascal_expression' and 'pascal_simple_expression'. From 'pascal_expression', the role 'pascal_expression177' has cardinality 0..*, and from 'pascal_simple_expression', the role 'pascal_simple_expression' has cardinality 0..*.
+An association connects 'pascal_EObject' and 'pascal_simple_expression'. From 'pascal_EObject', the role 'pascal_EObject' has cardinality 0..*, and from 'pascal_simple_expression', the role 'pascal_simple_expression179' has cardinality 0..*.
+An association connects 'pascal_term' and 'pascal_factor'. From 'pascal_term', the role 'pascal_term' has cardinality 0..*, and from 'pascal_factor', the role 'pascal_factor' has cardinality 0..*.
+An association connects 'pascal_factor' and 'pascal_variable'. From 'pascal_factor', the role 'pascal_factor182' has cardinality 0..*, and from 'pascal_variable', the role 'pascal_variable183' has cardinality 0..*.
+An association connects 'pascal_factor' and 'pascal_number'. From 'pascal_factor', the role 'pascal_factor185' has cardinality 0..*, and from 'pascal_number', the role 'pascal_number' has cardinality 0..*.
+An association connects 'pascal_set' and 'pascal_factor'. From 'pascal_set', the role 'pascal_set' has cardinality 0..*, and from 'pascal_factor', the role 'pascal_factor187' has cardinality 0..*.
+An association connects 'pascal_factor' and 'pascal_function_designator'. From 'pascal_factor', the role 'pascal_factor189' has cardinality 0..*, and from 'pascal_function_designator', the role 'pascal_function_designator190' has cardinality 0..*.
+An association connects 'pascal_expression' and 'pascal_factor'. From 'pascal_expression', the role 'pascal_expression193' has cardinality 0..*, and from 'pascal_factor', the role 'pascal_factor192' has cardinality 0..*.
+An association connects 'pascal_factor' and 'pascal_factor'. From 'pascal_factor', the role 'pascal_factor194' has cardinality 0..*, and from 'pascal_factor', the role 'pascal_factor196' has cardinality 0..*.
+An association connects 'pascal_variable' and 'pascal_resto'. From 'pascal_variable', the role 'pascal_variable198' has cardinality 0..*, and from 'pascal_resto', the role 'pascal_resto' has cardinality 0..*.
+An association connects 'pascal_expression_list' and 'pascal_resto'. From 'pascal_expression_list', the role 'pascal_expression_list' has cardinality 0..*, and from 'pascal_resto', the role 'pascal_resto200' has cardinality 0..*.
+An association connects 'pascal_resto' and 'pascal_resto'. From 'pascal_resto', the role 'pascal_resto203' has cardinality 0..*, and from 'pascal_resto', the role 'pascal_resto201' has cardinality 0..*.
+An association connects 'pascal_resto' and 'pascal_resto'. From 'pascal_resto', the role 'pascal_resto204' has cardinality 0..*, and from 'pascal_resto', the role 'pascal_resto206' has cardinality 0..*.
+An association connects 'pascal_resto' and 'pascal_resto'. From 'pascal_resto', the role 'pascal_resto207' has cardinality 0..*, and from 'pascal_resto', the role 'pascal_resto209' has cardinality 0..*.
+An association connects 'pascal_set' and 'pascal_expression_list'. From 'pascal_set', the role 'pascal_set211' has cardinality 0..*, and from 'pascal_expression_list', the role 'pascal_expression_list212' has cardinality 0..*.
+An association connects 'pascal_expression' and 'pascal_expression_list'. From 'pascal_expression', the role 'pascal_expression215' has cardinality 0..*, and from 'pascal_expression_list', the role 'pascal_expression_list214' has cardinality 0..*.
+An association connects 'pascal_function_designator' and 'pascal_expression_list'. From 'pascal_function_designator', the role 'pascal_function_designator217' has cardinality 0..*, and from 'pascal_expression_list', the role 'pascal_expression_list218' has cardinality 0..*.
+An association connects 'pascal_type' and 'pascal_simple_type'. From 'pascal_type', the role 'pascal_type220' has cardinality 0..*, and from 'pascal_simple_type', the role 'pascal_simple_type' has cardinality 0..*.
+An association connects 'pascal_structured_type' and 'pascal_type'. From 'pascal_structured_type', the role 'pascal_structured_type' has cardinality 0..*, and from 'pascal_type', the role 'pascal_type222' has cardinality 0..*.
+An association connects 'pascal_pointer_type' and 'pascal_type'. From 'pascal_pointer_type', the role 'pascal_pointer_type' has cardinality 0..*, and from 'pascal_type', the role 'pascal_type224' has cardinality 0..*.
+An association connects 'pascal_subrange_type' and 'pascal_simple_type'. From 'pascal_subrange_type', the role 'pascal_subrange_type' has cardinality 0..*, and from 'pascal_simple_type', the role 'pascal_simple_type226' has cardinality 0..*.
+An association connects 'pascal_simple_type' and 'pascal_enumerated_type'. From 'pascal_simple_type', the role 'pascal_simple_type228' has cardinality 0..*, and from 'pascal_enumerated_type', the role 'pascal_enumerated_type' has cardinality 0..*.
+An association connects 'pascal_identifier_list' and 'pascal_enumerated_type'. From 'pascal_identifier_list', the role 'pascal_identifier_list231' has cardinality 0..*, and from 'pascal_enumerated_type', the role 'pascal_enumerated_type230' has cardinality 0..*.
+An association connects 'pascal_constant' and 'pascal_subrange_type'. From 'pascal_constant', the role 'pascal_constant234' has cardinality 0..*, and from 'pascal_subrange_type', the role 'pascal_subrange_type233' has cardinality 0..*.
+An association connects 'pascal_subrange_type' and 'pascal_constant'. From 'pascal_subrange_type', the role 'pascal_subrange_type236' has cardinality 0..*, and from 'pascal_constant', the role 'pascal_constant237' has cardinality 0..*.
+An association connects 'pascal_constant' and 'pascal_subrange_type'. From 'pascal_constant', the role 'pascal_constant240' has cardinality 0..*, and from 'pascal_subrange_type', the role 'pascal_subrange_type239' has cardinality 0..*.
+An association connects 'pascal_structured_type' and 'pascal_unpacked_structured_type'. From 'pascal_structured_type', the role 'pascal_structured_type242' has cardinality 0..*, and from 'pascal_unpacked_structured_type', the role 'pascal_unpacked_structured_type' has cardinality 0..*.
+An association connects 'pascal_unpacked_structured_type' and 'pascal_array_type'. From 'pascal_unpacked_structured_type', the role 'pascal_unpacked_structured_type244' has cardinality 0..*, and from 'pascal_array_type', the role 'pascal_array_type' has cardinality 0..*.
+An association connects 'pascal_record_type' and 'pascal_unpacked_structured_type'. From 'pascal_record_type', the role 'pascal_record_type' has cardinality 0..*, and from 'pascal_unpacked_structured_type', the role 'pascal_unpacked_structured_type246' has cardinality 0..*.
+An association connects 'pascal_unpacked_structured_type' and 'pascal_set_type'. From 'pascal_unpacked_structured_type', the role 'pascal_unpacked_structured_type248' has cardinality 0..*, and from 'pascal_set_type', the role 'pascal_set_type' has cardinality 0..*.
+An association connects 'pascal_unpacked_structured_type' and 'pascal_file_type'. From 'pascal_unpacked_structured_type', the role 'pascal_unpacked_structured_type250' has cardinality 0..*, and from 'pascal_file_type', the role 'pascal_file_type' has cardinality 0..*.
+An association connects 'pascal_array_type' and 'pascal_simple_type'. From 'pascal_array_type', the role 'pascal_array_type252' has cardinality 0..*, and from 'pascal_simple_type', the role 'pascal_simple_type253' has cardinality 0..*.
+An association connects 'pascal_array_type' and 'pascal_type'. From 'pascal_array_type', the role 'pascal_array_type255' has cardinality 0..*, and from 'pascal_type', the role 'pascal_type256' has cardinality 0..*.
+An association connects 'pascal_record_type' and 'pascal_field_list'. From 'pascal_record_type', the role 'pascal_record_type258' has cardinality 0..*, and from 'pascal_field_list', the role 'pascal_field_list' has cardinality 0..*.
+An association connects 'pascal_set_type' and 'pascal_type'. From 'pascal_set_type', the role 'pascal_set_type260' has cardinality 0..*, and from 'pascal_type', the role 'pascal_type261' has cardinality 0..*.
+An association connects 'pascal_file_type' and 'pascal_type'. From 'pascal_file_type', the role 'pascal_file_type263' has cardinality 0..*, and from 'pascal_type', the role 'pascal_type264' has cardinality 0..*.
+An association connects 'pascal_pointer_type' and 'pascal_type'. From 'pascal_pointer_type', the role 'pascal_pointer_type266' has cardinality 0..*, and from 'pascal_type', the role 'pascal_type267' has cardinality 0..*.
+An association connects 'pascal_fixed_part' and 'pascal_field_list'. From 'pascal_fixed_part', the role 'pascal_fixed_part' has cardinality 0..*, and from 'pascal_field_list', the role 'pascal_field_list269' has cardinality 0..*.
+An association connects 'pascal_variant_part' and 'pascal_field_list'. From 'pascal_variant_part', the role 'pascal_variant_part' has cardinality 0..*, and from 'pascal_field_list', the role 'pascal_field_list271' has cardinality 0..*.
+An association connects 'pascal_record_section' and 'pascal_fixed_part'. From 'pascal_record_section', the role 'pascal_record_section' has cardinality 0..*, and from 'pascal_fixed_part', the role 'pascal_fixed_part273' has cardinality 0..*.
+An association connects 'pascal_identifier_list' and 'pascal_record_section'. From 'pascal_identifier_list', the role 'pascal_identifier_list276' has cardinality 0..*, and from 'pascal_record_section', the role 'pascal_record_section275' has cardinality 0..*.
+An association connects 'pascal_type' and 'pascal_record_section'. From 'pascal_type', the role 'pascal_type279' has cardinality 0..*, and from 'pascal_record_section', the role 'pascal_record_section278' has cardinality 0..*.
+An association connects 'pascal_variant_part' and 'pascal_tag_field'. From 'pascal_variant_part', the role 'pascal_variant_part281' has cardinality 0..*, and from 'pascal_tag_field', the role 'pascal_tag_field' has cardinality 0..*.
+An association connects 'pascal_variant' and 'pascal_variant_part'. From 'pascal_variant', the role 'pascal_variant' has cardinality 0..*, and from 'pascal_variant_part', the role 'pascal_variant_part283' has cardinality 0..*.
+An association connects 'pascal_case_label_list' and 'pascal_variant'. From 'pascal_case_label_list', the role 'pascal_case_label_list286' has cardinality 0..*, and from 'pascal_variant', the role 'pascal_variant285' has cardinality 0..*.
+An association connects 'pascal_field_list' and 'pascal_variant'. From 'pascal_field_list', the role 'pascal_field_list289' has cardinality 0..*, and from 'pascal_variant', the role 'pascal_variant288' has cardinality 0..*.
+An association connects 'pascal_any_number' and 'pascal_number'. From 'pascal_any_number', the role 'pascal_any_number' has cardinality 0..*, and from 'pascal_number', the role 'pascal_number291' has cardinality 0..*.
+An association connects 'pascal_constant' and 'pascal_number'. From 'pascal_constant', the role 'pascal_constant293' has cardinality 0..*, and from 'pascal_number', the role 'pascal_number294' has cardinality 0..*.

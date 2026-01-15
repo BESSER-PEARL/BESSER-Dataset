@@ -1,0 +1,472 @@
+The domain model 'MachineLibrary' describes the core structural elements and their relationships within the system.
+
+The model defines 114 main class(es).
+
+'MachineLibrary_NodeGeneral_Terminal' represents an important domain concept.
+It has the following attributes: 'steelCarrier', which is of type str; 'maxScreens', which is of type int; 'name_4', which is of type str; 'maxYValue', which is of type int; 'customTimer2', which is of type int; 'keyBoardSignalCarrierPresent', which is of type int; 'name_1', which is of type str; 'terminalType', which is of type int; 'name_2', which is of type str; 'stationAuto', which is of type str; 'displayTime', which is of type int; 'maxXValue', which is of type int; 'name_5', which is of type str; 'name_6', which is of type str; 'stationType', which is of type int; 'customTimer1', which is of type int; 'lenOfPlanID', which is of type int; 'name_3', which is of type str; 'stationReady', which is of type str; 'signalCarrierPresent', which is of type int.
+
+'MachineLibrary_UnitConfig_Terminal' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_UnitConfig_Host' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_CheckAddSID_PM2PM' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_Commands' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_Command' represents an important domain concept.
+It has the following attributes: 'commandProgParameter', which is of type int; 'commandNo', which is of type str; 'commandName', which is of type str.
+
+'MachineLibrary_UnitGeneralSpecial' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_NodeGeneral_RemotePM' represents an important domain concept.
+It has the following attributes: 'system', which is of type str; 'timeServer', which is of type int.
+
+'MachineLibrary_HistoryConfig_AccuPyc' represents an important domain concept.
+It has the following attributes: 'currentSample', which is of type str; 'sampleCupWeight', which is of type float; 'currentSampleID', which is of type str.
+
+'MachineLibrary_SepByComma_Field_Scanner' represents an important domain concept.
+It has the following attributes: 'fieldName', which is of type str; 'fieldNo', which is of type int.
+
+'MachineLibrary_Communication_SuperQXRF' represents an important domain concept.
+It has one attribute: 'enq_ACK_Protocol', which is of type int.
+
+'MachineLibrary_UnitGeneral_Scanner' represents an important domain concept.
+It has the following attributes: 'fillWith', which is of type str; 'registerSample', which is of type int; 'preString', which is of type str; 'addString', which is of type str; 'start', which is of type int; 'forcedSampleType', which is of type int; 'length', which is of type int.
+
+'MachineLibrary_Report_Host' represents an important domain concept.
+It has the following attributes: 'sendErrorWarningsMsgOnly', which is of type int; 'sampleMoved', which is of type int; 'internal', which is of type int; 'maxType', which is of type int; 'stateChanged', which is of type int; 'note', which is of type str; 'rawData', which is of type int; 'sampleRemoved', which is of type int; 'sampleInsert', which is of type int; 'note1', which is of type str; 'sendLifeMessages', which is of type int; 'timeStamp', which is of type int; 'fileName', which is of type str; 'minType', which is of type int.
+
+'MachineLibrary_TransferFileSection' represents an important domain concept.
+It has the following attributes: 'transferSeq', which is of type int; 'transferSection', which is of type str; 'transferFile', which is of type str.
+
+'MachineLibrary_ParamPrint' represents an important domain concept.
+It has the following attributes: 'horzPosValues', which is of type float; 'vertPosHeader', which is of type float; 'vertPosData', which is of type float; 'fontHightData', which is of type float; 'fontHightHeader', which is of type float; 'horzPosLeftBorder', which is of type float; 'vertLineSpace', which is of type float; 'dateStamp', which is of type str.
+
+'MachineLibrary_NodePrograms' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_ExeAskPrepUnit_ARL_XRF_OES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_Moved_Host' represents an important domain concept.
+It has the following attributes: 'pos0', which is of type int; 'writePositionNameInFile', which is of type int; 'report_ALL', which is of type int; 'type0', which is of type int.
+
+'MachineLibrary_NodeGeneral_WinCC2WinCC' represents an important domain concept.
+It has one attribute: 'prefix', which is of type str.
+
+'MachineLibrary_CheckSampleConfig_SuperQXRF' represents an important domain concept.
+It has the following attributes: 'samples', which is of type str; 'sampleID', which is of type str; 'minutes', which is of type str; 'anaProg', which is of type str; 'seq_X', which is of type int; 'program', which is of type str.
+
+'MachineLibrary_PLCtoPmMatrix' represents an important domain concept.
+It has the following attributes: 'plcpmmatrixBit13', which is of type int; 'plcpmmatrixBit8', which is of type int; 'plcpmmatrixBit10', which is of type int; 'plcpmmatrixBit11', which is of type int; 'plcpmmatrixBit1', which is of type int; 'plcpmmatrixBit9', which is of type int; 'plcpmmatrixBit14', which is of type int; 'plcpmmatrixBit12', which is of type int; 'plcpmmatrixBit0', which is of type int; 'plcpmmatrixBit5', which is of type int; 'plcpmmatrixBit2', which is of type int; 'plcpmmatrixBit6', which is of type int; 'plcpmmatrixBit7', which is of type int; 'plcpmmatrixBit4', which is of type int; 'plcpmmatrixBit15', which is of type int; 'plcpmmatrixBit3', which is of type int.
+
+'MachineLibrary_InsertRemove_Host' represents an important domain concept.
+It has one attribute: 'report_All', which is of type int.
+
+'MachineLibrary_RobotConfSendOrder' represents an important domain concept.
+It has the following attributes: 'robotconfsendorderVar_X', which is of type str; 'robotconfsendorderFrom_X', which is of type str; 'robotconfsendorderSeq_X', which is of type int; 'robotconfsendorderType_X', which is of type str.
+
+'MachineLibrary_RobotVarToErrorbits' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_Parameter' represents an important domain concept.
+It has the following attributes: 'parameterMin', which is of type int; 'parameterT1', which is of type str; 'parameterMax', which is of type int; 'parameterConfig', which is of type str; 'parameterT2', which is of type str; 'parameterV', which is of type str; 'parameterName', which is of type str; 'parameterV1', which is of type str; 'parameterType', which is of type str; 'parameterV0', which is of type str; 'parameterParaLen', which is of type int.
+
+'MachineLibrary_OES_XRF_Condition' represents an important domain concept.
+It has the following attributes: 'paraName', which is of type str; 'comment', which is of type str; 'para', which is of type str; 'seq_X', which is of type int.
+
+'MachineLibrary_TCPIP_Link' represents an important domain concept.
+It has the following attributes: 'termChar', which is of type int; 'sendBuffer', which is of type int; 'address_1', which is of type str; 'port', which is of type int; 'address_4', which is of type str; 'address_5', which is of type str; 'maxDataSize', which is of type int; 'msgDelay', which is of type int; 'address_3', which is of type str; 'address_6', which is of type str; 'protocol', which is of type int; 'address_2', which is of type str; 'receiveBuffer', which is of type int.
+
+'MachineLibrary_ControlSamples_SuperQXRF' represents an important domain concept.
+It has one attribute: 'outOfControl', which is of type int.
+
+'MachineLibrary_GeneralParameter_SuperQXRF' represents an important domain concept.
+It has the following attributes: 'listName', which is of type str; 'startList', which is of type str; 'switchRemote', which is of type str.
+
+'MachineLibrary_IBMWebsphereMQ' represents an important domain concept.
+It has the following attributes: 'readQueName', which is of type str; 'maxDataSize', which is of type int; 'qName', which is of type str; 'sendBuffer', which is of type int; 'sendDynamicQueName', which is of type str; 'sendQueName', which is of type str; 'readQueMgrName', which is of type str; 'readDynamicQueName', which is of type str; 'receiveBuffer', which is of type int; 'sendQueMgrName', which is of type str.
+
+'MachineLibrary_WinCCLnk' represents an important domain concept.
+It has the following attributes: 'connectionName', which is of type str; 'canCreateTags', which is of type int; 'updateCycle_Help', which is of type str; 'updateCycle', which is of type int; 'canModifyTag', which is of type int.
+
+'MachineLibrary_Compac_Link' represents an important domain concept.
+It has the following attributes: 'checksum', which is of type int; 'useNotACK_NAK', which is of type int; 'useNotENQ', which is of type int; 'timeout', which is of type int; 'commConfig', which is of type str; 'bytecountcode', which is of type int; 'byteCount', which is of type int; 'checksumCode', which is of type int; 'splitLongMessage', which is of type int; 'maxDataLength', which is of type int; 'params', which is of type str; 'bcc', which is of type int; 'retry', which is of type int; 'port', which is of type str.
+
+'MachineLibrary_CommunicationData' represents an important domain concept.
+It has the following attributes: 'comSendDataLength', which is of type int; 'comSIDDataLength', which is of type int; 'comErrorDataAddress', which is of type str; 'comSendDataAddress', which is of type str; 'comErrorDataLength', which is of type int; 'comRequestDataAddress', which is of type str; 'comSIDDataAddress', which is of type str; 'comProgressIndDataAddress', which is of type str; 'comProgressIndDataLength', which is of type int; 'comRequestDataLength', which is of type int.
+
+'MachineLibrary_CheckAskPrepUnit_ARL_XRF_OES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_FileTransfer_Link' represents an important domain concept.
+It has the following attributes: 'receiveBuffer', which is of type int; 'flagWriteAfterReading', which is of type int; 'flagDelAfterReading', which is of type int; 'toWriteWaitFor', which is of type str; 'sendBuffer', which is of type int; 'flagToWriteWaitFor', which is of type int; 'delimter', which is of type str; 'writePath', which is of type str; 'maxDataLength', which is of type int; 'pollTime', which is of type int; 'delimiter', which is of type str; 'translation', which is of type int; 'timeoutwrite', which is of type str; 'flagToWriteWaitForDeleted', which is of type int; 'writeAfterReading', which is of type int; 'readPath', which is of type str.
+
+'MachineLibrary_Transfer' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_LinkConfig' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_File_Sample_ARL_XRF_OES' represents an important domain concept.
+It has one attribute: 'noSuccess', which is of type str.
+
+'MachineLibrary_Positions' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_UnitProgram' represents an important domain concept.
+It has one attribute: 'unitProgName', which is of type str.
+
+'MachineLibrary_NodeGeneral_RigakuXRF' represents an important domain concept.
+It has the following attributes: 'timeoutResponce', which is of type int; 'timerToSendStatus', which is of type int; 'bDoNotshiftAtExit', which is of type int; 'timeout', which is of type int.
+
+'MachineLibrary_RobotWinCCToRobot' represents an important domain concept.
+It has the following attributes: 'robotwincctorobotFrom_X', which is of type str; 'robotwincctorobotTo_X', which is of type str; 'robotwincctorobootSeq_X', which is of type int; 'robotwincctorobootType_X', which is of type str.
+
+'MachineLibrary_UnitPrograms' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_UnitSpecialConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_CheckAddSID_Values_PM2PM' represents an important domain concept.
+It has the following attributes: 'optionNo', which is of type int; 'optonValue', which is of type str.
+
+'MachineLibrary_SepByComma_ID_Scanner' represents an important domain concept.
+It has the following attributes: 'idPrevValue', which is of type str; 'idCharValue', which is of type str; 'idValue', which is of type int; 'idSeq_X', which is of type int.
+
+'MachineLibrary_UnitGeneralParameters' represents an important domain concept.
+It has the following attributes: 'visibleType_1', which is of type int; 'KeyWord_1', which is of type str; 'UseWith_1', which is of type str; 'seq_X', which is of type int; 'maxValue_1', which is of type int; 'defaultValue_1', which is of type int; 'unit_1', which is of type str; 'minValue_1', which is of type int; 'comment_1', which is of type str; 'canBeChange_1', which is of type int; 'paraName_1', which is of type str.
+
+'MachineLibrary_NodeGeneralSpecial' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_StatusBit' represents an important domain concept.
+It has the following attributes: 'bitName', which is of type str; 'bitNo', which is of type int.
+
+'MachineLibrary_PlainMove' represents an important domain concept.
+It has the following attributes: 'plainmoveSID_REF', which is of type str; 'plainmoveType', which is of type int; 'plainmovePreDefWS', which is of type str.
+
+'MachineLibrary_ErrorMessage_OBLFOES' represents an important domain concept.
+It has one attribute: 'errorMessage', which is of type str.
+
+'MachineLibrary_UnitGeneral_AccPyc' represents an important domain concept.
+It has the following attributes: 'cupWeight', which is of type float; 'minSampleWeight', which is of type float.
+
+'MachineLibrary_DisableSCT_ARL_XRF_OES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_CheckSample_SuperQXRF' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_RobotVarToErrorbit' represents an important domain concept.
+It has the following attributes: 'robotvartoerrorbitBit_X', which is of type int; 'robotvartoerrorbitSeq_X', which is of type int; 'robotvartoerrorbitVar_X', which is of type str; 'robotvartoerrorbitType_X', which is of type str; 'robotvartoerrorbitInv_X', which is of type int.
+
+'MachineLibrary_UnitConfig_ARL_XRF_OES' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_NodeSpecialConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_InsertRemove_Keywords_Host' represents an important domain concept.
+It has the following attributes: 'keywordKey', which is of type str; 'keywordValue', which is of type str.
+
+'MachineLibrary_GeneralSetting_ARL_XRF_OES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_UnitGeneral_SuperQ' represents an important domain concept.
+It has the following attributes: 'lastPosAnalysing', which is of type int; 'lastPosInInstrument', which is of type int.
+
+'MachineLibrary_UnitGeneral_RigakuXRF' represents an important domain concept.
+It has the following attributes: 'lastPosAnalyHAG_SIg', which is of type int; 'lastPoHAG_SIInstrument', which is of type int; 'separator', which is of type int; 'lastPosInInstrument', which is of type int.
+
+'MachineLibrary_WS_Update_Host' represents an important domain concept.
+It has the following attributes: 'AllowUnit0', which is of type int; 'checkUnit', which is of type int.
+
+'MachineLibrary_RobotConfiguration' represents an important domain concept.
+It has the following attributes: 'robotID', which is of type str; 'robotActivate', which is of type int; 'robotSystemID', which is of type str; 'robotIPAddress', which is of type str.
+
+'MachineLibrary_Buttons' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_Settings_ARL_XRF_OES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_Parameters' represents an important domain concept.
+It has the following attributes: 'parameterConfigYes', which is of type str; 'parameterConfigNo', which is of type str.
+
+'MachineLibrary_OutputRequest_OBLFOES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_NodeGeneral_AccuPycMeter' represents an important domain concept.
+It has the following attributes: 'polling', which is of type int; 'sendSampleWeight', which is of type int; 'expectSampleWeight', which is of type int; 'runTimout', which is of type int.
+
+'MachineLibrary_Units' represents an important domain concept.
+It has the following attributes: 'unitName', which is of type str; 'internalUniNo', which is of type int; 'unitNo', which is of type int.
+
+'MachineLibrary_RobotToWinCC' represents an important domain concept.
+It has the following attributes: 'robotToWinccSeq_X', which is of type int; 'robotToWinccTo_X', which is of type str; 'robotToWinccFrom_X', which is of type str; 'robotToWinccType_X', which is of type str.
+
+'MachineLibrary_UnitConfig_SuperQ_XRF' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_PS_Process_Finished_ARL_XRF_OES' represents an important domain concept.
+It has one attribute: 'noSuccess', which is of type str.
+
+'MachineLibrary_ExecuteFiling_ARL_XRF_OES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_RobotWarningONDelete' represents an important domain concept.
+It has the following attributes: 'robotExtraPos_1', which is of type str; 'robotErrBitWhenConfirmationIsNeededFor_PM', which is of type int; 'robotErrBitWhenConfirmationIsNeededFor_Robot', which is of type int; 'robotExtraUnit_2', which is of type str.
+
+'MachineLibrary_UnitConfig_OBLF_OES' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_UnitGeneral_Remote' represents an important domain concept.
+It has the following attributes: 'editWSDB', which is of type bool; 'handshakeA', which is of type str; 'handshakeT', which is of type int; 'handshakeQ', which is of type str.
+
+'MachineLibrary_DPbase_Link' represents an important domain concept.
+It has the following attributes: 'speed', which is of type int; 'cp_name', which is of type str; 'maxNodes', which is of type int.
+
+'MachineLibrary_SepByComma_Scanner' represents an important domain concept.
+It has the following attributes: 'preDefWS', which is of type int; 'activ', which is of type int.
+
+'MachineLibrary_CheckSampleRunTimeParams_SuperQXRF' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'sampleType', which is of type int.
+
+'MachineLibrary_Link2' represents an important domain concept.
+It has the following attributes: 'link2ParamFile', which is of type str; 'link2ParamSection', which is of type str; 'link2Type', which is of type str.
+
+'MachineLibrary_UnitGeneral' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_NodeConfig' represents an important domain concept.
+It has the following attributes: 'simFileName', which is of type str; 'nodeNo', which is of type int; 'nodeName', which is of type str.
+
+'MachineLibrary_NodeProgram' represents an important domain concept.
+It has the following attributes: 'programName', which is of type str; 'programNo', which is of type int; 'programSection', which is of type str; 'programLenPerParam', which is of type str; 'programAddress', which is of type str.
+
+'MachineLibrary_RobotVarToBusycode' represents an important domain concept.
+It has the following attributes: 'robotvartobusycodeBit_X', which is of type int; 'robotvartobusycodeSeq_X', which is of type int; 'robotvartobusycodeVar_X', which is of type str; 'robotvartobusycodeType_X', which is of type str; 'robotvartobusycodeUnit_X', which is of type int.
+
+'MachineLibrary_RobotVarToBusyCodes' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_PMMachineLibrary' represents an important domain concept.
+It has the following attributes: 'libraryVersionRemark', which is of type str; 'libraryVersion', which is of type float.
+
+'MachineLibrary_WinCCAddTag' represents an important domain concept.
+It has one attribute: 'winCCTag', which is of type str.
+
+'MachineLibrary_History_AccuPycMeter' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_ExePrepUnit_ARL_XRF_OES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_LabMachine' represents an important domain concept.
+It has the following attributes: 'versionRemark', which is of type str; 'linkParamSection', which is of type str; 'createWinCCTags', which is of type str; 'driver', which is of type str; 'linkType', which is of type str; 'machineVersionNo', which is of type float; 'machineName', which is of type str; 'linkParamFile', which is of type str.
+
+'MachineLibrary_InsertRemove_Types_Host' represents an important domain concept.
+It has the following attributes: 'typeNo', which is of type int; 'typeValue', which is of type str.
+
+'MachineLibrary_NodeGeneral_PM2PM' represents an important domain concept.
+It has the following attributes: 'timeServer', which is of type int; 'type', which is of type int.
+
+'MachineLibrary_CheckSampleRunTime_SuperQXRF' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_Translate_Terminal' represents an important domain concept.
+It has the following attributes: 'man_Busy', which is of type str; 'man_Ready', which is of type str; 'auto_Busy', which is of type str; 'auto_Ready', which is of type str.
+
+'MachineLibrary_Serial_Link' represents an important domain concept.
+It has the following attributes: 'bufferLenght', which is of type str; 'port', which is of type str; 'maxCharDelay', which is of type str; 'params', which is of type str; 'commConfig', which is of type str; 'logging', which is of type int; 'startChar', which is of type str; 'endChar', which is of type str.
+
+'MachineLibrary_Button' represents an important domain concept.
+It has the following attributes: 'buttonText', which is of type str; 'buttonNo', which is of type int; 'commandNo', which is of type int.
+
+'MachineLibrary_RobotWinCCToRobots' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_NodeGeneral' represents an important domain concept.
+It has the following attributes: 'canCreateStateTag', which is of type str; 'canCreateErrorTag', which is of type str.
+
+'MachineLibrary_UnitGeneral_Terminal' represents an important domain concept.
+It has the following attributes: 'station5', which is of type str; 'station3', which is of type str; 'thisStation', which is of type str; 'station4', which is of type str; 'station1', which is of type str; 'station2', which is of type str.
+
+'MachineLibrary_LabMachines' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_InsertRemove_Entry_Host' represents an important domain concept.
+It has the following attributes: 'entryNo', which is of type int; 'entryName', which is of type str.
+
+'MachineLibrary_CheckFilling_ARL_XRF_OES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_Position' represents an important domain concept.
+It has the following attributes: 'posWarningOnDelete', which is of type int; 'posIndex', which is of type int; 'posName', which is of type str; 'posRemark', which is of type str; 'posNo', which is of type int; 'posExit', which is of type int.
+
+'MachineLibrary_RobotToWinccs' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_DPbase_Node' represents an important domain concept.
+It has the following attributes: 'nodeNo', which is of type int; 'isXPS', which is of type int.
+
+'MachineLibrary_RobotConfSendOrders' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_RecalRequest_OBLFOES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_UnitGeneral_HostPC' represents an important domain concept.
+It has the following attributes: 'replyOnLink', which is of type int; 'writeDumyIfNoDataExist', which is of type int; 'index', which is of type int; 'maxIndex', which is of type int.
+
+'MachineLibrary_PlainMoveEntrySend' represents an important domain concept.
+It has the following attributes: 'plainmoveEntry', which is of type str; 'plainmoveSeq', which is of type int; 'plainmoveSend', which is of type str.
+
+'MachineLibrary_CheckReqPrepUnit_ARL_XRF_OES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_TestRequest_OBLFOES' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MachineLibrary_StausBits' represents an important domain concept.
+It does not declare any attributes.
+
+'MachineLibrary_UnitGeneral_PM2PM' represents an important domain concept.
+It has the following attributes: 'sid_Mask', which is of type str; 'processFeedBack', which is of type str.
+
+'MachineLibrary_UnitProgParameters' represents an important domain concept.
+It has the following attributes: 'parameterNo', which is of type int; 'parameter', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'MachineLibrary_PMMachineLibrary' and 'MachineLibrary_LabMachines'. From 'MachineLibrary_PMMachineLibrary', the role 'MachineLibrary_PMMachineLibrary' has cardinality 0..*, and from 'MachineLibrary_LabMachines', the role 'MachineLibrary_LabMachines' has cardinality 0..*.
+An association connects 'MachineLibrary_LabMachines' and 'MachineLibrary_LabMachine'. From 'MachineLibrary_LabMachines', the role 'MachineLibrary_LabMachines2' has cardinality 0..*, and from 'MachineLibrary_LabMachine', the role 'MachineLibrary_LabMachine' has cardinality 0..*.
+An association connects 'MachineLibrary_LabMachine' and 'MachineLibrary_Link2'. From 'MachineLibrary_LabMachine', the role 'MachineLibrary_LabMachine4' has cardinality 0..*, and from 'MachineLibrary_Link2', the role 'MachineLibrary_Link2' has cardinality 0..*.
+An association connects 'MachineLibrary_LabMachine' and 'MachineLibrary_NodeConfig'. From 'MachineLibrary_LabMachine', the role 'MachineLibrary_LabMachine6' has cardinality 0..*, and from 'MachineLibrary_NodeConfig', the role 'MachineLibrary_NodeConfig' has cardinality 0..*.
+An association connects 'MachineLibrary_LabMachine' and 'MachineLibrary_LinkConfig'. From 'MachineLibrary_LabMachine', the role 'MachineLibrary_LabMachine8' has cardinality 0..*, and from 'MachineLibrary_LinkConfig', the role 'MachineLibrary_LinkConfig' has cardinality 0..*.
+An association connects 'MachineLibrary_LinkConfig' and 'MachineLibrary_WinCCLnk'. From 'MachineLibrary_LinkConfig', the role 'MachineLibrary_LinkConfig10' has cardinality 0..*, and from 'MachineLibrary_WinCCLnk', the role 'MachineLibrary_WinCCLnk' has cardinality 0..*.
+An association connects 'MachineLibrary_TCPIP_Link' and 'MachineLibrary_LinkConfig'. From 'MachineLibrary_TCPIP_Link', the role 'MachineLibrary_TCPIP_Link' has cardinality 0..*, and from 'MachineLibrary_LinkConfig', the role 'MachineLibrary_LinkConfig12' has cardinality 0..*.
+An association connects 'MachineLibrary_LinkConfig' and 'MachineLibrary_Serial_Link'. From 'MachineLibrary_LinkConfig', the role 'MachineLibrary_LinkConfig14' has cardinality 0..*, and from 'MachineLibrary_Serial_Link', the role 'MachineLibrary_Serial_Link' has cardinality 0..*.
+An association connects 'MachineLibrary_LinkConfig' and 'MachineLibrary_FileTransfer_Link'. From 'MachineLibrary_LinkConfig', the role 'MachineLibrary_LinkConfig16' has cardinality 0..*, and from 'MachineLibrary_FileTransfer_Link', the role 'MachineLibrary_FileTransfer_Link' has cardinality 0..*.
+An association connects 'MachineLibrary_LinkConfig' and 'MachineLibrary_Compac_Link'. From 'MachineLibrary_LinkConfig', the role 'MachineLibrary_LinkConfig18' has cardinality 0..*, and from 'MachineLibrary_Compac_Link', the role 'MachineLibrary_Compac_Link' has cardinality 0..*.
+An association connects 'MachineLibrary_IBMWebsphereMQ' and 'MachineLibrary_LinkConfig'. From 'MachineLibrary_IBMWebsphereMQ', the role 'MachineLibrary_IBMWebsphereMQ' has cardinality 0..*, and from 'MachineLibrary_LinkConfig', the role 'MachineLibrary_LinkConfig20' has cardinality 0..*.
+An association connects 'MachineLibrary_LinkConfig' and 'MachineLibrary_DPbase_Link'. From 'MachineLibrary_LinkConfig', the role 'MachineLibrary_LinkConfig22' has cardinality 0..*, and from 'MachineLibrary_DPbase_Link', the role 'MachineLibrary_DPbase_Link' has cardinality 0..*.
+An association connects 'MachineLibrary_DPbase_Link' and 'MachineLibrary_DPbase_Node'. From 'MachineLibrary_DPbase_Link', the role 'MachineLibrary_DPbase_Link24' has cardinality 0..*, and from 'MachineLibrary_DPbase_Node', the role 'MachineLibrary_DPbase_Node' has cardinality 0..*.
+An association connects 'MachineLibrary_Units' and 'MachineLibrary_NodeConfig'. From 'MachineLibrary_Units', the role 'MachineLibrary_Units' has cardinality 0..*, and from 'MachineLibrary_NodeConfig', the role 'MachineLibrary_NodeConfig26' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeConfig' and 'MachineLibrary_Commands'. From 'MachineLibrary_NodeConfig', the role 'MachineLibrary_NodeConfig28' has cardinality 0..*, and from 'MachineLibrary_Commands', the role 'MachineLibrary_Commands' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeConfig' and 'MachineLibrary_NodePrograms'. From 'MachineLibrary_NodeConfig', the role 'MachineLibrary_NodeConfig30' has cardinality 0..*, and from 'MachineLibrary_NodePrograms', the role 'MachineLibrary_NodePrograms' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeConfig' and 'MachineLibrary_Parameters'. From 'MachineLibrary_NodeConfig', the role 'MachineLibrary_NodeConfig32' has cardinality 0..*, and from 'MachineLibrary_Parameters', the role 'MachineLibrary_Parameters' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeConfig' and 'MachineLibrary_CommunicationData'. From 'MachineLibrary_NodeConfig', the role 'MachineLibrary_NodeConfig34' has cardinality 0..*, and from 'MachineLibrary_CommunicationData', the role 'MachineLibrary_CommunicationData' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeSpecialConfiguration' and 'MachineLibrary_NodeConfig'. From 'MachineLibrary_NodeSpecialConfiguration', the role 'MachineLibrary_NodeSpecialConfiguration' has cardinality 0..*, and from 'MachineLibrary_NodeConfig', the role 'MachineLibrary_NodeConfig36' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeGeneral' and 'MachineLibrary_NodeConfig'. From 'MachineLibrary_NodeGeneral', the role 'MachineLibrary_NodeGeneral' has cardinality 0..*, and from 'MachineLibrary_NodeConfig', the role 'MachineLibrary_NodeConfig38' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeGeneralSpecial' and 'MachineLibrary_NodeConfig'. From 'MachineLibrary_NodeGeneralSpecial', the role 'MachineLibrary_NodeGeneralSpecial' has cardinality 0..*, and from 'MachineLibrary_NodeConfig', the role 'MachineLibrary_NodeConfig40' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeGeneralSpecial' and 'MachineLibrary_NodeGeneral_Terminal'. From 'MachineLibrary_NodeGeneralSpecial', the role 'MachineLibrary_NodeGeneralSpecial42' has cardinality 0..*, and from 'MachineLibrary_NodeGeneral_Terminal', the role 'MachineLibrary_NodeGeneral_Terminal' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeGeneralSpecial' and 'MachineLibrary_NodeGeneral_PM2PM'. From 'MachineLibrary_NodeGeneralSpecial', the role 'MachineLibrary_NodeGeneralSpecial44' has cardinality 0..*, and from 'MachineLibrary_NodeGeneral_PM2PM', the role 'MachineLibrary_NodeGeneral_PM2PM' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeGeneral_RemotePM' and 'MachineLibrary_NodeGeneralSpecial'. From 'MachineLibrary_NodeGeneral_RemotePM', the role 'MachineLibrary_NodeGeneral_RemotePM' has cardinality 0..*, and from 'MachineLibrary_NodeGeneralSpecial', the role 'MachineLibrary_NodeGeneralSpecial46' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeGeneral_WinCC2WinCC' and 'MachineLibrary_NodeGeneralSpecial'. From 'MachineLibrary_NodeGeneral_WinCC2WinCC', the role 'MachineLibrary_NodeGeneral_WinCC2WinCC' has cardinality 0..*, and from 'MachineLibrary_NodeGeneralSpecial', the role 'MachineLibrary_NodeGeneralSpecial48' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeGeneralSpecial' and 'MachineLibrary_NodeGeneral_AccuPycMeter'. From 'MachineLibrary_NodeGeneralSpecial', the role 'MachineLibrary_NodeGeneralSpecial50' has cardinality 0..*, and from 'MachineLibrary_NodeGeneral_AccuPycMeter', the role 'MachineLibrary_NodeGeneral_AccuPycMeter' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeGeneralSpecial' and 'MachineLibrary_NodeGeneral_RigakuXRF'. From 'MachineLibrary_NodeGeneralSpecial', the role 'MachineLibrary_NodeGeneralSpecial52' has cardinality 0..*, and from 'MachineLibrary_NodeGeneral_RigakuXRF', the role 'MachineLibrary_NodeGeneral_RigakuXRF' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeGeneral_WinCC2WinCC' and 'MachineLibrary_WinCCAddTag'. From 'MachineLibrary_NodeGeneral_WinCC2WinCC', the role 'MachineLibrary_NodeGeneral_WinCC2WinCC54' has cardinality 0..*, and from 'MachineLibrary_WinCCAddTag', the role 'MachineLibrary_WinCCAddTag' has cardinality 0..*.
+An association connects 'MachineLibrary_Positions' and 'MachineLibrary_Units'. From 'MachineLibrary_Positions', the role 'MachineLibrary_Positions' has cardinality 0..*, and from 'MachineLibrary_Units', the role 'MachineLibrary_Units56' has cardinality 0..*.
+An association connects 'MachineLibrary_Units' and 'MachineLibrary_StausBits'. From 'MachineLibrary_Units', the role 'MachineLibrary_Units58' has cardinality 0..*, and from 'MachineLibrary_StausBits', the role 'MachineLibrary_StausBits' has cardinality 0..*.
+An association connects 'MachineLibrary_Units' and 'MachineLibrary_PLCtoPmMatrix'. From 'MachineLibrary_Units', the role 'MachineLibrary_Units60' has cardinality 0..*, and from 'MachineLibrary_PLCtoPmMatrix', the role 'MachineLibrary_PLCtoPmMatrix' has cardinality 0..*.
+An association connects 'MachineLibrary_Units' and 'MachineLibrary_UnitPrograms'. From 'MachineLibrary_Units', the role 'MachineLibrary_Units62' has cardinality 0..*, and from 'MachineLibrary_UnitPrograms', the role 'MachineLibrary_UnitPrograms' has cardinality 0..*.
+An association connects 'MachineLibrary_Units' and 'MachineLibrary_Buttons'. From 'MachineLibrary_Units', the role 'MachineLibrary_Units64' has cardinality 0..*, and from 'MachineLibrary_Buttons', the role 'MachineLibrary_Buttons' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitGeneral' and 'MachineLibrary_Units'. From 'MachineLibrary_UnitGeneral', the role 'MachineLibrary_UnitGeneral' has cardinality 0..*, and from 'MachineLibrary_Units', the role 'MachineLibrary_Units66' has cardinality 0..*.
+An association connects 'MachineLibrary_Units' and 'MachineLibrary_UnitGeneralSpecial'. From 'MachineLibrary_Units', the role 'MachineLibrary_Units68' has cardinality 0..*, and from 'MachineLibrary_UnitGeneralSpecial', the role 'MachineLibrary_UnitGeneralSpecial' has cardinality 0..*.
+An association connects 'MachineLibrary_Units' and 'MachineLibrary_UnitSpecialConfiguration'. From 'MachineLibrary_Units', the role 'MachineLibrary_Units70' has cardinality 0..*, and from 'MachineLibrary_UnitSpecialConfiguration', the role 'MachineLibrary_UnitSpecialConfiguration' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitGeneralParameters' and 'MachineLibrary_UnitGeneral'. From 'MachineLibrary_UnitGeneralParameters', the role 'MachineLibrary_UnitGeneralParameters' has cardinality 0..*, and from 'MachineLibrary_UnitGeneral', the role 'MachineLibrary_UnitGeneral72' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitGeneralSpecial' and 'MachineLibrary_UnitGeneral_Terminal'. From 'MachineLibrary_UnitGeneralSpecial', the role 'MachineLibrary_UnitGeneralSpecial74' has cardinality 0..*, and from 'MachineLibrary_UnitGeneral_Terminal', the role 'MachineLibrary_UnitGeneral_Terminal' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitGeneral_HostPC' and 'MachineLibrary_UnitGeneralSpecial'. From 'MachineLibrary_UnitGeneral_HostPC', the role 'MachineLibrary_UnitGeneral_HostPC' has cardinality 0..*, and from 'MachineLibrary_UnitGeneralSpecial', the role 'MachineLibrary_UnitGeneralSpecial76' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitGeneralSpecial' and 'MachineLibrary_UnitGeneral_Remote'. From 'MachineLibrary_UnitGeneralSpecial', the role 'MachineLibrary_UnitGeneralSpecial78' has cardinality 0..*, and from 'MachineLibrary_UnitGeneral_Remote', the role 'MachineLibrary_UnitGeneral_Remote' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitGeneralSpecial' and 'MachineLibrary_UnitGeneral_PM2PM'. From 'MachineLibrary_UnitGeneralSpecial', the role 'MachineLibrary_UnitGeneralSpecial80' has cardinality 0..*, and from 'MachineLibrary_UnitGeneral_PM2PM', the role 'MachineLibrary_UnitGeneral_PM2PM' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitGeneral_AccPyc' and 'MachineLibrary_UnitGeneralSpecial'. From 'MachineLibrary_UnitGeneral_AccPyc', the role 'MachineLibrary_UnitGeneral_AccPyc' has cardinality 0..*, and from 'MachineLibrary_UnitGeneralSpecial', the role 'MachineLibrary_UnitGeneralSpecial82' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitGeneral_SuperQ' and 'MachineLibrary_UnitGeneralSpecial'. From 'MachineLibrary_UnitGeneral_SuperQ', the role 'MachineLibrary_UnitGeneral_SuperQ' has cardinality 0..*, and from 'MachineLibrary_UnitGeneralSpecial', the role 'MachineLibrary_UnitGeneralSpecial84' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitGeneral_RigakuXRF' and 'MachineLibrary_UnitGeneralSpecial'. From 'MachineLibrary_UnitGeneral_RigakuXRF', the role 'MachineLibrary_UnitGeneral_RigakuXRF' has cardinality 0..*, and from 'MachineLibrary_UnitGeneralSpecial', the role 'MachineLibrary_UnitGeneralSpecial86' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitGeneral_Scanner' and 'MachineLibrary_UnitGeneralSpecial'. From 'MachineLibrary_UnitGeneral_Scanner', the role 'MachineLibrary_UnitGeneral_Scanner' has cardinality 0..*, and from 'MachineLibrary_UnitGeneralSpecial', the role 'MachineLibrary_UnitGeneralSpecial88' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_Terminal' and 'MachineLibrary_UnitSpecialConfiguration'. From 'MachineLibrary_UnitConfig_Terminal', the role 'MachineLibrary_UnitConfig_Terminal' has cardinality 0..*, and from 'MachineLibrary_UnitSpecialConfiguration', the role 'MachineLibrary_UnitSpecialConfiguration90' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitSpecialConfiguration' and 'MachineLibrary_UnitConfig_OBLF_OES'. From 'MachineLibrary_UnitSpecialConfiguration', the role 'MachineLibrary_UnitSpecialConfiguration92' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_OBLF_OES', the role 'MachineLibrary_UnitConfig_OBLF_OES' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_SuperQ_XRF' and 'MachineLibrary_UnitSpecialConfiguration'. From 'MachineLibrary_UnitConfig_SuperQ_XRF', the role 'MachineLibrary_UnitConfig_SuperQ_XRF' has cardinality 0..*, and from 'MachineLibrary_UnitSpecialConfiguration', the role 'MachineLibrary_UnitSpecialConfiguration94' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitSpecialConfiguration' and 'MachineLibrary_UnitConfig_ARL_XRF_OES'. From 'MachineLibrary_UnitSpecialConfiguration', the role 'MachineLibrary_UnitSpecialConfiguration96' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitSpecialConfiguration' and 'MachineLibrary_UnitConfig_Host'. From 'MachineLibrary_UnitSpecialConfiguration', the role 'MachineLibrary_UnitSpecialConfiguration98' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_Host', the role 'MachineLibrary_UnitConfig_Host' has cardinality 0..*.
+An association connects 'MachineLibrary_History_AccuPycMeter' and 'MachineLibrary_UnitSpecialConfiguration'. From 'MachineLibrary_History_AccuPycMeter', the role 'MachineLibrary_History_AccuPycMeter' has cardinality 0..*, and from 'MachineLibrary_UnitSpecialConfiguration', the role 'MachineLibrary_UnitSpecialConfiguration100' has cardinality 0..*.
+An association connects 'MachineLibrary_SepByComma_Scanner' and 'MachineLibrary_UnitSpecialConfiguration'. From 'MachineLibrary_SepByComma_Scanner', the role 'MachineLibrary_SepByComma_Scanner' has cardinality 0..*, and from 'MachineLibrary_UnitSpecialConfiguration', the role 'MachineLibrary_UnitSpecialConfiguration102' has cardinality 0..*.
+An association connects 'MachineLibrary_CheckAddSID_PM2PM' and 'MachineLibrary_UnitSpecialConfiguration'. From 'MachineLibrary_CheckAddSID_PM2PM', the role 'MachineLibrary_CheckAddSID_PM2PM' has cardinality 0..*, and from 'MachineLibrary_UnitSpecialConfiguration', the role 'MachineLibrary_UnitSpecialConfiguration104' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_Terminal' and 'MachineLibrary_Translate_Terminal'. From 'MachineLibrary_UnitConfig_Terminal', the role 'MachineLibrary_UnitConfig_Terminal106' has cardinality 0..*, and from 'MachineLibrary_Translate_Terminal', the role 'MachineLibrary_Translate_Terminal' has cardinality 0..*.
+An association connects 'MachineLibrary_OutputRequest_OBLFOES' and 'MachineLibrary_UnitConfig_OBLF_OES'. From 'MachineLibrary_OutputRequest_OBLFOES', the role 'MachineLibrary_OutputRequest_OBLFOES' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_OBLF_OES', the role 'MachineLibrary_UnitConfig_OBLF_OES108' has cardinality 0..*.
+An association connects 'MachineLibrary_TestRequest_OBLFOES' and 'MachineLibrary_UnitConfig_OBLF_OES'. From 'MachineLibrary_TestRequest_OBLFOES', the role 'MachineLibrary_TestRequest_OBLFOES' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_OBLF_OES', the role 'MachineLibrary_UnitConfig_OBLF_OES110' has cardinality 0..*.
+An association connects 'MachineLibrary_RecalRequest_OBLFOES' and 'MachineLibrary_UnitConfig_OBLF_OES'. From 'MachineLibrary_RecalRequest_OBLFOES', the role 'MachineLibrary_RecalRequest_OBLFOES' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_OBLF_OES', the role 'MachineLibrary_UnitConfig_OBLF_OES112' has cardinality 0..*.
+An association connects 'MachineLibrary_ErrorMessage_OBLFOES' and 'MachineLibrary_UnitConfig_OBLF_OES'. From 'MachineLibrary_ErrorMessage_OBLFOES', the role 'MachineLibrary_ErrorMessage_OBLFOES' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_OBLF_OES', the role 'MachineLibrary_UnitConfig_OBLF_OES114' has cardinality 0..*.
+An association connects 'MachineLibrary_GeneralParameter_SuperQXRF' and 'MachineLibrary_UnitConfig_SuperQ_XRF'. From 'MachineLibrary_GeneralParameter_SuperQXRF', the role 'MachineLibrary_GeneralParameter_SuperQXRF' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_SuperQ_XRF', the role 'MachineLibrary_UnitConfig_SuperQ_XRF116' has cardinality 0..*.
+An association connects 'MachineLibrary_ControlSamples_SuperQXRF' and 'MachineLibrary_UnitConfig_SuperQ_XRF'. From 'MachineLibrary_ControlSamples_SuperQXRF', the role 'MachineLibrary_ControlSamples_SuperQXRF' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_SuperQ_XRF', the role 'MachineLibrary_UnitConfig_SuperQ_XRF118' has cardinality 0..*.
+An association connects 'MachineLibrary_Communication_SuperQXRF' and 'MachineLibrary_UnitConfig_SuperQ_XRF'. From 'MachineLibrary_Communication_SuperQXRF', the role 'MachineLibrary_Communication_SuperQXRF' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_SuperQ_XRF', the role 'MachineLibrary_UnitConfig_SuperQ_XRF120' has cardinality 0..*.
+An association connects 'MachineLibrary_CheckSampleRunTime_SuperQXRF' and 'MachineLibrary_UnitConfig_SuperQ_XRF'. From 'MachineLibrary_CheckSampleRunTime_SuperQXRF', the role 'MachineLibrary_CheckSampleRunTime_SuperQXRF' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_SuperQ_XRF', the role 'MachineLibrary_UnitConfig_SuperQ_XRF122' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_SuperQ_XRF' and 'MachineLibrary_CheckSample_SuperQXRF'. From 'MachineLibrary_UnitConfig_SuperQ_XRF', the role 'MachineLibrary_UnitConfig_SuperQ_XRF124' has cardinality 0..*, and from 'MachineLibrary_CheckSample_SuperQXRF', the role 'MachineLibrary_CheckSample_SuperQXRF' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_ARL_XRF_OES' and 'MachineLibrary_CheckFilling_ARL_XRF_OES'. From 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES126' has cardinality 0..*, and from 'MachineLibrary_CheckFilling_ARL_XRF_OES', the role 'MachineLibrary_CheckFilling_ARL_XRF_OES' has cardinality 0..*.
+An association connects 'MachineLibrary_ExecuteFiling_ARL_XRF_OES' and 'MachineLibrary_UnitConfig_ARL_XRF_OES'. From 'MachineLibrary_ExecuteFiling_ARL_XRF_OES', the role 'MachineLibrary_ExecuteFiling_ARL_XRF_OES' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES128' has cardinality 0..*.
+An association connects 'MachineLibrary_CheckReqPrepUnit_ARL_XRF_OES' and 'MachineLibrary_UnitConfig_ARL_XRF_OES'. From 'MachineLibrary_CheckReqPrepUnit_ARL_XRF_OES', the role 'MachineLibrary_CheckReqPrepUnit_ARL_XRF_OES' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES130' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_ARL_XRF_OES' and 'MachineLibrary_ExePrepUnit_ARL_XRF_OES'. From 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES132' has cardinality 0..*, and from 'MachineLibrary_ExePrepUnit_ARL_XRF_OES', the role 'MachineLibrary_ExePrepUnit_ARL_XRF_OES' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_ARL_XRF_OES' and 'MachineLibrary_CheckAskPrepUnit_ARL_XRF_OES'. From 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES134' has cardinality 0..*, and from 'MachineLibrary_CheckAskPrepUnit_ARL_XRF_OES', the role 'MachineLibrary_CheckAskPrepUnit_ARL_XRF_OES' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_ARL_XRF_OES' and 'MachineLibrary_ExeAskPrepUnit_ARL_XRF_OES'. From 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES136' has cardinality 0..*, and from 'MachineLibrary_ExeAskPrepUnit_ARL_XRF_OES', the role 'MachineLibrary_ExeAskPrepUnit_ARL_XRF_OES' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_ARL_XRF_OES' and 'MachineLibrary_DisableSCT_ARL_XRF_OES'. From 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES138' has cardinality 0..*, and from 'MachineLibrary_DisableSCT_ARL_XRF_OES', the role 'MachineLibrary_DisableSCT_ARL_XRF_OES' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_ARL_XRF_OES' and 'MachineLibrary_Settings_ARL_XRF_OES'. From 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES140' has cardinality 0..*, and from 'MachineLibrary_Settings_ARL_XRF_OES', the role 'MachineLibrary_Settings_ARL_XRF_OES' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_ARL_XRF_OES' and 'MachineLibrary_GeneralSetting_ARL_XRF_OES'. From 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES142' has cardinality 0..*, and from 'MachineLibrary_GeneralSetting_ARL_XRF_OES', the role 'MachineLibrary_GeneralSetting_ARL_XRF_OES' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_ARL_XRF_OES' and 'MachineLibrary_PS_Process_Finished_ARL_XRF_OES'. From 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES144' has cardinality 0..*, and from 'MachineLibrary_PS_Process_Finished_ARL_XRF_OES', the role 'MachineLibrary_PS_Process_Finished_ARL_XRF_OES' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_ARL_XRF_OES' and 'MachineLibrary_File_Sample_ARL_XRF_OES'. From 'MachineLibrary_UnitConfig_ARL_XRF_OES', the role 'MachineLibrary_UnitConfig_ARL_XRF_OES146' has cardinality 0..*, and from 'MachineLibrary_File_Sample_ARL_XRF_OES', the role 'MachineLibrary_File_Sample_ARL_XRF_OES' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_Host' and 'MachineLibrary_Report_Host'. From 'MachineLibrary_UnitConfig_Host', the role 'MachineLibrary_UnitConfig_Host148' has cardinality 0..*, and from 'MachineLibrary_Report_Host', the role 'MachineLibrary_Report_Host' has cardinality 0..*.
+An association connects 'MachineLibrary_WS_Update_Host' and 'MachineLibrary_UnitConfig_Host'. From 'MachineLibrary_WS_Update_Host', the role 'MachineLibrary_WS_Update_Host' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_Host', the role 'MachineLibrary_UnitConfig_Host150' has cardinality 0..*.
+An association connects 'MachineLibrary_Moved_Host' and 'MachineLibrary_UnitConfig_Host'. From 'MachineLibrary_Moved_Host', the role 'MachineLibrary_Moved_Host' has cardinality 0..*, and from 'MachineLibrary_UnitConfig_Host', the role 'MachineLibrary_UnitConfig_Host152' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_Host' and 'MachineLibrary_InsertRemove_Host'. From 'MachineLibrary_UnitConfig_Host', the role 'MachineLibrary_UnitConfig_Host154' has cardinality 0..*, and from 'MachineLibrary_InsertRemove_Host', the role 'MachineLibrary_InsertRemove_Host' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitConfig_Host' and 'MachineLibrary_InsertRemove_Host'. From 'MachineLibrary_UnitConfig_Host', the role 'MachineLibrary_UnitConfig_Host156' has cardinality 0..*, and from 'MachineLibrary_InsertRemove_Host', the role 'MachineLibrary_InsertRemove_Host157' has cardinality 0..*.
+An association connects 'MachineLibrary_OutputRequest_OBLFOES' and 'MachineLibrary_OES_XRF_Condition'. From 'MachineLibrary_OutputRequest_OBLFOES', the role 'MachineLibrary_OutputRequest_OBLFOES159' has cardinality 0..*, and from 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition' has cardinality 0..*.
+An association connects 'MachineLibrary_OES_XRF_Condition' and 'MachineLibrary_TestRequest_OBLFOES'. From 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition162' has cardinality 0..*, and from 'MachineLibrary_TestRequest_OBLFOES', the role 'MachineLibrary_TestRequest_OBLFOES161' has cardinality 0..*.
+An association connects 'MachineLibrary_RecalRequest_OBLFOES' and 'MachineLibrary_OES_XRF_Condition'. From 'MachineLibrary_RecalRequest_OBLFOES', the role 'MachineLibrary_RecalRequest_OBLFOES164' has cardinality 0..*, and from 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition165' has cardinality 0..*.
+An association connects 'MachineLibrary_CheckFilling_ARL_XRF_OES' and 'MachineLibrary_OES_XRF_Condition'. From 'MachineLibrary_CheckFilling_ARL_XRF_OES', the role 'MachineLibrary_CheckFilling_ARL_XRF_OES167' has cardinality 0..*, and from 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition168' has cardinality 0..*.
+An association connects 'MachineLibrary_ExecuteFiling_ARL_XRF_OES' and 'MachineLibrary_OES_XRF_Condition'. From 'MachineLibrary_ExecuteFiling_ARL_XRF_OES', the role 'MachineLibrary_ExecuteFiling_ARL_XRF_OES170' has cardinality 0..*, and from 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition171' has cardinality 0..*.
+An association connects 'MachineLibrary_OES_XRF_Condition' and 'MachineLibrary_CheckReqPrepUnit_ARL_XRF_OES'. From 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition174' has cardinality 0..*, and from 'MachineLibrary_CheckReqPrepUnit_ARL_XRF_OES', the role 'MachineLibrary_CheckReqPrepUnit_ARL_XRF_OES173' has cardinality 0..*.
+An association connects 'MachineLibrary_OES_XRF_Condition' and 'MachineLibrary_ExePrepUnit_ARL_XRF_OES'. From 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition177' has cardinality 0..*, and from 'MachineLibrary_ExePrepUnit_ARL_XRF_OES', the role 'MachineLibrary_ExePrepUnit_ARL_XRF_OES176' has cardinality 0..*.
+An association connects 'MachineLibrary_CheckAskPrepUnit_ARL_XRF_OES' and 'MachineLibrary_OES_XRF_Condition'. From 'MachineLibrary_CheckAskPrepUnit_ARL_XRF_OES', the role 'MachineLibrary_CheckAskPrepUnit_ARL_XRF_OES179' has cardinality 0..*, and from 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition180' has cardinality 0..*.
+An association connects 'MachineLibrary_ExeAskPrepUnit_ARL_XRF_OES' and 'MachineLibrary_OES_XRF_Condition'. From 'MachineLibrary_ExeAskPrepUnit_ARL_XRF_OES', the role 'MachineLibrary_ExeAskPrepUnit_ARL_XRF_OES182' has cardinality 0..*, and from 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition183' has cardinality 0..*.
+An association connects 'MachineLibrary_DisableSCT_ARL_XRF_OES' and 'MachineLibrary_OES_XRF_Condition'. From 'MachineLibrary_DisableSCT_ARL_XRF_OES', the role 'MachineLibrary_DisableSCT_ARL_XRF_OES185' has cardinality 0..*, and from 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition186' has cardinality 0..*.
+An association connects 'MachineLibrary_OES_XRF_Condition' and 'MachineLibrary_Settings_ARL_XRF_OES'. From 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition189' has cardinality 0..*, and from 'MachineLibrary_Settings_ARL_XRF_OES', the role 'MachineLibrary_Settings_ARL_XRF_OES188' has cardinality 0..*.
+An association connects 'MachineLibrary_GeneralSetting_ARL_XRF_OES' and 'MachineLibrary_OES_XRF_Condition'. From 'MachineLibrary_GeneralSetting_ARL_XRF_OES', the role 'MachineLibrary_GeneralSetting_ARL_XRF_OES191' has cardinality 0..*, and from 'MachineLibrary_OES_XRF_Condition', the role 'MachineLibrary_OES_XRF_Condition192' has cardinality 0..*.
+An association connects 'MachineLibrary_CheckSampleRunTimeParams_SuperQXRF' and 'MachineLibrary_CheckSampleRunTime_SuperQXRF'. From 'MachineLibrary_CheckSampleRunTimeParams_SuperQXRF', the role 'MachineLibrary_CheckSampleRunTimeParams_SuperQXRF' has cardinality 0..*, and from 'MachineLibrary_CheckSampleRunTime_SuperQXRF', the role 'MachineLibrary_CheckSampleRunTime_SuperQXRF194' has cardinality 0..*.
+An association connects 'MachineLibrary_CheckSample_SuperQXRF' and 'MachineLibrary_CheckSampleConfig_SuperQXRF'. From 'MachineLibrary_CheckSample_SuperQXRF', the role 'MachineLibrary_CheckSample_SuperQXRF196' has cardinality 0..*, and from 'MachineLibrary_CheckSampleConfig_SuperQXRF', the role 'MachineLibrary_CheckSampleConfig_SuperQXRF' has cardinality 0..*.
+An association connects 'MachineLibrary_History_AccuPycMeter' and 'MachineLibrary_HistoryConfig_AccuPyc'. From 'MachineLibrary_History_AccuPycMeter', the role 'MachineLibrary_History_AccuPycMeter198' has cardinality 0..*, and from 'MachineLibrary_HistoryConfig_AccuPyc', the role 'MachineLibrary_HistoryConfig_AccuPyc' has cardinality 0..*.
+An association connects 'MachineLibrary_InsertRemove_Entry_Host' and 'MachineLibrary_InsertRemove_Host'. From 'MachineLibrary_InsertRemove_Entry_Host', the role 'MachineLibrary_InsertRemove_Entry_Host' has cardinality 0..*, and from 'MachineLibrary_InsertRemove_Host', the role 'MachineLibrary_InsertRemove_Host200' has cardinality 0..*.
+An association connects 'MachineLibrary_InsertRemove_Types_Host' and 'MachineLibrary_InsertRemove_Host'. From 'MachineLibrary_InsertRemove_Types_Host', the role 'MachineLibrary_InsertRemove_Types_Host' has cardinality 0..*, and from 'MachineLibrary_InsertRemove_Host', the role 'MachineLibrary_InsertRemove_Host202' has cardinality 0..*.
+An association connects 'MachineLibrary_InsertRemove_Keywords_Host' and 'MachineLibrary_InsertRemove_Host'. From 'MachineLibrary_InsertRemove_Keywords_Host', the role 'MachineLibrary_InsertRemove_Keywords_Host' has cardinality 0..*, and from 'MachineLibrary_InsertRemove_Host', the role 'MachineLibrary_InsertRemove_Host204' has cardinality 0..*.
+An association connects 'MachineLibrary_SepByComma_Field_Scanner' and 'MachineLibrary_SepByComma_Scanner'. From 'MachineLibrary_SepByComma_Field_Scanner', the role 'MachineLibrary_SepByComma_Field_Scanner' has cardinality 0..*, and from 'MachineLibrary_SepByComma_Scanner', the role 'MachineLibrary_SepByComma_Scanner206' has cardinality 0..*.
+An association connects 'MachineLibrary_SepByComma_ID_Scanner' and 'MachineLibrary_SepByComma_Scanner'. From 'MachineLibrary_SepByComma_ID_Scanner', the role 'MachineLibrary_SepByComma_ID_Scanner' has cardinality 0..*, and from 'MachineLibrary_SepByComma_Scanner', the role 'MachineLibrary_SepByComma_Scanner208' has cardinality 0..*.
+An association connects 'MachineLibrary_CheckAddSID_Values_PM2PM' and 'MachineLibrary_CheckAddSID_PM2PM'. From 'MachineLibrary_CheckAddSID_Values_PM2PM', the role 'MachineLibrary_CheckAddSID_Values_PM2PM' has cardinality 0..*, and from 'MachineLibrary_CheckAddSID_PM2PM', the role 'MachineLibrary_CheckAddSID_PM2PM210' has cardinality 0..*.
+An association connects 'MachineLibrary_Button' and 'MachineLibrary_Buttons'. From 'MachineLibrary_Button', the role 'MachineLibrary_Button' has cardinality 0..*, and from 'MachineLibrary_Buttons', the role 'MachineLibrary_Buttons212' has cardinality 0..*.
+An association connects 'MachineLibrary_Position' and 'MachineLibrary_Positions'. From 'MachineLibrary_Position', the role 'MachineLibrary_Position' has cardinality 0..*, and from 'MachineLibrary_Positions', the role 'MachineLibrary_Positions214' has cardinality 0..*.
+An association connects 'MachineLibrary_StatusBit' and 'MachineLibrary_StausBits'. From 'MachineLibrary_StatusBit', the role 'MachineLibrary_StatusBit' has cardinality 0..*, and from 'MachineLibrary_StausBits', the role 'MachineLibrary_StausBits216' has cardinality 0..*.
+An association connects 'MachineLibrary_Commands' and 'MachineLibrary_Command'. From 'MachineLibrary_Commands', the role 'MachineLibrary_Commands218' has cardinality 0..*, and from 'MachineLibrary_Command', the role 'MachineLibrary_Command' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeProgram' and 'MachineLibrary_NodePrograms'. From 'MachineLibrary_NodeProgram', the role 'MachineLibrary_NodeProgram' has cardinality 0..*, and from 'MachineLibrary_NodePrograms', the role 'MachineLibrary_NodePrograms220' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitPrograms' and 'MachineLibrary_UnitProgram'. From 'MachineLibrary_UnitPrograms', the role 'MachineLibrary_UnitPrograms222' has cardinality 0..*, and from 'MachineLibrary_UnitProgram', the role 'MachineLibrary_UnitProgram' has cardinality 0..*.
+An association connects 'MachineLibrary_UnitProgram' and 'MachineLibrary_UnitProgParameters'. From 'MachineLibrary_UnitProgram', the role 'MachineLibrary_UnitProgram224' has cardinality 0..*, and from 'MachineLibrary_UnitProgParameters', the role 'MachineLibrary_UnitProgParameters' has cardinality 0..*.
+An association connects 'MachineLibrary_Parameter' and 'MachineLibrary_Parameters'. From 'MachineLibrary_Parameter', the role 'MachineLibrary_Parameter' has cardinality 0..*, and from 'MachineLibrary_Parameters', the role 'MachineLibrary_Parameters226' has cardinality 0..*.
+An association connects 'MachineLibrary_ParamPrint' and 'MachineLibrary_NodeSpecialConfiguration'. From 'MachineLibrary_ParamPrint', the role 'MachineLibrary_ParamPrint' has cardinality 0..*, and from 'MachineLibrary_NodeSpecialConfiguration', the role 'MachineLibrary_NodeSpecialConfiguration228' has cardinality 0..*.
+An association connects 'MachineLibrary_NodeSpecialConfiguration' and 'MachineLibrary_Transfer'. From 'MachineLibrary_NodeSpecialConfiguration', the role 'MachineLibrary_NodeSpecialConfiguration230' has cardinality 0..*, and from 'MachineLibrary_Transfer', the role 'MachineLibrary_Transfer' has cardinality 0..*.
+An association connects 'MachineLibrary_PlainMove' and 'MachineLibrary_NodeSpecialConfiguration'. From 'MachineLibrary_PlainMove', the role 'MachineLibrary_PlainMove' has cardinality 0..*, and from 'MachineLibrary_NodeSpecialConfiguration', the role 'MachineLibrary_NodeSpecialConfiguration232' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotConfiguration' and 'MachineLibrary_NodeSpecialConfiguration'. From 'MachineLibrary_RobotConfiguration', the role 'MachineLibrary_RobotConfiguration' has cardinality 0..*, and from 'MachineLibrary_NodeSpecialConfiguration', the role 'MachineLibrary_NodeSpecialConfiguration234' has cardinality 0..*.
+An association connects 'MachineLibrary_TransferFileSection' and 'MachineLibrary_Transfer'. From 'MachineLibrary_TransferFileSection', the role 'MachineLibrary_TransferFileSection' has cardinality 0..*, and from 'MachineLibrary_Transfer', the role 'MachineLibrary_Transfer236' has cardinality 0..*.
+An association connects 'MachineLibrary_PlainMove' and 'MachineLibrary_PlainMoveEntrySend'. From 'MachineLibrary_PlainMove', the role 'MachineLibrary_PlainMove238' has cardinality 0..*, and from 'MachineLibrary_PlainMoveEntrySend', the role 'MachineLibrary_PlainMoveEntrySend' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotVarToBusyCodes' and 'MachineLibrary_RobotConfiguration'. From 'MachineLibrary_RobotVarToBusyCodes', the role 'MachineLibrary_RobotVarToBusyCodes' has cardinality 0..*, and from 'MachineLibrary_RobotConfiguration', the role 'MachineLibrary_RobotConfiguration240' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotConfiguration' and 'MachineLibrary_RobotConfSendOrders'. From 'MachineLibrary_RobotConfiguration', the role 'MachineLibrary_RobotConfiguration242' has cardinality 0..*, and from 'MachineLibrary_RobotConfSendOrders', the role 'MachineLibrary_RobotConfSendOrders' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotConfiguration' and 'MachineLibrary_RobotWinCCToRobots'. From 'MachineLibrary_RobotConfiguration', the role 'MachineLibrary_RobotConfiguration244' has cardinality 0..*, and from 'MachineLibrary_RobotWinCCToRobots', the role 'MachineLibrary_RobotWinCCToRobots' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotConfiguration' and 'MachineLibrary_RobotToWinccs'. From 'MachineLibrary_RobotConfiguration', the role 'MachineLibrary_RobotConfiguration246' has cardinality 0..*, and from 'MachineLibrary_RobotToWinccs', the role 'MachineLibrary_RobotToWinccs' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotConfiguration' and 'MachineLibrary_RobotWarningONDelete'. From 'MachineLibrary_RobotConfiguration', the role 'MachineLibrary_RobotConfiguration248' has cardinality 0..*, and from 'MachineLibrary_RobotWarningONDelete', the role 'MachineLibrary_RobotWarningONDelete' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotVarToErrorbits' and 'MachineLibrary_RobotConfiguration'. From 'MachineLibrary_RobotVarToErrorbits', the role 'MachineLibrary_RobotVarToErrorbits' has cardinality 0..*, and from 'MachineLibrary_RobotConfiguration', the role 'MachineLibrary_RobotConfiguration250' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotVarToBusyCodes' and 'MachineLibrary_RobotVarToBusycode'. From 'MachineLibrary_RobotVarToBusyCodes', the role 'MachineLibrary_RobotVarToBusyCodes252' has cardinality 0..*, and from 'MachineLibrary_RobotVarToBusycode', the role 'MachineLibrary_RobotVarToBusycode' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotConfSendOrder' and 'MachineLibrary_RobotConfSendOrders'. From 'MachineLibrary_RobotConfSendOrder', the role 'MachineLibrary_RobotConfSendOrder' has cardinality 0..*, and from 'MachineLibrary_RobotConfSendOrders', the role 'MachineLibrary_RobotConfSendOrders254' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotWinCCToRobots' and 'MachineLibrary_RobotWinCCToRobot'. From 'MachineLibrary_RobotWinCCToRobots', the role 'MachineLibrary_RobotWinCCToRobots256' has cardinality 0..*, and from 'MachineLibrary_RobotWinCCToRobot', the role 'MachineLibrary_RobotWinCCToRobot' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotToWinccs' and 'MachineLibrary_RobotToWinCC'. From 'MachineLibrary_RobotToWinccs', the role 'MachineLibrary_RobotToWinccs258' has cardinality 0..*, and from 'MachineLibrary_RobotToWinCC', the role 'MachineLibrary_RobotToWinCC' has cardinality 0..*.
+An association connects 'MachineLibrary_RobotVarToErrorbit' and 'MachineLibrary_RobotVarToErrorbits'. From 'MachineLibrary_RobotVarToErrorbit', the role 'MachineLibrary_RobotVarToErrorbit' has cardinality 0..*, and from 'MachineLibrary_RobotVarToErrorbits', the role 'MachineLibrary_RobotVarToErrorbits260' has cardinality 0..*.

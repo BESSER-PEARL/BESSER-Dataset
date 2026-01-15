@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/emfjson/emfjson-samples/eclipse/org.emfjson.sample.emf.ui/model/model.ecore

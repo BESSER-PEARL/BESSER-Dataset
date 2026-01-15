@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lucas-koehler/emf.ecp.core/tests/org.eclipse.emf.ecp.test.model/model/university.ecore

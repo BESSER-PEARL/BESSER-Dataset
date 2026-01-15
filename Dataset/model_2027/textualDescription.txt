@@ -1,0 +1,97 @@
+The domain model 'uisut' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'uisut_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'uisut_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'UISUTElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uisut_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'uisut_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'uisut_UISUTElement' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'id', which is of type str.
+
+'uisut_ApplicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'uisut_UIDataVariable' represents an important domain concept.
+It has one attribute: 'constraintRE', which is of type str.
+
+'uisut_UIControl' represents an important domain concept.
+It has the following attributes: 'valueExpression', which is of type str; 'variableName', which is of type str.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'uisut_UISUT' represents an important domain concept.
+It does not declare any attributes.
+
+'UITrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'uisut_UIState' represents an important domain concept.
+It has the following attributes: 'pic', which is of type str; 'isInitial', which is of type bool.
+
+'uisut_UserTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'uisut_UIStatemachine' represents an important domain concept.
+It does not declare any attributes.
+
+'uisut_UITrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'uisut_UITransition' represents an important domain concept.
+It has the following attributes: 'scriptStr', which is of type str; 'guardStr', which is of type str; 'actionStr', which is of type str; 'triggerStr', which is of type str.
+
+'uisut_UICondition' represents an important domain concept.
+It does not declare any attributes.
+
+'uisut_ComponentTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'uisut_UISUT' is a specialization of 'UISUTElement'.
+The class 'uisut_ApplicationSystem' is a specialization of 'UISUTElement'.
+The class 'uisut_UIStatemachine' is a specialization of 'UISUTElement'.
+The class 'uisut_UIState' is a specialization of 'AbstractState'.
+The class 'uisut_UITransition' is a specialization of 'UISUTElement'.
+The class 'uisut_UITrigger' is a specialization of 'UISUTElement'.
+The class 'uisut_UserTrigger' is a specialization of 'UITrigger'.
+The class 'uisut_ComponentTrigger' is a specialization of 'UITrigger'.
+The class 'uisut_UICondition' is a specialization of 'UISUTElement'.
+The class 'uisut_Action' is a specialization of 'UISUTElement'.
+The class 'uisut_UIControl' is a specialization of 'UISUTElement'.
+The class 'uisut_UIDataVariable' is a specialization of 'UISUTElement'.
+The class 'uisut_InitialState' is a specialization of 'AbstractState'.
+The class 'uisut_FinalState' is a specialization of 'AbstractState'.
+The class 'uisut_AbstractState' is a specialization of 'UISUTElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uisut_UISUT' and 'uisut_UIStatemachine'. From 'uisut_UISUT', the role 'uisut_UISUT' has cardinality 0..*, and from 'uisut_UIStatemachine', the role 'uisut_UIStatemachine' has cardinality 0..*.
+An association connects 'uisut_ApplicationSystem' and 'uisut_UISUT'. From 'uisut_ApplicationSystem', the role 'uisut_ApplicationSystem' has cardinality 0..*, and from 'uisut_UISUT', the role 'uisut_UISUT2' has cardinality 0..*.
+An association connects 'uisut_AbstractState' and 'uisut_UIStatemachine'. From 'uisut_AbstractState', the role 'uisut_AbstractState' has cardinality 0..*, and from 'uisut_UIStatemachine', the role 'uisut_UIStatemachine4' has cardinality 0..*.
+An association connects 'uisut_UITransition' and 'uisut_UIStatemachine'. From 'uisut_UITransition', the role 'uisut_UITransition' has cardinality 0..*, and from 'uisut_UIStatemachine', the role 'uisut_UIStatemachine6' has cardinality 0..*.
+An association connects 'uisut_UIDataVariable' and 'uisut_UIStatemachine'. From 'uisut_UIDataVariable', the role 'uisut_UIDataVariable' has cardinality 0..*, and from 'uisut_UIStatemachine', the role 'uisut_UIStatemachine8' has cardinality 0..*.
+An association connects 'uisut_UIState' and 'uisut_UIControl'. From 'uisut_UIState', the role 'uisut_UIState' has cardinality 0..*, and from 'uisut_UIControl', the role 'uisut_UIControl' has cardinality 0..*.
+An association connects 'uisut_UIState' and 'uisut_UIDataVariable'. From 'uisut_UIState', the role 'uisut_UIState11' has cardinality 0..*, and from 'uisut_UIDataVariable', the role 'uisut_UIDataVariable12' has cardinality 0..*.
+An association connects 'uisut_UIState' and 'uisut_UIDataVariable'. From 'uisut_UIState', the role 'uisut_UIState14' has cardinality 0..*, and from 'uisut_UIDataVariable', the role 'uisut_UIDataVariable15' has cardinality 0..*.
+An association connects 'uisut_AbstractState' and 'uisut_UITransition'. From 'uisut_AbstractState', the role 'AbstractState' has cardinality 0..*, and from 'uisut_UITransition', the role 'itsInTransition' has cardinality 0..*.
+An association connects 'uisut_AbstractState' and 'uisut_UITransition'. From 'uisut_AbstractState', the role 'AbstractState18' has cardinality 0..*, and from 'uisut_UITransition', the role 'itsOutTransition' has cardinality 0..*.
+An association connects 'uisut_UITransition' and 'uisut_UITrigger'. From 'uisut_UITransition', the role 'uisut_UITransition20' has cardinality 0..*, and from 'uisut_UITrigger', the role 'uisut_UITrigger' has cardinality 0..*.
+An association connects 'uisut_UICondition' and 'uisut_UITransition'. From 'uisut_UICondition', the role 'uisut_UICondition' has cardinality 0..*, and from 'uisut_UITransition', the role 'uisut_UITransition22' has cardinality 0..*.
+An association connects 'uisut_Action' and 'uisut_UITransition'. From 'uisut_Action', the role 'uisut_Action' has cardinality 0..*, and from 'uisut_UITransition', the role 'uisut_UITransition24' has cardinality 0..*.
+An association connects 'uisut_UIDataVariable' and 'uisut_UITransition'. From 'uisut_UIDataVariable', the role 'uisut_UIDataVariable27' has cardinality 0..*, and from 'uisut_UITransition', the role 'uisut_UITransition26' has cardinality 0..*.
+An association connects 'uisut_UIControl' and 'uisut_UIDataVariable'. From 'uisut_UIControl', the role 'uisut_UIControl29' has cardinality 0..*, and from 'uisut_UIDataVariable', the role 'uisut_UIDataVariable30' has cardinality 0..*.
+An association connects 'uisut_UIControl' and 'uisut_UIDataVariable'. From 'uisut_UIControl', the role 'uisut_UIControl32' has cardinality 0..*, and from 'uisut_UIDataVariable', the role 'uisut_UIDataVariable33' has cardinality 0..*.
+An association connects 'uisut_AbstractState' and 'uisut_UITransition'. From 'uisut_AbstractState', the role 'itsTrgtState' has cardinality 0..*, and from 'uisut_UITransition', the role 'UITransition' has cardinality 0..*.
+An association connects 'uisut_UITransition' and 'uisut_AbstractState'. From 'uisut_UITransition', the role 'UITransition36' has cardinality 0..*, and from 'uisut_AbstractState', the role 'itsSrcState' has cardinality 0..*.

@@ -1,0 +1,39 @@
+The domain model 'dmm' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'dmm_Exam' represents an important domain concept.
+It has one attribute: 'examID', which is of type str.
+
+'dmm_UniversityManagementSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'dmm_Professor' represents an important domain concept.
+It has one attribute: 'employeeNumber', which is of type int.
+
+'dmm_Person' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'name', which is of type str.
+
+'dmm_Student' represents an important domain concept.
+It has one attribute: 'matriculationNumber', which is of type int.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'dmm_Course' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'courseNumber', which is of type int; 'courseType', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CourseType' defines the following possible values: 'VO', 'PR', 'UE', 'SEM'.
+
+The model also captures inheritance relationships between classes.
+The class 'dmm_Student' is a specialization of 'Person'.
+The class 'dmm_Professor' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dmm_Student' and 'dmm_Course'. From 'dmm_Student', the role 'dmm_Student' has cardinality 0..*, and from 'dmm_Course', the role 'dmm_Course' has cardinality 0..*.
+An association connects 'dmm_Course' and 'dmm_Professor'. From 'dmm_Course', the role 'dmm_Course2' has cardinality 0..*, and from 'dmm_Professor', the role 'dmm_Professor' has cardinality 0..*.
+An association connects 'dmm_Course' and 'dmm_Course'. From 'dmm_Course', the role 'dmm_Course5' has cardinality 0..*, and from 'dmm_Course', the role 'dmm_Course3' has cardinality 0..*.
+An association connects 'dmm_Course' and 'dmm_Exam'. From 'dmm_Course', the role 'dmm_Course7' has cardinality 0..*, and from 'dmm_Exam', the role 'dmm_Exam' has cardinality 0..*.
+An association connects 'dmm_Course' and 'dmm_UniversityManagementSystem'. From 'dmm_Course', the role 'dmm_Course9' has cardinality 0..*, and from 'dmm_UniversityManagementSystem', the role 'dmm_UniversityManagementSystem' has cardinality 0..*.
+An association connects 'dmm_Person' and 'dmm_UniversityManagementSystem'. From 'dmm_Person', the role 'dmm_Person' has cardinality 0..*, and from 'dmm_UniversityManagementSystem', the role 'dmm_UniversityManagementSystem11' has cardinality 0..*.

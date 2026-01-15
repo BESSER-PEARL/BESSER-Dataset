@@ -1,0 +1,25 @@
+The domain model 'SimplePersons' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'SimplePersons_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePersons_Male' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePersons_PersonRegister' represents an important domain concept.
+It does not declare any attributes.
+
+'SimplePersons_Female' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'SimplePersons_Male' is a specialization of 'Person'.
+The class 'SimplePersons_Female' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimplePersons_PersonRegister' and 'SimplePersons_Person'. From 'SimplePersons_PersonRegister', the role 'SimplePersons_PersonRegister' has cardinality 0..*, and from 'SimplePersons_Person', the role 'SimplePersons_Person' has cardinality 0..*.

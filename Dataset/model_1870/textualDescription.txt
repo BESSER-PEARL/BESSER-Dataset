@@ -1,0 +1,55 @@
+The domain model 'datatypes' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatypes_IDLReference' represents an important domain concept.
+It does not declare any attributes.
+
+'IDLReference' represents an important domain concept.
+It does not declare any attributes.
+
+'datatypes_VectorType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatypes_CustomType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatypes_ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatypes_Field' represents an important domain concept.
+It has the following attributes: 'measureUnit', which is of type str; 'description', which is of type str; 'name', which is of type str.
+
+'datatypes_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatypes_DataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'datatypes_TypesLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'datatypes_RosIDLReference' represents an important domain concept.
+It has the following attributes: 'rosPackage', which is of type str; 'namespace', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'datatypes_SimpleType' is a specialization of 'DataType'.
+The class 'datatypes_ComplexType' is a specialization of 'DataType'.
+The class 'datatypes_RosIDLReference' is a specialization of 'IDLReference'.
+The class 'datatypes_VectorType' is a specialization of 'ComplexType'.
+The class 'datatypes_CustomType' is a specialization of 'ComplexType'.
+The class 'datatypes_IDLReference' is a specialization of 'ComplexType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'datatypes_TypesLibrary' and 'datatypes_DataType'. From 'datatypes_TypesLibrary', the role 'typesLibrary' has cardinality 0..*, and from 'datatypes_DataType', the role 'DataType' has cardinality 0..*.
+An association connects 'datatypes_TypesLibrary' and 'datatypes_TypesLibrary'. From 'datatypes_TypesLibrary', the role 'datatypes_TypesLibrary' has cardinality 0..*, and from 'datatypes_TypesLibrary', the role 'datatypes_TypesLibrary1' has cardinality 0..*.
+An association connects 'datatypes_DataType' and 'datatypes_TypesLibrary'. From 'datatypes_DataType', the role 'types' has cardinality 0..*, and from 'datatypes_TypesLibrary', the role 'TypesLibrary' has cardinality 0..*.
+An association connects 'datatypes_VectorType' and 'datatypes_DataType'. From 'datatypes_VectorType', the role 'datatypes_VectorType' has cardinality 0..*, and from 'datatypes_DataType', the role 'datatypes_DataType' has cardinality 0..*.
+An association connects 'datatypes_Field' and 'datatypes_CustomType'. From 'datatypes_Field', the role 'datatypes_Field' has cardinality 0..*, and from 'datatypes_CustomType', the role 'datatypes_CustomType' has cardinality 0..*.
+An association connects 'datatypes_Field' and 'datatypes_DataType'. From 'datatypes_Field', the role 'datatypes_Field7' has cardinality 0..*, and from 'datatypes_DataType', the role 'datatypes_DataType8' has cardinality 0..*.

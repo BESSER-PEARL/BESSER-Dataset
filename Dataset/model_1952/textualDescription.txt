@@ -1,0 +1,54 @@
+The domain model 'mode' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'mode_MediaArtifact' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'source', which is of type str; 'name', which is of type str.
+
+'mode_EBook' represents an important domain concept.
+It does not declare any attributes.
+
+'MediaArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'mode_Video' represents an important domain concept.
+It has one attribute: 'length', which is of type int.
+
+'mode_Device' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'mode_Music' represents an important domain concept.
+It has one attribute: 'length', which is of type int.
+
+'mode_AudioBook' represents an important domain concept.
+It has one attribute: 'length', which is of type int.
+
+'mode_MediaCollection' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mode_User' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mode_MediaLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DeviceType' defines the following possible values: 'Computer', 'Tablet', 'Smartphone'.
+The enumeration 'MediaSourceType' defines the following possible values: 'MediaStore', 'ExternalArtifact'.
+
+The model also captures inheritance relationships between classes.
+The class 'mode_Video' is a specialization of 'MediaArtifact'.
+The class 'mode_Music' is a specialization of 'MediaArtifact'.
+The class 'mode_AudioBook' is a specialization of 'MediaArtifact'.
+The class 'mode_EBook' is a specialization of 'MediaArtifact'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mode_MediaLibrary' and 'mode_Device'. From 'mode_MediaLibrary', the role 'mode_MediaLibrary' has cardinality 0..*, and from 'mode_Device', the role 'mode_Device' has cardinality 0..*.
+An association connects 'mode_MediaLibrary' and 'mode_User'. From 'mode_MediaLibrary', the role 'mode_MediaLibrary2' has cardinality 0..*, and from 'mode_User', the role 'mode_User' has cardinality 0..*.
+An association connects 'mode_MediaCollection' and 'mode_MediaLibrary'. From 'mode_MediaCollection', the role 'mode_MediaCollection' has cardinality 0..*, and from 'mode_MediaLibrary', the role 'mode_MediaLibrary4' has cardinality 0..*.
+An association connects 'mode_User' and 'mode_MediaCollection'. From 'mode_User', the role 'ownedUser' has cardinality 0..*, and from 'mode_MediaCollection', the role 'MediaCollection' has cardinality 0..*.
+An association connects 'mode_MediaCollection' and 'mode_MediaArtifact'. From 'mode_MediaCollection', the role 'collection' has cardinality 0..*, and from 'mode_MediaArtifact', the role 'MediaArtifact' has cardinality 0..*.
+An association connects 'mode_Device' and 'mode_MediaCollection'. From 'mode_Device', the role 'Device' has cardinality 0..*, and from 'mode_MediaCollection', the role 'synchronisedCollections' has cardinality 0..*.
+An association connects 'mode_User' and 'mode_MediaCollection'. From 'mode_User', the role 'User' has cardinality 0..*, and from 'mode_MediaCollection', the role 'ownedCollections' has cardinality 0..*.
+An association connects 'mode_MediaCollection' and 'mode_MediaArtifact'. From 'mode_MediaCollection', the role 'MediaCollection10' has cardinality 0..*, and from 'mode_MediaArtifact', the role 'mediaArtifacts' has cardinality 0..*.
+An association connects 'mode_Device' and 'mode_MediaCollection'. From 'mode_Device', the role 'synchronisedDevices' has cardinality 0..*, and from 'mode_MediaCollection', the role 'MediaCollection12' has cardinality 0..*.

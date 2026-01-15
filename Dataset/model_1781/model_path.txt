@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/bmaggi/Topcased/plugins/generators/configurators/docbook/fromSchema/docbook.ecore

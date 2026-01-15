@@ -1,0 +1,33 @@
+The domain model 'smachDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'smachDSL_Test' represents an important domain concept.
+It has one attribute: 'ros', which is of type str.
+
+'smachDSL_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smachDSL_PrimitivePackage' represents an important domain concept.
+It does not declare any attributes.
+
+'smachDSL_ActionState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smachDSL_ActionClient' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'actionname', which is of type str; 'actiontype', which is of type str.
+
+'smachDSL_Transition' represents an important domain concept.
+It has one attribute: 'outcome', which is of type str.
+
+'smachDSL_ServiceClient' represents an important domain concept.
+It has the following attributes: 'servicename', which is of type str; 'servicesrv', which is of type str; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'smachDSL_StateMachine' and 'smachDSL_PrimitivePackage'. From 'smachDSL_StateMachine', the role 'smachDSL_StateMachine' has cardinality 0..*, and from 'smachDSL_PrimitivePackage', the role 'smachDSL_PrimitivePackage' has cardinality 0..*.
+An association connects 'smachDSL_StateMachine' and 'smachDSL_ActionClient'. From 'smachDSL_StateMachine', the role 'smachDSL_StateMachine2' has cardinality 0..*, and from 'smachDSL_ActionClient', the role 'smachDSL_ActionClient' has cardinality 0..*.
+An association connects 'smachDSL_StateMachine' and 'smachDSL_ServiceClient'. From 'smachDSL_StateMachine', the role 'smachDSL_StateMachine4' has cardinality 0..*, and from 'smachDSL_ServiceClient', the role 'smachDSL_ServiceClient' has cardinality 0..*.
+An association connects 'smachDSL_ActionState' and 'smachDSL_StateMachine'. From 'smachDSL_ActionState', the role 'smachDSL_ActionState' has cardinality 0..*, and from 'smachDSL_StateMachine', the role 'smachDSL_StateMachine6' has cardinality 0..*.
+An association connects 'smachDSL_ActionClient' and 'smachDSL_ActionState'. From 'smachDSL_ActionClient', the role 'smachDSL_ActionClient9' has cardinality 0..*, and from 'smachDSL_ActionState', the role 'smachDSL_ActionState8' has cardinality 0..*.
+An association connects 'smachDSL_ActionState' and 'smachDSL_Transition'. From 'smachDSL_ActionState', the role 'smachDSL_ActionState11' has cardinality 0..*, and from 'smachDSL_Transition', the role 'smachDSL_Transition' has cardinality 0..*.
+An association connects 'smachDSL_Transition' and 'smachDSL_ActionState'. From 'smachDSL_Transition', the role 'smachDSL_Transition13' has cardinality 0..*, and from 'smachDSL_ActionState', the role 'smachDSL_ActionState14' has cardinality 0..*.

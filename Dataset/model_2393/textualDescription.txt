@@ -1,0 +1,31 @@
+The domain model 'genSql' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'genSql_DataBase' represents an important domain concept.
+It does not declare any attributes.
+
+'genSql_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'genSql_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'genSql_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'genSql_Column' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'SQLType', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TIPO' defines the following possible values: 'date', 'String', 'int', 'varchar', 'boolean', 'number'.
+
+Relationships between classes are modeled using associations.
+An association connects 'genSql_Table' and 'genSql_DataBase'. From 'genSql_Table', the role 'genSql_Table' has cardinality 0..*, and from 'genSql_DataBase', the role 'genSql_DataBase' has cardinality 0..*.
+An association connects 'genSql_Column' and 'genSql_Table'. From 'genSql_Column', the role 'genSql_Column' has cardinality 0..*, and from 'genSql_Table', the role 'genSql_Table2' has cardinality 0..*.
+An association connects 'genSql_PrimaryKey' and 'genSql_Table'. From 'genSql_PrimaryKey', the role 'genSql_PrimaryKey' has cardinality 0..*, and from 'genSql_Table', the role 'genSql_Table4' has cardinality 0..*.
+An association connects 'genSql_ForeignKey' and 'genSql_Table'. From 'genSql_ForeignKey', the role 'genSql_ForeignKey' has cardinality 0..*, and from 'genSql_Table', the role 'genSql_Table6' has cardinality 0..*.
+An association connects 'genSql_Column' and 'genSql_PrimaryKey'. From 'genSql_Column', the role 'genSql_Column9' has cardinality 0..*, and from 'genSql_PrimaryKey', the role 'genSql_PrimaryKey8' has cardinality 0..*.
+An association connects 'genSql_ForeignKey' and 'genSql_Column'. From 'genSql_ForeignKey', the role 'genSql_ForeignKey11' has cardinality 0..*, and from 'genSql_Column', the role 'genSql_Column12' has cardinality 0..*.
+An association connects 'genSql_Table' and 'genSql_ForeignKey'. From 'genSql_Table', the role 'genSql_Table15' has cardinality 0..*, and from 'genSql_ForeignKey', the role 'genSql_ForeignKey14' has cardinality 0..*.
+An association connects 'genSql_Column' and 'genSql_ForeignKey'. From 'genSql_Column', the role 'genSql_Column18' has cardinality 0..*, and from 'genSql_ForeignKey', the role 'genSql_ForeignKey17' has cardinality 0..*.

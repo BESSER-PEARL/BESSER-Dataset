@@ -1,0 +1,30 @@
+The domain model 'softwaretraces' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'MyNode' represents an important domain concept.
+It does not declare any attributes.
+
+'softwaretraces_Model' represents an important domain concept.
+It has one attribute: 'resourceFileName', which is of type str.
+
+'softwaretraces_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'softwaretraces_MyNode' represents an important domain concept.
+It does not declare any attributes.
+
+'softwaretraces_Trace' represents an important domain concept.
+It has the following attributes: 'projectName', which is of type str; 'fileName', which is of type str; 'lineNumber', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'softwaretraces_Model' is a specialization of 'MyNode'.
+The class 'softwaretraces_Feature' is a specialization of 'MyNode'.
+The class 'softwaretraces_Trace' is a specialization of 'MyNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'softwaretraces_Model' and 'softwaretraces_Feature'. From 'softwaretraces_Model', the role 'softwaretraces_Model' has cardinality 0..*, and from 'softwaretraces_Feature', the role 'softwaretraces_Feature' has cardinality 0..*.
+An association connects 'softwaretraces_Model' and 'softwaretraces_Trace'. From 'softwaretraces_Model', the role 'softwaretraces_Model2' has cardinality 0..*, and from 'softwaretraces_Trace', the role 'softwaretraces_Trace' has cardinality 0..*.
+An association connects 'softwaretraces_Feature' and 'softwaretraces_Feature'. From 'softwaretraces_Feature', the role 'softwaretraces_Feature3' has cardinality 0..*, and from 'softwaretraces_Feature', the role 'softwaretraces_Feature5' has cardinality 0..*.
+An association connects 'softwaretraces_Feature' and 'softwaretraces_Trace'. From 'softwaretraces_Feature', the role 'softwaretraces_Feature7' has cardinality 0..*, and from 'softwaretraces_Trace', the role 'softwaretraces_Trace8' has cardinality 0..*.
+An association connects 'softwaretraces_Trace' and 'softwaretraces_Trace'. From 'softwaretraces_Trace', the role 'softwaretraces_Trace11' has cardinality 0..*, and from 'softwaretraces_Trace', the role 'softwaretraces_Trace9' has cardinality 0..*.

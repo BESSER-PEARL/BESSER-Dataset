@@ -1,0 +1,50 @@
+The domain model 'gradingsystem' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'Task' represents an important domain concept.
+It does not declare any attributes.
+
+'gradingsystem_Task' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gradingsystem_GradingSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'gradingsystem_TaskGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'gradingsystem_Grading' represents an important domain concept.
+It has one attribute: 'semester', which is of type str.
+
+'gradingsystem_GradingScheme' represents an important domain concept.
+It does not declare any attributes.
+
+'gradingsystem_MinRequirement' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type int.
+
+'gradingsystem_ConcreteTask' represents an important domain concept.
+It has one attribute: 'maxPoints', which is of type int.
+
+'gradingsystem_Grade' represents an important domain concept.
+It has the following attributes: 'requiredPoints', which is of type int; 'name', which is of type str.
+
+'gradingsystem_Course' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MinRequirementsType' defines the following possible values: 'Percentage', 'Absolute'.
+
+The model also captures inheritance relationships between classes.
+The class 'gradingsystem_ConcreteTask' is a specialization of 'Task'.
+The class 'gradingsystem_TaskGroup' is a specialization of 'Task'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gradingsystem_Course' and 'gradingsystem_GradingSystem'. From 'gradingsystem_Course', the role 'gradingsystem_Course' has cardinality 0..*, and from 'gradingsystem_GradingSystem', the role 'gradingsystem_GradingSystem' has cardinality 0..*.
+An association connects 'gradingsystem_Course' and 'gradingsystem_Grading'. From 'gradingsystem_Course', the role 'gradingsystem_Course2' has cardinality 0..*, and from 'gradingsystem_Grading', the role 'gradingsystem_Grading' has cardinality 0..*.
+An association connects 'gradingsystem_MinRequirement' and 'gradingsystem_Task'. From 'gradingsystem_MinRequirement', the role 'gradingsystem_MinRequirement' has cardinality 0..*, and from 'gradingsystem_Task', the role 'gradingsystem_Task' has cardinality 0..*.
+An association connects 'gradingsystem_TaskGroup' and 'gradingsystem_Task'. From 'gradingsystem_TaskGroup', the role 'gradingsystem_TaskGroup' has cardinality 0..*, and from 'gradingsystem_Task', the role 'gradingsystem_Task5' has cardinality 0..*.
+An association connects 'gradingsystem_GradingScheme' and 'gradingsystem_Grade'. From 'gradingsystem_GradingScheme', the role 'gradingsystem_GradingScheme' has cardinality 0..*, and from 'gradingsystem_Grade', the role 'gradingsystem_Grade' has cardinality 0..*.
+An association connects 'gradingsystem_GradingScheme' and 'gradingsystem_Grade'. From 'gradingsystem_GradingScheme', the role 'gradingsystem_GradingScheme8' has cardinality 0..*, and from 'gradingsystem_Grade', the role 'gradingsystem_Grade9' has cardinality 0..*.
+An association connects 'gradingsystem_Grading' and 'gradingsystem_Task'. From 'gradingsystem_Grading', the role 'gradingsystem_Grading11' has cardinality 0..*, and from 'gradingsystem_Task', the role 'gradingsystem_Task12' has cardinality 0..*.
+An association connects 'gradingsystem_GradingScheme' and 'gradingsystem_Grading'. From 'gradingsystem_GradingScheme', the role 'gradingsystem_GradingScheme15' has cardinality 0..*, and from 'gradingsystem_Grading', the role 'gradingsystem_Grading14' has cardinality 0..*.

@@ -1,0 +1,45 @@
+The domain model 'edges' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'EdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'edges_MigrationEdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'edges_MixingEdgeLabelValue' represents an important domain concept.
+It has one attribute: 'mixingRate', which is of type float.
+
+'edges_MigrationEdgeLabelValue' represents an important domain concept.
+It has one attribute: 'migrationRate', which is of type float.
+
+'edges_MixingEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'edges_MigrationEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'edges_MixingEdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'PopulationEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'edges_PopulationEdge' represents an important domain concept.
+It has one attribute: 'populationIdentifier', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'edges_MigrationEdge' is a specialization of 'PopulationEdge'.
+The class 'edges_MigrationEdgeLabel' is a specialization of 'EdgeLabel'.
+The class 'edges_MigrationEdgeLabelValue' is a specialization of 'LabelValue'.
+The class 'edges_MixingEdge' is a specialization of 'PopulationEdge'.
+The class 'edges_MixingEdgeLabel' is a specialization of 'EdgeLabel'.
+The class 'edges_MixingEdgeLabelValue' is a specialization of 'LabelValue'.
+The class 'edges_PopulationEdge' is a specialization of 'Edge'.

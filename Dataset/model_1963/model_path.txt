@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mcolburn/alwb-source/net.ages.workbench.templates.dsl/src-gen/net/ages/workbench/templates/dsl/Atem.ecore

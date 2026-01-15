@@ -1,0 +1,68 @@
+The domain model 'viewmodeltrace' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'viewmodeltrace_ViewModelTrace' represents an important domain concept.
+It has one attribute: 'traceModelId', which is of type str.
+
+'viewmodeltrace_EObjectMatchArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'viewmodeltrace_VariableInstantiationTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'MatchArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'viewmodeltrace_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'viewmodeltrace_ConstraintTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'viewmodeltrace_LogicModel' represents an important domain concept.
+It does not declare any attributes.
+
+'viewmodeltrace_Trace' represents an important domain concept.
+It has the following attributes: 'traceName', which is of type str; 'state', which is of type str.
+
+'viewmodeltrace_JavaObjectMatchArgument' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'viewmodeltrace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'viewmodeltrace_StringVariablePair' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'viewmodeltrace_MatchArgument' represents an important domain concept.
+It has one attribute: 'parameterName', which is of type str.
+
+'viewmodeltrace_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewmodeltrace_MatchArgumentTuple' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TraceState' defines the following possible values: 'USED', 'UNUSED'.
+
+The model also captures inheritance relationships between classes.
+The class 'viewmodeltrace_EObjectMatchArgument' is a specialization of 'MatchArgument'.
+The class 'viewmodeltrace_JavaObjectMatchArgument' is a specialization of 'MatchArgument'.
+The class 'viewmodeltrace_VariableInstantiationTrace' is a specialization of 'Trace'.
+The class 'viewmodeltrace_ConstraintTrace' is a specialization of 'Trace'.
+
+Relationships between classes are modeled using associations.
+An association connects 'viewmodeltrace_LogicModel' and 'viewmodeltrace_ViewModelTrace'. From 'viewmodeltrace_LogicModel', the role 'viewmodeltrace_LogicModel' has cardinality 0..*, and from 'viewmodeltrace_ViewModelTrace', the role 'viewmodeltrace_ViewModelTrace' has cardinality 0..*.
+An association connects 'viewmodeltrace_ViewModelTrace' and 'viewmodeltrace_Trace'. From 'viewmodeltrace_ViewModelTrace', the role 'viewmodeltrace_ViewModelTrace2' has cardinality 0..*, and from 'viewmodeltrace_Trace', the role 'viewmodeltrace_Trace' has cardinality 0..*.
+An association connects 'viewmodeltrace_MatchArgumentTuple' and 'viewmodeltrace_MatchArgument'. From 'viewmodeltrace_MatchArgumentTuple', the role 'viewmodeltrace_MatchArgumentTuple' has cardinality 0..*, and from 'viewmodeltrace_MatchArgument', the role 'viewmodeltrace_MatchArgument' has cardinality 0..*.
+An association connects 'viewmodeltrace_EObjectMatchArgument' and 'viewmodeltrace_EObject'. From 'viewmodeltrace_EObjectMatchArgument', the role 'viewmodeltrace_EObjectMatchArgument' has cardinality 0..*, and from 'viewmodeltrace_EObject', the role 'viewmodeltrace_EObject' has cardinality 0..*.
+An association connects 'viewmodeltrace_MatchArgumentTuple' and 'viewmodeltrace_Trace'. From 'viewmodeltrace_MatchArgumentTuple', the role 'viewmodeltrace_MatchArgumentTuple7' has cardinality 0..*, and from 'viewmodeltrace_Trace', the role 'viewmodeltrace_Trace6' has cardinality 0..*.
+An association connects 'viewmodeltrace_StringVariablePair' and 'viewmodeltrace_VariableInstantiationTrace'. From 'viewmodeltrace_StringVariablePair', the role 'viewmodeltrace_StringVariablePair' has cardinality 0..*, and from 'viewmodeltrace_VariableInstantiationTrace', the role 'viewmodeltrace_VariableInstantiationTrace' has cardinality 0..*.
+An association connects 'viewmodeltrace_Variable' and 'viewmodeltrace_StringVariablePair'. From 'viewmodeltrace_Variable', the role 'viewmodeltrace_Variable' has cardinality 0..*, and from 'viewmodeltrace_StringVariablePair', the role 'viewmodeltrace_StringVariablePair10' has cardinality 0..*.
+An association connects 'viewmodeltrace_Variable' and 'viewmodeltrace_ConstraintTrace'. From 'viewmodeltrace_Variable', the role 'viewmodeltrace_Variable12' has cardinality 0..*, and from 'viewmodeltrace_ConstraintTrace', the role 'viewmodeltrace_ConstraintTrace' has cardinality 0..*.
+An association connects 'viewmodeltrace_ConstraintTrace' and 'viewmodeltrace_Constraint'. From 'viewmodeltrace_ConstraintTrace', the role 'viewmodeltrace_ConstraintTrace14' has cardinality 0..*, and from 'viewmodeltrace_Constraint', the role 'viewmodeltrace_Constraint' has cardinality 0..*.

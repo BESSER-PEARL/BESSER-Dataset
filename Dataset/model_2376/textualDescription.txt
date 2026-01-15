@@ -1,0 +1,101 @@
+The domain model 'umltordbms' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'umltordbms_PackageToSchema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umltordbms_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'FromAttributeOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'FromAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_AttributeToColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_FromAttributeOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'ToColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_PrimitiveToName' represents an important domain concept.
+It has the following attributes: 'typeName', which is of type str; 'name', which is of type str.
+
+'umltordbms_AssociationToForeignKey' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umltordbms_NonLeafAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_ClassToTable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'umltordbms_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_ToColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'umltordbms_FromAttribute' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'name', which is of type str.
+
+'umltordbms_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'umltordbms_AttributeToColumn' is a specialization of 'FromAttribute'.
+The class 'umltordbms_AttributeToColumn' is a specialization of 'ToColumn'.
+The class 'umltordbms_AssociationToForeignKey' is a specialization of 'ToColumn'.
+The class 'umltordbms_ClassToTable' is a specialization of 'FromAttributeOwner'.
+The class 'umltordbms_ClassToTable' is a specialization of 'ToColumn'.
+The class 'umltordbms_NonLeafAttribute' is a specialization of 'FromAttributeOwner'.
+The class 'umltordbms_NonLeafAttribute' is a specialization of 'FromAttribute'.
+
+Relationships between classes are modeled using associations.
+An association connects 'umltordbms_AttributeToColumn' and 'umltordbms_PrimitiveToName'. From 'umltordbms_AttributeToColumn', the role 'umltordbms_AttributeToColumn' has cardinality 0..*, and from 'umltordbms_PrimitiveToName', the role 'umltordbms_PrimitiveToName' has cardinality 0..*.
+An association connects 'umltordbms_AssociationToForeignKey' and 'umltordbms_ClassToTable'. From 'umltordbms_AssociationToForeignKey', the role 'umltordbms_AssociationToForeignKey' has cardinality 0..*, and from 'umltordbms_ClassToTable', the role 'umltordbms_ClassToTable' has cardinality 0..*.
+An association connects 'umltordbms_ClassToTable' and 'umltordbms_AssociationToForeignKey'. From 'umltordbms_ClassToTable', the role 'ClassToTable' has cardinality 0..*, and from 'umltordbms_AssociationToForeignKey', the role 'associationsToForeignKeys' has cardinality 0..*.
+An association connects 'umltordbms_Association' and 'umltordbms_AssociationToForeignKey'. From 'umltordbms_Association', the role 'umltordbms_Association' has cardinality 0..*, and from 'umltordbms_AssociationToForeignKey', the role 'umltordbms_AssociationToForeignKey4' has cardinality 0..*.
+An association connects 'umltordbms_AssociationToForeignKey' and 'umltordbms_ForeignKey'. From 'umltordbms_AssociationToForeignKey', the role 'umltordbms_AssociationToForeignKey6' has cardinality 0..*, and from 'umltordbms_ForeignKey', the role 'umltordbms_ForeignKey' has cardinality 0..*.
+An association connects 'umltordbms_PackageToSchema' and 'umltordbms_ClassToTable'. From 'umltordbms_PackageToSchema', the role 'PackageToSchema' has cardinality 0..*, and from 'umltordbms_ClassToTable', the role 'classesToTables' has cardinality 0..*.
+An association connects 'umltordbms_AssociationToForeignKey' and 'umltordbms_ClassToTable'. From 'umltordbms_AssociationToForeignKey', the role 'AssociationToForeignKey' has cardinality 0..*, and from 'umltordbms_ClassToTable', the role 'owner' has cardinality 0..*.
+An association connects 'umltordbms_Class' and 'umltordbms_ClassToTable'. From 'umltordbms_Class', the role 'umltordbms_Class' has cardinality 0..*, and from 'umltordbms_ClassToTable', the role 'umltordbms_ClassToTable10' has cardinality 0..*.
+An association connects 'umltordbms_ClassToTable' and 'umltordbms_Table'. From 'umltordbms_ClassToTable', the role 'umltordbms_ClassToTable12' has cardinality 0..*, and from 'umltordbms_Table', the role 'umltordbms_Table' has cardinality 0..*.
+An association connects 'umltordbms_Key' and 'umltordbms_ClassToTable'. From 'umltordbms_Key', the role 'umltordbms_Key' has cardinality 0..*, and from 'umltordbms_ClassToTable', the role 'umltordbms_ClassToTable14' has cardinality 0..*.
+An association connects 'umltordbms_FromAttribute' and 'umltordbms_FromAttributeOwner'. From 'umltordbms_FromAttribute', the role 'fromAttributes' has cardinality 0..*, and from 'umltordbms_FromAttributeOwner', the role 'FromAttributeOwner' has cardinality 0..*.
+An association connects 'umltordbms_FromAttribute' and 'umltordbms_AttributeToColumn'. From 'umltordbms_FromAttribute', the role 'umltordbms_FromAttribute' has cardinality 0..*, and from 'umltordbms_AttributeToColumn', the role 'umltordbms_AttributeToColumn17' has cardinality 0..*.
+An association connects 'umltordbms_Attribute' and 'umltordbms_FromAttribute'. From 'umltordbms_Attribute', the role 'umltordbms_Attribute' has cardinality 0..*, and from 'umltordbms_FromAttribute', the role 'umltordbms_FromAttribute19' has cardinality 0..*.
+An association connects 'umltordbms_FromAttribute' and 'umltordbms_FromAttributeOwner'. From 'umltordbms_FromAttribute', the role 'FromAttribute' has cardinality 0..*, and from 'umltordbms_FromAttributeOwner', the role 'owner21' has cardinality 0..*.
+An association connects 'umltordbms_PackageToSchema' and 'umltordbms_ClassToTable'. From 'umltordbms_PackageToSchema', the role 'owner23' has cardinality 0..*, and from 'umltordbms_ClassToTable', the role 'ClassToTable24' has cardinality 0..*.
+An association connects 'umltordbms_PrimitiveToName' and 'umltordbms_PackageToSchema'. From 'umltordbms_PrimitiveToName', the role 'PrimitiveToName' has cardinality 0..*, and from 'umltordbms_PackageToSchema', the role 'owner26' has cardinality 0..*.
+An association connects 'umltordbms_Package' and 'umltordbms_PackageToSchema'. From 'umltordbms_Package', the role 'umltordbms_Package' has cardinality 0..*, and from 'umltordbms_PackageToSchema', the role 'umltordbms_PackageToSchema' has cardinality 0..*.
+An association connects 'umltordbms_PackageToSchema' and 'umltordbms_Schema'. From 'umltordbms_PackageToSchema', the role 'umltordbms_PackageToSchema29' has cardinality 0..*, and from 'umltordbms_Schema', the role 'umltordbms_Schema' has cardinality 0..*.
+An association connects 'umltordbms_PrimitiveToName' and 'umltordbms_PackageToSchema'. From 'umltordbms_PrimitiveToName', the role 'primitivesToNames' has cardinality 0..*, and from 'umltordbms_PackageToSchema', the role 'PackageToSchema31' has cardinality 0..*.
+An association connects 'umltordbms_PrimitiveToName' and 'umltordbms_PrimitiveDataType'. From 'umltordbms_PrimitiveToName', the role 'umltordbms_PrimitiveToName33' has cardinality 0..*, and from 'umltordbms_PrimitiveDataType', the role 'umltordbms_PrimitiveDataType' has cardinality 0..*.
+An association connects 'umltordbms_Column' and 'umltordbms_ToColumn'. From 'umltordbms_Column', the role 'umltordbms_Column' has cardinality 0..*, and from 'umltordbms_ToColumn', the role 'umltordbms_ToColumn' has cardinality 0..*.

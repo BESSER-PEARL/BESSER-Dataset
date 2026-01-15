@@ -1,0 +1,426 @@
+The domain model 'Actions' describes the core structural elements and their relationships within the system.
+
+The model defines 96 main class(es).
+
+'Actions_CompleteActions_ReclassifyObjectAction' represents an important domain concept.
+It has one attribute: 'isReplaceAll', which is of type bool.
+
+'Actions_BasicActions_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_DestroyLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_ReadLinkObjectEndQualifierAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_RemoveStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_ReplyAction' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'QualifierValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_UnmarshallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_SendObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_ReadlsClassifiedObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_StructuredActions_RaiseExceptionAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_CreateLinkObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_ReadLinkObjectEndAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_StructuredActions_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_OpaqueAction' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'Actions_IntermediateActions_LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_BroadcastSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_StructuredActions_ReadVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_StructuredActions_AddVariableValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_CallAction' represents an important domain concept.
+It has one attribute: 'isSynchronous', which is of type bool.
+
+'CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_LinkEndCreationData' represents an important domain concept.
+It has one attribute: 'isReplaceAll', which is of type bool.
+
+'Actions_BasicActions_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_DestroyObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_ReadStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_ReduceAction' represents an important domain concept.
+It has one attribute: 'isOrdered', which is of type bool.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_TestIdentityAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_ClearStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_QualifierValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_StructuredActions_VariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_StructuredActions_RemoveVariableValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_ValueSpecificationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_LinkEndDestructionData' represents an important domain concept.
+It has one attribute: 'isDestroyDuplicates', which is of type bool.
+
+'Actions_CompleteActions_AcceptCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_StartClassifierBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_AcceptEventAction' represents an important domain concept.
+It has one attribute: 'isUnmarshall', which is of type bool.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_ReadLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_ReadExtendAction' represents an important domain concept.
+It does not declare any attributes.
+
+'OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_StructuredActions_ActionInputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_CallBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_ReadSelfAction' represents an important domain concept.
+It does not declare any attributes.
+
+'AcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_StructuredActions_WriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_BasicActions_ValuePin' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_StructuredActions_ClearVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_CreateObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_IntermediateActions_AddStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions_CompleteActions_StartObjectBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Actions_BasicActions_Action' is a specialization of 'NamedElement'.
+The class 'Actions_BasicActions_OpaqueAction' is a specialization of 'Action'.
+The class 'Actions_BasicActions_InputPin' is a specialization of 'Pin'.
+The class 'Actions_BasicActions_OutputPin' is a specialization of 'Pin'.
+The class 'Actions_BasicActions_Pin' is a specialization of 'BasicActions_TypedElement'.
+The class 'Actions_BasicActions_Pin' is a specialization of 'BasicActions_MultiplicityElement'.
+The class 'Actions_BasicActions_ValuePin' is a specialization of 'InputPin'.
+The class 'Actions_BasicActions_InvocationAction' is a specialization of 'Action'.
+The class 'Actions_BasicActions_CallAction' is a specialization of 'InvocationAction'.
+The class 'Actions_BasicActions_CallBehaviorAction' is a specialization of 'CallAction'.
+The class 'Actions_BasicActions_SendSignalAction' is a specialization of 'InvocationAction'.
+The class 'Actions_IntermediateActions_BroadcastSignalAction' is a specialization of 'InvocationAction'.
+The class 'Actions_IntermediateActions_SendObjectAction' is a specialization of 'InvocationAction'.
+The class 'Actions_IntermediateActions_CreateObjectAction' is a specialization of 'Action'.
+The class 'Actions_IntermediateActions_DestroyObjectAction' is a specialization of 'Action'.
+The class 'Actions_IntermediateActions_TestIdentityAction' is a specialization of 'Action'.
+The class 'Actions_IntermediateActions_ReadSelfAction' is a specialization of 'Action'.
+The class 'Actions_IntermediateActions_ValueSpecificationAction' is a specialization of 'Action'.
+The class 'Actions_IntermediateActions_StructuralFeatureAction' is a specialization of 'Action'.
+The class 'Actions_IntermediateActions_ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'Actions_IntermediateActions_WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'Actions_IntermediateActions_AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'Actions_IntermediateActions_RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'Actions_IntermediateActions_ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'Actions_IntermediateActions_LinkAction' is a specialization of 'Action'.
+The class 'Actions_IntermediateActions_LinkEndData' is a specialization of 'Element'.
+The class 'Actions_IntermediateActions_ReadLinkAction' is a specialization of 'LinkAction'.
+The class 'Actions_IntermediateActions_WriteLinkAction' is a specialization of 'LinkAction'.
+The class 'Actions_IntermediateActions_CreateLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'Actions_IntermediateActions_LinkEndCreationData' is a specialization of 'LinkEndData'.
+The class 'Actions_IntermediateActions_DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'Actions_IntermediateActions_LinkEndDestructionData' is a specialization of 'LinkEndData'.
+The class 'Actions_CompleteActions_ReplyAction' is a specialization of 'Action'.
+The class 'Actions_CompleteActions_UnmarshallAction' is a specialization of 'Action'.
+The class 'Actions_CompleteActions_AcceptEventAction' is a specialization of 'Action'.
+The class 'Actions_CompleteActions_AcceptCallAction' is a specialization of 'AcceptEventAction'.
+The class 'Actions_CompleteActions_ReadExtendAction' is a specialization of 'Action'.
+The class 'Actions_CompleteActions_ReclassifyObjectAction' is a specialization of 'Action'.
+The class 'Actions_CompleteActions_StartClassifierBehaviorAction' is a specialization of 'Action'.
+The class 'Actions_CompleteActions_StartObjectBehaviorAction' is a specialization of 'CallAction'.
+The class 'Actions_CompleteActions_QualifierValue' is a specialization of 'Element'.
+The class 'Actions_CompleteActions_ReadLinkObjectEndAction' is a specialization of 'Action'.
+The class 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction' is a specialization of 'Action'.
+The class 'Actions_CompleteActions_CreateLinkObjectAction' is a specialization of 'CreateLinkAction'.
+The class 'Actions_CompleteActions_ReduceAction' is a specialization of 'Action'.
+The class 'Actions_StructuredActions_VariableAction' is a specialization of 'Action'.
+The class 'Actions_StructuredActions_ReadVariableAction' is a specialization of 'VariableAction'.
+The class 'Actions_StructuredActions_WriteVariableAction' is a specialization of 'VariableAction'.
+The class 'Actions_StructuredActions_AddVariableValueAction' is a specialization of 'WriteVariableAction'.
+The class 'Actions_StructuredActions_RemoveVariableValueAction' is a specialization of 'WriteVariableAction'.
+The class 'Actions_StructuredActions_ClearVariableAction' is a specialization of 'VariableAction'.
+The class 'Actions_StructuredActions_RaiseExceptionAction' is a specialization of 'Action'.
+The class 'Actions_StructuredActions_ActionInputPin' is a specialization of 'InputPin'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Actions_BasicActions_Action' and 'Classifier'. From 'Actions_BasicActions_Action', the role 'Actions_BasicActions_Action' has cardinality 0..*, and from 'Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'Actions_BasicActions_Action' and 'InputPin'. From 'Actions_BasicActions_Action', the role 'Actions_BasicActions_Action2' has cardinality 0..*, and from 'InputPin', the role 'InputPin' has cardinality 0..*.
+An association connects 'Actions_BasicActions_Action' and 'OutputPin'. From 'Actions_BasicActions_Action', the role 'Actions_BasicActions_Action4' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_BasicActions_OpaqueAction'. From 'InputPin', the role 'InputPin6' has cardinality 0..*, and from 'Actions_BasicActions_OpaqueAction', the role 'Actions_BasicActions_OpaqueAction' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_BasicActions_OpaqueAction'. From 'OutputPin', the role 'OutputPin9' has cardinality 0..*, and from 'Actions_BasicActions_OpaqueAction', the role 'Actions_BasicActions_OpaqueAction8' has cardinality 0..*.
+An association connects 'Actions_BasicActions_ValuePin' and 'ValueSpecification'. From 'Actions_BasicActions_ValuePin', the role 'Actions_BasicActions_ValuePin' has cardinality 0..*, and from 'ValueSpecification', the role 'ValueSpecification' has cardinality 0..*.
+An association connects 'Actions_BasicActions_InvocationAction' and 'InputPin'. From 'Actions_BasicActions_InvocationAction', the role 'Actions_BasicActions_InvocationAction' has cardinality 0..*, and from 'InputPin', the role 'InputPin12' has cardinality 0..*.
+An association connects 'Actions_BasicActions_CallAction' and 'OutputPin'. From 'Actions_BasicActions_CallAction', the role 'Actions_BasicActions_CallAction' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin14' has cardinality 0..*.
+An association connects 'Actions_BasicActions_CallBehaviorAction' and 'Behavior'. From 'Actions_BasicActions_CallBehaviorAction', the role 'Actions_BasicActions_CallBehaviorAction' has cardinality 0..*, and from 'Behavior', the role 'Behavior' has cardinality 0..*.
+An association connects 'Operation' and 'Actions_BasicActions_CallOperationAction'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'Actions_BasicActions_CallOperationAction', the role 'Actions_BasicActions_CallOperationAction' has cardinality 0..*.
+An association connects 'Actions_BasicActions_CallOperationAction' and 'InputPin'. From 'Actions_BasicActions_CallOperationAction', the role 'Actions_BasicActions_CallOperationAction18' has cardinality 0..*, and from 'InputPin', the role 'InputPin19' has cardinality 0..*.
+An association connects 'Actions_BasicActions_SendSignalAction' and 'InputPin'. From 'Actions_BasicActions_SendSignalAction', the role 'Actions_BasicActions_SendSignalAction' has cardinality 0..*, and from 'InputPin', the role 'InputPin21' has cardinality 0..*.
+An association connects 'Actions_BasicActions_SendSignalAction' and 'Signal'. From 'Actions_BasicActions_SendSignalAction', the role 'Actions_BasicActions_SendSignalAction23' has cardinality 0..*, and from 'Signal', the role 'Signal' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_BroadcastSignalAction' and 'Signal'. From 'Actions_IntermediateActions_BroadcastSignalAction', the role 'Actions_IntermediateActions_BroadcastSignalAction' has cardinality 0..*, and from 'Signal', the role 'Signal25' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_IntermediateActions_SendObjectAction'. From 'InputPin', the role 'InputPin27' has cardinality 0..*, and from 'Actions_IntermediateActions_SendObjectAction', the role 'Actions_IntermediateActions_SendObjectAction' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_SendObjectAction' and 'InputPin'. From 'Actions_IntermediateActions_SendObjectAction', the role 'Actions_IntermediateActions_SendObjectAction29' has cardinality 0..*, and from 'InputPin', the role 'InputPin30' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_CreateObjectAction' and 'Classifier'. From 'Actions_IntermediateActions_CreateObjectAction', the role 'Actions_IntermediateActions_CreateObjectAction' has cardinality 0..*, and from 'Classifier', the role 'Classifier32' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_CreateObjectAction' and 'OutputPin'. From 'Actions_IntermediateActions_CreateObjectAction', the role 'Actions_IntermediateActions_CreateObjectAction34' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin35' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_IntermediateActions_DestroyObjectAction'. From 'InputPin', the role 'InputPin37' has cardinality 0..*, and from 'Actions_IntermediateActions_DestroyObjectAction', the role 'Actions_IntermediateActions_DestroyObjectAction' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_IntermediateActions_TestIdentityAction'. From 'OutputPin', the role 'OutputPin39' has cardinality 0..*, and from 'Actions_IntermediateActions_TestIdentityAction', the role 'Actions_IntermediateActions_TestIdentityAction' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_TestIdentityAction' and 'InputPin'. From 'Actions_IntermediateActions_TestIdentityAction', the role 'Actions_IntermediateActions_TestIdentityAction41' has cardinality 0..*, and from 'InputPin', the role 'InputPin42' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_IntermediateActions_TestIdentityAction'. From 'InputPin', the role 'InputPin45' has cardinality 0..*, and from 'Actions_IntermediateActions_TestIdentityAction', the role 'Actions_IntermediateActions_TestIdentityAction44' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_IntermediateActions_ReadSelfAction'. From 'OutputPin', the role 'OutputPin47' has cardinality 0..*, and from 'Actions_IntermediateActions_ReadSelfAction', the role 'Actions_IntermediateActions_ReadSelfAction' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_ValueSpecificationAction' and 'OutputPin'. From 'Actions_IntermediateActions_ValueSpecificationAction', the role 'Actions_IntermediateActions_ValueSpecificationAction' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin49' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_ValueSpecificationAction' and 'ValueSpecification'. From 'Actions_IntermediateActions_ValueSpecificationAction', the role 'Actions_IntermediateActions_ValueSpecificationAction51' has cardinality 0..*, and from 'ValueSpecification', the role 'ValueSpecification52' has cardinality 0..*.
+An association connects 'StructuralFeature' and 'Actions_IntermediateActions_StructuralFeatureAction'. From 'StructuralFeature', the role 'StructuralFeature' has cardinality 0..*, and from 'Actions_IntermediateActions_StructuralFeatureAction', the role 'Actions_IntermediateActions_StructuralFeatureAction' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_StructuralFeatureAction' and 'InputPin'. From 'Actions_IntermediateActions_StructuralFeatureAction', the role 'Actions_IntermediateActions_StructuralFeatureAction55' has cardinality 0..*, and from 'InputPin', the role 'InputPin56' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_IntermediateActions_ReadStructuralFeatureAction'. From 'OutputPin', the role 'OutputPin58' has cardinality 0..*, and from 'Actions_IntermediateActions_ReadStructuralFeatureAction', the role 'Actions_IntermediateActions_ReadStructuralFeatureAction' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_WriteStructuralFeatureAction' and 'InputPin'. From 'Actions_IntermediateActions_WriteStructuralFeatureAction', the role 'Actions_IntermediateActions_WriteStructuralFeatureAction' has cardinality 0..*, and from 'InputPin', the role 'InputPin60' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_IntermediateActions_WriteStructuralFeatureAction'. From 'OutputPin', the role 'OutputPin63' has cardinality 0..*, and from 'Actions_IntermediateActions_WriteStructuralFeatureAction', the role 'Actions_IntermediateActions_WriteStructuralFeatureAction62' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_IntermediateActions_AddStructuralFeatureValueAction'. From 'InputPin', the role 'InputPin65' has cardinality 0..*, and from 'Actions_IntermediateActions_AddStructuralFeatureValueAction', the role 'Actions_IntermediateActions_AddStructuralFeatureValueAction' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_RemoveStructuralFeatureValueAction' and 'InputPin'. From 'Actions_IntermediateActions_RemoveStructuralFeatureValueAction', the role 'Actions_IntermediateActions_RemoveStructuralFeatureValueAction' has cardinality 0..*, and from 'InputPin', the role 'InputPin67' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_IntermediateActions_ClearStructuralFeatureAction'. From 'OutputPin', the role 'OutputPin69' has cardinality 0..*, and from 'Actions_IntermediateActions_ClearStructuralFeatureAction', the role 'Actions_IntermediateActions_ClearStructuralFeatureAction' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_IntermediateActions_LinkAction'. From 'InputPin', the role 'InputPin71' has cardinality 0..*, and from 'Actions_IntermediateActions_LinkAction', the role 'Actions_IntermediateActions_LinkAction' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_LinkAction' and 'LinkEndData'. From 'Actions_IntermediateActions_LinkAction', the role 'Actions_IntermediateActions_LinkAction73' has cardinality 0..*, and from 'LinkEndData', the role 'LinkEndData' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_LinkEndData' and 'InputPin'. From 'Actions_IntermediateActions_LinkEndData', the role 'Actions_IntermediateActions_LinkEndData' has cardinality 0..*, and from 'InputPin', the role 'InputPin75' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_LinkEndData' and 'Property'. From 'Actions_IntermediateActions_LinkEndData', the role 'Actions_IntermediateActions_LinkEndData77' has cardinality 0..*, and from 'Property', the role 'Property' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_LinkEndData' and 'QualifierValue'. From 'Actions_IntermediateActions_LinkEndData', the role 'Actions_IntermediateActions_LinkEndData79' has cardinality 0..*, and from 'QualifierValue', the role 'QualifierValue' has cardinality 0..*.
+An association connects 'Actions_IntermediateActions_ReadLinkAction' and 'OutputPin'. From 'Actions_IntermediateActions_ReadLinkAction', the role 'Actions_IntermediateActions_ReadLinkAction' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin81' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_IntermediateActions_LinkEndCreationData'. From 'InputPin', the role 'InputPin83' has cardinality 0..*, and from 'Actions_IntermediateActions_LinkEndCreationData', the role 'Actions_IntermediateActions_LinkEndCreationData' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_IntermediateActions_LinkEndDestructionData'. From 'InputPin', the role 'InputPin85' has cardinality 0..*, and from 'Actions_IntermediateActions_LinkEndDestructionData', the role 'Actions_IntermediateActions_LinkEndDestructionData' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_ReplyAction' and 'InputPin'. From 'Actions_CompleteActions_ReplyAction', the role 'Actions_CompleteActions_ReplyAction' has cardinality 0..*, and from 'InputPin', the role 'InputPin87' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_CompleteActions_ReplyAction'. From 'InputPin', the role 'InputPin90' has cardinality 0..*, and from 'Actions_CompleteActions_ReplyAction', the role 'Actions_CompleteActions_ReplyAction89' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_ReplyAction' and 'Trigger'. From 'Actions_CompleteActions_ReplyAction', the role 'Actions_CompleteActions_ReplyAction92' has cardinality 0..*, and from 'Trigger', the role 'Trigger' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_CompleteActions_UnmarshallAction'. From 'InputPin', the role 'InputPin94' has cardinality 0..*, and from 'Actions_CompleteActions_UnmarshallAction', the role 'Actions_CompleteActions_UnmarshallAction' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_UnmarshallAction' and 'Classifier'. From 'Actions_CompleteActions_UnmarshallAction', the role 'Actions_CompleteActions_UnmarshallAction96' has cardinality 0..*, and from 'Classifier', the role 'Classifier97' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_CompleteActions_UnmarshallAction'. From 'OutputPin', the role 'OutputPin100' has cardinality 0..*, and from 'Actions_CompleteActions_UnmarshallAction', the role 'Actions_CompleteActions_UnmarshallAction99' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_CompleteActions_AcceptEventAction'. From 'OutputPin', the role 'OutputPin102' has cardinality 0..*, and from 'Actions_CompleteActions_AcceptEventAction', the role 'Actions_CompleteActions_AcceptEventAction' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_AcceptEventAction' and 'Trigger'. From 'Actions_CompleteActions_AcceptEventAction', the role 'Actions_CompleteActions_AcceptEventAction104' has cardinality 0..*, and from 'Trigger', the role 'Trigger105' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_AcceptCallAction' and 'OutputPin'. From 'Actions_CompleteActions_AcceptCallAction', the role 'Actions_CompleteActions_AcceptCallAction' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin107' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_CompleteActions_ReadExtendAction'. From 'OutputPin', the role 'OutputPin109' has cardinality 0..*, and from 'Actions_CompleteActions_ReadExtendAction', the role 'Actions_CompleteActions_ReadExtendAction' has cardinality 0..*.
+An association connects 'Classifier' and 'Actions_CompleteActions_ReadExtendAction'. From 'Classifier', the role 'Classifier112' has cardinality 0..*, and from 'Actions_CompleteActions_ReadExtendAction', the role 'Actions_CompleteActions_ReadExtendAction111' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_CompleteActions_ReclassifyObjectAction'. From 'InputPin', the role 'InputPin114' has cardinality 0..*, and from 'Actions_CompleteActions_ReclassifyObjectAction', the role 'Actions_CompleteActions_ReclassifyObjectAction' has cardinality 0..*.
+An association connects 'Classifier' and 'Actions_CompleteActions_ReclassifyObjectAction'. From 'Classifier', the role 'Classifier117' has cardinality 0..*, and from 'Actions_CompleteActions_ReclassifyObjectAction', the role 'Actions_CompleteActions_ReclassifyObjectAction116' has cardinality 0..*.
+An association connects 'Classifier' and 'Actions_CompleteActions_ReclassifyObjectAction'. From 'Classifier', the role 'Classifier120' has cardinality 0..*, and from 'Actions_CompleteActions_ReclassifyObjectAction', the role 'Actions_CompleteActions_ReclassifyObjectAction119' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_CompleteActions_ReadlsClassifiedObjectAction'. From 'OutputPin', the role 'OutputPin122' has cardinality 0..*, and from 'Actions_CompleteActions_ReadlsClassifiedObjectAction', the role 'Actions_CompleteActions_ReadlsClassifiedObjectAction' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_CompleteActions_ReadlsClassifiedObjectAction'. From 'InputPin', the role 'InputPin125' has cardinality 0..*, and from 'Actions_CompleteActions_ReadlsClassifiedObjectAction', the role 'Actions_CompleteActions_ReadlsClassifiedObjectAction124' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_CompleteActions_StartClassifierBehaviorAction'. From 'InputPin', the role 'InputPin127' has cardinality 0..*, and from 'Actions_CompleteActions_StartClassifierBehaviorAction', the role 'Actions_CompleteActions_StartClassifierBehaviorAction' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_StartObjectBehaviorAction' and 'InputPin'. From 'Actions_CompleteActions_StartObjectBehaviorAction', the role 'Actions_CompleteActions_StartObjectBehaviorAction' has cardinality 0..*, and from 'InputPin', the role 'InputPin129' has cardinality 0..*.
+An association connects 'Property' and 'Actions_CompleteActions_QualifierValue'. From 'Property', the role 'Property131' has cardinality 0..*, and from 'Actions_CompleteActions_QualifierValue', the role 'Actions_CompleteActions_QualifierValue' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_CompleteActions_QualifierValue'. From 'InputPin', the role 'InputPin134' has cardinality 0..*, and from 'Actions_CompleteActions_QualifierValue', the role 'Actions_CompleteActions_QualifierValue133' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_ReadLinkObjectEndAction' and 'Property'. From 'Actions_CompleteActions_ReadLinkObjectEndAction', the role 'Actions_CompleteActions_ReadLinkObjectEndAction' has cardinality 0..*, and from 'Property', the role 'Property136' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_ReadLinkObjectEndAction' and 'InputPin'. From 'Actions_CompleteActions_ReadLinkObjectEndAction', the role 'Actions_CompleteActions_ReadLinkObjectEndAction138' has cardinality 0..*, and from 'InputPin', the role 'InputPin139' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_CompleteActions_ReadLinkObjectEndAction'. From 'OutputPin', the role 'OutputPin142' has cardinality 0..*, and from 'Actions_CompleteActions_ReadLinkObjectEndAction', the role 'Actions_CompleteActions_ReadLinkObjectEndAction141' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction' and 'InputPin'. From 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction', the role 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction' has cardinality 0..*, and from 'InputPin', the role 'InputPin144' has cardinality 0..*.
+An association connects 'OutputPin' and 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction'. From 'OutputPin', the role 'OutputPin147' has cardinality 0..*, and from 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction', the role 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction146' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction' and 'Property'. From 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction', the role 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction149' has cardinality 0..*, and from 'Property', the role 'Property150' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_CreateLinkObjectAction' and 'OutputPin'. From 'Actions_CompleteActions_CreateLinkObjectAction', the role 'Actions_CompleteActions_CreateLinkObjectAction' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin152' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_ReduceAction' and 'OutputPin'. From 'Actions_CompleteActions_ReduceAction', the role 'Actions_CompleteActions_ReduceAction' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin154' has cardinality 0..*.
+An association connects 'Actions_CompleteActions_ReduceAction' and 'InputPin'. From 'Actions_CompleteActions_ReduceAction', the role 'Actions_CompleteActions_ReduceAction156' has cardinality 0..*, and from 'InputPin', the role 'InputPin157' has cardinality 0..*.
+An association connects 'Behavior' and 'Actions_CompleteActions_ReduceAction'. From 'Behavior', the role 'Behavior160' has cardinality 0..*, and from 'Actions_CompleteActions_ReduceAction', the role 'Actions_CompleteActions_ReduceAction159' has cardinality 0..*.
+An association connects 'Variable' and 'Actions_StructuredActions_VariableAction'. From 'Variable', the role 'Variable' has cardinality 0..*, and from 'Actions_StructuredActions_VariableAction', the role 'Actions_StructuredActions_VariableAction' has cardinality 0..*.
+An association connects 'Actions_StructuredActions_ReadVariableAction' and 'OutputPin'. From 'Actions_StructuredActions_ReadVariableAction', the role 'Actions_StructuredActions_ReadVariableAction' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin163' has cardinality 0..*.
+An association connects 'Actions_StructuredActions_WriteVariableAction' and 'InputPin'. From 'Actions_StructuredActions_WriteVariableAction', the role 'Actions_StructuredActions_WriteVariableAction' has cardinality 0..*, and from 'InputPin', the role 'InputPin165' has cardinality 0..*.
+An association connects 'Actions_StructuredActions_AddVariableValueAction' and 'InputPin'. From 'Actions_StructuredActions_AddVariableValueAction', the role 'Actions_StructuredActions_AddVariableValueAction' has cardinality 0..*, and from 'InputPin', the role 'InputPin167' has cardinality 0..*.
+An association connects 'InputPin' and 'Actions_StructuredActions_RemoveVariableValueAction'. From 'InputPin', the role 'InputPin169' has cardinality 0..*, and from 'Actions_StructuredActions_RemoveVariableValueAction', the role 'Actions_StructuredActions_RemoveVariableValueAction' has cardinality 0..*.
+An association connects 'Actions_StructuredActions_RaiseExceptionAction' and 'InputPin'. From 'Actions_StructuredActions_RaiseExceptionAction', the role 'Actions_StructuredActions_RaiseExceptionAction' has cardinality 0..*, and from 'InputPin', the role 'InputPin171' has cardinality 0..*.
+An association connects 'Actions_StructuredActions_ActionInputPin' and 'Action'. From 'Actions_StructuredActions_ActionInputPin', the role 'Actions_StructuredActions_ActionInputPin' has cardinality 0..*, and from 'Action', the role 'Action' has cardinality 0..*.

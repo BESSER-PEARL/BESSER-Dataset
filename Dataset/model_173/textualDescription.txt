@@ -1,0 +1,401 @@
+The domain model 'highlevelnets' describes the core structural elements and their relationships within the system.
+
+The model defines 89 main class(es).
+
+'highlevelnets_npnets_Synchronization' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'kind', which is of type str.
+
+'highlevelnets_tokentypes_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'common_INetElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NPnetMarked' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokentypes_TokenTypeElementNet' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'Synchronization' represents an important domain concept.
+It does not declare any attributes.
+
+'TransitionSynchronized' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokentypes_ElementNetMarked' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_npnets_NPnetMarked' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_npndiagrams_NPNSymbolTransitionSN' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_hlpn_HighLevelPetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_common_INetElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comment', which is of type str.
+
+'highlevelnets_hlpn_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_hlpn_ContextVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_npndiagrams_NPNDiagramNetSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenType' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenTypeElementNet' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokenexpressions_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ElementNetMarked' represents an important domain concept.
+It does not declare any attributes.
+
+'NPNSymbolTransitionSN' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokentypes_TokenType' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_hlpn_Node' represents an important domain concept.
+It has the following attributes: 'secondTimeConstraint', which is of type int; 'firstTimeConstraint', which is of type int.
+
+'highlevelnets_npndiagrams_NPNSymbolPlaceSN' represents an important domain concept.
+It does not declare any attributes.
+
+'NPNSymbolArcTPSN' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokenexpressions_TokenVariadicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_npndiagrams_NPNDiagramNPNMarked' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_npnets_TransitionSynchronized' represents an important domain concept.
+It does not declare any attributes.
+
+'IEntityIdentifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenWeight' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokenexpressions_TokenWeight' represents an important domain concept.
+It has one attribute: 'weight', which is of type str.
+
+'highlevelnets_npndiagrams_NPNSymbolNodeSN' represents an important domain concept.
+It has one attribute: 'constraints', which is of type str.
+
+'highlevelnets_tokenexpressions_TokenMultisetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokenexpressions_TokenExpressionBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_marking_PlaceMarking' represents an important domain concept.
+It does not declare any attributes.
+
+'NPNSymbolArcSN' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenMultiSet' represents an important domain concept.
+It does not declare any attributes.
+
+'PlaceMarking' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_npnets_NPnet' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_marking_HighLevelPetriNetMarked' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_npndiagrams_NPNSymbolArcSN' represents an important domain concept.
+It has one attribute: 'bendpoints', which is of type str.
+
+'Token' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokentypes_TokenTypeAtomic' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokenexpressions_Monom' represents an important domain concept.
+It has one attribute: 'power', which is of type str.
+
+'highlevelnets_hlpn_ArcTP' represents an important domain concept.
+It has the following attributes: 'firstTimeConstraint', which is of type int; 'secondTimeConstraint', which is of type int.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'NPnet' represents an important domain concept.
+It does not declare any attributes.
+
+'NPNSymbolTokenSN' represents an important domain concept.
+It does not declare any attributes.
+
+'NPNSymbolArcPTSN' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokenexpressions_TokenBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokentypes_TokenAtomic' represents an important domain concept.
+It does not declare any attributes.
+
+'INetElement' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_hlpn_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_hlpn_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenVariadicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_marking_Marking' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_npndiagrams_NPNSymbolTokenSN' represents an important domain concept.
+It has one attribute: 'constraints', which is of type str.
+
+'TokenAtomic' represents an important domain concept.
+It does not declare any attributes.
+
+'Marking' represents an important domain concept.
+It does not declare any attributes.
+
+'hlpn_ContextVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_npndiagrams_NPNSymbolArcTPSN' represents an important domain concept.
+It does not declare any attributes.
+
+'MonomConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'Monom' represents an important domain concept.
+It does not declare any attributes.
+
+'Atom' represents an important domain concept.
+It does not declare any attributes.
+
+'HighLevelPetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokenexpressions_NetConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokenexpressions_MonomConstant' represents an important domain concept.
+It has one attribute: 'power', which is of type str.
+
+'Place' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenNet' represents an important domain concept.
+It does not declare any attributes.
+
+'NPNSymbolNodeSN' represents an important domain concept.
+It does not declare any attributes.
+
+'NPNSymbolPlaceSN' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokentypes_TokenNet' represents an important domain concept.
+It does not declare any attributes.
+
+'NPNDiagramNetSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokentypes_Atom' represents an important domain concept.
+It does not declare any attributes.
+
+'NetConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_hlpn_ArcPT' represents an important domain concept.
+It does not declare any attributes.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_common_IEntityIdentifiable' represents an important domain concept.
+It has one attribute: 'uuid', which is of type str.
+
+'highlevelnets_tokenexpressions_TokenMultiSet' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_tokentypes_TokenAttribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str; 'type', which is of type str.
+
+'ArcTP' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'hlpn_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'TokenTypeAtomic' represents an important domain concept.
+It does not declare any attributes.
+
+'ArcPT' represents an important domain concept.
+It does not declare any attributes.
+
+'highlevelnets_npndiagrams_NPNSymbolArcPTSN' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ESynchronizationKind' defines the following possible values: 'VerticalSynchronization', 'HorizontalSynchronization'.
+
+The model also captures inheritance relationships between classes.
+The class 'highlevelnets_marking_Marking' is a specialization of 'INetElement'.
+The class 'highlevelnets_marking_PlaceMarking' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_marking_HighLevelPetriNetMarked' is a specialization of 'INetElement'.
+The class 'highlevelnets_tokentypes_TokenType' is a specialization of 'INetElement'.
+The class 'highlevelnets_tokentypes_TokenTypeAtomic' is a specialization of 'TokenType'.
+The class 'highlevelnets_tokentypes_TokenTypeElementNet' is a specialization of 'TokenType'.
+The class 'highlevelnets_tokentypes_Token' is a specialization of 'INetElement'.
+The class 'highlevelnets_tokentypes_TokenAtomic' is a specialization of 'Token'.
+The class 'highlevelnets_tokentypes_TokenNet' is a specialization of 'Token'.
+The class 'highlevelnets_tokentypes_TokenAttribute' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_tokentypes_ElementNetMarked' is a specialization of 'INetElement'.
+The class 'highlevelnets_tokentypes_Atom' is a specialization of 'INetElement'.
+The class 'highlevelnets_tokenexpressions_TokenWeight' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_tokenexpressions_TokenMultisetExpression' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_tokenexpressions_TokenMultiSet' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_tokenexpressions_Variable' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_tokenexpressions_TokenVariadicExpression' is a specialization of 'INetElement'.
+The class 'highlevelnets_tokenexpressions_Monom' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_tokenexpressions_TokenExpressionBinding' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_tokenexpressions_TokenBinding' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_tokenexpressions_MonomConstant' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_tokenexpressions_NetConstant' is a specialization of 'INetElement'.
+The class 'highlevelnets_hlpn_HighLevelPetriNet' is a specialization of 'common_INetElement'.
+The class 'highlevelnets_hlpn_HighLevelPetriNet' is a specialization of 'hlpn_ContextVariable'.
+The class 'highlevelnets_hlpn_Place' is a specialization of 'Node'.
+The class 'highlevelnets_hlpn_Transition' is a specialization of 'hlpn_ContextVariable'.
+The class 'highlevelnets_hlpn_Transition' is a specialization of 'hlpn_Node'.
+The class 'highlevelnets_hlpn_ArcPT' is a specialization of 'Arc'.
+The class 'highlevelnets_hlpn_ArcTP' is a specialization of 'Arc'.
+The class 'highlevelnets_hlpn_ContextVariable' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_hlpn_Node' is a specialization of 'INetElement'.
+The class 'highlevelnets_hlpn_Arc' is a specialization of 'INetElement'.
+The class 'highlevelnets_npnets_NPnet' is a specialization of 'INetElement'.
+The class 'highlevelnets_npnets_NPnetMarked' is a specialization of 'INetElement'.
+The class 'highlevelnets_npnets_Synchronization' is a specialization of 'INetElement'.
+The class 'highlevelnets_npnets_TransitionSynchronized' is a specialization of 'Transition'.
+The class 'highlevelnets_common_INetElement' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_npndiagrams_NPNDiagramNPNMarked' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_npndiagrams_NPNDiagramNetSystem' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_npndiagrams_NPNSymbolPlaceSN' is a specialization of 'NPNSymbolNodeSN'.
+The class 'highlevelnets_npndiagrams_NPNSymbolTransitionSN' is a specialization of 'NPNSymbolNodeSN'.
+The class 'highlevelnets_npndiagrams_NPNSymbolArcPTSN' is a specialization of 'NPNSymbolArcSN'.
+The class 'highlevelnets_npndiagrams_NPNSymbolArcTPSN' is a specialization of 'NPNSymbolArcSN'.
+The class 'highlevelnets_npndiagrams_NPNSymbolNodeSN' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_npndiagrams_NPNSymbolArcSN' is a specialization of 'IEntityIdentifiable'.
+The class 'highlevelnets_npndiagrams_NPNSymbolTokenSN' is a specialization of 'IEntityIdentifiable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'highlevelnets_marking_Marking' and 'PlaceMarking'. From 'highlevelnets_marking_Marking', the role 'highlevelnets_marking_Marking' has cardinality 0..*, and from 'PlaceMarking', the role 'PlaceMarking' has cardinality 0..*.
+An association connects 'highlevelnets_marking_PlaceMarking' and 'Place'. From 'highlevelnets_marking_PlaceMarking', the role 'highlevelnets_marking_PlaceMarking' has cardinality 0..*, and from 'Place', the role 'Place' has cardinality 0..*.
+An association connects 'TokenMultiSet' and 'highlevelnets_marking_PlaceMarking'. From 'TokenMultiSet', the role 'TokenMultiSet' has cardinality 0..*, and from 'highlevelnets_marking_PlaceMarking', the role 'highlevelnets_marking_PlaceMarking3' has cardinality 0..*.
+An association connects 'highlevelnets_marking_HighLevelPetriNetMarked' and 'HighLevelPetriNet'. From 'highlevelnets_marking_HighLevelPetriNetMarked', the role 'highlevelnets_marking_HighLevelPetriNetMarked' has cardinality 0..*, and from 'HighLevelPetriNet', the role 'HighLevelPetriNet' has cardinality 0..*.
+An association connects 'Marking' and 'highlevelnets_marking_HighLevelPetriNetMarked'. From 'Marking', the role 'Marking' has cardinality 0..*, and from 'highlevelnets_marking_HighLevelPetriNetMarked', the role 'highlevelnets_marking_HighLevelPetriNetMarked6' has cardinality 0..*.
+An association connects 'highlevelnets_tokentypes_TokenTypeAtomic' and 'Atom'. From 'highlevelnets_tokentypes_TokenTypeAtomic', the role 'highlevelnets_tokentypes_TokenTypeAtomic' has cardinality 0..*, and from 'Atom', the role 'Atom' has cardinality 0..*.
+An association connects 'TokenAtomic' and 'highlevelnets_tokentypes_TokenTypeAtomic'. From 'TokenAtomic', the role 'tokentypes' has cardinality 0..*, and from 'highlevelnets_tokentypes_TokenTypeAtomic', the role 'TokenAtomic' has cardinality 0..*.
+An association connects 'ElementNetMarked' and 'highlevelnets_tokentypes_TokenTypeElementNet'. From 'ElementNetMarked', the role 'tokentypes10' has cardinality 0..*, and from 'highlevelnets_tokentypes_TokenTypeElementNet', the role 'ElementNetMarked' has cardinality 0..*.
+An association connects 'highlevelnets_tokentypes_TokenTypeElementNet' and 'HighLevelPetriNet'. From 'highlevelnets_tokentypes_TokenTypeElementNet', the role 'highlevelnets_tokentypes_TokenTypeElementNet' has cardinality 0..*, and from 'HighLevelPetriNet', the role 'HighLevelPetriNet12' has cardinality 0..*.
+An association connects 'highlevelnets_tokentypes_TokenTypeElementNet' and 'TokenNet'. From 'highlevelnets_tokentypes_TokenTypeElementNet', the role 'TokenNet' has cardinality 0..*, and from 'TokenNet', the role 'tokentypes14' has cardinality 0..*.
+An association connects 'TokenAttribute' and 'highlevelnets_tokentypes_Token'. From 'TokenAttribute', the role 'TokenAttribute' has cardinality 0..*, and from 'highlevelnets_tokentypes_Token', the role 'highlevelnets_tokentypes_Token' has cardinality 0..*.
+An association connects 'TokenTypeAtomic' and 'highlevelnets_tokentypes_TokenAtomic'. From 'TokenTypeAtomic', the role 'tokentypes17' has cardinality 0..*, and from 'highlevelnets_tokentypes_TokenAtomic', the role 'TokenTypeAtomic' has cardinality 0..*.
+An association connects 'Atom' and 'highlevelnets_tokentypes_TokenAtomic'. From 'Atom', the role 'Atom19' has cardinality 0..*, and from 'highlevelnets_tokentypes_TokenAtomic', the role 'highlevelnets_tokentypes_TokenAtomic' has cardinality 0..*.
+An association connects 'TokenTypeElementNet' and 'highlevelnets_tokentypes_TokenNet'. From 'TokenTypeElementNet', the role 'tokentypes21' has cardinality 0..*, and from 'highlevelnets_tokentypes_TokenNet', the role 'TokenTypeElementNet' has cardinality 0..*.
+An association connects 'ElementNetMarked' and 'highlevelnets_tokentypes_TokenNet'. From 'ElementNetMarked', the role 'ElementNetMarked23' has cardinality 0..*, and from 'highlevelnets_tokentypes_TokenNet', the role 'highlevelnets_tokentypes_TokenNet' has cardinality 0..*.
+An association connects 'TokenTypeElementNet' and 'highlevelnets_tokentypes_ElementNetMarked'. From 'TokenTypeElementNet', the role 'tokentypes26' has cardinality 0..*, and from 'highlevelnets_tokentypes_ElementNetMarked', the role 'TokenTypeElementNet25' has cardinality 0..*.
+An association connects 'highlevelnets_tokentypes_ElementNetMarked' and 'Marking'. From 'highlevelnets_tokentypes_ElementNetMarked', the role 'highlevelnets_tokentypes_ElementNetMarked' has cardinality 0..*, and from 'Marking', the role 'Marking28' has cardinality 0..*.
+An association connects 'highlevelnets_tokenexpressions_TokenWeight' and 'Token'. From 'highlevelnets_tokenexpressions_TokenWeight', the role 'highlevelnets_tokenexpressions_TokenWeight' has cardinality 0..*, and from 'Token', the role 'Token' has cardinality 0..*.
+An association connects 'highlevelnets_tokenexpressions_TokenMultisetExpression' and 'TokenType'. From 'highlevelnets_tokenexpressions_TokenMultisetExpression', the role 'highlevelnets_tokenexpressions_TokenMultisetExpression' has cardinality 0..*, and from 'TokenType', the role 'TokenType' has cardinality 0..*.
+An association connects 'TokenMultiSet' and 'highlevelnets_tokenexpressions_TokenMultisetExpression'. From 'TokenMultiSet', the role 'TokenMultiSet33' has cardinality 0..*, and from 'highlevelnets_tokenexpressions_TokenMultisetExpression', the role 'highlevelnets_tokenexpressions_TokenMultisetExpression32' has cardinality 0..*.
+An association connects 'highlevelnets_tokenexpressions_TokenMultiSet' and 'TokenWeight'. From 'highlevelnets_tokenexpressions_TokenMultiSet', the role 'highlevelnets_tokenexpressions_TokenMultiSet' has cardinality 0..*, and from 'TokenWeight', the role 'TokenWeight' has cardinality 0..*.
+An association connects 'highlevelnets_tokenexpressions_TokenMultiSet' and 'TokenType'. From 'highlevelnets_tokenexpressions_TokenMultiSet', the role 'highlevelnets_tokenexpressions_TokenMultiSet36' has cardinality 0..*, and from 'TokenType', the role 'TokenType37' has cardinality 0..*.
+An association connects 'highlevelnets_tokenexpressions_Variable' and 'ContextVariable'. From 'highlevelnets_tokenexpressions_Variable', the role 'ContextVariable' has cardinality 0..*, and from 'ContextVariable', the role 'hlpn' has cardinality 0..*.
+An association connects 'highlevelnets_tokenexpressions_TokenVariadicExpression' and 'Monom'. From 'highlevelnets_tokenexpressions_TokenVariadicExpression', the role 'highlevelnets_tokenexpressions_TokenVariadicExpression' has cardinality 0..*, and from 'Monom', the role 'Monom' has cardinality 0..*.
+An association connects 'highlevelnets_tokenexpressions_TokenVariadicExpression' and 'MonomConstant'. From 'highlevelnets_tokenexpressions_TokenVariadicExpression', the role 'highlevelnets_tokenexpressions_TokenVariadicExpression41' has cardinality 0..*, and from 'MonomConstant', the role 'MonomConstant' has cardinality 0..*.
+An association connects 'Variable' and 'highlevelnets_tokenexpressions_Monom'. From 'Variable', the role 'Variable' has cardinality 0..*, and from 'highlevelnets_tokenexpressions_Monom', the role 'highlevelnets_tokenexpressions_Monom' has cardinality 0..*.
+An association connects 'highlevelnets_tokenexpressions_TokenExpressionBinding' and 'TokenVariadicExpression'. From 'highlevelnets_tokenexpressions_TokenExpressionBinding', the role 'highlevelnets_tokenexpressions_TokenExpressionBinding' has cardinality 0..*, and from 'TokenVariadicExpression', the role 'TokenVariadicExpression' has cardinality 0..*.
+An association connects 'TokenBinding' and 'highlevelnets_tokenexpressions_TokenExpressionBinding'. From 'TokenBinding', the role 'TokenBinding' has cardinality 0..*, and from 'highlevelnets_tokenexpressions_TokenExpressionBinding', the role 'highlevelnets_tokenexpressions_TokenExpressionBinding45' has cardinality 0..*.
+An association connects 'highlevelnets_tokenexpressions_TokenBinding' and 'Variable'. From 'highlevelnets_tokenexpressions_TokenBinding', the role 'highlevelnets_tokenexpressions_TokenBinding' has cardinality 0..*, and from 'Variable', the role 'Variable47' has cardinality 0..*.
+An association connects 'Token' and 'highlevelnets_tokenexpressions_TokenBinding'. From 'Token', the role 'Token50' has cardinality 0..*, and from 'highlevelnets_tokenexpressions_TokenBinding', the role 'highlevelnets_tokenexpressions_TokenBinding49' has cardinality 0..*.
+An association connects 'highlevelnets_tokenexpressions_MonomConstant' and 'Variable'. From 'highlevelnets_tokenexpressions_MonomConstant', the role 'highlevelnets_tokenexpressions_MonomConstant' has cardinality 0..*, and from 'Variable', the role 'Variable52' has cardinality 0..*.
+An association connects 'Token' and 'highlevelnets_tokenexpressions_MonomConstant'. From 'Token', the role 'Token55' has cardinality 0..*, and from 'highlevelnets_tokenexpressions_MonomConstant', the role 'highlevelnets_tokenexpressions_MonomConstant54' has cardinality 0..*.
+An association connects 'TokenBinding' and 'highlevelnets_tokenexpressions_NetConstant'. From 'TokenBinding', the role 'TokenBinding57' has cardinality 0..*, and from 'highlevelnets_tokenexpressions_NetConstant', the role 'highlevelnets_tokenexpressions_NetConstant' has cardinality 0..*.
+An association connects 'Node' and 'highlevelnets_hlpn_HighLevelPetriNet'. From 'Node', the role 'hlpn59' has cardinality 0..*, and from 'highlevelnets_hlpn_HighLevelPetriNet', the role 'Node' has cardinality 0..*.
+An association connects 'Arc' and 'highlevelnets_hlpn_HighLevelPetriNet'. From 'Arc', the role 'hlpn61' has cardinality 0..*, and from 'highlevelnets_hlpn_HighLevelPetriNet', the role 'Arc' has cardinality 0..*.
+An association connects 'highlevelnets_hlpn_Place' and 'ArcPT'. From 'highlevelnets_hlpn_Place', the role 'ArcPT' has cardinality 0..*, and from 'ArcPT', the role 'hlpn63' has cardinality 0..*.
+An association connects 'ArcTP' and 'highlevelnets_hlpn_Place'. From 'ArcTP', the role 'hlpn65' has cardinality 0..*, and from 'highlevelnets_hlpn_Place', the role 'ArcTP' has cardinality 0..*.
+An association connects 'highlevelnets_hlpn_Place' and 'TokenType'. From 'highlevelnets_hlpn_Place', the role 'highlevelnets_hlpn_Place' has cardinality 0..*, and from 'TokenType', the role 'TokenType67' has cardinality 0..*.
+An association connects 'ArcPT' and 'highlevelnets_hlpn_Transition'. From 'ArcPT', the role 'hlpn70' has cardinality 0..*, and from 'highlevelnets_hlpn_Transition', the role 'ArcPT69' has cardinality 0..*.
+An association connects 'ArcTP' and 'highlevelnets_hlpn_Transition'. From 'ArcTP', the role 'hlpn73' has cardinality 0..*, and from 'highlevelnets_hlpn_Transition', the role 'ArcTP72' has cardinality 0..*.
+An association connects 'highlevelnets_hlpn_ArcPT' and 'Place'. From 'highlevelnets_hlpn_ArcPT', the role 'Place75' has cardinality 0..*, and from 'Place', the role 'hlpn76' has cardinality 0..*.
+An association connects 'Transition' and 'highlevelnets_hlpn_ArcPT'. From 'Transition', the role 'hlpn78' has cardinality 0..*, and from 'highlevelnets_hlpn_ArcPT', the role 'Transition' has cardinality 0..*.
+An association connects 'highlevelnets_hlpn_ArcPT' and 'TokenVariadicExpression'. From 'highlevelnets_hlpn_ArcPT', the role 'highlevelnets_hlpn_ArcPT' has cardinality 0..*, and from 'TokenVariadicExpression', the role 'TokenVariadicExpression80' has cardinality 0..*.
+An association connects 'Transition' and 'highlevelnets_hlpn_ArcTP'. From 'Transition', the role 'hlpn83' has cardinality 0..*, and from 'highlevelnets_hlpn_ArcTP', the role 'Transition82' has cardinality 0..*.
+An association connects 'highlevelnets_hlpn_ArcTP' and 'Place'. From 'highlevelnets_hlpn_ArcTP', the role 'Place85' has cardinality 0..*, and from 'Place', the role 'hlpn86' has cardinality 0..*.
+An association connects 'TokenVariadicExpression' and 'highlevelnets_hlpn_ArcTP'. From 'TokenVariadicExpression', the role 'TokenVariadicExpression88' has cardinality 0..*, and from 'highlevelnets_hlpn_ArcTP', the role 'highlevelnets_hlpn_ArcTP' has cardinality 0..*.
+An association connects 'Variable' and 'highlevelnets_hlpn_ContextVariable'. From 'Variable', the role 'tokenexpressions' has cardinality 0..*, and from 'highlevelnets_hlpn_ContextVariable', the role 'Variable90' has cardinality 0..*.
+An association connects 'highlevelnets_hlpn_Node' and 'HighLevelPetriNet'. From 'highlevelnets_hlpn_Node', the role 'HighLevelPetriNet92' has cardinality 0..*, and from 'HighLevelPetriNet', the role 'hlpn93' has cardinality 0..*.
+An association connects 'highlevelnets_hlpn_Arc' and 'HighLevelPetriNet'. From 'highlevelnets_hlpn_Arc', the role 'HighLevelPetriNet95' has cardinality 0..*, and from 'HighLevelPetriNet', the role 'hlpn96' has cardinality 0..*.
+An association connects 'HighLevelPetriNet' and 'highlevelnets_npnets_NPnet'. From 'HighLevelPetriNet', the role 'HighLevelPetriNet98' has cardinality 0..*, and from 'highlevelnets_npnets_NPnet', the role 'highlevelnets_npnets_NPnet' has cardinality 0..*.
+An association connects 'TokenTypeElementNet' and 'highlevelnets_npnets_NPnet'. From 'TokenTypeElementNet', the role 'TokenTypeElementNet101' has cardinality 0..*, and from 'highlevelnets_npnets_NPnet', the role 'highlevelnets_npnets_NPnet100' has cardinality 0..*.
+An association connects 'TokenTypeAtomic' and 'highlevelnets_npnets_NPnet'. From 'TokenTypeAtomic', the role 'TokenTypeAtomic104' has cardinality 0..*, and from 'highlevelnets_npnets_NPnet', the role 'highlevelnets_npnets_NPnet103' has cardinality 0..*.
+An association connects 'NetConstant' and 'highlevelnets_npnets_NPnet'. From 'NetConstant', the role 'NetConstant' has cardinality 0..*, and from 'highlevelnets_npnets_NPnet', the role 'highlevelnets_npnets_NPnet106' has cardinality 0..*.
+An association connects 'Synchronization' and 'highlevelnets_npnets_NPnet'. From 'Synchronization', the role 'Synchronization' has cardinality 0..*, and from 'highlevelnets_npnets_NPnet', the role 'highlevelnets_npnets_NPnet108' has cardinality 0..*.
+An association connects 'highlevelnets_npnets_NPnetMarked' and 'NPnet'. From 'highlevelnets_npnets_NPnetMarked', the role 'highlevelnets_npnets_NPnetMarked' has cardinality 0..*, and from 'NPnet', the role 'NPnet' has cardinality 0..*.
+An association connects 'highlevelnets_npnets_NPnetMarked' and 'Marking'. From 'highlevelnets_npnets_NPnetMarked', the role 'highlevelnets_npnets_NPnetMarked111' has cardinality 0..*, and from 'Marking', the role 'Marking112' has cardinality 0..*.
+An association connects 'NPNDiagramNetSystem' and 'highlevelnets_npnets_NPnetMarked'. From 'NPNDiagramNetSystem', the role 'NPNDiagramNetSystem' has cardinality 0..*, and from 'highlevelnets_npnets_NPnetMarked', the role 'highlevelnets_npnets_NPnetMarked114' has cardinality 0..*.
+An association connects 'TransitionSynchronized' and 'highlevelnets_npnets_Synchronization'. From 'TransitionSynchronized', the role 'npnets' has cardinality 0..*, and from 'highlevelnets_npnets_Synchronization', the role 'TransitionSynchronized' has cardinality 0..*.
+An association connects 'highlevelnets_npnets_TransitionSynchronized' and 'Synchronization'. From 'highlevelnets_npnets_TransitionSynchronized', the role 'Synchronization117' has cardinality 0..*, and from 'Synchronization', the role 'npnets118' has cardinality 0..*.
+An association connects 'NPNDiagramNetSystem' and 'highlevelnets_npndiagrams_NPNDiagramNPNMarked'. From 'NPNDiagramNetSystem', the role 'NPNDiagramNetSystem120' has cardinality 0..*, and from 'highlevelnets_npndiagrams_NPNDiagramNPNMarked', the role 'highlevelnets_npndiagrams_NPNDiagramNPNMarked' has cardinality 0..*.
+An association connects 'NPnetMarked' and 'highlevelnets_npndiagrams_NPNDiagramNPNMarked'. From 'NPnetMarked', the role 'NPnetMarked' has cardinality 0..*, and from 'highlevelnets_npndiagrams_NPNDiagramNPNMarked', the role 'highlevelnets_npndiagrams_NPNDiagramNPNMarked122' has cardinality 0..*.
+An association connects 'HighLevelPetriNet' and 'highlevelnets_npndiagrams_NPNDiagramNetSystem'. From 'HighLevelPetriNet', the role 'HighLevelPetriNet124' has cardinality 0..*, and from 'highlevelnets_npndiagrams_NPNDiagramNetSystem', the role 'highlevelnets_npndiagrams_NPNDiagramNetSystem' has cardinality 0..*.
+An association connects 'highlevelnets_npndiagrams_NPNDiagramNetSystem' and 'NPNSymbolNodeSN'. From 'highlevelnets_npndiagrams_NPNDiagramNetSystem', the role 'NPNSymbolNodeSN' has cardinality 0..*, and from 'NPNSymbolNodeSN', the role 'npndiagrams' has cardinality 0..*.
+An association connects 'highlevelnets_npndiagrams_NPNDiagramNetSystem' and 'NPNSymbolArcSN'. From 'highlevelnets_npndiagrams_NPNDiagramNetSystem', the role 'NPNSymbolArcSN' has cardinality 0..*, and from 'NPNSymbolArcSN', the role 'npndiagrams127' has cardinality 0..*.
+An association connects 'highlevelnets_npndiagrams_NPNSymbolPlaceSN' and 'NPNSymbolArcPTSN'. From 'highlevelnets_npndiagrams_NPNSymbolPlaceSN', the role 'NPNSymbolArcPTSN' has cardinality 0..*, and from 'NPNSymbolArcPTSN', the role 'npndiagrams129' has cardinality 0..*.
+An association connects 'highlevelnets_npndiagrams_NPNSymbolPlaceSN' and 'NPNSymbolArcTPSN'. From 'highlevelnets_npndiagrams_NPNSymbolPlaceSN', the role 'NPNSymbolArcTPSN' has cardinality 0..*, and from 'NPNSymbolArcTPSN', the role 'npndiagrams131' has cardinality 0..*.
+An association connects 'NPNSymbolTokenSN' and 'highlevelnets_npndiagrams_NPNSymbolPlaceSN'. From 'NPNSymbolTokenSN', the role 'npndiagrams133' has cardinality 0..*, and from 'highlevelnets_npndiagrams_NPNSymbolPlaceSN', the role 'NPNSymbolTokenSN' has cardinality 0..*.
+An association connects 'highlevelnets_npndiagrams_NPNSymbolTransitionSN' and 'NPNSymbolArcTPSN'. From 'highlevelnets_npndiagrams_NPNSymbolTransitionSN', the role 'NPNSymbolArcTPSN135' has cardinality 0..*, and from 'NPNSymbolArcTPSN', the role 'npndiagrams136' has cardinality 0..*.
+An association connects 'NPNSymbolArcPTSN' and 'highlevelnets_npndiagrams_NPNSymbolTransitionSN'. From 'NPNSymbolArcPTSN', the role 'npndiagrams139' has cardinality 0..*, and from 'highlevelnets_npndiagrams_NPNSymbolTransitionSN', the role 'NPNSymbolArcPTSN138' has cardinality 0..*.
+An association connects 'NPNSymbolTransitionSN' and 'highlevelnets_npndiagrams_NPNSymbolArcPTSN'. From 'NPNSymbolTransitionSN', the role 'npndiagrams141' has cardinality 0..*, and from 'highlevelnets_npndiagrams_NPNSymbolArcPTSN', the role 'NPNSymbolTransitionSN' has cardinality 0..*.
+An association connects 'NPNSymbolPlaceSN' and 'highlevelnets_npndiagrams_NPNSymbolArcPTSN'. From 'NPNSymbolPlaceSN', the role 'npndiagrams143' has cardinality 0..*, and from 'highlevelnets_npndiagrams_NPNSymbolArcPTSN', the role 'NPNSymbolPlaceSN' has cardinality 0..*.
+An association connects 'NPNSymbolPlaceSN' and 'highlevelnets_npndiagrams_NPNSymbolArcTPSN'. From 'NPNSymbolPlaceSN', the role 'npndiagrams146' has cardinality 0..*, and from 'highlevelnets_npndiagrams_NPNSymbolArcTPSN', the role 'NPNSymbolPlaceSN145' has cardinality 0..*.
+An association connects 'highlevelnets_npndiagrams_NPNSymbolArcTPSN' and 'NPNSymbolTransitionSN'. From 'highlevelnets_npndiagrams_NPNSymbolArcTPSN', the role 'NPNSymbolTransitionSN148' has cardinality 0..*, and from 'NPNSymbolTransitionSN', the role 'npndiagrams149' has cardinality 0..*.
+An association connects 'NPNDiagramNetSystem' and 'highlevelnets_npndiagrams_NPNSymbolNodeSN'. From 'NPNDiagramNetSystem', the role 'npndiagrams152' has cardinality 0..*, and from 'highlevelnets_npndiagrams_NPNSymbolNodeSN', the role 'NPNDiagramNetSystem151' has cardinality 0..*.
+An association connects 'Node' and 'highlevelnets_npndiagrams_NPNSymbolNodeSN'. From 'Node', the role 'Node154' has cardinality 0..*, and from 'highlevelnets_npndiagrams_NPNSymbolNodeSN', the role 'highlevelnets_npndiagrams_NPNSymbolNodeSN' has cardinality 0..*.
+An association connects 'highlevelnets_npndiagrams_NPNSymbolArcSN' and 'NPNDiagramNetSystem'. From 'highlevelnets_npndiagrams_NPNSymbolArcSN', the role 'NPNDiagramNetSystem156' has cardinality 0..*, and from 'NPNDiagramNetSystem', the role 'npndiagrams157' has cardinality 0..*.
+An association connects 'Arc' and 'highlevelnets_npndiagrams_NPNSymbolArcSN'. From 'Arc', the role 'Arc159' has cardinality 0..*, and from 'highlevelnets_npndiagrams_NPNSymbolArcSN', the role 'highlevelnets_npndiagrams_NPNSymbolArcSN' has cardinality 0..*.
+An association connects 'highlevelnets_npndiagrams_NPNSymbolTokenSN' and 'NPNSymbolPlaceSN'. From 'highlevelnets_npndiagrams_NPNSymbolTokenSN', the role 'NPNSymbolPlaceSN161' has cardinality 0..*, and from 'NPNSymbolPlaceSN', the role 'npndiagrams162' has cardinality 0..*.

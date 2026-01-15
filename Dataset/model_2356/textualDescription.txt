@@ -1,0 +1,36 @@
+The domain model 'ER' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'ER_Key' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ER_ForeignKey' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ER_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ER_Column' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'ER_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'ER_Table' and 'ER_Schema'. From 'ER_Table', the role 'Table' has cardinality 0..*, and from 'ER_Schema', the role 'schema' has cardinality 0..*.
+An association connects 'ER_ForeignKey' and 'ER_Schema'. From 'ER_ForeignKey', the role 'ForeignKey' has cardinality 0..*, and from 'ER_Schema', the role 'schema2' has cardinality 0..*.
+An association connects 'ER_Schema' and 'ER_Table'. From 'ER_Schema', the role 'Schema' has cardinality 0..*, and from 'ER_Table', the role 'table' has cardinality 0..*.
+An association connects 'ER_Table' and 'ER_Key'. From 'ER_Table', the role 'owner' has cardinality 0..*, and from 'ER_Key', the role 'Key' has cardinality 0..*.
+An association connects 'ER_Column' and 'ER_Table'. From 'ER_Column', the role 'Column' has cardinality 0..*, and from 'ER_Table', the role 'owner6' has cardinality 0..*.
+An association connects 'ER_ForeignKey' and 'ER_Table'. From 'ER_ForeignKey', the role 'ForeignKey9' has cardinality 0..*, and from 'ER_Table', the role 'owner8' has cardinality 0..*.
+An association connects 'ER_Key' and 'ER_Table'. From 'ER_Key', the role 'hasKey' has cardinality 0..*, and from 'ER_Table', the role 'Table11' has cardinality 0..*.
+An association connects 'ER_Column' and 'ER_Key'. From 'ER_Column', the role 'ER_Column' has cardinality 0..*, and from 'ER_Key', the role 'ER_Key' has cardinality 0..*.
+An association connects 'ER_Key' and 'ER_ForeignKey'. From 'ER_Key', the role 'ER_Key14' has cardinality 0..*, and from 'ER_ForeignKey', the role 'ER_ForeignKey' has cardinality 0..*.
+An association connects 'ER_Table' and 'ER_Column'. From 'ER_Table', the role 'Table16' has cardinality 0..*, and from 'ER_Column', the role 'column' has cardinality 0..*.
+An association connects 'ER_Column' and 'ER_Key'. From 'ER_Column', the role 'ER_Column18' has cardinality 0..*, and from 'ER_Key', the role 'ER_Key19' has cardinality 0..*.
+An association connects 'ER_Column' and 'ER_ForeignKey'. From 'ER_Column', the role 'column21' has cardinality 0..*, and from 'ER_ForeignKey', the role 'ForeignKey22' has cardinality 0..*.
+An association connects 'ER_ForeignKey' and 'ER_Schema'. From 'ER_ForeignKey', the role 'foreignKey' has cardinality 0..*, and from 'ER_Schema', the role 'Schema24' has cardinality 0..*.
+An association connects 'ER_ForeignKey' and 'ER_Table'. From 'ER_ForeignKey', the role 'hasForeignKey' has cardinality 0..*, and from 'ER_Table', the role 'Table26' has cardinality 0..*.
+An association connects 'ER_ForeignKey' and 'ER_Column'. From 'ER_ForeignKey', the role 'hasForeignKey28' has cardinality 0..*, and from 'ER_Column', the role 'Column29' has cardinality 0..*.
+An association connects 'ER_Key' and 'ER_ForeignKey'. From 'ER_Key', the role 'ER_Key32' has cardinality 0..*, and from 'ER_ForeignKey', the role 'ER_ForeignKey31' has cardinality 0..*.

@@ -1,0 +1,90 @@
+The domain model 'iTrace' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'iTrace_Code' represents an important domain concept.
+It does not declare any attributes.
+
+'iTrace_SourceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'iTrace_TraceLink' represents an important domain concept.
+It has the following attributes: 'ruleName', which is of type str; 'mode', which is of type str; 'createdOn', which is of type str; 'createdBy', which is of type str; 'comment', which is of type str; 'technicalBinding', which is of type str; 'type', which is of type str; 'fromFileName', which is of type str.
+
+'iTrace_Model' represents an important domain concept.
+It has one attribute: 'metamodel', which is of type str.
+
+'iTrace_M2MLink' represents an important domain concept.
+It does not declare any attributes.
+
+'iTrace_TraceLinkElement' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'ref', which is of type str.
+
+'iTrace_TargetElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Artefact' represents an important domain concept.
+It does not declare any attributes.
+
+'iTrace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'iTrace_Feature' represents an important domain concept.
+It has the following attributes: 'attribute', which is of type str; 'value', which is of type str.
+
+'TraceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceLinkElement' represents an important domain concept.
+It does not declare any attributes.
+
+'iTrace_Block' represents an important domain concept.
+It has the following attributes: 'endLine', which is of type int; 'endColumn', which is of type int; 'blockNumber', which is of type int; 'startLine', which is of type int; 'startColumn', which is of type int.
+
+'iTrace_iTraceModel' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'projectName', which is of type str.
+
+'iTrace_Artefact' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'abstractionLevel', which is of type str; 'aspect', which is of type str; 'path', which is of type str.
+
+'iTrace_M2TLink' represents an important domain concept.
+It does not declare any attributes.
+
+'iTrace_SpecificFeature' represents an important domain concept.
+It has one attribute: 'groupName', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AbstractionLevel' defines the following possible values: 'CODE', 'PDM', 'CIM', 'PSM', 'PIM', 'ANNOTATION', 'UNSPECIFIED'.
+The enumeration 'Mode' defines the following possible values: 'Automatic', 'Manual'.
+The enumeration 'Aspect' defines the following possible values: 'Unspecified', 'Content', 'Architecture', 'Semantics', 'Interface', 'Quality', 'Behaviour'.
+The enumeration 'Type' defines the following possible values: 'Annotation', 'Transformation'.
+The enumeration 'ModelType' defines the following possible values: 'Both', 'None', 'Source', 'Target'.
+
+The model also captures inheritance relationships between classes.
+The class 'iTrace_M2MLink' is a specialization of 'TraceLink'.
+The class 'iTrace_M2TLink' is a specialization of 'TraceLink'.
+The class 'iTrace_Code' is a specialization of 'Artefact'.
+The class 'iTrace_Model' is a specialization of 'Artefact'.
+The class 'iTrace_SourceElement' is a specialization of 'TraceLinkElement'.
+The class 'iTrace_TargetElement' is a specialization of 'TraceLinkElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iTrace_TraceLink' and 'iTrace_iTraceModel'. From 'iTrace_TraceLink', the role 'TraceLink' has cardinality 0..*, and from 'iTrace_iTraceModel', the role 'iTraceModel' has cardinality 0..*.
+An association connects 'iTrace_iTraceModel' and 'iTrace_Artefact'. From 'iTrace_iTraceModel', the role 'iTraceModel2' has cardinality 0..*, and from 'iTrace_Artefact', the role 'Artefact' has cardinality 0..*.
+An association connects 'iTrace_SpecificFeature' and 'iTrace_iTraceModel'. From 'iTrace_SpecificFeature', the role 'SpecificFeature' has cardinality 0..*, and from 'iTrace_iTraceModel', the role 'iTraceModel4' has cardinality 0..*.
+An association connects 'iTrace_TraceLink' and 'iTrace_SourceElement'. From 'iTrace_TraceLink', the role 'traceLink' has cardinality 0..*, and from 'iTrace_SourceElement', the role 'SourceElement' has cardinality 0..*.
+An association connects 'iTrace_iTraceModel' and 'iTrace_TraceLink'. From 'iTrace_iTraceModel', the role 'iTraceModel7' has cardinality 0..*, and from 'iTrace_TraceLink', the role 'traceLinks' has cardinality 0..*.
+An association connects 'iTrace_TraceLinkElement' and 'iTrace_Model'. From 'iTrace_TraceLinkElement', the role 'elements' has cardinality 0..*, and from 'iTrace_Model', the role 'Model' has cardinality 0..*.
+An association connects 'iTrace_EObject' and 'iTrace_TraceLinkElement'. From 'iTrace_EObject', the role 'iTrace_EObject' has cardinality 0..*, and from 'iTrace_TraceLinkElement', the role 'iTrace_TraceLinkElement' has cardinality 0..*.
+An association connects 'iTrace_M2MLink' and 'iTrace_TargetElement'. From 'iTrace_M2MLink', the role 'traceLink11' has cardinality 0..*, and from 'iTrace_TargetElement', the role 'TargetElement' has cardinality 0..*.
+An association connects 'iTrace_Block' and 'iTrace_M2TLink'. From 'iTrace_Block', the role 'Block' has cardinality 0..*, and from 'iTrace_M2TLink', the role 'traceLink13' has cardinality 0..*.
+An association connects 'iTrace_iTraceModel' and 'iTrace_Artefact'. From 'iTrace_iTraceModel', the role 'iTraceModel15' has cardinality 0..*, and from 'iTrace_Artefact', the role 'artefacts' has cardinality 0..*.
+An association connects 'iTrace_Code' and 'iTrace_Block'. From 'iTrace_Code', the role 'code' has cardinality 0..*, and from 'iTrace_Block', the role 'Block17' has cardinality 0..*.
+An association connects 'iTrace_Block' and 'iTrace_Code'. From 'iTrace_Block', the role 'blocks' has cardinality 0..*, and from 'iTrace_Code', the role 'Code' has cardinality 0..*.
+An association connects 'iTrace_M2TLink' and 'iTrace_Block'. From 'iTrace_M2TLink', the role 'M2TLink' has cardinality 0..*, and from 'iTrace_Block', the role 'targetBlocks' has cardinality 0..*.
+An association connects 'iTrace_Model' and 'iTrace_TraceLinkElement'. From 'iTrace_Model', the role 'model' has cardinality 0..*, and from 'iTrace_TraceLinkElement', the role 'TraceLinkElement' has cardinality 0..*.
+An association connects 'iTrace_SourceElement' and 'iTrace_TraceLink'. From 'iTrace_SourceElement', the role 'sourceElements' has cardinality 0..*, and from 'iTrace_TraceLink', the role 'TraceLink22' has cardinality 0..*.
+An association connects 'iTrace_M2MLink' and 'iTrace_TargetElement'. From 'iTrace_M2MLink', the role 'M2MLink' has cardinality 0..*, and from 'iTrace_TargetElement', the role 'targetElements' has cardinality 0..*.
+An association connects 'iTrace_SpecificFeature' and 'iTrace_Feature'. From 'iTrace_SpecificFeature', the role 'SpecificFeature25' has cardinality 0..*, and from 'iTrace_Feature', the role 'features' has cardinality 0..*.
+An association connects 'iTrace_Feature' and 'iTrace_SpecificFeature'. From 'iTrace_Feature', the role 'Feature' has cardinality 0..*, and from 'iTrace_SpecificFeature', the role 'specificFeature' has cardinality 0..*.
+An association connects 'iTrace_SpecificFeature' and 'iTrace_iTraceModel'. From 'iTrace_SpecificFeature', the role 'specificFeatures' has cardinality 0..*, and from 'iTrace_iTraceModel', the role 'iTraceModel28' has cardinality 0..*.

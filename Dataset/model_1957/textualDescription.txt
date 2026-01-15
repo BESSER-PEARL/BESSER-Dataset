@@ -1,0 +1,74 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'library_Check' represents an important domain concept.
+It has one attribute: 'isbn', which is of type str.
+
+'library_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'library_ByYear' represents an important domain concept.
+It has one attribute: 'year', which is of type str.
+
+'library_ShowUserAccount' represents an important domain concept.
+It has the following attributes: 'firstname', which is of type str; 'secondname', which is of type str.
+
+'library_Search' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Show' represents an important domain concept.
+It has one attribute: 'what', which is of type str.
+
+'library_AddUser' represents an important domain concept.
+It has the following attributes: 'secondname', which is of type str; 'age', which is of type str; 'firstname', which is of type str.
+
+'library_Author' represents an important domain concept.
+It has the following attributes: 'firstname', which is of type str; 'secondname', which is of type str.
+
+'library_Remove' represents an important domain concept.
+It has one attribute: 'isbn', which is of type str.
+
+'library_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'library_AddAuthor' represents an important domain concept.
+It has one attribute: 'isbn', which is of type str.
+
+'library_Add' represents an important domain concept.
+It has the following attributes: 'year', which is of type str; 'isbn', which is of type str; 'title', which is of type str.
+
+'library_ByAuthor' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Lend' represents an important domain concept.
+It has the following attributes: 'firstname', which is of type str; 'isbn', which is of type str; 'secondname', which is of type str.
+
+'library_Return' represents an important domain concept.
+It has the following attributes: 'secondname', which is of type str; 'isbn', which is of type str; 'firstname', which is of type str.
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'Search' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'library_Search' is a specialization of 'Command'.
+The class 'library_AddAuthor' is a specialization of 'Command'.
+The class 'library_ByYear' is a specialization of 'Search'.
+The class 'library_ByAuthor' is a specialization of 'Search'.
+The class 'library_Lend' is a specialization of 'Command'.
+The class 'library_Add' is a specialization of 'Command'.
+The class 'library_AddUser' is a specialization of 'Command'.
+The class 'library_Remove' is a specialization of 'Command'.
+The class 'library_Return' is a specialization of 'Command'.
+The class 'library_Check' is a specialization of 'Command'.
+The class 'library_Show' is a specialization of 'Command'.
+The class 'library_ShowUserAccount' is a specialization of 'Command'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Command' and 'library_Model'. From 'library_Command', the role 'library_Command' has cardinality 0..*, and from 'library_Model', the role 'library_Model' has cardinality 0..*.
+An association connects 'library_AddAuthor' and 'library_Author'. From 'library_AddAuthor', the role 'library_AddAuthor' has cardinality 0..*, and from 'library_Author', the role 'library_Author' has cardinality 0..*.
+An association connects 'library_Author' and 'library_ByAuthor'. From 'library_Author', the role 'library_Author3' has cardinality 0..*, and from 'library_ByAuthor', the role 'library_ByAuthor' has cardinality 0..*.
+An association connects 'library_Author' and 'library_Add'. From 'library_Author', the role 'library_Author5' has cardinality 0..*, and from 'library_Add', the role 'library_Add' has cardinality 0..*.

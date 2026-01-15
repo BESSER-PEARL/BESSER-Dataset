@@ -1,0 +1,90 @@
+The domain model 'miniJava' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'miniJava_Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_ClassDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Statement' represents an important domain concept.
+It has the following attributes: 'isArrayElementAssignment', which is of type bool; 'statementType', which is of type str.
+
+'miniJava_NumberValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'miniJava_Type' represents an important domain concept.
+It has one attribute: 'typeName', which is of type str.
+
+'miniJava_MainMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'miniJava_SquareBrackets' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Expr' represents an important domain concept.
+It has one attribute: 'expressionType', which is of type str.
+
+'miniJava_Point' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_VarDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_MethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Method' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'miniJava_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Program' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'miniJava_Expression' is a specialization of 'Expr'.
+The class 'miniJava_Addition' is a specialization of 'Expr'.
+The class 'miniJava_Multiplication' is a specialization of 'Expr'.
+The class 'miniJava_Point' is a specialization of 'Expr'.
+The class 'miniJava_SquareBrackets' is a specialization of 'Expr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'miniJava_Program' and 'miniJava_ClassDecl'. From 'miniJava_Program', the role 'miniJava_Program' has cardinality 0..*, and from 'miniJava_ClassDecl', the role 'miniJava_ClassDecl' has cardinality 0..*.
+An association connects 'miniJava_ClassDecl' and 'miniJava_MainMethod'. From 'miniJava_ClassDecl', the role 'miniJava_ClassDecl2' has cardinality 0..*, and from 'miniJava_MainMethod', the role 'miniJava_MainMethod' has cardinality 0..*.
+An association connects 'miniJava_ClassDecl' and 'miniJava_ClassDecl'. From 'miniJava_ClassDecl', the role 'miniJava_ClassDecl5' has cardinality 0..*, and from 'miniJava_ClassDecl', the role 'miniJava_ClassDecl3' has cardinality 0..*.
+An association connects 'miniJava_VarDeclaration' and 'miniJava_ClassDecl'. From 'miniJava_VarDeclaration', the role 'miniJava_VarDeclaration' has cardinality 0..*, and from 'miniJava_ClassDecl', the role 'miniJava_ClassDecl7' has cardinality 0..*.
+An association connects 'miniJava_Method' and 'miniJava_ClassDecl'. From 'miniJava_Method', the role 'miniJava_Method' has cardinality 0..*, and from 'miniJava_ClassDecl', the role 'miniJava_ClassDecl9' has cardinality 0..*.
+An association connects 'miniJava_Statement' and 'miniJava_MainMethod'. From 'miniJava_Statement', the role 'miniJava_Statement' has cardinality 0..*, and from 'miniJava_MainMethod', the role 'miniJava_MainMethod11' has cardinality 0..*.
+An association connects 'miniJava_Type' and 'miniJava_ClassDecl'. From 'miniJava_Type', the role 'miniJava_Type' has cardinality 0..*, and from 'miniJava_ClassDecl', the role 'miniJava_ClassDecl13' has cardinality 0..*.
+An association connects 'miniJava_VarDeclaration' and 'miniJava_Variable'. From 'miniJava_VarDeclaration', the role 'miniJava_VarDeclaration15' has cardinality 0..*, and from 'miniJava_Variable', the role 'miniJava_Variable' has cardinality 0..*.
+An association connects 'miniJava_Type' and 'miniJava_Variable'. From 'miniJava_Type', the role 'miniJava_Type18' has cardinality 0..*, and from 'miniJava_Variable', the role 'miniJava_Variable17' has cardinality 0..*.
+An association connects 'miniJava_Method' and 'miniJava_Type'. From 'miniJava_Method', the role 'miniJava_Method20' has cardinality 0..*, and from 'miniJava_Type', the role 'miniJava_Type21' has cardinality 0..*.
+An association connects 'miniJava_Method' and 'miniJava_Variable'. From 'miniJava_Method', the role 'miniJava_Method23' has cardinality 0..*, and from 'miniJava_Variable', the role 'miniJava_Variable24' has cardinality 0..*.
+An association connects 'miniJava_Method' and 'miniJava_VarDeclaration'. From 'miniJava_Method', the role 'miniJava_Method26' has cardinality 0..*, and from 'miniJava_VarDeclaration', the role 'miniJava_VarDeclaration27' has cardinality 0..*.
+An association connects 'miniJava_Statement' and 'miniJava_Method'. From 'miniJava_Statement', the role 'miniJava_Statement30' has cardinality 0..*, and from 'miniJava_Method', the role 'miniJava_Method29' has cardinality 0..*.
+An association connects 'miniJava_Method' and 'miniJava_Expr'. From 'miniJava_Method', the role 'miniJava_Method32' has cardinality 0..*, and from 'miniJava_Expr', the role 'miniJava_Expr' has cardinality 0..*.
+An association connects 'miniJava_Statement' and 'miniJava_Statement'. From 'miniJava_Statement', the role 'miniJava_Statement35' has cardinality 0..*, and from 'miniJava_Statement', the role 'miniJava_Statement33' has cardinality 0..*.
+An association connects 'miniJava_Statement' and 'miniJava_Expr'. From 'miniJava_Statement', the role 'miniJava_Statement37' has cardinality 0..*, and from 'miniJava_Expr', the role 'miniJava_Expr38' has cardinality 0..*.
+An association connects 'miniJava_Variable' and 'miniJava_Statement'. From 'miniJava_Variable', the role 'miniJava_Variable41' has cardinality 0..*, and from 'miniJava_Statement', the role 'miniJava_Statement40' has cardinality 0..*.
+An association connects 'miniJava_Expr' and 'miniJava_Statement'. From 'miniJava_Expr', the role 'miniJava_Expr44' has cardinality 0..*, and from 'miniJava_Statement', the role 'miniJava_Statement43' has cardinality 0..*.
+An association connects 'miniJava_Expr' and 'miniJava_Expr'. From 'miniJava_Expr', the role 'miniJava_Expr45' has cardinality 0..*, and from 'miniJava_Expr', the role 'miniJava_Expr47' has cardinality 0..*.
+An association connects 'miniJava_Expr' and 'miniJava_Expr'. From 'miniJava_Expr', the role 'miniJava_Expr50' has cardinality 0..*, and from 'miniJava_Expr', the role 'miniJava_Expr48' has cardinality 0..*.
+An association connects 'miniJava_Expr' and 'miniJava_Type'. From 'miniJava_Expr', the role 'miniJava_Expr52' has cardinality 0..*, and from 'miniJava_Type', the role 'miniJava_Type53' has cardinality 0..*.
+An association connects 'miniJava_Expr' and 'miniJava_Variable'. From 'miniJava_Expr', the role 'miniJava_Expr55' has cardinality 0..*, and from 'miniJava_Variable', the role 'miniJava_Variable56' has cardinality 0..*.
+An association connects 'miniJava_NumberValue' and 'miniJava_Expr'. From 'miniJava_NumberValue', the role 'miniJava_NumberValue' has cardinality 0..*, and from 'miniJava_Expr', the role 'miniJava_Expr58' has cardinality 0..*.
+An association connects 'miniJava_Expr' and 'miniJava_MethodCall'. From 'miniJava_Expr', the role 'miniJava_Expr60' has cardinality 0..*, and from 'miniJava_MethodCall', the role 'miniJava_MethodCall' has cardinality 0..*.
+An association connects 'miniJava_Expr' and 'miniJava_Expr'. From 'miniJava_Expr', the role 'miniJava_Expr61' has cardinality 0..*, and from 'miniJava_Expr', the role 'miniJava_Expr63' has cardinality 0..*.
+An association connects 'miniJava_MethodCall' and 'miniJava_Method'. From 'miniJava_MethodCall', the role 'miniJava_MethodCall65' has cardinality 0..*, and from 'miniJava_Method', the role 'miniJava_Method66' has cardinality 0..*.
+An association connects 'miniJava_Expr' and 'miniJava_MethodCall'. From 'miniJava_Expr', the role 'miniJava_Expr69' has cardinality 0..*, and from 'miniJava_MethodCall', the role 'miniJava_MethodCall68' has cardinality 0..*.

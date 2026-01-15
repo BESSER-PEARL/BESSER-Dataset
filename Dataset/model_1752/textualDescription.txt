@@ -1,0 +1,41 @@
+The domain model 'simpleanySimplified' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'simpleanySimplified_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleanySimplified_MixedData' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'simpleanySimplified_MixedBaseClass' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleanySimplified_Description' represents an important domain concept.
+It has one attribute: 'keywords', which is of type str.
+
+'simpleanySimplified_MixedFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'MixedData' represents an important domain concept.
+It does not declare any attributes.
+
+'MixedBaseClass' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleanySimplified_MixedText' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleanySimplified_Book' represents an important domain concept.
+It has the following attributes: 'author', which is of type str; 'title', which is of type str; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleanySimplified_Description' is a specialization of 'MixedBaseClass'.
+The class 'simpleanySimplified_MixedText' is a specialization of 'MixedData'.
+The class 'simpleanySimplified_MixedFeature' is a specialization of 'MixedData'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleanySimplified_Book' and 'simpleanySimplified_Description'. From 'simpleanySimplified_Book', the role 'simpleanySimplified_Book' has cardinality 0..*, and from 'simpleanySimplified_Description', the role 'simpleanySimplified_Description' has cardinality 0..*.
+An association connects 'simpleanySimplified_Description' and 'simpleanySimplified_Description'. From 'simpleanySimplified_Description', the role 'simpleanySimplified_Description1' has cardinality 0..*, and from 'simpleanySimplified_Description', the role 'simpleanySimplified_Description3' has cardinality 0..*.
+An association connects 'simpleanySimplified_Book' and 'simpleanySimplified_Library'. From 'simpleanySimplified_Book', the role 'simpleanySimplified_Book5' has cardinality 0..*, and from 'simpleanySimplified_Library', the role 'simpleanySimplified_Library' has cardinality 0..*.
+An association connects 'simpleanySimplified_MixedData' and 'simpleanySimplified_MixedBaseClass'. From 'simpleanySimplified_MixedData', the role 'simpleanySimplified_MixedData' has cardinality 0..*, and from 'simpleanySimplified_MixedBaseClass', the role 'simpleanySimplified_MixedBaseClass' has cardinality 0..*.

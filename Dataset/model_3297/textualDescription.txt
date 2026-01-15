@@ -1,0 +1,293 @@
+The domain model 'standard' describes the core structural elements and their relationships within the system.
+
+The model defines 72 main class(es).
+
+'DynamicNodeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_AggregatingSIDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'DiseaseModelLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'AggregatingSIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Infector' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SIRInoculator' represents an important domain concept.
+It has the following attributes: 'inoculatedPercentage', which is of type float; 'inoculatePercentage', which is of type bool.
+
+'StochasticDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'DiseaseModelLabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'SIInfector' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_StochasticPoissonSIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_IntegrationLabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_DiseaseModelState' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SIRLabelValue' represents an important domain concept.
+It has one attribute: 'r', which is of type float.
+
+'standard_StandardDiseaseModelState' represents an important domain concept.
+It has one attribute: 'areaRatio', which is of type float.
+
+'standard_SanityChecker' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_AggregatingSEIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_PopulationLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SILabelValue' represents an important domain concept.
+It has one attribute: 'i', which is of type float.
+
+'StandardDiseaseModelLabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'SI' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SIR' represents an important domain concept.
+It has one attribute: 'immunityLossRate', which is of type float.
+
+'Modifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'SIR' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SILabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_StandardStochasticDiseaseModel' represents an important domain concept.
+It has one attribute: 'gain', which is of type float.
+
+'standard_StochasticPoissonSIDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SIDiseaseModelState' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_PopulationModelLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_IntegrationDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_AggregatingDiseaseModelState' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_AggregatingSIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_DeterministicSIDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'SEIR' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SEIR' represents an important domain concept.
+It has one attribute: 'incubationRate', which is of type float.
+
+'standard_StochasticDiseaseModel' represents an important domain concept.
+It has the following attributes: 'seed', which is of type str; 'randomGenerator', which is of type str.
+
+'standard_StandardInfector' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_InfectorInoculatorCollection' represents an important domain concept.
+It has one attribute: 'importFolder', which is of type str.
+
+'standard_SIInfector' represents an important domain concept.
+It has one attribute: 'infectiousCount', which is of type float.
+
+'SILabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SIRLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardDiseaseModelLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SEIRLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegrationLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'SIRLabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_DeterministicSEIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SI' represents an important domain concept.
+It has the following attributes: 'transmissionRate', which is of type float; 'nonLinearityCoefficient', which is of type float; 'infectiousMortalityRate', which is of type float; 'infectiousMortality', which is of type float; 'characteristicMixingDistance', which is of type float; 'recoveryRate', which is of type float; 'roadNetworkInfectiousProportion', which is of type float; 'physicallyAdjacentInfectiousProportion', which is of type float.
+
+'SanityChecker' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardStochasticDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegrationDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_DiseaseModel' represents an important domain concept.
+It has the following attributes: 'diseaseName', which is of type str; 'timePeriod', which is of type str; 'backgroundBirthRate', which is of type float; 'populationIdentifier', which is of type str; 'finiteDifference', which is of type bool; 'frequencyDependent', which is of type bool; 'backgroundMortalityRate', which is of type float; 'relativeTolerance', which is of type float.
+
+'standard_DiseaseModelLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardInfector' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Infector' represents an important domain concept.
+It has the following attributes: 'infectPercentage', which is of type bool; 'diseaseName', which is of type str; 'targetURI', which is of type str; 'targetISOKey', which is of type str; 'populationIdentifier', which is of type str.
+
+'IntegrationLabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_IntegrationLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_StochasticSEIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_StochasticSIDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'DiseaseModelState' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardDiseaseModelState' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_DiseaseModelLabelValue' represents an important domain concept.
+It has the following attributes: 'incidence', which is of type float; 'diseaseDeaths', which is of type float; 'populationCount', which is of type float.
+
+'standard_DeterministicSIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SEIRLabelValue' represents an important domain concept.
+It has one attribute: 'e', which is of type float.
+
+'NodeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_StochasticPoissonSEIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'DiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_StandardDiseaseModel' represents an important domain concept.
+It has the following attributes: 'totalPopulationCount', which is of type float; 'referencePopulationDensity', which is of type float; 'totalPopulationCountReciprocal', which is of type float; 'totalArea', which is of type float.
+
+'standard_StandardDiseaseModelLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'AggregatingSIDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_StandardDiseaseModelLabelValue' represents an important domain concept.
+It has one attribute: 's', which is of type float.
+
+'standard_StochasticSIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'standard_DeterministicSEIRDiseaseModel' is a specialization of 'SEIR'.
+The class 'standard_DeterministicSIDiseaseModel' is a specialization of 'SI'.
+The class 'standard_DeterministicSIRDiseaseModel' is a specialization of 'SIR'.
+The class 'standard_DiseaseModel' is a specialization of 'NodeDecorator'.
+The class 'standard_DiseaseModel' is a specialization of 'SanityChecker'.
+The class 'standard_DiseaseModel' is a specialization of 'Modifiable'.
+The class 'standard_DiseaseModelLabel' is a specialization of 'DynamicNodeLabel'.
+The class 'standard_DiseaseModelLabelValue' is a specialization of 'LabelValue'.
+The class 'standard_DiseaseModelLabelValue' is a specialization of 'IntegrationLabelValue'.
+The class 'standard_Infector' is a specialization of 'NodeDecorator'.
+The class 'standard_Infector' is a specialization of 'Modifiable'.
+The class 'standard_SEIR' is a specialization of 'SIR'.
+The class 'standard_SEIRLabel' is a specialization of 'StandardDiseaseModelLabel'.
+The class 'standard_SEIRLabelValue' is a specialization of 'SIRLabelValue'.
+The class 'standard_SI' is a specialization of 'StandardDiseaseModel'.
+The class 'standard_SIDiseaseModelState' is a specialization of 'StandardDiseaseModelState'.
+The class 'standard_SIInfector' is a specialization of 'StandardInfector'.
+The class 'standard_SILabel' is a specialization of 'StandardDiseaseModelLabel'.
+The class 'standard_SILabelValue' is a specialization of 'StandardDiseaseModelLabelValue'.
+The class 'standard_SIR' is a specialization of 'SI'.
+The class 'standard_SIRLabel' is a specialization of 'StandardDiseaseModelLabel'.
+The class 'standard_SIRLabelValue' is a specialization of 'SILabelValue'.
+The class 'standard_StandardDiseaseModel' is a specialization of 'DiseaseModel'.
+The class 'standard_StandardDiseaseModel' is a specialization of 'IntegrationDecorator'.
+The class 'standard_StandardDiseaseModelLabel' is a specialization of 'DiseaseModelLabel'.
+The class 'standard_StandardDiseaseModelLabel' is a specialization of 'IntegrationLabel'.
+The class 'standard_StandardDiseaseModelLabelValue' is a specialization of 'DiseaseModelLabelValue'.
+The class 'standard_StandardDiseaseModelState' is a specialization of 'DiseaseModelState'.
+The class 'standard_StandardInfector' is a specialization of 'Infector'.
+The class 'standard_StochasticSEIRDiseaseModel' is a specialization of 'SEIR'.
+The class 'standard_StochasticSEIRDiseaseModel' is a specialization of 'StandardStochasticDiseaseModel'.
+The class 'standard_StochasticSIDiseaseModel' is a specialization of 'SI'.
+The class 'standard_StochasticSIDiseaseModel' is a specialization of 'StandardStochasticDiseaseModel'.
+The class 'standard_StochasticSIRDiseaseModel' is a specialization of 'SIR'.
+The class 'standard_StochasticSIRDiseaseModel' is a specialization of 'StandardStochasticDiseaseModel'.
+The class 'standard_AggregatingSIDiseaseModel' is a specialization of 'SI'.
+The class 'standard_AggregatingDiseaseModelState' is a specialization of 'DiseaseModelState'.
+The class 'standard_AggregatingSEIRDiseaseModel' is a specialization of 'AggregatingSIRDiseaseModel'.
+The class 'standard_AggregatingSIRDiseaseModel' is a specialization of 'AggregatingSIDiseaseModel'.
+The class 'standard_StochasticDiseaseModel' is a specialization of 'DiseaseModel'.
+The class 'standard_StandardStochasticDiseaseModel' is a specialization of 'StochasticDiseaseModel'.
+The class 'standard_SIRInoculator' is a specialization of 'SIInfector'.
+The class 'standard_StochasticPoissonSIDiseaseModel' is a specialization of 'SI'.
+The class 'standard_StochasticPoissonSIRDiseaseModel' is a specialization of 'SIR'.
+The class 'standard_StochasticPoissonSEIRDiseaseModel' is a specialization of 'SEIR'.
+The class 'standard_InfectorInoculatorCollection' is a specialization of 'NodeDecorator'.
+The class 'standard_InfectorInoculatorCollection' is a specialization of 'Modifiable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'standard_PopulationLabel' and 'standard_DiseaseModelLabel'. From 'standard_PopulationLabel', the role 'standard_PopulationLabel' has cardinality 0..*, and from 'standard_DiseaseModelLabel', the role 'standard_DiseaseModelLabel' has cardinality 0..*.
+An association connects 'standard_DiseaseModelLabel' and 'standard_DiseaseModelState'. From 'standard_DiseaseModelLabel', the role 'label' has cardinality 0..*, and from 'standard_DiseaseModelState', the role 'DiseaseModelState' has cardinality 0..*.
+An association connects 'standard_DiseaseModelLabel' and 'standard_PopulationModelLabel'. From 'standard_DiseaseModelLabel', the role 'standard_DiseaseModelLabel3' has cardinality 0..*, and from 'standard_PopulationModelLabel', the role 'standard_PopulationModelLabel' has cardinality 0..*.
+An association connects 'standard_DiseaseModelState' and 'standard_DiseaseModelLabel'. From 'standard_DiseaseModelState', the role 'diseaseModelState' has cardinality 0..*, and from 'standard_DiseaseModelLabel', the role 'DiseaseModelLabel' has cardinality 0..*.
+An association connects 'standard_Infector' and 'standard_StandardDiseaseModel'. From 'standard_Infector', the role 'standard_Infector' has cardinality 0..*, and from 'standard_StandardDiseaseModel', the role 'standard_StandardDiseaseModel' has cardinality 0..*.
+An association connects 'standard_Infector' and 'standard_DiseaseModelLabel'. From 'standard_Infector', the role 'standard_Infector7' has cardinality 0..*, and from 'standard_DiseaseModelLabel', the role 'standard_DiseaseModelLabel8' has cardinality 0..*.
+An association connects 'standard_SEIRLabelValue' and 'standard_SEIRLabel'. From 'standard_SEIRLabelValue', the role 'standard_SEIRLabelValue' has cardinality 0..*, and from 'standard_SEIRLabel', the role 'standard_SEIRLabel' has cardinality 0..*.
+An association connects 'standard_SEIRLabelValue' and 'standard_SEIRLabel'. From 'standard_SEIRLabelValue', the role 'standard_SEIRLabelValue12' has cardinality 0..*, and from 'standard_SEIRLabel', the role 'standard_SEIRLabel11' has cardinality 0..*.
+An association connects 'standard_SEIRLabelValue' and 'standard_SEIRLabel'. From 'standard_SEIRLabelValue', the role 'standard_SEIRLabelValue15' has cardinality 0..*, and from 'standard_SEIRLabel', the role 'standard_SEIRLabel14' has cardinality 0..*.
+An association connects 'standard_SEIRLabel' and 'standard_SEIRLabelValue'. From 'standard_SEIRLabel', the role 'standard_SEIRLabel17' has cardinality 0..*, and from 'standard_SEIRLabelValue', the role 'standard_SEIRLabelValue18' has cardinality 0..*.
+An association connects 'standard_SEIRLabelValue' and 'standard_SEIRLabel'. From 'standard_SEIRLabelValue', the role 'standard_SEIRLabelValue21' has cardinality 0..*, and from 'standard_SEIRLabel', the role 'standard_SEIRLabel20' has cardinality 0..*.
+An association connects 'standard_SILabelValue' and 'standard_SILabel'. From 'standard_SILabelValue', the role 'standard_SILabelValue' has cardinality 0..*, and from 'standard_SILabel', the role 'standard_SILabel' has cardinality 0..*.
+An association connects 'standard_SILabelValue' and 'standard_SILabel'. From 'standard_SILabelValue', the role 'standard_SILabelValue25' has cardinality 0..*, and from 'standard_SILabel', the role 'standard_SILabel24' has cardinality 0..*.
+An association connects 'standard_SILabelValue' and 'standard_SILabel'. From 'standard_SILabelValue', the role 'standard_SILabelValue28' has cardinality 0..*, and from 'standard_SILabel', the role 'standard_SILabel27' has cardinality 0..*.
+An association connects 'standard_SILabelValue' and 'standard_SILabel'. From 'standard_SILabelValue', the role 'standard_SILabelValue31' has cardinality 0..*, and from 'standard_SILabel', the role 'standard_SILabel30' has cardinality 0..*.
+An association connects 'standard_SILabel' and 'standard_SILabelValue'. From 'standard_SILabel', the role 'standard_SILabel33' has cardinality 0..*, and from 'standard_SILabelValue', the role 'standard_SILabelValue34' has cardinality 0..*.
+An association connects 'standard_SIRLabel' and 'standard_SIRLabelValue'. From 'standard_SIRLabel', the role 'standard_SIRLabel' has cardinality 0..*, and from 'standard_SIRLabelValue', the role 'standard_SIRLabelValue' has cardinality 0..*.
+An association connects 'standard_SIRLabel' and 'standard_SIRLabelValue'. From 'standard_SIRLabel', the role 'standard_SIRLabel37' has cardinality 0..*, and from 'standard_SIRLabelValue', the role 'standard_SIRLabelValue38' has cardinality 0..*.
+An association connects 'standard_SIRLabelValue' and 'standard_SIRLabel'. From 'standard_SIRLabelValue', the role 'standard_SIRLabelValue41' has cardinality 0..*, and from 'standard_SIRLabel', the role 'standard_SIRLabel40' has cardinality 0..*.
+An association connects 'standard_SIRLabel' and 'standard_SIRLabelValue'. From 'standard_SIRLabel', the role 'standard_SIRLabel43' has cardinality 0..*, and from 'standard_SIRLabelValue', the role 'standard_SIRLabelValue44' has cardinality 0..*.
+An association connects 'standard_SIRLabelValue' and 'standard_SIRLabel'. From 'standard_SIRLabelValue', the role 'standard_SIRLabelValue47' has cardinality 0..*, and from 'standard_SIRLabel', the role 'standard_SIRLabel46' has cardinality 0..*.
+An association connects 'standard_SILabel' and 'standard_AggregatingDiseaseModelState'. From 'standard_SILabel', the role 'standard_SILabel49' has cardinality 0..*, and from 'standard_AggregatingDiseaseModelState', the role 'standard_AggregatingDiseaseModelState' has cardinality 0..*.
+An association connects 'standard_InfectorInoculatorCollection' and 'standard_Infector'. From 'standard_InfectorInoculatorCollection', the role 'standard_InfectorInoculatorCollection' has cardinality 0..*, and from 'standard_Infector', the role 'standard_Infector51' has cardinality 0..*.

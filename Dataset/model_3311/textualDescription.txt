@@ -1,0 +1,22 @@
+The domain model 'transform' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'transform_Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'transform_Grammar' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'transform_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'transform_Transformation' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'transform_Transformation' and 'transform_Graph'. From 'transform_Transformation', the role 'transform_Transformation' has cardinality 0..*, and from 'transform_Graph', the role 'transform_Graph' has cardinality 0..*.
+An association connects 'transform_Transformation' and 'transform_Grammar'. From 'transform_Transformation', the role 'transform_Transformation2' has cardinality 0..*, and from 'transform_Grammar', the role 'transform_Grammar' has cardinality 0..*.

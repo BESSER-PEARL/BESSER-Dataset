@@ -1,0 +1,44 @@
+The domain model 'dbDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'dbDsl_AbstractDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbDsl_Database' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dbDsl_Column' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AbstractDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbDsl_AbstractColumnMapper' represents an important domain concept.
+It does not declare any attributes.
+
+'dbDsl_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'Root' represents an important domain concept.
+It does not declare any attributes.
+
+'dbDsl_CharType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbDsl_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dbDsl_NumberType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dbDsl_Database' is a specialization of 'Root'.
+The class 'dbDsl_CharType' is a specialization of 'AbstractDataType'.
+The class 'dbDsl_NumberType' is a specialization of 'AbstractDataType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dbDsl_Table' and 'dbDsl_Database'. From 'dbDsl_Table', the role 'dbDsl_Table' has cardinality 0..*, and from 'dbDsl_Database', the role 'dbDsl_Database' has cardinality 0..*.
+An association connects 'dbDsl_Table' and 'dbDsl_Column'. From 'dbDsl_Table', the role 'dbDsl_Table2' has cardinality 0..*, and from 'dbDsl_Column', the role 'dbDsl_Column' has cardinality 0..*.
+An association connects 'dbDsl_AbstractDataType' and 'dbDsl_Column'. From 'dbDsl_AbstractDataType', the role 'dbDsl_AbstractDataType' has cardinality 0..*, and from 'dbDsl_Column', the role 'dbDsl_Column4' has cardinality 0..*.
+An association connects 'dbDsl_AbstractColumnMapper' and 'dbDsl_Column'. From 'dbDsl_AbstractColumnMapper', the role 'dbDsl_AbstractColumnMapper' has cardinality 0..*, and from 'dbDsl_Column', the role 'dbDsl_Column6' has cardinality 0..*.

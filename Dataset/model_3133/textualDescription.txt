@@ -1,0 +1,57 @@
+The domain model 'ClassDiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'ClassDiagram_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ClassDiagram_Attribute' represents an important domain concept.
+It has one attribute: 'multivalued', which is of type bool.
+
+'ClassDiagram_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_StructuralFeature' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'name', which is of type str.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassDiagram_Classifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'ClassDiagram_Class' is a specialization of 'Classifier'.
+The class 'ClassDiagram_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'ClassDiagram_PrimitiveType' is a specialization of 'Classifier'.
+The class 'ClassDiagram_Operation' is a specialization of 'StructuralFeature'.
+The class 'ClassDiagram_Parameter' is a specialization of 'TypedElement'.
+The class 'ClassDiagram_Attribute' is a specialization of 'StructuralFeature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ClassDiagram_Classifier' and 'ClassDiagram_Model'. From 'ClassDiagram_Classifier', the role 'ClassDiagram_Classifier' has cardinality 0..*, and from 'ClassDiagram_Model', the role 'ClassDiagram_Model' has cardinality 0..*.
+An association connects 'ClassDiagram_Class' and 'ClassDiagram_StructuralFeature'. From 'ClassDiagram_Class', the role 'owner' has cardinality 0..*, and from 'ClassDiagram_StructuralFeature', the role 'StructuralFeature' has cardinality 0..*.
+An association connects 'ClassDiagram_Class' and 'ClassDiagram_Class'. From 'ClassDiagram_Class', the role 'Class' has cardinality 0..*, and from 'ClassDiagram_Class', the role 'childs' has cardinality 0..*.
+An association connects 'ClassDiagram_Class' and 'ClassDiagram_Class'. From 'ClassDiagram_Class', the role 'Class6' has cardinality 0..*, and from 'ClassDiagram_Class', the role 'parents' has cardinality 0..*.
+An association connects 'ClassDiagram_StructuralFeature' and 'ClassDiagram_Class'. From 'ClassDiagram_StructuralFeature', the role 'features' has cardinality 0..*, and from 'ClassDiagram_Class', the role 'Class8' has cardinality 0..*.
+An association connects 'ClassDiagram_Classifier' and 'ClassDiagram_TypedElement'. From 'ClassDiagram_Classifier', the role 'ClassDiagram_Classifier10' has cardinality 0..*, and from 'ClassDiagram_TypedElement', the role 'ClassDiagram_TypedElement' has cardinality 0..*.
+An association connects 'ClassDiagram_Operation' and 'ClassDiagram_Parameter'. From 'ClassDiagram_Operation', the role 'paramOf' has cardinality 0..*, and from 'ClassDiagram_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'ClassDiagram_Operation' and 'ClassDiagram_Parameter'. From 'ClassDiagram_Operation', the role 'Operation' has cardinality 0..*, and from 'ClassDiagram_Parameter', the role 'params' has cardinality 0..*.

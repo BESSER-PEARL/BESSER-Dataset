@@ -1,0 +1,66 @@
+The domain model 'relationaldb' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldb_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldb_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldb_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldb_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'relationaldb_UmlToNoSQLID' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldb_Database' represents an important domain concept.
+It has one attribute: 'rawDatabase', which is of type str.
+
+'relationaldb_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldb_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldb_Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'relationaldb_Varchar' represents an important domain concept.
+It has one attribute: 'length', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DatabaseKind' defines a single possible value: 'POSTGRES'.
+
+The model also captures inheritance relationships between classes.
+The class 'relationaldb_Database' is a specialization of 'Named'.
+The class 'relationaldb_Table' is a specialization of 'Named'.
+The class 'relationaldb_Column' is a specialization of 'Named'.
+The class 'relationaldb_ForeignKey' is a specialization of 'Column'.
+The class 'relationaldb_PrimitiveType' is a specialization of 'Type'.
+The class 'relationaldb_Varchar' is a specialization of 'PrimitiveType'.
+The class 'relationaldb_Integer' is a specialization of 'PrimitiveType'.
+The class 'relationaldb_UmlToNoSQLID' is a specialization of 'PrimitiveType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'relationaldb_Table' and 'relationaldb_Database'. From 'relationaldb_Table', the role 'relationaldb_Table' has cardinality 0..*, and from 'relationaldb_Database', the role 'relationaldb_Database' has cardinality 0..*.
+An association connects 'relationaldb_Column' and 'relationaldb_Table'. From 'relationaldb_Column', the role 'Column' has cardinality 0..*, and from 'relationaldb_Table', the role 'owner' has cardinality 0..*.
+An association connects 'relationaldb_Table' and 'relationaldb_Column'. From 'relationaldb_Table', the role 'relationaldb_Table3' has cardinality 0..*, and from 'relationaldb_Column', the role 'relationaldb_Column' has cardinality 0..*.
+An association connects 'relationaldb_Table' and 'relationaldb_Column'. From 'relationaldb_Table', the role 'Table' has cardinality 0..*, and from 'relationaldb_Column', the role 'col' has cardinality 0..*.
+An association connects 'relationaldb_Column' and 'relationaldb_Type'. From 'relationaldb_Column', the role 'relationaldb_Column6' has cardinality 0..*, and from 'relationaldb_Type', the role 'relationaldb_Type' has cardinality 0..*.
+An association connects 'relationaldb_ForeignKey' and 'relationaldb_Column'. From 'relationaldb_ForeignKey', the role 'relationaldb_ForeignKey' has cardinality 0..*, and from 'relationaldb_Column', the role 'relationaldb_Column8' has cardinality 0..*.

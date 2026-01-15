@@ -1,0 +1,76 @@
+The domain model 'sql' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'Key' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Annotation' represents an important domain concept.
+It has one attribute: 'annotation', which is of type str.
+
+'sql_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'properties', which is of type str.
+
+'sql_Event' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'condition', which is of type str.
+
+'sql_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sql_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Key' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Condition' defines the following possible values: 'Update', 'Delete'.
+The enumeration 'Property' defines the following possible values: 'NotNull', 'Unique', 'AutoIncrement'.
+The enumeration 'Action' defines the following possible values: 'SetNull', 'Cascade'.
+
+The model also captures inheritance relationships between classes.
+The class 'sql_NamedElement' is a specialization of 'ModelElement'.
+The class 'sql_Table' is a specialization of 'NamedElement'.
+The class 'sql_Column' is a specialization of 'NamedElement'.
+The class 'sql_Column' is a specialization of 'ModelElement'.
+The class 'sql_Key' is a specialization of 'ModelElement'.
+The class 'sql_PrimaryKey' is a specialization of 'Key'.
+The class 'sql_ForeignKey' is a specialization of 'Key'.
+The class 'sql_Event' is a specialization of 'ModelElement'.
+The class 'sql_Schema' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sql_Table' and 'sql_Column'. From 'sql_Table', the role 'owningTable' has cardinality 0..*, and from 'sql_Column', the role 'Column' has cardinality 0..*.
+An association connects 'sql_Table' and 'sql_PrimaryKey'. From 'sql_Table', the role 'owningTable2' has cardinality 0..*, and from 'sql_PrimaryKey', the role 'PrimaryKey' has cardinality 0..*.
+An association connects 'sql_Table' and 'sql_ForeignKey'. From 'sql_Table', the role 'owningTable4' has cardinality 0..*, and from 'sql_ForeignKey', the role 'ForeignKey' has cardinality 0..*.
+An association connects 'sql_Table' and 'sql_ForeignKey'. From 'sql_Table', the role 'referencedTable' has cardinality 0..*, and from 'sql_ForeignKey', the role 'ForeignKey6' has cardinality 0..*.
+An association connects 'sql_Table' and 'sql_Schema'. From 'sql_Table', the role 'ownedTables' has cardinality 0..*, and from 'sql_Schema', the role 'Schema' has cardinality 0..*.
+An association connects 'sql_Table' and 'sql_Column'. From 'sql_Table', the role 'Table' has cardinality 0..*, and from 'sql_Column', the role 'ownedColumns' has cardinality 0..*.
+An association connects 'sql_Column' and 'sql_Key'. From 'sql_Column', the role 'column' has cardinality 0..*, and from 'sql_Key', the role 'Key' has cardinality 0..*.
+An association connects 'sql_Key' and 'sql_Column'. From 'sql_Key', the role 'keys' has cardinality 0..*, and from 'sql_Column', the role 'Column11' has cardinality 0..*.
+An association connects 'sql_Table' and 'sql_PrimaryKey'. From 'sql_Table', the role 'Table13' has cardinality 0..*, and from 'sql_PrimaryKey', the role 'ownedPrimaryKey' has cardinality 0..*.
+An association connects 'sql_ForeignKey' and 'sql_Table'. From 'sql_ForeignKey', the role 'referencingForeignKeys' has cardinality 0..*, and from 'sql_Table', the role 'Table15' has cardinality 0..*.
+An association connects 'sql_ForeignKey' and 'sql_Table'. From 'sql_ForeignKey', the role 'ownedForeignKeys' has cardinality 0..*, and from 'sql_Table', the role 'Table17' has cardinality 0..*.
+An association connects 'sql_Event' and 'sql_ForeignKey'. From 'sql_Event', the role 'Event' has cardinality 0..*, and from 'sql_ForeignKey', the role 'owningForeignKey' has cardinality 0..*.
+An association connects 'sql_ForeignKey' and 'sql_Event'. From 'sql_ForeignKey', the role 'ForeignKey20' has cardinality 0..*, and from 'sql_Event', the role 'ownedEvents' has cardinality 0..*.
+An association connects 'sql_Table' and 'sql_Schema'. From 'sql_Table', the role 'Table22' has cardinality 0..*, and from 'sql_Schema', the role 'owningSchema' has cardinality 0..*.
+An association connects 'sql_ModelElement' and 'sql_Annotation'. From 'sql_ModelElement', the role 'owningModelElement' has cardinality 0..*, and from 'sql_Annotation', the role 'Annotation' has cardinality 0..*.
+An association connects 'sql_ModelElement' and 'sql_Annotation'. From 'sql_ModelElement', the role 'ModelElement' has cardinality 0..*, and from 'sql_Annotation', the role 'ownedAnnotations' has cardinality 0..*.

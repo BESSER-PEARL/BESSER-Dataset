@@ -1,0 +1,167 @@
+The domain model 'rell' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'rell_Delete' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_MulOrDiv' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'rell_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_ConditionElement' represents an important domain concept.
+It has one attribute: 'compareName', which is of type str.
+
+'rell_Relational' represents an important domain concept.
+It has one attribute: 'entity', which is of type str.
+
+'rell_Equality' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'rell_Attribute' represents an important domain concept.
+It has one attribute: 'modificator', which is of type str.
+
+'rell_RelAttrubutesList' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_VariableInit' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_And' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'rell_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'Relational' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_Create' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'rell_ClassDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rell_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'rell_Update' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'rell_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_PrimitiveType' represents an important domain concept.
+It has one attribute: 'primitiveType', which is of type str.
+
+'rell_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_ClassType' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_Conditions' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rell_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rell_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'rell_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rell_Variable' is a specialization of 'Statement'.
+The class 'rell_Relational' is a specialization of 'Statement'.
+The class 'rell_Update' is a specialization of 'Relational'.
+The class 'rell_Delete' is a specialization of 'Relational'.
+The class 'rell_Create' is a specialization of 'Relational'.
+The class 'rell_VariableInit' is a specialization of 'Statement'.
+The class 'rell_Or' is a specialization of 'Expression'.
+The class 'rell_And' is a specialization of 'Expression'.
+The class 'rell_Equality' is a specialization of 'Expression'.
+The class 'rell_Comparison' is a specialization of 'Expression'.
+The class 'rell_Plus' is a specialization of 'Expression'.
+The class 'rell_Minus' is a specialization of 'Expression'.
+The class 'rell_IntConstant' is a specialization of 'Expression'.
+The class 'rell_StringConstant' is a specialization of 'Expression'.
+The class 'rell_BoolConstant' is a specialization of 'Expression'.
+The class 'rell_VariableRef' is a specialization of 'Expression'.
+The class 'rell_MulOrDiv' is a specialization of 'Expression'.
+The class 'rell_Not' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rell_ClassDefinition' and 'rell_Model'. From 'rell_ClassDefinition', the role 'rell_ClassDefinition' has cardinality 0..*, and from 'rell_Model', the role 'rell_Model' has cardinality 0..*.
+An association connects 'rell_Model' and 'rell_Operation'. From 'rell_Model', the role 'rell_Model2' has cardinality 0..*, and from 'rell_Operation', the role 'rell_Operation' has cardinality 0..*.
+An association connects 'rell_ClassDefinition' and 'rell_ClassDefinition'. From 'rell_ClassDefinition', the role 'rell_ClassDefinition3' has cardinality 0..*, and from 'rell_ClassDefinition', the role 'rell_ClassDefinition5' has cardinality 0..*.
+An association connects 'rell_ClassDefinition' and 'rell_Attribute'. From 'rell_ClassDefinition', the role 'rell_ClassDefinition7' has cardinality 0..*, and from 'rell_Attribute', the role 'rell_Attribute' has cardinality 0..*.
+An association connects 'rell_RelAttrubutesList' and 'rell_Operation'. From 'rell_RelAttrubutesList', the role 'rell_RelAttrubutesList' has cardinality 0..*, and from 'rell_Operation', the role 'rell_Operation9' has cardinality 0..*.
+An association connects 'rell_Statement' and 'rell_Operation'. From 'rell_Statement', the role 'rell_Statement' has cardinality 0..*, and from 'rell_Operation', the role 'rell_Operation11' has cardinality 0..*.
+An association connects 'rell_Variable' and 'rell_Variable'. From 'rell_Variable', the role 'rell_Variable' has cardinality 0..*, and from 'rell_Variable', the role 'rell_Variable12' has cardinality 0..*.
+An association connects 'rell_VariableDeclaration' and 'rell_Variable'. From 'rell_VariableDeclaration', the role 'rell_VariableDeclaration' has cardinality 0..*, and from 'rell_Variable', the role 'rell_Variable15' has cardinality 0..*.
+An association connects 'rell_Variable' and 'rell_Expression'. From 'rell_Variable', the role 'rell_Variable17' has cardinality 0..*, and from 'rell_Expression', the role 'rell_Expression' has cardinality 0..*.
+An association connects 'rell_Relational' and 'rell_Relational'. From 'rell_Relational', the role 'rell_Relational18' has cardinality 0..*, and from 'rell_Relational', the role 'rell_Relational' has cardinality 0..*.
+An association connects 'rell_Relational' and 'rell_Conditions'. From 'rell_Relational', the role 'rell_Relational21' has cardinality 0..*, and from 'rell_Conditions', the role 'rell_Conditions' has cardinality 0..*.
+An association connects 'rell_Update' and 'rell_VariableInit'. From 'rell_Update', the role 'rell_Update' has cardinality 0..*, and from 'rell_VariableInit', the role 'rell_VariableInit' has cardinality 0..*.
+An association connects 'rell_Conditions' and 'rell_ConditionElement'. From 'rell_Conditions', the role 'rell_Conditions24' has cardinality 0..*, and from 'rell_ConditionElement', the role 'rell_ConditionElement' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_ConditionElement'. From 'rell_Expression', the role 'rell_Expression27' has cardinality 0..*, and from 'rell_ConditionElement', the role 'rell_ConditionElement26' has cardinality 0..*.
+An association connects 'rell_VariableInit' and 'rell_VariableInit'. From 'rell_VariableInit', the role 'rell_VariableInit28' has cardinality 0..*, and from 'rell_VariableInit', the role 'rell_VariableInit30' has cardinality 0..*.
+An association connects 'rell_VariableDeclaration' and 'rell_VariableInit'. From 'rell_VariableDeclaration', the role 'rell_VariableDeclaration33' has cardinality 0..*, and from 'rell_VariableInit', the role 'rell_VariableInit32' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_VariableInit'. From 'rell_Expression', the role 'rell_Expression36' has cardinality 0..*, and from 'rell_VariableInit', the role 'rell_VariableInit35' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_Expression'. From 'rell_Expression', the role 'rell_Expression39' has cardinality 0..*, and from 'rell_Expression', the role 'rell_Expression37' has cardinality 0..*.
+An association connects 'rell_RelAttrubutesList' and 'rell_VariableDeclaration'. From 'rell_RelAttrubutesList', the role 'rell_RelAttrubutesList41' has cardinality 0..*, and from 'rell_VariableDeclaration', the role 'rell_VariableDeclaration42' has cardinality 0..*.
+An association connects 'rell_VariableDeclaration' and 'rell_Attribute'. From 'rell_VariableDeclaration', the role 'rell_VariableDeclaration45' has cardinality 0..*, and from 'rell_Attribute', the role 'rell_Attribute44' has cardinality 0..*.
+An association connects 'rell_TypeReference' and 'rell_VariableDeclaration'. From 'rell_TypeReference', the role 'rell_TypeReference' has cardinality 0..*, and from 'rell_VariableDeclaration', the role 'rell_VariableDeclaration47' has cardinality 0..*.
+An association connects 'rell_TypeReference' and 'rell_PrimitiveType'. From 'rell_TypeReference', the role 'rell_TypeReference49' has cardinality 0..*, and from 'rell_PrimitiveType', the role 'rell_PrimitiveType' has cardinality 0..*.
+An association connects 'rell_TypeReference' and 'rell_ClassType'. From 'rell_TypeReference', the role 'rell_TypeReference51' has cardinality 0..*, and from 'rell_ClassType', the role 'rell_ClassType' has cardinality 0..*.
+An association connects 'rell_ClassDefinition' and 'rell_ClassType'. From 'rell_ClassDefinition', the role 'rell_ClassDefinition54' has cardinality 0..*, and from 'rell_ClassType', the role 'rell_ClassType53' has cardinality 0..*.
+An association connects 'rell_Or' and 'rell_Expression'. From 'rell_Or', the role 'rell_Or' has cardinality 0..*, and from 'rell_Expression', the role 'rell_Expression56' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_Or'. From 'rell_Expression', the role 'rell_Expression59' has cardinality 0..*, and from 'rell_Or', the role 'rell_Or58' has cardinality 0..*.
+An association connects 'rell_And' and 'rell_Expression'. From 'rell_And', the role 'rell_And' has cardinality 0..*, and from 'rell_Expression', the role 'rell_Expression61' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_And'. From 'rell_Expression', the role 'rell_Expression64' has cardinality 0..*, and from 'rell_And', the role 'rell_And63' has cardinality 0..*.
+An association connects 'rell_Equality' and 'rell_Expression'. From 'rell_Equality', the role 'rell_Equality' has cardinality 0..*, and from 'rell_Expression', the role 'rell_Expression66' has cardinality 0..*.
+An association connects 'rell_Equality' and 'rell_Expression'. From 'rell_Equality', the role 'rell_Equality68' has cardinality 0..*, and from 'rell_Expression', the role 'rell_Expression69' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_Comparison'. From 'rell_Expression', the role 'rell_Expression71' has cardinality 0..*, and from 'rell_Comparison', the role 'rell_Comparison' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_Comparison'. From 'rell_Expression', the role 'rell_Expression74' has cardinality 0..*, and from 'rell_Comparison', the role 'rell_Comparison73' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_Plus'. From 'rell_Expression', the role 'rell_Expression76' has cardinality 0..*, and from 'rell_Plus', the role 'rell_Plus' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_Plus'. From 'rell_Expression', the role 'rell_Expression79' has cardinality 0..*, and from 'rell_Plus', the role 'rell_Plus78' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_Minus'. From 'rell_Expression', the role 'rell_Expression81' has cardinality 0..*, and from 'rell_Minus', the role 'rell_Minus' has cardinality 0..*.
+An association connects 'rell_Minus' and 'rell_Expression'. From 'rell_Minus', the role 'rell_Minus83' has cardinality 0..*, and from 'rell_Expression', the role 'rell_Expression84' has cardinality 0..*.
+An association connects 'rell_VariableDeclaration' and 'rell_VariableRef'. From 'rell_VariableDeclaration', the role 'rell_VariableDeclaration86' has cardinality 0..*, and from 'rell_VariableRef', the role 'rell_VariableRef' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_MulOrDiv'. From 'rell_Expression', the role 'rell_Expression88' has cardinality 0..*, and from 'rell_MulOrDiv', the role 'rell_MulOrDiv' has cardinality 0..*.
+An association connects 'rell_MulOrDiv' and 'rell_Expression'. From 'rell_MulOrDiv', the role 'rell_MulOrDiv90' has cardinality 0..*, and from 'rell_Expression', the role 'rell_Expression91' has cardinality 0..*.
+An association connects 'rell_Expression' and 'rell_Not'. From 'rell_Expression', the role 'rell_Expression93' has cardinality 0..*, and from 'rell_Not', the role 'rell_Not' has cardinality 0..*.

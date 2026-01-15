@@ -1,0 +1,80 @@
+The domain model 'DBLP' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'DBLP_Record' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'url', which is of type str; 'mdate', which is of type str; 'ee', which is of type str.
+
+'DBLP_Proceedings' represents an important domain concept.
+It has the following attributes: 'year', which is of type int; 'isbn', which is of type str; 'title', which is of type str; 'month', which is of type str.
+
+'DBLP_InCollection' represents an important domain concept.
+It has the following attributes: 'fromPage', which is of type int; 'bookTitle', which is of type str; 'title', which is of type str; 'year', which is of type int; 'toPage', which is of type int; 'month', which is of type str.
+
+'DBLP_Author' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DBLP_Book' represents an important domain concept.
+It has the following attributes: 'volume', which is of type int; 'month', which is of type str; 'edition', which is of type int; 'title', which is of type str; 'series', which is of type str; 'year', which is of type int; 'isbn', which is of type str.
+
+'DBLP_Editor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DBLP_Organization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DBLP_PhDThesis' represents an important domain concept.
+It has the following attributes: 'month', which is of type str; 'title', which is of type str; 'year', which is of type int.
+
+'Record' represents an important domain concept.
+It does not declare any attributes.
+
+'DBLP_InProceedings' represents an important domain concept.
+It has the following attributes: 'toPage', which is of type int; 'fromPage', which is of type int; 'year', which is of type int; 'month', which is of type str; 'bootitle', which is of type str; 'title', which is of type str.
+
+'DBLP_Www' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'year', which is of type int; 'month', which is of type str.
+
+'DBLP_Article' represents an important domain concept.
+It has the following attributes: 'volume', which is of type str; 'title', which is of type str; 'year', which is of type int; 'fromPage', which is of type int; 'month', which is of type str; 'number', which is of type int; 'toPage', which is of type int.
+
+'DBLP_Journal' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DBLP_Publisher' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'address', which is of type str.
+
+'DBLP_MastersThesis' represents an important domain concept.
+It has the following attributes: 'month', which is of type str; 'title', which is of type str; 'year', which is of type int.
+
+'DBLP_School' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'address', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'DBLP_Article' is a specialization of 'Record'.
+The class 'DBLP_Book' is a specialization of 'Record'.
+The class 'DBLP_InCollection' is a specialization of 'Record'.
+The class 'DBLP_InProceedings' is a specialization of 'Record'.
+The class 'DBLP_MastersThesis' is a specialization of 'Record'.
+The class 'DBLP_Proceedings' is a specialization of 'Record'.
+The class 'DBLP_PhDThesis' is a specialization of 'Record'.
+The class 'DBLP_Www' is a specialization of 'Record'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DBLP_Record' and 'DBLP_Author'. From 'DBLP_Record', the role 'records' has cardinality 0..*, and from 'DBLP_Author', the role 'Author' has cardinality 0..*.
+An association connects 'DBLP_Journal' and 'DBLP_Article'. From 'DBLP_Journal', the role 'Journal' has cardinality 0..*, and from 'DBLP_Article', the role 'articles' has cardinality 0..*.
+An association connects 'DBLP_Record' and 'DBLP_Author'. From 'DBLP_Record', the role 'Record' has cardinality 0..*, and from 'DBLP_Author', the role 'authors' has cardinality 0..*.
+An association connects 'DBLP_Article' and 'DBLP_Journal'. From 'DBLP_Article', the role 'Article' has cardinality 0..*, and from 'DBLP_Journal', the role 'journal' has cardinality 0..*.
+An association connects 'DBLP_Book' and 'DBLP_Publisher'. From 'DBLP_Book', the role 'DBLP_Book' has cardinality 0..*, and from 'DBLP_Publisher', the role 'DBLP_Publisher' has cardinality 0..*.
+An association connects 'DBLP_InCollection' and 'DBLP_Editor'. From 'DBLP_InCollection', the role 'DBLP_InCollection' has cardinality 0..*, and from 'DBLP_Editor', the role 'DBLP_Editor' has cardinality 0..*.
+An association connects 'DBLP_Organization' and 'DBLP_InCollection'. From 'DBLP_Organization', the role 'DBLP_Organization' has cardinality 0..*, and from 'DBLP_InCollection', the role 'DBLP_InCollection7' has cardinality 0..*.
+An association connects 'DBLP_Publisher' and 'DBLP_InCollection'. From 'DBLP_Publisher', the role 'DBLP_Publisher10' has cardinality 0..*, and from 'DBLP_InCollection', the role 'DBLP_InCollection9' has cardinality 0..*.
+An association connects 'DBLP_InProceedings' and 'DBLP_Editor'. From 'DBLP_InProceedings', the role 'DBLP_InProceedings' has cardinality 0..*, and from 'DBLP_Editor', the role 'DBLP_Editor12' has cardinality 0..*.
+An association connects 'DBLP_Organization' and 'DBLP_InProceedings'. From 'DBLP_Organization', the role 'DBLP_Organization15' has cardinality 0..*, and from 'DBLP_InProceedings', the role 'DBLP_InProceedings14' has cardinality 0..*.
+An association connects 'DBLP_InProceedings' and 'DBLP_Publisher'. From 'DBLP_InProceedings', the role 'DBLP_InProceedings17' has cardinality 0..*, and from 'DBLP_Publisher', the role 'DBLP_Publisher18' has cardinality 0..*.
+An association connects 'DBLP_School' and 'DBLP_MastersThesis'. From 'DBLP_School', the role 'DBLP_School' has cardinality 0..*, and from 'DBLP_MastersThesis', the role 'DBLP_MastersThesis' has cardinality 0..*.
+An association connects 'DBLP_Editor' and 'DBLP_Proceedings'. From 'DBLP_Editor', the role 'DBLP_Editor21' has cardinality 0..*, and from 'DBLP_Proceedings', the role 'DBLP_Proceedings' has cardinality 0..*.
+An association connects 'DBLP_Publisher' and 'DBLP_Proceedings'. From 'DBLP_Publisher', the role 'DBLP_Publisher24' has cardinality 0..*, and from 'DBLP_Proceedings', the role 'DBLP_Proceedings23' has cardinality 0..*.
+An association connects 'DBLP_Proceedings' and 'DBLP_Organization'. From 'DBLP_Proceedings', the role 'DBLP_Proceedings26' has cardinality 0..*, and from 'DBLP_Organization', the role 'DBLP_Organization27' has cardinality 0..*.
+An association connects 'DBLP_School' and 'DBLP_PhDThesis'. From 'DBLP_School', the role 'DBLP_School29' has cardinality 0..*, and from 'DBLP_PhDThesis', the role 'DBLP_PhDThesis' has cardinality 0..*.
+An association connects 'DBLP_Www' and 'DBLP_Editor'. From 'DBLP_Www', the role 'DBLP_Www' has cardinality 0..*, and from 'DBLP_Editor', the role 'DBLP_Editor31' has cardinality 0..*.

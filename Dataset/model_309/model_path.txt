@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jimclarkuk/Eclipse-Dojos/EMFBasics/EMF_Demo/model/library.ecore

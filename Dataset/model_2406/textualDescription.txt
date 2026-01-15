@@ -1,0 +1,42 @@
+The domain model 'dbschema' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'dbschema_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dbschema_Column' represents an important domain concept.
+It has the following attributes: 'primary', which is of type bool; 'size', which is of type int; 'type', which is of type str.
+
+'dbschema_ForeignKeyColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'dbschema_DBSchema' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbschema_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'dbschema_AttributeColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ColumnType' defines the following possible values: 'BIT', 'ROWID', 'LONGVARCHAR', 'SMALLINT', 'TIMESTAMP', 'VARCHAR', 'DATALINK', 'OTHER', 'CHAR', 'ARRAY', 'JAVAOBJECT', 'FLOAT', 'NVARCHAR', 'DOUBLE', 'REF', 'DATE', 'NULL', 'NUMERIC', 'NCHAR', 'SQLXML', 'BIGINT', 'TIME', 'VARBINARY', 'REAL', 'INTEGER', 'LONGVARBINARY', 'TINYINT', 'BOOLEAN', 'CLOB', 'NCLOB', 'BINARY', 'BLOB', 'DECIMAL', 'DISTINCT', 'STRUCT', 'LONGNVARCHAR'.
+
+The model also captures inheritance relationships between classes.
+The class 'dbschema_DBSchema' is a specialization of 'NamedElement'.
+The class 'dbschema_Table' is a specialization of 'NamedElement'.
+The class 'dbschema_Column' is a specialization of 'NamedElement'.
+The class 'dbschema_AttributeColumn' is a specialization of 'Column'.
+The class 'dbschema_ForeignKeyColumn' is a specialization of 'Column'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dbschema_Table' and 'dbschema_DBSchema'. From 'dbschema_Table', the role 'dbschema_Table' has cardinality 0..*, and from 'dbschema_DBSchema', the role 'dbschema_DBSchema' has cardinality 0..*.
+An association connects 'dbschema_Table' and 'dbschema_Column'. From 'dbschema_Table', the role 'dbschema_Table2' has cardinality 0..*, and from 'dbschema_Column', the role 'dbschema_Column' has cardinality 0..*.
+An association connects 'dbschema_ForeignKeyColumn' and 'dbschema_AttributeColumn'. From 'dbschema_ForeignKeyColumn', the role 'dbschema_ForeignKeyColumn' has cardinality 0..*, and from 'dbschema_AttributeColumn', the role 'dbschema_AttributeColumn' has cardinality 0..*.

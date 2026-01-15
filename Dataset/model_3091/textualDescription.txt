@@ -1,0 +1,39 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'SimpleClass_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'is_primary', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleClass_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleClass_Class' represents an important domain concept.
+It has one attribute: 'is_persistent', which is of type str.
+
+'SimpleClass_Classifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleClass_Association' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'SimpleClass_Class' is a specialization of 'Classifier'.
+The class 'SimpleClass_PrimitiveDataType' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimpleClass_Class' and 'Class'. From 'SimpleClass_Class', the role 'SimpleClass_Class' has cardinality 0..*, and from 'Class', the role 'Class' has cardinality 0..*.
+An association connects 'SimpleClass_Class' and 'Attribute'. From 'SimpleClass_Class', the role '0' has cardinality 0..*, and from 'Attribute', the role '#' has cardinality 0..*.
+An association connects 'SimpleClass_Association' and 'Class'. From 'SimpleClass_Association', the role 'SimpleClass_Association' has cardinality 0..*, and from 'Class', the role 'Class3' has cardinality 0..*.
+An association connects 'SimpleClass_Association' and 'Class'. From 'SimpleClass_Association', the role 'SimpleClass_Association5' has cardinality 0..*, and from 'Class', the role 'Class6' has cardinality 0..*.
+An association connects 'SimpleClass_Attribute' and 'Classifier'. From 'SimpleClass_Attribute', the role 'SimpleClass_Attribute' has cardinality 0..*, and from 'Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'Class' and 'SimpleClass_Attribute'. From 'Class', the role '#10' has cardinality 0..*, and from 'SimpleClass_Attribute', the role '09' has cardinality 0..*.

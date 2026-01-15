@@ -1,0 +1,35 @@
+The domain model 'traceabilitymodel' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'traceabilitymodel_MetaModel' represents an important domain concept.
+It has the following attributes: 'nsUri', which is of type str; 'name', which is of type str.
+
+'traceabilitymodel_Block' represents an important domain concept.
+It has the following attributes: 'startPos', which is of type str; 'endPos', which is of type str; 'startLine', which is of type str; 'endColumn', which is of type str; 'endLine', which is of type str; 'ID', which is of type str; 'startColumn', which is of type str; 'protectedBlock', which is of type bool.
+
+'traceabilitymodel_File' represents an important domain concept.
+It has the following attributes: 'ID', which is of type str; 'URI', which is of type str; 'name', which is of type str.
+
+'traceabilitymodel_TraceableSegment' represents an important domain concept.
+It has the following attributes: 'startColumn', which is of type str; 'endColumn', which is of type str; 'startLine', which is of type str; 'startPos', which is of type str; 'endPos', which is of type str; 'endLine', which is of type str.
+
+'traceabilitymodel_Trace' represents an important domain concept.
+It has the following attributes: 'specificationName', which is of type str; 'sourceOperationID', which is of type str; 'sourceOperationName', which is of type str.
+
+'traceabilitymodel_TraceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'traceabilitymodel_ModelElementRef' represents an important domain concept.
+It has the following attributes: 'uri', which is of type str; 'featureRef', which is of type str; 'name', which is of type str; 'ID', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'traceabilitymodel_ModelElementRef' and 'traceabilitymodel_MetaModel'. From 'traceabilitymodel_ModelElementRef', the role 'traceabilitymodel_ModelElementRef' has cardinality 0..*, and from 'traceabilitymodel_MetaModel', the role 'traceabilitymodel_MetaModel' has cardinality 0..*.
+An association connects 'traceabilitymodel_TraceableSegment' and 'traceabilitymodel_Trace'. From 'traceabilitymodel_TraceableSegment', the role 'traceabilitymodel_TraceableSegment' has cardinality 0..*, and from 'traceabilitymodel_Trace', the role 'traceabilitymodel_Trace' has cardinality 0..*.
+An association connects 'traceabilitymodel_Trace' and 'traceabilitymodel_ModelElementRef'. From 'traceabilitymodel_Trace', the role 'traceabilitymodel_Trace3' has cardinality 0..*, and from 'traceabilitymodel_ModelElementRef', the role 'traceabilitymodel_ModelElementRef4' has cardinality 0..*.
+An association connects 'traceabilitymodel_Block' and 'traceabilitymodel_TraceableSegment'. From 'traceabilitymodel_Block', the role 'traceabilitymodel_Block' has cardinality 0..*, and from 'traceabilitymodel_TraceableSegment', the role 'traceabilitymodel_TraceableSegment6' has cardinality 0..*.
+An association connects 'traceabilitymodel_TraceModel' and 'traceabilitymodel_Trace'. From 'traceabilitymodel_TraceModel', the role 'traceabilitymodel_TraceModel' has cardinality 0..*, and from 'traceabilitymodel_Trace', the role 'traceabilitymodel_Trace8' has cardinality 0..*.
+An association connects 'traceabilitymodel_TraceModel' and 'traceabilitymodel_File'. From 'traceabilitymodel_TraceModel', the role 'traceabilitymodel_TraceModel10' has cardinality 0..*, and from 'traceabilitymodel_File', the role 'traceabilitymodel_File' has cardinality 0..*.
+An association connects 'traceabilitymodel_ModelElementRef' and 'traceabilitymodel_TraceModel'. From 'traceabilitymodel_ModelElementRef', the role 'traceabilitymodel_ModelElementRef13' has cardinality 0..*, and from 'traceabilitymodel_TraceModel', the role 'traceabilitymodel_TraceModel12' has cardinality 0..*.
+An association connects 'traceabilitymodel_TraceModel' and 'traceabilitymodel_MetaModel'. From 'traceabilitymodel_TraceModel', the role 'traceabilitymodel_TraceModel15' has cardinality 0..*, and from 'traceabilitymodel_MetaModel', the role 'traceabilitymodel_MetaModel16' has cardinality 0..*.
+An association connects 'traceabilitymodel_File' and 'traceabilitymodel_Block'. From 'traceabilitymodel_File', the role 'traceabilitymodel_File18' has cardinality 0..*, and from 'traceabilitymodel_Block', the role 'traceabilitymodel_Block19' has cardinality 0..*.

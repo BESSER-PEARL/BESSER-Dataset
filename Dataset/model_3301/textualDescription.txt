@@ -1,0 +1,22 @@
+The domain model 'trigger' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'trigger_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'Decorator' represents an important domain concept.
+It does not declare any attributes.
+
+'trigger_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'trigger_Decorator' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'trigger_Trigger' is a specialization of 'Decorator'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trigger_Predicate' and 'trigger_Trigger'. From 'trigger_Predicate', the role 'trigger_Predicate' has cardinality 0..*, and from 'trigger_Trigger', the role 'trigger_Trigger' has cardinality 0..*.
+An association connects 'trigger_Decorator' and 'trigger_Trigger'. From 'trigger_Decorator', the role 'trigger_Decorator' has cardinality 0..*, and from 'trigger_Trigger', the role 'trigger_Trigger2' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/MDEGroup/MDEProfiler/Dataset/ATLZoo/QVT2ATLVM/QVT2ATLVM/Samples/Book2Publication/BOOKS.ecore

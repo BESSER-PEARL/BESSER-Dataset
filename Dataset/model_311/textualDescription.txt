@@ -1,0 +1,31 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'library_MapOfDataTypes' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'library_WriterNameMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'library_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Book' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'pages', which is of type int; 'category', which is of type str.
+
+'library_Library' represents an important domain concept.
+It has the following attributes: 'bookByTitleMap', which is of type str; 'options', which is of type str; 'map1', which is of type str; 'name', which is of type str; 'uRIs_1', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'ScienceFiction', 'Biography', 'MYSTERY'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Writer' and 'library_Book'. From 'library_Writer', the role 'Writer' has cardinality 0..*, and from 'library_Book', the role 'books' has cardinality 0..*.
+An association connects 'library_Writer' and 'library_Library'. From 'library_Writer', the role 'library_Writer' has cardinality 0..*, and from 'library_Library', the role 'library_Library' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Book'. From 'library_Library', the role 'library_Library3' has cardinality 0..*, and from 'library_Book', the role 'library_Book' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Library'. From 'library_Book', the role 'library_Book6' has cardinality 0..*, and from 'library_Library', the role 'library_Library5' has cardinality 0..*.
+An association connects 'library_Library' and 'library_WriterNameMap'. From 'library_Library', the role 'library_Library8' has cardinality 0..*, and from 'library_WriterNameMap', the role 'library_WriterNameMap' has cardinality 0..*.
+An association connects 'library_MapOfDataTypes' and 'library_Library'. From 'library_MapOfDataTypes', the role 'library_MapOfDataTypes' has cardinality 0..*, and from 'library_Library', the role 'library_Library10' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Writer'. From 'library_Book', the role 'Book' has cardinality 0..*, and from 'library_Writer', the role 'author' has cardinality 0..*.
+An association connects 'library_WriterNameMap' and 'library_Writer'. From 'library_WriterNameMap', the role 'library_WriterNameMap13' has cardinality 0..*, and from 'library_Writer', the role 'library_Writer14' has cardinality 0..*.

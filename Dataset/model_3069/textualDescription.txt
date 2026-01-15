@@ -1,0 +1,135 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'myDsl_RestExceptionList' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Service' represents an important domain concept.
+It has the following attributes: 'deleteby', which is of type str; 'name', which is of type str; 'updateby', which is of type str; 'findby', which is of type str.
+
+'myDsl_Transformation' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_DataAccessObject' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'updateby', which is of type str; 'findby', which is of type str; 'deleteby', which is of type str.
+
+'myDsl_Resource' represents an important domain concept.
+It has the following attributes: 'deleteby', which is of type str; 'name', which is of type str; 'findby', which is of type str; 'updateby', which is of type str.
+
+'myDsl_DomainModel' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_ModelMapper' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_DataModel' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'myDsl_Block' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'myDsl_ExceptionMapper' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_DataModelMethodConclusion' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_BaseException' represents an important domain concept.
+It has the following attributes: 'errorCode', which is of type str; 'message', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_RestModel' represents an important domain concept.
+It has the following attributes: 'self', which is of type str; 'id', which is of type str.
+
+'myDsl_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool.
+
+'myDsl_ValidationService' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_RestModelMethodConclusion' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_RestAPI' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_RestException' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'statusCode', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RestStatusCode' defines the following possible values: 'INFORMATIONAL', 'SERVER_ERROR', 'CLIENT_ERROR', 'REDIRECTION', 'SUCCESS', 'NETWORK_ERROR'.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_PrimitiveType' is a specialization of 'Type'.
+The class 'myDsl_DataModel' is a specialization of 'Type'.
+The class 'myDsl_RestModel' is a specialization of 'Type'.
+The class 'myDsl_ModelMapper' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_DomainModel' and 'myDsl_Type'. From 'myDsl_DomainModel', the role 'myDsl_DomainModel' has cardinality 0..*, and from 'myDsl_Type', the role 'myDsl_Type' has cardinality 0..*.
+An association connects 'myDsl_RestAPI' and 'myDsl_DomainModel'. From 'myDsl_RestAPI', the role 'myDsl_RestAPI' has cardinality 0..*, and from 'myDsl_DomainModel', the role 'myDsl_DomainModel2' has cardinality 0..*.
+An association connects 'myDsl_RestAPI' and 'myDsl_Resource'. From 'myDsl_RestAPI', the role 'myDsl_RestAPI4' has cardinality 0..*, and from 'myDsl_Resource', the role 'myDsl_Resource' has cardinality 0..*.
+An association connects 'myDsl_Service' and 'myDsl_RestAPI'. From 'myDsl_Service', the role 'myDsl_Service' has cardinality 0..*, and from 'myDsl_RestAPI', the role 'myDsl_RestAPI6' has cardinality 0..*.
+An association connects 'myDsl_RestAPI' and 'myDsl_DataAccessObject'. From 'myDsl_RestAPI', the role 'myDsl_RestAPI8' has cardinality 0..*, and from 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject' has cardinality 0..*.
+An association connects 'myDsl_ExceptionMapper' and 'myDsl_RestAPI'. From 'myDsl_ExceptionMapper', the role 'myDsl_ExceptionMapper' has cardinality 0..*, and from 'myDsl_RestAPI', the role 'myDsl_RestAPI10' has cardinality 0..*.
+An association connects 'myDsl_DataModel' and 'myDsl_DataModel'. From 'myDsl_DataModel', the role 'myDsl_DataModel11' has cardinality 0..*, and from 'myDsl_DataModel', the role 'myDsl_DataModel' has cardinality 0..*.
+An association connects 'myDsl_DataModel' and 'myDsl_Feature'. From 'myDsl_DataModel', the role 'myDsl_DataModel14' has cardinality 0..*, and from 'myDsl_Feature', the role 'myDsl_Feature' has cardinality 0..*.
+An association connects 'myDsl_RestModel' and 'myDsl_RestModel'. From 'myDsl_RestModel', the role 'myDsl_RestModel15' has cardinality 0..*, and from 'myDsl_RestModel', the role 'myDsl_RestModel' has cardinality 0..*.
+An association connects 'myDsl_Feature' and 'myDsl_RestModel'. From 'myDsl_Feature', the role 'myDsl_Feature19' has cardinality 0..*, and from 'myDsl_RestModel', the role 'myDsl_RestModel18' has cardinality 0..*.
+An association connects 'myDsl_Transformation' and 'myDsl_ModelMapper'. From 'myDsl_Transformation', the role 'myDsl_Transformation' has cardinality 0..*, and from 'myDsl_ModelMapper', the role 'myDsl_ModelMapper' has cardinality 0..*.
+An association connects 'myDsl_DataModel' and 'myDsl_Transformation'. From 'myDsl_DataModel', the role 'myDsl_DataModel23' has cardinality 0..*, and from 'myDsl_Transformation', the role 'myDsl_Transformation22' has cardinality 0..*.
+An association connects 'myDsl_RestModel' and 'myDsl_Transformation'. From 'myDsl_RestModel', the role 'myDsl_RestModel26' has cardinality 0..*, and from 'myDsl_Transformation', the role 'myDsl_Transformation25' has cardinality 0..*.
+An association connects 'myDsl_Type' and 'myDsl_Feature'. From 'myDsl_Type', the role 'myDsl_Type29' has cardinality 0..*, and from 'myDsl_Feature', the role 'myDsl_Feature28' has cardinality 0..*.
+An association connects 'myDsl_Service' and 'myDsl_Resource'. From 'myDsl_Service', the role 'myDsl_Service32' has cardinality 0..*, and from 'myDsl_Resource', the role 'myDsl_Resource31' has cardinality 0..*.
+An association connects 'myDsl_Resource' and 'myDsl_ExceptionMapper'. From 'myDsl_Resource', the role 'myDsl_Resource34' has cardinality 0..*, and from 'myDsl_ExceptionMapper', the role 'myDsl_ExceptionMapper35' has cardinality 0..*.
+An association connects 'myDsl_RestModel' and 'myDsl_Resource'. From 'myDsl_RestModel', the role 'myDsl_RestModel38' has cardinality 0..*, and from 'myDsl_Resource', the role 'myDsl_Resource37' has cardinality 0..*.
+An association connects 'myDsl_Resource' and 'myDsl_ValidationService'. From 'myDsl_Resource', the role 'myDsl_Resource40' has cardinality 0..*, and from 'myDsl_ValidationService', the role 'myDsl_ValidationService' has cardinality 0..*.
+An association connects 'myDsl_Resource' and 'myDsl_Block'. From 'myDsl_Resource', the role 'myDsl_Resource42' has cardinality 0..*, and from 'myDsl_Block', the role 'myDsl_Block' has cardinality 0..*.
+An association connects 'myDsl_RestModelMethodConclusion' and 'myDsl_Resource'. From 'myDsl_RestModelMethodConclusion', the role 'myDsl_RestModelMethodConclusion' has cardinality 0..*, and from 'myDsl_Resource', the role 'myDsl_Resource44' has cardinality 0..*.
+An association connects 'myDsl_Block' and 'myDsl_Resource'. From 'myDsl_Block', the role 'myDsl_Block47' has cardinality 0..*, and from 'myDsl_Resource', the role 'myDsl_Resource46' has cardinality 0..*.
+An association connects 'myDsl_Resource' and 'myDsl_RestModelMethodConclusion'. From 'myDsl_Resource', the role 'myDsl_Resource49' has cardinality 0..*, and from 'myDsl_RestModelMethodConclusion', the role 'myDsl_RestModelMethodConclusion50' has cardinality 0..*.
+An association connects 'myDsl_Resource' and 'myDsl_RestModel'. From 'myDsl_Resource', the role 'myDsl_Resource52' has cardinality 0..*, and from 'myDsl_RestModel', the role 'myDsl_RestModel53' has cardinality 0..*.
+An association connects 'myDsl_ValidationService' and 'myDsl_Resource'. From 'myDsl_ValidationService', the role 'myDsl_ValidationService56' has cardinality 0..*, and from 'myDsl_Resource', the role 'myDsl_Resource55' has cardinality 0..*.
+An association connects 'myDsl_Block' and 'myDsl_Resource'. From 'myDsl_Block', the role 'myDsl_Block59' has cardinality 0..*, and from 'myDsl_Resource', the role 'myDsl_Resource58' has cardinality 0..*.
+An association connects 'myDsl_RestModelMethodConclusion' and 'myDsl_Resource'. From 'myDsl_RestModelMethodConclusion', the role 'myDsl_RestModelMethodConclusion62' has cardinality 0..*, and from 'myDsl_Resource', the role 'myDsl_Resource61' has cardinality 0..*.
+An association connects 'myDsl_Block' and 'myDsl_Resource'. From 'myDsl_Block', the role 'myDsl_Block65' has cardinality 0..*, and from 'myDsl_Resource', the role 'myDsl_Resource64' has cardinality 0..*.
+An association connects 'myDsl_Resource' and 'myDsl_RestExceptionList'. From 'myDsl_Resource', the role 'myDsl_Resource67' has cardinality 0..*, and from 'myDsl_RestExceptionList', the role 'myDsl_RestExceptionList' has cardinality 0..*.
+An association connects 'myDsl_DataAccessObject' and 'myDsl_Service'. From 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject70' has cardinality 0..*, and from 'myDsl_Service', the role 'myDsl_Service69' has cardinality 0..*.
+An association connects 'myDsl_DataModel' and 'myDsl_Service'. From 'myDsl_DataModel', the role 'myDsl_DataModel73' has cardinality 0..*, and from 'myDsl_Service', the role 'myDsl_Service72' has cardinality 0..*.
+An association connects 'myDsl_Block' and 'myDsl_Service'. From 'myDsl_Block', the role 'myDsl_Block76' has cardinality 0..*, and from 'myDsl_Service', the role 'myDsl_Service75' has cardinality 0..*.
+An association connects 'myDsl_Service' and 'myDsl_DataModelMethodConclusion'. From 'myDsl_Service', the role 'myDsl_Service78' has cardinality 0..*, and from 'myDsl_DataModelMethodConclusion', the role 'myDsl_DataModelMethodConclusion' has cardinality 0..*.
+An association connects 'myDsl_Service' and 'myDsl_Block'. From 'myDsl_Service', the role 'myDsl_Service80' has cardinality 0..*, and from 'myDsl_Block', the role 'myDsl_Block81' has cardinality 0..*.
+An association connects 'myDsl_Service' and 'myDsl_DataModelMethodConclusion'. From 'myDsl_Service', the role 'myDsl_Service83' has cardinality 0..*, and from 'myDsl_DataModelMethodConclusion', the role 'myDsl_DataModelMethodConclusion84' has cardinality 0..*.
+An association connects 'myDsl_DataModel' and 'myDsl_Service'. From 'myDsl_DataModel', the role 'myDsl_DataModel87' has cardinality 0..*, and from 'myDsl_Service', the role 'myDsl_Service86' has cardinality 0..*.
+An association connects 'myDsl_Block' and 'myDsl_Service'. From 'myDsl_Block', the role 'myDsl_Block90' has cardinality 0..*, and from 'myDsl_Service', the role 'myDsl_Service89' has cardinality 0..*.
+An association connects 'myDsl_DataModelMethodConclusion' and 'myDsl_Service'. From 'myDsl_DataModelMethodConclusion', the role 'myDsl_DataModelMethodConclusion93' has cardinality 0..*, and from 'myDsl_Service', the role 'myDsl_Service92' has cardinality 0..*.
+An association connects 'myDsl_Service' and 'myDsl_Block'. From 'myDsl_Service', the role 'myDsl_Service95' has cardinality 0..*, and from 'myDsl_Block', the role 'myDsl_Block96' has cardinality 0..*.
+An association connects 'myDsl_Service' and 'myDsl_RestExceptionList'. From 'myDsl_Service', the role 'myDsl_Service98' has cardinality 0..*, and from 'myDsl_RestExceptionList', the role 'myDsl_RestExceptionList99' has cardinality 0..*.
+An association connects 'myDsl_ValidationService' and 'myDsl_RestModel'. From 'myDsl_ValidationService', the role 'myDsl_ValidationService101' has cardinality 0..*, and from 'myDsl_RestModel', the role 'myDsl_RestModel102' has cardinality 0..*.
+An association connects 'myDsl_Block' and 'myDsl_ValidationService'. From 'myDsl_Block', the role 'myDsl_Block105' has cardinality 0..*, and from 'myDsl_ValidationService', the role 'myDsl_ValidationService104' has cardinality 0..*.
+An association connects 'myDsl_DataAccessObject' and 'myDsl_DataModel'. From 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject107' has cardinality 0..*, and from 'myDsl_DataModel', the role 'myDsl_DataModel108' has cardinality 0..*.
+An association connects 'myDsl_DataAccessObject' and 'myDsl_Block'. From 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject110' has cardinality 0..*, and from 'myDsl_Block', the role 'myDsl_Block111' has cardinality 0..*.
+An association connects 'myDsl_DataModelMethodConclusion' and 'myDsl_DataAccessObject'. From 'myDsl_DataModelMethodConclusion', the role 'myDsl_DataModelMethodConclusion114' has cardinality 0..*, and from 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject113' has cardinality 0..*.
+An association connects 'myDsl_Block' and 'myDsl_DataAccessObject'. From 'myDsl_Block', the role 'myDsl_Block117' has cardinality 0..*, and from 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject116' has cardinality 0..*.
+An association connects 'myDsl_DataModelMethodConclusion' and 'myDsl_DataAccessObject'. From 'myDsl_DataModelMethodConclusion', the role 'myDsl_DataModelMethodConclusion120' has cardinality 0..*, and from 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject119' has cardinality 0..*.
+An association connects 'myDsl_DataAccessObject' and 'myDsl_DataModel'. From 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject122' has cardinality 0..*, and from 'myDsl_DataModel', the role 'myDsl_DataModel123' has cardinality 0..*.
+An association connects 'myDsl_DataAccessObject' and 'myDsl_Block'. From 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject125' has cardinality 0..*, and from 'myDsl_Block', the role 'myDsl_Block126' has cardinality 0..*.
+An association connects 'myDsl_DataAccessObject' and 'myDsl_DataModelMethodConclusion'. From 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject128' has cardinality 0..*, and from 'myDsl_DataModelMethodConclusion', the role 'myDsl_DataModelMethodConclusion129' has cardinality 0..*.
+An association connects 'myDsl_DataAccessObject' and 'myDsl_Block'. From 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject131' has cardinality 0..*, and from 'myDsl_Block', the role 'myDsl_Block132' has cardinality 0..*.
+An association connects 'myDsl_DataAccessObject' and 'myDsl_RestExceptionList'. From 'myDsl_DataAccessObject', the role 'myDsl_DataAccessObject134' has cardinality 0..*, and from 'myDsl_RestExceptionList', the role 'myDsl_RestExceptionList135' has cardinality 0..*.
+An association connects 'myDsl_DataModelMethodConclusion' and 'myDsl_DataModel'. From 'myDsl_DataModelMethodConclusion', the role 'myDsl_DataModelMethodConclusion137' has cardinality 0..*, and from 'myDsl_DataModel', the role 'myDsl_DataModel138' has cardinality 0..*.
+An association connects 'myDsl_DataModelMethodConclusion' and 'myDsl_RestExceptionList'. From 'myDsl_DataModelMethodConclusion', the role 'myDsl_DataModelMethodConclusion140' has cardinality 0..*, and from 'myDsl_RestExceptionList', the role 'myDsl_RestExceptionList141' has cardinality 0..*.
+An association connects 'myDsl_RestModelMethodConclusion' and 'myDsl_RestModel'. From 'myDsl_RestModelMethodConclusion', the role 'myDsl_RestModelMethodConclusion143' has cardinality 0..*, and from 'myDsl_RestModel', the role 'myDsl_RestModel144' has cardinality 0..*.
+An association connects 'myDsl_RestModelMethodConclusion' and 'myDsl_RestExceptionList'. From 'myDsl_RestModelMethodConclusion', the role 'myDsl_RestModelMethodConclusion146' has cardinality 0..*, and from 'myDsl_RestExceptionList', the role 'myDsl_RestExceptionList147' has cardinality 0..*.
+An association connects 'myDsl_RestExceptionList' and 'myDsl_RestException'. From 'myDsl_RestExceptionList', the role 'myDsl_RestExceptionList149' has cardinality 0..*, and from 'myDsl_RestException', the role 'myDsl_RestException' has cardinality 0..*.
+An association connects 'myDsl_RestException' and 'myDsl_ExceptionMapper'. From 'myDsl_RestException', the role 'myDsl_RestException152' has cardinality 0..*, and from 'myDsl_ExceptionMapper', the role 'myDsl_ExceptionMapper151' has cardinality 0..*.
+An association connects 'myDsl_BaseException' and 'myDsl_ExceptionMapper'. From 'myDsl_BaseException', the role 'myDsl_BaseException' has cardinality 0..*, and from 'myDsl_ExceptionMapper', the role 'myDsl_ExceptionMapper154' has cardinality 0..*.

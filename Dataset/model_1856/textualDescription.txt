@@ -1,0 +1,108 @@
+The domain model 'application' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'application_Language' represents an important domain concept.
+It does not declare any attributes.
+
+'application_ApplicationLanguages' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_ApplicationInfrastructureLayers' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'application_MessageLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'application_ApplicationMapper' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'application_ApplicationUILayer' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_ApplicationRealms' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_Application' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_ApplicationMessageLibraries' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_Mappers' represents an important domain concept.
+It does not declare any attributes.
+
+'application_ApplicationStyle' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'application_EnterpriseInfrastructure' represents an important domain concept.
+It does not declare any attributes.
+
+'application_ApplicationMappers' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_MappingLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'application_ApplicationGroup' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_Roles' represents an important domain concept.
+It does not declare any attributes.
+
+'application_ApplicationRecipe' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_ApplicationInfrastructureLayer' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_ApplicationStyleLibraries' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_StyleLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'application_Recipes' represents an important domain concept.
+It does not declare any attributes.
+
+'application_ApplicationMessageLibrary' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'application_ApplicationRecipes' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_ApplicationRealm' represents an important domain concept.
+It has the following attributes: 'uid', which is of type str; 'name', which is of type str.
+
+'application_ApplicationUIPackage' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'application_Form' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'application_Application' and 'application_ApplicationGroup'. From 'application_Application', the role 'application_Application' has cardinality 0..*, and from 'application_ApplicationGroup', the role 'application_ApplicationGroup' has cardinality 0..*.
+An association connects 'application_Application' and 'application_ApplicationRecipes'. From 'application_Application', the role 'application_Application2' has cardinality 0..*, and from 'application_ApplicationRecipes', the role 'application_ApplicationRecipes' has cardinality 0..*.
+An association connects 'application_Application' and 'application_ApplicationMappers'. From 'application_Application', the role 'application_Application4' has cardinality 0..*, and from 'application_ApplicationMappers', the role 'application_ApplicationMappers' has cardinality 0..*.
+An association connects 'application_Application' and 'application_ApplicationUILayer'. From 'application_Application', the role 'application_Application6' has cardinality 0..*, and from 'application_ApplicationUILayer', the role 'application_ApplicationUILayer' has cardinality 0..*.
+An association connects 'application_ApplicationInfrastructureLayers' and 'application_Application'. From 'application_ApplicationInfrastructureLayers', the role 'application_ApplicationInfrastructureLayers' has cardinality 0..*, and from 'application_Application', the role 'application_Application8' has cardinality 0..*.
+An association connects 'application_ApplicationStyleLibraries' and 'application_Application'. From 'application_ApplicationStyleLibraries', the role 'application_ApplicationStyleLibraries' has cardinality 0..*, and from 'application_Application', the role 'application_Application10' has cardinality 0..*.
+An association connects 'application_ApplicationRealms' and 'application_Application'. From 'application_ApplicationRealms', the role 'application_ApplicationRealms' has cardinality 0..*, and from 'application_Application', the role 'application_Application12' has cardinality 0..*.
+An association connects 'application_Application' and 'application_ApplicationMessageLibraries'. From 'application_Application', the role 'application_Application14' has cardinality 0..*, and from 'application_ApplicationMessageLibraries', the role 'application_ApplicationMessageLibraries' has cardinality 0..*.
+An association connects 'application_ApplicationInfrastructureLayers' and 'application_ApplicationInfrastructureLayer'. From 'application_ApplicationInfrastructureLayers', the role 'application_ApplicationInfrastructureLayers16' has cardinality 0..*, and from 'application_ApplicationInfrastructureLayer', the role 'application_ApplicationInfrastructureLayer' has cardinality 0..*.
+An association connects 'application_EnterpriseInfrastructure' and 'application_ApplicationInfrastructureLayer'. From 'application_EnterpriseInfrastructure', the role 'application_EnterpriseInfrastructure' has cardinality 0..*, and from 'application_ApplicationInfrastructureLayer', the role 'application_ApplicationInfrastructureLayer18' has cardinality 0..*.
+An association connects 'application_ApplicationMessageLibrary' and 'application_ApplicationMessageLibraries'. From 'application_ApplicationMessageLibrary', the role 'application_ApplicationMessageLibrary' has cardinality 0..*, and from 'application_ApplicationMessageLibraries', the role 'application_ApplicationMessageLibraries20' has cardinality 0..*.
+An association connects 'application_ApplicationMessageLibraries' and 'application_ApplicationLanguages'. From 'application_ApplicationMessageLibraries', the role 'application_ApplicationMessageLibraries22' has cardinality 0..*, and from 'application_ApplicationLanguages', the role 'application_ApplicationLanguages' has cardinality 0..*.
+An association connects 'application_Language' and 'application_ApplicationLanguages'. From 'application_Language', the role 'application_Language' has cardinality 0..*, and from 'application_ApplicationLanguages', the role 'application_ApplicationLanguages24' has cardinality 0..*.
+An association connects 'application_MessageLibrary' and 'application_ApplicationMessageLibrary'. From 'application_MessageLibrary', the role 'application_MessageLibrary' has cardinality 0..*, and from 'application_ApplicationMessageLibrary', the role 'application_ApplicationMessageLibrary26' has cardinality 0..*.
+An association connects 'application_ApplicationRealms' and 'application_ApplicationRealm'. From 'application_ApplicationRealms', the role 'application_ApplicationRealms28' has cardinality 0..*, and from 'application_ApplicationRealm', the role 'application_ApplicationRealm' has cardinality 0..*.
+An association connects 'application_ApplicationRealm' and 'application_Roles'. From 'application_ApplicationRealm', the role 'application_ApplicationRealm30' has cardinality 0..*, and from 'application_Roles', the role 'application_Roles' has cardinality 0..*.
+An association connects 'application_ApplicationStyle' and 'application_ApplicationStyleLibraries'. From 'application_ApplicationStyle', the role 'application_ApplicationStyle' has cardinality 0..*, and from 'application_ApplicationStyleLibraries', the role 'application_ApplicationStyleLibraries32' has cardinality 0..*.
+An association connects 'application_StyleLibrary' and 'application_ApplicationStyle'. From 'application_StyleLibrary', the role 'application_StyleLibrary' has cardinality 0..*, and from 'application_ApplicationStyle', the role 'application_ApplicationStyle34' has cardinality 0..*.
+An association connects 'application_ApplicationUILayer' and 'application_ApplicationUIPackage'. From 'application_ApplicationUILayer', the role 'application_ApplicationUILayer36' has cardinality 0..*, and from 'application_ApplicationUIPackage', the role 'application_ApplicationUIPackage' has cardinality 0..*.
+An association connects 'application_ApplicationUIPackage' and 'application_Form'. From 'application_ApplicationUIPackage', the role 'application_ApplicationUIPackage38' has cardinality 0..*, and from 'application_Form', the role 'application_Form' has cardinality 0..*.
+An association connects 'application_ApplicationRecipe' and 'application_ApplicationRecipes'. From 'application_ApplicationRecipe', the role 'application_ApplicationRecipe' has cardinality 0..*, and from 'application_ApplicationRecipes', the role 'application_ApplicationRecipes40' has cardinality 0..*.
+An association connects 'application_ApplicationRecipe' and 'application_Recipes'. From 'application_ApplicationRecipe', the role 'application_ApplicationRecipe42' has cardinality 0..*, and from 'application_Recipes', the role 'application_Recipes' has cardinality 0..*.
+An association connects 'application_ApplicationMappers' and 'application_ApplicationMapper'. From 'application_ApplicationMappers', the role 'application_ApplicationMappers44' has cardinality 0..*, and from 'application_ApplicationMapper', the role 'application_ApplicationMapper' has cardinality 0..*.
+An association connects 'application_MappingLayer' and 'application_ApplicationMappers'. From 'application_MappingLayer', the role 'application_MappingLayer' has cardinality 0..*, and from 'application_ApplicationMappers', the role 'application_ApplicationMappers46' has cardinality 0..*.
+An association connects 'application_Mappers' and 'application_ApplicationMapper'. From 'application_Mappers', the role 'application_Mappers' has cardinality 0..*, and from 'application_ApplicationMapper', the role 'application_ApplicationMapper48' has cardinality 0..*.

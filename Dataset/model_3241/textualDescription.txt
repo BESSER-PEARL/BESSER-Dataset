@@ -1,0 +1,154 @@
+The domain model 'remes' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'remes_SubMode' represents an important domain concept.
+It has the following attributes: 'resourceClassC', which is of type str; 'resourceClassB', which is of type str; 'invariant', which is of type str; 'isUrgent', which is of type str; 'resourceClassA', which is of type str.
+
+'remes_FromConditionalConnectorEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_EntryEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_ExitConditionalSubEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_CompositeMode' represents an important domain concept.
+It does not declare any attributes.
+
+'ToCompositeModeEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'ToSubModeEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'InitEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_Edge' represents an important domain concept.
+It has the following attributes: 'actionBody', which is of type str; 'actionGuard', which is of type str.
+
+'remes_ToCompositeModeEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'FromSubModeEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_EntryConditionalTopInitEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'ToConditionalConnectorEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'FromCompositeModeEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_InitEdge' represents an important domain concept.
+It has one attribute: 'initialization', which is of type str.
+
+'remes_ConditionalConnector' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'remes_RemesDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_FromCompositeModeEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_ToSubModeEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_ToConditionalConnectorEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_FromSubModeEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_EntryConditionalTopEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_ExitEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'FromConditionalConnectorEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_EntryInitEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_EntryConditionalSubEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'FromCompositeModeInitEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_FromCompositeModeInitEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'Mode' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_ExitConditionalTopEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_InternalEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'remes_Mode' represents an important domain concept.
+It has the following attributes: 'initialization', which is of type str; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'remes_CompositeMode' is a specialization of 'Mode'.
+The class 'remes_EntryConditionalSubEdge' is a specialization of 'FromConditionalConnectorEdge'.
+The class 'remes_EntryConditionalSubEdge' is a specialization of 'ToSubModeEdge'.
+The class 'remes_EntryConditionalSubEdge' is a specialization of 'Edge'.
+The class 'remes_EntryConditionalTopEdge' is a specialization of 'FromCompositeModeEdge'.
+The class 'remes_EntryConditionalTopEdge' is a specialization of 'ToConditionalConnectorEdge'.
+The class 'remes_EntryConditionalTopEdge' is a specialization of 'Edge'.
+The class 'remes_EntryConditionalTopInitEdge' is a specialization of 'FromCompositeModeInitEdge'.
+The class 'remes_EntryConditionalTopInitEdge' is a specialization of 'ToConditionalConnectorEdge'.
+The class 'remes_EntryConditionalTopInitEdge' is a specialization of 'InitEdge'.
+The class 'remes_EntryEdge' is a specialization of 'FromCompositeModeEdge'.
+The class 'remes_EntryEdge' is a specialization of 'ToSubModeEdge'.
+The class 'remes_EntryEdge' is a specialization of 'Edge'.
+The class 'remes_EntryInitEdge' is a specialization of 'FromCompositeModeInitEdge'.
+The class 'remes_EntryInitEdge' is a specialization of 'ToSubModeEdge'.
+The class 'remes_EntryInitEdge' is a specialization of 'InitEdge'.
+The class 'remes_ExitConditionalSubEdge' is a specialization of 'FromSubModeEdge'.
+The class 'remes_ExitConditionalSubEdge' is a specialization of 'ToConditionalConnectorEdge'.
+The class 'remes_ExitConditionalSubEdge' is a specialization of 'Edge'.
+The class 'remes_ExitConditionalTopEdge' is a specialization of 'FromConditionalConnectorEdge'.
+The class 'remes_ExitConditionalTopEdge' is a specialization of 'ToCompositeModeEdge'.
+The class 'remes_ExitConditionalTopEdge' is a specialization of 'Edge'.
+The class 'remes_ExitEdge' is a specialization of 'FromSubModeEdge'.
+The class 'remes_ExitEdge' is a specialization of 'ToCompositeModeEdge'.
+The class 'remes_ExitEdge' is a specialization of 'Edge'.
+The class 'remes_InternalEdge' is a specialization of 'FromSubModeEdge'.
+The class 'remes_InternalEdge' is a specialization of 'ToSubModeEdge'.
+The class 'remes_InternalEdge' is a specialization of 'Edge'.
+The class 'remes_SubMode' is a specialization of 'Mode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'remes_CompositeMode' and 'remes_ToCompositeModeEdge'. From 'remes_CompositeMode', the role 'connectTo' has cardinality 0..*, and from 'remes_ToCompositeModeEdge', the role 'ToCompositeModeEdge' has cardinality 0..*.
+An association connects 'remes_FromCompositeModeInitEdge' and 'remes_CompositeMode'. From 'remes_FromCompositeModeInitEdge', the role 'FromCompositeModeInitEdge' has cardinality 0..*, and from 'remes_CompositeMode', the role 'connectFrom' has cardinality 0..*.
+An association connects 'remes_FromCompositeModeEdge' and 'remes_CompositeMode'. From 'remes_FromCompositeModeEdge', the role 'FromCompositeModeEdge' has cardinality 0..*, and from 'remes_CompositeMode', the role 'connectFrom3' has cardinality 0..*.
+An association connects 'remes_CompositeMode' and 'remes_SubMode'. From 'remes_CompositeMode', the role 'parent' has cardinality 0..*, and from 'remes_SubMode', the role 'SubMode' has cardinality 0..*.
+An association connects 'remes_ConditionalConnector' and 'remes_CompositeMode'. From 'remes_ConditionalConnector', the role 'ConditionalConnector' has cardinality 0..*, and from 'remes_CompositeMode', the role 'parent6' has cardinality 0..*.
+An association connects 'remes_ToConditionalConnectorEdge' and 'remes_ConditionalConnector'. From 'remes_ToConditionalConnectorEdge', the role 'ToConditionalConnectorEdge' has cardinality 0..*, and from 'remes_ConditionalConnector', the role 'connectTo8' has cardinality 0..*.
+An association connects 'remes_ConditionalConnector' and 'remes_FromConditionalConnectorEdge'. From 'remes_ConditionalConnector', the role 'connectFrom10' has cardinality 0..*, and from 'remes_FromConditionalConnectorEdge', the role 'FromConditionalConnectorEdge' has cardinality 0..*.
+An association connects 'remes_CompositeMode' and 'remes_ConditionalConnector'. From 'remes_CompositeMode', the role 'CompositeMode' has cardinality 0..*, and from 'remes_ConditionalConnector', the role 'conditionalConnectors' has cardinality 0..*.
+An association connects 'remes_CompositeMode' and 'remes_FromCompositeModeEdge'. From 'remes_CompositeMode', the role 'CompositeMode13' has cardinality 0..*, and from 'remes_FromCompositeModeEdge', the role 'entryEdge' has cardinality 0..*.
+An association connects 'remes_FromCompositeModeInitEdge' and 'remes_CompositeMode'. From 'remes_FromCompositeModeInitEdge', the role 'initEdge' has cardinality 0..*, and from 'remes_CompositeMode', the role 'CompositeMode15' has cardinality 0..*.
+An association connects 'remes_FromConditionalConnectorEdge' and 'remes_ConditionalConnector'. From 'remes_FromConditionalConnectorEdge', the role 'exitEdges' has cardinality 0..*, and from 'remes_ConditionalConnector', the role 'ConditionalConnector17' has cardinality 0..*.
+An association connects 'remes_FromSubModeEdge' and 'remes_SubMode'. From 'remes_FromSubModeEdge', the role 'exitEdges19' has cardinality 0..*, and from 'remes_SubMode', the role 'SubMode20' has cardinality 0..*.
+An association connects 'remes_Mode' and 'remes_RemesDiagram'. From 'remes_Mode', the role 'remes_Mode' has cardinality 0..*, and from 'remes_RemesDiagram', the role 'remes_RemesDiagram' has cardinality 0..*.
+An association connects 'remes_ToSubModeEdge' and 'remes_SubMode'. From 'remes_ToSubModeEdge', the role 'ToSubModeEdge' has cardinality 0..*, and from 'remes_SubMode', the role 'connectTo23' has cardinality 0..*.
+An association connects 'remes_FromSubModeEdge' and 'remes_SubMode'. From 'remes_FromSubModeEdge', the role 'FromSubModeEdge' has cardinality 0..*, and from 'remes_SubMode', the role 'connectFrom25' has cardinality 0..*.
+An association connects 'remes_CompositeMode' and 'remes_SubMode'. From 'remes_CompositeMode', the role 'CompositeMode27' has cardinality 0..*, and from 'remes_SubMode', the role 'subModes' has cardinality 0..*.
+An association connects 'remes_CompositeMode' and 'remes_ToCompositeModeEdge'. From 'remes_CompositeMode', the role 'CompositeMode30' has cardinality 0..*, and from 'remes_ToCompositeModeEdge', the role 'exitEdges29' has cardinality 0..*.
+An association connects 'remes_ToConditionalConnectorEdge' and 'remes_ConditionalConnector'. From 'remes_ToConditionalConnectorEdge', the role 'entryEdges' has cardinality 0..*, and from 'remes_ConditionalConnector', the role 'ConditionalConnector32' has cardinality 0..*.
+An association connects 'remes_SubMode' and 'remes_ToSubModeEdge'. From 'remes_SubMode', the role 'SubMode35' has cardinality 0..*, and from 'remes_ToSubModeEdge', the role 'entryEdges34' has cardinality 0..*.

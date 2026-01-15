@@ -1,0 +1,18 @@
+The domain model 'university' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'university_Student' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'university_University' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'university_Course' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'university_Course' and 'university_Student'. From 'university_Course', the role 'courses' has cardinality 0..*, and from 'university_Student', the role 'Student' has cardinality 0..*.
+An association connects 'university_Course' and 'university_Student'. From 'university_Course', the role 'Course' has cardinality 0..*, and from 'university_Student', the role 'students' has cardinality 0..*.
+An association connects 'university_University' and 'university_Student'. From 'university_University', the role 'university_University' has cardinality 0..*, and from 'university_Student', the role 'university_Student' has cardinality 0..*.
+An association connects 'university_University' and 'university_Course'. From 'university_University', the role 'university_University4' has cardinality 0..*, and from 'university_Course', the role 'university_Course' has cardinality 0..*.

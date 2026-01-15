@@ -1,0 +1,77 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'trace_Failure' represents an important domain concept.
+It has one attribute: 'reason', which is of type str.
+
+'trace_UnionValue' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Assignment' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'displayName', which is of type str; 'assignmentType', which is of type str; 'baseName', which is of type str.
+
+'trace_Step' represents an important domain concept.
+It has the following attributes: 'number', which is of type str; 'hidden', which is of type str; 'thread', which is of type str.
+
+'trace_Value' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_NameToValueMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'trace_StructValue' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_SimpleValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_FunctionCall' represents an important domain concept.
+It has the following attributes: 'displayName', which is of type str; 'id', which is of type str.
+
+'trace_LocationOnly' represents an important domain concept.
+It does not declare any attributes.
+
+'Step' represents an important domain concept.
+It does not declare any attributes.
+
+'StructValue' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Location' represents an important domain concept.
+It has the following attributes: 'line', which is of type str; 'function', which is of type str; 'file', which is of type str.
+
+'trace_FunctionReturn' represents an important domain concept.
+It has the following attributes: 'displayName', which is of type str; 'id', which is of type str.
+
+'trace_Output' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'trace_ArrayValue' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_ArrayValue' is a specialization of 'Value'.
+The class 'trace_Assignment' is a specialization of 'Step'.
+The class 'trace_Failure' is a specialization of 'Step'.
+The class 'trace_FunctionCall' is a specialization of 'Step'.
+The class 'trace_FunctionReturn' is a specialization of 'Step'.
+The class 'trace_LocationOnly' is a specialization of 'Step'.
+The class 'trace_SimpleValue' is a specialization of 'Value'.
+The class 'trace_StructValue' is a specialization of 'Value'.
+The class 'trace_UnionValue' is a specialization of 'StructValue'.
+The class 'trace_Output' is a specialization of 'Step'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_ArrayValue' and 'trace_Value'. From 'trace_ArrayValue', the role 'trace_ArrayValue' has cardinality 0..*, and from 'trace_Value', the role 'trace_Value' has cardinality 0..*.
+An association connects 'trace_Assignment' and 'trace_Value'. From 'trace_Assignment', the role 'trace_Assignment' has cardinality 0..*, and from 'trace_Value', the role 'trace_Value2' has cardinality 0..*.
+An association connects 'trace_Value' and 'trace_NameToValueMap'. From 'trace_Value', the role 'trace_Value4' has cardinality 0..*, and from 'trace_NameToValueMap', the role 'trace_NameToValueMap' has cardinality 0..*.
+An association connects 'trace_Step' and 'trace_Location'. From 'trace_Step', the role 'trace_Step' has cardinality 0..*, and from 'trace_Location', the role 'trace_Location' has cardinality 0..*.
+An association connects 'trace_StructValue' and 'trace_NameToValueMap'. From 'trace_StructValue', the role 'trace_StructValue' has cardinality 0..*, and from 'trace_NameToValueMap', the role 'trace_NameToValueMap7' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_Step'. From 'trace_Trace', the role 'trace_Trace' has cardinality 0..*, and from 'trace_Step', the role 'trace_Step9' has cardinality 0..*.

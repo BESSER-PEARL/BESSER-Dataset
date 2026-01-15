@@ -1,0 +1,41 @@
+The domain model 'scheduleOfCourse' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'scheduleOfCourse_CourseLoad' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'totalQuantity', which is of type int; 'unitQuantity', which is of type int.
+
+'scheduleOfCourse_scheduleOfCourse' represents an important domain concept.
+It does not declare any attributes.
+
+'scheduleOfCourse_LessonPeriod' represents an important domain concept.
+It has the following attributes: 'start', which is of type str; 'end', which is of type str.
+
+'scheduleOfCourse_TopLevelSpace' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'id', which is of type str; 'name', which is of type str.
+
+'scheduleOfCourse_Capacity' represents an important domain concept.
+It has the following attributes: 'normal', which is of type int; 'exam', which is of type int.
+
+'scheduleOfCourse_Lesson' represents an important domain concept.
+It has the following attributes: 'start', which is of type str; 'end', which is of type str.
+
+'scheduleOfCourse_Shift' represents an important domain concept.
+It has the following attributes: 'types', which is of type str; 'name', which is of type str.
+
+'scheduleOfCourse_Room' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'description', which is of type str; 'id', which is of type str.
+
+'scheduleOfCourse_Occupation' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'current', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'scheduleOfCourse_Shift' and 'scheduleOfCourse_Occupation'. From 'scheduleOfCourse_Shift', the role 'scheduleOfCourse_Shift' has cardinality 0..*, and from 'scheduleOfCourse_Occupation', the role 'scheduleOfCourse_Occupation' has cardinality 0..*.
+An association connects 'scheduleOfCourse_Lesson' and 'scheduleOfCourse_Shift'. From 'scheduleOfCourse_Lesson', the role 'scheduleOfCourse_Lesson' has cardinality 0..*, and from 'scheduleOfCourse_Shift', the role 'scheduleOfCourse_Shift2' has cardinality 0..*.
+An association connects 'scheduleOfCourse_Shift' and 'scheduleOfCourse_Room'. From 'scheduleOfCourse_Shift', the role 'scheduleOfCourse_Shift4' has cardinality 0..*, and from 'scheduleOfCourse_Room', the role 'scheduleOfCourse_Room' has cardinality 0..*.
+An association connects 'scheduleOfCourse_LessonPeriod' and 'scheduleOfCourse_scheduleOfCourse'. From 'scheduleOfCourse_LessonPeriod', the role 'scheduleOfCourse_LessonPeriod' has cardinality 0..*, and from 'scheduleOfCourse_scheduleOfCourse', the role 'scheduleOfCourse_scheduleOfCourse' has cardinality 0..*.
+An association connects 'scheduleOfCourse_CourseLoad' and 'scheduleOfCourse_scheduleOfCourse'. From 'scheduleOfCourse_CourseLoad', the role 'scheduleOfCourse_CourseLoad' has cardinality 0..*, and from 'scheduleOfCourse_scheduleOfCourse', the role 'scheduleOfCourse_scheduleOfCourse7' has cardinality 0..*.
+An association connects 'scheduleOfCourse_Shift' and 'scheduleOfCourse_scheduleOfCourse'. From 'scheduleOfCourse_Shift', the role 'scheduleOfCourse_Shift10' has cardinality 0..*, and from 'scheduleOfCourse_scheduleOfCourse', the role 'scheduleOfCourse_scheduleOfCourse9' has cardinality 0..*.
+An association connects 'scheduleOfCourse_Lesson' and 'scheduleOfCourse_Room'. From 'scheduleOfCourse_Lesson', the role 'scheduleOfCourse_Lesson12' has cardinality 0..*, and from 'scheduleOfCourse_Room', the role 'scheduleOfCourse_Room13' has cardinality 0..*.
+An association connects 'scheduleOfCourse_TopLevelSpace' and 'scheduleOfCourse_Room'. From 'scheduleOfCourse_TopLevelSpace', the role 'scheduleOfCourse_TopLevelSpace' has cardinality 0..*, and from 'scheduleOfCourse_Room', the role 'scheduleOfCourse_Room15' has cardinality 0..*.
+An association connects 'scheduleOfCourse_Capacity' and 'scheduleOfCourse_Room'. From 'scheduleOfCourse_Capacity', the role 'scheduleOfCourse_Capacity' has cardinality 0..*, and from 'scheduleOfCourse_Room', the role 'scheduleOfCourse_Room17' has cardinality 0..*.

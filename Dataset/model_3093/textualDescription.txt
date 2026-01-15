@@ -1,0 +1,37 @@
+The domain model 'ClassMM' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'ClassMM_ClassModel' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassMM_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassMM_Class' represents an important domain concept.
+It has one attribute: 'is_persistent', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassMM_Association' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ClassMM_Attribute' represents an important domain concept.
+It has the following attributes: 'is_primary', which is of type str; 'name', which is of type str.
+
+'ClassMM_Classifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'ClassMM_Class' is a specialization of 'Classifier'.
+The class 'ClassMM_PrimitiveDataType' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ClassMM_Association' and 'ClassMM_Class'. From 'ClassMM_Association', the role 'ClassMM_Association' has cardinality 0..*, and from 'ClassMM_Class', the role 'ClassMM_Class' has cardinality 0..*.
+An association connects 'ClassMM_Association' and 'ClassMM_Class'. From 'ClassMM_Association', the role 'ClassMM_Association2' has cardinality 0..*, and from 'ClassMM_Class', the role 'ClassMM_Class3' has cardinality 0..*.
+An association connects 'ClassMM_Classifier' and 'ClassMM_Attribute'. From 'ClassMM_Classifier', the role 'ClassMM_Classifier' has cardinality 0..*, and from 'ClassMM_Attribute', the role 'ClassMM_Attribute' has cardinality 0..*.
+An association connects 'ClassMM_Attribute' and 'ClassMM_Class'. From 'ClassMM_Attribute', the role 'ClassMM_Attribute7' has cardinality 0..*, and from 'ClassMM_Class', the role 'ClassMM_Class6' has cardinality 0..*.
+An association connects 'ClassMM_Class' and 'ClassMM_Class'. From 'ClassMM_Class', the role 'ClassMM_Class8' has cardinality 0..*, and from 'ClassMM_Class', the role 'ClassMM_Class10' has cardinality 0..*.
+An association connects 'ClassMM_ClassModel' and 'ClassMM_Classifier'. From 'ClassMM_ClassModel', the role 'ClassMM_ClassModel' has cardinality 0..*, and from 'ClassMM_Classifier', the role 'ClassMM_Classifier12' has cardinality 0..*.
+An association connects 'ClassMM_Association' and 'ClassMM_ClassModel'. From 'ClassMM_Association', the role 'ClassMM_Association15' has cardinality 0..*, and from 'ClassMM_ClassModel', the role 'ClassMM_ClassModel14' has cardinality 0..*.

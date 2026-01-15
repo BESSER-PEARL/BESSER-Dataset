@@ -1,0 +1,107 @@
+The domain model 'oml' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'oml_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_AnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_Feature' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'oml_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_Annotation' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'oml_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_ExternalClass' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_StructuralFeature' represents an important domain concept.
+It has one attribute: 'isMany', which is of type str.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'oml_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityEnum' defines the following possible values: 'private', 'public'.
+
+The model also captures inheritance relationships between classes.
+The class 'oml_Model' is a specialization of 'Package'.
+The class 'oml_PackageableElement' is a specialization of 'NamedElement'.
+The class 'oml_NamedElement' is a specialization of 'AnnotatedElement'.
+The class 'oml_Package' is a specialization of 'PackageableElement'.
+The class 'oml_Classifier' is a specialization of 'PackageableElement'.
+The class 'oml_ExternalClass' is a specialization of 'Class'.
+The class 'oml_Class' is a specialization of 'Classifier'.
+The class 'oml_Datatype' is a specialization of 'Classifier'.
+The class 'oml_Feature' is a specialization of 'NamedElement'.
+The class 'oml_StructuralFeature' is a specialization of 'Feature'.
+The class 'oml_Operation' is a specialization of 'Feature'.
+The class 'oml_Parameter' is a specialization of 'NamedElement'.
+The class 'oml_Reference' is a specialization of 'StructuralFeature'.
+The class 'oml_Attribute' is a specialization of 'StructuralFeature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'oml_Package' and 'oml_PackageableElement'. From 'oml_Package', the role 'Package' has cardinality 0..*, and from 'oml_PackageableElement', the role 'contents' has cardinality 0..*.
+An association connects 'oml_AnnotatedElement' and 'oml_Annotation'. From 'oml_AnnotatedElement', the role 'oml_AnnotatedElement' has cardinality 0..*, and from 'oml_Annotation', the role 'oml_Annotation' has cardinality 0..*.
+An association connects 'oml_Package' and 'oml_PackageableElement'. From 'oml_Package', the role 'package' has cardinality 0..*, and from 'oml_PackageableElement', the role 'PackageableElement' has cardinality 0..*.
+An association connects 'oml_Class' and 'oml_Class'. From 'oml_Class', the role 'extendedBy' has cardinality 0..*, and from 'oml_Class', the role 'Class' has cardinality 0..*.
+An association connects 'oml_Class' and 'oml_Class'. From 'oml_Class', the role 'Class7' has cardinality 0..*, and from 'oml_Class', the role 'extends' has cardinality 0..*.
+An association connects 'oml_Class' and 'oml_Feature'. From 'oml_Class', the role 'owner' has cardinality 0..*, and from 'oml_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'oml_Feature' and 'oml_Class'. From 'oml_Feature', the role 'features' has cardinality 0..*, and from 'oml_Class', the role 'Class10' has cardinality 0..*.
+An association connects 'oml_Feature' and 'oml_Classifier'. From 'oml_Feature', the role 'oml_Feature' has cardinality 0..*, and from 'oml_Classifier', the role 'oml_Classifier' has cardinality 0..*.
+An association connects 'oml_Operation' and 'oml_Parameter'. From 'oml_Operation', the role 'owner13' has cardinality 0..*, and from 'oml_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'oml_Classifier' and 'oml_Parameter'. From 'oml_Classifier', the role 'oml_Classifier15' has cardinality 0..*, and from 'oml_Parameter', the role 'oml_Parameter' has cardinality 0..*.
+An association connects 'oml_Operation' and 'oml_Parameter'. From 'oml_Operation', the role 'Operation' has cardinality 0..*, and from 'oml_Parameter', the role 'parameters' has cardinality 0..*.

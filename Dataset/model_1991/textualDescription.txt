@@ -1,0 +1,61 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'trace_GenLinkTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_AbstractTrace' represents an important domain concept.
+It has the following attributes: 'processed', which is of type bool; 'visualID', which is of type int.
+
+'trace_GenLinkLabelTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_MatchingTrace' represents an important domain concept.
+It has one attribute: 'queryText', which is of type str.
+
+'trace_GenChildNodeTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_GenNodeTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'GenNodeTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_TraceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_ToolGroupTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_GenNodeLabelTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'MatchingTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_GenCompartmentTrace' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_MatchingTrace' is a specialization of 'AbstractTrace'.
+The class 'trace_GenNodeTrace' is a specialization of 'MatchingTrace'.
+The class 'trace_GenChildNodeTrace' is a specialization of 'GenNodeTrace'.
+The class 'trace_GenNodeLabelTrace' is a specialization of 'MatchingTrace'.
+The class 'trace_GenLinkTrace' is a specialization of 'MatchingTrace'.
+The class 'trace_GenCompartmentTrace' is a specialization of 'MatchingTrace'.
+The class 'trace_GenLinkLabelTrace' is a specialization of 'MatchingTrace'.
+The class 'trace_ToolGroupTrace' is a specialization of 'MatchingTrace'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_GenNodeTrace' and 'trace_TraceModel'. From 'trace_GenNodeTrace', the role 'trace_GenNodeTrace' has cardinality 0..*, and from 'trace_TraceModel', the role 'trace_TraceModel' has cardinality 0..*.
+An association connects 'trace_TraceModel' and 'trace_GenChildNodeTrace'. From 'trace_TraceModel', the role 'trace_TraceModel2' has cardinality 0..*, and from 'trace_GenChildNodeTrace', the role 'trace_GenChildNodeTrace' has cardinality 0..*.
+An association connects 'trace_GenLinkTrace' and 'trace_TraceModel'. From 'trace_GenLinkTrace', the role 'trace_GenLinkTrace' has cardinality 0..*, and from 'trace_TraceModel', the role 'trace_TraceModel4' has cardinality 0..*.
+An association connects 'trace_ToolGroupTrace' and 'trace_TraceModel'. From 'trace_ToolGroupTrace', the role 'trace_ToolGroupTrace' has cardinality 0..*, and from 'trace_TraceModel', the role 'trace_TraceModel6' has cardinality 0..*.
+An association connects 'trace_GenNodeLabelTrace' and 'trace_GenNodeTrace'. From 'trace_GenNodeLabelTrace', the role 'trace_GenNodeLabelTrace' has cardinality 0..*, and from 'trace_GenNodeTrace', the role 'trace_GenNodeTrace8' has cardinality 0..*.
+An association connects 'trace_GenNodeTrace' and 'trace_GenCompartmentTrace'. From 'trace_GenNodeTrace', the role 'trace_GenNodeTrace10' has cardinality 0..*, and from 'trace_GenCompartmentTrace', the role 'trace_GenCompartmentTrace' has cardinality 0..*.
+An association connects 'trace_GenLinkTrace' and 'trace_GenLinkLabelTrace'. From 'trace_GenLinkTrace', the role 'trace_GenLinkTrace12' has cardinality 0..*, and from 'trace_GenLinkLabelTrace', the role 'trace_GenLinkLabelTrace' has cardinality 0..*.

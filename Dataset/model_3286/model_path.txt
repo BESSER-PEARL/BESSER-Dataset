@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gw4e/gw4e.project/bundles/editor/gw4e.eclipse.dsl.policies/model/generated/DSLPolicies.ecore

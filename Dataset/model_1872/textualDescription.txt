@@ -1,0 +1,1331 @@
+The domain model 'eTJ' describes the core structural elements and their relationships within the system.
+
+The model defines 292 main class(es).
+
+'eTJ_NikuReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Footer' represents an important domain concept.
+It does not declare any attributes.
+
+'NavigatorAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_EndCredit' represents an important domain concept.
+It has one attribute: 'credit', which is of type float.
+
+'WeeklyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_HideTask' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ExtDate' represents an important domain concept.
+It does not declare any attributes.
+
+'IncludePropertiesAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_RollupTask' represents an important domain concept.
+It does not declare any attributes.
+
+'Definitions' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_SortTasks' represents an important domain concept.
+It does not declare any attributes.
+
+'Minimum' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_HideReport' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Timezone' represents an important domain concept.
+It has one attribute: 'timezone', which is of type str.
+
+'NumberFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TaskAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_LogicalExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'eTJ_Account' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'eTJ_Period' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_DailyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'StatusTimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Footer' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_PurgeTask' represents an important domain concept.
+It has one attribute: 'listAttribute', which is of type str.
+
+'eTJ_SortJournalEntries' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Interval1' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_LogicalFunctionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Copyright' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'eTJ_Persistent' represents an important domain concept.
+It has one attribute: 'persistent', which is of type bool.
+
+'eTJ_TagFile' represents an important domain concept.
+It has the following attributes: 'filename', which is of type str; 'id', which is of type str.
+
+'eTJ_Defintions' represents an important domain concept.
+It has the following attributes: 'flags', which is of type bool; 'resources', which is of type bool; 'tasks', which is of type bool; 'project', which is of type bool; 'projectids', which is of type bool.
+
+'eTJ_TimeFormat' represents an important domain concept.
+It has one attribute: 'timeformat', which is of type str.
+
+'eTJ_Header' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Navigator' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'eTJ_Efficiency' represents an important domain concept.
+It has one attribute: 'efficiency', which is of type float.
+
+'eTJ_Width' represents an important domain concept.
+It has one attribute: 'width', which is of type float.
+
+'ShiftsTask' represents an important domain concept.
+It does not declare any attributes.
+
+'ProjectAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_LogicalAbsoluteIdExression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'eTJ_SupplementAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_NikuReport' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'eTJ_Complete' represents an important domain concept.
+It has one attribute: 'complete', which is of type float.
+
+'eTJ_DurationQuantity' represents an important domain concept.
+It has the following attributes: 'value', which is of type float; 'unit', which is of type str.
+
+'eTJ_Macro' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'value', which is of type str.
+
+'eTJ_NumberFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ColumnAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_CellText' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'eTJ_ReportPrefix' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ChargeSet' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Alert' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+'eTJ_TreeLevel' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+'StatusStatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_NewTask' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'text', which is of type str.
+
+'eTJ_Columns' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_AccountAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Fail' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_LogicalBooleanLiteral' represents an important domain concept.
+It has one attribute: 'isTrue', which is of type bool.
+
+'eTJ_ISODATE' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_RGB' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'eTJ_Center' represents an important domain concept.
+It does not declare any attributes.
+
+'AllocateResourceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Maximum' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Right' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Flags' represents an important domain concept.
+It has one attribute: 'flags', which is of type str.
+
+'End' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Allocate' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_IcalReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ShiftsAllocate' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_LogicalNumeralLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'StatusSheetReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ProjectIds' represents an important domain concept.
+It has one attribute: 'ids', which is of type str.
+
+'Header' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Booking' represents an important domain concept.
+It has the following attributes: 'sloppy', which is of type int; 'overtime', which is of type int.
+
+'eTJ_Priority' represents an important domain concept.
+It has one attribute: 'priority', which is of type int.
+
+'eTJ_Rate' represents an important domain concept.
+It has one attribute: 'rate', which is of type float.
+
+'eTJ_IncludePropertiesAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_StatusSheetReport' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'eTJ_Length' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_LogicalStringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'AccountAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ListType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'eTJ_TimesheetReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_IcalReport' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'eTJ_LogicalDateLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Author' represents an important domain concept.
+It does not declare any attributes.
+
+'SortTasks' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Details' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_LimitsAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_MaxEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'StatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_LogicalFlagExpression' represents an important domain concept.
+It has one attribute: 'columId', which is of type str.
+
+'eTJ_MonthlyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'Headline' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Interval2' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ResourcePrefix' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_StatusSheet' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TaskTimesheet' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_StatusStatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Caption' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_HideAccount' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'eTJ_Scenario' represents an important domain concept.
+It has the following attributes: 'active', which is of type str; 'name', which is of type str; 'id', which is of type str.
+
+'eTJ_JournalEntry' represents an important domain concept.
+It has one attribute: 'headline', which is of type str.
+
+'ShiftsResource' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TaskPrefix' represents an important domain concept.
+It does not declare any attributes.
+
+'MonthlyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Vacation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DailyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Report' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'DailyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'Epilog' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Depends' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Resource' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'eTJ_HAlign' represents an important domain concept.
+It has one attribute: 'justification', which is of type str.
+
+'eTJ_TaskStatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Limit' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ExtendTask' represents an important domain concept.
+It does not declare any attributes.
+
+'AccountReport' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Column' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'eTJ_ExtendedResourceAttribute' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'eTJ_MinEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_MacroCall' represents an important domain concept.
+It has one attribute: 'buildin', which is of type str.
+
+'eTJ_Mandatory' represents an important domain concept.
+It has one attribute: 'mandatory', which is of type bool.
+
+'WeeklyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Shift' represents an important domain concept.
+It has the following attributes: 'timezone', which is of type str; 'id', which is of type str; 'replace', which is of type str; 'name', which is of type str.
+
+'eTJ_Milestone' represents an important domain concept.
+It has one attribute: 'milestone', which is of type bool.
+
+'ColumnAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ResourceRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_FontColor' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'ResourceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Duration' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ListItem' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskReport' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_IncludeProperties' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'eTJ_ToolTip' represents an important domain concept.
+It has one attribute: 'tip', which is of type str.
+
+'eTJ_CellColor' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_SortResources' represents an important domain concept.
+It does not declare any attributes.
+
+'Center' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_MaxStart' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Scenarios' represents an important domain concept.
+It does not declare any attributes.
+
+'Left' represents an important domain concept.
+It does not declare any attributes.
+
+'TimesheetReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Title' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'eTJ_Export' represents an important domain concept.
+It has the following attributes: 'filename', which is of type str; 'id', which is of type str.
+
+'eTJ_WeeklyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_CurrencyFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Timeoff' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'eTJ_ScenarioIcal' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Remaining' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskStatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TimesheetReport' represents an important domain concept.
+It has one attribute: 'filename', which is of type str.
+
+'eTJ_HideJournalEntry' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'Prolog' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Extend' represents an important domain concept.
+It has the following attributes: 'scenariospecific', which is of type bool; 'name', which is of type str; 'inherit', which is of type bool; 'description', which is of type str.
+
+'eTJ_Limits' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtDate' represents an important domain concept.
+It does not declare any attributes.
+
+'SortJournalEntries' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Minimum' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ShortTimeFormat' represents an important domain concept.
+It has one attribute: 'shortTimeFormat', which is of type str.
+
+'eTJ_ShiftsResource' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_JournalMode' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'eTJ_End' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Sort' represents an important domain concept.
+It has one attribute: 'tree', which is of type bool.
+
+'eTJ_SupplementTask' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Global' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_GapDuration' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'SortResources' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TextReport' represents an important domain concept.
+It does not declare any attributes.
+
+'ExportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Charge' represents an important domain concept.
+It has the following attributes: 'applies', which is of type str; 'amount', which is of type float.
+
+'CurrencyFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Effort' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'ReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TaskDependency' represents an important domain concept.
+It has one attribute: 'policy', which is of type str.
+
+'eTJ_WeekStarts' represents an important domain concept.
+It has the following attributes: 'monday', which is of type bool; 'sunday', which is of type bool.
+
+'GapLength' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_StatusTimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Prolog' represents an important domain concept.
+It does not declare any attributes.
+
+'Precedes' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_LoadUnit' represents an important domain concept.
+It has one attribute: 'unit', which is of type str.
+
+'eTJ_AllocateResource' represents an important domain concept.
+It does not declare any attributes.
+
+'LimitsAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'NikuReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Timesheet' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Warn' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Left' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_NavigatorAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ResourceReport' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_AllocateResourceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_WorkHours' represents an important domain concept.
+It has the following attributes: 'start', which is of type str; 'stop', which is of type str.
+
+'eTJ_Interval4' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Summary' represents an important domain concept.
+It does not declare any attributes.
+
+'ListItem' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Function' represents an important domain concept.
+It has the following attributes: 'level', which is of type int; 'distance', which is of type int; 'parentId', which is of type str.
+
+'eTJ_AccountPrefix' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_StatusTimesheet' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'level', which is of type str.
+
+'MonthlyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Leaves' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TaskAttributes' represents an important domain concept.
+It has the following attributes: 'flags', which is of type bool; 'minend', which is of type bool; 'depends', which is of type bool; 'maxend', which is of type bool; 'responsible', which is of type bool; 'minstart', which is of type bool; 'priority', which is of type bool; 'all', which is of type bool; 'none', which is of type bool; 'complete', which is of type bool; 'maxstart', which is of type bool; 'booking', which is of type bool; 'note', which is of type bool.
+
+'Start' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_BookingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TaskStatusSheet' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Definitions' represents an important domain concept.
+It has the following attributes: 'all', which is of type bool; 'none', which is of type bool.
+
+'eTJ_TaskReport' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TaskRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_GapLength' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_AccountReport' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_StatusStatusSheet' represents an important domain concept.
+It has the following attributes: 'level', which is of type str; 'text', which is of type str.
+
+'eTJ_DailyWorkingHours' represents an important domain concept.
+It has one attribute: 'dailyWorkingHours', which is of type float.
+
+'Summary' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceReport' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_YearlyWorkingDays' represents an important domain concept.
+It has one attribute: 'yearlyWorkingDays', which is of type int.
+
+'eTJ_StatusSheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Details' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ExtendedTaskAttribute' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'eTJ_Criterion' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'columnId', which is of type str.
+
+'eTJ_ExtendResource' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Select' represents an important domain concept.
+It has one attribute: 'argument', which is of type str.
+
+'eTJ_Scheduling' represents an important domain concept.
+It has one attribute: 'scheduling', which is of type str.
+
+'eTJ_Work' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'value', which is of type float.
+
+'eTJ_PurgeReport' represents an important domain concept.
+It has one attribute: 'listAttribute', which is of type str.
+
+'eTJ_SelfContained' represents an important domain concept.
+It has one attribute: 'selfcontained', which is of type str.
+
+'eTJ_ProjectAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_MonthlyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ShiftTimesheet' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_StatusSheetReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TrackingScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Responsible' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_JournalAttributes' represents an important domain concept.
+It has one attribute: 'args', which is of type str.
+
+'eTJ_HideResource' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_RealFormat' represents an important domain concept.
+It has the following attributes: 'negativePrefix', which is of type str; 'thousandsSeparator', which is of type str; 'fractionSeparator', which is of type str; 'negativeSuffix', which is of type str; 'fractionDigits', which is of type int.
+
+'eTJ_Interval3' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ExportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ExtendedResourceAttributeColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'GapDuration' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ResourceAttributes' represents an important domain concept.
+It has the following attributes: 'all', which is of type bool; 'none', which is of type bool; 'vacation', which is of type bool; 'workingHours', which is of type bool; 'booking', which is of type bool.
+
+'NewTaskAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ShiftsTask' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_WorkingHours' represents an important domain concept.
+It has one attribute: 'off', which is of type bool.
+
+'eTJ_Now' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskTimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_LeaveDetails' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'eTJ_MinStart' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Epilog' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Task' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'eTJ_AccountShare' represents an important domain concept.
+It has one attribute: 'share', which is of type float.
+
+'eTJ_Project' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'version', which is of type str; 'name', which is of type str.
+
+'eTJ_Credit' represents an important domain concept.
+It has the following attributes: 'amount', which is of type float; 'description', which is of type str.
+
+'eTJ_LimitAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'IcalReportAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ShiftsLimit' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Email' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'eTJ_RichText' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'eTJ_WeeklyMax' represents an important domain concept.
+It does not declare any attributes.
+
+'Caption' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Scheduled' represents an important domain concept.
+It has one attribute: 'scheduled', which is of type bool.
+
+'eTJ_NewTaskAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_AccountRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_DailyMin' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Include' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'eTJ_ResourceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Shifts' represents an important domain concept.
+It does not declare any attributes.
+
+'Right' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_PurgeResource' represents an important domain concept.
+It has one attribute: 'listAttribute', which is of type str.
+
+'eTJ_Headline' represents an important domain concept.
+It does not declare any attributes.
+
+'TextReport' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'TimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_SupplementReport' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_TimingResolution' represents an important domain concept.
+It has one attribute: 'timingResolution', which is of type int.
+
+'eTJ_Weekdays' represents an important domain concept.
+It has the following attributes: 'first', which is of type str; 'last', which is of type str.
+
+'eTJ_TaskTimesheetAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_RollupAccount' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Balance' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Managers' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Scale' represents an important domain concept.
+It has one attribute: 'scale', which is of type str.
+
+'SortAccounts' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Formats' represents an important domain concept.
+It has one attribute: 'formats', which is of type str.
+
+'eTJ_Precedes' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_RollupResource' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Currency' represents an important domain concept.
+It has one attribute: 'currency', which is of type str.
+
+'eTJ_BookingTask' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_SupplementResource' represents an important domain concept.
+It does not declare any attributes.
+
+'Maximum' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_Note' represents an important domain concept.
+It has one attribute: 'note', which is of type str.
+
+'eTJ_SortAccounts' represents an important domain concept.
+It does not declare any attributes.
+
+'eTJ_ProjectId' represents an important domain concept.
+It has one attribute: 'projectId', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BuildInMacro' defines the following possible values: 'now', 'projectstart', 'projectend'.
+The enumeration 'SelectArgument' defines the following possible values: 'RANDOM', 'MINALLOCATED', 'ORDER', 'MINLOADED', 'MAXLOADED'.
+The enumeration 'YesNo' defines the following possible values: 'YES', 'NO'.
+The enumeration 'SchedulingPolicy' defines the following possible values: 'ALAP', 'ASAP'.
+The enumeration 'JournalEntrySortCriterion' defines the following possible values: 'DATE_UP', 'ALERT_UP', 'PROPERTY_UP', 'ALERT_DOWN', 'DATE_DOWN'.
+The enumeration 'TimeUnit' defines the following possible values: 'MINUTE', 'DAY', 'MONTH', 'YEAR', 'WEEK', 'HOUR'.
+The enumeration 'ChargeApplies' defines the following possible values: 'PERDAY', 'PERWEEK', 'ONEND', 'PERHOUR', 'ONSTART'.
+The enumeration 'LeaveType' defines the following possible values: 'special', 'unemployed', 'project', 'holiday', 'sick', 'unpaid', 'annual'.
+The enumeration 'AlertLevel' defines the following possible values: 'RED', 'GREEN', 'YELLOW'.
+The enumeration 'PurgeResourceAttribute' defines the following possible values: 'FAIL', 'REPORTS', 'WARN', 'FLAGS', 'VACATIONS', 'MANAGERS'.
+The enumeration 'ScaleResolution' defines the following possible values: 'WEEK', 'DAY', 'YEAR', 'MONTH', 'HOUR', 'QUARTER'.
+The enumeration 'LoadDisplayUnit' defines the following possible values: 'HOURS', 'LONGAUTO', 'SHORTAUTO', 'DAYS', 'MINUTES', 'YEARS', 'MONTHS', 'WEEKS'.
+The enumeration 'PurgeTaskAttribute' defines the following possible values: 'WARN', 'CHARGE', 'DEPENDS', 'FLAGS', 'CHARGESET', 'PRECEDES', 'FAIL', 'BOOKING'.
+The enumeration 'CriterionDirection' defines the following possible values: 'UP', 'DOWN'.
+The enumeration 'Weekday' defines the following possible values: 'SUN', 'WED', 'THR', 'TUE', 'MON', 'SAT', 'FRI'.
+The enumeration 'JournalModeValue' defines the following possible values: 'JOURNAL_SUB', 'JOURNAL', 'STATUS_DOWN', 'ALERTS_DOWN', 'STATUS_UP'.
+The enumeration 'WorkQuantityUnit' defines the following possible values: 'MINUTES', 'PERCENT', 'DAYS', 'HOURS'.
+The enumeration 'ReportFormat' defines the following possible values: 'HTML', 'NIKU', 'CSV'.
+The enumeration 'PurgeReportAttribute' defines the following possible values: 'DEFINITIONS', 'COLUMNS', 'FLAGS', 'SORTJOURNALENTRIES', 'SORTACCOUNTS', 'SORTTASKS', 'SORTRESOURCES', 'FORMATS', 'SCENARIOS', 'JOURNALATTRIBUTES'.
+The enumeration 'ListTypeValues' defines the following possible values: 'COMMA', 'NUMBERED', 'BULLETS'.
+The enumeration 'DependsPolicy' defines the following possible values: 'ONSTART', 'ONEND'.
+The enumeration 'Justification' defines the following possible values: 'LEFT', 'CENTER', 'RIGHT'.
+The enumeration 'ColumnId' defines the following possible values: 'effort', 'wbs', 'quarterly', 'competitorcount', 'pathcriticalness', 'efficiency', 'note', 'journal', 'directreports', 'sickleave', 'criticalness', 'alertsummaries', 'hourly', 'targets', 'resources', 'priority', 'index', 'minstart', 'activetasks', 'status', 'revenue', 'gauge', 'minend', 'precursors', 'journalmessages', 'managers', 'seqno', 'name', 'journalsummaries', 'headcount', 'effortdone', 'complete', 'id', 'balance', 'duration', 'rate', 'bsi', 'yearly', 'fte', 'opentasks', 'scheduling', 'competitors', 'freework', 'closedtasks', 'scenario', 'turnover', 'alerttrend', 'children', 'unpaidleave', 'line', 'completed', 'maxstart', 'freetime', 'specialleave', 'cost', 'effortleft', 'alertmessages', 'daily', 'duties', 'journal_sub', 'followers', 'maxend', 'no', 'inputs', 'start', 'chart', 'email', 'responsible', 'hierarchindex', 'reports', 'monthly', 'alert', 'flags', 'weekly', 'annualleave', 'end', 'annualleavebalance'.
+The enumeration 'JournalAttributeValues' defines the following possible values: 'date', 'flags', 'summary', 'property', 'NONE', 'details', 'ALL', 'propertyid', 'headline', 'author', 'alert', 'timesheet'.
+
+The model also captures inheritance relationships between classes.
+The class 'eTJ_Leaves' is a specialization of 'Property'.
+The class 'eTJ_Leaves' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_Account' is a specialization of 'Property'.
+The class 'eTJ_Account' is a specialization of 'AccountAttribute'.
+The class 'eTJ_AccountPrefix' is a specialization of 'IncludePropertiesAttribute'.
+The class 'eTJ_AccountReport' is a specialization of 'Property'.
+The class 'eTJ_AccountReport' is a specialization of 'ReportAttribute'.
+The class 'eTJ_AccountRoot' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Task' is a specialization of 'Property'.
+The class 'eTJ_MacroCall' is a specialization of 'End'.
+The class 'eTJ_MacroCall' is a specialization of 'Start'.
+The class 'eTJ_MacroCall' is a specialization of 'ExtDate'.
+The class 'eTJ_Report' is a specialization of 'AccountReport'.
+The class 'eTJ_Report' is a specialization of 'ResourceReport'.
+The class 'eTJ_Report' is a specialization of 'TaskReport'.
+The class 'eTJ_Report' is a specialization of 'TextReport'.
+The class 'eTJ_IcalReport' is a specialization of 'Property'.
+The class 'eTJ_Export' is a specialization of 'Property'.
+The class 'eTJ_Resource' is a specialization of 'Property'.
+The class 'eTJ_Resource' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_Allocate' is a specialization of 'Property'.
+The class 'eTJ_Navigator' is a specialization of 'Property'.
+The class 'eTJ_NewTask' is a specialization of 'TimesheetAttribute'.
+The class 'eTJ_NikuReport' is a specialization of 'Property'.
+The class 'eTJ_Alternative' is a specialization of 'AllocateResourceAttribute'.
+The class 'eTJ_Author' is a specialization of 'StatusStatusSheetAttribute'.
+The class 'eTJ_Balance' is a specialization of 'Property'.
+The class 'eTJ_Balance' is a specialization of 'ReportAttribute'.
+The class 'eTJ_BookingResource' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_Caption' is a specialization of 'ReportAttribute'.
+The class 'eTJ_CellColor' is a specialization of 'Property'.
+The class 'eTJ_CellColor' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_CellText' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_Center' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Columns' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Copyright' is a specialization of 'Property'.
+The class 'eTJ_Credit' is a specialization of 'AccountAttribute'.
+The class 'eTJ_Currency' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_CurrencyFormat' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_CurrencyFormat' is a specialization of 'ReportAttribute'.
+The class 'eTJ_DailyMax' is a specialization of 'LimitsAttribute'.
+The class 'eTJ_DailyMin' is a specialization of 'LimitsAttribute'.
+The class 'eTJ_DailyWorkingHours' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_Definitions' is a specialization of 'ExportAttribute'.
+The class 'eTJ_Details' is a specialization of 'StatusStatusSheetAttribute'.
+The class 'eTJ_Details' is a specialization of 'StatusTimesheetAttribute'.
+The class 'eTJ_Efficiency' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_Email' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_End' is a specialization of 'ReportAttribute'.
+The class 'eTJ_End' is a specialization of 'IcalReportAttribute'.
+The class 'eTJ_End' is a specialization of 'ExportAttribute'.
+The class 'eTJ_End' is a specialization of 'NewTaskAttribute'.
+The class 'eTJ_End' is a specialization of 'NikuReportAttribute'.
+The class 'eTJ_End' is a specialization of 'StatusSheetReportAttribute'.
+The class 'eTJ_End' is a specialization of 'TaskTimesheetAttribute'.
+The class 'eTJ_End' is a specialization of 'TimesheetReportAttribute'.
+The class 'eTJ_End' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_Epilog' is a specialization of 'ReportAttribute'.
+The class 'eTJ_ExtendResource' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_ExtendedResourceAttribute' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_ExtendTask' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_Fail' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_Flags' is a specialization of 'Property'.
+The class 'eTJ_Flags' is a specialization of 'AccountAttribute'.
+The class 'eTJ_Flags' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Flags' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_Flags' is a specialization of 'StatusStatusSheetAttribute'.
+The class 'eTJ_Flags' is a specialization of 'StatusTimesheetAttribute'.
+The class 'eTJ_FontColor' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_Footer' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Formats' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Formats' is a specialization of 'NikuReportAttribute'.
+The class 'eTJ_HAlign' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_Header' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Headline' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Headline' is a specialization of 'NikuReportAttribute'.
+The class 'eTJ_HideAccount' is a specialization of 'ReportAttribute'.
+The class 'eTJ_HideJournalEntry' is a specialization of 'ReportAttribute'.
+The class 'eTJ_HideJournalEntry' is a specialization of 'IcalReportAttribute'.
+The class 'eTJ_HideReport' is a specialization of 'NavigatorAttribute'.
+The class 'eTJ_HideResource' is a specialization of 'ReportAttribute'.
+The class 'eTJ_HideResource' is a specialization of 'IcalReportAttribute'.
+The class 'eTJ_HideResource' is a specialization of 'ExportAttribute'.
+The class 'eTJ_HideResource' is a specialization of 'NikuReportAttribute'.
+The class 'eTJ_HideResource' is a specialization of 'StatusSheetReportAttribute'.
+The class 'eTJ_HideResource' is a specialization of 'TimesheetReportAttribute'.
+The class 'eTJ_HideTask' is a specialization of 'ReportAttribute'.
+The class 'eTJ_HideTask' is a specialization of 'IcalReportAttribute'.
+The class 'eTJ_HideTask' is a specialization of 'ExportAttribute'.
+The class 'eTJ_HideTask' is a specialization of 'NikuReportAttribute'.
+The class 'eTJ_HideTask' is a specialization of 'StatusSheetReportAttribute'.
+The class 'eTJ_Include' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_IncludeProperties' is a specialization of 'Property'.
+The class 'eTJ_JournalAttributes' is a specialization of 'ReportAttribute'.
+The class 'eTJ_JournalEntry' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_JournalEntry' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_JournalMode' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Left' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Limits' is a specialization of 'Property'.
+The class 'eTJ_Limits' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_ListItem' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_ListType' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_LoadUnit' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Macro' is a specialization of 'Property'.
+The class 'eTJ_Managers' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_Mandatory' is a specialization of 'AllocateResourceAttribute'.
+The class 'eTJ_Maximum' is a specialization of 'LimitsAttribute'.
+The class 'eTJ_Minimum' is a specialization of 'LimitsAttribute'.
+The class 'eTJ_MonthlyMax' is a specialization of 'LimitsAttribute'.
+The class 'eTJ_MonthlyMin' is a specialization of 'LimitsAttribute'.
+The class 'eTJ_Now' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_NumberFormat' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_NumberFormat' is a specialization of 'ReportAttribute'.
+The class 'eTJ_NumberFormat' is a specialization of 'NikuReportAttribute'.
+The class 'eTJ_Period' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Period' is a specialization of 'IcalReportAttribute'.
+The class 'eTJ_Period' is a specialization of 'ExportAttribute'.
+The class 'eTJ_Period' is a specialization of 'NikuReportAttribute'.
+The class 'eTJ_Period' is a specialization of 'StatusSheetReportAttribute'.
+The class 'eTJ_Period' is a specialization of 'TimesheetReportAttribute'.
+The class 'eTJ_Period' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_Persistent' is a specialization of 'AllocateResourceAttribute'.
+The class 'eTJ_Priority' is a specialization of 'NewTaskAttribute'.
+The class 'eTJ_Priority' is a specialization of 'TaskTimesheetAttribute'.
+The class 'eTJ_ProjectIds' is a specialization of 'Property'.
+The class 'eTJ_Prolog' is a specialization of 'ReportAttribute'.
+The class 'eTJ_PurgeReport' is a specialization of 'ReportAttribute'.
+The class 'eTJ_PurgeResource' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_Rate' is a specialization of 'Property'.
+The class 'eTJ_Rate' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_Remaining' is a specialization of 'NewTaskAttribute'.
+The class 'eTJ_Remaining' is a specialization of 'TaskTimesheetAttribute'.
+The class 'eTJ_ReportPrefix' is a specialization of 'IncludePropertiesAttribute'.
+The class 'eTJ_ResourceAttributes' is a specialization of 'ExportAttribute'.
+The class 'eTJ_ResourcePrefix' is a specialization of 'IncludePropertiesAttribute'.
+The class 'eTJ_ResourceReport' is a specialization of 'Property'.
+The class 'eTJ_ResourceReport' is a specialization of 'ReportAttribute'.
+The class 'eTJ_ResourceRoot' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Right' is a specialization of 'ReportAttribute'.
+The class 'eTJ_RollupAccount' is a specialization of 'ReportAttribute'.
+The class 'eTJ_RollupResource' is a specialization of 'ReportAttribute'.
+The class 'eTJ_RollupResource' is a specialization of 'IcalReportAttribute'.
+The class 'eTJ_RollupResource' is a specialization of 'ExportAttribute'.
+The class 'eTJ_RollupTask' is a specialization of 'ReportAttribute'.
+The class 'eTJ_RollupTask' is a specialization of 'IcalReportAttribute'.
+The class 'eTJ_RollupTask' is a specialization of 'ExportAttribute'.
+The class 'eTJ_Scale' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_Scenario' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_ScenarioIcal' is a specialization of 'IcalReportAttribute'.
+The class 'eTJ_Scenarios' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Scenarios' is a specialization of 'ExportAttribute'.
+The class 'eTJ_Select' is a specialization of 'AllocateResourceAttribute'.
+The class 'eTJ_SelfContained' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Shift' is a specialization of 'Property'.
+The class 'eTJ_ShiftTimesheet' is a specialization of 'TimesheetAttribute'.
+The class 'eTJ_Shifts' is a specialization of 'ShiftsResource'.
+The class 'eTJ_Shifts' is a specialization of 'ShiftsTask'.
+The class 'eTJ_ShiftsAllocate' is a specialization of 'AllocateResourceAttribute'.
+The class 'eTJ_ShiftsResource' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_ShortTimeFormat' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_Sort' is a specialization of 'SortAccounts'.
+The class 'eTJ_Sort' is a specialization of 'SortJournalEntries'.
+The class 'eTJ_Sort' is a specialization of 'SortResources'.
+The class 'eTJ_Sort' is a specialization of 'SortTasks'.
+The class 'eTJ_SortAccounts' is a specialization of 'ReportAttribute'.
+The class 'eTJ_SortJournalEntries' is a specialization of 'ReportAttribute'.
+The class 'eTJ_SortResources' is a specialization of 'ReportAttribute'.
+The class 'eTJ_SortResources' is a specialization of 'StatusSheetReportAttribute'.
+The class 'eTJ_SortTasks' is a specialization of 'ReportAttribute'.
+The class 'eTJ_SortTasks' is a specialization of 'StatusSheetReportAttribute'.
+The class 'eTJ_Start' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Start' is a specialization of 'IcalReportAttribute'.
+The class 'eTJ_Start' is a specialization of 'ExportAttribute'.
+The class 'eTJ_Start' is a specialization of 'NikuReportAttribute'.
+The class 'eTJ_Start' is a specialization of 'StatusSheetReportAttribute'.
+The class 'eTJ_Start' is a specialization of 'TimesheetReportAttribute'.
+The class 'eTJ_Start' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_StatusStatusSheet' is a specialization of 'TaskStatusSheetAttribute'.
+The class 'eTJ_StatusTimesheet' is a specialization of 'TaskTimesheetAttribute'.
+The class 'eTJ_StatusTimesheet' is a specialization of 'TimesheetAttribute'.
+The class 'eTJ_StatusSheet' is a specialization of 'Property'.
+The class 'eTJ_StatusSheetReport' is a specialization of 'Property'.
+The class 'eTJ_Summary' is a specialization of 'StatusStatusSheetAttribute'.
+The class 'eTJ_Summary' is a specialization of 'StatusTimesheetAttribute'.
+The class 'eTJ_SupplementAccount' is a specialization of 'Property'.
+The class 'eTJ_SupplementReport' is a specialization of 'Property'.
+The class 'eTJ_SupplementResource' is a specialization of 'Property'.
+The class 'eTJ_SupplementResource' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_SupplementTask' is a specialization of 'Property'.
+The class 'eTJ_TagFile' is a specialization of 'Property'.
+The class 'eTJ_TaskStatusSheet' is a specialization of 'StatusSheetAttribute'.
+The class 'eTJ_TaskStatusSheet' is a specialization of 'TaskStatusSheetAttribute'.
+The class 'eTJ_TaskTimesheet' is a specialization of 'TimesheetAttribute'.
+The class 'eTJ_TaskAttributes' is a specialization of 'ExportAttribute'.
+The class 'eTJ_TaskPrefix' is a specialization of 'IncludePropertiesAttribute'.
+The class 'eTJ_TaskReport' is a specialization of 'Property'.
+The class 'eTJ_TaskReport' is a specialization of 'ReportAttribute'.
+The class 'eTJ_TaskRoot' is a specialization of 'ReportAttribute'.
+The class 'eTJ_TextReport' is a specialization of 'Property'.
+The class 'eTJ_TextReport' is a specialization of 'ReportAttribute'.
+The class 'eTJ_TimeFormat' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_TimeFormat' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Timeoff' is a specialization of 'NikuReportAttribute'.
+The class 'eTJ_Timesheet' is a specialization of 'Property'.
+The class 'eTJ_TimesheetReport' is a specialization of 'Property'.
+The class 'eTJ_Timezone' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_Timezone' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Timezone' is a specialization of 'ExportAttribute'.
+The class 'eTJ_TimingResolution' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_Title' is a specialization of 'ReportAttribute'.
+The class 'eTJ_Title' is a specialization of 'NikuReportAttribute'.
+The class 'eTJ_Title' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_ToolTip' is a specialization of 'Property'.
+The class 'eTJ_ToolTip' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_TrackingScenario' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_Vacation' is a specialization of 'Property'.
+The class 'eTJ_Vacation' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_Warn' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_WeekStarts' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_WeeklyMax' is a specialization of 'LimitsAttribute'.
+The class 'eTJ_WeeklyMin' is a specialization of 'LimitsAttribute'.
+The class 'eTJ_Width' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_Work' is a specialization of 'NewTaskAttribute'.
+The class 'eTJ_Work' is a specialization of 'TaskTimesheetAttribute'.
+The class 'eTJ_WorkingHours' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_WorkingHours' is a specialization of 'ResourceAttribute'.
+The class 'eTJ_YearlyWorkingDays' is a specialization of 'ProjectAttribute'.
+The class 'eTJ_ExtendedResourceAttributeColumn' is a specialization of 'ColumnAttribute'.
+The class 'eTJ_DurationQuantity' is a specialization of 'GapDuration'.
+The class 'eTJ_DurationQuantity' is a specialization of 'GapLength'.
+The class 'eTJ_Limit' is a specialization of 'DailyMax'.
+The class 'eTJ_Limit' is a specialization of 'DailyMin'.
+The class 'eTJ_Limit' is a specialization of 'Maximum'.
+The class 'eTJ_Limit' is a specialization of 'Minimum'.
+The class 'eTJ_Limit' is a specialization of 'MonthlyMax'.
+The class 'eTJ_Limit' is a specialization of 'MonthlyMin'.
+The class 'eTJ_Limit' is a specialization of 'WeeklyMax'.
+The class 'eTJ_Limit' is a specialization of 'WeeklyMin'.
+The class 'eTJ_RealFormat' is a specialization of 'CurrencyFormat'.
+The class 'eTJ_RealFormat' is a specialization of 'NumberFormat'.
+The class 'eTJ_TaskDependency' is a specialization of 'Precedes'.
+The class 'eTJ_RichText' is a specialization of 'Caption'.
+The class 'eTJ_RichText' is a specialization of 'Center'.
+The class 'eTJ_RichText' is a specialization of 'Details'.
+The class 'eTJ_RichText' is a specialization of 'Epilog'.
+The class 'eTJ_RichText' is a specialization of 'Footer'.
+The class 'eTJ_RichText' is a specialization of 'Header'.
+The class 'eTJ_RichText' is a specialization of 'Headline'.
+The class 'eTJ_RichText' is a specialization of 'Left'.
+The class 'eTJ_RichText' is a specialization of 'ListItem'.
+The class 'eTJ_RichText' is a specialization of 'Prolog'.
+The class 'eTJ_RichText' is a specialization of 'Right'.
+The class 'eTJ_RichText' is a specialization of 'Summary'.
+The class 'eTJ_Defintions' is a specialization of 'Definitions'.
+The class 'eTJ_LogicalFunctionExpression' is a specialization of 'LogicalExpression'.
+The class 'eTJ_LogicalAbsoluteIdExression' is a specialization of 'LogicalExpression'.
+The class 'eTJ_LogicalBooleanLiteral' is a specialization of 'LogicalExpression'.
+The class 'eTJ_LogicalNumeralLiteral' is a specialization of 'LogicalExpression'.
+The class 'eTJ_LogicalStringLiteral' is a specialization of 'LogicalExpression'.
+The class 'eTJ_LogicalDateLiteral' is a specialization of 'LogicalExpression'.
+The class 'eTJ_LogicalFlagExpression' is a specialization of 'LogicalExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'eTJ_Global' and 'eTJ_Project'. From 'eTJ_Global', the role 'eTJ_Global' has cardinality 0..*, and from 'eTJ_Project', the role 'eTJ_Project' has cardinality 0..*.
+An association connects 'eTJ_Property' and 'eTJ_Global'. From 'eTJ_Property', the role 'eTJ_Property' has cardinality 0..*, and from 'eTJ_Global', the role 'eTJ_Global2' has cardinality 0..*.
+An association connects 'eTJ_Leaves' and 'eTJ_LeaveDetails'. From 'eTJ_Leaves', the role 'eTJ_Leaves' has cardinality 0..*, and from 'eTJ_LeaveDetails', the role 'eTJ_LeaveDetails' has cardinality 0..*.
+An association connects 'eTJ_LeaveDetails' and 'eTJ_Interval3'. From 'eTJ_LeaveDetails', the role 'eTJ_LeaveDetails5' has cardinality 0..*, and from 'eTJ_Interval3', the role 'eTJ_Interval3' has cardinality 0..*.
+An association connects 'eTJ_AccountAttribute' and 'eTJ_Account'. From 'eTJ_AccountAttribute', the role 'eTJ_AccountAttribute' has cardinality 0..*, and from 'eTJ_Account', the role 'eTJ_Account' has cardinality 0..*.
+An association connects 'eTJ_Account' and 'eTJ_AccountPrefix'. From 'eTJ_Account', the role 'eTJ_Account8' has cardinality 0..*, and from 'eTJ_AccountPrefix', the role 'eTJ_AccountPrefix' has cardinality 0..*.
+An association connects 'eTJ_AccountRoot' and 'eTJ_Account'. From 'eTJ_AccountRoot', the role 'eTJ_AccountRoot' has cardinality 0..*, and from 'eTJ_Account', the role 'eTJ_Account10' has cardinality 0..*.
+An association connects 'eTJ_Project' and 'eTJ_Interval2'. From 'eTJ_Project', the role 'eTJ_Project12' has cardinality 0..*, and from 'eTJ_Interval2', the role 'eTJ_Interval2' has cardinality 0..*.
+An association connects 'eTJ_ProjectAttribute' and 'eTJ_Project'. From 'eTJ_ProjectAttribute', the role 'eTJ_ProjectAttribute' has cardinality 0..*, and from 'eTJ_Project', the role 'eTJ_Project14' has cardinality 0..*.
+An association connects 'eTJ_TaskAttribute' and 'eTJ_Task'. From 'eTJ_TaskAttribute', the role 'eTJ_TaskAttribute' has cardinality 0..*, and from 'eTJ_Task', the role 'eTJ_Task' has cardinality 0..*.
+An association connects 'eTJ_TaskAttribute' and 'eTJ_Scenario'. From 'eTJ_TaskAttribute', the role 'eTJ_TaskAttribute17' has cardinality 0..*, and from 'eTJ_Scenario', the role 'eTJ_Scenario' has cardinality 0..*.
+An association connects 'eTJ_TaskAttribute' and 'eTJ_EObject'. From 'eTJ_TaskAttribute', the role 'eTJ_TaskAttribute19' has cardinality 0..*, and from 'eTJ_EObject', the role 'eTJ_EObject' has cardinality 0..*.
+An association connects 'eTJ_Macro' and 'eTJ_MacroCall'. From 'eTJ_Macro', the role 'eTJ_Macro' has cardinality 0..*, and from 'eTJ_MacroCall', the role 'eTJ_MacroCall' has cardinality 0..*.
+An association connects 'eTJ_Report' and 'eTJ_ReportAttribute'. From 'eTJ_Report', the role 'eTJ_Report' has cardinality 0..*, and from 'eTJ_ReportAttribute', the role 'eTJ_ReportAttribute' has cardinality 0..*.
+An association connects 'eTJ_IcalReportAttribute' and 'eTJ_IcalReport'. From 'eTJ_IcalReportAttribute', the role 'eTJ_IcalReportAttribute' has cardinality 0..*, and from 'eTJ_IcalReport', the role 'eTJ_IcalReport' has cardinality 0..*.
+An association connects 'eTJ_Export' and 'eTJ_ExportAttribute'. From 'eTJ_Export', the role 'eTJ_Export' has cardinality 0..*, and from 'eTJ_ExportAttribute', the role 'eTJ_ExportAttribute' has cardinality 0..*.
+An association connects 'eTJ_ResourceAttribute' and 'eTJ_Resource'. From 'eTJ_ResourceAttribute', the role 'eTJ_ResourceAttribute' has cardinality 0..*, and from 'eTJ_Resource', the role 'eTJ_Resource' has cardinality 0..*.
+An association connects 'eTJ_Allocate' and 'eTJ_AllocateResource'. From 'eTJ_Allocate', the role 'eTJ_Allocate' has cardinality 0..*, and from 'eTJ_AllocateResource', the role 'eTJ_AllocateResource' has cardinality 0..*.
+An association connects 'eTJ_AllocateResource' and 'eTJ_Resource'. From 'eTJ_AllocateResource', the role 'eTJ_AllocateResource27' has cardinality 0..*, and from 'eTJ_Resource', the role 'eTJ_Resource28' has cardinality 0..*.
+An association connects 'eTJ_AllocateResource' and 'eTJ_AllocateResourceAttribute'. From 'eTJ_AllocateResource', the role 'eTJ_AllocateResource30' has cardinality 0..*, and from 'eTJ_AllocateResourceAttribute', the role 'eTJ_AllocateResourceAttribute' has cardinality 0..*.
+An association connects 'eTJ_Navigator' and 'eTJ_NavigatorAttribute'. From 'eTJ_Navigator', the role 'eTJ_Navigator' has cardinality 0..*, and from 'eTJ_NavigatorAttribute', the role 'eTJ_NavigatorAttribute' has cardinality 0..*.
+An association connects 'eTJ_NewTask' and 'eTJ_NewTaskAttribute'. From 'eTJ_NewTask', the role 'eTJ_NewTask' has cardinality 0..*, and from 'eTJ_NewTaskAttribute', the role 'eTJ_NewTaskAttribute' has cardinality 0..*.
+An association connects 'eTJ_NikuReportAttribute' and 'eTJ_NikuReport'. From 'eTJ_NikuReportAttribute', the role 'eTJ_NikuReportAttribute' has cardinality 0..*, and from 'eTJ_NikuReport', the role 'eTJ_NikuReport' has cardinality 0..*.
+An association connects 'eTJ_Alternative' and 'eTJ_Resource'. From 'eTJ_Alternative', the role 'eTJ_Alternative' has cardinality 0..*, and from 'eTJ_Resource', the role 'eTJ_Resource35' has cardinality 0..*.
+An association connects 'eTJ_Resource' and 'eTJ_Author'. From 'eTJ_Resource', the role 'eTJ_Resource37' has cardinality 0..*, and from 'eTJ_Author', the role 'eTJ_Author' has cardinality 0..*.
+An association connects 'eTJ_Balance' and 'eTJ_Account'. From 'eTJ_Balance', the role 'eTJ_Balance' has cardinality 0..*, and from 'eTJ_Account', the role 'eTJ_Account39' has cardinality 0..*.
+An association connects 'eTJ_Account' and 'eTJ_Balance'. From 'eTJ_Account', the role 'eTJ_Account42' has cardinality 0..*, and from 'eTJ_Balance', the role 'eTJ_Balance41' has cardinality 0..*.
+An association connects 'eTJ_Booking' and 'eTJ_Interval4'. From 'eTJ_Booking', the role 'eTJ_Booking' has cardinality 0..*, and from 'eTJ_Interval4', the role 'eTJ_Interval4' has cardinality 0..*.
+An association connects 'eTJ_Resource' and 'eTJ_BookingTask'. From 'eTJ_Resource', the role 'eTJ_Resource45' has cardinality 0..*, and from 'eTJ_BookingTask', the role 'eTJ_BookingTask' has cardinality 0..*.
+An association connects 'eTJ_Booking' and 'eTJ_BookingTask'. From 'eTJ_Booking', the role 'eTJ_Booking48' has cardinality 0..*, and from 'eTJ_BookingTask', the role 'eTJ_BookingTask47' has cardinality 0..*.
+An association connects 'eTJ_BookingResource' and 'eTJ_Task'. From 'eTJ_BookingResource', the role 'eTJ_BookingResource' has cardinality 0..*, and from 'eTJ_Task', the role 'eTJ_Task50' has cardinality 0..*.
+An association connects 'eTJ_BookingResource' and 'eTJ_Booking'. From 'eTJ_BookingResource', the role 'eTJ_BookingResource52' has cardinality 0..*, and from 'eTJ_Booking', the role 'eTJ_Booking53' has cardinality 0..*.
+An association connects 'eTJ_LogicalExpression' and 'eTJ_CellColor'. From 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression' has cardinality 0..*, and from 'eTJ_CellColor', the role 'eTJ_CellColor' has cardinality 0..*.
+An association connects 'eTJ_RGB' and 'eTJ_CellColor'. From 'eTJ_RGB', the role 'eTJ_RGB' has cardinality 0..*, and from 'eTJ_CellColor', the role 'eTJ_CellColor56' has cardinality 0..*.
+An association connects 'eTJ_CellText' and 'eTJ_LogicalExpression'. From 'eTJ_CellText', the role 'eTJ_CellText' has cardinality 0..*, and from 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression58' has cardinality 0..*.
+An association connects 'eTJ_ChargeSet' and 'eTJ_AccountShare'. From 'eTJ_ChargeSet', the role 'eTJ_ChargeSet' has cardinality 0..*, and from 'eTJ_AccountShare', the role 'eTJ_AccountShare' has cardinality 0..*.
+An association connects 'eTJ_Columns' and 'eTJ_Column'. From 'eTJ_Columns', the role 'eTJ_Columns' has cardinality 0..*, and from 'eTJ_Column', the role 'eTJ_Column' has cardinality 0..*.
+An association connects 'eTJ_Credit' and 'eTJ_ISODATE'. From 'eTJ_Credit', the role 'eTJ_Credit' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE' has cardinality 0..*.
+An association connects 'eTJ_Depends' and 'eTJ_TaskDependency'. From 'eTJ_Depends', the role 'eTJ_Depends' has cardinality 0..*, and from 'eTJ_TaskDependency', the role 'eTJ_TaskDependency' has cardinality 0..*.
+An association connects 'eTJ_DurationQuantity' and 'eTJ_Duration'. From 'eTJ_DurationQuantity', the role 'eTJ_DurationQuantity' has cardinality 0..*, and from 'eTJ_Duration', the role 'eTJ_Duration' has cardinality 0..*.
+An association connects 'eTJ_Effort' and 'eTJ_DurationQuantity'. From 'eTJ_Effort', the role 'eTJ_Effort' has cardinality 0..*, and from 'eTJ_DurationQuantity', the role 'eTJ_DurationQuantity65' has cardinality 0..*.
+An association connects 'eTJ_ISODATE' and 'eTJ_End'. From 'eTJ_ISODATE', the role 'eTJ_ISODATE67' has cardinality 0..*, and from 'eTJ_End', the role 'eTJ_End' has cardinality 0..*.
+An association connects 'eTJ_Extend' and 'eTJ_ExtendResource'. From 'eTJ_Extend', the role 'eTJ_Extend' has cardinality 0..*, and from 'eTJ_ExtendResource', the role 'eTJ_ExtendResource' has cardinality 0..*.
+An association connects 'eTJ_ExtendedResourceAttribute' and 'eTJ_Extend'. From 'eTJ_ExtendedResourceAttribute', the role 'eTJ_ExtendedResourceAttribute' has cardinality 0..*, and from 'eTJ_Extend', the role 'eTJ_Extend70' has cardinality 0..*.
+An association connects 'eTJ_ExtendTask' and 'eTJ_Extend'. From 'eTJ_ExtendTask', the role 'eTJ_ExtendTask' has cardinality 0..*, and from 'eTJ_Extend', the role 'eTJ_Extend72' has cardinality 0..*.
+An association connects 'eTJ_ExtendedTaskAttribute' and 'eTJ_Extend'. From 'eTJ_ExtendedTaskAttribute', the role 'eTJ_ExtendedTaskAttribute' has cardinality 0..*, and from 'eTJ_Extend', the role 'eTJ_Extend74' has cardinality 0..*.
+An association connects 'eTJ_LogicalExpression' and 'eTJ_Fail'. From 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression76' has cardinality 0..*, and from 'eTJ_Fail', the role 'eTJ_Fail' has cardinality 0..*.
+An association connects 'eTJ_Function' and 'eTJ_ISODATE'. From 'eTJ_Function', the role 'eTJ_Function' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE78' has cardinality 0..*.
+An association connects 'eTJ_Scenario' and 'eTJ_Function'. From 'eTJ_Scenario', the role 'eTJ_Scenario81' has cardinality 0..*, and from 'eTJ_Function', the role 'eTJ_Function80' has cardinality 0..*.
+An association connects 'eTJ_Function' and 'eTJ_Task'. From 'eTJ_Function', the role 'eTJ_Function83' has cardinality 0..*, and from 'eTJ_Task', the role 'eTJ_Task84' has cardinality 0..*.
+An association connects 'eTJ_Resource' and 'eTJ_Function'. From 'eTJ_Resource', the role 'eTJ_Resource87' has cardinality 0..*, and from 'eTJ_Function', the role 'eTJ_Function86' has cardinality 0..*.
+An association connects 'eTJ_HAlign' and 'eTJ_LogicalExpression'. From 'eTJ_HAlign', the role 'eTJ_HAlign' has cardinality 0..*, and from 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression89' has cardinality 0..*.
+An association connects 'eTJ_LogicalExpression' and 'eTJ_HideReport'. From 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression91' has cardinality 0..*, and from 'eTJ_HideReport', the role 'eTJ_HideReport' has cardinality 0..*.
+An association connects 'eTJ_HideResource' and 'eTJ_LogicalExpression'. From 'eTJ_HideResource', the role 'eTJ_HideResource' has cardinality 0..*, and from 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression93' has cardinality 0..*.
+An association connects 'eTJ_HideTask' and 'eTJ_LogicalExpression'. From 'eTJ_HideTask', the role 'eTJ_HideTask' has cardinality 0..*, and from 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression95' has cardinality 0..*.
+An association connects 'eTJ_IncludePropertiesAttribute' and 'eTJ_IncludeProperties'. From 'eTJ_IncludePropertiesAttribute', the role 'eTJ_IncludePropertiesAttribute' has cardinality 0..*, and from 'eTJ_IncludeProperties', the role 'eTJ_IncludeProperties' has cardinality 0..*.
+An association connects 'eTJ_ISODATE' and 'eTJ_Interval1'. From 'eTJ_ISODATE', the role 'eTJ_ISODATE98' has cardinality 0..*, and from 'eTJ_Interval1', the role 'eTJ_Interval1' has cardinality 0..*.
+An association connects 'eTJ_Interval1' and 'eTJ_ISODATE'. From 'eTJ_Interval1', the role 'eTJ_Interval1100' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE101' has cardinality 0..*.
+An association connects 'eTJ_DurationQuantity' and 'eTJ_Interval1'. From 'eTJ_DurationQuantity', the role 'eTJ_DurationQuantity104' has cardinality 0..*, and from 'eTJ_Interval1', the role 'eTJ_Interval1103' has cardinality 0..*.
+An association connects 'eTJ_Interval2' and 'eTJ_ISODATE'. From 'eTJ_Interval2', the role 'eTJ_Interval2106' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE107' has cardinality 0..*.
+An association connects 'eTJ_Interval2' and 'eTJ_ISODATE'. From 'eTJ_Interval2', the role 'eTJ_Interval2109' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE110' has cardinality 0..*.
+An association connects 'eTJ_Interval2' and 'eTJ_DurationQuantity'. From 'eTJ_Interval2', the role 'eTJ_Interval2112' has cardinality 0..*, and from 'eTJ_DurationQuantity', the role 'eTJ_DurationQuantity113' has cardinality 0..*.
+An association connects 'eTJ_ISODATE' and 'eTJ_Interval3'. From 'eTJ_ISODATE', the role 'eTJ_ISODATE116' has cardinality 0..*, and from 'eTJ_Interval3', the role 'eTJ_Interval3115' has cardinality 0..*.
+An association connects 'eTJ_Interval3' and 'eTJ_ISODATE'. From 'eTJ_Interval3', the role 'eTJ_Interval3118' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE119' has cardinality 0..*.
+An association connects 'eTJ_DurationQuantity' and 'eTJ_Interval3'. From 'eTJ_DurationQuantity', the role 'eTJ_DurationQuantity122' has cardinality 0..*, and from 'eTJ_Interval3', the role 'eTJ_Interval3121' has cardinality 0..*.
+An association connects 'eTJ_Interval4' and 'eTJ_ISODATE'. From 'eTJ_Interval4', the role 'eTJ_Interval4124' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE125' has cardinality 0..*.
+An association connects 'eTJ_Interval4' and 'eTJ_ISODATE'. From 'eTJ_Interval4', the role 'eTJ_Interval4127' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE128' has cardinality 0..*.
+An association connects 'eTJ_DurationQuantity' and 'eTJ_Interval4'. From 'eTJ_DurationQuantity', the role 'eTJ_DurationQuantity131' has cardinality 0..*, and from 'eTJ_Interval4', the role 'eTJ_Interval4130' has cardinality 0..*.
+An association connects 'eTJ_JournalEntry' and 'eTJ_ISODATE'. From 'eTJ_JournalEntry', the role 'eTJ_JournalEntry' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE133' has cardinality 0..*.
+An association connects 'eTJ_JournalEntry' and 'eTJ_Alert'. From 'eTJ_JournalEntry', the role 'eTJ_JournalEntry135' has cardinality 0..*, and from 'eTJ_Alert', the role 'eTJ_Alert' has cardinality 0..*.
+An association connects 'eTJ_Author' and 'eTJ_JournalEntry'. From 'eTJ_Author', the role 'eTJ_Author138' has cardinality 0..*, and from 'eTJ_JournalEntry', the role 'eTJ_JournalEntry137' has cardinality 0..*.
+An association connects 'eTJ_JournalEntry' and 'eTJ_Details'. From 'eTJ_JournalEntry', the role 'eTJ_JournalEntry140' has cardinality 0..*, and from 'eTJ_Details', the role 'eTJ_Details' has cardinality 0..*.
+An association connects 'eTJ_Summary' and 'eTJ_JournalEntry'. From 'eTJ_Summary', the role 'eTJ_Summary' has cardinality 0..*, and from 'eTJ_JournalEntry', the role 'eTJ_JournalEntry142' has cardinality 0..*.
+An association connects 'eTJ_Length' and 'eTJ_DurationQuantity'. From 'eTJ_Length', the role 'eTJ_Length' has cardinality 0..*, and from 'eTJ_DurationQuantity', the role 'eTJ_DurationQuantity144' has cardinality 0..*.
+An association connects 'eTJ_LimitsAttribute' and 'eTJ_Limits'. From 'eTJ_LimitsAttribute', the role 'eTJ_LimitsAttribute' has cardinality 0..*, and from 'eTJ_Limits', the role 'eTJ_Limits' has cardinality 0..*.
+An association connects 'eTJ_LogicalExpression' and 'eTJ_LogicalExpression'. From 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression148' has cardinality 0..*, and from 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression146' has cardinality 0..*.
+An association connects 'eTJ_LogicalExpression' and 'eTJ_LogicalExpression'. From 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression151' has cardinality 0..*, and from 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression149' has cardinality 0..*.
+An association connects 'eTJ_Property' and 'eTJ_Macro'. From 'eTJ_Property', the role 'eTJ_Property154' has cardinality 0..*, and from 'eTJ_Macro', the role 'eTJ_Macro153' has cardinality 0..*.
+An association connects 'eTJ_Managers' and 'eTJ_Resource'. From 'eTJ_Managers', the role 'eTJ_Managers' has cardinality 0..*, and from 'eTJ_Resource', the role 'eTJ_Resource156' has cardinality 0..*.
+An association connects 'eTJ_ISODATE' and 'eTJ_MaxEnd'. From 'eTJ_ISODATE', the role 'eTJ_ISODATE158' has cardinality 0..*, and from 'eTJ_MaxEnd', the role 'eTJ_MaxEnd' has cardinality 0..*.
+An association connects 'eTJ_MaxStart' and 'eTJ_ISODATE'. From 'eTJ_MaxStart', the role 'eTJ_MaxStart' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE160' has cardinality 0..*.
+An association connects 'eTJ_ISODATE' and 'eTJ_MinEnd'. From 'eTJ_ISODATE', the role 'eTJ_ISODATE162' has cardinality 0..*, and from 'eTJ_MinEnd', the role 'eTJ_MinEnd' has cardinality 0..*.
+An association connects 'eTJ_ISODATE' and 'eTJ_MinStart'. From 'eTJ_ISODATE', the role 'eTJ_ISODATE164' has cardinality 0..*, and from 'eTJ_MinStart', the role 'eTJ_MinStart' has cardinality 0..*.
+An association connects 'eTJ_Now' and 'eTJ_ISODATE'. From 'eTJ_Now', the role 'eTJ_Now' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE166' has cardinality 0..*.
+An association connects 'eTJ_Period' and 'eTJ_Interval2'. From 'eTJ_Period', the role 'eTJ_Period' has cardinality 0..*, and from 'eTJ_Interval2', the role 'eTJ_Interval2168' has cardinality 0..*.
+An association connects 'eTJ_DurationQuantity' and 'eTJ_Remaining'. From 'eTJ_DurationQuantity', the role 'eTJ_DurationQuantity170' has cardinality 0..*, and from 'eTJ_Remaining', the role 'eTJ_Remaining' has cardinality 0..*.
+An association connects 'eTJ_ReportPrefix' and 'eTJ_Report'. From 'eTJ_ReportPrefix', the role 'eTJ_ReportPrefix' has cardinality 0..*, and from 'eTJ_Report', the role 'eTJ_Report172' has cardinality 0..*.
+An association connects 'eTJ_Resource' and 'eTJ_ResourcePrefix'. From 'eTJ_Resource', the role 'eTJ_Resource174' has cardinality 0..*, and from 'eTJ_ResourcePrefix', the role 'eTJ_ResourcePrefix' has cardinality 0..*.
+An association connects 'eTJ_Resource' and 'eTJ_ResourceRoot'. From 'eTJ_Resource', the role 'eTJ_Resource176' has cardinality 0..*, and from 'eTJ_ResourceRoot', the role 'eTJ_ResourceRoot' has cardinality 0..*.
+An association connects 'eTJ_Resource' and 'eTJ_Responsible'. From 'eTJ_Resource', the role 'eTJ_Resource178' has cardinality 0..*, and from 'eTJ_Responsible', the role 'eTJ_Responsible' has cardinality 0..*.
+An association connects 'eTJ_RollupAccount' and 'eTJ_LogicalExpression'. From 'eTJ_RollupAccount', the role 'eTJ_RollupAccount' has cardinality 0..*, and from 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression180' has cardinality 0..*.
+An association connects 'eTJ_LogicalExpression' and 'eTJ_RollupResource'. From 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression182' has cardinality 0..*, and from 'eTJ_RollupResource', the role 'eTJ_RollupResource' has cardinality 0..*.
+An association connects 'eTJ_LogicalExpression' and 'eTJ_RollupTask'. From 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression184' has cardinality 0..*, and from 'eTJ_RollupTask', the role 'eTJ_RollupTask' has cardinality 0..*.
+An association connects 'eTJ_Scenario' and 'eTJ_Scenario'. From 'eTJ_Scenario', the role 'eTJ_Scenario187' has cardinality 0..*, and from 'eTJ_Scenario', the role 'eTJ_Scenario185' has cardinality 0..*.
+An association connects 'eTJ_Scenario' and 'eTJ_ScenarioIcal'. From 'eTJ_Scenario', the role 'eTJ_Scenario189' has cardinality 0..*, and from 'eTJ_ScenarioIcal', the role 'eTJ_ScenarioIcal' has cardinality 0..*.
+An association connects 'eTJ_Scenarios' and 'eTJ_Scenario'. From 'eTJ_Scenarios', the role 'eTJ_Scenarios' has cardinality 0..*, and from 'eTJ_Scenario', the role 'eTJ_Scenario191' has cardinality 0..*.
+An association connects 'eTJ_Shift' and 'eTJ_Vacation'. From 'eTJ_Shift', the role 'eTJ_Shift' has cardinality 0..*, and from 'eTJ_Vacation', the role 'eTJ_Vacation' has cardinality 0..*.
+An association connects 'eTJ_Shift' and 'eTJ_Shift'. From 'eTJ_Shift', the role 'eTJ_Shift195' has cardinality 0..*, and from 'eTJ_Shift', the role 'eTJ_Shift193' has cardinality 0..*.
+An association connects 'eTJ_WorkingHours' and 'eTJ_Shift'. From 'eTJ_WorkingHours', the role 'eTJ_WorkingHours' has cardinality 0..*, and from 'eTJ_Shift', the role 'eTJ_Shift197' has cardinality 0..*.
+An association connects 'eTJ_Shift' and 'eTJ_ShiftTimesheet'. From 'eTJ_Shift', the role 'eTJ_Shift199' has cardinality 0..*, and from 'eTJ_ShiftTimesheet', the role 'eTJ_ShiftTimesheet' has cardinality 0..*.
+An association connects 'eTJ_ShiftsLimit' and 'eTJ_Shifts'. From 'eTJ_ShiftsLimit', the role 'eTJ_ShiftsLimit' has cardinality 0..*, and from 'eTJ_Shifts', the role 'eTJ_Shifts' has cardinality 0..*.
+An association connects 'eTJ_ShiftsLimit' and 'eTJ_Shift'. From 'eTJ_ShiftsLimit', the role 'eTJ_ShiftsLimit202' has cardinality 0..*, and from 'eTJ_Shift', the role 'eTJ_Shift203' has cardinality 0..*.
+An association connects 'eTJ_ShiftsLimit' and 'eTJ_Interval2'. From 'eTJ_ShiftsLimit', the role 'eTJ_ShiftsLimit205' has cardinality 0..*, and from 'eTJ_Interval2', the role 'eTJ_Interval2206' has cardinality 0..*.
+An association connects 'eTJ_Shift' and 'eTJ_ShiftsAllocate'. From 'eTJ_Shift', the role 'eTJ_Shift208' has cardinality 0..*, and from 'eTJ_ShiftsAllocate', the role 'eTJ_ShiftsAllocate' has cardinality 0..*.
+An association connects 'eTJ_Interval3' and 'eTJ_ShiftsAllocate'. From 'eTJ_Interval3', the role 'eTJ_Interval3211' has cardinality 0..*, and from 'eTJ_ShiftsAllocate', the role 'eTJ_ShiftsAllocate210' has cardinality 0..*.
+An association connects 'eTJ_Criterion' and 'eTJ_Sort'. From 'eTJ_Criterion', the role 'eTJ_Criterion' has cardinality 0..*, and from 'eTJ_Sort', the role 'eTJ_Sort' has cardinality 0..*.
+An association connects 'eTJ_Start' and 'eTJ_ISODATE'. From 'eTJ_Start', the role 'eTJ_Start' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE214' has cardinality 0..*.
+An association connects 'eTJ_StatusStatusSheetAttribute' and 'eTJ_StatusStatusSheet'. From 'eTJ_StatusStatusSheetAttribute', the role 'eTJ_StatusStatusSheetAttribute' has cardinality 0..*, and from 'eTJ_StatusStatusSheet', the role 'eTJ_StatusStatusSheet' has cardinality 0..*.
+An association connects 'eTJ_StatusTimesheet' and 'eTJ_StatusTimesheetAttribute'. From 'eTJ_StatusTimesheet', the role 'eTJ_StatusTimesheet' has cardinality 0..*, and from 'eTJ_StatusTimesheetAttribute', the role 'eTJ_StatusTimesheetAttribute' has cardinality 0..*.
+An association connects 'eTJ_StatusSheet' and 'eTJ_Resource'. From 'eTJ_StatusSheet', the role 'eTJ_StatusSheet' has cardinality 0..*, and from 'eTJ_Resource', the role 'eTJ_Resource218' has cardinality 0..*.
+An association connects 'eTJ_StatusSheet' and 'eTJ_Interval4'. From 'eTJ_StatusSheet', the role 'eTJ_StatusSheet220' has cardinality 0..*, and from 'eTJ_Interval4', the role 'eTJ_Interval4221' has cardinality 0..*.
+An association connects 'eTJ_StatusSheet' and 'eTJ_StatusSheetAttribute'. From 'eTJ_StatusSheet', the role 'eTJ_StatusSheet223' has cardinality 0..*, and from 'eTJ_StatusSheetAttribute', the role 'eTJ_StatusSheetAttribute' has cardinality 0..*.
+An association connects 'eTJ_StatusSheetReportAttribute' and 'eTJ_StatusSheetReport'. From 'eTJ_StatusSheetReportAttribute', the role 'eTJ_StatusSheetReportAttribute' has cardinality 0..*, and from 'eTJ_StatusSheetReport', the role 'eTJ_StatusSheetReport' has cardinality 0..*.
+An association connects 'eTJ_Account' and 'eTJ_SupplementAccount'. From 'eTJ_Account', the role 'eTJ_Account226' has cardinality 0..*, and from 'eTJ_SupplementAccount', the role 'eTJ_SupplementAccount' has cardinality 0..*.
+An association connects 'eTJ_AccountAttribute' and 'eTJ_SupplementAccount'. From 'eTJ_AccountAttribute', the role 'eTJ_AccountAttribute229' has cardinality 0..*, and from 'eTJ_SupplementAccount', the role 'eTJ_SupplementAccount228' has cardinality 0..*.
+An association connects 'eTJ_Report' and 'eTJ_SupplementReport'. From 'eTJ_Report', the role 'eTJ_Report231' has cardinality 0..*, and from 'eTJ_SupplementReport', the role 'eTJ_SupplementReport' has cardinality 0..*.
+An association connects 'eTJ_ReportAttribute' and 'eTJ_SupplementReport'. From 'eTJ_ReportAttribute', the role 'eTJ_ReportAttribute234' has cardinality 0..*, and from 'eTJ_SupplementReport', the role 'eTJ_SupplementReport233' has cardinality 0..*.
+An association connects 'eTJ_SupplementResource' and 'eTJ_Resource'. From 'eTJ_SupplementResource', the role 'eTJ_SupplementResource' has cardinality 0..*, and from 'eTJ_Resource', the role 'eTJ_Resource236' has cardinality 0..*.
+An association connects 'eTJ_SupplementResource' and 'eTJ_ResourceAttribute'. From 'eTJ_SupplementResource', the role 'eTJ_SupplementResource238' has cardinality 0..*, and from 'eTJ_ResourceAttribute', the role 'eTJ_ResourceAttribute239' has cardinality 0..*.
+An association connects 'eTJ_SupplementTask' and 'eTJ_Task'. From 'eTJ_SupplementTask', the role 'eTJ_SupplementTask' has cardinality 0..*, and from 'eTJ_Task', the role 'eTJ_Task241' has cardinality 0..*.
+An association connects 'eTJ_TaskAttribute' and 'eTJ_SupplementTask'. From 'eTJ_TaskAttribute', the role 'eTJ_TaskAttribute244' has cardinality 0..*, and from 'eTJ_SupplementTask', the role 'eTJ_SupplementTask243' has cardinality 0..*.
+An association connects 'eTJ_HideResource' and 'eTJ_TagFile'. From 'eTJ_HideResource', the role 'eTJ_HideResource246' has cardinality 0..*, and from 'eTJ_TagFile', the role 'eTJ_TagFile' has cardinality 0..*.
+An association connects 'eTJ_TagFile' and 'eTJ_HideTask'. From 'eTJ_TagFile', the role 'eTJ_TagFile248' has cardinality 0..*, and from 'eTJ_HideTask', the role 'eTJ_HideTask249' has cardinality 0..*.
+An association connects 'eTJ_RollupResource' and 'eTJ_TagFile'. From 'eTJ_RollupResource', the role 'eTJ_RollupResource252' has cardinality 0..*, and from 'eTJ_TagFile', the role 'eTJ_TagFile251' has cardinality 0..*.
+An association connects 'eTJ_RollupTask' and 'eTJ_TagFile'. From 'eTJ_RollupTask', the role 'eTJ_RollupTask255' has cardinality 0..*, and from 'eTJ_TagFile', the role 'eTJ_TagFile254' has cardinality 0..*.
+An association connects 'eTJ_Task' and 'eTJ_TaskStatusSheet'. From 'eTJ_Task', the role 'eTJ_Task257' has cardinality 0..*, and from 'eTJ_TaskStatusSheet', the role 'eTJ_TaskStatusSheet' has cardinality 0..*.
+An association connects 'eTJ_TaskStatusSheetAttribute' and 'eTJ_TaskStatusSheet'. From 'eTJ_TaskStatusSheetAttribute', the role 'eTJ_TaskStatusSheetAttribute' has cardinality 0..*, and from 'eTJ_TaskStatusSheet', the role 'eTJ_TaskStatusSheet259' has cardinality 0..*.
+An association connects 'eTJ_Task' and 'eTJ_TaskTimesheet'. From 'eTJ_Task', the role 'eTJ_Task261' has cardinality 0..*, and from 'eTJ_TaskTimesheet', the role 'eTJ_TaskTimesheet' has cardinality 0..*.
+An association connects 'eTJ_TaskTimesheet' and 'eTJ_TaskTimesheetAttribute'. From 'eTJ_TaskTimesheet', the role 'eTJ_TaskTimesheet263' has cardinality 0..*, and from 'eTJ_TaskTimesheetAttribute', the role 'eTJ_TaskTimesheetAttribute' has cardinality 0..*.
+An association connects 'eTJ_TaskPrefix' and 'eTJ_Task'. From 'eTJ_TaskPrefix', the role 'eTJ_TaskPrefix' has cardinality 0..*, and from 'eTJ_Task', the role 'eTJ_Task265' has cardinality 0..*.
+An association connects 'eTJ_TaskRoot' and 'eTJ_Task'. From 'eTJ_TaskRoot', the role 'eTJ_TaskRoot' has cardinality 0..*, and from 'eTJ_Task', the role 'eTJ_Task267' has cardinality 0..*.
+An association connects 'eTJ_Resource' and 'eTJ_Timesheet'. From 'eTJ_Resource', the role 'eTJ_Resource269' has cardinality 0..*, and from 'eTJ_Timesheet', the role 'eTJ_Timesheet' has cardinality 0..*.
+An association connects 'eTJ_Timesheet' and 'eTJ_Interval4'. From 'eTJ_Timesheet', the role 'eTJ_Timesheet271' has cardinality 0..*, and from 'eTJ_Interval4', the role 'eTJ_Interval4272' has cardinality 0..*.
+An association connects 'eTJ_Timesheet' and 'eTJ_TimesheetAttribute'. From 'eTJ_Timesheet', the role 'eTJ_Timesheet274' has cardinality 0..*, and from 'eTJ_TimesheetAttribute', the role 'eTJ_TimesheetAttribute' has cardinality 0..*.
+An association connects 'eTJ_TimesheetReportAttribute' and 'eTJ_TimesheetReport'. From 'eTJ_TimesheetReportAttribute', the role 'eTJ_TimesheetReportAttribute' has cardinality 0..*, and from 'eTJ_TimesheetReport', the role 'eTJ_TimesheetReport' has cardinality 0..*.
+An association connects 'eTJ_LogicalExpression' and 'eTJ_ToolTip'. From 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression277' has cardinality 0..*, and from 'eTJ_ToolTip', the role 'eTJ_ToolTip' has cardinality 0..*.
+An association connects 'eTJ_Scenario' and 'eTJ_TrackingScenario'. From 'eTJ_Scenario', the role 'eTJ_Scenario279' has cardinality 0..*, and from 'eTJ_TrackingScenario', the role 'eTJ_TrackingScenario' has cardinality 0..*.
+An association connects 'eTJ_Vacation' and 'eTJ_Interval3'. From 'eTJ_Vacation', the role 'eTJ_Vacation281' has cardinality 0..*, and from 'eTJ_Interval3', the role 'eTJ_Interval3282' has cardinality 0..*.
+An association connects 'eTJ_Warn' and 'eTJ_LogicalExpression'. From 'eTJ_Warn', the role 'eTJ_Warn' has cardinality 0..*, and from 'eTJ_LogicalExpression', the role 'eTJ_LogicalExpression284' has cardinality 0..*.
+An association connects 'eTJ_WorkingHours' and 'eTJ_Weekdays'. From 'eTJ_WorkingHours', the role 'eTJ_WorkingHours286' has cardinality 0..*, and from 'eTJ_Weekdays', the role 'eTJ_Weekdays' has cardinality 0..*.
+An association connects 'eTJ_WorkingHours' and 'eTJ_WorkHours'. From 'eTJ_WorkingHours', the role 'eTJ_WorkingHours288' has cardinality 0..*, and from 'eTJ_WorkHours', the role 'eTJ_WorkHours' has cardinality 0..*.
+An association connects 'eTJ_Account' and 'eTJ_AccountShare'. From 'eTJ_Account', the role 'eTJ_Account291' has cardinality 0..*, and from 'eTJ_AccountShare', the role 'eTJ_AccountShare290' has cardinality 0..*.
+An association connects 'eTJ_Extend' and 'eTJ_ExtendedResourceAttributeColumn'. From 'eTJ_Extend', the role 'eTJ_Extend293' has cardinality 0..*, and from 'eTJ_ExtendedResourceAttributeColumn', the role 'eTJ_ExtendedResourceAttributeColumn' has cardinality 0..*.
+An association connects 'eTJ_ExtendedResourceAttributeColumn' and 'eTJ_Column'. From 'eTJ_ExtendedResourceAttributeColumn', the role 'eTJ_ExtendedResourceAttributeColumn296' has cardinality 0..*, and from 'eTJ_Column', the role 'eTJ_Column295' has cardinality 0..*.
+An association connects 'eTJ_Column' and 'eTJ_ColumnAttribute'. From 'eTJ_Column', the role 'eTJ_Column298' has cardinality 0..*, and from 'eTJ_ColumnAttribute', the role 'eTJ_ColumnAttribute' has cardinality 0..*.
+An association connects 'eTJ_Criterion' and 'eTJ_Scenario'. From 'eTJ_Criterion', the role 'eTJ_Criterion300' has cardinality 0..*, and from 'eTJ_Scenario', the role 'eTJ_Scenario301' has cardinality 0..*.
+An association connects 'eTJ_Limit' and 'eTJ_DurationQuantity'. From 'eTJ_Limit', the role 'eTJ_Limit' has cardinality 0..*, and from 'eTJ_DurationQuantity', the role 'eTJ_DurationQuantity303' has cardinality 0..*.
+An association connects 'eTJ_LimitAttribute' and 'eTJ_Limit'. From 'eTJ_LimitAttribute', the role 'eTJ_LimitAttribute' has cardinality 0..*, and from 'eTJ_Limit', the role 'eTJ_Limit305' has cardinality 0..*.
+An association connects 'eTJ_ISODATE' and 'eTJ_LimitAttribute'. From 'eTJ_ISODATE', the role 'eTJ_ISODATE308' has cardinality 0..*, and from 'eTJ_LimitAttribute', the role 'eTJ_LimitAttribute307' has cardinality 0..*.
+An association connects 'eTJ_Interval1' and 'eTJ_LimitAttribute'. From 'eTJ_Interval1', the role 'eTJ_Interval1311' has cardinality 0..*, and from 'eTJ_LimitAttribute', the role 'eTJ_LimitAttribute310' has cardinality 0..*.
+An association connects 'eTJ_LimitAttribute' and 'eTJ_Resource'. From 'eTJ_LimitAttribute', the role 'eTJ_LimitAttribute313' has cardinality 0..*, and from 'eTJ_Resource', the role 'eTJ_Resource314' has cardinality 0..*.
+An association connects 'eTJ_LimitAttribute' and 'eTJ_ISODATE'. From 'eTJ_LimitAttribute', the role 'eTJ_LimitAttribute316' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE317' has cardinality 0..*.
+An association connects 'eTJ_Task' and 'eTJ_TaskDependency'. From 'eTJ_Task', the role 'eTJ_Task320' has cardinality 0..*, and from 'eTJ_TaskDependency', the role 'eTJ_TaskDependency319' has cardinality 0..*.
+An association connects 'eTJ_GapDuration' and 'eTJ_TaskDependency'. From 'eTJ_GapDuration', the role 'eTJ_GapDuration' has cardinality 0..*, and from 'eTJ_TaskDependency', the role 'eTJ_TaskDependency322' has cardinality 0..*.
+An association connects 'eTJ_TaskDependency' and 'eTJ_GapLength'. From 'eTJ_TaskDependency', the role 'eTJ_TaskDependency324' has cardinality 0..*, and from 'eTJ_GapLength', the role 'eTJ_GapLength' has cardinality 0..*.
+An association connects 'eTJ_ExtDate' and 'eTJ_ISODATE'. From 'eTJ_ExtDate', the role 'eTJ_ExtDate' has cardinality 0..*, and from 'eTJ_ISODATE', the role 'eTJ_ISODATE326' has cardinality 0..*.
+An association connects 'eTJ_ISODATE' and 'eTJ_DurationQuantity'. From 'eTJ_ISODATE', the role 'eTJ_ISODATE328' has cardinality 0..*, and from 'eTJ_DurationQuantity', the role 'eTJ_DurationQuantity329' has cardinality 0..*.
+An association connects 'eTJ_Function' and 'eTJ_LogicalFunctionExpression'. From 'eTJ_Function', the role 'eTJ_Function331' has cardinality 0..*, and from 'eTJ_LogicalFunctionExpression', the role 'eTJ_LogicalFunctionExpression' has cardinality 0..*.
+An association connects 'eTJ_MacroCall' and 'eTJ_LogicalStringLiteral'. From 'eTJ_MacroCall', the role 'eTJ_MacroCall333' has cardinality 0..*, and from 'eTJ_LogicalStringLiteral', the role 'eTJ_LogicalStringLiteral' has cardinality 0..*.
+An association connects 'eTJ_ISODATE' and 'eTJ_LogicalDateLiteral'. From 'eTJ_ISODATE', the role 'eTJ_ISODATE335' has cardinality 0..*, and from 'eTJ_LogicalDateLiteral', the role 'eTJ_LogicalDateLiteral' has cardinality 0..*.
+An association connects 'eTJ_Scenario' and 'eTJ_LogicalFlagExpression'. From 'eTJ_Scenario', the role 'eTJ_Scenario337' has cardinality 0..*, and from 'eTJ_LogicalFlagExpression', the role 'eTJ_LogicalFlagExpression' has cardinality 0..*.

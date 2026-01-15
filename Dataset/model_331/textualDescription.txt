@@ -1,0 +1,23 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'library_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Member' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'name', which is of type str.
+
+'library_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Book' represents an important domain concept.
+It has the following attributes: 'pages', which is of type int; 'title', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Book' and 'library_Library'. From 'library_Book', the role 'library_Book' has cardinality 0..*, and from 'library_Library', the role 'library_Library' has cardinality 0..*.
+An association connects 'library_Writer' and 'library_Library'. From 'library_Writer', the role 'library_Writer' has cardinality 0..*, and from 'library_Library', the role 'library_Library2' has cardinality 0..*.
+An association connects 'library_Member' and 'library_Library'. From 'library_Member', the role 'library_Member' has cardinality 0..*, and from 'library_Library', the role 'library_Library4' has cardinality 0..*.
+An association connects 'library_Writer' and 'library_Book'. From 'library_Writer', the role 'Writer' has cardinality 0..*, and from 'library_Book', the role 'books' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Writer'. From 'library_Book', the role 'Book' has cardinality 0..*, and from 'library_Writer', the role 'author' has cardinality 0..*.
+An association connects 'library_Member' and 'library_Book'. From 'library_Member', the role 'library_Member8' has cardinality 0..*, and from 'library_Book', the role 'library_Book9' has cardinality 0..*.

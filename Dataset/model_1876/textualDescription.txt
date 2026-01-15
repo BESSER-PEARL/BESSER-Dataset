@@ -1,0 +1,120 @@
+The domain model 'Classes' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'Database' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Buissnesslayer_Room' represents an important domain concept.
+It has one attribute: 'roomType', which is of type int.
+
+'LoginController' represents an important domain concept.
+It does not declare any attributes.
+
+'PaymentHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'UserHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'Guest' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Buissnesslayer_UserHandler' represents an important domain concept.
+It has one attribute: 'Users', which is of type str.
+
+'Classes_Datalayer_Database' represents an important domain concept.
+It has one attribute: 'extrasDB', which is of type str.
+
+'Classes_Buissnesslayer_User' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Email', which is of type str.
+
+'Classes_Interactionlayer_LoginController' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Buissnesslayer_Address' represents an important domain concept.
+It has the following attributes: 'city', which is of type str; 'street', which is of type str; 'postalNumber', which is of type int; 'country', which is of type str.
+
+'GUIController' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Buissnesslayer_Booking' represents an important domain concept.
+It has the following attributes: 'nrOfGuests', which is of type int; 'parkings', which is of type str; 'endDate', which is of type str; 'checkedIn', which is of type bool; 'bookingID', which is of type int; 'payment', which is of type str; 'startDate', which is of type str; 'guest', which is of type int; 'checkedOut', which is of type bool; 'paymentComplete', which is of type bool; 'extras', which is of type str.
+
+'Address' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Buissnesslayer_Employee' represents an important domain concept.
+It has the following attributes: 'Password', which is of type str; 'ID', which is of type int.
+
+'BookingHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Interactionlayer_GUIController' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Buissnesslayer_BookingHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Booking' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Interactionlayer_LoginController_DataType1' represents an important domain concept.
+It does not declare any attributes.
+
+'User' represents an important domain concept.
+It does not declare any attributes.
+
+'GUI' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_BuisnessLogicLayer_PaymentInfo' represents an important domain concept.
+It has the following attributes: 'CreditCard', which is of type int; 'PaymentComplete', which is of type bool; 'CVV', which is of type int; 'ExpiryDate', which is of type int.
+
+'Classes_BuisnessLogicLayer_PaymentHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Interactionlayer_GUI' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Buissnesslayer_Guest' represents an important domain concept.
+It has one attribute: 'wrokAround', which is of type int.
+
+'Room' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Classes_Buissnesslayer_Employee' is a specialization of 'User'.
+The class 'Classes_Buissnesslayer_Guest' is a specialization of 'User'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Guest' and 'Classes_Datalayer_Database'. From 'Guest', the role 'Guest' has cardinality 0..*, and from 'Classes_Datalayer_Database', the role 'Classes_Datalayer_Database' has cardinality 0..*.
+An association connects 'Classes_Datalayer_Database' and 'UserHandler'. From 'Classes_Datalayer_Database', the role 'UserHandler' has cardinality 0..*, and from 'UserHandler', the role 'Buissnesslayer' has cardinality 0..*.
+An association connects 'Classes_Datalayer_Database' and 'Employee'. From 'Classes_Datalayer_Database', the role 'Classes_Datalayer_Database3' has cardinality 0..*, and from 'Employee', the role 'Employee' has cardinality 0..*.
+An association connects 'Classes_Datalayer_Database' and 'Booking'. From 'Classes_Datalayer_Database', the role 'Classes_Datalayer_Database5' has cardinality 0..*, and from 'Booking', the role 'Booking' has cardinality 0..*.
+An association connects 'Room' and 'Classes_Datalayer_Database'. From 'Room', the role 'Room' has cardinality 0..*, and from 'Classes_Datalayer_Database', the role 'Classes_Datalayer_Database7' has cardinality 0..*.
+An association connects 'Room' and 'Classes_Buissnesslayer_Booking'. From 'Room', the role 'Room9' has cardinality 0..*, and from 'Classes_Buissnesslayer_Booking', the role 'Classes_Buissnesslayer_Booking' has cardinality 0..*.
+An association connects 'Room' and 'Classes_Buissnesslayer_Booking'. From 'Room', the role 'Room12' has cardinality 0..*, and from 'Classes_Buissnesslayer_Booking', the role 'Classes_Buissnesslayer_Booking11' has cardinality 0..*.
+An association connects 'Booking' and 'Classes_Buissnesslayer_BookingHandler'. From 'Booking', the role 'Booking14' has cardinality 0..*, and from 'Classes_Buissnesslayer_BookingHandler', the role 'Classes_Buissnesslayer_BookingHandler' has cardinality 0..*.
+An association connects 'Classes_Buissnesslayer_BookingHandler' and 'Booking'. From 'Classes_Buissnesslayer_BookingHandler', the role 'Classes_Buissnesslayer_BookingHandler16' has cardinality 0..*, and from 'Booking', the role 'Booking17' has cardinality 0..*.
+An association connects 'User' and 'Classes_Buissnesslayer_BookingHandler'. From 'User', the role 'Buissnesslayer19' has cardinality 0..*, and from 'Classes_Buissnesslayer_BookingHandler', the role 'User' has cardinality 0..*.
+An association connects 'Classes_Buissnesslayer_BookingHandler' and 'Database'. From 'Classes_Buissnesslayer_BookingHandler', the role 'Classes_Buissnesslayer_BookingHandler21' has cardinality 0..*, and from 'Database', the role 'Database' has cardinality 0..*.
+An association connects 'Classes_Buissnesslayer_BookingHandler' and 'UserHandler'. From 'Classes_Buissnesslayer_BookingHandler', the role 'Classes_Buissnesslayer_BookingHandler23' has cardinality 0..*, and from 'UserHandler', the role 'UserHandler24' has cardinality 0..*.
+An association connects 'LoginController' and 'Classes_Buissnesslayer_User'. From 'LoginController', the role 'LoginController' has cardinality 0..*, and from 'Classes_Buissnesslayer_User', the role 'Classes_Buissnesslayer_User' has cardinality 0..*.
+An association connects 'Classes_Buissnesslayer_User' and 'UserHandler'. From 'Classes_Buissnesslayer_User', the role 'Classes_Buissnesslayer_User27' has cardinality 0..*, and from 'UserHandler', the role 'UserHandler28' has cardinality 0..*.
+An association connects 'Address' and 'Classes_Buissnesslayer_User'. From 'Address', the role 'Address' has cardinality 0..*, and from 'Classes_Buissnesslayer_User', the role 'Classes_Buissnesslayer_User30' has cardinality 0..*.
+An association connects 'Classes_Buissnesslayer_User' and 'BookingHandler'. From 'Classes_Buissnesslayer_User', the role 'BookingHandler' has cardinality 0..*, and from 'BookingHandler', the role 'Buissnesslayer32' has cardinality 0..*.
+An association connects 'Database' and 'Classes_Buissnesslayer_UserHandler'. From 'Database', the role 'Datalayer' has cardinality 0..*, and from 'Classes_Buissnesslayer_UserHandler', the role 'Database34' has cardinality 0..*.
+An association connects 'LoginController' and 'Classes_Buissnesslayer_UserHandler'. From 'LoginController', the role 'Interactionlayer' has cardinality 0..*, and from 'Classes_Buissnesslayer_UserHandler', the role 'LoginController36' has cardinality 0..*.
+An association connects 'GUIController' and 'Classes_Interactionlayer_GUI'. From 'GUIController', the role 'GUIController' has cardinality 0..*, and from 'Classes_Interactionlayer_GUI', the role 'Classes_Interactionlayer_GUI' has cardinality 0..*.
+An association connects 'GUI' and 'Classes_Interactionlayer_GUIController'. From 'GUI', the role 'GUI' has cardinality 0..*, and from 'Classes_Interactionlayer_GUIController', the role 'Classes_Interactionlayer_GUIController' has cardinality 0..*.
+An association connects 'LoginController' and 'Classes_Interactionlayer_GUIController'. From 'LoginController', the role 'Interactionlayer41' has cardinality 0..*, and from 'Classes_Interactionlayer_GUIController', the role 'LoginController40' has cardinality 0..*.
+An association connects 'BookingHandler' and 'Classes_Interactionlayer_GUIController'. From 'BookingHandler', the role 'BookingHandler44' has cardinality 0..*, and from 'Classes_Interactionlayer_GUIController', the role 'Classes_Interactionlayer_GUIController43' has cardinality 0..*.
+An association connects 'Classes_Interactionlayer_LoginController' and 'GUIController'. From 'Classes_Interactionlayer_LoginController', the role 'GUIController46' has cardinality 0..*, and from 'GUIController', the role 'Interactionlayer47' has cardinality 0..*.
+An association connects 'User' and 'Classes_Interactionlayer_LoginController'. From 'User', the role 'User49' has cardinality 0..*, and from 'Classes_Interactionlayer_LoginController', the role 'Classes_Interactionlayer_LoginController' has cardinality 0..*.
+An association connects 'Classes_Interactionlayer_LoginController' and 'PaymentHandler'. From 'Classes_Interactionlayer_LoginController', the role 'Classes_Interactionlayer_LoginController51' has cardinality 0..*, and from 'PaymentHandler', the role 'PaymentHandler' has cardinality 0..*.
+An association connects 'UserHandler' and 'Classes_Interactionlayer_LoginController'. From 'UserHandler', the role 'Buissnesslayer54' has cardinality 0..*, and from 'Classes_Interactionlayer_LoginController', the role 'UserHandler53' has cardinality 0..*.
+An association connects 'PaymentHandler' and 'Classes_BuisnessLogicLayer_PaymentInfo'. From 'PaymentHandler', the role 'PaymentHandler56' has cardinality 0..*, and from 'Classes_BuisnessLogicLayer_PaymentInfo', the role 'Classes_BuisnessLogicLayer_PaymentInfo' has cardinality 0..*.

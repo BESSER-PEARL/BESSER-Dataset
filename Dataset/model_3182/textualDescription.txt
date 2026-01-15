@@ -1,0 +1,56 @@
+The domain model 'architecture' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'architecture_Architecture' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'architecture_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'architecture_AtomicType' represents an important domain concept.
+It has one attribute: 'atomType', which is of type str.
+
+'architecture_AbstractModel' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_DomainDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'architecture_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'architecture_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'architecture_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'architecture_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'Boolean', 'INT', 'STRING', 'Void', 'Double'.
+
+Relationships between classes are modeled using associations.
+An association connects 'architecture_Model' and 'architecture_DomainDeclaration'. From 'architecture_Model', the role 'architecture_Model' has cardinality 0..*, and from 'architecture_DomainDeclaration', the role 'architecture_DomainDeclaration' has cardinality 0..*.
+An association connects 'architecture_DomainDeclaration' and 'architecture_AbstractModel'. From 'architecture_DomainDeclaration', the role 'architecture_DomainDeclaration2' has cardinality 0..*, and from 'architecture_AbstractModel', the role 'architecture_AbstractModel' has cardinality 0..*.
+An association connects 'architecture_Import' and 'architecture_AbstractModel'. From 'architecture_Import', the role 'architecture_Import' has cardinality 0..*, and from 'architecture_AbstractModel', the role 'architecture_AbstractModel4' has cardinality 0..*.
+An association connects 'architecture_AbstractModel' and 'architecture_Component'. From 'architecture_AbstractModel', the role 'architecture_AbstractModel6' has cardinality 0..*, and from 'architecture_Component', the role 'architecture_Component' has cardinality 0..*.
+An association connects 'architecture_AbstractModel' and 'architecture_Architecture'. From 'architecture_AbstractModel', the role 'architecture_AbstractModel8' has cardinality 0..*, and from 'architecture_Architecture', the role 'architecture_Architecture' has cardinality 0..*.
+An association connects 'architecture_Operation' and 'architecture_Component'. From 'architecture_Operation', the role 'architecture_Operation' has cardinality 0..*, and from 'architecture_Component', the role 'architecture_Component10' has cardinality 0..*.
+An association connects 'architecture_Operation' and 'architecture_Component'. From 'architecture_Operation', the role 'architecture_Operation13' has cardinality 0..*, and from 'architecture_Component', the role 'architecture_Component12' has cardinality 0..*.
+An association connects 'architecture_Component' and 'architecture_Operation'. From 'architecture_Component', the role 'architecture_Component15' has cardinality 0..*, and from 'architecture_Operation', the role 'architecture_Operation16' has cardinality 0..*.
+An association connects 'architecture_Architecture' and 'architecture_Variable'. From 'architecture_Architecture', the role 'architecture_Architecture18' has cardinality 0..*, and from 'architecture_Variable', the role 'architecture_Variable' has cardinality 0..*.
+An association connects 'architecture_Architecture' and 'architecture_Binding'. From 'architecture_Architecture', the role 'architecture_Architecture20' has cardinality 0..*, and from 'architecture_Binding', the role 'architecture_Binding' has cardinality 0..*.
+An association connects 'architecture_Variable' and 'architecture_Binding'. From 'architecture_Variable', the role 'architecture_Variable23' has cardinality 0..*, and from 'architecture_Binding', the role 'architecture_Binding22' has cardinality 0..*.
+An association connects 'architecture_Binding' and 'architecture_Operation'. From 'architecture_Binding', the role 'architecture_Binding25' has cardinality 0..*, and from 'architecture_Operation', the role 'architecture_Operation26' has cardinality 0..*.
+An association connects 'architecture_Variable' and 'architecture_Binding'. From 'architecture_Variable', the role 'architecture_Variable29' has cardinality 0..*, and from 'architecture_Binding', the role 'architecture_Binding28' has cardinality 0..*.
+An association connects 'architecture_Binding' and 'architecture_Operation'. From 'architecture_Binding', the role 'architecture_Binding31' has cardinality 0..*, and from 'architecture_Operation', the role 'architecture_Operation32' has cardinality 0..*.
+An association connects 'architecture_Variable' and 'architecture_AtomicType'. From 'architecture_Variable', the role 'architecture_Variable34' has cardinality 0..*, and from 'architecture_AtomicType', the role 'architecture_AtomicType' has cardinality 0..*.
+An association connects 'architecture_Variable' and 'architecture_Operation'. From 'architecture_Variable', the role 'architecture_Variable37' has cardinality 0..*, and from 'architecture_Operation', the role 'architecture_Operation36' has cardinality 0..*.
+An association connects 'architecture_AtomicType' and 'architecture_Operation'. From 'architecture_AtomicType', the role 'architecture_AtomicType40' has cardinality 0..*, and from 'architecture_Operation', the role 'architecture_Operation39' has cardinality 0..*.
+An association connects 'architecture_Component' and 'architecture_AtomicType'. From 'architecture_Component', the role 'architecture_Component43' has cardinality 0..*, and from 'architecture_AtomicType', the role 'architecture_AtomicType42' has cardinality 0..*.

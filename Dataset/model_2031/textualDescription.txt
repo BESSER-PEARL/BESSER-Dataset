@@ -1,0 +1,63 @@
+The domain model 'MySM' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'MySM_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MySM_Pseudostate' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'psId', which is of type str.
+
+'Region' represents an important domain concept.
+It does not declare any attributes.
+
+'MySM_Transition' represents an important domain concept.
+It has one attribute: 'tId', which is of type str.
+
+'MySM_ComplexSate' represents an important domain concept.
+It does not declare any attributes.
+
+'MySM_Statemachine' represents an important domain concept.
+It does not declare any attributes.
+
+'MySM_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'MySM_LabeledTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'MySM_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MySM_Region' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Pseudokind' defines the following possible values: 'DeepHistory', 'Exit', 'Initial', 'ShallowHistory', 'End'.
+
+The model also captures inheritance relationships between classes.
+The class 'MySM_Statemachine' is a specialization of 'Region'.
+The class 'MySM_Pseudostate' is a specialization of 'Vertex'.
+The class 'MySM_State' is a specialization of 'Vertex'.
+The class 'MySM_ComplexSate' is a specialization of 'State'.
+The class 'MySM_LabeledTransition' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MySM_Statemachine' and 'MySM_Transition'. From 'MySM_Statemachine', the role 'MySM_Statemachine' has cardinality 0..*, and from 'MySM_Transition', the role 'MySM_Transition' has cardinality 0..*.
+An association connects 'MySM_Action' and 'MySM_Statemachine'. From 'MySM_Action', the role 'MySM_Action' has cardinality 0..*, and from 'MySM_Statemachine', the role 'MySM_Statemachine2' has cardinality 0..*.
+An association connects 'MySM_State' and 'MySM_Region'. From 'MySM_State', the role 'MySM_State' has cardinality 0..*, and from 'MySM_Region', the role 'MySM_Region' has cardinality 0..*.
+An association connects 'MySM_Region' and 'MySM_Pseudostate'. From 'MySM_Region', the role 'MySM_Region5' has cardinality 0..*, and from 'MySM_Pseudostate', the role 'MySM_Pseudostate' has cardinality 0..*.
+An association connects 'MySM_Transition' and 'MySM_Vertex'. From 'MySM_Transition', the role 'MySM_Transition7' has cardinality 0..*, and from 'MySM_Vertex', the role 'MySM_Vertex' has cardinality 0..*.
+An association connects 'MySM_Region' and 'MySM_ComplexSate'. From 'MySM_Region', the role 'MySM_Region9' has cardinality 0..*, and from 'MySM_ComplexSate', the role 'MySM_ComplexSate' has cardinality 0..*.
+An association connects 'MySM_Vertex' and 'MySM_Transition'. From 'MySM_Vertex', the role 'MySM_Vertex12' has cardinality 0..*, and from 'MySM_Transition', the role 'MySM_Transition11' has cardinality 0..*.
+An association connects 'MySM_Vertex' and 'MySM_Transition'. From 'MySM_Vertex', the role 'MySM_Vertex15' has cardinality 0..*, and from 'MySM_Transition', the role 'MySM_Transition14' has cardinality 0..*.
+An association connects 'MySM_Action' and 'MySM_LabeledTransition'. From 'MySM_Action', the role 'MySM_Action17' has cardinality 0..*, and from 'MySM_LabeledTransition', the role 'MySM_LabeledTransition' has cardinality 0..*.

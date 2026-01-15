@@ -1,0 +1,105 @@
+The domain model 'llp' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'llp_SynchronisationInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_MemoryReference' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'llp_LockInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_WriteInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_UnlockInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_DataAccessPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_RepetitionInstruction' represents an important domain concept.
+It has one attribute: 'numberOfRepetitions', which is of type int.
+
+'llp_IOInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_Task' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'llp_ControlFlowBranchingInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'CacheInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlFlowInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_ReadInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_SpawnInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'IOInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'SynchronisationInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_ControlFlowInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_SkipInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'DataAccessPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_ParenthesisInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_CacheInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_LowLevelProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'llp_CommitInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'llp_ReadInstruction' is a specialization of 'IOInstruction'.
+The class 'llp_WriteInstruction' is a specialization of 'IOInstruction'.
+The class 'llp_IOInstruction' is a specialization of 'DataAccessPattern'.
+The class 'llp_CacheInstruction' is a specialization of 'DataAccessPattern'.
+The class 'llp_CommitInstruction' is a specialization of 'CacheInstruction'.
+The class 'llp_LockInstruction' is a specialization of 'SynchronisationInstruction'.
+The class 'llp_UnlockInstruction' is a specialization of 'SynchronisationInstruction'.
+The class 'llp_SpawnInstruction' is a specialization of 'DataAccessPattern'.
+The class 'llp_ControlFlowBranchingInstruction' is a specialization of 'ControlFlowInstruction'.
+The class 'llp_RepetitionInstruction' is a specialization of 'ControlFlowInstruction'.
+The class 'llp_ControlFlowInstruction' is a specialization of 'DataAccessPattern'.
+The class 'llp_SkipInstruction' is a specialization of 'ControlFlowInstruction'.
+The class 'llp_SynchronisationInstruction' is a specialization of 'DataAccessPattern'.
+The class 'llp_ParenthesisInstruction' is a specialization of 'ControlFlowInstruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'llp_Task' and 'llp_LowLevelProgram'. From 'llp_Task', the role 'llp_Task' has cardinality 0..*, and from 'llp_LowLevelProgram', the role 'llp_LowLevelProgram' has cardinality 0..*.
+An association connects 'llp_LowLevelProgram' and 'llp_Block'. From 'llp_LowLevelProgram', the role 'llp_LowLevelProgram2' has cardinality 0..*, and from 'llp_Block', the role 'llp_Block' has cardinality 0..*.
+An association connects 'llp_Task' and 'llp_Block'. From 'llp_Task', the role 'llp_Task4' has cardinality 0..*, and from 'llp_Block', the role 'llp_Block5' has cardinality 0..*.
+An association connects 'llp_Block' and 'llp_DataAccessPattern'. From 'llp_Block', the role 'llp_Block7' has cardinality 0..*, and from 'llp_DataAccessPattern', the role 'llp_DataAccessPattern' has cardinality 0..*.
+An association connects 'llp_MemoryReference' and 'llp_IOInstruction'. From 'llp_MemoryReference', the role 'llp_MemoryReference' has cardinality 0..*, and from 'llp_IOInstruction', the role 'llp_IOInstruction' has cardinality 0..*.
+An association connects 'llp_CommitInstruction' and 'llp_MemoryReference'. From 'llp_CommitInstruction', the role 'llp_CommitInstruction' has cardinality 0..*, and from 'llp_MemoryReference', the role 'llp_MemoryReference10' has cardinality 0..*.
+An association connects 'llp_SpawnInstruction' and 'llp_Task'. From 'llp_SpawnInstruction', the role 'llp_SpawnInstruction' has cardinality 0..*, and from 'llp_Task', the role 'llp_Task12' has cardinality 0..*.
+An association connects 'llp_Block' and 'llp_ControlFlowBranchingInstruction'. From 'llp_Block', the role 'llp_Block14' has cardinality 0..*, and from 'llp_ControlFlowBranchingInstruction', the role 'llp_ControlFlowBranchingInstruction' has cardinality 0..*.
+An association connects 'llp_ControlFlowBranchingInstruction' and 'llp_Block'. From 'llp_ControlFlowBranchingInstruction', the role 'llp_ControlFlowBranchingInstruction16' has cardinality 0..*, and from 'llp_Block', the role 'llp_Block17' has cardinality 0..*.
+An association connects 'llp_RepetitionInstruction' and 'llp_Block'. From 'llp_RepetitionInstruction', the role 'llp_RepetitionInstruction' has cardinality 0..*, and from 'llp_Block', the role 'llp_Block19' has cardinality 0..*.
+An association connects 'llp_SynchronisationInstruction' and 'llp_MemoryReference'. From 'llp_SynchronisationInstruction', the role 'llp_SynchronisationInstruction' has cardinality 0..*, and from 'llp_MemoryReference', the role 'llp_MemoryReference21' has cardinality 0..*.
+An association connects 'llp_ParenthesisInstruction' and 'llp_Block'. From 'llp_ParenthesisInstruction', the role 'llp_ParenthesisInstruction' has cardinality 0..*, and from 'llp_Block', the role 'llp_Block23' has cardinality 0..*.

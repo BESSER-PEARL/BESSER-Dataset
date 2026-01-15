@@ -1,0 +1,43 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'trace_BoolAny' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'trace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Trace' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'trace_DecimalAny' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'trace_StringAny' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'trace_ObjectAny' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Any' represents an important domain concept.
+It does not declare any attributes.
+
+'Any' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_IntAny' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_BoolAny' is a specialization of 'Any'.
+The class 'trace_IntAny' is a specialization of 'Any'.
+The class 'trace_DecimalAny' is a specialization of 'Any'.
+The class 'trace_StringAny' is a specialization of 'Any'.
+The class 'trace_ObjectAny' is a specialization of 'Any'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_Trace' and 'trace_Any'. From 'trace_Trace', the role 'trace_Trace' has cardinality 0..*, and from 'trace_Any', the role 'trace_Any' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_EObject'. From 'trace_Trace', the role 'trace_Trace2' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_EObject'. From 'trace_Trace', the role 'trace_Trace4' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject5' has cardinality 0..*.
+An association connects 'trace_ObjectAny' and 'trace_EObject'. From 'trace_ObjectAny', the role 'trace_ObjectAny' has cardinality 0..*, and from 'trace_EObject', the role 'trace_EObject7' has cardinality 0..*.

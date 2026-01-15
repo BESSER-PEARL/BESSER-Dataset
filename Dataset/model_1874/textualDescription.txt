@@ -1,0 +1,134 @@
+The domain model 'problog' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'ProbabilityMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_Proposition' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_Referable' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_ProbabilityFraction' represents an important domain concept.
+It has the following attributes: 'nominator', which is of type int; 'denominator', which is of type int.
+
+'problog_ImportLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Referable' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_Collection' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_Annotatable' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_Comment' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'problog_Term' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'arguments', which is of type int.
+
+'problog_ProbabilityLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'problog_RHS' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Collection' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_Cheat' represents an important domain concept.
+It has one attribute: 'contents', which is of type str.
+
+'problog_ProbabilityMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_TermInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ProbLogStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_ProbLogProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_PLList' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_ProbLogStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_LHS' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_Atom' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'problog_Evidence' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Annotatable' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_PLTuple' represents an important domain concept.
+It does not declare any attributes.
+
+'Proposition' represents an important domain concept.
+It does not declare any attributes.
+
+'problog_AnnotatedReferable' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'problog_Rule' is a specialization of 'Statement'.
+The class 'problog_Evidence' is a specialization of 'ProbLogStatement'.
+The class 'problog_Query' is a specialization of 'ProbLogStatement'.
+The class 'problog_Atom' is a specialization of 'Referable'.
+The class 'problog_Atom' is a specialization of 'Annotatable'.
+The class 'problog_Variable' is a specialization of 'Referable'.
+The class 'problog_AnnotatedReferable' is a specialization of 'Proposition'.
+The class 'problog_ProbabilityLiteral' is a specialization of 'ProbabilityMeasure'.
+The class 'problog_ProbabilityFraction' is a specialization of 'ProbabilityMeasure'.
+The class 'problog_Annotatable' is a specialization of 'Proposition'.
+The class 'problog_ProbLogStatement' is a specialization of 'Statement'.
+The class 'problog_TermInstance' is a specialization of 'Annotatable'.
+The class 'problog_TermInstance' is a specialization of 'Referable'.
+The class 'problog_Comment' is a specialization of 'Statement'.
+The class 'problog_Cheat' is a specialization of 'Statement'.
+The class 'problog_ImportLibrary' is a specialization of 'Statement'.
+The class 'problog_Collection' is a specialization of 'Referable'.
+The class 'problog_PLList' is a specialization of 'Collection'.
+The class 'problog_PLTuple' is a specialization of 'Collection'.
+
+Relationships between classes are modeled using associations.
+An association connects 'problog_ProbLogProgram' and 'problog_Statement'. From 'problog_ProbLogProgram', the role 'problog_ProbLogProgram' has cardinality 0..*, and from 'problog_Statement', the role 'problog_Statement' has cardinality 0..*.
+An association connects 'problog_ProbLogProgram' and 'problog_Term'. From 'problog_ProbLogProgram', the role 'problog_ProbLogProgram2' has cardinality 0..*, and from 'problog_Term', the role 'problog_Term' has cardinality 0..*.
+An association connects 'problog_LHS' and 'problog_Rule'. From 'problog_LHS', the role 'problog_LHS' has cardinality 0..*, and from 'problog_Rule', the role 'problog_Rule' has cardinality 0..*.
+An association connects 'problog_RHS' and 'problog_Rule'. From 'problog_RHS', the role 'problog_RHS' has cardinality 0..*, and from 'problog_Rule', the role 'problog_Rule5' has cardinality 0..*.
+An association connects 'problog_LHS' and 'problog_Proposition'. From 'problog_LHS', the role 'problog_LHS7' has cardinality 0..*, and from 'problog_Proposition', the role 'problog_Proposition' has cardinality 0..*.
+An association connects 'problog_RHS' and 'problog_Referable'. From 'problog_RHS', the role 'problog_RHS9' has cardinality 0..*, and from 'problog_Referable', the role 'problog_Referable' has cardinality 0..*.
+An association connects 'problog_AnnotatedReferable' and 'problog_ProbabilityMeasure'. From 'problog_AnnotatedReferable', the role 'problog_AnnotatedReferable' has cardinality 0..*, and from 'problog_ProbabilityMeasure', the role 'problog_ProbabilityMeasure' has cardinality 0..*.
+An association connects 'problog_AnnotatedReferable' and 'problog_Annotatable'. From 'problog_AnnotatedReferable', the role 'problog_AnnotatedReferable12' has cardinality 0..*, and from 'problog_Annotatable', the role 'problog_Annotatable' has cardinality 0..*.
+An association connects 'problog_Referable' and 'problog_ProbLogStatement'. From 'problog_Referable', the role 'problog_Referable14' has cardinality 0..*, and from 'problog_ProbLogStatement', the role 'problog_ProbLogStatement' has cardinality 0..*.
+An association connects 'problog_Term' and 'problog_TermInstance'. From 'problog_Term', the role 'problog_Term16' has cardinality 0..*, and from 'problog_TermInstance', the role 'problog_TermInstance' has cardinality 0..*.
+An association connects 'problog_TermInstance' and 'problog_Referable'. From 'problog_TermInstance', the role 'problog_TermInstance18' has cardinality 0..*, and from 'problog_Referable', the role 'problog_Referable19' has cardinality 0..*.
+An association connects 'problog_Collection' and 'problog_Referable'. From 'problog_Collection', the role 'problog_Collection' has cardinality 0..*, and from 'problog_Referable', the role 'problog_Referable21' has cardinality 0..*.

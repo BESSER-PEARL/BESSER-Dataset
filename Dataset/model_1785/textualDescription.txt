@@ -1,0 +1,6 @@
+The domain model 'column' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'column_Book' represents an important domain concept.
+It has the following attributes: 'pages', which is of type str; 'author', which is of type str; 'weight', which is of type str; 'title', which is of type str.

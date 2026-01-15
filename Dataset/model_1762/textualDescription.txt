@@ -1,0 +1,37 @@
+The domain model 'emftest' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'emftest_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'emftest_BookCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'Book' represents an important domain concept.
+It does not declare any attributes.
+
+'emftest_Author' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'emftest_ParentBook' represents an important domain concept.
+It does not declare any attributes.
+
+'emftest_ChildBook' represents an important domain concept.
+It does not declare any attributes.
+
+'emftest_Book' represents an important domain concept.
+It has the following attributes: 'pages', which is of type int; 'title', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookType' defines the following possible values: 'Parent', 'Child'.
+
+The model also captures inheritance relationships between classes.
+The class 'emftest_ChildBook' is a specialization of 'Book'.
+The class 'emftest_ParentBook' is a specialization of 'Book'.
+
+Relationships between classes are modeled using associations.
+An association connects 'emftest_Author' and 'emftest_Book'. From 'emftest_Author', the role 'emftest_Author' has cardinality 0..*, and from 'emftest_Book', the role 'emftest_Book' has cardinality 0..*.
+An association connects 'emftest_Book' and 'emftest_BookCollection'. From 'emftest_Book', the role 'emftest_Book2' has cardinality 0..*, and from 'emftest_BookCollection', the role 'emftest_BookCollection' has cardinality 0..*.
+An association connects 'emftest_BookCollection' and 'emftest_Library'. From 'emftest_BookCollection', the role 'emftest_BookCollection4' has cardinality 0..*, and from 'emftest_Library', the role 'emftest_Library' has cardinality 0..*.
+An association connects 'emftest_Author' and 'emftest_Book'. From 'emftest_Author', the role 'emftest_Author6' has cardinality 0..*, and from 'emftest_Book', the role 'emftest_Book7' has cardinality 0..*.

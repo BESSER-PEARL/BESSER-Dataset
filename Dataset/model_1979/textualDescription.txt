@@ -1,0 +1,38 @@
+The domain model 'MRPTrace' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'MRPTrace_Event' represents an important domain concept.
+It has one attribute: 'time', which is of type str.
+
+'MRPTrace_Trace' represents an important domain concept.
+It has one attribute: 'granularity', which is of type str.
+
+'MRPTrace_TraceEntry' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MRPTrace_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MRPTrace_RDMElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MRPTrace_TraceModel' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TimeUnit' defines the following possible values: 'MILLISECONDS', 'DAYS', 'NANOSECONDS', 'SECONDS', 'MICROSECONDS', 'MINUTES', 'HOURS'.
+
+The model also captures inheritance relationships between classes.
+The class 'MRPTrace_Trace' is a specialization of 'NamedElement'.
+The class 'MRPTrace_Event' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MRPTrace_TraceModel' and 'MRPTrace_Trace'. From 'MRPTrace_TraceModel', the role 'MRPTrace_TraceModel' has cardinality 0..*, and from 'MRPTrace_Trace', the role 'MRPTrace_Trace' has cardinality 0..*.
+An association connects 'MRPTrace_TraceEntry' and 'MRPTrace_Trace'. From 'MRPTrace_TraceEntry', the role 'MRPTrace_TraceEntry' has cardinality 0..*, and from 'MRPTrace_Trace', the role 'MRPTrace_Trace2' has cardinality 0..*.
+An association connects 'MRPTrace_TraceEntry' and 'MRPTrace_TraceEntry'. From 'MRPTrace_TraceEntry', the role 'MRPTrace_TraceEntry5' has cardinality 0..*, and from 'MRPTrace_TraceEntry', the role 'MRPTrace_TraceEntry3' has cardinality 0..*.
+An association connects 'MRPTrace_TraceEntry' and 'MRPTrace_RDMElement'. From 'MRPTrace_TraceEntry', the role 'MRPTrace_TraceEntry7' has cardinality 0..*, and from 'MRPTrace_RDMElement', the role 'MRPTrace_RDMElement' has cardinality 0..*.
+An association connects 'MRPTrace_TraceEntry' and 'MRPTrace_Event'. From 'MRPTrace_TraceEntry', the role 'MRPTrace_TraceEntry9' has cardinality 0..*, and from 'MRPTrace_Event', the role 'MRPTrace_Event' has cardinality 0..*.

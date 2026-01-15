@@ -1,0 +1,28 @@
+The domain model 'codetaginfo' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'codetaginfo_CodeTag' represents an important domain concept.
+It has the following attributes: 'tag_end', which is of type str; 'contents', which is of type str; 'type', which is of type str; 'uuid', which is of type str; 'group', which is of type str; 'tag_begin', which is of type str; 'name', which is of type str.
+
+'codetaginfo_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'codetaginfo_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'codetaginfo_CodeTagContext' represents an important domain concept.
+It has the following attributes: 'component_name', which is of type str; 'group', which is of type str; 'operation_name', which is of type str; 'class_name', which is of type str.
+
+'codetaginfo_CodeTagInfo' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'filename', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CodeTagType' defines the following possible values: 'CLASSPUBLICMETHODSSECTIONIMPL', 'FILEFOOTERCPP', 'CLASSGENERATEDOPERATIONIMPL', 'CONSTRUCTORINITLIST', 'CLASSGENERATEDATTRIBUTEGET', 'CLASSPUBLICMETHODSSECTIONDECLARE', 'FILEHEADERCPP', 'CLASSPRIVATEMETHODSSECTIONDECLARE', 'CLASSPRIVATEMEMBERSSECTIONDECLARE', 'FILEHEADERH', 'FILEFOOTERH', 'CLASSPRIVATEMETHODSSECTIONIMPL', 'CLASSGENERATEDATTRIBUTESET', 'FILEINCLUDESH', 'FILEINCLUDESCPP'.
+
+Relationships between classes are modeled using associations.
+An association connects 'codetaginfo_CodeTagContext' and 'codetaginfo_CodeTag'. From 'codetaginfo_CodeTagContext', the role 'codetaginfo_CodeTagContext' has cardinality 0..*, and from 'codetaginfo_CodeTag', the role 'codetaginfo_CodeTag' has cardinality 0..*.
+An association connects 'codetaginfo_CodeTagInfo' and 'codetaginfo_CodeTag'. From 'codetaginfo_CodeTagInfo', the role 'codetaginfo_CodeTagInfo' has cardinality 0..*, and from 'codetaginfo_CodeTag', the role 'codetaginfo_CodeTag2' has cardinality 0..*.
+An association connects 'codetaginfo_EStringToStringMapEntry' and 'codetaginfo_DocumentRoot'. From 'codetaginfo_EStringToStringMapEntry', the role 'codetaginfo_EStringToStringMapEntry' has cardinality 0..*, and from 'codetaginfo_DocumentRoot', the role 'codetaginfo_DocumentRoot' has cardinality 0..*.
+An association connects 'codetaginfo_EStringToStringMapEntry' and 'codetaginfo_DocumentRoot'. From 'codetaginfo_EStringToStringMapEntry', the role 'codetaginfo_EStringToStringMapEntry6' has cardinality 0..*, and from 'codetaginfo_DocumentRoot', the role 'codetaginfo_DocumentRoot5' has cardinality 0..*.
+An association connects 'codetaginfo_CodeTagInfo' and 'codetaginfo_DocumentRoot'. From 'codetaginfo_CodeTagInfo', the role 'codetaginfo_CodeTagInfo9' has cardinality 0..*, and from 'codetaginfo_DocumentRoot', the role 'codetaginfo_DocumentRoot8' has cardinality 0..*.

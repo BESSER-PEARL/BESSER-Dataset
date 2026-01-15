@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ISO20022ArchitectForum/SAMPLE-CODE-PUBLIC/DLT/Corda/ISO20022Generated/model/ISO20022.ecore

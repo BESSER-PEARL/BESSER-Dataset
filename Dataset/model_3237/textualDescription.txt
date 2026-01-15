@@ -1,0 +1,44 @@
+The domain model 'uppaalSMC' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'uppaalSMC_DoubleType' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaalSMC_NSTA' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaalSMC_ChanceEdge' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'NTA' represents an important domain concept.
+It does not declare any attributes.
+
+'Location' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaalSMC_ExponentialLocation' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaalSMC_ChanceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'uppaalSMC_NSTA' is a specialization of 'NTA'.
+The class 'uppaalSMC_DoubleType' is a specialization of 'Type'.
+The class 'uppaalSMC_ChanceNode' is a specialization of 'Location'.
+The class 'uppaalSMC_ChanceEdge' is a specialization of 'Edge'.
+The class 'uppaalSMC_ExponentialLocation' is a specialization of 'Location'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uppaalSMC_DoubleType' and 'uppaalSMC_NSTA'. From 'uppaalSMC_DoubleType', the role 'uppaalSMC_DoubleType' has cardinality 0..*, and from 'uppaalSMC_NSTA', the role 'uppaalSMC_NSTA' has cardinality 0..*.
+An association connects 'uppaalSMC_ExponentialLocation' and 'Expression'. From 'uppaalSMC_ExponentialLocation', the role 'uppaalSMC_ExponentialLocation' has cardinality 0..*, and from 'Expression', the role 'Expression' has cardinality 0..*.

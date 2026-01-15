@@ -1,0 +1,50 @@
+The domain model 'gsml' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'gsml_TaskGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'Task' represents an important domain concept.
+It does not declare any attributes.
+
+'gsml_Grading' represents an important domain concept.
+It has one attribute: 'Semester', which is of type str.
+
+'gsml_Course' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'gsml_GradingScheme' represents an important domain concept.
+It does not declare any attributes.
+
+'gsml_GradingSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'gsml_Task' represents an important domain concept.
+It has the following attributes: 'MinRequirementType', which is of type str; 'Name', which is of type str; 'MinRequirement', which is of type float.
+
+'gsml_Grade' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'RequiredPoints', which is of type float.
+
+'gsml_ConcreteTask' represents an important domain concept.
+It has one attribute: 'MaxPoints', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MinRequirementType' defines the following possible values: 'Relative', 'Absolute'.
+
+The model also captures inheritance relationships between classes.
+The class 'gsml_ConcreteTask' is a specialization of 'Task'.
+The class 'gsml_TaskGroup' is a specialization of 'Task'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gsml_Grading' and 'gsml_Course'. From 'gsml_Grading', the role 'gsml_Grading' has cardinality 0..*, and from 'gsml_Course', the role 'gsml_Course' has cardinality 0..*.
+An association connects 'gsml_GradingScheme' and 'gsml_Course'. From 'gsml_GradingScheme', the role 'gsml_GradingScheme' has cardinality 0..*, and from 'gsml_Course', the role 'gsml_Course2' has cardinality 0..*.
+An association connects 'gsml_GradingScheme' and 'gsml_Course'. From 'gsml_GradingScheme', the role 'gsml_GradingScheme5' has cardinality 0..*, and from 'gsml_Course', the role 'gsml_Course4' has cardinality 0..*.
+An association connects 'gsml_Course' and 'gsml_GradingScheme'. From 'gsml_Course', the role 'gsml_Course7' has cardinality 0..*, and from 'gsml_GradingScheme', the role 'gsml_GradingScheme8' has cardinality 0..*.
+An association connects 'gsml_TaskGroup' and 'gsml_Task'. From 'gsml_TaskGroup', the role 'gsml_TaskGroup' has cardinality 0..*, and from 'gsml_Task', the role 'gsml_Task' has cardinality 0..*.
+An association connects 'gsml_Grade' and 'gsml_GradingScheme'. From 'gsml_Grade', the role 'gsml_Grade' has cardinality 0..*, and from 'gsml_GradingScheme', the role 'gsml_GradingScheme11' has cardinality 0..*.
+An association connects 'gsml_GradingScheme' and 'gsml_Grade'. From 'gsml_GradingScheme', the role 'gsml_GradingScheme13' has cardinality 0..*, and from 'gsml_Grade', the role 'gsml_Grade14' has cardinality 0..*.
+An association connects 'gsml_GradingSystem' and 'gsml_Course'. From 'gsml_GradingSystem', the role 'gsml_GradingSystem' has cardinality 0..*, and from 'gsml_Course', the role 'gsml_Course16' has cardinality 0..*.
+An association connects 'gsml_Grading' and 'gsml_GradingScheme'. From 'gsml_Grading', the role 'gsml_Grading18' has cardinality 0..*, and from 'gsml_GradingScheme', the role 'gsml_GradingScheme19' has cardinality 0..*.
+An association connects 'gsml_Task' and 'gsml_Grading'. From 'gsml_Task', the role 'gsml_Task22' has cardinality 0..*, and from 'gsml_Grading', the role 'gsml_Grading21' has cardinality 0..*.
+An association connects 'gsml_Task' and 'gsml_Grading'. From 'gsml_Task', the role 'gsml_Task25' has cardinality 0..*, and from 'gsml_Grading', the role 'gsml_Grading24' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/viatra/EMF-IncQuery-Examples/school/school/model/school.ecore

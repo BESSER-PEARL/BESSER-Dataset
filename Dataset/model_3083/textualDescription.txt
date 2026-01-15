@@ -1,0 +1,343 @@
+The domain model 'cppmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 74 main class(es).
+
+'CPPQualifiedNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPStructType' represents an important domain concept.
+It does not declare any attributes.
+
+'OOPLRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_TypedMultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPClassRefAssocCollection' represents an important domain concept.
+It has one attribute: 'cppContainer', which is of type str.
+
+'cppmodel_CPPExternalBridge' represents an important domain concept.
+It has one attribute: 'cppExternalNamespace', which is of type str.
+
+'cppmodel_CPPMakeFile' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPEnumerator' represents an important domain concept.
+It has one attribute: 'cppValue', which is of type str.
+
+'cppmodel_CPPRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPEnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'OOPLClassReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPStructMember' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_OOPLDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'CPPNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPQualifiedNamedElement' represents an important domain concept.
+It has the following attributes: 'cppPrefix', which is of type str; 'cppQualifiedName', which is of type str.
+
+'cppmodel_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPProtocolOperationImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPModel' represents an important domain concept.
+It does not declare any attributes.
+
+'OOPLClassRefAssocCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'OOPLClass' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPClass' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'OOPLStructMember' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPExternalHeaderInclusion' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'OOPLBasicType' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPProtocol' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_XTClass' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPFormalParameter' represents an important domain concept.
+It has one attribute: 'passingMode', which is of type str.
+
+'cppmodel_State' represents an important domain concept.
+It does not declare any attributes.
+
+'OOPLEnumerator' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPClassReferenceStorage' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'CPPSourceFile' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPUserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'OOPLStructType' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPExternalLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'OOPLClassReferenceStorage' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPSignal' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPPort' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPExternalHeader' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cppmodel_OOPLNameProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_Snippet' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_XTEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPProtocolOperationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPBasicType' represents an important domain concept.
+It has one attribute: 'cppSpecifier', which is of type str.
+
+'OOPLClassRefSimpleCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPBodyFile' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_XTProtocol' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPClassReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPState' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_XTPort' represents an important domain concept.
+It does not declare any attributes.
+
+'OOPLSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_XTProtocolOperationImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_XTProtocolOperationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPClassRefSimpleCollection' represents an important domain concept.
+It has one attribute: 'cppContainer', which is of type str.
+
+'cppmodel_CPPDirectory' represents an important domain concept.
+It has the following attributes: 'path', which is of type str; 'parentDirectory', which is of type str; 'name', which is of type str.
+
+'cppmodel_CPPNamedElement' represents an important domain concept.
+It has one attribute: 'cppName', which is of type str.
+
+'cppmodel_CPPHeaderFile' represents an important domain concept.
+It has the following attributes: 'includePath', which is of type str; 'includeDirectory', which is of type str; 'includeName', which is of type str.
+
+'cppmodel_CPPReturnValue' represents an important domain concept.
+It does not declare any attributes.
+
+'OOPLEnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPSourceFile' represents an important domain concept.
+It has the following attributes: 'generationPath', which is of type str; 'generationName', which is of type str; 'generationDirectory', which is of type str.
+
+'cppmodel_XTComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'cppmodel_CPPSequence' represents an important domain concept.
+It has one attribute: 'cppContainer', which is of type str.
+
+'OOPLUserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CPPParameterPassingKind' defines the following possible values: 'BY_CONSTANT_REFERENCE', 'BY_VALUE', 'BY_REFERENCE'.
+
+The model also captures inheritance relationships between classes.
+The class 'cppmodel_CPPQualifiedNamedElement' is a specialization of 'CPPNamedElement'.
+The class 'cppmodel_CPPModel' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPPackage' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPClass' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPClass' is a specialization of 'OOPLClass'.
+The class 'cppmodel_CPPProtocol' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPHeaderFile' is a specialization of 'CPPSourceFile'.
+The class 'cppmodel_CPPBodyFile' is a specialization of 'CPPSourceFile'.
+The class 'cppmodel_CPPComponent' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPRelation' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPRelation' is a specialization of 'OOPLRelation'.
+The class 'cppmodel_CPPOperation' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPPort' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPProtocolOperationDefinition' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPSignal' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPProtocolOperationImplementation' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPClassReference' is a specialization of 'OOPLClassReference'.
+The class 'cppmodel_CPPClassReference' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPClassReferenceStorage' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPClassReferenceStorage' is a specialization of 'OOPLClassReferenceStorage'.
+The class 'cppmodel_CPPClassRefSimpleCollection' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPClassRefSimpleCollection' is a specialization of 'OOPLClassRefSimpleCollection'.
+The class 'cppmodel_CPPClassRefAssocCollection' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPClassRefAssocCollection' is a specialization of 'OOPLClassRefAssocCollection'.
+The class 'cppmodel_CPPAttribute' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPState' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPTransition' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPEvent' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPFormalParameter' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPReturnValue' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPBasicType' is a specialization of 'OOPLBasicType'.
+The class 'cppmodel_CPPBasicType' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPSequence' is a specialization of 'OOPLSequence'.
+The class 'cppmodel_CPPEnumType' is a specialization of 'OOPLEnumType'.
+The class 'cppmodel_CPPEnumType' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPEnumerator' is a specialization of 'OOPLEnumerator'.
+The class 'cppmodel_CPPEnumerator' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPStructType' is a specialization of 'OOPLStructType'.
+The class 'cppmodel_CPPStructType' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPStructMember' is a specialization of 'OOPLStructMember'.
+The class 'cppmodel_CPPStructMember' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPUserDefinedType' is a specialization of 'OOPLUserDefinedType'.
+The class 'cppmodel_CPPUserDefinedType' is a specialization of 'CPPQualifiedNamedElement'.
+The class 'cppmodel_CPPMakeFile' is a specialization of 'CPPSourceFile'.
+The class 'cppmodel_CPPExternalBridge' is a specialization of 'CPPQualifiedNamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cppmodel_CPPNamedElement' and 'cppmodel_OOPLNameProvider'. From 'cppmodel_CPPNamedElement', the role 'cppmodel_CPPNamedElement' has cardinality 0..*, and from 'cppmodel_OOPLNameProvider', the role 'cppmodel_OOPLNameProvider' has cardinality 0..*.
+An association connects 'cppmodel_CPPQualifiedNamedElement' and 'cppmodel_CPPQualifiedNamedElement'. From 'cppmodel_CPPQualifiedNamedElement', the role 'cppmodel_CPPQualifiedNamedElement' has cardinality 0..*, and from 'cppmodel_CPPQualifiedNamedElement', the role 'cppmodel_CPPQualifiedNamedElement1' has cardinality 0..*.
+An association connects 'cppmodel_Model' and 'cppmodel_CPPModel'. From 'cppmodel_Model', the role 'cppmodel_Model' has cardinality 0..*, and from 'cppmodel_CPPModel', the role 'cppmodel_CPPModel' has cardinality 0..*.
+An association connects 'cppmodel_CPPBodyFile' and 'cppmodel_CPPModel'. From 'cppmodel_CPPBodyFile', the role 'cppmodel_CPPBodyFile' has cardinality 0..*, and from 'cppmodel_CPPModel', the role 'cppmodel_CPPModel5' has cardinality 0..*.
+An association connects 'cppmodel_CPPHeaderFile' and 'cppmodel_CPPModel'. From 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile' has cardinality 0..*, and from 'cppmodel_CPPModel', the role 'cppmodel_CPPModel7' has cardinality 0..*.
+An association connects 'cppmodel_CPPHeaderFile' and 'cppmodel_CPPModel'. From 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile10' has cardinality 0..*, and from 'cppmodel_CPPModel', the role 'cppmodel_CPPModel9' has cardinality 0..*.
+An association connects 'cppmodel_CPPModel' and 'cppmodel_CPPHeaderFile'. From 'cppmodel_CPPModel', the role 'cppmodel_CPPModel12' has cardinality 0..*, and from 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile13' has cardinality 0..*.
+An association connects 'cppmodel_CPPDirectory' and 'cppmodel_CPPModel'. From 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory' has cardinality 0..*, and from 'cppmodel_CPPModel', the role 'cppmodel_CPPModel15' has cardinality 0..*.
+An association connects 'cppmodel_CPPDirectory' and 'cppmodel_CPPModel'. From 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory18' has cardinality 0..*, and from 'cppmodel_CPPModel', the role 'cppmodel_CPPModel17' has cardinality 0..*.
+An association connects 'cppmodel_CPPModel' and 'cppmodel_CPPDirectory'. From 'cppmodel_CPPModel', the role 'cppmodel_CPPModel20' has cardinality 0..*, and from 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory21' has cardinality 0..*.
+An association connects 'cppmodel_CPPDirectory' and 'cppmodel_CPPModel'. From 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory24' has cardinality 0..*, and from 'cppmodel_CPPModel', the role 'cppmodel_CPPModel23' has cardinality 0..*.
+An association connects 'cppmodel_CPPPackage' and 'cppmodel_Package'. From 'cppmodel_CPPPackage', the role 'cppmodel_CPPPackage' has cardinality 0..*, and from 'cppmodel_Package', the role 'cppmodel_Package' has cardinality 0..*.
+An association connects 'cppmodel_CPPBodyFile' and 'cppmodel_CPPPackage'. From 'cppmodel_CPPBodyFile', the role 'cppmodel_CPPBodyFile28' has cardinality 0..*, and from 'cppmodel_CPPPackage', the role 'cppmodel_CPPPackage27' has cardinality 0..*.
+An association connects 'cppmodel_CPPHeaderFile' and 'cppmodel_CPPPackage'. From 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile31' has cardinality 0..*, and from 'cppmodel_CPPPackage', the role 'cppmodel_CPPPackage30' has cardinality 0..*.
+An association connects 'cppmodel_CPPDirectory' and 'cppmodel_CPPPackage'. From 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory34' has cardinality 0..*, and from 'cppmodel_CPPPackage', the role 'cppmodel_CPPPackage33' has cardinality 0..*.
+An association connects 'cppmodel_CPPDirectory' and 'cppmodel_CPPPackage'. From 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory37' has cardinality 0..*, and from 'cppmodel_CPPPackage', the role 'cppmodel_CPPPackage36' has cardinality 0..*.
+An association connects 'cppmodel_CPPHeaderFile' and 'cppmodel_CPPClass'. From 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile39' has cardinality 0..*, and from 'cppmodel_CPPClass', the role 'cppmodel_CPPClass' has cardinality 0..*.
+An association connects 'cppmodel_CPPClass' and 'cppmodel_CPPBodyFile'. From 'cppmodel_CPPClass', the role 'cppmodel_CPPClass41' has cardinality 0..*, and from 'cppmodel_CPPBodyFile', the role 'cppmodel_CPPBodyFile42' has cardinality 0..*.
+An association connects 'cppmodel_XTProtocol' and 'cppmodel_CPPProtocol'. From 'cppmodel_XTProtocol', the role 'cppmodel_XTProtocol' has cardinality 0..*, and from 'cppmodel_CPPProtocol', the role 'cppmodel_CPPProtocol' has cardinality 0..*.
+An association connects 'cppmodel_CPPHeaderFile' and 'cppmodel_CPPProtocol'. From 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile46' has cardinality 0..*, and from 'cppmodel_CPPProtocol', the role 'cppmodel_CPPProtocol45' has cardinality 0..*.
+An association connects 'cppmodel_CPPSourceFile' and 'cppmodel_CPPHeaderFile'. From 'cppmodel_CPPSourceFile', the role 'cppmodel_CPPSourceFile' has cardinality 0..*, and from 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile48' has cardinality 0..*.
+An association connects 'cppmodel_CPPSourceFile' and 'cppmodel_CPPExternalHeaderInclusion'. From 'cppmodel_CPPSourceFile', the role 'cppmodel_CPPSourceFile50' has cardinality 0..*, and from 'cppmodel_CPPExternalHeaderInclusion', the role 'cppmodel_CPPExternalHeaderInclusion' has cardinality 0..*.
+An association connects 'cppmodel_CPPDirectory' and 'cppmodel_CPPDirectory'. From 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory51' has cardinality 0..*, and from 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory53' has cardinality 0..*.
+An association connects 'cppmodel_CPPSourceFile' and 'cppmodel_CPPDirectory'. From 'cppmodel_CPPSourceFile', the role 'cppmodel_CPPSourceFile56' has cardinality 0..*, and from 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory55' has cardinality 0..*.
+An association connects 'cppmodel_CPPMakeFile' and 'cppmodel_CPPDirectory'. From 'cppmodel_CPPMakeFile', the role 'cppmodel_CPPMakeFile' has cardinality 0..*, and from 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory58' has cardinality 0..*.
+An association connects 'cppmodel_XTComponent' and 'cppmodel_CPPComponent'. From 'cppmodel_XTComponent', the role 'cppmodel_XTComponent' has cardinality 0..*, and from 'cppmodel_CPPComponent', the role 'cppmodel_CPPComponent' has cardinality 0..*.
+An association connects 'cppmodel_CPPComponent' and 'cppmodel_CPPHeaderFile'. From 'cppmodel_CPPComponent', the role 'cppmodel_CPPComponent61' has cardinality 0..*, and from 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile62' has cardinality 0..*.
+An association connects 'cppmodel_CPPBodyFile' and 'cppmodel_CPPComponent'. From 'cppmodel_CPPBodyFile', the role 'cppmodel_CPPBodyFile65' has cardinality 0..*, and from 'cppmodel_CPPComponent', the role 'cppmodel_CPPComponent64' has cardinality 0..*.
+An association connects 'cppmodel_CPPHeaderFile' and 'cppmodel_CPPComponent'. From 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile68' has cardinality 0..*, and from 'cppmodel_CPPComponent', the role 'cppmodel_CPPComponent67' has cardinality 0..*.
+An association connects 'cppmodel_CPPComponent' and 'cppmodel_CPPHeaderFile'. From 'cppmodel_CPPComponent', the role 'cppmodel_CPPComponent70' has cardinality 0..*, and from 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile71' has cardinality 0..*.
+An association connects 'cppmodel_CPPDirectory' and 'cppmodel_CPPComponent'. From 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory74' has cardinality 0..*, and from 'cppmodel_CPPComponent', the role 'cppmodel_CPPComponent73' has cardinality 0..*.
+An association connects 'cppmodel_CPPComponent' and 'cppmodel_CPPDirectory'. From 'cppmodel_CPPComponent', the role 'cppmodel_CPPComponent76' has cardinality 0..*, and from 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory77' has cardinality 0..*.
+An association connects 'cppmodel_CPPDirectory' and 'cppmodel_CPPComponent'. From 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory80' has cardinality 0..*, and from 'cppmodel_CPPComponent', the role 'cppmodel_CPPComponent79' has cardinality 0..*.
+An association connects 'cppmodel_CPPDirectory' and 'cppmodel_CPPComponent'. From 'cppmodel_CPPDirectory', the role 'cppmodel_CPPDirectory83' has cardinality 0..*, and from 'cppmodel_CPPComponent', the role 'cppmodel_CPPComponent82' has cardinality 0..*.
+An association connects 'cppmodel_CPPExternalHeader' and 'cppmodel_CPPExternalHeaderInclusion'. From 'cppmodel_CPPExternalHeader', the role 'cppmodel_CPPExternalHeader' has cardinality 0..*, and from 'cppmodel_CPPExternalHeaderInclusion', the role 'cppmodel_CPPExternalHeaderInclusion85' has cardinality 0..*.
+An association connects 'cppmodel_CPPOperation' and 'cppmodel_Operation'. From 'cppmodel_CPPOperation', the role 'cppmodel_CPPOperation' has cardinality 0..*, and from 'cppmodel_Operation', the role 'cppmodel_Operation' has cardinality 0..*.
+An association connects 'cppmodel_CPPOperation' and 'cppmodel_Snippet'. From 'cppmodel_CPPOperation', the role 'cppmodel_CPPOperation88' has cardinality 0..*, and from 'cppmodel_Snippet', the role 'cppmodel_Snippet' has cardinality 0..*.
+An association connects 'cppmodel_XTPort' and 'cppmodel_CPPPort'. From 'cppmodel_XTPort', the role 'cppmodel_XTPort' has cardinality 0..*, and from 'cppmodel_CPPPort', the role 'cppmodel_CPPPort' has cardinality 0..*.
+An association connects 'cppmodel_CPPHeaderFile' and 'cppmodel_CPPPort'. From 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile92' has cardinality 0..*, and from 'cppmodel_CPPPort', the role 'cppmodel_CPPPort91' has cardinality 0..*.
+An association connects 'cppmodel_CPPHeaderFile' and 'cppmodel_CPPPort'. From 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile95' has cardinality 0..*, and from 'cppmodel_CPPPort', the role 'cppmodel_CPPPort94' has cardinality 0..*.
+An association connects 'cppmodel_CPPBodyFile' and 'cppmodel_CPPPort'. From 'cppmodel_CPPBodyFile', the role 'cppmodel_CPPBodyFile98' has cardinality 0..*, and from 'cppmodel_CPPPort', the role 'cppmodel_CPPPort97' has cardinality 0..*.
+An association connects 'cppmodel_CPPBodyFile' and 'cppmodel_CPPPort'. From 'cppmodel_CPPBodyFile', the role 'cppmodel_CPPBodyFile101' has cardinality 0..*, and from 'cppmodel_CPPPort', the role 'cppmodel_CPPPort100' has cardinality 0..*.
+An association connects 'cppmodel_CPPProtocolOperationDefinition' and 'cppmodel_XTProtocolOperationDefinition'. From 'cppmodel_CPPProtocolOperationDefinition', the role 'cppmodel_CPPProtocolOperationDefinition' has cardinality 0..*, and from 'cppmodel_XTProtocolOperationDefinition', the role 'cppmodel_XTProtocolOperationDefinition' has cardinality 0..*.
+An association connects 'cppmodel_Signal' and 'cppmodel_CPPSignal'. From 'cppmodel_Signal', the role 'cppmodel_Signal' has cardinality 0..*, and from 'cppmodel_CPPSignal', the role 'cppmodel_CPPSignal' has cardinality 0..*.
+An association connects 'cppmodel_CPPProtocolOperationImplementation' and 'cppmodel_XTProtocolOperationImplementation'. From 'cppmodel_CPPProtocolOperationImplementation', the role 'cppmodel_CPPProtocolOperationImplementation' has cardinality 0..*, and from 'cppmodel_XTProtocolOperationImplementation', the role 'cppmodel_XTProtocolOperationImplementation' has cardinality 0..*.
+An association connects 'cppmodel_CPPClassRefAssocCollection' and 'cppmodel_CPPAttribute'. From 'cppmodel_CPPClassRefAssocCollection', the role 'cppmodel_CPPClassRefAssocCollection' has cardinality 0..*, and from 'cppmodel_CPPAttribute', the role 'cppmodel_CPPAttribute' has cardinality 0..*.
+An association connects 'cppmodel_CPPAttribute' and 'cppmodel_Attribute'. From 'cppmodel_CPPAttribute', the role 'cppmodel_CPPAttribute107' has cardinality 0..*, and from 'cppmodel_Attribute', the role 'cppmodel_Attribute' has cardinality 0..*.
+An association connects 'cppmodel_CPPAttribute' and 'cppmodel_CPPSequence'. From 'cppmodel_CPPAttribute', the role 'cppmodel_CPPAttribute109' has cardinality 0..*, and from 'cppmodel_CPPSequence', the role 'cppmodel_CPPSequence' has cardinality 0..*.
+An association connects 'cppmodel_CPPAttribute' and 'cppmodel_OOPLDataType'. From 'cppmodel_CPPAttribute', the role 'cppmodel_CPPAttribute111' has cardinality 0..*, and from 'cppmodel_OOPLDataType', the role 'cppmodel_OOPLDataType' has cardinality 0..*.
+An association connects 'cppmodel_State' and 'cppmodel_CPPState'. From 'cppmodel_State', the role 'cppmodel_State' has cardinality 0..*, and from 'cppmodel_CPPState', the role 'cppmodel_CPPState' has cardinality 0..*.
+An association connects 'cppmodel_Snippet' and 'cppmodel_CPPState'. From 'cppmodel_Snippet', the role 'cppmodel_Snippet115' has cardinality 0..*, and from 'cppmodel_CPPState', the role 'cppmodel_CPPState114' has cardinality 0..*.
+An association connects 'cppmodel_Snippet' and 'cppmodel_CPPState'. From 'cppmodel_Snippet', the role 'cppmodel_Snippet118' has cardinality 0..*, and from 'cppmodel_CPPState', the role 'cppmodel_CPPState117' has cardinality 0..*.
+An association connects 'cppmodel_Transition' and 'cppmodel_CPPTransition'. From 'cppmodel_Transition', the role 'cppmodel_Transition' has cardinality 0..*, and from 'cppmodel_CPPTransition', the role 'cppmodel_CPPTransition' has cardinality 0..*.
+An association connects 'cppmodel_CPPTransition' and 'cppmodel_Snippet'. From 'cppmodel_CPPTransition', the role 'cppmodel_CPPTransition121' has cardinality 0..*, and from 'cppmodel_Snippet', the role 'cppmodel_Snippet122' has cardinality 0..*.
+An association connects 'cppmodel_CPPTransition' and 'cppmodel_Snippet'. From 'cppmodel_CPPTransition', the role 'cppmodel_CPPTransition124' has cardinality 0..*, and from 'cppmodel_Snippet', the role 'cppmodel_Snippet125' has cardinality 0..*.
+An association connects 'cppmodel_XTEvent' and 'cppmodel_CPPEvent'. From 'cppmodel_XTEvent', the role 'cppmodel_XTEvent' has cardinality 0..*, and from 'cppmodel_CPPEvent', the role 'cppmodel_CPPEvent' has cardinality 0..*.
+An association connects 'cppmodel_CPPFormalParameter' and 'cppmodel_Parameter'. From 'cppmodel_CPPFormalParameter', the role 'cppmodel_CPPFormalParameter' has cardinality 0..*, and from 'cppmodel_Parameter', the role 'cppmodel_Parameter' has cardinality 0..*.
+An association connects 'cppmodel_CPPFormalParameter' and 'cppmodel_CPPSequence'. From 'cppmodel_CPPFormalParameter', the role 'cppmodel_CPPFormalParameter129' has cardinality 0..*, and from 'cppmodel_CPPSequence', the role 'cppmodel_CPPSequence130' has cardinality 0..*.
+An association connects 'cppmodel_OOPLDataType' and 'cppmodel_CPPFormalParameter'. From 'cppmodel_OOPLDataType', the role 'cppmodel_OOPLDataType133' has cardinality 0..*, and from 'cppmodel_CPPFormalParameter', the role 'cppmodel_CPPFormalParameter132' has cardinality 0..*.
+An association connects 'cppmodel_CPPReturnValue' and 'cppmodel_OOPLDataType'. From 'cppmodel_CPPReturnValue', the role 'cppmodel_CPPReturnValue' has cardinality 0..*, and from 'cppmodel_OOPLDataType', the role 'cppmodel_OOPLDataType135' has cardinality 0..*.
+An association connects 'cppmodel_CPPReturnValue' and 'cppmodel_CPPSequence'. From 'cppmodel_CPPReturnValue', the role 'cppmodel_CPPReturnValue137' has cardinality 0..*, and from 'cppmodel_CPPSequence', the role 'cppmodel_CPPSequence138' has cardinality 0..*.
+An association connects 'cppmodel_TypedMultiplicityElement' and 'cppmodel_CPPReturnValue'. From 'cppmodel_TypedMultiplicityElement', the role 'cppmodel_TypedMultiplicityElement' has cardinality 0..*, and from 'cppmodel_CPPReturnValue', the role 'cppmodel_CPPReturnValue140' has cardinality 0..*.
+An association connects 'cppmodel_CPPExternalLibrary' and 'cppmodel_CPPExternalHeader'. From 'cppmodel_CPPExternalLibrary', the role 'cppmodel_CPPExternalLibrary' has cardinality 0..*, and from 'cppmodel_CPPExternalHeader', the role 'cppmodel_CPPExternalHeader142' has cardinality 0..*.
+An association connects 'cppmodel_CPPExternalBridge' and 'cppmodel_CPPHeaderFile'. From 'cppmodel_CPPExternalBridge', the role 'cppmodel_CPPExternalBridge' has cardinality 0..*, and from 'cppmodel_CPPHeaderFile', the role 'cppmodel_CPPHeaderFile144' has cardinality 0..*.
+An association connects 'cppmodel_CPPBodyFile' and 'cppmodel_CPPExternalBridge'. From 'cppmodel_CPPBodyFile', the role 'cppmodel_CPPBodyFile147' has cardinality 0..*, and from 'cppmodel_CPPExternalBridge', the role 'cppmodel_CPPExternalBridge146' has cardinality 0..*.
+An association connects 'cppmodel_XTClass' and 'cppmodel_CPPExternalBridge'. From 'cppmodel_XTClass', the role 'cppmodel_XTClass' has cardinality 0..*, and from 'cppmodel_CPPExternalBridge', the role 'cppmodel_CPPExternalBridge149' has cardinality 0..*.

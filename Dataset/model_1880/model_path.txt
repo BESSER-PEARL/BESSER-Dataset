@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/christophedavid31/PTCompta/fr.logiprolls.ptcompta.model/model/shop.ecore

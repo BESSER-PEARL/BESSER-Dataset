@@ -1,0 +1,32 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'trace_TimedZone' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_TimedZoneTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EventPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_TraceModel' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_TraceModel' and 'trace_Trace'. From 'trace_TraceModel', the role 'trace_TraceModel' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace' has cardinality 0..*.
+An association connects 'trace_TraceModel' and 'trace_TimedZoneTrace'. From 'trace_TraceModel', the role 'trace_TraceModel2' has cardinality 0..*, and from 'trace_TimedZoneTrace', the role 'trace_TimedZoneTrace' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_EventPattern'. From 'trace_Trace', the role 'trace_Trace4' has cardinality 0..*, and from 'trace_EventPattern', the role 'trace_EventPattern' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_Automaton'. From 'trace_Trace', the role 'trace_Trace6' has cardinality 0..*, and from 'trace_Automaton', the role 'trace_Automaton' has cardinality 0..*.
+An association connects 'trace_TimedZoneTrace' and 'trace_TimedZone'. From 'trace_TimedZoneTrace', the role 'trace_TimedZoneTrace8' has cardinality 0..*, and from 'trace_TimedZone', the role 'trace_TimedZone' has cardinality 0..*.
+An association connects 'trace_TimedZoneTrace' and 'trace_Transition'. From 'trace_TimedZoneTrace', the role 'trace_TimedZoneTrace10' has cardinality 0..*, and from 'trace_Transition', the role 'trace_Transition' has cardinality 0..*.

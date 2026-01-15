@@ -1,0 +1,35 @@
+The domain model 'rdb' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'rdb_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rdb_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_Column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'rdb_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Key' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_Key' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rdb_PrimaryKey' is a specialization of 'Key'.
+The class 'rdb_ForeignKey' is a specialization of 'Key'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rdb_Schema' and 'rdb_Table'. From 'rdb_Schema', the role 'rdb_Schema' has cardinality 0..*, and from 'rdb_Table', the role 'rdb_Table' has cardinality 0..*.
+An association connects 'rdb_Column' and 'rdb_Table'. From 'rdb_Column', the role 'rdb_Column' has cardinality 0..*, and from 'rdb_Table', the role 'rdb_Table2' has cardinality 0..*.
+An association connects 'rdb_Table' and 'rdb_Key'. From 'rdb_Table', the role 'rdb_Table4' has cardinality 0..*, and from 'rdb_Key', the role 'rdb_Key' has cardinality 0..*.
+An association connects 'rdb_Column' and 'rdb_Key'. From 'rdb_Column', the role 'rdb_Column7' has cardinality 0..*, and from 'rdb_Key', the role 'rdb_Key6' has cardinality 0..*.
+An association connects 'rdb_ForeignKey' and 'rdb_Column'. From 'rdb_ForeignKey', the role 'rdb_ForeignKey' has cardinality 0..*, and from 'rdb_Column', the role 'rdb_Column9' has cardinality 0..*.

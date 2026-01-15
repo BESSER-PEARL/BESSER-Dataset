@@ -1,0 +1,37 @@
+The domain model 'sunBooks' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'sunBooks_BookType' represents an important domain concept.
+It has the following attributes: 'iSBN', which is of type str; 'description', which is of type str; 'bookCategory', which is of type str; 'publicationDate', which is of type str; 'name', which is of type str; 'price', which is of type str; 'itemId', which is of type str.
+
+'sunBooks_AuthorsType' represents an important domain concept.
+It has one attribute: 'authorName', which is of type str.
+
+'sunBooks_CollectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'sunBooks_PromotionType' represents an important domain concept.
+It has the following attributes: 'none', which is of type str; 'discount', which is of type str.
+
+'sunBooks_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'sunBooks_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'sunBooks_BooksType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategoryType' defines the following possible values: 'other', 'magazine', 'fiction', 'novel'.
+The enumeration 'BookCategoryType1' defines the following possible values: 'other', 'novel', 'magazine', 'fiction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sunBooks_BookType' and 'sunBooks_BooksType'. From 'sunBooks_BookType', the role 'sunBooks_BookType' has cardinality 0..*, and from 'sunBooks_BooksType', the role 'sunBooks_BooksType' has cardinality 0..*.
+An association connects 'sunBooks_AuthorsType' and 'sunBooks_BookType'. From 'sunBooks_AuthorsType', the role 'sunBooks_AuthorsType' has cardinality 0..*, and from 'sunBooks_BookType', the role 'sunBooks_BookType2' has cardinality 0..*.
+An association connects 'sunBooks_PromotionType' and 'sunBooks_BookType'. From 'sunBooks_PromotionType', the role 'sunBooks_PromotionType' has cardinality 0..*, and from 'sunBooks_BookType', the role 'sunBooks_BookType4' has cardinality 0..*.
+An association connects 'sunBooks_CollectionType' and 'sunBooks_BooksType'. From 'sunBooks_CollectionType', the role 'sunBooks_CollectionType' has cardinality 0..*, and from 'sunBooks_BooksType', the role 'sunBooks_BooksType6' has cardinality 0..*.
+An association connects 'sunBooks_EStringToStringMapEntry' and 'sunBooks_DocumentRoot'. From 'sunBooks_EStringToStringMapEntry', the role 'sunBooks_EStringToStringMapEntry' has cardinality 0..*, and from 'sunBooks_DocumentRoot', the role 'sunBooks_DocumentRoot' has cardinality 0..*.
+An association connects 'sunBooks_DocumentRoot' and 'sunBooks_EStringToStringMapEntry'. From 'sunBooks_DocumentRoot', the role 'sunBooks_DocumentRoot9' has cardinality 0..*, and from 'sunBooks_EStringToStringMapEntry', the role 'sunBooks_EStringToStringMapEntry10' has cardinality 0..*.
+An association connects 'sunBooks_DocumentRoot' and 'sunBooks_CollectionType'. From 'sunBooks_DocumentRoot', the role 'sunBooks_DocumentRoot12' has cardinality 0..*, and from 'sunBooks_CollectionType', the role 'sunBooks_CollectionType13' has cardinality 0..*.

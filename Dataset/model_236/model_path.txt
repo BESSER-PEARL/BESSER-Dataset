@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/kevoree/kmf-samples/ecore/org.kevoree.modeling.sample.ecore.kt/src/test/resources/ecore.ecore

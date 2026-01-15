@@ -1,0 +1,37 @@
+The domain model 'rcd' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'rcd_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'rcd_Classifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rcd_Attribute' represents an important domain concept.
+It has the following attributes: 'is_primary', which is of type bool; 'upper', which is of type str; 'name', which is of type str; 'lower', which is of type str.
+
+'rcd_ClassModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rcd_Association' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'lower', which is of type str; 'upper', which is of type str.
+
+'rcd_Class' represents an important domain concept.
+It has one attribute: 'is_persistent', which is of type bool.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rcd_Class' is a specialization of 'Classifier'.
+The class 'rcd_PrimitiveDataType' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rcd_Class' and 'rcd_Association'. From 'rcd_Class', the role 'rcd_Class' has cardinality 0..*, and from 'rcd_Association', the role 'rcd_Association' has cardinality 0..*.
+An association connects 'rcd_Class' and 'rcd_Association'. From 'rcd_Class', the role 'rcd_Class3' has cardinality 0..*, and from 'rcd_Association', the role 'rcd_Association2' has cardinality 0..*.
+An association connects 'rcd_Classifier' and 'rcd_Attribute'. From 'rcd_Classifier', the role 'rcd_Classifier' has cardinality 0..*, and from 'rcd_Attribute', the role 'rcd_Attribute' has cardinality 0..*.
+An association connects 'rcd_Attribute' and 'rcd_Class'. From 'rcd_Attribute', the role 'rcd_Attribute7' has cardinality 0..*, and from 'rcd_Class', the role 'rcd_Class6' has cardinality 0..*.
+An association connects 'rcd_Class' and 'rcd_Class'. From 'rcd_Class', the role 'rcd_Class8' has cardinality 0..*, and from 'rcd_Class', the role 'rcd_Class10' has cardinality 0..*.
+An association connects 'rcd_Classifier' and 'rcd_ClassModel'. From 'rcd_Classifier', the role 'rcd_Classifier12' has cardinality 0..*, and from 'rcd_ClassModel', the role 'rcd_ClassModel' has cardinality 0..*.
+An association connects 'rcd_ClassModel' and 'rcd_Association'. From 'rcd_ClassModel', the role 'rcd_ClassModel14' has cardinality 0..*, and from 'rcd_Association', the role 'rcd_Association15' has cardinality 0..*.

@@ -1,0 +1,79 @@
+The domain model 'uppaal' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'uppaal_LocationType' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'y', which is of type str; 'id', which is of type str; 'color', which is of type str.
+
+'uppaal_TransitionType' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'id', which is of type str; 'x', which is of type str; 'y', which is of type str.
+
+'uppaal_NtaType' represents an important domain concept.
+It has the following attributes: 'system', which is of type str; 'instantiation', which is of type str; 'declaration', which is of type str; 'imports', which is of type str.
+
+'uppaal_CommittedType' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_UrgentType' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_TargetType' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'uppaal_NameType' represents an important domain concept.
+It has the following attributes: 'y', which is of type str; 'x', which is of type str; 'mixed', which is of type str.
+
+'uppaal_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'uppaal_InitType' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'uppaal_LabelType' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'kind', which is of type str; 'mixed', which is of type str; 'y', which is of type str.
+
+'uppaal_ParameterType' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'mixed', which is of type str; 'y', which is of type str.
+
+'uppaal_NailType' represents an important domain concept.
+It has the following attributes: 'y', which is of type str; 'x', which is of type str.
+
+'uppaal_SourceType' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'uppaal_TemplateType' represents an important domain concept.
+It has one attribute: 'declaration', which is of type str.
+
+'uppaal_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'instantiation', which is of type str; 'mixed', which is of type str; 'imports', which is of type str; 'declaration', which is of type str; 'system', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'uppaal_DocumentRoot' and 'uppaal_EStringToStringMapEntry'. From 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot' has cardinality 0..*, and from 'uppaal_EStringToStringMapEntry', the role 'uppaal_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'uppaal_DocumentRoot' and 'uppaal_EStringToStringMapEntry'. From 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot2' has cardinality 0..*, and from 'uppaal_EStringToStringMapEntry', the role 'uppaal_EStringToStringMapEntry3' has cardinality 0..*.
+An association connects 'uppaal_DocumentRoot' and 'uppaal_CommittedType'. From 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot5' has cardinality 0..*, and from 'uppaal_CommittedType', the role 'uppaal_CommittedType' has cardinality 0..*.
+An association connects 'uppaal_DocumentRoot' and 'uppaal_InitType'. From 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot7' has cardinality 0..*, and from 'uppaal_InitType', the role 'uppaal_InitType' has cardinality 0..*.
+An association connects 'uppaal_LabelType' and 'uppaal_DocumentRoot'. From 'uppaal_LabelType', the role 'uppaal_LabelType' has cardinality 0..*, and from 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot9' has cardinality 0..*.
+An association connects 'uppaal_LocationType' and 'uppaal_DocumentRoot'. From 'uppaal_LocationType', the role 'uppaal_LocationType' has cardinality 0..*, and from 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot11' has cardinality 0..*.
+An association connects 'uppaal_NailType' and 'uppaal_DocumentRoot'. From 'uppaal_NailType', the role 'uppaal_NailType' has cardinality 0..*, and from 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot13' has cardinality 0..*.
+An association connects 'uppaal_DocumentRoot' and 'uppaal_NameType'. From 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot15' has cardinality 0..*, and from 'uppaal_NameType', the role 'uppaal_NameType' has cardinality 0..*.
+An association connects 'uppaal_DocumentRoot' and 'uppaal_NtaType'. From 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot17' has cardinality 0..*, and from 'uppaal_NtaType', the role 'uppaal_NtaType' has cardinality 0..*.
+An association connects 'uppaal_DocumentRoot' and 'uppaal_ParameterType'. From 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot19' has cardinality 0..*, and from 'uppaal_ParameterType', the role 'uppaal_ParameterType' has cardinality 0..*.
+An association connects 'uppaal_SourceType' and 'uppaal_DocumentRoot'. From 'uppaal_SourceType', the role 'uppaal_SourceType' has cardinality 0..*, and from 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot21' has cardinality 0..*.
+An association connects 'uppaal_TargetType' and 'uppaal_DocumentRoot'. From 'uppaal_TargetType', the role 'uppaal_TargetType' has cardinality 0..*, and from 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot23' has cardinality 0..*.
+An association connects 'uppaal_TemplateType' and 'uppaal_DocumentRoot'. From 'uppaal_TemplateType', the role 'uppaal_TemplateType' has cardinality 0..*, and from 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot25' has cardinality 0..*.
+An association connects 'uppaal_DocumentRoot' and 'uppaal_TransitionType'. From 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot27' has cardinality 0..*, and from 'uppaal_TransitionType', the role 'uppaal_TransitionType' has cardinality 0..*.
+An association connects 'uppaal_DocumentRoot' and 'uppaal_UrgentType'. From 'uppaal_DocumentRoot', the role 'uppaal_DocumentRoot29' has cardinality 0..*, and from 'uppaal_UrgentType', the role 'uppaal_UrgentType' has cardinality 0..*.
+An association connects 'uppaal_LocationType' and 'uppaal_NameType'. From 'uppaal_LocationType', the role 'uppaal_LocationType31' has cardinality 0..*, and from 'uppaal_NameType', the role 'uppaal_NameType32' has cardinality 0..*.
+An association connects 'uppaal_LocationType' and 'uppaal_LabelType'. From 'uppaal_LocationType', the role 'uppaal_LocationType34' has cardinality 0..*, and from 'uppaal_LabelType', the role 'uppaal_LabelType35' has cardinality 0..*.
+An association connects 'uppaal_UrgentType' and 'uppaal_LocationType'. From 'uppaal_UrgentType', the role 'uppaal_UrgentType38' has cardinality 0..*, and from 'uppaal_LocationType', the role 'uppaal_LocationType37' has cardinality 0..*.
+An association connects 'uppaal_CommittedType' and 'uppaal_LocationType'. From 'uppaal_CommittedType', the role 'uppaal_CommittedType41' has cardinality 0..*, and from 'uppaal_LocationType', the role 'uppaal_LocationType40' has cardinality 0..*.
+An association connects 'uppaal_NtaType' and 'uppaal_TemplateType'. From 'uppaal_NtaType', the role 'uppaal_NtaType43' has cardinality 0..*, and from 'uppaal_TemplateType', the role 'uppaal_TemplateType44' has cardinality 0..*.
+An association connects 'uppaal_TemplateType' and 'uppaal_NameType'. From 'uppaal_TemplateType', the role 'uppaal_TemplateType46' has cardinality 0..*, and from 'uppaal_NameType', the role 'uppaal_NameType47' has cardinality 0..*.
+An association connects 'uppaal_ParameterType' and 'uppaal_TemplateType'. From 'uppaal_ParameterType', the role 'uppaal_ParameterType50' has cardinality 0..*, and from 'uppaal_TemplateType', the role 'uppaal_TemplateType49' has cardinality 0..*.
+An association connects 'uppaal_TemplateType' and 'uppaal_LocationType'. From 'uppaal_TemplateType', the role 'uppaal_TemplateType52' has cardinality 0..*, and from 'uppaal_LocationType', the role 'uppaal_LocationType53' has cardinality 0..*.
+An association connects 'uppaal_InitType' and 'uppaal_TemplateType'. From 'uppaal_InitType', the role 'uppaal_InitType56' has cardinality 0..*, and from 'uppaal_TemplateType', the role 'uppaal_TemplateType55' has cardinality 0..*.
+An association connects 'uppaal_TemplateType' and 'uppaal_TransitionType'. From 'uppaal_TemplateType', the role 'uppaal_TemplateType58' has cardinality 0..*, and from 'uppaal_TransitionType', the role 'uppaal_TransitionType59' has cardinality 0..*.
+An association connects 'uppaal_TransitionType' and 'uppaal_SourceType'. From 'uppaal_TransitionType', the role 'uppaal_TransitionType61' has cardinality 0..*, and from 'uppaal_SourceType', the role 'uppaal_SourceType62' has cardinality 0..*.
+An association connects 'uppaal_TargetType' and 'uppaal_TransitionType'. From 'uppaal_TargetType', the role 'uppaal_TargetType65' has cardinality 0..*, and from 'uppaal_TransitionType', the role 'uppaal_TransitionType64' has cardinality 0..*.
+An association connects 'uppaal_LabelType' and 'uppaal_TransitionType'. From 'uppaal_LabelType', the role 'uppaal_LabelType68' has cardinality 0..*, and from 'uppaal_TransitionType', the role 'uppaal_TransitionType67' has cardinality 0..*.
+An association connects 'uppaal_TransitionType' and 'uppaal_NailType'. From 'uppaal_TransitionType', the role 'uppaal_TransitionType70' has cardinality 0..*, and from 'uppaal_NailType', the role 'uppaal_NailType71' has cardinality 0..*.

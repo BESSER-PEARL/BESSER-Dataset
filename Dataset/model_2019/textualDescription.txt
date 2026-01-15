@@ -1,0 +1,2481 @@
+The domain model 'ecore' describes the core structural elements and their relationships within the system.
+
+The model defines 638 main class(es).
+
+'IntermediateActivities_TracedDecisionNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Loci_TracedSemanticVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedGeneralizationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_TracedObject' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedManifestation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_State' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedSequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedExtensionalValue' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_ActivityContent' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedSignal' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActivities_TracedForkNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedPrimitiveValue' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedNamespace' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_TracedInitialNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Values_ActionActivation_firing_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExtend' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedCompoundValue' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedCreateObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedStereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedValueSpecificationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_TracedBooleanValue' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedAcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLiteralString' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedPartDecomposition' represents an important domain concept.
+It does not declare any attributes.
+
+'Values_SemanticVisitor_runtimeModelElement_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_TracedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTimeObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedStructuredValue' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedActivityNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedMessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReadExtentAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedCompoundValue' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedFlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedLinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLiteralBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'Traced_TracedObjects' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedClass' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedCombinedFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_TracedActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedConditionalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedClearVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTimeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedLiteralBooleanEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActivities_TracedJoinNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_TracedOpaqueActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedClause' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_BasicBehaviors_TracedOpaqueBehaviorExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Values_SemanticVisitor_runtimeModelElement_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedSemanticVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInformationFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedExecutionOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActivities_TracedActivityParameterNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedStartClassifierBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedCallActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedValuePin' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedAcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInformationFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActivities_TracedMergeNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTimeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedFlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedCreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedClassifierTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActions_TracedCreateObjectActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedRedefinableTemplateSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExceptionHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDestructionOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReception' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedLiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedGeneralOrdering' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedAcceptCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDeployedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_BasicActions_TracedOutputPinActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReadSelfAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedExtensionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedFunctionBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Values_ActionActivation_firing_Value' represents an important domain concept.
+It has one attribute: 'firing', which is of type str.
+
+'uml_TracedPackageMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedCombinedFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActivities_TracedControlNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_ecore_TracedEModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedConnectableElementTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedControlNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCreateLinkObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_BasicActions_TracedOpaqueActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedRedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedUseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedElementImport' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedObject' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_TracedIntegerValue' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedConnectionPointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedRemoveVariableValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedAbstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActivities_TracedActivityNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_BasicActions_TracedCallActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedStructuredValue' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedPrimitiveValue' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedActionExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_TracedLiteralIntegerEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActions_TracedReadStructuralFeatureActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDeployedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCombinedFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedSubstitution' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedClearAssociationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedPseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedOutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedStartObjectBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedEnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInclude' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_TracedForkNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'Loci_TracedSemanticVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedOpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedStructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedConditionalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedGeneralOrdering' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_BasicActions_TracedActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedJoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_BasicActions_TracedInputPinActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedWriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTimeInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedContinuation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedComment' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedUnmarshallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReadLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReclassifyObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedClause' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInteractionUse' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLinkEndDestructionData' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedMultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedProtocolConformance' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedGate' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedSubstitution' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReadSelfAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedState' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCreateObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedObject' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedExpansionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedInstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActions_TracedValueSpecificationActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedStringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedSendObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedAnyReceiveEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedClass' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedCentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInteractionOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedUseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_TracedActivityFinalNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActions_TracedWriteStructuralFeatureActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedWriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_TracedMergeNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedStructuralFeatureActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedMessageOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_BasicBehaviors_TracedExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTemplateSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Traced_TracedObjects' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDurationConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReplyAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedLiteralInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedWriteStructuralFeatureActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedStateInvariant' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_TracedActivityParameterNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTimeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_BasicActions_TracedCallBehaviorActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedWriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedBehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedValueSpecificationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedConsiderIgnoreFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedObjectNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReadLinkObjectEndQualifierAction' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActions_TracedReadStructuralFeatureActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedStructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedCollaborationUse' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedBooleanValue' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInterruptibleActivityRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExecutionEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedPinActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedCreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActivities_TracedActivityFinalNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedPackageImport' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_TracedCallBehaviorActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedActor' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedParameterSet' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDeploymentSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedInputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActivities_TracedObjectNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedChangeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedPin' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedAssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedLifeline' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedPin' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedNamespace' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedCallEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReadVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReadStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReduceAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedPort' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedEModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedWriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActions_TracedAddStructuralFeatureValueActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedGeneralization' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedExtensionalValue' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedRaiseExceptionAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReadIsClassifiedObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExpansionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedInvocationActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedOpaqueBehaviorExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActivities_TracedActivityExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActivities_TracedDecisionNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDuration' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedSendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedLiteralEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDeploymentSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedRedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedOpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityContent' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedLoopNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedLinkEndCreationData' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedFinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_TracedJoinNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDeployment' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedComponentRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_BasicActions_TracedPinActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedStructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedEnumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedAbstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedComponentRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActivities_TracedInitialNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedMergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedProtocolTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActions_TracedAddStructuralFeatureValueActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_IntermediateActions_TracedStructuralFeatureActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedAssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedLiteralEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedInteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedAcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedMergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedPackageMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedSignalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedGate' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDestroyObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedState' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDestroyObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedRemoveStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_BasicActions_TracedInvocationActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCollaborationUse' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedIntegerValue' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedCreateLinkObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedRemoveStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedProfileApplication' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedBehaviorExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedComment' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLinkEndCreationData' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInteractionConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_Kernel_TracedLiteralIntegerEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedBroadcastSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTemplateBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedConnectorEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDestroyLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedClearAssociationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedActionInputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedAbstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedMultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExecutionOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLiteralReal' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedIntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedJoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDeployment' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedContinuation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTimeInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedStringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActions_TracedValueSpecificationActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedClearStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDurationObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_TracedLiteralBooleanEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedAddStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedOperationTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedEnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedFunctionBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedWriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTimeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReadLinkObjectEndAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedOpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedBehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedClearStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedValuePin' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedPrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTemplateParameterSubstitution' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedMessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedClassifierTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedExecutionEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedActionInputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCallBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTemplateSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedAnyReceiveEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInteractionUse' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedCommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_TracedActivityExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedClass' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLiteralUnlimitedNatural' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_TracedActivityNodeActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedLiteralUnlimitedNatural' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedActionExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedStructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedChangeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInteractionOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedPackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReclassifyObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedInvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedLiteralBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedFinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedLiteralReal' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedBehaviorExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedBroadcastSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedAddVariableValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReadVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedRaiseExceptionAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDurationObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedRedefinableTemplateSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTemplateBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedPackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedActor' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedBehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedIntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedStructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedInteractionUse' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTestIdentityAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedOpaqueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedAcceptCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReadExtentAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedGeneralizationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedLiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTestIdentityAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInformationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedMessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedPort' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedProtocolConformance' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLiteralInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedPackageImport' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedDirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedConnectionPointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedConsiderIgnoreFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReadLinkObjectEndAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReadStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedSendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedLinkEndDestructionData' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActions_TracedCreateObjectActionActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedParameterableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedEnumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDuration' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInteraction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedOpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedLinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedExtend' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedParameterableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReplyAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedCallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedOutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInformationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedPackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTimeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedStartObjectBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedType' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReadIsClassifiedObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedProtocolTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInterfaceRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedMessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedStructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedPartDecomposition' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLoopNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDestructionOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedLiteralString' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedManifestation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedType' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedIntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedGeneralization' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedConnectorEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedClearVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedPseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTimeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedState' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedMessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedBehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedStateInvariant' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedBehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedBehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedMessageOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_TracedOutputPinActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedImage' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedOpaqueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedStereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedParameterSet' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedSignalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedImage' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInterruptibleActivityRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedEncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDurationInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedStartClassifierBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedRedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedSequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedConnectableElementTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedExtensionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReadLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedInclude' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedEncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedQualifierValue' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedAddVariableValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTimeObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedSignal' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedSendObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDurationConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReception' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedReduceAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedLifeline' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedOperationTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInteractionConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedMessageOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedMultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedInterfaceRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedQualifierValue' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedUnmarshallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_TracedInputPinActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedPrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedCallEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedAddStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedTemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedExceptionHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedWriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedRemoveVariableValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedOpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedCentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedCallBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedReadLinkObjectEndQualifierAction' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedDestroyLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedDurationInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'umlTrace_uml_TracedElementImport' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedTemplateParameterSubstitution' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_TracedProfileApplication' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'umlTrace_uml_TracedCombinedFragment' is a specialization of 'TracedInteractionFragment'.
+The class 'umlTrace_uml_TracedInteractionFragment' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedNamedElement' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedElement' is a specialization of 'TracedEModelElement'.
+The class 'umlTrace_uml_TracedConditionalNode' is a specialization of 'TracedStructuredActivityNode'.
+The class 'umlTrace_uml_TracedStructuredActivityNode' is a specialization of 'uml_TracedAction'.
+The class 'umlTrace_uml_TracedStructuredActivityNode' is a specialization of 'uml_TracedNamespace'.
+The class 'umlTrace_uml_TracedStructuredActivityNode' is a specialization of 'uml_TracedActivityGroup'.
+The class 'umlTrace_uml_TracedAction' is a specialization of 'TracedExecutableNode'.
+The class 'umlTrace_uml_TracedExecutableNode' is a specialization of 'TracedActivityNode'.
+The class 'umlTrace_uml_TracedActivityNode' is a specialization of 'uml_TracedRedefinableElement'.
+The class 'umlTrace_uml_TracedActivityNode' is a specialization of 'ActivityContent'.
+The class 'umlTrace_uml_TracedRedefinableElement' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedNamespace' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedActivityGroup' is a specialization of 'uml_TracedNamedElement'.
+The class 'umlTrace_uml_TracedActivityGroup' is a specialization of 'ActivityContent'.
+The class 'umlTrace_uml_TracedCreateLinkObjectAction' is a specialization of 'TracedCreateLinkAction'.
+The class 'umlTrace_uml_TracedCreateLinkAction' is a specialization of 'TracedWriteLinkAction'.
+The class 'umlTrace_uml_TracedWriteLinkAction' is a specialization of 'TracedLinkAction'.
+The class 'umlTrace_uml_TracedLinkAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedInitialNode' is a specialization of 'TracedControlNode'.
+The class 'umlTrace_uml_TracedControlNode' is a specialization of 'TracedActivityNode'.
+The class 'umlTrace_uml_TracedFlowFinalNode' is a specialization of 'TracedFinalNode'.
+The class 'umlTrace_uml_TracedFinalNode' is a specialization of 'TracedControlNode'.
+The class 'umlTrace_uml_TracedExpansionRegion' is a specialization of 'TracedStructuredActivityNode'.
+The class 'umlTrace_uml_TracedCreateObjectAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedLifeline' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedDurationConstraint' is a specialization of 'TracedIntervalConstraint'.
+The class 'umlTrace_uml_TracedIntervalConstraint' is a specialization of 'TracedConstraint'.
+The class 'umlTrace_uml_TracedConstraint' is a specialization of 'TracedPackageableElement'.
+The class 'umlTrace_uml_TracedPackageableElement' is a specialization of 'uml_TracedNamedElement'.
+The class 'umlTrace_uml_TracedPackageableElement' is a specialization of 'uml_TracedParameterableElement'.
+The class 'umlTrace_uml_TracedParameterableElement' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedPseudostate' is a specialization of 'TracedVertex'.
+The class 'umlTrace_uml_TracedVertex' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedDestructionOccurrenceSpecification' is a specialization of 'TracedMessageOccurrenceSpecification'.
+The class 'umlTrace_uml_TracedMessageOccurrenceSpecification' is a specialization of 'uml_TracedOccurrenceSpecification'.
+The class 'umlTrace_uml_TracedMessageOccurrenceSpecification' is a specialization of 'uml_TracedMessageEnd'.
+The class 'umlTrace_uml_TracedOccurrenceSpecification' is a specialization of 'TracedInteractionFragment'.
+The class 'umlTrace_uml_TracedMessageEnd' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedPackage' is a specialization of 'uml_TracedNamespace'.
+The class 'umlTrace_uml_TracedPackage' is a specialization of 'uml_TracedPackageableElement'.
+The class 'umlTrace_uml_TracedPackage' is a specialization of 'uml_TracedTemplateableElement'.
+The class 'umlTrace_uml_TracedTemplateableElement' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedConnector' is a specialization of 'TracedFeature'.
+The class 'umlTrace_uml_TracedFeature' is a specialization of 'TracedRedefinableElement'.
+The class 'umlTrace_uml_TracedSendObjectAction' is a specialization of 'TracedInvocationAction'.
+The class 'umlTrace_uml_TracedInvocationAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedOpaqueAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedProtocolConformance' is a specialization of 'TracedDirectedRelationship'.
+The class 'umlTrace_uml_TracedDirectedRelationship' is a specialization of 'TracedRelationship'.
+The class 'umlTrace_uml_TracedRelationship' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedCallBehaviorAction' is a specialization of 'TracedCallAction'.
+The class 'umlTrace_uml_TracedCallAction' is a specialization of 'TracedInvocationAction'.
+The class 'umlTrace_uml_TracedPackageImport' is a specialization of 'TracedDirectedRelationship'.
+The class 'umlTrace_uml_TracedClass' is a specialization of 'uml_TracedEncapsulatedClassifier'.
+The class 'umlTrace_uml_TracedClass' is a specialization of 'uml_TracedBehavioredClassifier'.
+The class 'umlTrace_uml_TracedEncapsulatedClassifier' is a specialization of 'TracedStructuredClassifier'.
+The class 'umlTrace_uml_TracedStructuredClassifier' is a specialization of 'TracedClassifier'.
+The class 'umlTrace_uml_TracedClassifier' is a specialization of 'uml_TracedNamespace'.
+The class 'umlTrace_uml_TracedClassifier' is a specialization of 'uml_TracedRedefinableElement'.
+The class 'umlTrace_uml_TracedClassifier' is a specialization of 'uml_TracedType'.
+The class 'umlTrace_uml_TracedClassifier' is a specialization of 'uml_TracedTemplateableElement'.
+The class 'umlTrace_uml_TracedType' is a specialization of 'TracedPackageableElement'.
+The class 'umlTrace_uml_TracedBehavioredClassifier' is a specialization of 'TracedClassifier'.
+The class 'umlTrace_uml_TracedActivityFinalNode' is a specialization of 'TracedFinalNode'.
+The class 'umlTrace_uml_TracedObservation' is a specialization of 'TracedPackageableElement'.
+The class 'umlTrace_uml_TracedInteractionUse' is a specialization of 'TracedInteractionFragment'.
+The class 'umlTrace_uml_TracedLoopNode' is a specialization of 'TracedStructuredActivityNode'.
+The class 'umlTrace_uml_TracedSignal' is a specialization of 'TracedClassifier'.
+The class 'umlTrace_uml_TracedGeneralizationSet' is a specialization of 'TracedPackageableElement'.
+The class 'umlTrace_uml_TracedChangeEvent' is a specialization of 'TracedEvent'.
+The class 'umlTrace_uml_TracedEvent' is a specialization of 'TracedPackageableElement'.
+The class 'umlTrace_uml_TracedDependency' is a specialization of 'uml_TracedPackageableElement'.
+The class 'umlTrace_uml_TracedDependency' is a specialization of 'uml_TracedDirectedRelationship'.
+The class 'umlTrace_uml_TracedPort' is a specialization of 'TracedProperty'.
+The class 'umlTrace_uml_TracedProperty' is a specialization of 'uml_TracedStructuralFeature'.
+The class 'umlTrace_uml_TracedProperty' is a specialization of 'uml_TracedConnectableElement'.
+The class 'umlTrace_uml_TracedProperty' is a specialization of 'uml_TracedDeploymentTarget'.
+The class 'umlTrace_uml_TracedStructuralFeature' is a specialization of 'uml_TracedFeature'.
+The class 'umlTrace_uml_TracedStructuralFeature' is a specialization of 'uml_TracedTypedElement'.
+The class 'umlTrace_uml_TracedStructuralFeature' is a specialization of 'uml_TracedMultiplicityElement'.
+The class 'umlTrace_uml_TracedTypedElement' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedMultiplicityElement' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedConnectableElement' is a specialization of 'uml_TracedTypedElement'.
+The class 'umlTrace_uml_TracedConnectableElement' is a specialization of 'uml_TracedParameterableElement'.
+The class 'umlTrace_uml_TracedDeploymentTarget' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedCollaborationUse' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedValuePin' is a specialization of 'TracedInputPin'.
+The class 'umlTrace_uml_TracedInputPin' is a specialization of 'TracedPin'.
+The class 'umlTrace_uml_TracedPin' is a specialization of 'uml_TracedObjectNode'.
+The class 'umlTrace_uml_TracedPin' is a specialization of 'uml_TracedMultiplicityElement'.
+The class 'umlTrace_uml_TracedObjectNode' is a specialization of 'uml_TracedActivityNode'.
+The class 'umlTrace_uml_TracedObjectNode' is a specialization of 'uml_TracedTypedElement'.
+The class 'umlTrace_uml_TracedDeploymentSpecification' is a specialization of 'TracedArtifact'.
+The class 'umlTrace_uml_TracedArtifact' is a specialization of 'uml_TracedClassifier'.
+The class 'umlTrace_uml_TracedArtifact' is a specialization of 'uml_TracedDeployedArtifact'.
+The class 'umlTrace_uml_TracedDeployedArtifact' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedTransition' is a specialization of 'uml_TracedNamespace'.
+The class 'umlTrace_uml_TracedTransition' is a specialization of 'uml_TracedRedefinableElement'.
+The class 'umlTrace_uml_TracedNode' is a specialization of 'uml_TracedClass'.
+The class 'umlTrace_uml_TracedNode' is a specialization of 'uml_TracedDeploymentTarget'.
+The class 'umlTrace_uml_TracedExceptionHandler' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedSequenceNode' is a specialization of 'TracedStructuredActivityNode'.
+The class 'umlTrace_uml_TracedUseCase' is a specialization of 'TracedBehavioredClassifier'.
+The class 'umlTrace_uml_TracedStartClassifierBehaviorAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedExtend' is a specialization of 'uml_TracedNamedElement'.
+The class 'umlTrace_uml_TracedExtend' is a specialization of 'uml_TracedDirectedRelationship'.
+The class 'umlTrace_uml_TracedRemoveStructuralFeatureValueAction' is a specialization of 'TracedWriteStructuralFeatureAction'.
+The class 'umlTrace_uml_TracedWriteStructuralFeatureAction' is a specialization of 'TracedStructuralFeatureAction'.
+The class 'umlTrace_uml_TracedStructuralFeatureAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedReadLinkAction' is a specialization of 'TracedLinkAction'.
+The class 'umlTrace_uml_TracedExtension' is a specialization of 'TracedAssociation'.
+The class 'umlTrace_uml_TracedAssociation' is a specialization of 'uml_TracedClassifier'.
+The class 'umlTrace_uml_TracedAssociation' is a specialization of 'uml_TracedRelationship'.
+The class 'umlTrace_uml_TracedExecutionEnvironment' is a specialization of 'TracedNode'.
+The class 'umlTrace_uml_TracedConsiderIgnoreFragment' is a specialization of 'TracedCombinedFragment'.
+The class 'umlTrace_uml_TracedContinuation' is a specialization of 'TracedInteractionFragment'.
+The class 'umlTrace_uml_TracedCallOperationAction' is a specialization of 'TracedCallAction'.
+The class 'umlTrace_uml_TracedTimeConstraint' is a specialization of 'TracedIntervalConstraint'.
+The class 'umlTrace_uml_TracedClearVariableAction' is a specialization of 'TracedVariableAction'.
+The class 'umlTrace_uml_TracedVariableAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedReadSelfAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedLiteralString' is a specialization of 'TracedLiteralSpecification'.
+The class 'umlTrace_uml_TracedLiteralSpecification' is a specialization of 'TracedValueSpecification'.
+The class 'umlTrace_uml_TracedValueSpecification' is a specialization of 'uml_TracedPackageableElement'.
+The class 'umlTrace_uml_TracedValueSpecification' is a specialization of 'uml_TracedTypedElement'.
+The class 'umlTrace_uml_TracedBroadcastSignalAction' is a specialization of 'TracedInvocationAction'.
+The class 'umlTrace_uml_TracedInteraction' is a specialization of 'uml_TracedBehavior'.
+The class 'umlTrace_uml_TracedInteraction' is a specialization of 'uml_TracedInteractionFragment'.
+The class 'umlTrace_uml_TracedBehavior' is a specialization of 'TracedClass'.
+The class 'umlTrace_uml_TracedSlot' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedLiteralNull' is a specialization of 'TracedLiteralSpecification'.
+The class 'umlTrace_uml_TracedParameter' is a specialization of 'uml_TracedConnectableElement'.
+The class 'umlTrace_uml_TracedParameter' is a specialization of 'uml_TracedMultiplicityElement'.
+The class 'umlTrace_uml_TracedOpaqueExpression' is a specialization of 'TracedValueSpecification'.
+The class 'umlTrace_uml_TracedTrigger' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedStateInvariant' is a specialization of 'TracedInteractionFragment'.
+The class 'umlTrace_uml_TracedAssociationClass' is a specialization of 'uml_TracedClass'.
+The class 'umlTrace_uml_TracedAssociationClass' is a specialization of 'uml_TracedAssociation'.
+The class 'umlTrace_uml_TracedInstanceSpecification' is a specialization of 'uml_TracedDeploymentTarget'.
+The class 'umlTrace_uml_TracedInstanceSpecification' is a specialization of 'uml_TracedPackageableElement'.
+The class 'umlTrace_uml_TracedInstanceSpecification' is a specialization of 'uml_TracedDeployedArtifact'.
+The class 'umlTrace_uml_TracedTemplateSignature' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedLinkEndDestructionData' is a specialization of 'TracedLinkEndData'.
+The class 'umlTrace_uml_TracedLinkEndData' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedAcceptCallAction' is a specialization of 'TracedAcceptEventAction'.
+The class 'umlTrace_uml_TracedAcceptEventAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedReduceAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedRaiseExceptionAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedStereotype' is a specialization of 'TracedClass'.
+The class 'umlTrace_uml_TracedClearAssociationAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedEnumerationLiteral' is a specialization of 'TracedInstanceSpecification'.
+The class 'umlTrace_uml_TracedSubstitution' is a specialization of 'TracedRealization'.
+The class 'umlTrace_uml_TracedRealization' is a specialization of 'TracedAbstraction'.
+The class 'umlTrace_uml_TracedAbstraction' is a specialization of 'TracedDependency'.
+The class 'umlTrace_uml_TracedExecutionSpecification' is a specialization of 'TracedInteractionFragment'.
+The class 'umlTrace_uml_TracedReplyAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedActor' is a specialization of 'TracedBehavioredClassifier'.
+The class 'umlTrace_uml_TracedInformationFlow' is a specialization of 'uml_TracedPackageableElement'.
+The class 'umlTrace_uml_TracedInformationFlow' is a specialization of 'uml_TracedDirectedRelationship'.
+The class 'umlTrace_uml_TracedDestroyObjectAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedActivityPartition' is a specialization of 'TracedActivityGroup'.
+The class 'umlTrace_uml_TracedStateMachine' is a specialization of 'TracedBehavior'.
+The class 'umlTrace_uml_TracedMessage' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedReadLinkObjectEndQualifierAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedDeployment' is a specialization of 'TracedDependency'.
+The class 'umlTrace_uml_TracedActivity' is a specialization of 'TracedBehavior'.
+The class 'umlTrace_uml_TracedForkNode' is a specialization of 'TracedControlNode'.
+The class 'umlTrace_uml_TracedProtocolStateMachine' is a specialization of 'TracedStateMachine'.
+The class 'umlTrace_uml_TracedInterval' is a specialization of 'TracedValueSpecification'.
+The class 'umlTrace_uml_TracedClearStructuralFeatureAction' is a specialization of 'TracedStructuralFeatureAction'.
+The class 'umlTrace_uml_TracedObjectFlow' is a specialization of 'TracedActivityEdge'.
+The class 'umlTrace_uml_TracedActivityEdge' is a specialization of 'TracedRedefinableElement'.
+The class 'umlTrace_uml_TracedTestIdentityAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedInstanceValue' is a specialization of 'TracedValueSpecification'.
+The class 'umlTrace_uml_TracedLiteralUnlimitedNatural' is a specialization of 'TracedLiteralSpecification'.
+The class 'umlTrace_uml_TracedReclassifyObjectAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedTimeEvent' is a specialization of 'TracedEvent'.
+The class 'umlTrace_uml_TracedPartDecomposition' is a specialization of 'TracedInteractionUse'.
+The class 'umlTrace_uml_TracedInterruptibleActivityRegion' is a specialization of 'TracedActivityGroup'.
+The class 'umlTrace_uml_TracedAddVariableValueAction' is a specialization of 'TracedWriteVariableAction'.
+The class 'umlTrace_uml_TracedWriteVariableAction' is a specialization of 'TracedVariableAction'.
+The class 'umlTrace_uml_TracedProtocolTransition' is a specialization of 'TracedTransition'.
+The class 'umlTrace_uml_TracedImage' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedLiteralReal' is a specialization of 'TracedLiteralSpecification'.
+The class 'umlTrace_uml_TracedInteractionOperand' is a specialization of 'uml_TracedNamespace'.
+The class 'umlTrace_uml_TracedInteractionOperand' is a specialization of 'uml_TracedInteractionFragment'.
+The class 'umlTrace_uml_TracedGeneralization' is a specialization of 'TracedDirectedRelationship'.
+The class 'umlTrace_uml_TracedInformationItem' is a specialization of 'TracedClassifier'.
+The class 'umlTrace_uml_TracedModel' is a specialization of 'TracedPackage'.
+The class 'umlTrace_uml_TracedClassifierTemplateParameter' is a specialization of 'TracedTemplateParameter'.
+The class 'umlTrace_uml_TracedTemplateParameter' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedOperation' is a specialization of 'uml_TracedBehavioralFeature'.
+The class 'umlTrace_uml_TracedOperation' is a specialization of 'uml_TracedParameterableElement'.
+The class 'umlTrace_uml_TracedOperation' is a specialization of 'uml_TracedTemplateableElement'.
+The class 'umlTrace_uml_TracedBehavioralFeature' is a specialization of 'uml_TracedNamespace'.
+The class 'umlTrace_uml_TracedBehavioralFeature' is a specialization of 'uml_TracedFeature'.
+The class 'umlTrace_uml_TracedAnyReceiveEvent' is a specialization of 'TracedMessageEvent'.
+The class 'umlTrace_uml_TracedMessageEvent' is a specialization of 'TracedEvent'.
+The class 'umlTrace_uml_TracedPrimitiveType' is a specialization of 'TracedDataType'.
+The class 'umlTrace_uml_TracedDataType' is a specialization of 'TracedClassifier'.
+The class 'umlTrace_uml_TracedReadStructuralFeatureAction' is a specialization of 'TracedStructuralFeatureAction'.
+The class 'umlTrace_uml_TracedParameterSet' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedDataStoreNode' is a specialization of 'TracedCentralBufferNode'.
+The class 'umlTrace_uml_TracedCentralBufferNode' is a specialization of 'TracedObjectNode'.
+The class 'umlTrace_uml_TracedSendSignalAction' is a specialization of 'TracedInvocationAction'.
+The class 'umlTrace_uml_TracedReception' is a specialization of 'TracedBehavioralFeature'.
+The class 'umlTrace_uml_TracedTemplateBinding' is a specialization of 'TracedDirectedRelationship'.
+The class 'umlTrace_uml_TracedUsage' is a specialization of 'TracedDependency'.
+The class 'umlTrace_uml_TracedActionInputPin' is a specialization of 'TracedInputPin'.
+The class 'umlTrace_uml_TracedReadVariableAction' is a specialization of 'TracedVariableAction'.
+The class 'umlTrace_uml_TracedDestroyLinkAction' is a specialization of 'TracedWriteLinkAction'.
+The class 'umlTrace_uml_TracedLiteralInteger' is a specialization of 'TracedLiteralSpecification'.
+The class 'umlTrace_uml_TracedSignalEvent' is a specialization of 'TracedMessageEvent'.
+The class 'umlTrace_uml_TracedReadLinkObjectEndAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedTimeInterval' is a specialization of 'TracedInterval'.
+The class 'umlTrace_uml_TracedOperationTemplateParameter' is a specialization of 'TracedTemplateParameter'.
+The class 'umlTrace_uml_TracedDurationObservation' is a specialization of 'TracedObservation'.
+The class 'umlTrace_uml_TracedConnectionPointReference' is a specialization of 'TracedVertex'.
+The class 'umlTrace_uml_TracedTimeExpression' is a specialization of 'TracedValueSpecification'.
+The class 'umlTrace_uml_TracedQualifierValue' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedDurationInterval' is a specialization of 'TracedInterval'.
+The class 'umlTrace_uml_TracedFunctionBehavior' is a specialization of 'TracedOpaqueBehavior'.
+The class 'umlTrace_uml_TracedOpaqueBehavior' is a specialization of 'TracedBehavior'.
+The class 'umlTrace_uml_TracedInterfaceRealization' is a specialization of 'TracedRealization'.
+The class 'umlTrace_uml_TracedDevice' is a specialization of 'TracedNode'.
+The class 'umlTrace_uml_TracedTemplateParameterSubstitution' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedJoinNode' is a specialization of 'TracedControlNode'.
+The class 'umlTrace_uml_TracedRedefinableTemplateSignature' is a specialization of 'uml_TracedRedefinableElement'.
+The class 'umlTrace_uml_TracedRedefinableTemplateSignature' is a specialization of 'uml_TracedTemplateSignature'.
+The class 'umlTrace_uml_TracedReadIsClassifiedObjectAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedTimeObservation' is a specialization of 'TracedObservation'.
+The class 'umlTrace_uml_TracedDecisionNode' is a specialization of 'TracedControlNode'.
+The class 'umlTrace_uml_TracedElementImport' is a specialization of 'TracedDirectedRelationship'.
+The class 'umlTrace_uml_TracedExtensionPoint' is a specialization of 'TracedRedefinableElement'.
+The class 'umlTrace_uml_TracedExecutionOccurrenceSpecification' is a specialization of 'TracedOccurrenceSpecification'.
+The class 'umlTrace_uml_TracedInteractionConstraint' is a specialization of 'TracedConstraint'.
+The class 'umlTrace_uml_TracedAddStructuralFeatureValueAction' is a specialization of 'TracedWriteStructuralFeatureAction'.
+The class 'umlTrace_uml_TracedInterface' is a specialization of 'TracedClassifier'.
+The class 'umlTrace_uml_TracedComponent' is a specialization of 'TracedClass'.
+The class 'umlTrace_uml_TracedCallEvent' is a specialization of 'TracedMessageEvent'.
+The class 'umlTrace_uml_TracedComment' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedBehaviorExecutionSpecification' is a specialization of 'TracedExecutionSpecification'.
+The class 'umlTrace_uml_TracedComponentRealization' is a specialization of 'TracedRealization'.
+The class 'umlTrace_uml_TracedCommunicationPath' is a specialization of 'TracedAssociation'.
+The class 'umlTrace_uml_TracedPackageMerge' is a specialization of 'TracedDirectedRelationship'.
+The class 'umlTrace_uml_TracedClause' is a specialization of 'TracedElement'.
+The class 'umlTrace_uml_TracedFinalState' is a specialization of 'TracedState'.
+The class 'umlTrace_uml_TracedState' is a specialization of 'uml_TracedNamespace'.
+The class 'umlTrace_uml_TracedState' is a specialization of 'uml_TracedRedefinableElement'.
+The class 'umlTrace_uml_TracedState' is a specialization of 'uml_TracedVertex'.
+The class 'umlTrace_uml_TracedConnectableElementTemplateParameter' is a specialization of 'TracedTemplateParameter'.
+The class 'umlTrace_uml_TracedActionExecutionSpecification' is a specialization of 'TracedExecutionSpecification'.
+The class 'umlTrace_uml_TracedOutputPin' is a specialization of 'TracedPin'.
+The class 'umlTrace_uml_TracedDuration' is a specialization of 'TracedValueSpecification'.
+The class 'umlTrace_uml_TracedUnmarshallAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedProfile' is a specialization of 'TracedPackage'.
+The class 'umlTrace_uml_TracedExtensionEnd' is a specialization of 'TracedProperty'.
+The class 'umlTrace_uml_TracedExpansionNode' is a specialization of 'TracedObjectNode'.
+The class 'umlTrace_uml_TracedActivityParameterNode' is a specialization of 'TracedObjectNode'.
+The class 'umlTrace_uml_TracedProfileApplication' is a specialization of 'TracedDirectedRelationship'.
+The class 'umlTrace_uml_TracedConnectorEnd' is a specialization of 'TracedMultiplicityElement'.
+The class 'umlTrace_uml_TracedEnumeration' is a specialization of 'TracedDataType'.
+The class 'umlTrace_uml_TracedCollaboration' is a specialization of 'uml_TracedStructuredClassifier'.
+The class 'umlTrace_uml_TracedCollaboration' is a specialization of 'uml_TracedBehavioredClassifier'.
+The class 'umlTrace_uml_TracedVariable' is a specialization of 'uml_TracedConnectableElement'.
+The class 'umlTrace_uml_TracedVariable' is a specialization of 'uml_TracedMultiplicityElement'.
+The class 'umlTrace_uml_TracedValueSpecificationAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedReadExtentAction' is a specialization of 'TracedAction'.
+The class 'umlTrace_uml_TracedStringExpression' is a specialization of 'uml_TracedExpression'.
+The class 'umlTrace_uml_TracedStringExpression' is a specialization of 'uml_TracedTemplateableElement'.
+The class 'umlTrace_uml_TracedExpression' is a specialization of 'TracedValueSpecification'.
+The class 'umlTrace_uml_TracedGeneralOrdering' is a specialization of 'TracedNamedElement'.
+The class 'umlTrace_uml_TracedLiteralBoolean' is a specialization of 'TracedLiteralSpecification'.
+The class 'umlTrace_uml_TracedStartObjectBehaviorAction' is a specialization of 'TracedCallAction'.
+The class 'umlTrace_uml_TracedRegion' is a specialization of 'uml_TracedNamespace'.
+The class 'umlTrace_uml_TracedRegion' is a specialization of 'uml_TracedRedefinableElement'.
+The class 'umlTrace_uml_TracedInclude' is a specialization of 'uml_TracedNamedElement'.
+The class 'umlTrace_uml_TracedInclude' is a specialization of 'uml_TracedDirectedRelationship'.
+The class 'umlTrace_uml_TracedControlFlow' is a specialization of 'TracedActivityEdge'.
+The class 'umlTrace_uml_TracedGate' is a specialization of 'TracedMessageEnd'.
+The class 'umlTrace_uml_TracedRemoveVariableValueAction' is a specialization of 'TracedWriteVariableAction'.
+The class 'umlTrace_uml_TracedManifestation' is a specialization of 'TracedAbstraction'.
+The class 'umlTrace_uml_TracedLinkEndCreationData' is a specialization of 'TracedLinkEndData'.
+The class 'umlTrace_uml_TracedMergeNode' is a specialization of 'TracedControlNode'.
+The class 'umlTrace_IntermediateActivities_TracedForkNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+The class 'umlTrace_IntermediateActivities_TracedControlNodeActivation' is a specialization of 'TracedActivityNodeActivation'.
+The class 'umlTrace_IntermediateActivities_TracedActivityNodeActivation' is a specialization of 'TracedSemanticVisitor'.
+The class 'umlTrace_IntermediateActivities_TracedObjectNodeActivation' is a specialization of 'TracedActivityNodeActivation'.
+The class 'umlTrace_IntermediateActivities_TracedInitialNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+The class 'umlTrace_IntermediateActivities_TracedActivityExecution' is a specialization of 'TracedExecution'.
+The class 'umlTrace_IntermediateActivities_TracedMergeNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+The class 'umlTrace_IntermediateActivities_TracedActivityParameterNodeActivation' is a specialization of 'TracedObjectNodeActivation'.
+The class 'umlTrace_IntermediateActivities_TracedJoinNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+The class 'umlTrace_IntermediateActivities_TracedActivityFinalNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+The class 'umlTrace_IntermediateActivities_TracedDecisionNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+The class 'umlTrace_BasicActions_TracedPinActivation' is a specialization of 'TracedObjectNodeActivation'.
+The class 'umlTrace_BasicActions_TracedActionActivation' is a specialization of 'TracedActivityNodeActivation'.
+The class 'umlTrace_BasicActions_TracedInvocationActionActivation' is a specialization of 'TracedActionActivation'.
+The class 'umlTrace_BasicActions_TracedCallActionActivation' is a specialization of 'TracedInvocationActionActivation'.
+The class 'umlTrace_BasicActions_TracedOpaqueActionActivation' is a specialization of 'TracedActionActivation'.
+The class 'umlTrace_BasicActions_TracedInputPinActivation' is a specialization of 'TracedPinActivation'.
+The class 'umlTrace_BasicActions_TracedCallBehaviorActionActivation' is a specialization of 'TracedCallActionActivation'.
+The class 'umlTrace_BasicActions_TracedOutputPinActivation' is a specialization of 'TracedPinActivation'.
+The class 'umlTrace_IntermediateActions_TracedStructuralFeatureActionActivation' is a specialization of 'TracedActionActivation'.
+The class 'umlTrace_IntermediateActions_TracedReadStructuralFeatureActionActivation' is a specialization of 'TracedStructuralFeatureActionActivation'.
+The class 'umlTrace_IntermediateActions_TracedAddStructuralFeatureValueActionActivation' is a specialization of 'TracedWriteStructuralFeatureActionActivation'.
+The class 'umlTrace_IntermediateActions_TracedWriteStructuralFeatureActionActivation' is a specialization of 'TracedStructuralFeatureActionActivation'.
+The class 'umlTrace_IntermediateActions_TracedValueSpecificationActionActivation' is a specialization of 'TracedActionActivation'.
+The class 'umlTrace_IntermediateActions_TracedCreateObjectActionActivation' is a specialization of 'TracedActionActivation'.
+The class 'umlTrace_BasicBehaviors_TracedExecution' is a specialization of 'TracedObject'.
+The class 'umlTrace_BasicBehaviors_TracedOpaqueBehaviorExecution' is a specialization of 'TracedExecution'.
+The class 'umlTrace_Kernel_TracedObject' is a specialization of 'TracedExtensionalValue'.
+The class 'umlTrace_Kernel_TracedExtensionalValue' is a specialization of 'TracedCompoundValue'.
+The class 'umlTrace_Kernel_TracedCompoundValue' is a specialization of 'TracedStructuredValue'.
+The class 'umlTrace_Kernel_TracedStructuredValue' is a specialization of 'TracedValue'.
+The class 'umlTrace_Kernel_TracedValue' is a specialization of 'TracedSemanticVisitor'.
+The class 'umlTrace_Kernel_TracedReference' is a specialization of 'TracedStructuredValue'.
+The class 'umlTrace_Kernel_TracedLiteralEvaluation' is a specialization of 'TracedEvaluation'.
+The class 'umlTrace_Kernel_TracedEvaluation' is a specialization of 'TracedSemanticVisitor'.
+The class 'umlTrace_Kernel_TracedIntegerValue' is a specialization of 'TracedPrimitiveValue'.
+The class 'umlTrace_Kernel_TracedPrimitiveValue' is a specialization of 'TracedValue'.
+The class 'umlTrace_Kernel_TracedLiteralBooleanEvaluation' is a specialization of 'TracedLiteralEvaluation'.
+The class 'umlTrace_Kernel_TracedBooleanValue' is a specialization of 'TracedPrimitiveValue'.
+The class 'umlTrace_Kernel_TracedLiteralIntegerEvaluation' is a specialization of 'TracedLiteralEvaluation'.
+The class 'umlTrace_IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution' is a specialization of 'TracedOpaqueBehaviorExecution'.
+The class 'umlTrace_IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution' is a specialization of 'TracedOpaqueBehaviorExecution'.
+The class 'umlTrace_IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution' is a specialization of 'TracedOpaqueBehaviorExecution'.
+
+Relationships between classes are modeled using associations.
+An association connects 'umlTrace_State' and 'Values_ActionActivation_firing_Value'. From 'umlTrace_State', the role '0' has cardinality 0..*, and from 'Values_ActionActivation_firing_Value', the role 'unnamed role' has cardinality 0..*.
+An association connects 'umlTrace_State' and 'Values_SemanticVisitor_runtimeModelElement_Value'. From 'umlTrace_State', the role '02' has cardinality 0..*, and from 'Values_SemanticVisitor_runtimeModelElement_Value', the role '3' has cardinality 0..*.
+An association connects 'State' and 'umlTrace_Trace'. From 'State', the role 'State' has cardinality 0..*, and from 'umlTrace_Trace', the role 'umlTrace_Trace' has cardinality 0..*.
+An association connects 'umlTrace_Trace' and 'Traced_TracedObjects'. From 'umlTrace_Trace', the role 'umlTrace_Trace6' has cardinality 0..*, and from 'Traced_TracedObjects', the role 'Traced_TracedObjects' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedCombinedFragment'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects' has cardinality 0..*, and from 'uml_TracedCombinedFragment', the role 'uml_TracedCombinedFragment' has cardinality 0..*.
+An association connects 'uml_TracedCreateLinkObjectAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedCreateLinkObjectAction', the role 'uml_TracedCreateLinkObjectAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects9' has cardinality 0..*.
+An association connects 'uml_TracedInitialNode' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedInitialNode', the role 'uml_TracedInitialNode' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects11' has cardinality 0..*.
+An association connects 'uml_TracedFlowFinalNode' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedFlowFinalNode', the role 'uml_TracedFlowFinalNode' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects13' has cardinality 0..*.
+An association connects 'uml_TracedExpansionRegion' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedExpansionRegion', the role 'uml_TracedExpansionRegion' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects15' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedCreateObjectAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects17' has cardinality 0..*, and from 'uml_TracedCreateObjectAction', the role 'uml_TracedCreateObjectAction' has cardinality 0..*.
+An association connects 'uml_TracedLifeline' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedLifeline', the role 'uml_TracedLifeline' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects19' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'IntermediateActivities_TracedForkNodeActivation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects21' has cardinality 0..*, and from 'IntermediateActivities_TracedForkNodeActivation', the role 'IntermediateActivities_TracedForkNodeActivation' has cardinality 0..*.
+An association connects 'uml_TracedDurationConstraint' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedDurationConstraint', the role 'uml_TracedDurationConstraint' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects23' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedDestructionOccurrenceSpecification'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects25' has cardinality 0..*, and from 'uml_TracedDestructionOccurrenceSpecification', the role 'uml_TracedDestructionOccurrenceSpecification' has cardinality 0..*.
+An association connects 'uml_TracedConnector' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedConnector', the role 'uml_TracedConnector' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects27' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedSendObjectAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects29' has cardinality 0..*, and from 'uml_TracedSendObjectAction', the role 'uml_TracedSendObjectAction' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedPackageImport'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects31' has cardinality 0..*, and from 'uml_TracedPackageImport', the role 'uml_TracedPackageImport' has cardinality 0..*.
+An association connects 'uml_TracedClass' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedClass', the role 'uml_TracedClass' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects33' has cardinality 0..*.
+An association connects 'uml_TracedInteractionUse' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedInteractionUse', the role 'uml_TracedInteractionUse' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects35' has cardinality 0..*.
+An association connects 'uml_TracedGeneralizationSet' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedGeneralizationSet', the role 'uml_TracedGeneralizationSet' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects37' has cardinality 0..*.
+An association connects 'uml_TracedChangeEvent' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedChangeEvent', the role 'uml_TracedChangeEvent' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects39' has cardinality 0..*.
+An association connects 'uml_TracedDependency' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedDependency', the role 'uml_TracedDependency' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects41' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedPort'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects43' has cardinality 0..*, and from 'uml_TracedPort', the role 'uml_TracedPort' has cardinality 0..*.
+An association connects 'IntermediateActivities_TracedInitialNodeActivation' and 'umlTrace_Traced_TracedObjects'. From 'IntermediateActivities_TracedInitialNodeActivation', the role 'IntermediateActivities_TracedInitialNodeActivation' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects45' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedCollaborationUse'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects47' has cardinality 0..*, and from 'uml_TracedCollaborationUse', the role 'uml_TracedCollaborationUse' has cardinality 0..*.
+An association connects 'IntermediateActivities_TracedActivityExecution' and 'umlTrace_Traced_TracedObjects'. From 'IntermediateActivities_TracedActivityExecution', the role 'IntermediateActivities_TracedActivityExecution' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects49' has cardinality 0..*.
+An association connects 'uml_TracedValuePin' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedValuePin', the role 'uml_TracedValuePin' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects51' has cardinality 0..*.
+An association connects 'uml_TracedNode' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedNode', the role 'uml_TracedNode' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects53' has cardinality 0..*.
+An association connects 'uml_TracedExceptionHandler' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedExceptionHandler', the role 'uml_TracedExceptionHandler' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects55' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedSequenceNode'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects57' has cardinality 0..*, and from 'uml_TracedSequenceNode', the role 'uml_TracedSequenceNode' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedStartClassifierBehaviorAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects59' has cardinality 0..*, and from 'uml_TracedStartClassifierBehaviorAction', the role 'uml_TracedStartClassifierBehaviorAction' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedExtend'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects61' has cardinality 0..*, and from 'uml_TracedExtend', the role 'uml_TracedExtend' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects63' has cardinality 0..*, and from 'IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution', the role 'IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution' has cardinality 0..*.
+An association connects 'uml_TracedExtension' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedExtension', the role 'uml_TracedExtension' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects65' has cardinality 0..*.
+An association connects 'uml_TracedStructuredActivityNode' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedStructuredActivityNode', the role 'uml_TracedStructuredActivityNode' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects67' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedExecutionEnvironment'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects69' has cardinality 0..*, and from 'uml_TracedExecutionEnvironment', the role 'uml_TracedExecutionEnvironment' has cardinality 0..*.
+An association connects 'uml_TracedIntervalConstraint' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedIntervalConstraint', the role 'uml_TracedIntervalConstraint' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects71' has cardinality 0..*.
+An association connects 'uml_TracedConsiderIgnoreFragment' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedConsiderIgnoreFragment', the role 'uml_TracedConsiderIgnoreFragment' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects73' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedContinuation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects75' has cardinality 0..*, and from 'uml_TracedContinuation', the role 'uml_TracedContinuation' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedTimeConstraint'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects77' has cardinality 0..*, and from 'uml_TracedTimeConstraint', the role 'uml_TracedTimeConstraint' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedInputPin'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects79' has cardinality 0..*, and from 'uml_TracedInputPin', the role 'uml_TracedInputPin' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedClearVariableAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects81' has cardinality 0..*, and from 'uml_TracedClearVariableAction', the role 'uml_TracedClearVariableAction' has cardinality 0..*.
+An association connects 'uml_TracedConstraint' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedConstraint', the role 'uml_TracedConstraint' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects83' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedBroadcastSignalAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects85' has cardinality 0..*, and from 'uml_TracedBroadcastSignalAction', the role 'uml_TracedBroadcastSignalAction' has cardinality 0..*.
+An association connects 'uml_TracedInteraction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedInteraction', the role 'uml_TracedInteraction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects87' has cardinality 0..*.
+An association connects 'IntermediateActivities_TracedActivityNodeActivation' and 'umlTrace_Traced_TracedObjects'. From 'IntermediateActivities_TracedActivityNodeActivation', the role 'IntermediateActivities_TracedActivityNodeActivation' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects89' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedParameter'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects91' has cardinality 0..*, and from 'uml_TracedParameter', the role 'uml_TracedParameter' has cardinality 0..*.
+An association connects 'uml_TracedOpaqueExpression' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedOpaqueExpression', the role 'uml_TracedOpaqueExpression' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects93' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedLiteralString'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects95' has cardinality 0..*, and from 'uml_TracedLiteralString', the role 'uml_TracedLiteralString' has cardinality 0..*.
+An association connects 'BasicActions_TracedInputPinActivation' and 'umlTrace_Traced_TracedObjects'. From 'BasicActions_TracedInputPinActivation', the role 'BasicActions_TracedInputPinActivation' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects97' has cardinality 0..*.
+An association connects 'uml_TracedStateInvariant' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedStateInvariant', the role 'uml_TracedStateInvariant' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects99' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects101' has cardinality 0..*, and from 'IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution', the role 'IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution' has cardinality 0..*.
+An association connects 'uml_TracedInstanceSpecification' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedInstanceSpecification', the role 'uml_TracedInstanceSpecification' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects103' has cardinality 0..*.
+An association connects 'uml_TracedAcceptCallAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedAcceptCallAction', the role 'uml_TracedAcceptCallAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects105' has cardinality 0..*.
+An association connects 'uml_TracedStereotype' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedStereotype', the role 'uml_TracedStereotype' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects107' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedEnumerationLiteral'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects109' has cardinality 0..*, and from 'uml_TracedEnumerationLiteral', the role 'uml_TracedEnumerationLiteral' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedSubstitution'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects111' has cardinality 0..*, and from 'uml_TracedSubstitution', the role 'uml_TracedSubstitution' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedInformationFlow'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects113' has cardinality 0..*, and from 'uml_TracedInformationFlow', the role 'uml_TracedInformationFlow' has cardinality 0..*.
+An association connects 'uml_TracedAssociationClass' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedAssociationClass', the role 'uml_TracedAssociationClass' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects115' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedDestroyObjectAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects117' has cardinality 0..*, and from 'uml_TracedDestroyObjectAction', the role 'uml_TracedDestroyObjectAction' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'BasicActions_TracedCallBehaviorActionActivation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects119' has cardinality 0..*, and from 'BasicActions_TracedCallBehaviorActionActivation', the role 'BasicActions_TracedCallBehaviorActionActivation' has cardinality 0..*.
+An association connects 'IntermediateActivities_TracedActivityParameterNodeActivation' and 'umlTrace_Traced_TracedObjects'. From 'IntermediateActivities_TracedActivityParameterNodeActivation', the role 'IntermediateActivities_TracedActivityParameterNodeActivation' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects121' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedActivityPartition'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects123' has cardinality 0..*, and from 'uml_TracedActivityPartition', the role 'uml_TracedActivityPartition' has cardinality 0..*.
+An association connects 'uml_TracedStateMachine' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedStateMachine', the role 'uml_TracedStateMachine' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects125' has cardinality 0..*.
+An association connects 'uml_TracedMessage' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedMessage', the role 'uml_TracedMessage' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects127' has cardinality 0..*.
+An association connects 'uml_TracedDeployment' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedDeployment', the role 'uml_TracedDeployment' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects129' has cardinality 0..*.
+An association connects 'uml_TracedActivity' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedActivity', the role 'uml_TracedActivity' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects131' has cardinality 0..*.
+An association connects 'uml_TracedForkNode' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedForkNode', the role 'uml_TracedForkNode' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects133' has cardinality 0..*.
+An association connects 'Kernel_TracedReference' and 'umlTrace_Traced_TracedObjects'. From 'Kernel_TracedReference', the role 'Kernel_TracedReference' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects135' has cardinality 0..*.
+An association connects 'IntermediateActions_TracedAddStructuralFeatureValueActionActivation' and 'umlTrace_Traced_TracedObjects'. From 'IntermediateActions_TracedAddStructuralFeatureValueActionActivation', the role 'IntermediateActions_TracedAddStructuralFeatureValueActionActivation' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects137' has cardinality 0..*.
+An association connects 'uml_TracedInstanceValue' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedInstanceValue', the role 'uml_TracedInstanceValue' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects139' has cardinality 0..*.
+An association connects 'uml_TracedReclassifyObjectAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedReclassifyObjectAction', the role 'uml_TracedReclassifyObjectAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects141' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedUseCase'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects143' has cardinality 0..*, and from 'uml_TracedUseCase', the role 'uml_TracedUseCase' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'IntermediateActivities_TracedJoinNodeActivation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects145' has cardinality 0..*, and from 'IntermediateActivities_TracedJoinNodeActivation', the role 'IntermediateActivities_TracedJoinNodeActivation' has cardinality 0..*.
+An association connects 'Kernel_TracedObject' and 'umlTrace_Traced_TracedObjects'. From 'Kernel_TracedObject', the role 'Kernel_TracedObject' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects147' has cardinality 0..*.
+An association connects 'Loci_TracedSemanticVisitor' and 'umlTrace_Traced_TracedObjects'. From 'Loci_TracedSemanticVisitor', the role 'Loci_TracedSemanticVisitor' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects149' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedTimeEvent'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects151' has cardinality 0..*, and from 'uml_TracedTimeEvent', the role 'uml_TracedTimeEvent' has cardinality 0..*.
+An association connects 'uml_TracedPartDecomposition' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedPartDecomposition', the role 'uml_TracedPartDecomposition' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects153' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedInterruptibleActivityRegion'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects155' has cardinality 0..*, and from 'uml_TracedInterruptibleActivityRegion', the role 'uml_TracedInterruptibleActivityRegion' has cardinality 0..*.
+An association connects 'uml_TracedProtocolTransition' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedProtocolTransition', the role 'uml_TracedProtocolTransition' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects157' has cardinality 0..*.
+An association connects 'uml_TracedInteractionOperand' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedInteractionOperand', the role 'uml_TracedInteractionOperand' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects159' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedGeneralization'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects161' has cardinality 0..*, and from 'uml_TracedGeneralization', the role 'uml_TracedGeneralization' has cardinality 0..*.
+An association connects 'uml_TracedRemoveStructuralFeatureValueAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedRemoveStructuralFeatureValueAction', the role 'uml_TracedRemoveStructuralFeatureValueAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects163' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedInterval'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects165' has cardinality 0..*, and from 'uml_TracedInterval', the role 'uml_TracedInterval' has cardinality 0..*.
+An association connects 'Kernel_TracedIntegerValue' and 'umlTrace_Traced_TracedObjects'. From 'Kernel_TracedIntegerValue', the role 'Kernel_TracedIntegerValue' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects167' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedAnyReceiveEvent'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects169' has cardinality 0..*, and from 'uml_TracedAnyReceiveEvent', the role 'uml_TracedAnyReceiveEvent' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedReadStructuralFeatureAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects171' has cardinality 0..*, and from 'uml_TracedReadStructuralFeatureAction', the role 'uml_TracedReadStructuralFeatureAction' has cardinality 0..*.
+An association connects 'uml_TracedDataStoreNode' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedDataStoreNode', the role 'uml_TracedDataStoreNode' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects173' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedProtocolStateMachine'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects175' has cardinality 0..*, and from 'uml_TracedProtocolStateMachine', the role 'uml_TracedProtocolStateMachine' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedReception'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects177' has cardinality 0..*, and from 'uml_TracedReception', the role 'uml_TracedReception' has cardinality 0..*.
+An association connects 'uml_TracedMessageOccurrenceSpecification' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedMessageOccurrenceSpecification', the role 'uml_TracedMessageOccurrenceSpecification' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects179' has cardinality 0..*.
+An association connects 'uml_TracedTemplateBinding' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedTemplateBinding', the role 'uml_TracedTemplateBinding' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects181' has cardinality 0..*.
+An association connects 'uml_TracedDeploymentSpecification' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedDeploymentSpecification', the role 'uml_TracedDeploymentSpecification' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects183' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedUsage'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects185' has cardinality 0..*, and from 'uml_TracedUsage', the role 'uml_TracedUsage' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedActionInputPin'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects187' has cardinality 0..*, and from 'uml_TracedActionInputPin', the role 'uml_TracedActionInputPin' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedReadVariableAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects189' has cardinality 0..*, and from 'uml_TracedReadVariableAction', the role 'uml_TracedReadVariableAction' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'IntermediateActivities_TracedActivityFinalNodeActivation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects191' has cardinality 0..*, and from 'IntermediateActivities_TracedActivityFinalNodeActivation', the role 'IntermediateActivities_TracedActivityFinalNodeActivation' has cardinality 0..*.
+An association connects 'uml_TracedDestroyLinkAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedDestroyLinkAction', the role 'uml_TracedDestroyLinkAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects193' has cardinality 0..*.
+An association connects 'uml_TracedLiteralInteger' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedLiteralInteger', the role 'uml_TracedLiteralInteger' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects195' has cardinality 0..*.
+An association connects 'uml_TracedSignalEvent' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedSignalEvent', the role 'uml_TracedSignalEvent' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects197' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'Kernel_TracedBooleanValue'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects199' has cardinality 0..*, and from 'Kernel_TracedBooleanValue', the role 'Kernel_TracedBooleanValue' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedConditionalNode'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects201' has cardinality 0..*, and from 'uml_TracedConditionalNode', the role 'uml_TracedConditionalNode' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedConnectionPointReference'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects203' has cardinality 0..*, and from 'uml_TracedConnectionPointReference', the role 'uml_TracedConnectionPointReference' has cardinality 0..*.
+An association connects 'uml_TracedRealization' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedRealization', the role 'uml_TracedRealization' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects205' has cardinality 0..*.
+An association connects 'uml_TracedReadLinkObjectEndQualifierAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedReadLinkObjectEndQualifierAction', the role 'uml_TracedReadLinkObjectEndQualifierAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects207' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'BasicActions_TracedOpaqueActionActivation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects209' has cardinality 0..*, and from 'BasicActions_TracedOpaqueActionActivation', the role 'BasicActions_TracedOpaqueActionActivation' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedJoinNode'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects211' has cardinality 0..*, and from 'uml_TracedJoinNode', the role 'uml_TracedJoinNode' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedRedefinableTemplateSignature'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects213' has cardinality 0..*, and from 'uml_TracedRedefinableTemplateSignature', the role 'uml_TracedRedefinableTemplateSignature' has cardinality 0..*.
+An association connects 'uml_TracedModel' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedModel', the role 'uml_TracedModel' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects215' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedCentralBufferNode'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects217' has cardinality 0..*, and from 'uml_TracedCentralBufferNode', the role 'uml_TracedCentralBufferNode' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'Kernel_TracedLiteralIntegerEvaluation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects219' has cardinality 0..*, and from 'Kernel_TracedLiteralIntegerEvaluation', the role 'Kernel_TracedLiteralIntegerEvaluation' has cardinality 0..*.
+An association connects 'uml_TracedCreateLinkAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedCreateLinkAction', the role 'uml_TracedCreateLinkAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects221' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedExtensionPoint'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects223' has cardinality 0..*, and from 'uml_TracedExtensionPoint', the role 'uml_TracedExtensionPoint' has cardinality 0..*.
+An association connects 'uml_TracedSignal' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedSignal', the role 'uml_TracedSignal' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects225' has cardinality 0..*.
+An association connects 'uml_TracedExecutionOccurrenceSpecification' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedExecutionOccurrenceSpecification', the role 'uml_TracedExecutionOccurrenceSpecification' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects227' has cardinality 0..*.
+An association connects 'uml_TracedTimeInterval' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedTimeInterval', the role 'uml_TracedTimeInterval' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects229' has cardinality 0..*.
+An association connects 'uml_TracedInteractionConstraint' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedInteractionConstraint', the role 'uml_TracedInteractionConstraint' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects231' has cardinality 0..*.
+An association connects 'IntermediateActivities_TracedDecisionNodeActivation' and 'umlTrace_Traced_TracedObjects'. From 'IntermediateActivities_TracedDecisionNodeActivation', the role 'IntermediateActivities_TracedDecisionNodeActivation' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects233' has cardinality 0..*.
+An association connects 'uml_TracedInterface' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedInterface', the role 'uml_TracedInterface' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects235' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedOpaqueBehavior'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects237' has cardinality 0..*, and from 'uml_TracedOpaqueBehavior', the role 'uml_TracedOpaqueBehavior' has cardinality 0..*.
+An association connects 'uml_TracedProtocolConformance' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedProtocolConformance', the role 'uml_TracedProtocolConformance' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects239' has cardinality 0..*.
+An association connects 'uml_TracedPackage' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedPackage', the role 'uml_TracedPackage' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects241' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedCallEvent'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects243' has cardinality 0..*, and from 'uml_TracedCallEvent', the role 'uml_TracedCallEvent' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedLoopNode'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects245' has cardinality 0..*, and from 'uml_TracedLoopNode', the role 'uml_TracedLoopNode' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedComment'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects247' has cardinality 0..*, and from 'uml_TracedComment', the role 'uml_TracedComment' has cardinality 0..*.
+An association connects 'uml_TracedDataType' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedDataType', the role 'uml_TracedDataType' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects249' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedComponentRealization'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects251' has cardinality 0..*, and from 'uml_TracedComponentRealization', the role 'uml_TracedComponentRealization' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedAcceptEventAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects253' has cardinality 0..*, and from 'uml_TracedAcceptEventAction', the role 'uml_TracedAcceptEventAction' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedOccurrenceSpecification'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects255' has cardinality 0..*, and from 'uml_TracedOccurrenceSpecification', the role 'uml_TracedOccurrenceSpecification' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedParameterSet'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects257' has cardinality 0..*, and from 'uml_TracedParameterSet', the role 'uml_TracedParameterSet' has cardinality 0..*.
+An association connects 'uml_TracedObjectFlow' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedObjectFlow', the role 'uml_TracedObjectFlow' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects259' has cardinality 0..*.
+An association connects 'uml_TracedOperation' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedOperation', the role 'uml_TracedOperation' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects261' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedReadSelfAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects263' has cardinality 0..*, and from 'uml_TracedReadSelfAction', the role 'uml_TracedReadSelfAction' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'IntermediateActions_TracedReadStructuralFeatureActionActivation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects265' has cardinality 0..*, and from 'IntermediateActions_TracedReadStructuralFeatureActionActivation', the role 'IntermediateActions_TracedReadStructuralFeatureActionActivation' has cardinality 0..*.
+An association connects 'uml_TracedDecisionNode' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedDecisionNode', the role 'uml_TracedDecisionNode' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects267' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedPackageMerge'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects269' has cardinality 0..*, and from 'uml_TracedPackageMerge', the role 'uml_TracedPackageMerge' has cardinality 0..*.
+An association connects 'uml_TracedClause' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedClause', the role 'uml_TracedClause' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects271' has cardinality 0..*.
+An association connects 'uml_TracedReplyAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedReplyAction', the role 'uml_TracedReplyAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects273' has cardinality 0..*.
+An association connects 'uml_TracedTrigger' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedTrigger', the role 'uml_TracedTrigger' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects275' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedTransition'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects277' has cardinality 0..*, and from 'uml_TracedTransition', the role 'uml_TracedTransition' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedDurationInterval'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects279' has cardinality 0..*, and from 'uml_TracedDurationInterval', the role 'uml_TracedDurationInterval' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedLinkEndData'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects281' has cardinality 0..*, and from 'uml_TracedLinkEndData', the role 'uml_TracedLinkEndData' has cardinality 0..*.
+An association connects 'uml_TracedConnectableElementTemplateParameter' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedConnectableElementTemplateParameter', the role 'uml_TracedConnectableElementTemplateParameter' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects283' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedOperationTemplateParameter'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects285' has cardinality 0..*, and from 'uml_TracedOperationTemplateParameter', the role 'uml_TracedOperationTemplateParameter' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedInformationItem'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects287' has cardinality 0..*, and from 'uml_TracedInformationItem', the role 'uml_TracedInformationItem' has cardinality 0..*.
+An association connects 'uml_TracedActionExecutionSpecification' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedActionExecutionSpecification', the role 'uml_TracedActionExecutionSpecification' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects289' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedOutputPin'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects291' has cardinality 0..*, and from 'uml_TracedOutputPin', the role 'uml_TracedOutputPin' has cardinality 0..*.
+An association connects 'uml_TracedTemplateParameterSubstitution' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedTemplateParameterSubstitution', the role 'uml_TracedTemplateParameterSubstitution' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects293' has cardinality 0..*.
+An association connects 'uml_TracedDuration' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedDuration', the role 'uml_TracedDuration' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects295' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedReduceAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects297' has cardinality 0..*, and from 'uml_TracedReduceAction', the role 'uml_TracedReduceAction' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedFinalState'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects299' has cardinality 0..*, and from 'uml_TracedFinalState', the role 'uml_TracedFinalState' has cardinality 0..*.
+An association connects 'uml_TracedOpaqueAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedOpaqueAction', the role 'uml_TracedOpaqueAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects301' has cardinality 0..*.
+An association connects 'uml_TracedDevice' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedDevice', the role 'uml_TracedDevice' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects303' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedProperty'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects305' has cardinality 0..*, and from 'uml_TracedProperty', the role 'uml_TracedProperty' has cardinality 0..*.
+An association connects 'uml_TracedExtensionEnd' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedExtensionEnd', the role 'uml_TracedExtensionEnd' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects307' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedImage'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects309' has cardinality 0..*, and from 'uml_TracedImage', the role 'uml_TracedImage' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedQualifierValue'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects311' has cardinality 0..*, and from 'uml_TracedQualifierValue', the role 'uml_TracedQualifierValue' has cardinality 0..*.
+An association connects 'uml_TracedAddStructuralFeatureValueAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedAddStructuralFeatureValueAction', the role 'uml_TracedAddStructuralFeatureValueAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects313' has cardinality 0..*.
+An association connects 'uml_TracedExpansionNode' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedExpansionNode', the role 'uml_TracedExpansionNode' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects315' has cardinality 0..*.
+An association connects 'uml_TracedActivityParameterNode' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedActivityParameterNode', the role 'uml_TracedActivityParameterNode' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects317' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedBehaviorExecutionSpecification'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects319' has cardinality 0..*, and from 'uml_TracedBehaviorExecutionSpecification', the role 'uml_TracedBehaviorExecutionSpecification' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedDurationObservation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects321' has cardinality 0..*, and from 'uml_TracedDurationObservation', the role 'uml_TracedDurationObservation' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedProfileApplication'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects323' has cardinality 0..*, and from 'uml_TracedProfileApplication', the role 'uml_TracedProfileApplication' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedCallOperationAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects325' has cardinality 0..*, and from 'uml_TracedCallOperationAction', the role 'uml_TracedCallOperationAction' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedArtifact'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects327' has cardinality 0..*, and from 'uml_TracedArtifact', the role 'uml_TracedArtifact' has cardinality 0..*.
+An association connects 'uml_TracedConnectorEnd' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedConnectorEnd', the role 'uml_TracedConnectorEnd' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects329' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedVariable'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects331' has cardinality 0..*, and from 'uml_TracedVariable', the role 'uml_TracedVariable' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedCallBehaviorAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects333' has cardinality 0..*, and from 'uml_TracedCallBehaviorAction', the role 'uml_TracedCallBehaviorAction' has cardinality 0..*.
+An association connects 'uml_TracedReadLinkObjectEndAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedReadLinkObjectEndAction', the role 'uml_TracedReadLinkObjectEndAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects335' has cardinality 0..*.
+An association connects 'uml_TracedEnumeration' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedEnumeration', the role 'uml_TracedEnumeration' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects337' has cardinality 0..*.
+An association connects 'uml_TracedLiteralUnlimitedNatural' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedLiteralUnlimitedNatural', the role 'uml_TracedLiteralUnlimitedNatural' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects339' has cardinality 0..*.
+An association connects 'uml_TracedTemplateSignature' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedTemplateSignature', the role 'uml_TracedTemplateSignature' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects341' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'BasicActions_TracedOutputPinActivation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects343' has cardinality 0..*, and from 'BasicActions_TracedOutputPinActivation', the role 'BasicActions_TracedOutputPinActivation' has cardinality 0..*.
+An association connects 'uml_TracedReadExtentAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedReadExtentAction', the role 'uml_TracedReadExtentAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects345' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedLinkEndDestructionData'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects347' has cardinality 0..*, and from 'uml_TracedLinkEndDestructionData', the role 'uml_TracedLinkEndDestructionData' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedStringExpression'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects349' has cardinality 0..*, and from 'uml_TracedStringExpression', the role 'uml_TracedStringExpression' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedPrimitiveType'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects351' has cardinality 0..*, and from 'uml_TracedPrimitiveType', the role 'uml_TracedPrimitiveType' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'Kernel_TracedLiteralBooleanEvaluation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects353' has cardinality 0..*, and from 'Kernel_TracedLiteralBooleanEvaluation', the role 'Kernel_TracedLiteralBooleanEvaluation' has cardinality 0..*.
+An association connects 'uml_TracedCommunicationPath' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedCommunicationPath', the role 'uml_TracedCommunicationPath' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects355' has cardinality 0..*.
+An association connects 'uml_TracedRaiseExceptionAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedRaiseExceptionAction', the role 'uml_TracedRaiseExceptionAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects357' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedReadLinkAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects359' has cardinality 0..*, and from 'uml_TracedReadLinkAction', the role 'uml_TracedReadLinkAction' has cardinality 0..*.
+An association connects 'uml_TracedLiteralBoolean' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedLiteralBoolean', the role 'uml_TracedLiteralBoolean' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects361' has cardinality 0..*.
+An association connects 'uml_TracedStartObjectBehaviorAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedStartObjectBehaviorAction', the role 'uml_TracedStartObjectBehaviorAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects363' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'IntermediateActions_TracedValueSpecificationActionActivation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects365' has cardinality 0..*, and from 'IntermediateActions_TracedValueSpecificationActionActivation', the role 'IntermediateActions_TracedValueSpecificationActionActivation' has cardinality 0..*.
+An association connects 'uml_TracedLiteralNull' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedLiteralNull', the role 'uml_TracedLiteralNull' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects367' has cardinality 0..*.
+An association connects 'uml_TracedState' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedState', the role 'uml_TracedState' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects369' has cardinality 0..*.
+An association connects 'uml_TracedRegion' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedRegion', the role 'uml_TracedRegion' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects371' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedInclude'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects373' has cardinality 0..*, and from 'uml_TracedInclude', the role 'uml_TracedInclude' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedLiteralReal'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects375' has cardinality 0..*, and from 'uml_TracedLiteralReal', the role 'uml_TracedLiteralReal' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedAddVariableValueAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects377' has cardinality 0..*, and from 'uml_TracedAddVariableValueAction', the role 'uml_TracedAddVariableValueAction' has cardinality 0..*.
+An association connects 'uml_TracedClearStructuralFeatureAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedClearStructuralFeatureAction', the role 'uml_TracedClearStructuralFeatureAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects379' has cardinality 0..*.
+An association connects 'uml_TracedAssociation' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedAssociation', the role 'uml_TracedAssociation' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects381' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedExpression'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects383' has cardinality 0..*, and from 'uml_TracedExpression', the role 'uml_TracedExpression' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedUnmarshallAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects385' has cardinality 0..*, and from 'uml_TracedUnmarshallAction', the role 'uml_TracedUnmarshallAction' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedSlot'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects387' has cardinality 0..*, and from 'uml_TracedSlot', the role 'uml_TracedSlot' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'IntermediateActions_TracedCreateObjectActionActivation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects389' has cardinality 0..*, and from 'IntermediateActions_TracedCreateObjectActionActivation', the role 'IntermediateActions_TracedCreateObjectActionActivation' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedCollaboration'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects391' has cardinality 0..*, and from 'uml_TracedCollaboration', the role 'uml_TracedCollaboration' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedTestIdentityAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects393' has cardinality 0..*, and from 'uml_TracedTestIdentityAction', the role 'uml_TracedTestIdentityAction' has cardinality 0..*.
+An association connects 'uml_TracedProfile' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedProfile', the role 'uml_TracedProfile' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects395' has cardinality 0..*.
+An association connects 'uml_TracedRemoveVariableValueAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedRemoveVariableValueAction', the role 'uml_TracedRemoveVariableValueAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects397' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedActor'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects399' has cardinality 0..*, and from 'uml_TracedActor', the role 'uml_TracedActor' has cardinality 0..*.
+An association connects 'uml_TracedManifestation' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedManifestation', the role 'uml_TracedManifestation' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects401' has cardinality 0..*.
+An association connects 'uml_TracedInterfaceRealization' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedInterfaceRealization', the role 'uml_TracedInterfaceRealization' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects403' has cardinality 0..*.
+An association connects 'uml_TracedSendSignalAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedSendSignalAction', the role 'uml_TracedSendSignalAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects405' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedFunctionBehavior'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects407' has cardinality 0..*, and from 'uml_TracedFunctionBehavior', the role 'uml_TracedFunctionBehavior' has cardinality 0..*.
+An association connects 'uml_TracedValueSpecificationAction' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedValueSpecificationAction', the role 'uml_TracedValueSpecificationAction' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects409' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedTimeExpression'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects411' has cardinality 0..*, and from 'uml_TracedTimeExpression', the role 'uml_TracedTimeExpression' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedAbstraction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects413' has cardinality 0..*, and from 'uml_TracedAbstraction', the role 'uml_TracedAbstraction' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedReadIsClassifiedObjectAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects415' has cardinality 0..*, and from 'uml_TracedReadIsClassifiedObjectAction', the role 'uml_TracedReadIsClassifiedObjectAction' has cardinality 0..*.
+An association connects 'uml_TracedTemplateParameter' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedTemplateParameter', the role 'uml_TracedTemplateParameter' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects417' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'IntermediateActivities_TracedMergeNodeActivation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects419' has cardinality 0..*, and from 'IntermediateActivities_TracedMergeNodeActivation', the role 'IntermediateActivities_TracedMergeNodeActivation' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects421' has cardinality 0..*, and from 'IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution', the role 'IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution' has cardinality 0..*.
+An association connects 'uml_TracedPseudostate' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedPseudostate', the role 'uml_TracedPseudostate' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects423' has cardinality 0..*.
+An association connects 'uml_TracedLinkEndCreationData' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedLinkEndCreationData', the role 'uml_TracedLinkEndCreationData' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects425' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedClearAssociationAction'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects427' has cardinality 0..*, and from 'uml_TracedClearAssociationAction', the role 'uml_TracedClearAssociationAction' has cardinality 0..*.
+An association connects 'uml_TracedMergeNode' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedMergeNode', the role 'uml_TracedMergeNode' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects429' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedElementImport'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects431' has cardinality 0..*, and from 'uml_TracedElementImport', the role 'uml_TracedElementImport' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedComponent'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects433' has cardinality 0..*, and from 'uml_TracedComponent', the role 'uml_TracedComponent' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedClassifierTemplateParameter'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects435' has cardinality 0..*, and from 'uml_TracedClassifierTemplateParameter', the role 'uml_TracedClassifierTemplateParameter' has cardinality 0..*.
+An association connects 'uml_TracedActivityFinalNode' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedActivityFinalNode', the role 'uml_TracedActivityFinalNode' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects437' has cardinality 0..*.
+An association connects 'uml_TracedGate' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedGate', the role 'uml_TracedGate' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects439' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedTimeObservation'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects441' has cardinality 0..*, and from 'uml_TracedTimeObservation', the role 'uml_TracedTimeObservation' has cardinality 0..*.
+An association connects 'umlTrace_Traced_TracedObjects' and 'uml_TracedControlFlow'. From 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects443' has cardinality 0..*, and from 'uml_TracedControlFlow', the role 'uml_TracedControlFlow' has cardinality 0..*.
+An association connects 'uml_TracedGeneralOrdering' and 'umlTrace_Traced_TracedObjects'. From 'uml_TracedGeneralOrdering', the role 'uml_TracedGeneralOrdering' has cardinality 0..*, and from 'umlTrace_Traced_TracedObjects', the role 'umlTrace_Traced_TracedObjects445' has cardinality 0..*.
+An association connects 'Values_SemanticVisitor_runtimeModelElement_Value' and 'umlTrace_Loci_TracedSemanticVisitor'. From 'Values_SemanticVisitor_runtimeModelElement_Value', the role '448' has cardinality 0..*, and from 'umlTrace_Loci_TracedSemanticVisitor', the role '0447' has cardinality 0..*.
+An association connects 'umlTrace_BasicActions_TracedActionActivation' and 'Values_ActionActivation_firing_Value'. From 'umlTrace_BasicActions_TracedActionActivation', the role '0450' has cardinality 0..*, and from 'Values_ActionActivation_firing_Value', the role '451' has cardinality 0..*.
+An association connects 'uml_TracedElement' and 'umlTrace_Values_SemanticVisitor_runtimeModelElement_Value'. From 'uml_TracedElement', the role 'uml_TracedElement' has cardinality 0..*, and from 'umlTrace_Values_SemanticVisitor_runtimeModelElement_Value', the role 'umlTrace_Values_SemanticVisitor_runtimeModelElement_Value' has cardinality 0..*.
+An association connects 'Loci_TracedSemanticVisitor' and 'umlTrace_Values_SemanticVisitor_runtimeModelElement_Value'. From 'Loci_TracedSemanticVisitor', the role '455' has cardinality 0..*, and from 'umlTrace_Values_SemanticVisitor_runtimeModelElement_Value', the role '0454' has cardinality 0..*.
+An association connects 'umlTrace_Values_SemanticVisitor_runtimeModelElement_Value' and 'State'. From 'umlTrace_Values_SemanticVisitor_runtimeModelElement_Value', the role '0457' has cardinality 0..*, and from 'State', the role '458' has cardinality 0..*.
+An association connects 'State' and 'umlTrace_Values_ActionActivation_firing_Value'. From 'State', the role '461' has cardinality 0..*, and from 'umlTrace_Values_ActionActivation_firing_Value', the role '0460' has cardinality 0..*.
+An association connects 'BasicActions_TracedActionActivation' and 'umlTrace_Values_ActionActivation_firing_Value'. From 'BasicActions_TracedActionActivation', the role '464' has cardinality 0..*, and from 'umlTrace_Values_ActionActivation_firing_Value', the role '0463' has cardinality 0..*.

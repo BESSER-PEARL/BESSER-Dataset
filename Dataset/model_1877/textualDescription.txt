@@ -1,0 +1,50 @@
+The domain model 'expansionmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'AbstractRepresentation' represents an important domain concept.
+It does not declare any attributes.
+
+'expansionmodel_UseContext' represents an important domain concept.
+It has the following attributes: 'diagramType', which is of type str; 'name', which is of type str.
+
+'expansionmodel_Representation' represents an important domain concept.
+It has one attribute: 'graphicalElementType', which is of type str.
+
+'expansionmodel_GMFT_BasedRepresentation' represents an important domain concept.
+It has one attribute: 'reusedID', which is of type str.
+
+'expansionmodel_AbstractRepresentation' represents an important domain concept.
+It has the following attributes: 'viewFactory', which is of type str; 'editPartQualifiedName', which is of type str; 'name', which is of type str.
+
+'Representation' represents an important domain concept.
+It does not declare any attributes.
+
+'expansionmodel_RepresentationKind' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'editPartQualifiedName', which is of type str; 'viewFactory', which is of type str.
+
+'expansionmodel_DiagramExpansion' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'expansionmodel_InducedRepresentation' represents an important domain concept.
+It has one attribute: 'hint', which is of type str.
+
+'expansionmodel_GraphicalElementLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'expansionmodel_Representation' is a specialization of 'AbstractRepresentation'.
+The class 'expansionmodel_InducedRepresentation' is a specialization of 'AbstractRepresentation'.
+The class 'expansionmodel_GMFT_BasedRepresentation' is a specialization of 'Representation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expansionmodel_Representation' and 'expansionmodel_InducedRepresentation'. From 'expansionmodel_Representation', the role 'expansionmodel_Representation' has cardinality 0..*, and from 'expansionmodel_InducedRepresentation', the role 'expansionmodel_InducedRepresentation' has cardinality 0..*.
+An association connects 'expansionmodel_Representation' and 'expansionmodel_Representation'. From 'expansionmodel_Representation', the role 'expansionmodel_Representation1' has cardinality 0..*, and from 'expansionmodel_Representation', the role 'expansionmodel_Representation3' has cardinality 0..*.
+An association connects 'expansionmodel_AbstractRepresentation' and 'expansionmodel_RepresentationKind'. From 'expansionmodel_AbstractRepresentation', the role 'expansionmodel_AbstractRepresentation' has cardinality 0..*, and from 'expansionmodel_RepresentationKind', the role 'expansionmodel_RepresentationKind' has cardinality 0..*.
+An association connects 'expansionmodel_Representation' and 'expansionmodel_InducedRepresentation'. From 'expansionmodel_Representation', the role 'expansionmodel_Representation7' has cardinality 0..*, and from 'expansionmodel_InducedRepresentation', the role 'expansionmodel_InducedRepresentation6' has cardinality 0..*.
+An association connects 'expansionmodel_GraphicalElementLibrary' and 'expansionmodel_RepresentationKind'. From 'expansionmodel_GraphicalElementLibrary', the role 'expansionmodel_GraphicalElementLibrary' has cardinality 0..*, and from 'expansionmodel_RepresentationKind', the role 'expansionmodel_RepresentationKind9' has cardinality 0..*.
+An association connects 'expansionmodel_GraphicalElementLibrary' and 'expansionmodel_AbstractRepresentation'. From 'expansionmodel_GraphicalElementLibrary', the role 'expansionmodel_GraphicalElementLibrary11' has cardinality 0..*, and from 'expansionmodel_AbstractRepresentation', the role 'expansionmodel_AbstractRepresentation12' has cardinality 0..*.
+An association connects 'expansionmodel_Representation' and 'expansionmodel_UseContext'. From 'expansionmodel_Representation', the role 'expansionmodel_Representation14' has cardinality 0..*, and from 'expansionmodel_UseContext', the role 'expansionmodel_UseContext' has cardinality 0..*.
+An association connects 'expansionmodel_UseContext' and 'expansionmodel_GMFT_BasedRepresentation'. From 'expansionmodel_UseContext', the role 'expansionmodel_UseContext16' has cardinality 0..*, and from 'expansionmodel_GMFT_BasedRepresentation', the role 'expansionmodel_GMFT_BasedRepresentation' has cardinality 0..*.
+An association connects 'expansionmodel_UseContext' and 'expansionmodel_DiagramExpansion'. From 'expansionmodel_UseContext', the role 'expansionmodel_UseContext18' has cardinality 0..*, and from 'expansionmodel_DiagramExpansion', the role 'expansionmodel_DiagramExpansion' has cardinality 0..*.
+An association connects 'expansionmodel_GraphicalElementLibrary' and 'expansionmodel_DiagramExpansion'. From 'expansionmodel_GraphicalElementLibrary', the role 'expansionmodel_GraphicalElementLibrary21' has cardinality 0..*, and from 'expansionmodel_DiagramExpansion', the role 'expansionmodel_DiagramExpansion20' has cardinality 0..*.

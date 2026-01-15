@@ -1,0 +1,94 @@
+The domain model 'class_diagramm' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'class_diagramm_DataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'class_diagramm_RefMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'class_diagramm_Association' represents an important domain concept.
+It has the following attributes: 'minCardinality', which is of type int; 'name', which is of type str; 'maxCardinality', which is of type int; 'isAggregation', which is of type bool.
+
+'class_diagramm_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'class_diagramm_RefClass' represents an important domain concept.
+It does not declare any attributes.
+
+'class_diagramm_RefAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'RefAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'RefPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'class_diagramm_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RefMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'class_diagramm_Method' represents an important domain concept.
+It has the following attributes: 'modifier', which is of type str; 'name', which is of type str.
+
+'class_diagramm_RefParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'class_diagramm_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'modifier', which is of type str.
+
+'RefAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'class_diagramm_RefPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'RefDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'RefParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'RefClass' represents an important domain concept.
+It does not declare any attributes.
+
+'class_diagramm_RefDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'class_diagramm_RefAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'class_diagramm_Class' represents an important domain concept.
+It has the following attributes: 'modifier', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ModifierType' defines the following possible values: 'public', 'protected', 'private', 'abstract', 'final', 'static'.
+
+The model also captures inheritance relationships between classes.
+The class 'class_diagramm_Package' is a specialization of 'RefPackage'.
+The class 'class_diagramm_DataType' is a specialization of 'RefDataType'.
+The class 'class_diagramm_Method' is a specialization of 'RefMethod'.
+The class 'class_diagramm_Attribute' is a specialization of 'RefAttribute'.
+The class 'class_diagramm_Parameter' is a specialization of 'RefParameter'.
+The class 'class_diagramm_Class' is a specialization of 'RefClass'.
+The class 'class_diagramm_Association' is a specialization of 'RefAssociation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'class_diagramm_RefAssociation' and 'class_diagramm_Package'. From 'class_diagramm_RefAssociation', the role 'class_diagramm_RefAssociation' has cardinality 0..*, and from 'class_diagramm_Package', the role 'class_diagramm_Package' has cardinality 0..*.
+An association connects 'class_diagramm_Package' and 'class_diagramm_RefClass'. From 'class_diagramm_Package', the role 'class_diagramm_Package2' has cardinality 0..*, and from 'class_diagramm_RefClass', the role 'class_diagramm_RefClass' has cardinality 0..*.
+An association connects 'class_diagramm_Method' and 'class_diagramm_RefClass'. From 'class_diagramm_Method', the role 'class_diagramm_Method' has cardinality 0..*, and from 'class_diagramm_RefClass', the role 'class_diagramm_RefClass4' has cardinality 0..*.
+An association connects 'class_diagramm_Method' and 'class_diagramm_RefParameter'. From 'class_diagramm_Method', the role 'class_diagramm_Method6' has cardinality 0..*, and from 'class_diagramm_RefParameter', the role 'class_diagramm_RefParameter' has cardinality 0..*.
+An association connects 'class_diagramm_RefDataType' and 'class_diagramm_Method'. From 'class_diagramm_RefDataType', the role 'class_diagramm_RefDataType' has cardinality 0..*, and from 'class_diagramm_Method', the role 'class_diagramm_Method8' has cardinality 0..*.
+An association connects 'class_diagramm_RefClass' and 'class_diagramm_Attribute'. From 'class_diagramm_RefClass', the role 'class_diagramm_RefClass10' has cardinality 0..*, and from 'class_diagramm_Attribute', the role 'class_diagramm_Attribute' has cardinality 0..*.
+An association connects 'class_diagramm_Attribute' and 'class_diagramm_RefDataType'. From 'class_diagramm_Attribute', the role 'class_diagramm_Attribute12' has cardinality 0..*, and from 'class_diagramm_RefDataType', the role 'class_diagramm_RefDataType13' has cardinality 0..*.
+An association connects 'class_diagramm_Parameter' and 'class_diagramm_RefClass'. From 'class_diagramm_Parameter', the role 'class_diagramm_Parameter' has cardinality 0..*, and from 'class_diagramm_RefClass', the role 'class_diagramm_RefClass15' has cardinality 0..*.
+An association connects 'class_diagramm_RefDataType' and 'class_diagramm_Parameter'. From 'class_diagramm_RefDataType', the role 'class_diagramm_RefDataType18' has cardinality 0..*, and from 'class_diagramm_Parameter', the role 'class_diagramm_Parameter17' has cardinality 0..*.
+An association connects 'class_diagramm_RefClass' and 'class_diagramm_Class'. From 'class_diagramm_RefClass', the role 'class_diagramm_RefClass20' has cardinality 0..*, and from 'class_diagramm_Class', the role 'class_diagramm_Class' has cardinality 0..*.
+An association connects 'class_diagramm_Class' and 'class_diagramm_RefAttribute'. From 'class_diagramm_Class', the role 'class_diagramm_Class22' has cardinality 0..*, and from 'class_diagramm_RefAttribute', the role 'class_diagramm_RefAttribute' has cardinality 0..*.
+An association connects 'class_diagramm_RefMethod' and 'class_diagramm_Class'. From 'class_diagramm_RefMethod', the role 'class_diagramm_RefMethod' has cardinality 0..*, and from 'class_diagramm_Class', the role 'class_diagramm_Class24' has cardinality 0..*.
+An association connects 'class_diagramm_Association' and 'class_diagramm_RefClass'. From 'class_diagramm_Association', the role 'class_diagramm_Association' has cardinality 0..*, and from 'class_diagramm_RefClass', the role 'class_diagramm_RefClass26' has cardinality 0..*.
+An association connects 'class_diagramm_Association' and 'class_diagramm_RefClass'. From 'class_diagramm_Association', the role 'class_diagramm_Association28' has cardinality 0..*, and from 'class_diagramm_RefClass', the role 'class_diagramm_RefClass29' has cardinality 0..*.

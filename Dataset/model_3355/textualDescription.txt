@@ -1,0 +1,45 @@
+The domain model 'uispecDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'uispecDsl_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'uispecDsl_EntityReference' represents an important domain concept.
+It does not declare any attributes.
+
+'uispecDsl_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'uispecDsl_CheckBoxWidget' represents an important domain concept.
+It does not declare any attributes.
+
+'uispecDsl_Field' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'uispecDsl_TextFieldWidget' represents an important domain concept.
+It has one attribute: 'length', which is of type int.
+
+'Widget' represents an important domain concept.
+It does not declare any attributes.
+
+'uispecDsl_Form' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'uispecDsl_ComboWidget' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'uispecDsl_Widget' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'uispecDsl_TextFieldWidget' is a specialization of 'Widget'.
+The class 'uispecDsl_CheckBoxWidget' is a specialization of 'Widget'.
+The class 'uispecDsl_ComboWidget' is a specialization of 'Widget'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uispecDsl_EntityReference' and 'uispecDsl_Form'. From 'uispecDsl_EntityReference', the role 'uispecDsl_EntityReference' has cardinality 0..*, and from 'uispecDsl_Form', the role 'uispecDsl_Form' has cardinality 0..*.
+An association connects 'uispecDsl_Field' and 'uispecDsl_Form'. From 'uispecDsl_Field', the role 'uispecDsl_Field' has cardinality 0..*, and from 'uispecDsl_Form', the role 'uispecDsl_Form2' has cardinality 0..*.
+An association connects 'uispecDsl_Entity' and 'uispecDsl_EntityReference'. From 'uispecDsl_Entity', the role 'uispecDsl_Entity' has cardinality 0..*, and from 'uispecDsl_EntityReference', the role 'uispecDsl_EntityReference4' has cardinality 0..*.
+An association connects 'uispecDsl_Widget' and 'uispecDsl_Field'. From 'uispecDsl_Widget', the role 'uispecDsl_Widget' has cardinality 0..*, and from 'uispecDsl_Field', the role 'uispecDsl_Field6' has cardinality 0..*.
+An association connects 'uispecDsl_Attribute' and 'uispecDsl_Field'. From 'uispecDsl_Attribute', the role 'uispecDsl_Attribute' has cardinality 0..*, and from 'uispecDsl_Field', the role 'uispecDsl_Field8' has cardinality 0..*.

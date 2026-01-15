@@ -1,0 +1,12 @@
+The domain model 'experimental' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'experimental_PerculationDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'StochasticSEIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'experimental_PerculationDiseaseModel' is a specialization of 'StochasticSEIRDiseaseModel'.

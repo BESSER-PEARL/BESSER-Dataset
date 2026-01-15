@@ -1,0 +1,70 @@
+The domain model 'ezdaap' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'ezdaap_EZDaapLibraryUnit' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ezdaap_EZDaapPlayList' represents an important domain concept.
+It does not declare any attributes.
+
+'ezdaap_EZDaapITunesInstance' represents an important domain concept.
+It has the following attributes: 'revID', which is of type int; 'sessionID', which is of type int; 'id', which is of type str; 'serverName', which is of type str.
+
+'EZDaapElem' represents an important domain concept.
+It does not declare any attributes.
+
+'ezdaap_EZDaapDictionary' represents an important domain concept.
+It does not declare any attributes.
+
+'ezdaap_EZDaapElem' represents an important domain concept.
+It does not declare any attributes.
+
+'EZDaapIntelPropertyElem' represents an important domain concept.
+It does not declare any attributes.
+
+'ezdaap_EZDaapSong' represents an important domain concept.
+It does not declare any attributes.
+
+'ezdaap_EZDaapAlbum' represents an important domain concept.
+It does not declare any attributes.
+
+'EZDaapLibraryUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'ezdaap_EZDaapIntelPropertyElem' represents an important domain concept.
+It has one attribute: 'license', which is of type str.
+
+'ezdaap_EZDaapManager' represents an important domain concept.
+It does not declare any attributes.
+
+'ezdaap_EZDaapArtist' represents an important domain concept.
+It does not declare any attributes.
+
+'ezdaap_EZDaapLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DAAP_COMM_CST' defines the following possible values: 'MAX_SIMULTATNEOUS_CONNECTIONS', 'MAX_USER_SIMULTANEOUS_CONNECTION', 'MAX_USER_CONNECTIONS_PER_SESSION'.
+The enumeration 'DAAP_CONNECTION_KIND' defines the following possible values: 'USER', 'DB'.
+
+The model also captures inheritance relationships between classes.
+The class 'ezdaap_EZDaapSong' is a specialization of 'EZDaapElem'.
+The class 'ezdaap_EZDaapSong' is a specialization of 'EZDaapIntelPropertyElem'.
+The class 'ezdaap_EZDaapAlbum' is a specialization of 'EZDaapIntelPropertyElem'.
+The class 'ezdaap_EZDaapAlbum' is a specialization of 'EZDaapElem'.
+The class 'ezdaap_EZDaapPlayList' is a specialization of 'EZDaapElem'.
+The class 'ezdaap_EZDaapLibrary' is a specialization of 'EZDaapLibraryUnit'.
+The class 'ezdaap_EZDaapElem' is a specialization of 'EZDaapLibraryUnit'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ezdaap_EZDaapITunesInstance' and 'ezdaap_EZDaapLibrary'. From 'ezdaap_EZDaapITunesInstance', the role 'ezdaap_EZDaapITunesInstance' has cardinality 0..*, and from 'ezdaap_EZDaapLibrary', the role 'ezdaap_EZDaapLibrary' has cardinality 0..*.
+An association connects 'ezdaap_EZDaapITunesInstance' and 'ezdaap_EZDaapPlayList'. From 'ezdaap_EZDaapITunesInstance', the role 'ezdaap_EZDaapITunesInstance2' has cardinality 0..*, and from 'ezdaap_EZDaapPlayList', the role 'ezdaap_EZDaapPlayList' has cardinality 0..*.
+An association connects 'ezdaap_EZDaapITunesInstance' and 'ezdaap_EZDaapSong'. From 'ezdaap_EZDaapITunesInstance', the role 'ezdaap_EZDaapITunesInstance4' has cardinality 0..*, and from 'ezdaap_EZDaapSong', the role 'ezdaap_EZDaapSong' has cardinality 0..*.
+An association connects 'ezdaap_EZDaapITunesInstance' and 'ezdaap_EZDaapAlbum'. From 'ezdaap_EZDaapITunesInstance', the role 'ezdaap_EZDaapITunesInstance6' has cardinality 0..*, and from 'ezdaap_EZDaapAlbum', the role 'ezdaap_EZDaapAlbum' has cardinality 0..*.
+An association connects 'ezdaap_EZDaapArtist' and 'ezdaap_EZDaapITunesInstance'. From 'ezdaap_EZDaapArtist', the role 'ezdaap_EZDaapArtist' has cardinality 0..*, and from 'ezdaap_EZDaapITunesInstance', the role 'ezdaap_EZDaapITunesInstance8' has cardinality 0..*.
+An association connects 'ezdaap_EZDaapITunesInstance' and 'ezdaap_EZDaapManager'. From 'ezdaap_EZDaapITunesInstance', the role 'ezdaap_EZDaapITunesInstance10' has cardinality 0..*, and from 'ezdaap_EZDaapManager', the role 'ezdaap_EZDaapManager' has cardinality 0..*.
+An association connects 'ezdaap_EZDaapAlbum' and 'ezdaap_EZDaapSong'. From 'ezdaap_EZDaapAlbum', the role 'ezdaap_EZDaapAlbum12' has cardinality 0..*, and from 'ezdaap_EZDaapSong', the role 'ezdaap_EZDaapSong13' has cardinality 0..*.
+An association connects 'ezdaap_EZDaapSong' and 'ezdaap_EZDaapPlayList'. From 'ezdaap_EZDaapSong', the role 'ezdaap_EZDaapSong16' has cardinality 0..*, and from 'ezdaap_EZDaapPlayList', the role 'ezdaap_EZDaapPlayList15' has cardinality 0..*.
+An association connects 'ezdaap_EZDaapLibrary' and 'ezdaap_EZDaapLibraryUnit'. From 'ezdaap_EZDaapLibrary', the role 'ezdaap_EZDaapLibrary18' has cardinality 0..*, and from 'ezdaap_EZDaapLibraryUnit', the role 'ezdaap_EZDaapLibraryUnit' has cardinality 0..*.
+An association connects 'ezdaap_EZDaapIntelPropertyElem' and 'ezdaap_EZDaapArtist'. From 'ezdaap_EZDaapIntelPropertyElem', the role 'ezdaap_EZDaapIntelPropertyElem' has cardinality 0..*, and from 'ezdaap_EZDaapArtist', the role 'ezdaap_EZDaapArtist20' has cardinality 0..*.

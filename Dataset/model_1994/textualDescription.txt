@@ -1,0 +1,48 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'trace_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_ClassMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_ReferenceMapping' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'trace_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_AttributeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ReferenceMappingType' defines the following possible values: 'MAPPED', 'NONE', 'TRANSLATED'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_Trace' and 'trace_EPackage'. From 'trace_Trace', the role 'trace_Trace' has cardinality 0..*, and from 'trace_EPackage', the role 'trace_EPackage' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_EPackage'. From 'trace_Trace', the role 'trace_Trace2' has cardinality 0..*, and from 'trace_EPackage', the role 'trace_EPackage3' has cardinality 0..*.
+An association connects 'trace_EClass' and 'trace_Trace'. From 'trace_EClass', the role 'trace_EClass' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace5' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_EClass'. From 'trace_Trace', the role 'trace_Trace7' has cardinality 0..*, and from 'trace_EClass', the role 'trace_EClass8' has cardinality 0..*.
+An association connects 'trace_Trace' and 'trace_ClassMapping'. From 'trace_Trace', the role 'trace_Trace10' has cardinality 0..*, and from 'trace_ClassMapping', the role 'trace_ClassMapping' has cardinality 0..*.
+An association connects 'trace_AttributeMapping' and 'trace_Trace'. From 'trace_AttributeMapping', the role 'trace_AttributeMapping' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace12' has cardinality 0..*.
+An association connects 'trace_ReferenceMapping' and 'trace_Trace'. From 'trace_ReferenceMapping', the role 'trace_ReferenceMapping' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace14' has cardinality 0..*.
+An association connects 'trace_EClass' and 'trace_ClassMapping'. From 'trace_EClass', the role 'trace_EClass17' has cardinality 0..*, and from 'trace_ClassMapping', the role 'trace_ClassMapping16' has cardinality 0..*.
+An association connects 'trace_EClass' and 'trace_ClassMapping'. From 'trace_EClass', the role 'trace_EClass20' has cardinality 0..*, and from 'trace_ClassMapping', the role 'trace_ClassMapping19' has cardinality 0..*.
+An association connects 'trace_EAttribute' and 'trace_AttributeMapping'. From 'trace_EAttribute', the role 'trace_EAttribute' has cardinality 0..*, and from 'trace_AttributeMapping', the role 'trace_AttributeMapping22' has cardinality 0..*.
+An association connects 'trace_EAttribute' and 'trace_AttributeMapping'. From 'trace_EAttribute', the role 'trace_EAttribute25' has cardinality 0..*, and from 'trace_AttributeMapping', the role 'trace_AttributeMapping24' has cardinality 0..*.
+An association connects 'trace_EReference' and 'trace_ReferenceMapping'. From 'trace_EReference', the role 'trace_EReference' has cardinality 0..*, and from 'trace_ReferenceMapping', the role 'trace_ReferenceMapping27' has cardinality 0..*.
+An association connects 'trace_EStructuralFeature' and 'trace_ReferenceMapping'. From 'trace_EStructuralFeature', the role 'trace_EStructuralFeature' has cardinality 0..*, and from 'trace_ReferenceMapping', the role 'trace_ReferenceMapping29' has cardinality 0..*.

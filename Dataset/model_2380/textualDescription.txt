@@ -1,0 +1,157 @@
+The domain model 'relational' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'relational_Comment' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'SQLObject' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_ForeignKey' represents an important domain concept.
+It has the following attributes: 'onUpdate', which is of type str; 'onDelete', which is of type str.
+
+'relational_SQLObject' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'label', which is of type str.
+
+'relational_UserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_CheckConstraint' represents an important domain concept.
+It has one attribute: 'searchCondition', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_BaseTable' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_Trigger' represents an important domain concept.
+It has the following attributes: 'newRow', which is of type str; 'insertType', which is of type bool; 'updateType', which is of type bool; 'oldTable', which is of type str; 'condition', which is of type str; 'statementSQL', which is of type str; 'oldRow', which is of type str; 'actionGranularity', which is of type str; 'actionTime', which is of type str; 'newTable', which is of type str; 'deleteType', which is of type bool.
+
+'DistinctUserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_DistinctUserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'UserDefinedType' represents an important domain concept.
+It does not declare any attributes.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_Column' represents an important domain concept.
+It has the following attributes: 'srid', which is of type str; 'nullable', which is of type bool; 'length', which is of type int; 'defaultValue', which is of type str.
+
+'relational_UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_Domain' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'nullable', which is of type bool.
+
+'relational_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_TableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_ENamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_ReferenceConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'relational_Assertion' represents an important domain concept.
+It has one attribute: 'searchCondition', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ReferentialActionType' defines the following possible values: 'SET_NULL', 'CASCADE', 'SET_DEFAULT', 'RESTRICT', 'NO_ACTION'.
+The enumeration 'ActionTimeType' defines the following possible values: 'BEFORE', 'AFTER', 'INSTEADOF'.
+The enumeration 'ActionGranularityType' defines the following possible values: 'ROW', 'STATEMENT'.
+
+The model also captures inheritance relationships between classes.
+The class 'relational_SQLObject' is a specialization of 'ENamedElement'.
+The class 'relational_DataType' is a specialization of 'SQLObject'.
+The class 'relational_TypedElement' is a specialization of 'SQLObject'.
+The class 'relational_Schema' is a specialization of 'SQLObject'.
+The class 'relational_Trigger' is a specialization of 'SQLObject'.
+The class 'relational_Table' is a specialization of 'SQLObject'.
+The class 'relational_Column' is a specialization of 'TypedElement'.
+The class 'relational_BaseTable' is a specialization of 'Table'.
+The class 'relational_Constraint' is a specialization of 'SQLObject'.
+The class 'relational_TableConstraint' is a specialization of 'Constraint'.
+The class 'relational_ReferenceConstraint' is a specialization of 'TableConstraint'.
+The class 'relational_ForeignKey' is a specialization of 'ReferenceConstraint'.
+The class 'relational_UniqueConstraint' is a specialization of 'ReferenceConstraint'.
+The class 'relational_PrimaryKey' is a specialization of 'UniqueConstraint'.
+The class 'relational_CheckConstraint' is a specialization of 'TableConstraint'.
+The class 'relational_Assertion' is a specialization of 'Constraint'.
+The class 'relational_UserDefinedType' is a specialization of 'DataType'.
+The class 'relational_Domain' is a specialization of 'DistinctUserDefinedType'.
+The class 'relational_DistinctUserDefinedType' is a specialization of 'UserDefinedType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'relational_Comment' and 'relational_SQLObject'. From 'relational_Comment', the role 'Comment' has cardinality 0..*, and from 'relational_SQLObject', the role 'sqlobject' has cardinality 0..*.
+An association connects 'relational_SQLObject' and 'relational_Comment'. From 'relational_SQLObject', the role 'SQLObject' has cardinality 0..*, and from 'relational_Comment', the role 'comments' has cardinality 0..*.
+An association connects 'relational_DataType' and 'relational_TypedElement'. From 'relational_DataType', the role 'dataType' has cardinality 0..*, and from 'relational_TypedElement', the role 'TypedElement' has cardinality 0..*.
+An association connects 'relational_DataType' and 'relational_TypedElement'. From 'relational_DataType', the role 'DataType' has cardinality 0..*, and from 'relational_TypedElement', the role 'typedElement' has cardinality 0..*.
+An association connects 'relational_Table' and 'relational_Schema'. From 'relational_Table', the role 'Table' has cardinality 0..*, and from 'relational_Schema', the role 'schema' has cardinality 0..*.
+An association connects 'relational_Schema' and 'relational_Trigger'. From 'relational_Schema', the role 'schema6' has cardinality 0..*, and from 'relational_Trigger', the role 'Trigger' has cardinality 0..*.
+An association connects 'relational_Assertion' and 'relational_Schema'. From 'relational_Assertion', the role 'Assertion' has cardinality 0..*, and from 'relational_Schema', the role 'schema8' has cardinality 0..*.
+An association connects 'relational_Schema' and 'relational_UserDefinedType'. From 'relational_Schema', the role 'schema10' has cardinality 0..*, and from 'relational_UserDefinedType', the role 'UserDefinedType' has cardinality 0..*.
+An association connects 'relational_Schema' and 'relational_Trigger'. From 'relational_Schema', the role 'Schema' has cardinality 0..*, and from 'relational_Trigger', the role 'triggers' has cardinality 0..*.
+An association connects 'relational_Table' and 'relational_Trigger'. From 'relational_Table', the role 'Table14' has cardinality 0..*, and from 'relational_Trigger', the role 'triggers13' has cardinality 0..*.
+An association connects 'relational_Trigger' and 'relational_Table'. From 'relational_Trigger', the role 'triggersConstrainted' has cardinality 0..*, and from 'relational_Table', the role 'Table16' has cardinality 0..*.
+An association connects 'relational_Table' and 'relational_Schema'. From 'relational_Table', the role 'tables' has cardinality 0..*, and from 'relational_Schema', the role 'Schema18' has cardinality 0..*.
+An association connects 'relational_Table' and 'relational_Trigger'. From 'relational_Table', the role 'table' has cardinality 0..*, and from 'relational_Trigger', the role 'Trigger20' has cardinality 0..*.
+An association connects 'relational_Table' and 'relational_Trigger'. From 'relational_Table', the role 'triggerTables' has cardinality 0..*, and from 'relational_Trigger', the role 'Trigger22' has cardinality 0..*.
+An association connects 'relational_Column' and 'relational_Table'. From 'relational_Column', the role 'Column' has cardinality 0..*, and from 'relational_Table', the role 'table24' has cardinality 0..*.
+An association connects 'relational_Table' and 'relational_Column'. From 'relational_Table', the role 'Table26' has cardinality 0..*, and from 'relational_Column', the role 'columns' has cardinality 0..*.
+An association connects 'relational_ReferenceConstraint' and 'relational_Column'. From 'relational_ReferenceConstraint', the role 'ReferenceConstraint' has cardinality 0..*, and from 'relational_Column', the role 'members' has cardinality 0..*.
+An association connects 'relational_ForeignKey' and 'relational_Column'. From 'relational_ForeignKey', the role 'ForeignKey' has cardinality 0..*, and from 'relational_Column', the role 'referencedMembers' has cardinality 0..*.
+An association connects 'relational_BaseTable' and 'relational_ForeignKey'. From 'relational_BaseTable', the role 'referencedTable' has cardinality 0..*, and from 'relational_ForeignKey', the role 'ForeignKey30' has cardinality 0..*.
+An association connects 'relational_TableConstraint' and 'relational_BaseTable'. From 'relational_TableConstraint', the role 'TableConstraint' has cardinality 0..*, and from 'relational_BaseTable', the role 'baseTable' has cardinality 0..*.
+An association connects 'relational_BaseTable' and 'relational_TableConstraint'. From 'relational_BaseTable', the role 'BaseTable' has cardinality 0..*, and from 'relational_TableConstraint', the role 'constraints' has cardinality 0..*.
+An association connects 'relational_ReferenceConstraint' and 'relational_Column'. From 'relational_ReferenceConstraint', the role 'referenceConstraint' has cardinality 0..*, and from 'relational_Column', the role 'Column34' has cardinality 0..*.
+An association connects 'relational_ForeignKey' and 'relational_BaseTable'. From 'relational_ForeignKey', the role 'referencingForeignKeys' has cardinality 0..*, and from 'relational_BaseTable', the role 'BaseTable36' has cardinality 0..*.
+An association connects 'relational_UniqueConstraint' and 'relational_ForeignKey'. From 'relational_UniqueConstraint', the role 'UniqueConstraint' has cardinality 0..*, and from 'relational_ForeignKey', the role 'foreignKey' has cardinality 0..*.
+An association connects 'relational_ForeignKey' and 'relational_Column'. From 'relational_ForeignKey', the role 'foreignKey39' has cardinality 0..*, and from 'relational_Column', the role 'Column40' has cardinality 0..*.
+An association connects 'relational_UniqueConstraint' and 'relational_ForeignKey'. From 'relational_UniqueConstraint', the role 'uniqueConstraint' has cardinality 0..*, and from 'relational_ForeignKey', the role 'ForeignKey42' has cardinality 0..*.
+An association connects 'relational_Schema' and 'relational_Assertion'. From 'relational_Schema', the role 'Schema44' has cardinality 0..*, and from 'relational_Assertion', the role 'assertions' has cardinality 0..*.
+An association connects 'relational_Schema' and 'relational_UserDefinedType'. From 'relational_Schema', the role 'Schema46' has cardinality 0..*, and from 'relational_UserDefinedType', the role 'userDefinedTypes' has cardinality 0..*.
+An association connects 'relational_CheckConstraint' and 'relational_Domain'. From 'relational_CheckConstraint', the role 'relational_CheckConstraint' has cardinality 0..*, and from 'relational_Domain', the role 'relational_Domain' has cardinality 0..*.
+An association connects 'relational_DataType' and 'relational_Domain'. From 'relational_DataType', the role 'relational_DataType' has cardinality 0..*, and from 'relational_Domain', the role 'relational_Domain49' has cardinality 0..*.

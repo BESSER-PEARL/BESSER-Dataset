@@ -1,0 +1,31 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'library_Writer' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Library' represents an important domain concept.
+It has the following attributes: 'site', which is of type str; 'name', which is of type str.
+
+'library_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Book' represents an important domain concept.
+It has the following attributes: 'category', which is of type str; 'pages', which is of type int; 'title', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'IT', 'ScienceFiction', 'Biography', 'Mystery'.
+
+The model also captures inheritance relationships between classes.
+The class 'library_Writer' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Book' and 'library_Writer'. From 'library_Book', the role 'books' has cardinality 0..*, and from 'library_Writer', the role 'Writer' has cardinality 0..*.
+An association connects 'library_Writer' and 'library_Library'. From 'library_Writer', the role 'library_Writer' has cardinality 0..*, and from 'library_Library', the role 'library_Library' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Book'. From 'library_Library', the role 'library_Library3' has cardinality 0..*, and from 'library_Book', the role 'library_Book' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Person'. From 'library_Library', the role 'Library' has cardinality 0..*, and from 'library_Person', the role 'hr.ecorePerson' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Writer'. From 'library_Book', the role 'Book' has cardinality 0..*, and from 'library_Writer', the role 'author' has cardinality 0..*.

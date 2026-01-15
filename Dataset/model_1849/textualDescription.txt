@@ -1,0 +1,16 @@
+The domain model 'style' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'style_StyleSet' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'style_StyleLibrary' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'uid', which is of type str.
+
+'style_StylePointer' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'style_StyleSet' and 'style_StyleLibrary'. From 'style_StyleSet', the role 'style_StyleSet' has cardinality 0..*, and from 'style_StyleLibrary', the role 'style_StyleLibrary' has cardinality 0..*.
+An association connects 'style_StyleLibrary' and 'style_StylePointer'. From 'style_StyleLibrary', the role 'style_StyleLibrary2' has cardinality 0..*, and from 'style_StylePointer', the role 'style_StylePointer' has cardinality 0..*.

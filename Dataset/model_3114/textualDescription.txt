@@ -1,0 +1,67 @@
+The domain model 'LedsCodeModel' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'LedsCodeModel_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'LedsCodeModel_AbstractClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'LedsCodeModel_Specification' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'createdDate', which is of type date.
+
+'LedsCodeModel_ENUM' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'LedsCodeModel_Feature' represents an important domain concept.
+It has the following attributes: 'engine', which is of type str; 'dataBaseName', which is of type str; 'orm', which is of type str; 'language', which is of type str; 'applicationType', which is of type str.
+
+'AbstractClass' represents an important domain concept.
+It does not declare any attributes.
+
+'LedsCodeModel_Class' represents an important domain concept.
+It has the following attributes: 'stereotypeClass', which is of type str; 'abstract', which is of type bool.
+
+'LedsCodeModel_Association' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'LedsCodeModel_PrimitiveDataType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'LedsCodeModel_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'LedsCodeModel_ClassDiagram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'LedsCodeModel_Classifier' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StereotypeClass' defines the following possible values: 'View', 'Entity', 'Security'.
+The enumeration 'StereotypeAttribute' defines the following possible values: 'Password', 'User'.
+The enumeration 'PrimitiveData' defines the following possible values: 'int', 'String', 'long', 'short', 'char', 'byte', 'boolean', 'float', 'double'.
+
+The model also captures inheritance relationships between classes.
+The class 'LedsCodeModel_ClassDiagram' is a specialization of 'Model'.
+The class 'LedsCodeModel_Class' is a specialization of 'AbstractClass'.
+The class 'LedsCodeModel_PrimitiveDataType' is a specialization of 'Classifier'.
+The class 'LedsCodeModel_AbstractClass' is a specialization of 'Classifier'.
+The class 'LedsCodeModel_ENUM' is a specialization of 'AbstractClass'.
+
+Relationships between classes are modeled using associations.
+An association connects 'LedsCodeModel_Model' and 'LedsCodeModel_Specification'. From 'LedsCodeModel_Model', the role 'LedsCodeModel_Model' has cardinality 0..*, and from 'LedsCodeModel_Specification', the role 'LedsCodeModel_Specification' has cardinality 0..*.
+An association connects 'LedsCodeModel_Specification' and 'LedsCodeModel_Feature'. From 'LedsCodeModel_Specification', the role 'LedsCodeModel_Specification2' has cardinality 0..*, and from 'LedsCodeModel_Feature', the role 'LedsCodeModel_Feature' has cardinality 0..*.
+An association connects 'LedsCodeModel_AbstractClass' and 'LedsCodeModel_ClassDiagram'. From 'LedsCodeModel_AbstractClass', the role 'LedsCodeModel_AbstractClass' has cardinality 0..*, and from 'LedsCodeModel_ClassDiagram', the role 'LedsCodeModel_ClassDiagram' has cardinality 0..*.
+An association connects 'LedsCodeModel_Attribute' and 'LedsCodeModel_Class'. From 'LedsCodeModel_Attribute', the role 'LedsCodeModel_Attribute' has cardinality 0..*, and from 'LedsCodeModel_Class', the role 'LedsCodeModel_Class' has cardinality 0..*.
+An association connects 'LedsCodeModel_Class' and 'LedsCodeModel_Class'. From 'LedsCodeModel_Class', the role 'LedsCodeModel_Class5' has cardinality 0..*, and from 'LedsCodeModel_Class', the role 'LedsCodeModel_Class7' has cardinality 0..*.
+An association connects 'LedsCodeModel_Attribute' and 'LedsCodeModel_Classifier'. From 'LedsCodeModel_Attribute', the role 'LedsCodeModel_Attribute9' has cardinality 0..*, and from 'LedsCodeModel_Classifier', the role 'LedsCodeModel_Classifier' has cardinality 0..*.
+An association connects 'LedsCodeModel_Association' and 'LedsCodeModel_Class'. From 'LedsCodeModel_Association', the role 'LedsCodeModel_Association' has cardinality 0..*, and from 'LedsCodeModel_Class', the role 'LedsCodeModel_Class11' has cardinality 0..*.
+An association connects 'LedsCodeModel_Class' and 'LedsCodeModel_Association'. From 'LedsCodeModel_Class', the role 'LedsCodeModel_Class14' has cardinality 0..*, and from 'LedsCodeModel_Association', the role 'LedsCodeModel_Association13' has cardinality 0..*.

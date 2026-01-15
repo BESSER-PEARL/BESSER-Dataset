@@ -1,0 +1,588 @@
+The domain model 'PhotosMetaModel' describes the core structural elements and their relationships within the system.
+
+The model defines 145 main class(es).
+
+'PhotosMetaModel_Data' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Router' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Order_s' represents an important domain concept.
+It does not declare any attributes.
+
+'PresentationSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_React' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_AmazonWebServices' represents an important domain concept.
+It does not declare any attributes.
+
+'ReactFunctions' represents an important domain concept.
+It does not declare any attributes.
+
+'Logic' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Component_a' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_AmazonElasticComputeCloud' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_RestController' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_ReactDOM' represents an important domain concept.
+It has the following attributes: 'isRoute', which is of type str; 'isStruct', which is of type str; 'isConstant', which is of type str.
+
+'PhotosMetaModel_Files' represents an important domain concept.
+It has the following attributes: 'extension', which is of type str; 'type', which is of type str.
+
+'PhotosMetaModel_GetMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Dependencies' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_ExceptionHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Libraries' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'PhotosMetaModel_SegmentStructure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_ReactFunctions' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_Id' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_SearchCriteria' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Public' represents an important domain concept.
+It does not declare any attributes.
+
+'UI' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Spring' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_DataSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Entities' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'PhotosMetaModel_ReactClasses' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_BusinessLogicSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'Actions' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_GeneratedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Folder_a' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RequestMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Database' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_Components' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Actions' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_REST' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_LifeCycle' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_UI' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_RequestPart' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_ReactConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Logic' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Column_s' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_Request' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Services' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Layer' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_PutMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'Layer' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Table_p' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_RequestMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Policy' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Render' represents an important domain concept.
+It does not declare any attributes.
+
+'Entities' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Scheme' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_Exception' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_PresentationSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Functionalities' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_EnableGlobalMethodSecurity' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Architecture' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_ViewComponents' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_PostgreSQLConnection' represents an important domain concept.
+It has the following attributes: 'port', which is of type int; 'url', which is of type str; 'username', which is of type str; 'password', which is of type str.
+
+'PhotosMetaModel_Index_p' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Presentation' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Bean' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Directories' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_BusinessLogic' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_EnableAuthorizationServer' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_AmazonS3API' represents an important domain concept.
+It has the following attributes: 'bucketName', which is of type str; 'accessKey', which is of type str; 'endpointUrl', which is of type str; 'secretKey', which is of type str.
+
+'PhotosMetaModel_SpringBootApplication' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_View_a' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Function_p' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Privilege' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_NamedNativeQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_State' represents an important domain concept.
+It has one attribute: 'active', which is of type str.
+
+'DataSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'Components' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_PostgreSQL_a' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Album' represents an important domain concept.
+It has the following attributes: 'url', which is of type str; 'name', which is of type str.
+
+'PhotosMetaModel_PostMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessLogicSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Security_a' represents an important domain concept.
+It does not declare any attributes.
+
+'Modules' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_NTier' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_PhotoActions' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_BucketObjectsNotPublic' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_ObjectsPublic' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_User_d' represents an important domain concept.
+It has the following attributes: 'password', which is of type str; 'last_name', which is of type str; 'first_name', which is of type str; 'profile_description', which is of type str; 'email', which is of type str; 'username', which is of type str.
+
+'PhotosMetaModel_AmazonSimpleStorageService' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Subcomponents' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_PostgreSQL' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Modules' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_DeleteMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'Functionalities' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Technology' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Specification' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Cluster' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Props' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'dataType', which is of type str.
+
+'PhotosMetaModel_View' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Column_p' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_EnableResourceServer' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_SoftGallery' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_BatchOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_EnableWebSecurity' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_File_a' represents an important domain concept.
+It has the following attributes: 'Onwer', which is of type str; 'size', which is of type str; 'ObjectURL', which is of type str.
+
+'PhotosMetaModel_Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_OnlyAuthorized' represents an important domain concept.
+It does not declare any attributes.
+
+'ReactConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Row' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_DataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_AmazonS3Storage' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Access' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Autowired' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Repository_a' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_CoreFunctions' represents an important domain concept.
+It does not declare any attributes.
+
+'Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Action_a' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Structure' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Model_a' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Information' represents an important domain concept.
+It has one attribute: 'fileType', which is of type str.
+
+'PhotosMetaModel_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Photo' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_ProfileManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Configuration' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_User_p' represents an important domain concept.
+It has the following attributes: 'username', which is of type str; 'password', which is of type str.
+
+'PhotosMetaModel_Bucket' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_Table_s' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PhotosMetaModel_AllowedToUse' represents an important domain concept.
+It does not declare any attributes.
+
+'Access' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_AppAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_Controller_a' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_MetaData' represents an important domain concept.
+It does not declare any attributes.
+
+'PhotosMetaModel_AlbumManagement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'PhotosMetaModel_PostMapping' is a specialization of 'RequestMapping'.
+The class 'PhotosMetaModel_GetMapping' is a specialization of 'RequestMapping'.
+The class 'PhotosMetaModel_PutMapping' is a specialization of 'RequestMapping'.
+The class 'PhotosMetaModel_DeleteMapping' is a specialization of 'RequestMapping'.
+The class 'PhotosMetaModel_User_d' is a specialization of 'Entities'.
+The class 'PhotosMetaModel_AppAccess' is a specialization of 'Functionalities'.
+The class 'PhotosMetaModel_ProfileManagement' is a specialization of 'Functionalities'.
+The class 'PhotosMetaModel_AlbumManagement' is a specialization of 'Functionalities'.
+The class 'PhotosMetaModel_PhotoActions' is a specialization of 'Functionalities'.
+The class 'PhotosMetaModel_Photo' is a specialization of 'Entities'.
+The class 'PhotosMetaModel_Album' is a specialization of 'Entities'.
+The class 'PhotosMetaModel_REST' is a specialization of 'Connection'.
+The class 'PhotosMetaModel_PostgreSQLConnection' is a specialization of 'Connection'.
+The class 'PhotosMetaModel_AmazonS3API' is a specialization of 'Connection'.
+The class 'PhotosMetaModel_Presentation' is a specialization of 'Layer'.
+The class 'PhotosMetaModel_BusinessLogic' is a specialization of 'Layer'.
+The class 'PhotosMetaModel_Data' is a specialization of 'Layer'.
+The class 'PhotosMetaModel_AllowedToUse' is a specialization of 'Relation'.
+The class 'PhotosMetaModel_View_a' is a specialization of 'PresentationSegment'.
+The class 'PhotosMetaModel_Component_a' is a specialization of 'PresentationSegment'.
+The class 'PhotosMetaModel_Action_a' is a specialization of 'PresentationSegment'.
+The class 'PhotosMetaModel_Controller_a' is a specialization of 'BusinessLogicSegment'.
+The class 'PhotosMetaModel_Model_a' is a specialization of 'BusinessLogicSegment'.
+The class 'PhotosMetaModel_Repository_a' is a specialization of 'BusinessLogicSegment'.
+The class 'PhotosMetaModel_Security_a' is a specialization of 'BusinessLogicSegment'.
+The class 'PhotosMetaModel_PostgreSQL_a' is a specialization of 'DataSegment'.
+The class 'PhotosMetaModel_AmazonS3Storage' is a specialization of 'DataSegment'.
+The class 'PhotosMetaModel_Components' is a specialization of 'Modules'.
+The class 'PhotosMetaModel_Render' is a specialization of 'ReactFunctions'.
+The class 'PhotosMetaModel_Constructor' is a specialization of 'ReactFunctions'.
+The class 'PhotosMetaModel_LifeCycle' is a specialization of 'ReactFunctions'.
+The class 'PhotosMetaModel_Public' is a specialization of 'Access'.
+The class 'PhotosMetaModel_ObjectsPublic' is a specialization of 'Access'.
+The class 'PhotosMetaModel_BucketObjectsNotPublic' is a specialization of 'Access'.
+The class 'PhotosMetaModel_OnlyAuthorized' is a specialization of 'Access'.
+The class 'PhotosMetaModel_ReactConfiguration' is a specialization of 'Modules'.
+The class 'PhotosMetaModel_ReactDOM' is a specialization of 'ReactConfiguration'.
+The class 'PhotosMetaModel_Dependencies' is a specialization of 'ReactConfiguration'.
+The class 'PhotosMetaModel_Logic' is a specialization of 'Components'.
+The class 'PhotosMetaModel_UI' is a specialization of 'Components'.
+The class 'PhotosMetaModel_CoreFunctions' is a specialization of 'ReactFunctions'.
+The class 'PhotosMetaModel_Router' is a specialization of 'Logic'.
+The class 'PhotosMetaModel_Structure' is a specialization of 'Logic'.
+The class 'PhotosMetaModel_ViewComponents' is a specialization of 'UI'.
+The class 'PhotosMetaModel_Subcomponents' is a specialization of 'UI'.
+The class 'PhotosMetaModel_Actions' is a specialization of 'Modules'.
+The class 'PhotosMetaModel_Request' is a specialization of 'Actions'.
+The class 'PhotosMetaModel_Services' is a specialization of 'Actions'.
+The class 'PhotosMetaModel_Libraries' is a specialization of 'Modules'.
+The class 'PhotosMetaModel_Information' is a specialization of 'Modules'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PhotosMetaModel_SoftGallery' and 'PhotosMetaModel_Domain'. From 'PhotosMetaModel_SoftGallery', the role 'PhotosMetaModel_SoftGallery' has cardinality 0..*, and from 'PhotosMetaModel_Domain', the role 'PhotosMetaModel_Domain' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Architecture' and 'PhotosMetaModel_SoftGallery'. From 'PhotosMetaModel_Architecture', the role 'PhotosMetaModel_Architecture' has cardinality 0..*, and from 'PhotosMetaModel_SoftGallery', the role 'PhotosMetaModel_SoftGallery2' has cardinality 0..*.
+An association connects 'PhotosMetaModel_SoftGallery' and 'PhotosMetaModel_Technology'. From 'PhotosMetaModel_SoftGallery', the role 'PhotosMetaModel_SoftGallery4' has cardinality 0..*, and from 'PhotosMetaModel_Technology', the role 'PhotosMetaModel_Technology' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Domain' and 'PhotosMetaModel_Functionalities'. From 'PhotosMetaModel_Domain', the role 'PhotosMetaModel_Domain6' has cardinality 0..*, and from 'PhotosMetaModel_Functionalities', the role 'PhotosMetaModel_Functionalities' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Domain' and 'PhotosMetaModel_Entities'. From 'PhotosMetaModel_Domain', the role 'PhotosMetaModel_Domain8' has cardinality 0..*, and from 'PhotosMetaModel_Entities', the role 'PhotosMetaModel_Entities' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Architecture' and 'PhotosMetaModel_NTier'. From 'PhotosMetaModel_Architecture', the role 'PhotosMetaModel_Architecture10' has cardinality 0..*, and from 'PhotosMetaModel_NTier', the role 'PhotosMetaModel_NTier' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Technology' and 'PhotosMetaModel_Spring'. From 'PhotosMetaModel_Technology', the role 'PhotosMetaModel_Technology12' has cardinality 0..*, and from 'PhotosMetaModel_Spring', the role 'PhotosMetaModel_Spring' has cardinality 0..*.
+An association connects 'PhotosMetaModel_PostgreSQL' and 'PhotosMetaModel_Technology'. From 'PhotosMetaModel_PostgreSQL', the role 'PhotosMetaModel_PostgreSQL' has cardinality 0..*, and from 'PhotosMetaModel_Technology', the role 'PhotosMetaModel_Technology14' has cardinality 0..*.
+An association connects 'PhotosMetaModel_React' and 'PhotosMetaModel_Technology'. From 'PhotosMetaModel_React', the role 'PhotosMetaModel_React' has cardinality 0..*, and from 'PhotosMetaModel_Technology', the role 'PhotosMetaModel_Technology16' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Technology' and 'PhotosMetaModel_AmazonWebServices'. From 'PhotosMetaModel_Technology', the role 'PhotosMetaModel_Technology18' has cardinality 0..*, and from 'PhotosMetaModel_AmazonWebServices', the role 'PhotosMetaModel_AmazonWebServices' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Spring' and 'PhotosMetaModel_SpringBootApplication'. From 'PhotosMetaModel_Spring', the role 'PhotosMetaModel_Spring20' has cardinality 0..*, and from 'PhotosMetaModel_SpringBootApplication', the role 'PhotosMetaModel_SpringBootApplication' has cardinality 0..*.
+An association connects 'PhotosMetaModel_React' and 'PhotosMetaModel_Modules'. From 'PhotosMetaModel_React', the role 'PhotosMetaModel_React22' has cardinality 0..*, and from 'PhotosMetaModel_Modules', the role 'PhotosMetaModel_Modules' has cardinality 0..*.
+An association connects 'PhotosMetaModel_RequestMapping' and 'PhotosMetaModel_RestController'. From 'PhotosMetaModel_RequestMapping', the role 'PhotosMetaModel_RequestMapping' has cardinality 0..*, and from 'PhotosMetaModel_RestController', the role 'PhotosMetaModel_RestController' has cardinality 0..*.
+An association connects 'PhotosMetaModel_ExceptionHandler' and 'PhotosMetaModel_RestController'. From 'PhotosMetaModel_ExceptionHandler', the role 'PhotosMetaModel_ExceptionHandler' has cardinality 0..*, and from 'PhotosMetaModel_RestController', the role 'PhotosMetaModel_RestController25' has cardinality 0..*.
+An association connects 'PhotosMetaModel_RestController' and 'PhotosMetaModel_Autowired'. From 'PhotosMetaModel_RestController', the role 'PhotosMetaModel_RestController27' has cardinality 0..*, and from 'PhotosMetaModel_Autowired', the role 'PhotosMetaModel_Autowired' has cardinality 0..*.
+An association connects 'PhotosMetaModel_RestController' and 'PhotosMetaModel_Specification'. From 'PhotosMetaModel_RestController', the role 'PhotosMetaModel_RestController29' has cardinality 0..*, and from 'PhotosMetaModel_Specification', the role 'PhotosMetaModel_Specification' has cardinality 0..*.
+An association connects 'PhotosMetaModel_SpringBootApplication' and 'PhotosMetaModel_Repository'. From 'PhotosMetaModel_SpringBootApplication', the role 'PhotosMetaModel_SpringBootApplication31' has cardinality 0..*, and from 'PhotosMetaModel_Repository', the role 'PhotosMetaModel_Repository' has cardinality 0..*.
+An association connects 'PhotosMetaModel_RestController' and 'PhotosMetaModel_SpringBootApplication'. From 'PhotosMetaModel_RestController', the role 'PhotosMetaModel_RestController34' has cardinality 0..*, and from 'PhotosMetaModel_SpringBootApplication', the role 'PhotosMetaModel_SpringBootApplication33' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Entity' and 'PhotosMetaModel_SpringBootApplication'. From 'PhotosMetaModel_Entity', the role 'PhotosMetaModel_Entity' has cardinality 0..*, and from 'PhotosMetaModel_SpringBootApplication', the role 'PhotosMetaModel_SpringBootApplication36' has cardinality 0..*.
+An association connects 'PhotosMetaModel_SpringBootApplication' and 'PhotosMetaModel_Component'. From 'PhotosMetaModel_SpringBootApplication', the role 'PhotosMetaModel_SpringBootApplication38' has cardinality 0..*, and from 'PhotosMetaModel_Component', the role 'PhotosMetaModel_Component' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Configuration' and 'PhotosMetaModel_SpringBootApplication'. From 'PhotosMetaModel_Configuration', the role 'PhotosMetaModel_Configuration' has cardinality 0..*, and from 'PhotosMetaModel_SpringBootApplication', the role 'PhotosMetaModel_SpringBootApplication40' has cardinality 0..*.
+An association connects 'PhotosMetaModel_RequestPart' and 'PhotosMetaModel_RequestMapping'. From 'PhotosMetaModel_RequestPart', the role 'PhotosMetaModel_RequestPart' has cardinality 0..*, and from 'PhotosMetaModel_RequestMapping', the role 'PhotosMetaModel_RequestMapping42' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Exception' and 'PhotosMetaModel_ExceptionHandler'. From 'PhotosMetaModel_Exception', the role 'PhotosMetaModel_Exception' has cardinality 0..*, and from 'PhotosMetaModel_ExceptionHandler', the role 'PhotosMetaModel_ExceptionHandler44' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Table_s' and 'PhotosMetaModel_Entity'. From 'PhotosMetaModel_Table_s', the role 'PhotosMetaModel_Table_s' has cardinality 0..*, and from 'PhotosMetaModel_Entity', the role 'PhotosMetaModel_Entity46' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Entity' and 'PhotosMetaModel_NamedNativeQuery'. From 'PhotosMetaModel_Entity', the role 'PhotosMetaModel_Entity48' has cardinality 0..*, and from 'PhotosMetaModel_NamedNativeQuery', the role 'PhotosMetaModel_NamedNativeQuery' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Table_s' and 'PhotosMetaModel_Column_s'. From 'PhotosMetaModel_Table_s', the role 'PhotosMetaModel_Table_s50' has cardinality 0..*, and from 'PhotosMetaModel_Column_s', the role 'PhotosMetaModel_Column_s' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Id' and 'PhotosMetaModel_Table_s'. From 'PhotosMetaModel_Id', the role 'PhotosMetaModel_Id' has cardinality 0..*, and from 'PhotosMetaModel_Table_s', the role 'PhotosMetaModel_Table_s52' has cardinality 0..*.
+An association connects 'PhotosMetaModel_GeneratedValue' and 'PhotosMetaModel_Id'. From 'PhotosMetaModel_GeneratedValue', the role 'PhotosMetaModel_GeneratedValue' has cardinality 0..*, and from 'PhotosMetaModel_Id', the role 'PhotosMetaModel_Id54' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Column_p' and 'PhotosMetaModel_Constraint'. From 'PhotosMetaModel_Column_p', the role 'PhotosMetaModel_Column_p' has cardinality 0..*, and from 'PhotosMetaModel_Constraint', the role 'PhotosMetaModel_Constraint' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Column_p' and 'PhotosMetaModel_DataType'. From 'PhotosMetaModel_Column_p', the role 'PhotosMetaModel_Column_p57' has cardinality 0..*, and from 'PhotosMetaModel_DataType', the role 'PhotosMetaModel_DataType' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Specification' and 'PhotosMetaModel_SearchCriteria'. From 'PhotosMetaModel_Specification', the role 'PhotosMetaModel_Specification59' has cardinality 0..*, and from 'PhotosMetaModel_SearchCriteria', the role 'PhotosMetaModel_SearchCriteria' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Specification' and 'PhotosMetaModel_Predicate'. From 'PhotosMetaModel_Specification', the role 'PhotosMetaModel_Specification61' has cardinality 0..*, and from 'PhotosMetaModel_Predicate', the role 'PhotosMetaModel_Predicate' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Configuration' and 'PhotosMetaModel_Bean'. From 'PhotosMetaModel_Configuration', the role 'PhotosMetaModel_Configuration63' has cardinality 0..*, and from 'PhotosMetaModel_Bean', the role 'PhotosMetaModel_Bean' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Configuration' and 'PhotosMetaModel_EnableWebSecurity'. From 'PhotosMetaModel_Configuration', the role 'PhotosMetaModel_Configuration65' has cardinality 0..*, and from 'PhotosMetaModel_EnableWebSecurity', the role 'PhotosMetaModel_EnableWebSecurity' has cardinality 0..*.
+An association connects 'PhotosMetaModel_EnableResourceServer' and 'PhotosMetaModel_Configuration'. From 'PhotosMetaModel_EnableResourceServer', the role 'PhotosMetaModel_EnableResourceServer' has cardinality 0..*, and from 'PhotosMetaModel_Configuration', the role 'PhotosMetaModel_Configuration67' has cardinality 0..*.
+An association connects 'PhotosMetaModel_EnableAuthorizationServer' and 'PhotosMetaModel_Configuration'. From 'PhotosMetaModel_EnableAuthorizationServer', the role 'PhotosMetaModel_EnableAuthorizationServer' has cardinality 0..*, and from 'PhotosMetaModel_Configuration', the role 'PhotosMetaModel_Configuration69' has cardinality 0..*.
+An association connects 'PhotosMetaModel_EnableGlobalMethodSecurity' and 'PhotosMetaModel_Configuration'. From 'PhotosMetaModel_EnableGlobalMethodSecurity', the role 'PhotosMetaModel_EnableGlobalMethodSecurity' has cardinality 0..*, and from 'PhotosMetaModel_Configuration', the role 'PhotosMetaModel_Configuration71' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Order_s' and 'PhotosMetaModel_Component'. From 'PhotosMetaModel_Order_s', the role 'PhotosMetaModel_Order_s' has cardinality 0..*, and from 'PhotosMetaModel_Component', the role 'PhotosMetaModel_Component73' has cardinality 0..*.
+An association connects 'PhotosMetaModel_PostgreSQL' and 'PhotosMetaModel_Cluster'. From 'PhotosMetaModel_PostgreSQL', the role 'PhotosMetaModel_PostgreSQL75' has cardinality 0..*, and from 'PhotosMetaModel_Cluster', the role 'PhotosMetaModel_Cluster' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Query' and 'PhotosMetaModel_Clause'. From 'PhotosMetaModel_Query', the role 'PhotosMetaModel_Query' has cardinality 0..*, and from 'PhotosMetaModel_Clause', the role 'PhotosMetaModel_Clause' has cardinality 0..*.
+An association connects 'PhotosMetaModel_ForeignKey' and 'PhotosMetaModel_Column_p'. From 'PhotosMetaModel_ForeignKey', the role 'PhotosMetaModel_ForeignKey' has cardinality 0..*, and from 'PhotosMetaModel_Column_p', the role 'PhotosMetaModel_Column_p78' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Table_p' and 'PhotosMetaModel_ForeignKey'. From 'PhotosMetaModel_Table_p', the role 'PhotosMetaModel_Table_p' has cardinality 0..*, and from 'PhotosMetaModel_ForeignKey', the role 'PhotosMetaModel_ForeignKey80' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Table_p' and 'PhotosMetaModel_Column_p'. From 'PhotosMetaModel_Table_p', the role 'PhotosMetaModel_Table_p82' has cardinality 0..*, and from 'PhotosMetaModel_Column_p', the role 'PhotosMetaModel_Column_p83' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Table_p' and 'PhotosMetaModel_Row'. From 'PhotosMetaModel_Table_p', the role 'PhotosMetaModel_Table_p85' has cardinality 0..*, and from 'PhotosMetaModel_Row', the role 'PhotosMetaModel_Row' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Table_p' and 'PhotosMetaModel_ForeignKey'. From 'PhotosMetaModel_Table_p', the role 'PhotosMetaModel_Table_p87' has cardinality 0..*, and from 'PhotosMetaModel_ForeignKey', the role 'PhotosMetaModel_ForeignKey88' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Column_p' and 'PhotosMetaModel_Table_p'. From 'PhotosMetaModel_Column_p', the role 'PhotosMetaModel_Column_p91' has cardinality 0..*, and from 'PhotosMetaModel_Table_p', the role 'PhotosMetaModel_Table_p90' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Table_p' and 'PhotosMetaModel_Table_p'. From 'PhotosMetaModel_Table_p', the role 'PhotosMetaModel_Table_p94' has cardinality 0..*, and from 'PhotosMetaModel_Table_p', the role 'PhotosMetaModel_Table_p92' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Database' and 'PhotosMetaModel_Scheme'. From 'PhotosMetaModel_Database', the role 'PhotosMetaModel_Database' has cardinality 0..*, and from 'PhotosMetaModel_Scheme', the role 'PhotosMetaModel_Scheme' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Table_p' and 'PhotosMetaModel_Scheme'. From 'PhotosMetaModel_Table_p', the role 'PhotosMetaModel_Table_p98' has cardinality 0..*, and from 'PhotosMetaModel_Scheme', the role 'PhotosMetaModel_Scheme97' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Scheme' and 'PhotosMetaModel_View'. From 'PhotosMetaModel_Scheme', the role 'PhotosMetaModel_Scheme100' has cardinality 0..*, and from 'PhotosMetaModel_View', the role 'PhotosMetaModel_View' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Scheme' and 'PhotosMetaModel_Index_p'. From 'PhotosMetaModel_Scheme', the role 'PhotosMetaModel_Scheme102' has cardinality 0..*, and from 'PhotosMetaModel_Index_p', the role 'PhotosMetaModel_Index_p' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Scheme' and 'PhotosMetaModel_Trigger'. From 'PhotosMetaModel_Scheme', the role 'PhotosMetaModel_Scheme104' has cardinality 0..*, and from 'PhotosMetaModel_Trigger', the role 'PhotosMetaModel_Trigger' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Scheme' and 'PhotosMetaModel_Function_p'. From 'PhotosMetaModel_Scheme', the role 'PhotosMetaModel_Scheme106' has cardinality 0..*, and from 'PhotosMetaModel_Function_p', the role 'PhotosMetaModel_Function_p' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Query' and 'PhotosMetaModel_User_p'. From 'PhotosMetaModel_Query', the role 'PhotosMetaModel_Query108' has cardinality 0..*, and from 'PhotosMetaModel_User_p', the role 'PhotosMetaModel_User_p' has cardinality 0..*.
+An association connects 'PhotosMetaModel_User_p' and 'PhotosMetaModel_Privilege'. From 'PhotosMetaModel_User_p', the role 'PhotosMetaModel_User_p110' has cardinality 0..*, and from 'PhotosMetaModel_Privilege', the role 'PhotosMetaModel_Privilege' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Cluster' and 'PhotosMetaModel_Database'. From 'PhotosMetaModel_Cluster', the role 'PhotosMetaModel_Cluster112' has cardinality 0..*, and from 'PhotosMetaModel_Database', the role 'PhotosMetaModel_Database113' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Cluster' and 'PhotosMetaModel_User_p'. From 'PhotosMetaModel_Cluster', the role 'PhotosMetaModel_Cluster115' has cardinality 0..*, and from 'PhotosMetaModel_User_p', the role 'PhotosMetaModel_User_p116' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Row' and 'PhotosMetaModel_Policy'. From 'PhotosMetaModel_Row', the role 'PhotosMetaModel_Row118' has cardinality 0..*, and from 'PhotosMetaModel_Policy', the role 'PhotosMetaModel_Policy' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Column' and 'PhotosMetaModel_DataType'. From 'PhotosMetaModel_Column', the role 'PhotosMetaModel_Column' has cardinality 0..*, and from 'PhotosMetaModel_DataType', the role 'PhotosMetaModel_DataType120' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Constraint' and 'PhotosMetaModel_Column'. From 'PhotosMetaModel_Constraint', the role 'PhotosMetaModel_Constraint123' has cardinality 0..*, and from 'PhotosMetaModel_Column', the role 'PhotosMetaModel_Column122' has cardinality 0..*.
+An association connects 'PhotosMetaModel_User_d' and 'PhotosMetaModel_Functionalities'. From 'PhotosMetaModel_User_d', the role 'PhotosMetaModel_User_d' has cardinality 0..*, and from 'PhotosMetaModel_Functionalities', the role 'PhotosMetaModel_Functionalities125' has cardinality 0..*.
+An association connects 'PhotosMetaModel_AlbumManagement' and 'PhotosMetaModel_PhotoActions'. From 'PhotosMetaModel_AlbumManagement', the role 'PhotosMetaModel_AlbumManagement' has cardinality 0..*, and from 'PhotosMetaModel_PhotoActions', the role 'PhotosMetaModel_PhotoActions' has cardinality 0..*.
+An association connects 'PhotosMetaModel_PhotoActions' and 'PhotosMetaModel_Photo'. From 'PhotosMetaModel_PhotoActions', the role 'PhotosMetaModel_PhotoActions128' has cardinality 0..*, and from 'PhotosMetaModel_Photo', the role 'PhotosMetaModel_Photo' has cardinality 0..*.
+An association connects 'PhotosMetaModel_AlbumManagement' and 'PhotosMetaModel_Album'. From 'PhotosMetaModel_AlbumManagement', the role 'PhotosMetaModel_AlbumManagement130' has cardinality 0..*, and from 'PhotosMetaModel_Album', the role 'PhotosMetaModel_Album' has cardinality 0..*.
+An association connects 'PhotosMetaModel_AmazonWebServices' and 'PhotosMetaModel_AmazonSimpleStorageService'. From 'PhotosMetaModel_AmazonWebServices', the role 'PhotosMetaModel_AmazonWebServices132' has cardinality 0..*, and from 'PhotosMetaModel_AmazonSimpleStorageService', the role 'PhotosMetaModel_AmazonSimpleStorageService' has cardinality 0..*.
+An association connects 'PhotosMetaModel_AmazonWebServices' and 'PhotosMetaModel_AmazonElasticComputeCloud'. From 'PhotosMetaModel_AmazonWebServices', the role 'PhotosMetaModel_AmazonWebServices134' has cardinality 0..*, and from 'PhotosMetaModel_AmazonElasticComputeCloud', the role 'PhotosMetaModel_AmazonElasticComputeCloud' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Connection' and 'PhotosMetaModel_NTier'. From 'PhotosMetaModel_Connection', the role 'PhotosMetaModel_Connection' has cardinality 0..*, and from 'PhotosMetaModel_NTier', the role 'PhotosMetaModel_NTier136' has cardinality 0..*.
+An association connects 'PhotosMetaModel_NTier' and 'PhotosMetaModel_Layer'. From 'PhotosMetaModel_NTier', the role 'PhotosMetaModel_NTier138' has cardinality 0..*, and from 'PhotosMetaModel_Layer', the role 'PhotosMetaModel_Layer' has cardinality 0..*.
+An association connects 'PhotosMetaModel_NTier' and 'PhotosMetaModel_Relation'. From 'PhotosMetaModel_NTier', the role 'PhotosMetaModel_NTier140' has cardinality 0..*, and from 'PhotosMetaModel_Relation', the role 'PhotosMetaModel_Relation' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Connection' and 'PhotosMetaModel_Layer'. From 'PhotosMetaModel_Connection', the role 'PhotosMetaModel_Connection142' has cardinality 0..*, and from 'PhotosMetaModel_Layer', the role 'PhotosMetaModel_Layer143' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Connection' and 'PhotosMetaModel_Layer'. From 'PhotosMetaModel_Connection', the role 'PhotosMetaModel_Connection145' has cardinality 0..*, and from 'PhotosMetaModel_Layer', the role 'PhotosMetaModel_Layer146' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Layer' and 'PhotosMetaModel_Relation'. From 'PhotosMetaModel_Layer', the role 'PhotosMetaModel_Layer149' has cardinality 0..*, and from 'PhotosMetaModel_Relation', the role 'PhotosMetaModel_Relation148' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Layer' and 'PhotosMetaModel_Relation'. From 'PhotosMetaModel_Layer', the role 'PhotosMetaModel_Layer152' has cardinality 0..*, and from 'PhotosMetaModel_Relation', the role 'PhotosMetaModel_Relation151' has cardinality 0..*.
+An association connects 'PhotosMetaModel_PresentationSegment' and 'PhotosMetaModel_Presentation'. From 'PhotosMetaModel_PresentationSegment', the role 'PhotosMetaModel_PresentationSegment' has cardinality 0..*, and from 'PhotosMetaModel_Presentation', the role 'PhotosMetaModel_Presentation' has cardinality 0..*.
+An association connects 'PhotosMetaModel_BusinessLogicSegment' and 'PhotosMetaModel_BusinessLogic'. From 'PhotosMetaModel_BusinessLogicSegment', the role 'PhotosMetaModel_BusinessLogicSegment' has cardinality 0..*, and from 'PhotosMetaModel_BusinessLogic', the role 'PhotosMetaModel_BusinessLogic' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Data' and 'PhotosMetaModel_DataSegment'. From 'PhotosMetaModel_Data', the role 'PhotosMetaModel_Data' has cardinality 0..*, and from 'PhotosMetaModel_DataSegment', the role 'PhotosMetaModel_DataSegment' has cardinality 0..*.
+An association connects 'PhotosMetaModel_SegmentStructure' and 'PhotosMetaModel_PresentationSegment'. From 'PhotosMetaModel_SegmentStructure', the role 'PhotosMetaModel_SegmentStructure' has cardinality 0..*, and from 'PhotosMetaModel_PresentationSegment', the role 'PhotosMetaModel_PresentationSegment157' has cardinality 0..*.
+An association connects 'PhotosMetaModel_BusinessLogicSegment' and 'PhotosMetaModel_SegmentStructure'. From 'PhotosMetaModel_BusinessLogicSegment', the role 'PhotosMetaModel_BusinessLogicSegment159' has cardinality 0..*, and from 'PhotosMetaModel_SegmentStructure', the role 'PhotosMetaModel_SegmentStructure160' has cardinality 0..*.
+An association connects 'PhotosMetaModel_SegmentStructure' and 'PhotosMetaModel_DataSegment'. From 'PhotosMetaModel_SegmentStructure', the role 'PhotosMetaModel_SegmentStructure163' has cardinality 0..*, and from 'PhotosMetaModel_DataSegment', the role 'PhotosMetaModel_DataSegment162' has cardinality 0..*.
+An association connects 'PhotosMetaModel_ReactClasses' and 'PhotosMetaModel_Components'. From 'PhotosMetaModel_ReactClasses', the role 'PhotosMetaModel_ReactClasses' has cardinality 0..*, and from 'PhotosMetaModel_Components', the role 'PhotosMetaModel_Components' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Components' and 'PhotosMetaModel_Modules'. From 'PhotosMetaModel_Components', the role 'PhotosMetaModel_Components166' has cardinality 0..*, and from 'PhotosMetaModel_Modules', the role 'PhotosMetaModel_Modules167' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Bucket' and 'PhotosMetaModel_AmazonSimpleStorageService'. From 'PhotosMetaModel_Bucket', the role 'PhotosMetaModel_Bucket' has cardinality 0..*, and from 'PhotosMetaModel_AmazonSimpleStorageService', the role 'PhotosMetaModel_AmazonSimpleStorageService169' has cardinality 0..*.
+An association connects 'PhotosMetaModel_AmazonSimpleStorageService' and 'PhotosMetaModel_BatchOperation'. From 'PhotosMetaModel_AmazonSimpleStorageService', the role 'PhotosMetaModel_AmazonSimpleStorageService171' has cardinality 0..*, and from 'PhotosMetaModel_BatchOperation', the role 'PhotosMetaModel_BatchOperation' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Access' and 'PhotosMetaModel_Bucket'. From 'PhotosMetaModel_Access', the role 'PhotosMetaModel_Access' has cardinality 0..*, and from 'PhotosMetaModel_Bucket', the role 'PhotosMetaModel_Bucket173' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Bucket' and 'PhotosMetaModel_File_a'. From 'PhotosMetaModel_Bucket', the role 'PhotosMetaModel_Bucket175' has cardinality 0..*, and from 'PhotosMetaModel_File_a', the role 'PhotosMetaModel_File_a' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Folder_a' and 'PhotosMetaModel_Bucket'. From 'PhotosMetaModel_Folder_a', the role 'PhotosMetaModel_Folder_a' has cardinality 0..*, and from 'PhotosMetaModel_Bucket', the role 'PhotosMetaModel_Bucket177' has cardinality 0..*.
+An association connects 'PhotosMetaModel_File_a' and 'PhotosMetaModel_MetaData'. From 'PhotosMetaModel_File_a', the role 'PhotosMetaModel_File_a179' has cardinality 0..*, and from 'PhotosMetaModel_MetaData', the role 'PhotosMetaModel_MetaData' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Folder_a' and 'PhotosMetaModel_File_a'. From 'PhotosMetaModel_Folder_a', the role 'PhotosMetaModel_Folder_a181' has cardinality 0..*, and from 'PhotosMetaModel_File_a', the role 'PhotosMetaModel_File_a182' has cardinality 0..*.
+An association connects 'PhotosMetaModel_ReactFunctions' and 'PhotosMetaModel_ReactClasses'. From 'PhotosMetaModel_ReactFunctions', the role 'PhotosMetaModel_ReactFunctions' has cardinality 0..*, and from 'PhotosMetaModel_ReactClasses', the role 'PhotosMetaModel_ReactClasses184' has cardinality 0..*.
+An association connects 'PhotosMetaModel_ReactClasses' and 'PhotosMetaModel_Props'. From 'PhotosMetaModel_ReactClasses', the role 'PhotosMetaModel_ReactClasses186' has cardinality 0..*, and from 'PhotosMetaModel_Props', the role 'PhotosMetaModel_Props' has cardinality 0..*.
+An association connects 'PhotosMetaModel_State' and 'PhotosMetaModel_ReactClasses'. From 'PhotosMetaModel_State', the role 'PhotosMetaModel_State' has cardinality 0..*, and from 'PhotosMetaModel_ReactClasses', the role 'PhotosMetaModel_ReactClasses188' has cardinality 0..*.
+An association connects 'PhotosMetaModel_CoreFunctions' and 'PhotosMetaModel_CoreFunctions'. From 'PhotosMetaModel_CoreFunctions', the role 'PhotosMetaModel_CoreFunctions189' has cardinality 0..*, and from 'PhotosMetaModel_CoreFunctions', the role 'PhotosMetaModel_CoreFunctions' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Request' and 'PhotosMetaModel_Services'. From 'PhotosMetaModel_Request', the role 'PhotosMetaModel_Request' has cardinality 0..*, and from 'PhotosMetaModel_Services', the role 'PhotosMetaModel_Services' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Directories' and 'PhotosMetaModel_SegmentStructure'. From 'PhotosMetaModel_Directories', the role 'PhotosMetaModel_Directories' has cardinality 0..*, and from 'PhotosMetaModel_SegmentStructure', the role 'PhotosMetaModel_SegmentStructure193' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Files' and 'PhotosMetaModel_SegmentStructure'. From 'PhotosMetaModel_Files', the role 'PhotosMetaModel_Files' has cardinality 0..*, and from 'PhotosMetaModel_SegmentStructure', the role 'PhotosMetaModel_SegmentStructure195' has cardinality 0..*.
+An association connects 'PhotosMetaModel_Directories' and 'PhotosMetaModel_Files'. From 'PhotosMetaModel_Directories', the role 'PhotosMetaModel_Directories197' has cardinality 0..*, and from 'PhotosMetaModel_Files', the role 'PhotosMetaModel_Files198' has cardinality 0..*.

@@ -1,0 +1,154 @@
+The domain model 'jbatch' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'jbatch_Property' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'jbatch_Analyzer' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'jbatch_Chunk' represents an important domain concept.
+It has the following attributes: 'skipLimit', which is of type str; 'retryLimit', which is of type str; 'timeLimit', which is of type str; 'itemCount', which is of type str; 'checkpointPolicy', which is of type str.
+
+'jbatch_PartitionPlan' represents an important domain concept.
+It has the following attributes: 'partitions', which is of type str; 'threads', which is of type str.
+
+'jbatch_Collector' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'jbatch_ItemWriter' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'jbatch_Listener' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'jbatch_Listeners' represents an important domain concept.
+It does not declare any attributes.
+
+'jbatch_Decision' represents an important domain concept.
+It has the following attributes: 'transitionElements', which is of type str; 'ref', which is of type str; 'id', which is of type str.
+
+'jbatch_IncludeType' represents an important domain concept.
+It has one attribute: 'class', which is of type str.
+
+'jbatch_Job' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'restartable', which is of type str; 'group', which is of type str; 'id', which is of type str.
+
+'jbatch_PartitionMapper' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'jbatch_ItemReader' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'jbatch_Flow' represents an important domain concept.
+It has the following attributes: 'transitionElements', which is of type str; 'next1', which is of type str; 'id', which is of type str; 'group', which is of type str.
+
+'jbatch_End' represents an important domain concept.
+It has the following attributes: 'on', which is of type str; 'exitStatus', which is of type str.
+
+'jbatch_Step' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'startLimit', which is of type str; 'allowStartIfComplete', which is of type str; 'transitionElements', which is of type str; 'next1', which is of type str.
+
+'jbatch_Fail' represents an important domain concept.
+It has the following attributes: 'exitStatus', which is of type str; 'on', which is of type str.
+
+'jbatch_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'jbatch_Properties' represents an important domain concept.
+It has one attribute: 'partition', which is of type str.
+
+'jbatch_ExceptionClassFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'jbatch_Stop' represents an important domain concept.
+It has the following attributes: 'restart', which is of type str; 'on', which is of type str; 'exitStatus', which is of type str.
+
+'jbatch_PartitionReducer' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'jbatch_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'jbatch_Partition' represents an important domain concept.
+It does not declare any attributes.
+
+'jbatch_Batchlet' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'jbatch_Next' represents an important domain concept.
+It has the following attributes: 'to', which is of type str; 'on', which is of type str.
+
+'jbatch_CheckpointAlgorithm' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'jbatch_ItemProcessor' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'jbatch_Split' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'next', which is of type str.
+
+'jbatch_ExcludeType' represents an important domain concept.
+It has one attribute: 'class', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'jbatch_Analyzer' and 'jbatch_Properties'. From 'jbatch_Analyzer', the role 'jbatch_Analyzer' has cardinality 0..*, and from 'jbatch_Properties', the role 'jbatch_Properties' has cardinality 0..*.
+An association connects 'jbatch_Properties' and 'jbatch_Batchlet'. From 'jbatch_Properties', the role 'jbatch_Properties2' has cardinality 0..*, and from 'jbatch_Batchlet', the role 'jbatch_Batchlet' has cardinality 0..*.
+An association connects 'jbatch_Properties' and 'jbatch_CheckpointAlgorithm'. From 'jbatch_Properties', the role 'jbatch_Properties4' has cardinality 0..*, and from 'jbatch_CheckpointAlgorithm', the role 'jbatch_CheckpointAlgorithm' has cardinality 0..*.
+An association connects 'jbatch_Chunk' and 'jbatch_ItemReader'. From 'jbatch_Chunk', the role 'jbatch_Chunk' has cardinality 0..*, and from 'jbatch_ItemReader', the role 'jbatch_ItemReader' has cardinality 0..*.
+An association connects 'jbatch_ItemProcessor' and 'jbatch_Chunk'. From 'jbatch_ItemProcessor', the role 'jbatch_ItemProcessor' has cardinality 0..*, and from 'jbatch_Chunk', the role 'jbatch_Chunk7' has cardinality 0..*.
+An association connects 'jbatch_ItemWriter' and 'jbatch_Chunk'. From 'jbatch_ItemWriter', the role 'jbatch_ItemWriter' has cardinality 0..*, and from 'jbatch_Chunk', the role 'jbatch_Chunk9' has cardinality 0..*.
+An association connects 'jbatch_CheckpointAlgorithm' and 'jbatch_Chunk'. From 'jbatch_CheckpointAlgorithm', the role 'jbatch_CheckpointAlgorithm12' has cardinality 0..*, and from 'jbatch_Chunk', the role 'jbatch_Chunk11' has cardinality 0..*.
+An association connects 'jbatch_ExceptionClassFilter' and 'jbatch_Chunk'. From 'jbatch_ExceptionClassFilter', the role 'jbatch_ExceptionClassFilter' has cardinality 0..*, and from 'jbatch_Chunk', the role 'jbatch_Chunk14' has cardinality 0..*.
+An association connects 'jbatch_ExceptionClassFilter' and 'jbatch_Chunk'. From 'jbatch_ExceptionClassFilter', the role 'jbatch_ExceptionClassFilter17' has cardinality 0..*, and from 'jbatch_Chunk', the role 'jbatch_Chunk16' has cardinality 0..*.
+An association connects 'jbatch_Chunk' and 'jbatch_ExceptionClassFilter'. From 'jbatch_Chunk', the role 'jbatch_Chunk19' has cardinality 0..*, and from 'jbatch_ExceptionClassFilter', the role 'jbatch_ExceptionClassFilter20' has cardinality 0..*.
+An association connects 'jbatch_Properties' and 'jbatch_Collector'. From 'jbatch_Properties', the role 'jbatch_Properties22' has cardinality 0..*, and from 'jbatch_Collector', the role 'jbatch_Collector' has cardinality 0..*.
+An association connects 'jbatch_Properties' and 'jbatch_Decision'. From 'jbatch_Properties', the role 'jbatch_Properties24' has cardinality 0..*, and from 'jbatch_Decision', the role 'jbatch_Decision' has cardinality 0..*.
+An association connects 'jbatch_Decision' and 'jbatch_End'. From 'jbatch_Decision', the role 'jbatch_Decision26' has cardinality 0..*, and from 'jbatch_End', the role 'jbatch_End' has cardinality 0..*.
+An association connects 'jbatch_Decision' and 'jbatch_Fail'. From 'jbatch_Decision', the role 'jbatch_Decision28' has cardinality 0..*, and from 'jbatch_Fail', the role 'jbatch_Fail' has cardinality 0..*.
+An association connects 'jbatch_Decision' and 'jbatch_Next'. From 'jbatch_Decision', the role 'jbatch_Decision30' has cardinality 0..*, and from 'jbatch_Next', the role 'jbatch_Next' has cardinality 0..*.
+An association connects 'jbatch_Stop' and 'jbatch_Decision'. From 'jbatch_Stop', the role 'jbatch_Stop' has cardinality 0..*, and from 'jbatch_Decision', the role 'jbatch_Decision32' has cardinality 0..*.
+An association connects 'jbatch_EStringToStringMapEntry' and 'jbatch_DocumentRoot'. From 'jbatch_EStringToStringMapEntry', the role 'jbatch_EStringToStringMapEntry' has cardinality 0..*, and from 'jbatch_DocumentRoot', the role 'jbatch_DocumentRoot' has cardinality 0..*.
+An association connects 'jbatch_DocumentRoot' and 'jbatch_EStringToStringMapEntry'. From 'jbatch_DocumentRoot', the role 'jbatch_DocumentRoot35' has cardinality 0..*, and from 'jbatch_EStringToStringMapEntry', the role 'jbatch_EStringToStringMapEntry36' has cardinality 0..*.
+An association connects 'jbatch_Job' and 'jbatch_DocumentRoot'. From 'jbatch_Job', the role 'jbatch_Job' has cardinality 0..*, and from 'jbatch_DocumentRoot', the role 'jbatch_DocumentRoot38' has cardinality 0..*.
+An association connects 'jbatch_ExceptionClassFilter' and 'jbatch_IncludeType'. From 'jbatch_ExceptionClassFilter', the role 'jbatch_ExceptionClassFilter40' has cardinality 0..*, and from 'jbatch_IncludeType', the role 'jbatch_IncludeType' has cardinality 0..*.
+An association connects 'jbatch_ExcludeType' and 'jbatch_ExceptionClassFilter'. From 'jbatch_ExcludeType', the role 'jbatch_ExcludeType' has cardinality 0..*, and from 'jbatch_ExceptionClassFilter', the role 'jbatch_ExceptionClassFilter42' has cardinality 0..*.
+An association connects 'jbatch_Decision' and 'jbatch_Flow'. From 'jbatch_Decision', the role 'jbatch_Decision44' has cardinality 0..*, and from 'jbatch_Flow', the role 'jbatch_Flow' has cardinality 0..*.
+An association connects 'jbatch_Flow' and 'jbatch_Flow'. From 'jbatch_Flow', the role 'jbatch_Flow45' has cardinality 0..*, and from 'jbatch_Flow', the role 'jbatch_Flow47' has cardinality 0..*.
+An association connects 'jbatch_Flow' and 'jbatch_Split'. From 'jbatch_Flow', the role 'jbatch_Flow49' has cardinality 0..*, and from 'jbatch_Split', the role 'jbatch_Split' has cardinality 0..*.
+An association connects 'jbatch_Flow' and 'jbatch_Step'. From 'jbatch_Flow', the role 'jbatch_Flow51' has cardinality 0..*, and from 'jbatch_Step', the role 'jbatch_Step' has cardinality 0..*.
+An association connects 'jbatch_Flow' and 'jbatch_End'. From 'jbatch_Flow', the role 'jbatch_Flow53' has cardinality 0..*, and from 'jbatch_End', the role 'jbatch_End54' has cardinality 0..*.
+An association connects 'jbatch_Flow' and 'jbatch_Fail'. From 'jbatch_Flow', the role 'jbatch_Flow56' has cardinality 0..*, and from 'jbatch_Fail', the role 'jbatch_Fail57' has cardinality 0..*.
+An association connects 'jbatch_Next' and 'jbatch_Flow'. From 'jbatch_Next', the role 'jbatch_Next60' has cardinality 0..*, and from 'jbatch_Flow', the role 'jbatch_Flow59' has cardinality 0..*.
+An association connects 'jbatch_Stop' and 'jbatch_Flow'. From 'jbatch_Stop', the role 'jbatch_Stop63' has cardinality 0..*, and from 'jbatch_Flow', the role 'jbatch_Flow62' has cardinality 0..*.
+An association connects 'jbatch_ItemProcessor' and 'jbatch_Properties'. From 'jbatch_ItemProcessor', the role 'jbatch_ItemProcessor65' has cardinality 0..*, and from 'jbatch_Properties', the role 'jbatch_Properties66' has cardinality 0..*.
+An association connects 'jbatch_Properties' and 'jbatch_ItemReader'. From 'jbatch_Properties', the role 'jbatch_Properties69' has cardinality 0..*, and from 'jbatch_ItemReader', the role 'jbatch_ItemReader68' has cardinality 0..*.
+An association connects 'jbatch_Properties' and 'jbatch_ItemWriter'. From 'jbatch_Properties', the role 'jbatch_Properties72' has cardinality 0..*, and from 'jbatch_ItemWriter', the role 'jbatch_ItemWriter71' has cardinality 0..*.
+An association connects 'jbatch_Properties' and 'jbatch_Job'. From 'jbatch_Properties', the role 'jbatch_Properties75' has cardinality 0..*, and from 'jbatch_Job', the role 'jbatch_Job74' has cardinality 0..*.
+An association connects 'jbatch_Job' and 'jbatch_Listeners'. From 'jbatch_Job', the role 'jbatch_Job77' has cardinality 0..*, and from 'jbatch_Listeners', the role 'jbatch_Listeners' has cardinality 0..*.
+An association connects 'jbatch_Decision' and 'jbatch_Job'. From 'jbatch_Decision', the role 'jbatch_Decision80' has cardinality 0..*, and from 'jbatch_Job', the role 'jbatch_Job79' has cardinality 0..*.
+An association connects 'jbatch_Flow' and 'jbatch_Job'. From 'jbatch_Flow', the role 'jbatch_Flow83' has cardinality 0..*, and from 'jbatch_Job', the role 'jbatch_Job82' has cardinality 0..*.
+An association connects 'jbatch_Job' and 'jbatch_Split'. From 'jbatch_Job', the role 'jbatch_Job85' has cardinality 0..*, and from 'jbatch_Split', the role 'jbatch_Split86' has cardinality 0..*.
+An association connects 'jbatch_Job' and 'jbatch_Step'. From 'jbatch_Job', the role 'jbatch_Job88' has cardinality 0..*, and from 'jbatch_Step', the role 'jbatch_Step89' has cardinality 0..*.
+An association connects 'jbatch_Listener' and 'jbatch_Properties'. From 'jbatch_Listener', the role 'jbatch_Listener' has cardinality 0..*, and from 'jbatch_Properties', the role 'jbatch_Properties91' has cardinality 0..*.
+An association connects 'jbatch_Listeners' and 'jbatch_Listener'. From 'jbatch_Listeners', the role 'jbatch_Listeners93' has cardinality 0..*, and from 'jbatch_Listener', the role 'jbatch_Listener94' has cardinality 0..*.
+An association connects 'jbatch_PartitionMapper' and 'jbatch_Partition'. From 'jbatch_PartitionMapper', the role 'jbatch_PartitionMapper' has cardinality 0..*, and from 'jbatch_Partition', the role 'jbatch_Partition' has cardinality 0..*.
+An association connects 'jbatch_PartitionPlan' and 'jbatch_Partition'. From 'jbatch_PartitionPlan', the role 'jbatch_PartitionPlan' has cardinality 0..*, and from 'jbatch_Partition', the role 'jbatch_Partition97' has cardinality 0..*.
+An association connects 'jbatch_Partition' and 'jbatch_Collector'. From 'jbatch_Partition', the role 'jbatch_Partition99' has cardinality 0..*, and from 'jbatch_Collector', the role 'jbatch_Collector100' has cardinality 0..*.
+An association connects 'jbatch_Analyzer' and 'jbatch_Partition'. From 'jbatch_Analyzer', the role 'jbatch_Analyzer103' has cardinality 0..*, and from 'jbatch_Partition', the role 'jbatch_Partition102' has cardinality 0..*.
+An association connects 'jbatch_PartitionReducer' and 'jbatch_Partition'. From 'jbatch_PartitionReducer', the role 'jbatch_PartitionReducer' has cardinality 0..*, and from 'jbatch_Partition', the role 'jbatch_Partition105' has cardinality 0..*.
+An association connects 'jbatch_Properties' and 'jbatch_PartitionMapper'. From 'jbatch_Properties', the role 'jbatch_Properties108' has cardinality 0..*, and from 'jbatch_PartitionMapper', the role 'jbatch_PartitionMapper107' has cardinality 0..*.
+An association connects 'jbatch_PartitionPlan' and 'jbatch_Properties'. From 'jbatch_PartitionPlan', the role 'jbatch_PartitionPlan110' has cardinality 0..*, and from 'jbatch_Properties', the role 'jbatch_Properties111' has cardinality 0..*.
+An association connects 'jbatch_Properties' and 'jbatch_PartitionReducer'. From 'jbatch_Properties', the role 'jbatch_Properties114' has cardinality 0..*, and from 'jbatch_PartitionReducer', the role 'jbatch_PartitionReducer113' has cardinality 0..*.
+An association connects 'jbatch_Property' and 'jbatch_Properties'. From 'jbatch_Property', the role 'jbatch_Property' has cardinality 0..*, and from 'jbatch_Properties', the role 'jbatch_Properties116' has cardinality 0..*.
+An association connects 'jbatch_Flow' and 'jbatch_Split'. From 'jbatch_Flow', the role 'jbatch_Flow119' has cardinality 0..*, and from 'jbatch_Split', the role 'jbatch_Split118' has cardinality 0..*.
+An association connects 'jbatch_Step' and 'jbatch_Properties'. From 'jbatch_Step', the role 'jbatch_Step121' has cardinality 0..*, and from 'jbatch_Properties', the role 'jbatch_Properties122' has cardinality 0..*.
+An association connects 'jbatch_Listeners' and 'jbatch_Step'. From 'jbatch_Listeners', the role 'jbatch_Listeners125' has cardinality 0..*, and from 'jbatch_Step', the role 'jbatch_Step124' has cardinality 0..*.
+An association connects 'jbatch_Step' and 'jbatch_Batchlet'. From 'jbatch_Step', the role 'jbatch_Step127' has cardinality 0..*, and from 'jbatch_Batchlet', the role 'jbatch_Batchlet128' has cardinality 0..*.
+An association connects 'jbatch_Chunk' and 'jbatch_Step'. From 'jbatch_Chunk', the role 'jbatch_Chunk131' has cardinality 0..*, and from 'jbatch_Step', the role 'jbatch_Step130' has cardinality 0..*.
+An association connects 'jbatch_Step' and 'jbatch_Partition'. From 'jbatch_Step', the role 'jbatch_Step133' has cardinality 0..*, and from 'jbatch_Partition', the role 'jbatch_Partition134' has cardinality 0..*.
+An association connects 'jbatch_Step' and 'jbatch_End'. From 'jbatch_Step', the role 'jbatch_Step136' has cardinality 0..*, and from 'jbatch_End', the role 'jbatch_End137' has cardinality 0..*.
+An association connects 'jbatch_Step' and 'jbatch_Fail'. From 'jbatch_Step', the role 'jbatch_Step139' has cardinality 0..*, and from 'jbatch_Fail', the role 'jbatch_Fail140' has cardinality 0..*.
+An association connects 'jbatch_Step' and 'jbatch_Next'. From 'jbatch_Step', the role 'jbatch_Step142' has cardinality 0..*, and from 'jbatch_Next', the role 'jbatch_Next143' has cardinality 0..*.
+An association connects 'jbatch_Step' and 'jbatch_Stop'. From 'jbatch_Step', the role 'jbatch_Step145' has cardinality 0..*, and from 'jbatch_Stop', the role 'jbatch_Stop146' has cardinality 0..*.

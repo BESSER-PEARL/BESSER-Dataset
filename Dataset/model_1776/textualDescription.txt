@@ -1,0 +1,13 @@
+The domain model 'samples' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'samples_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'samples_Author' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'samples_Author' and 'samples_Book'. From 'samples_Author', the role 'samples_Author' has cardinality 0..*, and from 'samples_Book', the role 'samples_Book' has cardinality 0..*.
+An association connects 'samples_Author' and 'samples_Book'. From 'samples_Author', the role 'samples_Author3' has cardinality 0..*, and from 'samples_Book', the role 'samples_Book2' has cardinality 0..*.

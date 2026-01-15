@@ -1,0 +1,193 @@
+The domain model 'rdb' describes the core structural elements and their relationships within the system.
+
+The model defines 47 main class(es).
+
+'IndexedColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'constraints_rdb_TableColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_constraints_UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_NamedColumnSet' represents an important domain concept.
+It does not declare any attributes.
+
+'datatypes_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_constraints_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_constraints_CheckConstraint' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'rdb_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'SchemaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_TableColumn' represents an important domain concept.
+It has the following attributes: 'isPrimaryKey', which is of type str; 'isForeignKey', which is of type str.
+
+'rdb_constraints_ColumnRefConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_view_View' represents an important domain concept.
+It has one attribute: 'ddl', which is of type str.
+
+'rdb_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_datatypes_DataType' represents an important domain concept.
+It has the following attributes: 'check', which is of type str; 'default', which is of type str; 'var', which is of type str; 'decimalDigits', which is of type int; 'nullable', which is of type bool; 'size', which is of type int.
+
+'rdb_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'view_rdb_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_view_ReferencedViewColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_constraints_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ColumnRefConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'ViewAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_view_ViewExpressionColumn' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'rdb_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_constraints_IndexedColumn' represents an important domain concept.
+It has one attribute: 'ascending', which is of type bool.
+
+'ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_datatypes_Domain' represents an important domain concept.
+It does not declare any attributes.
+
+'Index' represents an important domain concept.
+It does not declare any attributes.
+
+'ViewColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CheckConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_SchemaElement' represents an important domain concept.
+It has one attribute: 'owner', which is of type str.
+
+'rdb_constraints_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_view_ViewColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'view_rdb_NamedColumnSet' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedColumnSet' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_constraints_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_Model' represents an important domain concept.
+It has one attribute: 'server_id', which is of type str.
+
+'rdb_datatypes_PrimitiveDataType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'rdb_view_ViewAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'UniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rdb_NamedColumnSet' is a specialization of 'SchemaElement'.
+The class 'rdb_NamedElement' is a specialization of 'Element'.
+The class 'rdb_Model' is a specialization of 'NamedElement'.
+The class 'rdb_Schema' is a specialization of 'NamedElement'.
+The class 'rdb_SchemaElement' is a specialization of 'NamedElement'.
+The class 'rdb_Table' is a specialization of 'NamedColumnSet'.
+The class 'rdb_Column' is a specialization of 'NamedElement'.
+The class 'rdb_TableColumn' is a specialization of 'Column'.
+The class 'rdb_constraints_Constraint' is a specialization of 'NamedElement'.
+The class 'rdb_constraints_CheckConstraint' is a specialization of 'Constraint'.
+The class 'rdb_constraints_ColumnRefConstraint' is a specialization of 'Constraint'.
+The class 'rdb_constraints_UniqueConstraint' is a specialization of 'ColumnRefConstraint'.
+The class 'rdb_constraints_PrimaryKey' is a specialization of 'UniqueConstraint'.
+The class 'rdb_constraints_ForeignKey' is a specialization of 'ColumnRefConstraint'.
+The class 'rdb_constraints_Index' is a specialization of 'Constraint'.
+The class 'rdb_constraints_IndexedColumn' is a specialization of 'NamedElement'.
+The class 'rdb_datatypes_Domain' is a specialization of 'SchemaElement'.
+The class 'rdb_datatypes_Domain' is a specialization of 'datatypes_PrimitiveDataType'.
+The class 'rdb_datatypes_DataType' is a specialization of 'NamedElement'.
+The class 'rdb_datatypes_PrimitiveDataType' is a specialization of 'DataType'.
+The class 'rdb_view_View' is a specialization of 'NamedColumnSet'.
+The class 'rdb_view_ViewAlias' is a specialization of 'NamedElement'.
+The class 'rdb_view_ViewColumn' is a specialization of 'Column'.
+The class 'rdb_view_ViewExpressionColumn' is a specialization of 'ViewColumn'.
+The class 'rdb_view_ReferencedViewColumn' is a specialization of 'ViewColumn'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rdb_Element' and 'rdb_Element'. From 'rdb_Element', the role 'rdb_Element' has cardinality 0..*, and from 'rdb_Element', the role 'rdb_Element0' has cardinality 0..*.
+An association connects 'rdb_Schema' and 'rdb_Model'. From 'rdb_Schema', the role 'rdb_Schema' has cardinality 0..*, and from 'rdb_Model', the role 'rdb_Model' has cardinality 0..*.
+An association connects 'rdb_SchemaElement' and 'rdb_Schema'. From 'rdb_SchemaElement', the role 'rdb_SchemaElement' has cardinality 0..*, and from 'rdb_Schema', the role 'rdb_Schema4' has cardinality 0..*.
+An association connects 'rdb_TableColumn' and 'rdb_Table'. From 'rdb_TableColumn', the role 'rdb_TableColumn' has cardinality 0..*, and from 'rdb_Table', the role 'rdb_Table' has cardinality 0..*.
+An association connects 'PrimaryKey' and 'rdb_Table'. From 'PrimaryKey', the role 'PrimaryKey' has cardinality 0..*, and from 'rdb_Table', the role 'rdb_Table7' has cardinality 0..*.
+An association connects 'rdb_Table' and 'UniqueConstraint'. From 'rdb_Table', the role 'rdb_Table9' has cardinality 0..*, and from 'UniqueConstraint', the role 'UniqueConstraint' has cardinality 0..*.
+An association connects 'rdb_Table' and 'ForeignKey'. From 'rdb_Table', the role 'rdb_Table11' has cardinality 0..*, and from 'ForeignKey', the role 'ForeignKey' has cardinality 0..*.
+An association connects 'Index' and 'rdb_Table'. From 'Index', the role 'Index' has cardinality 0..*, and from 'rdb_Table', the role 'rdb_Table13' has cardinality 0..*.
+An association connects 'CheckConstraint' and 'rdb_Table'. From 'CheckConstraint', the role 'CheckConstraint' has cardinality 0..*, and from 'rdb_Table', the role 'rdb_Table15' has cardinality 0..*.
+An association connects 'rdb_TableColumn' and 'Domain'. From 'rdb_TableColumn', the role 'rdb_TableColumn17' has cardinality 0..*, and from 'Domain', the role 'Domain' has cardinality 0..*.
+An association connects 'PrimitiveDataType' and 'rdb_TableColumn'. From 'PrimitiveDataType', the role 'PrimitiveDataType' has cardinality 0..*, and from 'rdb_TableColumn', the role 'rdb_TableColumn19' has cardinality 0..*.
+An association connects 'rdb_constraints_ColumnRefConstraint' and 'constraints_rdb_TableColumn'. From 'rdb_constraints_ColumnRefConstraint', the role 'rdb_constraints_ColumnRefConstraint' has cardinality 0..*, and from 'constraints_rdb_TableColumn', the role 'constraints_rdb_TableColumn' has cardinality 0..*.
+An association connects 'UniqueConstraint' and 'rdb_constraints_ForeignKey'. From 'UniqueConstraint', the role 'UniqueConstraint22' has cardinality 0..*, and from 'rdb_constraints_ForeignKey', the role 'rdb_constraints_ForeignKey' has cardinality 0..*.
+An association connects 'IndexedColumn' and 'rdb_constraints_Index'. From 'IndexedColumn', the role 'IndexedColumn' has cardinality 0..*, and from 'rdb_constraints_Index', the role 'rdb_constraints_Index' has cardinality 0..*.
+An association connects 'constraints_rdb_TableColumn' and 'rdb_constraints_IndexedColumn'. From 'constraints_rdb_TableColumn', the role 'constraints_rdb_TableColumn25' has cardinality 0..*, and from 'rdb_constraints_IndexedColumn', the role 'rdb_constraints_IndexedColumn' has cardinality 0..*.
+An association connects 'rdb_datatypes_Domain' and 'Domain'. From 'rdb_datatypes_Domain', the role 'rdb_datatypes_Domain' has cardinality 0..*, and from 'Domain', the role 'Domain27' has cardinality 0..*.
+An association connects 'rdb_view_View' and 'ViewColumn'. From 'rdb_view_View', the role 'rdb_view_View' has cardinality 0..*, and from 'ViewColumn', the role 'ViewColumn' has cardinality 0..*.
+An association connects 'rdb_view_View' and 'ViewAlias'. From 'rdb_view_View', the role 'rdb_view_View30' has cardinality 0..*, and from 'ViewAlias', the role 'ViewAlias' has cardinality 0..*.
+An association connects 'view_rdb_NamedColumnSet' and 'rdb_view_ViewAlias'. From 'view_rdb_NamedColumnSet', the role 'view_rdb_NamedColumnSet' has cardinality 0..*, and from 'rdb_view_ViewAlias', the role 'rdb_view_ViewAlias' has cardinality 0..*.
+An association connects 'rdb_view_ReferencedViewColumn' and 'view_rdb_Column'. From 'rdb_view_ReferencedViewColumn', the role 'rdb_view_ReferencedViewColumn' has cardinality 0..*, and from 'view_rdb_Column', the role 'view_rdb_Column' has cardinality 0..*.

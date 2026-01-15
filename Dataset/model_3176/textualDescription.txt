@@ -1,0 +1,127 @@
+The domain model 'iotdsl' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'iotdsl_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_IfBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'iotdsl_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Attribute' represents an important domain concept.
+It has the following attributes: 'tag', which is of type str; 'typeName', which is of type str; 'value', which is of type str.
+
+'iotdsl_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_And' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'iotdsl_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Equality' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'iotdsl_Iot' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'iotdsl_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'iotdsl_Device' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_MulOrDiv' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'iotdsl_Variable' is a specialization of 'Action'.
+The class 'iotdsl_Expression' is a specialization of 'Action'.
+The class 'iotdsl_IfStatement' is a specialization of 'Expression'.
+The class 'iotdsl_Or' is a specialization of 'Expression'.
+The class 'iotdsl_And' is a specialization of 'Expression'.
+The class 'iotdsl_Equality' is a specialization of 'Expression'.
+The class 'iotdsl_Comparison' is a specialization of 'Expression'.
+The class 'iotdsl_Plus' is a specialization of 'Expression'.
+The class 'iotdsl_Minus' is a specialization of 'Expression'.
+The class 'iotdsl_MulOrDiv' is a specialization of 'Expression'.
+The class 'iotdsl_Not' is a specialization of 'Expression'.
+The class 'iotdsl_IntConstant' is a specialization of 'Expression'.
+The class 'iotdsl_StringConstant' is a specialization of 'Expression'.
+The class 'iotdsl_BoolConstant' is a specialization of 'Expression'.
+The class 'iotdsl_VariableRef' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iotdsl_Iot' and 'iotdsl_Device'. From 'iotdsl_Iot', the role 'iotdsl_Iot' has cardinality 0..*, and from 'iotdsl_Device', the role 'iotdsl_Device' has cardinality 0..*.
+An association connects 'iotdsl_Device' and 'iotdsl_Device'. From 'iotdsl_Device', the role 'iotdsl_Device3' has cardinality 0..*, and from 'iotdsl_Device', the role 'iotdsl_Device1' has cardinality 0..*.
+An association connects 'iotdsl_Device' and 'iotdsl_Attribute'. From 'iotdsl_Device', the role 'iotdsl_Device5' has cardinality 0..*, and from 'iotdsl_Attribute', the role 'iotdsl_Attribute' has cardinality 0..*.
+An association connects 'iotdsl_Device' and 'iotdsl_State'. From 'iotdsl_Device', the role 'iotdsl_Device7' has cardinality 0..*, and from 'iotdsl_State', the role 'iotdsl_State' has cardinality 0..*.
+An association connects 'iotdsl_Device' and 'iotdsl_Event'. From 'iotdsl_Device', the role 'iotdsl_Device9' has cardinality 0..*, and from 'iotdsl_Event', the role 'iotdsl_Event' has cardinality 0..*.
+An association connects 'iotdsl_Transition' and 'iotdsl_Device'. From 'iotdsl_Transition', the role 'iotdsl_Transition' has cardinality 0..*, and from 'iotdsl_Device', the role 'iotdsl_Device11' has cardinality 0..*.
+An association connects 'iotdsl_Action' and 'iotdsl_State'. From 'iotdsl_Action', the role 'iotdsl_Action' has cardinality 0..*, and from 'iotdsl_State', the role 'iotdsl_State13' has cardinality 0..*.
+An association connects 'iotdsl_Event' and 'iotdsl_Transition'. From 'iotdsl_Event', the role 'iotdsl_Event16' has cardinality 0..*, and from 'iotdsl_Transition', the role 'iotdsl_Transition15' has cardinality 0..*.
+An association connects 'iotdsl_State' and 'iotdsl_Transition'. From 'iotdsl_State', the role 'iotdsl_State19' has cardinality 0..*, and from 'iotdsl_Transition', the role 'iotdsl_Transition18' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_Variable'. From 'iotdsl_Expression', the role 'iotdsl_Expression' has cardinality 0..*, and from 'iotdsl_Variable', the role 'iotdsl_Variable' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_IfStatement'. From 'iotdsl_Expression', the role 'iotdsl_Expression22' has cardinality 0..*, and from 'iotdsl_IfStatement', the role 'iotdsl_IfStatement' has cardinality 0..*.
+An association connects 'iotdsl_IfBlock' and 'iotdsl_IfStatement'. From 'iotdsl_IfBlock', the role 'iotdsl_IfBlock' has cardinality 0..*, and from 'iotdsl_IfStatement', the role 'iotdsl_IfStatement24' has cardinality 0..*.
+An association connects 'iotdsl_IfBlock' and 'iotdsl_IfStatement'. From 'iotdsl_IfBlock', the role 'iotdsl_IfBlock27' has cardinality 0..*, and from 'iotdsl_IfStatement', the role 'iotdsl_IfStatement26' has cardinality 0..*.
+An association connects 'iotdsl_IfBlock' and 'iotdsl_Action'. From 'iotdsl_IfBlock', the role 'iotdsl_IfBlock29' has cardinality 0..*, and from 'iotdsl_Action', the role 'iotdsl_Action30' has cardinality 0..*.
+An association connects 'iotdsl_Or' and 'iotdsl_Expression'. From 'iotdsl_Or', the role 'iotdsl_Or' has cardinality 0..*, and from 'iotdsl_Expression', the role 'iotdsl_Expression32' has cardinality 0..*.
+An association connects 'iotdsl_Or' and 'iotdsl_Expression'. From 'iotdsl_Or', the role 'iotdsl_Or34' has cardinality 0..*, and from 'iotdsl_Expression', the role 'iotdsl_Expression35' has cardinality 0..*.
+An association connects 'iotdsl_And' and 'iotdsl_Expression'. From 'iotdsl_And', the role 'iotdsl_And' has cardinality 0..*, and from 'iotdsl_Expression', the role 'iotdsl_Expression37' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_And'. From 'iotdsl_Expression', the role 'iotdsl_Expression40' has cardinality 0..*, and from 'iotdsl_And', the role 'iotdsl_And39' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_Equality'. From 'iotdsl_Expression', the role 'iotdsl_Expression42' has cardinality 0..*, and from 'iotdsl_Equality', the role 'iotdsl_Equality' has cardinality 0..*.
+An association connects 'iotdsl_Equality' and 'iotdsl_Expression'. From 'iotdsl_Equality', the role 'iotdsl_Equality44' has cardinality 0..*, and from 'iotdsl_Expression', the role 'iotdsl_Expression45' has cardinality 0..*.
+An association connects 'iotdsl_Comparison' and 'iotdsl_Expression'. From 'iotdsl_Comparison', the role 'iotdsl_Comparison' has cardinality 0..*, and from 'iotdsl_Expression', the role 'iotdsl_Expression47' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_Comparison'. From 'iotdsl_Expression', the role 'iotdsl_Expression50' has cardinality 0..*, and from 'iotdsl_Comparison', the role 'iotdsl_Comparison49' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_Plus'. From 'iotdsl_Expression', the role 'iotdsl_Expression52' has cardinality 0..*, and from 'iotdsl_Plus', the role 'iotdsl_Plus' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_Plus'. From 'iotdsl_Expression', the role 'iotdsl_Expression55' has cardinality 0..*, and from 'iotdsl_Plus', the role 'iotdsl_Plus54' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_Minus'. From 'iotdsl_Expression', the role 'iotdsl_Expression57' has cardinality 0..*, and from 'iotdsl_Minus', the role 'iotdsl_Minus' has cardinality 0..*.
+An association connects 'iotdsl_Minus' and 'iotdsl_Expression'. From 'iotdsl_Minus', the role 'iotdsl_Minus59' has cardinality 0..*, and from 'iotdsl_Expression', the role 'iotdsl_Expression60' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_MulOrDiv'. From 'iotdsl_Expression', the role 'iotdsl_Expression62' has cardinality 0..*, and from 'iotdsl_MulOrDiv', the role 'iotdsl_MulOrDiv' has cardinality 0..*.
+An association connects 'iotdsl_MulOrDiv' and 'iotdsl_Expression'. From 'iotdsl_MulOrDiv', the role 'iotdsl_MulOrDiv64' has cardinality 0..*, and from 'iotdsl_Expression', the role 'iotdsl_Expression65' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_Not'. From 'iotdsl_Expression', the role 'iotdsl_Expression67' has cardinality 0..*, and from 'iotdsl_Not', the role 'iotdsl_Not' has cardinality 0..*.
+An association connects 'iotdsl_Variable' and 'iotdsl_VariableRef'. From 'iotdsl_Variable', the role 'iotdsl_Variable69' has cardinality 0..*, and from 'iotdsl_VariableRef', the role 'iotdsl_VariableRef' has cardinality 0..*.

@@ -1,0 +1,76 @@
+The domain model 'netxstudio' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'netxstudio_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Site' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Room' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Equipment' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_RFSService' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Metric' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Company' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Library' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'version', which is of type str.
+
+'netxstudio_Protocol' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_User' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_MetricSource' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Meta' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Tolerance' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'netxstudio_Country' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'netxstudio_Library' and 'netxstudio_Network'. From 'netxstudio_Library', the role 'netxstudio_Library' has cardinality 0..*, and from 'netxstudio_Network', the role 'netxstudio_Network' has cardinality 0..*.
+An association connects 'netxstudio_Function' and 'netxstudio_Library'. From 'netxstudio_Function', the role 'netxstudio_Function' has cardinality 0..*, and from 'netxstudio_Library', the role 'netxstudio_Library2' has cardinality 0..*.
+An association connects 'netxstudio_Equipment' and 'netxstudio_Library'. From 'netxstudio_Equipment', the role 'netxstudio_Equipment' has cardinality 0..*, and from 'netxstudio_Library', the role 'netxstudio_Library4' has cardinality 0..*.
+An association connects 'netxstudio_Metric' and 'netxstudio_Library'. From 'netxstudio_Metric', the role 'netxstudio_Metric' has cardinality 0..*, and from 'netxstudio_Library', the role 'netxstudio_Library6' has cardinality 0..*.
+An association connects 'netxstudio_Parameter' and 'netxstudio_Library'. From 'netxstudio_Parameter', the role 'netxstudio_Parameter' has cardinality 0..*, and from 'netxstudio_Library', the role 'netxstudio_Library8' has cardinality 0..*.
+An association connects 'netxstudio_Protocol' and 'netxstudio_Library'. From 'netxstudio_Protocol', the role 'netxstudio_Protocol' has cardinality 0..*, and from 'netxstudio_Library', the role 'netxstudio_Library10' has cardinality 0..*.
+An association connects 'netxstudio_Company' and 'netxstudio_Library'. From 'netxstudio_Company', the role 'netxstudio_Company' has cardinality 0..*, and from 'netxstudio_Library', the role 'netxstudio_Library12' has cardinality 0..*.
+An association connects 'netxstudio_Tolerance' and 'netxstudio_Library'. From 'netxstudio_Tolerance', the role 'netxstudio_Tolerance' has cardinality 0..*, and from 'netxstudio_Library', the role 'netxstudio_Library14' has cardinality 0..*.
+An association connects 'netxstudio_Library' and 'netxstudio_Expression'. From 'netxstudio_Library', the role 'netxstudio_Library16' has cardinality 0..*, and from 'netxstudio_Expression', the role 'netxstudio_Expression' has cardinality 0..*.
+An association connects 'netxstudio_Library' and 'netxstudio_User'. From 'netxstudio_Library', the role 'netxstudio_Library18' has cardinality 0..*, and from 'netxstudio_User', the role 'netxstudio_User' has cardinality 0..*.
+An association connects 'netxstudio_Library' and 'netxstudio_Room'. From 'netxstudio_Library', the role 'netxstudio_Library20' has cardinality 0..*, and from 'netxstudio_Room', the role 'netxstudio_Room' has cardinality 0..*.
+An association connects 'netxstudio_Library' and 'netxstudio_Country'. From 'netxstudio_Library', the role 'netxstudio_Library22' has cardinality 0..*, and from 'netxstudio_Country', the role 'netxstudio_Country' has cardinality 0..*.
+An association connects 'netxstudio_Library' and 'netxstudio_Site'. From 'netxstudio_Library', the role 'netxstudio_Library24' has cardinality 0..*, and from 'netxstudio_Site', the role 'netxstudio_Site' has cardinality 0..*.
+An association connects 'netxstudio_Library' and 'netxstudio_Unit'. From 'netxstudio_Library', the role 'netxstudio_Library26' has cardinality 0..*, and from 'netxstudio_Unit', the role 'netxstudio_Unit' has cardinality 0..*.
+An association connects 'netxstudio_RFSService' and 'netxstudio_Library'. From 'netxstudio_RFSService', the role 'netxstudio_RFSService' has cardinality 0..*, and from 'netxstudio_Library', the role 'netxstudio_Library28' has cardinality 0..*.
+An association connects 'netxstudio_Meta' and 'netxstudio_Library'. From 'netxstudio_Meta', the role 'netxstudio_Meta' has cardinality 0..*, and from 'netxstudio_Library', the role 'netxstudio_Library30' has cardinality 0..*.
+An association connects 'netxstudio_MetricSource' and 'netxstudio_Library'. From 'netxstudio_MetricSource', the role 'netxstudio_MetricSource' has cardinality 0..*, and from 'netxstudio_Library', the role 'netxstudio_Library32' has cardinality 0..*.

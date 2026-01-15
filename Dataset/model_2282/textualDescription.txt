@@ -1,0 +1,39 @@
+The domain model 'University' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'University_Student' represents an important domain concept.
+It has one attribute: 'matriculationNumber', which is of type int.
+
+'University_Person' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'email', which is of type str.
+
+'University_Exam' represents an important domain concept.
+It has one attribute: 'examID', which is of type str.
+
+'University_UniversityManagementSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'University_Professor' represents an important domain concept.
+It has one attribute: 'employeeNumber', which is of type int.
+
+'University_Course' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'courseType', which is of type str; 'courseNumber', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CourseType' defines the following possible values: 'UE', 'PR', 'VO', 'SEM'.
+
+The model also captures inheritance relationships between classes.
+The class 'University_Student' is a specialization of 'Person'.
+The class 'University_Professor' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'University_Student' and 'University_Course'. From 'University_Student', the role 'University_Student' has cardinality 0..*, and from 'University_Course', the role 'University_Course' has cardinality 0..*.
+An association connects 'University_Professor' and 'University_Course'. From 'University_Professor', the role 'University_Professor' has cardinality 0..*, and from 'University_Course', the role 'University_Course2' has cardinality 0..*.
+An association connects 'University_Course' and 'University_Course'. From 'University_Course', the role 'University_Course5' has cardinality 0..*, and from 'University_Course', the role 'University_Course3' has cardinality 0..*.
+An association connects 'University_Exam' and 'University_Course'. From 'University_Exam', the role 'University_Exam' has cardinality 0..*, and from 'University_Course', the role 'University_Course7' has cardinality 0..*.
+An association connects 'University_Course' and 'University_UniversityManagementSystem'. From 'University_Course', the role 'University_Course9' has cardinality 0..*, and from 'University_UniversityManagementSystem', the role 'University_UniversityManagementSystem' has cardinality 0..*.
+An association connects 'University_UniversityManagementSystem' and 'University_Person'. From 'University_UniversityManagementSystem', the role 'University_UniversityManagementSystem11' has cardinality 0..*, and from 'University_Person', the role 'University_Person' has cardinality 0..*.

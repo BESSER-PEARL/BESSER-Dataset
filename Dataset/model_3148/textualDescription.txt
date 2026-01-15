@@ -1,0 +1,346 @@
+The domain model 'ccore' describes the core structural elements and their relationships within the system.
+
+The model defines 74 main class(es).
+
+'ccore_Page' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'title', which is of type str; 'idRuntime', which is of type str; 'label', which is of type str.
+
+'ccore_TypeDefinition' represents an important domain concept.
+It has one attribute: 'idRuntime', which is of type str.
+
+'ccore_ComposerLink' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_MenuGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_ViewModel' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_Exporter' represents an important domain concept.
+It has one attribute: 'types', which is of type str.
+
+'EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'DBObject' represents an important domain concept.
+It does not declare any attributes.
+
+'EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_DBObject' represents an important domain concept.
+It has the following attributes: 'uuid_lsb', which is of type str; 'uuid_msb', which is of type str; 'objectId', which is of type int.
+
+'ccore_RuntimeItem' represents an important domain concept.
+It has the following attributes: 'extendsClass', which is of type bool; 'className', which is of type str.
+
+'ccore_RuntimeItemType' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_DoubleAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_ComputedString' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'ccore_ExtItem' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_Item' represents an important domain concept.
+It has the following attributes: 'twRevModified', which is of type bool; 'displayName', which is of type str; 'qualifiedName', which is of type str; 'twCommittedDate', which is of type str; 'twRequireNewRev', which is of type bool; 'itemReadonly', which is of type bool; 'isvalid', which is of type bool; 'itemHidden', which is of type bool; 'committedBy', which is of type str; 'twVersion', which is of type int.
+
+'ccore_ContentItem' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_InteractionController' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_BindingDesc' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_View' represents an important domain concept.
+It has one attribute: 'icon', which is of type str.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'LongAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'RuntimeItemType' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_DynamicActions' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_Cadse' represents an important domain concept.
+It has the following attributes: 'itemRepoURL', which is of type str; 'description', which is of type str; 'itemRepoPasswd', which is of type str; 'executed', which is of type bool; 'itemRepoLogin', which is of type str; 'defaultContentRepoURL', which is of type str; 'idDefinition', which is of type str.
+
+'EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_UnresolvedAttributeType' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_MenuAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_StringAttribute' represents an important domain concept.
+It has one attribute: 'notEmpty', which is of type bool.
+
+'ccore_ComposerType' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemType' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_Attribute' represents an important domain concept.
+It has the following attributes: 'cannotBeUndefined', which is of type bool; 'tWEvol', which is of type str; '_final', which is of type bool; 'tWUpdateKind', which is of type str; 'devGenerated', which is of type bool; 'idRuntime', which is of type str; 'mustBeInitialized', which is of type bool; 'require', which is of type bool; 'natif', which is of type bool; 'tWRevSpecific', which is of type bool; 'hiddenInComputedPages', which is of type bool; 'isList', which is of type bool; 'tWCommitKind', which is of type str.
+
+'ccore_BooleanAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_UUIDAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_EnumType' represents an important domain concept.
+It has the following attributes: 'values', which is of type str; 'javaClass', which is of type str; 'mustBeGenerated', which is of type bool.
+
+'ccore_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_LinkType' represents an important domain concept.
+It has the following attributes: 'group', which is of type bool; 'mapping', which is of type bool; 'max', which is of type int; 'twDestEvol', which is of type str; 'linkManager', which is of type str; 'min', which is of type int; 'kind', which is of type int; 'aggregation', which is of type bool; 'selection', which is of type str; 'hidden', which is of type bool; 'annotation', which is of type bool; 'composition', which is of type bool; 'twCoupled', which is of type bool.
+
+'ccore_ViewItemType' represents an important domain concept.
+It has the following attributes: 'isRootElement', which is of type bool; 'ref', which is of type bool.
+
+'EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_ActionExtItemType' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_TimeAttribute' represents an important domain concept.
+It has one attribute: 'initWithTheCurrentTime', which is of type bool.
+
+'ccore_ExporterType' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_GenInformation' represents an important domain concept.
+It has one attribute: 'cSTName', which is of type str.
+
+'ccore_GroupExtItem' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_GroupOfAttributes' represents an important domain concept.
+It has one attribute: 'column', which is of type int.
+
+'ccore_UIValidator' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_ExtentedType' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_BindExt' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_ViewLinkType' represents an important domain concept.
+It has the following attributes: 'aggregation', which is of type bool; 'canCreateItem', which is of type bool; 'canCreateLink', which is of type bool; 'displayCreate', which is of type str.
+
+'ccore_IntegerAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'BindingDesc' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_ItemType' represents an important domain concept.
+It has the following attributes: 'isRootElement', which is of type bool; 'hasUniqueName', which is of type bool; 'isMetaItemType', which is of type bool; 'customManager', which is of type bool; 'validateNameRe', which is of type str; 'packageName', which is of type str; 'itemFactoryClass', which is of type str; 'icon', which is of type str; 'isInstanceHidden', which is of type bool; 'isInstanceAbstract', which is of type bool; 'displayNameTemplate', which is of type str; 'messageErrorId', which is of type str; 'managerClass', which is of type str; 'overwriteDefaultPages', which is of type bool; 'hasShortName', which is of type bool; 'hasContent', which is of type bool; 'itemManagerClass', which is of type str; 'humanName', which is of type str; 'qualifiedNameTemplate', which is of type str.
+
+'ccore_Enum' represents an important domain concept.
+It has the following attributes: 'enumClazz', which is of type str; 'values', which is of type str.
+
+'ccore_MenuAbstract' represents an important domain concept.
+It has the following attributes: 'path', which is of type str; 'icon', which is of type str; 'label', which is of type str.
+
+'ccore_WCListener' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_Display' represents an important domain concept.
+It has the following attributes: 'extendsIC', which is of type bool; 'extendsMC', which is of type bool; 'extendsUI', which is of type bool.
+
+'ccore_ExportedContent' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_ContentItemType' represents an important domain concept.
+It has one attribute: 'extendsClass', which is of type bool.
+
+'ccore_ViewDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_Menu' represents an important domain concept.
+It does not declare any attributes.
+
+'RuntimeItem' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_Field' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'editable', which is of type bool; 'position', which is of type str.
+
+'ccore_Composer' represents an important domain concept.
+It has one attribute: 'types', which is of type str.
+
+'ccore_LongAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_KeyDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_ModelController' represents an important domain concept.
+It does not declare any attributes.
+
+'ccore_DateAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PositionEnum' defines the following possible values: 'top', 'right', 'defaultpos', 'left', 'none', 'group'.
+The enumeration 'TWCommitKind' defines the following possible values: 'conflict', 'reconcile', 'none'.
+The enumeration 'TWUpdateKind' defines the following possible values: 'merge', 'none', 'compute'.
+The enumeration 'TWDestEvol' defines the following possible values: 'finalDest', 'effective', 'immutable', 'mutable', 'branch'.
+The enumeration 'TWEvol' defines the following possible values: 'twImmutable', 'twTransient', 'twMutable', 'twFinal'.
+
+The model also captures inheritance relationships between classes.
+The class 'ccore_TypeDefinition' is a specialization of 'Item'.
+The class 'ccore_TypeDefinition' is a specialization of 'EClass'.
+The class 'ccore_ExtentedType' is a specialization of 'TypeDefinition'.
+The class 'ccore_ItemType' is a specialization of 'TypeDefinition'.
+The class 'ccore_Cadse' is a specialization of 'Item'.
+The class 'ccore_Cadse' is a specialization of 'EPackage'.
+The class 'ccore_Item' is a specialization of 'ENamedElement'.
+The class 'ccore_Item' is a specialization of 'DBObject'.
+The class 'ccore_Attribute' is a specialization of 'Item'.
+The class 'ccore_Attribute' is a specialization of 'EAttribute'.
+The class 'ccore_KeyDefinition' is a specialization of 'Item'.
+The class 'ccore_ContentItemType' is a specialization of 'ItemType'.
+The class 'ccore_StringAttribute' is a specialization of 'Attribute'.
+The class 'ccore_BooleanAttribute' is a specialization of 'Attribute'.
+The class 'ccore_IntegerAttribute' is a specialization of 'Attribute'.
+The class 'ccore_LongAttribute' is a specialization of 'Attribute'.
+The class 'ccore_DateAttribute' is a specialization of 'Attribute'.
+The class 'ccore_UUIDAttribute' is a specialization of 'Attribute'.
+The class 'ccore_DoubleAttribute' is a specialization of 'Attribute'.
+The class 'ccore_TimeAttribute' is a specialization of 'LongAttribute'.
+The class 'ccore_BindExt' is a specialization of 'BindingDesc'.
+The class 'ccore_RuntimeItem' is a specialization of 'Item'.
+The class 'ccore_Display' is a specialization of 'RuntimeItem'.
+The class 'ccore_InteractionController' is a specialization of 'RuntimeItem'.
+The class 'ccore_ModelController' is a specialization of 'RuntimeItem'.
+The class 'ccore_Enum' is a specialization of 'Attribute'.
+The class 'ccore_LinkType' is a specialization of 'EReference'.
+The class 'ccore_LinkType' is a specialization of 'Attribute'.
+The class 'ccore_Field' is a specialization of 'Item'.
+The class 'ccore_EnumType' is a specialization of 'EEnum'.
+The class 'ccore_Composer' is a specialization of 'RuntimeItem'.
+The class 'ccore_Exporter' is a specialization of 'RuntimeItem'.
+The class 'ccore_ComposerType' is a specialization of 'RuntimeItemType'.
+The class 'ccore_ExporterType' is a specialization of 'RuntimeItemType'.
+The class 'ccore_RuntimeItemType' is a specialization of 'ItemType'.
+The class 'ccore_BindingDesc' is a specialization of 'DBObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ccore_Attribute' and 'ccore_TypeDefinition'. From 'ccore_Attribute', the role 'ccore_Attribute' has cardinality 0..*, and from 'ccore_TypeDefinition', the role 'ccore_TypeDefinition' has cardinality 0..*.
+An association connects 'ccore_TypeDefinition' and 'ccore_Field'. From 'ccore_TypeDefinition', the role 'ccore_TypeDefinition2' has cardinality 0..*, and from 'ccore_Field', the role 'ccore_Field' has cardinality 0..*.
+An association connects 'ccore_TypeDefinition' and 'ccore_Page'. From 'ccore_TypeDefinition', the role 'ccore_TypeDefinition4' has cardinality 0..*, and from 'ccore_Page', the role 'ccore_Page' has cardinality 0..*.
+An association connects 'ccore_TypeDefinition' and 'ccore_UIValidator'. From 'ccore_TypeDefinition', the role 'ccore_TypeDefinition6' has cardinality 0..*, and from 'ccore_UIValidator', the role 'ccore_UIValidator' has cardinality 0..*.
+An association connects 'ccore_Page' and 'ccore_TypeDefinition'. From 'ccore_Page', the role 'ccore_Page9' has cardinality 0..*, and from 'ccore_TypeDefinition', the role 'ccore_TypeDefinition8' has cardinality 0..*.
+An association connects 'ccore_TypeDefinition' and 'ccore_GroupOfAttributes'. From 'ccore_TypeDefinition', the role 'ccore_TypeDefinition11' has cardinality 0..*, and from 'ccore_GroupOfAttributes', the role 'ccore_GroupOfAttributes' has cardinality 0..*.
+An association connects 'ccore_TypeDefinition' and 'ccore_EClass'. From 'ccore_TypeDefinition', the role 'ccore_TypeDefinition13' has cardinality 0..*, and from 'ccore_EClass', the role 'ccore_EClass' has cardinality 0..*.
+An association connects 'ccore_ItemType' and 'ccore_ExtentedType'. From 'ccore_ItemType', the role 'ccore_ItemType' has cardinality 0..*, and from 'ccore_ExtentedType', the role 'ccore_ExtentedType' has cardinality 0..*.
+An association connects 'ccore_ItemType' and 'ccore_ItemType'. From 'ccore_ItemType', the role 'ccore_ItemType15' has cardinality 0..*, and from 'ccore_ItemType', the role 'ccore_ItemType17' has cardinality 0..*.
+An association connects 'ccore_ItemType' and 'ccore_WCListener'. From 'ccore_ItemType', the role 'ccore_ItemType19' has cardinality 0..*, and from 'ccore_WCListener', the role 'ccore_WCListener' has cardinality 0..*.
+An association connects 'ccore_ItemType' and 'ccore_ItemType'. From 'ccore_ItemType', the role 'ccore_ItemType20' has cardinality 0..*, and from 'ccore_ItemType', the role 'ccore_ItemType22' has cardinality 0..*.
+An association connects 'ccore_ExtentedType' and 'ccore_ItemType'. From 'ccore_ExtentedType', the role 'ccore_ExtentedType25' has cardinality 0..*, and from 'ccore_ItemType', the role 'ccore_ItemType24' has cardinality 0..*.
+An association connects 'ccore_KeyDefinition' and 'ccore_ItemType'. From 'ccore_KeyDefinition', the role 'ccore_KeyDefinition' has cardinality 0..*, and from 'ccore_ItemType', the role 'ccore_ItemType27' has cardinality 0..*.
+An association connects 'ccore_ContentItemType' and 'ccore_ItemType'. From 'ccore_ContentItemType', the role 'ccore_ContentItemType' has cardinality 0..*, and from 'ccore_ItemType', the role 'ccore_ItemType29' has cardinality 0..*.
+An association connects 'ccore_ItemType' and 'ccore_ExporterType'. From 'ccore_ItemType', the role 'ccore_ItemType31' has cardinality 0..*, and from 'ccore_ExporterType', the role 'ccore_ExporterType' has cardinality 0..*.
+An association connects 'ccore_ComposerType' and 'ccore_ItemType'. From 'ccore_ComposerType', the role 'ccore_ComposerType' has cardinality 0..*, and from 'ccore_ItemType', the role 'ccore_ItemType33' has cardinality 0..*.
+An association connects 'ccore_ItemType' and 'ccore_ContentItemType'. From 'ccore_ItemType', the role 'ccore_ItemType35' has cardinality 0..*, and from 'ccore_ContentItemType', the role 'ccore_ContentItemType36' has cardinality 0..*.
+An association connects 'ccore_Cadse' and 'ccore_Cadse'. From 'ccore_Cadse', the role 'ccore_Cadse37' has cardinality 0..*, and from 'ccore_Cadse', the role 'ccore_Cadse' has cardinality 0..*.
+An association connects 'ccore_ItemType' and 'ccore_Cadse'. From 'ccore_ItemType', the role 'ccore_ItemType41' has cardinality 0..*, and from 'ccore_Cadse', the role 'ccore_Cadse40' has cardinality 0..*.
+An association connects 'ccore_Cadse' and 'ccore_KeyDefinition'. From 'ccore_Cadse', the role 'ccore_Cadse43' has cardinality 0..*, and from 'ccore_KeyDefinition', the role 'ccore_KeyDefinition44' has cardinality 0..*.
+An association connects 'ccore_ExtentedType' and 'ccore_Cadse'. From 'ccore_ExtentedType', the role 'ccore_ExtentedType47' has cardinality 0..*, and from 'ccore_Cadse', the role 'ccore_Cadse46' has cardinality 0..*.
+An association connects 'ccore_EPackage' and 'ccore_Cadse'. From 'ccore_EPackage', the role 'ccore_EPackage' has cardinality 0..*, and from 'ccore_Cadse', the role 'ccore_Cadse49' has cardinality 0..*.
+An association connects 'ccore_BindingDesc' and 'ccore_Cadse'. From 'ccore_BindingDesc', the role 'ccore_BindingDesc' has cardinality 0..*, and from 'ccore_Cadse', the role 'ccore_Cadse51' has cardinality 0..*.
+An association connects 'ccore_Item' and 'ccore_Cadse'. From 'ccore_Item', the role 'ccore_Item' has cardinality 0..*, and from 'ccore_Cadse', the role 'ccore_Cadse53' has cardinality 0..*.
+An association connects 'ccore_ItemType' and 'ccore_Item'. From 'ccore_ItemType', the role 'ccore_ItemType56' has cardinality 0..*, and from 'ccore_Item', the role 'ccore_Item55' has cardinality 0..*.
+An association connects 'ccore_Item' and 'ccore_Item'. From 'ccore_Item', the role 'ccore_Item59' has cardinality 0..*, and from 'ccore_Item', the role 'ccore_Item57' has cardinality 0..*.
+An association connects 'ccore_Attribute' and 'ccore_Item'. From 'ccore_Attribute', the role 'ccore_Attribute62' has cardinality 0..*, and from 'ccore_Item', the role 'ccore_Item61' has cardinality 0..*.
+An association connects 'ccore_Item' and 'ccore_ContentItem'. From 'ccore_Item', the role 'ownerItem' has cardinality 0..*, and from 'ccore_ContentItem', the role 'ContentItem' has cardinality 0..*.
+An association connects 'ccore_Cadse' and 'ccore_Item'. From 'ccore_Cadse', the role 'ccore_Cadse66' has cardinality 0..*, and from 'ccore_Item', the role 'ccore_Item65' has cardinality 0..*.
+An association connects 'ccore_Item' and 'ccore_Exporter'. From 'ccore_Item', the role 'ownerItem68' has cardinality 0..*, and from 'ccore_Exporter', the role 'Exporter' has cardinality 0..*.
+An association connects 'ccore_Composer' and 'ccore_Item'. From 'ccore_Composer', the role 'Composer' has cardinality 0..*, and from 'ccore_Item', the role 'ownerItem70' has cardinality 0..*.
+An association connects 'ccore_WCListener' and 'ccore_Attribute'. From 'ccore_WCListener', the role 'ccore_WCListener73' has cardinality 0..*, and from 'ccore_Attribute', the role 'ccore_Attribute72' has cardinality 0..*.
+An association connects 'ccore_KeyDefinition' and 'ccore_EStructuralFeature'. From 'ccore_KeyDefinition', the role 'ccore_KeyDefinition75' has cardinality 0..*, and from 'ccore_EStructuralFeature', the role 'ccore_EStructuralFeature' has cardinality 0..*.
+An association connects 'ccore_KeyDefinition' and 'ccore_KeyDefinition'. From 'ccore_KeyDefinition', the role 'ccore_KeyDefinition78' has cardinality 0..*, and from 'ccore_KeyDefinition', the role 'ccore_KeyDefinition76' has cardinality 0..*.
+An association connects 'ccore_ViewItemType' and 'ccore_ItemType'. From 'ccore_ViewItemType', the role 'ccore_ViewItemType' has cardinality 0..*, and from 'ccore_ItemType', the role 'ccore_ItemType80' has cardinality 0..*.
+An association connects 'ccore_ViewLinkType' and 'ccore_ViewItemType'. From 'ccore_ViewLinkType', the role 'ccore_ViewLinkType' has cardinality 0..*, and from 'ccore_ViewItemType', the role 'ccore_ViewItemType82' has cardinality 0..*.
+An association connects 'ccore_ViewDescription' and 'ccore_TypeDefinition'. From 'ccore_ViewDescription', the role 'ccore_ViewDescription' has cardinality 0..*, and from 'ccore_TypeDefinition', the role 'ccore_TypeDefinition84' has cardinality 0..*.
+An association connects 'ccore_ItemType' and 'ccore_BindExt'. From 'ccore_ItemType', the role 'ccore_ItemType86' has cardinality 0..*, and from 'ccore_BindExt', the role 'ccore_BindExt' has cardinality 0..*.
+An association connects 'ccore_BindExt' and 'ccore_ExtentedType'. From 'ccore_BindExt', the role 'ccore_BindExt88' has cardinality 0..*, and from 'ccore_ExtentedType', the role 'ccore_ExtentedType89' has cardinality 0..*.
+An association connects 'ccore_ActionExtItemType' and 'ccore_Menu'. From 'ccore_ActionExtItemType', the role 'ccore_ActionExtItemType' has cardinality 0..*, and from 'ccore_Menu', the role 'ccore_Menu' has cardinality 0..*.
+An association connects 'ccore_Menu' and 'ccore_MenuAbstract'. From 'ccore_Menu', the role 'ccore_Menu92' has cardinality 0..*, and from 'ccore_MenuAbstract', the role 'ccore_MenuAbstract' has cardinality 0..*.
+An association connects 'ccore_UIValidator' and 'ccore_UIValidator'. From 'ccore_UIValidator', the role 'ccore_UIValidator93' has cardinality 0..*, and from 'ccore_UIValidator', the role 'ccore_UIValidator95' has cardinality 0..*.
+An association connects 'ccore_UIValidator' and 'ccore_Attribute'. From 'ccore_UIValidator', the role 'ccore_UIValidator97' has cardinality 0..*, and from 'ccore_Attribute', the role 'ccore_Attribute98' has cardinality 0..*.
+An association connects 'ccore_Enum' and 'ccore_EnumType'. From 'ccore_Enum', the role 'ccore_Enum' has cardinality 0..*, and from 'ccore_EnumType', the role 'ccore_EnumType' has cardinality 0..*.
+An association connects 'ccore_TypeDefinition' and 'ccore_LinkType'. From 'ccore_TypeDefinition', the role 'ccore_TypeDefinition101' has cardinality 0..*, and from 'ccore_LinkType', the role 'ccore_LinkType' has cardinality 0..*.
+An association connects 'ccore_TypeDefinition' and 'ccore_LinkType'. From 'ccore_TypeDefinition', the role 'ccore_TypeDefinition104' has cardinality 0..*, and from 'ccore_LinkType', the role 'ccore_LinkType103' has cardinality 0..*.
+An association connects 'ccore_ItemType' and 'ccore_WCListener'. From 'ccore_ItemType', the role 'ccore_ItemType107' has cardinality 0..*, and from 'ccore_WCListener', the role 'ccore_WCListener106' has cardinality 0..*.
+An association connects 'ccore_WCListener' and 'ccore_Attribute'. From 'ccore_WCListener', the role 'ccore_WCListener109' has cardinality 0..*, and from 'ccore_Attribute', the role 'ccore_Attribute110' has cardinality 0..*.
+An association connects 'ccore_Field' and 'ccore_Attribute'. From 'ccore_Field', the role 'ccore_Field112' has cardinality 0..*, and from 'ccore_Attribute', the role 'ccore_Attribute113' has cardinality 0..*.
+An association connects 'ccore_Field' and 'ccore_InteractionController'. From 'ccore_Field', the role 'ccore_Field115' has cardinality 0..*, and from 'ccore_InteractionController', the role 'ccore_InteractionController' has cardinality 0..*.
+An association connects 'ccore_Field' and 'ccore_ModelController'. From 'ccore_Field', the role 'ccore_Field117' has cardinality 0..*, and from 'ccore_ModelController', the role 'ccore_ModelController' has cardinality 0..*.
+An association connects 'ccore_Field' and 'ccore_Display'. From 'ccore_Field', the role 'ccore_Field119' has cardinality 0..*, and from 'ccore_Display', the role 'ccore_Display' has cardinality 0..*.
+An association connects 'ccore_Page' and 'ccore_Attribute'. From 'ccore_Page', the role 'ccore_Page121' has cardinality 0..*, and from 'ccore_Attribute', the role 'ccore_Attribute122' has cardinality 0..*.
+An association connects 'ccore_Page' and 'ccore_Page'. From 'ccore_Page', the role 'ccore_Page123' has cardinality 0..*, and from 'ccore_Page', the role 'ccore_Page125' has cardinality 0..*.
+An association connects 'ccore_EnumType' and 'ccore_EEnum'. From 'ccore_EnumType', the role 'ccore_EnumType127' has cardinality 0..*, and from 'ccore_EEnum', the role 'ccore_EEnum' has cardinality 0..*.
+An association connects 'ccore_GroupOfAttributes' and 'ccore_Attribute'. From 'ccore_GroupOfAttributes', the role 'ccore_GroupOfAttributes129' has cardinality 0..*, and from 'ccore_Attribute', the role 'ccore_Attribute130' has cardinality 0..*.
+An association connects 'ccore_GroupOfAttributes' and 'ccore_GroupOfAttributes'. From 'ccore_GroupOfAttributes', the role 'ccore_GroupOfAttributes131' has cardinality 0..*, and from 'ccore_GroupOfAttributes', the role 'ccore_GroupOfAttributes133' has cardinality 0..*.
+An association connects 'ccore_ViewLinkType' and 'ccore_LinkType'. From 'ccore_ViewLinkType', the role 'ccore_ViewLinkType135' has cardinality 0..*, and from 'ccore_LinkType', the role 'ccore_LinkType136' has cardinality 0..*.
+An association connects 'ccore_Item' and 'ccore_GroupExtItem'. From 'ccore_Item', the role 'ccore_Item138' has cardinality 0..*, and from 'ccore_GroupExtItem', the role 'ccore_GroupExtItem' has cardinality 0..*.
+An association connects 'ccore_Item' and 'ccore_GroupExtItem'. From 'ccore_Item', the role 'ccore_Item141' has cardinality 0..*, and from 'ccore_GroupExtItem', the role 'ccore_GroupExtItem140' has cardinality 0..*.
+An association connects 'ccore_LinkType' and 'ccore_Composer'. From 'ccore_LinkType', the role 'ccore_LinkType143' has cardinality 0..*, and from 'ccore_Composer', the role 'ccore_Composer' has cardinality 0..*.
+An association connects 'ccore_ComposerLink' and 'ccore_Composer'. From 'ccore_ComposerLink', the role 'ccore_ComposerLink' has cardinality 0..*, and from 'ccore_Composer', the role 'ccore_Composer145' has cardinality 0..*.
+An association connects 'ccore_Composer' and 'ccore_Item'. From 'ccore_Composer', the role 'composers' has cardinality 0..*, and from 'ccore_Item', the role 'Item' has cardinality 0..*.
+An association connects 'ccore_Exporter' and 'ccore_Item'. From 'ccore_Exporter', the role 'exporters' has cardinality 0..*, and from 'ccore_Item', the role 'Item148' has cardinality 0..*.
+An association connects 'ccore_Item' and 'ccore_ContentItem'. From 'ccore_Item', the role 'Item150' has cardinality 0..*, and from 'ccore_ContentItem', the role 'contents' has cardinality 0..*.
+An association connects 'ccore_ContentItem' and 'ccore_ContentItem'. From 'ccore_ContentItem', the role 'ccore_ContentItem' has cardinality 0..*, and from 'ccore_ContentItem', the role 'ccore_ContentItem151' has cardinality 0..*.
+An association connects 'ccore_Exporter' and 'ccore_ComposerLink'. From 'ccore_Exporter', the role 'ccore_Exporter' has cardinality 0..*, and from 'ccore_ComposerLink', the role 'ccore_ComposerLink154' has cardinality 0..*.
+An association connects 'ccore_LinkType' and 'ccore_ComposerLink'. From 'ccore_LinkType', the role 'ccore_LinkType157' has cardinality 0..*, and from 'ccore_ComposerLink', the role 'ccore_ComposerLink156' has cardinality 0..*.
+An association connects 'ccore_ViewItemType' and 'ccore_View'. From 'ccore_ViewItemType', the role 'ccore_ViewItemType159' has cardinality 0..*, and from 'ccore_View', the role 'ccore_View' has cardinality 0..*.
+An association connects 'ccore_View' and 'ccore_ViewModel'. From 'ccore_View', the role 'ccore_View161' has cardinality 0..*, and from 'ccore_ViewModel', the role 'ccore_ViewModel' has cardinality 0..*.
+An association connects 'ccore_Item' and 'ccore_BindingDesc'. From 'ccore_Item', the role 'ccore_Item164' has cardinality 0..*, and from 'ccore_BindingDesc', the role 'ccore_BindingDesc163' has cardinality 0..*.
+An association connects 'ccore_Item' and 'ccore_BindingDesc'. From 'ccore_Item', the role 'ccore_Item167' has cardinality 0..*, and from 'ccore_BindingDesc', the role 'ccore_BindingDesc166' has cardinality 0..*.
+An association connects 'ccore_LinkType' and 'ccore_BindingDesc'. From 'ccore_LinkType', the role 'ccore_LinkType170' has cardinality 0..*, and from 'ccore_BindingDesc', the role 'ccore_BindingDesc169' has cardinality 0..*.
+An association connects 'ccore_DBObject' and 'ccore_ItemType'. From 'ccore_DBObject', the role 'ccore_DBObject' has cardinality 0..*, and from 'ccore_ItemType', the role 'ccore_ItemType172' has cardinality 0..*.

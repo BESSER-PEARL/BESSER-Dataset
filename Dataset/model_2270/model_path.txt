@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/siba88/ame/at.ac.tuwien.big.momot.examples.university.key/model/university.ecore

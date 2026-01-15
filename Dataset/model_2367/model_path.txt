@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/anatlyzer/a2l/examples/example.vmtesting/transformations/UML2Relational/relational.ecore

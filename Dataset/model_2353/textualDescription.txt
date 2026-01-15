@@ -1,0 +1,46 @@
+The domain model 'simpleRdbms' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'simpleRdbms_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleRdbms_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleRdbms_Column' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'simpleRdbms_RModelElement' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'name', which is of type str.
+
+'simpleRdbms_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleRdbms_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'RModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleRdbms_Schema' is a specialization of 'RModelElement'.
+The class 'simpleRdbms_Table' is a specialization of 'RModelElement'.
+The class 'simpleRdbms_Column' is a specialization of 'RModelElement'.
+The class 'simpleRdbms_Key' is a specialization of 'RModelElement'.
+The class 'simpleRdbms_ForeignKey' is a specialization of 'RModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleRdbms_Table' and 'simpleRdbms_Schema'. From 'simpleRdbms_Table', the role 'Table' has cardinality 0..*, and from 'simpleRdbms_Schema', the role 'schema' has cardinality 0..*.
+An association connects 'simpleRdbms_Table' and 'simpleRdbms_Schema'. From 'simpleRdbms_Table', the role 'tables' has cardinality 0..*, and from 'simpleRdbms_Schema', the role 'Schema' has cardinality 0..*.
+An association connects 'simpleRdbms_Table' and 'simpleRdbms_Column'. From 'simpleRdbms_Table', the role 'owner' has cardinality 0..*, and from 'simpleRdbms_Column', the role 'Column' has cardinality 0..*.
+An association connects 'simpleRdbms_Table' and 'simpleRdbms_Key'. From 'simpleRdbms_Table', the role 'owner4' has cardinality 0..*, and from 'simpleRdbms_Key', the role 'Key' has cardinality 0..*.
+An association connects 'simpleRdbms_Table' and 'simpleRdbms_ForeignKey'. From 'simpleRdbms_Table', the role 'owner6' has cardinality 0..*, and from 'simpleRdbms_ForeignKey', the role 'ForeignKey' has cardinality 0..*.
+An association connects 'simpleRdbms_Table' and 'simpleRdbms_Column'. From 'simpleRdbms_Table', the role 'Table8' has cardinality 0..*, and from 'simpleRdbms_Column', the role 'column' has cardinality 0..*.
+An association connects 'simpleRdbms_Column' and 'simpleRdbms_Key'. From 'simpleRdbms_Column', the role 'column10' has cardinality 0..*, and from 'simpleRdbms_Key', the role 'Key11' has cardinality 0..*.
+An association connects 'simpleRdbms_Column' and 'simpleRdbms_ForeignKey'. From 'simpleRdbms_Column', the role 'column13' has cardinality 0..*, and from 'simpleRdbms_ForeignKey', the role 'ForeignKey14' has cardinality 0..*.
+An association connects 'simpleRdbms_Column' and 'simpleRdbms_Key'. From 'simpleRdbms_Column', the role 'Column16' has cardinality 0..*, and from 'simpleRdbms_Key', the role 'key' has cardinality 0..*.
+An association connects 'simpleRdbms_Table' and 'simpleRdbms_Key'. From 'simpleRdbms_Table', the role 'Table19' has cardinality 0..*, and from 'simpleRdbms_Key', the role 'key18' has cardinality 0..*.
+An association connects 'simpleRdbms_Column' and 'simpleRdbms_ForeignKey'. From 'simpleRdbms_Column', the role 'Column21' has cardinality 0..*, and from 'simpleRdbms_ForeignKey', the role 'foreignKey' has cardinality 0..*.
+An association connects 'simpleRdbms_ForeignKey' and 'simpleRdbms_Key'. From 'simpleRdbms_ForeignKey', the role 'simpleRdbms_ForeignKey' has cardinality 0..*, and from 'simpleRdbms_Key', the role 'simpleRdbms_Key' has cardinality 0..*.
+An association connects 'simpleRdbms_Table' and 'simpleRdbms_ForeignKey'. From 'simpleRdbms_Table', the role 'Table25' has cardinality 0..*, and from 'simpleRdbms_ForeignKey', the role 'foreignKey24' has cardinality 0..*.

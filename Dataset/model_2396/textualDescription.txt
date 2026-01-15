@@ -1,0 +1,38 @@
+The domain model 'SqlMetamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'SqlMetamodel_Column' represents an important domain concept.
+It has the following attributes: 'nullable', which is of type bool; 'name', which is of type str; 'type', which is of type str.
+
+'SqlMetamodel_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'SqlMetamodel_Constraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SqlMetamodel_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'SqlMetamodel_ForeingKey' represents an important domain concept.
+It does not declare any attributes.
+
+'SqlMetamodel_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TypeData' defines the following possible values: 'STRING', 'INT', 'FLOAT', 'DOUBLE', 'BOOLEAN', 'DATE'.
+
+The model also captures inheritance relationships between classes.
+The class 'SqlMetamodel_ForeingKey' is a specialization of 'Constraint'.
+The class 'SqlMetamodel_PrimaryKey' is a specialization of 'Constraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SqlMetamodel_Schema' and 'SqlMetamodel_Table'. From 'SqlMetamodel_Schema', the role 'SqlMetamodel_Schema' has cardinality 0..*, and from 'SqlMetamodel_Table', the role 'SqlMetamodel_Table' has cardinality 0..*.
+An association connects 'SqlMetamodel_Table' and 'SqlMetamodel_Column'. From 'SqlMetamodel_Table', the role 'SqlMetamodel_Table2' has cardinality 0..*, and from 'SqlMetamodel_Column', the role 'SqlMetamodel_Column' has cardinality 0..*.
+An association connects 'SqlMetamodel_Table' and 'SqlMetamodel_Constraint'. From 'SqlMetamodel_Table', the role 'SqlMetamodel_Table4' has cardinality 0..*, and from 'SqlMetamodel_Constraint', the role 'SqlMetamodel_Constraint' has cardinality 0..*.
+An association connects 'SqlMetamodel_Table' and 'SqlMetamodel_PrimaryKey'. From 'SqlMetamodel_Table', the role 'SqlMetamodel_Table6' has cardinality 0..*, and from 'SqlMetamodel_PrimaryKey', the role 'SqlMetamodel_PrimaryKey' has cardinality 0..*.
+An association connects 'SqlMetamodel_Table' and 'SqlMetamodel_ForeingKey'. From 'SqlMetamodel_Table', the role 'SqlMetamodel_Table8' has cardinality 0..*, and from 'SqlMetamodel_ForeingKey', the role 'SqlMetamodel_ForeingKey' has cardinality 0..*.

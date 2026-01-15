@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/prayasb/org.eclipse.emf.teneo/tests/org.eclipse.emf.teneo.samples/src/org/eclipse/emf/teneo/samples/emf/sample/sunBooks/model/sunBooks.ecore

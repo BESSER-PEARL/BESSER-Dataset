@@ -1,0 +1,44 @@
+The domain model 'comicBooks' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'comicBooks_Editor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'comicBooks_Artist' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'comicBooks_Publisher' represents an important domain concept.
+It has one attribute: 'publishersName', which is of type str.
+
+'comicBooks_Book' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'publicationDate', which is of type str.
+
+'comicBooks_Series' represents an important domain concept.
+It has one attribute: 'seriesName', which is of type str.
+
+'comicBooks_ComicBookCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'comicBooks_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'comicBooks_Book' and 'comicBooks_ComicBookCollection'. From 'comicBooks_Book', the role 'comicBooks_Book' has cardinality 0..*, and from 'comicBooks_ComicBookCollection', the role 'comicBooks_ComicBookCollection' has cardinality 0..*.
+An association connects 'comicBooks_ComicBookCollection' and 'comicBooks_Artist'. From 'comicBooks_ComicBookCollection', the role 'comicBooks_ComicBookCollection2' has cardinality 0..*, and from 'comicBooks_Artist', the role 'comicBooks_Artist' has cardinality 0..*.
+An association connects 'comicBooks_ComicBookCollection' and 'comicBooks_Editor'. From 'comicBooks_ComicBookCollection', the role 'comicBooks_ComicBookCollection4' has cardinality 0..*, and from 'comicBooks_Editor', the role 'comicBooks_Editor' has cardinality 0..*.
+An association connects 'comicBooks_ComicBookCollection' and 'comicBooks_Writer'. From 'comicBooks_ComicBookCollection', the role 'comicBooks_ComicBookCollection6' has cardinality 0..*, and from 'comicBooks_Writer', the role 'comicBooks_Writer' has cardinality 0..*.
+An association connects 'comicBooks_Publisher' and 'comicBooks_ComicBookCollection'. From 'comicBooks_Publisher', the role 'comicBooks_Publisher' has cardinality 0..*, and from 'comicBooks_ComicBookCollection', the role 'comicBooks_ComicBookCollection8' has cardinality 0..*.
+An association connects 'comicBooks_ComicBookCollection' and 'comicBooks_Series'. From 'comicBooks_ComicBookCollection', the role 'comicBooks_ComicBookCollection10' has cardinality 0..*, and from 'comicBooks_Series', the role 'comicBooks_Series' has cardinality 0..*.
+An association connects 'comicBooks_Publisher' and 'comicBooks_Book'. From 'comicBooks_Publisher', the role 'publisher' has cardinality 0..*, and from 'comicBooks_Book', the role 'Book' has cardinality 0..*.
+An association connects 'comicBooks_Book' and 'comicBooks_Series'. From 'comicBooks_Book', the role 'Book13' has cardinality 0..*, and from 'comicBooks_Series', the role 'seriesPartOf' has cardinality 0..*.
+An association connects 'comicBooks_Artist' and 'comicBooks_Book'. From 'comicBooks_Artist', the role 'Artist' has cardinality 0..*, and from 'comicBooks_Book', the role 'booksArtistFor' has cardinality 0..*.
+An association connects 'comicBooks_Editor' and 'comicBooks_Book'. From 'comicBooks_Editor', the role 'Editor' has cardinality 0..*, and from 'comicBooks_Book', the role 'booksEditorFor' has cardinality 0..*.
+An association connects 'comicBooks_Book' and 'comicBooks_Writer'. From 'comicBooks_Book', the role 'booksWriterFor' has cardinality 0..*, and from 'comicBooks_Writer', the role 'Writer' has cardinality 0..*.
+An association connects 'comicBooks_Artist' and 'comicBooks_Book'. From 'comicBooks_Artist', the role 'Artist18' has cardinality 0..*, and from 'comicBooks_Book', the role 'booksCoverArtistFor' has cardinality 0..*.
+An association connects 'comicBooks_Publisher' and 'comicBooks_Book'. From 'comicBooks_Publisher', the role 'Publisher' has cardinality 0..*, and from 'comicBooks_Book', the role 'booksPublished' has cardinality 0..*.
+An association connects 'comicBooks_Series' and 'comicBooks_Book'. From 'comicBooks_Series', the role 'Series' has cardinality 0..*, and from 'comicBooks_Book', the role 'booksInSeries' has cardinality 0..*.
+An association connects 'comicBooks_Book' and 'comicBooks_Artist'. From 'comicBooks_Book', the role 'Book22' has cardinality 0..*, and from 'comicBooks_Artist', the role 'artists' has cardinality 0..*.
+An association connects 'comicBooks_Book' and 'comicBooks_Artist'. From 'comicBooks_Book', the role 'Book24' has cardinality 0..*, and from 'comicBooks_Artist', the role 'coverArtist' has cardinality 0..*.
+An association connects 'comicBooks_Book' and 'comicBooks_Editor'. From 'comicBooks_Book', the role 'Book26' has cardinality 0..*, and from 'comicBooks_Editor', the role 'editors' has cardinality 0..*.
+An association connects 'comicBooks_Writer' and 'comicBooks_Book'. From 'comicBooks_Writer', the role 'writers' has cardinality 0..*, and from 'comicBooks_Book', the role 'Book28' has cardinality 0..*.

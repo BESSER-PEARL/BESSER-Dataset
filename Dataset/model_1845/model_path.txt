@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/hallvard/playtrd/org.eclipse.e4.tm.examples/contacts/contacts.ecore

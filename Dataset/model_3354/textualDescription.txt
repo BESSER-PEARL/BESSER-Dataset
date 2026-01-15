@@ -1,0 +1,51 @@
+The domain model 'entityDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'entityDsl_IntType' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_EntityReference' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'entityDsl_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'entityDsl_Module' is a specialization of 'Named'.
+The class 'entityDsl_Entity' is a specialization of 'Named'.
+The class 'entityDsl_Attribute' is a specialization of 'Named'.
+The class 'entityDsl_BooleanType' is a specialization of 'AbstractType'.
+The class 'entityDsl_IntType' is a specialization of 'AbstractType'.
+The class 'entityDsl_StringType' is a specialization of 'AbstractType'.
+The class 'entityDsl_EntityReference' is a specialization of 'AbstractType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'entityDsl_Entity' and 'entityDsl_Module'. From 'entityDsl_Entity', the role 'entityDsl_Entity' has cardinality 0..*, and from 'entityDsl_Module', the role 'entityDsl_Module' has cardinality 0..*.
+An association connects 'entityDsl_Attribute' and 'entityDsl_Entity'. From 'entityDsl_Attribute', the role 'entityDsl_Attribute' has cardinality 0..*, and from 'entityDsl_Entity', the role 'entityDsl_Entity2' has cardinality 0..*.
+An association connects 'entityDsl_Attribute' and 'entityDsl_AbstractType'. From 'entityDsl_Attribute', the role 'entityDsl_Attribute4' has cardinality 0..*, and from 'entityDsl_AbstractType', the role 'entityDsl_AbstractType' has cardinality 0..*.
+An association connects 'entityDsl_EntityReference' and 'entityDsl_Entity'. From 'entityDsl_EntityReference', the role 'entityDsl_EntityReference' has cardinality 0..*, and from 'entityDsl_Entity', the role 'entityDsl_Entity6' has cardinality 0..*.

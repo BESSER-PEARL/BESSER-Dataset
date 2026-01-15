@@ -1,0 +1,153 @@
+The domain model 'jdtmm' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'jdtmm_JDTMethodBody' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTTypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTParent' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTMethod' represents an important domain concept.
+It has the following attributes: 'constructor', which is of type str; 'final', which is of type str; 'static', which is of type str; 'abstract', which is of type str; 'synchronized', which is of type str.
+
+'jdtmm_JDTJavaElement' represents an important domain concept.
+It has the following attributes: 'elementName', which is of type str; 'elementType', which is of type str; 'comment', which is of type str; 'generated', which is of type str.
+
+'JDTType' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTJavaProject' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTMember' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTException' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTOpaqueBody' represents an important domain concept.
+It has one attribute: '_body', which is of type str.
+
+'jdtmm_JDTMember' represents an important domain concept.
+It has the following attributes: 'explicitPlainTextRequiredImports', which is of type str; 'visibility', which is of type str.
+
+'JDTMethodBody' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTTypeRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTParentJavaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTParent' represents an important domain concept.
+It has one attribute: 'flags', which is of type str.
+
+'jdtmm_JDTField' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'isMultiValued', which is of type str; 'static', which is of type str; 'abstract', which is of type str; 'generateSetter', which is of type str; 'final', which is of type str; 'generateGetter', which is of type str.
+
+'jdtmm_JDTPackageFragmentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTParentJavaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTImportDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTCompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTJavaModel' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTClass' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTTypeRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTParameter' represents an important domain concept.
+It has the following attributes: 'isMultiValued', which is of type str; 'final', which is of type str.
+
+'jdtmm_JDTType' represents an important domain concept.
+It has the following attributes: 'interface', which is of type str; 'superInterfaceNames', which is of type str; 'abstract', which is of type str; 'class', which is of type str; 'superClassName', which is of type str; 'static', which is of type str; 'enum', which is of type str; 'final', which is of type str.
+
+'jdtmm_JDTImportContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'JDTJavaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jdtmm_JDTPackageFragment' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityKind' defines the following possible values: 'public', 'private', 'protected'.
+The enumeration 'TrueFalseDefault' defines the following possible values: 'false', 'true', 'default'.
+
+The model also captures inheritance relationships between classes.
+The class 'jdtmm_JDTMethod' is a specialization of 'JDTMember'.
+The class 'jdtmm_JDTMember' is a specialization of 'JDTParentJavaElement'.
+The class 'jdtmm_JDTParentJavaElement' is a specialization of 'JDTJavaElement'.
+The class 'jdtmm_JDTParentJavaElement' is a specialization of 'JDTParent'.
+The class 'jdtmm_JDTTypeParameter' is a specialization of 'JDTJavaElement'.
+The class 'jdtmm_JDTType' is a specialization of 'JDTMember'.
+The class 'jdtmm_JDTField' is a specialization of 'JDTMember'.
+The class 'jdtmm_JDTCompilationUnit' is a specialization of 'JDTTypeRoot'.
+The class 'jdtmm_JDTTypeRoot' is a specialization of 'JDTParentJavaElement'.
+The class 'jdtmm_JDTPackageFragment' is a specialization of 'JDTParentJavaElement'.
+The class 'jdtmm_JDTPackageFragmentRoot' is a specialization of 'JDTParentJavaElement'.
+The class 'jdtmm_JDTJavaProject' is a specialization of 'JDTParentJavaElement'.
+The class 'jdtmm_JDTJavaModel' is a specialization of 'JDTParentJavaElement'.
+The class 'jdtmm_JDTParameter' is a specialization of 'JDTMember'.
+The class 'jdtmm_JDTClass' is a specialization of 'JDTType'.
+The class 'jdtmm_JDTInterface' is a specialization of 'JDTType'.
+The class 'jdtmm_JDTEnum' is a specialization of 'JDTType'.
+The class 'jdtmm_JDTImportDeclaration' is a specialization of 'JDTJavaElement'.
+The class 'jdtmm_JDTImportContainer' is a specialization of 'JDTParentJavaElement'.
+The class 'jdtmm_JDTOpaqueBody' is a specialization of 'JDTMethodBody'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jdtmm_JDTMethod' and 'jdtmm_JDTMethodBody'. From 'jdtmm_JDTMethod', the role 'JDTMethod' has cardinality 0..*, and from 'jdtmm_JDTMethodBody', the role 'bodies' has cardinality 0..*.
+An association connects 'jdtmm_JDTType' and 'jdtmm_JDTMethod'. From 'jdtmm_JDTType', the role 'JDTType' has cardinality 0..*, and from 'jdtmm_JDTMethod', the role 'methods' has cardinality 0..*.
+An association connects 'jdtmm_JDTMethod' and 'jdtmm_JDTParameter'. From 'jdtmm_JDTMethod', the role 'returnOwner' has cardinality 0..*, and from 'jdtmm_JDTParameter', the role 'JDTParameter' has cardinality 0..*.
+An association connects 'jdtmm_JDTMethod' and 'jdtmm_JDTParameter'. From 'jdtmm_JDTMethod', the role 'parameterOwner' has cardinality 0..*, and from 'jdtmm_JDTParameter', the role 'JDTParameter4' has cardinality 0..*.
+An association connects 'jdtmm_JDTType' and 'jdtmm_JDTMethod'. From 'jdtmm_JDTType', the role 'jdtmm_JDTType' has cardinality 0..*, and from 'jdtmm_JDTMethod', the role 'jdtmm_JDTMethod' has cardinality 0..*.
+An association connects 'jdtmm_JDTMethod' and 'jdtmm_JDTMethodBody'. From 'jdtmm_JDTMethod', the role 'owner' has cardinality 0..*, and from 'jdtmm_JDTMethodBody', the role 'JDTMethodBody' has cardinality 0..*.
+An association connects 'jdtmm_JDTTypeParameter' and 'jdtmm_JDTMember'. From 'jdtmm_JDTTypeParameter', the role 'JDTTypeParameter' has cardinality 0..*, and from 'jdtmm_JDTMember', the role 'declaringMember' has cardinality 0..*.
+An association connects 'jdtmm_JDTType' and 'jdtmm_JDTMember'. From 'jdtmm_JDTType', the role 'jdtmm_JDTType9' has cardinality 0..*, and from 'jdtmm_JDTMember', the role 'jdtmm_JDTMember' has cardinality 0..*.
+An association connects 'jdtmm_JDTParent' and 'jdtmm_JDTJavaElement'. From 'jdtmm_JDTParent', the role 'parent' has cardinality 0..*, and from 'jdtmm_JDTJavaElement', the role 'JDTJavaElement' has cardinality 0..*.
+An association connects 'jdtmm_JDTParent' and 'jdtmm_JDTJavaElement'. From 'jdtmm_JDTParent', the role 'JDTParent' has cardinality 0..*, and from 'jdtmm_JDTJavaElement', the role 'children' has cardinality 0..*.
+An association connects 'jdtmm_JDTTypeParameter' and 'jdtmm_JDTMember'. From 'jdtmm_JDTTypeParameter', the role 'typeParameters' has cardinality 0..*, and from 'jdtmm_JDTMember', the role 'JDTMember' has cardinality 0..*.
+An association connects 'jdtmm_JDTType' and 'jdtmm_JDTMethod'. From 'jdtmm_JDTType', the role 'owner14' has cardinality 0..*, and from 'jdtmm_JDTMethod', the role 'JDTMethod15' has cardinality 0..*.
+An association connects 'jdtmm_JDTField' and 'jdtmm_JDTType'. From 'jdtmm_JDTField', the role 'JDTField' has cardinality 0..*, and from 'jdtmm_JDTType', the role 'owner17' has cardinality 0..*.
+An association connects 'jdtmm_JDTCompilationUnit' and 'jdtmm_JDTType'. From 'jdtmm_JDTCompilationUnit', the role 'JDTCompilationUnit' has cardinality 0..*, and from 'jdtmm_JDTType', the role 'types' has cardinality 0..*.
+An association connects 'jdtmm_JDTType' and 'jdtmm_JDTType'. From 'jdtmm_JDTType', the role 'JDTType22' has cardinality 0..*, and from 'jdtmm_JDTType', the role 'owner21' has cardinality 0..*.
+An association connects 'jdtmm_JDTType' and 'jdtmm_JDTType'. From 'jdtmm_JDTType', the role 'types25' has cardinality 0..*, and from 'jdtmm_JDTType', the role 'JDTType26' has cardinality 0..*.
+An association connects 'jdtmm_JDTType' and 'jdtmm_JDTType'. From 'jdtmm_JDTType', the role 'jdtmm_JDTType27' has cardinality 0..*, and from 'jdtmm_JDTType', the role 'jdtmm_JDTType29' has cardinality 0..*.
+An association connects 'jdtmm_JDTType' and 'jdtmm_JDTType'. From 'jdtmm_JDTType', the role 'jdtmm_JDTType30' has cardinality 0..*, and from 'jdtmm_JDTType', the role 'jdtmm_JDTType32' has cardinality 0..*.
+An association connects 'jdtmm_JDTField' and 'jdtmm_JDTType'. From 'jdtmm_JDTField', the role 'jdtmm_JDTField' has cardinality 0..*, and from 'jdtmm_JDTType', the role 'jdtmm_JDTType34' has cardinality 0..*.
+An association connects 'jdtmm_JDTField' and 'jdtmm_JDTType'. From 'jdtmm_JDTField', the role 'fields' has cardinality 0..*, and from 'jdtmm_JDTType', the role 'JDTType36' has cardinality 0..*.
+An association connects 'jdtmm_JDTPackageFragment' and 'jdtmm_JDTCompilationUnit'. From 'jdtmm_JDTPackageFragment', the role 'JDTPackageFragment' has cardinality 0..*, and from 'jdtmm_JDTCompilationUnit', the role 'compilationUnits' has cardinality 0..*.
+An association connects 'jdtmm_JDTType' and 'jdtmm_JDTCompilationUnit'. From 'jdtmm_JDTType', the role 'JDTType39' has cardinality 0..*, and from 'jdtmm_JDTCompilationUnit', the role 'compilationUnit' has cardinality 0..*.
+An association connects 'jdtmm_JDTPackageFragmentRoot' and 'jdtmm_JDTPackageFragment'. From 'jdtmm_JDTPackageFragmentRoot', the role 'JDTPackageFragmentRoot' has cardinality 0..*, and from 'jdtmm_JDTPackageFragment', the role 'packageFragments' has cardinality 0..*.
+An association connects 'jdtmm_JDTCompilationUnit' and 'jdtmm_JDTPackageFragment'. From 'jdtmm_JDTCompilationUnit', the role 'JDTCompilationUnit42' has cardinality 0..*, and from 'jdtmm_JDTPackageFragment', the role 'packageFragment' has cardinality 0..*.
+An association connects 'jdtmm_JDTJavaProject' and 'jdtmm_JDTPackageFragmentRoot'. From 'jdtmm_JDTJavaProject', the role 'JDTJavaProject' has cardinality 0..*, and from 'jdtmm_JDTPackageFragmentRoot', the role 'packageFragmentRoots' has cardinality 0..*.
+An association connects 'jdtmm_JDTPackageFragmentRoot' and 'jdtmm_JDTPackageFragment'. From 'jdtmm_JDTPackageFragmentRoot', the role 'packageFragmentRoot' has cardinality 0..*, and from 'jdtmm_JDTPackageFragment', the role 'JDTPackageFragment45' has cardinality 0..*.
+An association connects 'jdtmm_JDTJavaModel' and 'jdtmm_JDTJavaProject'. From 'jdtmm_JDTJavaModel', the role 'JDTJavaModel' has cardinality 0..*, and from 'jdtmm_JDTJavaProject', the role 'javaProject' has cardinality 0..*.
+An association connects 'jdtmm_JDTPackageFragmentRoot' and 'jdtmm_JDTJavaProject'. From 'jdtmm_JDTPackageFragmentRoot', the role 'JDTPackageFragmentRoot49' has cardinality 0..*, and from 'jdtmm_JDTJavaProject', the role 'javaProject48' has cardinality 0..*.
+An association connects 'jdtmm_JDTJavaProject' and 'jdtmm_JDTJavaModel'. From 'jdtmm_JDTJavaProject', the role 'JDTJavaProject51' has cardinality 0..*, and from 'jdtmm_JDTJavaModel', the role 'javaModel' has cardinality 0..*.
+An association connects 'jdtmm_JDTMethod' and 'jdtmm_JDTParameter'. From 'jdtmm_JDTMethod', the role 'JDTMethod53' has cardinality 0..*, and from 'jdtmm_JDTParameter', the role 'parameters' has cardinality 0..*.
+An association connects 'jdtmm_JDTParameter' and 'jdtmm_JDTType'. From 'jdtmm_JDTParameter', the role 'jdtmm_JDTParameter' has cardinality 0..*, and from 'jdtmm_JDTType', the role 'jdtmm_JDTType55' has cardinality 0..*.
+An association connects 'jdtmm_JDTParameter' and 'jdtmm_JDTMethod'. From 'jdtmm_JDTParameter', the role 'returnType' has cardinality 0..*, and from 'jdtmm_JDTMethod', the role 'JDTMethod57' has cardinality 0..*.

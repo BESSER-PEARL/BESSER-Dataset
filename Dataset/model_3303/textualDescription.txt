@@ -1,0 +1,52 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'model_GraphDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'model_NodeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Comparable' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EdgeDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'Decorator' represents an important domain concept.
+It does not declare any attributes.
+
+'model_STEMTime' represents an important domain concept.
+It has one attribute: 'time', which is of type date.
+
+'model_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Decorator' represents an important domain concept.
+It has the following attributes: 'graphDecorated', which is of type bool; 'progress', which is of type float; 'enabled', which is of type bool.
+
+'model_DynamicLabel' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Decorator' is a specialization of 'Identifiable'.
+The class 'model_EdgeDecorator' is a specialization of 'Decorator'.
+The class 'model_GraphDecorator' is a specialization of 'Decorator'.
+The class 'model_Model' is a specialization of 'Identifiable'.
+The class 'model_NodeDecorator' is a specialization of 'Decorator'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_DynamicLabel' and 'model_Decorator'. From 'model_DynamicLabel', the role 'graph.ecoreDynamicLabel' has cardinality 0..*, and from 'model_Decorator', the role 'decorator' has cardinality 0..*.
+An association connects 'model_Decorator' and 'model_Graph'. From 'model_Decorator', the role 'decorators' has cardinality 0..*, and from 'model_Graph', the role 'graph.ecoreGraph' has cardinality 0..*.
+An association connects 'model_Model' and 'model_Model'. From 'model_Model', the role 'model_Model' has cardinality 0..*, and from 'model_Model', the role 'model_Model2' has cardinality 0..*.
+An association connects 'model_Graph' and 'model_Model'. From 'model_Graph', the role 'model_Graph' has cardinality 0..*, and from 'model_Model', the role 'model_Model5' has cardinality 0..*.
+An association connects 'model_Model' and 'model_GraphDecorator'. From 'model_Model', the role 'model_Model7' has cardinality 0..*, and from 'model_GraphDecorator', the role 'model_GraphDecorator' has cardinality 0..*.
+An association connects 'model_Model' and 'model_NodeDecorator'. From 'model_Model', the role 'model_Model9' has cardinality 0..*, and from 'model_NodeDecorator', the role 'model_NodeDecorator' has cardinality 0..*.
+An association connects 'model_Model' and 'model_EdgeDecorator'. From 'model_Model', the role 'model_Model11' has cardinality 0..*, and from 'model_EdgeDecorator', the role 'model_EdgeDecorator' has cardinality 0..*.

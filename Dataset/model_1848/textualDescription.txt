@@ -1,0 +1,94 @@
+The domain model 'libsys' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'libsys_Magazine' represents an important domain concept.
+It has the following attributes: 'publisher', which is of type str; 'articles', which is of type str.
+
+'libsys_UserAccount' represents an important domain concept.
+It has the following attributes: 'emailAddress', which is of type str; 'userNumber', which is of type int; 'telephoneNumber', which is of type str; 'userClassification', which is of type str; 'userName', which is of type str; 'lockIndication', which is of type bool; 'userData', which is of type str; 'validUntilDate', which is of type date; 'postallAddress', which is of type str; 'unpaidFeeAmount', which is of type int.
+
+'libsys_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'libsys_IdentificationCard' represents an important domain concept.
+It has one attribute: 'userNumber', which is of type int.
+
+'libsys_Instance' represents an important domain concept.
+It has the following attributes: 'shelfmark', which is of type str; 'returnDate', which is of type date; 'components', which is of type str; 'rentalPeriod', which is of type str; 'location', which is of type str; 'comments', which is of type str; 'status', which is of type str.
+
+'Medium' represents an important domain concept.
+It does not declare any attributes.
+
+'libsys_Terminal' represents an important domain concept.
+It does not declare any attributes.
+
+'libsys_UnpaidFee' represents an important domain concept.
+It has the following attributes: 'reason', which is of type str; 'amount', which is of type int.
+
+'libsys_MediaAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'libsys_CD' represents an important domain concept.
+It has the following attributes: 'artists', which is of type str; 'genres', which is of type str; 'tracks', which is of type str.
+
+'libsys_Librarian' represents an important domain concept.
+It does not declare any attributes.
+
+'libsys_StatusSignal' represents an important domain concept.
+It does not declare any attributes.
+
+'libsys_Medium' represents an important domain concept.
+It has the following attributes: 'publicationYear', which is of type date; 'partialShelfmark', which is of type str; 'title', which is of type str; 'additionalTitle', which is of type str; 'identificationCode', which is of type str; 'keywords', which is of type str; 'authors', which is of type str.
+
+'libsys_BarCodeScanner' represents an important domain concept.
+It does not declare any attributes.
+
+'libsys_UserAdministration' represents an important domain concept.
+It does not declare any attributes.
+
+'libsys_Book' represents an important domain concept.
+It has the following attributes: 'publisher', which is of type str; 'placeOfPublication', which is of type str; 'editor', which is of type str; 'ISBN', which is of type str.
+
+'libsys_ReservationEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'libsys_BorrowedEntry' represents an important domain concept.
+It has one attribute: 'returnDate', which is of type date.
+
+'libsys_ExtensionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'libsys_Video' represents an important domain concept.
+It has the following attributes: 'actors', which is of type str; 'genres', which is of type str.
+
+'libsys_User' represents an important domain concept.
+It does not declare any attributes.
+
+'libsys_SearchCriterion' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'InstanceStatus' defines the following possible values: 'Available', 'ReadingRoom', 'Missing', 'Overdue', 'Borrowed', 'ReservedAndAvailable', 'AcquisitionProcess', 'ReservedAndBorrowed'.
+The enumeration 'MediumCode' defines the following possible values: 'video', 'magazine', 'book', 'CD'.
+
+The model also captures inheritance relationships between classes.
+The class 'libsys_Book' is a specialization of 'Medium'.
+The class 'libsys_Magazine' is a specialization of 'Medium'.
+The class 'libsys_CD' is a specialization of 'Medium'.
+The class 'libsys_Video' is a specialization of 'Medium'.
+
+Relationships between classes are modeled using associations.
+An association connects 'libsys_Medium' and 'libsys_Instance'. From 'libsys_Medium', the role 'libsys_Medium' has cardinality 0..*, and from 'libsys_Instance', the role 'libsys_Instance' has cardinality 0..*.
+An association connects 'libsys_ReservationEntry' and 'libsys_Instance'. From 'libsys_ReservationEntry', the role 'libsys_ReservationEntry' has cardinality 0..*, and from 'libsys_Instance', the role 'libsys_Instance2' has cardinality 0..*.
+An association connects 'libsys_Instance' and 'libsys_BorrowedEntry'. From 'libsys_Instance', the role 'libsys_Instance4' has cardinality 0..*, and from 'libsys_BorrowedEntry', the role 'libsys_BorrowedEntry' has cardinality 0..*.
+An association connects 'libsys_UserAccount' and 'libsys_User'. From 'libsys_UserAccount', the role 'libsys_UserAccount' has cardinality 0..*, and from 'libsys_User', the role 'libsys_User' has cardinality 0..*.
+An association connects 'libsys_UserAccount' and 'libsys_Instance'. From 'libsys_UserAccount', the role 'libsys_UserAccount7' has cardinality 0..*, and from 'libsys_Instance', the role 'libsys_Instance8' has cardinality 0..*.
+An association connects 'libsys_Instance' and 'libsys_UserAccount'. From 'libsys_Instance', the role 'libsys_Instance11' has cardinality 0..*, and from 'libsys_UserAccount', the role 'libsys_UserAccount10' has cardinality 0..*.
+An association connects 'libsys_UserAccount' and 'libsys_UserAdministration'. From 'libsys_UserAccount', the role 'libsys_UserAccount13' has cardinality 0..*, and from 'libsys_UserAdministration', the role 'libsys_UserAdministration' has cardinality 0..*.
+An association connects 'libsys_MediaAdministration' and 'libsys_Medium'. From 'libsys_MediaAdministration', the role 'libsys_MediaAdministration' has cardinality 0..*, and from 'libsys_Medium', the role 'libsys_Medium15' has cardinality 0..*.
+An association connects 'libsys_Library' and 'libsys_Medium'. From 'libsys_Library', the role 'libsys_Library' has cardinality 0..*, and from 'libsys_Medium', the role 'libsys_Medium17' has cardinality 0..*.
+An association connects 'libsys_Librarian' and 'libsys_Library'. From 'libsys_Librarian', the role 'libsys_Librarian' has cardinality 0..*, and from 'libsys_Library', the role 'libsys_Library19' has cardinality 0..*.
+An association connects 'libsys_Library' and 'libsys_User'. From 'libsys_Library', the role 'libsys_Library21' has cardinality 0..*, and from 'libsys_User', the role 'libsys_User22' has cardinality 0..*.
+An association connects 'libsys_User' and 'libsys_BorrowedEntry'. From 'libsys_User', the role 'libsys_User25' has cardinality 0..*, and from 'libsys_BorrowedEntry', the role 'libsys_BorrowedEntry24' has cardinality 0..*.
+An association connects 'libsys_User' and 'libsys_ReservationEntry'. From 'libsys_User', the role 'libsys_User28' has cardinality 0..*, and from 'libsys_ReservationEntry', the role 'libsys_ReservationEntry27' has cardinality 0..*.

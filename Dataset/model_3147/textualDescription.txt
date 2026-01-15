@@ -1,0 +1,102 @@
+The domain model 'oclstdlibcs' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'Nameable' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaImplementationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlibcs_LibClassCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlibcs_JavaClassCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlibcs_MetaclassNameCS' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'oclstdlibcs_LibPropertyCS' represents an important domain concept.
+It has one attribute: 'isStatic', which is of type str.
+
+'AttributeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlibcs_Precedence' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlibcs_LibRootPackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlibcs_LibCoercionCS' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlibcs_LibPackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlibcs_JavaImplementationCS' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstraintCS' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredClassCS' represents an important domain concept.
+It does not declare any attributes.
+
+'RootPackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlibcs_LibOperationCS' represents an important domain concept.
+It has the following attributes: 'isValidating', which is of type str; 'isStatic', which is of type str; 'isInvalidating', which is of type str.
+
+'oclstdlibcs_LibConstraintCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlibcs_LibIterationCS' represents an important domain concept.
+It has the following attributes: 'isInvalidating', which is of type str; 'isValidating', which is of type str.
+
+'oclstdlibcs_ParameterCS' represents an important domain concept.
+It does not declare any attributes.
+
+'oclstdlibcs_PrecedenceCS' represents an important domain concept.
+It has one attribute: 'isRightAssociative', which is of type bool.
+
+'PackageCS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'oclstdlibcs_JavaClassCS' is a specialization of 'NamedElementCS'.
+The class 'oclstdlibcs_JavaImplementationCS' is a specialization of 'ElementCS'.
+The class 'oclstdlibcs_LibClassCS' is a specialization of 'StructuredClassCS'.
+The class 'oclstdlibcs_LibCoercionCS' is a specialization of 'OperationCS'.
+The class 'oclstdlibcs_LibCoercionCS' is a specialization of 'JavaImplementationCS'.
+The class 'oclstdlibcs_LibConstraintCS' is a specialization of 'ConstraintCS'.
+The class 'oclstdlibcs_LibIterationCS' is a specialization of 'OperationCS'.
+The class 'oclstdlibcs_LibIterationCS' is a specialization of 'JavaImplementationCS'.
+The class 'oclstdlibcs_LibOperationCS' is a specialization of 'OperationCS'.
+The class 'oclstdlibcs_LibOperationCS' is a specialization of 'JavaImplementationCS'.
+The class 'oclstdlibcs_LibPackageCS' is a specialization of 'PackageCS'.
+The class 'oclstdlibcs_LibPropertyCS' is a specialization of 'AttributeCS'.
+The class 'oclstdlibcs_LibPropertyCS' is a specialization of 'JavaImplementationCS'.
+The class 'oclstdlibcs_LibRootPackageCS' is a specialization of 'RootPackageCS'.
+The class 'oclstdlibcs_MetaclassNameCS' is a specialization of 'ElementCS'.
+The class 'oclstdlibcs_MetaclassNameCS' is a specialization of 'Nameable'.
+The class 'oclstdlibcs_PrecedenceCS' is a specialization of 'NamedElementCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'oclstdlibcs_JavaImplementationCS' and 'oclstdlibcs_JavaClassCS'. From 'oclstdlibcs_JavaImplementationCS', the role 'oclstdlibcs_JavaImplementationCS' has cardinality 0..*, and from 'oclstdlibcs_JavaClassCS', the role 'oclstdlibcs_JavaClassCS' has cardinality 0..*.
+An association connects 'oclstdlibcs_MetaclassNameCS' and 'oclstdlibcs_LibClassCS'. From 'oclstdlibcs_MetaclassNameCS', the role 'oclstdlibcs_MetaclassNameCS' has cardinality 0..*, and from 'oclstdlibcs_LibClassCS', the role 'oclstdlibcs_LibClassCS' has cardinality 0..*.
+An association connects 'oclstdlibcs_ParameterCS' and 'oclstdlibcs_LibIterationCS'. From 'oclstdlibcs_ParameterCS', the role 'oclstdlibcs_ParameterCS' has cardinality 0..*, and from 'oclstdlibcs_LibIterationCS', the role 'oclstdlibcs_LibIterationCS' has cardinality 0..*.
+An association connects 'oclstdlibcs_ParameterCS' and 'oclstdlibcs_LibIterationCS'. From 'oclstdlibcs_ParameterCS', the role 'oclstdlibcs_ParameterCS5' has cardinality 0..*, and from 'oclstdlibcs_LibIterationCS', the role 'oclstdlibcs_LibIterationCS4' has cardinality 0..*.
+An association connects 'oclstdlibcs_Precedence' and 'oclstdlibcs_LibOperationCS'. From 'oclstdlibcs_Precedence', the role 'oclstdlibcs_Precedence' has cardinality 0..*, and from 'oclstdlibcs_LibOperationCS', the role 'oclstdlibcs_LibOperationCS' has cardinality 0..*.
+An association connects 'oclstdlibcs_LibPackageCS' and 'oclstdlibcs_PrecedenceCS'. From 'oclstdlibcs_LibPackageCS', the role 'oclstdlibcs_LibPackageCS' has cardinality 0..*, and from 'oclstdlibcs_PrecedenceCS', the role 'oclstdlibcs_PrecedenceCS' has cardinality 0..*.

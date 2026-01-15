@@ -1,0 +1,39 @@
+The domain model 'metamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'metamodel_Constraint' represents an important domain concept.
+It has the following attributes: 'reference', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+'metamodel_Database' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodel_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodel_Row' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Column' represents an important domain concept.
+It has the following attributes: 'nullable', which is of type bool; 'name', which is of type str; 'type', which is of type str; 'size', which is of type str.
+
+'metamodel_Sequence' represents an important domain concept.
+It has the following attributes: 'maxValue', which is of type str; 'startwith', which is of type str; 'incrementby', which is of type int; 'cycle', which is of type bool; 'name', which is of type str; 'minValue', which is of type int; 'currentValue', which is of type str.
+
+'metamodel_Cell' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Datatype' defines the following possible values: 'BIGINT', 'DECIMAL', 'FLOAT', 'INT', 'LONGTEXT', 'DATE', 'DATETIME', 'VARCHAR', 'SMALLINT', 'STRING', 'TINYTEXT', 'TIMESTAMP', 'TEXT', 'BOOLEAN', 'BLOB', 'CHAR', 'DOUBLE'.
+The enumeration 'ConstraintType' defines the following possible values: 'UNIQUE', 'FOREIGN_KEY', 'COMPOSITE_PRIMARY_KEY', 'PRIMARY_KEY'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metamodel_Table' and 'metamodel_Database'. From 'metamodel_Table', the role 'metamodel_Table' has cardinality 0..*, and from 'metamodel_Database', the role 'metamodel_Database' has cardinality 0..*.
+An association connects 'metamodel_Sequence' and 'metamodel_Database'. From 'metamodel_Sequence', the role 'metamodel_Sequence' has cardinality 0..*, and from 'metamodel_Database', the role 'metamodel_Database2' has cardinality 0..*.
+An association connects 'metamodel_Constraint' and 'metamodel_Table'. From 'metamodel_Constraint', the role 'metamodel_Constraint' has cardinality 0..*, and from 'metamodel_Table', the role 'metamodel_Table4' has cardinality 0..*.
+An association connects 'metamodel_Column' and 'metamodel_Table'. From 'metamodel_Column', the role 'metamodel_Column' has cardinality 0..*, and from 'metamodel_Table', the role 'metamodel_Table6' has cardinality 0..*.
+An association connects 'metamodel_Row' and 'metamodel_Table'. From 'metamodel_Row', the role 'metamodel_Row' has cardinality 0..*, and from 'metamodel_Table', the role 'metamodel_Table8' has cardinality 0..*.
+An association connects 'metamodel_Column' and 'metamodel_Constraint'. From 'metamodel_Column', the role 'metamodel_Column11' has cardinality 0..*, and from 'metamodel_Constraint', the role 'metamodel_Constraint10' has cardinality 0..*.
+An association connects 'metamodel_Column' and 'metamodel_Constraint'. From 'metamodel_Column', the role 'metamodel_Column13' has cardinality 0..*, and from 'metamodel_Constraint', the role 'metamodel_Constraint14' has cardinality 0..*.
+An association connects 'metamodel_Row' and 'metamodel_Cell'. From 'metamodel_Row', the role 'metamodel_Row16' has cardinality 0..*, and from 'metamodel_Cell', the role 'metamodel_Cell' has cardinality 0..*.
+An association connects 'metamodel_Column' and 'metamodel_Cell'. From 'metamodel_Column', the role 'metamodel_Column19' has cardinality 0..*, and from 'metamodel_Cell', the role 'metamodel_Cell18' has cardinality 0..*.

@@ -1,0 +1,50 @@
+The domain model 'hermes' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'hermes_Entity' represents an important domain concept.
+It has one attribute: 'annotations', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'hermes_Feature' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'annotations', which is of type str.
+
+'hermes_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'hermes_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'hermes_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'hermes_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'hermes_DataType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EntityAnnotation' defines a single possible value: 'Cache'.
+The enumeration 'FetureAnnotation' defines the following possible values: 'Id', 'Index', 'Ignore', 'Load'.
+The enumeration 'DataTypes' defines the following possible values: 'Integer', 'String', 'Object', 'Boolean', 'Long', 'Double'.
+
+The model also captures inheritance relationships between classes.
+The class 'hermes_Module' is a specialization of 'NamedElement'.
+The class 'hermes_Package' is a specialization of 'NamedElement'.
+The class 'hermes_Entity' is a specialization of 'NamedElement'.
+The class 'hermes_Feature' is a specialization of 'NamedElement'.
+The class 'hermes_Reference' is a specialization of 'Feature'.
+The class 'hermes_DataType' is a specialization of 'Feature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hermes_Module' and 'hermes_Package'. From 'hermes_Module', the role 'hermes_Module' has cardinality 0..*, and from 'hermes_Package', the role 'hermes_Package' has cardinality 0..*.
+An association connects 'hermes_Entity' and 'hermes_Package'. From 'hermes_Entity', the role 'hermes_Entity' has cardinality 0..*, and from 'hermes_Package', the role 'hermes_Package2' has cardinality 0..*.
+An association connects 'hermes_Entity' and 'hermes_Feature'. From 'hermes_Entity', the role 'hermes_Entity4' has cardinality 0..*, and from 'hermes_Feature', the role 'hermes_Feature' has cardinality 0..*.
+An association connects 'hermes_Entity' and 'hermes_Entity'. From 'hermes_Entity', the role 'hermes_Entity7' has cardinality 0..*, and from 'hermes_Entity', the role 'hermes_Entity5' has cardinality 0..*.
+An association connects 'hermes_Reference' and 'hermes_Entity'. From 'hermes_Reference', the role 'hermes_Reference' has cardinality 0..*, and from 'hermes_Entity', the role 'hermes_Entity9' has cardinality 0..*.

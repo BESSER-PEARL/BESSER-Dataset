@@ -1,0 +1,174 @@
+The domain model 'giraffeDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'giraffeDSL_ActionRangeType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type str; 'type', which is of type str.
+
+'giraffeDSL_MonitorRangeType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type str; 'type', which is of type str.
+
+'giraffeDSL_VirtualMachineTypeFeature' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'many', which is of type str.
+
+'giraffeDSL_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'giraffeDSL_CloudCredentialType' represents an important domain concept.
+It has the following attributes: 'many', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+'giraffeDSL_DeployTypeFeature' represents an important domain concept.
+It has the following attributes: 'many', which is of type str; 'name', which is of type str.
+
+'giraffeDSL_DomainModel' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_CloudProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_DeployRangeType' represents an important domain concept.
+It has the following attributes: 'many', which is of type str; 'type', which is of type str; 'name', which is of type str.
+
+'giraffeDSL_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_CloudPasswordType' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_InitIncrementFeature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type int; 'many', which is of type str.
+
+'giraffeDSL_ActionMethodType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'many', which is of type str; 'name', which is of type str.
+
+'giraffeDSL_ScriptType' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_StressClassType' represents an important domain concept.
+It has the following attributes: 'many', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+'giraffeDSL_DeployType' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_CloudUserType' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_CloudType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'many', which is of type str.
+
+'giraffeDSL_InitMachinesFeature' represents an important domain concept.
+It has the following attributes: 'type', which is of type int; 'many', which is of type str; 'name', which is of type str.
+
+'CloudOptionalTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_GeoZoneType' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_StressRangeType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'many', which is of type str.
+
+'giraffeDSL_DeployAppClassType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'many', which is of type str; 'name', which is of type str.
+
+'giraffeDSL_DeployAppFeature' represents an important domain concept.
+It has the following attributes: 'many', which is of type str; 'name', which is of type str.
+
+'giraffeDSL_ActionClassType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'many', which is of type str; 'name', which is of type str.
+
+'giraffeDSL_MgmAddressType' represents an important domain concept.
+It has the following attributes: 'many', which is of type str; 'type', which is of type str; 'name', which is of type str.
+
+'giraffeDSL_Stress' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_DeployAppSlaveMethodType' represents an important domain concept.
+It has the following attributes: 'many', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_VirtualMachineFeature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type str.
+
+'giraffeDSL_StressMethodType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type str; 'type', which is of type str.
+
+'giraffeDSL_CloudProviderType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type str.
+
+'giraffeDSL_DeployApp' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_Deploy' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_DeployAppMasterMethodType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'many', which is of type str; 'name', which is of type str.
+
+'giraffeDSL_MonitoringType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'many', which is of type str.
+
+'giraffeDSL_Features' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'giraffeDSL_IntFeature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'giraffeDSL_Create' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_VirtualMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_Monitor' represents an important domain concept.
+It does not declare any attributes.
+
+'giraffeDSL_CloudOptionalTypes' represents an important domain concept.
+It has the following attributes: 'many', which is of type str; 'type', which is of type str; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'giraffeDSL_Create' is a specialization of 'Type'.
+The class 'giraffeDSL_VirtualMachine' is a specialization of 'Type'.
+The class 'giraffeDSL_CloudProvider' is a specialization of 'Type'.
+The class 'giraffeDSL_ScriptType' is a specialization of 'CloudOptionalTypes'.
+The class 'giraffeDSL_GeoZoneType' is a specialization of 'CloudOptionalTypes'.
+The class 'giraffeDSL_CloudUserType' is a specialization of 'CloudOptionalTypes'.
+The class 'giraffeDSL_CloudPasswordType' is a specialization of 'CloudOptionalTypes'.
+The class 'giraffeDSL_Deploy' is a specialization of 'Type'.
+The class 'giraffeDSL_DeployType' is a specialization of 'Type'.
+The class 'giraffeDSL_DeployApp' is a specialization of 'Type'.
+The class 'giraffeDSL_Monitor' is a specialization of 'Type'.
+The class 'giraffeDSL_Stress' is a specialization of 'Type'.
+The class 'giraffeDSL_Action' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'giraffeDSL_Type' and 'giraffeDSL_DomainModel'. From 'giraffeDSL_Type', the role 'giraffeDSL_Type' has cardinality 0..*, and from 'giraffeDSL_DomainModel', the role 'giraffeDSL_DomainModel' has cardinality 0..*.
+An association connects 'giraffeDSL_VirtualMachineFeature' and 'giraffeDSL_Create'. From 'giraffeDSL_VirtualMachineFeature', the role 'giraffeDSL_VirtualMachineFeature' has cardinality 0..*, and from 'giraffeDSL_Create', the role 'giraffeDSL_Create' has cardinality 0..*.
+An association connects 'giraffeDSL_Create' and 'giraffeDSL_InitMachinesFeature'. From 'giraffeDSL_Create', the role 'giraffeDSL_Create3' has cardinality 0..*, and from 'giraffeDSL_InitMachinesFeature', the role 'giraffeDSL_InitMachinesFeature' has cardinality 0..*.
+An association connects 'giraffeDSL_InitIncrementFeature' and 'giraffeDSL_Create'. From 'giraffeDSL_InitIncrementFeature', the role 'giraffeDSL_InitIncrementFeature' has cardinality 0..*, and from 'giraffeDSL_Create', the role 'giraffeDSL_Create5' has cardinality 0..*.
+An association connects 'giraffeDSL_VirtualMachineFeature' and 'giraffeDSL_VirtualMachine'. From 'giraffeDSL_VirtualMachineFeature', the role 'giraffeDSL_VirtualMachineFeature7' has cardinality 0..*, and from 'giraffeDSL_VirtualMachine', the role 'giraffeDSL_VirtualMachine' has cardinality 0..*.
+An association connects 'giraffeDSL_VirtualMachine' and 'giraffeDSL_VirtualMachineTypeFeature'. From 'giraffeDSL_VirtualMachine', the role 'giraffeDSL_VirtualMachine9' has cardinality 0..*, and from 'giraffeDSL_VirtualMachineTypeFeature', the role 'giraffeDSL_VirtualMachineTypeFeature' has cardinality 0..*.
+An association connects 'giraffeDSL_CloudProviderType' and 'giraffeDSL_VirtualMachine'. From 'giraffeDSL_CloudProviderType', the role 'giraffeDSL_CloudProviderType' has cardinality 0..*, and from 'giraffeDSL_VirtualMachine', the role 'giraffeDSL_VirtualMachine11' has cardinality 0..*.
+An association connects 'giraffeDSL_CloudProvider' and 'giraffeDSL_CloudProviderType'. From 'giraffeDSL_CloudProvider', the role 'giraffeDSL_CloudProvider' has cardinality 0..*, and from 'giraffeDSL_CloudProviderType', the role 'giraffeDSL_CloudProviderType13' has cardinality 0..*.
+An association connects 'giraffeDSL_CloudType' and 'giraffeDSL_CloudProvider'. From 'giraffeDSL_CloudType', the role 'giraffeDSL_CloudType' has cardinality 0..*, and from 'giraffeDSL_CloudProvider', the role 'giraffeDSL_CloudProvider15' has cardinality 0..*.
+An association connects 'giraffeDSL_CloudProvider' and 'giraffeDSL_MgmAddressType'. From 'giraffeDSL_CloudProvider', the role 'giraffeDSL_CloudProvider17' has cardinality 0..*, and from 'giraffeDSL_MgmAddressType', the role 'giraffeDSL_MgmAddressType' has cardinality 0..*.
+An association connects 'giraffeDSL_CloudProvider' and 'giraffeDSL_CloudCredentialType'. From 'giraffeDSL_CloudProvider', the role 'giraffeDSL_CloudProvider19' has cardinality 0..*, and from 'giraffeDSL_CloudCredentialType', the role 'giraffeDSL_CloudCredentialType' has cardinality 0..*.
+An association connects 'giraffeDSL_CloudProvider' and 'giraffeDSL_CloudOptionalTypes'. From 'giraffeDSL_CloudProvider', the role 'giraffeDSL_CloudProvider21' has cardinality 0..*, and from 'giraffeDSL_CloudOptionalTypes', the role 'giraffeDSL_CloudOptionalTypes' has cardinality 0..*.
+An association connects 'giraffeDSL_Deploy' and 'giraffeDSL_DeployAppFeature'. From 'giraffeDSL_Deploy', the role 'giraffeDSL_Deploy' has cardinality 0..*, and from 'giraffeDSL_DeployAppFeature', the role 'giraffeDSL_DeployAppFeature' has cardinality 0..*.
+An association connects 'giraffeDSL_Deploy' and 'giraffeDSL_DeployTypeFeature'. From 'giraffeDSL_Deploy', the role 'giraffeDSL_Deploy24' has cardinality 0..*, and from 'giraffeDSL_DeployTypeFeature', the role 'giraffeDSL_DeployTypeFeature' has cardinality 0..*.
+An association connects 'giraffeDSL_DeployAppFeature' and 'giraffeDSL_DeployApp'. From 'giraffeDSL_DeployAppFeature', the role 'giraffeDSL_DeployAppFeature26' has cardinality 0..*, and from 'giraffeDSL_DeployApp', the role 'giraffeDSL_DeployApp' has cardinality 0..*.
+An association connects 'giraffeDSL_DeployType' and 'giraffeDSL_DeployTypeFeature'. From 'giraffeDSL_DeployType', the role 'giraffeDSL_DeployType' has cardinality 0..*, and from 'giraffeDSL_DeployTypeFeature', the role 'giraffeDSL_DeployTypeFeature28' has cardinality 0..*.
+An association connects 'giraffeDSL_DeployType' and 'giraffeDSL_DeployRangeType'. From 'giraffeDSL_DeployType', the role 'giraffeDSL_DeployType30' has cardinality 0..*, and from 'giraffeDSL_DeployRangeType', the role 'giraffeDSL_DeployRangeType' has cardinality 0..*.
+An association connects 'giraffeDSL_DeployApp' and 'giraffeDSL_DeployAppClassType'. From 'giraffeDSL_DeployApp', the role 'giraffeDSL_DeployApp32' has cardinality 0..*, and from 'giraffeDSL_DeployAppClassType', the role 'giraffeDSL_DeployAppClassType' has cardinality 0..*.
+An association connects 'giraffeDSL_DeployApp' and 'giraffeDSL_DeployAppMasterMethodType'. From 'giraffeDSL_DeployApp', the role 'giraffeDSL_DeployApp34' has cardinality 0..*, and from 'giraffeDSL_DeployAppMasterMethodType', the role 'giraffeDSL_DeployAppMasterMethodType' has cardinality 0..*.
+An association connects 'giraffeDSL_DeployAppSlaveMethodType' and 'giraffeDSL_DeployApp'. From 'giraffeDSL_DeployAppSlaveMethodType', the role 'giraffeDSL_DeployAppSlaveMethodType' has cardinality 0..*, and from 'giraffeDSL_DeployApp', the role 'giraffeDSL_DeployApp36' has cardinality 0..*.
+An association connects 'giraffeDSL_Monitor' and 'giraffeDSL_MonitorRangeType'. From 'giraffeDSL_Monitor', the role 'giraffeDSL_Monitor' has cardinality 0..*, and from 'giraffeDSL_MonitorRangeType', the role 'giraffeDSL_MonitorRangeType' has cardinality 0..*.
+An association connects 'giraffeDSL_MonitoringType' and 'giraffeDSL_Monitor'. From 'giraffeDSL_MonitoringType', the role 'giraffeDSL_MonitoringType' has cardinality 0..*, and from 'giraffeDSL_Monitor', the role 'giraffeDSL_Monitor39' has cardinality 0..*.
+An association connects 'giraffeDSL_Stress' and 'giraffeDSL_StressRangeType'. From 'giraffeDSL_Stress', the role 'giraffeDSL_Stress' has cardinality 0..*, and from 'giraffeDSL_StressRangeType', the role 'giraffeDSL_StressRangeType' has cardinality 0..*.
+An association connects 'giraffeDSL_Stress' and 'giraffeDSL_StressClassType'. From 'giraffeDSL_Stress', the role 'giraffeDSL_Stress42' has cardinality 0..*, and from 'giraffeDSL_StressClassType', the role 'giraffeDSL_StressClassType' has cardinality 0..*.
+An association connects 'giraffeDSL_StressMethodType' and 'giraffeDSL_Stress'. From 'giraffeDSL_StressMethodType', the role 'giraffeDSL_StressMethodType' has cardinality 0..*, and from 'giraffeDSL_Stress', the role 'giraffeDSL_Stress44' has cardinality 0..*.
+An association connects 'giraffeDSL_Action' and 'giraffeDSL_ActionRangeType'. From 'giraffeDSL_Action', the role 'giraffeDSL_Action' has cardinality 0..*, and from 'giraffeDSL_ActionRangeType', the role 'giraffeDSL_ActionRangeType' has cardinality 0..*.
+An association connects 'giraffeDSL_Action' and 'giraffeDSL_ActionClassType'. From 'giraffeDSL_Action', the role 'giraffeDSL_Action47' has cardinality 0..*, and from 'giraffeDSL_ActionClassType', the role 'giraffeDSL_ActionClassType' has cardinality 0..*.
+An association connects 'giraffeDSL_Action' and 'giraffeDSL_ActionMethodType'. From 'giraffeDSL_Action', the role 'giraffeDSL_Action49' has cardinality 0..*, and from 'giraffeDSL_ActionMethodType', the role 'giraffeDSL_ActionMethodType' has cardinality 0..*.

@@ -1,0 +1,28 @@
+The domain model 'eMFProject' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'eMFProject_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eMFProject_Command' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'name', which is of type str.
+
+'eMFProject_Statemachine' represents an important domain concept.
+It does not declare any attributes.
+
+'eMFProject_Event' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str.
+
+'eMFProject_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'eMFProject_Event' and 'eMFProject_Statemachine'. From 'eMFProject_Event', the role 'eMFProject_Event' has cardinality 0..*, and from 'eMFProject_Statemachine', the role 'eMFProject_Statemachine' has cardinality 0..*.
+An association connects 'eMFProject_Event' and 'eMFProject_Statemachine'. From 'eMFProject_Event', the role 'eMFProject_Event3' has cardinality 0..*, and from 'eMFProject_Statemachine', the role 'eMFProject_Statemachine2' has cardinality 0..*.
+An association connects 'eMFProject_Statemachine' and 'eMFProject_Command'. From 'eMFProject_Statemachine', the role 'eMFProject_Statemachine5' has cardinality 0..*, and from 'eMFProject_Command', the role 'eMFProject_Command' has cardinality 0..*.
+An association connects 'eMFProject_State' and 'eMFProject_Statemachine'. From 'eMFProject_State', the role 'eMFProject_State' has cardinality 0..*, and from 'eMFProject_Statemachine', the role 'eMFProject_Statemachine7' has cardinality 0..*.
+An association connects 'eMFProject_Command' and 'eMFProject_State'. From 'eMFProject_Command', the role 'eMFProject_Command10' has cardinality 0..*, and from 'eMFProject_State', the role 'eMFProject_State9' has cardinality 0..*.
+An association connects 'eMFProject_State' and 'eMFProject_Transition'. From 'eMFProject_State', the role 'eMFProject_State12' has cardinality 0..*, and from 'eMFProject_Transition', the role 'eMFProject_Transition' has cardinality 0..*.
+An association connects 'eMFProject_Event' and 'eMFProject_Transition'. From 'eMFProject_Event', the role 'eMFProject_Event15' has cardinality 0..*, and from 'eMFProject_Transition', the role 'eMFProject_Transition14' has cardinality 0..*.
+An association connects 'eMFProject_Transition' and 'eMFProject_State'. From 'eMFProject_Transition', the role 'eMFProject_Transition17' has cardinality 0..*, and from 'eMFProject_State', the role 'eMFProject_State18' has cardinality 0..*.

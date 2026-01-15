@@ -1,0 +1,50 @@
+The domain model 'decobat' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'decobat_Product' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'unitWeight', which is of type str; 'height', which is of type str; 'depth', which is of type str; 'unitBilledPrice', which is of type str; 'name', which is of type str; 'created', which is of type date; 'update', which is of type date; 'shortDescription', which is of type str; 'description', which is of type str; 'unitCostPrice', which is of type str.
+
+'decobat_Supplier' represents an important domain concept.
+It has the following attributes: 'fax', which is of type str; 'code', which is of type str; 'phone', which is of type str; 'email', which is of type str; 'city', which is of type str; 'address', which is of type str; 'zip', which is of type str; 'country', which is of type str; 'name', which is of type str.
+
+'decobat_Object' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'shortDescription', which is of type str; 'code', which is of type str.
+
+'decobat_Project' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'shortDescription', which is of type str; 'name', which is of type str; 'created', which is of type date; 'closed', which is of type date.
+
+'decobat_Level' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'shortDescription', which is of type str; 'name', which is of type str; 'code', which is of type str.
+
+'decobat_Service' represents an important domain concept.
+It has the following attributes: 'hourlyCostPrice', which is of type str; 'hourlyBilledPrice', which is of type str; 'shortDescription', which is of type str; 'description', which is of type str; 'name', which is of type str; 'code', which is of type str.
+
+'decobat_Customer' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str; 'phone', which is of type str; 'city', which is of type str; 'country', which is of type str; 'fax', which is of type str; 'zip', which is of type str; 'address', which is of type str; 'email', which is of type str.
+
+'decobat_LibraryCategory' represents an important domain concept.
+It has the following attributes: 'shortDescription', which is of type str; 'created', which is of type date; 'description', which is of type str; 'name', which is of type str.
+
+'decobat_ProjectCategory' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'created', which is of type date; 'shortDescription', which is of type str; 'description', which is of type str.
+
+'decobat_Library' represents an important domain concept.
+It has the following attributes: 'created', which is of type date; 'depth', which is of type str; 'update', which is of type date; 'name', which is of type str; 'width', which is of type str; 'description', which is of type str; 'shortDescription', which is of type str; 'height', which is of type str.
+
+'decobat_ProjectRevision' represents an important domain concept.
+It has the following attributes: 'shortDescription', which is of type str; 'update', which is of type date; 'comment', which is of type str; 'description', which is of type str.
+
+'decobat_Plan' represents an important domain concept.
+It has the following attributes: 'shortDescription', which is of type str; 'name', which is of type str; 'description', which is of type str; 'code', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'decobat_Project' and 'decobat_ProjectRevision'. From 'decobat_Project', the role 'decobat_Project' has cardinality 0..*, and from 'decobat_ProjectRevision', the role 'decobat_ProjectRevision' has cardinality 0..*.
+An association connects 'decobat_Project' and 'decobat_ProjectCategory'. From 'decobat_Project', the role 'decobat_Project2' has cardinality 0..*, and from 'decobat_ProjectCategory', the role 'decobat_ProjectCategory' has cardinality 0..*.
+An association connects 'decobat_Plan' and 'decobat_Project'. From 'decobat_Plan', the role 'decobat_Plan' has cardinality 0..*, and from 'decobat_Project', the role 'decobat_Project4' has cardinality 0..*.
+An association connects 'decobat_Project' and 'decobat_Customer'. From 'decobat_Project', the role 'decobat_Project6' has cardinality 0..*, and from 'decobat_Customer', the role 'decobat_Customer' has cardinality 0..*.
+An association connects 'decobat_LibraryCategory' and 'decobat_Library'. From 'decobat_LibraryCategory', the role 'decobat_LibraryCategory' has cardinality 0..*, and from 'decobat_Library', the role 'decobat_Library' has cardinality 0..*.
+An association connects 'decobat_Supplier' and 'decobat_Product'. From 'decobat_Supplier', the role 'decobat_Supplier' has cardinality 0..*, and from 'decobat_Product', the role 'decobat_Product' has cardinality 0..*.
+An association connects 'decobat_Plan' and 'decobat_Level'. From 'decobat_Plan', the role 'decobat_Plan10' has cardinality 0..*, and from 'decobat_Level', the role 'decobat_Level' has cardinality 0..*.
+An association connects 'decobat_Level' and 'decobat_Library'. From 'decobat_Level', the role 'decobat_Level12' has cardinality 0..*, and from 'decobat_Library', the role 'decobat_Library13' has cardinality 0..*.
+An association connects 'decobat_Object' and 'decobat_Library'. From 'decobat_Object', the role 'decobat_Object' has cardinality 0..*, and from 'decobat_Library', the role 'decobat_Library15' has cardinality 0..*.

@@ -1,0 +1,600 @@
+The domain model 'atem' describes the core structural elements and their relationships within the system.
+
+The model defines 123 main class(es).
+
+'atem_HeadComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_HeaderFooterDate' represents an important domain concept.
+It has the following attributes: 'dsl_HeaderFooterDate', which is of type bool; 'dsl_HeaderFooterDate_Language', which is of type str.
+
+'atem_WhenModeOfWeekCase' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Head' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_PassThroughHtml' represents an important domain concept.
+It has one attribute: 'dsl_Passthrough_html_text', which is of type str.
+
+'atem_MCD' represents an important domain concept.
+It has one attribute: 'dsl_MCD_value', which is of type bool.
+
+'atem_DOWN' represents an important domain concept.
+It has one attribute: 'dsl_Display_Mode', which is of type bool.
+
+'atem_WhenOther' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_SectionElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractDateCase' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_GenYear' represents an important domain concept.
+It has one attribute: 'dsl_Display_Year', which is of type bool.
+
+'atem_AbstractDayCase' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_WhenPentecostarionDay' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_SundaysBeforeTriodionCase' represents an important domain concept.
+It has one attribute: 'dsl_SundaysBeforeTriodionCase_Days', which is of type int.
+
+'atem_HeaderFooterColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Verse' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_WhenDayNameCase' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_DOL' represents an important domain concept.
+It has one attribute: 'dsl_Display_DayLukan', which is of type bool.
+
+'atem_Date' represents an important domain concept.
+It has the following attributes: 'dsl_Date_month', which is of type int; 'dsl_Date_year', which is of type int; 'dsl_Date_day', which is of type int.
+
+'atem_DayNameSet' represents an important domain concept.
+It has one attribute: 'dslDayNameSet_Values', which is of type str.
+
+'atem_SAEC' represents an important domain concept.
+It has one attribute: 'dsl_Display_SundayAfterElevationCross', which is of type bool.
+
+'atem_SetLocale' represents an important domain concept.
+It has the following attributes: 'dsl_SetLocale_V2', which is of type str; 'dsl_SetLocale_V1', which is of type str.
+
+'atem_WhenTriodionDay' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_HeaderFooterText' represents an important domain concept.
+It has one attribute: 'dsl_HeaderFooterText', which is of type str.
+
+'atem_AbstractDayNameCase' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Driver' represents an important domain concept.
+It has the following attributes: 'dsl_Driver_RegEx', which is of type str; 'dsl_Driver_Status', which is of type str.
+
+'atem_Break' represents an important domain concept.
+It has one attribute: 'dsl_break_type', which is of type str.
+
+'atem_DOM' represents an important domain concept.
+It has one attribute: 'dsl_Display_Mode', which is of type bool.
+
+'atem_DayRange' represents an important domain concept.
+It has the following attributes: 'dsl_Range_To', which is of type int; 'dsl_DayRange_from', which is of type int.
+
+'AbstractDayNameCase' represents an important domain concept.
+It does not declare any attributes.
+
+'SectionElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_DOP' represents an important domain concept.
+It has one attribute: 'dsl_Display_Mode', which is of type bool.
+
+'HeaderFooterFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_AtemModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HeadComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_TemplateTitle' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_WhenMovableCycleDay' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_PrefaceFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_HeaderFooterCommemoration' represents an important domain concept.
+It has one attribute: 'dsl_HeaderFooterCommemoration', which is of type bool.
+
+'atem_HeaderFooterPageNumber' represents an important domain concept.
+It has one attribute: 'dsl_HeaderFooterPageNumber', which is of type bool.
+
+'atem_InfoElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_SectionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_RestoreLocale' represents an important domain concept.
+It has one attribute: 'dsl_RestoreLocale', which is of type bool.
+
+'atem_WhenPascha' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_HeaderFooterLookup' represents an important domain concept.
+It has one attribute: 'dsl_HeaderFooterLookup_Language', which is of type str.
+
+'atem_WhenDayName' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Paragraph' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_WhenDateCase' represents an important domain concept.
+It has one attribute: 'dsl_WhenDate_Case_Month', which is of type str.
+
+'atem_WhenModeOfWeek' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Reading' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_HeaderFooterTitle' represents an important domain concept.
+It has one attribute: 'dsl_HeaderFooterTitle', which is of type bool.
+
+'atem_PageKeepWithNext' represents an important domain concept.
+It has one attribute: 'dsl_PageKeepWithNext_value', which is of type str.
+
+'InfoElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_All' represents an important domain concept.
+It has one attribute: 'dsl_Display_LiturgicalDayProperties', which is of type bool.
+
+'atem_Commemoration' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_PageFooterEven' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_SubTitle' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_DateSet' represents an important domain concept.
+It has one attribute: 'dslDateSet_Values', which is of type int.
+
+'atem_HeaderFooterColumnLeft' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_DayNameRange' represents an important domain concept.
+It has the following attributes: 'dsl_DayNameRange_from', which is of type str; 'dsl_DayNameRange_To', which is of type str.
+
+'atem_WhenExistsCase' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Title' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Aid' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atem_PageHeaderEven' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_HeaderFooterColumnRight' represents an important domain concept.
+It does not declare any attributes.
+
+'PrefaceElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_WhenSundaysBeforeTriodion' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Info' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atem_DOWT' represents an important domain concept.
+It has one attribute: 'dsl_Display_Mode', which is of type bool.
+
+'AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_WhenPeriodCase' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Media' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_SBT' represents an important domain concept.
+It has one attribute: 'dsl_Display_SundaysBeforeTriodion', which is of type bool.
+
+'atem_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_TemplateStatus' represents an important domain concept.
+It has one attribute: 'dsl_TemplateStatus', which is of type str.
+
+'atem_PageNumber' represents an important domain concept.
+It has one attribute: 'dsl_PageNumber_value', which is of type int.
+
+'atem_PageFooterOdd' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Lookup' represents an important domain concept.
+It has the following attributes: 'dsl_Lookup_OverrideDay', which is of type str; 'dsl_Lookup_Override_Mode_Set', which is of type bool; 'dsl_Lookup_OverrideMode', which is of type str; 'dsl_Lookup_Override__Day_Set', which is of type bool; 'dsl_Lookup_Media_Off', which is of type bool.
+
+'atem_Section' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atem_WhenSundayAfterElevationOfCrossDay' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Hymn' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_MOW' represents an important domain concept.
+It has one attribute: 'dsl_Display_Mode', which is of type bool.
+
+'atem_WDOLC' represents an important domain concept.
+It has one attribute: 'dsl_Display_DayLukan', which is of type bool.
+
+'atem_LDP' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractDayCase' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_VersionSwitch' represents an important domain concept.
+It has one attribute: 'dsl_VersionSwitch_flag', which is of type str.
+
+'atem_EOW' represents an important domain concept.
+It has one attribute: 'dsl_Display_Eothinon', which is of type bool.
+
+'atem_SOL' represents an important domain concept.
+It has one attribute: 'dsl_Display_StartLukan', which is of type bool.
+
+'atem_WhenExists' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Dialog' represents an important domain concept.
+It does not declare any attributes.
+
+'LdpType' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_TaggedText' represents an important domain concept.
+It does not declare any attributes.
+
+'HeaderFooterColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_HeaderFooterColumnCenter' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_NOP' represents an important domain concept.
+It has one attribute: 'dsl_Display_Mode', which is of type bool.
+
+'atem_TemplateFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Heading1' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'atem_GenDate' represents an important domain concept.
+It has one attribute: 'dsl_Display_Date', which is of type bool.
+
+'atem_Version' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atem_Heading3' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_PageHeaderOdd' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_LdpType' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_ElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Rubric' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Preface' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'atem_DateRange' represents an important domain concept.
+It has the following attributes: 'dsl_DateRange_To', which is of type int; 'dsl_DateRange_from', which is of type int.
+
+'atem_HeaderFooterFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_PassThroughPdf' represents an important domain concept.
+It has one attribute: 'dsl_Passthrough_pdf_text', which is of type str.
+
+'atem_ModeOfWeekSet' represents an important domain concept.
+It has one attribute: 'dsl_ModeOfWeekSet_MOWs', which is of type str.
+
+'atem_WOLC' represents an important domain concept.
+It has one attribute: 'dsl_Display_DayLukan', which is of type bool.
+
+'atem_ResourceText' represents an important domain concept.
+It has one attribute: 'dsl_ResourceText_Media_Off', which is of type bool.
+
+'atem_AbstractDateCase' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_WhenDate' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_Heading2' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_DaySet' represents an important domain concept.
+It has one attribute: 'dslSetValue_Days', which is of type int.
+
+'atem_WhenLukanCycleDay' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_PrefaceElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'atem_LitBook' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DayOfMonthTypes' defines the following possible values: 'D29', 'D31', 'D20', 'D13', 'D06', 'D26', 'D15', 'D05', 'D12', 'D07', 'D04', 'D22', 'D01', 'D14', 'D19', 'D16', 'D17', 'D28', 'D11', 'D21', 'D02', 'D30', 'D18', 'D25', 'D23', 'D03', 'D24', 'D27', 'D08', 'D10', 'D09'.
+The enumeration 'MonthName' defines the following possible values: 'Apr', 'May', 'Dec', 'Mar', 'Nov', 'Jul', 'Oct', 'Jan', 'Sep', 'Feb', 'Jun', 'Aug'.
+The enumeration 'Language' defines the following possible values: 'L2', 'L1'.
+The enumeration 'Seasons' defines the following possible values: 'Apostles_Fast', 'Pentecostarion', 'Triodion', 'Dormition_Fast', 'Nativity_Fast'.
+The enumeration 'DayOfWeek' defines the following possible values: 'Wednesday', 'Thursday', 'Friday', 'Monday', 'Sunday', 'Saturday', 'Tuesday'.
+The enumeration 'BookTypes' defines the following possible values: 'Horologion', 'Eothina', 'Pentecostarion', 'Psalter', 'Other', 'Heirmologion', 'Triodion', 'Octochechos', 'Katavasias', 'Menaion', 'Lectionary', 'Euchologion'.
+The enumeration 'BreakType' defines the following possible values: 'page', 'line'.
+The enumeration 'DowTypes' defines the following possible values: 'D1', 'D3', 'D7', 'D6', 'D5', 'D2', 'D4'.
+The enumeration 'VersionSwitchType' defines the following possible values: 'L1', 'L2', 'Both'.
+The enumeration 'Null' defines a single possible value: 'null'.
+The enumeration 'ModeTypes' defines the following possible values: 'M1', 'M7', 'M8', 'M6', 'M3', 'M4', 'M5', 'M2'.
+The enumeration 'PeriodType' defines the following possible values: 'pentecostarion', 'pascha', 'triodion'.
+The enumeration 'TemplateStatuses' defines the following possible values: 'Draft', 'NA', 'Review', 'Final'.
+
+The model also captures inheritance relationships between classes.
+The class 'atem_TemplateTitle' is a specialization of 'HeadComponent'.
+The class 'atem_PageKeepWithNext' is a specialization of 'HeadComponent'.
+The class 'atem_PageHeaderEven' is a specialization of 'HeadComponent'.
+The class 'atem_PageHeaderOdd' is a specialization of 'HeadComponent'.
+The class 'atem_PageFooterEven' is a specialization of 'HeadComponent'.
+The class 'atem_PageFooterOdd' is a specialization of 'HeadComponent'.
+The class 'atem_HeaderFooterColumnLeft' is a specialization of 'HeaderFooterColumn'.
+The class 'atem_HeaderFooterColumnCenter' is a specialization of 'HeaderFooterColumn'.
+The class 'atem_HeaderFooterColumnRight' is a specialization of 'HeaderFooterColumn'.
+The class 'atem_HeaderFooterText' is a specialization of 'HeaderFooterFragment'.
+The class 'atem_HeaderFooterDate' is a specialization of 'HeaderFooterFragment'.
+The class 'atem_HeaderFooterPageNumber' is a specialization of 'HeaderFooterFragment'.
+The class 'atem_HeaderFooterLookup' is a specialization of 'HeaderFooterFragment'.
+The class 'atem_HeaderFooterTitle' is a specialization of 'HeaderFooterFragment'.
+The class 'atem_HeaderFooterCommemoration' is a specialization of 'HeaderFooterFragment'.
+The class 'atem_Commemoration' is a specialization of 'HeadComponent'.
+The class 'atem_VersionSwitch' is a specialization of 'AbstractComponent'.
+The class 'atem_VersionSwitch' is a specialization of 'InfoElementType'.
+The class 'atem_VersionSwitch' is a specialization of 'PrefaceElementType'.
+The class 'atem_ResourceText' is a specialization of 'ElementType'.
+The class 'atem_Lookup' is a specialization of 'ElementType'.
+The class 'atem_LDP' is a specialization of 'ElementType'.
+The class 'atem_TaggedText' is a specialization of 'ElementType'.
+The class 'atem_Info' is a specialization of 'AbstractComponent'.
+The class 'atem_Date' is a specialization of 'HeadComponent'.
+The class 'atem_Date' is a specialization of 'SectionElementType'.
+The class 'atem_Section' is a specialization of 'AbstractComponent'.
+The class 'atem_Section' is a specialization of 'PrefaceElementType'.
+The class 'atem_Section' is a specialization of 'SectionElementType'.
+The class 'atem_All' is a specialization of 'LdpType'.
+The class 'atem_GenDate' is a specialization of 'LdpType'.
+The class 'atem_GenYear' is a specialization of 'LdpType'.
+The class 'atem_MCD' is a specialization of 'LdpType'.
+The class 'atem_MOW' is a specialization of 'LdpType'.
+The class 'atem_NOP' is a specialization of 'LdpType'.
+The class 'atem_DOM' is a specialization of 'LdpType'.
+The class 'atem_DOP' is a specialization of 'LdpType'.
+The class 'atem_DOWN' is a specialization of 'LdpType'.
+The class 'atem_DOWT' is a specialization of 'LdpType'.
+The class 'atem_EOW' is a specialization of 'LdpType'.
+The class 'atem_SAEC' is a specialization of 'LdpType'.
+The class 'atem_SOL' is a specialization of 'LdpType'.
+The class 'atem_DOL' is a specialization of 'LdpType'.
+The class 'atem_WOLC' is a specialization of 'LdpType'.
+The class 'atem_WDOLC' is a specialization of 'LdpType'.
+The class 'atem_SBT' is a specialization of 'LdpType'.
+The class 'atem_TemplateFragment' is a specialization of 'AbstractComponent'.
+The class 'atem_TemplateFragment' is a specialization of 'PrefaceElementType'.
+The class 'atem_TemplateFragment' is a specialization of 'SectionElementType'.
+The class 'atem_SectionFragment' is a specialization of 'AbstractComponent'.
+The class 'atem_SectionFragment' is a specialization of 'PrefaceElementType'.
+The class 'atem_SectionFragment' is a specialization of 'SectionElementType'.
+The class 'atem_Break' is a specialization of 'AbstractComponent'.
+The class 'atem_Break' is a specialization of 'SectionElementType'.
+The class 'atem_PageNumber' is a specialization of 'HeadComponent'.
+The class 'atem_PassThroughHtml' is a specialization of 'AbstractComponent'.
+The class 'atem_PassThroughHtml' is a specialization of 'SectionElementType'.
+The class 'atem_PassThroughPdf' is a specialization of 'AbstractComponent'.
+The class 'atem_PassThroughPdf' is a specialization of 'SectionElementType'.
+The class 'atem_Title' is a specialization of 'AbstractComponent'.
+The class 'atem_Title' is a specialization of 'InfoElementType'.
+The class 'atem_Title' is a specialization of 'PrefaceElementType'.
+The class 'atem_Title' is a specialization of 'SectionElementType'.
+The class 'atem_SubTitle' is a specialization of 'AbstractComponent'.
+The class 'atem_SubTitle' is a specialization of 'InfoElementType'.
+The class 'atem_SubTitle' is a specialization of 'PrefaceElementType'.
+The class 'atem_SubTitle' is a specialization of 'SectionElementType'.
+The class 'atem_Paragraph' is a specialization of 'AbstractComponent'.
+The class 'atem_Paragraph' is a specialization of 'InfoElementType'.
+The class 'atem_Paragraph' is a specialization of 'PrefaceElementType'.
+The class 'atem_Paragraph' is a specialization of 'SectionElementType'.
+The class 'atem_Block' is a specialization of 'AbstractComponent'.
+The class 'atem_Block' is a specialization of 'InfoElementType'.
+The class 'atem_Block' is a specialization of 'PrefaceElementType'.
+The class 'atem_Block' is a specialization of 'SectionElementType'.
+The class 'atem_Hymn' is a specialization of 'AbstractComponent'.
+The class 'atem_Hymn' is a specialization of 'SectionElementType'.
+The class 'atem_Media' is a specialization of 'AbstractComponent'.
+The class 'atem_Media' is a specialization of 'SectionElementType'.
+The class 'atem_Verse' is a specialization of 'AbstractComponent'.
+The class 'atem_Verse' is a specialization of 'SectionElementType'.
+The class 'atem_Actor' is a specialization of 'AbstractComponent'.
+The class 'atem_Actor' is a specialization of 'SectionElementType'.
+The class 'atem_Rubric' is a specialization of 'AbstractComponent'.
+The class 'atem_Rubric' is a specialization of 'SectionElementType'.
+The class 'atem_Dialog' is a specialization of 'AbstractComponent'.
+The class 'atem_Dialog' is a specialization of 'SectionElementType'.
+The class 'atem_Reading' is a specialization of 'AbstractComponent'.
+The class 'atem_Reading' is a specialization of 'SectionElementType'.
+The class 'atem_Heading1' is a specialization of 'AbstractComponent'.
+The class 'atem_Heading1' is a specialization of 'SectionElementType'.
+The class 'atem_Heading2' is a specialization of 'AbstractComponent'.
+The class 'atem_Heading2' is a specialization of 'SectionElementType'.
+The class 'atem_Heading3' is a specialization of 'AbstractComponent'.
+The class 'atem_Heading3' is a specialization of 'SectionElementType'.
+The class 'atem_Aid' is a specialization of 'AbstractComponent'.
+The class 'atem_Version' is a specialization of 'AbstractComponent'.
+The class 'atem_LitBook' is a specialization of 'AbstractComponent'.
+The class 'atem_SetLocale' is a specialization of 'AbstractComponent'.
+The class 'atem_SetLocale' is a specialization of 'SectionElementType'.
+The class 'atem_RestoreLocale' is a specialization of 'AbstractComponent'.
+The class 'atem_RestoreLocale' is a specialization of 'SectionElementType'.
+The class 'atem_WhenDate' is a specialization of 'AbstractComponent'.
+The class 'atem_WhenDate' is a specialization of 'SectionElementType'.
+The class 'atem_DateRange' is a specialization of 'AbstractDateCase'.
+The class 'atem_DateSet' is a specialization of 'AbstractDateCase'.
+The class 'atem_WhenDayName' is a specialization of 'AbstractComponent'.
+The class 'atem_WhenDayName' is a specialization of 'SectionElementType'.
+The class 'atem_DayNameRange' is a specialization of 'AbstractDayNameCase'.
+The class 'atem_DayNameSet' is a specialization of 'AbstractDayNameCase'.
+The class 'atem_WhenPentecostarionDay' is a specialization of 'AbstractComponent'.
+The class 'atem_WhenPentecostarionDay' is a specialization of 'SectionElementType'.
+The class 'atem_WhenTriodionDay' is a specialization of 'AbstractComponent'.
+The class 'atem_WhenTriodionDay' is a specialization of 'SectionElementType'.
+The class 'atem_WhenMovableCycleDay' is a specialization of 'AbstractComponent'.
+The class 'atem_WhenMovableCycleDay' is a specialization of 'SectionElementType'.
+The class 'atem_WhenSundayAfterElevationOfCrossDay' is a specialization of 'AbstractComponent'.
+The class 'atem_WhenSundayAfterElevationOfCrossDay' is a specialization of 'SectionElementType'.
+The class 'atem_WhenLukanCycleDay' is a specialization of 'AbstractComponent'.
+The class 'atem_WhenLukanCycleDay' is a specialization of 'SectionElementType'.
+The class 'atem_WhenPascha' is a specialization of 'AbstractComponent'.
+The class 'atem_WhenPascha' is a specialization of 'SectionElementType'.
+The class 'atem_DayRange' is a specialization of 'AbstractDayCase'.
+The class 'atem_DaySet' is a specialization of 'AbstractDayCase'.
+The class 'atem_WhenModeOfWeek' is a specialization of 'AbstractComponent'.
+The class 'atem_WhenModeOfWeek' is a specialization of 'SectionElementType'.
+The class 'atem_WhenSundaysBeforeTriodion' is a specialization of 'AbstractComponent'.
+The class 'atem_WhenSundaysBeforeTriodion' is a specialization of 'SectionElementType'.
+The class 'atem_WhenExists' is a specialization of 'AbstractComponent'.
+The class 'atem_WhenExists' is a specialization of 'SectionElementType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'atem_AtemModel' and 'atem_TemplateStatus'. From 'atem_AtemModel', the role 'atem_AtemModel' has cardinality 0..*, and from 'atem_TemplateStatus', the role 'atem_TemplateStatus' has cardinality 0..*.
+An association connects 'atem_AtemModel' and 'atem_Import'. From 'atem_AtemModel', the role 'atem_AtemModel2' has cardinality 0..*, and from 'atem_Import', the role 'atem_Import' has cardinality 0..*.
+An association connects 'atem_Driver' and 'atem_AtemModel'. From 'atem_Driver', the role 'atem_Driver' has cardinality 0..*, and from 'atem_AtemModel', the role 'atem_AtemModel4' has cardinality 0..*.
+An association connects 'atem_AtemModel' and 'atem_Head'. From 'atem_AtemModel', the role 'atem_AtemModel6' has cardinality 0..*, and from 'atem_Head', the role 'atem_Head' has cardinality 0..*.
+An association connects 'atem_AtemModel' and 'atem_Preface'. From 'atem_AtemModel', the role 'atem_AtemModel8' has cardinality 0..*, and from 'atem_Preface', the role 'atem_Preface' has cardinality 0..*.
+An association connects 'atem_AbstractComponent' and 'atem_AtemModel'. From 'atem_AbstractComponent', the role 'atem_AbstractComponent' has cardinality 0..*, and from 'atem_AtemModel', the role 'atem_AtemModel10' has cardinality 0..*.
+An association connects 'atem_HeadComponent' and 'atem_Head'. From 'atem_HeadComponent', the role 'atem_HeadComponent' has cardinality 0..*, and from 'atem_Head', the role 'atem_Head12' has cardinality 0..*.
+An association connects 'atem_TemplateTitle' and 'atem_HeaderFooterFragment'. From 'atem_TemplateTitle', the role 'atem_TemplateTitle' has cardinality 0..*, and from 'atem_HeaderFooterFragment', the role 'atem_HeaderFooterFragment' has cardinality 0..*.
+An association connects 'atem_PageHeaderEven' and 'atem_HeaderFooterColumn'. From 'atem_PageHeaderEven', the role 'atem_PageHeaderEven' has cardinality 0..*, and from 'atem_HeaderFooterColumn', the role 'atem_HeaderFooterColumn' has cardinality 0..*.
+An association connects 'atem_HeaderFooterColumn' and 'atem_PageHeaderOdd'. From 'atem_HeaderFooterColumn', the role 'atem_HeaderFooterColumn16' has cardinality 0..*, and from 'atem_PageHeaderOdd', the role 'atem_PageHeaderOdd' has cardinality 0..*.
+An association connects 'atem_PageFooterEven' and 'atem_HeaderFooterColumn'. From 'atem_PageFooterEven', the role 'atem_PageFooterEven' has cardinality 0..*, and from 'atem_HeaderFooterColumn', the role 'atem_HeaderFooterColumn18' has cardinality 0..*.
+An association connects 'atem_HeaderFooterColumn' and 'atem_PageFooterOdd'. From 'atem_HeaderFooterColumn', the role 'atem_HeaderFooterColumn20' has cardinality 0..*, and from 'atem_PageFooterOdd', the role 'atem_PageFooterOdd' has cardinality 0..*.
+An association connects 'atem_HeaderFooterFragment' and 'atem_HeaderFooterColumn'. From 'atem_HeaderFooterFragment', the role 'atem_HeaderFooterFragment23' has cardinality 0..*, and from 'atem_HeaderFooterColumn', the role 'atem_HeaderFooterColumn22' has cardinality 0..*.
+An association connects 'atem_ElementType' and 'atem_HeaderFooterLookup'. From 'atem_ElementType', the role 'atem_ElementType' has cardinality 0..*, and from 'atem_HeaderFooterLookup', the role 'atem_HeaderFooterLookup' has cardinality 0..*.
+An association connects 'atem_Commemoration' and 'atem_HeaderFooterFragment'. From 'atem_Commemoration', the role 'atem_Commemoration' has cardinality 0..*, and from 'atem_HeaderFooterFragment', the role 'atem_HeaderFooterFragment26' has cardinality 0..*.
+An association connects 'atem_ResourceText' and 'atem_Definition'. From 'atem_ResourceText', the role 'atem_ResourceText' has cardinality 0..*, and from 'atem_Definition', the role 'atem_Definition' has cardinality 0..*.
+An association connects 'atem_Definition' and 'atem_Lookup'. From 'atem_Definition', the role 'atem_Definition29' has cardinality 0..*, and from 'atem_Lookup', the role 'atem_Lookup' has cardinality 0..*.
+An association connects 'atem_LdpType' and 'atem_LDP'. From 'atem_LdpType', the role 'atem_LdpType' has cardinality 0..*, and from 'atem_LDP', the role 'atem_LDP' has cardinality 0..*.
+An association connects 'atem_TaggedText' and 'atem_Definition'. From 'atem_TaggedText', the role 'atem_TaggedText' has cardinality 0..*, and from 'atem_Definition', the role 'atem_Definition32' has cardinality 0..*.
+An association connects 'atem_ElementType' and 'atem_TaggedText'. From 'atem_ElementType', the role 'atem_ElementType35' has cardinality 0..*, and from 'atem_TaggedText', the role 'atem_TaggedText34' has cardinality 0..*.
+An association connects 'atem_Info' and 'atem_InfoElementType'. From 'atem_Info', the role 'atem_Info' has cardinality 0..*, and from 'atem_InfoElementType', the role 'atem_InfoElementType' has cardinality 0..*.
+An association connects 'atem_PrefaceElementType' and 'atem_Preface'. From 'atem_PrefaceElementType', the role 'atem_PrefaceElementType' has cardinality 0..*, and from 'atem_Preface', the role 'atem_Preface38' has cardinality 0..*.
+An association connects 'atem_Section' and 'atem_Definition'. From 'atem_Section', the role 'atem_Section' has cardinality 0..*, and from 'atem_Definition', the role 'atem_Definition40' has cardinality 0..*.
+An association connects 'atem_Section' and 'atem_SectionElementType'. From 'atem_Section', the role 'atem_Section42' has cardinality 0..*, and from 'atem_SectionElementType', the role 'atem_SectionElementType' has cardinality 0..*.
+An association connects 'atem_AtemModel' and 'atem_TemplateFragment'. From 'atem_AtemModel', the role 'atem_AtemModel44' has cardinality 0..*, and from 'atem_TemplateFragment', the role 'atem_TemplateFragment' has cardinality 0..*.
+An association connects 'atem_PrefaceFragment' and 'atem_Preface'. From 'atem_PrefaceFragment', the role 'atem_PrefaceFragment' has cardinality 0..*, and from 'atem_Preface', the role 'atem_Preface46' has cardinality 0..*.
+An association connects 'atem_SectionFragment' and 'atem_Section'. From 'atem_SectionFragment', the role 'atem_SectionFragment' has cardinality 0..*, and from 'atem_Section', the role 'atem_Section48' has cardinality 0..*.
+An association connects 'atem_Title' and 'atem_Definition'. From 'atem_Title', the role 'atem_Title' has cardinality 0..*, and from 'atem_Definition', the role 'atem_Definition50' has cardinality 0..*.
+An association connects 'atem_ElementType' and 'atem_Title'. From 'atem_ElementType', the role 'atem_ElementType53' has cardinality 0..*, and from 'atem_Title', the role 'atem_Title52' has cardinality 0..*.
+An association connects 'atem_Definition' and 'atem_SubTitle'. From 'atem_Definition', the role 'atem_Definition55' has cardinality 0..*, and from 'atem_SubTitle', the role 'atem_SubTitle' has cardinality 0..*.
+An association connects 'atem_SubTitle' and 'atem_ElementType'. From 'atem_SubTitle', the role 'atem_SubTitle57' has cardinality 0..*, and from 'atem_ElementType', the role 'atem_ElementType58' has cardinality 0..*.
+An association connects 'atem_Paragraph' and 'atem_Definition'. From 'atem_Paragraph', the role 'atem_Paragraph' has cardinality 0..*, and from 'atem_Definition', the role 'atem_Definition60' has cardinality 0..*.
+An association connects 'atem_Paragraph' and 'atem_ElementType'. From 'atem_Paragraph', the role 'atem_Paragraph62' has cardinality 0..*, and from 'atem_ElementType', the role 'atem_ElementType63' has cardinality 0..*.
+An association connects 'atem_Definition' and 'atem_Block'. From 'atem_Definition', the role 'atem_Definition65' has cardinality 0..*, and from 'atem_Block', the role 'atem_Block' has cardinality 0..*.
+An association connects 'atem_Block' and 'atem_ElementType'. From 'atem_Block', the role 'atem_Block67' has cardinality 0..*, and from 'atem_ElementType', the role 'atem_ElementType68' has cardinality 0..*.
+An association connects 'atem_ElementType' and 'atem_Hymn'. From 'atem_ElementType', the role 'atem_ElementType70' has cardinality 0..*, and from 'atem_Hymn', the role 'atem_Hymn' has cardinality 0..*.
+An association connects 'atem_ElementType' and 'atem_Media'. From 'atem_ElementType', the role 'atem_ElementType72' has cardinality 0..*, and from 'atem_Media', the role 'atem_Media' has cardinality 0..*.
+An association connects 'atem_ElementType' and 'atem_Verse'. From 'atem_ElementType', the role 'atem_ElementType74' has cardinality 0..*, and from 'atem_Verse', the role 'atem_Verse' has cardinality 0..*.
+An association connects 'atem_Actor' and 'atem_ElementType'. From 'atem_Actor', the role 'atem_Actor' has cardinality 0..*, and from 'atem_ElementType', the role 'atem_ElementType76' has cardinality 0..*.
+An association connects 'atem_ElementType' and 'atem_Rubric'. From 'atem_ElementType', the role 'atem_ElementType78' has cardinality 0..*, and from 'atem_Rubric', the role 'atem_Rubric' has cardinality 0..*.
+An association connects 'atem_ElementType' and 'atem_Dialog'. From 'atem_ElementType', the role 'atem_ElementType80' has cardinality 0..*, and from 'atem_Dialog', the role 'atem_Dialog' has cardinality 0..*.
+An association connects 'atem_ElementType' and 'atem_Reading'. From 'atem_ElementType', the role 'atem_ElementType82' has cardinality 0..*, and from 'atem_Reading', the role 'atem_Reading' has cardinality 0..*.
+An association connects 'atem_Heading1' and 'atem_ElementType'. From 'atem_Heading1', the role 'atem_Heading1' has cardinality 0..*, and from 'atem_ElementType', the role 'atem_ElementType84' has cardinality 0..*.
+An association connects 'atem_ElementType' and 'atem_Heading2'. From 'atem_ElementType', the role 'atem_ElementType86' has cardinality 0..*, and from 'atem_Heading2', the role 'atem_Heading2' has cardinality 0..*.
+An association connects 'atem_ElementType' and 'atem_Heading3'. From 'atem_ElementType', the role 'atem_ElementType88' has cardinality 0..*, and from 'atem_Heading3', the role 'atem_Heading3' has cardinality 0..*.
+An association connects 'atem_WhenDateCase' and 'atem_WhenDate'. From 'atem_WhenDateCase', the role 'atem_WhenDateCase' has cardinality 0..*, and from 'atem_WhenDate', the role 'atem_WhenDate' has cardinality 0..*.
+An association connects 'atem_WhenDate' and 'atem_WhenOther'. From 'atem_WhenDate', the role 'atem_WhenDate91' has cardinality 0..*, and from 'atem_WhenOther', the role 'atem_WhenOther' has cardinality 0..*.
+An association connects 'atem_WhenDateCase' and 'atem_AbstractDateCase'. From 'atem_WhenDateCase', the role 'atem_WhenDateCase93' has cardinality 0..*, and from 'atem_AbstractDateCase', the role 'atem_AbstractDateCase' has cardinality 0..*.
+An association connects 'atem_AbstractComponent' and 'atem_WhenDateCase'. From 'atem_AbstractComponent', the role 'atem_AbstractComponent96' has cardinality 0..*, and from 'atem_WhenDateCase', the role 'atem_WhenDateCase95' has cardinality 0..*.
+An association connects 'atem_WhenDayNameCase' and 'atem_WhenDayName'. From 'atem_WhenDayNameCase', the role 'atem_WhenDayNameCase' has cardinality 0..*, and from 'atem_WhenDayName', the role 'atem_WhenDayName' has cardinality 0..*.
+An association connects 'atem_WhenOther' and 'atem_WhenDayName'. From 'atem_WhenOther', the role 'atem_WhenOther100' has cardinality 0..*, and from 'atem_WhenDayName', the role 'atem_WhenDayName99' has cardinality 0..*.
+An association connects 'atem_AbstractDayNameCase' and 'atem_WhenDayNameCase'. From 'atem_AbstractDayNameCase', the role 'atem_AbstractDayNameCase' has cardinality 0..*, and from 'atem_WhenDayNameCase', the role 'atem_WhenDayNameCase102' has cardinality 0..*.
+An association connects 'atem_AbstractComponent' and 'atem_WhenDayNameCase'. From 'atem_AbstractComponent', the role 'atem_AbstractComponent105' has cardinality 0..*, and from 'atem_WhenDayNameCase', the role 'atem_WhenDayNameCase104' has cardinality 0..*.
+An association connects 'atem_WhenPentecostarionDay' and 'atem_WhenPeriodCase'. From 'atem_WhenPentecostarionDay', the role 'atem_WhenPentecostarionDay' has cardinality 0..*, and from 'atem_WhenPeriodCase', the role 'atem_WhenPeriodCase' has cardinality 0..*.
+An association connects 'atem_WhenPentecostarionDay' and 'atem_WhenOther'. From 'atem_WhenPentecostarionDay', the role 'atem_WhenPentecostarionDay108' has cardinality 0..*, and from 'atem_WhenOther', the role 'atem_WhenOther109' has cardinality 0..*.
+An association connects 'atem_WhenTriodionDay' and 'atem_WhenPeriodCase'. From 'atem_WhenTriodionDay', the role 'atem_WhenTriodionDay' has cardinality 0..*, and from 'atem_WhenPeriodCase', the role 'atem_WhenPeriodCase111' has cardinality 0..*.
+An association connects 'atem_WhenOther' and 'atem_WhenTriodionDay'. From 'atem_WhenOther', the role 'atem_WhenOther114' has cardinality 0..*, and from 'atem_WhenTriodionDay', the role 'atem_WhenTriodionDay113' has cardinality 0..*.
+An association connects 'atem_WhenPeriodCase' and 'atem_WhenMovableCycleDay'. From 'atem_WhenPeriodCase', the role 'atem_WhenPeriodCase116' has cardinality 0..*, and from 'atem_WhenMovableCycleDay', the role 'atem_WhenMovableCycleDay' has cardinality 0..*.
+An association connects 'atem_WhenMovableCycleDay' and 'atem_WhenOther'. From 'atem_WhenMovableCycleDay', the role 'atem_WhenMovableCycleDay118' has cardinality 0..*, and from 'atem_WhenOther', the role 'atem_WhenOther119' has cardinality 0..*.
+An association connects 'atem_WhenDateCase' and 'atem_WhenSundayAfterElevationOfCrossDay'. From 'atem_WhenDateCase', the role 'atem_WhenDateCase121' has cardinality 0..*, and from 'atem_WhenSundayAfterElevationOfCrossDay', the role 'atem_WhenSundayAfterElevationOfCrossDay' has cardinality 0..*.
+An association connects 'atem_WhenOther' and 'atem_WhenSundayAfterElevationOfCrossDay'. From 'atem_WhenOther', the role 'atem_WhenOther124' has cardinality 0..*, and from 'atem_WhenSundayAfterElevationOfCrossDay', the role 'atem_WhenSundayAfterElevationOfCrossDay123' has cardinality 0..*.
+An association connects 'atem_WhenPeriodCase' and 'atem_WhenLukanCycleDay'. From 'atem_WhenPeriodCase', the role 'atem_WhenPeriodCase126' has cardinality 0..*, and from 'atem_WhenLukanCycleDay', the role 'atem_WhenLukanCycleDay' has cardinality 0..*.
+An association connects 'atem_WhenLukanCycleDay' and 'atem_WhenOther'. From 'atem_WhenLukanCycleDay', the role 'atem_WhenLukanCycleDay128' has cardinality 0..*, and from 'atem_WhenOther', the role 'atem_WhenOther129' has cardinality 0..*.
+An association connects 'atem_AbstractComponent' and 'atem_WhenPascha'. From 'atem_AbstractComponent', the role 'atem_AbstractComponent131' has cardinality 0..*, and from 'atem_WhenPascha', the role 'atem_WhenPascha' has cardinality 0..*.
+An association connects 'atem_AbstractComponent' and 'atem_WhenPascha'. From 'atem_AbstractComponent', the role 'atem_AbstractComponent134' has cardinality 0..*, and from 'atem_WhenPascha', the role 'atem_WhenPascha133' has cardinality 0..*.
+An association connects 'atem_WhenOther' and 'atem_AbstractComponent'. From 'atem_WhenOther', the role 'atem_WhenOther136' has cardinality 0..*, and from 'atem_AbstractComponent', the role 'atem_AbstractComponent137' has cardinality 0..*.
+An association connects 'atem_AbstractDayCase' and 'atem_WhenPeriodCase'. From 'atem_AbstractDayCase', the role 'atem_AbstractDayCase' has cardinality 0..*, and from 'atem_WhenPeriodCase', the role 'atem_WhenPeriodCase139' has cardinality 0..*.
+An association connects 'atem_AbstractComponent' and 'atem_WhenPeriodCase'. From 'atem_AbstractComponent', the role 'atem_AbstractComponent142' has cardinality 0..*, and from 'atem_WhenPeriodCase', the role 'atem_WhenPeriodCase141' has cardinality 0..*.
+An association connects 'atem_WhenModeOfWeekCase' and 'atem_WhenModeOfWeek'. From 'atem_WhenModeOfWeekCase', the role 'atem_WhenModeOfWeekCase' has cardinality 0..*, and from 'atem_WhenModeOfWeek', the role 'atem_WhenModeOfWeek' has cardinality 0..*.
+An association connects 'atem_WhenOther' and 'atem_WhenModeOfWeek'. From 'atem_WhenOther', the role 'atem_WhenOther146' has cardinality 0..*, and from 'atem_WhenModeOfWeek', the role 'atem_WhenModeOfWeek145' has cardinality 0..*.
+An association connects 'atem_WhenModeOfWeekCase' and 'atem_ModeOfWeekSet'. From 'atem_WhenModeOfWeekCase', the role 'atem_WhenModeOfWeekCase148' has cardinality 0..*, and from 'atem_ModeOfWeekSet', the role 'atem_ModeOfWeekSet' has cardinality 0..*.
+An association connects 'atem_WhenModeOfWeekCase' and 'atem_AbstractComponent'. From 'atem_WhenModeOfWeekCase', the role 'atem_WhenModeOfWeekCase150' has cardinality 0..*, and from 'atem_AbstractComponent', the role 'atem_AbstractComponent151' has cardinality 0..*.
+An association connects 'atem_WhenSundaysBeforeTriodion' and 'atem_SundaysBeforeTriodionCase'. From 'atem_WhenSundaysBeforeTriodion', the role 'atem_WhenSundaysBeforeTriodion' has cardinality 0..*, and from 'atem_SundaysBeforeTriodionCase', the role 'atem_SundaysBeforeTriodionCase' has cardinality 0..*.
+An association connects 'atem_WhenOther' and 'atem_WhenSundaysBeforeTriodion'. From 'atem_WhenOther', the role 'atem_WhenOther155' has cardinality 0..*, and from 'atem_WhenSundaysBeforeTriodion', the role 'atem_WhenSundaysBeforeTriodion154' has cardinality 0..*.
+An association connects 'atem_AbstractComponent' and 'atem_SundaysBeforeTriodionCase'. From 'atem_AbstractComponent', the role 'atem_AbstractComponent158' has cardinality 0..*, and from 'atem_SundaysBeforeTriodionCase', the role 'atem_SundaysBeforeTriodionCase157' has cardinality 0..*.
+An association connects 'atem_WhenExistsCase' and 'atem_WhenExists'. From 'atem_WhenExistsCase', the role 'atem_WhenExistsCase' has cardinality 0..*, and from 'atem_WhenExists', the role 'atem_WhenExists' has cardinality 0..*.
+An association connects 'atem_WhenOther' and 'atem_WhenExists'. From 'atem_WhenOther', the role 'atem_WhenOther162' has cardinality 0..*, and from 'atem_WhenExists', the role 'atem_WhenExists161' has cardinality 0..*.
+An association connects 'atem_WhenExistsCase' and 'atem_Definition'. From 'atem_WhenExistsCase', the role 'atem_WhenExistsCase164' has cardinality 0..*, and from 'atem_Definition', the role 'atem_Definition165' has cardinality 0..*.
+An association connects 'atem_WhenExistsCase' and 'atem_AbstractComponent'. From 'atem_WhenExistsCase', the role 'atem_WhenExistsCase167' has cardinality 0..*, and from 'atem_AbstractComponent', the role 'atem_AbstractComponent168' has cardinality 0..*.

@@ -1,0 +1,19 @@
+The domain model 'metrics' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'metrics_MetricSource' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'mappingFile', which is of type str; 'lastPurge', which is of type str; 'metrickind', which is of type str; 'lastContact', which is of type str; 'metricLocation', which is of type str.
+
+'metrics_MetricLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metrics_Metric' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MetricKind' defines the following possible values: 'FILE', 'RDMS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metrics_MetricSource' and 'metrics_MetricLibrary'. From 'metrics_MetricSource', the role 'metrics_MetricSource' has cardinality 0..*, and from 'metrics_MetricLibrary', the role 'metrics_MetricLibrary' has cardinality 0..*.
+An association connects 'metrics_Metric' and 'metrics_MetricSource'. From 'metrics_Metric', the role 'networks.ecoreMetric' has cardinality 0..*, and from 'metrics_MetricSource', the role 'metricSource' has cardinality 0..*.

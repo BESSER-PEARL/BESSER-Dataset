@@ -1,0 +1,93 @@
+The domain model 'zlvp' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'zlvp_Jahr' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int.
+
+'zlvp_Gruppen' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int; 'spruch', which is of type str.
+
+'zlvp_ZeltDetail' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int.
+
+'zlvp_Verleih' represents an important domain concept.
+It has the following attributes: 'bemerkung', which is of type str; 'datum', which is of type date; 'person', which is of type str; 'id', which is of type int.
+
+'zlvp_Person' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'id', which is of type int; 'email', which is of type str; 'strasse', which is of type str; 'ort', which is of type str; 'gebDat', which is of type date; 'nachname', which is of type str; 'plz', which is of type str; 'handyNr', which is of type str; 'vorname', which is of type str; 'notTelNr', which is of type str; 'telNr', which is of type str.
+
+'zlvp_Lagerort' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'name', which is of type str.
+
+'zlvp_Funktion' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'name', which is of type str.
+
+'zlvp_Geschlecht' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int.
+
+'zlvp_Teilnehmer' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'zlvp_LegendaTyp' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int.
+
+'zlvp_Legenda' represents an important domain concept.
+It has the following attributes: 'handyNr', which is of type str; 'strasse', which is of type str; 'bemerkung', which is of type str; 'telNr', which is of type str; 'nachname', which is of type str; 'id', which is of type int; 'vorname', which is of type str; 'email', which is of type str; 'ort', which is of type str; 'faxNr', which is of type str; 'plz', which is of type str; 'firma', which is of type str.
+
+'zlvp_Anrede' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'name', which is of type str.
+
+'zlvp_Stab' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'zlvp_Leiter' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'zlvp_Lager' represents an important domain concept.
+It has the following attributes: 'ort', which is of type str; 'stop', which is of type date; 'thema', which is of type str; 'id', which is of type int; 'start', which is of type date; 'name', which is of type str.
+
+'zlvp_ZeltDetailBezeichnung' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int.
+
+'zlvp_Programm' represents an important domain concept.
+It has the following attributes: 'nachmittag', which is of type str; 'datum', which is of type date; 'nacht', which is of type str; 'id', which is of type int; 'vormittag', which is of type str.
+
+'zlvp_Zelt' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type int.
+
+'zlvp_Schaeden' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'bezeichnung', which is of type str; 'datum', which is of type date.
+
+'zlvp_Essen' represents an important domain concept.
+It has the following attributes: 'datum', which is of type date; 'nachmittag', which is of type str; 'nacht', which is of type str; 'vormittag', which is of type str; 'id', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'zlvp_Person' and 'zlvp_Geschlecht'. From 'zlvp_Person', the role 'zlvp_Person' has cardinality 0..*, and from 'zlvp_Geschlecht', the role 'zlvp_Geschlecht' has cardinality 0..*.
+An association connects 'zlvp_Anrede' and 'zlvp_Person'. From 'zlvp_Anrede', the role 'zlvp_Anrede' has cardinality 0..*, and from 'zlvp_Person', the role 'zlvp_Person2' has cardinality 0..*.
+An association connects 'zlvp_Lager' and 'zlvp_Stab'. From 'zlvp_Lager', the role 'zlvp_Lager' has cardinality 0..*, and from 'zlvp_Stab', the role 'zlvp_Stab' has cardinality 0..*.
+An association connects 'zlvp_Person' and 'zlvp_Stab'. From 'zlvp_Person', the role 'zlvp_Person6' has cardinality 0..*, and from 'zlvp_Stab', the role 'zlvp_Stab5' has cardinality 0..*.
+An association connects 'zlvp_Stab' and 'zlvp_Funktion'. From 'zlvp_Stab', the role 'zlvp_Stab8' has cardinality 0..*, and from 'zlvp_Funktion', the role 'zlvp_Funktion' has cardinality 0..*.
+An association connects 'zlvp_Gruppen' and 'zlvp_Leiter'. From 'zlvp_Gruppen', the role 'zlvp_Gruppen' has cardinality 0..*, and from 'zlvp_Leiter', the role 'zlvp_Leiter' has cardinality 0..*.
+An association connects 'zlvp_Leiter' and 'zlvp_Person'. From 'zlvp_Leiter', the role 'zlvp_Leiter11' has cardinality 0..*, and from 'zlvp_Person', the role 'zlvp_Person12' has cardinality 0..*.
+An association connects 'zlvp_Gruppen' and 'zlvp_Teilnehmer'. From 'zlvp_Gruppen', the role 'zlvp_Gruppen14' has cardinality 0..*, and from 'zlvp_Teilnehmer', the role 'zlvp_Teilnehmer' has cardinality 0..*.
+An association connects 'zlvp_Person' and 'zlvp_Teilnehmer'. From 'zlvp_Person', the role 'zlvp_Person17' has cardinality 0..*, and from 'zlvp_Teilnehmer', the role 'zlvp_Teilnehmer16' has cardinality 0..*.
+An association connects 'zlvp_Jahr' and 'zlvp_Lager'. From 'zlvp_Jahr', the role 'zlvp_Jahr' has cardinality 0..*, and from 'zlvp_Lager', the role 'zlvp_Lager19' has cardinality 0..*.
+An association connects 'zlvp_Gruppen' and 'zlvp_Lager'. From 'zlvp_Gruppen', the role 'zlvp_Gruppen22' has cardinality 0..*, and from 'zlvp_Lager', the role 'zlvp_Lager21' has cardinality 0..*.
+An association connects 'zlvp_Lager' and 'zlvp_Stab'. From 'zlvp_Lager', the role 'zlvp_Lager24' has cardinality 0..*, and from 'zlvp_Stab', the role 'zlvp_Stab25' has cardinality 0..*.
+An association connects 'zlvp_Lager' and 'zlvp_Essen'. From 'zlvp_Lager', the role 'zlvp_Lager27' has cardinality 0..*, and from 'zlvp_Essen', the role 'zlvp_Essen' has cardinality 0..*.
+An association connects 'zlvp_Lager' and 'zlvp_Programm'. From 'zlvp_Lager', the role 'zlvp_Lager29' has cardinality 0..*, and from 'zlvp_Programm', the role 'zlvp_Programm' has cardinality 0..*.
+An association connects 'zlvp_Lager' and 'zlvp_Zelt'. From 'zlvp_Lager', the role 'zlvp_Lager31' has cardinality 0..*, and from 'zlvp_Zelt', the role 'zlvp_Zelt' has cardinality 0..*.
+An association connects 'zlvp_Person' and 'zlvp_Lager'. From 'zlvp_Person', the role 'zlvp_Person34' has cardinality 0..*, and from 'zlvp_Lager', the role 'zlvp_Lager33' has cardinality 0..*.
+An association connects 'zlvp_Lager' and 'zlvp_Lagerort'. From 'zlvp_Lager', the role 'zlvp_Lager36' has cardinality 0..*, and from 'zlvp_Lagerort', the role 'zlvp_Lagerort' has cardinality 0..*.
+An association connects 'zlvp_Gruppen' and 'zlvp_Leiter'. From 'zlvp_Gruppen', the role 'zlvp_Gruppen38' has cardinality 0..*, and from 'zlvp_Leiter', the role 'zlvp_Leiter39' has cardinality 0..*.
+An association connects 'zlvp_Teilnehmer' and 'zlvp_Gruppen'. From 'zlvp_Teilnehmer', the role 'zlvp_Teilnehmer42' has cardinality 0..*, and from 'zlvp_Gruppen', the role 'zlvp_Gruppen41' has cardinality 0..*.
+An association connects 'zlvp_Zelt' and 'zlvp_ZeltDetail'. From 'zlvp_Zelt', the role 'zlvp_Zelt44' has cardinality 0..*, and from 'zlvp_ZeltDetail', the role 'zlvp_ZeltDetail' has cardinality 0..*.
+An association connects 'zlvp_Zelt' and 'zlvp_Schaeden'. From 'zlvp_Zelt', the role 'zlvp_Zelt46' has cardinality 0..*, and from 'zlvp_Schaeden', the role 'zlvp_Schaeden' has cardinality 0..*.
+An association connects 'zlvp_Verleih' and 'zlvp_Zelt'. From 'zlvp_Verleih', the role 'zlvp_Verleih' has cardinality 0..*, and from 'zlvp_Zelt', the role 'zlvp_Zelt48' has cardinality 0..*.
+An association connects 'zlvp_Lager' and 'zlvp_Zelt'. From 'zlvp_Lager', the role 'zlvp_Lager51' has cardinality 0..*, and from 'zlvp_Zelt', the role 'zlvp_Zelt50' has cardinality 0..*.
+An association connects 'zlvp_ZeltDetail' and 'zlvp_ZeltDetailBezeichnung'. From 'zlvp_ZeltDetail', the role 'zlvp_ZeltDetail53' has cardinality 0..*, and from 'zlvp_ZeltDetailBezeichnung', the role 'zlvp_ZeltDetailBezeichnung' has cardinality 0..*.
+An association connects 'zlvp_Anrede' and 'zlvp_Legenda'. From 'zlvp_Anrede', the role 'zlvp_Anrede55' has cardinality 0..*, and from 'zlvp_Legenda', the role 'zlvp_Legenda' has cardinality 0..*.
+An association connects 'zlvp_Legenda' and 'zlvp_LegendaTyp'. From 'zlvp_Legenda', the role 'zlvp_Legenda57' has cardinality 0..*, and from 'zlvp_LegendaTyp', the role 'zlvp_LegendaTyp' has cardinality 0..*.
+An association connects 'zlvp_Lagerort' and 'zlvp_Legenda'. From 'zlvp_Lagerort', the role 'zlvp_Lagerort59' has cardinality 0..*, and from 'zlvp_Legenda', the role 'zlvp_Legenda60' has cardinality 0..*.
+An association connects 'zlvp_Lagerort' and 'zlvp_Lager'. From 'zlvp_Lagerort', the role 'zlvp_Lagerort62' has cardinality 0..*, and from 'zlvp_Lager', the role 'zlvp_Lager63' has cardinality 0..*.

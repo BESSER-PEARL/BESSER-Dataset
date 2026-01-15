@@ -1,0 +1,63 @@
+The domain model 'titan' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'titan_MultiReference' represents an important domain concept.
+It does not declare any attributes.
+
+'titan_SingleDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'titan_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'titan_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'titan_Module' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'titan_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'titan_SingleReference' represents an important domain concept.
+It does not declare any attributes.
+
+'titan_DataType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'titan_MultiDataType' represents an important domain concept.
+It has one attribute: 'unique', which is of type bool.
+
+'titan_Reference' represents an important domain concept.
+It has one attribute: 'unique', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataTypes' defines the following possible values: 'Long', 'Integer', 'Boolean', 'String', 'Double'.
+The enumeration 'InternalDSLType' defines a single possible value: 'NestedFunctions'.
+
+The model also captures inheritance relationships between classes.
+The class 'titan_Reference' is a specialization of 'Feature'.
+The class 'titan_SingleReference' is a specialization of 'Reference'.
+The class 'titan_MultiReference' is a specialization of 'Reference'.
+The class 'titan_DataType' is a specialization of 'Feature'.
+The class 'titan_SingleDataType' is a specialization of 'DataType'.
+The class 'titan_MultiDataType' is a specialization of 'DataType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'titan_Package' and 'titan_Module'. From 'titan_Package', the role 'titan_Package' has cardinality 0..*, and from 'titan_Module', the role 'titan_Module' has cardinality 0..*.
+An association connects 'titan_Package' and 'titan_Entity'. From 'titan_Package', the role 'titan_Package2' has cardinality 0..*, and from 'titan_Entity', the role 'titan_Entity' has cardinality 0..*.
+An association connects 'titan_Entity' and 'titan_Entity'. From 'titan_Entity', the role 'titan_Entity5' has cardinality 0..*, and from 'titan_Entity', the role 'titan_Entity3' has cardinality 0..*.
+An association connects 'titan_Entity' and 'titan_Feature'. From 'titan_Entity', the role 'titan_Entity7' has cardinality 0..*, and from 'titan_Feature', the role 'titan_Feature' has cardinality 0..*.
+An association connects 'titan_Entity' and 'titan_Reference'. From 'titan_Entity', the role 'titan_Entity9' has cardinality 0..*, and from 'titan_Reference', the role 'titan_Reference' has cardinality 0..*.
+An association connects 'titan_MultiReference' and 'titan_Reference'. From 'titan_MultiReference', the role 'titan_MultiReference' has cardinality 0..*, and from 'titan_Reference', the role 'titan_Reference11' has cardinality 0..*.
+An association connects 'titan_MultiDataType' and 'titan_DataType'. From 'titan_MultiDataType', the role 'titan_MultiDataType' has cardinality 0..*, and from 'titan_DataType', the role 'titan_DataType' has cardinality 0..*.

@@ -1,0 +1,47 @@
+The domain model 'SimpleRDBMS' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'SimpleRDBMS_RdbmsForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleRDBMS_RdbmsColumn' represents an important domain concept.
+It has one attribute: 'rdbmsType', which is of type str.
+
+'SimpleRDBMS_RdbmsModelElement' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'rdbmsName', which is of type str; 'rdbmsKind', which is of type str.
+
+'SimpleRDBMS_RdbmsSchema' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleRDBMS_RdbmsTable' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleRDBMS_RdbmsKey' represents an important domain concept.
+It does not declare any attributes.
+
+'RdbmsModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'SimpleRDBMS_RdbmsColumn' is a specialization of 'RdbmsModelElement'.
+The class 'SimpleRDBMS_RdbmsForeignKey' is a specialization of 'RdbmsModelElement'.
+The class 'SimpleRDBMS_RdbmsKey' is a specialization of 'RdbmsModelElement'.
+The class 'SimpleRDBMS_RdbmsSchema' is a specialization of 'RdbmsModelElement'.
+The class 'SimpleRDBMS_RdbmsTable' is a specialization of 'RdbmsModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimpleRDBMS_RdbmsTable' and 'SimpleRDBMS_RdbmsColumn'. From 'SimpleRDBMS_RdbmsTable', the role 'RdbmsTable' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsColumn', the role 'rdbmsColumn' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsColumn' and 'SimpleRDBMS_RdbmsKey'. From 'SimpleRDBMS_RdbmsColumn', the role 'rdbmsColumn2' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsKey', the role 'RdbmsKey' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsColumn' and 'SimpleRDBMS_RdbmsForeignKey'. From 'SimpleRDBMS_RdbmsColumn', the role 'rdbmsColumn4' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsForeignKey', the role 'RdbmsForeignKey' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsTable' and 'SimpleRDBMS_RdbmsForeignKey'. From 'SimpleRDBMS_RdbmsTable', the role 'RdbmsTable6' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsForeignKey', the role 'rdbmsForeignKey' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsForeignKey' and 'SimpleRDBMS_RdbmsKey'. From 'SimpleRDBMS_RdbmsForeignKey', the role 'rdbmsRefersToOpposite' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsKey', the role 'RdbmsKey8' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsForeignKey' and 'SimpleRDBMS_RdbmsColumn'. From 'SimpleRDBMS_RdbmsForeignKey', the role 'rdbmsForeignKey10' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsColumn', the role 'RdbmsColumn' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsColumn' and 'SimpleRDBMS_RdbmsKey'. From 'SimpleRDBMS_RdbmsColumn', the role 'RdbmsColumn12' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsKey', the role 'rdbmsKey' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsKey' and 'SimpleRDBMS_RdbmsForeignKey'. From 'SimpleRDBMS_RdbmsKey', the role 'rdbmsRefersTo' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsForeignKey', the role 'RdbmsForeignKey14' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsKey' and 'SimpleRDBMS_RdbmsTable'. From 'SimpleRDBMS_RdbmsKey', the role 'rdbmsKey16' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsTable', the role 'RdbmsTable17' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsTable' and 'SimpleRDBMS_RdbmsSchema'. From 'SimpleRDBMS_RdbmsTable', the role 'RdbmsTable19' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsSchema', the role 'rdbmsSchema' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsTable' and 'SimpleRDBMS_RdbmsColumn'. From 'SimpleRDBMS_RdbmsTable', the role 'rdbmsOwner' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsColumn', the role 'RdbmsColumn21' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsForeignKey' and 'SimpleRDBMS_RdbmsTable'. From 'SimpleRDBMS_RdbmsForeignKey', the role 'RdbmsForeignKey24' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsTable', the role 'rdbmsOwner23' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsTable' and 'SimpleRDBMS_RdbmsKey'. From 'SimpleRDBMS_RdbmsTable', the role 'rdbmsOwner26' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsKey', the role 'RdbmsKey27' has cardinality 0..*.
+An association connects 'SimpleRDBMS_RdbmsSchema' and 'SimpleRDBMS_RdbmsTable'. From 'SimpleRDBMS_RdbmsSchema', the role 'RdbmsSchema' has cardinality 0..*, and from 'SimpleRDBMS_RdbmsTable', the role 'rdbmsTable' has cardinality 0..*.

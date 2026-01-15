@@ -1,0 +1,26 @@
+The domain model 'c' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'Foo' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractClass' represents an important domain concept.
+It does not declare any attributes.
+
+'c_AbstractClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'c_Foo' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'c_Bar' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'c_Foo' is a specialization of 'AbstractClass'.
+The class 'c_Bar' is a specialization of 'Foo'.
+
+Relationships between classes are modeled using associations.
+An association connects 'c_Foo' and 'c_Bar'. From 'c_Foo', the role 'c_Foo' has cardinality 0..*, and from 'c_Bar', the role 'c_Bar' has cardinality 0..*.
+An association connects 'c_Bar' and 'c_Foo'. From 'c_Bar', the role 'c_Bar2' has cardinality 0..*, and from 'c_Foo', the role 'c_Foo3' has cardinality 0..*.

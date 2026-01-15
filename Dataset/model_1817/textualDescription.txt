@@ -1,0 +1,335 @@
+The domain model 'ddsMetamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 63 main class(es).
+
+'ddsMetamodel_DdsResourceLimits' represents an important domain concept.
+It has the following attributes: 'max_samples', which is of type str; 'max_samples_per_instances', which is of type str; 'max_instances', which is of type str.
+
+'ddsMetamodel_DdsSystem' represents an important domain concept.
+It has one attribute: 'systemName', which is of type str.
+
+'ddsMetamodel_DdsPublisherQosProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsDataReaderLifecycleQos' represents an important domain concept.
+It has the following attributes: 'enable_invalid_samples', which is of type bool; 'autopurge_dispose_all', which is of type bool.
+
+'ddsMetamodel_DdsDurabilityQos' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ddsMetamodel_DdsEntityFactoryQos' represents an important domain concept.
+It has one attribute: 'autoenable_created_entities', which is of type bool.
+
+'ddsMetamodel_DdsDestinationOrderQos' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ddsMetamodel_DdsDomainParticipant' represents an important domain concept.
+It has the following attributes: 'domainParticipantName', which is of type str; 'domainId', which is of type int.
+
+'ddsMetamodel_DdsOwnershipStrengthQos' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ddsMetamodel_DdsPublisherListener' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'listenedStatus', which is of type str.
+
+'ddsMetamodel_DdsOwnershipQos' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ddsMetamodel_DdsDataWriterQosProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsDataWriterListener' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'listenedStatus', which is of type str.
+
+'ddsMetamodel_DdsTopicDataQos' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ddsMetamodel_DdsDataWriterStatusCondition' represents an important domain concept.
+It has one attribute: 'enabled_status', which is of type str.
+
+'ddsMetamodel_DdsDataReaderStatusCondition' represents an important domain concept.
+It has one attribute: 'enabled_status', which is of type str.
+
+'ddsMetamodel_DdsUserDataQos' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ddsMetamodel_DdsDataStructure' represents an important domain concept.
+It has one attribute: 'structureName', which is of type str.
+
+'DdsQosProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsReliabilityQos' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ddsMetamodel_DdsDomainParticipantStatusCondition' represents an important domain concept.
+It has one attribute: 'enabled_status', which is of type str.
+
+'ddsMetamodel_DdsStatusCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsTransportPriorityQos' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ddsMetamodel_DdsHistoryQos' represents an important domain concept.
+It has the following attributes: 'depth', which is of type str; 'kind', which is of type str.
+
+'ddsMetamodel_DdsReadCondition' represents an important domain concept.
+It has the following attributes: 'view_state_mask', which is of type str; 'instance_state_mask', which is of type str; 'sample_state_mask', which is of type str.
+
+'ddsMetamodel_DdsPublisherStatusCondition' represents an important domain concept.
+It has one attribute: 'enabled_status', which is of type str.
+
+'DdsStatusCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsDataReaderListener' represents an important domain concept.
+It has the following attributes: 'listenedStatus', which is of type str; 'name', which is of type str.
+
+'ddsMetamodel_QueryCondition' represents an important domain concept.
+It has the following attributes: 'queryParameters', which is of type str; 'query', which is of type str.
+
+'ddsMetamodel_GuardCondition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ddsMetamodel_DdsDataWriterLifecycleQos' represents an important domain concept.
+It has one attribute: 'autodispose_unregistered_instances', which is of type bool.
+
+'ddsMetamodel_DdsDomainParticipantQosProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsTimeBasedFilterQos' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsDomainParticipantListener' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'listenedStatus', which is of type str.
+
+'ddsMetamodel_DdsDuration' represents an important domain concept.
+It has the following attributes: 'sec', which is of type str; 'nanoSec', which is of type str.
+
+'ddsMetamodel_DdsSubscriber' represents an important domain concept.
+It has one attribute: 'subscriberName', which is of type str.
+
+'ddsMetamodel_DdsHost' represents an important domain concept.
+It has one attribute: 'hostName', which is of type str.
+
+'ddsMetamodel_DdsLivelinessQos' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ddsMetamodel_DdsStructuredField' represents an important domain concept.
+It has the following attributes: 'isKey', which is of type bool; 'maxMultiplicity', which is of type int; 'fieldName', which is of type str.
+
+'ddsMetamodel_DdsSubscriberStatusCondition' represents an important domain concept.
+It has one attribute: 'enabled_status', which is of type str.
+
+'DdsReadCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsPartitionQos' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ddsMetamodel_DdsLatencyBudgetQos' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsWaitSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ddsMetamodel_DdsSubscriberQosProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsDataModule' represents an important domain concept.
+It has one attribute: 'moduleName', which is of type str.
+
+'ddsMetamodel_DdsLifespan' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsPresentationQos' represents an important domain concept.
+It has the following attributes: 'ordered_access', which is of type bool; 'access_scope', which is of type str; 'coherent_access', which is of type bool.
+
+'ddsMetamodel_DdsDataReaderQosProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsQosProfile' represents an important domain concept.
+It has one attribute: 'profileName', which is of type str.
+
+'ddsMetamodel_DdsTopicStatusCondition' represents an important domain concept.
+It has one attribute: 'enabled_status', which is of type str.
+
+'ddsMetamodel_DdsApplication' represents an important domain concept.
+It has one attribute: 'applicationName', which is of type str.
+
+'ddsMetamodel_DdsDataWriter' represents an important domain concept.
+It has one attribute: 'dataWriterName', which is of type str.
+
+'ddsMetamodel_DdsTopicQosProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsDurabilityServiceQos' represents an important domain concept.
+It has the following attributes: 'max_instances', which is of type str; 'max_samples_per_instances', which is of type str; 'max_samples', which is of type str; 'history_kind', which is of type str; 'history_depth', which is of type str.
+
+'ddsMetamodel_DdsDataField' represents an important domain concept.
+It has the following attributes: 'fieldType', which is of type str; 'isKey', which is of type bool; 'maxMultiplicity', which is of type int; 'fieldName', which is of type str.
+
+'ddsMetamodel_DdsSubscriberListener' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'listenedStatus', which is of type str.
+
+'ddsMetamodel_DdsTopicListener' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'listenedStatus', which is of type str.
+
+'ddsMetamodel_DdsDataReader' represents an important domain concept.
+It has one attribute: 'dataReaderName', which is of type str.
+
+'ddsMetamodel_DdsTopic' represents an important domain concept.
+It has one attribute: 'topicName', which is of type str.
+
+'ddsMetamodel_DdsGroupDataQos' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ddsMetamodel_DdsDeadlineQos' represents an important domain concept.
+It does not declare any attributes.
+
+'ddsMetamodel_DdsPublisher' represents an important domain concept.
+It has one attribute: 'publisherName', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ViewStateKind' defines the following possible values: 'NEW_VIEW_STATE', 'ANY_VIEW_STATE', 'NOT_NEW_VIEW_STATE'.
+The enumeration 'SampleStateKind' defines the following possible values: 'NOT_READ_SAMPLE_STATE', 'READ_SAMPLE_STATE', 'ANY_READ_SAMPLE_STATE'.
+The enumeration 'SubscriberStatus' defines the following possible values: 'SAMPLE_LOST_STATUS', 'SAMPLE_REJECTED_STATUS', 'REQUESTED_INCOMPATIBLE_QOS_STATUS', 'LIVELINESS_CHANGED_STATUS', 'DATA_ON_READERS_STATUS', 'DATA_AVAILABLE_STATUS', 'SUBSCRIPTION_MATCHED_STATUS', 'REQUESTED_DEADLINE_MISSED_STATUS'.
+The enumeration 'ReliabilityQosPolicyKind' defines the following possible values: 'BEST_EFFORT_RELIABILITY_QOS', 'RELIABLE_RELIABILITY_QOS'.
+The enumeration 'TopicStatus' defines a single possible value: 'INCONSISTENT_TOPIC_STATUS'.
+The enumeration 'LivelinessQosPolicyKind' defines the following possible values: 'MANUAL_LIVELINESS_QOS', 'MANUAL_BY_PARTICIPANT_LIVELINESS_QOS', 'MANUAL_BY_TOPIC_LIVELINESS_QOS', 'AUTOMATIC_LIVELINESS_QOS'.
+The enumeration 'DataWriterStatus' defines the following possible values: 'LIVELINESS_LOST_STATUS', 'PUBLICATION_MATCHED_STATUS', 'OFFERED_DEADLINE_MISSED_STATUS', 'OFFERED_INCOMPATIBLE_QOS_STATUS'.
+The enumeration 'InstanceStateKind' defines the following possible values: 'ALIVE_INSTANCE_STATE', 'NOT_ALIVE_DISPOSED_INSTANCE_STATE', 'NOT_ALIVE_NO_WRITERS_INSTANCE_STATE', 'ANY_INSTANCE_STATE'.
+The enumeration 'DestinationOrderQosPolicyKind' defines the following possible values: 'BY_RECEPTION_TIMESTAMP_DESTINATIONORDER_QOS', 'BY_SOURCE_TIMESTAMP_DESTINATIONORDER_QOS'.
+The enumeration 'PresentationQosPolicyAccessScopeKind' defines the following possible values: 'INSTANCE_PRESENTATION_QOS', 'TOPIC_PRESENTATION_QOS', 'GROUP_PRESENTATION_QOS'.
+The enumeration 'HistoryQosPolicyKind' defines the following possible values: 'KEEP_ALL_HISTORY_QOS', 'KEEP_LAST_HISTORY_QOS'.
+The enumeration 'DurabilityQosPolicyKind' defines the following possible values: 'TRANSIENT_DURABILITY_QOS', 'VOLATILE_DURABILITY_QOS', 'TRANSIENT_LOCAL_DURABILITY_QOS', 'PERSISTENT_DURABILITY_QOS'.
+The enumeration 'DomainParticipantStatus' defines the following possible values: 'OFFERED_DEADLINE_MISSED_STATUS', 'LIVELINESS_CHANGED_STATUS', 'SAMPLE_REJECTED_STATUS', 'INCONSISTENT_TOPIC_STATUS', 'LIVELINESS_LOST_STATUS', 'REQUESTED_DEADLINE_MISSED_STATUS', 'SAMPLE_LOST_STATUS', 'OFFERED_INCOMPATIBLE_QOS_STATUS', 'PUBLICATION_MATCHED_STATUS', 'REQUESTED_INCOMPATIBLE_QOS_STATUS', 'DATA_ON_READERS_STATUS', 'DATA_AVAILABLE_STATUS', 'SUBSCRIPTION_MATCHED_STATUS'.
+The enumeration 'OwnershipQosPolicyKind' defines the following possible values: 'SHARED_OWNERSHIP_QOS', 'EXCLUSIVE_OWNERSHIP_QOS'.
+The enumeration 'PublisherStatus' defines the following possible values: 'OFFERED_INCOMPATIBLE_QOS_STATUS', 'PUBLICATION_MATCHED_STATUS', 'LIVELINESS_LOST_STATUS', 'OFFERED_DEADLINE_MISSED_STATUS'.
+The enumeration 'DataReaderStatus' defines the following possible values: 'LIVELINESS_CHANGED_STATUS', 'DATA_AVAILABLE_STATUS', 'REQUESTED_INCOMPATIBLE_QOS_STATUS', 'SAMPLE_LOST_STATUS', 'SUBSCRIPTION_MATCHED_STATUS', 'REQUESTED_DEADLINE_MISSED_STATUS', 'SAMPLE_REJECTED_STATUS'.
+The enumeration 'InvalidSampleVisibilityQosPolicy' defines the following possible values: 'ALL_INVALID_SAMPLES', 'NO_INVALID_SAMPLES', 'MINIMUM_INVALID_SAMPLES'.
+
+The model also captures inheritance relationships between classes.
+The class 'ddsMetamodel_DdsDomainParticipantQosProfile' is a specialization of 'DdsQosProfile'.
+The class 'ddsMetamodel_DdsTopicQosProfile' is a specialization of 'DdsQosProfile'.
+The class 'ddsMetamodel_DdsPublisherQosProfile' is a specialization of 'DdsQosProfile'.
+The class 'ddsMetamodel_DdsDataWriterQosProfile' is a specialization of 'DdsQosProfile'.
+The class 'ddsMetamodel_DdsSubscriberQosProfile' is a specialization of 'DdsQosProfile'.
+The class 'ddsMetamodel_DdsDataReaderQosProfile' is a specialization of 'DdsQosProfile'.
+The class 'ddsMetamodel_DdsDomainParticipantStatusCondition' is a specialization of 'DdsStatusCondition'.
+The class 'ddsMetamodel_DdsPublisherStatusCondition' is a specialization of 'DdsStatusCondition'.
+The class 'ddsMetamodel_DdsSubscriberStatusCondition' is a specialization of 'DdsStatusCondition'.
+The class 'ddsMetamodel_DdsDataWriterStatusCondition' is a specialization of 'DdsStatusCondition'.
+The class 'ddsMetamodel_DdsDataReaderStatusCondition' is a specialization of 'DdsStatusCondition'.
+The class 'ddsMetamodel_DdsTopicStatusCondition' is a specialization of 'DdsStatusCondition'.
+The class 'ddsMetamodel_QueryCondition' is a specialization of 'DdsReadCondition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ddsMetamodel_DdsDomainParticipant' and 'ddsMetamodel_DdsApplication'. From 'ddsMetamodel_DdsDomainParticipant', the role 'ddsMetamodel_DdsDomainParticipant' has cardinality 0..*, and from 'ddsMetamodel_DdsApplication', the role 'ddsMetamodel_DdsApplication' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsApplication' and 'ddsMetamodel_DdsWaitSet'. From 'ddsMetamodel_DdsApplication', the role 'ddsMetamodel_DdsApplication2' has cardinality 0..*, and from 'ddsMetamodel_DdsWaitSet', the role 'ddsMetamodel_DdsWaitSet' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsSubscriber' and 'ddsMetamodel_DdsDomainParticipant'. From 'ddsMetamodel_DdsSubscriber', the role 'ddsMetamodel_DdsSubscriber' has cardinality 0..*, and from 'ddsMetamodel_DdsDomainParticipant', the role 'ddsMetamodel_DdsDomainParticipant4' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDomainParticipant' and 'ddsMetamodel_DdsPublisher'. From 'ddsMetamodel_DdsDomainParticipant', the role 'ddsMetamodel_DdsDomainParticipant6' has cardinality 0..*, and from 'ddsMetamodel_DdsPublisher', the role 'ddsMetamodel_DdsPublisher' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDomainParticipantQosProfile' and 'ddsMetamodel_DdsDomainParticipant'. From 'ddsMetamodel_DdsDomainParticipantQosProfile', the role 'ddsMetamodel_DdsDomainParticipantQosProfile' has cardinality 0..*, and from 'ddsMetamodel_DdsDomainParticipant', the role 'ddsMetamodel_DdsDomainParticipant8' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDomainParticipantListener' and 'ddsMetamodel_DdsDomainParticipant'. From 'ddsMetamodel_DdsDomainParticipantListener', the role 'ddsMetamodel_DdsDomainParticipantListener' has cardinality 0..*, and from 'ddsMetamodel_DdsDomainParticipant', the role 'ddsMetamodel_DdsDomainParticipant10' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTopic' and 'ddsMetamodel_DdsTopicListener'. From 'ddsMetamodel_DdsTopic', the role 'ddsMetamodel_DdsTopic' has cardinality 0..*, and from 'ddsMetamodel_DdsTopicListener', the role 'ddsMetamodel_DdsTopicListener' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTopicQosProfile' and 'ddsMetamodel_DdsTopic'. From 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile' has cardinality 0..*, and from 'ddsMetamodel_DdsTopic', the role 'ddsMetamodel_DdsTopic13' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataStructure' and 'ddsMetamodel_DdsTopic'. From 'ddsMetamodel_DdsDataStructure', the role 'ddsMetamodel_DdsDataStructure' has cardinality 0..*, and from 'ddsMetamodel_DdsTopic', the role 'ddsMetamodel_DdsTopic15' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsSubscriber' and 'ddsMetamodel_DdsDataReader'. From 'ddsMetamodel_DdsSubscriber', the role 'containingSubscriber' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReader', the role 'DdsDataReader' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsSubscriber' and 'ddsMetamodel_DdsSubscriberListener'. From 'ddsMetamodel_DdsSubscriber', the role 'ddsMetamodel_DdsSubscriber18' has cardinality 0..*, and from 'ddsMetamodel_DdsSubscriberListener', the role 'ddsMetamodel_DdsSubscriberListener' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsSubscriberQosProfile' and 'ddsMetamodel_DdsSubscriber'. From 'ddsMetamodel_DdsSubscriberQosProfile', the role 'ddsMetamodel_DdsSubscriberQosProfile' has cardinality 0..*, and from 'ddsMetamodel_DdsSubscriber', the role 'ddsMetamodel_DdsSubscriber20' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReader' and 'ddsMetamodel_DdsTopic'. From 'ddsMetamodel_DdsDataReader', the role 'ddsMetamodel_DdsDataReader' has cardinality 0..*, and from 'ddsMetamodel_DdsTopic', the role 'ddsMetamodel_DdsTopic22' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReader' and 'ddsMetamodel_DdsDataReaderListener'. From 'ddsMetamodel_DdsDataReader', the role 'ddsMetamodel_DdsDataReader24' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReaderListener', the role 'ddsMetamodel_DdsDataReaderListener' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReader' and 'ddsMetamodel_DdsDataReaderQosProfile'. From 'ddsMetamodel_DdsDataReader', the role 'ddsMetamodel_DdsDataReader26' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReader' and 'ddsMetamodel_DdsSubscriber'. From 'ddsMetamodel_DdsDataReader', the role 'ddsdatareader' has cardinality 0..*, and from 'ddsMetamodel_DdsSubscriber', the role 'DdsSubscriber' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsPublisher' and 'ddsMetamodel_DdsDataWriter'. From 'ddsMetamodel_DdsPublisher', the role 'ddsMetamodel_DdsPublisher29' has cardinality 0..*, and from 'ddsMetamodel_DdsDataWriter', the role 'ddsMetamodel_DdsDataWriter' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsPublisherListener' and 'ddsMetamodel_DdsPublisher'. From 'ddsMetamodel_DdsPublisherListener', the role 'ddsMetamodel_DdsPublisherListener' has cardinality 0..*, and from 'ddsMetamodel_DdsPublisher', the role 'ddsMetamodel_DdsPublisher31' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsPublisherQosProfile' and 'ddsMetamodel_DdsPublisher'. From 'ddsMetamodel_DdsPublisherQosProfile', the role 'ddsMetamodel_DdsPublisherQosProfile' has cardinality 0..*, and from 'ddsMetamodel_DdsPublisher', the role 'ddsMetamodel_DdsPublisher33' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriter' and 'ddsMetamodel_DdsTopic'. From 'ddsMetamodel_DdsDataWriter', the role 'ddsMetamodel_DdsDataWriter35' has cardinality 0..*, and from 'ddsMetamodel_DdsTopic', the role 'ddsMetamodel_DdsTopic36' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriterListener' and 'ddsMetamodel_DdsDataWriter'. From 'ddsMetamodel_DdsDataWriterListener', the role 'ddsMetamodel_DdsDataWriterListener' has cardinality 0..*, and from 'ddsMetamodel_DdsDataWriter', the role 'ddsMetamodel_DdsDataWriter38' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriter' and 'ddsMetamodel_DdsDataWriterQosProfile'. From 'ddsMetamodel_DdsDataWriter', the role 'ddsMetamodel_DdsDataWriter40' has cardinality 0..*, and from 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataModule' and 'ddsMetamodel_DdsDataStructure'. From 'ddsMetamodel_DdsDataModule', the role 'containerDataModule' has cardinality 0..*, and from 'ddsMetamodel_DdsDataStructure', the role 'DdsDataStructure' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataModule' and 'ddsMetamodel_DdsDataModule'. From 'ddsMetamodel_DdsDataModule', the role 'containingModule' has cardinality 0..*, and from 'ddsMetamodel_DdsDataModule', the role 'DdsDataModule' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataModule' and 'ddsMetamodel_DdsSystem'. From 'ddsMetamodel_DdsDataModule', the role 'dataModules' has cardinality 0..*, and from 'ddsMetamodel_DdsSystem', the role 'DdsSystem' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataModule' and 'ddsMetamodel_DdsDataModule'. From 'ddsMetamodel_DdsDataModule', the role 'innerModules' has cardinality 0..*, and from 'ddsMetamodel_DdsDataModule', the role 'DdsDataModule47' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataStructure' and 'ddsMetamodel_DdsDataField'. From 'ddsMetamodel_DdsDataStructure', the role 'ddsMetamodel_DdsDataStructure49' has cardinality 0..*, and from 'ddsMetamodel_DdsDataField', the role 'ddsMetamodel_DdsDataField' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataStructure' and 'ddsMetamodel_DdsStructuredField'. From 'ddsMetamodel_DdsDataStructure', the role 'dataStructure' has cardinality 0..*, and from 'ddsMetamodel_DdsStructuredField', the role 'DdsStructuredField' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataModule' and 'ddsMetamodel_DdsDataStructure'. From 'ddsMetamodel_DdsDataModule', the role 'DdsDataModule52' has cardinality 0..*, and from 'ddsMetamodel_DdsDataStructure', the role 'dataStructures' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDomainParticipantQosProfile' and 'ddsMetamodel_DdsUserDataQos'. From 'ddsMetamodel_DdsDomainParticipantQosProfile', the role 'ddsMetamodel_DdsDomainParticipantQosProfile54' has cardinality 0..*, and from 'ddsMetamodel_DdsUserDataQos', the role 'ddsMetamodel_DdsUserDataQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDomainParticipantQosProfile' and 'ddsMetamodel_DdsEntityFactoryQos'. From 'ddsMetamodel_DdsDomainParticipantQosProfile', the role 'ddsMetamodel_DdsDomainParticipantQosProfile56' has cardinality 0..*, and from 'ddsMetamodel_DdsEntityFactoryQos', the role 'ddsMetamodel_DdsEntityFactoryQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTopicDataQos' and 'ddsMetamodel_DdsTopicQosProfile'. From 'ddsMetamodel_DdsTopicDataQos', the role 'ddsMetamodel_DdsTopicDataQos' has cardinality 0..*, and from 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile58' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDurabilityQos' and 'ddsMetamodel_DdsTopicQosProfile'. From 'ddsMetamodel_DdsDurabilityQos', the role 'ddsMetamodel_DdsDurabilityQos' has cardinality 0..*, and from 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile60' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDurabilityServiceQos' and 'ddsMetamodel_DdsTopicQosProfile'. From 'ddsMetamodel_DdsDurabilityServiceQos', the role 'ddsMetamodel_DdsDurabilityServiceQos' has cardinality 0..*, and from 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile62' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTopicQosProfile' and 'ddsMetamodel_DdsLatencyBudgetQos'. From 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile64' has cardinality 0..*, and from 'ddsMetamodel_DdsLatencyBudgetQos', the role 'ddsMetamodel_DdsLatencyBudgetQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTopicQosProfile' and 'ddsMetamodel_DdsLivelinessQos'. From 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile66' has cardinality 0..*, and from 'ddsMetamodel_DdsLivelinessQos', the role 'ddsMetamodel_DdsLivelinessQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTopicQosProfile' and 'ddsMetamodel_DdsOwnershipQos'. From 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile68' has cardinality 0..*, and from 'ddsMetamodel_DdsOwnershipQos', the role 'ddsMetamodel_DdsOwnershipQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTopicQosProfile' and 'ddsMetamodel_DdsReliabilityQos'. From 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile70' has cardinality 0..*, and from 'ddsMetamodel_DdsReliabilityQos', the role 'ddsMetamodel_DdsReliabilityQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTopicQosProfile' and 'ddsMetamodel_DdsDestinationOrderQos'. From 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile72' has cardinality 0..*, and from 'ddsMetamodel_DdsDestinationOrderQos', the role 'ddsMetamodel_DdsDestinationOrderQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTopicQosProfile' and 'ddsMetamodel_DdsHistoryQos'. From 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile74' has cardinality 0..*, and from 'ddsMetamodel_DdsHistoryQos', the role 'ddsMetamodel_DdsHistoryQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsResourceLimits' and 'ddsMetamodel_DdsTopicQosProfile'. From 'ddsMetamodel_DdsResourceLimits', the role 'ddsMetamodel_DdsResourceLimits' has cardinality 0..*, and from 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile76' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTransportPriorityQos' and 'ddsMetamodel_DdsTopicQosProfile'. From 'ddsMetamodel_DdsTransportPriorityQos', the role 'ddsMetamodel_DdsTransportPriorityQos' has cardinality 0..*, and from 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile78' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsLifespan' and 'ddsMetamodel_DdsTopicQosProfile'. From 'ddsMetamodel_DdsLifespan', the role 'ddsMetamodel_DdsLifespan' has cardinality 0..*, and from 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile80' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDeadlineQos' and 'ddsMetamodel_DdsTopicQosProfile'. From 'ddsMetamodel_DdsDeadlineQos', the role 'ddsMetamodel_DdsDeadlineQos' has cardinality 0..*, and from 'ddsMetamodel_DdsTopicQosProfile', the role 'ddsMetamodel_DdsTopicQosProfile82' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDuration' and 'ddsMetamodel_DdsDurabilityServiceQos'. From 'ddsMetamodel_DdsDuration', the role 'ddsMetamodel_DdsDuration' has cardinality 0..*, and from 'ddsMetamodel_DdsDurabilityServiceQos', the role 'ddsMetamodel_DdsDurabilityServiceQos84' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDuration' and 'ddsMetamodel_DdsDeadlineQos'. From 'ddsMetamodel_DdsDuration', the role 'ddsMetamodel_DdsDuration87' has cardinality 0..*, and from 'ddsMetamodel_DdsDeadlineQos', the role 'ddsMetamodel_DdsDeadlineQos86' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDuration' and 'ddsMetamodel_DdsLatencyBudgetQos'. From 'ddsMetamodel_DdsDuration', the role 'ddsMetamodel_DdsDuration90' has cardinality 0..*, and from 'ddsMetamodel_DdsLatencyBudgetQos', the role 'ddsMetamodel_DdsLatencyBudgetQos89' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsLivelinessQos' and 'ddsMetamodel_DdsDuration'. From 'ddsMetamodel_DdsLivelinessQos', the role 'ddsMetamodel_DdsLivelinessQos92' has cardinality 0..*, and from 'ddsMetamodel_DdsDuration', the role 'ddsMetamodel_DdsDuration93' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTimeBasedFilterQos' and 'ddsMetamodel_DdsDuration'. From 'ddsMetamodel_DdsTimeBasedFilterQos', the role 'ddsMetamodel_DdsTimeBasedFilterQos' has cardinality 0..*, and from 'ddsMetamodel_DdsDuration', the role 'ddsMetamodel_DdsDuration95' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsReliabilityQos' and 'ddsMetamodel_DdsDuration'. From 'ddsMetamodel_DdsReliabilityQos', the role 'ddsMetamodel_DdsReliabilityQos97' has cardinality 0..*, and from 'ddsMetamodel_DdsDuration', the role 'ddsMetamodel_DdsDuration98' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsLifespan' and 'ddsMetamodel_DdsDuration'. From 'ddsMetamodel_DdsLifespan', the role 'ddsMetamodel_DdsLifespan100' has cardinality 0..*, and from 'ddsMetamodel_DdsDuration', the role 'ddsMetamodel_DdsDuration101' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDuration' and 'ddsMetamodel_DdsDataWriterLifecycleQos'. From 'ddsMetamodel_DdsDuration', the role 'ddsMetamodel_DdsDuration103' has cardinality 0..*, and from 'ddsMetamodel_DdsDataWriterLifecycleQos', the role 'ddsMetamodel_DdsDataWriterLifecycleQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDuration' and 'ddsMetamodel_DdsDataWriterLifecycleQos'. From 'ddsMetamodel_DdsDuration', the role 'ddsMetamodel_DdsDuration106' has cardinality 0..*, and from 'ddsMetamodel_DdsDataWriterLifecycleQos', the role 'ddsMetamodel_DdsDataWriterLifecycleQos105' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDuration' and 'ddsMetamodel_DdsDataReaderLifecycleQos'. From 'ddsMetamodel_DdsDuration', the role 'ddsMetamodel_DdsDuration108' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReaderLifecycleQos', the role 'ddsMetamodel_DdsDataReaderLifecycleQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReaderLifecycleQos' and 'ddsMetamodel_DdsDuration'. From 'ddsMetamodel_DdsDataReaderLifecycleQos', the role 'ddsMetamodel_DdsDataReaderLifecycleQos110' has cardinality 0..*, and from 'ddsMetamodel_DdsDuration', the role 'ddsMetamodel_DdsDuration111' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsPublisherQosProfile' and 'ddsMetamodel_DdsGroupDataQos'. From 'ddsMetamodel_DdsPublisherQosProfile', the role 'ddsMetamodel_DdsPublisherQosProfile113' has cardinality 0..*, and from 'ddsMetamodel_DdsGroupDataQos', the role 'ddsMetamodel_DdsGroupDataQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsEntityFactoryQos' and 'ddsMetamodel_DdsPublisherQosProfile'. From 'ddsMetamodel_DdsEntityFactoryQos', the role 'ddsMetamodel_DdsEntityFactoryQos116' has cardinality 0..*, and from 'ddsMetamodel_DdsPublisherQosProfile', the role 'ddsMetamodel_DdsPublisherQosProfile115' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsPublisherQosProfile' and 'ddsMetamodel_DdsPresentationQos'. From 'ddsMetamodel_DdsPublisherQosProfile', the role 'ddsMetamodel_DdsPublisherQosProfile118' has cardinality 0..*, and from 'ddsMetamodel_DdsPresentationQos', the role 'ddsMetamodel_DdsPresentationQos' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsPartitionQos' and 'ddsMetamodel_DdsPublisherQosProfile'. From 'ddsMetamodel_DdsPartitionQos', the role 'ddsMetamodel_DdsPartitionQos' has cardinality 0..*, and from 'ddsMetamodel_DdsPublisherQosProfile', the role 'ddsMetamodel_DdsPublisherQosProfile120' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriterQosProfile' and 'ddsMetamodel_DdsUserDataQos'. From 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile122' has cardinality 0..*, and from 'ddsMetamodel_DdsUserDataQos', the role 'ddsMetamodel_DdsUserDataQos123' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriterQosProfile' and 'ddsMetamodel_DdsDurabilityQos'. From 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile125' has cardinality 0..*, and from 'ddsMetamodel_DdsDurabilityQos', the role 'ddsMetamodel_DdsDurabilityQos126' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriterQosProfile' and 'ddsMetamodel_DdsDeadlineQos'. From 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile128' has cardinality 0..*, and from 'ddsMetamodel_DdsDeadlineQos', the role 'ddsMetamodel_DdsDeadlineQos129' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriterQosProfile' and 'ddsMetamodel_DdsLatencyBudgetQos'. From 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile131' has cardinality 0..*, and from 'ddsMetamodel_DdsLatencyBudgetQos', the role 'ddsMetamodel_DdsLatencyBudgetQos132' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsOwnershipQos' and 'ddsMetamodel_DdsDataWriterQosProfile'. From 'ddsMetamodel_DdsOwnershipQos', the role 'ddsMetamodel_DdsOwnershipQos135' has cardinality 0..*, and from 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile134' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsOwnershipStrengthQos' and 'ddsMetamodel_DdsDataWriterQosProfile'. From 'ddsMetamodel_DdsOwnershipStrengthQos', the role 'ddsMetamodel_DdsOwnershipStrengthQos' has cardinality 0..*, and from 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile137' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriterQosProfile' and 'ddsMetamodel_DdsLivelinessQos'. From 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile139' has cardinality 0..*, and from 'ddsMetamodel_DdsLivelinessQos', the role 'ddsMetamodel_DdsLivelinessQos140' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriterQosProfile' and 'ddsMetamodel_DdsReliabilityQos'. From 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile142' has cardinality 0..*, and from 'ddsMetamodel_DdsReliabilityQos', the role 'ddsMetamodel_DdsReliabilityQos143' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTransportPriorityQos' and 'ddsMetamodel_DdsDataWriterQosProfile'. From 'ddsMetamodel_DdsTransportPriorityQos', the role 'ddsMetamodel_DdsTransportPriorityQos146' has cardinality 0..*, and from 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile145' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriterQosProfile' and 'ddsMetamodel_DdsLifespan'. From 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile148' has cardinality 0..*, and from 'ddsMetamodel_DdsLifespan', the role 'ddsMetamodel_DdsLifespan149' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriterQosProfile' and 'ddsMetamodel_DdsDestinationOrderQos'. From 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile151' has cardinality 0..*, and from 'ddsMetamodel_DdsDestinationOrderQos', the role 'ddsMetamodel_DdsDestinationOrderQos152' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriterQosProfile' and 'ddsMetamodel_DdsHistoryQos'. From 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile154' has cardinality 0..*, and from 'ddsMetamodel_DdsHistoryQos', the role 'ddsMetamodel_DdsHistoryQos155' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsResourceLimits' and 'ddsMetamodel_DdsDataWriterQosProfile'. From 'ddsMetamodel_DdsResourceLimits', the role 'ddsMetamodel_DdsResourceLimits158' has cardinality 0..*, and from 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile157' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriterLifecycleQos' and 'ddsMetamodel_DdsDataWriterQosProfile'. From 'ddsMetamodel_DdsDataWriterLifecycleQos', the role 'ddsMetamodel_DdsDataWriterLifecycleQos161' has cardinality 0..*, and from 'ddsMetamodel_DdsDataWriterQosProfile', the role 'ddsMetamodel_DdsDataWriterQosProfile160' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsGroupDataQos' and 'ddsMetamodel_DdsSubscriberQosProfile'. From 'ddsMetamodel_DdsGroupDataQos', the role 'ddsMetamodel_DdsGroupDataQos164' has cardinality 0..*, and from 'ddsMetamodel_DdsSubscriberQosProfile', the role 'ddsMetamodel_DdsSubscriberQosProfile163' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsEntityFactoryQos' and 'ddsMetamodel_DdsSubscriberQosProfile'. From 'ddsMetamodel_DdsEntityFactoryQos', the role 'ddsMetamodel_DdsEntityFactoryQos167' has cardinality 0..*, and from 'ddsMetamodel_DdsSubscriberQosProfile', the role 'ddsMetamodel_DdsSubscriberQosProfile166' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsPresentationQos' and 'ddsMetamodel_DdsSubscriberQosProfile'. From 'ddsMetamodel_DdsPresentationQos', the role 'ddsMetamodel_DdsPresentationQos170' has cardinality 0..*, and from 'ddsMetamodel_DdsSubscriberQosProfile', the role 'ddsMetamodel_DdsSubscriberQosProfile169' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsSubscriberQosProfile' and 'ddsMetamodel_DdsPartitionQos'. From 'ddsMetamodel_DdsSubscriberQosProfile', the role 'ddsMetamodel_DdsSubscriberQosProfile172' has cardinality 0..*, and from 'ddsMetamodel_DdsPartitionQos', the role 'ddsMetamodel_DdsPartitionQos173' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsUserDataQos' and 'ddsMetamodel_DdsDataReaderQosProfile'. From 'ddsMetamodel_DdsUserDataQos', the role 'ddsMetamodel_DdsUserDataQos176' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile175' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReaderQosProfile' and 'ddsMetamodel_DdsDurabilityQos'. From 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile178' has cardinality 0..*, and from 'ddsMetamodel_DdsDurabilityQos', the role 'ddsMetamodel_DdsDurabilityQos179' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDeadlineQos' and 'ddsMetamodel_DdsDataReaderQosProfile'. From 'ddsMetamodel_DdsDeadlineQos', the role 'ddsMetamodel_DdsDeadlineQos182' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile181' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReaderQosProfile' and 'ddsMetamodel_DdsLatencyBudgetQos'. From 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile184' has cardinality 0..*, and from 'ddsMetamodel_DdsLatencyBudgetQos', the role 'ddsMetamodel_DdsLatencyBudgetQos185' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReaderQosProfile' and 'ddsMetamodel_DdsLivelinessQos'. From 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile187' has cardinality 0..*, and from 'ddsMetamodel_DdsLivelinessQos', the role 'ddsMetamodel_DdsLivelinessQos188' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsOwnershipQos' and 'ddsMetamodel_DdsDataReaderQosProfile'. From 'ddsMetamodel_DdsOwnershipQos', the role 'ddsMetamodel_DdsOwnershipQos191' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile190' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTimeBasedFilterQos' and 'ddsMetamodel_DdsDataReaderQosProfile'. From 'ddsMetamodel_DdsTimeBasedFilterQos', the role 'ddsMetamodel_DdsTimeBasedFilterQos194' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile193' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsReliabilityQos' and 'ddsMetamodel_DdsDataReaderQosProfile'. From 'ddsMetamodel_DdsReliabilityQos', the role 'ddsMetamodel_DdsReliabilityQos197' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile196' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDestinationOrderQos' and 'ddsMetamodel_DdsDataReaderQosProfile'. From 'ddsMetamodel_DdsDestinationOrderQos', the role 'ddsMetamodel_DdsDestinationOrderQos200' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile199' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsHistoryQos' and 'ddsMetamodel_DdsDataReaderQosProfile'. From 'ddsMetamodel_DdsHistoryQos', the role 'ddsMetamodel_DdsHistoryQos203' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile202' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReaderQosProfile' and 'ddsMetamodel_DdsResourceLimits'. From 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile205' has cardinality 0..*, and from 'ddsMetamodel_DdsResourceLimits', the role 'ddsMetamodel_DdsResourceLimits206' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReaderLifecycleQos' and 'ddsMetamodel_DdsDataReaderQosProfile'. From 'ddsMetamodel_DdsDataReaderLifecycleQos', the role 'ddsMetamodel_DdsDataReaderLifecycleQos209' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReaderQosProfile', the role 'ddsMetamodel_DdsDataReaderQosProfile208' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsWaitSet' and 'ddsMetamodel_DdsReadCondition'. From 'ddsMetamodel_DdsWaitSet', the role 'ddsMetamodel_DdsWaitSet211' has cardinality 0..*, and from 'ddsMetamodel_DdsReadCondition', the role 'ddsMetamodel_DdsReadCondition' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsStatusCondition' and 'ddsMetamodel_DdsWaitSet'. From 'ddsMetamodel_DdsStatusCondition', the role 'DdsStatusCondition' has cardinality 0..*, and from 'ddsMetamodel_DdsWaitSet', the role 'containingWaitset' has cardinality 0..*.
+An association connects 'ddsMetamodel_GuardCondition' and 'ddsMetamodel_DdsWaitSet'. From 'ddsMetamodel_GuardCondition', the role 'ddsMetamodel_GuardCondition' has cardinality 0..*, and from 'ddsMetamodel_DdsWaitSet', the role 'ddsMetamodel_DdsWaitSet214' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReader' and 'ddsMetamodel_DdsReadCondition'. From 'ddsMetamodel_DdsDataReader', the role 'ddsMetamodel_DdsDataReader217' has cardinality 0..*, and from 'ddsMetamodel_DdsReadCondition', the role 'ddsMetamodel_DdsReadCondition216' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsStructuredField' and 'ddsMetamodel_DdsDataStructure'. From 'ddsMetamodel_DdsStructuredField', the role 'ddsMetamodel_DdsStructuredField' has cardinality 0..*, and from 'ddsMetamodel_DdsDataStructure', the role 'ddsMetamodel_DdsDataStructure219' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataStructure' and 'ddsMetamodel_DdsStructuredField'. From 'ddsMetamodel_DdsDataStructure', the role 'DdsDataStructure221' has cardinality 0..*, and from 'ddsMetamodel_DdsStructuredField', the role 'structuredFields' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsStatusCondition' and 'ddsMetamodel_DdsWaitSet'. From 'ddsMetamodel_DdsStatusCondition', the role 'statusConditions' has cardinality 0..*, and from 'ddsMetamodel_DdsWaitSet', the role 'DdsWaitSet' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDomainParticipantStatusCondition' and 'ddsMetamodel_DdsDomainParticipant'. From 'ddsMetamodel_DdsDomainParticipantStatusCondition', the role 'ddsMetamodel_DdsDomainParticipantStatusCondition' has cardinality 0..*, and from 'ddsMetamodel_DdsDomainParticipant', the role 'ddsMetamodel_DdsDomainParticipant224' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsPublisher' and 'ddsMetamodel_DdsPublisherStatusCondition'. From 'ddsMetamodel_DdsPublisher', the role 'ddsMetamodel_DdsPublisher226' has cardinality 0..*, and from 'ddsMetamodel_DdsPublisherStatusCondition', the role 'ddsMetamodel_DdsPublisherStatusCondition' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsSubscriberStatusCondition' and 'ddsMetamodel_DdsSubscriber'. From 'ddsMetamodel_DdsSubscriberStatusCondition', the role 'ddsMetamodel_DdsSubscriberStatusCondition' has cardinality 0..*, and from 'ddsMetamodel_DdsSubscriber', the role 'ddsMetamodel_DdsSubscriber228' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataWriter' and 'ddsMetamodel_DdsDataWriterStatusCondition'. From 'ddsMetamodel_DdsDataWriter', the role 'ddsMetamodel_DdsDataWriter230' has cardinality 0..*, and from 'ddsMetamodel_DdsDataWriterStatusCondition', the role 'ddsMetamodel_DdsDataWriterStatusCondition' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsDataReaderStatusCondition' and 'ddsMetamodel_DdsDataReader'. From 'ddsMetamodel_DdsDataReaderStatusCondition', the role 'ddsMetamodel_DdsDataReaderStatusCondition' has cardinality 0..*, and from 'ddsMetamodel_DdsDataReader', the role 'ddsMetamodel_DdsDataReader232' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsTopicStatusCondition' and 'ddsMetamodel_DdsTopic'. From 'ddsMetamodel_DdsTopicStatusCondition', the role 'ddsMetamodel_DdsTopicStatusCondition' has cardinality 0..*, and from 'ddsMetamodel_DdsTopic', the role 'ddsMetamodel_DdsTopic234' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsSystem' and 'ddsMetamodel_DdsHost'. From 'ddsMetamodel_DdsSystem', the role 'ddsMetamodel_DdsSystem' has cardinality 0..*, and from 'ddsMetamodel_DdsHost', the role 'ddsMetamodel_DdsHost' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsSystem' and 'ddsMetamodel_DdsQosProfile'. From 'ddsMetamodel_DdsSystem', the role 'ddsMetamodel_DdsSystem237' has cardinality 0..*, and from 'ddsMetamodel_DdsQosProfile', the role 'ddsMetamodel_DdsQosProfile' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsSystem' and 'ddsMetamodel_DdsDataModule'. From 'ddsMetamodel_DdsSystem', the role 'containingSystem' has cardinality 0..*, and from 'ddsMetamodel_DdsDataModule', the role 'DdsDataModule239' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsSystem' and 'ddsMetamodel_DdsTopic'. From 'ddsMetamodel_DdsSystem', the role 'ddsMetamodel_DdsSystem241' has cardinality 0..*, and from 'ddsMetamodel_DdsTopic', the role 'ddsMetamodel_DdsTopic242' has cardinality 0..*.
+An association connects 'ddsMetamodel_DdsApplication' and 'ddsMetamodel_DdsHost'. From 'ddsMetamodel_DdsApplication', the role 'ddsMetamodel_DdsApplication245' has cardinality 0..*, and from 'ddsMetamodel_DdsHost', the role 'ddsMetamodel_DdsHost244' has cardinality 0..*.

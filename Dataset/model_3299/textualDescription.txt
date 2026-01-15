@@ -1,0 +1,26 @@
+The domain model 'automaticexperiment' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'automaticexperiment_AutomaticExperiment' represents an important domain concept.
+It has the following attributes: 'referanceDataDir', which is of type str; 'reInit', which is of type bool; 'maximumNumberOfIterations', which is of type str; 'errorAnalysisAlgorithm', which is of type str; 'errorFunction', which is of type str; 'tolerance', which is of type float.
+
+'automaticexperiment_ModifiableParameter' represents an important domain concept.
+It has the following attributes: 'targetURI', which is of type str; 'step', which is of type float; 'lowerBound', which is of type float; 'featureName', which is of type str; 'upperBound', which is of type float; 'initialValue', which is of type float.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'automaticexperiment_Scenario' represents an important domain concept.
+It does not declare any attributes.
+
+'automaticexperiment_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'automaticexperiment_AutomaticExperiment' is a specialization of 'Identifiable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'automaticexperiment_Scenario' and 'automaticexperiment_AutomaticExperiment'. From 'automaticexperiment_Scenario', the role 'automaticexperiment_Scenario' has cardinality 0..*, and from 'automaticexperiment_AutomaticExperiment', the role 'automaticexperiment_AutomaticExperiment' has cardinality 0..*.
+An association connects 'automaticexperiment_ModifiableParameter' and 'automaticexperiment_AutomaticExperiment'. From 'automaticexperiment_ModifiableParameter', the role 'automaticexperiment_ModifiableParameter' has cardinality 0..*, and from 'automaticexperiment_AutomaticExperiment', the role 'automaticexperiment_AutomaticExperiment2' has cardinality 0..*.
+An association connects 'automaticexperiment_ModifiableParameter' and 'automaticexperiment_EStructuralFeature'. From 'automaticexperiment_ModifiableParameter', the role 'automaticexperiment_ModifiableParameter4' has cardinality 0..*, and from 'automaticexperiment_EStructuralFeature', the role 'automaticexperiment_EStructuralFeature' has cardinality 0..*.

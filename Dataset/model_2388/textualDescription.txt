@@ -1,0 +1,37 @@
+The domain model 'database' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'database_Column' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'database_DataBaseElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'database_Schema' represents an important domain concept.
+It does not declare any attributes.
+
+'database_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'database_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'DataBaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RailsData' defines the following possible values: 'string', 'date', 'boolean', 'time', 'integer', 'decimal', 'dateTime', 'float', 'timestamp', 'binary', 'text'.
+
+The model also captures inheritance relationships between classes.
+The class 'database_Schema' is a specialization of 'DataBaseElement'.
+The class 'database_Table' is a specialization of 'DataBaseElement'.
+The class 'database_Column' is a specialization of 'DataBaseElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'database_Table' and 'database_Schema'. From 'database_Table', the role 'database_Table' has cardinality 0..*, and from 'database_Schema', the role 'database_Schema' has cardinality 0..*.
+An association connects 'database_Table' and 'database_Column'. From 'database_Table', the role 'database_Table2' has cardinality 0..*, and from 'database_Column', the role 'database_Column' has cardinality 0..*.
+An association connects 'database_Table' and 'database_Column'. From 'database_Table', the role 'database_Table4' has cardinality 0..*, and from 'database_Column', the role 'database_Column5' has cardinality 0..*.
+An association connects 'database_Table' and 'database_ForeignKey'. From 'database_Table', the role 'database_Table7' has cardinality 0..*, and from 'database_ForeignKey', the role 'database_ForeignKey' has cardinality 0..*.
+An association connects 'database_Column' and 'database_ForeignKey'. From 'database_Column', the role 'database_Column10' has cardinality 0..*, and from 'database_ForeignKey', the role 'database_ForeignKey9' has cardinality 0..*.
+An association connects 'database_Table' and 'database_ForeignKey'. From 'database_Table', the role 'database_Table13' has cardinality 0..*, and from 'database_ForeignKey', the role 'database_ForeignKey12' has cardinality 0..*.

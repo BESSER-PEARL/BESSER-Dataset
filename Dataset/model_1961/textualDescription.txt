@@ -1,0 +1,29 @@
+The domain model 'sourceanalysator' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'sourceanalysator_GeneralSource' represents an important domain concept.
+It has the following attributes: 'aliases', which is of type str; 'dontCount', which is of type bool; 'name', which is of type str.
+
+'sourceanalysator_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'sourceanalysator_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'sourceanalysator_Hyperlink' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'sourceanalysator_Article' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'localFile', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'sourceanalysator_Source' and 'sourceanalysator_GeneralSource'. From 'sourceanalysator_Source', the role 'Source' has cardinality 0..*, and from 'sourceanalysator_GeneralSource', the role 'generalSource' has cardinality 0..*.
+An association connects 'sourceanalysator_Source' and 'sourceanalysator_GeneralSource'. From 'sourceanalysator_Source', the role 'sources' has cardinality 0..*, and from 'sourceanalysator_GeneralSource', the role 'GeneralSource' has cardinality 0..*.
+An association connects 'sourceanalysator_Article' and 'sourceanalysator_Source'. From 'sourceanalysator_Article', the role 'Article' has cardinality 0..*, and from 'sourceanalysator_Source', the role 'sources3' has cardinality 0..*.
+An association connects 'sourceanalysator_Source' and 'sourceanalysator_Hyperlink'. From 'sourceanalysator_Source', the role 'sources5' has cardinality 0..*, and from 'sourceanalysator_Hyperlink', the role 'Hyperlink' has cardinality 0..*.
+An association connects 'sourceanalysator_Library' and 'sourceanalysator_GeneralSource'. From 'sourceanalysator_Library', the role 'sourceanalysator_Library' has cardinality 0..*, and from 'sourceanalysator_GeneralSource', the role 'sourceanalysator_GeneralSource' has cardinality 0..*.
+An association connects 'sourceanalysator_Article' and 'sourceanalysator_Library'. From 'sourceanalysator_Article', the role 'sourceanalysator_Article' has cardinality 0..*, and from 'sourceanalysator_Library', the role 'sourceanalysator_Library8' has cardinality 0..*.
+An association connects 'sourceanalysator_Hyperlink' and 'sourceanalysator_Library'. From 'sourceanalysator_Hyperlink', the role 'sourceanalysator_Hyperlink' has cardinality 0..*, and from 'sourceanalysator_Library', the role 'sourceanalysator_Library10' has cardinality 0..*.
+An association connects 'sourceanalysator_Source' and 'sourceanalysator_Article'. From 'sourceanalysator_Source', the role 'Source12' has cardinality 0..*, and from 'sourceanalysator_Article', the role 'article' has cardinality 0..*.
+An association connects 'sourceanalysator_Hyperlink' and 'sourceanalysator_Source'. From 'sourceanalysator_Hyperlink', the role 'hyperlink' has cardinality 0..*, and from 'sourceanalysator_Source', the role 'Source14' has cardinality 0..*.

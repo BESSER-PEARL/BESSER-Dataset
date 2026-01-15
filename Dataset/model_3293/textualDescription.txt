@@ -1,0 +1,43 @@
+The domain model 'multipopulation' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'MultiPopulationSIDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'multipopulation_MultiPopulationSEIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'multipopulation_MultiPopulationSIDiseaseModel' represents an important domain concept.
+It has the following attributes: 'physicallyAdjacentInfectiousProportion', which is of type float; 'characteristicMixingDistance', which is of type float; 'roadNetworkInfectiousProportion', which is of type float.
+
+'multipopulation_MultiPopulationSIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiPopulationSIRDiseaseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'multipopulation_DoubleValueMatrix' represents an important domain concept.
+It does not declare any attributes.
+
+'multipopulation_StringValueList' represents an important domain concept.
+It does not declare any attributes.
+
+'multipopulation_DoubleValueList' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'multipopulation_MultiPopulationSIDiseaseModel' is a specialization of 'StandardDiseaseModel'.
+The class 'multipopulation_MultiPopulationSIRDiseaseModel' is a specialization of 'MultiPopulationSIDiseaseModel'.
+The class 'multipopulation_MultiPopulationSEIRDiseaseModel' is a specialization of 'MultiPopulationSIRDiseaseModel'.
+
+Relationships between classes are modeled using associations.
+An association connects 'multipopulation_MultiPopulationSIDiseaseModel' and 'multipopulation_StringValueList'. From 'multipopulation_MultiPopulationSIDiseaseModel', the role 'multipopulation_MultiPopulationSIDiseaseModel' has cardinality 0..*, and from 'multipopulation_StringValueList', the role 'multipopulation_StringValueList' has cardinality 0..*.
+An association connects 'multipopulation_MultiPopulationSIDiseaseModel' and 'multipopulation_DoubleValueMatrix'. From 'multipopulation_MultiPopulationSIDiseaseModel', the role 'multipopulation_MultiPopulationSIDiseaseModel2' has cardinality 0..*, and from 'multipopulation_DoubleValueMatrix', the role 'multipopulation_DoubleValueMatrix' has cardinality 0..*.
+An association connects 'multipopulation_MultiPopulationSIDiseaseModel' and 'multipopulation_DoubleValueList'. From 'multipopulation_MultiPopulationSIDiseaseModel', the role 'multipopulation_MultiPopulationSIDiseaseModel4' has cardinality 0..*, and from 'multipopulation_DoubleValueList', the role 'multipopulation_DoubleValueList' has cardinality 0..*.
+An association connects 'multipopulation_DoubleValueList' and 'multipopulation_MultiPopulationSIDiseaseModel'. From 'multipopulation_DoubleValueList', the role 'multipopulation_DoubleValueList7' has cardinality 0..*, and from 'multipopulation_MultiPopulationSIDiseaseModel', the role 'multipopulation_MultiPopulationSIDiseaseModel6' has cardinality 0..*.
+An association connects 'multipopulation_DoubleValueList' and 'multipopulation_MultiPopulationSIRDiseaseModel'. From 'multipopulation_DoubleValueList', the role 'multipopulation_DoubleValueList9' has cardinality 0..*, and from 'multipopulation_MultiPopulationSIRDiseaseModel', the role 'multipopulation_MultiPopulationSIRDiseaseModel' has cardinality 0..*.
+An association connects 'multipopulation_DoubleValueList' and 'multipopulation_MultiPopulationSEIRDiseaseModel'. From 'multipopulation_DoubleValueList', the role 'multipopulation_DoubleValueList11' has cardinality 0..*, and from 'multipopulation_MultiPopulationSEIRDiseaseModel', the role 'multipopulation_MultiPopulationSEIRDiseaseModel' has cardinality 0..*.

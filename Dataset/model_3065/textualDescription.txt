@@ -1,0 +1,152 @@
+The domain model 'forms' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'forms_CompositeCondition' represents an important domain concept.
+It has one attribute: 'compositionType', which is of type str.
+
+'forms_Relationship' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'upperBound', which is of type int.
+
+'forms_List' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_EntityModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'forms_Form' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'welcomeForm', which is of type bool; 'title', which is of type str.
+
+'forms_AttributePageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_TextArea' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_SelectionField' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_DateSelectionField' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributePageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_FormModel' represents an important domain concept.
+It does not declare any attributes.
+
+'EntityModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_AttributeValueCondition' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'forms_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'forms_PageElement' represents an important domain concept.
+It has the following attributes: 'elementID', which is of type str; 'label', which is of type str.
+
+'forms_Attribute' represents an important domain concept.
+It has the following attributes: 'mandatory', which is of type bool; 'type', which is of type str.
+
+'forms_Page' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'forms_RelationshipPageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_TimeSelectionField' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_Condition' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'conditionID', which is of type str.
+
+'forms_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationshipPageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_EntityModel' represents an important domain concept.
+It does not declare any attributes.
+
+'forms_TextField' represents an important domain concept.
+It has one attribute: 'format', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AttributeType' defines the following possible values: 'Boolean', 'Year', 'String', 'Text', 'Integer', 'Time', 'None', 'Email', 'Date'.
+The enumeration 'ConditionType' defines the following possible values: 'Enable', 'Hide', 'None', 'Disable', 'Show'.
+The enumeration 'CompositeConditionType' defines the following possible values: 'And', 'Or'.
+
+The model also captures inheritance relationships between classes.
+The class 'forms_Entity' is a specialization of 'EntityModelElement'.
+The class 'forms_Entity' is a specialization of 'NamedElement'.
+The class 'forms_Attribute' is a specialization of 'Feature'.
+The class 'forms_Relationship' is a specialization of 'Feature'.
+The class 'forms_Enumeration' is a specialization of 'EntityModelElement'.
+The class 'forms_Enumeration' is a specialization of 'NamedElement'.
+The class 'forms_Literal' is a specialization of 'NamedElement'.
+The class 'forms_Form' is a specialization of 'NamedElement'.
+The class 'forms_Feature' is a specialization of 'NamedElement'.
+The class 'forms_TextField' is a specialization of 'AttributePageElement'.
+The class 'forms_TextArea' is a specialization of 'AttributePageElement'.
+The class 'forms_SelectionField' is a specialization of 'AttributePageElement'.
+The class 'forms_List' is a specialization of 'RelationshipPageElement'.
+The class 'forms_Table' is a specialization of 'RelationshipPageElement'.
+The class 'forms_Column' is a specialization of 'AttributePageElement'.
+The class 'forms_AttributeValueCondition' is a specialization of 'Condition'.
+The class 'forms_CompositeCondition' is a specialization of 'Condition'.
+The class 'forms_AttributePageElement' is a specialization of 'PageElement'.
+The class 'forms_RelationshipPageElement' is a specialization of 'PageElement'.
+The class 'forms_DateSelectionField' is a specialization of 'AttributePageElement'.
+The class 'forms_TimeSelectionField' is a specialization of 'AttributePageElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'forms_Entity' and 'forms_Feature'. From 'forms_Entity', the role 'forms_Entity' has cardinality 0..*, and from 'forms_Feature', the role 'forms_Feature' has cardinality 0..*.
+An association connects 'forms_Entity' and 'forms_Attribute'. From 'forms_Entity', the role 'forms_Entity2' has cardinality 0..*, and from 'forms_Attribute', the role 'forms_Attribute' has cardinality 0..*.
+An association connects 'forms_Entity' and 'forms_Entity'. From 'forms_Entity', the role 'forms_Entity3' has cardinality 0..*, and from 'forms_Entity', the role 'forms_Entity5' has cardinality 0..*.
+An association connects 'forms_Attribute' and 'forms_Enumeration'. From 'forms_Attribute', the role 'forms_Attribute7' has cardinality 0..*, and from 'forms_Enumeration', the role 'forms_Enumeration' has cardinality 0..*.
+An association connects 'forms_Relationship' and 'forms_Entity'. From 'forms_Relationship', the role 'forms_Relationship' has cardinality 0..*, and from 'forms_Entity', the role 'forms_Entity9' has cardinality 0..*.
+An association connects 'forms_Relationship' and 'forms_Relationship'. From 'forms_Relationship', the role 'forms_Relationship12' has cardinality 0..*, and from 'forms_Relationship', the role 'forms_Relationship10' has cardinality 0..*.
+An association connects 'forms_Enumeration' and 'forms_Literal'. From 'forms_Enumeration', the role 'forms_Enumeration14' has cardinality 0..*, and from 'forms_Literal', the role 'forms_Literal' has cardinality 0..*.
+An association connects 'forms_EntityModelElement' and 'forms_EntityModel'. From 'forms_EntityModelElement', the role 'forms_EntityModelElement' has cardinality 0..*, and from 'forms_EntityModel', the role 'forms_EntityModel' has cardinality 0..*.
+An association connects 'forms_Form' and 'forms_FormModel'. From 'forms_Form', the role 'forms_Form' has cardinality 0..*, and from 'forms_FormModel', the role 'forms_FormModel' has cardinality 0..*.
+An association connects 'forms_Entity' and 'forms_Form'. From 'forms_Entity', the role 'forms_Entity19' has cardinality 0..*, and from 'forms_Form', the role 'forms_Form18' has cardinality 0..*.
+An association connects 'forms_Page' and 'forms_Form'. From 'forms_Page', the role 'forms_Page' has cardinality 0..*, and from 'forms_Form', the role 'forms_Form21' has cardinality 0..*.
+An association connects 'forms_Page' and 'forms_PageElement'. From 'forms_Page', the role 'forms_Page23' has cardinality 0..*, and from 'forms_PageElement', the role 'forms_PageElement' has cardinality 0..*.
+An association connects 'forms_Page' and 'forms_Condition'. From 'forms_Page', the role 'forms_Page25' has cardinality 0..*, and from 'forms_Condition', the role 'forms_Condition' has cardinality 0..*.
+An association connects 'forms_Condition' and 'forms_PageElement'. From 'forms_Condition', the role 'forms_Condition28' has cardinality 0..*, and from 'forms_PageElement', the role 'forms_PageElement27' has cardinality 0..*.
+An association connects 'forms_Table' and 'forms_Column'. From 'forms_Table', the role 'forms_Table' has cardinality 0..*, and from 'forms_Column', the role 'forms_Column' has cardinality 0..*.
+An association connects 'forms_Attribute' and 'forms_AttributeValueCondition'. From 'forms_Attribute', the role 'forms_Attribute31' has cardinality 0..*, and from 'forms_AttributeValueCondition', the role 'forms_AttributeValueCondition' has cardinality 0..*.
+An association connects 'forms_Condition' and 'forms_CompositeCondition'. From 'forms_Condition', the role 'forms_Condition33' has cardinality 0..*, and from 'forms_CompositeCondition', the role 'forms_CompositeCondition' has cardinality 0..*.
+An association connects 'forms_AttributePageElement' and 'forms_Attribute'. From 'forms_AttributePageElement', the role 'forms_AttributePageElement' has cardinality 0..*, and from 'forms_Attribute', the role 'forms_Attribute35' has cardinality 0..*.
+An association connects 'forms_RelationshipPageElement' and 'forms_Relationship'. From 'forms_RelationshipPageElement', the role 'forms_RelationshipPageElement' has cardinality 0..*, and from 'forms_Relationship', the role 'forms_Relationship37' has cardinality 0..*.
+An association connects 'forms_RelationshipPageElement' and 'forms_Form'. From 'forms_RelationshipPageElement', the role 'forms_RelationshipPageElement39' has cardinality 0..*, and from 'forms_Form', the role 'forms_Form40' has cardinality 0..*.

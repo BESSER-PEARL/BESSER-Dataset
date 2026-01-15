@@ -1,0 +1,79 @@
+The domain model 'UppaalFlat11' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'UppaalFlat11_LocationType' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'y', which is of type str; 'x', which is of type str; 'id', which is of type str.
+
+'UppaalFlat11_TargetType' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'UppaalFlat11_ParameterType' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'y', which is of type str; 'x', which is of type str.
+
+'UppaalFlat11_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'UppaalFlat11_NameType' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'x', which is of type str; 'y', which is of type str.
+
+'UppaalFlat11_NailType' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'y', which is of type str.
+
+'UppaalFlat11_UrgentType' represents an important domain concept.
+It does not declare any attributes.
+
+'UppaalFlat11_SourceType' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'UppaalFlat11_TransitionType' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'y', which is of type str; 'x', which is of type str; 'id', which is of type str.
+
+'UppaalFlat11_NtaType' represents an important domain concept.
+It has the following attributes: 'instantiation', which is of type str; 'imports', which is of type str; 'declaration', which is of type str; 'system', which is of type str.
+
+'UppaalFlat11_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'declaration', which is of type str; 'instantiation', which is of type str; 'system', which is of type str; 'imports', which is of type str.
+
+'UppaalFlat11_InitType' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'UppaalFlat11_LabelType' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'kind', which is of type str; 'y', which is of type str; 'mixed', which is of type str.
+
+'UppaalFlat11_CommittedType' represents an important domain concept.
+It does not declare any attributes.
+
+'UppaalFlat11_TemplateType' represents an important domain concept.
+It has one attribute: 'declaration', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'UppaalFlat11_DocumentRoot' and 'UppaalFlat11_EStringToStringMapEntry'. From 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot' has cardinality 0..*, and from 'UppaalFlat11_EStringToStringMapEntry', the role 'UppaalFlat11_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'UppaalFlat11_DocumentRoot' and 'UppaalFlat11_EStringToStringMapEntry'. From 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot2' has cardinality 0..*, and from 'UppaalFlat11_EStringToStringMapEntry', the role 'UppaalFlat11_EStringToStringMapEntry3' has cardinality 0..*.
+An association connects 'UppaalFlat11_DocumentRoot' and 'UppaalFlat11_CommittedType'. From 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot5' has cardinality 0..*, and from 'UppaalFlat11_CommittedType', the role 'UppaalFlat11_CommittedType' has cardinality 0..*.
+An association connects 'UppaalFlat11_InitType' and 'UppaalFlat11_DocumentRoot'. From 'UppaalFlat11_InitType', the role 'UppaalFlat11_InitType' has cardinality 0..*, and from 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot7' has cardinality 0..*.
+An association connects 'UppaalFlat11_LabelType' and 'UppaalFlat11_DocumentRoot'. From 'UppaalFlat11_LabelType', the role 'UppaalFlat11_LabelType' has cardinality 0..*, and from 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot9' has cardinality 0..*.
+An association connects 'UppaalFlat11_LocationType' and 'UppaalFlat11_DocumentRoot'. From 'UppaalFlat11_LocationType', the role 'UppaalFlat11_LocationType' has cardinality 0..*, and from 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot11' has cardinality 0..*.
+An association connects 'UppaalFlat11_DocumentRoot' and 'UppaalFlat11_NailType'. From 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot13' has cardinality 0..*, and from 'UppaalFlat11_NailType', the role 'UppaalFlat11_NailType' has cardinality 0..*.
+An association connects 'UppaalFlat11_DocumentRoot' and 'UppaalFlat11_NameType'. From 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot15' has cardinality 0..*, and from 'UppaalFlat11_NameType', the role 'UppaalFlat11_NameType' has cardinality 0..*.
+An association connects 'UppaalFlat11_DocumentRoot' and 'UppaalFlat11_NtaType'. From 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot17' has cardinality 0..*, and from 'UppaalFlat11_NtaType', the role 'UppaalFlat11_NtaType' has cardinality 0..*.
+An association connects 'UppaalFlat11_DocumentRoot' and 'UppaalFlat11_ParameterType'. From 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot19' has cardinality 0..*, and from 'UppaalFlat11_ParameterType', the role 'UppaalFlat11_ParameterType' has cardinality 0..*.
+An association connects 'UppaalFlat11_SourceType' and 'UppaalFlat11_DocumentRoot'. From 'UppaalFlat11_SourceType', the role 'UppaalFlat11_SourceType' has cardinality 0..*, and from 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot21' has cardinality 0..*.
+An association connects 'UppaalFlat11_DocumentRoot' and 'UppaalFlat11_TargetType'. From 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot23' has cardinality 0..*, and from 'UppaalFlat11_TargetType', the role 'UppaalFlat11_TargetType' has cardinality 0..*.
+An association connects 'UppaalFlat11_TemplateType' and 'UppaalFlat11_DocumentRoot'. From 'UppaalFlat11_TemplateType', the role 'UppaalFlat11_TemplateType' has cardinality 0..*, and from 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot25' has cardinality 0..*.
+An association connects 'UppaalFlat11_TransitionType' and 'UppaalFlat11_DocumentRoot'. From 'UppaalFlat11_TransitionType', the role 'UppaalFlat11_TransitionType' has cardinality 0..*, and from 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot27' has cardinality 0..*.
+An association connects 'UppaalFlat11_UrgentType' and 'UppaalFlat11_DocumentRoot'. From 'UppaalFlat11_UrgentType', the role 'UppaalFlat11_UrgentType' has cardinality 0..*, and from 'UppaalFlat11_DocumentRoot', the role 'UppaalFlat11_DocumentRoot29' has cardinality 0..*.
+An association connects 'UppaalFlat11_LocationType' and 'UppaalFlat11_NameType'. From 'UppaalFlat11_LocationType', the role 'UppaalFlat11_LocationType31' has cardinality 0..*, and from 'UppaalFlat11_NameType', the role 'UppaalFlat11_NameType32' has cardinality 0..*.
+An association connects 'UppaalFlat11_LocationType' and 'UppaalFlat11_LabelType'. From 'UppaalFlat11_LocationType', the role 'UppaalFlat11_LocationType34' has cardinality 0..*, and from 'UppaalFlat11_LabelType', the role 'UppaalFlat11_LabelType35' has cardinality 0..*.
+An association connects 'UppaalFlat11_UrgentType' and 'UppaalFlat11_LocationType'. From 'UppaalFlat11_UrgentType', the role 'UppaalFlat11_UrgentType38' has cardinality 0..*, and from 'UppaalFlat11_LocationType', the role 'UppaalFlat11_LocationType37' has cardinality 0..*.
+An association connects 'UppaalFlat11_LocationType' and 'UppaalFlat11_CommittedType'. From 'UppaalFlat11_LocationType', the role 'UppaalFlat11_LocationType40' has cardinality 0..*, and from 'UppaalFlat11_CommittedType', the role 'UppaalFlat11_CommittedType41' has cardinality 0..*.
+An association connects 'UppaalFlat11_NtaType' and 'UppaalFlat11_TemplateType'. From 'UppaalFlat11_NtaType', the role 'UppaalFlat11_NtaType43' has cardinality 0..*, and from 'UppaalFlat11_TemplateType', the role 'UppaalFlat11_TemplateType44' has cardinality 0..*.
+An association connects 'UppaalFlat11_TemplateType' and 'UppaalFlat11_NameType'. From 'UppaalFlat11_TemplateType', the role 'UppaalFlat11_TemplateType46' has cardinality 0..*, and from 'UppaalFlat11_NameType', the role 'UppaalFlat11_NameType47' has cardinality 0..*.
+An association connects 'UppaalFlat11_ParameterType' and 'UppaalFlat11_TemplateType'. From 'UppaalFlat11_ParameterType', the role 'UppaalFlat11_ParameterType50' has cardinality 0..*, and from 'UppaalFlat11_TemplateType', the role 'UppaalFlat11_TemplateType49' has cardinality 0..*.
+An association connects 'UppaalFlat11_TemplateType' and 'UppaalFlat11_LocationType'. From 'UppaalFlat11_TemplateType', the role 'UppaalFlat11_TemplateType52' has cardinality 0..*, and from 'UppaalFlat11_LocationType', the role 'UppaalFlat11_LocationType53' has cardinality 0..*.
+An association connects 'UppaalFlat11_InitType' and 'UppaalFlat11_TemplateType'. From 'UppaalFlat11_InitType', the role 'UppaalFlat11_InitType56' has cardinality 0..*, and from 'UppaalFlat11_TemplateType', the role 'UppaalFlat11_TemplateType55' has cardinality 0..*.
+An association connects 'UppaalFlat11_TransitionType' and 'UppaalFlat11_TemplateType'. From 'UppaalFlat11_TransitionType', the role 'UppaalFlat11_TransitionType59' has cardinality 0..*, and from 'UppaalFlat11_TemplateType', the role 'UppaalFlat11_TemplateType58' has cardinality 0..*.
+An association connects 'UppaalFlat11_SourceType' and 'UppaalFlat11_TransitionType'. From 'UppaalFlat11_SourceType', the role 'UppaalFlat11_SourceType62' has cardinality 0..*, and from 'UppaalFlat11_TransitionType', the role 'UppaalFlat11_TransitionType61' has cardinality 0..*.
+An association connects 'UppaalFlat11_TransitionType' and 'UppaalFlat11_TargetType'. From 'UppaalFlat11_TransitionType', the role 'UppaalFlat11_TransitionType64' has cardinality 0..*, and from 'UppaalFlat11_TargetType', the role 'UppaalFlat11_TargetType65' has cardinality 0..*.
+An association connects 'UppaalFlat11_TransitionType' and 'UppaalFlat11_LabelType'. From 'UppaalFlat11_TransitionType', the role 'UppaalFlat11_TransitionType67' has cardinality 0..*, and from 'UppaalFlat11_LabelType', the role 'UppaalFlat11_LabelType68' has cardinality 0..*.
+An association connects 'UppaalFlat11_TransitionType' and 'UppaalFlat11_NailType'. From 'UppaalFlat11_TransitionType', the role 'UppaalFlat11_TransitionType70' has cardinality 0..*, and from 'UppaalFlat11_NailType', the role 'UppaalFlat11_NailType71' has cardinality 0..*.

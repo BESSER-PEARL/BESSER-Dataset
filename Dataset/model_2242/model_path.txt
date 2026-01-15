@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mortlun/TDT4250/course_description.ecore

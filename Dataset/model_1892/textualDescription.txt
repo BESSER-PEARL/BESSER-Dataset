@@ -1,0 +1,85 @@
+The domain model 'sgen' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'sgen_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'sgen_FeatureTypeLibrary' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_DeprecatableElement' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'deprecated', which is of type bool.
+
+'sgen_RealLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'sgen_GeneratorModel' represents an important domain concept.
+It has one attribute: 'generatorId', which is of type str.
+
+'DeprecatableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_FeatureType' represents an important domain concept.
+It has one attribute: 'optional', which is of type bool.
+
+'sgen_BoolLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'sgen_FeatureParameterValue' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_FeatureParameter' represents an important domain concept.
+It has the following attributes: 'parameterType', which is of type str; 'optional', which is of type bool.
+
+'sgen_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sgen_GeneratorEntry' represents an important domain concept.
+It has one attribute: 'contentType', which is of type str.
+
+'sgen_GeneratorConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'sgen_FeatureConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParameterTypes' defines the following possible values: 'FLOAT', 'BOOLEAN', 'INTEGER', 'STRING'.
+
+The model also captures inheritance relationships between classes.
+The class 'sgen_FeatureType' is a specialization of 'NamedElement'.
+The class 'sgen_FeatureType' is a specialization of 'DeprecatableElement'.
+The class 'sgen_FeatureParameter' is a specialization of 'NamedElement'.
+The class 'sgen_FeatureParameter' is a specialization of 'DeprecatableElement'.
+The class 'sgen_BoolLiteral' is a specialization of 'Literal'.
+The class 'sgen_IntLiteral' is a specialization of 'Literal'.
+The class 'sgen_RealLiteral' is a specialization of 'Literal'.
+The class 'sgen_StringLiteral' is a specialization of 'Literal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sgen_GeneratorEntry' and 'sgen_GeneratorModel'. From 'sgen_GeneratorEntry', the role 'sgen_GeneratorEntry' has cardinality 0..*, and from 'sgen_GeneratorModel', the role 'sgen_GeneratorModel' has cardinality 0..*.
+An association connects 'sgen_GeneratorConfiguration' and 'sgen_FeatureConfiguration'. From 'sgen_GeneratorConfiguration', the role 'sgen_GeneratorConfiguration' has cardinality 0..*, and from 'sgen_FeatureConfiguration', the role 'sgen_FeatureConfiguration' has cardinality 0..*.
+An association connects 'sgen_FeatureParameter' and 'sgen_FeatureType'. From 'sgen_FeatureParameter', the role 'FeatureParameter' has cardinality 0..*, and from 'sgen_FeatureType', the role 'featureType' has cardinality 0..*.
+An association connects 'sgen_FeatureTypeLibrary' and 'sgen_FeatureType'. From 'sgen_FeatureTypeLibrary', the role 'sgen_FeatureTypeLibrary' has cardinality 0..*, and from 'sgen_FeatureType', the role 'sgen_FeatureType' has cardinality 0..*.
+An association connects 'sgen_FeatureParameter' and 'sgen_FeatureType'. From 'sgen_FeatureParameter', the role 'parameters' has cardinality 0..*, and from 'sgen_FeatureType', the role 'FeatureType' has cardinality 0..*.
+An association connects 'sgen_FeatureType' and 'sgen_FeatureConfiguration'. From 'sgen_FeatureType', the role 'sgen_FeatureType7' has cardinality 0..*, and from 'sgen_FeatureConfiguration', the role 'sgen_FeatureConfiguration6' has cardinality 0..*.
+An association connects 'sgen_FeatureParameterValue' and 'sgen_FeatureConfiguration'. From 'sgen_FeatureParameterValue', the role 'FeatureParameterValue' has cardinality 0..*, and from 'sgen_FeatureConfiguration', the role 'featureConfiguration' has cardinality 0..*.
+An association connects 'sgen_GeneratorEntry' and 'sgen_EObject'. From 'sgen_GeneratorEntry', the role 'sgen_GeneratorEntry10' has cardinality 0..*, and from 'sgen_EObject', the role 'sgen_EObject' has cardinality 0..*.
+An association connects 'sgen_GeneratorEntry' and 'sgen_FeatureConfiguration'. From 'sgen_GeneratorEntry', the role 'sgen_GeneratorEntry12' has cardinality 0..*, and from 'sgen_FeatureConfiguration', the role 'sgen_FeatureConfiguration13' has cardinality 0..*.
+An association connects 'sgen_FeatureParameterValue' and 'sgen_FeatureParameter'. From 'sgen_FeatureParameterValue', the role 'sgen_FeatureParameterValue' has cardinality 0..*, and from 'sgen_FeatureParameter', the role 'sgen_FeatureParameter' has cardinality 0..*.
+An association connects 'sgen_FeatureConfiguration' and 'sgen_FeatureParameterValue'. From 'sgen_FeatureConfiguration', the role 'FeatureConfiguration' has cardinality 0..*, and from 'sgen_FeatureParameterValue', the role 'parameterValues' has cardinality 0..*.
+An association connects 'sgen_Literal' and 'sgen_FeatureParameterValue'. From 'sgen_Literal', the role 'sgen_Literal' has cardinality 0..*, and from 'sgen_FeatureParameterValue', the role 'sgen_FeatureParameterValue17' has cardinality 0..*.
+An association connects 'sgen_FeatureType' and 'sgen_FeatureTypeLibrary'. From 'sgen_FeatureType', the role 'sgen_FeatureType20' has cardinality 0..*, and from 'sgen_FeatureTypeLibrary', the role 'sgen_FeatureTypeLibrary19' has cardinality 0..*.

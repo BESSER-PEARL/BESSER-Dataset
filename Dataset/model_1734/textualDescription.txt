@@ -1,0 +1,32 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'library_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Book' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Author' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'library_Author' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Library' and 'library_Book'. From 'library_Library', the role 'library_Library' has cardinality 0..*, and from 'library_Book', the role 'library_Book' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Author'. From 'library_Book', the role 'writtenBooks' has cardinality 0..*, and from 'library_Author', the role 'Author' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Author'. From 'library_Book', the role 'Book' has cardinality 0..*, and from 'library_Author', the role 'authors' has cardinality 0..*.
+An association connects 'library_Person' and 'library_Book'. From 'library_Person', the role 'library_Person' has cardinality 0..*, and from 'library_Book', the role 'library_Book4' has cardinality 0..*.
+An association connects 'library_Model' and 'library_Library'. From 'library_Model', the role 'library_Model' has cardinality 0..*, and from 'library_Library', the role 'library_Library6' has cardinality 0..*.
+An association connects 'library_Person' and 'library_Model'. From 'library_Person', the role 'library_Person9' has cardinality 0..*, and from 'library_Model', the role 'library_Model8' has cardinality 0..*.
